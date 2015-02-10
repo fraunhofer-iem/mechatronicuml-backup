@@ -209,7 +209,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int BLOCK___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -218,7 +218,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int BLOCK___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -227,7 +227,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int BLOCK___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -236,7 +236,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int BLOCK___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -245,7 +245,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int BLOCK___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -254,7 +254,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int BLOCK___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1230,7 +1230,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int ASSIGNMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1239,7 +1239,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ASSIGNMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1248,7 +1248,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ASSIGNMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1257,7 +1257,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int ASSIGNMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1266,7 +1266,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int ASSIGNMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1275,7 +1275,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int ASSIGNMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1772,7 +1772,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int IF_STATEMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1781,7 +1781,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int IF_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1790,7 +1790,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int IF_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1799,7 +1799,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int IF_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1808,7 +1808,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int IF_STATEMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1817,7 +1817,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int IF_STATEMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2016,7 +2016,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int OPERATION_CALL___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2025,7 +2025,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int OPERATION_CALL___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2034,7 +2034,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int OPERATION_CALL___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2043,7 +2043,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int OPERATION_CALL___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2052,7 +2052,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int OPERATION_CALL___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2061,7 +2061,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_CALL___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int OPERATION_CALL___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2251,7 +2251,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATEMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int RETURN_STATEMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2260,7 +2260,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int RETURN_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2269,7 +2269,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int RETURN_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2278,7 +2278,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int RETURN_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2287,7 +2287,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATEMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int RETURN_STATEMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2296,7 +2296,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RETURN_STATEMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int RETURN_STATEMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2495,7 +2495,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int TRIGGER_MESSAGE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2504,7 +2504,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int TRIGGER_MESSAGE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2513,7 +2513,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int TRIGGER_MESSAGE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2522,7 +2522,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int TRIGGER_MESSAGE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2531,7 +2531,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int TRIGGER_MESSAGE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2540,7 +2540,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRIGGER_MESSAGE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int TRIGGER_MESSAGE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2739,7 +2739,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2748,7 +2748,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -2757,7 +2757,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -2766,7 +2766,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -2775,7 +2775,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -2784,7 +2784,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -2983,7 +2983,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_SELECTOR___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int POSITION_SELECTOR___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -2992,7 +2992,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_SELECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int POSITION_SELECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3001,7 +3001,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_SELECTOR___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int POSITION_SELECTOR___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3010,7 +3010,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_SELECTOR___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int POSITION_SELECTOR___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3019,7 +3019,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_SELECTOR___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int POSITION_SELECTOR___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3028,7 +3028,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POSITION_SELECTOR___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int POSITION_SELECTOR___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3227,7 +3227,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3236,7 +3236,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3245,7 +3245,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3254,7 +3254,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3263,7 +3263,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3272,7 +3272,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3471,7 +3471,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int TYPED_NAMED_ELEMENT_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3480,7 +3480,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int TYPED_NAMED_ELEMENT_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3489,7 +3489,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int TYPED_NAMED_ELEMENT_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3498,7 +3498,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int TYPED_NAMED_ELEMENT_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3507,7 +3507,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int TYPED_NAMED_ELEMENT_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3516,7 +3516,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int TYPED_NAMED_ELEMENT_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3706,7 +3706,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_INITIALIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int ARRAY_INITIALIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3715,7 +3715,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_INITIALIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ARRAY_INITIALIZE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3724,7 +3724,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_INITIALIZE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ARRAY_INITIALIZE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3733,7 +3733,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_INITIALIZE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int ARRAY_INITIALIZE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3742,7 +3742,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_INITIALIZE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int ARRAY_INITIALIZE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3751,7 +3751,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_INITIALIZE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int ARRAY_INITIALIZE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3950,7 +3950,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int NONDETERMINISTIC_CHOICE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3959,7 +3959,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int NONDETERMINISTIC_CHOICE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3968,7 +3968,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int NONDETERMINISTIC_CHOICE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3977,7 +3977,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int NONDETERMINISTIC_CHOICE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3986,7 +3986,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int NONDETERMINISTIC_CHOICE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3995,7 +3995,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NONDETERMINISTIC_CHOICE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int NONDETERMINISTIC_CHOICE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -4185,7 +4185,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int PARAMETER_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4194,7 +4194,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int PARAMETER_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -4203,7 +4203,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int PARAMETER_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -4212,7 +4212,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int PARAMETER_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -4221,7 +4221,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int PARAMETER_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -4230,7 +4230,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int PARAMETER_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -4420,7 +4420,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int TIME_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4429,7 +4429,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int TIME_VALUE_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ExpressionsPackage.EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN_1;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -4438,7 +4438,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int TIME_VALUE_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ExpressionsPackage.EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT_1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -4447,7 +4447,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int TIME_VALUE_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EIS_SET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -4456,7 +4456,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int TIME_VALUE_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ExpressionsPackage.EXPRESSION___EUNSET__ESTRUCTURALFEATURE_1;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -4465,7 +4465,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int TIME_VALUE_EXPRESSION___EINVOKE__EOPERATION_ELIST = ExpressionsPackage.EXPRESSION___EINVOKE__EOPERATION_ELIST_1;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.

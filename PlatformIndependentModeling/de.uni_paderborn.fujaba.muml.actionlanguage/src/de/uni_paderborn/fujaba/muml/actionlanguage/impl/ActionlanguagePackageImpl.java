@@ -1065,7 +1065,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (assignmentEClass, 
 		   source, 
 		   new String[] {
-			 "ValidLHS", "-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(muml::component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(muml::component::HybridPort).outPort\nelse\n\ttrue\nendif"
+			 "ValidLHS", "-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\nelse\n\ttrue\nendif"
 		   });	
 		addAnnotation
 		  (operationCallEClass, 
