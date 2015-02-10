@@ -219,6 +219,18 @@ For more information about guice, see https://github.com/google/guice
    limitations under the License.
    </license>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guava.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.javax.inject" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.aopalliance" version="1.0.0" match="greaterOrEqual"/>
