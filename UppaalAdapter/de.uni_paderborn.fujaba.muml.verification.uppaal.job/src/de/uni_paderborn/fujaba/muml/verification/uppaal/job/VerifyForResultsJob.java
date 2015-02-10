@@ -74,8 +74,20 @@ public class VerifyForResultsJob extends SynchronousJob {
 			TransformationJob verifyJob = new TransformationJob("Running verification process", URI.createPlatformPluginURI("/de.uni_paderborn.fujaba.muml.verification.uppaal.transformation/transforms/VerifiableElement2Results.qvto", true));
 			ModelExtent resultExtent = new BasicModelExtent();
 			ModelExtent optionsExtent = new BasicModelExtent(Arrays.asList(new Options[] {optionsProvider.getOptions()}));
+			
+//			try {
+//				ResourceSet resourceSet = new ResourceSetImpl();
+//				Resource inputResource = resourceSet.createResource(URI.createPlatformResourceURI("TestProjekt/input2.xmi", true));
+//				inputResource.getContents().addAll(mainInputExtent.getContents());
+//				//mainInputExtent.setContents(new ArrayList<EObject>());
+//				inputResource.save(Collections.emptyMap());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+						
 			verifyJob.setTransformationParameters(mainInputExtent, optionsExtent, resultExtent);
 			status = verifyJob.execute(subMonitor.newChild(90));
+			
 			if (!status.isOK())
 				return status;
 			

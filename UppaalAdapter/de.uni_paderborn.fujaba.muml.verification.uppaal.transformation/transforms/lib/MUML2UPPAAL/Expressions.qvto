@@ -646,11 +646,12 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	
 	-- other expressions
 		
-	mapping muml_actionLanguage::Block :: createSingleExpression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::Expression when {self.expressions->size() = 1} {
+	mapping muml_actionLanguage::Block :: createSingleExpression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::Expression {
 		
 		-- mapping a block to an UPPAAL expression is only supported if the block contains just one expression 
-		
+			
 		init {
+			assert fatal (self.expressions->size() = 1) with log ("Only blocks with exactly one expression are currently supported.");
 			result := self.expressions->first().map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID)	
 		}	
 		
@@ -834,9 +835,9 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	}
 	
 	mapping storydriven_expressions::Expression :: failOnUnsupportedExpression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : uppaal_expressions::Expression {
-		
+				
 		init {
-			assert fatal (false) with log("Mapping this expression is unsupported due to UPPAAL limitations.")
+			assert fatal (false) with log("Mapping this expression is unsupported due to UPPAAL limitations. CompInsId: " + componentInstanceID.toString() + ". ")
 		}	
 		
 	}

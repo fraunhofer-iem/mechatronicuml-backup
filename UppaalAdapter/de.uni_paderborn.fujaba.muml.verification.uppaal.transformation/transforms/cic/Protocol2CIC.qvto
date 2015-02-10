@@ -465,7 +465,8 @@ init{
 	 }
 }
 
-helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean{
+helper portReferencedByProtocol(inout protocol : CoordinationProtocol) : Boolean {
+	assert fatal (not protocol.oclIsUndefined());
 	var directContents : Sequence(EObject):=protocol.eContents().oclAsType(EObject);
 	var indirectContents:= directContents->closure(eContents());
 	

@@ -34,17 +34,17 @@ main() {
 	var uppaalTransformation : VerifiableElement2UPPAAL = new VerifiableElement2UPPAAL(verifiableElementModel, options, uppaalModel, uppaalReq, originalCIC, staticallyNormalizedModel, verifiableCIC);
 	
 	var retcode : Status = uppaalTransformation.transform();
-	assert fatal (retcode.succeeded()) with log('UPPAAL translation failed: ' + retcode.raisedException().repr());
+	assert fatal (retcode.succeeded()) with log('UPPAAL translation failed in VerifiableElement2Results.qvto: ' + retcode.raisedException().repr());
 	
 	//Verification by Uppaal
 	var uppaalTrace : uppaal_trace = uppaal_trace.createEmptyModel().oclAsType(uppaal_trace);
 	var verifyta : UPPAAL2Trace = new UPPAAL2Trace(uppaalModel,uppaalReq,options,uppaalTrace);
 	verifyta.generateTrace := false;
 	retcode := verifyta.transform();
-	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed: ' + retcode.raisedException().repr());
+	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed in VerifiableElement2Results.qvto: ' + retcode.raisedException().repr());
 	
 	//Results translation
 	var evalResultTransformation := new MTCTLEvaluateResultTransformation(originalCIC, staticallyNormalizedModel, verifiableCIC, uppaalTrace, output);
 	retcode := evalResultTransformation.transform();
-	assert fatal (retcode.succeeded()) with log('Evaluation of verification results failed: ' + retcode.raisedException().repr());
+	assert fatal (retcode.succeeded()) with log('Evaluation of verification results failed in VerifiableElement2Results.qvto: ' + retcode.raisedException().repr());
 }
