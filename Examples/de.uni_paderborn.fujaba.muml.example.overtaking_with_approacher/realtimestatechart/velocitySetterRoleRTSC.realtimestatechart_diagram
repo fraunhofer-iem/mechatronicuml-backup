@@ -37,7 +37,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_g9kGO6vGEeS17_7FUkLEVQ"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_JecxsqMFEeSbmbyTJYAEVw"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g9aVWqvGEeS17_7FUkLEVQ" x="-20" y="-26" width="237" height="108"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g9aVWqvGEeS17_7FUkLEVQ" x="-12" y="-27" width="237" height="108"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_g9kGPKvGEeS17_7FUkLEVQ" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_g9kGPqvGEeS17_7FUkLEVQ" type="5060"/>
@@ -82,7 +82,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_g9aVPqvGEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_cGvZwZQjEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g9aVMavGEeS17_7FUkLEVQ" width="711" height="291"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g9aVMavGEeS17_7FUkLEVQ" width="723" height="315"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_g9aVP6vGEeS17_7FUkLEVQ" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_g9aVQavGEeS17_7FUkLEVQ" type="5060"/>
@@ -121,6 +121,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_g-AyIavGEeS17_7FUkLEVQ" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_iX-FcKMEEeSbmbyTJYAEVw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g-AyIqvGEeS17_7FUkLEVQ" points="[-114, -103, -37, -33]$[-37, -33, 40, 37]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DFF68LIDEeSfELQb2KT7iw" id="(0.9930843706777317,0.4)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_hAZXwKvGEeS17_7FUkLEVQ" type="4003" source="_g9aVP6vGEeS17_7FUkLEVQ" target="_g9aVMKvGEeS17_7FUkLEVQ" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_hAZXw6vGEeS17_7FUkLEVQ" type="6005">
@@ -133,7 +134,7 @@
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_i6ZdEKMEEeSbmbyTJYAEVw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hAZXwqvGEeS17_7FUkLEVQ" points="[40, 37, -37, -33]$[-37, -33, -114, -103]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vRPAIKvGEeS17_7FUkLEVQ" id="(0.10059171597633136,0.7862068965517242)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vlW2AKvGEeS17_7FUkLEVQ" id="(0.9957805907172996,0.5876288659793815)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vlW2AKvGEeS17_7FUkLEVQ" id="(0.9903181189488244,0.5492063492063493)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_hC7HUKvGEeS17_7FUkLEVQ" type="4003" source="_g9aVWavGEeS17_7FUkLEVQ" target="_g9kGPKvGEeS17_7FUkLEVQ" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_hC7HU6vGEeS17_7FUkLEVQ" type="6005">
@@ -158,5 +159,31 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hDE4UqvGEeS17_7FUkLEVQ" points="[-8, -36, 0, -33]$[0, -33, 8, -30]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_00BTQKvGEeS17_7FUkLEVQ" id="(0.06046511627906977,0.71875)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1JZGUKvGEeS17_7FUkLEVQ" id="(0.9367088607594937,0.7037037037037037)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_x_DAALICEeSfELQb2KT7iw" type="4003" source="_g9aVMKvGEeS17_7FUkLEVQ" target="_g9aVMKvGEeS17_7FUkLEVQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_x_DnELICEeSfELQb2KT7iw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_x_DnEbICEeSfELQb2KT7iw" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_x_DnErICEeSfELQb2KT7iw" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_x_DnE7ICEeSfELQb2KT7iw" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_x_DAAbICEeSfELQb2KT7iw" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_x-09kLICEeSfELQb2KT7iw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_x_DAArICEeSfELQb2KT7iw" points="[26, 0, 31, 24]$[73, 0, 78, 24]$[73, 61, 78, 85]$[-11, 61, -6, 85]$[-11, 38, -6, 62]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x_jWULICEeSfELQb2KT7iw" id="(0.9640387275242047,0.8793650793650793)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x_jWUbICEeSfELQb2KT7iw" id="(0.9571230982019364,0.8031746031746032)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_y-vicLICEeSfELQb2KT7iw" type="4003" source="_g9aVP6vGEeS17_7FUkLEVQ" target="_g9aVP6vGEeS17_7FUkLEVQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_y-vic7ICEeSfELQb2KT7iw" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_y-vidLICEeSfELQb2KT7iw" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_y-vidbICEeSfELQb2KT7iw" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_y-vidrICEeSfELQb2KT7iw" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_y-vicbICEeSfELQb2KT7iw" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_y-tGMLICEeSfELQb2KT7iw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_y-vicrICEeSfELQb2KT7iw" points="[20, 9, 45, -9]$[43, 9, 68, -9]$[43, 108, 68, 90]$[-22, 108, 3, 90]$[-22, 46, 3, 28]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y_NcgLICEeSfELQb2KT7iw" id="(0.8816568047337278,0.6827586206896552)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_y_ODkLICEeSfELQb2KT7iw" id="(0.7337278106508875,0.8068965517241379)"/>
   </edges>
 </notation:Diagram>

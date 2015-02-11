@@ -12,7 +12,7 @@ runningExample {
 		}
 		constraint differentLocation ApproacherDistributeCommAndDrv {
 		descriptors (first, second);
-		ocl self.allocateToDifferentECUs('approacherCommunicator', 'approacherDriver');
+		ocl self.allocateToDifferentECUs('ApproacherCommunicator', 'approacherDriver');
 		}
 		
 	constraint requiredHardwareResourceInstance OvertakerMotorLSensor {
@@ -92,5 +92,10 @@ runningExample {
 		descriptors (first, second);
 		ocl self.allocateEmbeddedToPlatformInstance('approacher', 'Approacher');
 	}
+	
+	constraint requiredHardwareResourceInstance SectionToServerInstance {
+        descriptors (first, second);
+        ocl self.allocateEmbeddedToPlatformInstance('section', 'ServerInstance');
+}
 		
 }

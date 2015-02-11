@@ -504,7 +504,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_4AQxUau8EeS17_7FUkLEVQ" type="4003" source="_vpEHwKu6EeS17_7FUkLEVQ" target="_TNJrUKu7EeS17_7FUkLEVQ" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_4AZ7QKu8EeS17_7FUkLEVQ" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_4AZ7Qau8EeS17_7FUkLEVQ" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_4AZ7Qau8EeS17_7FUkLEVQ" x="-2" y="-18"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_4AZ7Qqu8EeS17_7FUkLEVQ" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4AZ7Q6u8EeS17_7FUkLEVQ" x="-10" y="20"/>
