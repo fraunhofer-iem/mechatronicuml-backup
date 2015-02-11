@@ -1832,7 +1832,7 @@
         <embeddedRegions xmi:id="_JecxsKMFEeSbmbyTJYAEVw" priority="1">
           <embeddedStatechart xmi:id="_JecxsaMFEeSbmbyTJYAEVw" name="changingModeRTSC">
             <transitions xmi:id="_Ni7TwKMFEeSbmbyTJYAEVw" priority="1" target="_MCk7UKMFEeSbmbyTJYAEVw" source="_JecxsqMFEeSbmbyTJYAEVw" urgent="false">
-              <clockConstraints xmi:id="_yNq9YKMFEeSbmbyTJYAEVw" clock="_FG6JsKMFEeSbmbyTJYAEVw" operator="GREATER_OR_EQUAL">
+              <clockConstraints xmi:id="_yNq9YKMFEeSbmbyTJYAEVw" clock="_rwpHkLIDEeSfELQb2KT7iw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_zhbEQKMFEeSbmbyTJYAEVw" unit="SECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_0ZmpcKMFEeSbmbyTJYAEVw" value="3"/>
                 </bound>
@@ -1842,7 +1842,7 @@
               </events>
             </transitions>
             <transitions xmi:id="_OBgtMKMFEeSbmbyTJYAEVw" priority="1" target="_JecxsqMFEeSbmbyTJYAEVw" source="_MCk7UKMFEeSbmbyTJYAEVw" urgent="false">
-              <clockConstraints xmi:id="_1Ax-MKMFEeSbmbyTJYAEVw" clock="_FG6JsKMFEeSbmbyTJYAEVw" operator="GREATER_OR_EQUAL">
+              <clockConstraints xmi:id="_1Ax-MKMFEeSbmbyTJYAEVw" clock="_rwpHkLIDEeSfELQb2KT7iw" operator="GREATER_OR_EQUAL">
                 <bound xmi:id="_1d5_EKMFEeSbmbyTJYAEVw" unit="SECONDS">
                   <value xsi:type="sdcec:LiteralExpression" xmi:id="_2PEWQKMFEeSbmbyTJYAEVw" value="3"/>
                 </bound>
@@ -1852,7 +1852,7 @@
               </events>
             </transitions>
             <states xmi:id="_JecxsqMFEeSbmbyTJYAEVw" name="slow" outgoingTransitions="_Ni7TwKMFEeSbmbyTJYAEVw" incomingTransitions="_OBgtMKMFEeSbmbyTJYAEVw" initial="true">
-              <entryEvent xmi:id="_S1LQgKMFEeSbmbyTJYAEVw" clockResets="_FG6JsKMFEeSbmbyTJYAEVw">
+              <entryEvent xmi:id="_S1LQgKMFEeSbmbyTJYAEVw" clockResets="_rwpHkLIDEeSfELQb2KT7iw">
                 <action xmi:id="_TmUZkKMFEeSbmbyTJYAEVw" name="setSlow">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_Vj1PIKMFEeSbmbyTJYAEVw">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_Vj1PIaMFEeSbmbyTJYAEVw" assignOperator=":=">
@@ -1864,7 +1864,7 @@
               </entryEvent>
             </states>
             <states xmi:id="_MCk7UKMFEeSbmbyTJYAEVw" name="fast" outgoingTransitions="_OBgtMKMFEeSbmbyTJYAEVw" incomingTransitions="_Ni7TwKMFEeSbmbyTJYAEVw">
-              <entryEvent xmi:id="_eatJMKMFEeSbmbyTJYAEVw" clockResets="_FG6JsKMFEeSbmbyTJYAEVw">
+              <entryEvent xmi:id="_eatJMKMFEeSbmbyTJYAEVw" clockResets="_rwpHkLIDEeSfELQb2KT7iw">
                 <action xmi:id="_fM73YKMFEeSbmbyTJYAEVw" name="setFast">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_haLLAKMFEeSbmbyTJYAEVw">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_haLLAaMFEeSbmbyTJYAEVw" assignOperator=":=">
@@ -1918,6 +1918,11 @@
           <message xmi:id="_xJkCILIFEeSfELQb2KT7iw" instanceOf="_1OxI4JnbEeSlOsDDn13LAA"/>
         </events>
       </transitions>
+      <transitions xmi:id="_s7I8ELIUEeSZFP8a3W8l0g" priority="2" target="__Pm0kKMDEeSbmbyTJYAEVw" source="__Pm0kKMDEeSbmbyTJYAEVw">
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_wUSCILIUEeSZFP8a3W8l0g" kind="TRIGGER">
+          <message xmi:id="_wpZWgLIUEeSZFP8a3W8l0g" instanceOf="_z8GAEJnbEeSlOsDDn13LAA"/>
+        </events>
+      </transitions>
       <states xmi:id="_dKEfAZQjEeSZM-zEIRk3lw" name="slow" outgoingTransitions="_ArZdIKMEEeSbmbyTJYAEVw _ibMwQLIFEeSfELQb2KT7iw" incomingTransitions="_BIaJQKMEEeSbmbyTJYAEVw _ibMwQLIFEeSfELQb2KT7iw" initial="true">
         <entryEvent xmi:id="_U4Q_EKMEEeSbmbyTJYAEVw">
           <action xmi:id="_VMxPcKMEEeSbmbyTJYAEVw" name="setSlow">
@@ -1930,7 +1935,7 @@
           </action>
         </entryEvent>
       </states>
-      <states xmi:id="__Pm0kKMDEeSbmbyTJYAEVw" name="fast" outgoingTransitions="_BIaJQKMEEeSbmbyTJYAEVw" incomingTransitions="_ArZdIKMEEeSbmbyTJYAEVw">
+      <states xmi:id="__Pm0kKMDEeSbmbyTJYAEVw" name="fast" outgoingTransitions="_BIaJQKMEEeSbmbyTJYAEVw _s7I8ELIUEeSZFP8a3W8l0g" incomingTransitions="_ArZdIKMEEeSbmbyTJYAEVw _s7I8ELIUEeSZFP8a3W8l0g">
         <entryEvent xmi:id="_Q8a0kKMEEeSbmbyTJYAEVw">
           <action xmi:id="_RVv6kKMEEeSbmbyTJYAEVw" name="setFast">
             <expressions xsi:type="actionlanguage:Block" xmi:id="_Trfp8KMEEeSbmbyTJYAEVw">

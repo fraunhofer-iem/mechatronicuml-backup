@@ -89,4 +89,17 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ibsfgLIFEeSfELQb2KT7iw" id="(0.23270440251572327,0.8866666666666667)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ibsfgbIFEeSfELQb2KT7iw" id="(0.779874213836478,0.84)"/>
   </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_s7TUILIUEeSZFP8a3W8l0g" type="4003" source="_irpYr6vGEeS17_7FUkLEVQ" target="_irpYr6vGEeS17_7FUkLEVQ" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_s7TUI7IUEeSZFP8a3W8l0g" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_s7T7MLIUEeSZFP8a3W8l0g" y="-20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_s7T7MbIUEeSZFP8a3W8l0g" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_s7T7MrIUEeSZFP8a3W8l0g" x="-10" y="20"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_s7TUIbIUEeSZFP8a3W8l0g" fontName="Segoe UI"/>
+    <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_s7I8ELIUEeSZFP8a3W8l0g"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_s7TUIrIUEeSZFP8a3W8l0g" points="[12, 16, 12, 16]$[12, 16, 12, 16]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s7iksLIUEeSZFP8a3W8l0g" id="(0.9875776397515528,0.728)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s7iksbIUEeSZFP8a3W8l0g" id="(0.7329192546583851,0.872)"/>
+  </edges>
 </notation:Diagram>

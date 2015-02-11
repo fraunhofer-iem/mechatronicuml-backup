@@ -49,7 +49,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_fQx0WqvGEeS17_7FUkLEVQ" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_fQx0W6vGEeS17_7FUkLEVQ" lineColor="0"/>
         <element xmi:type="protocol:ConnectorQualityOfServiceAssumptions" href="../fraunhoferDemo.fujaba#_P1MlGZQiEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fQx0XKvGEeS17_7FUkLEVQ" x="67" y="162"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fQx0XKvGEeS17_7FUkLEVQ" x="145" y="129"/>
       </children>
     </children>
     <element xmi:type="protocol:CoordinationProtocol" href="../fraunhoferDemo.fujaba#_P1DbIJQiEeSZM-zEIRk3lw"/>
