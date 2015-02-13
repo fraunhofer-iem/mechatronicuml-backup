@@ -4,6 +4,7 @@
     <descriptors name="CoordinationProtocolFigure">
       <actualFigure xsi:type="gmfgraph:Ellipse" name="CoordinationProtocolFigure" lineKind="LINE_DASH">
         <layout xsi:type="gmfgraph:GridLayout"/>
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="173" green="216" blue="230"/>
         <children xsi:type="gmfgraph:Label" name="CoordinationProtocolNameFigure">
           <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
         </children>

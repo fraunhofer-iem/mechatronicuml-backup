@@ -107,6 +107,8 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureInPolygon().setVisible(portType == PortType.IN_PORT);
 		getFigureOutPolygon().setVisible(portType == PortType.OUT_PORT);
 		getFigureInOutPolygon().setVisible(portType == PortType.INOUT_PORT);
+		
+		
 
 		// Show Rectangle for Port only if it is no continuous port.
 		getFigureShadowRectangle().setVisible(portKind != PortKind.CONTINUOUS);
