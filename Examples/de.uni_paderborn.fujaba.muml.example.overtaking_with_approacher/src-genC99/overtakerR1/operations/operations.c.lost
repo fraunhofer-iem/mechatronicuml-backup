@@ -1,0 +1,141 @@
+
+Sat Feb 14 15:35:00 CET 2015
+================================================================================
+Start of user code approacherMotorR_velocity_ExecApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerMotorL_velocity_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherLine_lineLight_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerLine_lineLight_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerDistance_distance_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeColor_color_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerColor_color_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeLine_lineLight_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerMotorR_velocity_ExecApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherColor_color_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeDistance_distanceOvertakee_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeMotorR_velocity_ExecApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherMotorR_velocity_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakeeMotorL_velocity_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherDistance_distance_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeMotorL_velocity_ExecApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerDistance_distance_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherMotorL_velocity_ExecApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerMotorR_velocity_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherLine_lineLight_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeLine_lineLight_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code approacherMotorL_velocity_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherDistance_distance_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code approacherColor_color_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerLine_lineLight_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakerMotorL_velocity_ExecApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakeeDistance_distanceOvertakee_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakerColor_color_InitApi **/ 
+//add your implementation here
+
+/**End of user code
+Start of user code overtakeeColor_color_ExecApi **/ 
+//add your implementation here
+
+//default return value
+return 0;
+/**End of user code
+Start of user code overtakeeMotorR_velocity_InitApi **/ 
+//add your implementation here
+
+/**End of user code
