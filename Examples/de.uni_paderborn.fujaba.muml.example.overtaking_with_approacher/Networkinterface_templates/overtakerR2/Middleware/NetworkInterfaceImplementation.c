@@ -14,11 +14,13 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 }
 /** Start of user code user includes **/ 
 
-#define DATA_LEN (32)
+#define DATA_LEN 32
 
 //Buffers for sending and receiving data, use the same for all networkinterfaces, to save some memory/performance
 U8 receive_buf[DATA_LEN];
 U8 send_buf[DATA_LEN];
+
+const U8 bd_addr[7]={0x00, 0x16, 0x53, 0x10, 0xBD, 0x02, 0x00};
 
 /**End of user code**/
 
@@ -30,10 +32,11 @@ U8 send_buf[DATA_LEN];
 bool_t networkInterface_VirtualBluetoothPort_init(void){
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_init **/ 
 
-  ecrobot_init_bt_slave("CYBERTRON");
-  display_goto_xy(0, 0);
-  display_string("BT-Slave! Addr:");
-  display_update();
+	static SINT bt_status = BT_NO_INIT;
+	ecrobot_init_bt_master(bd_addr, "CYBERTRON");
+	display_goto_xy(0, 0);
+	display_string("BT-Master!");
+	display_update();
 
 /**End of user code**/
 //standard return value
@@ -108,7 +111,7 @@ bool_t networkInterface_VirtualWifiPort_init(void){
 	ecrobot_wb_init(NXT_PORT_S3);
 	ecrobot_wb_wait_for_i2c(NXT_PORT_S3);
 
-	U8 wbIpAddr[4] = {192, 168, 0, 105};
+	U8 wbIpAddr[4] = {192, 168, 0, 104};
 	U8 wbIpMask[4] = { 255, 255, 255, 0};
 	U8 wbIpGateway[4] = { 192, 168, 0, 1};
 
