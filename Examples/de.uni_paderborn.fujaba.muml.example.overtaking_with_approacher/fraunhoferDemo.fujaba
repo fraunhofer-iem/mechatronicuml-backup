@@ -395,9 +395,9 @@
               </guard>
             </transitions>
             <states xmi:id="_FpXdkau4EeS17_7FUkLEVQ" name="checkDistance" outgoingTransitions="_MMGKwKu4EeS17_7FUkLEVQ" incomingTransitions="_MpM9gKu4EeS17_7FUkLEVQ" initial="true"/>
-            <states xmi:id="_KFm_YKu4EeS17_7FUkLEVQ" name="break" outgoingTransitions="_MpM9gKu4EeS17_7FUkLEVQ _NB5KUKu4EeS17_7FUkLEVQ" incomingTransitions="_MMGKwKu4EeS17_7FUkLEVQ _NB5KUKu4EeS17_7FUkLEVQ">
+            <states xmi:id="_KFm_YKu4EeS17_7FUkLEVQ" name="breakNow" outgoingTransitions="_MpM9gKu4EeS17_7FUkLEVQ _NB5KUKu4EeS17_7FUkLEVQ" incomingTransitions="_MMGKwKu4EeS17_7FUkLEVQ _NB5KUKu4EeS17_7FUkLEVQ">
               <entryEvent xmi:id="_RCQBYKu4EeS17_7FUkLEVQ">
-                <action xmi:id="_R91f4Ku4EeS17_7FUkLEVQ" name="break">
+                <action xmi:id="_R91f4Ku4EeS17_7FUkLEVQ" name="breakNow">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_TqTBsKu4EeS17_7FUkLEVQ">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_TqTBsau4EeS17_7FUkLEVQ" assignOperator=":=">
                       <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_TqTBsqu4EeS17_7FUkLEVQ" value="0"/>
@@ -624,9 +624,9 @@
               </guard>
             </transitions>
             <states xmi:id="_Jyv1Iqu1EeSOh7ww5c64Rw" name="checkDistance" outgoingTransitions="_R8fjcKu1EeSOh7ww5c64Rw" incomingTransitions="_SgHN4Ku1EeSOh7ww5c64Rw" initial="true"/>
-            <states xmi:id="_Pkd8IKu1EeSOh7ww5c64Rw" name="break" outgoingTransitions="_SgHN4Ku1EeSOh7ww5c64Rw _TGM9gKu1EeSOh7ww5c64Rw" incomingTransitions="_R8fjcKu1EeSOh7ww5c64Rw _TGM9gKu1EeSOh7ww5c64Rw">
+            <states xmi:id="_Pkd8IKu1EeSOh7ww5c64Rw" name="breakNow" outgoingTransitions="_SgHN4Ku1EeSOh7ww5c64Rw _TGM9gKu1EeSOh7ww5c64Rw" incomingTransitions="_R8fjcKu1EeSOh7ww5c64Rw _TGM9gKu1EeSOh7ww5c64Rw">
               <entryEvent xmi:id="_XAiFEKu1EeSOh7ww5c64Rw">
-                <action xmi:id="_XTrDgKu1EeSOh7ww5c64Rw" name="break">
+                <action xmi:id="_XTrDgKu1EeSOh7ww5c64Rw" name="breakNow">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_uYdNwKu1EeSOh7ww5c64Rw">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_uYdNwau1EeSOh7ww5c64Rw" assignOperator=":=">
                       <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_uYdNwqu1EeSOh7ww5c64Rw" value="0"/>
@@ -769,9 +769,9 @@
               </guard>
             </transitions>
             <states xmi:id="_5pvHAquwEeSOh7ww5c64Rw" name="checkDistance" outgoingTransitions="_GsbhQKuxEeSOh7ww5c64Rw" incomingTransitions="_HSbKQKuxEeSOh7ww5c64Rw" initial="true"/>
-            <states xmi:id="_C7niEKuxEeSOh7ww5c64Rw" name="break" outgoingTransitions="_HSbKQKuxEeSOh7ww5c64Rw _HvUhoKuxEeSOh7ww5c64Rw" incomingTransitions="_GsbhQKuxEeSOh7ww5c64Rw _HvUhoKuxEeSOh7ww5c64Rw">
+            <states xmi:id="_C7niEKuxEeSOh7ww5c64Rw" name="breakNow" outgoingTransitions="_HSbKQKuxEeSOh7ww5c64Rw _HvUhoKuxEeSOh7ww5c64Rw" incomingTransitions="_GsbhQKuxEeSOh7ww5c64Rw _HvUhoKuxEeSOh7ww5c64Rw">
               <entryEvent xmi:id="_J-dSsKuxEeSOh7ww5c64Rw">
-                <action xmi:id="_LAFu0KuxEeSOh7ww5c64Rw" name="break">
+                <action xmi:id="_LAFu0KuxEeSOh7ww5c64Rw" name="breakNow">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_NQoOEKuxEeSOh7ww5c64Rw">
                     <expressions xsi:type="actionlanguage:Assignment" xmi:id="_NQoOEauxEeSOh7ww5c64Rw" assignOperator=":=">
                       <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_NQoOEquxEeSOh7ww5c64Rw" value="0"/>
