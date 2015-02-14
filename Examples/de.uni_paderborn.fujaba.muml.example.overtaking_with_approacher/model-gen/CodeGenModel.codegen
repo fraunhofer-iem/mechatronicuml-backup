@@ -185,7 +185,7 @@
         <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" connectorEndpointInstances="//@hpic/@hwplatformInstances.1/@delegationPorts.1 //@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.5/@hwports.1">
           <type xsi:type="hwplatform:Delegation" href="fraunhoferDemo.fujaba#_al6WkKhjEeSJj6cnB4p9sw"/>
         </networkingHardwareInstances>
-        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakerR1" allocatedAtomicComponentInstances="//@cic/@componentInstances.1 //@cic/@componentInstances.2 //@cic/@componentInstances.4 //@cic/@componentInstances.6">
+        <resources xsi:type="codegen:RefinedStructuredResourceInstance" name="overtakerR1" allocatedAtomicComponentInstances="//@cic/@componentInstances.1 //@cic/@componentInstances.2 //@cic/@componentInstances.4 //@cic/@componentInstances.6 //@cic/@componentInstances.3">
           <resourceType xsi:type="hwresource:StructuredResource" href="fraunhoferDemo.fujaba#_HcLmgKe8EeSK_8TqY1SjtQ"/>
           <hwports xsi:type="hwplatforminstance:HWPortInstance" name="virtualBluetoothPort">
             <type xsi:type="hwplatform:HWPortPart" href="fraunhoferDemo.fujaba#_a4whuKfBEeSK_8TqY1SjtQ"/>
@@ -565,7 +565,7 @@
       </portInstances>
       <componentPart href="fraunhoferDemo.fujaba#_8iLeoJRVEeSZM-zEIRk3lw"/>
     </componentInstances>
-    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerDriver">
+    <componentInstances xsi:type="codegen:RefinedAtomicComponentInstance" name="overtakerDriver" allocatedResourceInstance="//@hpic/@hwplatformInstances.1/@embeddedHPIC/@resources.0">
       <componentType xsi:type="component:StaticAtomicComponent" href="fraunhoferDemo.fujaba#_BQCDAJOUEeSZM-zEIRk3lw"/>
       <portInstances xsi:type="instance:DiscreteSinglePortInstance" name="initiatorP1" connectorInstances="//@cic/@portConnectorInstances.6">
         <type xsi:type="component:DiscretePort" href="fraunhoferDemo.fujaba#_bKPb0JRQEeSZM-zEIRk3lw"/>
