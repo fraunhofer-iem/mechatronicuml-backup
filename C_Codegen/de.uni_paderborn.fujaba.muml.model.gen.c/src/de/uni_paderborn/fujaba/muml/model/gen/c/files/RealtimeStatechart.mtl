@@ -128,7 +128,11 @@
 				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]
 					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
 				[/for]
-			
+			[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
+				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable)) ]
+					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+				[/for]
+			[/if]
 			
 			[else]
 				static void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart) {
