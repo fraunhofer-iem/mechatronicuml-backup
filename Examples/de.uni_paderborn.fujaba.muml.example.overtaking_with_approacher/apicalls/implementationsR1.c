@@ -59,7 +59,7 @@ static U8 pkd = 32;
     while(ecrobot_is_ENTER_button_pressed()==0){
     	    systick_wait_ms(50);
     }
-    ret=ecrobot_LL_calibrate_White(NXT_PORT_S1);
+    ret=ecrobot_LL_calibrate_White(NXT_PORT_S2);
 
      display_goto_xy(0,0);
     display_int(ret,3);
@@ -71,7 +71,7 @@ static U8 pkd = 32;
     	    systick_wait_ms(50);
 
     }
-    ret=ecrobot_LL_calibrate_Black(NXT_PORT_S1);
+    ret=ecrobot_LL_calibrate_Black(NXT_PORT_S2);
 
       display_goto_xy(0,0);
     display_int(ret,3);
@@ -83,7 +83,7 @@ static U8 pkd = 32;
     systick_wait_ms(50);
 
     }
-    ret=ecrobot_LL_Take_SetPoint_Snapshot(NXT_PORT_S1);
+    ret=ecrobot_LL_Take_SetPoint_Snapshot(NXT_PORT_S2);
 
     display_goto_xy(0,0);
     display_int(ret,3);
@@ -96,8 +96,8 @@ static U8 pkd = 32;
     //ret = ecrobot_LL_setKP(NXT_PORT_S1,kp,kpf );
 
 
-    ecrobot_LL_setKI(NXT_PORT_S1, 0, 1);
-	ecrobot_LL_setKD(NXT_PORT_S1, 0, 1);
+    ecrobot_LL_setKI(NXT_PORT_S2, 0, 1);
+	ecrobot_LL_setKD(NXT_PORT_S2, 0, 1);
     systick_wait_ms(2000);
 
 /**End of user code**/
