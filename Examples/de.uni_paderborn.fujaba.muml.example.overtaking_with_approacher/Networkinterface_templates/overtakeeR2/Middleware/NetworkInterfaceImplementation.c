@@ -87,7 +87,7 @@ MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void){
 /**End of user code**/
 ///////////////////////////////
 
-if(!(Message_can_read_delimited_from(receive_buf,0,recvLength))){
+if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
@@ -330,7 +330,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	/**End of user code**/
 	///////////////////////////////
 
-	if(!(Message_can_read_delimited_from(receive_buf,0,recvLength))){
+	if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
 		free(tmpMessage);
 	    tmpMessage = NULL;
 		}
@@ -399,7 +399,7 @@ int_t recvLength = 0;
 /**End of user code**/
 ///////////////////////////////
 
-if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,DATA_LEN))){
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
@@ -468,7 +468,7 @@ int_t recvLength = 0;
 /**End of user code**/
 ///////////////////////////////
 
-if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,DATA_LEN))){
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
