@@ -19,7 +19,7 @@
 
 
 [**
- * Generates a LogicExpression
+ * Generates a LogicExpression 
  * @param expression the expression
  * @param parop the parent operator
  * @param usePre use pre construct for rhs variables
@@ -526,4 +526,4 @@ unexpected expression class with unary op: [expression.eClass().name/]
 	else
 		generateExpression(var.initializeExpression,'')
 	endif
-/]
+/] 

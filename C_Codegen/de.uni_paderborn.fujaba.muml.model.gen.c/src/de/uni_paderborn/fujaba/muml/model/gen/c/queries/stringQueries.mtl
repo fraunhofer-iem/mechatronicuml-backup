@@ -12,9 +12,13 @@
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwplatform/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwresource/1.0/',
 				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/swplatform/0.4.0/',
-				'http://www.fujaba.de/muml/psm/0.4.0/')]
+				'http://www.fujaba.de/muml/psm/0.4.0/') /]
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
 
@@ -79,7 +83,7 @@ endif
 /]
 
 [query public getName(rsri : RefinedStructuredResourceInstance) : String =
-	rsri.oclAsType(StructuredResourceInstance).name.getName().toLowerFirst()	
+	rsri.oclAsType(hardware::hwresourceinstance::StructuredResourceInstance).name.getName().toLowerFirst()	
 /]
 
 [query public getName(rsri : Resource) : String =

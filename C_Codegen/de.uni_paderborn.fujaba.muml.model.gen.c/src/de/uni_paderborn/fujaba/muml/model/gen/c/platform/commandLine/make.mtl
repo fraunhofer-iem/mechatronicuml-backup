@@ -32,10 +32,10 @@ RTSC = [for (comp : Component | (rsri.allocatedAtomicComponentInstances.oclAsTyp
 COMP = [for (comp : Component | (rsri.allocatedAtomicComponentInstances.oclAsType(AtomicComponentInstance).componentType)->asSet())][if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 LIB = syncChannel.o  Messages.o MessageBuffer.o NetworkMessageBuffer.o port.o NetworkInterface.o
-COMMON = Configuration.o [if (rsri.allocatedAtomicComponentInstances.eAllContents(APICallParameterBinding)->size()>0)]implementations.o[/if]
+COMMON = Configuration.o [if (rsri.allocatedAtomicComponentInstances.eAllContents(APICallParameterBinding)->size()>0)]implementations.o[/if] operations.o
 
 CC = gcc
-CFLAGS = -c -g -std=c99 -Wall -Wpedantic -Wstrict-prototypes
+CFLAGS = -c -g -std=c99 -Wall  -Wstrict-prototypes
 all: app
 
 app : main.o $(RTSC) $(COMP) $(LIB) $(MW) $(COMMON) [if (rsri.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (rsri.allocatedAtomicComponentInstances.oclAsType(AtomicComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if]

@@ -17,7 +17,7 @@
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
 
-[**
+[** 
  * Create variable declarations
  * @param attributeSet the set of attributes
 */]
