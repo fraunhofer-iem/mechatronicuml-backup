@@ -96,9 +96,9 @@
  */]
 [template public generateOSFiles(rsri : RefinedStructuredResourceInstance, path: String)]
 [comment]
-possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
+possbile values for 'targetPlatform' are: 'C99' or 'nxtOSEK'
 [/comment]
-[let targetPlatform : String = 'nxtOSEK']
+[let targetPlatform : String = 'C99']
 
 
 [if (targetPlatform = 'nxtOSEK')]
