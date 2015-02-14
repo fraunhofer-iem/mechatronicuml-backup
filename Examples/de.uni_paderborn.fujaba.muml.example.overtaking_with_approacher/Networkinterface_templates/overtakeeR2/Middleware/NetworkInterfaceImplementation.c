@@ -111,7 +111,7 @@ bool_t networkInterface_VirtualWifiPort_init(void){
 	ecrobot_wb_init(NXT_PORT_S3);
 	ecrobot_wb_wait_for_i2c(NXT_PORT_S3);
 
-	U8 wbIpAddr[4] = {192, 168, 0, 103};
+	U8 wbIpAddr[4] = {192, 168, 0, 104};
 	U8 wbIpMask[4] = { 255, 255, 255, 0};
 	U8 wbIpGateway[4] = { 192, 168, 0, 1};
 

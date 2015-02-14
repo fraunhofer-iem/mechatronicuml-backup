@@ -14,6 +14,12 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 }
 /** Start of user code user includes **/ 
 
+#define DATA_LEN (32)
+
+//Buffers for sending and receiving data, use the same for all networkinterfaces, to save some memory/performance
+U8 receive_buf[DATA_LEN];
+U8 send_buf[DATA_LEN];
+
 /**End of user code**/
 
 
@@ -41,7 +47,6 @@ return true;
 bool_t networkInterface_VirtualBluetoothPort_send(MiddlewareMessage * msg){
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_send **/ 
 
-
 /**End of user code**/
 //free the allocated memory for the message after it has been sent
 free(msg);
@@ -59,26 +64,20 @@ return true;
  */
 MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void){
 //create new MiddlewareMessage
-MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
-
-//buffer for receiving data
-char buf[30];
-//number of received bytes
-int_t recvLength = 0;
 
 ///////////////////////////////
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_receive **/ 
- //fill the buffer *buf and specify the number of received bytres (recvLength)
+//create new MiddlewareMessage
 /**End of user code**/
 ///////////////////////////////
 
-if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
 else{
 	//read the buffer and create the middlewareMessage
-	MiddlewareMessage_read_delimited_from(buf, tmpMessage, 0);
+	MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
 	}
 //return the received message
 return tmpMessage;
@@ -201,12 +200,9 @@ return true;
 bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_send **/ 
 
-	U8 buf[32];
-	int msg_size = sizeof(buf);
-
-	MiddlewareMessage_write_delimited_to(msg, buf, 0);
+	MiddlewareMessage_write_delimited_to(msg, send_buf, 0);
 	   
-	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, buf, msg_size);
+	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, send_buf, DATA_LEN);
 
 	//actual sending
 	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3))
@@ -260,10 +256,6 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 
-	//buffer for receiving data
-	char buf[32];
-	int msg_size = sizeof(buf);
-
 	///////////////////////////////
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_receive **/ 
 
@@ -282,9 +274,9 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 
 	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
 
-	MiddlewareMessage_write_delimited_to(reqMessage, buf, 0);
+	MiddlewareMessage_write_delimited_to(reqMessage, receive_buf, 0);
 
-	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, buf, msg_size);
+	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
 
 	//sending of the request
 	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3))
@@ -306,7 +298,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//wait for tcp to be "done" before reading received message
 	while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
 	{
-		buf = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+		receive_buf = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
 
 		/*
 		//display the stuff
@@ -322,13 +314,13 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	/**End of user code**/
 	///////////////////////////////
 
-	if(!(Message_can_read_delimited_from(buf,0,recvLength))){
+	if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
 		free(tmpMessage);
 	    tmpMessage = NULL;
 		}
 	else{
 		//read the buffer and create the middlewareMessage
-		MiddlewareMessage_read_delimited_from(buf, tmpMessage, 0);
+		MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
 		}
 	//return the received message
 	return tmpMessage;
@@ -391,7 +383,7 @@ int_t recvLength = 0;
 /**End of user code**/
 ///////////////////////////////
 
-if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,DATA_LEN))){
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
