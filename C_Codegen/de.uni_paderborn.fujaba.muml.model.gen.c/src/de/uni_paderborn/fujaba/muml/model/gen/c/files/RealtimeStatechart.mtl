@@ -510,7 +510,7 @@ ion
  * @param expression the expression
 */]
 [template public getGuardExpression(expression : Expression)]
-[if expression.oclIsKindOf(ComparisonExpression) or expression.oclIsKindOf(LogicalExpression)]
+[if expression.oclIsKindOf(ComparisonExpression) or expression.oclIsKindOf(LogicalExpression) or expression.oclIsKindOf(TypedNamedElementExpression)]
 	[generateExpression(expression, '')/]
 [elseif expression.oclIsKindOf(Block)]
 	[expression.oclAsType(Block).expressions->at(1).getGuardExpression()/]
