@@ -27,7 +27,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rkLj0aiKEeSARpGDjsZEbA" x="84" y="35"/>
             </children>
             <element xmi:type="instance:AtomicComponentInstance" href="../fraunhoferDemo.fujaba#_VOUdw5_GEeSYU6UyOlfnUQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rjve96iKEeSARpGDjsZEbA" x="378" y="18"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rjve96iKEeSARpGDjsZEbA" x="366" y="15"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_rjve-aiKEeSARpGDjsZEbA" type="3024" fontName="Segoe UI" lineColor="0">
             <children xmi:type="notation:DecorationNode" xmi:id="_rjve-6iKEeSARpGDjsZEbA" type="5028"/>

@@ -3112,10 +3112,10 @@
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_VN3x0p_GEeSYU6UyOlfnUQ" name="requestorPDel1" connectorInstances="_VOUd2Z_GEeSYU6UyOlfnUQ _pH1wcJ_HEeSYU6UyOlfnUQ" type="_QqEscJ6HEeSNj-oH_1Kb-Q"/>
         <embeddedCIC xmi:id="_VOUdwJ_GEeSYU6UyOlfnUQ" name="OvertakerVehicle">
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdwZ_GEeSYU6UyOlfnUQ" name="overtakerMotorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_7qtEEJRVEeSZM-zEIRk3lw">
-            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdwp_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_VOUd2J_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdwp_GEeSYU6UyOlfnUQ" name="velocityContR" connectorInstances="_VOUd2J_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdw5_GEeSYU6UyOlfnUQ" name="overtakerMotorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_8iLeoJRVEeSZM-zEIRk3lw">
-            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdxJ_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_VOUd3J_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_VOUdxJ_GEeSYU6UyOlfnUQ" name="velocityContL" connectorInstances="_VOUd3J_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_VOUdxZ_GEeSYU6UyOlfnUQ" name="overtakerDriver" componentType="_BQCDAJOUEeSZM-zEIRk3lw" componentPart="_9cr_EJRVEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_VOUdxp_GEeSYU6UyOlfnUQ" name="distance" connectorInstances="_VOUd35_GEeSYU6UyOlfnUQ" type="_yJ8ggJRKEeSZM-zEIRk3lw"/>
@@ -3172,10 +3172,10 @@
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_zfogK5_GEeSYU6UyOlfnUQ" name="informOvertakee1" connectorInstances="_zfogO5_GEeSYU6UyOlfnUQ" type="_qw9moJ9UEeSDApXOK6N3KA"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogLJ_GEeSYU6UyOlfnUQ" name="overtakeeMotorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_2nodsJRTEeSZM-zEIRk3lw">
-            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogLZ_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_zfogNp_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogLZ_GEeSYU6UyOlfnUQ" name="velocityContR" connectorInstances="_zfogNp_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogLp_GEeSYU6UyOlfnUQ" name="overtakeeMotorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_3UI-YJRTEeSZM-zEIRk3lw">
-            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogL5_GEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_zfogOp_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogL5_GEeSYU6UyOlfnUQ" name="velocityContL" connectorInstances="_zfogOp_GEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_zfogMJ_GEeSYU6UyOlfnUQ" name="overtakeeLine" componentType="_o9fgsJ8OEeSDApXOK6N3KA" componentPart="_cfbBAJ8PEeSDApXOK6N3KA">
             <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_zfogMZ_GEeSYU6UyOlfnUQ" name="lineLight" connectorInstances="_zfogNZ_GEeSYU6UyOlfnUQ" type="_rJ6U8J8OEeSDApXOK6N3KA"/>
@@ -3209,10 +3209,10 @@
         <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycCfsJ_HEeSYU6UyOlfnUQ" name="informApproacherPDel1" connectorInstances="_ycVat5_HEeSYU6UyOlfnUQ _HXBE0J_IEeSYU6UyOlfnUQ" type="_23pVkJ6ZEeSB5YpXOU2UeA"/>
         <embeddedCIC xmi:id="_ycVaoJ_HEeSYU6UyOlfnUQ" name="ApproacherVehicle">
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaoZ_HEeSYU6UyOlfnUQ" name="approacherMotorR" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_x87hwJRWEeSZM-zEIRk3lw">
-            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVaop_HEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_ycVas5_HEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVaop_HEeSYU6UyOlfnUQ" name="velocityContR" connectorInstances="_ycVas5_HEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVao5_HEeSYU6UyOlfnUQ" name="approacherMotorL" componentType="_65UR8JQqEeSZM-zEIRk3lw" componentPart="_yW6vEJRWEeSZM-zEIRk3lw">
-            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVapJ_HEeSYU6UyOlfnUQ" name="velocity" connectorInstances="_ycVatp_HEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_ycVapJ_HEeSYU6UyOlfnUQ" name="velocityContL" connectorInstances="_ycVatp_HEeSYU6UyOlfnUQ" type="_u9MGEJRJEeSZM-zEIRk3lw"/>
           </componentInstances>
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVapZ_HEeSYU6UyOlfnUQ" name="approacherDriver" componentType="_EGtqUJOWEeSZM-zEIRk3lw" componentPart="_yyzZ0JRWEeSZM-zEIRk3lw">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVapp_HEeSYU6UyOlfnUQ" name="limiterP1" connectorInstances="_ycVatJ_HEeSYU6UyOlfnUQ" type="_uk1BsJRPEeSZM-zEIRk3lw"/>
@@ -3221,7 +3221,7 @@
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_ycVaqZ_HEeSYU6UyOlfnUQ" name="velocityR" connectorInstances="_ycVas5_HEeSYU6UyOlfnUQ" type="_dwFrcJRKEeSZM-zEIRk3lw"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_c2WJQKuyEeSOh7ww5c64Rw" name="distanceAproacher" connectorInstances="_g-o0UKuyEeSOh7ww5c64Rw" type="_JDPyMKuyEeSOh7ww5c64Rw"/>
           </componentInstances>
-          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaqp_HEeSYU6UyOlfnUQ" name="ApproacherCommunicator" componentType="_ZJhDUJ6aEeSB5YpXOU2UeA" componentPart="_MPkx4J6ZEeSB5YpXOU2UeA">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_ycVaqp_HEeSYU6UyOlfnUQ" name="approacherCommunicator" componentType="_ZJhDUJ6aEeSB5YpXOU2UeA" componentPart="_MPkx4J6ZEeSB5YpXOU2UeA">
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVaq5_HEeSYU6UyOlfnUQ" name="vehicleApproacherP1" connectorInstances="_ycVauJ_HEeSYU6UyOlfnUQ" type="__agSAJ6aEeSB5YpXOU2UeA"/>
             <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_ycVarJ_HEeSYU6UyOlfnUQ" name="limitDrivingP1" connectorInstances="_ycVatJ_HEeSYU6UyOlfnUQ" type="_zVXsMJ6aEeSB5YpXOU2UeA"/>
             <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_ycVarZ_HEeSYU6UyOlfnUQ" name="colorApproacher" connectorInstances="_ycVauZ_HEeSYU6UyOlfnUQ" type="_amAy4J8QEeSDApXOK6N3KA"/>
@@ -4291,7 +4291,7 @@
           </resources>
         </embeddedHPIC>
       </hwplatformInstances>
-      <hwplatformInstances xmi:id="_HiiW0KhkEeSJj6cnB4p9sw" name="ServerInstance" hwplatformType="_rPkGIKfDEeSK_8TqY1SjtQ">
+      <hwplatformInstances xmi:id="_HiiW0KhkEeSJj6cnB4p9sw" name="SectionControlInstance" hwplatformType="_rPkGIKfDEeSK_8TqY1SjtQ">
         <delegationPorts xmi:id="_HiiW0ahkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
         <delegationPorts xmi:id="_HiiW0qhkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_kUf7wKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_HiiW06hkEeSJj6cnB4p9sw">
@@ -4321,7 +4321,7 @@
         </embeddedHPIC>
       </hwplatformInstances>
     </modelElements>
-    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_rPkGIKfDEeSK_8TqY1SjtQ" name="Server">
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_rPkGIKfDEeSK_8TqY1SjtQ" name="SectionControl">
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_wMFqgKfDEeSK_8TqY1SjtQ" name="Brick" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_wMFqgafDEeSK_8TqY1SjtQ">
           <lowerBound xmi:id="_xrUooKfDEeSK_8TqY1SjtQ"/>
@@ -4377,6 +4377,7 @@
       <allocations xmi:id="_tqF0QKunEeS8h7ja3qSVLA" componentInstance="_apaYAJ_HEeSYU6UyOlfnUQ" resourceInstance="_HiiW1qhkEeSJj6cnB4p9sw"/>
       <allocations xmi:id="_duuaYKvAEeS17_7FUkLEVQ" componentInstance="_c2WJQauyEeSOh7ww5c64Rw" resourceInstance="_EDe2E6hkEeSJj6cnB4p9sw"/>
       <allocations xmi:id="_x6fJEKvAEeS17_7FUkLEVQ" componentInstance="_JdH_4au0EeSOh7ww5c64Rw" resourceInstance="_4sMNxKhjEeSJj6cnB4p9sw"/>
+      <allocations xmi:id="_xHUcsLRFEeSNPJMyNnWx-A" componentInstance="_VOUdxZ_GEeSYU6UyOlfnUQ" resourceInstance="_-PAV-6hjEeSJj6cnB4p9sw"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
