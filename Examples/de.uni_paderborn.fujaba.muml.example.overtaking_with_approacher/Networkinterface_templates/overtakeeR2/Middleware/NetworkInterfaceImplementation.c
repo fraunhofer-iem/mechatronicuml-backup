@@ -14,7 +14,7 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 }
 /** Start of user code user includes **/ 
 
-#define DATA_LEN (32)
+#define DATA_LEN 32
 
 //Buffers for sending and receiving data, use the same for all networkinterfaces, to save some memory/performance
 U8 receive_buf[DATA_LEN];

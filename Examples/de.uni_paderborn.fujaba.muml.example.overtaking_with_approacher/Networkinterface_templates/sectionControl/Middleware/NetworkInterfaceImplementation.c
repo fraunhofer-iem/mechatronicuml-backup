@@ -14,7 +14,7 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 }
 /** Start of user code user includes **/ 
 
-#define DATA_LEN (32)
+#define DATA_LEN 32
 
 //Buffers for sending and receiving data, use the same for all networkinterfaces, to save some memory/performance
 U8 receive_buf[DATA_LEN];
@@ -46,6 +46,7 @@ return true;
  */
 bool_t networkInterface_VirtualBluetoothPort_send(MiddlewareMessage * msg){
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_send **/ 
+
 
 /**End of user code**/
 //free the allocated memory for the message after it has been sent
@@ -276,7 +277,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 
 	MiddlewareMessage_write_delimited_to(reqMessage, receive_buf, 0);
 
-	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
+	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, msg_size);
 
 	//sending of the request
 	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3))
@@ -452,7 +453,7 @@ int_t recvLength = 0;
 /**End of user code**/
 ///////////////////////////////
 
-if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,DATA_LEN))){
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
