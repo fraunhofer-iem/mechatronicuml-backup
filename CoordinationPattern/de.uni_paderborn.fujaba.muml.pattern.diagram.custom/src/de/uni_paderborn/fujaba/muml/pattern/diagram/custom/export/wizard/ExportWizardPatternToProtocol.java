@@ -53,8 +53,8 @@ public class ExportWizardPatternToProtocol extends
 			initialSelection = new StructuredSelection(selectedResources);
 		}
 		setNeedsProgressMonitor(true);
-	//	workbench.addWindowListener(listener);
-		
+		// workbench.addWindowListener(listener);
+
 		// try to infer editing domain from initial selection
 
 		for (Object element : initialSelection.toArray()) {
@@ -133,26 +133,28 @@ public class ExportWizardPatternToProtocol extends
 
 	PatternToProtocolExportWizardPage1 page1;
 	PatternToProtocolExportWizardPage2 page2;
+
 	public void addPages() {
 		page1 = new PatternToProtocolExportWizardPage1("Page 1", toolkit);
 		page2 = new PatternToProtocolExportWizardPage2("Page 2", toolkit, page1);
 		addPage(page1);
-		addPage(page2);		
+		addPage(page2);
 	}
+
 	@Override
 	public IWizardPage getNextPage(IWizardPage page) {
 		// TODO Auto-generated method stub
-		IWizardPage next= super.getNextPage(page);
-		if(next == page2)
+		IWizardPage next = super.getNextPage(page);
+		if (next == page2)
 			page2.refresh();
 		return next;
 	}
-	
+
 	@Override
 	public IWizardPage getPreviousPage(IWizardPage page) {
 		// TODO Auto-generated method stub
-		IWizardPage prev =  super.getPreviousPage(page);
-		if(prev == page2)
+		IWizardPage prev = super.getPreviousPage(page);
+		if (prev == page2)
 			page2.refresh();
 		return prev;
 	}
@@ -177,33 +179,34 @@ public class ExportWizardPatternToProtocol extends
 				return Status.OK_STATUS;
 			}
 		};
-		
+
 	}
-	
-	public boolean performFinish()
-	{
+
+	public boolean performFinish() {
 		super.performFinish();
 		System.out.println("Finished Pressed!!");
-		 TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE
-				 	.createEditingDomain(this.getResourceSet());
-		 transformPatternToProtocol(domain, page1.getSelectedPattern());
+		TransactionalEditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE
+				.createEditingDomain(this.getResourceSet());
+		transformPatternToProtocol(domain, page1.getSelectedPattern());
 		return true;
 	}
-	
-	private static void transformPatternToProtocol(
-			EditingDomain editingDomain, CoordinationPattern pattern) 
-	{
-		
+
+	private static void transformPatternToProtocol(EditingDomain editingDomain,
+			CoordinationPattern pattern) {
+
 		ModelExtent inputExtent = new BasicModelExtent(
-				Arrays.asList(new EObject[] { pattern,pattern.eContainer().eContainer() }));
+				Arrays.asList(new EObject[] { pattern,
+						pattern.eContainer().eContainer() }));
 
 		final List<ModelExtent> modelExtents = Arrays
 				.asList(new ModelExtent[] { inputExtent });
 
 		// Load QVTO script
 		final TransformationExecutor transformationExecutor = Activator
-				.getInstance().getTransformationExecutor(
-						"/ExampleProject/transforms/TransformPatternToProtocol.qvto", false);
+				.getInstance()
+				.getTransformationExecutor(
+						"/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto",
+						false);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);

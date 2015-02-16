@@ -1,13 +1,14 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
-import java.beans.Expression;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
@@ -53,15 +54,47 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 		section.setText("Bind all parameters to values");
 		section.setLayout(new GridLayout());
 		Composite comp = toolkit.createComposite(section);
-		comp.setLayout(new GridLayout());
+		comp.setLayout(new GridLayout(2,false));
+		
 		comp.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
 				| GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
 		section.setClient(comp);
-		selectionLabel = toolkit.createLabel(comp, "No pattern selected");
-		selectionLabel.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-				| GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
+		selectionLabel = toolkit.createLabel(comp, "");
+		GridData gridData = new GridData(GridData.VERTICAL_ALIGN_FILL
+				| GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL );
+		gridData.horizontalSpan =2;
+		selectionLabel.setLayoutData(gridData);
 
 		mainComp = comp;
+		ExportWizardPatternToProtocol wizard = (ExportWizardPatternToProtocol)this.getWizard();
+		int max = Integer.MIN_VALUE;
+		for(CoordinationPattern pattern : wizard.getPatternList())
+		{
+			int parametersize = pattern.getPatternParameters().size();
+			if(parametersize > max)
+			{
+				max = parametersize;
+			}
+		}
+		
+		if(max > Integer.MIN_VALUE)
+		{
+			for(int i=0;i<max;i++)
+			{
+				Label l = toolkit.createLabel(mainComp,
+						"");
+				l.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
+						| GridData.HORIZONTAL_ALIGN_FILL
+						| GridData.GRAB_HORIZONTAL));
+				Text t = toolkit.createText(mainComp, "");
+				t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
+						| GridData.HORIZONTAL_ALIGN_FILL
+						| GridData.GRAB_HORIZONTAL));
+				l.setVisible(true);
+				t.setVisible(true);
+			}
+			
+		}
 //		this.getPage1().getPatternSelectionCombobox()
 //				.addSelectionListener(this);		
 		this.setControl(section);
@@ -69,31 +102,40 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 	}
 	public void refresh()
 	{
-		if(hm != null && !hm.isEmpty())
+		Control[] children =mainComp.getChildren();
+		for(Control c : children)
 		{
-			for(Text t : hm.values())
-			{
-				t.dispose();				
-			}
+			c.setVisible(false);
 		}
-		
 		CoordinationPattern p = page1.getSelectedPattern();
 		if(p == null)
+		{
+			Label l = (Label)children[0];
+			l.setVisible(true);
+			l.setText("No pattern selected!");
 			return;
+		}			
 		LegalConfiguration lc = page1.getSelectedLegalConfiguration();
 		hm = new HashMap<Parameter, Text>();
-		for(Parameter parameter : p.getPatternParameters())
+		int counter = 1;
+		List<Parameter> parameterList = p.getPatternParameters();
+		if(parameterList.size()==0)
 		{
-			Label l = toolkit.createLabel(mainComp,
-					parameter.getName());
-			l.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-					| GridData.HORIZONTAL_ALIGN_FILL
-					| GridData.GRAB_HORIZONTAL));
-			Text t = toolkit.createText(mainComp, "");
-			t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-					| GridData.HORIZONTAL_ALIGN_FILL
-					| GridData.GRAB_HORIZONTAL));
+			Label l = (Label)children[0];
+			l.setVisible(true);
+			l.setText("The selected pattern has no paramters to bind!");
+			return;
+		}
+		for(Parameter parameter : parameterList)
+		{
+			Label l = (Label)children[counter*2-1];
+			Text t = (Text)children[counter*2];
+			l.setVisible(true);
+			t.setVisible(true);
+			l.setText(parameter.getName()+" ["+ parameter.getDataType().toString()+"]:");		
+			t.setText("");
 			hm.put(parameter, t);
+			counter++;
 		}
 		if (lc != null)
 		{
@@ -108,8 +150,6 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 					
 			}
 		}
-		this.getControl().redraw();
-		this.getShell().redraw();
 	}
 	
 	public ArrayList<ParameterBinding> getParameterBindings()

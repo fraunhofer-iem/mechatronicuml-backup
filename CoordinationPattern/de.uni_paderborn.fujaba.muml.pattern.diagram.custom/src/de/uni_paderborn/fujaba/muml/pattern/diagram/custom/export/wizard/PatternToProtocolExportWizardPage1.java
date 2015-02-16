@@ -1,8 +1,6 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
-import java.awt.List;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 import org.eclipse.jface.wizard.IWizardPage;
@@ -14,16 +12,13 @@ import org.eclipse.swt.layout.GridLayout;
 //import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 
@@ -41,7 +36,8 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 	Combo legalConfigurationCombo;
 	FormToolkit toolkit;
 	Combo patternSelectionCombo;
-	//Composite parameterBindingComp;
+
+	// Composite parameterBindingComp;
 
 	public PatternToProtocolExportWizardPage1(String pageName,
 			FormToolkit toolkit) {
@@ -50,30 +46,25 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		this.setTitle("Step 1: Selection of a Coordination Pattern");
 	}
 
-	public CoordinationPattern getSelectedPattern()
-	{
+	public CoordinationPattern getSelectedPattern() {
 		int index = patternSelectionCombo.getSelectionIndex();
-		if(index >=0)
-			return  this.getPatternList().get(index);
-		else return null;
-	}
-	
-	public LegalConfiguration getSelectedLegalConfiguration()
-	{
-		CoordinationPattern selectedPattern = this.getSelectedPattern();
-		if(selectedPattern == null)
-			return null;
-		int lcIndex = legalConfigurationCombo.getSelectionIndex();
-		if (lcIndex != legalConfigurationCombo.getItemCount() - 1
-				&& lcIndex >= 0)
-		{
-			return selectedPattern.getLegalConfigurations().get(lcIndex);
-		}
+		if (index >= 0)
+			return this.getPatternList().get(index);
 		else
 			return null;
 	}
 
-	
+	public LegalConfiguration getSelectedLegalConfiguration() {
+		CoordinationPattern selectedPattern = this.getSelectedPattern();
+		if (selectedPattern == null)
+			return null;
+		int lcIndex = legalConfigurationCombo.getSelectionIndex();
+		if (lcIndex != legalConfigurationCombo.getItemCount() - 1
+				&& lcIndex >= 0) {
+			return selectedPattern.getLegalConfigurations().get(lcIndex);
+		} else
+			return null;
+	}
 
 	private ArrayList<CoordinationPattern> getPatternList() {
 		return ((ExportWizardPatternToProtocol) this.getWizard())
@@ -127,10 +118,10 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 		legalConfigurationCombo.addSelectionListener(this);
 		patternSelectionCombo.addSelectionListener(this);
 
-//		parameterBindingComp = toolkit.createComposite(mainComposite);
-//		parameterBindingComp.setLayout(new GridLayout(2, false));
+		// parameterBindingComp = toolkit.createComposite(mainComposite);
+		// parameterBindingComp.setLayout(new GridLayout(2, false));
 		this.setControl(mainComposite);
-		
+
 	}
 
 	@Override
@@ -164,56 +155,41 @@ public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
 				legalConfigurationCombo.select(legalConfigurationCombo
 						.getItemCount() - 1);
 				// delete old children
-				/*Control[] children = parameterBindingComp.getChildren();
-				for (Control child : children) {
-					child.dispose();
-				}
-				parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
-				for (Parameter parameter : selectedPattern
-						.getPatternParameters()) {
-					Label l = toolkit.createLabel(parameterBindingComp,
-							parameter.getName());
-					l.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-							| GridData.HORIZONTAL_ALIGN_FILL
-							| GridData.GRAB_HORIZONTAL));
-					Text t = toolkit.createText(parameterBindingComp, "");
-					t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL
-							| GridData.HORIZONTAL_ALIGN_FILL
-							| GridData.GRAB_HORIZONTAL));
-					parameterToTextfieldHashMap.put(parameter, t);
-				}
-				parameterBindingComp.layout();
-				parameterBindingComp.redraw();
-				this.getControl().redraw();
-				this.getShell().redraw();*/
+				/*
+				 * Control[] children = parameterBindingComp.getChildren(); for
+				 * (Control child : children) { child.dispose(); }
+				 * parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
+				 * for (Parameter parameter : selectedPattern
+				 * .getPatternParameters()) { Label l =
+				 * toolkit.createLabel(parameterBindingComp,
+				 * parameter.getName()); l.setLayoutData(new
+				 * GridData(GridData.VERTICAL_ALIGN_FILL |
+				 * GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
+				 * Text t = toolkit.createText(parameterBindingComp, "");
+				 * t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL |
+				 * GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
+				 * parameterToTextfieldHashMap.put(parameter, t); }
+				 * parameterBindingComp.layout(); parameterBindingComp.redraw();
+				 * this.getControl().redraw(); this.getShell().redraw();
+				 */
 			}
 			/*
-			if (e.getSource() == legalConfigurationCombo) {
-				int lcIndex = legalConfigurationCombo.getSelectionIndex();
-				if (lcIndex != legalConfigurationCombo.getItemCount() - 1
-						&& lcIndex >= 0) {
-					LegalConfiguration lc = selectedPattern
-							.getLegalConfigurations().get(lcIndex);
-					Collection<Text> coll = parameterToTextfieldHashMap
-							.values();
-					for (Text t : coll) {
-						t.setText("");
-					}
-					for (ParameterBinding binding : lc.getParameterBindings()) {
-						Parameter p = binding.getParameter();
-						Text t = parameterToTextfieldHashMap.get(p);
-
-						if (t != null) {
-							t.setText(binding.getValue().toString());
-						}
-					}
-				} else if (lcIndex == legalConfigurationCombo.getItemCount() - 1
-						&& lcIndex >= 0) {
-					for (Text t : parameterToTextfieldHashMap.values()) {
-						t.setText("");
-					}
-				}
-			}*/
+			 * if (e.getSource() == legalConfigurationCombo) { int lcIndex =
+			 * legalConfigurationCombo.getSelectionIndex(); if (lcIndex !=
+			 * legalConfigurationCombo.getItemCount() - 1 && lcIndex >= 0) {
+			 * LegalConfiguration lc = selectedPattern
+			 * .getLegalConfigurations().get(lcIndex); Collection<Text> coll =
+			 * parameterToTextfieldHashMap .values(); for (Text t : coll) {
+			 * t.setText(""); } for (ParameterBinding binding :
+			 * lc.getParameterBindings()) { Parameter p =
+			 * binding.getParameter(); Text t =
+			 * parameterToTextfieldHashMap.get(p);
+			 * 
+			 * if (t != null) { t.setText(binding.getValue().toString()); } } }
+			 * else if (lcIndex == legalConfigurationCombo.getItemCount() - 1 &&
+			 * lcIndex >= 0) { for (Text t :
+			 * parameterToTextfieldHashMap.values()) { t.setText(""); } } }
+			 */
 		}
 
 	}
