@@ -24,6 +24,8 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.impl.MsgtypePackageImpl;
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.pattern.impl.PatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -95,6 +97,7 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
+		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		MsgtypePackageImpl theMsgtypePackage = (MsgtypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) instanceof MsgtypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) : MsgtypePackage.eINSTANCE);
 		
@@ -109,6 +112,7 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
+		thePatternPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
 		theMsgtypePackage.createPackageContents();
 		
@@ -123,6 +127,7 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
+		thePatternPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
 		theMsgtypePackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
@@ -198,6 +203,7 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
+		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
@@ -211,6 +217,7 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		getESubpackages().add(theConstraintPackage);
 		getESubpackages().add(theInstancePackage);
 		getESubpackages().add(theProtocolPackage);
+		getESubpackages().add(thePatternPackage);
 		getESubpackages().add(theRealtimestatechartPackage);
 		getESubpackages().add(theMsgtypePackage);
 		getESubpackages().add(theTypesPackage);
