@@ -53,5 +53,5 @@ Export-Package: org.opt4j.benchmarks,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice;bundle-version="4.0.0",
  de.uni_paderborn.fujaba.muml.allocation.ext.dependency.guice.multibindings;bundle-version="4.0.0",
- org.sat4j.corex;bundle-version="2.3.3",
- org.sat4j.pbx;bundle-version="2.3.3"
+ org.sat4j.core;bundle-version="2.3.3",
+ org.sat4j.pb;bundle-version="2.3.3"
