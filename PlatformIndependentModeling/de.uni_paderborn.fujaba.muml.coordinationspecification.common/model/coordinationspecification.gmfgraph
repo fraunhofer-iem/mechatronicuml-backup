@@ -56,7 +56,7 @@
       <actualFigure xsi:type="gmfgraph:InvisibleRectangle" name="MessageBufferCompartmentRectangle"/>
     </descriptors>
     <descriptors name="RoleMessageBufferConnectionFigureDescriptor">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleMessageBufferConnection"/>
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleMessageBufferConnection" lineKind="LINE_DOT"/>
     </descriptors>
     <descriptors name="QualityOfServiceAssumptionsFigureDescriptor">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="QualityOfServiceAssumptionsRectangle">
@@ -81,7 +81,7 @@
       <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.3"/>
     </descriptors>
     <descriptors name="RoleConnectorQoSAConnectorConnectionFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnectorQoSAConnectorConnection" lineKind="LINE_DASH"/>
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RoleConnectorQoSAConnectorConnection" lineKind="LINE_DOT"/>
     </descriptors>
     <descriptors name="VerificationConstraintRepositoryFigureDescriptor">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="VerificationConstraintRepository">
