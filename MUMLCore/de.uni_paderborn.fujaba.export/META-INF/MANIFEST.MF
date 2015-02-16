@@ -19,4 +19,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.export.operation,
  de.uni_paderborn.fujaba.export.pages,
+ de.uni_paderborn.fujaba.export.providers,
  de.uni_paderborn.fujaba.export.wizard

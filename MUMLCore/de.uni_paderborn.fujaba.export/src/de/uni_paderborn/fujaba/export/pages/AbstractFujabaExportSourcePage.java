@@ -44,11 +44,11 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 	/**
 	 * Page Extension that allows the user to select the domain element
 	 */
-	private DomainElementPageExtension domainElementExtension;
+	protected DomainElementPageExtension domainElementExtension;
 
-	private FormToolkit toolkit;
+	protected FormToolkit toolkit;
 	
-	private ISelection selection;
+	protected ISelection selection;
 
 	/**
 	 * Creates a fujaba-export source page.
