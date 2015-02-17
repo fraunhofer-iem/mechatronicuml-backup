@@ -98,7 +98,7 @@
 [comment]
 possbile values for 'targetPlatform' are: 'C99' or 'nxtOSEK'
 [/comment]
-[let targetPlatform : String = 'C99']
+[let targetPlatform : String = 'nxtOSEK']
 
 
 [if (targetPlatform = 'nxtOSEK')]
