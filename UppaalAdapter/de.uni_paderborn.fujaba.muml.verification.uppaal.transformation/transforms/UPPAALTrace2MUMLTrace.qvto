@@ -100,7 +100,12 @@ when {not self.location.getRTSCVertex().oclIsUndefined() or not self.location.ge
 		instanceOf := activeTransition.statechart;
 	}; 
 	
-	variableBindings := instanceOf.oclAsType(RealtimeStatechart).variables.map createVariableBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
+	// only map non-constant variables as constant variables are not in uppaals trace
+	// TODO maybe add constant variables to the list of variable bindings to inform the user about the values.	
+	var RtscVars : OrderedSet(muml::behavior::Variable) := instanceOf.oclAsType(RealtimeStatechart).variables;
+	var nonConstantVariables : OrderedSet(muml::behavior::Variable) := RtscVars->select(i:muml::behavior::Variable|i.constant=false)->asOrderedSet();
+	variableBindings := nonConstantVariables.map createVariableBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
+	// variableBindings := instanceOf.oclAsType(RealtimeStatechart).variables.map createVariableBinding(diagState, self.process.template.oclAsType(RedefinedTemplate).declaration.getInstanceID());
 	
 	//Create extension representing the current values of the Rtsc's clocks, if there are any clocks
 	if(instanceOf.oclAsType(RealtimeStatechart).clocks->size()>0)

@@ -181,7 +181,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		};
 		
 												
-		log('Phase one: Traverse hierarchy tree and create timed automata skeletons.');
+		// log('Phase one: Traverse hierarchy tree and create timed automata skeletons.');
 		
 		var allStatecharts : OrderedSet(RealtimeStatechart) = self.getAllStatechartsPrefix();
 		
@@ -212,7 +212,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		};
 				
 				
-		log('Phase two: Traverse exit trees to create global joins.');
+		// log('Phase two: Traverse exit trees to create global joins.');
 		
 		-- create set G of global join starting points (i.e. all composite states) arranged from low-level to high-level states
 				
@@ -235,7 +235,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		-- Phase three: Postprocess sync channels.
 		
 		// TODO: implement phase 3: post-processing of sync channels to avoid unintended synchronizations between one transition inside a composite state, and a second transition leaving that composite state
-		log('Phase three: Not implemented yet.');
+		// log('Phase three: Not implemented yet.');
 		
 		end {
 			-- finally, all embedded regions must contain flat statecharts

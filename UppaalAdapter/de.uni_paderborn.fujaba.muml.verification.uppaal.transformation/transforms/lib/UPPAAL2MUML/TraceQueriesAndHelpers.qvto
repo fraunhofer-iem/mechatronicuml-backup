@@ -91,8 +91,8 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 }
 
 
-//Parent Variables have to be passed in correct order
-//indexes referce to first parent variable (self if there are no parent variables)
+// parent variables have to be passed in correct order
+// indexes refers to first parent variable (self if there are no parent variables)
 query uppaal::declarations::Variable :: getVariableValue(diagState : diagnosticTrace::State, indexes : Sequence(Integer), parentVariables : OrderedSet(uppaal::declarations::Variable)) : OrderedSet(VariableValue){
 	
 	var variables : OrderedSet(uppaal::declarations::Variable):= parentVariables;
@@ -668,9 +668,28 @@ helper Variable :: setVariableValue(inout varBinding : VariableBinding , diagSta
 	
 	var parentIndexes : Sequence(Integer);
 	parentIndexes += instanceID;
-
-	var variableValues := self.getUppaalVariable().getVariableValue(diagState, parentIndexes, null);
 	
+	var variableValues : OrderedSet(VariableValue);
+	var variableIsConstant : Boolean := false;
+	
+	// check if variable is a constant 
+	if (self.getUppaalVariable().container.oclIsKindOf(uppaal::declarations::DataVariableDeclaration)) {
+        var dataVariableDec := self.getUppaalVariable().container.oclAsType(uppaal::declarations::DataVariableDeclaration);
+        if (dataVariableDec.prefix = uppaal::declarations::DataVariablePrefix::CONST) {
+            // var integerValue := self.getUppaalVariable().initializer; 
+            // var varValue : VariableValue;
+            // varValue.value := integerValue;
+            // variableValues->append(varValue);
+            variableIsConstant := true;
+            assert(false) with log ('Found constant variable : '+self.name.toString() + '. We will not find a value for this variable in the trace as Uppaal does not write them into it.');
+        };
+    };
+    
+    if (not variableIsConstant) {
+        // log('variable is NOT constant');
+        variableValues := self.getUppaalVariable().getVariableValue(diagState, parentIndexes, null); 
+	};
+
 	if(variableValues -> size() = 0)
 		assert(false) with log ('Could not find value for variable '+self.name.toString());
 	if(variableValues -> size() = 1)
