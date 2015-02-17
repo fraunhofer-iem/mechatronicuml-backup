@@ -31,7 +31,7 @@ Middleware* Middleware_create(void){
 bool_t Middelware_init(void){
 		
 	if (mw != NULL){
-        mw->idOfECU = ECU_SECTIONCONTROLBRICK;
+        mw->idOfECU = ECU_SERVERBRICK;
         mw->incoming = NetworkMessageBuffer_create(15, true);
         mw->outgoing = NetworkMessageBuffer_create(15, true);
 		return true;

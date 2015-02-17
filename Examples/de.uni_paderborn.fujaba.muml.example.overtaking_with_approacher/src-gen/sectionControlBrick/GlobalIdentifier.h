@@ -85,5 +85,5 @@
 			#define ECU_OVERTAKERR2 4 /**< Global Identifier: For the ECU: overtakerR2 */
 			#define ECU_APPROACHERR1 5 /**< Global Identifier: For the ECU: approacherR1 */
 			#define ECU_APPROACHERR2 6 /**< Global Identifier: For the ECU: approacherR2 */
-			#define ECU_SECTIONCONTROLBRICK 7 /**< Global Identifier: For the ECU: sectionControlBrick */
+			#define ECU_SERVERBRICK 7 /**< Global Identifier: For the ECU: sectionControlBrick */
 
