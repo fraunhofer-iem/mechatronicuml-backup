@@ -20,6 +20,8 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 U8 receive_buf[DATA_LEN];
 U8 send_buf[DATA_LEN];
 
+const U8 bd_addr[7]={0x00, 0x16, 0x53, 0x10, 0xBD, 0x02, 0x00};
+
 /**End of user code**/
 
 
@@ -31,9 +33,9 @@ bool_t networkInterface_VirtualBluetoothPort_init(void){
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_init **/ 
 
 	static SINT bt_status = BT_NO_INIT;
-	ecrobot_init_bt_slave("CYBERTRON");
+	ecrobot_init_bt_master(bd_addr, "CYBERTRON");
 	display_goto_xy(0, 0);
-	display_string("BT-Slave. Addr:!");
+	display_string("BT-Master!");
 	display_update();
 
 /**End of user code**/
@@ -111,7 +113,7 @@ bool_t networkInterface_VirtualWifiPort_init(void){
 	ecrobot_wb_init(NXT_PORT_S3);
 	ecrobot_wb_wait_for_i2c(NXT_PORT_S3);
 
-	U8 wbIpAddr[4] = {192, 168, 0, 105};
+	U8 wbIpAddr[4] = {192, 168, 0, 104};
 	U8 wbIpMask[4] = { 255, 255, 255, 0};
 	U8 wbIpGateway[4] = { 192, 168, 0, 1};
 
@@ -269,6 +271,14 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
+
+ int myPortIds[15] = {PORT_OVERTAKERMOTORRMOTORVELOCITYCONTR, PORT_OVERTAKERMOTORLMOTORVELOCITYCONTL, PORT_OVERTAKERDRIVEROVERTAKERDRIVERINITIATORP1, PORT_OVERTAKERDRIVEROVERTAKERDRIVERDISTANCE,
+ 						PORT_OVERTAKERDRIVEROVERTAKERDRIVERLINE, PORT_OVERTAKERDRIVEROVERTAKERDRIVERVELOCITYR, PORT_OVERTAKERDRIVEROVERTAKERDRIVERVELOCITYL, PORT_OVERTAKERDISTANCEDISTANCEDISTANCE, 
+ 						PORT_OVERTAKERCOMMUNICATOROVERTAKERCOMMUNICATOREXECUTORP1, PORT_OVERTAKERCOMMUNICATOROVERTAKERCOMMUNICATORVEHICLEOVERTAKERP1, PORT_OVERTAKERCOMMUNICATOROVERTAKERCOMMUNICATOROVERTAKERP1,
+ 						PORT_OVERTAKERCOMMUNICATOROVERTAKERCOMMUNICATORREQUESTORP1, PORT_OVERTAKERCOMMUNICATOROVERTAKERCOMMUNICATORCOLOR, PORT_OVERTAKERLINELINELINELIGHT, PORT_OVERTAKERCOLORCOLORCOLOR};
+
+static int counter = 0;
+
 MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
 	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
@@ -288,7 +298,10 @@ U8* received;
 		every time this function gets called
 	*/	
 
-	reqMessage->_targetPort = 0;
+	reqMessage->_targetPort = myPortIds[counter];
+	counter ++
+	if(counter == 15)
+		counter = 0;
 
 	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
 
