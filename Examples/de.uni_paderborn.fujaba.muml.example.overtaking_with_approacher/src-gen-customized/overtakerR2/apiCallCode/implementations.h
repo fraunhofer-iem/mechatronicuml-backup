@@ -1,3 +1,6 @@
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
 /**
  * @file 
  * @author generated
@@ -11,12 +14,19 @@
 
 #include "../lib/types.h"
 
+ /***
+
+ 		method to initialize all
+ 	*/
+
+ 		void initAll();
+
 /**
- * @brief Implemtation of the Parameterbinding: overtakerColor_color_InitApi of the Port-Instance: PortInstance: color of the ComponentInstance: overtakerColor 
+ * @brief Implemtation of the Parameterbinding: approacherColor_color_InitApi of the Port-Instance: PortInstance: color of the ComponentInstance: approacherColor 
  */
 		void overtakerColor_color_InitApi();	
 /**
- * @brief Implemtation of the Parameterbinding: overtakerColor_color_ExecApi of the Port-Instance: PortInstance: color of the ComponentInstance: overtakerColor 
+ * @brief Implemtation of the Parameterbinding: approacherColor_color_ExecApi of the Port-Instance: PortInstance: color of the ComponentInstance: approacherColor 
  */
 		int overtakerColor_color_ExecApi();	
 
