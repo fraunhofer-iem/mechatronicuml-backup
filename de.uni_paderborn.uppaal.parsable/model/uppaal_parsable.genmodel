@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.uppaal.parsable/src" modelPluginID="de.uni_paderborn.uppaal.parsable"
+    modelName="Parsable" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.uppaal/model/uppaal.genmodel#//uppaal"
+    importOrganizing="true">
+  <foreignModel>uppaal_parsable.ecore</foreignModel>
+  <genPackages prefix="Parsable" basePackage="de.uni_paderborn.uppaal" resource="XML"
+      disposableProviderFactory="true" generateExampleClass="false" multipleEditorPages="false"
+      generateModelWizard="false" fileExtensions="uppaal_parsable" ecorePackage="uppaal_parsable.ecore#/"
+      publicationLocation="">
+    <nestedGenPackages prefix="TemplatesParsable" disposableProviderFactory="true"
+        ecorePackage="uppaal_parsable.ecore#//templates_parsable">
+      <genClasses ecoreClass="uppaal_parsable.ecore#//templates_parsable/IdentifiableLocation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uppaal_parsable.ecore#//templates_parsable/IdentifiableLocation/id"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

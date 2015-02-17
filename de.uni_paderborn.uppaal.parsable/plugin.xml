@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+--><plugin>
+<extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uppaal_parsable -->
+      <package class="de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage" genModel="model/uppaal_parsable.genmodel" uri="http://www.uni-paderborn.de/uppaal/parsable/templates_parsable/0.4.0"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <!-- @generated uppaal_parsable -->
+      <package class="de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage" genModel="model/uppaal_parsable.genmodel" uri="http://www.uni-paderborn.de/uppaal/parsable/templates_parsable/0.4.0"/>
+   </extension>
+
+</plugin>
