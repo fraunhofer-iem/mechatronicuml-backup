@@ -247,11 +247,20 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
+
+int myPortIds[14] = {PORT_APPROACHERMOTORRMOTORVELOCITYCONTR, PORT_APPROACHERMOTORLMOTORVELOCITYCONTL, PORT_APPROACHERDRIVERAPPROACHERDRIVERLIMITERP1, PORT_APPROACHERDRIVERAPPROACHERDRIVERVELOCITYL, 
+	PORT_APPROACHERDRIVERAPPROACHERDRIVERLINEAPPROACHER, PORT_APPROACHERDRIVERAPPROACHERDRIVERVELOCITYR, PORT_APPROACHERDRIVERAPPROACHERDRIVERDISTANCEAPROACHER, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORVEHICLEAPPROACHERP1,
+	PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORLIMITDRIVINGP1, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORINFORMAPPROACHERP1, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORCOLORAPPROACHER, PORT_APPROACHERCOLORCOLORCOLOR
+	PORT_APPROACHERLINELINELINELIGHT,PORT_APPROACHERDISTANCEDISTANCEDISTANCE};
+
+static int counter = 0;
+
+
 MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
 	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
-U8* received;
+	U8* received;
 	///////////////////////////////
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_receive **/ 
 
@@ -260,13 +269,10 @@ U8* received;
 	
 	//The target port for which we want to receive a message
 
-	/*
-		TODO: (Idea) Every time this function gets called we need to check for one of our PortIDs.
-		I think a simple solution is that we just check for a different PortID,
-		every time this function gets called
-	*/	
-
-	reqMessage->_targetPort = 0;
+	reqMessage->_targetPort = myPortIds[counter];
+	counter ++
+	if(counter == 14)
+		counter = 0;
 
 	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
 
