@@ -116,12 +116,12 @@ bool_t networkInterface_VirtualWifiPort_init(void){
 	U8 wbIpGateway[4] = { 192, 168, 0, 1};
 
 	//Disable Wifi
-	result_disable = ecrobot_wb_wifi_disable(NXT_PORT_S3);
+	ecrobot_wb_wifi_disable(NXT_PORT_S3);
 
-	result_config = ecrobot_wb_wifi_config(NXT_PORT_S3, "IPT_EM_DEMO", wbIpAddr,
+	ecrobot_wb_wifi_config(NXT_PORT_S3, "IPT_EM_DEMO", wbIpAddr,
 			wbIpMask, wbIpGateway, WB_I2C_WIFI_SECURITY_TYPE_OPEN, "");
 
-	result_enable = ecrobot_wb_wifi_enable(NXT_PORT_S3);
+	ecrobot_wb_wifi_enable(NXT_PORT_S3);
 
 /*
 	//This is just for displaying stuff, uncomment if you want to see it
@@ -185,19 +185,21 @@ bool_t networkInterface_VirtualWifiPort_init(void){
    displayip(tcptarget);
 */
 
-   while(!ecrobot_wb_wifi_isconnected(NXT_PORT_S3))
+   if(!ecrobot_wb_wifi_isconnected(NXT_PORT_S3))
    {
    	/*
    		display_goto_xy(0,7);
    		display_string("waiting f. wifi");
    		display_update();
    	*/
-   }
+   }else
+   {
 
    //Show that wifi is connected now
 	display_goto_xy(11, 4);
 	display_string("[WF]");
 	display_update();
+	}
 
 /**End of user code**/
 //standard return value
@@ -241,7 +243,7 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
 	//wait for tcp to be "done" before reading received messages
 	while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
 	{
-	   received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+	   ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
 
 	/*
 	   //display the stuff
@@ -271,7 +273,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
 	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
-
+U8* received;
 	///////////////////////////////
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_receive **/ 
 
@@ -292,7 +294,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 
 	MiddlewareMessage_write_delimited_to(reqMessage, receive_buf, 0);
 
-	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, msg_size);
+	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
 
 	//sending of the request
 	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3))
@@ -314,7 +316,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//wait for tcp to be "done" before reading received message
 	while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
 	{
-		receive_buf = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+		received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
 
 		/*
 		//display the stuff
@@ -330,13 +332,13 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	/**End of user code**/
 	///////////////////////////////
 
-	if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
+	if(!(Message_can_read_delimited_from(received,0,DATA_LEN))){
 		free(tmpMessage);
 	    tmpMessage = NULL;
 		}
 	else{
 		//read the buffer and create the middlewareMessage
-		MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
+		MiddlewareMessage_read_delimited_from(received, tmpMessage, 0);
 		}
 	//return the received message
 	return tmpMessage;
