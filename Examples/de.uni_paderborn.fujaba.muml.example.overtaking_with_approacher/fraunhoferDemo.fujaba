@@ -4037,8 +4037,8 @@
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_dqZi4KfBEeSK_8TqY1SjtQ" name="R2" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_dqZi4afBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_figUAKfBEeSK_8TqY1SjtQ"/>
-          <upperBound xmi:id="_figUAafBEeSK_8TqY1SjtQ"/>
+          <lowerBound xmi:id="_FnGhILaXEeSavI5T7sJhVQ"/>
+          <upperBound xmi:id="_FnHIMLaXEeSavI5T7sJhVQ"/>
         </cardinality>
         <hwPortParts xmi:id="_eFHwAKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRkKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_eFHwAafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRlKe-EeSK_8TqY1SjtQ"/>
@@ -4060,8 +4060,8 @@
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_2jFTsKfBEeSK_8TqY1SjtQ" name="Line" resourceType="_06QxMKfAEeSK_8TqY1SjtQ">
         <cardinality xmi:id="_2jFTsafBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_4424QKfBEeSK_8TqY1SjtQ"/>
-          <upperBound xmi:id="_4424QafBEeSK_8TqY1SjtQ"/>
+          <lowerBound xmi:id="__bNmoLaWEeSavI5T7sJhVQ"/>
+          <upperBound xmi:id="__bPb0LaWEeSavI5T7sJhVQ"/>
         </cardinality>
         <hwPortParts xmi:id="_3mt68KfBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" communicationResource="_KoIy7KfBEeSK_8TqY1SjtQ"/>
       </embeddedPlatformParts>
@@ -4101,8 +4101,9 @@
     </modelElements>
     <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_-b5NkKfCEeSK_8TqY1SjtQ">
       <hwplatformInstances xmi:id="_4sMNoKhjEeSJj6cnB4p9sw" name="Overtakee" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_4sMNoahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_4sMNqahjEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <delegationPorts xmi:id="_4sMNoqhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_4sMNoahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_4sMNqahjEeSJj6cnB4p9sw _WXCsYLabEeSvg7rqv6dToQ" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
+        <delegationPorts xmi:id="_4sMNoqhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw _sOdocLaXEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_neFF0LabEeSvg7rqv6dToQ" name="D1-virtualWifi.02" connectorInstances="_3Ar4ELabEeSvg7rqv6dToQ _9CcmMLabEeSvg7rqv6dToQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_4sMNo6hjEeSJj6cnB4p9sw">
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpKhjEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNy6hjEeSJj6cnB4p9sw _4sMNtKhjEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpahjEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzKhjEeSJj6cnB4p9sw _4sMNw6hjEeSJj6cnB4p9sw"/>
@@ -4111,6 +4112,7 @@
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNqKhjEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzahjEeSJj6cnB4p9sw _4sMNwahjEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_4sMNqahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _4sMNrqhjEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_4sMNqqhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _4sMNtqhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_3Ar4ELabEeSvg7rqv6dToQ" connectorEndpointInstances="_i8ns0LabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
           <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNq6hjEeSJj6cnB4p9sw" name="overtakeeLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNrKhjEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_4sMNpqhjEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
           </resources>
@@ -4125,6 +4127,7 @@
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtahjEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_4sMNp6hjEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNtqhjEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNt6hjEeSJj6cnB4p9sw" name="outputPortA" type="_eFHwB6fBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_i8ns0LabEeSvg7rqv6dToQ" name="VirtualWifiPort2" connectorInstances="_3Ar4ELabEeSvg7rqv6dToQ" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_4sMNuKhjEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
               <frequency xmi:id="_4sMNuahjEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
             </embeddedAtomicResourceInstances>
@@ -4168,8 +4171,8 @@
         </embeddedHPIC>
       </hwplatformInstances>
       <hwplatformInstances xmi:id="_-PAV8KhjEeSJj6cnB4p9sw" name="Overtaker" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_-PAV8ahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <delegationPorts xmi:id="_-PAV8qhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_-PAV8ahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw _WXCsYLabEeSvg7rqv6dToQ" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
+        <delegationPorts xmi:id="_-PAV8qhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw _EdRV0LaYEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_-PAV86hjEeSJj6cnB4p9sw">
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9KhjEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWAahjEeSJj6cnB4p9sw _-PAWF6hjEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9ahjEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_6hjEeSJj6cnB4p9sw _-PAWDahjEeSJj6cnB4p9sw"/>
@@ -4236,7 +4239,8 @@
       </hwplatformInstances>
       <hwplatformInstances xmi:id="_EDe2AKhkEeSJj6cnB4p9sw" name="Approacher" hwplatformType="_UnNrIafBEeSK_8TqY1SjtQ">
         <delegationPorts xmi:id="_EDe2AahkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_EDe2CahkEeSJj6cnB4p9sw" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
-        <delegationPorts xmi:id="_EDe2AqhkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_EDe2AqhkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw _HvUVYLaYEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_pr6PULabEeSvg7rqv6dToQ" name="D1-virtualWifi.02" connectorInstances="_6BgkwLabEeSvg7rqv6dToQ _9CcmMLabEeSvg7rqv6dToQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_EDe2A6hkEeSJj6cnB4p9sw">
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BKhkEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FKhkEeSJj6cnB4p9sw _EDe2LahkEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BahkEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2F6hkEeSJj6cnB4p9sw _EDe2EKhkEeSJj6cnB4p9sw"/>
@@ -4245,6 +4249,7 @@
           <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2CKhkEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2GKhkEeSJj6cnB4p9sw _EDe2DqhkEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EDe2CahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2AahkEeSJj6cnB4p9sw _EDe2JahkEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EDe2CqhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_EDe2AqhkEeSJj6cnB4p9sw _EDe2J6hkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_6BgkwLabEeSvg7rqv6dToQ" connectorEndpointInstances="_sT1T0LabEeSvg7rqv6dToQ _pr6PULabEeSvg7rqv6dToQ"/>
           <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2C6hkEeSJj6cnB4p9sw" name="approacherLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2DKhkEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_EDe2BqhkEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
           </resources>
@@ -4289,6 +4294,7 @@
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LKhkEeSJj6cnB4p9sw" name="inputPort2" type="_eFHwBafBEeSK_8TqY1SjtQ"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LahkEeSJj6cnB4p9sw" name="inputPort4" connectorInstances="_EDe2BKhkEeSJj6cnB4p9sw" type="_eFHwAafBEeSK_8TqY1SjtQ"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2LqhkEeSJj6cnB4p9sw" name="inputPort1" connectorInstances="_EDe2B6hkEeSJj6cnB4p9sw" type="_eFHwAqfBEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_sT1T0LabEeSvg7rqv6dToQ" name="VirtualWifiPort2" connectorInstances="_6BgkwLabEeSvg7rqv6dToQ" type="_w-0uwKhiEeSJj6cnB4p9sw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_EDe2L6hkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
               <frequency xmi:id="_EDe2MKhkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
             </embeddedAtomicResourceInstances>
@@ -4302,22 +4308,27 @@
         </embeddedHPIC>
       </hwplatformInstances>
       <hwplatformInstances xmi:id="_HiiW0KhkEeSJj6cnB4p9sw" name="SectionControlInstance" hwplatformType="_rPkGIKfDEeSK_8TqY1SjtQ">
-        <delegationPorts xmi:id="_HiiW0ahkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_HiiW0ahkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw _sOdocLaXEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
         <delegationPorts xmi:id="_HiiW0qhkEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_kUf7wKhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="_-2mBMLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.02" connectorInstances="_ixeUILaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="__NF1oLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.03" connectorInstances="_EdRV0LaYEeSavI5T7sJhVQ _jZ2iwLaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
+        <delegationPorts xmi:id="__dlIsLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.01" connectorInstances="_HvUVYLaYEeSavI5T7sJhVQ _hvTFcLaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_HiiW06hkEeSJj6cnB4p9sw">
           <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_HiiW1KhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0ahkEeSJj6cnB4p9sw _HiiW16hkEeSJj6cnB4p9sw"/>
           <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_HiiW1ahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0qhkEeSJj6cnB4p9sw _HiiW2ahkEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_1dGiQLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_1wFvsLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_18InoLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_hvTFcLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_b8L3ULaYEeSavI5T7sJhVQ __dlIsLaXEeSavI5T7sJhVQ"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_ixeUILaYEeSavI5T7sJhVQ" connectorEndpointInstances="_bvF2gLaYEeSavI5T7sJhVQ _-2mBMLaXEeSavI5T7sJhVQ"/>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_jZ2iwLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_cM_TcLaYEeSavI5T7sJhVQ __NF1oLaXEeSavI5T7sJhVQ"/>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_HiiW1qhkEeSJj6cnB4p9sw" name="serverBrick" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW16hkEeSJj6cnB4p9sw" name="VirtualWifiPort" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2KhkEeSJj6cnB4p9sw" name="inputPort4" type="_0unagafDEeSK_8TqY1SjtQ"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2ahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_0unaiKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2qhkEeSJj6cnB4p9sw" name="outputPortC" type="_0unahqfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW26hkEeSJj6cnB4p9sw" name="outputPortA" type="_0unah6fDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW3KhkEeSJj6cnB4p9sw" name="inputPort1" type="_0unagqfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW3ahkEeSJj6cnB4p9sw" name="outputPortB" type="_0unagKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW3qhkEeSJj6cnB4p9sw" name="inputPort3" type="_0unag6fDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW36hkEeSJj6cnB4p9sw" name="usbPort" type="_0unahKfDEeSK_8TqY1SjtQ"/>
-            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW4KhkEeSJj6cnB4p9sw" name="inputPort2" type="_0unahafDEeSK_8TqY1SjtQ"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_bvF2gLaYEeSavI5T7sJhVQ" name="VirtualWifiPort2" connectorInstances="_ixeUILaYEeSavI5T7sJhVQ" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_b8L3ULaYEeSavI5T7sJhVQ" name="VirtualWifiPort1" connectorInstances="_hvTFcLaYEeSavI5T7sJhVQ" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_cDxGALaYEeSavI5T7sJhVQ" name="VirtualWifiPort" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
+            <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_cM_TcLaYEeSavI5T7sJhVQ" name="VirtualWifiPort3" connectorInstances="_jZ2iwLaYEeSavI5T7sJhVQ" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
             <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_HiiW4ahkEeSJj6cnB4p9sw" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
               <frequency xmi:id="_HiiW4qhkEeSJj6cnB4p9sw" value="60.0" unit="MHz"/>
             </embeddedAtomicResourceInstances>
@@ -4330,6 +4341,11 @@
           </resources>
         </embeddedHPIC>
       </hwplatformInstances>
+      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_sOdocLaXEeSavI5T7sJhVQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _HiiW0ahkEeSJj6cnB4p9sw"/>
+      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EdRV0LaYEeSavI5T7sJhVQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw __NF1oLaXEeSavI5T7sJhVQ"/>
+      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_HvUVYLaYEeSavI5T7sJhVQ" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="__dlIsLaXEeSavI5T7sJhVQ _EDe2AqhkEeSJj6cnB4p9sw"/>
+      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_WXCsYLabEeSvg7rqv6dToQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _-PAV8ahjEeSJj6cnB4p9sw"/>
+      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_9CcmMLabEeSvg7rqv6dToQ" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_pr6PULabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
     </modelElements>
     <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_rPkGIKfDEeSK_8TqY1SjtQ" name="SectionControl">
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_wMFqgKfDEeSK_8TqY1SjtQ" name="Brick" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
