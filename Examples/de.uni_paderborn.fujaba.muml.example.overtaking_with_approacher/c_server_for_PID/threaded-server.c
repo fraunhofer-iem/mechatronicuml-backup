@@ -9,9 +9,6 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <ncurses.h> 
-
-#include "Messages.h"
-#include "Messages.c"
 typedef struct MiddlewareMessage MiddlewareMessage;
 
 #define PORT    "9999" /* Port to listen on */
