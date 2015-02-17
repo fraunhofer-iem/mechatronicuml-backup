@@ -14,15 +14,48 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 }
 /** Start of user code user includes **/ 
 
+#define DATA_LEN 32
+
+//Buffers for sending and receiving data, use the same for all networkinterfaces, to save some memory/performance
+U8 receive_buf[DATA_LEN];
+U8 send_buf[DATA_LEN];
+
 /**End of user code**/
 
 
 /*
- * INIT method for network interface virtualBluetoothPort
- * implement this method, to do additional initialization for NI virtualBluetoothPort. Usually this is called before the main application is started.
+ * INIT method for network interface inputPort4
+ * implement this method, to do additional initialization for NI inputPort4. Usually this is called before the main application is started.
  */
-bool_t networkInterface_VirtualBluetoothPort_init(void){
-/** @TODO Start of user code networkInterface_VirtualBluetoothPort_init **/ 
+bool_t networkInterface_InputPort4_init(void){
+/** @TODO Start of user code networkInterface_InputPort4_init **/ 
+
+	ecrobot_init_rs485(DEFAULT_BAUD_RATE_RS485);
+	
+	/*
+
+	static U16 i = 0;
+
+
+
+	if(ecrobot_read_rs485(bt_receive_buf,0, DATA_LEN) > 0)
+	{
+	  display_goto_xy(7, 4);
+	  display_string("[RS]");
+	  display_update();
+	}else
+	{
+	  i++;
+	  if(i % 10000 == 1){
+	  display_goto_xy(7, 4);
+	  display_string("    ");
+	  display_update();
+	}
+	}
+	bt_send_buf[0] = 42;
+	ecrobot_send_rs485(bt_send_buf,0, 2);
+
+	*/
 
 /**End of user code**/
 //standard return value
@@ -31,16 +64,17 @@ return true;
 
 
 /*
- * SEND method for network interface virtualBluetoothPort.
- * implement this method, to send a message via the NI virtualBluetoothPort.
+ * SEND method for network interface inputPort4.
+ * implement this method, to send a message via the NI inputPort4.
  * This method ist called by the middleware, if a message has to be sent via this network interface
  * @param msg the message to be sent
  * hint: use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
  * to write the message content into a byte array, if needed
  */
-bool_t networkInterface_VirtualBluetoothPort_send(MiddlewareMessage * msg){
-/** @TODO Start of user code networkInterface_VirtualBluetoothPort_send **/ 
-
+bool_t networkInterface_InputPort4_send(MiddlewareMessage * msg){
+/** @TODO Start of user code networkInterface_InputPort4_send **/ 
+	  MiddlewareMessage_write_delimited_to(msg, send_buf, 0);
+	  ecrobot_sendData_rs485(send_buf,0, DATA_LEN);
 
 /**End of user code**/
 //free the allocated memory for the message after it has been sent
@@ -52,33 +86,23 @@ return true;
 
 
 /*
- * RECEIVE method for network interface virtualBluetoothPort.
- * implement this method, to receive a message via the NI virtualBluetoothPort.
+ * RECEIVE method for network interface inputPort4.
+ * implement this method, to receive a message via the NI inputPort4.
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
-MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void){
+MiddlewareMessage * networkInterface_InputPort4_receive(void){
 //create new MiddlewareMessage
 MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 
-//buffer for receiving data
-char buf[30];
-//number of received bytes
-int_t recvLength = 0;
-
-///////////////////////////////
-/** @TODO Start of user code networkInterface_VirtualBluetoothPort_receive **/ 
- //fill the buffer *buf and specify the number of received bytres (recvLength)
-/**End of user code**/
-///////////////////////////////
-
-if(recvLength<=0 || !(Message_can_read_delimited_from(buf,0,recvLength))){
+if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
+	ecrobot_readData_rs485(receive_buf, DATA_LEN);
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
 else{
 	//read the buffer and create the middlewareMessage
-	MiddlewareMessage_read_delimited_from(buf, tmpMessage, 0);
+	MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
 	}
 //return the received message
 return tmpMessage;
@@ -156,11 +180,11 @@ return tmpMessage;
 	
 
 /*
- * INIT method for network interface inputPort4
- * implement this method, to do additional initialization for NI inputPort4. Usually this is called before the main application is started.
+ * INIT method for network interface virtualBluetoothPort
+ * implement this method, to do additional initialization for NI virtualBluetoothPort. Usually this is called before the main application is started.
  */
-bool_t networkInterface_InputPort4_init(void){
-/** @TODO Start of user code networkInterface_InputPort4_init **/ 
+bool_t networkInterface_VirtualBluetoothPort_init(void){
+/** @TODO Start of user code networkInterface_VirtualBluetoothPort_init **/ 
 
 /**End of user code**/
 //standard return value
@@ -169,15 +193,15 @@ return true;
 
 
 /*
- * SEND method for network interface inputPort4.
- * implement this method, to send a message via the NI inputPort4.
+ * SEND method for network interface virtualBluetoothPort.
+ * implement this method, to send a message via the NI virtualBluetoothPort.
  * This method ist called by the middleware, if a message has to be sent via this network interface
  * @param msg the message to be sent
  * hint: use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
  * to write the message content into a byte array, if needed
  */
-bool_t networkInterface_InputPort4_send(MiddlewareMessage * msg){
-/** @TODO Start of user code networkInterface_InputPort4_send **/ 
+bool_t networkInterface_VirtualBluetoothPort_send(MiddlewareMessage * msg){
+/** @TODO Start of user code networkInterface_VirtualBluetoothPort_send **/ 
 
 
 /**End of user code**/
@@ -190,12 +214,12 @@ return true;
 
 
 /*
- * RECEIVE method for network interface inputPort4.
- * implement this method, to receive a message via the NI inputPort4.
+ * RECEIVE method for network interface virtualBluetoothPort.
+ * implement this method, to receive a message via the NI virtualBluetoothPort.
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
-MiddlewareMessage * networkInterface_InputPort4_receive(void){
+MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void){
 //create new MiddlewareMessage
 MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 
@@ -205,7 +229,7 @@ char buf[30];
 int_t recvLength = 0;
 
 ///////////////////////////////
-/** @TODO Start of user code networkInterface_InputPort4_receive **/ 
+/** @TODO Start of user code networkInterface_VirtualBluetoothPort_receive **/ 
  //fill the buffer *buf and specify the number of received bytres (recvLength)
 /**End of user code**/
 ///////////////////////////////
