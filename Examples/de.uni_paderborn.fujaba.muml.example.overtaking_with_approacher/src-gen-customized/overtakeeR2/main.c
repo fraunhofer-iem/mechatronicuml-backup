@@ -43,7 +43,6 @@ void ecrobot_device_initialize()
 networkInterface_VirtualBluetoothPort_init();
 networkInterface_UsbPort_init();
 networkInterface_InputPort4_init();
-networkInterface_VirtualWifiPort_init();
 
 //initialize sensors and actors
 	overtakeeColor_color_InitApi();
@@ -52,6 +51,8 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
+	networkInterface_VirtualWifiPort_init();
+
 	mw = Middleware_create();
 	configureOvertakeeR2CIC();
 	//initialize model
