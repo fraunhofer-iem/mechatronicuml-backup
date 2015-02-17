@@ -22,7 +22,7 @@ static U8 pkd = 32;
 	void initAll(){
 		ecrobot_init_tetrix(NXT_PORT_S1);
 		 ecrobot_LL_init(NXT_PORT_S2);
-	ecrobot_init_sonar_sensor(NXT_PORT_S4);
+	ecrobot_init_sonar_sensor(NXT_PORT_S3);
 
 
 	}
