@@ -92,20 +92,18 @@ return true;
  * @return the received MiddlewareMessage
  */
 MiddlewareMessage * networkInterface_InputPort4_receive(void){
-//create new MiddlewareMessage
-MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
-
-if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
-	ecrobot_readData_rs485(receive_buf, DATA_LEN);
-	free(tmpMessage);
-    tmpMessage = NULL;
+	if(ecrobot_readData_rs485(receive_buf, DATA_LEN) <= 0)
+	{	
+		return NULL;
 	}
-else{
-	//read the buffer and create the middlewareMessage
-	MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
-	}
-//return the received message
-return tmpMessage;
+	else{
+		//read the buffer and create the middlewareMessage
+		MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
+		MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
+		return tmpMessage;
+		}
+	//return the received message
+	return NULL;
 }
 
 	

@@ -252,7 +252,6 @@ static int counter = 0;
 
 MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
-	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 U8* received;
 	///////////////////////////////
@@ -277,6 +276,7 @@ U8* received;
 	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
 
 	MiddlewareMessage_write_delimited_to(reqMessage, receive_buf, 0);
+	free(reqMessage);
 
 	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
 
@@ -311,21 +311,21 @@ U8* received;
 		*/
 	}
 
-	free(reqMessage);
-
 	/**End of user code**/
 	///////////////////////////////
 
-	if(!(Message_can_read_delimited_from(received,0,DATA_LEN))){
-		free(tmpMessage);
-	    tmpMessage = NULL;
-		}
+	if(received <= 0)
+	{
+		return NULL;
+	}
 	else{
 		//read the buffer and create the middlewareMessage
+		MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 		MiddlewareMessage_read_delimited_from(received, tmpMessage, 0);
+		return tmpMessage;
 		}
 	//return the received message
-	return tmpMessage;
+	return NULL;
 }
 
 	
@@ -469,17 +469,17 @@ return true;
  */
 MiddlewareMessage * networkInterface_InputPort4_receive(void){
 //create new MiddlewareMessage
-MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 
-if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
-	ecrobot_readData_rs485(receive_buf, DATA_LEN);
-	free(tmpMessage);
-    tmpMessage = NULL;
-	}
+if(ecrobot_readData_rs485(receive_buf, DATA_LEN) <= 0)
+{	
+	return NULL;
+}
 else{
 	//read the buffer and create the middlewareMessage
+	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
+	return tmpMessage;
 	}
 //return the received message
-return tmpMessage;
+return NULL;
 }
