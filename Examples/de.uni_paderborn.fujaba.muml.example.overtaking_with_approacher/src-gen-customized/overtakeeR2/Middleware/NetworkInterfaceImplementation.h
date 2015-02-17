@@ -1,3 +1,7 @@
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
+#include "ecrobot_wifiblock.h"
 /**
  * @file 
  * @author generated
@@ -136,30 +140,5 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage* msg);
  * @return the received MiddlewareMessage
  */
 MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void);
-/**
- * @brief INIT method for NetworkInterface: VirtualWifiPort2 of ECU:overtakeeR2
- * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::VirtualWifiPort2. Usually this is called before the main application is started.
- * @return What you have implemented
- */
-bool_t networkInterface_VirtualWifiPort2_init(void);
-
-/**
- * @brief SEND method for the NetworkInterface: VirtualWifiPort2 of ECU:overtakeeR2
- * @details Implement this method, to send a message via the  NetworkInterface: Middleware::VirtualWifiPort2.
- * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
- * @param msg the MiddlewareMessage to be sent
- * @return What you have implemented
- * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
- * to write the message content into a byte array, if needed
- */
-bool_t networkInterface_VirtualWifiPort2_send(MiddlewareMessage* msg);
-
-/**
- * @brief RECEIVE method for the NetworkInterface: VirtualWifiPort2 of ECU:overtakeeR2
- * @details implement this method, to receive a message via the  NetworkInterface: Middleware::VirtualWifiPort2.
- * This method ist called by the middleware periodically to receive new messages
- * @return the received MiddlewareMessage
- */
-MiddlewareMessage * networkInterface_VirtualWifiPort2_receive(void);
 
 #endif /* NETWORKINTERFACEIMPLEMENTATION_H_ */
