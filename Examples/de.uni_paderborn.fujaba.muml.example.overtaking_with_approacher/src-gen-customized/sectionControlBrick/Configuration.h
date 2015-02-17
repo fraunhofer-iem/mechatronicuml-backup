@@ -2,7 +2,7 @@
 /**
  * @file 
  * @author generated
- * @brief This reflects a concrete ComponentInstanceConfiguration (CIC) for the ECU: serverBrick 
+ * @brief This reflects a concrete ComponentInstanceConfiguration (CIC) for the ECU: sectionControlBrick 
  * @details 
  */
 		
@@ -22,19 +22,19 @@
 #include "RTSCs/rootsectionControlRTSCStateChart.h"
 
  /**
-  * @brief Configures the ComponentInstanceConfiguration for the ECU: serverBrick
+  * @brief Configures the ComponentInstanceConfiguration for the ECU: sectionControlBrick
   * @details This method creates a whole ComponentInstanceConfiguration
   *           The ComponentInstances, their Ports and their MessageBuffer, and their Realtime-StateCharts are created.
   *            Furthermore, the CIC is initialized.
   */
-void configureServerBrickCIC(void);
+void configureSectionControlBrickCIC(void);
 
 
 /**
-* @brief Initialize function for ECU: serverBrick
-* @details This is the initialize function for ECU: serverBrick. This function calls the initialization function
+* @brief Initialize function for ECU: sectionControlBrick
+* @details This is the initialize function for ECU: sectionControlBrick. This function calls the initialization function
 *	 for the middleware of the ECU and of all AtomicComponentInstances which are allocated on this ECU.
 */
-void initializeServerBrickCIC(void);
+void initializeSectionControlBrickCIC(void);
 
 #endif /*CIC_H*/

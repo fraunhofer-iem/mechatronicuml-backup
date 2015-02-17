@@ -4,9 +4,9 @@
 //@max_bytes_length=32
 
 //the following message types are not generated, because they have no parameters
-//overtakeOvertakingMessagesMessage
-//unsaveOvertakingMessagesMessage
 //saveOvertakingMessagesMessage
+//unsaveOvertakingMessagesMessage
+//overtakeOvertakingMessagesMessage
 
 //protobuf definition for message type change
 message changeOvertakingMessagesMessage{

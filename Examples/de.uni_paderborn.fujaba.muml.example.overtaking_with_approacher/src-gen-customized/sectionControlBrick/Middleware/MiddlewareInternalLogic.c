@@ -201,22 +201,22 @@ NetworkInterface* MW_getNetworkInterface(ECUID ecu)
 	switch (ecu)
 	{
 case ECU_OVERTAKEER2:
-	return mw->VirtualWifiPort;
+	return mw->VirtualWifiPort1;
 	break;
 case ECU_OVERTAKEER1:
-	return mw->VirtualWifiPort;
+	return mw->VirtualWifiPort1;
 	break;
 case ECU_OVERTAKERR1:
-	return mw->VirtualWifiPort3;
+	return mw->VirtualWifiPort2;
 	break;
 case ECU_OVERTAKERR2:
-	return mw->VirtualWifiPort3;
+	return mw->VirtualWifiPort2;
 	break;
 case ECU_APPROACHERR1:
-	return mw->VirtualWifiPort1;
+	return mw->VirtualWifiPort3;
 	break;
 case ECU_APPROACHERR2:
-	return mw->VirtualWifiPort1;
+	return mw->VirtualWifiPort3;
 	break;
 case ECU_SERVERBRICK:
 	return mw->intern;

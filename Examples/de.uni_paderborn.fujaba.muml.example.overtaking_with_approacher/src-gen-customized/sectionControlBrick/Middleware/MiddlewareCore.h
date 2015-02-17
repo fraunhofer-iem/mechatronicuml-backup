@@ -25,30 +25,28 @@
 
 /**
  * 
- * @brief Description of the Middleware for the ECU: serverBrick
- * @details It contains the Components, which are allocated on a ECU, the NetworkInterfaces of the ECU: serverBrick
+ * @brief Description of the Middleware for the ECU: sectionControlBrick
+ * @details It contains the Components, which are allocated on a ECU, the NetworkInterfaces of the ECU: sectionControlBrick
  */
 typedef struct Middleware {
 
 //Create components?
-	SectionControlComponent* sectionComponent; /**< The ComponentInstance: section of Type: SectionControlComponent , which is allocated on the ECU: serverBrick */
+	SectionControlComponent* sectionComponent; /**< The ComponentInstance: section of Type: SectionControlComponent , which is allocated on the ECU: sectionControlBrick */
 
 
 //intern NetworkInterface	
-NetworkInterface* intern;  /**< Pointer to the internal NetworkInterface of the ECU: serverBrick  */
+NetworkInterface* intern;  /**< Pointer to the internal NetworkInterface of the ECU: sectionControlBrick  */
 //Create Networkinterfaces
-	NetworkInterface* VirtualWifiPort; /**< Pointer the the NetworkInterface: VirtualWifiPort of the ECU: serverBrick */
-	NetworkInterface* virtualBluetoothPort; /**< Pointer the the NetworkInterface: virtualBluetoothPort of the ECU: serverBrick */
-	NetworkInterface* VirtualWifiPort2; /**< Pointer the the NetworkInterface: VirtualWifiPort2 of the ECU: serverBrick */
-	NetworkInterface* VirtualWifiPort1; /**< Pointer the the NetworkInterface: VirtualWifiPort1 of the ECU: serverBrick */
-	NetworkInterface* VirtualWifiPort; /**< Pointer the the NetworkInterface: VirtualWifiPort of the ECU: serverBrick */
-	NetworkInterface* VirtualWifiPort3; /**< Pointer the the NetworkInterface: VirtualWifiPort3 of the ECU: serverBrick */
+	NetworkInterface* VirtualWifiPort1; /**< Pointer the the NetworkInterface: VirtualWifiPort1 of the ECU: sectionControlBrick */
+	NetworkInterface* virtualBluetoothPort; /**< Pointer the the NetworkInterface: virtualBluetoothPort of the ECU: sectionControlBrick */
+	NetworkInterface* VirtualWifiPort3; /**< Pointer the the NetworkInterface: VirtualWifiPort3 of the ECU: sectionControlBrick */
+	NetworkInterface* VirtualWifiPort2; /**< Pointer the the NetworkInterface: VirtualWifiPort2 of the ECU: sectionControlBrick */
 
 //Create NetworkMessageBuffer
 NetworkMessageBuffer* outgoing; /**< Pointer to the NetworkMessageBuffer, which stores the outgoing #MiddlewareMessage%s */
 NetworkMessageBuffer* incoming; /**< Pointer to the NetworkMessageBuffer, which stores the incoming #MiddlewareMessage%s */
 
-ECUID idOfECU; /**< The ECUID of the ECU: serverBrick on which the Middleware is executed */
+ECUID idOfECU; /**< The ECUID of the ECU: sectionControlBrick on which the Middleware is executed */
 
 }Middleware;
 

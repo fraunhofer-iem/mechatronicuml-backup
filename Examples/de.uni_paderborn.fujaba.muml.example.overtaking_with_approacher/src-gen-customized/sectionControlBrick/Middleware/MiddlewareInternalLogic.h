@@ -49,7 +49,7 @@ NetworkInterface* MW_getNetworkInterface(ECUID ecu);
 
 /**
  * @brief Get the Port with the given PortID
- * @details This function returns a Pointer to a Port for a given PortID, thus this Port must belong to a Component which is allocated on this ECU: serverBrick
+ * @details This function returns a Pointer to a Port for a given PortID, thus this Port must belong to a Component which is allocated on this ECU: sectionControlBrick
  *          and which is contained in the struct Middleware
  * 
  * @param portID the PortID for which the corresponding Port shall be returned
@@ -60,7 +60,7 @@ Port* MW_getPortforIdentifier(PortID portID);
 
 /**
  * @brief Return the  PortID of a receiving port for a given sender PortID
- * @details This function returns the PortID of every Port, no matter if its allocated on this ECU: serverBrick or on any other ECU
+ * @details This function returns the PortID of every Port, no matter if its allocated on this ECU: sectionControlBrick or on any other ECU
  * 
  * @param portID the PortID of the sender Port
  * @return the PortID of the corresponding receiver Port, if no one could be found 0

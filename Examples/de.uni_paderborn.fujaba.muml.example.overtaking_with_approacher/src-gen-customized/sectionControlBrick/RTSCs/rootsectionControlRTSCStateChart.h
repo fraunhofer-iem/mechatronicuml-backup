@@ -121,14 +121,6 @@
 	void RootsectionControlRTSCStateChart_processStep(RootsectionControlRTSCStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: sectionOvertakerPortRTSC of the Realtime-StateChart: RootsectionControlRTSC
-	 * @details This method is called, whenever a the Region: sectionOvertakerPortRTSC is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootsectionControlRTSCStateChart whose Region: sectionOvertakerPortRTSC shall be exit
-	 */
-		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakerPortRTSC_sectionOvertakerPortRTSCStateChart_exit(RootsectionControlRTSCStateChart* rtsc);
-	/**
 	 * @brief Leaves the Region: sectionOvertakeePortRTSC of the Realtime-StateChart: RootsectionControlRTSC
 	 * @details This method is called, whenever a the Region: sectionOvertakeePortRTSC is left.
 	 * 			The correct State is set and all Exit-Events are executed.
@@ -137,13 +129,13 @@
 	 */
 		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSCStateChart_exit(RootsectionControlRTSCStateChart* rtsc);
 	/**
-	 * @brief Leaves the Region: controllerPortRTSC of the Realtime-StateChart: RootsectionControlRTSC
-	 * @details This method is called, whenever a the Region: controllerPortRTSC is left.
+	 * @brief Leaves the Region: sectionOvertakerPortRTSC of the Realtime-StateChart: RootsectionControlRTSC
+	 * @details This method is called, whenever a the Region: sectionOvertakerPortRTSC is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootsectionControlRTSCStateChart whose Region: controllerPortRTSC shall be exit
+	 * @param rtsc The specific RootsectionControlRTSCStateChart whose Region: sectionOvertakerPortRTSC shall be exit
 	 */
-		void ROOTSECTIONCONTROLRTSC_INIT_STATE_controllerPortRTSC_controllerPortRTSCStateChart_exit(RootsectionControlRTSCStateChart* rtsc);
+		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakerPortRTSC_sectionOvertakerPortRTSCStateChart_exit(RootsectionControlRTSCStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: sectionApproacherPortRTSC of the Realtime-StateChart: RootsectionControlRTSC
 	 * @details This method is called, whenever a the Region: sectionApproacherPortRTSC is left.
@@ -152,6 +144,14 @@
 	 * @param rtsc The specific RootsectionControlRTSCStateChart whose Region: sectionApproacherPortRTSC shall be exit
 	 */
 		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionApproacherPortRTSC_sectionApproacherPortRTSCStateChart_exit(RootsectionControlRTSCStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: controllerPortRTSC of the Realtime-StateChart: RootsectionControlRTSC
+	 * @details This method is called, whenever a the Region: controllerPortRTSC is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootsectionControlRTSCStateChart whose Region: controllerPortRTSC shall be exit
+	 */
+		void ROOTSECTIONCONTROLRTSC_INIT_STATE_controllerPortRTSC_controllerPortRTSCStateChart_exit(RootsectionControlRTSCStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RootsectionControlRTSC is in a specific State

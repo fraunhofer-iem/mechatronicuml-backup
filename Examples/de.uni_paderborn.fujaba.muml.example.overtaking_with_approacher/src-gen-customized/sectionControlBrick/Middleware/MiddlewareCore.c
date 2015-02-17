@@ -10,12 +10,10 @@ Middleware* Middleware_create(void){
 	 * call create-function for every NI of the ECU
 	 */
 	mw->intern = NetworkInterface_create("intern");
-	mw->VirtualWifiPort = NetworkInterface_create("VirtualWifiPort");
-	mw->virtualBluetoothPort = NetworkInterface_create("virtualBluetoothPort");
-	mw->VirtualWifiPort2 = NetworkInterface_create("VirtualWifiPort2");
 	mw->VirtualWifiPort1 = NetworkInterface_create("VirtualWifiPort1");
-	mw->VirtualWifiPort = NetworkInterface_create("VirtualWifiPort");
+	mw->virtualBluetoothPort = NetworkInterface_create("virtualBluetoothPort");
 	mw->VirtualWifiPort3 = NetworkInterface_create("VirtualWifiPort3");
+	mw->VirtualWifiPort2 = NetworkInterface_create("VirtualWifiPort2");
 
 	if(Middelware_init() == true){
 		return mw;
@@ -52,12 +50,10 @@ bool_t Middleware_destroy(void){
 
 //destroy all network interfaces
 	NetworkInterface_destroy(mw->intern);
-	NetworkInterface_destroy(mw->VirtualWifiPort);
-	NetworkInterface_destroy(mw->virtualBluetoothPort);
-	NetworkInterface_destroy(mw->VirtualWifiPort2);
 	NetworkInterface_destroy(mw->VirtualWifiPort1);
-	NetworkInterface_destroy(mw->VirtualWifiPort);
+	NetworkInterface_destroy(mw->virtualBluetoothPort);
 	NetworkInterface_destroy(mw->VirtualWifiPort3);
+	NetworkInterface_destroy(mw->VirtualWifiPort2);
 
 //destroy all NetworkMessageBuffer
   	NetworkMessageBuffer_destroy(mw->incoming);
@@ -123,22 +119,16 @@ bool_t MW_NIreceiveMessages(void){
 
 	MiddlewareMessage* msg;
 	msg = NULL;
-		msg = mw->VirtualWifiPort->receiveMethod();
+		msg = mw->VirtualWifiPort1->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
 		msg = mw->virtualBluetoothPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort2->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort1->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
 		msg = mw->VirtualWifiPort3->receiveMethod();
+		if (msg != NULL)
+			NetworkMessageBuffer_enqueue(mw->incoming, msg);
+		msg = mw->VirtualWifiPort2->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
     return true;

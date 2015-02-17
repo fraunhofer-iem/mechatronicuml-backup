@@ -559,6 +559,17 @@
 		}
 		
 		
+		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSCStateChart_exit(
+				RootsectionControlRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSC) {
+			case ROOTSECTIONCONTROLRTSC_INIT_STATE_SECTIONOVERTAKEEPORTRTSC_SECTIONOVERTAKEEPORTRTSC_INIT_STATE:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+		}
 		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakerPortRTSC_sectionOvertakerPortRTSCStateChart_exit(
 				RootsectionControlRTSCStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakerPortRTSC_sectionOvertakerPortRTSC) {
@@ -570,10 +581,10 @@
 				break;
 			}
 		}
-		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSCStateChart_exit(
+		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionApproacherPortRTSC_sectionApproacherPortRTSCStateChart_exit(
 				RootsectionControlRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSC) {
-			case ROOTSECTIONCONTROLRTSC_INIT_STATE_SECTIONOVERTAKEEPORTRTSC_SECTIONOVERTAKEEPORTRTSC_INIT_STATE:
+			switch (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionApproacherPortRTSC_sectionApproacherPortRTSC) {
+			case ROOTSECTIONCONTROLRTSC_INIT_STATE_SECTIONAPPROACHERPORTRTSC_SECTIONAPPROACHERPORTRTSC_INIT_STATE:
 				// nothing to do
 		
 				break;
@@ -596,29 +607,18 @@
 				break;
 			}
 		}
-		void ROOTSECTIONCONTROLRTSC_INIT_STATE_sectionApproacherPortRTSC_sectionApproacherPortRTSCStateChart_exit(
-				RootsectionControlRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionApproacherPortRTSC_sectionApproacherPortRTSC) {
-			case ROOTSECTIONCONTROLRTSC_INIT_STATE_SECTIONAPPROACHERPORTRTSC_SECTIONAPPROACHERPORTRTSC_INIT_STATE:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-		}
 				
 			
 		int_t RootsectionControlRTSCStateChart_isInState(
 				RootsectionControlRTSCStateChart* stateChart,
 				RootsectionControlRTSCState state) {
-			return (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakerPortRTSC_sectionOvertakerPortRTSC
+			return (stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSC
 					== state
-					|| stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakeePortRTSC_sectionOvertakeePortRTSC
-							== state
-					|| stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_controllerPortRTSC_controllerPortRTSC
+					|| stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionOvertakerPortRTSC_sectionOvertakerPortRTSC
 							== state
 					|| stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_sectionApproacherPortRTSC_sectionApproacherPortRTSC
+							== state
+					|| stateChart->currentStateOfROOTSECTIONCONTROLRTSC_INIT_STATE_controllerPortRTSC_controllerPortRTSC
 							== state);
 		
 		}

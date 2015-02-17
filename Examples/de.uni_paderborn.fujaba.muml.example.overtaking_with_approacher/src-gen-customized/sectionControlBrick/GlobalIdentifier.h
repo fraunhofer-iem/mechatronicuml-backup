@@ -6,27 +6,27 @@
  * 			 These GlobalIdentifiers are equal for all ECUs
  */
 		//Define MessageType IDs
-			#define MESSAGE_MOTOR_VELOCITY_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 1 /**< Global Identifier: For the Message-Type: Motor_velocity_message */
-			#define MESSAGE_FIXVELOCITYOVERTAKINGMESSAGESMESSAGE 2 /**< Global Identifier: For the Message-Type: fixVelocity */
-			#define MESSAGE_INITIATEOVERTAKINGMESSAGESMESSAGE 3 /**< Global Identifier: For the Message-Type: initiate */
-			#define MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE 4 /**< Global Identifier: For the Message-Type: setSlow */
-			#define MESSAGE_COLOR_COLOR_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 5 /**< Global Identifier: For the Message-Type: Color_color_message */
-			#define MESSAGE_FINISHOVERTAKINGOVERTAKINGMESSAGESMESSAGE 6 /**< Global Identifier: For the Message-Type: finishOvertaking */
-			#define MESSAGE_DECLINEOVERTAKINGOVERTAKINGMESSAGESMESSAGE 7 /**< Global Identifier: For the Message-Type: declineOvertaking */
-			#define MESSAGE_STARTEDOOVERTAKINGMESSAGESMESSAGE 8 /**< Global Identifier: For the Message-Type: startedO */
-			#define MESSAGE_DISTANCE_DISTANCE_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 9 /**< Global Identifier: For the Message-Type: Distance_distance_message */
-			#define MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE 10 /**< Global Identifier: For the Message-Type: setFast */
-			#define MESSAGE_ACCEPTOVERTAKINGOVERTAKINGMESSAGESMESSAGE 11 /**< Global Identifier: For the Message-Type: acceptOvertaking */
-			#define MESSAGE_REQUESTOVERTAKINGOVERTAKINGMESSAGESMESSAGE 12 /**< Global Identifier: For the Message-Type: requestOvertaking */
-			#define MESSAGE_EXECUTEDOVERTAKINGMESSAGESMESSAGE 13 /**< Global Identifier: For the Message-Type: executed */
-			#define MESSAGE_OVERTAKEOVERTAKINGMESSAGESMESSAGE 14 /**< Global Identifier: For the Message-Type: overtake */
-			#define MESSAGE_CHANGEOVERTAKINGMESSAGESMESSAGE 15 /**< Global Identifier: For the Message-Type: change */
-			#define MESSAGE_UNSAVEOVERTAKINGMESSAGESMESSAGE 16 /**< Global Identifier: For the Message-Type: unsave */
-			#define MESSAGE_EXECUTEOVERTAKINGMESSAGESMESSAGE 17 /**< Global Identifier: For the Message-Type: execute */
-			#define MESSAGE_FINISHEDOOVERTAKINGMESSAGESMESSAGE 18 /**< Global Identifier: For the Message-Type: finishedO */
-			#define MESSAGE_SAVEOVERTAKINGMESSAGESMESSAGE 19 /**< Global Identifier: For the Message-Type: save */
-			#define MESSAGE_FREEVELOCITYOVERTAKINGMESSAGESMESSAGE 20 /**< Global Identifier: For the Message-Type: freeVelocity */
-			#define MESSAGE_LINE_LINELIGHT_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 21 /**< Global Identifier: For the Message-Type: Line_lineLight_message */
+			#define MESSAGE_EXECUTEOVERTAKINGMESSAGESMESSAGE 1 /**< Global Identifier: For the Message-Type: execute */
+			#define MESSAGE_FREEVELOCITYOVERTAKINGMESSAGESMESSAGE 2 /**< Global Identifier: For the Message-Type: freeVelocity */
+			#define MESSAGE_FINISHOVERTAKINGOVERTAKINGMESSAGESMESSAGE 3 /**< Global Identifier: For the Message-Type: finishOvertaking */
+			#define MESSAGE_DECLINEOVERTAKINGOVERTAKINGMESSAGESMESSAGE 4 /**< Global Identifier: For the Message-Type: declineOvertaking */
+			#define MESSAGE_UNSAVEOVERTAKINGMESSAGESMESSAGE 5 /**< Global Identifier: For the Message-Type: unsave */
+			#define MESSAGE_LINE_LINELIGHT_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 6 /**< Global Identifier: For the Message-Type: Line_lineLight_message */
+			#define MESSAGE_CHANGEOVERTAKINGMESSAGESMESSAGE 7 /**< Global Identifier: For the Message-Type: change */
+			#define MESSAGE_REQUESTOVERTAKINGOVERTAKINGMESSAGESMESSAGE 8 /**< Global Identifier: For the Message-Type: requestOvertaking */
+			#define MESSAGE_OVERTAKEOVERTAKINGMESSAGESMESSAGE 9 /**< Global Identifier: For the Message-Type: overtake */
+			#define MESSAGE_COLOR_COLOR_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 10 /**< Global Identifier: For the Message-Type: Color_color_message */
+			#define MESSAGE_DISTANCE_DISTANCE_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 11 /**< Global Identifier: For the Message-Type: Distance_distance_message */
+			#define MESSAGE_EXECUTEDOVERTAKINGMESSAGESMESSAGE 12 /**< Global Identifier: For the Message-Type: executed */
+			#define MESSAGE_SAVEOVERTAKINGMESSAGESMESSAGE 13 /**< Global Identifier: For the Message-Type: save */
+			#define MESSAGE_FIXVELOCITYOVERTAKINGMESSAGESMESSAGE 14 /**< Global Identifier: For the Message-Type: fixVelocity */
+			#define MESSAGE_INITIATEOVERTAKINGMESSAGESMESSAGE 15 /**< Global Identifier: For the Message-Type: initiate */
+			#define MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE 16 /**< Global Identifier: For the Message-Type: setSlow */
+			#define MESSAGE_MOTOR_VELOCITY_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE 17 /**< Global Identifier: For the Message-Type: Motor_velocity_message */
+			#define MESSAGE_ACCEPTOVERTAKINGOVERTAKINGMESSAGESMESSAGE 18 /**< Global Identifier: For the Message-Type: acceptOvertaking */
+			#define MESSAGE_FINISHEDOOVERTAKINGMESSAGESMESSAGE 19 /**< Global Identifier: For the Message-Type: finishedO */
+			#define MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE 20 /**< Global Identifier: For the Message-Type: setFast */
+			#define MESSAGE_STARTEDOOVERTAKINGMESSAGESMESSAGE 21 /**< Global Identifier: For the Message-Type: startedO */
 
 		//Define Port IDs
 			#define PORT_SECTIONSECTIONCONTROLSECTIONAPPROACHERP1 1 /**< Global Identifier: For the Discrete-Port-Instance: sectionApproacherP1 */
@@ -85,5 +85,5 @@
 			#define ECU_OVERTAKERR2 4 /**< Global Identifier: For the ECU: overtakerR2 */
 			#define ECU_APPROACHERR1 5 /**< Global Identifier: For the ECU: approacherR1 */
 			#define ECU_APPROACHERR2 6 /**< Global Identifier: For the ECU: approacherR2 */
-			#define ECU_SERVERBRICK 7 /**< Global Identifier: For the ECU: serverBrick */
+			#define ECU_SERVERBRICK 7 /**< Global Identifier: For the ECU: sectionControlBrick */
 

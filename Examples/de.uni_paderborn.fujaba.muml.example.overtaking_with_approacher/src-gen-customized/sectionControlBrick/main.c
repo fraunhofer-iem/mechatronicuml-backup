@@ -1,4 +1,4 @@
-/** \mainpage Documentation of the generated Code for ECU: serverBrick
+/** \mainpage Documentation of the generated Code for ECU: sectionControlBrick
  * 	The generated Code is documented for Doxygen @link http://www.doxygen.org @endlink.
  * 	Thus, a useful Documentation can be generated via Doxygen in html, latex,...!
  *
@@ -39,12 +39,10 @@ void user_1ms_isr_type2(void){ /* do nothing */ }
 void ecrobot_device_initialize()
 {
 //initialize all network interfaces
-networkInterface_VirtualWifiPort_init();
-networkInterface_VirtualBluetoothPort_init();
-networkInterface_VirtualWifiPort2_init();
 networkInterface_VirtualWifiPort1_init();
-networkInterface_VirtualWifiPort_init();
+networkInterface_VirtualBluetoothPort_init();
 networkInterface_VirtualWifiPort3_init();
+networkInterface_VirtualWifiPort2_init();
 
 //initialize sensors and actors
 }
@@ -53,17 +51,15 @@ void ecrobot_device_terminate()
 }
 TASK(Task_initModel){
 	mw = Middleware_create();
-	configureServerBrickCIC();
+	configureSectionControlBrickCIC();
 	//initialize model
-	initializeServerBrickCIC();
+	initializeSectionControlBrickCIC();
 //initialize all network interfaces
 NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface_intern_send, NetworkInterface_intern_receive);
-	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
-	NetworkInterface_init(mw->virtualBluetoothPort,networkInterface_VirtualBluetoothPort_init, networkInterface_VirtualBluetoothPort_send, networkInterface_VirtualBluetoothPort_receive);
-	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort2_init, networkInterface_VirtualWifiPort2_send, networkInterface_VirtualWifiPort2_receive);
 	NetworkInterface_init(mw->VirtualWifiPort1,networkInterface_VirtualWifiPort1_init, networkInterface_VirtualWifiPort1_send, networkInterface_VirtualWifiPort1_receive);
-	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
+	NetworkInterface_init(mw->virtualBluetoothPort,networkInterface_VirtualBluetoothPort_init, networkInterface_VirtualBluetoothPort_send, networkInterface_VirtualBluetoothPort_receive);
 	NetworkInterface_init(mw->VirtualWifiPort3,networkInterface_VirtualWifiPort3_init, networkInterface_VirtualWifiPort3_send, networkInterface_VirtualWifiPort3_receive);
+	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort2_init, networkInterface_VirtualWifiPort2_send, networkInterface_VirtualWifiPort2_receive);
 ChainTask(Task_Main);
 }
 

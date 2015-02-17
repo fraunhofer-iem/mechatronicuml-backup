@@ -1,5 +1,5 @@
 		#include "Configuration.h"
-	void configureServerBrickCIC(void){
+	void configureSectionControlBrickCIC(void){
 
 MessageID * messageIDsOfbuffer;
 		//create instance section of type SectionControlComponent
@@ -40,16 +40,16 @@ MessageID * messageIDsOfbuffer;
 		mw->sectionComponent->stateChart = RootsectionControlRTSCStateChart_create(mw->sectionComponent);
 
 	//call the initialize method after generation
-	initializeServerBrickCIC();
+	initializeSectionControlBrickCIC();
 
 }
 
 ///////////////////////////////////////
-/// \brief Initialize function for RSRI serverBrick
-/// This is the initialize function for RSRI serverBrick. This function calls the initialization function
+/// \brief Initialize function for RSRI sectionControlBrick
+/// This is the initialize function for RSRI sectionControlBrick. This function calls the initialization function
 /// for the middleware of the ECU and of all AtomicComponentInstances which are allocated on this RSRI.
 //////////////////////////////////////
-void initializeServerBrickCIC(void){
+void initializeSectionControlBrickCIC(void){
  
   //init component instances (inside of this init-functions,
   //the ports ands and the RTSC of the component instance is initialized
