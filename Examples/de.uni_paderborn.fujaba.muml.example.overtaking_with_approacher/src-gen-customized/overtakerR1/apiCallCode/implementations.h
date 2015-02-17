@@ -1,3 +1,8 @@
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
+#include "ecrobot_lineleader.h"
+
 /**
  * @file 
  * @author generated
@@ -10,6 +15,13 @@
 #define APICALL_H_
 
 #include "../lib/types.h"
+
+ 	/***
+
+ 		method to initialize all
+ 	*/
+
+ 		void initAll();
 
 /**
  * @brief Implemtation of the Parameterbinding: overtakerMotorR_velocityContR_InitApi of the Port-Instance: PortInstance: velocityContR of the ComponentInstance: overtakerMotorR 
