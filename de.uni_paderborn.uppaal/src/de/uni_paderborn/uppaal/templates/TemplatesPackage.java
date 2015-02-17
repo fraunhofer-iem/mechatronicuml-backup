@@ -294,22 +294,13 @@ public interface TemplatesPackage extends EPackage {
 	int LOCATION__POSITION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Color</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION__COLOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Color Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__COLOR_CODE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int LOCATION__COLOR_CODE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Template</b></em>' container reference.
@@ -318,7 +309,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__PARENT_TEMPLATE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int LOCATION__PARENT_TEMPLATE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Invariant</b></em>' containment reference.
@@ -327,7 +318,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__INVARIANT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int LOCATION__INVARIANT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Location Time Kind</b></em>' attribute.
@@ -336,7 +327,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION__LOCATION_TIME_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int LOCATION__LOCATION_TIME_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Location</em>' class.
@@ -345,7 +336,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int LOCATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl <em>Edge</em>}' class.
@@ -376,22 +367,13 @@ public interface TemplatesPackage extends EPackage {
 	int EDGE__COMMENT = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Color</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE__COLOR = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Color Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__COLOR_CODE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 2;
+	int EDGE__COLOR_CODE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -400,7 +382,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__SOURCE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 3;
+	int EDGE__SOURCE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -409,7 +391,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__TARGET = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 4;
+	int EDGE__TARGET = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent Template</b></em>' container reference.
@@ -418,7 +400,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__PARENT_TEMPLATE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 5;
+	int EDGE__PARENT_TEMPLATE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -427,7 +409,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__GUARD = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 6;
+	int EDGE__GUARD = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Update</b></em>' containment reference list.
@@ -436,7 +418,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__UPDATE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 7;
+	int EDGE__UPDATE = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Synchronization</b></em>' containment reference.
@@ -445,7 +427,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__SYNCHRONIZATION = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 8;
+	int EDGE__SYNCHRONIZATION = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' containment reference list.
@@ -454,7 +436,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE__SELECTION = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 9;
+	int EDGE__SELECTION = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Edge</em>' class.
@@ -463,7 +445,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 10;
+	int EDGE_FEATURE_COUNT = VisualsPackage.LINEAR_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.templates.impl.SynchronizationImpl <em>Synchronization</em>}' class.

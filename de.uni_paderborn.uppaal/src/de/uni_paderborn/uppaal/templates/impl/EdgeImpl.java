@@ -36,7 +36,6 @@ import de.uni_paderborn.uppaal.visuals.impl.LinearElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl#getColor <em>Color</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl#getColorCode <em>Color Code</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl#getTarget <em>Target</em>}</li>
@@ -70,26 +69,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ColorKind COLOR_EDEFAULT = ColorKind.DEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected ColorKind color = COLOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColorCode() <em>Color Code</em>}' attribute.
@@ -209,27 +188,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ColorKind getColor() {
-		return color;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setColor(ColorKind newColor) {
-		ColorKind oldColor = color;
-		color = newColor == null ? COLOR_EDEFAULT : newColor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__COLOR, oldColor, color));
 	}
 
 	/**
@@ -542,8 +500,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		switch (featureID) {
 			case TemplatesPackage.EDGE__COMMENT:
 				return getComment();
-			case TemplatesPackage.EDGE__COLOR:
-				return getColor();
 			case TemplatesPackage.EDGE__COLOR_CODE:
 				return getColorCode();
 			case TemplatesPackage.EDGE__SOURCE:
@@ -577,9 +533,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		switch (featureID) {
 			case TemplatesPackage.EDGE__COMMENT:
 				setComment((String)newValue);
-				return;
-			case TemplatesPackage.EDGE__COLOR:
-				setColor((ColorKind)newValue);
 				return;
 			case TemplatesPackage.EDGE__COLOR_CODE:
 				setColorCode((String)newValue);
@@ -622,9 +575,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 			case TemplatesPackage.EDGE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case TemplatesPackage.EDGE__COLOR:
-				setColor(COLOR_EDEFAULT);
-				return;
 			case TemplatesPackage.EDGE__COLOR_CODE:
 				setColorCode(COLOR_CODE_EDEFAULT);
 				return;
@@ -663,8 +613,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		switch (featureID) {
 			case TemplatesPackage.EDGE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case TemplatesPackage.EDGE__COLOR:
-				return color != COLOR_EDEFAULT;
 			case TemplatesPackage.EDGE__COLOR_CODE:
 				return COLOR_CODE_EDEFAULT == null ? colorCode != null : !COLOR_CODE_EDEFAULT.equals(colorCode);
 			case TemplatesPackage.EDGE__SOURCE:
@@ -700,7 +648,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		}
 		if (baseClass == ColoredElement.class) {
 			switch (derivedFeatureID) {
-				case TemplatesPackage.EDGE__COLOR: return VisualsPackage.COLORED_ELEMENT__COLOR;
 				case TemplatesPackage.EDGE__COLOR_CODE: return VisualsPackage.COLORED_ELEMENT__COLOR_CODE;
 				default: return -1;
 			}
@@ -723,7 +670,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		}
 		if (baseClass == ColoredElement.class) {
 			switch (baseFeatureID) {
-				case VisualsPackage.COLORED_ELEMENT__COLOR: return TemplatesPackage.EDGE__COLOR;
 				case VisualsPackage.COLORED_ELEMENT__COLOR_CODE: return TemplatesPackage.EDGE__COLOR_CODE;
 				default: return -1;
 			}
@@ -743,8 +689,6 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", color: ");
-		result.append(color);
 		result.append(", colorCode: ");
 		result.append(colorCode);
 		result.append(')');

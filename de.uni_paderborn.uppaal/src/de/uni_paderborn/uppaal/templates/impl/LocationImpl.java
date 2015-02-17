@@ -32,7 +32,6 @@ import de.uni_paderborn.uppaal.visuals.VisualsPackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getPosition <em>Position</em>}</li>
- *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getColor <em>Color</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getColorCode <em>Color Code</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getParentTemplate <em>Parent Template</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.LocationImpl#getInvariant <em>Invariant</em>}</li>
@@ -72,26 +71,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 	 * @ordered
 	 */
 	protected Point position;
-
-	/**
-	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ColorKind COLOR_EDEFAULT = ColorKind.DEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected ColorKind color = COLOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColorCode() <em>Color Code</em>}' attribute.
@@ -224,27 +203,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.LOCATION__POSITION, newPosition, newPosition));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ColorKind getColor() {
-		return color;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setColor(ColorKind newColor) {
-		ColorKind oldColor = color;
-		color = newColor == null ? COLOR_EDEFAULT : newColor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.LOCATION__COLOR, oldColor, color));
 	}
 
 	/**
@@ -433,8 +391,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 				return getComment();
 			case TemplatesPackage.LOCATION__POSITION:
 				return getPosition();
-			case TemplatesPackage.LOCATION__COLOR:
-				return getColor();
 			case TemplatesPackage.LOCATION__COLOR_CODE:
 				return getColorCode();
 			case TemplatesPackage.LOCATION__PARENT_TEMPLATE:
@@ -460,9 +416,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 				return;
 			case TemplatesPackage.LOCATION__POSITION:
 				setPosition((Point)newValue);
-				return;
-			case TemplatesPackage.LOCATION__COLOR:
-				setColor((ColorKind)newValue);
 				return;
 			case TemplatesPackage.LOCATION__COLOR_CODE:
 				setColorCode((String)newValue);
@@ -494,9 +447,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 			case TemplatesPackage.LOCATION__POSITION:
 				setPosition((Point)null);
 				return;
-			case TemplatesPackage.LOCATION__COLOR:
-				setColor(COLOR_EDEFAULT);
-				return;
 			case TemplatesPackage.LOCATION__COLOR_CODE:
 				setColorCode(COLOR_CODE_EDEFAULT);
 				return;
@@ -525,8 +475,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case TemplatesPackage.LOCATION__POSITION:
 				return position != null;
-			case TemplatesPackage.LOCATION__COLOR:
-				return color != COLOR_EDEFAULT;
 			case TemplatesPackage.LOCATION__COLOR_CODE:
 				return COLOR_CODE_EDEFAULT == null ? colorCode != null : !COLOR_CODE_EDEFAULT.equals(colorCode);
 			case TemplatesPackage.LOCATION__PARENT_TEMPLATE:
@@ -560,7 +508,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 		}
 		if (baseClass == ColoredElement.class) {
 			switch (derivedFeatureID) {
-				case TemplatesPackage.LOCATION__COLOR: return VisualsPackage.COLORED_ELEMENT__COLOR;
 				case TemplatesPackage.LOCATION__COLOR_CODE: return VisualsPackage.COLORED_ELEMENT__COLOR_CODE;
 				default: return -1;
 			}
@@ -589,7 +536,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 		}
 		if (baseClass == ColoredElement.class) {
 			switch (baseFeatureID) {
-				case VisualsPackage.COLORED_ELEMENT__COLOR: return TemplatesPackage.LOCATION__COLOR;
 				case VisualsPackage.COLORED_ELEMENT__COLOR_CODE: return TemplatesPackage.LOCATION__COLOR_CODE;
 				default: return -1;
 			}
@@ -609,8 +555,6 @@ public class LocationImpl extends NamedElementImpl implements Location {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", color: ");
-		result.append(color);
 		result.append(", colorCode: ");
 		result.append(colorCode);
 		result.append(", locationTimeKind: ");
