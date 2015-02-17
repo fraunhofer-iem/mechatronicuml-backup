@@ -12,7 +12,8 @@
 
 #include "../GlobalIdentifier.h"
 #include "MiddlewareCore.h"
-
+#include "ecrobot_interface.h"
+ 
 //Intern networkinterface
  /**
   * @brief Does Nothing, just to be consisten to the Interface
