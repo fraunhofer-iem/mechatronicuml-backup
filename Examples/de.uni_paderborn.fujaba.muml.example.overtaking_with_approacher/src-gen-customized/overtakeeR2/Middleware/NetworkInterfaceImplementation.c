@@ -299,7 +299,7 @@ U8* received;
 	*/	
 
 	reqMessage->_targetPort = myPortIds[counter];
-	counter ++
+	counter++;
 	if(counter == 15)
 		counter = 0;
 
