@@ -132,7 +132,7 @@ bool_t MW_NIreceiveMessages(void){
 		msg = mw->inputPort4->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->usbPort->receiveMethod();
+		//msg = mw->usbPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
     return true;

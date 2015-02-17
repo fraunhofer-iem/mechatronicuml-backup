@@ -129,16 +129,16 @@ bool_t MW_NIreceiveMessages(void){
 
 	MiddlewareMessage* msg;
 	msg = NULL;
-		msg = mw->usbPort->receiveMethod();
+		//msg = mw->usbPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->virtualBluetoothPort->receiveMethod();
+		//msg = mw->virtualBluetoothPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
 		msg = mw->inputPort4->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort->receiveMethod();
+		//msg = mw->VirtualWifiPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
     return true;

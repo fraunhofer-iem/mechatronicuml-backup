@@ -125,12 +125,6 @@ bool_t MW_NIreceiveMessages(void){
 		msg = mw->virtualBluetoothPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort3->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort2->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
     return true;
 }
 
