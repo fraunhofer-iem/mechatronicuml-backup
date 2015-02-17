@@ -1,3 +1,6 @@
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
 /**
  * @file 
  * @author generated
@@ -10,6 +13,13 @@
 #define APICALL_H_
 
 #include "../lib/types.h"
+
+  /***
+
+ 		method to initialize all
+ 	*/
+
+ 		void initAll();
 
 /**
  * @brief Implemtation of the Parameterbinding: overtakeeColor_color_InitApi of the Port-Instance: PortInstance: color of the ComponentInstance: overtakeeColor 
