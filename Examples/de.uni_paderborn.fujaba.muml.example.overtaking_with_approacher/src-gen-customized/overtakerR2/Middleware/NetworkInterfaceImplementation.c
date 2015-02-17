@@ -299,7 +299,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	*/	
 
 	reqMessage->_targetPort = myPortIds[counter];
-	counter ++
+	counter ++;
 	if(counter == 15)
 		counter = 0;
 
