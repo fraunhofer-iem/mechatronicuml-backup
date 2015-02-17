@@ -44,7 +44,6 @@ networkInterface_VirtualBluetoothPort_init();
 networkInterface_VirtualWifiPort_init();
 networkInterface_UsbPort_init();
 networkInterface_InputPort4_init();
-networkInterface_VirtualWifiPort2_init();
 
 //initialize sensors and actors
 	approacherColor_color_InitApi();
@@ -63,7 +62,7 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 	NetworkInterface_init(mw->usbPort,networkInterface_UsbPort_init, networkInterface_UsbPort_send, networkInterface_UsbPort_receive);
 	NetworkInterface_init(mw->inputPort4,networkInterface_InputPort4_init, networkInterface_InputPort4_send, networkInterface_InputPort4_receive);
-	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort2_init, networkInterface_VirtualWifiPort2_send, networkInterface_VirtualWifiPort2_receive);
+	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 ChainTask(Task_Main);
 }
 
