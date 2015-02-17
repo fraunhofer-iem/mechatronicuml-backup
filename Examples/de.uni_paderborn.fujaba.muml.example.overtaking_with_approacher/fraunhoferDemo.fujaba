@@ -4342,7 +4342,7 @@
         </embeddedHPIC>
       </hwplatformInstances>
       <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_sOdocLaXEeSavI5T7sJhVQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _HiiW0ahkEeSJj6cnB4p9sw"/>
-      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EdRV0LaYEeSavI5T7sJhVQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw __NF1oLaXEeSavI5T7sJhVQ"/>
+      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EdRV0LaYEeSavI5T7sJhVQ" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw __NF1oLaXEeSavI5T7sJhVQ"/>
       <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_HvUVYLaYEeSavI5T7sJhVQ" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="__dlIsLaXEeSavI5T7sJhVQ _EDe2AqhkEeSJj6cnB4p9sw"/>
       <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_WXCsYLabEeSvg7rqv6dToQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _-PAV8ahjEeSJj6cnB4p9sw"/>
       <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_9CcmMLabEeSvg7rqv6dToQ" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_pr6PULabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
@@ -4350,8 +4350,8 @@
     <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_rPkGIKfDEeSK_8TqY1SjtQ" name="SectionControl">
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_wMFqgKfDEeSK_8TqY1SjtQ" name="Brick" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_wMFqgafDEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_xrUooKfDEeSK_8TqY1SjtQ"/>
-          <upperBound xmi:id="_xrUooafDEeSK_8TqY1SjtQ"/>
+          <lowerBound xmi:id="_GANKYLanEeSvg7rqv6dToQ"/>
+          <upperBound xmi:id="_GAO_kLanEeSvg7rqv6dToQ"/>
         </cardinality>
         <hwPortParts xmi:id="_0unagKfDEeSK_8TqY1SjtQ" communicationResource="_dSpRkKe-EeSK_8TqY1SjtQ"/>
         <hwPortParts xmi:id="_0unagafDEeSK_8TqY1SjtQ" communicationResource="_dSpRlKe-EeSK_8TqY1SjtQ"/>

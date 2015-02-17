@@ -491,7 +491,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_3C6e8LaWEeSavI5T7sJhVQ" y="5"/>
       </children>
       <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../fraunhoferDemo.fujaba#_-PAV8qhjEeSJj6cnB4p9sw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3C5347aWEeSavI5T7sJhVQ" x="177" y="641"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3C5347aWEeSavI5T7sJhVQ" x="429" y="641"/>
     </children>
     <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../fraunhoferDemo.fujaba#_-PAV8KhjEeSJj6cnB4p9sw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DOYHB6umEeS8h7ja3qSVLA" x="2571"/>
