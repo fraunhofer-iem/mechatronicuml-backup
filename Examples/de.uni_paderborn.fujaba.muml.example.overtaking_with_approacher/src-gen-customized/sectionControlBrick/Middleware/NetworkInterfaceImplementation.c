@@ -247,6 +247,9 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
+ int myPortIds[4] = {PORT_SECTIONSECTIONCONTROLSECTIONAPPROACHERP1, PORT_SECTIONSECTIONCONTROLSECTIONOVERTAKERP1, PORT_SECTIONSECTIONCONTROLSECTIONOVERTAKEEP1, PORT_SECTIONSECTIONCONTROLCONTROLLERP1};
+static int counter = 0;
+
 MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
 	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
@@ -266,7 +269,10 @@ U8* received;
 		every time this function gets called
 	*/	
 
-	reqMessage->_targetPort = 0;
+	reqMessage->_targetPort = myPortIds[counter];
+	counter ++
+	if(counter == 4)
+		counter = 0;
 
 	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
 
