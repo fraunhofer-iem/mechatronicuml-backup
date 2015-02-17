@@ -75,18 +75,21 @@ return true;
  */
 MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void){
 //create new MiddlewareMessage
-	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
+
+	MiddlewareMessage * tmpMessage;
 
 ///////////////////////////////
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_receive **/ 
 //create new MiddlewareMessage
-	  	
+	if(ecrobot_read_bt_packet(receive_buf, DATA_LEN) > 0)
+	  {
+	  	tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	    //Don't forget freeing the memory at the end! (after the message is consumed?)
+	  }
 /**End of user code**/
 ///////////////////////////////
 
 if(!(Message_can_read_delimited_from(receive_buf,0,DATA_LEN))){
-
 	free(tmpMessage);
     tmpMessage = NULL;
 	}
