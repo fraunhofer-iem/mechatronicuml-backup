@@ -1,8 +1,12 @@
+#include "kernel.h"
+#include "kernel_id.h"
+#include "ecrobot_interface.h"
+#include "ecrobot_wifiblock.h"
 /**
  * @file 
  * @author generated
  * @brief Implementations of the Interface NetworkInterface
- * @details In this file Method-Stubs for the #NetworkInterface%s of the ECU sectionControlBrick are genereated,
+ * @details In this file Method-Stubs for the #NetworkInterface%s of the ECU overtakeeR2 are genereated,
  *          These Method-Stubs have to be manually implemented, since they are called in the Middleware and in the Methods MW_NIreceiveMessages(void) and MW_NIsendMessages(void)
  * 
  * @warning the Implementation of the #NetworkInterface%s has to be done manually
@@ -37,39 +41,14 @@ bool_t NetworkInterface_intern_send(MiddlewareMessage* msg);
 MiddlewareMessage* NetworkInterface_intern_receive(void);
 
 /**
- * @brief INIT method for NetworkInterface: VirtualWifiPort1 of ECU:sectionControlBrick
- * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::VirtualWifiPort1. Usually this is called before the main application is started.
- * @return What you have implemented
- */
-bool_t networkInterface_VirtualWifiPort1_init(void);
-
-/**
- * @brief SEND method for the NetworkInterface: VirtualWifiPort1 of ECU:sectionControlBrick
- * @details Implement this method, to send a message via the  NetworkInterface: Middleware::VirtualWifiPort1.
- * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
- * @param msg the MiddlewareMessage to be sent
- * @return What you have implemented
- * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
- * to write the message content into a byte array, if needed
- */
-bool_t networkInterface_VirtualWifiPort1_send(MiddlewareMessage* msg);
-
-/**
- * @brief RECEIVE method for the NetworkInterface: VirtualWifiPort1 of ECU:sectionControlBrick
- * @details implement this method, to receive a message via the  NetworkInterface: Middleware::VirtualWifiPort1.
- * This method ist called by the middleware periodically to receive new messages
- * @return the received MiddlewareMessage
- */
-MiddlewareMessage * networkInterface_VirtualWifiPort1_receive(void);
-/**
- * @brief INIT method for NetworkInterface: virtualBluetoothPort of ECU:sectionControlBrick
+ * @brief INIT method for NetworkInterface: virtualBluetoothPort of ECU:overtakeeR2
  * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::virtualBluetoothPort. Usually this is called before the main application is started.
  * @return What you have implemented
  */
 bool_t networkInterface_VirtualBluetoothPort_init(void);
 
 /**
- * @brief SEND method for the NetworkInterface: virtualBluetoothPort of ECU:sectionControlBrick
+ * @brief SEND method for the NetworkInterface: virtualBluetoothPort of ECU:overtakeeR2
  * @details Implement this method, to send a message via the  NetworkInterface: Middleware::virtualBluetoothPort.
  * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
  * @param msg the MiddlewareMessage to be sent
@@ -80,61 +59,86 @@ bool_t networkInterface_VirtualBluetoothPort_init(void);
 bool_t networkInterface_VirtualBluetoothPort_send(MiddlewareMessage* msg);
 
 /**
- * @brief RECEIVE method for the NetworkInterface: virtualBluetoothPort of ECU:sectionControlBrick
+ * @brief RECEIVE method for the NetworkInterface: virtualBluetoothPort of ECU:overtakeeR2
  * @details implement this method, to receive a message via the  NetworkInterface: Middleware::virtualBluetoothPort.
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
 MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void);
 /**
- * @brief INIT method for NetworkInterface: VirtualWifiPort3 of ECU:sectionControlBrick
- * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::VirtualWifiPort3. Usually this is called before the main application is started.
+ * @brief INIT method for NetworkInterface: usbPort of ECU:overtakeeR2
+ * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::usbPort. Usually this is called before the main application is started.
  * @return What you have implemented
  */
-bool_t networkInterface_VirtualWifiPort3_init(void);
+bool_t networkInterface_UsbPort_init(void);
 
 /**
- * @brief SEND method for the NetworkInterface: VirtualWifiPort3 of ECU:sectionControlBrick
- * @details Implement this method, to send a message via the  NetworkInterface: Middleware::VirtualWifiPort3.
+ * @brief SEND method for the NetworkInterface: usbPort of ECU:overtakeeR2
+ * @details Implement this method, to send a message via the  NetworkInterface: Middleware::usbPort.
  * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
  * @param msg the MiddlewareMessage to be sent
  * @return What you have implemented
  * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
  * to write the message content into a byte array, if needed
  */
-bool_t networkInterface_VirtualWifiPort3_send(MiddlewareMessage* msg);
+bool_t networkInterface_UsbPort_send(MiddlewareMessage* msg);
 
 /**
- * @brief RECEIVE method for the NetworkInterface: VirtualWifiPort3 of ECU:sectionControlBrick
- * @details implement this method, to receive a message via the  NetworkInterface: Middleware::VirtualWifiPort3.
+ * @brief RECEIVE method for the NetworkInterface: usbPort of ECU:overtakeeR2
+ * @details implement this method, to receive a message via the  NetworkInterface: Middleware::usbPort.
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
-MiddlewareMessage * networkInterface_VirtualWifiPort3_receive(void);
+MiddlewareMessage * networkInterface_UsbPort_receive(void);
 /**
- * @brief INIT method for NetworkInterface: VirtualWifiPort2 of ECU:sectionControlBrick
- * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::VirtualWifiPort2. Usually this is called before the main application is started.
+ * @brief INIT method for NetworkInterface: inputPort4 of ECU:overtakeeR2
+ * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::inputPort4. Usually this is called before the main application is started.
  * @return What you have implemented
  */
-bool_t networkInterface_VirtualWifiPort2_init(void);
+bool_t networkInterface_InputPort4_init(void);
 
 /**
- * @brief SEND method for the NetworkInterface: VirtualWifiPort2 of ECU:sectionControlBrick
- * @details Implement this method, to send a message via the  NetworkInterface: Middleware::VirtualWifiPort2.
+ * @brief SEND method for the NetworkInterface: inputPort4 of ECU:overtakeeR2
+ * @details Implement this method, to send a message via the  NetworkInterface: Middleware::inputPort4.
  * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
  * @param msg the MiddlewareMessage to be sent
  * @return What you have implemented
  * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
  * to write the message content into a byte array, if needed
  */
-bool_t networkInterface_VirtualWifiPort2_send(MiddlewareMessage* msg);
+bool_t networkInterface_InputPort4_send(MiddlewareMessage* msg);
 
 /**
- * @brief RECEIVE method for the NetworkInterface: VirtualWifiPort2 of ECU:sectionControlBrick
- * @details implement this method, to receive a message via the  NetworkInterface: Middleware::VirtualWifiPort2.
+ * @brief RECEIVE method for the NetworkInterface: inputPort4 of ECU:overtakeeR2
+ * @details implement this method, to receive a message via the  NetworkInterface: Middleware::inputPort4.
  * This method ist called by the middleware periodically to receive new messages
  * @return the received MiddlewareMessage
  */
-MiddlewareMessage * networkInterface_VirtualWifiPort2_receive(void);
+MiddlewareMessage * networkInterface_InputPort4_receive(void);
+/**
+ * @brief INIT method for NetworkInterface: VirtualWifiPort of ECU:overtakeeR2
+ * @details Implement this method, to do additional initialization for NetworkInterface: Middleware::VirtualWifiPort. Usually this is called before the main application is started.
+ * @return What you have implemented
+ */
+bool_t networkInterface_VirtualWifiPort_init(void);
+
+/**
+ * @brief SEND method for the NetworkInterface: VirtualWifiPort of ECU:overtakeeR2
+ * @details Implement this method, to send a message via the  NetworkInterface: Middleware::VirtualWifiPort.
+ * This method ist called by the middleware, if a message has to be sent via this NetworkInterface
+ * @param msg the MiddlewareMessage to be sent
+ * @return What you have implemented
+ * @note use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
+ * to write the message content into a byte array, if needed
+ */
+bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage* msg);
+
+/**
+ * @brief RECEIVE method for the NetworkInterface: VirtualWifiPort of ECU:overtakeeR2
+ * @details implement this method, to receive a message via the  NetworkInterface: Middleware::VirtualWifiPort.
+ * This method ist called by the middleware periodically to receive new messages
+ * @return the received MiddlewareMessage
+ */
+MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void);
 
 #endif /* NETWORKINTERFACEIMPLEMENTATION_H_ */
