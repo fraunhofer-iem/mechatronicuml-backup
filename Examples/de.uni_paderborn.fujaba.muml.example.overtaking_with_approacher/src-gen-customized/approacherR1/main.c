@@ -49,10 +49,7 @@ networkInterface_VirtualBluetoothPort_init();
 networkInterface_UsbPort_init();
 
 //initialize sensors and actors
-	approacherMotorR_velocityContR_InitApi();
-	approacherMotorL_velocityContL_InitApi();
-	approacherLine_lineLight_InitApi();
-	approacherDistance_distance_InitApi();
+	initAll();
 }
 void ecrobot_device_terminate()
 {

@@ -49,10 +49,8 @@ networkInterface_InputPort4_init();
 networkInterface_UsbPort_init();
 
 //initialize sensors and actors
-	overtakerMotorR_velocityContR_InitApi();
-	overtakerMotorL_velocityContL_InitApi();
-	overtakerDistance_distance_InitApi();
-	overtakerLine_lineLight_InitApi();
+		initAll();
+
 }
 void ecrobot_device_terminate()
 {

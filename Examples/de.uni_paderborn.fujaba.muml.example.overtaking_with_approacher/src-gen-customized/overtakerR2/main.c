@@ -46,7 +46,8 @@ networkInterface_InputPort4_init();
 networkInterface_UsbPort_init();
 
 //initialize sensors and actors
-	overtakerColor_color_InitApi();
+		initAll();
+
 }
 void ecrobot_device_terminate()
 {

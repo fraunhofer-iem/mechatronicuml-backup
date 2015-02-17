@@ -47,7 +47,8 @@ networkInterface_VirtualWifiPort_init();
 networkInterface_VirtualWifiPort2_init();
 
 //initialize sensors and actors
-	overtakeeColor_color_InitApi();
+		initAll();
+
 }
 void ecrobot_device_terminate()
 {

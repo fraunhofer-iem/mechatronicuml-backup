@@ -49,10 +49,8 @@ networkInterface_InputPort4_init();
 networkInterface_VirtualWifiPort_init();
 
 //initialize sensors and actors
-	overtakeeMotorL_velocityContR_InitApi();
-	overtakeeMotorR_velocityContL_InitApi();
-	overtakeeLine_lineLight_InitApi();
-	overtakeeDistance_distanceOvertakee_InitApi();
+		initAll();
+
 }
 void ecrobot_device_terminate()
 {
