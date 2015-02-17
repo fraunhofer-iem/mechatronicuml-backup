@@ -26,12 +26,27 @@ main() {
 	var retcode : Status = uppaalTransformation.transform();
 	assert fatal (retcode.succeeded()) with log('Translation to UPPAAL failed: ' + retcode.raisedException().repr());
 	
+	// transform uppaal model to text, start verifyta for executing the model checking, parse the uppaal trace and store it into the uppaal trace model.
 	var uppaalTrace : uppaal_trace = uppaal_trace.createEmptyModel().oclAsType(uppaal_trace);
 	var verifyta : UPPAAL2Trace = new UPPAAL2Trace(uppaalModel,uppaalReq,options,uppaalTrace);
 	verifyta.generateTrace := true;
 	retcode := verifyta.transform();
 	assert fatal (retcode.succeeded()) with log('UPPAAL model checking + trace parsing failed: ' + retcode.raisedException().repr());
+
+    // var utraces := uppaalTrace.objects->(uppaal_trace::Trace);
+    var utraces := uppaalTrace.objects()[uppaal_trace::Trace];
+    var uReq := uppaalReq.objects()[uppaal_requirements::UnaryProperty];
+    
+    if (utraces->size() = 1) {
+        var utrace : uppaal_trace::Trace := utraces->any(true);
+        if (utrace.line = 1) {
+            log("huhu");
+        }
+    };
+
+    // log("huhu" + uppaalTrace.objectsOfType(uppaal_trace::Trace));
 	
+	// transform the uppaal trace model into the muml trace model
 	var traceTransformation : UPPAALTrace2MUMLTrace = new UPPAALTrace2MUMLTrace(mumlCic, uppaalModel, uppaalTrace, output);
 	retcode := traceTransformation.transform();
 	assert fatal (retcode.succeeded()) with log('Trace reverse transformation failed: ' + retcode.raisedException().repr());
