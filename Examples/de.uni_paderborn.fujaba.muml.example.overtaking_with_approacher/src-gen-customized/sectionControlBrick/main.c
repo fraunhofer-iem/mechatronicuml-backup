@@ -39,7 +39,7 @@ void user_1ms_isr_type2(void){ /* do nothing */ }
 void ecrobot_device_initialize()
 {
 //initialize all network interfaces
-networkInterface_VirtualWifiPort_init();
+//networkInterface_VirtualWifiPort_init();
 networkInterface_VirtualBluetoothPort_init();
 
 //initialize sensors and actors
@@ -48,6 +48,8 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
+	networkInterface_VirtualWifiPort_init();
+
 	mw = Middleware_create();
 	configureSectionControlBrickCIC();
 	//initialize model

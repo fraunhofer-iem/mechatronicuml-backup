@@ -24,6 +24,7 @@ Middleware *mw;
 
 
 //declare used OSEK tasks and counter
+DeclareTask(Task1);
 DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
@@ -41,7 +42,7 @@ void ecrobot_device_initialize()
 {
 //initialize all network interfaces
 networkInterface_VirtualBluetoothPort_init();
-networkInterface_VirtualWifiPort_init();
+//networkInterface_VirtualWifiPort_init();
 networkInterface_UsbPort_init();
 networkInterface_InputPort4_init();
 
@@ -52,6 +53,8 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
+		networkInterface_VirtualWifiPort_init();
+
 	mw = Middleware_create();
 	configureApproacherR2CIC();
 	//initialize model
@@ -65,6 +68,7 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 ChainTask(Task_Main);
 }
+
 
 
 TASK(Task_Main){

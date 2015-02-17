@@ -46,7 +46,7 @@ void ecrobot_device_initialize()
 networkInterface_UsbPort_init();
 networkInterface_VirtualBluetoothPort_init();
 networkInterface_InputPort4_init();
-networkInterface_VirtualWifiPort_init();
+//networkInterface_VirtualWifiPort_init();
 
 //initialize sensors and actors
 		initAll();
@@ -56,6 +56,8 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
+	networkInterface_VirtualWifiPort_init();
+
 	mw = Middleware_create();
 	configureOvertakeeR1CIC();
 	//initialize model
