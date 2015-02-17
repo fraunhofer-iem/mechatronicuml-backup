@@ -193,7 +193,7 @@ return true;
  * hint: use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
  * to write the message content into a byte array, if needed
  */
-bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
+bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage* msg){
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_send **/ 
 
 	MiddlewareMessage_write_delimited_to(msg, send_buf, 0);
@@ -248,15 +248,15 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
  * @return the received MiddlewareMessage
  */
 
-int myPortIds[14] = {PORT_APPROACHERMOTORRMOTORVELOCITYCONTR, PORT_APPROACHERMOTORLMOTORVELOCITYCONTL, PORT_APPROACHERDRIVERAPPROACHERDRIVERLIMITERP1, PORT_APPROACHERDRIVERAPPROACHERDRIVERVELOCITYL, 
+int myPortIds[14] = { PORT_APPROACHERMOTORRMOTORVELOCITYCONTR, PORT_APPROACHERMOTORLMOTORVELOCITYCONTL, PORT_APPROACHERDRIVERAPPROACHERDRIVERLIMITERP1, PORT_APPROACHERDRIVERAPPROACHERDRIVERVELOCITYL, 
 	PORT_APPROACHERDRIVERAPPROACHERDRIVERLINEAPPROACHER, PORT_APPROACHERDRIVERAPPROACHERDRIVERVELOCITYR, PORT_APPROACHERDRIVERAPPROACHERDRIVERDISTANCEAPROACHER, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORVEHICLEAPPROACHERP1,
-	PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORLIMITDRIVINGP1, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORINFORMAPPROACHERP1, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORCOLORAPPROACHER, PORT_APPROACHERCOLORCOLORCOLOR
-	PORT_APPROACHERLINELINELINELIGHT,PORT_APPROACHERDISTANCEDISTANCEDISTANCE};
+	PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORLIMITDRIVINGP1, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORINFORMAPPROACHERP1, PORT_APPROACHERCOMMUNICATORAPPROACHERCOMMUNICATORCOLORAPPROACHER, PORT_APPROACHERCOLORCOLORCOLOR,
+	PORT_APPROACHERLINELINELINELIGHT, PORT_APPROACHERDISTANCEDISTANCEDISTANCE };
 
 static int counter = 0;
 
 
-MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
+MiddlewareMessage* networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
 	MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
@@ -270,7 +270,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//The target port for which we want to receive a message
 
 	reqMessage->_targetPort = myPortIds[counter];
-	counter ++
+	counter ++;
 	if(counter == 14)
 		counter = 0;
 
