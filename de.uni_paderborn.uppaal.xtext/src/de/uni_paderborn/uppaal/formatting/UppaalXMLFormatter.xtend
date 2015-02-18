@@ -23,6 +23,7 @@ public class UppaalXMLFormatter extends AbstractDeclarativeFormatter {
 	override protected configureFormatting(FormattingConfig c) {
 		for(pair: findKeywordPairs('{', '}')) {
 			c.setIndentation(pair.first, pair.second)
+			c.setLinewrap(1).before(pair.first)
 			c.setLinewrap(1).after(pair.first)
 			c.setLinewrap(1).before(pair.second)
 			c.setLinewrap(1).after(pair.second)
@@ -30,7 +31,18 @@ public class UppaalXMLFormatter extends AbstractDeclarativeFormatter {
 		for(comma: findKeywords(',')) {
 			c.setNoLinewrap().before(comma)
 			c.setNoSpace().before(comma)
-			c.setLinewrap().after(comma)
+			c.setNoLinewrap().after(comma)
+		}
+		for(period: findKeywords('.')) {
+			c.setNoLinewrap().before(period)
+			c.setNoSpace().before(period)
+			c.setNoSpace().after(period)
+			c.setNoLinewrap().after(period)
+		}
+		for(semi: findKeywords(';')) {
+			c.setNoLinewrap().before(semi)
+			c.setNoSpace().before(semi)
+			c.setLinewrap(1).after(semi)
 		}
 		for(equality: findKeywords('=')) {
 			c.setNoLinewrap().before(equality)
@@ -41,6 +53,16 @@ public class UppaalXMLFormatter extends AbstractDeclarativeFormatter {
 		for(pair: findKeywordPairs('<', '>')) {
 			c.setNoLinewrap().before(pair.first)
 			c.setLinewrap(1).after(pair.second)
+			c.setNoSpace().before(pair.first)
+			c.setNoSpace().before(pair.second)
+			c.setNoSpace().after(pair.first)
+			c.setNoSpace().after(pair.second)
+		}	
+		for(pair: findKeywordPairs('[', ']')) {
+			c.setNoLinewrap().before(pair.first)
+			c.setNoLinewrap().after(pair.first)
+			c.setNoLinewrap().before(pair.second)
+			c.setNoLinewrap().after(pair.second)
 			c.setNoSpace().before(pair.first)
 			c.setNoSpace().before(pair.second)
 			c.setNoSpace().after(pair.first)
