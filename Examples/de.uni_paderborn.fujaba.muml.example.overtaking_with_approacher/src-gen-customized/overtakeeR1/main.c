@@ -43,8 +43,8 @@ void user_1ms_isr_type2(void){ /* do nothing */ }
 void ecrobot_device_initialize()
 {
 //initialize all network interfaces
-networkInterface_UsbPort_init();
-networkInterface_VirtualBluetoothPort_init();
+//networkInterface_UsbPort_init();
+//networkInterface_VirtualBluetoothPort_init();
 networkInterface_InputPort4_init();
 //networkInterface_VirtualWifiPort_init();
 
@@ -56,7 +56,7 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
-	networkInterface_VirtualWifiPort_init();
+	//networkInterface_VirtualWifiPort_init();
 
 	mw = Middleware_create();
 	configureOvertakeeR1CIC();
@@ -64,10 +64,10 @@ TASK(Task_initModel){
 	initializeOvertakeeR1CIC();
 //initialize all network interfaces
 NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface_intern_send, NetworkInterface_intern_receive);
-	NetworkInterface_init(mw->usbPort,networkInterface_UsbPort_init, networkInterface_UsbPort_send, networkInterface_UsbPort_receive);
-	NetworkInterface_init(mw->virtualBluetoothPort,networkInterface_VirtualBluetoothPort_init, networkInterface_VirtualBluetoothPort_send, networkInterface_VirtualBluetoothPort_receive);
+	//NetworkInterface_init(mw->usbPort,networkInterface_UsbPort_init, networkInterface_UsbPort_send, networkInterface_UsbPort_receive);
+	//NetworkInterface_init(mw->virtualBluetoothPort,networkInterface_VirtualBluetoothPort_init, networkInterface_VirtualBluetoothPort_send, networkInterface_VirtualBluetoothPort_receive);
 	NetworkInterface_init(mw->inputPort4,networkInterface_InputPort4_init, networkInterface_InputPort4_send, networkInterface_InputPort4_receive);
-	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
+	//NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 ChainTask(Task_Main);
 }
 
