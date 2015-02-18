@@ -12,7 +12,7 @@ Middleware* Middleware_create(void){
 	mw->intern = NetworkInterface_create("intern");
 	mw->virtualBluetoothPort = NetworkInterface_create("virtualBluetoothPort");
 	mw->VirtualWifiPort = NetworkInterface_create("VirtualWifiPort");
-	mw->usbPort = NetworkInterface_create("usbPort");
+	//mw->usbPort = NetworkInterface_create("usbPort");
 	mw->inputPort4 = NetworkInterface_create("inputPort4");
 	mw->VirtualWifiPort2 = NetworkInterface_create("VirtualWifiPort2");
 
@@ -54,7 +54,7 @@ bool_t Middleware_destroy(void){
 	NetworkInterface_destroy(mw->intern);
 	NetworkInterface_destroy(mw->virtualBluetoothPort);
 	NetworkInterface_destroy(mw->VirtualWifiPort);
-	NetworkInterface_destroy(mw->usbPort);
+	//NetworkInterface_destroy(mw->usbPort);
 	NetworkInterface_destroy(mw->inputPort4);
 	NetworkInterface_destroy(mw->VirtualWifiPort2);
 
@@ -125,18 +125,15 @@ bool_t MW_NIreceiveMessages(void){
 
 	MiddlewareMessage* msg;
 	msg = NULL;
-		//msg = mw->virtualBluetoothPort->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
+
 		msg = mw->VirtualWifiPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		//msg = mw->usbPort->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
+
 		msg = mw->inputPort4->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
+
     return true;
 }
 

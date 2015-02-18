@@ -260,13 +260,9 @@ MiddlewareMessage* networkInterface_VirtualWifiPort_receive(void){
 	//create new MiddlewareMessage
 	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 	U8* received;
-	///////////////////////////////
-	/** @TODO Start of user code networkInterface_VirtualWifiPort_receive **/ 
 
 	//String such that the server knows we request a message
 	strcpy(reqMessage->_mumlMsg, "Req msg!(WK6Hmq)"); 
-	
-	//The target port for which we want to receive a message
 
 	reqMessage->_targetPort = myPortIds[counter];
 	counter ++;
@@ -276,7 +272,7 @@ MiddlewareMessage* networkInterface_VirtualWifiPort_receive(void){
 	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
 
 	MiddlewareMessage_write_delimited_to(reqMessage, receive_buf, 0);
-		free(reqMessage);
+	free(reqMessage);
 
 	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
 
@@ -290,14 +286,12 @@ MiddlewareMessage* networkInterface_VirtualWifiPort_receive(void){
 		*/
 	}
 	ecrobot_wb_tcp_send(NXT_PORT_S3);
-
 	/*
 	display_goto_xy(0,7);
 	display_string("sending        ");
 	display_update();
 	*/
 
-	//wait for tcp to be "done" before reading received message
 	while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
 	{
 		received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
