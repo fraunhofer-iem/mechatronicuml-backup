@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fileset-config file-format-version="1.2.0" simple-config="true" sync-formatter="false">
+  <fileset name="all" enabled="true" check-config-name="Fujaba Common Checkstyle Config" local="false">
+    <file-match-pattern match-pattern="." include-pattern="true"/>
+  </fileset>
+  <filter name="FilesFromPackage" enabled="true">
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/component/provider"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/constraint/provider"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/core/provider"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/instance/provider"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/msgiface/provider"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/pattern/descriptor"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"/>
+    <filter-data value="src/de/uni_paderborn/fujaba/muml/model/realtimestatechart/provider"/>
+  </filter>
+</fileset-config>
