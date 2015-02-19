@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            icon="icons/TypeDialog.gif"
+	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            label="Open Data-Type Dialog"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+					</visibleWhen>
+	      </command>
+	      <command
+	      		commandId="org.eclipse.ui.file.export" id="export"
+	      		style="push" label="Export...">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+					</visibleWhen>	      		
+	      </command>
+	   </menuContribution>
+
+	</extension>
+	
+	
+	
+  <extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="de.uni_paderborn.fujaba"
+           name="MechatronicUML">
+     </category>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.OpenTypeDialogCommand"
+           description="Open Type Dialog"
+           id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+           name="Open Type Dialog">
+       <visibleWhen checkEnabled="false">
+			<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		</visibleWhen>
+     </command>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.ExportCommand"
+           description="Export..."
+           id="de.uni_paderborn.fujaba.muml.common.commands.ExportCommand"
+           name="Export...">
+     </command>
+  </extension>
+  
+  
+
+  <!-- make sure that the "types" modelelementcategory is accepted as valid -->
+  <extension
+          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <category
+              key="de.uni_paderborn.fujaba.muml.types.category"
+              name="types">
+          <child
+              class="DataType"
+              packageNsUri="http://www.fujaba.de/muml/types/0.4.0">
+          </child>
+      </category>
+  </extension>
+   
+  <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
+      </initializer>
+  </extension>
+ 
+  <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.DefaultCategoriesInitializer">
+      </initializer>
+  </extension>
+ 
+ 
+  <extension
+       point="org.eclipse.ltk.core.refactoring.moveParticipants">
+    <moveParticipant
+          class="de.uni_paderborn.fujaba.muml.common.refactoring.XMIMoveParticipant"
+          id="de.uni_paderborn.fujaba.muml.common.refactoring.xmiMoveParticipant"
+          name="Move XMI File">
+       <enablement>
+          <adapt type="org.eclipse.core.resources.IResource" />
+       </enablement>
+    </moveParticipant>
+  </extension>
+   
+   <extension
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+      <renameParticipant
+            class="de.uni_paderborn.fujaba.muml.common.refactoring.XMIRenameParticipant"
+            id="de.uni_paderborn.fujaba.muml.common.refactoring.xmiRenameParticipant"
+            name="Rename XMI File">
+        <enablement>
+          <adapt type="org.eclipse.core.resources.IResource" />
+       </enablement>
+      </renameParticipant>
+   </extension>
+ 
+   
+   <!-- Initialization for ClockConstraints using the CreationDialog -->
+   <extension
+         point="de.uni_paderborn.fujaba.common.elementInitializer">
+         <initializer
+               initializer="de.uni_paderborn.fujaba.muml.common.elementinitializer.ClockConstraintElementInitializer"
+               qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
+   </extension>
+  
+
+</plugin>
