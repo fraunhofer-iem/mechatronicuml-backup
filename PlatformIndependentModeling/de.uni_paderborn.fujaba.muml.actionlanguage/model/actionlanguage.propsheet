@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler/>
+  <genModel href="actionlanguage.genmodel#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.actionlanguage.edit.properties" name="ActionLanguage Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <packages>
+    <genPackage href="actionlanguage.genmodel#//actionlanguage"/>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/Block"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Block/expressions"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/Loop"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Loop/block"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Loop/loopTest"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/WhileLoop"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/DoWhileLoop"/>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/Assignment"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/assignOperator"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/rhs_assignExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/incrementDecrementOperator"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/Assignment/lhs_typedNamedElementExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.1">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ForLoop"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ForLoop/initializeExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ForLoop/countingExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/IfStatement"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/ifCondition"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/ifBlock"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseIfConditions"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseIfBlocks"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/IfStatement/elseBlock"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/OperationCall"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/OperationCall/operation"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/OperationCall/parameterBinding"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ReturnStatement"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ReturnStatement/expression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TriggerMessageExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TriggerMessageExpression/messageType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TriggerMessageExpression/parameter"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/DiscreteInteractionEndpointReference"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/DiscreteInteractionEndpointReference/typedNamedElementExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/DiscreteInteractionEndpointReference/position"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/PositionSelector"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/PositionSelector/kind"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/PositionSelector/successor"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/LocalVariableDeclarationStatement"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/LocalVariableDeclarationStatement/variable"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/typedNamedElement"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/indices"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ArrayInitializeExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ArrayInitializeExpression/expressions"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/NondeterministicChoiceExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/NondeterministicChoiceExpression/range"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/NondeterministicChoiceExpression/dataType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ParameterExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ParameterExpression/parameter"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/TimeValueExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TimeValueExpression/timeValue"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
