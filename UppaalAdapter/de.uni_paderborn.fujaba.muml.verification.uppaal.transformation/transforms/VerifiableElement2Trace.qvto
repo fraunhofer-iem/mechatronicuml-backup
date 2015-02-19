@@ -13,7 +13,7 @@ modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/ver
 /*
 * Transforms a model with a VerifiableElement into a MUML Trace
 */
-transformation VerifiableElement2Trace(in verifiableElementModel:muml, in options: verification_options, out output:reachability_rtsc);
+transformation VerifiableElement2Trace(in verifiableElementModel:muml, in options: verification_options, out output:reachability_rtsc) access VerifiableElement2UPPAAL, UPPAALTrace2MUMLTrace, UPPAAL2Trace;
 
 main() {
 
@@ -35,16 +35,38 @@ main() {
 
     // var utraces := uppaalTrace.objects->(uppaal_trace::Trace);
     var utraces := uppaalTrace.objects()[uppaal_trace::Trace];
-    var uReq := uppaalReq.objects()[uppaal_requirements::UnaryProperty];
+    var unaryProperty := uppaalReq.objects()[uppaal_requirements::UnaryProperty];
+    var binaryProperty := uppaalReq.objects()[uppaal_requirements::BinaryProperty];
+    
+    var quantifier_exists : Boolean := false;
+    var quantifier_forall : Boolean := false;
+    
+    if (unaryProperty->size() = 1) {
+        // log("unary property");
+        if (unaryProperty->any(true).quantifier=uppaal_requirements::PathQuantifier::EXISTS) {
+            // log("exists");
+            quantifier_exists := true;
+        };
+        if (unaryProperty->any(true).quantifier=uppaal_requirements::PathQuantifier::FORALL) {
+            // log("forall");
+            quantifier_forall := true;
+        };
+    };
+    
+    if (binaryProperty->size() = 1) {
+        // log("binary property");
+        quantifier_forall := true;
+    };
     
     if (utraces->size() = 1) {
         var utrace : uppaal_trace::Trace := utraces->any(true);
-        if (utrace.line = 1) {
-            log("huhu");
-        }
+        if (utrace._result = uppaal_trace::Result::SUCCESS and quantifier_forall) {
+            assert fatal (false) with log("The selected safety property is fulfilled. Thus, Uppaal cannot produce a trace for a counterexample.");
+        };
+        if (utrace._result = uppaal_trace::Result::FAILURE and quantifier_exists) {
+            assert fatal (false) with log("The selected existential property is NOT fulfilled. Thus, Uppaal cannot produce a trace for reaching this property.");
+        };
     };
-
-    // log("huhu" + uppaalTrace.objectsOfType(uppaal_trace::Trace));
 	
 	// transform the uppaal trace model into the muml trace model
 	var traceTransformation : UPPAALTrace2MUMLTrace = new UPPAALTrace2MUMLTrace(mumlCic, uppaalModel, uppaalTrace, output);
