@@ -1,0 +1,13 @@
+<chapter xml:id="userGuide"><title>User Guide</title>
+	<sect1><title>The User Guide</title>
+		<para>
+			This chapter ...
+		</para>
+	</sect1>
+
+	&GettingStarted;
+	&HowTo;
+	&Tutorials;
+	&FAQ;
+	&Legal;
+</chapter>
