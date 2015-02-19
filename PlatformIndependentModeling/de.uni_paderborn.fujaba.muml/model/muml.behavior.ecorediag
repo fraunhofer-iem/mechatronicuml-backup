@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="EcoreTools" measurementUnit="Pixel">
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/Behavior"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="352" y="196" width="102" height="42"/>
+  </children>
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/BehavioralElement"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="528" y="196" width="112" height="42"/>
+  </children>
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/Operation"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="20" y="196" width="102" height="42"/>
+  </children>
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/Parameter"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="148" y="104" width="102" height="42"/>
+  </children>
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/ParameterBinding"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="180" y="196" width="107" height="42"/>
+  </children>
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/TypedNamedElement"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="284" y="20" width="127" height="42"/>
+  </children>
+  <children type="1001">
+    <children type="4001"/>
+    <children type="5001">
+      <children type="2001">
+        <element href="muml.ecore#//behavior/Variable/constant"/>
+        <layoutConstraint xsi:type="notation:Location" x="7" y="15"/>
+      </children>
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <children type="5002">
+      <styles xsi:type="notation:DrawerStyle"/>
+      <styles xsi:type="notation:SortingStyle"/>
+      <styles xsi:type="notation:FilteringStyle"/>
+    </children>
+    <styles xsi:type="notation:ShapeStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element href="muml.ecore#//behavior/Variable"/>
+    <layoutConstraint xsi:type="notation:Bounds" x="304" y="104" width="126" height="49"/>
+  </children>
+  <styles xsi:type="notation:DiagramStyle"/>
+  <styles xsi:type="notation:StringValueStyle" name="layout:de.cau.cs.kieler.direction" stringValue="UP"/>
+  <styles xsi:type="notation:StringValueStyle" name="layout:de.cau.cs.kieler.edgeRouting" stringValue="ORTHOGONAL"/>
+  <element href="muml.ecore#//behavior"/>
+  <edges type="3002" source="//@children.0" target="//@children.1">
+    <children type="4011">
+      <layoutConstraint xsi:type="notation:Location" x="-43" y="-10"/>
+    </children>
+    <children type="4012">
+      <layoutConstraint xsi:type="notation:Location" x="-7" y="-22"/>
+    </children>
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element href="muml.ecore#//behavior/Behavior/behavioralElement"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, -153, 2]$[0, 28, -153, 30]$[153, 28, 0, 30]$[153, 0, 0, 2]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.25,0.9523809523809523)"/>
+  </edges>
+  <edges type="3002" source="//@children.0" target="//@children.2">
+    <children type="4011">
+      <layoutConstraint xsi:type="notation:Location" x="-7" y="9"/>
+    </children>
+    <children type="4012">
+      <layoutConstraint xsi:type="notation:Location" x="10" y="21"/>
+    </children>
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element href="muml.ecore#//behavior/Behavior/operations"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[4, 1, 284, 2]$[4, 28, 284, 29]$[-276, 28, 4, 29]$[-276, 1, 4, 2]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.12745098039215685,0.9761904761904762)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.6470588235294118,0.9523809523809523)"/>
+  </edges>
+  <edges type="3002" source="//@children.0" target="//@children.6">
+    <children type="4011">
+      <layoutConstraint xsi:type="notation:Location" x="-8" y="24"/>
+    </children>
+    <children type="4012">
+      <layoutConstraint xsi:type="notation:Location" y="11"/>
+    </children>
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element href="muml.ecore#//behavior/Behavior/variables"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, 137]$[0, -137, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.21568627450980393,0.30952380952380953)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+  </edges>
+  <edges type="3002" source="//@children.1" target="//@children.0">
+    <children type="4011">
+      <layoutConstraint xsi:type="notation:Location" x="-20" y="10"/>
+    </children>
+    <children type="4012">
+      <layoutConstraint xsi:type="notation:Location" x="-8" y="22"/>
+    </children>
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element href="muml.ecore#//behavior/BehavioralElement/behavior"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 2, 153, 0]$[0, 30, 153, 28]$[-153, 30, 0, 28]$[-153, 2, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.25,0.9523809523809523)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,1.0)"/>
+  </edges>
+  <edges type="3002" source="//@children.2" target="//@children.3">
+    <children type="4011">
+      <layoutConstraint xsi:type="notation:Location" x="-4" y="20"/>
+    </children>
+    <children type="4012">
+      <layoutConstraint xsi:type="notation:Location" x="18" y="9"/>
+    </children>
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element href="muml.ecore#//behavior/Operation/parameters"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-8, 0, -96, 78]$[-8, -29, -96, 49]$[-8, -78, -96, 0]$[78, -78, -10, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.10784313725490197,0.35714285714285715)"/>
+  </edges>
+  <edges type="3003" source="//@children.3" target="//@children.5">
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, -128, 40]$[0, -20, -128, 20]$[128, -20, 0, 20]$[128, -40, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.33333317313607286,1.0)"/>
+  </edges>
+  <edges type="3002" source="//@children.4" target="//@children.3">
+    <children type="4011">
+      <layoutConstraint xsi:type="notation:Location" x="-10" y="30"/>
+    </children>
+    <children type="4012">
+      <layoutConstraint xsi:type="notation:Location" x="2" y="8"/>
+    </children>
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element href="muml.ecore#//behavior/ParameterBinding/parameter"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, 52]$[0, -52, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.8725490196078431,0.8333333333333334)"/>
+  </edges>
+  <edges type="3003" source="//@children.6" target="//@children.5">
+    <styles xsi:type="notation:ConnectorStyle" lineColor="4210752"/>
+    <styles xsi:type="notation:FontStyle" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 0, 0, 42]$[0, -42, 0, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.0)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.6666665865680365,1.0)"/>
+  </edges>
+</notation:Diagram>
