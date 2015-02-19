@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Meta-Model Tests
+Bundle-SymbolicName: de.uni_paderborn.fujaba.tests
+Bundle-Version: 0.5.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
+ org.junit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",
+ org.eclipse.emf.codegen.ecore;bundle-version="2.7.0",
+ org.eclipse.ocl;bundle-version="3.1.0",
+ org.eclipse.ocl.ecore;bundle-version="3.1.2",
+ org.eclipse.gmf,
+ org.eclipse.gmf.runtime.emf.core,
+ org.eclipse.gmf.graphdef,
+ org.eclipse.gmf.tooldef,
+ org.eclipse.gmf.map,
+ org.eclipse.gmf.codegen,
+ org.eclipse.gmf.validate,
+ org.apache.commons.io;bundle-version="2.0.1",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.common,
+ org.eclipse.m2m.qvt.oml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Export-Package: de.uni_paderborn.fujaba.gmf.tests,
+ de.uni_paderborn.fujaba.tests,
+ de.uni_paderborn.fujaba.tests.packages,
+ de.uni_paderborn.fujaba.tests.resource
