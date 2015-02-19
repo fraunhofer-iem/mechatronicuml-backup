@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.RoleAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"
+		  class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+        <adviceBinding
+              class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.helpers.CoordinationProtocolEditHelperAdvice"
+              id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.CoordinationProtocolAdviceBinding"
+              inheritance="all"
+              typeId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <separator
+               name="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSC"
+               label="Create Role RTSC (incl. Diagram)"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.handlers.CreateRoleRTSCHandler"
+            description="Create the Role&apos;s RTSC and it&apos;s Diagram"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.createRoleRTSCCommand"
+            name="Create Role RTSC">
+      </command>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.RoleAdvice"/>
+         <advice
+               ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.CoordinationProtocolAdviceBinding">
+         </advice>
+      </binding>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.providers.CustomPatternEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
+		<contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+   			checkPluginLoaded="false">
+			<Priority name="Low"/>
+			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+			</popupContribution>
+		</contributionItemProvider>
+   </extension>
+	
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.layout.CoordinationProtocolLayoutProvider">
+            <Priority name="Highest"/>
+       </layoutProvider>
+   </extension>
+</plugin>
