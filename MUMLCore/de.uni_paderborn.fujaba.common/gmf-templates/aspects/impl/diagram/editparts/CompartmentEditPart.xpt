@@ -1,0 +1,26 @@
+
+«REM» Customized createFigure for CompartmentEditParts to additionally stretch ListLayouts in x and y-axis. «ENDREM»
+«AROUND createFigure FOR gmfgen::GenCompartment-»
+		«EXPAND xpt::Common::generatedMemberComment»
+		public org.eclipse.draw2d.IFigure createFigure() {
+			org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure result = (org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure) super.createFigure();
+			
+			«REM»By default titles are shown even if there are no TitleStyle, we need to switch it off«ENDREM»«-»
+			«IF not needsTitle-»
+			result.setTitleVisibility(false);
+			«ENDIF-»
+
+			// Begin added to always stretch list layouts
+			org.eclipse.draw2d.LayoutManager layoutManager = result.getContentPane()
+					.getLayoutManager();
+			if (layoutManager instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout) {
+				org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout constrainedToolbarLayout = (org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout) layoutManager;
+				constrainedToolbarLayout.setStretchMajorAxis(true);
+				constrainedToolbarLayout.setStretchMinorAxis(true);
+			}
+			// End added
+			
+			return result;
+		}
+
+«ENDAROUND»
