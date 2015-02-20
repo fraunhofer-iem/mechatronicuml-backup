@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r13960)-->
+<!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:Sets="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:allocation="http://www.fujaba.de/muml/psm/allocation/0.4.0/" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_FB0TQJJ7EeSSMde45fnrcg">
   <categories xmi:id="_FB0TQZJ7EeSSMde45fnrcg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_FB0TQpJ7EeSSMde45fnrcg" name="VOID"/>
@@ -1163,6 +1163,9 @@
       <variables xmi:id="_2Q58EJ9REeSDApXOK6N3KA" name="constSecBlack" dataType="_FB0TRpJ7EeSSMde45fnrcg" constant="true">
         <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_bxfWgLRkEeSNPJMyNnWx-A" value="7"/>
       </variables>
+      <variables xmi:id="_pcaXkLkIEeStdMdBJP68aQ" name="currentSec" dataType="_FB0TRpJ7EeSSMde45fnrcg" comment="Variable to save the current (or last known) section in which we are ">
+        <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_3fPZILkIEeStdMdBJP68aQ" value="0"/>
+      </variables>
       <states xmi:id="_c5l4oZOXEeSZM-zEIRk3lw" name="init" initial="true">
         <embeddedRegions xmi:id="_SYg5wJRLEeSZM-zEIRk3lw" priority="1">
           <embeddedStatechart xmi:id="_SYqqwJRLEeSZM-zEIRk3lw" name="overtakeePortRTSC" behavioralElement="_-B_QEJRLEeSZM-zEIRk3lw">
@@ -1219,90 +1222,102 @@
             <states xmi:id="_jo3f4pROEeSZM-zEIRk3lw" name="init" outgoingTransitions="_lV0XsJ_EEeSYU6UyOlfnUQ __0DtUJ9REeSDApXOK6N3KA" incomingTransitions="_BLxuMJ9SEeSDApXOK6N3KA _lV0XsJ_EEeSYU6UyOlfnUQ" initial="true">
               <entryEvent xmi:id="_RYHdsJ_FEeSYU6UyOlfnUQ">
                 <action xmi:id="_WqTwEJ_FEeSYU6UyOlfnUQ" name="checkColor">
-                  <expressions xsi:type="actionlanguage:Block" xmi:id="_-u_iQJ_LEeSYU6UyOlfnUQ">
-                    <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_-u_iQZ_LEeSYU6UyOlfnUQ">
-                      <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_-u_iQp_LEeSYU6UyOlfnUQ" operator="EQUAL">
-                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iQ5_LEeSYU6UyOlfnUQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
-                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iRJ_LEeSYU6UyOlfnUQ" typedNamedElement="_mV7GEJ9REeSDApXOK6N3KA"/>
+                  <expressions xsi:type="actionlanguage:Block" xmi:id="_By9rsLkJEeStdMdBJP68aQ">
+                    <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_By9rsbkJEeStdMdBJP68aQ">
+                      <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_By9rsrkJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rs7kJEeStdMdBJP68aQ" typedNamedElement="_pcaXkLkIEeStdMdBJP68aQ"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rtLkJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
                       </ifCondition>
-                      <ifBlock xmi:id="_-u_iRZ_LEeSYU6UyOlfnUQ">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iRp_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_iR5_LEeSYU6UyOlfnUQ" value="2"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iSJ_LEeSYU6UyOlfnUQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
-                        </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iSZ_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_iSp_LEeSYU6UyOlfnUQ" value="true"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iS5_LEeSYU6UyOlfnUQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                      <ifBlock xmi:id="_By9rtbkJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9rtrkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9rt7kJEeStdMdBJP68aQ" value="false"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9ruLkJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
                         </expressions>
                       </ifBlock>
-                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_-u_iTJ_LEeSYU6UyOlfnUQ" operator="EQUAL">
-                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iTZ_LEeSYU6UyOlfnUQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
-                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iTp_LEeSYU6UyOlfnUQ" typedNamedElement="_pgNQwJ9REeSDApXOK6N3KA"/>
-                      </elseIfConditions>
-                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_-u_iT5_LEeSYU6UyOlfnUQ" operator="EQUAL">
-                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iUJ_LEeSYU6UyOlfnUQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
-                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iUZ_LEeSYU6UyOlfnUQ" typedNamedElement="_s-nRUJ9REeSDApXOK6N3KA"/>
-                      </elseIfConditions>
-                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_-u_iUp_LEeSYU6UyOlfnUQ" operator="EQUAL">
-                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iU5_LEeSYU6UyOlfnUQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
-                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iVJ_LEeSYU6UyOlfnUQ" typedNamedElement="_v59BEJ9REeSDApXOK6N3KA"/>
-                      </elseIfConditions>
-                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_-u_iVZ_LEeSYU6UyOlfnUQ" operator="EQUAL">
-                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iVp_LEeSYU6UyOlfnUQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
-                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iV5_LEeSYU6UyOlfnUQ" typedNamedElement="_zACoQJ9REeSDApXOK6N3KA"/>
-                      </elseIfConditions>
-                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_-u_iWJ_LEeSYU6UyOlfnUQ" operator="EQUAL">
-                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iWZ_LEeSYU6UyOlfnUQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
-                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_-u_iWp_LEeSYU6UyOlfnUQ" typedNamedElement="_2Q58EJ9REeSDApXOK6N3KA"/>
-                      </elseIfConditions>
-                      <elseIfBlocks xmi:id="_-u_iW5_LEeSYU6UyOlfnUQ">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iXJ_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_iXZ_LEeSYU6UyOlfnUQ" value="3"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iXp_LEeSYU6UyOlfnUQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
+                    </expressions>
+                    <expressions xsi:type="actionlanguage:IfStatement" xmi:id="_By9rubkJEeStdMdBJP68aQ">
+                      <ifCondition xsi:type="sdcec:ComparisonExpression" xmi:id="_By9rurkJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9ru7kJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rvLkJEeStdMdBJP68aQ" typedNamedElement="_mV7GEJ9REeSDApXOK6N3KA"/>
+                      </ifCondition>
+                      <ifBlock xmi:id="_By9rvbkJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9rvrkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9rv7kJEeStdMdBJP68aQ" value="2"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9rwLkJEeStdMdBJP68aQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
                         </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iX5_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_iYJ_LEeSYU6UyOlfnUQ" value="true"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iYZ_LEeSYU6UyOlfnUQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9rwbkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9rwrkJEeStdMdBJP68aQ" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9rw7kJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                        </expressions>
+                      </ifBlock>
+                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_By9rxLkJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rxbkJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rxrkJEeStdMdBJP68aQ" typedNamedElement="_pgNQwJ9REeSDApXOK6N3KA"/>
+                      </elseIfConditions>
+                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_By9rx7kJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9ryLkJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rybkJEeStdMdBJP68aQ" typedNamedElement="_s-nRUJ9REeSDApXOK6N3KA"/>
+                      </elseIfConditions>
+                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_By9ryrkJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9ry7kJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rzLkJEeStdMdBJP68aQ" typedNamedElement="_v59BEJ9REeSDApXOK6N3KA"/>
+                      </elseIfConditions>
+                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_By9rzbkJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rzrkJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9rz7kJEeStdMdBJP68aQ" typedNamedElement="_zACoQJ9REeSDApXOK6N3KA"/>
+                      </elseIfConditions>
+                      <elseIfConditions xsi:type="sdcec:ComparisonExpression" xmi:id="_By9r0LkJEeStdMdBJP68aQ" operator="EQUAL">
+                        <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9r0bkJEeStdMdBJP68aQ" typedNamedElement="_whV3MJ8PEeSDApXOK6N3KA"/>
+                        <rightExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_By9r0rkJEeStdMdBJP68aQ" typedNamedElement="_2Q58EJ9REeSDApXOK6N3KA"/>
+                      </elseIfConditions>
+                      <elseIfBlocks xmi:id="_By9r07kJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9r1LkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9r1bkJEeStdMdBJP68aQ" value="3"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9r1rkJEeStdMdBJP68aQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
+                        </expressions>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9r17kJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9r2LkJEeStdMdBJP68aQ" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9r2bkJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
                         </expressions>
                       </elseIfBlocks>
-                      <elseIfBlocks xmi:id="_-u_iYp_LEeSYU6UyOlfnUQ">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iY5_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_iZJ_LEeSYU6UyOlfnUQ" value="4"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iZZ_LEeSYU6UyOlfnUQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
+                      <elseIfBlocks xmi:id="_By9r2rkJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9r27kJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9r3LkJEeStdMdBJP68aQ" value="4"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9r3bkJEeStdMdBJP68aQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
                         </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iZp_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_iZ5_LEeSYU6UyOlfnUQ" value="true"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iaJ_LEeSYU6UyOlfnUQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
-                        </expressions>
-                      </elseIfBlocks>
-                      <elseIfBlocks xmi:id="_-u_iaZ_LEeSYU6UyOlfnUQ">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_iap_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_ia5_LEeSYU6UyOlfnUQ" value="5"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_ibJ_LEeSYU6UyOlfnUQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
-                        </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_ibZ_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_ibp_LEeSYU6UyOlfnUQ" value="true"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_ib5_LEeSYU6UyOlfnUQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By9r3rkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By9r37kJEeStdMdBJP68aQ" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By9r4LkJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
                         </expressions>
                       </elseIfBlocks>
-                      <elseIfBlocks xmi:id="_-u_icJ_LEeSYU6UyOlfnUQ">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_icZ_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_icp_LEeSYU6UyOlfnUQ" value="6"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_ic5_LEeSYU6UyOlfnUQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
+                      <elseIfBlocks xmi:id="_By9r4bkJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By-SwLkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By-SwbkJEeStdMdBJP68aQ" value="5"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By-SwrkJEeStdMdBJP68aQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
                         </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_idJ_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_idZ_LEeSYU6UyOlfnUQ" value="true"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_idp_LEeSYU6UyOlfnUQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By-Sw7kJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By-SxLkJEeStdMdBJP68aQ" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By-SxbkJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
                         </expressions>
                       </elseIfBlocks>
-                      <elseIfBlocks xmi:id="_-u_id5_LEeSYU6UyOlfnUQ">
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_ieJ_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_ieZ_LEeSYU6UyOlfnUQ" value="7"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_iep_LEeSYU6UyOlfnUQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
+                      <elseIfBlocks xmi:id="_By-SxrkJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By-Sx7kJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By-SyLkJEeStdMdBJP68aQ" value="6"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By-SybkJEeStdMdBJP68aQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
                         </expressions>
-                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_-u_ie5_LEeSYU6UyOlfnUQ" assignOperator=":=">
-                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_-u_ifJ_LEeSYU6UyOlfnUQ" value="true"/>
-                          <lhs_typedNamedElementExpression xmi:id="_-u_ifZ_LEeSYU6UyOlfnUQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By-SyrkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By-Sy7kJEeStdMdBJP68aQ" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By-SzLkJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
+                        </expressions>
+                      </elseIfBlocks>
+                      <elseIfBlocks xmi:id="_By-SzbkJEeStdMdBJP68aQ">
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By-SzrkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By-Sz7kJEeStdMdBJP68aQ" value="7"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By-S0LkJEeStdMdBJP68aQ" typedNamedElement="_h7PDcJ9REeSDApXOK6N3KA"/>
+                        </expressions>
+                        <expressions xsi:type="actionlanguage:Assignment" xmi:id="_By-S0bkJEeStdMdBJP68aQ" assignOperator=":=">
+                          <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_By-S0rkJEeStdMdBJP68aQ" value="true"/>
+                          <lhs_typedNamedElementExpression xmi:id="_By-S07kJEeStdMdBJP68aQ" typedNamedElement="_bS1zIJ9REeSDApXOK6N3KA"/>
                         </expressions>
                       </elseIfBlocks>
                     </expressions>
