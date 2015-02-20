@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.behavior.OperationRepository;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
@@ -74,6 +75,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass variableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationRepositoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,6 +293,24 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOperationRepository() {
+		return operationRepositoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperationRepository_Operations() {
+		return (EReference)operationRepositoryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getVariable_Constant() {
 		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
 	}
@@ -432,6 +458,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		variableEClass = createEClass(VARIABLE);
 		createEAttribute(variableEClass, VARIABLE__CONSTANT);
 		createEReference(variableEClass, VARIABLE__INITIALIZE_EXPRESSION);
+
+		operationRepositoryEClass = createEClass(OPERATION_REPOSITORY);
+		createEReference(operationRepositoryEClass, OPERATION_REPOSITORY__OPERATIONS);
 	}
 
 	/**
@@ -475,6 +504,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		typedNamedElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		variableEClass.getESuperTypes().add(this.getTypedNamedElement());
 		variableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		operationRepositoryEClass.getESuperTypes().add(theCorePackage.getRepository());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -502,6 +532,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariable_Constant(), ecorePackage.getEBoolean(), "constant", "false", 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariable_InitializeExpression(), theExpressionsPackage.getExpression(), null, "initializeExpression", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationRepositoryEClass, OperationRepository.class, "OperationRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOperationRepository_Operations(), this.getOperation(), null, "operations", null, 0, -1, OperationRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

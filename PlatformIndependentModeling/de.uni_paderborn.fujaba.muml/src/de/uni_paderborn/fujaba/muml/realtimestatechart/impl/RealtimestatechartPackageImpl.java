@@ -1167,6 +1167,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRealtimeStatechart_UsedOperationRepositories() {
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart() {
 		return realtimeStatechartEClass.getEOperations().get(0);
 	}
@@ -1455,6 +1464,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDED);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__USED_OPERATION_REPOSITORIES);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___IS_SUPER_STATECHART_OF__REALTIMESTATECHART);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART);
@@ -1667,6 +1677,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AllAvailableVariables(), theBehaviorPackage.getVariable(), null, "allAvailableVariables", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AllAvailableOperations(), theBehaviorPackage.getOperation(), null, "allAvailableOperations", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_UsedOperationRepositories(), theBehaviorPackage.getOperationRepository(), null, "usedOperationRepositories", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart(), ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);

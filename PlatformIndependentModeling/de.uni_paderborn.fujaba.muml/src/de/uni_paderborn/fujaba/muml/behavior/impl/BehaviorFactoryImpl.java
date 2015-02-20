@@ -69,6 +69,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 			case BehaviorPackage.PARAMETER: return createParameter();
 			case BehaviorPackage.PARAMETER_BINDING: return createParameterBinding();
 			case BehaviorPackage.VARIABLE: return createVariable();
+			case BehaviorPackage.OPERATION_REPOSITORY: return createOperationRepository();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,6 +83,16 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public Variable createVariable() {
 		VariableImpl variable = new VariableImpl();
 		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationRepository createOperationRepository() {
+		OperationRepositoryImpl operationRepository = new OperationRepositoryImpl();
+		return operationRepository;
 	}
 
 	/**

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
@@ -33,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.behavior.OperationRepository;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -63,6 +65,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableVariables <em>All Available Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableOperations <em>All Available Operations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getUsedOperationRepositories <em>Used Operation Repositories</em>}</li>
  * </ul>
  * </p>
  *
@@ -198,6 +201,16 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getUsedOperationRepositories() <em>Used Operation Repositories</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsedOperationRepositories()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OperationRepository> usedOperationRepositories;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -454,6 +467,18 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<OperationRepository> getUsedOperationRepositories() {
+		if (usedOperationRepositories == null) {
+			usedOperationRepositories = new EObjectResolvingEList<OperationRepository>(OperationRepository.class, this, RealtimestatechartPackage.REALTIME_STATECHART__USED_OPERATION_REPOSITORIES);
+		}
+		return usedOperationRepositories;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isSuperStatechartOf(final RealtimeStatechart statechart) {
 		// TODO: Replace by OCL's transitive closure?
 				
@@ -622,6 +647,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getAllAvailableVariables();
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				return getAllAvailableOperations();
+			case RealtimestatechartPackage.REALTIME_STATECHART__USED_OPERATION_REPOSITORIES:
+				return getUsedOperationRepositories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -664,6 +691,10 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				getClocks().clear();
 				getClocks().addAll((Collection<? extends Clock>)newValue);
 				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__USED_OPERATION_REPOSITORIES:
+				getUsedOperationRepositories().clear();
+				getUsedOperationRepositories().addAll((Collection<? extends OperationRepository>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -699,6 +730,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__USED_OPERATION_REPOSITORIES:
+				getUsedOperationRepositories().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -738,6 +772,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return ALL_AVAILABLE_VARIABLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				return ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REALTIME_STATECHART__USED_OPERATION_REPOSITORIES:
+				return usedOperationRepositories != null && !usedOperationRepositories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

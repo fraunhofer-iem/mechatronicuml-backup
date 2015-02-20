@@ -1397,6 +1397,251 @@ public interface BehaviorPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationRepositoryImpl <em>Operation Repository</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.behavior.impl.OperationRepositoryImpl
+	 * @see de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl#getOperationRepository()
+	 * @generated
+	 */
+	int OPERATION_REPOSITORY = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY__ANNOTATION = CorePackage.REPOSITORY__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY__EXTENSION = CorePackage.REPOSITORY__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY__NAME = CorePackage.REPOSITORY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY__COMMENT = CorePackage.REPOSITORY__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY__OPERATIONS = CorePackage.REPOSITORY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Operation Repository</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY_FEATURE_COUNT = CorePackage.REPOSITORY_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ECLASS = CorePackage.REPOSITORY___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EIS_PROXY = CorePackage.REPOSITORY___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ERESOURCE = CorePackage.REPOSITORY___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ECONTAINER = CorePackage.REPOSITORY___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ECONTAINING_FEATURE = CorePackage.REPOSITORY___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ECONTAINMENT_FEATURE = CorePackage.REPOSITORY___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ECONTENTS = CorePackage.REPOSITORY___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EALL_CONTENTS = CorePackage.REPOSITORY___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ECROSS_REFERENCES = CorePackage.REPOSITORY___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EGET__ESTRUCTURALFEATURE = CorePackage.REPOSITORY___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.REPOSITORY___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.REPOSITORY___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EIS_SET__ESTRUCTURALFEATURE = CorePackage.REPOSITORY___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EUNSET__ESTRUCTURALFEATURE = CorePackage.REPOSITORY___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___EINVOKE__EOPERATION_ELIST = CorePackage.REPOSITORY___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.REPOSITORY___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___PROVIDE_EXTENSION__ECLASS = CorePackage.REPOSITORY___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___GET_ANNOTATION__STRING = CorePackage.REPOSITORY___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY___PROVIDE_ANNOTATION__STRING = CorePackage.REPOSITORY___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Operation Repository</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_REPOSITORY_OPERATION_COUNT = CorePackage.REPOSITORY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.behavior.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1480,6 +1725,27 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVariable_InitializeExpression();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.behavior.OperationRepository <em>Operation Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation Repository</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.behavior.OperationRepository
+	 * @generated
+	 */
+	EClass getOperationRepository();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.behavior.OperationRepository#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.behavior.OperationRepository#getOperations()
+	 * @see #getOperationRepository()
+	 * @generated
+	 */
+	EReference getOperationRepository_Operations();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.behavior.Variable#isConstant <em>Constant</em>}'.
@@ -1689,6 +1955,24 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIABLE__INITIALIZE_EXPRESSION = eINSTANCE.getVariable_InitializeExpression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationRepositoryImpl <em>Operation Repository</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.behavior.impl.OperationRepositoryImpl
+		 * @see de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl#getOperationRepository()
+		 * @generated
+		 */
+		EClass OPERATION_REPOSITORY = eINSTANCE.getOperationRepository();
+
+		/**
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION_REPOSITORY__OPERATIONS = eINSTANCE.getOperationRepository_Operations();
 
 		/**
 		 * The meta object literal for the '<em><b>Constant</b></em>' attribute feature.

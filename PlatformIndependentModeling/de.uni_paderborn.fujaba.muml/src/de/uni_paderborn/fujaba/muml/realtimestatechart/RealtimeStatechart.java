@@ -12,6 +12,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.behavior.OperationRepository;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 
 /**
@@ -35,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAllAvailableVariables <em>All Available Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getUsedOperationRepositories <em>Used Operation Repositories</em>}</li>
  * </ul>
  * </p>
  *
@@ -211,6 +213,21 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	EList<Operation> getAllAvailableOperations();
+
+	/**
+	 * Returns the value of the '<em><b>Used Operation Repositories</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.OperationRepository}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Used Operation Repositories</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_UsedOperationRepositories()
+	 * @model
+	 * @generated
+	 */
+	EList<OperationRepository> getUsedOperationRepositories();
 
 	/**
 	 * <!-- begin-user-doc -->

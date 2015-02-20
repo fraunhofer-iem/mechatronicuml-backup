@@ -1838,6 +1838,12 @@
           <details key="documentation" value="All operations accessible within this statechart."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="usedOperationRepositories"
+          upperBound="-1" eType="#//behavior/OperationRepository">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2649,6 +2655,13 @@
           <details key="documentation" value="A variable may have a value when it is initialized. The value is defined by an expression."/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Repository">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An OperationRepository groups a set of reusable Operations. Operations are not required to have an implementation."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+          eType="#//behavior/Operation" containment="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/pattern/0.3.18" nsPrefix="pattern">

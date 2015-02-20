@@ -284,6 +284,11 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.behavior.editor.OperationRepositoryEditor$Factory"
+             type="http://www.fujaba.de/muml/behavior/0.4.0#OperationRepository">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ContinuousPortEditor$Factory"
              type="http://www.fujaba.de/muml/component/0.4.0#ContinuousPort">
        </propertyEditor>
