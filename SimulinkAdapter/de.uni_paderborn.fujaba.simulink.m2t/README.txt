@@ -1,0 +1,1 @@
+Install Graphviz (http://graphviz.org/) to get layouted Stateflow charts.

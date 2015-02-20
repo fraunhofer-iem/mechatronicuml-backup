@@ -1,0 +1,9 @@
+digraph "Chart" {
+"__init" [shape=box,label=""];
+subgraph "cluster0" {
+label = "State";
+"0/0" [shape=box,label="SubState"];
+"0/emf0" [shape=box,label="nestedEMF"];
+}
+"emf0" [shape=box,label="doSomething"];
+}

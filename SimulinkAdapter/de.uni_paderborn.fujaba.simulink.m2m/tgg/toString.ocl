@@ -1,0 +1,19 @@
+package ecore
+
+context EInt
+def: toString() : String = 
+        OrderedSet{1000000, 10000, 1000, 100, 10, 1}->iterate(
+            denominator : Integer;
+            s : String = ''|
+            let numberAsString : String = OrderedSet{
+                    '0','1','2','3','4','5','6','7','8','9'
+                }->at(self.div(denominator).mod(10) + 1)
+            in
+                if s='' and numberAsString = '0' then
+                    s
+                else
+                    s.concat(numberAsString)
+                endif
+        )
+
+endpackage

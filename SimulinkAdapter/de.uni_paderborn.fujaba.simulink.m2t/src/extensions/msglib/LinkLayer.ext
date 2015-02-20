@@ -1,0 +1,11 @@
+import model;
+import model::msglib;
+
+extension org::eclipse::xtend::util::stdlib::globalvar;
+
+cached String linkLayerToString(String source):
+	JAVA de.uni_paderborn.fujaba.simulink.m2t.xtend.CopyUtil.mdlFileToString(java.lang.String)
+;
+
+String generateLinkLayer(LinkLayer ll):
+	linkLayerToString('templates::msglib::LinkLayer');

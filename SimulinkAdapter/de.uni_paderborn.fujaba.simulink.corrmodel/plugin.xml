@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://de.uni_paderborn.fujaba2simulink"
+            class="fujaba2simulink.Fujaba2simulinkPackage"
+            genModel="model/fujaba2simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="fujaba2simulink"
+            class="fujaba2simulink.util.Fujaba2simulinkResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://de.uni_paderborn.fujaba2simulink.behavior"
+            class="fujaba2simulink.behavior_model.Behavior_modelPackage"
+            genModel="model/fujaba2simulink.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="behavior_model"
+            class="fujaba2simulink.behavior_model.util.Behavior_modelResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

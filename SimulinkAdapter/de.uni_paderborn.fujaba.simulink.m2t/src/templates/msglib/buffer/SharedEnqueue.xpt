@@ -1,0 +1,10 @@
+«IMPORT model»
+«IMPORT model::stateflow»
+«IMPORT model::msglib»
+«IMPORT model::msglib::buffer»
+
+«EXTENSION extensions::msglib::buffer::SharedEnqueue»
+
+«DEFINE sharedEnqueue FOR SharedEnqueue-»
+«EXPAND templates::stateflow::EmbeddedFunction::generic FOR this.generateContent()-»
+«ENDDEFINE»

@@ -1,0 +1,9 @@
+import model::stateflow;
+
+Chart getChart(Node node):
+	if(Chart.isInstance(node)) then
+		node
+	else if (node == null) then
+		node
+	else
+		node.parent.getChart();
