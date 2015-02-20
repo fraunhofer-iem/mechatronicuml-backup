@@ -466,6 +466,29 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TypeCastExpressionItemProvider typeCastExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypeCastExpressionAdapter() {
+		if (typeCastExpressionItemProvider == null) {
+			typeCastExpressionItemProvider = new TypeCastExpressionItemProvider(this);
+		}
+
+		return typeCastExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -581,6 +604,7 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 		if (nondeterministicChoiceExpressionItemProvider != null) nondeterministicChoiceExpressionItemProvider.dispose();
 		if (parameterExpressionItemProvider != null) parameterExpressionItemProvider.dispose();
 		if (timeValueExpressionItemProvider != null) timeValueExpressionItemProvider.dispose();
+		if (typeCastExpressionItemProvider != null) typeCastExpressionItemProvider.dispose();
 	}
 
 }

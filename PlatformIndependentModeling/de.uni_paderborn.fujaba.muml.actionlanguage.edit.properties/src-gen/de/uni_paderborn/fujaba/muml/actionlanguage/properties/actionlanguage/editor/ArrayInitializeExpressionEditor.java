@@ -23,8 +23,12 @@ public class ArrayInitializeExpressionEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExpressions_GeneralTab_Editor(null, true);
+			addExpressions_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

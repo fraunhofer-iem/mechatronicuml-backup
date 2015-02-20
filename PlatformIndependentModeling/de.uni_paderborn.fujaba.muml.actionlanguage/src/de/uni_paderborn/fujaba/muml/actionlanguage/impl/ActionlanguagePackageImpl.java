@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TimeValueExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.util.ActionlanguageValidator;
@@ -183,6 +184,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	private EClass timeValueExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass typeCastExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -743,6 +751,33 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTypeCastExpression() {
+		return typeCastExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTypeCastExpression_DataType() {
+		return (EReference)typeCastExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTypeCastExpression_EnclosedExpression() {
+		return (EReference)typeCastExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -860,6 +895,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		timeValueExpressionEClass = createEClass(TIME_VALUE_EXPRESSION);
 		createEReference(timeValueExpressionEClass, TIME_VALUE_EXPRESSION__TIME_VALUE);
+
+		typeCastExpressionEClass = createEClass(TYPE_CAST_EXPRESSION);
+		createEReference(typeCastExpressionEClass, TYPE_CAST_EXPRESSION__DATA_TYPE);
+		createEReference(typeCastExpressionEClass, TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION);
 
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
@@ -989,6 +1028,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		initEClass(timeValueExpressionEClass, TimeValueExpression.class, "TimeValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimeValueExpression_TimeValue(), theValuetypePackage.getTimeValue(), null, "timeValue", null, 1, 1, TimeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(typeCastExpressionEClass, TypeCastExpression.class, "TypeCastExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTypeCastExpression_DataType(), theTypesPackage.getDataType(), null, "dataType", null, 0, 1, TypeCastExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTypeCastExpression_EnclosedExpression(), theExpressionsPackage.getExpression(), null, "enclosedExpression", null, 1, 1, TypeCastExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

@@ -23,6 +23,9 @@ public class IfStatementEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addIfCondition_GeneralTab_Editor(null, false);
 		}
@@ -32,11 +35,13 @@ public class IfStatementEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addElseIfConditions_GeneralTab_Editor(null, true);
+			addElseIfConditions_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addElseIfBlocks_GeneralTab_Editor(null, true);
+			addElseIfBlocks_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {

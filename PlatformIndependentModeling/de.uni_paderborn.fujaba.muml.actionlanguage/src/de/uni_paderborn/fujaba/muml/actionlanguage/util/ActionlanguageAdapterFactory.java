@@ -162,6 +162,10 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 				return createTimeValueExpressionAdapter();
 			}
 			@Override
+			public Adapter caseTypeCastExpression(TypeCastExpression object) {
+				return createTypeCastExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -442,6 +446,20 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTimeValueExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression <em>Type Cast Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression
+	 * @generated
+	 */
+	public Adapter createTypeCastExpressionAdapter() {
 		return null;
 	}
 

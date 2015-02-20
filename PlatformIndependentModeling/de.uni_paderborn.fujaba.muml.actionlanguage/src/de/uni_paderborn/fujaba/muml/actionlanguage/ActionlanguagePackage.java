@@ -4521,6 +4521,52 @@ public interface ActionlanguagePackage extends EPackage {
 	int TIME_VALUE_EXPRESSION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypeCastExpressionImpl <em>Type Cast Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypeCastExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getTypeCastExpression()
+	 * @generated
+	 */
+	int TYPE_CAST_EXPRESSION = 18;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_CAST_EXPRESSION__DATA_TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Enclosed Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Type Cast Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_CAST_EXPRESSION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Type Cast Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_CAST_EXPRESSION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4528,7 +4574,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 18;
+	int ASSIGN_OPERATOR = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -4538,7 +4584,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 19;
+	int INCREMENT_DECREMENT_OPERATOR = 20;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -4548,7 +4594,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 20;
+	int POSITION_SELECTOR_KIND = 21;
 
 
 	/**
@@ -5084,6 +5130,38 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getTimeValueExpression_TimeValue();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression <em>Type Cast Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type Cast Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression
+	 * @generated
+	 */
+	EClass getTypeCastExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression#getDataType()
+	 * @see #getTypeCastExpression()
+	 * @generated
+	 */
+	EReference getTypeCastExpression_DataType();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression#getEnclosedExpression <em>Enclosed Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enclosed Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression#getEnclosedExpression()
+	 * @see #getTypeCastExpression()
+	 * @generated
+	 */
+	EReference getTypeCastExpression_EnclosedExpression();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5571,6 +5649,32 @@ public interface ActionlanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TIME_VALUE_EXPRESSION__TIME_VALUE = eINSTANCE.getTimeValueExpression_TimeValue();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypeCastExpressionImpl <em>Type Cast Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypeCastExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getTypeCastExpression()
+		 * @generated
+		 */
+		EClass TYPE_CAST_EXPRESSION = eINSTANCE.getTypeCastExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_CAST_EXPRESSION__DATA_TYPE = eINSTANCE.getTypeCastExpression_DataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Enclosed Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION = eINSTANCE.getTypeCastExpression_EnclosedExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.

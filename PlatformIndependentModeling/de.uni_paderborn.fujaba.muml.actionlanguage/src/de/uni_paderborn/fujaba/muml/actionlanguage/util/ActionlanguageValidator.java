@@ -144,6 +144,8 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateParameterExpression((ParameterExpression)value, diagnostics, context);
 			case ActionlanguagePackage.TIME_VALUE_EXPRESSION:
 				return validateTimeValueExpression((TimeValueExpression)value, diagnostics, context);
+			case ActionlanguagePackage.TYPE_CAST_EXPRESSION:
+				return validateTypeCastExpression((TypeCastExpression)value, diagnostics, context);
 			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
 			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
@@ -451,6 +453,15 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateTimeValueExpression(TimeValueExpression timeValueExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(timeValueExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTypeCastExpression(TypeCastExpression typeCastExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(typeCastExpression, diagnostics, context);
 	}
 
 	/**

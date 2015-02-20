@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.ed
 /**
  * @generated
  */
-public class BlockEditor
+public class TypeCastExpressionEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public BlockEditor(String tab,
+	public TypeCastExpressionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -23,12 +23,8 @@ public class BlockEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExpressions_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+			addDataType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,22 +32,18 @@ public class BlockEditor
 	/**
 	 * @generated
 	 */
-	protected void addExpressions_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createExpressions_GeneralTab_Editor(),
-				front);
+	protected void addDataType_GeneralTab_Editor(String category, boolean front) {
+		addEditorToCategory(category, createDataType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExpressions_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataType_GeneralTab_Editor() {
 		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getBlock_Expressions();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				.getTypeCastExpression_DataType();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
-
-		editor.setTooltipMessage("List of expressions may be attached as a body of a loop or represent a path of a conditional statement.");
 
 		return editor;
 
@@ -64,13 +56,13 @@ public class BlockEditor
 	/**
 	 * @generated
 	 */
-	public BlockEditor(String tab) {
+	public TypeCastExpressionEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.muml.actionlanguage.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-						.getBlock());
+						.getTypeCastExpression());
 	}
 
 	/**
@@ -82,7 +74,7 @@ public class BlockEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new BlockEditor(tab);
+			return new TypeCastExpressionEditor(tab);
 		}
 
 		@Override

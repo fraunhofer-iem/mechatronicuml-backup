@@ -92,5 +92,9 @@
     <genClasses ecoreClass="actionlanguage.ecore#//TimeValueExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TimeValueExpression/timeValue"/>
     </genClasses>
+    <genClasses ecoreClass="actionlanguage.ecore#//TypeCastExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypeCastExpression/dataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypeCastExpression/enclosedExpression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
