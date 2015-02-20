@@ -1462,31 +1462,34 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION = "-- Assembly may only connect ports refining different roles\r\n" +
+		"portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)\r\n" +
+		"-- author: bingo, cgerking, see MUML #877";
+
+	/**
 	 * Validates the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "AssemblyBetweenDiscretePortsRequiresDifferentRoles", getObjectLabel(assemblyConnector, context) },
-						 new Object[] { assemblyConnector },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsRequiresDifferentRoles",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

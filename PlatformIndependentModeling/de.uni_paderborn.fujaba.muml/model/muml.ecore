@@ -232,7 +232,7 @@
         <details key="ValidPortDirections" value="-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds&#xA;portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)&#xA;-- author: bingo, cgerking, see MUML #875"/>
         <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
             value="-- Assembly may only connect ports refining roles of the same coordination protocol&#xA;portParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)&#xA;-- author: bingo, cgerking, see MUML #876"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="-- Assembly may only connect ports refining different roles&#xD;&#xA;portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)&#xD;&#xA;-- author: bingo, cgerking, see MUML #877"/>
         <details key="AssemblyBetweenDiscretePortsCompatibleMessageTypes" value="-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)&#xA;portParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->&#xA;forAll(p1, p2 | p1 &lt;> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xA;-- author: bingo, cgerking, see MUML #878"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
@@ -2055,15 +2055,15 @@
       </eAnnotations>
       <eLiterals name="VOID"/>
       <eLiterals name="BOOLEAN" value="1"/>
-      <eLiterals name="INT8" value="2" literal="INT8"/>
-      <eLiterals name="INT16" value="3" literal="INT16"/>
-      <eLiterals name="INT32" value="4" literal="INT32"/>
-      <eLiterals name="INT64" value="5" literal="INT64"/>
+      <eLiterals name="INT8" value="2"/>
+      <eLiterals name="INT16" value="3"/>
+      <eLiterals name="INT32" value="4"/>
+      <eLiterals name="INT64" value="5"/>
       <eLiterals name="DOUBLE" value="6"/>
-      <eLiterals name="UINT8" value="7" literal="UINT8"/>
-      <eLiterals name="UINT16" value="8" literal="UINT16"/>
-      <eLiterals name="UINT32" value="9" literal="UINT32"/>
-      <eLiterals name="UINT64" value="10" literal="UINT64"/>
+      <eLiterals name="UINT8" value="7"/>
+      <eLiterals name="UINT16" value="8"/>
+      <eLiterals name="UINT32" value="9"/>
+      <eLiterals name="UINT64" value="10"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RangedPrimitiveDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
