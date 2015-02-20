@@ -1,0 +1,144 @@
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype component uses muml::component("http://www.fujaba.de/muml/0.4.0");
+modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.4.0");
+modeltype constraints uses muml::constraint("http://www.fujaba.de/muml/0.4.0");
+modeltype instance uses muml::instance("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype protocol uses muml::protocol("http://www.fujaba.de/muml/0.4.0");
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+--modeltype componentpattern uses componentstorydiagram::componentstorypattern("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+--modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+
+--this transformation creates a rule based reconfiguration controller for a reconfigurable structured component
+transformation GenerateReconfigurationController(inout inputComponent : component);
+
+main() {
+	var oldComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
+	map addRuleBasedReconfigurationController(oldComponent);
+}
+
+mapping addRuleBasedReconfigurationController(inout comp : ReconfigurableStructuredComponent){
+	
+	-- create reconfiguration ports
+	comp.ports += new ReconfigurationMessagePort('reconfMsg', false); 
+	comp.ports += new ReconfigurationExecutionPort('reconfExec', false);
+	
+	-- instantiate reconfiguration controllers and connections
+	comp.controller := new RuleBasedReconfigurationController(comp.name + '_reconfController');
+	
+	-- create assembly between manager and executor
+	comp.connectors += new ReconfigurationPortAssemblyConnector(comp.controller.oclAsType(RuleBasedReconfigurationController).manager.ports 
+			-> select(p : Port | p.oclIsTypeOf(InternalReconfigurationCommunicationPort)) -> any(true), comp.controller.oclAsType(RuleBasedReconfigurationController).executor.ports 
+			-> select(p : Port | p.oclIsTypeOf(InternalReconfigurationCommunicationPort)) -> any(true));
+	
+	-- create delegations
+	comp.connectors += new ReconfigurationPortDelegationConnector(comp.controller.oclAsType(RuleBasedReconfigurationController).manager.ports 
+			-> select(p : Port | p.oclIsTypeOf(ReconfigurationMessagePort) and p.name = 'parent') -> any(true), comp.ports 
+			-> select(p : Port | p.oclIsTypeOf(ReconfigurationMessagePort)) -> any(true));
+			
+	comp.connectors += new ReconfigurationPortDelegationConnector(comp.controller.oclAsType(RuleBasedReconfigurationController).executor.ports 
+			-> select(p : Port | p.oclIsTypeOf(ReconfigurationExecutionPort) and p.name = 'parent') -> any(true), comp.ports 
+			-> select(p : Port | p.oclIsTypeOf(ReconfigurationExecutionPort)) -> any(true));
+}
+
+
+-- creates a rule based reconfiguration controller consisting of a manager and an executor for 
+-- the reconfigurable structure component
+constructor RuleBasedReconfigurationController::RuleBasedReconfigurationController(in theName : String){
+	
+	name := theName;
+	
+	-- create manager and executor including their ports
+	manager := new Manager();
+	executor := new Executor();
+}
+
+-- creates a manager for the rule based reconfiguration controller
+constructor Manager::Manager(){
+	ports += new InternalReconfigurationCommunicationPort('executor');
+	ports += new ReconfigurationMessagePort('parent', false);
+	ports += new ReconfigurationMessagePort('embeddedCI', true);
+}
+
+-- creates an executor for the rule based reconfiguration controller
+constructor Executor::Executor(){
+	ports += new InternalReconfigurationCommunicationPort('events');
+	ports += new ReconfigurationExecutionPort('parent', false);
+	ports += new ReconfigurationExecutionPort('embeddedCI', true);
+}
+
+-- creates a discrete port with the specified name
+constructor InternalReconfigurationCommunicationPort::InternalReconfigurationCommunicationPort(in theName : String){
+	name := theName;
+	cardinality := new Cardinality(1,1);
+}
+
+-- creates a reconfiguration message port with the specified name
+constructor ReconfigurationMessagePort::ReconfigurationMessagePort(in theName : String, in isMulti : Boolean){
+	name := theName;
+	
+	if(isMulti = true) then{
+		cardinality := new Cardinality(1, -1);
+	} else {
+		cardinality := new Cardinality(1, 1);
+	}
+	endif;
+}
+
+-- creates a reconfiguration execution port with the specified name
+constructor ReconfigurationExecutionPort::ReconfigurationExecutionPort(in theName : String, in isMulti : Boolean){
+	name := theName;
+	
+	if(isMulti = true) then{
+		cardinality := new Cardinality(1, -1);
+	} else {
+		cardinality := new Cardinality(1, 1);
+	}
+	endif;
+}
+
+-- create a cardinality object with the given bounds, an uBound of -1 encodes infinity
+constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
+	lowerBound := object NaturalNumber{
+		value := lBound;
+		infinity := false;
+	};
+	
+	if(uBound = -1) then{
+		upperBound := object NaturalNumber{
+			value := lBound + 1;
+			infinity := true;
+		}
+	} else {
+		upperBound := object NaturalNumber{
+			value := uBound;
+			infinity := false;
+		}
+	} endif;
+}
+
+constructor ReconfigurationPortAssemblyConnector::ReconfigurationPortAssemblyConnector(in srcPort : Port, in tgtPort : Port){
+	connectorEndpoints += srcPort;
+	connectorEndpoints += tgtPort;
+}
+
+constructor ReconfigurationPortDelegationConnector::ReconfigurationPortDelegationConnector(in srcPort : Port, in tgtPort : Port){
+	connectorEndpoints += srcPort;
+	connectorEndpoints += tgtPort;
+}

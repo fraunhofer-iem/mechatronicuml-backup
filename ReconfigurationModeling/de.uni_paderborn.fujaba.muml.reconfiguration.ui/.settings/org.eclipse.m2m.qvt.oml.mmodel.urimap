@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://www.fujaba.de/muml/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/modelinstance/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/reconfiguration/0.3.18" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore"/>
+  <mapping sourceURI="http://www.storydriven.org/core/0.3.1" targetURI="platform:/resource/org.storydriven.core/model/core.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/actionlanguage/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/componentstorydiagram/0.3.1" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore"/>
+</uriMap:MappingContainer>

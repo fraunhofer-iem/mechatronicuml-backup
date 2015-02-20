@@ -1,0 +1,113 @@
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+library ActionLanguageBaseLibrary;
+
+
+-- helpers
+
+--returns an expressions negating the input expression
+helper createNotExpression(in exp : Expression) : UnaryExpression{
+	return new UnaryExpression(exp, UnaryOperator::NOT);
+}
+
+helper Expression :: appendToLogicalExpression(op : LogicOperator, appendix : Expression): LogicalExpression{
+	return new LogicalExpression(self, op, appendix);
+}
+
+helper Expression :: appendToLogicalExpression(op : LogicOperator, appendix : String): LogicalExpression{
+	return new LogicalExpression(self, op, new LiteralExpression(appendix));
+}
+
+-- queries
+
+-- if the Expression is a literal expression containing an Integer, this query returns the value of the Integer
+query Expression::parseInteger() : Integer{
+	
+	if(self.oclIsTypeOf(LiteralExpression)) then{
+		return self.oclAsType(LiteralExpression).value.toInteger();
+	} endif;
+	
+	return null;
+}
+
+-- constructors
+
+constructor LiteralExpression::LiteralExpression(in newValue : String){
+	value := newValue;
+}
+
+constructor ComparisonExpression::ComparisonExpression(in leftExpr : Expression, in op : ComparingOperator, in rightExpr : Expression){
+	leftExpression := leftExpr;
+	rightExpression := rightExpr;
+	operator := op;
+}
+
+constructor LogicalExpression::LogicalExpression(in leftExpr : Expression, in op : LogicOperator, in rightExpr : Expression){
+	leftExpression := leftExpr;
+	rightExpression := rightExpr;
+	operator := op;
+}
+
+constructor ArithmeticExpression::ArithmeticExpression(in leftExpr : Expression, in op : ArithmeticOperator, in rightExpr : Expression){
+	leftExpression := leftExpr;
+	rightExpression := rightExpr;
+	operator := op;
+}
+
+constructor UnaryExpression::UnaryExpression(in exp : Expression, in op : UnaryOperator){
+	enclosedExpression := exp;
+	operator := op;
+}
+
+constructor Assignment::Assignment(in variable : Variable, in op : AssignOperator, in rightExpr : Expression){
+	lhs_typedNamedElementExpression := new TypedNamedElementExpression(variable);
+	rhs_assignExpression := rightExpr;
+	assignOperator := op;
+}
+
+constructor TypedNamedElementExpression::TypedNamedElementExpression(in element : TypedNamedElement){
+	typedNamedElement := element;
+}
+
+constructor TriggerMessageExpression::TriggerMessageExpression(in msg : MessageType, in param : Parameter){
+	messageType := msg;
+	parameter := param;
+}
+
+constructor OperationCall::OperationCall(in op : Operation){
+	operation := op;
+}
+
+constructor Block::Block(){
+	
+}
+
+constructor DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference(in pos : PositionSelectorKind, in variable : TypedNamedElementExpression){
+	position := new PositionSelector(pos, null);
+	typedNamedElementExpression := variable;
+}
+
+constructor PositionSelector::PositionSelector(in newKind : PositionSelectorKind, in succ : PositionSelector){
+	kind := newKind;
+	successor := succ;
+}
+
+constructor ReconfigurationRuleCallExpression::ReconfigurationRuleCallExpression(in reconfRule : ReconfigurationRule){
+	reconfigurationRule := reconfRule;
+}

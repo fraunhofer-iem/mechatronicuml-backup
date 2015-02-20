@@ -1,0 +1,293 @@
+import ActionLanguageBaseLibrary;
+import TypeAndBehaviorLibrary;
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+
+-- this library contains queries and constructors for generating RealtimeStatecharts
+library RTSCBaseLibrary;
+
+------------ helper functions --------------
+
+-- returns the model element category for real-time statecharts.
+helper getOrCreateRTSCCategory(inout rootNode : RootNode) : ModelElementCategory {
+	var rtscCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	if(rtscCategory.oclIsUndefined()){
+		rtscCategory := new ModelElementCategory('de.uni_paderborn.fujaba.muml.realtimestatechart.category', 'realtimestatechart');
+		rootNode.categories += rtscCategory;
+	};
+	return rtscCategory;
+}
+
+-- adds a region including an embedded RTSC with the specified name to the specified state
+helper createEmbeddedRTSC(in name : String, inout state : State, in priority : Integer) : RealtimeStatechart{
+	var rtsc : RealtimeStatechart := new RealtimeStatechart(name);
+	var region : Region := new Region();
+	
+	region.embeddedStatechart := rtsc;
+	region.priority := priority;
+	state.embeddedRegions += region;
+	
+	return rtsc;
+}
+
+-- creates a TypedNamedElementExpression or the negation (UnaryExpression with embedded TypedNamedElementExpression) depending on the bool parameter
+helper createSimpleGuardExpression(in variable : Variable, in bool : Boolean) : Expression{
+	var tNE : TypedNamedElementExpression := new TypedNamedElementExpression(variable);
+	
+	if(not bool)
+		return new UnaryExpression(UnaryOperator::NOT, tNE);
+	
+	return tNE;
+}
+
+-- creates a comparison expression where a variable is compared to a literal
+helper createSimpleCompareGuardExpression(in variable : Variable, in value : String) : ComparisonExpression{
+	
+	var literalExpr : Expression := new LiteralExpression(value);
+	var lhs : Expression := new TypedNamedElementExpression(variable);
+	
+	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, literalExpr);
+}
+
+-- creates a comparison expression where two variables are compared
+helper createCompareGuardExpression(in variable : Variable, in variable2 : Variable) : ComparisonExpression{
+	
+	var lhs : Expression := new TypedNamedElementExpression(variable);
+	var rhs : Expression := new TypedNamedElementExpression(variable2);
+	
+	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, rhs);
+}
+
+
+-- creates a block containing one assignment expression where a literal is assigned to a variable
+helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Block{
+	var block : Block := new Block();
+	
+	var rhs : Expression := new LiteralExpression(newValue);
+	
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	block.expressions += assignment;
+	
+	return block;
+}
+
+-- creates a block containing one assignment expression where an arbitrary expression is assigned to a variable
+helper createAssignmentExpressioninBlock(in variable : Variable, in newValue : Expression) : Block{
+	var block : Block := new Block();
+	
+	var rhs : Expression := newValue;
+	
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	block.expressions += assignment;
+	
+	return block;
+}
+
+-- creates a block containing one assignment expression where a literal is assigned to a variable
+helper createMsgParamAssignmentExpressioninBlock(in variable : Variable, in msg : MessageType, in param : Parameter) : Block{
+	var block : Block := new Block();
+	
+	var rhs : TriggerMessageExpression := new TriggerMessageExpression(msg, param);
+	
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	block.expressions += assignment;
+	
+	return block;
+}
+
+-- creates an assignment expression where a literal is assigned to a variable
+helper createSimpleAssignmentExpression(in variable : Variable, in newValue : String) : Assignment{
+	
+	var rhs : Expression := new LiteralExpression(newValue);
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	
+	return assignment;
+}
+
+-- creates an assignment expression where a literal is assigned to a variable
+helper createAssignmentExpression(in variable : Variable, in newValue : Expression) : Assignment{
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, newValue);
+	
+	return assignment;
+}
+
+-- creates a parameter binding where a literal is bound to a parameter
+helper createSimpleSendLiteralParameterBinding(in param : Parameter, in theValue : String) : ParameterBinding{
+	return (new ParameterBinding(param, new LiteralExpression(theValue)));
+}
+
+-- creates a parameter binding where a variable is bound to a parameter
+helper createSimpleSendVariableParameterBinding(in param : Parameter, in variable : Variable) : ParameterBinding{
+	return (new ParameterBinding(param, new TypedNamedElementExpression(variable)));
+}
+
+helper createReconfigurationRuleCallExpressionInBlock(in reconfRule : ReconfigurationRule) : Block{
+	var block : Block := new Block();
+	
+	block.expressions += new ReconfigurationRuleCallExpression(reconfRule);
+	
+	return block;
+}
+
+-- returns the synchronization channel with the specified name if it is accessible from within the given statechart or null otherwise
+helper getSynchronizationChannel(in rtsc : RealtimeStatechart, in channelName : String) : SynchronizationChannel{
+	
+	-- check whether rtsc is embedded
+	if(rtsc.parentRegion.oclIsUndefined()) then{
+		-- if not, return null -> no parent state defining the channel exists
+		return null;
+	} else {
+		var parentState : State := rtsc.parentRegion.parentState;
+		
+		-- search for channel with the specified name in all parent states (recursively)
+		return (parentState -> closure(if parentStatechart.parentRegion.oclIsUndefined() then parentState else parentStatechart.parentRegion.parentState endif).channels 
+							-> any(name = channelName)); 
+	}endif;
+	
+	return null;
+}
+
+------------ helper queries ---------------
+
+-- returns the variable with the given name that is accessible from within the realtime statechart
+query RealtimeStatechart::getVariableByName(in theName : String) : Variable{
+	return (self.allAvailableVariables -> any(name = theName));
+}
+
+-- returns the operation with the given name that is accessible from within the realtime statechart
+query RealtimeStatechart::getOperationByName(in theName : String) : Operation{
+	return (self.allAvailableOperations -> any(name = theName));
+}
+
+-- returns the state with the given name that is contained in the realtime statechart
+query RealtimeStatechart::getStateByName(in theName : String) : State{
+	return (self.states -> any(name = theName));
+}
+
+-- returns the clock with the given name that is contained in the realtime statechart
+query RealtimeStatechart::getClockByName(in theName : String) : Clock{
+	return (self.availableClocks -> any(name = theName));
+}
+-- returns the embedded statechart with the specified name. Assumes that the RTSC follows the
+-- standard MUML RTSC structure having one initial state containing all embedded statecharts.
+query RealtimeStatechart::getEmbeddedRTSCByName(in theName : String) : RealtimeStatechart{
+	var initState : State := self.states -> any(initial = true);
+	
+	-- check whether state exists
+	if(initState.oclIsUndefined()) then{
+		return null;
+	} else {
+		return (initState.embeddedRegions -> select(r : Region | r.embeddedStatechart.name = theName) -> any(true)).embeddedStatechart;
+	} endif;
+
+	-- default return to make QVT happy
+	return null;	
+}
+
+------------- constructors -----------------
+
+constructor RealtimeStatechart::RealtimeStatechart(in newName : String){
+	name := newName;
+}
+
+constructor State::State(in newName : String){
+	name := newName;
+}
+
+constructor Region::Region(){
+	
+}
+
+constructor Clock::Clock(in newName : String){
+	name := newName;
+}
+
+constructor Transition::Transition(in srcState : Vertex, in tgtState : Vertex, in prio : Integer){
+	source := srcState;
+	target := tgtState;
+	priority := source.getUniqueTransitionPriority(prio);
+}
+
+constructor SynchronizationChannel::SynchronizationChannel(in newName : String, in type : DataType){
+	name := newName;
+	selectorType := type;
+}
+
+constructor Synchronization::Synchronization(in channel : SynchronizationChannel, in theKind : SynchronizationKind, in selectorExpr : Expression){
+	syncChannel := channel;
+	kind := theKind;
+	selectorExpression := selectorExpr;
+}
+
+constructor EntryEvent::EntryEvent(in expr : Expression, in resets : Set(Clock)){
+	action := new Action('entry', expr);
+	clockResets += resets;
+	kind := EventKind::RAISE;
+}
+
+constructor ExitEvent::ExitEvent(in expr : Expression, in resets : Set(Clock)){
+	action := new Action('exit', expr);
+	clockResets += resets;
+	kind := EventKind::RAISE;
+}
+
+constructor Action::Action(in newName : String, in expr : Expression){
+	_expressions += expr;
+	name := newName;
+}
+
+constructor AsynchronousMessageEvent::AsynchronousMessageEvent(in msgType : MessageType, in evtKind : EventKind){
+	message := new Message(msgType);
+	kind := evtKind;
+}
+
+constructor Message::Message(in msgType : MessageType){
+	instanceOf := msgType;
+}
+
+constructor EntryPoint::EntryPoint(in newName : String){
+	name := newName;
+}
+
+constructor ExitPoint::ExitPoint(in newName : String){
+	name := newName;
+}
+
+constructor RelativeDeadline::RelativeDeadline(in lBound : String, in uBound : String, in unit : TimeUnit){
+	lowerBound := new TimeValue(new LiteralExpression(lBound), unit);
+	upperBound := new TimeValue(new LiteralExpression(uBound), unit);
+}
+
+constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : ComparingOperator, in newValue : Integer, in newUnit : TimeUnit){
+	clock := newClock;
+	operator := op;
+	bound := new TimeValue(newValue, newUnit);
+}
+
+constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : ComparingOperator, in newValue : Expression, in newUnit : TimeUnit){
+	clock := newClock;
+	operator := op;
+	bound := new TimeValue(newValue, newUnit);
+}
+
+constructor UnaryExpression::UnaryExpression(in theOperator : UnaryOperator, in theEnclosedExpression : Expression){
+	operator := theOperator;
+	enclosedExpression := theEnclosedExpression;
+}

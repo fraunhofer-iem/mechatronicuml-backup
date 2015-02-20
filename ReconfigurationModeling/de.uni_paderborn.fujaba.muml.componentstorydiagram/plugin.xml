@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+ <copyright>
+ </copyright>
+
+ $Id$
+--><plugin>
+
+
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage"
+            genModel="model/ComponentStoryDiagram.genmodel"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
+      </package>
+   </extension>
+
+</plugin>

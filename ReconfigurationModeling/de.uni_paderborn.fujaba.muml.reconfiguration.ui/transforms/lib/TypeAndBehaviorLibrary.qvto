@@ -1,0 +1,182 @@
+import ProjectSpecificConstants;
+import ActionLanguageBaseLibrary;
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+library TypeAndBehaviorLibrary;
+
+-- define string representations of the muml types
+property voidType : String = PrimitiveTypes::VOID.repr();
+property boolType : String = PrimitiveTypes::BOOLEAN.repr();
+property byteType : String = PrimitiveTypes::BYTE.repr();
+property shortType : String = PrimitiveTypes::SHORT.repr();
+property intType : String = PrimitiveTypes::INT.repr();
+property longType : String = PrimitiveTypes::LONG.repr();
+property doubleType : String = PrimitiveTypes::DOUBLE.repr();
+
+
+------------ helper functions --------------
+
+-- return the affected component type used in the executor for storing the affected children of 
+-- a reconfiguration. If it is not yet contained in the model, it will be created.
+helper RootNode::getOrCreateAffectedComponentsType() : StructType {
+	
+	var category : ModelElementCategory := self.getTypesCategory();
+	
+	-- try to obtain message type repository
+	var type : StructType := (category.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(StructType) 
+						and t.oclAsType(StructType).name = genTypeAffectedComponents) 
+						-> any(true)).oclAsType(StructType);
+	
+	-- if no repository was found, then create it!
+	if(type = null) then{
+		type := self.createAffectedComponentsType();
+		category.modelElements += type;
+		category.modelElements += (type._references -> any(true)).type;
+	}endif;
+	
+	return type;
+}
+
+-- creates the affected component type used in the executor for storing the affected children of 
+-- a reconfiguration
+helper RootNode::createAffectedComponentsType() : StructType {
+	
+	-- create struct types
+	var affectedCompType : StructType := new StructType(genTypeAffectedComponents);
+	var entryType : StructType := new StructType(genTypeAffectedComponentsEntry);
+	
+	-- create attributes
+	entryType.attributes += new Attribute(genAttrRequest, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrReply, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrAction, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrVoteCommit, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrFinished, self.getPrimitiveType(boolType));
+	
+	-- create references
+	affectedCompType._references += new Reference(genRefEntries, entryType, new Cardinality(0, -1));
+	-- FIXME: add references to port instance and reconf rule
+	
+	return affectedCompType;
+}
+
+
+------------ helper queries ---------------
+
+-- returns the model element category for real-time statecharts.
+query RootNode::getTypesCategory() : ModelElementCategory {
+	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+}
+
+-- return the primitive type with the given name which is contained in the types category of the rootNode
+query RootNode::getPrimitiveType(in typeName : String) : DataType{
+	var typeCategory : ModelElementCategory := self.getTypesCategory();
+	var theType : DataType := (typeCategory.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(PrimitiveDataType) and t.oclAsType(PrimitiveDataType).name = typeName) -> any(true)).oclAsType(DataType);
+	return theType;
+}
+
+-- return the parameter with the given name of an operation
+query Operation::getParameterByName(in theName : String) : Parameter{
+	return (self.parameters -> any(name = theName));
+}
+
+------------------ mappings ----------------
+
+-- copy TimeValue
+mapping TimeValue::mapTimeValue() : TimeValue{
+	value := self.value.deepclone().oclAsType(Expression);
+	unit := self.unit;
+}
+
+-- copy NaturalNumber
+mapping NaturalNumber::mapNaturalNumber() : NaturalNumber{
+	value := self.value;
+	infinity := self.infinity;
+}
+
+------------- constructors -----------------
+
+constructor Parameter::Parameter(in newName : String, in type : DataType){
+	name := newName;
+	dataType := type;
+}
+
+constructor ParameterBinding::ParameterBinding(in param : Parameter, in valueExpr : Expression){
+	parameter := param;
+	value := valueExpr;
+}
+
+constructor Variable::Variable(in newName : String, in type : DataType){
+	name := newName;
+	dataType := type;
+}
+
+constructor Operation::Operation(in newName : String, in type : DataType){
+	name := newName;
+	returnType := type;
+}
+
+constructor Operation::Operation(in newName : String, in type : DataType, in impl : Expression){
+	name := newName;
+	returnType := type;
+	implementations := impl;
+}
+
+constructor StructType::StructType(in newName : String){
+	name := newName;
+}
+
+constructor Attribute::Attribute(in newName : String, in dataType : DataType){
+	name := newName;
+	type := dataType;
+}
+
+constructor Reference::Reference(in newName : String, in dataType : DataType, in card : Cardinality){
+	name := newName;
+	type := dataType;
+	cardinality := card;
+}
+
+constructor NaturalNumber::NaturalNumber(in newValue : Integer, in inf : Boolean){
+	value := newValue;
+	infinity := inf;
+}
+
+constructor TimeValue::TimeValue(in newValue : Integer, in timeUnit : TimeUnit){
+	value := new LiteralExpression(newValue.toString());
+	unit := timeUnit;
+}
+
+constructor TimeValue::TimeValue(in newValue : Expression, in timeUnit : TimeUnit){
+	value := newValue;
+	unit := timeUnit;
+}
+
+-- create a cardinality object with the given bounds, an uBound of -1 encodes infinity
+constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
+	lowerBound := new NaturalNumber(lBound, false);
+	
+	if(uBound = -1) then{
+		upperBound := new NaturalNumber(lBound + 1, true);
+	} else {
+		upperBound := new NaturalNumber(uBound, false);
+	} endif;
+}
+
+constructor ModelElementCategory::ModelElementCategory(theKey : String, theName : String){
+	name := theName;
+	key := theKey;
+}

@@ -1,0 +1,18 @@
+import Workflow;
+
+modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
+modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+
+// For Debugging
+//transformation CSD2SDTransform(inout model: modelinstance);
+
+transformation CSD2SDTransform(in input: csd, out output : sd);
+
+main() {
+// For Debugging
+//	model.objects()[modelinstance::RootNode]->map RootNode2RootNode();
+
+input.objects()[storydiagrams::activities::Activity]->map Activity2Activity();
+}
