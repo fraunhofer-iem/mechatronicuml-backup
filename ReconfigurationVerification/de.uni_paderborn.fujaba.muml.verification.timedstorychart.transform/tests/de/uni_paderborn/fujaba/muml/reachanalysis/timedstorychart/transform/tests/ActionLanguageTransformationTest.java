@@ -159,7 +159,7 @@ public class ActionLanguageTransformationTest {
 
 	private void addAttributes() {
 		PrimitiveDataType integer = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		integer.setPrimitiveType(PrimitiveTypes.INT);
+		integer.setPrimitiveType(PrimitiveTypes.INT32);
 		typesCategory.getModelElements().add(integer);
 		
 		counter = BehaviorFactory.eINSTANCE.createVariable();
