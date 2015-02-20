@@ -12,7 +12,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.CoreEditPlugin;
@@ -23,7 +28,9 @@ import org.storydriven.core.provider.CoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExpressionItemProvider extends CommentableElementItemProvider {
+public class ExpressionItemProvider extends CommentableElementItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

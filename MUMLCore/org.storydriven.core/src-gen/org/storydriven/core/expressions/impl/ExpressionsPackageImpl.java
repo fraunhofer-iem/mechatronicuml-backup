@@ -9,6 +9,7 @@ package org.storydriven.core.expressions.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.Expression;
@@ -90,6 +91,9 @@ public class ExpressionsPackageImpl extends EPackageImpl implements
 				.get(eNS_URI) : new ExpressionsPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl) (EPackage.Registry.INSTANCE
