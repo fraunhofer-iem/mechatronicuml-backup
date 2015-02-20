@@ -34,13 +34,19 @@ public class SelectorTypePropertyDescriptor extends ItemPropertyDescriptor {
 		Collection<?> choices = super.getChoiceOfValues(object);
 		HashMap<String, Boolean> allowedPrimitiveTypes = new HashMap<String, Boolean>();
 		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
-				.getEEnumLiteral("BYTE").getLiteral(), true);
+				.getEEnumLiteral("INT8").getLiteral(), true);
 		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
-				.getEEnumLiteral("SHORT").getLiteral(), true);
+				.getEEnumLiteral("INT16").getLiteral(), true);
 		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
 				.getEEnumLiteral("BOOLEAN").getLiteral(), true);
 		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
-				.getEEnumLiteral("INT").getLiteral(), true);
+				.getEEnumLiteral("INT32").getLiteral(), true);
+		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
+				.getEEnumLiteral("UINT8").getLiteral(), true);
+		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
+				.getEEnumLiteral("UINT16").getLiteral(), true);
+		allowedPrimitiveTypes.put(TypesPackage.Literals.PRIMITIVE_TYPES
+				.getEEnumLiteral("UINT32").getLiteral(), true);
 
 		EClass eClassOfBehavioralElement = null;
 		Boolean additionalTypeAllowed = false;
