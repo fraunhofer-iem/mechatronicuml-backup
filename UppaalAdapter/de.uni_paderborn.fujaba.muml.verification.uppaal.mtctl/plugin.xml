@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+</plugin>

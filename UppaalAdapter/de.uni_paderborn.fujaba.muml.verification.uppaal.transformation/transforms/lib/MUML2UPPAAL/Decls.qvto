@@ -1,0 +1,6 @@
+library Decls;
+
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+
+property globalDeclarations : Declarations = null;

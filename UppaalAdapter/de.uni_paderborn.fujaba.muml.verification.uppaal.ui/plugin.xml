@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL Verification Command" description="Run UPPAAL model checking"/>
+      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.UppaalVerificationAction"
+         name="Run UPPAAL Model Checking"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.UppaalVerifyForResultAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="UPPAAL XML Export Command" description="Export UPPAAL XML file"/>
+      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalXMLAction"
+         name="Export UPPAAL XML File"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportUppaalXMLAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model"/>
+      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalModelAction"
+         name="Export UPPAAL Model"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportUppaalModelAction"/>
+   </extension>
+
+
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Export UPPAAL Model Command" description="Export UPPAAL model (Wizard)..."/>
+      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalWizardModelAction"
+         name="Export UPPAAL Model (Wizard)..."
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.ExportUppaalWizardDialogAction"/>
+   </extension>
+
+
+
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Trace Image Export Command" description="Export trace image"/>
+      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction"
+         name="Run UPPAAL Model Checking for a Trace"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportTraceImageAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="Add Default Properties Command" description="Add Default Verification Properties"/>
+      <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.AddDefaultPropertiesAction"
+         name="Add Default Verification Properties"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.AddDefaultPropertiesAction"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+      	 
+      	 <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.UppaalVerificationAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+               	  
+               	  <with variable="selection"><iterate ifEmpty="false">
+               	     <or> 
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+                     </or>
+                  </iterate></with>    
+               </and>              
+            </visibleWhen>
+         </command>
+      	                   
+         <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportTraceImageAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+	               	  <or>
+		               	  <with variable="selection"><iterate ifEmpty="false"> 
+		                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+		                  </iterate></with>
+		                  <with variable="selection"><iterate ifEmpty="false"> 
+		                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+		                  </iterate></with>
+		                  <with variable="selection"><iterate ifEmpty="false"> 
+		                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+		                  </iterate></with>
+		                  <with variable="selection"><iterate ifEmpty="false"> 
+		                     <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+		                  </iterate></with>
+		              </or>    
+               </and>              
+            </visibleWhen>
+         </command>
+         
+         <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalWizardModelAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+               	  
+               	  <with variable="selection"><iterate ifEmpty="false">
+               	     <or> 
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+                     </or>
+                  </iterate></with>    
+               </and>              
+            </visibleWhen>
+         </command>
+         
+         <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalModelAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+               	  
+               	  <with variable="selection"><iterate ifEmpty="false">
+               	     <or> 
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+                     </or>
+                  </iterate></with>    
+               </and>              
+            </visibleWhen>
+         </command>
+
+         <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalXMLAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+               	  
+               	  <with variable="selection"><iterate ifEmpty="false">
+               	     <or> 
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+                     </or>
+                  </iterate></with>    
+               </and>              
+            </visibleWhen>
+         </command>
+
+
+         <command commandId="de.uni_paderborn.fujaba.muml.verification.uppaal.AddDefaultPropertiesAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
+               	  
+               	  <with variable="selection"><iterate ifEmpty="false">
+               	     <or> 
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart"/>
+                        <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart"/>
+                     </or>
+                  </iterate></with>    
+               </and>              
+            </visibleWhen>
+         </command>
+                  
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.UppaalExportWizard"
+            id="de.uni_paderborn.fujaba.verification.upaal.export"
+            name="Uppaal Model">
+      </wizard>
+   </extension>
+
+</plugin>

@@ -1,0 +1,235 @@
+import transforms.lib.MUML2UPPAAL.Async.Variables;
+import transforms.lib.MUML2UPPAAL.Async.Functions;
+import transforms.lib.MUML2UPPAAL.Util;
+import transforms.lib.MUML2UPPAAL.Clocks;
+import transforms.lib.MUML2UPPAAL.Expressions;
+import transforms.lib.MUML2UPPAAL.IDs;
+
+modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype mumlBehavior uses 'http://www.fujaba.de/muml/behavior/0.4.0';
+modeltype mumlconnector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype mumlInstance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype mumlmsgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+
+modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
+modeltype mtctlQuantifiers uses mtctl::Quantifiers('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlPredicates uses mtctl::Predicates('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlSets uses mtctl::Sets('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlBooleanLogic uses mtctl::BooleanLogic('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctlComparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_core uses uppaal::core('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_system uses uppaal::declarations::system('http://www.uni-paderborn.de/uppaal/0.4.0');
+
+modeltype uppaalReq uses 'http://www.uni-paderborn.de/requirements/0.4.0';
+modeltype uppaalExpr uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+
+//Maps a set of (normalized) MTCTL properties to uppaal properties. Assumes normalized MTCTL and direct access to MUML2Uppaal traces (i.e. it should be the directly previous transformation)
+transformation MTCTL2Uppaal(in input:muml_protocol, out output:uppaalReq) access Functions, Util, Clocks, Expressions, Variables; //NOT IDs
+
+main() {
+	var targetRepository = object uppaalReq::PropertyRepository {};
+	input.objects()[mtctl::PropertyRepository]->forEach(repository) {
+		repository.properties->forEach(p) {
+			targetRepository.properties += p.expression->map Expression2Property();
+		};
+	};
+	assert (targetRepository.oclAsType(uppaalReq::PropertyRepository).properties->notEmpty()) with log ("There is no property to verify");
+}
+
+mapping mtctl::Expression::Expression2Property() : uppaalReq::Property disjuncts 
+	AGExpr::AGExpr2Property, 
+	AFExpr::AFExpr2Property, 
+	EGExpr::EGExpr2Property, 
+	EFExpr::EFExpr2Property, 
+	LeadsToExpr::LeadsToExpr2Property;
+
+mapping AGExpr::AGExpr2Property() : uppaalReq::UnaryProperty {
+	expression := self.expr.map Expression2Expression();
+	operator := uppaalReq::TemporalOperator::GLOBAL;
+	quantifier := uppaalReq::PathQuantifier::FORALL;
+	comment := self.oclAsType(EObject).eContainer().oclAsType(Property).comment;
+}
+mapping AFExpr::AFExpr2Property() : uppaalReq::UnaryProperty {
+	expression := self.expr.map Expression2Expression();
+	operator := uppaalReq::TemporalOperator::FUTURE;
+	quantifier := uppaalReq::PathQuantifier::FORALL;
+	comment := self.oclAsType(EObject).eContainer().oclAsType(Property).comment;
+}
+mapping EGExpr::EGExpr2Property() : uppaalReq::UnaryProperty {
+	expression := self.expr.map Expression2Expression();
+	operator := uppaalReq::TemporalOperator::GLOBAL;
+	quantifier := uppaalReq::PathQuantifier::EXISTS;
+	comment := self.oclAsType(EObject).eContainer().oclAsType(Property).comment;	
+}
+mapping EFExpr::EFExpr2Property() : uppaalReq::UnaryProperty {
+	expression := self.expr.map Expression2Expression();
+	operator := uppaalReq::TemporalOperator::FUTURE;
+	quantifier := uppaalReq::PathQuantifier::EXISTS;
+	comment := self.oclAsType(EObject).eContainer().oclAsType(Property).comment;
+}
+
+mapping LeadsToExpr::LeadsToExpr2Property() : uppaalReq::LeadsToProperty {
+	leftExpression := self.leftOpd.map Expression2Expression();
+	rightExpression := self.rightOpd.map Expression2Expression();
+	comment := self.oclAsType(EObject).eContainer().oclAsType(Property).comment;
+}
+
+mapping Expression::Expression2Expression() : uppaalExpr::Expression disjuncts 
+	AndExpr::AndExpr2LogicalExpr, 
+	OrExpr::OrExpr2LogicalExpr, 
+	NotExpr::NotExpr2NegationExpr, 
+	ImplyExpr::ImplyExpr2LogicalExpr,
+	ConstExpr::ConstExpr2LiteralExpression,
+	DeadlockExpr::DeadlockExpr2DeadlockExpression,
+	ComparisonExpr::ComparisonExpr2CompareExpression,
+	FalseExpr::FalseExpr2LiteralExpression,
+	TrueExpr::TrueExpr2LiteralExpression,
+	MumlElemExpr::MumlElemExpr2Expression,
+	StateActiveExpr::StateActiveExpr2IdentifierExpression,
+	BufferOverflowExpr::BufferOverflowExpr2Expression,
+	BufferMsgCountExpr::BufferMsgCount2Expression,
+	MessageInBufferExpr::MessageInBufferExpr2Expression,
+	MessageInTransitExpr::MessageInTransitExpr2Expression,
+	TransitionFiringExpr::TransitionFiringExpr2IdentifierExpression
+;
+
+mapping AndExpr::AndExpr2LogicalExpr() : uppaalExpr::LogicalExpression {
+	firstExpr := self.leftOpd.map Expression2Expression();
+	secondExpr := self.rightOpd.map Expression2Expression();
+	operator := LogicalOperator::AND;
+}
+
+mapping OrExpr::OrExpr2LogicalExpr() : uppaalExpr::LogicalExpression {
+	firstExpr := self.leftOpd.map Expression2Expression();
+	secondExpr := self.rightOpd.map Expression2Expression();
+	operator := LogicalOperator::OR;
+}
+
+mapping ImplyExpr::ImplyExpr2LogicalExpr() : uppaalExpr::LogicalExpression {
+	firstExpr := self.leftOpd.map Expression2Expression();
+	secondExpr := self.rightOpd.map Expression2Expression();
+	operator := LogicalOperator::IMPLY;
+}
+
+mapping NotExpr::NotExpr2NegationExpr() : uppaalExpr::NegationExpression {
+	negatedExpression := self.opd.map Expression2Expression();
+}
+
+mapping BufferMsgCountExpr::BufferMsgCount2Expression() : uppaalExpr::FunctionCallExpression { // getNumberOfElementsInBuffer(buffers[roleIndex][bufferIndex])
+	function := resolveoneIn(Functions::createGetNumElementsInBufferFunction).oclAsType(Function);
+	argument := object IdentifierExpression {identifier := resolveoneIn(Variables::createBuffersVariable).oclAsType(uppaal_core::NamedElement);
+		 index += object LiteralExpression {text := self.buffer.oclAsType(MumlElemExpr).instance.getInstanceID().repr()};
+		 index += object LiteralExpression {text := self.buffer.oclAsType(MumlElemExpr).elem.oclAsType(MessageBuffer).getBufferIndex().repr()}		
+	};
+}
+
+mapping TransitionFiringExpr::TransitionFiringExpr2IdentifierExpression() : ScopedIdentifierExpression {
+	var transition := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition);
+	var location := transition.resolveone(uppaal::templates::Location); //the intermediate location for the transition
+	identifier := object IdentifierExpression {identifier := location};
+	var instance := self.transition.oclAsType(MumlElemExpr).instance;
+	var templateDecls := instance.resolve(TemplateDeclaration)->union(instance.resolve(OrderedSet(TemplateDeclaration))->flatten());
+	scope := object IdentifierExpression {identifier := templateDecls.declaredTemplate->select(declTempl:RedefinedTemplate | declTempl.referredTemplate = location.parentTemplate)->any(true).oclAsType(uppaal_core::NamedElement)};	
+	assert fatal (not location.oclIsUndefined() and not scope.oclAsType(IdentifierExpression).identifier.oclIsUndefined()) with log("Error in translating TransitionFiringExpr to Uppaal");
+}
+
+mapping ConstExpr::ConstExpr2LiteralExpression() : uppaalExpr::LiteralExpression {
+	text := self.val.toString();
+}
+
+mapping MumlElemExpr::MumlElemExpr2Expression() : uppaalExpr::Expression disjuncts MumlElemExpr::ClockExpr2Expression, MumlElemExpr::VariableExpr2Expression;
+
+mapping MumlElemExpr::ClockExpr2Expression() : uppaalExpr::IdentifierExpression when {self.elem.oclIsKindOf(Clock)} {
+	identifier := self.elem.oclAsType(Clock).resolveoneIn(Clock::Clock2Variable).oclAsType(uppaal_core::NamedElement);
+	index += object LiteralExpression {text := self.instance.getInstanceID().repr() };
+}
+
+mapping MumlElemExpr::VariableExpr2Expression() : uppaalExpr::IdentifierExpression when {self.elem.oclIsKindOf(Variable)} {
+	identifier := self.elem.oclAsType(Variable).resolveoneIn(muml::behavior::Variable::Variable2Variable).oclAsType(uppaal_core::NamedElement);
+	index += object LiteralExpression {text := self.instance.getInstanceID().repr() };
+}
+
+mapping DeadlockExpr::DeadlockExpr2DeadlockExpression() : uppaalReq::DeadlockExpression {
+	
+}
+
+mapping BufferOverflowExpr::BufferOverflowExpr2Expression() : uppaalExpr::IdentifierExpression {
+	identifier := resolveoneIn(Variables::createOverflowVariable).oclAsType(uppaal_core::NamedElement);
+}
+
+mapping ComparisonExpr::ComparisonExpr2CompareExpression() : uppaalExpr::CompareExpression {
+	firstExpr := self.lhs.map Expression2Expression();
+	secondExpr := self.rhs.map Expression2Expression();
+	switch {
+		case (self.op = ComparisonOp::EQUALS) {operator := CompareOperator::EQUAL;}
+		case (self.op = ComparisonOp::GREATER_OR_EQUAL) {operator := CompareOperator::GREATER_OR_EQUAL;}
+		case (self.op = ComparisonOp::GREATER) {operator := CompareOperator::GREATER;}
+		case (self.op = ComparisonOp::LESS_OR_EQUAL) {operator := CompareOperator::LESS_OR_EQUAL;}
+		case (self.op = ComparisonOp::LESS) {operator := CompareOperator::LESS;}	
+		case (self.op = ComparisonOp::NOT_EQUAL) {operator := CompareOperator::UNEQUAL;}
+	};
+}
+
+mapping FalseExpr::FalseExpr2LiteralExpression() : uppaalExpr::LiteralExpression {
+	text := "false";
+}
+
+mapping TrueExpr::TrueExpr2LiteralExpression() : uppaalExpr::LiteralExpression {
+	text := "true";
+}
+
+mapping MessageInBufferExpr::MessageInBufferExpr2Expression() : FunctionCallExpression {
+	function := resolveoneIn(Functions::createCheckMessageInBufferFunction).oclAsType(Function);
+	argument += object IdentifierExpression { // will be buffers[roleIndex][bufferIndex]
+			identifier := resolveoneIn(Variables::createBuffersVariable).oclAsType(uppaal_core::NamedElement);
+			index += object LiteralExpression {text := self.buffer.oclAsType(MumlElemExpr).instance.getInstanceID().repr()};
+			index += object LiteralExpression {text := self.buffer.oclAsType(MumlElemExpr).elem.oclAsType(MessageBuffer).getBufferIndex().repr()}		
+	};
+	argument += object IdentifierExpression { // Uppaal message kind constant
+			identifier := self.message.oclAsType(MumlElemExpr).elem.resolveoneIn(MessageType::createMessageKindConstant).oclAsType(uppaal_core::NamedElement);
+	};
+}
+
+mapping MessageInTransitExpr::MessageInTransitExpr2Expression() : QuantificationExpression { //exists(i:instances) checkMessageInBuffer(connectors[i], messageType)
+	quantifier := Quantifier::EXISTENTIAL;
+	typeDefinition := object TypeReference {referredType := resolveoneIn(IDs::DiscretePortInstanceType).oclAsType(Type)};
+	variable := object uppaal_declarations::Variable {name := 'i'; container := result};
+	expression := object FunctionCallExpression {
+		function := resolveoneIn(Functions::createCheckMessageInBufferFunction).oclAsType(Function);
+		argument += object IdentifierExpression {
+			identifier := resolveoneIn(Variables::createConnectorsVariable).oclAsType(uppaal_core::NamedElement);
+			index += object IdentifierExpression {identifier := result.variable->any(true); };
+		};
+		argument += object IdentifierExpression { // Uppaal message kind constant
+			identifier := self.message.oclAsType(MumlElemExpr).elem.resolveoneIn(MessageType::createMessageKindConstant).oclAsType(uppaal_core::NamedElement);
+		};
+	};
+}
+
+mapping StateActiveExpr::StateActiveExpr2IdentifierExpression() : uppaalExpr::ScopedIdentifierExpression {
+	var state := self.state.oclAsType(MumlElemExpr).elem.oclAsType(State);
+	var location := state.resolveone(uppaal::templates::Location);
+	identifier := object IdentifierExpression {identifier := location};
+	var instance := self.state.oclAsType(MumlElemExpr).instance;
+	var templateDecls := instance.resolve(TemplateDeclaration)->union(instance.resolve(OrderedSet(TemplateDeclaration))->flatten());
+	scope := object IdentifierExpression {identifier := templateDecls.declaredTemplate->select(declTempl:RedefinedTemplate | declTempl.referredTemplate = location.parentTemplate)->any(true).oclAsType(uppaal_core::NamedElement)};
+	assert fatal (not location.oclIsUndefined() and not scope.oclAsType(IdentifierExpression).identifier.oclIsUndefined()) with log("Error in translating StateActiveExpr to Uppaal");
+}
+
+query cicToVerify() : ComponentInstanceConfiguration {
+	return input.objects()[ComponentInstanceConfiguration]->any(ve:ComponentInstanceConfiguration | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension)));
+} 

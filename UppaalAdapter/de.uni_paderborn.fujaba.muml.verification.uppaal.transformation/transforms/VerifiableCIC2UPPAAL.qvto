@@ -1,0 +1,82 @@
+import transforms.rtsc.RTSCHierarchyNormalization;
+import transforms.rtsc.RTSCDeadlineTransitionNormalization;
+import transforms.rtsc.RTSCCompositeTransitionNormalization;
+import transforms.rtsc.RTSCEntryExitEventNormalization;
+import transforms.rtsc.RTSCScaleTimeValuesNormalization;
+import transforms.rtsc.RTSCDoEventNormalization;
+import transforms.rtsc.RTSCUrgencyNormalization;
+import transforms.NameNormalization;
+import transforms.cic.Protocol2CIC;
+import transforms.MUML2UPPAAL;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
+
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_requirements uses 'http://www.uni-paderborn.de/requirements/0.4.0';
+modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
+
+/*
+* Transforms a property-normalized CIC to UPPAAL
+*/
+
+transformation VerifiableCIC2UPPAAL(in verifiable_cic : muml, in options : verification_options, out output_uppaal : uppaal, out output_req: uppaal_requirements);
+
+main() {
+	reportProgress("Normalizations");
+	
+	//add muml prefix to all named elements and substitute unsupported substrings of the named elements' names
+	var prefixedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var nameNormalization : NameNormalization = new NameNormalization(verifiable_cic, prefixedModel);
+	var retcode := nameNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('NamePrefix normalization failed: ' + retcode.raisedException().repr());
+
+	// Normalize transitions with deadlines by adding an intermediate state
+	var transitionNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var transitionDeadlineNormalization : RTSCDeadlineTransitionNormalization = new RTSCDeadlineTransitionNormalization(prefixedModel,transitionNormalizedModel);
+	retcode := transitionDeadlineNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Deadline transition normalization failed: ' + retcode.raisedException().repr());
+	
+	// Replace composite transitions by equivalent transitions and exit/entry points
+	var compositeNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var compositeNormalization : RTSCCompositeTransitionNormalization = new RTSCCompositeTransitionNormalization(transitionNormalizedModel,compositeNormalizedModel);
+	retcode := compositeNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Composite transition normalization failed: ' + retcode.raisedException().repr());
+	
+	// Replace do events by equivalent regions
+	var doEventNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var doEventNormalization : RTSCDoEventNormalization = new RTSCDoEventNormalization(compositeNormalizedModel,doEventNormalizedModel);
+	retcode := doEventNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Do event normalization failed: ' + retcode.raisedException().repr());
+		
+	// Flatten the RTSCs into one equivalent flat RTSC with multiple regions without hierarchical states
+	var flatModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var flattening : RTSCHierarchyNormalization = new RTSCHierarchyNormalization(doEventNormalizedModel,flatModel);
+	retcode := flattening.transform();
+	assert fatal (retcode.succeeded()) with log('Hierarchy normalization failed: ' + retcode.raisedException().repr());
+	
+	// Move entry/exit events of a state to incoming/outgoing transitions
+	var entryExitNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var entryExitNormalization : RTSCEntryExitEventNormalization = new RTSCEntryExitEventNormalization(flatModel,entryExitNormalizedModel);
+	retcode := entryExitNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Entry-Exit-Event normalization failed: ' + retcode.raisedException().repr());
+
+	// Normalize time units used in the model (to one common time unit)
+	var scaleClockValuesNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var scaleClockValuesNormalization : RTSCScaleTimeValuesNormalization = new RTSCScaleTimeValuesNormalization(entryExitNormalizedModel, scaleClockValuesNormalizedModel);
+	retcode := scaleClockValuesNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Scale-Time-Values normalization failed: ' + retcode.raisedException().repr());
+	
+	// Ensure that all transitions synchronizing over the same channel are either all urgent or all non-urgent.
+	var urgencyNormalizedModel : muml = muml.createEmptyModel().oclAsType(muml);
+	var urgencyNormalization : RTSCUrgencyNormalization = new RTSCUrgencyNormalization(scaleClockValuesNormalizedModel,urgencyNormalizedModel);
+	retcode := urgencyNormalization.transform();
+	assert fatal (retcode.succeeded()) with log('Urgency normalization failed: ' + retcode.raisedException().repr());
+	
+	// Migration to Uppaal, yielding the NTA model and the Uppaal "requirements" model
+	reportProgress("Migration");
+	var uppaalTransformation : MUML2UPPAAL = new MUML2UPPAAL(verifiable_cic, urgencyNormalizedModel, options, output_uppaal, output_req);
+	retcode := uppaalTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('UPPAAL transformation failed: ' + retcode.raisedException().repr());		
+
+}

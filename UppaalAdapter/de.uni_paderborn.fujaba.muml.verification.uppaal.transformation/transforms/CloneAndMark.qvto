@@ -1,0 +1,18 @@
+import transforms.lib.MUML2MUML;
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype muml uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype constraintModel uses 'http://www.fujaba.de/muml/constraint/0.4.0';
+modeltype verificationExtension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+
+//Clones input and marks the only element in the element_to_verify extent with an ElementToVerifyExtension
+transformation CloneAndMark(in input:muml, in element_to_verify:muml, out output:muml) extends MUML2MUML;
+
+main() {
+	input.objects()[RootNode]->map RootNode2RootNode();
+	var markedElement := element_to_verify.objects()[VerifiableElement]->any(true).oclAsType(VerifiableElement).map VerifiableElement2VerifiableElement();
+	markedElement.oclAsType(ExtendableElement).extension += object ElementToVerifyExtension{}
+}

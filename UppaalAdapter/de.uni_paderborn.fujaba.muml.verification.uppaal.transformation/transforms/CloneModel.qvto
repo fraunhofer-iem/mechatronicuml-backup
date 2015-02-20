@@ -1,0 +1,11 @@
+import transforms.lib.MUML2MUML;
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+
+transformation CloneModel(in input:muml_instance, out output:muml_instance) extends MUML2MUML;
+
+main() {
+	input.objects()[RootNode]->map RootNode2RootNode();
+}

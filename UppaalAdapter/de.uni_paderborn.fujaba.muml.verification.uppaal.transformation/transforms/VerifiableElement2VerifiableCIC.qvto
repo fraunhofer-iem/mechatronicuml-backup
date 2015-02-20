@@ -1,0 +1,47 @@
+import transforms.mtctl.MTCTLTransformation;
+import transforms.cic.Protocol2CIC;
+import transforms.CloneModel;
+import de.uni_paderborn.fujaba.muml.verification.uppaal._blackbox.ProgressUnit;
+
+modeltype muml_constraint uses muml::constraint('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype verification_extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0';
+modeltype muml uses 'http://www.fujaba.de/muml/0.4.0';
+modeltype verification_options uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options';
+
+
+/*
+* Transforms a VerifiableElement model into a CIC that can be verified (out verifiableCIC, i.e. the CIC with split properties)
+* "out staticallyNormalizedModel" contains the statically normalized MTCTL properties
+* "out originalCIC" contains the CIC with original (complex) MTCTL properties 
+*/
+transformation VerifiableElement2VerifiableCIC(in input : muml, in options: verification_options, out verifiableCIC : muml, out staticallyNormalizedModel : muml, out originalCIC : muml);
+
+main() {
+	reportProgress("Creating CIC");
+
+	var verifiableElement = input.objects()[VerifiableElement]->any(ve : VerifiableElement | ve.extension->exists(oclIsKindOf(ElementToVerifyExtension)));
+	if (verifiableElement.oclIsUndefined()) {
+		// in case no ElementToVerifyExtension has been set for a VerifiableElement, we take a VerifiableElement with verification constraints
+		verifiableElement := input.objects()[VerifiableElement]->any(ve : VerifiableElement | not ve.verificationConstraintRepositories->isEmpty());
+		verifiableElement.extension += object ElementToVerifyExtension {};
+	};
+
+	if (verifiableElement.oclIsKindOf(CoordinationProtocol)) {
+		var p2cicTransformation : Protocol2CIC = new Protocol2CIC(input, options, originalCIC);
+		var retcode : Status = p2cicTransformation.transform();
+		assert fatal (retcode.succeeded()) with log('Protocol2CIC failed: ' + retcode.raisedException().repr());
+	};
+	if (verifiableElement.oclIsKindOf(ComponentInstanceConfiguration)) {
+		var muml2mumlTransformation : CloneModel = new CloneModel(input, originalCIC);
+		var retcode : Status = muml2mumlTransformation.transform();
+		assert fatal (retcode.succeeded()) with log('CIC2CIC failed: ' + retcode.raisedException().repr());
+	};		
+	//TODO add AtomicComponent2CIC
+	
+	var mtctlTransformation : MTCTLTransformation = new MTCTLTransformation(originalCIC, staticallyNormalizedModel, verifiableCIC);
+	var retcode := mtctlTransformation.transform();
+	assert fatal (retcode.succeeded()) with log('MTCTL Transformation failed: ' + retcode.raisedException().repr());	
+	
+}

@@ -1,0 +1,322 @@
+import transforms.lib.MUML2UPPAAL.Queries;
+import transforms.lib.MUML2UPPAAL.Types;
+import transforms.lib.MUML2UPPAAL.Decls;
+
+library IDs;
+
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype uppaal_expressions uses uppaal::expressions('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_statements uses uppaal::statements('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
+modeltype muml_behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+	/** 
+	 *
+	 * Queries 
+	 *
+	 **/
+	
+
+	query overallNumberOfDiscretePortInstances() : Integer {
+		
+		return assert fatal (false) with log('Should be overridden.')
+	}
+	
+	query overallNumberOfComponentInstances() : Integer {
+	
+		return assert fatal (false) with log('Should be overridden.')
+	}
+	
+	query cicToVerify() : ComponentInstanceConfiguration {
+		return assert fatal (false) with log('Should be overridden.')
+	}
+	
+	
+	query ComponentInstanceConfiguration :: components() : OrderedSet(Component) {
+		
+		return self.componentInstances->collect(componentType)->asOrderedSet()
+		
+	}
+
+	
+	query ComponentInstanceConfiguration :: discretePorts() : OrderedSet(DiscretePort) {
+		
+		return self.discretePortInstances()
+				->collect(portType.oclAsType(DiscretePort))
+				->asOrderedSet()
+	}
+	
+	
+	query DiscretePortInstance :: getID() : Integer {
+		
+		// the id of a port instance is defined by its unique index
+		var id := cicToVerify().discretePortInstances()->indexOf(self) - 1;
+		
+		assert fatal (not id.oclIsInvalid()) with log("Couldn't determine the ID of the given port instance. Maybe the given instance is part of a multiport?");
+		
+		return id;
+	}
+	
+	
+	query ComponentInstance :: getID() : Integer {
+		
+		// the id of a component instance is defined by its unique index
+		var id := cicToVerify().componentInstances->indexOf(self) - 1;
+		
+		assert fatal (not id.oclIsInvalid()) with log("Couldn't determine the ID of the given component instance.");
+		
+		return id;
+	}
+	
+	
+	query ComponentInstanceConfiguration :: discretePortInstances() : OrderedSet(DiscretePortInstance) {
+		
+		
+		// TODO cache this
+		var pInstances := self.componentInstances
+			->collect(portInstances)
+			->flatten()
+			->select(pi | pi.oclIsKindOf(DiscretePortInstance))
+			->collect(oclAsType(DiscretePortInstance));
+		
+		// sort by name to ensure a reproducible order	
+		return pInstances->asOrderedSet(); 
+	}
+	
+	
+	// returns the index of the buffer to use with the "buffers" array
+	query MessageBuffer :: getBufferIndex() : Integer {
+	
+		return self.discreteInteractionEndpoint.receiverMessageBuffer->indexOf(self) - 1
+		
+	}
+	
+	
+	//Shortcut to "polymorphically" get the instance ID for a discrete port instance or Component instance
+	query EObject :: getInstanceID() : Integer {
+		if (self.oclIsKindOf(DiscretePortInstance)) {
+			return self.oclAsType(DiscretePortInstance).getID();
+		};
+		if (self.oclIsKindOf(ComponentInstance)) {
+			return self.oclAsType(ComponentInstance).getID();
+		};
+		assert fatal (false) with log("Cannot compute instance id for "+self.toString());
+		return null;
+	}
+	
+	
+	/** 
+	 *
+	 * End Queries 
+	 *
+	 **/
+
+	mapping muml_behavior::Variable :: Variable2IDRange() : DeclaredType when {not self.getOwningStatechart().oclIsUndefined()} {
+		
+		init {
+		
+			result := self.getOwningStatechart().map RTSC2IDRange()
+			
+		}
+		
+	}
+	
+	mapping Clock :: Clock2IDRange() : DeclaredType {
+		
+		init {
+						
+			result := self.statechart.map RTSC2IDRange()
+			
+		}
+		
+	}
+	
+	mapping SynchronizationChannel :: SyncChannel2IDRange() : DeclaredType {
+		
+		init {
+						
+			result := self.state.parentStatechart.map RTSC2IDRange()
+			
+		}
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2IDRange() : DeclaredType disjuncts 
+		RealtimeStatechart::RTSC2PortOrRoleIDRange, 
+		RealtimeStatechart::RTSC2ComponentIDRange;
+	
+	mapping RealtimeStatechart :: RTSC2ComponentIDRange() : DeclaredType when {(not self.isPortOrRoleStatechart()) and (self.isComponentStatechart())} {
+		
+		init {
+			
+			result := map ComponentInstanceType()
+			
+		}
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2PortOrRoleIDRange() : DeclaredType when {self.isPortOrRoleStatechart()} {
+		
+		init {
+				
+			result := map DiscretePortInstanceType()
+			
+		}
+		
+	}
+
+	mapping RealtimeStatechart :: RTSC2DiscretePortInstanceID() : uppaal_declarations::Variable {
+		
+		name := 'discretePortInstanceID';
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2DiscreteSubPortInstanceID() : uppaal_declarations::Variable {
+		
+		name := 'discreteSubPortInstanceID';
+		
+	}
+	
+	mapping RealtimeStatechart :: RTSC2ComponentInstanceID() : uppaal_declarations::Variable {
+		
+		name := 'componentInstanceID';
+		
+	}
+	
+	mapping NumberOfPortInstancesDeclaration() : DataVariableDeclaration {
+					
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			
+			referredType := INT;
+			
+		};
+		
+		variable += map NumberOfDiscretePortInstancesConstant();
+		
+	}
+	
+	mapping NumberOfDiscretePortInstancesConstant() : Variable {
+		
+		name := 'NUM_OF_DISCRETE_PORT_INSTANCES';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := overallNumberOfDiscretePortInstances().repr()
+			}
+		}	
+		
+	}
+	
+	
+	mapping DiscretePortInstanceTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map DiscretePortInstanceRangeSpec();
+		
+		type += map DiscretePortInstanceType();
+				
+	}
+	
+	mapping NumberOfComponentInstancesDeclaration() : DataVariableDeclaration {
+					
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			
+			referredType := INT;
+			
+		};
+		
+		variable += map NumberOfComponentInstancesConstant();
+		
+	}
+	
+	mapping NumberOfComponentInstancesConstant() : Variable {
+		
+		name := 'NUM_OF_COMPONENT_INSTANCES';
+		
+		initializer := object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := overallNumberOfDiscretePortInstances().repr()
+			}
+		}	
+		
+	}
+	
+	
+	mapping ComponentInstanceTypeDeclaration() : TypeDeclaration {
+		
+		typeDefinition := map ComponentInstanceRangeSpec();
+		
+		type += map ComponentInstanceType();
+				
+	}
+		
+	mapping DiscretePortInstanceType() : DeclaredType {
+					
+		name := "discretePortInstance"
+				
+	}
+	
+	mapping ComponentInstanceType() : DeclaredType {
+					
+		name := "componentInstance"
+
+	}
+	
+	mapping DiscretePortInstanceRangeSpec() : RangeTypeSpecification {
+		
+		bounds := object IntegerBounds {
+			
+			lowerBound := object uppaal_expressions::LiteralExpression {
+				text := 0.repr()
+			};
+			
+			upperBound := object uppaal_expressions::ArithmeticExpression {
+				firstExpr := object uppaal_expressions::IdentifierExpression {
+					identifier := resolveoneIn(NumberOfDiscretePortInstancesConstant, Variable);
+				};
+				operator := ArithmeticOperator::SUBTRACT;
+				secondExpr := object uppaal_expressions::LiteralExpression {
+					text := 1.repr();
+				};
+			}
+			
+		}
+		
+	}
+	
+	mapping ComponentInstanceRangeSpec() : RangeTypeSpecification {
+		
+		bounds := object IntegerBounds {
+			
+			lowerBound := object uppaal_expressions::LiteralExpression {
+				text := 0.repr()
+			};
+			
+			upperBound := object uppaal_expressions::ArithmeticExpression {
+				firstExpr := object uppaal_expressions::IdentifierExpression {
+					identifier := resolveoneIn(NumberOfComponentInstancesConstant, Variable);
+				};
+				operator := ArithmeticOperator::SUBTRACT;
+				secondExpr := object uppaal_expressions::LiteralExpression {
+					text := 1.repr();
+				};
+			}
+			
+		}
+		
+	}
+	
