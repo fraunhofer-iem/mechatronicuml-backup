@@ -1,0 +1,10 @@
+Declaration
+NodeLabelPredicates {Nlp1,Nlp2,Nlp3,Nlp4}
+Constants {X}
+Formulas
+(Nlp1(X) AU[ >= 5] Nlp2(X));
+AF[ > 5] Nlp1(X);
+AG[ <= 5] Nlp2(X);
+(Nlp2(X) EU[ < 5] Nlp1(X));
+EF[ = 5] Nlp3(X);
+EG[ >= 5] Nlp4(X);

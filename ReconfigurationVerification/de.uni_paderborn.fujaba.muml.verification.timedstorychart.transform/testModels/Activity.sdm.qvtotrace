@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="ASCII"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="actionToActivity" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//actionToActivity"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Action">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Activity">
+        <value>
+          <modelElement href="Activity.sdm#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createInputParameter" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createInputParameter"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Attribute">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@attributes.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EParameter">
+        <value>
+          <modelElement href="Activity.sdm#//@containedParameters.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createInputParameter" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createInputParameter"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Attribute">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@attributes.4"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EParameter">
+        <value>
+          <modelElement href="Activity.sdm#//@containedParameters.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createInputParameter" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createInputParameter"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Attribute">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@attributes.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EParameter">
+        <value>
+          <modelElement href="Activity.sdm#//@containedParameters.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createInputParameter" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createInputParameter"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Attribute">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@attributes.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EParameter">
+        <value>
+          <modelElement href="Activity.sdm#//@containedParameters.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createInputParameter" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createInputParameter"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Attribute">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@attributes.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="EParameter">
+        <value>
+          <modelElement href="Activity.sdm#//@containedParameters.4"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForBlock" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForBlock"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodeForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodeForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createPatternForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createPatternForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Assignment">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.2/@ownedRule"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addObjectVariableToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addObjectVariableToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="varName" type="String">
+        <value primitiveValue="a_binding"/>
+      </parameters>
+      <parameters name="varType" type="EClass">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding"/>
+        </value>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.2/@ownedRule"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ObjectVariable">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.2/@ownedRule/@variable.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createAttributeAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createAttributeAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EAttribute">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding/value"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="text" type="String">
+        <value primitiveValue="(b_binding.value.oclAsType(Integer) + 5).oclAsType(Integer)"/>
+      </parameters>
+      <parameters name="identifier" type="EObject">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.2/@ownedRule/@variable.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="AttributeAssignment">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.2/@ownedRule/@variable.0/@attributeAssignment.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForIfStatement" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForIfStatement"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.1"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createCheckPattern" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createCheckPattern"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifCondition"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MatchingPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.3/@ownedPattern"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addConstraintToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addConstraintToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="constraintText" type="String">
+        <value primitiveValue="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4"/>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.3/@ownedPattern"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Constraint">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.3/@ownedPattern/@constraint.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForLoop" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForLoop"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.2"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createCheckPattern" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createCheckPattern"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock/@loopTest"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MatchingPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.4/@ownedPattern"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addConstraintToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addConstraintToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="constraintText" type="String">
+        <value primitiveValue="counter_binding.value.oclAsType(Integer) &lt; 4"/>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.4/@ownedPattern"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Constraint">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.4/@ownedPattern/@constraint.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForBlock" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForBlock"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock/@block"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.3"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodeForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodeForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock/@block/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.3"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createPatternForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createPatternForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Assignment">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock/@block/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.5/@ownedRule"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addObjectVariableToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addObjectVariableToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="varName" type="String">
+        <value primitiveValue="a_binding"/>
+      </parameters>
+      <parameters name="varType" type="EClass">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding"/>
+        </value>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.5/@ownedRule"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ObjectVariable">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.5/@ownedRule/@variable.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createAttributeAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createAttributeAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EAttribute">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding/value"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="text" type="String">
+        <value primitiveValue="(b_binding.value.oclAsType(Integer) + 5).oclAsType(Integer)"/>
+      </parameters>
+      <parameters name="identifier" type="EObject">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.5/@ownedRule/@variable.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="AttributeAssignment">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.5/@ownedRule/@variable.0/@attributeAssignment.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createPatternForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createPatternForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Assignment">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock/@initalizeExpression"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.6/@ownedRule"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addObjectVariableToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addObjectVariableToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="varName" type="String">
+        <value primitiveValue="counter_binding"/>
+      </parameters>
+      <parameters name="varType" type="EClass">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding"/>
+        </value>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.6/@ownedRule"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ObjectVariable">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.6/@ownedRule/@variable.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createAttributeAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createAttributeAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EAttribute">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding/value"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="text" type="String">
+        <value primitiveValue="(0).oclAsType(Integer)"/>
+      </parameters>
+      <parameters name="identifier" type="EObject">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.6/@ownedRule/@variable.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="AttributeAssignment">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.6/@ownedRule/@variable.0/@attributeAssignment.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createPatternForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createPatternForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Assignment">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@ifBlock/@countingExpression"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.7/@ownedRule"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addObjectVariableToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addObjectVariableToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="varName" type="String">
+        <value primitiveValue="counter_binding"/>
+      </parameters>
+      <parameters name="varType" type="EClass">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding"/>
+        </value>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.7/@ownedRule"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ObjectVariable">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.7/@ownedRule/@variable.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createAttributeAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createAttributeAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EAttribute">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding/value"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="text" type="String">
+        <value primitiveValue="value.oclAsType(Integer)+1"/>
+      </parameters>
+      <parameters name="identifier" type="EObject">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.7/@ownedRule/@variable.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="AttributeAssignment">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.7/@ownedRule/@variable.0/@attributeAssignment.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createCheckPattern" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createCheckPattern"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseIfConditions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MatchingPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.8/@ownedPattern"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addConstraintToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addConstraintToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="constraintText" type="String">
+        <value primitiveValue="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4"/>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.8/@ownedPattern"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Constraint">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.8/@ownedPattern/@constraint.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForLoop" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForLoop"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseIfBlocks.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.9"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createCheckPattern" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createCheckPattern"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseIfBlocks.0/@loopTest"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MatchingPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.9/@ownedPattern"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addConstraintToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addConstraintToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="constraintText" type="String">
+        <value primitiveValue="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4"/>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.9/@ownedPattern"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Constraint">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.9/@ownedPattern/@constraint.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForBlock" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForBlock"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseIfBlocks.0/@block"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.10"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodeForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodeForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseIfBlocks.0/@block/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.10"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createPatternForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createPatternForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Assignment">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseIfBlocks.0/@block/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.10/@ownedRule"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addObjectVariableToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addObjectVariableToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="varName" type="String">
+        <value/>
+      </parameters>
+      <parameters name="varType" type="EClass">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding"/>
+        </value>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.10/@ownedRule"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ObjectVariable">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.10/@ownedRule/@variable.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createAttributeAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createAttributeAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EAttribute">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding/value"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="text" type="String">
+        <value/>
+      </parameters>
+      <parameters name="identifier" type="EObject">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.10/@ownedRule/@variable.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="AttributeAssignment">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.10/@ownedRule/@variable.0/@attributeAssignment.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForLoop" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForLoop"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseBlock"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.13"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createCheckPattern" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createCheckPattern"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseBlock/@loopTest"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="MatchingPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.11/@ownedPattern"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addConstraintToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addConstraintToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="constraintText" type="String">
+        <value primitiveValue="c_binding.value.oclAsType(Integer) &lt; d_binding.value.oclAsType(Integer) and d_binding.value.oclAsType(Integer) &lt; 4"/>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.11/@ownedPattern"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="Constraint">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.11/@ownedPattern/@constraint.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodesForBlock" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodesForBlock"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseBlock/@block"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.13"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addNodeForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addNodeForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseBlock/@block/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters kind="INOUT" name="toBlockNode" type="ActivityEdge">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityEdge.13"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="OrderedSet(ActivityEdge)">
+        <value collectionType="OclCollection"/>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createPatternForAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createPatternForAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="Assignment">
+        <value>
+          <modelElement href="input.xmi#//@categories.0/@modelElements.0/@states.0/@entryEvent/@action/@expressions.0/@expressions.1/@elseBlock/@block/@expressions.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.12/@ownedRule"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="addObjectVariableToRule" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//addObjectVariableToRule"/>
+    </mappingOperation>
+    <context/>
+    <parameters>
+      <parameters name="varName" type="String">
+        <value/>
+      </parameters>
+      <parameters name="varType" type="EClass">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding"/>
+        </value>
+      </parameters>
+      <parameters kind="INOUT" name="rule" type="StoryPattern">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.12/@ownedRule"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="ObjectVariable">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.12/@ownedRule/@variable.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="createAttributeAssignment" package="ActionLanguageTransformation" module="ActionLanguageTransformation">
+      <runtimeMappingOperation href="../transforms/ActionLanguageTransformation.qvtox#//createAttributeAssignment"/>
+    </mappingOperation>
+    <context>
+      <context name="self" type="EAttribute">
+        <value>
+          <modelElement href="http://www.fujaba.de/muml/model/runtime/0.3.0#//AttributeBinding/value"/>
+        </value>
+      </context>
+    </context>
+    <parameters>
+      <parameters name="text" type="String">
+        <value/>
+      </parameters>
+      <parameters name="identifier" type="EObject">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.12/@ownedRule/@variable.0"/>
+        </value>
+      </parameters>
+    </parameters>
+    <result>
+      <result kind="OUT" name="result" type="AttributeAssignment">
+        <value>
+          <modelElement href="Activity.sdm#//@ownedActivityNode.12/@ownedRule/@variable.0/@attributeAssignment.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

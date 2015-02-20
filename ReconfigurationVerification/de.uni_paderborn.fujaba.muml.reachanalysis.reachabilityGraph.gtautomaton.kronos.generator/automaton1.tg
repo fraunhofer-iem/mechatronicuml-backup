@@ -1,0 +1,16 @@
+#locs 2
+#trans 1
+#clocks 2
+c1Inst1 c1Inst2
+
+
+loc: 0 
+prop: loc0 init 
+invar: c1Inst1<5
+trans: c1Inst1>=7 => ; RESET{} ; goto 1
+
+loc: 1 
+prop: loc1 test
+invar: 
+trans: 
+

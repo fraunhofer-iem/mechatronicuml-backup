@@ -1,0 +1,46 @@
+#locs 8
+#trans 24
+#clocks 0
+
+
+
+loc: 0 
+prop: loc0 init 
+invar: 
+trans:  => ; RESET{} ; goto 1 => ; RESET{} ; goto 2 => ; RESET{} ; goto 3
+
+loc: 1 
+prop: loc1 
+invar: 
+trans:  => ; RESET{} ; goto 6 => ; RESET{} ; goto 4 => ; RESET{} ; goto 0
+
+loc: 2 
+prop: loc2 
+invar: 
+trans:  => ; RESET{} ; goto 6 => ; RESET{} ; goto 5 => ; RESET{} ; goto 0
+
+loc: 3 
+prop: loc3 
+invar: 
+trans:  => ; RESET{} ; goto 4 => ; RESET{} ; goto 5 => ; RESET{} ; goto 0
+
+loc: 4 
+prop: loc4 
+invar: 
+trans:  => ; RESET{} ; goto 7 => ; RESET{} ; goto 1 => ; RESET{} ; goto 3
+
+loc: 5 
+prop: loc5 
+invar: 
+trans:  => ; RESET{} ; goto 7 => ; RESET{} ; goto 2 => ; RESET{} ; goto 3
+
+loc: 6 
+prop: loc6 
+invar: 
+trans:  => ; RESET{} ; goto 7 => ; RESET{} ; goto 2 => ; RESET{} ; goto 1
+
+loc: 7 
+prop: loc7 
+invar: 
+trans:  => ; RESET{} ; goto 5 => ; RESET{} ; goto 4 => ; RESET{} ; goto 6
+

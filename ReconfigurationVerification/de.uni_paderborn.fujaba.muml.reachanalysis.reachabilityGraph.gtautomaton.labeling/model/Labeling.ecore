@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="labeling"
+    nsURI="http://www.fujaba.de/reachabilityGraph/gtautomaton/labeling/0.1.0" nsPrefix="de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.gtautomaton.labeling">
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicPropositionMapping" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Extension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propositions" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stepGraph" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.sdm/model/SDMReachabilityAnalysis.ecore#//StepGraph"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,5 @@
+cd ..
+cd ..
+cd ..
+cd d/uppaal-4.0.13/bin-Win32/
+./verifyta.exe -t1 test12.xml test12.q 2>out.txt
