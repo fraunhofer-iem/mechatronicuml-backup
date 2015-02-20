@@ -1027,7 +1027,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYNCHRONIZATION_CHANNEL__VALID_SELECTOR_TYPE__EEXPRESSION = "-- The selector type must be of type BOOLEAN, BYTE , SHORT, INT or of type role iff this RTSC is a multi-role RTSC, or of type port iff this RTSC is a multi-port RTSC \r\n" +
+	protected static final String SYNCHRONIZATION_CHANNEL__VALID_SELECTOR_TYPE__EEXPRESSION = "-- The selector type must be of and Integer type or of type role iff this RTSC is a multi-role RTSC, or of type port iff this RTSC is a multi-port RTSC \r\n" +
 		"let parentRtsc : realtimestatechart::RealtimeStatechart = self.state.parentStatechart in\r\n" +
 		"\r\n" +
 		"let behavElement : behavior::BehavioralElement = if (parentRtsc->isEmpty()) then null else parentRtsc.behavioralElement endif in\r\n" +
@@ -1035,9 +1035,14 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"let selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then \r\n" +
 		"self.selectorType.oclIsKindOf(types::PrimitiveDataType) \r\n" +
 		"and (self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN \r\n" +
-		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BYTE \r\n" +
-		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT \r\n" +
-		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::SHORT\r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT8 \r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT16 \r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT32\r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT64\r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT8 \r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT16 \r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT32\r\n" +
+		"\tor self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT64\r\n" +
 		")\r\n" +
 		"else true endif in \r\n" +
 		"\r\n" +
