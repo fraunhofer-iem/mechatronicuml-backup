@@ -85,7 +85,39 @@ public enum PrimitiveTypes implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOUBLE(6, "DOUBLE", "DOUBLE");
+	DOUBLE(6, "DOUBLE", "DOUBLE"), /**
+	 * The '<em><b>UINT8</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UINT8_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UINT8(7, "UINT8", "UINT8"), /**
+	 * The '<em><b>UINT16</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UINT16_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UINT16(8, "UINT16", "UINT16"), /**
+	 * The '<em><b>UINT32</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UINT32_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UINT32(9, "UINT32", "UINT32"), /**
+	 * The '<em><b>UINT64</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UINT64_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UINT64(10, "UINT64", "UINT64");
 
 	/**
 	 * The '<em><b>VOID</b></em>' literal value.
@@ -193,6 +225,66 @@ public enum PrimitiveTypes implements Enumerator {
 	public static final int DOUBLE_VALUE = 6;
 
 	/**
+	 * The '<em><b>UINT8</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UINT8</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UINT8
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UINT8_VALUE = 7;
+
+	/**
+	 * The '<em><b>UINT16</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UINT16</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UINT16
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UINT16_VALUE = 8;
+
+	/**
+	 * The '<em><b>UINT32</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UINT32</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UINT32
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UINT32_VALUE = 9;
+
+	/**
+	 * The '<em><b>UINT64</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UINT64</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UINT64
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UINT64_VALUE = 10;
+
+	/**
 	 * An array of all the '<em><b>Primitive Types</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,6 +299,10 @@ public enum PrimitiveTypes implements Enumerator {
 			INT32,
 			INT64,
 			DOUBLE,
+			UINT8,
+			UINT16,
+			UINT32,
+			UINT64,
 		};
 
 	/**
@@ -264,6 +360,10 @@ public enum PrimitiveTypes implements Enumerator {
 			case INT32_VALUE: return INT32;
 			case INT64_VALUE: return INT64;
 			case DOUBLE_VALUE: return DOUBLE;
+			case UINT8_VALUE: return UINT8;
+			case UINT16_VALUE: return UINT16;
+			case UINT32_VALUE: return UINT32;
+			case UINT64_VALUE: return UINT64;
 		}
 		return null;
 	}

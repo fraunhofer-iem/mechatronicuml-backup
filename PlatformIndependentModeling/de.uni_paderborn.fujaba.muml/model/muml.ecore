@@ -2060,6 +2060,10 @@
       <eLiterals name="INT32" value="4" literal="INT32"/>
       <eLiterals name="INT64" value="5" literal="INT64"/>
       <eLiterals name="DOUBLE" value="6"/>
+      <eLiterals name="UINT8" value="7" literal="UINT8"/>
+      <eLiterals name="UINT16" value="8" literal="UINT16"/>
+      <eLiterals name="UINT32" value="9" literal="UINT32"/>
+      <eLiterals name="UINT64" value="10" literal="UINT64"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RangedPrimitiveDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
