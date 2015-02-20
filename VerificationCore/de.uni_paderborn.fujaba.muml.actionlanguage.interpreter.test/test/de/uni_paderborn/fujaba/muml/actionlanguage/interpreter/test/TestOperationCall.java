@@ -65,7 +65,7 @@ public class TestOperationCall {
 
 		// set up data types
 		intType = typeFactory.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		voidType = typeFactory.createPrimitiveDataType();
 		((PrimitiveDataType) voidType).setPrimitiveType(PrimitiveTypes.VOID);

@@ -270,7 +270,7 @@ public class TestComputeSuccessors extends AbstractRTSCTest{
 		// set data type for selector
 		PrimitiveDataType dataType = TypesFactory.eINSTANCE
 				.createPrimitiveDataType();
-		dataType.setPrimitiveType(PrimitiveTypes.INT);
+		dataType.setPrimitiveType(PrimitiveTypes.INT32);
 		syncChannel.setSelectorType(dataType);
 
 		// setUp synchronizations

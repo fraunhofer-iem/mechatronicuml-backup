@@ -494,7 +494,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 								DataType intType = TypesFactory.eINSTANCE
 										.createPrimitiveDataType();
 								((PrimitiveDataType) intType)
-										.setPrimitiveType(PrimitiveTypes.INT);
+										.setPrimitiveType(PrimitiveTypes.INT32);
 
 								for (ClockConstraint cCon : transition
 										.getClockConstraints()) {
@@ -601,7 +601,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					DataType intType = TypesFactory.eINSTANCE
 							.createPrimitiveDataType();
 					((PrimitiveDataType) intType)
-							.setPrimitiveType(PrimitiveTypes.INT);
+							.setPrimitiveType(PrimitiveTypes.INT32);
 
 					// if outgoing urgent tau transition was found, get its
 					// clock constraints for performing the delay in this case
@@ -964,7 +964,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				.getIncomingTransitions().get(0) instanceof DelayTransition))
 				&& !urgentEnabled) {
 			DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-			((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+			((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 			// compute invariants of old locations
 			HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
@@ -1028,7 +1028,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			RealtimeStatechartInstance secondLocation) {
 
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		// create new set of the two transitions that may sync
 		EList<Transition> transitionSet = new BasicEList<Transition>();
@@ -1378,7 +1378,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	protected HashMap<UDBMClock, Integer> collectClockMaxValues(EList<VariableBinding> constantVariableBindings) {
 
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		HashMap<UDBMClock, Integer> clockMaxValues = new HashMap<UDBMClock, Integer>();
 
@@ -1732,7 +1732,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			ClockConstraint cc, Federation fed) {
 		UDBMClock clockForCC = clockMapping.get(cc.getClock());
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		((ZoneGraphState) state).getLocations().get(0)
 				.getAllAvailableVariableBindings();

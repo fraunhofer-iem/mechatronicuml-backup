@@ -67,7 +67,7 @@ public class TestSimpleExpressions {
 
 		// set up data types
 		intType = typeFactory.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		boolType = typeFactory.createPrimitiveDataType();
 		((PrimitiveDataType) boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
