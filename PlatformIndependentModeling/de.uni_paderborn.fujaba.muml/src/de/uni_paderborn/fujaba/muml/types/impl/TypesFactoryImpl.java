@@ -68,6 +68,8 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 			case TypesPackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case TypesPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case TypesPackage.RANGED_PRIMITIVE_DATA_TYPE: return createRangedPrimitiveDataType();
+			case TypesPackage.STRUCTURE_DATA_TYPE: return createStructureDataType();
+			case TypesPackage.ATTRIBUTE: return createAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +133,26 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public RangedPrimitiveDataType createRangedPrimitiveDataType() {
 		RangedPrimitiveDataTypeImpl rangedPrimitiveDataType = new RangedPrimitiveDataTypeImpl();
 		return rangedPrimitiveDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StructureDataType createStructureDataType() {
+		StructureDataTypeImpl structureDataType = new StructureDataTypeImpl();
+		return structureDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
 	}
 
 	/**

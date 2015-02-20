@@ -244,6 +244,16 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.StructureDataTypeEditor$Factory"
+             type="http://www.fujaba.de/muml/types/0.4.0#StructureDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.AttributeEditor$Factory"
+             type="http://www.fujaba.de/muml/types/0.4.0#Attribute">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.protocol.editor.CoordinationProtocolEditor$Factory"
              type="http://www.fujaba.de/muml/protocol/0.4.0#CoordinationProtocol">
        </propertyEditor>
