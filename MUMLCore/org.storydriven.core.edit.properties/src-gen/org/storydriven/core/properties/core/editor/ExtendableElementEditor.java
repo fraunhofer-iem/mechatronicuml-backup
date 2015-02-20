@@ -23,8 +23,12 @@ public abstract class ExtendableElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtension_ExtensionsTab_Editor(null, true);
+			addExtension_ExtensionsTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

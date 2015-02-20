@@ -25,10 +25,11 @@
     </classes>
     <classes>
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement"/>
-      <properties tab="//@tabs.2" tooltip="" reconcile="false" initializeOCLExpression="">
+      <properties tab="//@tabs.2" tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0" reconcile="false" initializeOCLExpression="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/extension"/>
         <editor xsi:type="de.uni_paderborn.fujaba:FlattenedListPropertyEditor"/>
       </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension"/>
@@ -45,6 +46,9 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/TypedElement"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.0 //@packages.0/@classes.3">
+      <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Repository"/>
     </classes>
   </packages>
   <packages>

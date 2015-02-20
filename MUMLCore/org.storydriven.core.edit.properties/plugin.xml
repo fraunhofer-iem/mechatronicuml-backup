@@ -85,6 +85,11 @@
     <propertyEditors>
     
        <propertyEditor
+             factory="org.storydriven.core.properties.core.editor.RepositoryEditor$Factory"
+             type="http://www.storydriven.org/core/0.3.1#Repository">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="org.storydriven.core.properties.expressions.editor.TextualExpressionEditor$Factory"
              type="http://www.storydriven.org/core/expressions/0.3.1#TextualExpression">
        </propertyEditor>
