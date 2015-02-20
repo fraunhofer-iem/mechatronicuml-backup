@@ -72,7 +72,7 @@ public class StateBehaviorGenerator
 		
 		Variable int_state = behaviorfactory.createVariable();
 		int_state.setName("state");
-		int_state.setDataType(this.getDataType(PrimitiveTypes.INT));
+		int_state.setDataType(this.getDataType(PrimitiveTypes.INT32));
 		rtsc.getVariables().add(int_state);
 		
 		rtsc.getStates().add(this.generateStateMain());
