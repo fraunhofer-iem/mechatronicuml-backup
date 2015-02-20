@@ -79,10 +79,10 @@ String incDecOp (IncrementDecrementOperator op):
 String dataType(PrimitiveDataType type):
 	switch (type.primitiveType) {
 		case PrimitiveTypes::BOOLEAN : ''
-		case PrimitiveTypes::BYTE : 'int8('
-		case PrimitiveTypes::SHORT : 'int16('
-		case PrimitiveTypes::INT : 'int32('
-		case PrimitiveTypes::LONG : 'int32('
+		case PrimitiveTypes::INT8 : 'int8('
+		case PrimitiveTypes::INT16 : 'int16('
+		case PrimitiveTypes::INT32 : 'int32('
+		case PrimitiveTypes::INT64 : 'int32('
 		case PrimitiveTypes::DOUBLE : 'double('
 		default: ""
 	}
