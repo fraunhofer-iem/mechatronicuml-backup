@@ -613,7 +613,7 @@
     </classes>
     <classes superClasses="//@packages.4/@classes.2">
       <genClass href="muml.genmodel#//muml/types/PrimitiveDataType"/>
-      <properties>
+      <properties tooltip="" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/types/PrimitiveDataType/primitiveType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
