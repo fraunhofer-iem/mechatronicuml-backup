@@ -20,6 +20,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
+import org.storydriven.core.Repository;
 import org.storydriven.core.TypedElement;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
@@ -39,6 +40,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass typedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass repositoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,9 +126,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-
 		// Obtain or create and register interdependencies
 		ExpressionsPackageImpl theExpressionsPackage = (ExpressionsPackageImpl) (EPackage.Registry.INSTANCE
 				.getEPackage(ExpressionsPackage.eNS_URI) instanceof ExpressionsPackageImpl ? EPackage.Registry.INSTANCE
@@ -174,6 +179,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 */
 	public EReference getTypedElement_GenericType() {
 		return (EReference) typedElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRepository() {
+		return repositoryEClass;
 	}
 
 	/**
@@ -380,6 +394,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		typedElementEClass = createEClass(TYPED_ELEMENT);
 		createEReference(typedElementEClass, TYPED_ELEMENT__TYPE);
 		createEReference(typedElementEClass, TYPED_ELEMENT__GENERIC_TYPE);
+
+		repositoryEClass = createEClass(REPOSITORY);
 	}
 
 	/**
@@ -409,8 +425,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ExpressionsPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
-				.getEPackage(EcorePackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theExpressionsPackage);
@@ -422,11 +436,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Add supertypes to classes
 		commentableElementEClass.getESuperTypes().add(
 				this.getExtendableElement());
-		extendableElementEClass.getESuperTypes().add(
-				theEcorePackage.getEObject());
+		extendableElementEClass.getESuperTypes().add(ecorePackage.getEObject());
 		extensionEClass.getESuperTypes().add(this.getExtendableElement());
 		namedElementEClass.getESuperTypes().add(this.getExtendableElement());
 		typedElementEClass.getESuperTypes().add(this.getExtendableElement());
+		repositoryEClass.getESuperTypes().add(this.getNamedElement());
+		repositoryEClass.getESuperTypes().add(this.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(commentableElementEClass, CommentableElement.class,
@@ -442,8 +457,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 				"ExtendableElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExtendableElement_Annotation(),
-				theEcorePackage.getEAnnotation(), null, "annotation", null, 0,
-				-1, ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE,
+				ecorePackage.getEAnnotation(), null, "annotation", null, 0, -1,
+				ExtendableElement.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtendableElement_Extension(), this.getExtension(),
@@ -456,41 +471,41 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 				getExtendableElement__GetExtension__EClass(),
 				this.getExtension(), "getExtension", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEClass(), "type", 1, 1, IS_UNIQUE,
+		addEParameter(op, ecorePackage.getEClass(), "type", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
 
 		op = initEOperation(getExtendableElement__ProvideExtension__EClass(),
 				this.getExtension(), "provideExtension", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEClass(), "type", 1, 1, IS_UNIQUE,
+		addEParameter(op, ecorePackage.getEClass(), "type", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
 
 		op = initEOperation(getExtendableElement__GetAnnotation__String(),
-				theEcorePackage.getEAnnotation(), "getAnnotation", 1, 1,
+				ecorePackage.getEAnnotation(), "getAnnotation", 1, 1,
 				IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "source", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
 
 		op = initEOperation(getExtendableElement__ProvideAnnotation__String(),
-				theEcorePackage.getEAnnotation(), "provideAnnotation", 1, 1,
+				ecorePackage.getEAnnotation(), "provideAnnotation", 1, 1,
 				IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "source", 1, 1, IS_UNIQUE,
 				!IS_ORDERED);
 
 		initEClass(extensionEClass, Extension.class, "Extension", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtension_Base(), theEcorePackage.getEObject(), null,
+		initEReference(getExtension_Base(), ecorePackage.getEObject(), null,
 				"base", null, 1, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE,
 				!IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtension_ModelBase(),
-				theEcorePackage.getEModelElement(), null, "modelBase", null, 0,
-				1, Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				ecorePackage.getEModelElement(), null, "modelBase", null, 0, 1,
+				Extension.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
 				IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtension_OwningAnnotation(),
-				theEcorePackage.getEAnnotation(), null, "owningAnnotation",
-				null, 0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE,
+				ecorePackage.getEAnnotation(), null, "owningAnnotation", null,
+				0, 1, Extension.class, IS_TRANSIENT, IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getExtension_ExtendableBase(),
@@ -509,16 +524,18 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(typedElementEClass, TypedElement.class, "TypedElement",
 				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTypedElement_Type(),
-				theEcorePackage.getEClassifier(), null, "type", null, 0, 1,
-				TypedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-				IS_DERIVED, !IS_ORDERED);
+		initEReference(getTypedElement_Type(), ecorePackage.getEClassifier(),
+				null, "type", null, 0, 1, TypedElement.class, IS_TRANSIENT,
+				IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getTypedElement_GenericType(),
-				theEcorePackage.getEGenericType(), null, "genericType", null,
-				0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE,
+				ecorePackage.getEGenericType(), null, "genericType", null, 0,
+				1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(repositoryEClass, Repository.class, "Repository",
+				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -605,6 +622,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 				new String[] {
 						"documentation",
 						"Abstract super class for all meta-model elements that are typed by means of an EClassifier or an EGenericType." });
+		addAnnotation(
+				repositoryEClass,
+				source,
+				new String[] {
+						"documentation",
+						"Repositories are used for grouping model elements that may be reused in different contexts." });
 	}
 
 	/**
