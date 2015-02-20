@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfiguration
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypeFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
-import de.uni_paderborn.fujaba.muml.types.provider.DataTypeItemProvider;
+import de.uni_paderborn.fujaba.muml.types.provider.StructureDataTypeItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType} object.
@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.types.provider.DataTypeItemProvider;
  * @generated
  */
 public class StructTypeItemProvider
-	extends DataTypeItemProvider {
+	extends StructureDataTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,6 @@ public class StructTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(StructdatatypePackage.Literals.STRUCT_TYPE__ATTRIBUTES);
 			childrenFeatures.add(StructdatatypePackage.Literals.STRUCT_TYPE__REFERENCES);
 		}
 		return childrenFeatures;
@@ -127,7 +126,6 @@ public class StructTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructType.class)) {
-			case StructdatatypePackage.STRUCT_TYPE__ATTRIBUTES:
 			case StructdatatypePackage.STRUCT_TYPE__REFERENCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -155,11 +153,6 @@ public class StructTypeItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(StructdatatypePackage.Literals.STRUCT_TYPE__ATTRIBUTES,
-				 StructdatatypeFactory.eINSTANCE.createAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

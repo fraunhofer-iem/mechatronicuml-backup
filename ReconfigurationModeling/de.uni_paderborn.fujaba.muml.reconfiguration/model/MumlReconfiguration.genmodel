@@ -133,13 +133,7 @@
     <nestedGenPackages prefix="Structdatatype" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//structdatatype">
       <genClasses ecoreClass="MumlReconfiguration.ecore#//structdatatype/StructType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/StructType/attributes"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/StructType/references"/>
-      </genClasses>
-      <genClasses ecoreClass="MumlReconfiguration.ecore#//structdatatype/Attribute">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/Attribute/structType"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/Attribute/type"/>
       </genClasses>
       <genClasses ecoreClass="MumlReconfiguration.ecore#//structdatatype/Reference">
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/Reference/structType"/>

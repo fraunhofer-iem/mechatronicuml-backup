@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
@@ -29,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.Protoc
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.ProtocolinstantiationPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl.ReconfInstancePackageImpl;
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypeFactory;
@@ -50,13 +50,6 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 	 * @generated
 	 */
 	private EClass structTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,6 +115,7 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 		StorydiagramsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -167,44 +161,8 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStructType_Attributes() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getStructType_References() {
-		return (EReference)structTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAttribute() {
-		return attributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttribute_StructType() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttribute_Type() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(1);
+		return (EReference)structTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -272,12 +230,7 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 
 		// Create classes and their features
 		structTypeEClass = createEClass(STRUCT_TYPE);
-		createEReference(structTypeEClass, STRUCT_TYPE__ATTRIBUTES);
 		createEReference(structTypeEClass, STRUCT_TYPE__REFERENCES);
-
-		attributeEClass = createEClass(ATTRIBUTE);
-		createEReference(attributeEClass, ATTRIBUTE__STRUCT_TYPE);
-		createEReference(attributeEClass, ATTRIBUTE__TYPE);
 
 		referenceEClass = createEClass(REFERENCE);
 		createEReference(referenceEClass, REFERENCE__STRUCT_TYPE);
@@ -318,18 +271,12 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		structTypeEClass.getESuperTypes().add(theTypesPackage.getDataType());
-		attributeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		structTypeEClass.getESuperTypes().add(theTypesPackage.getStructureDataType());
 		referenceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(structTypeEClass, StructType.class, "StructType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructType_Attributes(), this.getAttribute(), this.getAttribute_StructType(), "attributes", null, 0, -1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructType_References(), this.getReference(), this.getReference_StructType(), "references", null, 0, -1, StructType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_StructType(), this.getStructType(), this.getStructType_Attributes(), "structType", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttribute_Type(), theTypesPackage.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReference_StructType(), this.getStructType(), this.getStructType_References(), "structType", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

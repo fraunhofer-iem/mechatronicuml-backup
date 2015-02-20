@@ -194,11 +194,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor.AttributeEditor$Factory"
-             type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#Attribute">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.editor.ReferenceEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18#Reference">
        </propertyEditor>

@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypeFactory;
@@ -63,7 +62,6 @@ public class StructdatatypeFactoryImpl extends EFactoryImpl implements Structdat
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case StructdatatypePackage.STRUCT_TYPE: return createStructType();
-			case StructdatatypePackage.ATTRIBUTE: return createAttribute();
 			case StructdatatypePackage.REFERENCE: return createReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -78,16 +76,6 @@ public class StructdatatypeFactoryImpl extends EFactoryImpl implements Structdat
 	public StructType createStructType() {
 		StructTypeImpl structType = new StructTypeImpl();
 		return structType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute createAttribute() {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
 	}
 
 	/**

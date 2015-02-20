@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.e
  */
 public class StructTypeEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
+			de.uni_paderborn.fujaba.muml.properties.types.editor.StructureDataTypeEditor {
 
 	/**
 	 * @generated

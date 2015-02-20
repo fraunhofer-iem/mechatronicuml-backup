@@ -611,37 +611,14 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package defines complex struct data types that are used by the&#xD;&#xA;reconfiguration behavior. "/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+    <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/StructureDataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A StructType is a complex data type which is comparable to a struct in C. It specifies a set of attributes and a set of references, but provides no inheritance."/>
+        <details key="documentation" value="A StructType is a complex data type. It specifies a set of attributes and a set of (multi-valued) references, but provides no inheritance.&#xD;&#xA;\todoch{This type should be renamed! Maybe to SimpleClass}"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-          eType="#//structdatatype/Attribute" containment="true" eOpposite="#//structdatatype/Attribute/structType">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The set of attributes of this struct type. An attribute either needs to have a&#xD;&#xA;primitive data type or it needs to have an array datatype where the array elements&#xD;&#xA;have a primitive data type."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
           eType="#//structdatatype/Reference" containment="true" eOpposite="#//structdatatype/Reference/structType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The set of references of this struct type. The type of the reference is either another&#xD;&#xA;struct type or an element of the MechatronicUML model such as a component &#xD;&#xA;or a port."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An attribute is a field of a StructType. An attribute specifies a name and a primitive or array data type."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="structType" lowerBound="1"
-          eType="#//structdatatype/StructType" eOpposite="#//structdatatype/StructType/attributes">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This is the containing struct type."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The data type of this attribute. The data type needs to be a primitive data type&#xD;&#xA;or an array data type, where the array only contains primitives."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

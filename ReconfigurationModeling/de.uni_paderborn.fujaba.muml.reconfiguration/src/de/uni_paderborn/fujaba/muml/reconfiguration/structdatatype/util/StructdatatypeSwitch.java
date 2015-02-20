@@ -13,11 +13,11 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,18 +79,11 @@ public class StructdatatypeSwitch<T> extends Switch<T> {
 			case StructdatatypePackage.STRUCT_TYPE: {
 				StructType structType = (StructType)theEObject;
 				T result = caseStructType(structType);
+				if (result == null) result = caseStructureDataType(structType);
 				if (result == null) result = caseDataType(structType);
 				if (result == null) result = caseNamedElement(structType);
 				if (result == null) result = caseCommentableElement(structType);
 				if (result == null) result = caseExtendableElement(structType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case StructdatatypePackage.ATTRIBUTE: {
-				Attribute attribute = (Attribute)theEObject;
-				T result = caseAttribute(attribute);
-				if (result == null) result = caseNamedElement(attribute);
-				if (result == null) result = caseExtendableElement(attribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -118,21 +111,6 @@ public class StructdatatypeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStructType(StructType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAttribute(Attribute object) {
 		return null;
 	}
 
@@ -208,6 +186,21 @@ public class StructdatatypeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Structure Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Structure Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStructureDataType(StructureDataType object) {
 		return null;
 	}
 
