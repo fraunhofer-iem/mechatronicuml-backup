@@ -46,46 +46,38 @@ public enum PrimitiveTypes implements Enumerator {
 	BOOLEAN(1, "BOOLEAN", "BOOLEAN"),
 
 	/**
-	 * The '<em><b>BYTE</b></em>' literal object.
+	 * The '<em><b>INT8</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BYTE_VALUE
+	 * @see #INT8_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	BYTE(2, "BYTE", "BYTE"),
-
-	/**
-	 * The '<em><b>SHORT</b></em>' literal object.
+	INT8(2, "INT8", "INT8"), /**
+	 * The '<em><b>INT16</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SHORT_VALUE
+	 * @see #INT16_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SHORT(3, "SHORT", "SHORT"),
-
-	/**
-	 * The '<em><b>INT</b></em>' literal object.
+	INT16(3, "INT16", "INT16"), /**
+	 * The '<em><b>INT32</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #INT_VALUE
+	 * @see #INT32_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INT(4, "INT", "INT"),
-
-	/**
-	 * The '<em><b>LONG</b></em>' literal object.
+	INT32(4, "INT32", "INT32"), /**
+	 * The '<em><b>INT64</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LONG_VALUE
+	 * @see #INT64_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LONG(5, "LONG", "LONG"),
-
-	/**
+	INT64(5, "INT64", "INT64"), /**
 	 * The '<em><b>DOUBLE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,64 +118,64 @@ public enum PrimitiveTypes implements Enumerator {
 	public static final int BOOLEAN_VALUE = 1;
 
 	/**
-	 * The '<em><b>BYTE</b></em>' literal value.
+	 * The '<em><b>INT8</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>BYTE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>INT8</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BYTE
+	 * @see #INT8
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BYTE_VALUE = 2;
+	public static final int INT8_VALUE = 2;
 
 	/**
-	 * The '<em><b>SHORT</b></em>' literal value.
+	 * The '<em><b>INT16</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SHORT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>INT16</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SHORT
+	 * @see #INT16
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SHORT_VALUE = 3;
+	public static final int INT16_VALUE = 3;
 
 	/**
-	 * The '<em><b>INT</b></em>' literal value.
+	 * The '<em><b>INT32</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>INT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>INT32</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #INT
+	 * @see #INT32
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INT_VALUE = 4;
+	public static final int INT32_VALUE = 4;
 
 	/**
-	 * The '<em><b>LONG</b></em>' literal value.
+	 * The '<em><b>INT64</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>LONG</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>INT64</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LONG
+	 * @see #INT64
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LONG_VALUE = 5;
+	public static final int INT64_VALUE = 5;
 
 	/**
 	 * The '<em><b>DOUBLE</b></em>' literal value.
@@ -210,10 +202,10 @@ public enum PrimitiveTypes implements Enumerator {
 		new PrimitiveTypes[] {
 			VOID,
 			BOOLEAN,
-			BYTE,
-			SHORT,
-			INT,
-			LONG,
+			INT8,
+			INT16,
+			INT32,
+			INT64,
 			DOUBLE,
 		};
 
@@ -267,10 +259,10 @@ public enum PrimitiveTypes implements Enumerator {
 		switch (value) {
 			case VOID_VALUE: return VOID;
 			case BOOLEAN_VALUE: return BOOLEAN;
-			case BYTE_VALUE: return BYTE;
-			case SHORT_VALUE: return SHORT;
-			case INT_VALUE: return INT;
-			case LONG_VALUE: return LONG;
+			case INT8_VALUE: return INT8;
+			case INT16_VALUE: return INT16;
+			case INT32_VALUE: return INT32;
+			case INT64_VALUE: return INT64;
 			case DOUBLE_VALUE: return DOUBLE;
 		}
 		return null;

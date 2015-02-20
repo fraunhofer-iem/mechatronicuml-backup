@@ -372,10 +372,10 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BOOLEAN);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BYTE);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.SHORT);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.LONG);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT8);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT16);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT32);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT64);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.DOUBLE);
 
 		// Create resource

@@ -381,10 +381,10 @@
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//types/PrimitiveTypes">
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/VOID"/>
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/BOOLEAN"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/BYTE"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/SHORT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/LONG"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT8"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT16"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT32"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT64"/>
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/DOUBLE"/>
       </genEnums>
       <genClasses ecoreClass="muml.ecore#//types/ArrayDataType">

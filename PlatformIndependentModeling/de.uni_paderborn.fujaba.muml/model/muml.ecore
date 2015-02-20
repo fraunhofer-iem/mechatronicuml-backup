@@ -2055,10 +2055,10 @@
       </eAnnotations>
       <eLiterals name="VOID"/>
       <eLiterals name="BOOLEAN" value="1"/>
-      <eLiterals name="BYTE" value="2"/>
-      <eLiterals name="SHORT" value="3"/>
-      <eLiterals name="INT" value="4"/>
-      <eLiterals name="LONG" value="5"/>
+      <eLiterals name="INT8" value="2" literal="INT8"/>
+      <eLiterals name="INT16" value="3" literal="INT16"/>
+      <eLiterals name="INT32" value="4" literal="INT32"/>
+      <eLiterals name="INT64" value="5" literal="INT64"/>
       <eLiterals name="DOUBLE" value="6"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RangedPrimitiveDataType" eSuperTypes="#//types/DataType">
