@@ -281,8 +281,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		// Add supertypes to classes
 		messageTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		messageTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
-		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getRepository());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

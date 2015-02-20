@@ -336,7 +336,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int MESSAGE_TYPE_REPOSITORY__ANNOTATION = CorePackage.REPOSITORY__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -345,7 +345,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int MESSAGE_TYPE_REPOSITORY__EXTENSION = CorePackage.REPOSITORY__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -354,7 +354,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int MESSAGE_TYPE_REPOSITORY__NAME = CorePackage.REPOSITORY__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -363,7 +363,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int MESSAGE_TYPE_REPOSITORY__COMMENT = CorePackage.REPOSITORY__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Message Types</b></em>' containment reference list.
@@ -372,7 +372,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES = CorePackage.REPOSITORY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Message Type Repository</em>' class.
@@ -381,7 +381,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MESSAGE_TYPE_REPOSITORY_FEATURE_COUNT = CorePackage.REPOSITORY_FEATURE_COUNT + 1;
 
 
 	/**
@@ -391,7 +391,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+	int MESSAGE_TYPE_REPOSITORY___ECLASS = CorePackage.REPOSITORY___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -400,7 +400,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+	int MESSAGE_TYPE_REPOSITORY___EIS_PROXY = CorePackage.REPOSITORY___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -409,7 +409,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+	int MESSAGE_TYPE_REPOSITORY___ERESOURCE = CorePackage.REPOSITORY___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -418,7 +418,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+	int MESSAGE_TYPE_REPOSITORY___ECONTAINER = CorePackage.REPOSITORY___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -427,7 +427,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+	int MESSAGE_TYPE_REPOSITORY___ECONTAINING_FEATURE = CorePackage.REPOSITORY___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -436,7 +436,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+	int MESSAGE_TYPE_REPOSITORY___ECONTAINMENT_FEATURE = CorePackage.REPOSITORY___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -445,7 +445,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+	int MESSAGE_TYPE_REPOSITORY___ECONTENTS = CorePackage.REPOSITORY___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -454,7 +454,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+	int MESSAGE_TYPE_REPOSITORY___EALL_CONTENTS = CorePackage.REPOSITORY___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -463,7 +463,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+	int MESSAGE_TYPE_REPOSITORY___ECROSS_REFERENCES = CorePackage.REPOSITORY___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -472,7 +472,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int MESSAGE_TYPE_REPOSITORY___EGET__ESTRUCTURALFEATURE = CorePackage.REPOSITORY___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -481,7 +481,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int MESSAGE_TYPE_REPOSITORY___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.REPOSITORY___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -490,7 +490,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int MESSAGE_TYPE_REPOSITORY___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.REPOSITORY___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -499,7 +499,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int MESSAGE_TYPE_REPOSITORY___EIS_SET__ESTRUCTURALFEATURE = CorePackage.REPOSITORY___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -508,7 +508,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int MESSAGE_TYPE_REPOSITORY___EUNSET__ESTRUCTURALFEATURE = CorePackage.REPOSITORY___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -517,7 +517,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int MESSAGE_TYPE_REPOSITORY___EINVOKE__EOPERATION_ELIST = CorePackage.REPOSITORY___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -526,7 +526,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int MESSAGE_TYPE_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.REPOSITORY___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -535,7 +535,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE_TYPE_REPOSITORY___PROVIDE_EXTENSION__ECLASS = CorePackage.REPOSITORY___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -544,7 +544,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int MESSAGE_TYPE_REPOSITORY___GET_ANNOTATION__STRING = CorePackage.REPOSITORY___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -553,7 +553,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE_TYPE_REPOSITORY___PROVIDE_ANNOTATION__STRING = CorePackage.REPOSITORY___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message Type Repository</em>' class.
@@ -562,7 +562,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int MESSAGE_TYPE_REPOSITORY_OPERATION_COUNT = CorePackage.REPOSITORY_OPERATION_COUNT + 0;
 
 
 	/**
