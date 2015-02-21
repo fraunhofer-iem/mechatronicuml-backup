@@ -1832,7 +1832,7 @@
           upperBound="-1" eType="#//behavior/Operation" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).operations ->asOrderedSet()"/>
+          <details key="derivation" value="-- consider operations defined by self and by all parent RTSCs and include operations of all used OperationRepositories (either by self or by parent)&#xD;&#xA;let allParentRTSCs : Set(RealtimeStatechart) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif) in&#xD;&#xA;allParentRTSCs.operations ->union(allParentRTSCs.usedOperationRepositories.operations) ->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="All operations accessible within this statechart."/>
