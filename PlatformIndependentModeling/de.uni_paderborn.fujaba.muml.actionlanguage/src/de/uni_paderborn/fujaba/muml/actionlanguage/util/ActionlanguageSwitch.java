@@ -261,6 +261,9 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 			case ActionlanguagePackage.TYPE_CAST_EXPRESSION: {
 				TypeCastExpression typeCastExpression = (TypeCastExpression)theEObject;
 				T result = caseTypeCastExpression(typeCastExpression);
+				if (result == null) result = caseExpression(typeCastExpression);
+				if (result == null) result = caseCommentableElement(typeCastExpression);
+				if (result == null) result = caseExtendableElement(typeCastExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

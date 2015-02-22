@@ -39,7 +39,7 @@ import org.storydriven.core.expressions.Expression;
  * @model
  * @generated
  */
-public interface TypeCastExpression extends EObject {
+public interface TypeCastExpression extends Expression {
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

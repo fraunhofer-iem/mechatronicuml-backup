@@ -959,6 +959,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		nondeterministicChoiceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		parameterExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		timeValueExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		typeCastExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

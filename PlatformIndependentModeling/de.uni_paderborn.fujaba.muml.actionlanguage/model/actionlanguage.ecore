@@ -321,7 +321,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeCastExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="TypeCastExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A TypeCastExpression enables to perform an explicit type cast of the value of the enclosedExpression to the data type given in the eponymous reference. "/>
     </eAnnotations>

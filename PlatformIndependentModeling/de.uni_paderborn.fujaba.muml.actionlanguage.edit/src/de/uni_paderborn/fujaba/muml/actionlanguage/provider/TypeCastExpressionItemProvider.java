@@ -40,6 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.TypeCastExpression} object.
@@ -48,13 +49,7 @@ import org.storydriven.core.expressions.common.CommonExpressionsFactory;
  * @generated
  */
 public class TypeCastExpressionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -152,7 +147,10 @@ public class TypeCastExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_TypeCastExpression_type");
+		String label = ((TypeCastExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_TypeCastExpression_type") :
+			getString("_UI_TypeCastExpression_type") + " " + label;
 	}
 	
 
@@ -270,6 +268,11 @@ public class TypeCastExpressionItemProvider
 			(createChildParameter
 				(ActionlanguagePackage.Literals.TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

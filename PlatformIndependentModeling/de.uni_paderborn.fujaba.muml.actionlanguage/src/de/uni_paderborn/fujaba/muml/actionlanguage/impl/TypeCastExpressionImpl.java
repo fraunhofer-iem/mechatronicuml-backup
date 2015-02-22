@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +43,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @generated
  */
-public class TypeCastExpressionImpl extends EObjectImpl implements TypeCastExpression {
+public class TypeCastExpressionImpl extends ExpressionImpl implements TypeCastExpression {
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
