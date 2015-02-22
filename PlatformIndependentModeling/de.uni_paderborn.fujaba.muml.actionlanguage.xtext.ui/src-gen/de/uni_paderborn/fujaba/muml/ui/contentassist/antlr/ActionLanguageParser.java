@@ -90,6 +90,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationExpressionAccess().getGroup_1(), "rule__MultiplicationExpression__Group_1__0");
 					put(grammarAccess.getMultiplicationExpressionAccess().getGroup_1_1(), "rule__MultiplicationExpression__Group_1_1__0");
 					put(grammarAccess.getUnaryPreExpressionAccess().getGroup(), "rule__UnaryPreExpression__Group__0");
+					put(grammarAccess.getTypeCastExpressionAccess().getGroup(), "rule__TypeCastExpression__Group__0");
 					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup(), "rule__ExtendedTypedNamedElementExpression__Group__0");
@@ -157,6 +158,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionAssignment_1_1_2(), "rule__MultiplicationExpression__RightExpressionAssignment_1_1_2");
 					put(grammarAccess.getUnaryPreExpressionAccess().getOperatorAssignment_1(), "rule__UnaryPreExpression__OperatorAssignment_1");
 					put(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryPreExpression__EnclosedExpressionAssignment_2");
+					put(grammarAccess.getTypeCastExpressionAccess().getDataTypeAssignment_2(), "rule__TypeCastExpression__DataTypeAssignment_2");
+					put(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionAssignment_4(), "rule__TypeCastExpression__EnclosedExpressionAssignment_4");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionAssignment_1_0_2(), "rule__ExtendedTypedNamedElementExpression__PositionAssignment_1_0_2");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorAssignment_1_1_1(), "rule__ExtendedTypedNamedElementExpression__IncrementDecrementOperatorAssignment_1_1_1");

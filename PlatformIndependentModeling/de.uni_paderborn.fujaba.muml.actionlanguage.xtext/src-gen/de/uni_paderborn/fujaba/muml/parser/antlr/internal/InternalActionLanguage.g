@@ -989,6 +989,16 @@ ruleInitializeExpression returns [EObject current=null]
         $current = $this_Expression_2.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getInitializeExpressionAccess().getTypeCastExpressionParserRuleCall_3()); 
+    }
+    this_TypeCastExpression_3=ruleTypeCastExpression
+    { 
+        $current = $this_TypeCastExpression_3.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -2059,6 +2069,74 @@ ruleUnaryPreExpression returns [EObject current=null]
 
 
 
+// Entry rule entryRuleTypeCastExpression
+entryRuleTypeCastExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTypeCastExpressionRule()); }
+	 iv_ruleTypeCastExpression=ruleTypeCastExpression 
+	 { $current=$iv_ruleTypeCastExpression.current; } 
+	 EOF 
+;
+
+// Rule TypeCastExpression
+ruleTypeCastExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_0(),
+            $current);
+    }
+)	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTypeCastExpressionRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_2_0()); 
+	    }
+		ruleDATATYPE		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3=')' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_4_0()); 
+	    }
+		lv_enclosedExpression_4_0=ruleOperand		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTypeCastExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"enclosedExpression",
+        		lv_enclosedExpression_4_0, 
+        		"Operand");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleOperand
 entryRuleOperand returns [EObject current=null] 
 	:
@@ -2969,7 +3047,7 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
-RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
+RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 

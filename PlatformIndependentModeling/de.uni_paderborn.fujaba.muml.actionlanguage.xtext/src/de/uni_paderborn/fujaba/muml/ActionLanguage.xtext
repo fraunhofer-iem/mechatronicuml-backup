@@ -115,7 +115,7 @@ enum AssignOperator returns actionlanguage::AssignOperator:
 // initialize expression
 
 InitializeExpression returns expressions::Expression:
-	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
+	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression | TypeCastExpression
 ;
 
 // end of initialize expression
@@ -272,6 +272,11 @@ enum UnaryPreOperator returns commonExpressions::UnaryOperator:
 ;
 
 // end of UnaryPreExpression
+
+TypeCastExpression returns expressions::Expression:
+	{actionlanguage::TypeCastExpression}
+	'(' dataType=[types::DataType|DATATYPE] ')' enclosedExpression=Operand
+;
 
 // Operand
 
