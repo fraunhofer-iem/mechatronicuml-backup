@@ -13,13 +13,16 @@ public class PropertiesWizardDialog extends WizardDialog {
 	public PropertiesWizardDialog(Shell parentShell, IWizard newWizard) {
 		super(parentShell, newWizard);
 	}
-	
 	@Override
-	protected void cancelPressed() {
+	public boolean close() {
 		if (editingDomain != null) {
 			editingDomain.getCommandStack().undo();
 		}
 		editingDomain = null;
+		return super.close();
+	}
+	@Override
+	protected void cancelPressed() {
 		super.cancelPressed();
 	}
 	@Override
