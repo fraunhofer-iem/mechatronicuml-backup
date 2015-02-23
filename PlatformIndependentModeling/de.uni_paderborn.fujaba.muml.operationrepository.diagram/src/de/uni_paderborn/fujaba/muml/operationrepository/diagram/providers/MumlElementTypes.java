@@ -54,6 +54,16 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Operation_3001 = getElementType("de.uni_paderborn.fujaba.muml.operationrepository.diagram.Operation_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Parameter_3002 = getElementType("de.uni_paderborn.fujaba.muml.operationrepository.diagram.Parameter_3002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -98,6 +108,16 @@ public class MumlElementTypes {
 					OperationRepository_2001,
 					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 							.getOperationRepository());
+
+			elements.put(
+					Operation_3001,
+					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+							.getOperation());
+
+			elements.put(
+					Parameter_3002,
+					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+							.getParameter());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -117,6 +137,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(OperationRepository_2001);
+			KNOWN_ELEMENT_TYPES.add(Operation_3001);
+			KNOWN_ELEMENT_TYPES.add(Parameter_3002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -130,6 +152,10 @@ public class MumlElementTypes {
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
 			return OperationRepository_2001;
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+			return Operation_3001;
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return Parameter_3002;
 		}
 		return null;
 	}

@@ -23,6 +23,10 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+			return getOperationRepositoryOperationCompartment_7001SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
+			return getOperationParametersCompartment_7002SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -56,6 +60,68 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor> getOperationRepositoryOperationCompartment_7001SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.muml.behavior.OperationRepository modelElement = (de.uni_paderborn.fujaba.muml.behavior.OperationRepository) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOperations().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.behavior.Operation childElement = (de.uni_paderborn.fujaba.muml.behavior.Operation) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor> getOperationParametersCompartment_7002SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.muml.behavior.Operation modelElement = (de.uni_paderborn.fujaba.muml.behavior.Operation) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getParameters().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.behavior.Parameter childElement = (de.uni_paderborn.fujaba.muml.behavior.Parameter) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getContainedLinks(
 			View view) {
 		switch (de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlVisualIDRegistry
@@ -64,6 +130,10 @@ public class MumlDiagramUpdater {
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
 			return getOperationRepository_2001ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+			return getOperation_3001ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return getParameter_3002ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -77,6 +147,10 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
 			return getOperationRepository_2001IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+			return getOperation_3001IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return getParameter_3002IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -90,6 +164,10 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
 			return getOperationRepository_2001OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+			return getOperation_3001OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+			return getParameter_3002OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -113,6 +191,22 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getOperation_3001ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getParameter_3002ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getOperationRepository_2001IncomingLinks(
 			View view) {
 		return Collections.emptyList();
@@ -121,7 +215,39 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getOperation_3001IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getParameter_3002IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getOperationRepository_2001OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getOperation_3001OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlLinkDescriptor> getParameter_3002OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

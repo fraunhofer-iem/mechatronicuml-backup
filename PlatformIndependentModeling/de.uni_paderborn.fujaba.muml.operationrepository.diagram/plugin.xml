@@ -207,33 +207,33 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
             class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.operationrepository.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.operationrepository.diagram.general"
             class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
@@ -306,7 +306,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Operation Repository"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002"/>
       </viewProvider>
    </extension>
 
@@ -318,16 +318,16 @@
             <method name="getType()" value="Operation Repository"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001"/>
+            <method name="getType()" value="2001,3001,3002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="5003,5002,5005,5001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="7001,7002"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -345,6 +345,16 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart" id="OperationRepository_2001"/>
          <context elements="OperationRepository_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfOperationEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart" id="Operation_3001"/>
+         <context elements="Operation_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assistants.MumlModelingAssistantProviderOfParameterEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart" id="Parameter_3002"/>
+         <context elements="Parameter_3002"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -379,6 +389,26 @@
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.Operation_3001"
+               name="%metatype.name.Operation_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Operation"
+               edithelper="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.helpers.OperationEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.Parameter_3002"
+               name="%metatype.name.Parameter_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Parameter"
+               edithelper="de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.helpers.ParameterEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -393,6 +423,8 @@
       <binding context="de.uni_paderborn.fujaba.muml.operationrepository.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.operationrepository.diagram.ModelElementCategory_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.operationrepository.diagram.OperationRepository_2001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.operationrepository.diagram.Operation_3001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.operationrepository.diagram.Parameter_3002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -560,6 +592,13 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

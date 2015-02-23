@@ -54,12 +54,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOperation2CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.Messages.Operation2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.Messages.Operation2CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Operation_3001));
 		entry.setId("createOperation2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Operation_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -67,12 +70,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createParameter3CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.Messages.Parameter3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.Messages.Parameter3CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002));
 		entry.setId("createParameter3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.MumlElementTypes.Parameter_3002));
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

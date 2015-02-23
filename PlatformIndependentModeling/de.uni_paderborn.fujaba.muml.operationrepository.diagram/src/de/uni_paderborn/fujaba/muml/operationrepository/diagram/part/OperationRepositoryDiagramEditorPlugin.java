@@ -66,6 +66,11 @@ public class OperationRepositoryDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.operationrepository.diagram.expressions.MumlOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public OperationRepositoryDiagramEditorPlugin() {
 	}
 
@@ -88,6 +93,7 @@ public class OperationRepositoryDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory.dispose();
 		adapterFactory = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -255,6 +261,21 @@ public class OperationRepositoryDiagramEditorPlugin extends AbstractUIPlugin {
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.muml.operationrepository.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setMumlOCLFactory(
+			de.uni_paderborn.fujaba.muml.operationrepository.diagram.expressions.MumlOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

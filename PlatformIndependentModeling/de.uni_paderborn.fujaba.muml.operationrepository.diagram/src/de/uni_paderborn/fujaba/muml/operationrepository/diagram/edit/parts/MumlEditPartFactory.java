@@ -28,6 +28,38 @@ public class MumlEditPartFactory implements EditPartFactory {
 			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryEditPart(
 						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryNameEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationNameEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.WrappingLabelEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.ParameterEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.WrappingLabel2EditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationRepositoryOperationCompartmentEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts.OperationParametersCompartmentEditPart(
+						view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

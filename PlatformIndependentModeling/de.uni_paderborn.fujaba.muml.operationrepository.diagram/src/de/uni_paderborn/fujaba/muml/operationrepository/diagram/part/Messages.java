@@ -278,12 +278,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String OperationRepositoryOperationCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String OperationParametersCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
+
+	/**
+	 * @generated
+	 */
+	public static String MessageFormatParser_InvalidInputError;
 
 	/**
 	 * @generated
