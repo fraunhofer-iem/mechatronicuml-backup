@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgen:GenEditorGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.operationrepository.diagram" modelID="Operation Repository" diagramFileExtension="operationrepository_diagram" domainFileExtension="fujaba" dynamicTemplates="true" templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates">
+  <diagram visualID="1000" editPartClassName="ModelElementCategoryEditPart" itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy" canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy" iconProviderPriority="Low" creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams" validationProviderPriority="Low" validationEnabled="true" validationDecorators="true">
+    <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
+    <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ModelElementCategoryEditHelper"/>
+    <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <domainDiagramElement href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+    <topLevelNodes visualID="2001" editPartClassName="OperationRepositoryEditPart" itemSemanticEditPolicyClassName="OperationRepositoryItemSemanticEditPolicy" canonicalEditPolicyClassName="OperationRepositoryCanonicalEditPolicy" graphicalNodeEditPolicyClassName="OperationRepositoryGraphicalNodeEditPolicy" createCommandClassName="OperationRepositoryCreateCommand">
+      <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="OperationRepositoryEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="OperationRepositoryFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class OperationRepositoryFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureOperationRepositoryNameLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureOperationCompartmentFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public OperationRepositoryFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;layoutThis.marginWidth = 1;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureOperationRepositoryNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureOperationRepositoryNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureOperationRepositoryNameLabelFigure.setFont(FFIGUREOPERATIONREPOSITORYNAMELABELFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureOperationRepositoryNameLabelFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureOperationRepositoryNameLabelFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureOperationRepositoryNameLabelFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureOperationRepositoryNameLabelFigure.horizontalIndent = 0;&#xA;constraintFFigureOperationRepositoryNameLabelFigure.horizontalSpan = 1;&#xA;constraintFFigureOperationRepositoryNameLabelFigure.verticalSpan = 1;&#xA;constraintFFigureOperationRepositoryNameLabelFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureOperationRepositoryNameLabelFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureOperationRepositoryNameLabelFigure, constraintFFigureOperationRepositoryNameLabelFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureOperationCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureOperationCompartmentFigure.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureOperationCompartmentFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureOperationCompartmentFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureOperationCompartmentFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureOperationCompartmentFigure.horizontalIndent = 0;&#xA;constraintFFigureOperationCompartmentFigure.horizontalSpan = 1;&#xA;constraintFFigureOperationCompartmentFigure.verticalSpan = 1;&#xA;constraintFFigureOperationCompartmentFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureOperationCompartmentFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureOperationCompartmentFigure, constraintFFigureOperationCompartmentFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureOperationRepositoryNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureOperationRepositoryNameLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureOperationCompartmentFigure() {&#xA;&#x9;&#x9;return fFigureOperationCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREOPERATIONREPOSITORYNAMELABELFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="90"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/behavior/OperationRepository"/>
+        <containmentMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <childMetaFeature href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+      </modelFacet>
+    </topLevelNodes>
+    <palette>
+      <groups title="operationrepositoryeditor">
+        <entries xsi:type="gmfgen:ToolEntry" title="OperationRepository" description="Create new Operation Repository" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Operation" description="Create new Operation"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Parameter" description="Create new Parameter"/>
+      </groups>
+    </palette>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.diagram.general" name="Message Type Diagram Editor" parentCategory="de.uni_paderborn.fujaba.preferences">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.diagram.appearance" name="Appearance" parentCategory="de.uni_paderborn.fujaba.muml.diagram.general" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.diagram.connections" name="Connections" parentCategory="de.uni_paderborn.fujaba.muml.diagram.general" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.diagram.printing" name="Printing" parentCategory="de.uni_paderborn.fujaba.muml.diagram.general" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid" name="Rulers And Grid" parentCategory="de.uni_paderborn.fujaba.muml.diagram.general" kind="RulersAndGrid"/>
+    </preferencePages>
+  </diagram>
+  <plugin iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram" name="Operation Repository Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier" activatorClassName="OperationRepositoryDiagramEditorPlugin">
+    <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
+    <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>org.eclipse.emf.ecore.editor</requiredPlugins>
+  </plugin>
+  <editor packageName="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part" iD="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditorID" contextID="de.uni_paderborn.fujaba.muml.operationrepository.diagram.ui.diagramContext"/>
+  <navigator>
+    <childReferences child="//@diagram"/>
+    <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
+  </navigator>
+  <diagramUpdater/>
+  <propertySheet>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="appearance"/>
+    <tabs xsi:type="gmfgen:GenStandardPropertyTab" iD="diagram"/>
+    <tabs xsi:type="gmfgen:GenCustomPropertyTab" iD="domain" label="Core">
+      <filter xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+  </propertySheet>
+  <domainGenModel href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
+  <contextMenus context="//@diagram">
+    <items xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+</gmfgen:GenEditorGenerator>
