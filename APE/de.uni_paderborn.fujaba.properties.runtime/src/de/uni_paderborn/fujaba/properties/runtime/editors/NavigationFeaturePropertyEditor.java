@@ -45,7 +45,7 @@ public class NavigationFeaturePropertyEditor extends
 	protected boolean createMode = false;
 	private boolean initiallyOpen = false;
 	private EClass selectedClass = null;
-	private List<EClass> eClasses;
+	private List<EClass> eClasses = new ArrayList<EClass>();
 
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature, boolean initiallyOpen) {
@@ -125,10 +125,10 @@ public class NavigationFeaturePropertyEditor extends
 				EClass newClass = (EClass) selection.getFirstElement();
 				if (newClass != selectedClass) {
 					selectedClass = newClass;
-					if (isSet()) {
+					//if (isSet()) {
 						remove();
 						create();
-					}
+					//}
 				}
 			}
 		});
@@ -183,7 +183,6 @@ public class NavigationFeaturePropertyEditor extends
 			}
 		});
 
-		updateEClassesList();
 
 	}
 	
@@ -191,7 +190,7 @@ public class NavigationFeaturePropertyEditor extends
 
 		eClasses = getCreationEClasses();
 
-		selectedClass = null;
+		EClass selectedClass = null;
 		if (!eClasses.isEmpty()) {
 			selectedClass = eClasses.get(0);
 		}
