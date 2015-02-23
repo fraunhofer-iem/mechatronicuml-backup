@@ -4,7 +4,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_I-jjUF6VEeOU6dzb6wKMjg" type="5061"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_I-jjUV6VEeOU6dzb6wKMjg" type="5062"/>
     <children xmi:type="notation:DecorationNode" xmi:id="_I-jjUl6VEeOU6dzb6wKMjg" type="7030">
-      <children xmi:type="notation:Shape" xmi:id="_I_KAQF6VEeOU6dzb6wKMjg" type="3032" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:Shape" xmi:id="_I_KAQF6VEeOU6dzb6wKMjg" type="3032" fontName="Segoe UI" fillColor="13420443" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_I_KAQl6VEeOU6dzb6wKMjg" type="5060"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_I_KnUF6VEeOU6dzb6wKMjg" type="7031">
           <styles xmi:type="notation:SortingStyle" xmi:id="_I_KnUV6VEeOU6dzb6wKMjg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
@@ -25,7 +25,7 @@
         <element xmi:type="realtimestatechart:State" href="../../../coordinatingBebots.muml#_I8yBsV6VEeOU6dzb6wKMjg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I_KAQV6VEeOU6dzb6wKMjg" x="50" y="34" width="97" height="61"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_NfafYF6VEeOU6dzb6wKMjg" type="3032" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:Shape" xmi:id="_NfafYF6VEeOU6dzb6wKMjg" type="3032" fontName="Segoe UI" fillColor="13420443" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_NfafYl6VEeOU6dzb6wKMjg" type="5060"/>
         <children xmi:type="notation:DecorationNode" xmi:id="_NfbGcF6VEeOU6dzb6wKMjg" type="7031">
           <styles xmi:type="notation:SortingStyle" xmi:id="_NfbGcV6VEeOU6dzb6wKMjg" sorting="Automatic" sortingKeys="default_sorting_key:Ascending"/>
