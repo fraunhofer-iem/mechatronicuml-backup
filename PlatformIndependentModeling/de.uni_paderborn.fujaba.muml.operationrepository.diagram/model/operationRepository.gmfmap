@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfmap:Mapping
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/OperationRepository"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="operationRepository.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="operationRepository.gmfgraph#OperationRepository"/>
+    </ownedChild>
+  </nodes>
+  <diagram>
+    <diagramCanvas
+        href="operationRepository.gmfgraph#operationrepositoryeditor"/>
+    <domainModel
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior"/>
+    <domainMetaElement
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+    <palette
+        href="operationRepository.gmftool#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>
