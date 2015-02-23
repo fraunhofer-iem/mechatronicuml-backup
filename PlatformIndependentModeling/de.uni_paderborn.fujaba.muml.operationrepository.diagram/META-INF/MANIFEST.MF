@@ -40,7 +40,10 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.common;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.common;visibility:=reexport,
  org.eclipse.emf.ecore.editor;bundle-version="2.10.0",
- org.eclipse.ocl.ecore;visibility:=reexport
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport,
+ org.storydriven.core.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
