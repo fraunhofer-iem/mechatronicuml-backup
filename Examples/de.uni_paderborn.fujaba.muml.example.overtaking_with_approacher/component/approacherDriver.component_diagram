@@ -41,7 +41,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JDPyMquyEeSOh7ww5c64Rw" x="216" y="133"/>
     </children>
     <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_EGtqUJOWEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pu8VY6rGEeScJ-0YDJS4Tg" width="385" height="145"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pu8VY6rGEeScJ-0YDJS4Tg" x="252" y="144" width="385" height="145"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_Pu8VYarGEeScJ-0YDJS4Tg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
