@@ -56,7 +56,7 @@
         <styles xmi:type="notation:FontStyle" xmi:id="_R3StHbqgEeSQfL2uV5TAjw" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_R3StHrqgEeSQfL2uV5TAjw" lineColor="0"/>
         <element xmi:type="connector:MessageBuffer" href="../overtaking.muml#_Jyhh4ITTEeKO9r0VL65xcg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R3StH7qgEeSQfL2uV5TAjw" x="535" y="144"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R3StH7qgEeSQfL2uV5TAjw" x="520" y="144"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_R3StJrqgEeSQfL2uV5TAjw" type="3014">
         <children xmi:type="notation:DecorationNode" xmi:id="_R3StK7qgEeSQfL2uV5TAjw" type="5020"/>
