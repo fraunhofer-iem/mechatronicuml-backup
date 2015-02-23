@@ -10,10 +10,10 @@ Middleware* Middleware_create(void){
 	 * call create-function for every NI of the ECU
 	 */
 	mw->intern = NetworkInterface_create("intern");
-	mw->usbPort = NetworkInterface_create("usbPort");
-	mw->virtualBluetoothPort = NetworkInterface_create("virtualBluetoothPort");
+	//mw->usbPort = NetworkInterface_create("usbPort");
+	//mw->virtualBluetoothPort = NetworkInterface_create("virtualBluetoothPort");
 	mw->inputPort4 = NetworkInterface_create("inputPort4");
-	mw->VirtualWifiPort = NetworkInterface_create("VirtualWifiPort");
+	//mw->VirtualWifiPort = NetworkInterface_create("VirtualWifiPort");
 
 	if(Middelware_init() == true){
 		return mw;
@@ -129,16 +129,7 @@ bool_t MW_NIreceiveMessages(void){
 
 	MiddlewareMessage* msg;
 	msg = NULL;
-		msg = mw->usbPort->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->virtualBluetoothPort->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
 		msg = mw->inputPort4->receiveMethod();
-		if (msg != NULL)
-			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		msg = mw->VirtualWifiPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
     return true;
