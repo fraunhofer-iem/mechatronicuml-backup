@@ -117,7 +117,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_Bnfg3rdvEeSMqrGemIygLw"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_BnVv0LdvEeSMqrGemIygLw"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bnfg0bdvEeSMqrGemIygLw" x="423" y="18" width="102" height="73"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bnfg0bdvEeSMqrGemIygLw" x="404" y="18" width="121" height="73"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_iurwEJ9FEeSDApXOK6N3KA"/>
@@ -141,11 +141,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_xMyMDqu0EeSOh7ww5c64Rw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_wXdqwZOQEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xMyMAau0EeSOh7ww5c64Rw" width="759" height="702"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xMyMAau0EeSOh7ww5c64Rw" width="759" height="606"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_wXdqwJOQEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xF7WE6u0EeSOh7ww5c64Rw" width="841" height="853"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xF7WE6u0EeSOh7ww5c64Rw" width="841" height="709"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TUzTsarEEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_wXdqwJOQEeSZM-zEIRk3lw"/>

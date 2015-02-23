@@ -79,7 +79,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_zJQdbLRbEeSNPJMyNnWx-A"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_o8AykJ_VEeSYU6UyOlfnUQ"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zJQdX7RbEeSNPJMyNnWx-A" x="452" y="81"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zJQdX7RbEeSNPJMyNnWx-A" x="560" y="93"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_zJREULRbEeSNPJMyNnWx-A" type="3032" fontName="Segoe UI" lineColor="0">
                     <children xmi:type="notation:DecorationNode" xmi:id="_zJREUrRbEeSNPJMyNnWx-A" type="5060"/>

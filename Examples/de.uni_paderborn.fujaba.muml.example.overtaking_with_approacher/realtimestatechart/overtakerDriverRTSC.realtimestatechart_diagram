@@ -318,11 +318,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_yQAjnqu0EeSOh7ww5c64Rw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_2hhZQJOQEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQAjkau0EeSOh7ww5c64Rw" width="1119" height="1098"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yQAjkau0EeSOh7ww5c64Rw" width="1167" height="1098"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_2hgyMJOQEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLJRs6u0EeSOh7ww5c64Rw" width="1141" height="1189"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLJRs6u0EeSOh7ww5c64Rw" width="1189" height="1189"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TVGOoarEEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_2hgyMJOQEeSZM-zEIRk3lw"/>

@@ -256,7 +256,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_lVgSLLReEeSNPJMyNnWx-A"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_nDMK0J9IEeSDApXOK6N3KA"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lVfrILReEeSNPJMyNnWx-A" x="346"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lVfrILReEeSNPJMyNnWx-A" x="812" y="49"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_tcHl0ZRSEeSZM-zEIRk3lw"/>
