@@ -128,7 +128,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_w3b9mMOtEeKtesZp-51dtg"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../SectionEntry.muml#_w3YTMMOtEeKtesZp-51dtg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w3avccOtEeKtesZp-51dtg" x="431" y="370"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w3avccOtEeKtesZp-51dtg" x="431" y="404"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_QpxGUMaZEeKovq4g5K7Xxw" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_QpxGUsaZEeKovq4g5K7Xxw" type="5060"/>
@@ -153,7 +153,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_fu8LkMOtEeKtesZp-51dtg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fvrLYcOtEeKtesZp-51dtg" x="24" y="24" width="625" height="493"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fvrLYcOtEeKtesZp-51dtg" x="24" y="24" width="742" height="562"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_fu-n0cOtEeKtesZp-51dtg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../SectionEntry.muml#_fu8LkMOtEeKtesZp-51dtg"/>
@@ -238,7 +238,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_4IYbocOtEeKtesZp-51dtg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../SectionEntry.muml#_4IVYUMOtEeKtesZp-51dtg"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4IYbosOtEeKtesZp-51dtg" points="[-28, 6, 338, 144]$[-366, 6, 0, 144]$[-366, -101, 0, 37]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4IYbosOtEeKtesZp-51dtg" points="[-36, 9, 345, 179]$[-381, 9, 0, 179]$[-381, -128, 0, 42]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4I3j0MOtEeKtesZp-51dtg" id="(0.23529411764705882,0.6382978723404256)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_eVvuIMaZEeKovq4g5K7Xxw" type="4003" source="_QpxGUMaZEeKovq4g5K7Xxw" target="_fv6b8MOtEeKtesZp-51dtg" lineColor="0">
