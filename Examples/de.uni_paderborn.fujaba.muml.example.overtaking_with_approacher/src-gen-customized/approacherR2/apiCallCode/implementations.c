@@ -15,7 +15,8 @@ void initAll(){
 }	
 		int approacherColor_color_ExecApi(){
 /** Start of user code approacherColor_color_ExecApi **/ 
-									return ecrobot_get_nxtcolorsensor_id(NXT_PORT_S1);
+									ecrobot_process_bg_nxtcolorsensor();
+							return ecrobot_get_nxtcolorsensor_id(NXT_PORT_S1);
 
 /**End of user code**/
 }	
