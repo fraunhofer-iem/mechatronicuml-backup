@@ -125,10 +125,10 @@ public class NavigationFeaturePropertyEditor extends
 				EClass newClass = (EClass) selection.getFirstElement();
 				if (newClass != selectedClass) {
 					selectedClass = newClass;
-					//if (isSet()) {
+					if (isSet()) {
 						remove();
 						create();
-					//}
+					}
 				}
 			}
 		});
@@ -238,11 +238,12 @@ public class NavigationFeaturePropertyEditor extends
 		} else {
 			navigatedEditor.setInput(value);
 		}
+		updateEClassesList();
+
 		if (input != null && shouldCreateInitially()) {
 			create();
 		}
 		updateTitle();
-		updateEClassesList();
 	}
 
 	@Override
