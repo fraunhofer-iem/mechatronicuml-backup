@@ -190,7 +190,7 @@ public class NavigationFeaturePropertyEditor extends
 
 		eClasses = getCreationEClasses();
 
-		EClass selectedClass = null;
+		selectedClass = null;
 		if (!eClasses.isEmpty()) {
 			selectedClass = eClasses.get(0);
 		}
