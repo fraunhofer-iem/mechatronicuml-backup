@@ -46,6 +46,11 @@ import de.uni_paderborn.uppaal.types.Library
 class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
 
 	/**
+	 * The Library instance that is used by this ScopeProvider.
+	 */	
+	private static Library LIBRARY = null;
+
+	/**
 	 * Helper method that appends the TypedElements of a TypedElementContainer to a given
 	 * Iterable for NamedElements.
 	 */
@@ -127,6 +132,21 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 		Scopes::scopeFor( template.location )
 	}
 	
+	/**
+	 * Method that is called when the channelType attribute of a ChannelPrefixExpression
+	 * needs to be resolved.
+	 * 
+	 * @param context ChannelPrefixExpression instance.
+	 * @param ref EReference instance for the channelType attribute.
+	 * 
+	 * @return Scope for the channelType attribute.
+	 */
+	def IScope scope_ChannelPrefixExpression_channelType(EObject context, EReference ref)
+	{
+		val Library lib = getLibrary(context);
+		return Scopes::scopeFor(lib.types)
+	}
+		
 	/**
 	 * Main method to find the scope corresponding to a given IdentifierExpression.
 	 * It checks for certain special cases an then delegates to more specialized
@@ -287,7 +307,6 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 			// Scope for TypedElement's.
 			if (curMode == ScopeMode.TYPED_ELEMENTS || curMode == ScopeMode.TYPES_AND_TYPED_ELEMENTS)
 			{
-				// new ResourceSetImpl().getResource("platform:/plugin/.../stdlib.xmi", true).getContents();
 				switch(curObj)
 				{
 					NTA:
@@ -295,11 +314,14 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 							.filter(typeof(TypedDeclaration))
 							.bReduce(emptyList, TypedElementContainerReduction)
 					Template:
+					{
 						elements = elements + curObj.parameter
 							.bReduce(emptyList, TypedElementContainerReduction)
-							+ curObj.declarations.declaration
+						if (curObj.declarations != null)
+							elements = elements + curObj.declarations.declaration
 							.filter(typeof(TypedDeclaration))
 							.bReduce(emptyList, TypedElementContainerReduction)
+					}
 					de.uni_paderborn.uppaal.declarations.Function:
 						elements = elements + curObj.parameter
 							.bReduce(emptyList, TypedElementContainerReduction)
@@ -332,9 +354,12 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 							.bReduce(emptyList, TypeDeclarationReduction)
 							+ getPredefinedTypes(curObj)
 					Template:
-						elements = elements + curObj.declarations.declaration
-							.filter(typeof(TypeDeclaration))
-							.bReduce(emptyList, TypeDeclarationReduction)
+					{
+						if (curObj.declarations != null)
+							elements = elements + curObj.declarations.declaration
+								.filter(typeof(TypeDeclaration))
+								.bReduce(emptyList, TypeDeclarationReduction)
+					}
 					SystemDeclarations:
 						elements = elements + curObj.declaration
 							.filter(typeof(TypeDeclaration))
@@ -355,23 +380,50 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 		// Add predefined types if necessary.
 		if (curMode == ScopeMode.TYPES_AND_TYPED_ELEMENTS || curMode == ScopeMode.TYPES)
 		{
-			val Library lib = getLibrary();
-			return Scopes::scopeFor(lib.types, IScope::NULLSCOPE)
+			val Library lib = getLibrary(lastObj);
+			return Scopes::scopeFor(lib.types)
 		}
 		
 		// In case of failure or end of recursion, return the empty scope.
 		IScope::NULLSCOPE
 	}
 	
-	private static Library LIBRARY = null;
-	
-	private static def Library getLibrary()
+	/**
+	 * Gets an instance of Library for the given context.
+	 * 
+	 * @param context EObject whose Library should be returned if there is one.
+	 * 
+	 * @return An instance of Library.
+	 */
+	private static def Library getLibrary(EObject context)
 	{
 		if (LIBRARY == null)
 		{
-			LIBRARY = new ResourceSetImpl().getResource(
-				URI.createURI("platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi", false), true
-			).getContents().get(0) as Library;
+			// Check if there is already a Library loaded in the context.
+			if (context.eResource != null)
+			{
+				for (Resource res : context.eResource.resourceSet.resources)
+				{
+					for (EObject obj : res.contents)
+					{
+						if (obj instanceof Library)
+						{
+							LIBRARY = obj
+							return LIBRARY
+						}
+					}
+				}
+				
+				LIBRARY = context.eResource.resourceSet.getResource(
+					URI.createURI("platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi", false), true
+				).getContents().get(0) as Library;
+			}
+			else
+			{
+				LIBRARY = new ResourceSetImpl().getResource(
+					URI.createURI("platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi", false), true
+				).getContents().get(0) as Library;
+			}
 		}
 		LIBRARY
 	}

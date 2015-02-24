@@ -5,6 +5,9 @@ package de.uni_paderborn.uppaal;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.parsetree.reconstr.ITransientValueService;
+
+import de.uni_paderborn.uppaal.serializer.UppaalXMLTransientValueService;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -24,6 +27,11 @@ public class UppaalXMLRuntimeModule extends de.uni_paderborn.uppaal.AbstractUppa
 	@Override
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return de.uni_paderborn.uppaal.scoping.UppaalXMLScopeProvider.class;
+	}
+	
+	@Override
+	public Class<? extends ITransientValueService> bindITransientValueService() {
+		return UppaalXMLTransientValueService.class;
 	}
 	
 }

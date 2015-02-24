@@ -55,7 +55,6 @@ public class LocationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addColorPropertyDescriptor(object);
 			addColorCodePropertyDescriptor(object);
 			addLocationTimeKindPropertyDescriptor(object);
 		}
@@ -76,28 +75,6 @@ public class LocationItemProvider
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
 				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Color feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ColoredElement_color_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ColoredElement_color_feature", "_UI_ColoredElement_type"),
-				 VisualsPackage.Literals.COLORED_ELEMENT__COLOR,
 				 true,
 				 false,
 				 false,
@@ -219,7 +196,6 @@ public class LocationItemProvider
 
 		switch (notification.getFeatureID(Location.class)) {
 			case TemplatesPackage.LOCATION__COMMENT:
-			case TemplatesPackage.LOCATION__COLOR:
 			case TemplatesPackage.LOCATION__COLOR_CODE:
 			case TemplatesPackage.LOCATION__LOCATION_TIME_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

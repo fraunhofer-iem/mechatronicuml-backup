@@ -40,6 +40,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.scoping.IScope;
@@ -71,6 +72,11 @@ public class UppaalXMLScopeProvider extends AbstractDeclarativeScopeProvider {
     
     TYPES_AND_TYPED_ELEMENTS;
   }
+  
+  /**
+   * The Library instance that is used by this ScopeProvider.
+   */
+  private static Library LIBRARY = null;
   
   /**
    * Helper method that appends the TypedElements of a TypedElementContainer to a given
@@ -178,6 +184,21 @@ public class UppaalXMLScopeProvider extends AbstractDeclarativeScopeProvider {
       _xblockexpression = Scopes.scopeFor(_location);
     }
     return _xblockexpression;
+  }
+  
+  /**
+   * Method that is called when the channelType attribute of a ChannelPrefixExpression
+   * needs to be resolved.
+   * 
+   * @param context ChannelPrefixExpression instance.
+   * @param ref EReference instance for the channelType attribute.
+   * 
+   * @return Scope for the channelType attribute.
+   */
+  public IScope scope_ChannelPrefixExpression_channelType(final EObject context, final EReference ref) {
+    final Library lib = UppaalXMLScopeProvider.getLibrary(context);
+    EList<PredefinedType> _types = lib.getTypes();
+    return Scopes.scopeFor(_types);
   }
   
   /**
@@ -386,13 +407,18 @@ public class UppaalXMLScopeProvider extends AbstractDeclarativeScopeProvider {
                 Iterable<NamedElement> _emptyList = this.emptyList();
                 Iterable<NamedElement> _bReduce = this.<Iterable<NamedElement>, ParameterContainer>bReduce(_parameter, _emptyList, this.TypedElementContainerReduction);
                 Iterable<NamedElement> _plus = Iterables.<NamedElement>concat(elements, _bReduce);
+                elements = _plus;
                 LocalDeclarations _declarations = ((Template)curObj).getDeclarations();
-                EList<Declaration> _declaration = _declarations.getDeclaration();
-                Iterable<TypedDeclaration> _filter = Iterables.<TypedDeclaration>filter(_declaration, TypedDeclaration.class);
-                Iterable<NamedElement> _emptyList_1 = this.emptyList();
-                Iterable<NamedElement> _bReduce_1 = this.<Iterable<NamedElement>, TypedDeclaration>bReduce(_filter, _emptyList_1, this.TypedElementContainerReduction);
-                Iterable<NamedElement> _plus_1 = Iterables.<NamedElement>concat(_plus, _bReduce_1);
-                elements = _plus_1;
+                boolean _notEquals = (!Objects.equal(_declarations, null));
+                if (_notEquals) {
+                  LocalDeclarations _declarations_1 = ((Template)curObj).getDeclarations();
+                  EList<Declaration> _declaration = _declarations_1.getDeclaration();
+                  Iterable<TypedDeclaration> _filter = Iterables.<TypedDeclaration>filter(_declaration, TypedDeclaration.class);
+                  Iterable<NamedElement> _emptyList_1 = this.emptyList();
+                  Iterable<NamedElement> _bReduce_1 = this.<Iterable<NamedElement>, TypedDeclaration>bReduce(_filter, _emptyList_1, this.TypedElementContainerReduction);
+                  Iterable<NamedElement> _plus_1 = Iterables.<NamedElement>concat(elements, _bReduce_1);
+                  elements = _plus_1;
+                }
               }
             }
             if (!_matched_1) {
@@ -485,12 +511,16 @@ public class UppaalXMLScopeProvider extends AbstractDeclarativeScopeProvider {
               if (curObj instanceof Template) {
                 _matched_2=true;
                 LocalDeclarations _declarations = ((Template)curObj).getDeclarations();
-                EList<Declaration> _declaration = _declarations.getDeclaration();
-                Iterable<TypeDeclaration> _filter = Iterables.<TypeDeclaration>filter(_declaration, TypeDeclaration.class);
-                Iterable<NamedElement> _emptyList = this.emptyList();
-                Iterable<NamedElement> _bReduce = this.<Iterable<NamedElement>, TypeDeclaration>bReduce(_filter, _emptyList, this.TypeDeclarationReduction);
-                Iterable<NamedElement> _plus = Iterables.<NamedElement>concat(elements, _bReduce);
-                elements = _plus;
+                boolean _notEquals = (!Objects.equal(_declarations, null));
+                if (_notEquals) {
+                  LocalDeclarations _declarations_1 = ((Template)curObj).getDeclarations();
+                  EList<Declaration> _declaration = _declarations_1.getDeclaration();
+                  Iterable<TypeDeclaration> _filter = Iterables.<TypeDeclaration>filter(_declaration, TypeDeclaration.class);
+                  Iterable<NamedElement> _emptyList = this.emptyList();
+                  Iterable<NamedElement> _bReduce = this.<Iterable<NamedElement>, TypeDeclaration>bReduce(_filter, _emptyList, this.TypeDeclarationReduction);
+                  Iterable<NamedElement> _plus = Iterables.<NamedElement>concat(elements, _bReduce);
+                  elements = _plus;
+                }
               }
             }
             if (!_matched_2) {
@@ -525,28 +555,57 @@ public class UppaalXMLScopeProvider extends AbstractDeclarativeScopeProvider {
         _or = _equals_1;
       }
       if (_or) {
-        final Library lib = UppaalXMLScopeProvider.getLibrary();
+        final Library lib = UppaalXMLScopeProvider.getLibrary(lastObj);
         EList<PredefinedType> _types = lib.getTypes();
-        return Scopes.scopeFor(_types, IScope.NULLSCOPE);
+        return Scopes.scopeFor(_types);
       }
       _xblockexpression = IScope.NULLSCOPE;
     }
     return _xblockexpression;
   }
   
-  private static Library LIBRARY = null;
-  
-  private static Library getLibrary() {
+  /**
+   * Gets an instance of Library for the given context.
+   * 
+   * @param context EObject whose Library should be returned if there is one.
+   * 
+   * @return An instance of Library.
+   */
+  private static Library getLibrary(final EObject context) {
     Library _xblockexpression = null;
     {
       boolean _equals = Objects.equal(UppaalXMLScopeProvider.LIBRARY, null);
       if (_equals) {
-        ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
-        URI _createURI = URI.createURI("platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi", false);
-        Resource _resource = _resourceSetImpl.getResource(_createURI, true);
-        EList<EObject> _contents = _resource.getContents();
-        EObject _get = _contents.get(0);
-        UppaalXMLScopeProvider.LIBRARY = ((Library) _get);
+        Resource _eResource = context.eResource();
+        boolean _notEquals = (!Objects.equal(_eResource, null));
+        if (_notEquals) {
+          Resource _eResource_1 = context.eResource();
+          ResourceSet _resourceSet = _eResource_1.getResourceSet();
+          EList<Resource> _resources = _resourceSet.getResources();
+          for (final Resource res : _resources) {
+            EList<EObject> _contents = res.getContents();
+            for (final EObject obj : _contents) {
+              if ((obj instanceof Library)) {
+                UppaalXMLScopeProvider.LIBRARY = ((Library)obj);
+                return UppaalXMLScopeProvider.LIBRARY;
+              }
+            }
+          }
+          Resource _eResource_2 = context.eResource();
+          ResourceSet _resourceSet_1 = _eResource_2.getResourceSet();
+          URI _createURI = URI.createURI("platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi", false);
+          Resource _resource = _resourceSet_1.getResource(_createURI, true);
+          EList<EObject> _contents_1 = _resource.getContents();
+          EObject _get = _contents_1.get(0);
+          UppaalXMLScopeProvider.LIBRARY = ((Library) _get);
+        } else {
+          ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
+          URI _createURI_1 = URI.createURI("platform:/plugin/de.uni_paderborn.uppaal/model/stdlib.xmi", false);
+          Resource _resource_1 = _resourceSetImpl.getResource(_createURI_1, true);
+          EList<EObject> _contents_2 = _resource_1.getContents();
+          EObject _get_1 = _contents_2.get(0);
+          UppaalXMLScopeProvider.LIBRARY = ((Library) _get_1);
+        }
       }
       _xblockexpression = UppaalXMLScopeProvider.LIBRARY;
     }

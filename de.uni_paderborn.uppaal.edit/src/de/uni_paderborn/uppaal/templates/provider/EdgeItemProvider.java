@@ -55,7 +55,6 @@ public class EdgeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addColorPropertyDescriptor(object);
 			addColorCodePropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
@@ -77,28 +76,6 @@ public class EdgeItemProvider
 				 getString("_UI_CommentableElement_comment_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
 				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Color feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ColoredElement_color_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ColoredElement_color_feature", "_UI_ColoredElement_type"),
-				 VisualsPackage.Literals.COLORED_ELEMENT__COLOR,
 				 true,
 				 false,
 				 false,
@@ -244,7 +221,6 @@ public class EdgeItemProvider
 
 		switch (notification.getFeatureID(Edge.class)) {
 			case TemplatesPackage.EDGE__COMMENT:
-			case TemplatesPackage.EDGE__COLOR:
 			case TemplatesPackage.EDGE__COLOR_CODE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
