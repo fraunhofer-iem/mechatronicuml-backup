@@ -154,7 +154,7 @@
 		
 					//printf("sent message of type %d",MESSAGE_COLOR_COLOR_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE );
 		
-					fflush (stdout);
+					//fflush (stdout);
 		
 					//release all created received events
 		

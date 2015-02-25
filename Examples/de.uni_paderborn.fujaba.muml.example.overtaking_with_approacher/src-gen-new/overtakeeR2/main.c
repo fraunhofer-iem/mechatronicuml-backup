@@ -24,17 +24,25 @@ Middleware *mw;
 
 
 //declare used OSEK tasks and counter
-DeclareTask(Task_Main);
+//DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
 DeclareTask(Task_overtakeeCommunicatorComponent);
 DeclareTask(Task_overtakeeColorComponent);
+DeclareTask(Background);
+DeclareCounter(SysTimerCnt);
 
 
 
-
+int i = 0;
 /* nxtOSEK hook to be invoked from an ISR in category 2 */
-void user_1ms_isr_type2(void){ /* do nothing */ }
+void user_1ms_isr_type2(void){ 
+	StatusType ercd;
+
+	ercd = SignalCounter(SysTimerCnt); /* Increment OSEK Alarm Counter */
+	if (ercd != E_OK) {
+		ShutdownOS(ercd);
+	} }
 
 /* LEJOS OSEK hooks */
 void ecrobot_device_initialize()
@@ -45,7 +53,7 @@ networkInterface_UsbPort_init();
 networkInterface_InputPort4_init();
 
 //initialize sensors and actors
-	overtakeeColor_color_InitApi();
+	initAll();
 }
 void ecrobot_device_terminate()
 {
@@ -64,11 +72,13 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	NetworkInterface_init(mw->inputPort4,networkInterface_InputPort4_init, networkInterface_InputPort4_send, networkInterface_InputPort4_receive);
 	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
-ChainTask(Task_Main);
+//ChainTask(Task_Main);
+	
+	TerminateTask();
 }
 
 
-TASK(Task_Main){
+/* TASK(Task_Main){
 
 	//Activate a task per component instance
 		ActivateTask(Task_overtakeeCommunicatorComponent);
@@ -77,14 +87,17 @@ TASK(Task_Main){
 
 
 TerminateTask();
-}
+} */
 
 TASK(Task_overtakeeCommunicatorComponent){
-	OvertakeeCommunicatorComponent_processStep(mw->overtakeeCommunicatorComponent);
+	
+		OvertakeeCommunicatorComponent_processStep(mw->overtakeeCommunicatorComponent);
 	TerminateTask();
 }	
 TASK(Task_overtakeeColorComponent){
-	ColorComponent_processStep(mw->overtakeeColorComponent);
+	
+		ColorComponent_processStep(mw->overtakeeColorComponent);
+	
 	TerminateTask();
 }	
 
@@ -92,5 +105,14 @@ TASK(Task_MsgExchange){
 	    MW_NIsendMessages();
 		MW_NIreceiveMessages();
         MW_deliverReceivedMessages();
-ChainTask(Task_Main);
+        TerminateTask();
+//ChainTask(Task_Main);
+}
+
+TASK(Background){
+	while(1)
+	{
+		ecrobot_process_bg_nxtcolorsensor(); // communicates with NXT Color Sensor (this must be executed repeatedly in a background Task)
+	}
+
 }

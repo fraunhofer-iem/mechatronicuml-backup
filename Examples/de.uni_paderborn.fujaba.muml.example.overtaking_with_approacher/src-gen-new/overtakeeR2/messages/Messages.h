@@ -20,7 +20,7 @@
 
 #define MAX_STRING_LENGTH 32
 #define MAX_REPEATED_LENGTH 100
-#define MAX_BYTES_LENGTH 32
+#define MAX_BYTES_LENGTH 16
 
 /*******************************************************************
  * General functions
@@ -116,7 +116,7 @@ int changeOvertakingMessagesMessage_read_delimited_from(void *_buffer, struct ch
  *******************************************************************/
 
 /* Maximum size of a serialized MiddlewareMessage-message, useful for buffer allocation. */
-#define MAX_MiddlewareMessage_SIZE 61
+#define MAX_MiddlewareMessage_SIZE 45
 
 /* Structure that holds a deserialized MiddlewareMessage-message. */
 struct MiddlewareMessage {

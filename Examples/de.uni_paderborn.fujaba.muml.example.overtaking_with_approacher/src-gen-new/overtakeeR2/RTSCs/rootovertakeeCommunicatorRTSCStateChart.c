@@ -38,6 +38,11 @@
 				stateChart->change = false;
 		
 			}
+			else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
+				stateChart->change = true;
+				stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+				stateChart->secID = 2;
+			}
 		
 			;
 		
@@ -496,6 +501,11 @@
 		
 						stateChart->change = false;
 		
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 2;
 					}
 		
 					;

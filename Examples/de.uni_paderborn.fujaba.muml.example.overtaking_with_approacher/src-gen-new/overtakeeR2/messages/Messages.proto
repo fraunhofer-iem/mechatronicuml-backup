@@ -1,7 +1,7 @@
 //File: messages.proto
 //@max_string_length=32
 //@max_repeated_length=100
-//@max_bytes_length=32
+//@max_bytes_length=16
 
 //the following message types are not generated, because they have no parameters
 //acceptOvertakingOvertakingMessagesMessage
