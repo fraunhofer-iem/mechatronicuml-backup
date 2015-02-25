@@ -128,13 +128,16 @@ bool_t MW_NIreceiveMessages(void){
 		msg = mw->virtualBluetoothPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
-		//msg = mw->usbPort->receiveMethod();
+		msg = mw->usbPort->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
 		msg = mw->inputPort4->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
 		msg = mw->VirtualWifiPort->receiveMethod();
+		if (msg != NULL)
+			NetworkMessageBuffer_enqueue(mw->incoming, msg);
+		msg = mw->VirtualWifiPort2->receiveMethod();
 		if (msg != NULL)
 			NetworkMessageBuffer_enqueue(mw->incoming, msg);
     return true;
@@ -148,7 +151,11 @@ bool_t MW_NIsendMessages(void){
 	MiddlewareMessage* msg = NULL;
 	ECUID targetECUID = -1;
 	ECUID nextStepECUID = -1;
-	bool_t returnValue = true;
+
+	int numDeferred = 0;
+	MiddlewareMessage* deferred[mw->outgoing->currentSize];
+
+
 	while (mw->outgoing->currentSize>0){
 		msg = NetworkMessageBuffer_dequeue(mw->outgoing);
 		targetECUID = MW_getTargetECU(msg->_targetPort);
@@ -156,24 +163,30 @@ bool_t MW_NIsendMessages(void){
 		if(targetECUID == -1 || nextStepECUID == -1){
 			//this message belongs nowhere
 			free(msg);
-			returnValue = false;
 			continue;
 		}
         NetworkInterface* ni = MW_getNetworkInterface(nextStepECUID);
 		if(ni == NULL){
 			//we don't have a NetworkInterface to send it, thus throw it away
 			free(msg);
-			returnValue = false;
 			continue;
 		}
 		// the allocated memory for the MiddlewareMessage is deallocated (free(msg);) in the generated Stubs of the NetworkInterfaces
 		// !!! Thus, do not call free(msg); here !!!
         if(!(ni->sendMethod(msg))){
-			//something went wrong
-			returnValue = false;
+			//something went wrong. defer message delivery
+			deferred[numDeferred] = msg;
+			numDeferred++;
 		}
 	}
-	return returnValue;
+
+	// Re-enqueue deferred messages
+	int n;
+	for (n = 0; n < numDeferred; n++) {
+		NetworkMessageBuffer_enqueue(mw->outgoing, deferred[n]);
+	}
+
+	return false;
 }
 
 

@@ -78,13 +78,13 @@
 				int constSecBlue; /**< The Realtime-StateChart Variable: constSecBlue of Type: INT */
 				int constSecYellow; /**< The Realtime-StateChart Variable: constSecYellow of Type: INT */
 				int constSecOrange; /**< The Realtime-StateChart Variable: constSecOrange of Type: INT */
-				int constSecBlack; /**< The Realtime-StateChart Variable: constSecBlack of Type: INT */
+				int currentSec; /**< The Realtime-StateChart Variable: currentSec of Type: INT */
 				int colorOvertakee_apiValue; /**< The Realtime-StateChart Variable: colorOvertakee_apiValue of Type: INT */
 		
 	
 	
-				SyncChannel* informFinishSyncChannel; /**< The Realtime-StateChart's Synchronization Channel: informFinish */
 				SyncChannel* informStartSyncChannel; /**< The Realtime-StateChart's Synchronization Channel: informStart */
+				SyncChannel* informFinishSyncChannel; /**< The Realtime-StateChart's Synchronization Channel: informFinish */
 	
 		} ;
 
@@ -169,13 +169,21 @@
 	void RootovertakeeCommunicatorRTSCStateChart_processStep(RootovertakeeCommunicatorRTSCStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: informOvertakeePortRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
-	 * @details This method is called, whenever a the Region: informOvertakeePortRTSC is left.
+	 * @brief Leaves the Region: changingModeRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
+	 * @details This method is called, whenever a the Region: changingModeRTSC is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: informOvertakeePortRTSC shall be exit
+	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: changingModeRTSC shall be exit
 	 */
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: vehicleOvertakeePortRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
+	 * @details This method is called, whenever a the Region: vehicleOvertakeePortRTSC is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: vehicleOvertakeePortRTSC shall be exit
+	 */
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: overtakeeCommunicator_colorOvertakee_behavior of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
 	 * @details This method is called, whenever a the Region: overtakeeCommunicator_colorOvertakee_behavior is left.
@@ -184,6 +192,14 @@
 	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: overtakeeCommunicator_colorOvertakee_behavior shall be exit
 	 */
 		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_overtakeeCommunicator_colorOvertakee_behavior_overtakeeCommunicator_colorOvertakee_behaviorStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
+	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: PeriodicTransmission shall be exit
+	 */
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: overtakeePortRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
 	 * @details This method is called, whenever a the Region: overtakeePortRTSC is left.
@@ -201,29 +217,13 @@
 	 */
 		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_velocitySetterPortRTSC_velocitySetterPortRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
 	/**
-	 * @brief Leaves the Region: vehicleOvertakeePortRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
-	 * @details This method is called, whenever a the Region: vehicleOvertakeePortRTSC is left.
+	 * @brief Leaves the Region: informOvertakeePortRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
+	 * @details This method is called, whenever a the Region: informOvertakeePortRTSC is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: vehicleOvertakeePortRTSC shall be exit
+	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: informOvertakeePortRTSC shall be exit
 	 */
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
-	/**
-	 * @brief Leaves the Region: changingModeRTSC of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
-	 * @details This method is called, whenever a the Region: changingModeRTSC is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: changingModeRTSC shall be exit
-	 */
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
-	/**
-	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeCommunicatorRTSC
-	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootovertakeeCommunicatorRTSCStateChart whose Region: PeriodicTransmission shall be exit
-	 */
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSCStateChart_exit(RootovertakeeCommunicatorRTSCStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RootovertakeeCommunicatorRTSC is in a specific State

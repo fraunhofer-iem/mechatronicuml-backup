@@ -20,11 +20,13 @@
 		typedef enum {
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE of the Realtime-StateChart: RootovertakeeDriverRTSC */
 				,
-						ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_SLOW_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_SLOW_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC */ 
-				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_FAST_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_FAST_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC */ 
+						ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC */ 
+				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC */
+				,
+						ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_FAST_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_FAST_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart */ 
+				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_SLOW_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_SLOW_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart */ 
 				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC */ 
-				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_CHECKDISTANCE_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_CHECKDISTANCE_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC */ 
-				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_BREAKNOW_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_BREAKNOW_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC */ 
+				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_BREAKNOW_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_BREAKNOW_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC */ 
 				,		ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior */
 				,
 						ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICSENDING_STATE /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICSENDING_STATE of the Realtime-StateChart: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission */ 
@@ -54,8 +56,8 @@
 			RootovertakeeDriverRTSCState currentStateOfRootovertakeeDriverRTSC; /**< The current State of the Realtime-StateChart: RootovertakeeDriverRTSC */
 	
 				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC */
+				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart of the Realtime-StateChart: RootovertakeeDriverRTSC */
 				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC */
-				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC */
 				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC */
 				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC */
 				RootovertakeeDriverRTSCState currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behavior; /**< Represents the State: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC */
@@ -115,19 +117,19 @@
 	 */
 		void initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSCRegion(RootovertakeeDriverRTSCStateChart* stateChart);
 	/**
+	 * @brief Initializes the Region: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details The Member RootovertakeeDriverRTSCStateChart::currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart is initialized
+	 * 
+	 * @param stateChart The specific RootovertakeeDriverRTSCStateChart whose Region shall be initialized
+	 */
+		void initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechartRegion(RootovertakeeDriverRTSCStateChart* stateChart);
+	/**
 	 * @brief Initializes the Region: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC
 	 * @details The Member RootovertakeeDriverRTSCStateChart::currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC is initialized
 	 * 
 	 * @param stateChart The specific RootovertakeeDriverRTSCStateChart whose Region shall be initialized
 	 */
 		void initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSCRegion(RootovertakeeDriverRTSCStateChart* stateChart);
-	/**
-	 * @brief Initializes the Region: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details The Member RootovertakeeDriverRTSCStateChart::currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC is initialized
-	 * 
-	 * @param stateChart The specific RootovertakeeDriverRTSCStateChart whose Region shall be initialized
-	 */
-		void initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSCRegion(RootovertakeeDriverRTSCStateChart* stateChart);
 	/**
 	 * @brief Initializes the Region: ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
 	 * @details The Member RootovertakeeDriverRTSCStateChart::currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior is initialized
@@ -199,29 +201,13 @@
 	void RootovertakeeDriverRTSCStateChart_processStep(RootovertakeeDriverRTSCStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
+	 * @brief Leaves the Region: overtakeeDriver_velocityL_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: overtakeeDriver_velocityL_behavior is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: PeriodicTransmission shall be exit
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDriver_velocityL_behavior shall be exit
 	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
-	/**
-	 * @brief Leaves the Region: overtakeeDriver_lineOvertakee_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: overtakeeDriver_lineOvertakee_behavior is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDriver_lineOvertakee_behavior shall be exit
-	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
-	/**
-	 * @brief Leaves the Region: overtakeeDrivingRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: overtakeeDrivingRTSC is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDrivingRTSC shall be exit
-	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSCStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC
 	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
@@ -231,6 +217,14 @@
 	 */
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_LINEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 	/**
+	 * @brief Leaves the Region: statechart of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: statechart is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: statechart shall be exit
+	 */
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+	/**
 	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC
 	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
 	 * 			The correct State is set and all Exit-Events are executed.
@@ -239,13 +233,29 @@
 	 */
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 	/**
-	 * @brief Leaves the Region: overtakeeDriver_velocityL_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: overtakeeDriver_velocityL_behavior is left.
+	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDriver_velocityL_behavior shall be exit
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: PeriodicTransmission shall be exit
 	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: overtakeeDrivingRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: overtakeeDrivingRTSC is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDrivingRTSC shall be exit
+	 */
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSCStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: overtakeeDriver_distanceOvertakee_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: overtakeeDriver_distanceOvertakee_behavior is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDriver_distanceOvertakee_behavior shall be exit
+	 */
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: velocityGetterPortRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC
 	 * @details This method is called, whenever a the Region: velocityGetterPortRTSC is left.
@@ -255,22 +265,6 @@
 	 */
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSCStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 	/**
-	 * @brief Leaves the Region: overtakeeSaveBreakRTSC of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: overtakeeSaveBreakRTSC is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeSaveBreakRTSC shall be exit
-	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSCStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
-	/**
-	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: PeriodicTransmission shall be exit
-	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
-	/**
 	 * @brief Leaves the Region: overtakeeDriver_velocityR_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
 	 * @details This method is called, whenever a the Region: overtakeeDriver_velocityR_behavior is left.
 	 * 			The correct State is set and all Exit-Events are executed.
@@ -279,13 +273,21 @@
 	 */
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 	/**
-	 * @brief Leaves the Region: overtakeeDriver_distanceOvertakee_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
-	 * @details This method is called, whenever a the Region: overtakeeDriver_distanceOvertakee_behavior is left.
+	 * @brief Leaves the Region: overtakeeDriver_lineOvertakee_behavior of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: overtakeeDriver_lineOvertakee_behavior is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDriver_distanceOvertakee_behavior shall be exit
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: overtakeeDriver_lineOvertakee_behavior shall be exit
 	 */
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behaviorStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootovertakeeDriverRTSC
+	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootovertakeeDriverRTSCStateChart whose Region: PeriodicTransmission shall be exit
+	 */
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootovertakeeDriverRTSCStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RootovertakeeDriverRTSC is in a specific State

@@ -298,96 +298,7 @@ unsigned long Message_get_delimited_size(void *_buffer, int offset) {
 
 
 /*******************************************************************
- * Message: Messages.proto, line 17
- *******************************************************************/
-
-void changeOvertakingMessagesMessage_clear(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage) {
-	_memset(_changeOvertakingMessagesMessage, 0, sizeof(struct changeOvertakingMessagesMessage));
-}
-
-void changeOvertakingMessagesMessage_init_optional_attributes(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage) {
-	_changeOvertakingMessagesMessage->_secID = 0;
-	
-}
-
-int changeOvertakingMessagesMessage_is_default_message(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage) {
-    return _changeOvertakingMessagesMessage->_secID == 0
-    ;
-}
-
-int changeOvertakingMessagesMessage_write(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset) {
-	/* Write content of each message element.*/
-	/* Write the optional attribute only if it is different than the default value. */
-	if(_changeOvertakingMessagesMessage->_secID != 0) {
-		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
-	    if (_changeOvertakingMessagesMessage->_secID >= 0)
-	        offset = write_raw_varint32(_changeOvertakingMessagesMessage->_secID, _buffer, offset);
-	    else
-	        offset = write_raw_varint64(_changeOvertakingMessagesMessage->_secID, _buffer, offset);	    
-	}
-	
-	return offset;
-}
-
-int changeOvertakingMessagesMessage_write_with_tag(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset, int tag) {
-	/* Write tag.*/
-	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
-	/* Write content.*/
-	offset = changeOvertakingMessagesMessage_write_delimited_to(_changeOvertakingMessagesMessage, _buffer, offset);
-	
-	return offset;
-}
-
-int changeOvertakingMessagesMessage_write_delimited_to(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset) {
-	int i, shift, new_offset, size;
-	
-	new_offset = changeOvertakingMessagesMessage_write(_changeOvertakingMessagesMessage, _buffer, offset);
-	size = new_offset - offset;
-	shift = (size > 127) ? 2 : 1;
-	for (i = new_offset - 1; i >= offset; -- i)
-	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
-	
-	write_raw_varint32((unsigned long) size, _buffer, offset);         
-	    
-	return new_offset + shift;
-}
-
-int changeOvertakingMessagesMessage_read(void *_buffer, struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, int offset, int limit) {
-	unsigned int i = 0;
-	unsigned long long value = i;
-	unsigned long tag = value;
-	
-	/* Reset all attributes to 0 in advance. */
-	changeOvertakingMessagesMessage_clear(_changeOvertakingMessagesMessage);
-	/* Assign the optional attributes. */
-	changeOvertakingMessagesMessage_init_optional_attributes(_changeOvertakingMessagesMessage);
-	
-	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
-	while(offset < limit) {
-	    offset = read_raw_varint32(&tag, _buffer, offset);
-		tag = tag>>3;
-	    switch(tag){
-	        /* tag of: _changeOvertakingMessagesMessage._secID */
-	        case 1 :
-	        	offset = read_raw_varint32(&tag, _buffer, offset);
-	        	_changeOvertakingMessagesMessage->_secID = (signed long)tag;
-	        	break;
-	    }
-	}
-	
-	return offset;
-}
-
-int changeOvertakingMessagesMessage_read_delimited_from(void *_buffer, struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, int offset) {
-	unsigned long size;
-	
-	offset = read_raw_varint32(&size, _buffer, offset);
-	changeOvertakingMessagesMessage_read(_buffer, _changeOvertakingMessagesMessage, offset, size + offset);
-	
-	return offset + size;
-}
-/*******************************************************************
- * Message: Messages.proto, line 21
+ * Message: Messages.proto, line 19
  *******************************************************************/
 
 void Color_color_messageapi_messageType_RepositoryMessage_clear(struct Color_color_messageapi_messageType_RepositoryMessage *_Color_color_messageapi_messageType_RepositoryMessage) {
@@ -476,7 +387,96 @@ int Color_color_messageapi_messageType_RepositoryMessage_read_delimited_from(voi
 	return offset + size;
 }
 /*******************************************************************
- * Message: Messages.proto, line 33
+ * Message: Messages.proto, line 23
+ *******************************************************************/
+
+void changeOvertakingMessagesMessage_clear(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage) {
+	_memset(_changeOvertakingMessagesMessage, 0, sizeof(struct changeOvertakingMessagesMessage));
+}
+
+void changeOvertakingMessagesMessage_init_optional_attributes(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage) {
+	_changeOvertakingMessagesMessage->_secID = 0;
+	
+}
+
+int changeOvertakingMessagesMessage_is_default_message(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage) {
+    return _changeOvertakingMessagesMessage->_secID == 0
+    ;
+}
+
+int changeOvertakingMessagesMessage_write(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset) {
+	/* Write content of each message element.*/
+	/* Write the optional attribute only if it is different than the default value. */
+	if(_changeOvertakingMessagesMessage->_secID != 0) {
+		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
+	    if (_changeOvertakingMessagesMessage->_secID >= 0)
+	        offset = write_raw_varint32(_changeOvertakingMessagesMessage->_secID, _buffer, offset);
+	    else
+	        offset = write_raw_varint64(_changeOvertakingMessagesMessage->_secID, _buffer, offset);	    
+	}
+	
+	return offset;
+}
+
+int changeOvertakingMessagesMessage_write_with_tag(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset, int tag) {
+	/* Write tag.*/
+	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
+	/* Write content.*/
+	offset = changeOvertakingMessagesMessage_write_delimited_to(_changeOvertakingMessagesMessage, _buffer, offset);
+	
+	return offset;
+}
+
+int changeOvertakingMessagesMessage_write_delimited_to(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset) {
+	int i, shift, new_offset, size;
+	
+	new_offset = changeOvertakingMessagesMessage_write(_changeOvertakingMessagesMessage, _buffer, offset);
+	size = new_offset - offset;
+	shift = (size > 127) ? 2 : 1;
+	for (i = new_offset - 1; i >= offset; -- i)
+	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
+	
+	write_raw_varint32((unsigned long) size, _buffer, offset);         
+	    
+	return new_offset + shift;
+}
+
+int changeOvertakingMessagesMessage_read(void *_buffer, struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, int offset, int limit) {
+	unsigned int i = 0;
+	unsigned long long value = i;
+	unsigned long tag = value;
+	
+	/* Reset all attributes to 0 in advance. */
+	changeOvertakingMessagesMessage_clear(_changeOvertakingMessagesMessage);
+	/* Assign the optional attributes. */
+	changeOvertakingMessagesMessage_init_optional_attributes(_changeOvertakingMessagesMessage);
+	
+	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
+	while(offset < limit) {
+	    offset = read_raw_varint32(&tag, _buffer, offset);
+		tag = tag>>3;
+	    switch(tag){
+	        /* tag of: _changeOvertakingMessagesMessage._secID */
+	        case 1 :
+	        	offset = read_raw_varint32(&tag, _buffer, offset);
+	        	_changeOvertakingMessagesMessage->_secID = (signed long)tag;
+	        	break;
+	    }
+	}
+	
+	return offset;
+}
+
+int changeOvertakingMessagesMessage_read_delimited_from(void *_buffer, struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, int offset) {
+	unsigned long size;
+	
+	offset = read_raw_varint32(&size, _buffer, offset);
+	changeOvertakingMessagesMessage_read(_buffer, _changeOvertakingMessagesMessage, offset, size + offset);
+	
+	return offset + size;
+}
+/*******************************************************************
+ * Message: Messages.proto, line 35
  *******************************************************************/
 
 void MiddlewareMessage_clear(struct MiddlewareMessage *_MiddlewareMessage) {

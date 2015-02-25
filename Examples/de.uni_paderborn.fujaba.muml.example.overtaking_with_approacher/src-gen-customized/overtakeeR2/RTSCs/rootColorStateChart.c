@@ -154,7 +154,7 @@
 		
 					//printf("sent message of type %d",MESSAGE_COLOR_COLOR_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE );
 		
-					fflush (stdout);
+					//fflush (stdout);
 		
 					//release all created received events
 		
@@ -327,16 +327,11 @@
 		}
 		
 		
-		void ROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behaviorStateChart_exit(
+		void ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 				RootColorStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behavior) {
-			case ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE:
+			switch (stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
+			case ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICSENDING_STATE:
 				// nothing to do
-		
-				ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
-						stateChart);
-				ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
-						stateChart);
 		
 				break;
 			default:
@@ -358,11 +353,17 @@
 				break;
 			}
 		}
-		void ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+		void ROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behaviorStateChart_exit(
 				RootColorStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
-			case ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICSENDING_STATE:
+			switch (stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behavior) {
+			case ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE:
 				// nothing to do
+		
+				ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
+						stateChart);
+		
+				ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+						stateChart);
 		
 				break;
 			default:
@@ -373,11 +374,11 @@
 			
 		int_t RootColorStateChart_isInState(RootColorStateChart* stateChart,
 				RootColorState state) {
-			return (stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behavior
+			return (stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
 					== state
 					|| stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_ApiExecution_ApiExecution
 							== state
-					|| stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
+					|| stateChart->currentStateOfROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behavior
 							== state);
 		
 		}

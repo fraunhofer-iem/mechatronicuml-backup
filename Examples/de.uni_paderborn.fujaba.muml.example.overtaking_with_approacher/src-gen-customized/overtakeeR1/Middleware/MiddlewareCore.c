@@ -1,4 +1,5 @@
 #include "MiddlewareCore.h"
+#include "ecrobot_interface.h"
 
 /*
  * create a new middleware instance
@@ -81,14 +82,14 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	
 	//choose right function to create the bytearray (which is actually a chararray).
 	switch(id){
-	case MESSAGE_DISTANCE_DISTANCE_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE:
-			nwMsg->_mumlMsg_len = Distance_distance_messageapi_messageType_RepositoryMessage_write_delimited_to((Distance_distance_messageapi_messageType_RepositoryMessage*)msg, nwMsg->_mumlMsg, 0);
+	case MESSAGE_LINE_LINELIGHT_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE:
+			nwMsg->_mumlMsg_len = Line_lineLight_messageapi_messageType_RepositoryMessage_write_delimited_to((Line_lineLight_messageapi_messageType_RepositoryMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
 	case MESSAGE_MOTOR_VELOCITY_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE:
 			nwMsg->_mumlMsg_len = Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to((Motor_velocity_messageapi_messageType_RepositoryMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
-	case MESSAGE_LINE_LINELIGHT_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE:
-			nwMsg->_mumlMsg_len = Line_lineLight_messageapi_messageType_RepositoryMessage_write_delimited_to((Line_lineLight_messageapi_messageType_RepositoryMessage*)msg, nwMsg->_mumlMsg, 0);
+	case MESSAGE_DISTANCE_DISTANCE_MESSAGEAPI_MESSAGETYPE_REPOSITORYMESSAGE:
+			nwMsg->_mumlMsg_len = Distance_distance_messageapi_messageType_RepositoryMessage_write_delimited_to((Distance_distance_messageapi_messageType_RepositoryMessage*)msg, nwMsg->_mumlMsg, 0);
 			break;
 		default:
 			nwMsg->_mumlMsg_len = 0;
@@ -107,9 +108,50 @@ bool_t MW_deliverReceivedMessages(void){
 	MiddlewareMessage* msg;
 	while (mw->incoming->currentSize > 0){
 		msg = NetworkMessageBuffer_dequeue(mw->incoming);
+
+
 		if (MW_getTargetECU(msg->_targetPort) == mw->idOfECU){
-			//the target receiver is located on this ECU		
-			Port_addMessage(MW_getPortforIdentifier(msg->_targetPort), msg);
+		 	Port* port = MW_getPortforIdentifier(msg->_targetPort);
+
+			//the target receiver is located on this ECU	
+			if(msg->_targetPort==20 && msg->_msgID == MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE) {	
+		 		ecrobot_sound_tone(300, 100, 50);
+		 		systick_wait_ms(500);
+
+			//display_goto_xy(0,0);
+			//display_int(msg->_targetPort,3);
+			//display_goto_xy(0,1);
+			//display_int((int)port,8);
+			//display_update();
+			}
+			
+			int error = Port_addMessage(port, msg) == 0;
+			
+				// display_clear(0);
+			// display_goto_xy(0,0);
+			// display_int(msg->_targetPort,3);
+			// display_goto_xy(0,1);
+			// display_int(msg->_msgID,3);
+			// display_update();
+
+			
+			if (error) {
+				//ecrobot_sound_tone(600, 100, 50);
+		 		//systick_wait_ms(500);
+			}
+
+
+		 	if (!Port_doesMessageExist(port,msg->_msgID)) {
+		 		// ecrobot_sound_tone(900, 100, 50);
+		 		// systick_wait_ms(500);
+		 	}
+
+
+			// 	if (port == 0) {
+			// 		ecrobot_sound_tone(880, 200, 5);
+			// 	}
+				
+				
 		}else
 		{
 			NetworkMessageBuffer_enqueue(mw->outgoing, msg);

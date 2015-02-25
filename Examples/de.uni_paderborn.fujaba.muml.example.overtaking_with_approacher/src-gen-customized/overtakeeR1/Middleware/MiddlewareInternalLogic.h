@@ -14,9 +14,7 @@
 #include "MiddlewareCore.h"
 #include "../GlobalIdentifier.h"
 
-/**
- terst commit
-*/
+
 /**
  * @brief Determines for a PortID the ECUID of the target ECU
  * @details To determine the target ECU a ECU-table, based on the allocation-model

@@ -4,15 +4,19 @@
 MessageID * messageIDsOfbuffer;
 		//create instance overtakeeDriver of type OvertakeeDriverComponent
 		 mw->overtakeeDriverComponent = OvertakeeDriverComponent_create();
-					messageIDsOfbuffer = (MessageID*) calloc(2,sizeof(MessageID));
+					messageIDsOfbuffer = (MessageID*) calloc(4,sizeof(MessageID));
 						messageIDsOfbuffer[0] = MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE;
 						messageIDsOfbuffer[1] = MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE;
-					MessageBuffer* buffer1ofvelocityGetterP1velocityGetterP = MessageBuffer_create(5,false,2,messageIDsOfbuffer);
+						messageIDsOfbuffer[2] = MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE;
+						messageIDsOfbuffer[3] = MESSAGE_STOPALLOVERTAKINGMESSAGESMESSAGE;
+					MessageBuffer* buffer1ofvelocityGetterP1velocityGetterP = MessageBuffer_create(5,true,4,messageIDsOfbuffer);
 				MessageBuffer** allBuffersOfvelocityGetterP1velocityGetterP = (MessageBuffer**) malloc(1*sizeof(MessageBuffer*));
 				allBuffersOfvelocityGetterP1velocityGetterP[0] = buffer1ofvelocityGetterP1velocityGetterP;
 	
 				mw->overtakeeDriverComponent->velocityGetterPPort = Port_create(PORT_OVERTAKEEDRIVEROVERTAKEEDRIVERVELOCITYGETTERP1, 1, allBuffersOfvelocityGetterP1velocityGetterP);
 			
+
+
 			mw->overtakeeDriverComponent->velocityRPort = Port_create(PORT_OVERTAKEEDRIVEROVERTAKEEDRIVERVELOCITYR, 0, NULL);
 
 					messageIDsOfbuffer = (MessageID*) calloc(1,sizeof(MessageID));
@@ -23,6 +27,9 @@ MessageID * messageIDsOfbuffer;
 	
 				mw->overtakeeDriverComponent->lineOvertakeePort = Port_create(PORT_OVERTAKEEDRIVEROVERTAKEEDRIVERLINEOVERTAKEE, 1, allBuffersOflineOvertakeelineOvertakee);
 			
+
+			
+
 			mw->overtakeeDriverComponent->velocityLPort = Port_create(PORT_OVERTAKEEDRIVEROVERTAKEEDRIVERVELOCITYL, 0, NULL);
 
 					messageIDsOfbuffer = (MessageID*) calloc(1,sizeof(MessageID));

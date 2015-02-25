@@ -9,15 +9,15 @@
 #include "Messages.h"
 
  /**
-  * @brief The typedef for the Message Type: Distance_distance_message, whose struct is generated via protobuf
+  * @brief The typedef for the Message Type: Line_lineLight_message, whose struct is generated via protobuf
   */
-typedef struct Distance_distance_messageapi_messageType_RepositoryMessage Distance_distance_messageapi_messageType_RepositoryMessage;
+typedef struct Line_lineLight_messageapi_messageType_RepositoryMessage Line_lineLight_messageapi_messageType_RepositoryMessage;
  /**
   * @brief The typedef for the Message Type: Motor_velocity_message, whose struct is generated via protobuf
   */
 typedef struct Motor_velocity_messageapi_messageType_RepositoryMessage Motor_velocity_messageapi_messageType_RepositoryMessage;
  /**
-  * @brief The typedef for the Message Type: Line_lineLight_message, whose struct is generated via protobuf
+  * @brief The typedef for the Message Type: Distance_distance_message, whose struct is generated via protobuf
   */
-typedef struct Line_lineLight_messageapi_messageType_RepositoryMessage Line_lineLight_messageapi_messageType_RepositoryMessage;
+typedef struct Distance_distance_messageapi_messageType_RepositoryMessage Distance_distance_messageapi_messageType_RepositoryMessage;
 #endif /* MESSAGE_TYPES_H */

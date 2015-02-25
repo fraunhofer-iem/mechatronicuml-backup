@@ -117,14 +117,6 @@
 	void RootLineStateChart_processStep(RootLineStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: ApiExecution of the Realtime-StateChart: RootLine
-	 * @details This method is called, whenever a the Region: ApiExecution is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootLineStateChart whose Region: ApiExecution shall be exit
-	 */
-		void ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(RootLineStateChart* rtsc);
-	/**
 	 * @brief Leaves the Region: Line_lineLight_behavior of the Realtime-StateChart: RootLine
 	 * @details This method is called, whenever a the Region: Line_lineLight_behavior is left.
 	 * 			The correct State is set and all Exit-Events are executed.
@@ -140,6 +132,14 @@
 	 * @param rtsc The specific RootLineStateChart whose Region: PeriodicTransmission shall be exit
 	 */
 		void ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootLineStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: ApiExecution of the Realtime-StateChart: RootLine
+	 * @details This method is called, whenever a the Region: ApiExecution is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootLineStateChart whose Region: ApiExecution shall be exit
+	 */
+		void ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(RootLineStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RootLine is in a specific State

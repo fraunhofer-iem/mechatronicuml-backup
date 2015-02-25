@@ -326,21 +326,6 @@
 		}
 		
 		
-		void ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
-				RootLineStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecution) {
-			case ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_APIEXECUTION_APIEXECUTION_EXECINITCOMMAND_STATE:
-				// nothing to do
-		
-				break;
-			case ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_APIEXECUTION_APIEXECUTION_EXECEXECCOMMAND_STATE:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-		}
 		void ROOTLINE_LINE_STATE_STATE_Line_lineLight_behavior_Line_lineLight_behaviorStateChart_exit(
 				RootLineStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_Line_lineLight_behavior_Line_lineLight_behavior) {
@@ -349,7 +334,6 @@
 		
 				ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
 						stateChart);
-		
 				ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 						stateChart);
 		
@@ -369,15 +353,30 @@
 				break;
 			}
 		}
+		void ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
+				RootLineStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecution) {
+			case ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_APIEXECUTION_APIEXECUTION_EXECINITCOMMAND_STATE:
+				// nothing to do
+		
+				break;
+			case ROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_APIEXECUTION_APIEXECUTION_EXECEXECCOMMAND_STATE:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+		}
 				
 			
 		int_t RootLineStateChart_isInState(RootLineStateChart* stateChart,
 				RootLineState state) {
-			return (stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecution
+			return (stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_Line_lineLight_behavior_Line_lineLight_behavior
 					== state
-					|| stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_Line_lineLight_behavior_Line_lineLight_behavior
-							== state
 					|| stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
+							== state
+					|| stateChart->currentStateOfROOTLINE_LINE_STATE_STATE_LINE_LINELIGHT_BEHAVIOR_LINE_LINELIGHT_BEHAVIOR_LINELIGHT_INITSTATE_STATE_ApiExecution_ApiExecution
 							== state);
 		
 		}

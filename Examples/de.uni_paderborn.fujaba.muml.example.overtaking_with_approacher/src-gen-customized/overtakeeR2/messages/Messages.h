@@ -20,7 +20,7 @@
 
 #define MAX_STRING_LENGTH 32
 #define MAX_REPEATED_LENGTH 100
-#define MAX_BYTES_LENGTH 32
+#define MAX_BYTES_LENGTH 16
 
 /*******************************************************************
  * General functions
@@ -44,41 +44,7 @@ int Message_can_read_delimited_from(void *_buffer, int offset, unsigned int leng
 
 
 /*******************************************************************
- * Message: Messages.proto, line 17
- *******************************************************************/
-
-/* Maximum size of a serialized changeOvertakingMessagesMessage-message, useful for buffer allocation. */
-#define MAX_changeOvertakingMessagesMessage_SIZE 14
-
-/* Structure that holds a deserialized changeOvertakingMessagesMessage-message. */
-struct changeOvertakingMessagesMessage {
-    signed long _secID;
-};
-
-/*
- * Serialize a Person-message into the given buffer at offset and return
- * new offset for optional next message.
- */
-int changeOvertakingMessagesMessage_write_delimited_to(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset);
-
-/*
- * Serialize a Person-message together with its tag into the given buffer 
- * at offset and return new offset for optional next message.
- * Is useful if a Person-message is embedded in another message.
- */
-int changeOvertakingMessagesMessage_write_with_tag(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset, int tag);
-
-/*
- * Deserialize a Person-message from the given buffer at offset and return
- * new offset for optional next message.
- *
- * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
- */
-int changeOvertakingMessagesMessage_read_delimited_from(void *_buffer, struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, int offset);
-
-
-/*******************************************************************
- * Message: Messages.proto, line 21
+ * Message: Messages.proto, line 19
  *******************************************************************/
 
 /* Maximum size of a serialized Color_color_messageapi_messageType_RepositoryMessage-message, useful for buffer allocation. */
@@ -112,11 +78,45 @@ int Color_color_messageapi_messageType_RepositoryMessage_read_delimited_from(voi
 
 
 /*******************************************************************
- * Message: Messages.proto, line 33
+ * Message: Messages.proto, line 23
+ *******************************************************************/
+
+/* Maximum size of a serialized changeOvertakingMessagesMessage-message, useful for buffer allocation. */
+#define MAX_changeOvertakingMessagesMessage_SIZE 14
+
+/* Structure that holds a deserialized changeOvertakingMessagesMessage-message. */
+struct changeOvertakingMessagesMessage {
+    signed long _secID;
+};
+
+/*
+ * Serialize a Person-message into the given buffer at offset and return
+ * new offset for optional next message.
+ */
+int changeOvertakingMessagesMessage_write_delimited_to(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset);
+
+/*
+ * Serialize a Person-message together with its tag into the given buffer 
+ * at offset and return new offset for optional next message.
+ * Is useful if a Person-message is embedded in another message.
+ */
+int changeOvertakingMessagesMessage_write_with_tag(struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, void *_buffer, int offset, int tag);
+
+/*
+ * Deserialize a Person-message from the given buffer at offset and return
+ * new offset for optional next message.
+ *
+ * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
+ */
+int changeOvertakingMessagesMessage_read_delimited_from(void *_buffer, struct changeOvertakingMessagesMessage *_changeOvertakingMessagesMessage, int offset);
+
+
+/*******************************************************************
+ * Message: Messages.proto, line 35
  *******************************************************************/
 
 /* Maximum size of a serialized MiddlewareMessage-message, useful for buffer allocation. */
-#define MAX_MiddlewareMessage_SIZE 61
+#define MAX_MiddlewareMessage_SIZE 45
 
 /* Structure that holds a deserialized MiddlewareMessage-message. */
 struct MiddlewareMessage {

@@ -327,22 +327,6 @@
 		}
 		
 		
-		void ROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behaviorStateChart_exit(
-				RootDistanceStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behavior) {
-			case ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE:
-				// nothing to do
-		
-				ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
-						stateChart);
-				ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
-						stateChart);
-		
-				break;
-			default:
-				break;
-			}
-		}
 		void ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 				RootDistanceStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
@@ -369,15 +353,32 @@
 				break;
 			}
 		}
+		void ROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behaviorStateChart_exit(
+				RootDistanceStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behavior) {
+			case ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE:
+				// nothing to do
+		
+				ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(
+						stateChart);
+		
+				ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+						stateChart);
+		
+				break;
+			default:
+				break;
+			}
+		}
 				
 			
 		int_t RootDistanceStateChart_isInState(RootDistanceStateChart* stateChart,
 				RootDistanceState state) {
-			return (stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behavior
+			return (stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
 					== state
-					|| stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
-							== state
 					|| stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_ApiExecution_ApiExecution
+							== state
+					|| stateChart->currentStateOfROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behavior
 							== state);
 		
 		}

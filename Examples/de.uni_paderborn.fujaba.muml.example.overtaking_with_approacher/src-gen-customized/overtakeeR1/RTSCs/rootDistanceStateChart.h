@@ -117,14 +117,6 @@
 	void RootDistanceStateChart_processStep(RootDistanceStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: Distance_distance_behavior of the Realtime-StateChart: RootDistance
-	 * @details This method is called, whenever a the Region: Distance_distance_behavior is left.
-	 * 			The correct State is set and all Exit-Events are executed.
-	 *
-	 * @param rtsc The specific RootDistanceStateChart whose Region: Distance_distance_behavior shall be exit
-	 */
-		void ROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behaviorStateChart_exit(RootDistanceStateChart* rtsc);
-	/**
 	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootDistance
 	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
 	 * 			The correct State is set and all Exit-Events are executed.
@@ -140,6 +132,14 @@
 	 * @param rtsc The specific RootDistanceStateChart whose Region: ApiExecution shall be exit
 	 */
 		void ROOTDISTANCE_DISTANCE_STATE_STATE_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_DISTANCE_BEHAVIOR_DISTANCE_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(RootDistanceStateChart* rtsc);
+	/**
+	 * @brief Leaves the Region: Distance_distance_behavior of the Realtime-StateChart: RootDistance
+	 * @details This method is called, whenever a the Region: Distance_distance_behavior is left.
+	 * 			The correct State is set and all Exit-Events are executed.
+	 *
+	 * @param rtsc The specific RootDistanceStateChart whose Region: Distance_distance_behavior shall be exit
+	 */
+		void ROOTDISTANCE_DISTANCE_STATE_STATE_Distance_distance_behavior_Distance_distance_behaviorStateChart_exit(RootDistanceStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RootDistance is in a specific State

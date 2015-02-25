@@ -33,12 +33,15 @@
 		
 			// execute entry actions
 		
-			if (stateChart->colorOvertakee_apiValue == stateChart->constSecRed) {
+			if (stateChart->currentSec == stateChart->colorOvertakee_apiValue) {
 		
-				stateChart->secID = 2;
+				stateChart->change = false;
 		
+			}
+			else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
 				stateChart->change = true;
-		
+				stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+				stateChart->secID = 2;
 			}
 		
 			;
@@ -123,12 +126,12 @@
 			stateChart->Vel = stateChart->constVelSlow;
 			stateChart->change = false;
 			stateChart->secID = 0;
-			stateChart->constSecRed = 0;
-			stateChart->constSecGreen = 1;
-			stateChart->constSecBlue = 2;
+			stateChart->constSecRed = 5;
+			stateChart->constSecGreen = 2;
+			stateChart->constSecBlue = 1;
 			stateChart->constSecYellow = 3;
-			stateChart->constSecOrange = 5;
-			stateChart->constSecBlack = 7;
+			stateChart->constSecOrange = 4;
+			stateChart->currentSec = 0;
 			stateChart->colorOvertakee_apiValue = 0;
 		
 			stateChart->currentStateOfRootovertakeeCommunicatorRTSC =
@@ -163,12 +166,12 @@
 			if (stateChart != NULL) {
 				stateChart->parentComponent = parentComponent;
 		
-				stateChart->informFinishSyncChannel = SyncChannel_create();
 				stateChart->informStartSyncChannel = SyncChannel_create();
+				stateChart->informFinishSyncChannel = SyncChannel_create();
 				/*
 				 if (stateChart->parentComponent != NULL
-				 && stateChart->informFinishSyncChannel != NULL				
 				 && stateChart->informStartSyncChannel != NULL				
+				 && stateChart->informFinishSyncChannel != NULL				
 				 ) {
 				 RootovertakeeCommunicatorRTSCStateChart_initialize(stateChart);
 				 } else {
@@ -186,8 +189,8 @@
 
 			void RootovertakeeCommunicatorRTSCStateChart_destroy(RootovertakeeCommunicatorRTSCStateChart* stateChart) {
 				if(stateChart != NULL) {
-					SyncChannel_destroy(stateChart->informFinishSyncChannel);
 					SyncChannel_destroy(stateChart->informStartSyncChannel);
+					SyncChannel_destroy(stateChart->informFinishSyncChannel);
 		
 					free(stateChart);
 				}
@@ -494,14 +497,15 @@
 		
 					// execute entry actions
 		
-					if (stateChart->colorOvertakee_apiValue
+					if (stateChart->currentSec == stateChart->colorOvertakee_apiValue) {
 		
-					== stateChart->constSecRed) {
+						stateChart->change = false;
 		
-						stateChart->secID = 2;
-		
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
 						stateChart->change = true;
-		
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 2;
 					}
 		
 					;
@@ -568,13 +572,9 @@
 		
 					// execute entry actions
 		
-					if (stateChart->colorOvertakee_apiValue
+					if (stateChart->currentSec == stateChart->colorOvertakee_apiValue) {
 		
-					== stateChart->constSecRed) {
-		
-						stateChart->secID = 2;
-		
-						stateChart->change = true;
+						stateChart->change = false;
 		
 					}
 		
@@ -1237,14 +1237,29 @@
 		}
 		
 		
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSCStateChart_exit(
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSCStateChart_exit(
 				RootovertakeeCommunicatorRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSC) {
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_INFORMOVERTAKEEPORTRTSC_INFORMOVERTAKEEPORTRTSC_INIT_STATE:
+			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSC) {
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_CHANGINGMODERTSC_CHANGINGMODERTSC_SLOW_STATE:
 				// nothing to do
 		
 				break;
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_INFORMOVERTAKEEPORTRTSC_INFORMOVERTAKEEPORTRTSC_OVERTAKING_STATE:
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_CHANGINGMODERTSC_CHANGINGMODERTSC_FAST_STATE:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+		}
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSCStateChart_exit(
+				RootovertakeeCommunicatorRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSC) {
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VEHICLEOVERTAKEEPORTRTSC_VEHICLEOVERTAKEEPORTRTSC_INIT_STATE:
+				// nothing to do
+		
+				break;
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VEHICLEOVERTAKEEPORTRTSC_VEHICLEOVERTAKEEPORTRTSC_CHANGEDSECTION_STATE:
 				// nothing to do
 		
 				break;
@@ -1260,6 +1275,21 @@
 		
 				ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 						stateChart);
+		
+				break;
+			default:
+				break;
+			}
+		}
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+				RootovertakeeCommunicatorRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICRECEIVING_STATE:
+				// nothing to do
+		
+				break;
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_TIMEOUT_STATE:
+				// nothing to do
 		
 				break;
 			default:
@@ -1303,44 +1333,14 @@
 				break;
 			}
 		}
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSCStateChart_exit(
+		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSCStateChart_exit(
 				RootovertakeeCommunicatorRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSC) {
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VEHICLEOVERTAKEEPORTRTSC_VEHICLEOVERTAKEEPORTRTSC_INIT_STATE:
+			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSC) {
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_INFORMOVERTAKEEPORTRTSC_INFORMOVERTAKEEPORTRTSC_INIT_STATE:
 				// nothing to do
 		
 				break;
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VEHICLEOVERTAKEEPORTRTSC_VEHICLEOVERTAKEEPORTRTSC_CHANGEDSECTION_STATE:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-		}
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSCStateChart_exit(
-				RootovertakeeCommunicatorRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSC) {
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_CHANGINGMODERTSC_CHANGINGMODERTSC_SLOW_STATE:
-				// nothing to do
-		
-				break;
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_CHANGINGMODERTSC_CHANGINGMODERTSC_FAST_STATE:
-				// nothing to do
-		
-				break;
-			default:
-				break;
-			}
-		}
-		void ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
-				RootovertakeeCommunicatorRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICRECEIVING_STATE:
-				// nothing to do
-		
-				break;
-			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_TIMEOUT_STATE:
+			case ROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_INFORMOVERTAKEEPORTRTSC_INFORMOVERTAKEEPORTRTSC_OVERTAKING_STATE:
 				// nothing to do
 		
 				break;
@@ -1353,19 +1353,19 @@
 		int_t RootovertakeeCommunicatorRTSCStateChart_isInState(
 				RootovertakeeCommunicatorRTSCStateChart* stateChart,
 				RootovertakeeCommunicatorRTSCState state) {
-			return (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSC
+			return (stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSC
 					== state
+					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSC
+							== state
 					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_overtakeeCommunicator_colorOvertakee_behavior_overtakeeCommunicator_colorOvertakee_behavior
+							== state
+					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
 							== state
 					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_overtakeePortRTSC_overtakeePortRTSC
 							== state
 					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_velocitySetterPortRTSC_velocitySetterPortRTSC
 							== state
-					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_vehicleOvertakeePortRTSC_vehicleOvertakeePortRTSC
-							== state
-					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_VELOCITYSETTERPORTRTSC_VELOCITYSETTERPORTRTSC_CHANGINGMODE_STATE_changingModeRTSC_changingModeRTSC
-							== state
-					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_OVERTAKEECOMMUNICATOR_COLOROVERTAKEE_BEHAVIOR_COLOROVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
+					|| stateChart->currentStateOfROOTOVERTAKEECOMMUNICATORRTSC_INIT_STATE_informOvertakeePortRTSC_informOvertakeePortRTSC
 							== state);
 		
 		}

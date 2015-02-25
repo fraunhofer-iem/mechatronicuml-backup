@@ -44,41 +44,7 @@ int Message_can_read_delimited_from(void *_buffer, int offset, unsigned int leng
 
 
 /*******************************************************************
- * Message: Messages.proto, line 11
- *******************************************************************/
-
-/* Maximum size of a serialized Motor_velocity_messageapi_messageType_RepositoryMessage-message, useful for buffer allocation. */
-#define MAX_Motor_velocity_messageapi_messageType_RepositoryMessage_SIZE 14
-
-/* Structure that holds a deserialized Motor_velocity_messageapi_messageType_RepositoryMessage-message. */
-struct Motor_velocity_messageapi_messageType_RepositoryMessage {
-    signed long _velocity_value;
-};
-
-/*
- * Serialize a Person-message into the given buffer at offset and return
- * new offset for optional next message.
- */
-int Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset);
-
-/*
- * Serialize a Person-message together with its tag into the given buffer 
- * at offset and return new offset for optional next message.
- * Is useful if a Person-message is embedded in another message.
- */
-int Motor_velocity_messageapi_messageType_RepositoryMessage_write_with_tag(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset, int tag);
-
-/*
- * Deserialize a Person-message from the given buffer at offset and return
- * new offset for optional next message.
- *
- * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
- */
-int Motor_velocity_messageapi_messageType_RepositoryMessage_read_delimited_from(void *_buffer, struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, int offset);
-
-
-/*******************************************************************
- * Message: Messages.proto, line 15
+ * Message: Messages.proto, line 13
  *******************************************************************/
 
 /* Maximum size of a serialized Line_lineLight_messageapi_messageType_RepositoryMessage-message, useful for buffer allocation. */
@@ -112,7 +78,41 @@ int Line_lineLight_messageapi_messageType_RepositoryMessage_read_delimited_from(
 
 
 /*******************************************************************
- * Message: Messages.proto, line 19
+ * Message: Messages.proto, line 17
+ *******************************************************************/
+
+/* Maximum size of a serialized Motor_velocity_messageapi_messageType_RepositoryMessage-message, useful for buffer allocation. */
+#define MAX_Motor_velocity_messageapi_messageType_RepositoryMessage_SIZE 14
+
+/* Structure that holds a deserialized Motor_velocity_messageapi_messageType_RepositoryMessage-message. */
+struct Motor_velocity_messageapi_messageType_RepositoryMessage {
+    signed long _velocity_value;
+};
+
+/*
+ * Serialize a Person-message into the given buffer at offset and return
+ * new offset for optional next message.
+ */
+int Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset);
+
+/*
+ * Serialize a Person-message together with its tag into the given buffer 
+ * at offset and return new offset for optional next message.
+ * Is useful if a Person-message is embedded in another message.
+ */
+int Motor_velocity_messageapi_messageType_RepositoryMessage_write_with_tag(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset, int tag);
+
+/*
+ * Deserialize a Person-message from the given buffer at offset and return
+ * new offset for optional next message.
+ *
+ * Note: All fields in _Person will be reset to 0 before _buffer is interpreted.
+ */
+int Motor_velocity_messageapi_messageType_RepositoryMessage_read_delimited_from(void *_buffer, struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, int offset);
+
+
+/*******************************************************************
+ * Message: Messages.proto, line 21
  *******************************************************************/
 
 /* Maximum size of a serialized Distance_distance_messageapi_messageType_RepositoryMessage-message, useful for buffer allocation. */
@@ -146,7 +146,7 @@ int Distance_distance_messageapi_messageType_RepositoryMessage_read_delimited_fr
 
 
 /*******************************************************************
- * Message: Messages.proto, line 31
+ * Message: Messages.proto, line 33
  *******************************************************************/
 
 /* Maximum size of a serialized MiddlewareMessage-message, useful for buffer allocation. */

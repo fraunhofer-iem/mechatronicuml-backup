@@ -11,14 +11,14 @@ TARGET_SOURCES := \
   Middleware/MiddlewareCore.c\
   Middleware/MiddlewareInternalLogic.c\
   Middleware/NetworkInterfaceImplementation.c\
-  RTSCs/rootMotorStateChart.c\
   RTSCs/rootLineStateChart.c\
-  RTSCs/rootovertakeeDriverRTSCStateChart.c\
   RTSCs/rootDistanceStateChart.c\
-  components/motorComponent.c\
+  RTSCs/rootMotorStateChart.c\
+  RTSCs/rootovertakeeDriverRTSCStateChart.c\
   components/lineComponent.c\
-  components/overtakeeDriverComponent.c\
   components/distanceComponent.c\
+  components/motorComponent.c\
+  components/overtakeeDriverComponent.c\
   Configuration.c\
   apiCallCode/implementations.c\
   main.c

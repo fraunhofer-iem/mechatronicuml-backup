@@ -6,6 +6,7 @@
 		#include <stdlib.h>
 		#include "../GlobalIdentifier.h"
 		#include "rootovertakeeDriverRTSCStateChart.h"
+		#include "ecrobot_interface.h"
 		
 		
 
@@ -19,10 +20,23 @@
 				RootovertakeeDriverRTSCStateChart* stateChart) {
 		
 			stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC =
-					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_SLOW_STATE;
+					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE;
 		
 			// execute entry actions
+			stateChart->Vel = 0;
+			;
+		
+		}
+		void initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechartRegion(
+				RootovertakeeDriverRTSCStateChart* stateChart) {
+		
+			stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart =
+					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_SLOW_STATE;
+		
+			// execute entry actions
+		
 			stateChart->Vel = stateChart->constVelSlow;
+		
 			;
 		
 		}
@@ -31,17 +45,6 @@
 		
 			stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC =
 					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE;
-		
-			// execute entry actions
-		
-			// nothing to do
-		
-		}
-		void initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSCRegion(
-				RootovertakeeDriverRTSCStateChart* stateChart) {
-		
-			stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC =
-					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_CHECKDISTANCE_STATE;
 		
 			// execute entry actions
 		
@@ -180,8 +183,6 @@
 					stateChart);
 			initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSCRegion(
 					stateChart);
-			initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSCRegion(
-					stateChart);
 			initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behaviorRegion(
 					stateChart);
 			initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behaviorRegion(
@@ -236,23 +237,27 @@
 		
 
 		
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSCStateChart_processStep(
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_processStep(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_SLOW_STATE:
+
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart) {
+					
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_FAST_STATE:
 				if (Port_doesMessageExist(
 						OvertakeeDriverComponent_getvelocityGetterP(
 								stateChart->parentComponent),
-						MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE)
+						MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE)
 		
 						) {
+
+
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 							OvertakeeDriverComponent_getvelocityGetterP(
 									stateChart->parentComponent),
-							MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE);
+							MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE);
 		
 					//printf("received message of type %d",mwMsg->_msgID );
-					fflush (stdout);
+					//fflush (stdout);
 		
 					// execute exit actions
 					// nothing to do
@@ -267,8 +272,61 @@
 		
 					//release all created sent events
 					// change the state
-					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC =
-							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_FAST_STATE;
+					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart =
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_SLOW_STATE;
+		
+					// execute entry actions
+		
+					stateChart->Vel = stateChart->constVelSlow;
+		
+					;
+		
+				} else {
+					// execute do action
+					// nothing to do
+		
+				}
+				break;
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_SLOW_STATE:
+				if (Port_doesMessageExist(
+						OvertakeeDriverComponent_getvelocityGetterP(
+								stateChart->parentComponent),
+						MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE)
+		
+						) {
+
+					MiddlewareMessage* mwMsg = Port_receiveMessage(
+		
+					OvertakeeDriverComponent_getvelocityGetterP(
+		
+					stateChart->parentComponent),
+		
+					MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE);
+		
+					//printf("received message of type %d",mwMsg->_msgID );
+		
+					fflush (stdout);
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					free(mwMsg);
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart =
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_FAST_STATE;
 		
 					// execute entry actions
 		
@@ -282,20 +340,37 @@
 		
 				}
 				break;
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_FAST_STATE:
-				if (Port_doesMessageExist(
-						OvertakeeDriverComponent_getvelocityGetterP(
-								stateChart->parentComponent),
-						MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE)
+			default:
+				break;
+			}
+		}
 		
-						) {
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSCStateChart_processStep(
+				RootovertakeeDriverRTSCStateChart* stateChart) {
+								
+Port* port;
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE:
+				port = OvertakeeDriverComponent_getvelocityGetterP(
+								stateChart->parentComponent);
+				//display_goto_xy(0,0);
+				//display_int((int)port,8);
+				//display_update();
+
+				if (/*Port_doesMessageExist(
+						port,
+						MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE)
+					*/
+						1) {
+
+
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 		
 					OvertakeeDriverComponent_getvelocityGetterP(
 		
 					stateChart->parentComponent),
 		
-					MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE);
+					MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE);
 		
 					//printf("received message of type %d",mwMsg->_msgID );
 		
@@ -320,17 +395,76 @@
 					// change the state
 		
 					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC =
-							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_SLOW_STATE;
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE;
 		
 					// execute entry actions
 		
-					stateChart->Vel = stateChart->constVelSlow;
+					// nothing to do
+		
+					initializeROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechartRegion(
+							stateChart);
+		
+				} else {
+					// execute do action
+					// nothing to do
+		
+				}
+				break;
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE:
+				if (Port_doesMessageExist(
+						OvertakeeDriverComponent_getvelocityGetterP(
+								stateChart->parentComponent),
+						MESSAGE_STOPALLOVERTAKINGMESSAGESMESSAGE)
+		
+						) {
+					MiddlewareMessage* mwMsg = Port_receiveMessage(
+		
+					OvertakeeDriverComponent_getvelocityGetterP(
+		
+					stateChart->parentComponent),
+		
+					MESSAGE_STOPALLOVERTAKINGMESSAGESMESSAGE);
+		
+					//printf("received message of type %d",mwMsg->_msgID );
+		
+					fflush (stdout);
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_exit(
+							stateChart);
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					free(mwMsg);
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC =
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE;
+		
+					// execute entry actions
+		
+					stateChart->Vel = 0;
 		
 					;
 		
 				} else {
 					// execute do action
 					// nothing to do
+		
+					ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_processStep(
+							stateChart);
 		
 				}
 				break;
@@ -347,7 +481,41 @@
 		
 			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE:
 		
-				if (1) {
+				if (
+		
+				stateChart->distanceOvertakee_apiValue < stateChart->constBreakDistance
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+		
+					// nothing to do
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC =
+		
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_BREAKNOW_STATE;
+		
+					// execute entry actions
+		
+					stateChart->Vel = 0;
+		
+					;
+		
+				} else if (1
+		
+				) {
 		
 					// execute exit actions
 		
@@ -387,21 +555,7 @@
 		
 				break;
 		
-			default:
-		
-				break;
-		
-			}
-		
-		}
-		
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSCStateChart_processStep(
-		
-		RootovertakeeDriverRTSCStateChart* stateChart) {
-		
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC) {
-		
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_CHECKDISTANCE_STATE:
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_BREAKNOW_STATE:
 		
 				if (
 		
@@ -425,53 +579,9 @@
 		
 					// change the state
 		
-					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC =
+					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC =
 		
-							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_BREAKNOW_STATE;
-		
-					// execute entry actions
-		
-					stateChart->Vel = 0;
-		
-					;
-		
-				} else {
-		
-					// execute do action
-		
-					// nothing to do
-		
-				}
-		
-				break;
-		
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_BREAKNOW_STATE:
-		
-				if (
-		
-				stateChart->distanceOvertakee_apiValue < stateChart->constBreakDistance
-		
-				) {
-		
-					// execute exit actions
-		
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-		
-					// nothing to do
-		
-					// nothing to do			
-		
-					//release all created received events
-		
-					//release all created sent events
-		
-					// change the state
-		
-					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC =
-		
-							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_BREAKNOW_STATE;
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_BREAKNOW_STATE;
 		
 					// execute entry actions
 		
@@ -501,9 +611,9 @@
 		
 					// change the state
 		
-					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC =
+					stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC =
 		
-							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_CHECKDISTANCE_STATE;
+							ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE;
 		
 					// execute entry actions
 		
@@ -1215,7 +1325,7 @@
 			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE:
 				// execute do action
 				// nothing to do
-		
+
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behaviorStateChart_processStep(
 						stateChart);
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behaviorStateChart_processStep(
@@ -1223,8 +1333,6 @@
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behaviorStateChart_processStep(
 						stateChart);
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behaviorStateChart_processStep(
-						stateChart);
-				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSCStateChart_processStep(
 						stateChart);
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSCStateChart_processStep(
 						stateChart);
@@ -1238,36 +1346,14 @@
 		}
 		
 		
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behaviorStateChart_exit(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICSENDING_STATE:
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE:
 				// nothing to do
 		
-				break;
-			default:
-				break;
-			}
-		}
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behaviorStateChart_exit(
-				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behavior) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_LINEOVERTAKEE_INITSTATE_STATE:
-				// nothing to do
-		
-				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_LINEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 						stateChart);
-		
-				break;
-			default:
-				break;
-			}
-		}
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSCStateChart_exit(
-				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE:
-				// nothing to do
 		
 				break;
 			default:
@@ -1289,6 +1375,21 @@
 				break;
 			}
 		}
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_exit(
+				RootovertakeeDriverRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_FAST_STATE:
+				// nothing to do
+		
+				break;
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_SLOW_STATE:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+		}
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
@@ -1300,13 +1401,39 @@
 				break;
 			}
 		}
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behaviorStateChart_exit(
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE:
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PERIODICTRANSMISSION_PERIODICTRANSMISSION_PERIODICSENDING_STATE:
 				// nothing to do
 		
-				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+				break;
+			default:
+				break;
+			}
+		}
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSCStateChart_exit(
+				RootovertakeeDriverRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_DRIVE_STATE:
+				// nothing to do
+		
+				break;
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVINGRTSC_OVERTAKEEDRIVINGRTSC_BREAKNOW_STATE:
+				// nothing to do
+		
+				break;
+			default:
+				break;
+			}
+		}
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behaviorStateChart_exit(
+				RootovertakeeDriverRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behavior) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE:
+				// nothing to do
+		
+				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
 						stateChart);
 		
 				break;
@@ -1317,27 +1444,43 @@
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSCStateChart_exit(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_SLOW_STATE:
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE:
 				// nothing to do
 		
 				break;
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_FAST_STATE:
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE:
 				// nothing to do
+		
+				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_exit(
+						stateChart);
 		
 				break;
 			default:
 				break;
 			}
 		}
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSCStateChart_exit(
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behaviorStateChart_exit(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_CHECKDISTANCE_STATE:
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behavior) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE:
 				// nothing to do
 		
+				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+						stateChart);
+		
 				break;
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEESAVEBREAKRTSC_OVERTAKEESAVEBREAKRTSC_BREAKNOW_STATE:
+			default:
+				break;
+			}
+		}
+		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behaviorStateChart_exit(
+				RootovertakeeDriverRTSCStateChart* stateChart) {
+			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behavior) {
+			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_LINEOVERTAKEE_INITSTATE_STATE:
 				// nothing to do
+		
+				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_LINEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
+						stateChart);
 		
 				break;
 			default:
@@ -1359,60 +1502,32 @@
 				break;
 			}
 		}
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behaviorStateChart_exit(
-				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behavior) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE:
-				// nothing to do
-		
-				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
-						stateChart);
-		
-				break;
-			default:
-				break;
-			}
-		}
-		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behaviorStateChart_exit(
-				RootovertakeeDriverRTSCStateChart* stateChart) {
-			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behavior) {
-			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE:
-				// nothing to do
-		
-				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(
-						stateChart);
-		
-				break;
-			default:
-				break;
-			}
-		}
 				
 			
 		int_t RootovertakeeDriverRTSCStateChart_isInState(
 				RootovertakeeDriverRTSCStateChart* stateChart,
 				RootovertakeeDriverRTSCState state) {
-			return (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
+			return (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior
 					== state
-					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behavior
-							== state
-					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC
-							== state
 					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_LINEOVERTAKEE_BEHAVIOR_LINEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
+							== state
+					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart
 							== state
 					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYR_BEHAVIOR_VELOCITYR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
 							== state
-					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityL_behavior_overtakeeDriver_velocityL_behavior
+					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_OVERTAKEEDRIVER_VELOCITYL_BEHAVIOR_VELOCITYL_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
+							== state
+					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDrivingRTSC_overtakeeDrivingRTSC
+							== state
+					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behavior
 							== state
 					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC
 							== state
-					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeSaveBreakRTSC_overtakeeSaveBreakRTSC
-							== state
-					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
-							== state
 					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_velocityR_behavior_overtakeeDriver_velocityR_behavior
 							== state
-					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behavior
+					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behavior
+							== state
+					|| stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_OVERTAKEEDRIVER_DISTANCEOVERTAKEE_BEHAVIOR_DISTANCEOVERTAKEE_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmission
 							== state);
 		
 		}

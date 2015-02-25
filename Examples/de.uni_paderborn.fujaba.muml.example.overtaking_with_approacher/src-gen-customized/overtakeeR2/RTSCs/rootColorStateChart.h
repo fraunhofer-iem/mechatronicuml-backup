@@ -117,13 +117,13 @@
 	void RootColorStateChart_processStep(RootColorStateChart* rtsc);
 
 	/**
-	 * @brief Leaves the Region: Color_color_behavior of the Realtime-StateChart: RootColor
-	 * @details This method is called, whenever a the Region: Color_color_behavior is left.
+	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootColor
+	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootColorStateChart whose Region: Color_color_behavior shall be exit
+	 * @param rtsc The specific RootColorStateChart whose Region: PeriodicTransmission shall be exit
 	 */
-		void ROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behaviorStateChart_exit(RootColorStateChart* rtsc);
+		void ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootColorStateChart* rtsc);
 	/**
 	 * @brief Leaves the Region: ApiExecution of the Realtime-StateChart: RootColor
 	 * @details This method is called, whenever a the Region: ApiExecution is left.
@@ -133,13 +133,13 @@
 	 */
 		void ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_ApiExecution_ApiExecutionStateChart_exit(RootColorStateChart* rtsc);
 	/**
-	 * @brief Leaves the Region: PeriodicTransmission of the Realtime-StateChart: RootColor
-	 * @details This method is called, whenever a the Region: PeriodicTransmission is left.
+	 * @brief Leaves the Region: Color_color_behavior of the Realtime-StateChart: RootColor
+	 * @details This method is called, whenever a the Region: Color_color_behavior is left.
 	 * 			The correct State is set and all Exit-Events are executed.
 	 *
-	 * @param rtsc The specific RootColorStateChart whose Region: PeriodicTransmission shall be exit
+	 * @param rtsc The specific RootColorStateChart whose Region: Color_color_behavior shall be exit
 	 */
-		void ROOTCOLOR_COLOR_STATE_STATE_COLOR_COLOR_BEHAVIOR_COLOR_COLOR_BEHAVIOR_COLOR_INITSTATE_STATE_PeriodicTransmission_PeriodicTransmissionStateChart_exit(RootColorStateChart* rtsc);
+		void ROOTCOLOR_COLOR_STATE_STATE_Color_color_behavior_Color_color_behaviorStateChart_exit(RootColorStateChart* rtsc);
 			
 	/**
 	 * @brief Returns wether the Realtime-StateChart: RootColor is in a specific State

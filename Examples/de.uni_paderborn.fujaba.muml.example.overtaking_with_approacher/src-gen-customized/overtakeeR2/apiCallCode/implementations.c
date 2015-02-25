@@ -16,6 +16,7 @@ void initAll(){
 }	
 		int overtakeeColor_color_ExecApi(){
 /** Start of user code overtakeeColor_color_ExecApi **/ 
+						//	ecrobot_sound_tone(440,200,5);
 							ecrobot_process_bg_nxtcolorsensor();
 							return ecrobot_get_nxtcolorsensor_id(NXT_PORT_S1);
 

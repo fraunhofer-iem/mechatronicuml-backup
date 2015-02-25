@@ -298,96 +298,7 @@ unsigned long Message_get_delimited_size(void *_buffer, int offset) {
 
 
 /*******************************************************************
- * Message: Messages.proto, line 11
- *******************************************************************/
-
-void Motor_velocity_messageapi_messageType_RepositoryMessage_clear(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage) {
-	_memset(_Motor_velocity_messageapi_messageType_RepositoryMessage, 0, sizeof(struct Motor_velocity_messageapi_messageType_RepositoryMessage));
-}
-
-void Motor_velocity_messageapi_messageType_RepositoryMessage_init_optional_attributes(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage) {
-	_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value = 0;
-	
-}
-
-int Motor_velocity_messageapi_messageType_RepositoryMessage_is_default_message(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage) {
-    return _Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value == 0
-    ;
-}
-
-int Motor_velocity_messageapi_messageType_RepositoryMessage_write(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset) {
-	/* Write content of each message element.*/
-	/* Write the optional attribute only if it is different than the default value. */
-	if(_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value != 0) {
-		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
-	    if (_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value >= 0)
-	        offset = write_raw_varint32(_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value, _buffer, offset);
-	    else
-	        offset = write_raw_varint64(_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value, _buffer, offset);	    
-	}
-	
-	return offset;
-}
-
-int Motor_velocity_messageapi_messageType_RepositoryMessage_write_with_tag(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset, int tag) {
-	/* Write tag.*/
-	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
-	/* Write content.*/
-	offset = Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to(_Motor_velocity_messageapi_messageType_RepositoryMessage, _buffer, offset);
-	
-	return offset;
-}
-
-int Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset) {
-	int i, shift, new_offset, size;
-	
-	new_offset = Motor_velocity_messageapi_messageType_RepositoryMessage_write(_Motor_velocity_messageapi_messageType_RepositoryMessage, _buffer, offset);
-	size = new_offset - offset;
-	shift = (size > 127) ? 2 : 1;
-	for (i = new_offset - 1; i >= offset; -- i)
-	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
-	
-	write_raw_varint32((unsigned long) size, _buffer, offset);         
-	    
-	return new_offset + shift;
-}
-
-int Motor_velocity_messageapi_messageType_RepositoryMessage_read(void *_buffer, struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, int offset, int limit) {
-	unsigned int i = 0;
-	unsigned long long value = i;
-	unsigned long tag = value;
-	
-	/* Reset all attributes to 0 in advance. */
-	Motor_velocity_messageapi_messageType_RepositoryMessage_clear(_Motor_velocity_messageapi_messageType_RepositoryMessage);
-	/* Assign the optional attributes. */
-	Motor_velocity_messageapi_messageType_RepositoryMessage_init_optional_attributes(_Motor_velocity_messageapi_messageType_RepositoryMessage);
-	
-	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
-	while(offset < limit) {
-	    offset = read_raw_varint32(&tag, _buffer, offset);
-		tag = tag>>3;
-	    switch(tag){
-	        /* tag of: _Motor_velocity_messageapi_messageType_RepositoryMessage._velocity_value */
-	        case 1 :
-	        	offset = read_raw_varint32(&tag, _buffer, offset);
-	        	_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value = (signed long)tag;
-	        	break;
-	    }
-	}
-	
-	return offset;
-}
-
-int Motor_velocity_messageapi_messageType_RepositoryMessage_read_delimited_from(void *_buffer, struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, int offset) {
-	unsigned long size;
-	
-	offset = read_raw_varint32(&size, _buffer, offset);
-	Motor_velocity_messageapi_messageType_RepositoryMessage_read(_buffer, _Motor_velocity_messageapi_messageType_RepositoryMessage, offset, size + offset);
-	
-	return offset + size;
-}
-/*******************************************************************
- * Message: Messages.proto, line 15
+ * Message: Messages.proto, line 13
  *******************************************************************/
 
 void Line_lineLight_messageapi_messageType_RepositoryMessage_clear(struct Line_lineLight_messageapi_messageType_RepositoryMessage *_Line_lineLight_messageapi_messageType_RepositoryMessage) {
@@ -476,7 +387,96 @@ int Line_lineLight_messageapi_messageType_RepositoryMessage_read_delimited_from(
 	return offset + size;
 }
 /*******************************************************************
- * Message: Messages.proto, line 19
+ * Message: Messages.proto, line 17
+ *******************************************************************/
+
+void Motor_velocity_messageapi_messageType_RepositoryMessage_clear(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage) {
+	_memset(_Motor_velocity_messageapi_messageType_RepositoryMessage, 0, sizeof(struct Motor_velocity_messageapi_messageType_RepositoryMessage));
+}
+
+void Motor_velocity_messageapi_messageType_RepositoryMessage_init_optional_attributes(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage) {
+	_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value = 0;
+	
+}
+
+int Motor_velocity_messageapi_messageType_RepositoryMessage_is_default_message(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage) {
+    return _Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value == 0
+    ;
+}
+
+int Motor_velocity_messageapi_messageType_RepositoryMessage_write(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset) {
+	/* Write content of each message element.*/
+	/* Write the optional attribute only if it is different than the default value. */
+	if(_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value != 0) {
+		offset = write_raw_varint32((1<<3)+0, _buffer, offset);
+	    if (_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value >= 0)
+	        offset = write_raw_varint32(_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value, _buffer, offset);
+	    else
+	        offset = write_raw_varint64(_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value, _buffer, offset);	    
+	}
+	
+	return offset;
+}
+
+int Motor_velocity_messageapi_messageType_RepositoryMessage_write_with_tag(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset, int tag) {
+	/* Write tag.*/
+	offset = write_raw_varint32((tag<<3)+2, _buffer, offset);
+	/* Write content.*/
+	offset = Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to(_Motor_velocity_messageapi_messageType_RepositoryMessage, _buffer, offset);
+	
+	return offset;
+}
+
+int Motor_velocity_messageapi_messageType_RepositoryMessage_write_delimited_to(struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, void *_buffer, int offset) {
+	int i, shift, new_offset, size;
+	
+	new_offset = Motor_velocity_messageapi_messageType_RepositoryMessage_write(_Motor_velocity_messageapi_messageType_RepositoryMessage, _buffer, offset);
+	size = new_offset - offset;
+	shift = (size > 127) ? 2 : 1;
+	for (i = new_offset - 1; i >= offset; -- i)
+	    *((char *)_buffer + i + shift) = *((char *)_buffer + i);
+	
+	write_raw_varint32((unsigned long) size, _buffer, offset);         
+	    
+	return new_offset + shift;
+}
+
+int Motor_velocity_messageapi_messageType_RepositoryMessage_read(void *_buffer, struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, int offset, int limit) {
+	unsigned int i = 0;
+	unsigned long long value = i;
+	unsigned long tag = value;
+	
+	/* Reset all attributes to 0 in advance. */
+	Motor_velocity_messageapi_messageType_RepositoryMessage_clear(_Motor_velocity_messageapi_messageType_RepositoryMessage);
+	/* Assign the optional attributes. */
+	Motor_velocity_messageapi_messageType_RepositoryMessage_init_optional_attributes(_Motor_velocity_messageapi_messageType_RepositoryMessage);
+	
+	/* Read/interpret all attributes from buffer offset until upper limit is reached. */
+	while(offset < limit) {
+	    offset = read_raw_varint32(&tag, _buffer, offset);
+		tag = tag>>3;
+	    switch(tag){
+	        /* tag of: _Motor_velocity_messageapi_messageType_RepositoryMessage._velocity_value */
+	        case 1 :
+	        	offset = read_raw_varint32(&tag, _buffer, offset);
+	        	_Motor_velocity_messageapi_messageType_RepositoryMessage->_velocity_value = (signed long)tag;
+	        	break;
+	    }
+	}
+	
+	return offset;
+}
+
+int Motor_velocity_messageapi_messageType_RepositoryMessage_read_delimited_from(void *_buffer, struct Motor_velocity_messageapi_messageType_RepositoryMessage *_Motor_velocity_messageapi_messageType_RepositoryMessage, int offset) {
+	unsigned long size;
+	
+	offset = read_raw_varint32(&size, _buffer, offset);
+	Motor_velocity_messageapi_messageType_RepositoryMessage_read(_buffer, _Motor_velocity_messageapi_messageType_RepositoryMessage, offset, size + offset);
+	
+	return offset + size;
+}
+/*******************************************************************
+ * Message: Messages.proto, line 21
  *******************************************************************/
 
 void Distance_distance_messageapi_messageType_RepositoryMessage_clear(struct Distance_distance_messageapi_messageType_RepositoryMessage *_Distance_distance_messageapi_messageType_RepositoryMessage) {
@@ -565,7 +565,7 @@ int Distance_distance_messageapi_messageType_RepositoryMessage_read_delimited_fr
 	return offset + size;
 }
 /*******************************************************************
- * Message: Messages.proto, line 31
+ * Message: Messages.proto, line 33
  *******************************************************************/
 
 void MiddlewareMessage_clear(struct MiddlewareMessage *_MiddlewareMessage) {
