@@ -72,6 +72,30 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	NetworkInterface_init(mw->inputPort4,networkInterface_InputPort4_init, networkInterface_InputPort4_send, networkInterface_InputPort4_receive);
 	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
+
+	while(true) {
+		U8 receive_buf[32];
+		if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){
+			memset(receive_buf,0,32);
+		
+			ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, 32);
+			ecrobot_wb_tcp_send(NXT_PORT_S3);
+
+					 
+
+			while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
+			{
+				 
+			}
+			U8* received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+			if(received[0] == 2){ // 2 means this is a START message.
+				ecrobot_sendData_rs485(received,0, 32);
+				break;
+			}
+		}
+		systick_wait_ms(5);
+	}
+
 //ChainTask(Task_Main);
 	
 	TerminateTask();

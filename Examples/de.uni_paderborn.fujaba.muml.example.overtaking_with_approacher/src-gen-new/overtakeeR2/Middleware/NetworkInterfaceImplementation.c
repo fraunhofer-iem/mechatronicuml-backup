@@ -199,7 +199,8 @@ return true;
  */
 bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_send **/ 
-	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){
+	//ssfree(msg);
+	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){ }
 		memset(send_buf,0,DATA_LEN);
 
 		//no request
@@ -214,7 +215,7 @@ bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
 		msg = NULL;
 		//if we are reaching this statement, everything went ok
 		return true;
-	}
+	//}
 	return false;
 
 	
@@ -241,7 +242,10 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 
 	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){
 		memset(receive_buf,0,DATA_LEN);
-
+		// MiddlewareMessage msg;
+		// msg._targetPort = 20;
+		// msg._msgID = 14;
+		// msg._mumlMsg_len =0;
 			 
 
 		///////////////////////////////
@@ -264,7 +268,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 		//request message
 		receive_buf[0]=0;
 		receive_buf[1]=myPortIds[counter];
-		 
+		//MiddlewareMessage_write_delimited_to(&msg, receive_buf, 2);
 		ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
 		ecrobot_wb_tcp_send(NXT_PORT_S3);
 

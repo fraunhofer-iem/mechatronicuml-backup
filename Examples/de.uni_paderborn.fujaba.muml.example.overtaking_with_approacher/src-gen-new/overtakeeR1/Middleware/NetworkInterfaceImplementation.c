@@ -97,9 +97,13 @@ MiddlewareMessage * networkInterface_InputPort4_receive(void){
 		return NULL;
 	}
 	else{
+		
 		//read the buffer and create the middlewareMessage
 		MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
 		MiddlewareMessage_read_delimited_from(receive_buf, tmpMessage, 0);
+
+		
+
 		return tmpMessage;
 		}
 	//return the received message

@@ -6,6 +6,7 @@
 		#include <stdlib.h>
 		#include "../GlobalIdentifier.h"
 		#include "rootovertakeeDriverRTSCStateChart.h"
+		#include "ecrobot_interface.h"
 		
 		
 
@@ -238,7 +239,9 @@
 		
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechartStateChart_processStep(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
+
 			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_statechart_statechart) {
+					
 			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S2_STATE_STATECHART_STATECHART_FAST_STATE:
 				if (Port_doesMessageExist(
 						OvertakeeDriverComponent_getvelocityGetterP(
@@ -246,13 +249,15 @@
 						MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE)
 		
 						) {
+
+
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 							OvertakeeDriverComponent_getvelocityGetterP(
 									stateChart->parentComponent),
 							MESSAGE_SETSLOWOVERTAKINGMESSAGESMESSAGE);
 		
 					//printf("received message of type %d",mwMsg->_msgID );
-					fflush (stdout);
+					//fflush (stdout);
 		
 					// execute exit actions
 					// nothing to do
@@ -289,6 +294,7 @@
 						MESSAGE_SETFASTOVERTAKINGMESSAGESMESSAGE)
 		
 						) {
+
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 		
 					OvertakeeDriverComponent_getvelocityGetterP(
@@ -341,14 +347,23 @@
 		
 		void ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSCStateChart_processStep(
 				RootovertakeeDriverRTSCStateChart* stateChart) {
+								
+Port* port;
 			switch (stateChart->currentStateOfROOTOVERTAKEEDRIVERRTSC_INIT_STATE_velocityGetterPortRTSC_velocityGetterPortRTSC) {
 			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_VELOCITYGETTERPORTRTSC_VELOCITYGETTERPORTRTSC_S1_STATE:
-				if (Port_doesMessageExist(
-						OvertakeeDriverComponent_getvelocityGetterP(
-								stateChart->parentComponent),
+				port = OvertakeeDriverComponent_getvelocityGetterP(
+								stateChart->parentComponent);
+				//display_goto_xy(0,0);
+				//display_int((int)port,8);
+				//display_update();
+
+				if (/*Port_doesMessageExist(
+						port,
 						MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE)
-		
-						) {
+					*/
+						1) {
+
+
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
 		
 					OvertakeeDriverComponent_getvelocityGetterP(
@@ -1310,7 +1325,7 @@
 			case ROOTOVERTAKEEDRIVERRTSC_INIT_STATE:
 				// execute do action
 				// nothing to do
-		
+
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_distanceOvertakee_behavior_overtakeeDriver_distanceOvertakee_behaviorStateChart_processStep(
 						stateChart);
 				ROOTOVERTAKEEDRIVERRTSC_INIT_STATE_overtakeeDriver_lineOvertakee_behavior_overtakeeDriver_lineOvertakee_behaviorStateChart_processStep(

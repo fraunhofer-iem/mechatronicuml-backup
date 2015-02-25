@@ -66,6 +66,17 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	//NetworkInterface_init(mw->virtualBluetoothPort,networkInterface_VirtualBluetoothPort_init, networkInterface_VirtualBluetoothPort_send, networkInterface_VirtualBluetoothPort_receive);
 	NetworkInterface_init(mw->inputPort4,networkInterface_InputPort4_init, networkInterface_InputPort4_send, networkInterface_InputPort4_receive);
 	//NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
+
+	while(true) {
+		U8 receive_buf[32];
+		if(ecrobot_readData_rs485(receive_buf, 32) > 0) {
+			if(receive_buf[0] == 2){ // 2 means this is a START message.
+				break;
+			}
+		}
+		systick_wait_ms(5);
+	}
+ecrobot_sound_tone(440,100,50);
 ChainTask(Task_Main);
 }
 
