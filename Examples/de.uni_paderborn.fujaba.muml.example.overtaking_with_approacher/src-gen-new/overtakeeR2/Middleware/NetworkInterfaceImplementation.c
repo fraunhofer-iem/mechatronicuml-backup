@@ -240,7 +240,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 	//return NULL;
 			 
 
-	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){
+	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){ }
 		memset(receive_buf,0,DATA_LEN);
 		// MiddlewareMessage msg;
 		// msg._targetPort = 20;
@@ -309,7 +309,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 			}
 
 		}
-	}
+	
 	
 	return NULL;
 

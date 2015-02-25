@@ -497,14 +497,13 @@
 		
 					// execute entry actions
 		
-					// if (stateChart->currentSec == stateChart->colorOvertakee_apiValue) {
+					if (stateChart->currentSec == stateChart->colorOvertakee_apiValue) {
 		
-					// 	stateChart->change = false;
+						stateChart->change = false;
 		
-					// }
-					//else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
-					if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
-						ecrobot_sound_tone(400,100,50);
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
+							ecrobot_sound_tone(400,100,50);
 						stateChart->change = true;
 						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
 						stateChart->secID = 2;
