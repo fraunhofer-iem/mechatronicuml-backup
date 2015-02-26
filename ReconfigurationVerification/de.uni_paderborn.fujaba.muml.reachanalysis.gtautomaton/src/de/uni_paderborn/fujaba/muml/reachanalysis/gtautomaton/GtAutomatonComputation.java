@@ -978,12 +978,16 @@ public class GtAutomatonComputation extends SDMReachabilityComputation{
 					//cast value to the type of the variable, needs to be a primitive type 
 					//(otherwise it wouldn't be a LiteralExpression)
 					switch (((PrimitiveDataType)varBinding.getVariable().getDataType()).getPrimitiveType()){
+					case UINT64:
 					case INT64: varBinding.setValue(Long.parseLong(((LiteralExpression) curValue).getValue()));
 								break;
+					case UINT32:
 					case INT32: varBinding.setValue(Integer.parseInt(((LiteralExpression) curValue).getValue()));
 								break;
+					case UINT16:
 					case INT16: varBinding.setValue(Short.parseShort(((LiteralExpression) curValue).getValue()));
 								break;
+					case UINT8:
 					case INT8: varBinding.setValue(Byte.parseByte(((LiteralExpression) curValue).getValue()));
 								break;
 					case DOUBLE: varBinding.setValue(Double.parseDouble(((LiteralExpression) curValue).getValue()));
