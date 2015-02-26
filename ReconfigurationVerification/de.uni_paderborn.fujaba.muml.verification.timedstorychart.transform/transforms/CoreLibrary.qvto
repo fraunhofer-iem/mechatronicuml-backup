@@ -182,10 +182,10 @@ helper ComparingOperator::comparisonOperatorToString() : String {
 
 helper PrimitiveTypes::primitiveTypeToString() : String {
 	return switch {
-		case (self = PrimitiveTypes::INT) 'Integer';
-		case (self = PrimitiveTypes::BYTE) 'Integer';
-		case (self = PrimitiveTypes::SHORT) 'Integer';
-		case (self = PrimitiveTypes::LONG) 'Integer';
+		case (self = PrimitiveTypes::INT32) 'Integer';
+		case (self = PrimitiveTypes::INT8) 'Integer';
+		case (self = PrimitiveTypes::INT16) 'Integer';
+		case (self = PrimitiveTypes::INT64) 'Integer';
 		case (self = PrimitiveTypes::BOOLEAN) 'Boolean';
 		case (self = PrimitiveTypes::DOUBLE) 'Real';
 		else '';
@@ -197,10 +197,10 @@ helper PrimitiveTypes::primitiveTypeToString() : String {
 helper DataType::dataTypeToEClassifier() : EClassifier {
 	if(self.oclIsTypeOf(PrimitiveDataType)) then {
 		return switch {
-			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT) EInt.oclAsType(EDataType);
-			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::BYTE) EByte.oclAsType(EDataType);
-			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::SHORT) EShort.oclAsType(EDataType);
-			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::LONG) ELong.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT32) EInt.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT8) EByte.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT16) EShort.oclAsType(EDataType);
+			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::INT64) ELong.oclAsType(EDataType);
 			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN) EBoolean.oclAsType(EDataType);
 			case (self.oclAsType(PrimitiveDataType).primitiveType = PrimitiveTypes::DOUBLE) EDouble.oclAsType(EDataType);
 			else null;
