@@ -182,7 +182,16 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}
 	
 	public void setScopeForEObject(Operation operation) {
-		setScopeForRTSC(operation.eContainer());
+		
+		//if operation is embedded in an RTSC, add RTSC elements to scope
+		if (operation.eContainer() instanceof RealtimeStatechart){
+			setScopeForRTSC(operation.eContainer());
+		} else {
+			//initialize containers -> has been done by setScopeForRTSC if operation is embedded in RTSC
+			typedNamedElementList = new ArrayList<TypedNamedElement>();
+			initDataTypes(operation);
+		}
+		
 		List<Parameter> parameterList = getScopeForOperation(operation);
 		for (Parameter parameter : parameterList) {
 			typedNamedElementList.add(parameter);
