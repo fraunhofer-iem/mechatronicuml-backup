@@ -139,9 +139,9 @@ constructor StructType::StructType(in newName : String){
 	name := newName;
 }
 
-constructor Attribute::Attribute(in newName : String, in dataType : DataType){
+constructor Attribute::Attribute(in newName : String, in type : DataType){
 	name := newName;
-	type := dataType;
+	dataType := type;
 }
 
 constructor Reference::Reference(in newName : String, in dataType : DataType, in card : Cardinality){
