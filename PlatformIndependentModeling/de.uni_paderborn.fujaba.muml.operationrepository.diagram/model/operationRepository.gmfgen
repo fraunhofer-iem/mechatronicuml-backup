@@ -145,4 +145,7 @@
   <contextMenus context="//@diagram">
     <items xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
+  <extensions>
+    <rootInput href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  </extensions>
 </gmfgen:GenEditorGenerator>

@@ -25,7 +25,7 @@
       <editor
          id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditorID"
          name="%editorName"
-         icon="icons/obj16/OperationRepositoryDiagram.gif"
+         icon="icons/obj16/ModelinstanceDiagramFile.gif"
          extensions="operationrepository_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlDiagramEditor"
@@ -47,7 +47,7 @@
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
-  	     icon="icons/obj16/OperationRepositoryDiagram.gif"
+  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	     class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlCreationWizardID">
@@ -65,7 +65,7 @@
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.operationrepository.diagram.createDiagram"
-	            icon="icons/obj16/OperationRepositoryDiagram.gif"
+	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.createDiagram"
 	            label="Create Operation Repository Diagram"
 	            style="push">
