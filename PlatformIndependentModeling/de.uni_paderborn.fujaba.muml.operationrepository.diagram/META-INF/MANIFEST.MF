@@ -50,5 +50,6 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: de.uni_paderborn.fujaba.muml.operationrepository.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.operationrepository.diagram.parsers,
  de.uni_paderborn.fujaba.muml.operationrepository.diagram.part,
  de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers
