@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.operationrepository.diagram.providers.assis
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
