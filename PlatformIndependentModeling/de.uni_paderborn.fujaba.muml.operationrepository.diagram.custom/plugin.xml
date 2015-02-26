@@ -10,5 +10,11 @@
          </Priority>
       </editpartProvider>
    </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.operationrepository.diagram.custom.providers.CustomOperationrepositoryParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
 
 </plugin>
