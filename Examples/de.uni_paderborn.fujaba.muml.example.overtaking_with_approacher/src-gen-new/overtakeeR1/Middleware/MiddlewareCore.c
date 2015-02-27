@@ -113,45 +113,20 @@ bool_t MW_deliverReceivedMessages(void){
 		if (MW_getTargetECU(msg->_targetPort) == mw->idOfECU){
 		 	Port* port = MW_getPortforIdentifier(msg->_targetPort);
 
-			//the target receiver is located on this ECU	
-			if(msg->_targetPort==20 && msg->_msgID == MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE) {	
-		 		ecrobot_sound_tone(300, 100, 50);
-		 		systick_wait_ms(500);
-
-			//display_goto_xy(0,0);
-			//display_int(msg->_targetPort,3);
-			//display_goto_xy(0,1);
-			//display_int((int)port,8);
-			//display_update();
-			}
-			
 			int error = Port_addMessage(port, msg) == 0;
 			
-				// display_clear(0);
-			// display_goto_xy(0,0);
-			// display_int(msg->_targetPort,3);
-			// display_goto_xy(0,1);
-			// display_int(msg->_msgID,3);
-			// display_update();
-
-			
 			if (error) {
-				//ecrobot_sound_tone(600, 100, 50);
-		 		//systick_wait_ms(500);
+				 display_clear(0);
+				 display_goto_xy(0,0);
+				 display_int(msg->_targetPort,3);
+				 display_goto_xy(0,1);
+				 display_int(msg->_msgID,3);
+				 display_update();
+
+				ecrobot_sound_tone(600, 100, 50);
+		 		systick_wait_ms(5000);
 			}
 
-
-		 	if (!Port_doesMessageExist(port,msg->_msgID)) {
-		 		// ecrobot_sound_tone(900, 100, 50);
-		 		// systick_wait_ms(500);
-		 	}
-
-
-			// 	if (port == 0) {
-			// 		ecrobot_sound_tone(880, 200, 5);
-			// 	}
-				
-				
 		}else
 		{
 			NetworkMessageBuffer_enqueue(mw->outgoing, msg);

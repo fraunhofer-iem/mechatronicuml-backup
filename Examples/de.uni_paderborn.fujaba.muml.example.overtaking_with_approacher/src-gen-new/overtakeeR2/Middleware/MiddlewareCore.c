@@ -103,9 +103,25 @@ bool_t MW_deliverReceivedMessages(void){
 	MiddlewareMessage* msg;
 	while (mw->incoming->currentSize > 0){
 		msg = NetworkMessageBuffer_dequeue(mw->incoming);
+
+
 		if (MW_getTargetECU(msg->_targetPort) == mw->idOfECU){
-			//the target receiver is located on this ECU		
-			Port_addMessage(MW_getPortforIdentifier(msg->_targetPort), msg);
+		 	Port* port = MW_getPortforIdentifier(msg->_targetPort);
+
+			int error = Port_addMessage(port, msg) == 0;
+			
+			if (error) {
+				 display_clear(0);
+				 display_goto_xy(0,0);
+				 display_int(msg->_targetPort,3);
+				 display_goto_xy(0,1);
+				 display_int(msg->_msgID,3);
+				 display_update();
+
+				ecrobot_sound_tone(600, 100, 50);
+		 		systick_wait_ms(5000);
+			}
+
 		}else
 		{
 			NetworkMessageBuffer_enqueue(mw->outgoing, msg);

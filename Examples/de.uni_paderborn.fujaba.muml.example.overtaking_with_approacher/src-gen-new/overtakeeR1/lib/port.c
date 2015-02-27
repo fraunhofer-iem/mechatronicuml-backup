@@ -71,8 +71,6 @@ bool_t Port_doesMessageExist(Port * port, MessageID msgID) {
 		
 
 	}
-	
-		
 	return false;
 }
 
