@@ -507,6 +507,9 @@
 						stateChart->change = true;
 						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
 						stateChart->secID = 2;
+						display_goto_xy(0,1);
+				 		display_int(555,3);
+				 		display_update();
 					}
 		
 					;

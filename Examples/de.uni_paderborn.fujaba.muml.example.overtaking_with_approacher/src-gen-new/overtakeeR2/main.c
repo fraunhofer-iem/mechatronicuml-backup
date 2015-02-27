@@ -115,12 +115,13 @@ TerminateTask();
 
 TASK(Task_overtakeeCommunicatorComponent){
 	
-		OvertakeeCommunicatorComponent_processStep(mw->overtakeeCommunicatorComponent);
+		
 	TerminateTask();
 }	
 TASK(Task_overtakeeColorComponent){
 	
 		ColorComponent_processStep(mw->overtakeeColorComponent);
+OvertakeeCommunicatorComponent_processStep(mw->overtakeeCommunicatorComponent);
 	
 	TerminateTask();
 }	

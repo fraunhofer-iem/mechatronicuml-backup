@@ -146,6 +146,10 @@
 		
 					//send Message
 		
+					display_goto_xy(0,3);
+				 	display_int(msg->_color_value,3);
+				 	display_update();
+
 					MW_sendMessage(
 							MW_getTargetPortIDforIdentifier(
 									stateChart->parentComponent->colorPort->ID),
