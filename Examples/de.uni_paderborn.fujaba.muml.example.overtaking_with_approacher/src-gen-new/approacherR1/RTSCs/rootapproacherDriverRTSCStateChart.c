@@ -649,7 +649,7 @@
 		
 				stateChart->distance_apiValue >= stateChart->constBreakDistance
 		
-				&& unsupportedstateChart->fixedSlowFlag
+				&& stateChart->fixedSlowFlag
 		
 				) {
 		
