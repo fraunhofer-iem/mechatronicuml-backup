@@ -1,4 +1,6 @@
 #include "MiddlewareCore.h"
+#include "ecrobot_interface.h"
+
 
 /*
  * create a new middleware instance
