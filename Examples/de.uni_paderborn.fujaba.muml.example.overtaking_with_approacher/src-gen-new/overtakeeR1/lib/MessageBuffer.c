@@ -79,10 +79,6 @@ bool_t MessageBuffer_enqueue(MessageBuffer* buf, MiddlewareMessage* msg) {
 
 bool_t MessageBuffer_doesMessageExists(MessageBuffer* buf, MessageID msgID) {
 	if (buf->currentSize > 0) {
-		if(msgID==14){
-		ecrobot_sound_tone(900, 100, 50);
-		systick_wait_ms(500);
-	}
 		return ((MessageID) buf->queue[buf->index]->_msgID == msgID);
 	}
 	return false;

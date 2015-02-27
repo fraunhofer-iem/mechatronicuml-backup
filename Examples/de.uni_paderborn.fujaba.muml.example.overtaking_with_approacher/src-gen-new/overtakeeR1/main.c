@@ -76,7 +76,6 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 		}
 		systick_wait_ms(5);
 	}
-ecrobot_sound_tone(440,100,50);
 ChainTask(Task_Main);
 }
 
