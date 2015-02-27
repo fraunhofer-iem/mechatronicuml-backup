@@ -134,7 +134,7 @@ TASK(Task_MsgExchange){
 }
 
 TASK(Background){
-	while(1)
+	//while(1)
 	{
 		ecrobot_process_bg_nxtcolorsensor(); // communicates with NXT Color Sensor (this must be executed repeatedly in a background Task)
 	}
