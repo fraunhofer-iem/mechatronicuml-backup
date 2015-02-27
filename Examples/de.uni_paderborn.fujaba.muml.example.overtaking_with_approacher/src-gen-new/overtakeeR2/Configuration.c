@@ -7,7 +7,7 @@ MessageID * messageIDsOfbuffer;
 					messageIDsOfbuffer = (MessageID*) calloc(2,sizeof(MessageID));
 						messageIDsOfbuffer[0] = MESSAGE_REQUESTOVERTAKINGOVERTAKINGMESSAGESMESSAGE;
 						messageIDsOfbuffer[1] = MESSAGE_FINISHOVERTAKINGOVERTAKINGMESSAGESMESSAGE;
-					MessageBuffer* buffer1ofovertakeeP1overtakeeP = MessageBuffer_create(5,false,2,messageIDsOfbuffer);
+					MessageBuffer* buffer1ofovertakeeP1overtakeeP = MessageBuffer_create(5,true,2,messageIDsOfbuffer);
 				MessageBuffer** allBuffersOfovertakeeP1overtakeeP = (MessageBuffer**) malloc(1*sizeof(MessageBuffer*));
 				allBuffersOfovertakeeP1overtakeeP[0] = buffer1ofovertakeeP1overtakeeP;
 	

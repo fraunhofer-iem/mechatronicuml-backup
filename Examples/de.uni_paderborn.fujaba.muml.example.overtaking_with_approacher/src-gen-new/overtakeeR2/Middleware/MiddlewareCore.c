@@ -113,7 +113,7 @@ bool_t MW_deliverReceivedMessages(void){
 			int error = Port_addMessage(port, msg) == 0;
 			
 			if (error) {
-				 display_clear(0);
+				 /*display_clear(0);
 				 display_goto_xy(0,0);
 				 display_int(msg->_targetPort,3);
 				 display_goto_xy(0,1);
@@ -121,7 +121,7 @@ bool_t MW_deliverReceivedMessages(void){
 				 display_update();
 
 				ecrobot_sound_tone(600, 100, 50);
-		 		systick_wait_ms(5000);
+		 		systick_wait_ms(5000);*/
 			}
 
 		}else

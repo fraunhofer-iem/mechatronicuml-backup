@@ -503,7 +503,7 @@
 		
 					}
 					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
-							ecrobot_sound_tone(400,100,50);
+							//ecrobot_sound_tone(400,100,50);
 						stateChart->change = true;
 						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
 						stateChart->secID = 2;

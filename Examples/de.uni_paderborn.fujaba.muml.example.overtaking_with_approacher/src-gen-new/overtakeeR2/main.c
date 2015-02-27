@@ -29,7 +29,7 @@ DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
 DeclareTask(Task_overtakeeCommunicatorComponent);
 DeclareTask(Task_overtakeeColorComponent);
-DeclareTask(Background);
+//DeclareTask(Background);
 DeclareCounter(SysTimerCnt);
 
 
@@ -133,10 +133,10 @@ TASK(Task_MsgExchange){
 //ChainTask(Task_Main);
 }
 
-TASK(Background){
+//TASK(Background){
 	//while(1)
-	{
-		ecrobot_process_bg_nxtcolorsensor(); // communicates with NXT Color Sensor (this must be executed repeatedly in a background Task)
-	}
+//	{
+//		ecrobot_process_bg_nxtcolorsensor(); // communicates with NXT Color Sensor (this must be executed repeatedly in a background Task)
+//	}
 
-}
+//}
