@@ -61,9 +61,7 @@ Workflow {
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment auto-inject {}
 
 			// serializer 2.0
-			fragment = serializer.SerializerFragment auto-inject {
-				generateStub = true
-			}
+			fragment = serializer.SerializerFragment auto-inject {}
 
 			// the old serialization component
 			// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}
