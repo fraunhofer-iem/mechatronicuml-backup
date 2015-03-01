@@ -1182,7 +1182,7 @@ public abstract class AbstractUppaalXMLSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     ((declaration+=BlockTypedDeclaration | declaration+=TypeDeclaration)*)
+	 *     (declaration+=BlockTypedDeclaration | declaration+=TypeDeclaration)+
 	 */
 	protected void sequence_BlockDeclarations(EObject context, LocalDeclarations semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1200,7 +1200,7 @@ public abstract class AbstractUppaalXMLSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (declarations=BlockDeclarations statement+=Statement*)
+	 *     (declarations=BlockDeclarations? statement+=Statement*)
 	 */
 	protected void sequence_Block(EObject context, Block semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

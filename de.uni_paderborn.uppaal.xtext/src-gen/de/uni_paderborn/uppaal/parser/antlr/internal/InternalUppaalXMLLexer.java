@@ -2852,10 +2852,10 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2873,10 +2873,10 @@ public class InternalUppaalXMLLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop1:
                     do {
                         int alt1=3;
@@ -2892,7 +2892,7 @@ public class InternalUppaalXMLLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:21: '\\\\' .
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2900,7 +2900,7 @@ public class InternalUppaalXMLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2925,10 +2925,10 @@ public class InternalUppaalXMLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop2:
                     do {
                         int alt2=3;
@@ -2944,7 +2944,7 @@ public class InternalUppaalXMLLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:54: '\\\\' .
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2952,7 +2952,7 @@ public class InternalUppaalXMLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9624:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2995,8 +2995,8 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9626:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9626:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -3007,7 +3007,7 @@ public class InternalUppaalXMLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9626:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -3056,10 +3056,10 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -3077,17 +3077,17 @@ public class InternalUppaalXMLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:13: '0'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:13: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:17: '1' .. '9' ( '0' .. '9' )*
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:17: '1' .. '9' ( '0' .. '9' )*
                     {
                     matchRange('1','9'); 
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:26: ( '0' .. '9' )*
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:26: ( '0' .. '9' )*
                     loop5:
                     do {
                         int alt5=2;
@@ -3100,7 +3100,7 @@ public class InternalUppaalXMLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9628:27: '0' .. '9'
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -3134,12 +3134,12 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_SINGLE_LINE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:26: ( '//' (~ ( ( '<' | '\\r' | '\\n' ) ) )* )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:28: '//' (~ ( ( '<' | '\\r' | '\\n' ) ) )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:26: ( '//' (~ ( ( '<' | '\\r' | '\\n' ) ) )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:28: '//' (~ ( ( '<' | '\\r' | '\\n' ) ) )*
             {
             match("//"); 
 
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:33: (~ ( ( '<' | '\\r' | '\\n' ) ) )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:33: (~ ( ( '<' | '\\r' | '\\n' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -3152,7 +3152,7 @@ public class InternalUppaalXMLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9630:33: ~ ( ( '<' | '\\r' | '\\n' ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:33: ~ ( ( '<' | '\\r' | '\\n' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -3188,12 +3188,12 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_MULTI_LINE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:25: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:27: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9636:25: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9636:27: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:32: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9636:32: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -3218,7 +3218,7 @@ public class InternalUppaalXMLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9632:60: .
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9636:60: .
             	    {
             	    matchAny(); 
 
@@ -3248,10 +3248,10 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9638:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9638:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9634:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9638:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt9=0;
             loop9:
             do {
@@ -3305,8 +3305,8 @@ public class InternalUppaalXMLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9636:16: ( . )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9636:18: .
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9640:16: ( . )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9640:18: .
             {
             matchAny(); 
 

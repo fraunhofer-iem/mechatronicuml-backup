@@ -5102,7 +5102,11 @@ ruleBlock returns [EObject current=null]
             grammarAccess.getBlockAccess().getBlockAction_1(),
             $current);
     }
-)(
+)((
+(
+ruleBlockDeclarations
+)
+)=>
 (
 		{ 
 	        newCompositeNode(grammarAccess.getBlockAccess().getDeclarationsBlockDeclarationsParserRuleCall_2_0()); 
@@ -5120,7 +5124,7 @@ ruleBlock returns [EObject current=null]
 	    }
 
 )
-)(
+)?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getBlockAccess().getStatementStatementParserRuleCall_3_0()); 
@@ -5213,7 +5217,7 @@ ruleBlockTypedDeclaration
 )
 
 )
-)*)
+)+)
 ;
 
 

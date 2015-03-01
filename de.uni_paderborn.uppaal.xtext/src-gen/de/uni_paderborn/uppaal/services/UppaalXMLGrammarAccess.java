@@ -3242,10 +3242,10 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Block returns statements::Block:
-		//	"{" {statements::Block} declarations=BlockDeclarations statement+=Statement* "}";
+		//	"{" {statements::Block} => declarations=BlockDeclarations? statement+=Statement* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"{" {statements::Block} declarations=BlockDeclarations statement+=Statement* "}"
+		//"{" {statements::Block} => declarations=BlockDeclarations? statement+=Statement* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"{"
@@ -3254,7 +3254,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//{statements::Block}
 		public Action getBlockAction_1() { return cBlockAction_1; }
 
-		//declarations=BlockDeclarations
+		//=> declarations=BlockDeclarations?
 		public Assignment getDeclarationsAssignment_2() { return cDeclarationsAssignment_2; }
 
 		//BlockDeclarations
@@ -3283,13 +3283,13 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//	{declarations::LocalDeclarations} // Syntactic predicate is used to give priority to declarations rather
 		//	// than expressions like SimpleIdentifierExpression reachable from
 		//	// Statement in the Block rule.
-		//	=> declaration+=(BlockTypedDeclaration | TypeDeclaration)*;
+		//	=> declaration+=(BlockTypedDeclaration | TypeDeclaration)+;
 		public ParserRule getRule() { return rule; }
 
 		//{declarations::LocalDeclarations} // Syntactic predicate is used to give priority to declarations rather
 		//// than expressions like SimpleIdentifierExpression reachable from
 		//// Statement in the Block rule.
-		//=> declaration+=(BlockTypedDeclaration | TypeDeclaration)*
+		//=> declaration+=(BlockTypedDeclaration | TypeDeclaration)+
 		public Group getGroup() { return cGroup; }
 
 		//{declarations::LocalDeclarations}
@@ -3298,7 +3298,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//// Syntactic predicate is used to give priority to declarations rather
 		//// than expressions like SimpleIdentifierExpression reachable from
 		//// Statement in the Block rule.
-		//=> declaration+=(BlockTypedDeclaration | TypeDeclaration)*
+		//=> declaration+=(BlockTypedDeclaration | TypeDeclaration)+
 		public Assignment getDeclarationAssignment_1() { return cDeclarationAssignment_1; }
 
 		//BlockTypedDeclaration | TypeDeclaration
@@ -7182,7 +7182,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Block returns statements::Block:
-	//	"{" {statements::Block} declarations=BlockDeclarations statement+=Statement* "}";
+	//	"{" {statements::Block} => declarations=BlockDeclarations? statement+=Statement* "}";
 	public BlockElements getBlockAccess() {
 		return pBlock;
 	}
@@ -7195,7 +7195,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{declarations::LocalDeclarations} // Syntactic predicate is used to give priority to declarations rather
 	//	// than expressions like SimpleIdentifierExpression reachable from
 	//	// Statement in the Block rule.
-	//	=> declaration+=(BlockTypedDeclaration | TypeDeclaration)*;
+	//	=> declaration+=(BlockTypedDeclaration | TypeDeclaration)+;
 	public BlockDeclarationsElements getBlockDeclarationsAccess() {
 		return pBlockDeclarations;
 	}

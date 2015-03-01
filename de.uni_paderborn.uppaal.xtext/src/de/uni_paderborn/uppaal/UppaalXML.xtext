@@ -454,7 +454,9 @@ Statement returns statements::Statement:
 Block returns statements::Block:
 	'{'
 	{statements::Block}
-	declarations=BlockDeclarations
+	(
+		=>declarations=BlockDeclarations
+	)?
 	(
 		statement+=Statement
 	)*
@@ -467,7 +469,7 @@ BlockDeclarations returns declarations::LocalDeclarations:
 		// than expressions like SimpleIdentifierExpression reachable from
 		// Statement in the Block rule.
 		=>declaration+=(BlockTypedDeclaration | TypeDeclaration)
-	)*
+	)+
 ;
 BlockTypedDeclaration returns declarations::TypedDeclaration:
 	typeDefinition=TypeExpression
