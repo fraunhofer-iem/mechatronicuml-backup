@@ -56,6 +56,7 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
+	overtakerLine_lineLight_InitApi();
 	networkInterface_VirtualWifiPort_init();
 
 	mw = Middleware_create();

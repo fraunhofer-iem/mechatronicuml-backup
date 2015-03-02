@@ -55,6 +55,48 @@ void initAll(){
 }	
 		void approacherLine_lineLight_InitApi(){
 /** Start of user code approacherLine_lineLight_InitApi **/ 
+
+	display_clear(1);
+	int ret = 55;
+
+	display_goto_xy(0,0);
+	display_string("Put on White ");
+	display_update();
+	while(ecrobot_is_ENTER_button_pressed()==0){
+		systick_wait_ms(50);
+	}
+	ret=ecrobot_LL_calibrate_White(NXT_PORT_S2);
+
+	display_goto_xy(0,0);
+	display_int(ret,3);
+	display_goto_xy(1,0);
+	display_string("Put on Black ");
+	display_update();
+	systick_wait_ms(1000);
+	while(ecrobot_is_ENTER_button_pressed()==0){
+		systick_wait_ms(50);
+	}
+	ret=ecrobot_LL_calibrate_Black(NXT_PORT_S2);
+
+	display_goto_xy(0,0);
+	display_int(ret,3);
+	display_goto_xy(1,0);
+	display_string("Put on Line ");
+	display_update();
+	systick_wait_ms(1000);
+	while(ecrobot_is_ENTER_button_pressed()==0){
+		systick_wait_ms(50);
+	}
+	ret=ecrobot_LL_Take_SetPoint_Snapshot(NXT_PORT_S2);
+
+	display_goto_xy(0,0);
+	display_int(ret,3);
+	display_goto_xy(1,0);
+	display_string("Done");
+	display_update();
+	display_clear(1);
+
+	systick_wait_ms(2000);
 		
 /**End of user code**/
 }	
