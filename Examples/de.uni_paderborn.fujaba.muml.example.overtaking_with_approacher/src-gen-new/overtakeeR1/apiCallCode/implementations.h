@@ -58,5 +58,5 @@
 		int overtakeeDistance_distanceOvertakee_ExecApi();	
 
 
-
+		void overtakeeLine_lineLight_InitApi_real();
 #endif /*APICALL_H_ */
