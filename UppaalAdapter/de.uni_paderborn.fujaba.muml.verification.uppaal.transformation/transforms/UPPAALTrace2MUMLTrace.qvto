@@ -140,9 +140,10 @@ mapping Clock :: createClockBinding(diagState : diagnosticTrace::State, instance
 	assert fatal (fittingValues->size() > 0) with log("Could not find a clock value for clock "+self.toString()+" in trace");
 	
 	if(fittingValues ->size() > 1)
-			assert fatal (false) with log("Found more than one clock value for clock "+self.toString()+" in trace");
+			assert warning (false) with log("Found more than one clock value ("+fittingValues->size().toString()+ ") for clock "+self.toString()+" in trace");
 	
-	value :=  fittingValues->first().value;
+	//value :=  fittingValues->first().value;
+	value :=  fittingValues->select(value >= 0)->sortedBy(value)->last().value;
 }
 
 ////////////////////////////////////
