@@ -51,7 +51,7 @@ void ecrobot_device_initialize()
 networkInterface_VirtualBluetoothPort_init();
 
 //initialize sensors and actors
-	initAll();
+	//initAll();
 }
 void ecrobot_device_terminate()
 {
