@@ -100,7 +100,6 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 
 	TerminateTask();
 }
-}
 
 
 TASK(Task_approacherCommunicatorComponent){
