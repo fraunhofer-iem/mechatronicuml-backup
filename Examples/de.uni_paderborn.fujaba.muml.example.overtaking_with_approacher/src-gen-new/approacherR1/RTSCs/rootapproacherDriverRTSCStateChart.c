@@ -266,12 +266,14 @@
 			// startA synchronization channel
 			if (stateChart->currentStateOfROOTAPPROACHERDRIVERRTSC_INIT_STATE_limiterPortRTSC_limiterPortRTSC
 					== ROOTAPPROACHERDRIVERRTSC_INIT_STATE_LIMITERPORTRTSC_LIMITERPORTRTSC_S1_STATE
-					&& Port_doesMessageExist(
-							ApproacherDriverComponent_getlimiterP(
-									stateChart->parentComponent),
-							MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE)
+					 && 1
+					// Port_doesMessageExist(
+					// 		ApproacherDriverComponent_getlimiterP(
+					// 				stateChart->parentComponent),
+					// 		MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE
+							)
 		
-							) {
+							 {
 				SyncChannel_enableSend(stateChart->startASyncChannel);
 			}
 			if (stateChart->currentStateOfROOTAPPROACHERDRIVERRTSC_INIT_STATE_approacherDrivingRTSC_approacherDrivingRTSC
