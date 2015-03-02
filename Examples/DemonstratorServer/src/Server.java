@@ -109,7 +109,7 @@ public class Server {
 			            	if (message == null) {
 			            		message = EMPTY_MESSAGE;
 			            	} else {
-			            		System.out.println(" -> sending msg to '" + clientName + "' at port #" + portId + ": " + message);
+			            		System.out.println(" -> sent '" + clientName + "' port #" + portId + ":\t " + Arrays.toString(message));
 			            	}
 		            	
 		            		os.write(message);
@@ -119,7 +119,7 @@ public class Server {
 			            	int portId = receive[1];
 			            	if (portId > 0) {
 			            		pushMessage(portId, receive);
-			            		System.out.println(" <- received msg from '" + clientName + "' from port #" + portId + ": " + receive);
+			            		System.out.println(" <- recv '" + clientName + "' port #" + portId + ":\t " + Arrays.toString(receive));
 			            		
 			            	} else {
 			            		System.err.println("invalid port id");
