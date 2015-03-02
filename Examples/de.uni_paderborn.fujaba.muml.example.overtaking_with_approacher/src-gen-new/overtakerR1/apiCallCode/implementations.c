@@ -47,85 +47,8 @@ void initAll(){
 /** Start of user code overtakerMotorR_velocityContR_ExecApi **/ 
 	if(doLinefollowing == 1){
 
-			if(velocity == 0){
-				power2=0;
-				power1=0;
-
-			}
-			else{
-
-				self_average[0] = 0;
-
-		    	float p = (float)pk/(float)pkd;
-
-				i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, LL_REG_RESULT, 1, result, 1, 0);
-
-				int i;
-				for (i = 0; i < 8; i++) {
-					int pos = (1 << (7-i));
-					if ((result[0] & pos) == 0) {
-						self_average[0] += (i+1)*10;
-						count++;
-					}
-				}
-
-				self_average[0] /= count;
-
-				if(count == 0)
-				{
-					//No line detected
-					
-					if(last_known_direction == 0)
-					{
-						self_average[0] = 45;
-					}
-					else if(last_known_direction == 1)
-					{
-						self_average[0] = 90;
-					}
-					else if(last_known_direction == 2)
-					{
-						self_average[0] = 0;
-					}
-
-				} 
-				else if(count == 8)
-				{
-					//robot is orthogonal to the line, drive left
-					self_average[0] = 90;
-				}
-				else if(count > 0 && count < 8) 
-				{
-					if(self_average[0] > target)
-					{
-						last_known_direction = 1;
-					}
-					else if(self_average[0] < target)
-					{
-						last_known_direction = 2;
-					}
-					else
-					{
-						last_known_direction = 0;
-					}
-				}
-
-				difference = target - self_average[0];
-
-
-			    power1=velocity-((int)(difference*p));
-			    power2=velocity+((int)(difference*p));
-
-			    if(power2>cutoff){
-			    	power2=cutoff;
-			    }
-			    if(power1>cutoff){
-			    	power1=cutoff;
-			    }
-		}
-
+		overtakerMotorL_velocityContL_ExecApi(velocity);
 	}
-
 	 else {
 	 		power2 = velocity;
 			power2_old = power2;
@@ -142,8 +65,12 @@ void initAll(){
 		
 /**End of user code**/
 }	
+
+	char str[9];
+
 		void overtakerMotorL_velocityContL_ExecApi(int velocity){
 /** Start of user code overtakerMotorL_velocityContL_ExecApi **/ 
+	count = 0;
 
 	if(doLinefollowing == 1){
 
@@ -153,7 +80,11 @@ void initAll(){
 
 			}
 			else{
+				power2= 30;
+				power1 = 30;
 
+
+				
 				self_average[0] = 0;
 
 		    	float p = (float)pk/(float)pkd;
@@ -163,11 +94,18 @@ void initAll(){
 				int i;
 				for (i = 0; i < 8; i++) {
 					int pos = (1 << (7-i));
-					if ((result[0] & pos) == 0) {
+					if ((result[0] & pos) != 0) {
+						str[i] = '_';
 						self_average[0] += (i+1)*10;
 						count++;
+					} else {
+						str[i] = 'X';
 					}
 				}
+				str[8] = '\0';
+				display_string(str);
+				display_goto_xy(0,6);
+				display_update();
 
 				self_average[0] /= count;
 
@@ -211,7 +149,19 @@ void initAll(){
 				}
 
 				difference = target - self_average[0];
+				display_goto_xy(4,6);
+    display_int(self_average[0],3);
 
+	display_goto_xy(8,6);
+    display_int(difference,3);
+
+    display_goto_xy(12,6);
+    display_int(difference*p,3);
+
+	display_goto_xy(0,0);
+    display_unsigned(last_known_direction,1);
+    
+    display_update();
 
 			    power1=velocity-((int)(difference*p));
 			    power2=velocity+((int)(difference*p));
@@ -227,12 +177,12 @@ void initAll(){
 	}
 	 else {
 	 		power1 = velocity;
-			power1_old = power2;
+			power1_old = power1;
 			power2 = power2_old;
 	 	}
 	
 	ecrobot_tetrix_motors(NXT_PORT_S1, TETRIX_ADDRESS_1,
-						TETRIX_MODE_PWM, TETRIX_MODE_PWM_REV, power1, power2);
+						TETRIX_MODE_PWM, TETRIX_MODE_PWM_REV, (S8) power1, (S8) power2);
 /**End of user code**/
 }	
 		void overtakerDistance_distance_InitApi(){
