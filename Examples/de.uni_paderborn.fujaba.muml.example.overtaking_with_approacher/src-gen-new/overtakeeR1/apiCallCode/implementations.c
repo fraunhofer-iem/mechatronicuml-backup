@@ -53,6 +53,9 @@ void initAll(){
 /**End of user code**/
 }	
 		void overtakeeLine_lineLight_InitApi(){
+
+		}
+		void overtakeeLine_lineLight_InitApi_real(){
 /** Start of user code overtakeeLine_lineLight_InitApi **/ 
 
 			display_clear(1);

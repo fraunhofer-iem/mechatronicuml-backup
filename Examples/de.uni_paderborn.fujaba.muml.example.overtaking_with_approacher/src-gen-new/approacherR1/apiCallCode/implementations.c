@@ -54,6 +54,10 @@ void initAll(){
 /**End of user code**/
 }	
 		void approacherLine_lineLight_InitApi(){
+
+		}
+
+		void approacherLine_lineLight_InitApi_real(){
 /** Start of user code approacherLine_lineLight_InitApi **/ 
 
 	display_clear(1);

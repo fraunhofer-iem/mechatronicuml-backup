@@ -56,7 +56,7 @@ void ecrobot_device_terminate()
 }
 TASK(Task_initModel){
 networkInterface_VirtualWifiPort_init();
-approacherLine_lineLight_InitApi();
+approacherLine_lineLight_InitApi_real();
 	mw = Middleware_create();
 	configureApproacherR1CIC();
 	//initialize model

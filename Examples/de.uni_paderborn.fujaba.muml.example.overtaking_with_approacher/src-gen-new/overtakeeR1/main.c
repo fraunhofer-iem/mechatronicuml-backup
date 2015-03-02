@@ -56,7 +56,7 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
-	overtakeeLine_lineLight_InitApi();
+	overtakeeLine_lineLight_InitApi_real();
 	mw = Middleware_create();
 	configureOvertakeeR1CIC();
 	//initialize model

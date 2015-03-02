@@ -238,6 +238,9 @@ void initAll(){
 /**End of user code**/
 }	
 		void overtakerLine_lineLight_InitApi(){
+
+		}
+		void overtakerLine_lineLight_InitApi_real(){
 /** Start of user code overtakerLine_lineLight_InitApi **/ 
 
 			display_clear(1);
