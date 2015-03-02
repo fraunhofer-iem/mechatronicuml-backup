@@ -216,13 +216,16 @@ mapping MessageInTransitExpr::MessageInTransitExpr2Expression() : Quantification
 		};
 		argument += object IdentifierExpression { // Uppaal message kind constant
 			identifier := self.message.oclAsType(MumlElemExpr).elem.resolveoneIn(MessageType::createMessageKindConstant).oclAsType(uppaal_core::NamedElement);
-		};
+		}; 
 	};
 }
 
 mapping StateActiveExpr::StateActiveExpr2IdentifierExpression() : uppaalExpr::ScopedIdentifierExpression {
-	var state := self.state.oclAsType(MumlElemExpr).elem.oclAsType(State);
+	var state := self.state.oclAsType(MumlElemExpr).elem.oclAsType(Vertex);
+	if (state.oclIsInvalid())
+	   log('active state:' + state.toString());
 	var location := state.resolveone(uppaal::templates::Location);
+	// log('active location:' + location.toString());
 	identifier := object IdentifierExpression {identifier := location};
 	var instance := self.state.oclAsType(MumlElemExpr).instance;
 	var templateDecls := instance.resolve(TemplateDeclaration)->union(instance.resolve(OrderedSet(TemplateDeclaration))->flatten());

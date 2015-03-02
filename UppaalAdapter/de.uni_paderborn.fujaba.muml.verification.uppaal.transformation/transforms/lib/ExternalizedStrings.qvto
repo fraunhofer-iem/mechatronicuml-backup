@@ -1,7 +1,7 @@
 library ExternalizedStrings;
 
 //NameNormalization
-property mumlPrefix = "MumlElement_";
+property mumlPrefix = "muml_";
 
 helper getUnsupportedStrings() : OrderedSet(String){
 	var unsupportedCharacters : OrderedSet(String);
@@ -17,7 +17,7 @@ property substituteString = "_"; // The String unsupported Strings are replaced 
 //Protocol2CIC
 property coordinationProtocol2CICSuffix = "CIC";
 property role2PortSuffix = "Port";
-property role2ComponentSuffix = "ComponentRTSC";
+property role2ComponentSuffix = "CompRTSC";
 
 //RTSCDoEventNormalization
 property doRtscName = "DoRTSC";

@@ -22,4 +22,5 @@
   <mapping sourceURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore"/>
   <mapping sourceURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/options" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.options/model/options.ecore"/>
   <mapping sourceURI="http://www.fujaba.de/muml/behavior/0.4.0" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore"/>
+  <mapping sourceURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/results" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.results/model/results.ecore"/>
 </uriMap:MappingContainer>

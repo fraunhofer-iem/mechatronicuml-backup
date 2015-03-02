@@ -59,8 +59,7 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	
 	property finalTransitions : Dict(Transition, Set(Transition)) = Dict{}; --maps a final transition in a chain to the set of transitions originating from it (for mtctl workaround)
 	
-	property mumlElemsToFix : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a Transition from Exit Point to non-Exit point
-	
+	property mumlElemsToFixTransFiringExpr : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a Transition from Exit Point to non-Exit point   
 	
 	main() {
 	
@@ -69,17 +68,17 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		input.objects()[RootNode]->map RootNode2RootNode();
 		
 		-- fix TransitionFiringExpr(MumlElemExpr) for transitions from an ExitPoint to a non-Exit point. This is not a good approach. Remove as soon as the hierarchy normalization is fixed with Christopher's new approach to state deactivation
-		mumlElemsToFix->forEach(mumlElemExpr) {
+		mumlElemsToFixTransFiringExpr->forEach(mumlElemExpr) {
 			var debugProp := mumlElemExpr.oclAsType(EObject)->closure(x : EObject | if not x.oclIsUndefined() and x.oclIsKindOf(Property) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property));
 			var resultingExpr : mtctl::Expression = null;
 			var transitionFiringExpr := mumlElemExpr.eContainer().oclAsType(TransitionFiringExpr);
 			assert fatal (not transitionFiringExpr.oclIsUndefined()) with log("unexpected non-TransitionFiringExpr in hierarchy normalization \"mtctl repair\"");
-			log("---");
-			log("Fixing mtctl: reference of "+mumlElemExpr.elem.oclAsType(Transition).source.name+"->"+mumlElemExpr.elem.oclAsType(Transition).target.name+" becomes:");
+			// log("---");
+			// log("Fixing mtctl: reference of "+mumlElemExpr.elem.oclAsType(Transition).source.name+"->"+mumlElemExpr.elem.oclAsType(Transition).target.name+" becomes:");
 			//Create Or-Expression of 
 			finalTransitions->get(mumlElemExpr.elem.oclAsType(Transition))->forEach(t) {
 				assert(output.objects()->includes(t)) with log ("huh?");
-				log(t.source.name+"->"+t.target.name);
+				// log(t.source.name+"->"+t.target.name);
 				if (resultingExpr.oclIsUndefined()) {
 					mumlElemExpr.elem := t;
 					resultingExpr := object TransitionFiringExpr {transition := mumlElemExpr }; //reuse the original MumlElemExpr here
@@ -96,7 +95,6 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 			output.removeElement(transitionFiringExpr);
 			output.removeElement(resultingExpr);
 		};
-		
 	}
 	
 	//Modifies the model containing self such that self is replaced with a deep clone of newExpr //TODO put this into some shared file between MTCTLNormalization and MTCTLQuantifierNormalization (and others)
@@ -106,11 +104,15 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 	}
 	
 	mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
-		if (self.elem.oclIsKindOf(State))
-			elem := self.elem.late resolveoneIn(State::State2State)
-		else if (self.elem.oclIsKindOf(Transition) and self.eContainer().oclIsKindOf(TransitionFiringExpr) and not (self.elem.oclAsType(Transition).source.oclIsKindOf(ExitPoint) implies self.elem.oclAsType(Transition).target.oclIsKindOf(ExitPoint))) {
+		if (self.elem.oclIsKindOf(Vertex)) {
+			elem := self.elem.late resolveone(State);
+		}
+		else if (self.elem.oclIsKindOf(Transition) 
+		  and self.eContainer().oclIsKindOf(TransitionFiringExpr) 
+		  and not (self.elem.oclAsType(Transition).source.oclIsKindOf(ExitPoint) 
+		  implies self.elem.oclAsType(Transition).target.oclIsKindOf(ExitPoint))) {
 			elem := self.elem; //will be corrected in main() after the transformation
-			mumlElemsToFix += result;
+			mumlElemsToFixTransFiringExpr += result;
 		} else
 			elem := self.elem.late resolveone(EObject);
 		

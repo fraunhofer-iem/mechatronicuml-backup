@@ -22,25 +22,66 @@ modeltype extension uses 'http://www.fujaba.de/muml/verification/extension/0.4.0
 modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
 modeltype mtctl uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl';
 modeltype mtctl_comparables uses mtctl::Comparables('http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl');
+modeltype mtctl_predicates uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates';
+modeltype mtctl_bool uses 'http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic';
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+property mumlElemsToFix : Set(MumlElemExpr) = Set{}; --set of mapped MumlElemExpr where the original was referencing a State
+
 
 main() {
 
 	--input.objects()[BehavioralElement].behavior->sortedByName().oclAsType(RealtimeStatechart)->map RTSC2RTSC();
 	input.objects()[RootNode]->map RootNode2RootNode();
 	
+    -- fix stateActiveExpr(MumlElemExpr) for states that contain EntryPoints and/or ExitPoints.   
+    
+    mumlElemsToFix->forEach(mumlElemExpr) {
+        // var debugProp := mumlElemExpr.oclAsType(EObject)->closure(x : EObject | if not x.oclIsUndefined() and x.oclIsKindOf(Property) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property));
+        var resultingExpr : mtctl::Expression = null;
+        var stateActiveExpr := mumlElemExpr.eContainer().oclAsType(StateActiveExpr);    
+        assert fatal (not stateActiveExpr.oclIsUndefined()) with log("unexpected non-StateActiveExpr in composite transition normalization \"mtctl repair\"");       
+        var mystate : State = mumlElemExpr.elem.oclAsType(State);
+        mumlElemExpr.elem := mystate;
+        resultingExpr := object StateActiveExpr {state := mumlElemExpr }; //reuse the original MumlElemExpr here
+        
+        mystate.connectionPoints->forEach(cp) {
+            // log("connection point " + cp.name + " found for state " + mystate.name);
+            var nextMumlElemExpr := mumlElemExpr.deepclone().oclAsType(MumlElemExpr);
+            nextMumlElemExpr.elem := cp;
+            
+            //add to resultingExpr: "... or activeState(cp)"
+            resultingExpr := object OrExpr {rightOpd := resultingExpr; leftOpd := object StateActiveExpr {state := nextMumlElemExpr}}
+        };
+        assert fatal (not resultingExpr.oclIsUndefined()) with log ("Failed to repair mtctl query after Hierarchy normalization");
+        
+        //Replace the original expression with resultingExpr in the query
+        stateActiveExpr.replaceWith(resultingExpr);
+        output.removeElement(stateActiveExpr);
+        output.removeElement(resultingExpr);
+    };
+    
 }
 
+//Modifies the model containing self such that self is replaced with a deep clone of newExpr //TODO put this into some shared file between MTCTLNormalization and MTCTLQuantifierNormalization (and others)
+helper mtctl::Expression::replaceWith(newExpr : mtctl::Expression) {
+    var containingFeature := self.oclAsType(EObject).eContainingFeature();
+    self.oclAsType(EObject).eContainer().eSet(containingFeature, newExpr.deepclone().oclAsType(EObject));
+}
+    
 mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
 	if (self.elem.oclIsKindOf(Transition))
 		elem := self.elem.late resolveoneIn(muml::realtimestatechart::Transition::Transition2Transition)
-	else if (self.elem.oclIsKindOf(State))
-		elem := self.elem.oclAsType(State).map State2State()
-	else
+	else if (self.elem.oclIsKindOf(State)) {
+		elem := self.elem.oclAsType(State).map State2State(); // SDz: will be corrected in main() after the transformation
+		mumlElemsToFix += result;
+	} else
 		elem := self.elem.late resolveone(EObject);
 	instance := self.instance.map EObject2EObject();
 }
 
+
+    
 mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
 			
 	name := self.name;

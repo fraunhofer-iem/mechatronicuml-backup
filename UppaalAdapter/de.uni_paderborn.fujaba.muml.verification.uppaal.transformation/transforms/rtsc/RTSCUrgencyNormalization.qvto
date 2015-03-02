@@ -45,7 +45,7 @@ mapping SynchronizationChannel :: SyncChannel2UrgentSyncChannel() : Synchronizat
 }
 
 mapping SynchronizationChannel :: SyncChannel2NonUrgentSyncChannel() : SynchronizationChannel when {self.urgentAndNonUrgentTransitionsSynchronize()}{
-	name := self.name+"Non-Urgent";
+	name := self.name+"NonUrgent";
 						
 	selectorType := self.selectorType;
 } 
