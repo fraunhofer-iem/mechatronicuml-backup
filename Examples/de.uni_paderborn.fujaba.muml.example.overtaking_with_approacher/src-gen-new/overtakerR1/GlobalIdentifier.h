@@ -89,3 +89,5 @@
 			#define ECU_APPROACHERR2 6 /**< Global Identifier: For the ECU: approacherR2 */
 			#define ECU_SECTIONCONTROLBRICK 7 /**< Global Identifier: For the ECU: sectionControlBrick */
 
+ 			extern int doLinefollowing = 1;
+

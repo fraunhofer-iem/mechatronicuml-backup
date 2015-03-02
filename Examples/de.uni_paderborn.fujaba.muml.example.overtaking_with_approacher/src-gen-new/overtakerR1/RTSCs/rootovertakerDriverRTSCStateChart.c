@@ -290,10 +290,11 @@
 			// startAll synchronization channel
 			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_initiatorPortRTSC_initiatorPortRTSC
 					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S11_STATE
-					&& Port_doesMessageExist(
-							OvertakerDriverComponent_getinitiatorP(
-									stateChart->parentComponent),
-							MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE)
+					&&  1
+					// Port_doesMessageExist(
+					// 		OvertakerDriverComponent_getinitiatorP(
+					// 				stateChart->parentComponent),
+					// 		MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE)
 		
 							) {
 				SyncChannel_enableSend(stateChart->startAllSyncChannel);
@@ -601,7 +602,8 @@
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_DRIVETOOPPOSITELINE_STATE;
 		
 					// execute entry actions
-		
+										doLinefollowing = 0;
+
 					stateChart->velocityR_apiValue = stateChart->Vel;
 		
 					stateChart->velocityL_apiValue = stateChart->Vel;
@@ -681,6 +683,8 @@
 					// nothing to do
 		
 					// Transition Effects (incl. clock resets)
+					doLinefollowing = 1;
+
 		
 					stateChart->velocityR_apiValue = stateChart->Vel;
 		
@@ -737,7 +741,8 @@
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_TURNRIGHT_STATE;
 		
 					// execute entry actions
-		
+					doLinefollowing = 0;
+
 					stateChart->velocityR_apiValue = 0;
 		
 					stateChart->velocityL_apiValue = stateChart->Vel;
@@ -791,6 +796,8 @@
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_DRIVETOMAINLINE_STATE;
 		
 					// execute entry actions
+												doLinefollowing = 0;
+
 		
 					stateChart->velocityR_apiValue = stateChart->Vel;
 		
@@ -851,6 +858,8 @@
 					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_statechart_statechart =
 		
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_DRIVE_STATE;
+										doLinefollowing = 1;
+
 		
 					// execute entry actions
 		
@@ -935,6 +944,7 @@
 					// nothing to do
 		
 					// Transition Effects (incl. clock resets)
+					doLinefollowing = 1;
 		
 					stateChart->velocityR_apiValue = stateChart->Vel;
 		
@@ -1005,6 +1015,7 @@
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_TURNLEFT_STATE;
 		
 					// execute entry actions
+					doLinefollowing = 0;
 		
 					stateChart->velocityR_apiValue = stateChart->Vel;
 		
