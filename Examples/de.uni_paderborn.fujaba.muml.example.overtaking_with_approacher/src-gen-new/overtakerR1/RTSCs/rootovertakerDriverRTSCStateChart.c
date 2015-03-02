@@ -53,7 +53,7 @@
 		
 			// execute entry actions
 		
-			stateChart->Vel = 0;
+			stateChart->Vel = 25;
 		
 			;
 		
@@ -411,7 +411,7 @@
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_INIT_STATE:
 				if (
 		
-				stateChart->distance_apiValue < stateChart->constOvertakeDistance
+				stateChart->distance_apiValue < stateChart->constOvertakeDistance && stateChart->distance_apiValue > stateChart->constBreakDistance
 		
 				) {
 		
@@ -924,6 +924,8 @@
 					//release all created sent events
 		
 					// change the state
+
+
 		
 					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_statechart_statechart =
 		
@@ -1038,12 +1040,17 @@
 				break;
 		
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_BREAKNOW_STATE:
+					stateChart->velocityR_apiValue = stateChart->Vel;
+					stateChart->velocityL_apiValue = stateChart->Vel;
+					
 		
 				if (
 		
 				stateChart->distance_apiValue >= stateChart->constBreakDistance
 		
 				) {
+								//ecrobot_sound_tone(440,50,50);
+
 		
 					// execute exit actions
 		
@@ -1066,6 +1073,7 @@
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_DRIVE_STATE;
 		
 					// execute entry actions
+							stateChart->Vel = 25;
 		
 					// nothing to do
 		

@@ -23,6 +23,8 @@
  	*/
 
  		void initAll();
+ 				void overtakerLine_lineLight_InitApi_real();
+
 
 /**
  * @brief Implemtation of the Parameterbinding: overtakerMotorR_velocityContR_InitApi of the Port-Instance: PortInstance: velocityContR of the ComponentInstance: overtakerMotorR 
