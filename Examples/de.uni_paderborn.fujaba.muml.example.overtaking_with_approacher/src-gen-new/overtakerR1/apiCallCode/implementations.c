@@ -5,6 +5,9 @@ static bool_t initd = false;
 static S8 power1 = 0;
 static S8 power2 = 0;
 
+static S8 power1_old = 0;
+static S8 power2_old = 0;
+
 U8 result[1];
 U8 average[1];
 int self_average[1];
@@ -42,100 +45,96 @@ void initAll(){
 }	
 		void overtakerMotorR_velocityContR_ExecApi(int velocity){
 /** Start of user code overtakerMotorR_velocityContR_ExecApi **/ 
+	if(doLinefollowing == 1){
 
-	// if(//doLinefollowing == 1 
-	// 	1){
+			if(velocity == 0){
+				power2=0;
+				power1=0;
 
-	// 	self_average[0] = 0;
+			}
+			else{
 
-	//     float p = (float)pk/(float)pkd;
+				self_average[0] = 0;
 
-	// 	i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, LL_REG_RESULT, 1, result, 1, 0);
-	// 	i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, 0x43, 1, average, 1, 0);
+		    	float p = (float)pk/(float)pkd;
 
-	// 	int i;
-	// 	for (i = 0; i < 8; i++) {
-	// 		int pos = (1 << (7-i));
-	// 		if ((result[0] & pos) == 0) {
-	// 			self_average[0] += (i+1)*10;
-	// 			count++;
-	// 		}
-	// 	}
+				i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, LL_REG_RESULT, 1, result, 1, 0);
 
-	// 	self_average[0] /= count;
+				int i;
+				for (i = 0; i < 8; i++) {
+					int pos = (1 << (7-i));
+					if ((result[0] & pos) == 0) {
+						self_average[0] += (i+1)*10;
+						count++;
+					}
+				}
 
-	// 	if(count == 0)
-	// 	{
-	// 		//No line detected
-			
-	// 		if(last_known_direction == 0)
-	// 		{
-	// 			self_average[0] = 45;
-	// 		}
-	// 		else if(last_known_direction == 1)
-	// 		{
-	// 			self_average[0] = 90;
-	// 		}
-	// 		else if(last_known_direction == 2)
-	// 		{
-	// 			self_average[0] = 0;
-	// 		}
+				self_average[0] /= count;
 
-	// 	} 
-	// 	else if(count == 8)
-	// 	{
-	// 		//robot is orthogonal to the line, drive left
-	// 		self_average[0] = 90;
-	// 	}
-	// 	else if(count > 0 && count < 8) 
-	// 	{
-	// 		if(self_average[0] > target)
-	// 		{
-	// 			last_known_direction = 1;
-	// 		}
-	// 		else if(self_average[0] < target)
-	// 		{
-	// 			last_known_direction = 2;
-	// 		}
-	// 		else
-	// 		{
-	// 			last_known_direction = 0;
-	// 		}
-	// 	}
+				if(count == 0)
+				{
+					//No line detected
+					
+					if(last_known_direction == 0)
+					{
+						self_average[0] = 45;
+					}
+					else if(last_known_direction == 1)
+					{
+						self_average[0] = 90;
+					}
+					else if(last_known_direction == 2)
+					{
+						self_average[0] = 0;
+					}
 
-	// 	difference = target - self_average[0];
+				} 
+				else if(count == 8)
+				{
+					//robot is orthogonal to the line, drive left
+					self_average[0] = 90;
+				}
+				else if(count > 0 && count < 8) 
+				{
+					if(self_average[0] > target)
+					{
+						last_known_direction = 1;
+					}
+					else if(self_average[0] < target)
+					{
+						last_known_direction = 2;
+					}
+					else
+					{
+						last_known_direction = 0;
+					}
+				}
 
-
- //    power1=velocity-((int)(difference*p));
- //    power2=velocity+((int)(difference*p));
-
- //    if(power2>cutoff){
- //    	power2=cutoff;
- //    }
- //    if(power1>cutoff){
- //    	power1=cutoff;
- //    }
+				difference = target - self_average[0];
 
 
+			    power1=velocity-((int)(difference*p));
+			    power2=velocity+((int)(difference*p));
 
-	// }
-			
+			    if(power2>cutoff){
+			    	power2=cutoff;
+			    }
+			    if(power1>cutoff){
+			    	power1=cutoff;
+			    }
+		}
 
-	// else {
+	}
 
-
-	// 		power2 = velocity;
-
-	// 		}
-	// 		//test
-	// power2 = 30;
-	power1 = velocity;
-	display_goto_xy(0,1);
-		display_int(velocity,3);
-		display_update();
-
+	 else {
+	 		power2 = velocity;
+			power2_old = power2;
+			power1 = power1_old;
+	 	}
+	
 	ecrobot_tetrix_motors(NXT_PORT_S1, TETRIX_ADDRESS_1,
 						TETRIX_MODE_PWM, TETRIX_MODE_PWM_REV, power1, power2);
+	
 /**End of user code**/
 }	
 		void overtakerMotorL_velocityContL_InitApi(){
@@ -146,93 +145,92 @@ void initAll(){
 		void overtakerMotorL_velocityContL_ExecApi(int velocity){
 /** Start of user code overtakerMotorL_velocityContL_ExecApi **/ 
 
-	// if(
-	// 	//doLinefollowing == 1
-	// 	1){
+	if(doLinefollowing == 1){
 
-	// 		self_average[0] = 0;
+			if(velocity == 0){
+				power2=0;
+				power1=0;
 
-	//     float p = (float)pk/(float)pkd;
+			}
+			else{
 
-	// 	i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, LL_REG_RESULT, 1, result, 1, 0);
-	// 	i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, 0x43, 1, average, 1, 0);
+				self_average[0] = 0;
 
-	// 	int i;
-	// 	for (i = 0; i < 8; i++) {
-	// 		int pos = (1 << (7-i));
-	// 		if ((result[0] & pos) == 0) {
-	// 			self_average[0] += (i+1)*10;
-	// 			count++;
-	// 		}
-	// 	}
+		    	float p = (float)pk/(float)pkd;
 
-	// 	self_average[0] /= count;
+				i2c_start_transaction(NXT_PORT_S2, LL_I2C_ADDR, LL_REG_RESULT, 1, result, 1, 0);
 
-	// 	if(count == 0)
-	// 	{
-	// 		//No line detected
-			
-	// 		if(last_known_direction == 0)
-	// 		{
-	// 			self_average[0] = 45;
-	// 		}
-	// 		else if(last_known_direction == 1)
-	// 		{
-	// 			self_average[0] = 90;
-	// 		}
-	// 		else if(last_known_direction == 2)
-	// 		{
-	// 			self_average[0] = 0;
-	// 		}
+				int i;
+				for (i = 0; i < 8; i++) {
+					int pos = (1 << (7-i));
+					if ((result[0] & pos) == 0) {
+						self_average[0] += (i+1)*10;
+						count++;
+					}
+				}
 
-	// 	} 
-	// 	else if(count == 8)
-	// 	{
-	// 		//robot is orthogonal to the line, drive left
-	// 		self_average[0] = 90;
-	// 	}
-	// 	else if(count > 0 && count < 8) 
-	// 	{
-	// 		if(self_average[0] > target)
-	// 		{
-	// 			last_known_direction = 1;
-	// 		}
-	// 		else if(self_average[0] < target)
-	// 		{
-	// 			last_known_direction = 2;
-	// 		}
-	// 		else
-	// 		{
-	// 			last_known_direction = 0;
-	// 		}
-	// 	}
+				self_average[0] /= count;
 
-	// 	difference = target - self_average[0];
+				if(count == 0)
+				{
+					//No line detected
+					
+					if(last_known_direction == 0)
+					{
+						self_average[0] = 45;
+					}
+					else if(last_known_direction == 1)
+					{
+						self_average[0] = 90;
+					}
+					else if(last_known_direction == 2)
+					{
+						self_average[0] = 0;
+					}
 
+				} 
+				else if(count == 8)
+				{
+					//robot is orthogonal to the line, drive left
+					self_average[0] = 90;
+				}
+				else if(count > 0 && count < 8) 
+				{
+					if(self_average[0] > target)
+					{
+						last_known_direction = 1;
+					}
+					else if(self_average[0] < target)
+					{
+						last_known_direction = 2;
+					}
+					else
+					{
+						last_known_direction = 0;
+					}
+				}
 
-	//     power1=velocity-((int)(difference*p));
-	//     power2=velocity+((int)(difference*p));
-
-	//     if(power2>cutoff){
-	//     	power2=cutoff;
-	//     }
-	//     if(power1>cutoff){
-	//     	power1=cutoff;
-	//     }
+				difference = target - self_average[0];
 
 
+			    power1=velocity-((int)(difference*p));
+			    power2=velocity+((int)(difference*p));
 
-	// 	}
-	// else {
-	// 		power1 = velocity;
-				
-	// 	}
-		//Test
-		power2=velocity;
-		display_clear(0);
-		display_goto_xy(0,0);
-		display_int(velocity,3);
-		display_update();
+			    if(power2>cutoff){
+			    	power2=cutoff;
+			    }
+			    if(power1>cutoff){
+			    	power1=cutoff;
+			    }
+		}
+
+	}
+	 else {
+	 		power1 = velocity;
+			power1_old = power2;
+			power2 = power2_old;
+	 	}
+	
 	ecrobot_tetrix_motors(NXT_PORT_S1, TETRIX_ADDRESS_1,
 						TETRIX_MODE_PWM, TETRIX_MODE_PWM_REV, power1, power2);
 /**End of user code**/
