@@ -199,8 +199,8 @@ return true;
  * to write the message content into a byte array, if needed
  */
 bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
-free(msg);
-return true;
+//free(msg);
+//return true;
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_send **/ 
 	//ssfree(msg);
 	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){ 

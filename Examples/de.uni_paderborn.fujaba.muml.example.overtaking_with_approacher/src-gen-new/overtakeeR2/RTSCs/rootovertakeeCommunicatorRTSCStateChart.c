@@ -43,6 +43,30 @@
 				stateChart->currentSec = stateChart->colorOvertakee_apiValue;
 				stateChart->secID = 2;
 			}
+			else if(stateChart->colorOvertakee_apiValue == stateChart->constSecGreen){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 3;
+					
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecBlue){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 4;
+						
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecYellow){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 5;
+						
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecOrange){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 6;
+						
+					}
 		
 			;
 		
@@ -507,11 +531,42 @@
 						stateChart->change = true;
 						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
 						stateChart->secID = 2;
-						display_goto_xy(0,1);
-				 		display_int(555,3);
+						display_goto_xy(0,2);
+				 		display_string("red   ");
 				 		display_update();
 					}
-		
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecGreen){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 3;
+						display_goto_xy(0,2);
+				 		display_string("green ");
+				 		display_update();
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecBlue){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 4;
+						display_goto_xy(0,2);
+				 		display_string("blue  ");
+				 		display_update();
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecYellow){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 5;
+						display_goto_xy(0,2);
+				 		display_string("yellow");
+				 		display_update();
+					}
+					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecOrange){
+						stateChart->change = true;
+						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->secID = 6;
+						display_goto_xy(0,2);
+				 		display_string("orange");
+				 		display_update();
+					}		
 					;
 		
 				} else {
@@ -550,6 +605,9 @@
 		
 					//send Message
 		
+					ecrobot_sound_tone(500,50,50);
+					
+					
 					MW_sendMessage(
 		
 					MW_getTargetPortIDforIdentifier(
