@@ -6,7 +6,7 @@
  */
 
 #include "MessageBuffer.h"
- #include "ecrobot_interface.h"
+ 
 
 MessageBuffer* MessageBuffer_create(queue_size_t size, bool_t mode,
 		int_t numberOfIDs, MessageID* supportedIDs) {

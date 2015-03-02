@@ -8,7 +8,6 @@
 #include "port.h"
 #include <stdio.h>
 #include "../messages/Messages.h"
-#include "ecrobot_interface.h"
 
 Port* Port_create(PortID id, int_t numberOfBuffers, MessageBuffer** msgBuffer) {
 	//alloc mem for the port
@@ -47,7 +46,7 @@ bool_t Port_addMessage(Port* port, MiddlewareMessage* msg) {
 		//printf("buffer of port %d received msg of type %d\n", (int) port->ID,(int) msg->_msgID);
 	}
 	//on error: return failure
-			
+
 	return false;
 }
 

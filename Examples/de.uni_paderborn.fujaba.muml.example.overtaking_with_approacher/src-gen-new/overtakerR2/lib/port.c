@@ -40,10 +40,10 @@ bool_t Port_addMessage(Port* port, MiddlewareMessage* msg) {
 	MessageBuffer* buf = Port_getMessageBuffer(port, (MessageID) msg->_msgID);
 	//add message to buffer
 	if (buf != NULL) {
-		MessageBuffer_enqueue(buf, msg);
+		if (MessageBuffer_enqueue(buf, msg)) {
+			return true;
+		} 
 		//printf("buffer of port %d received msg of type %d\n", (int) port->ID,(int) msg->_msgID);
-
-		return true;
 	}
 	//on error: return failure
 
@@ -61,14 +61,24 @@ MessageBuffer * Port_getMessageBuffer(Port * port, MessageID msgID) {
 }
 
 bool_t Port_doesMessageExist(Port * port, MessageID msgID) {
-	if (MessageBuffer_doesMessageExists(Port_getMessageBuffer(port, msgID),msgID)) {
-		return true;
+	MessageBuffer* buffer = Port_getMessageBuffer(port, msgID);
+	if (buffer != 0) {
+
+		if (MessageBuffer_doesMessageExists(buffer,msgID)) {
+			return true;
+		}
+		
+
 	}
 	return false;
 }
 
 MiddlewareMessage* Port_receiveMessage(Port * port, MessageID msgID) {
-	return MessageBuffer_dequeue(Port_getMessageBuffer(port, msgID));
+	MessageBuffer* buffer = Port_getMessageBuffer(port, msgID);
+	if (buffer) {
+		return MessageBuffer_dequeue(buffer);
+	}
+	return NULL;
 }
 
 void Port_destroy(Port * port) {
