@@ -52,6 +52,7 @@
  * @brief Implemtation of the Parameterbinding: approacherDistance_distance_InitApi of the Port-Instance: PortInstance: distance of the ComponentInstance: approacherDistance 
  */
 		void approacherDistance_distance_InitApi();	
+		void approacherLine_lineLight_InitApi_real();
 /**
  * @brief Implemtation of the Parameterbinding: approacherDistance_distance_ExecApi of the Port-Instance: PortInstance: distance of the ComponentInstance: approacherDistance 
  */
