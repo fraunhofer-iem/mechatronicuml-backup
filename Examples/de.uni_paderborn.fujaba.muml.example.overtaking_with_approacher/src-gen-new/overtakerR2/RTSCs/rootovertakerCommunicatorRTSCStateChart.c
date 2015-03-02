@@ -38,34 +38,34 @@
 				stateChart->change = false;
 		
 			}
-			else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
+			else if(stateChart->color_apiValue == stateChart->constSecRed){
 							//ecrobot_sound_tone(400,100,50);
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 2;
 						display_goto_xy(0,2);
 				 		display_string("red   ");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecGreen){
+					else if(stateChart->color_apiValue == stateChart->constSecGreen){
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 3;
 						display_goto_xy(0,2);
 				 		display_string("green ");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecBlue){
+					else if(stateChart->color_apiValue == stateChart->constSecBlue){
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 4;
 						display_goto_xy(0,2);
 				 		display_string("blue  ");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecYellow){
+					else if(stateChart->color_apiValue == stateChart->constSecYellow){
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 5;
 						display_goto_xy(0,2);
 				 		display_string("yellow");
@@ -639,34 +639,34 @@
 						stateChart->change = false;
 		
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecRed){
+					else if(stateChart->color_apiValue == stateChart->constSecRed){
 							//ecrobot_sound_tone(400,100,50);
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 2;
 						display_goto_xy(0,2);
 				 		display_string("red   ");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecGreen){
+					else if(stateChart->color_apiValue == stateChart->constSecGreen){
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 3;
 						display_goto_xy(0,2);
 				 		display_string("green ");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecBlue){
+					else if(stateChart->color_apiValue == stateChart->constSecBlue){
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 4;
 						display_goto_xy(0,2);
 				 		display_string("blue  ");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecYellow){
+					else if(stateChart->color_apiValue == stateChart->constSecYellow){
 						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
+						stateChart->currentSec = stateChart->color_apiValue;
 						stateChart->secID = 5;
 						display_goto_xy(0,2);
 				 		display_string("yellow");
