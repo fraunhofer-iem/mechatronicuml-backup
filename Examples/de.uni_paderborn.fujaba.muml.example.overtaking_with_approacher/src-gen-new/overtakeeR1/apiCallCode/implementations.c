@@ -40,7 +40,7 @@ void initAll(){
 }	
 		void overtakeeMotorL_velocityContR_ExecApi(int velocity){
 /** Start of user code overtakeeMotorL_velocityContR_ExecApi **/ 
-		
+		count = 0;
 	self_average[0] = 0;
 
     float p = (float)pk/(float)pkd;
