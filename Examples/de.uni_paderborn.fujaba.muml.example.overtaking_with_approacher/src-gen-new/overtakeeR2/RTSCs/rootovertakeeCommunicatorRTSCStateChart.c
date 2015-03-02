@@ -61,12 +61,6 @@
 						stateChart->secID = 5;
 						
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecOrange){
-						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
-						stateChart->secID = 6;
-						
-					}
 		
 			;
 		
@@ -559,14 +553,7 @@
 				 		display_string("yellow");
 				 		display_update();
 					}
-					else if(stateChart->colorOvertakee_apiValue == stateChart->constSecOrange){
-						stateChart->change = true;
-						stateChart->currentSec = stateChart->colorOvertakee_apiValue;
-						stateChart->secID = 6;
-						display_goto_xy(0,2);
-				 		display_string("orange");
-				 		display_update();
-					}		
+		
 					;
 		
 				} else {

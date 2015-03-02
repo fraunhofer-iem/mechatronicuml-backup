@@ -145,6 +145,9 @@
 					msg->_color_value = stateChart->color_apiValue;
 		
 					//send Message
+					display_goto_xy(0,3);
+				 	display_int(msg->_color_value,3);
+				 	display_update();
 		
 					MW_sendMessage(
 							MW_getTargetPortIDforIdentifier(
