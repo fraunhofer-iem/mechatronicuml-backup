@@ -3,13 +3,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -96,8 +100,15 @@ public class Server {
 					
 		            byte receive[] = new byte[32];
 		            if (is.read(receive) != -1) {
-		
 			            String clientName = getClientName(clientSocket.getInetAddress());
+
+	            		PrintStream out = System.out;
+		            	if (clientName.equals("SectionControl")) {
+		            		out = System.err;
+		            	}
+		            	out.println(getTime() + " " + Arrays.toString(receive));
+	            		
+	            		
 			            
 			            boolean request = receive[0] == 0;
 			            if (request) {
@@ -109,7 +120,7 @@ public class Server {
 			            	if (message == null) {
 			            		message = EMPTY_MESSAGE;
 			            	} else {
-			            		System.out.println(" -> sent '" + clientName + "' port #" + portId + ":\t " + Arrays.toString(message));
+			            		out.println(getTime() + " -> sent '" + clientName + "' port #" + portId + ":\t " + Arrays.toString(message));
 			            	}
 		            	
 		            		os.write(message);
@@ -119,10 +130,10 @@ public class Server {
 			            	int portId = receive[1];
 			            	if (portId > 0) {
 			            		pushMessage(portId, receive);
-			            		System.out.println(" <- recv '" + clientName + "' port #" + portId + ":\t " + Arrays.toString(receive));
+			            		out.println(getTime() + " <- recv '" + clientName + "' port #" + portId + ":\t " + Arrays.toString(receive));
 			            		
 			            	} else {
-			            		System.err.println("invalid port id");
+			            		System.err.println("XXXX invalid port id XXXX");
 			            	}
 			            }
 		            }
@@ -163,5 +174,11 @@ public class Server {
 			return "SectionControl";
 		}
 		return clientName;
+	}
+
+	public String getTime() {
+		DateFormat df = DateFormat.getTimeInstance(DateFormat.MEDIUM, new Locale ("de", "DE"));
+		String formattedDate = df.format (new Date ());
+		return "[" + formattedDate + "]";
 	}
 }
