@@ -20,7 +20,7 @@ MiddlewareMessage* NetworkInterface_intern_receive(void){
 U8 receive_buf[DATA_LEN];
 U8 send_buf[DATA_LEN];
 
-const U8 bd_addr[7]={0x00, 0x16, 0x53, 0x10, 0xBD, 0x02, 0x00};
+const U8 bd_addr[7]={0x00, 0x16, 0x53, 0x14, 0x97, 0x9D, 0x00};
 
 /**End of user code**/
 
