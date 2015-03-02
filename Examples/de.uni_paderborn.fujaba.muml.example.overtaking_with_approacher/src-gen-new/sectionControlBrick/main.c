@@ -47,7 +47,6 @@ void user_1ms_isr_type2(void){
 void ecrobot_device_initialize()
 {
 //initialize all network interfaces
-//networkInterface_VirtualWifiPort_init();
 networkInterface_VirtualBluetoothPort_init();
 
 //initialize sensors and actors

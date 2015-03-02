@@ -50,7 +50,6 @@ void ecrobot_device_initialize()
 {
 //initialize all network interfaces
 networkInterface_VirtualBluetoothPort_init();
-//networkInterface_VirtualWifiPort_init();
 //networkInterface_UsbPort_init();
 networkInterface_InputPort4_init();
 
