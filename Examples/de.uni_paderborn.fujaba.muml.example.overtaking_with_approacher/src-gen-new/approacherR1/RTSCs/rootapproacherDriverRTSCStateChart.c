@@ -394,7 +394,8 @@
 				RootapproacherDriverRTSCStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTAPPROACHERDRIVERRTSC_INIT_STATE_limiterPortRTSC_limiterPortRTSC) {
 			case ROOTAPPROACHERDRIVERRTSC_INIT_STATE_LIMITERPORTRTSC_LIMITERPORTRTSC_S1_STATE:
-				if (SyncChannel_send((SyncChannel*) stateChart->startASyncChannel)
+				if (1
+						//SyncChannel_send((SyncChannel*) stateChart->startASyncChannel)
 		
 				) {
 					MiddlewareMessage* mwMsg = Port_receiveMessage(
