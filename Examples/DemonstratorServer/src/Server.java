@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,6 +11,7 @@ import java.net.Socket;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -20,10 +22,12 @@ import java.util.concurrent.Executors;
 
 public class Server {
 	
+	public static boolean OPTIMIZE_PORTID_DELIVERY = true;
+	
 	public static final byte[] EMPTY_MESSAGE = new byte[32]; // 32 zeroes
 	public static final byte[] START_MESSAGE = new byte[] { 2, 20, 6, 8, 20, 16, 14, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-	
+	private Map<InetAddress, List<Integer>> registeredPortsIds = new HashMap<InetAddress, List<Integer>>();
 	private Map<Integer, List<byte[]>> messages = new HashMap<Integer, List<byte[]>>();
 
     public static void main(String[] args) throws IOException {
@@ -102,21 +106,39 @@ public class Server {
 		            if (is.read(receive) != -1) {
 			            String clientName = getClientName(clientSocket.getInetAddress());
 
-	            		PrintStream out = System.out;
-		            	if (clientName.equals("SectionControl")) {
-		            		out = System.err;
-		            	}
-		            	out.println(getTime() + " " + Arrays.toString(receive));
-	            		
-	            		
+			            boolean quietDebug = false;
 			            
+			            PrintStream out = System.out;
+		            	if (clientName.equals("ApproacherR2")) {
+		            		out = System.err;
+		            	} else {
+		            		quietDebug = false; // XXX remove
+		            	}
+		            	
+		            	
+		            	if (quietDebug) {	
+		            		out = new PrintStream(new ByteArrayOutputStream());
+		            	}
+		            	
+	            		out.println(getTime() + " ?? qry  '" + clientName + "'\t" + Arrays.toString(receive));
+		            	
 			            boolean request = receive[0] == 0;
 			            if (request) {
 			            	int portId = receive[1];
+			            	byte[] message = null;
 			            	if (portId == 0) {
-			            		pushMessage(0, START_MESSAGE);
+			            		message = START_MESSAGE;
+			            	} else if (OPTIMIZE_PORTID_DELIVERY) {
+			            		addPortIdRegistration(clientSocket.getInetAddress(), portId);
+			            		for (int otherPortId : getPortIds(clientSocket.getInetAddress())) {
+			            			message = popMessage(otherPortId);
+			            			if (message != null) {
+			            				break;
+			            			}
+			            		}
+			            	} else {
+			            		message = popMessage(portId);
 			            	}
-			            	byte[] message = popMessage(portId);
 			            	if (message == null) {
 			            		message = EMPTY_MESSAGE;
 			            	} else {
@@ -174,6 +196,25 @@ public class Server {
 			return "SectionControl";
 		}
 		return clientName;
+	}
+
+	public List<Integer> getPortIds(InetAddress inetAddress) {
+		List<Integer> portIds = registeredPortsIds.get(inetAddress);
+		if (portIds == null) {
+			portIds = Collections.emptyList();
+		}
+		return portIds;
+	}
+	
+	public void addPortIdRegistration(InetAddress inetAddress, int portId) {
+		List<Integer> portIds = registeredPortsIds.get(inetAddress);
+		if (portIds == null) {
+			portIds = new ArrayList<Integer>();
+			registeredPortsIds.put(inetAddress, portIds);
+		}
+		if (!portIds.contains(portIds)) {
+			portIds.add(portId);
+		}
 	}
 
 	public String getTime() {
