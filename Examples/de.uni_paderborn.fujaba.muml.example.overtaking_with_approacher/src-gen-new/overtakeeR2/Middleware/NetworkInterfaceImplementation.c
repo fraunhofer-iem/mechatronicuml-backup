@@ -55,8 +55,8 @@ return true;
 bool_t networkInterface_VirtualBluetoothPort_send(MiddlewareMessage * msg){
 /** @TODO Start of user code networkInterface_VirtualBluetoothPort_send **/ 
 
-//	MiddlewareMessage_write_delimited_to(msg, send_buf, 0);
-//		ecrobot_send_bt_packet(send_buf, DATA_LEN);
+	MiddlewareMessage_write_delimited_to(msg, send_buf, 0);
+		ecrobot_send_bt_packet(send_buf, DATA_LEN);
 
 /**End of user code**/
 //free the allocated memory for the message after it has been sent
@@ -74,7 +74,6 @@ return true;
  * @return the received MiddlewareMessage
  */
 MiddlewareMessage * networkInterface_VirtualBluetoothPort_receive(void){
-return NULL;
 	if((ecrobot_read_bt_packet(receive_buf, DATA_LEN)) <= 0){
 		return NULL;
 		}
@@ -174,7 +173,7 @@ bool_t networkInterface_VirtualWifiPort_init(void){
    displayip(tcptarget);
 */
 
-   while(!ecrobot_wb_wifi_isconnected(NXT_PORT_S3))
+    while(!ecrobot_wb_wifi_isconnected(NXT_PORT_S3))
    {
    	/*
    		display_goto_xy(0,7);
@@ -184,6 +183,7 @@ bool_t networkInterface_VirtualWifiPort_init(void){
    				 
 
    }
+
 /**End of user code**/
 //standard return value
 return true;
@@ -199,8 +199,6 @@ return true;
  * to write the message content into a byte array, if needed
  */
 bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
-//free(msg);
-//return true;
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_send **/ 
 	//ssfree(msg);
 	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){ 

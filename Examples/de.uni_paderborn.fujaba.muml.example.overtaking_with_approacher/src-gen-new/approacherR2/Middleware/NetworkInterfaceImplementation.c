@@ -163,22 +163,16 @@ bool_t networkInterface_VirtualWifiPort_init(void){
    displayip(tcptarget);
 */
 
-   if(!ecrobot_wb_wifi_isconnected(NXT_PORT_S3))
+   while(!ecrobot_wb_wifi_isconnected(NXT_PORT_S3))
    {
    	/*
    		display_goto_xy(0,7);
    		display_string("waiting f. wifi");
    		display_update();
    	*/
-   }else
-   {
+   				 
 
-   //Show that wifi is connected now
-	display_goto_xy(11, 4);
-	display_string("[WF]");
-	display_update();
-	}
-
+   }
 /**End of user code**/
 //standard return value
 return true;
@@ -193,51 +187,28 @@ return true;
  * hint: use the protobuf method MiddlewareMessage_write_with_tag(struct MiddlewareMessage *_MiddlewareMessage, void *_buffer, int offset, int tag)
  * to write the message content into a byte array, if needed
  */
-bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage* msg){
+bool_t networkInterface_VirtualWifiPort_send(MiddlewareMessage * msg){
 	/** @TODO Start of user code networkInterface_VirtualWifiPort_send **/ 
+	//ssfree(msg);
+	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){ 
+		memset(send_buf,0,DATA_LEN);
 
-	MiddlewareMessage_write_delimited_to(msg, send_buf, 0);
+		//no request
+		send_buf[0] = 1;
+		send_buf[1] = msg->_targetPort;
+
+		MiddlewareMessage_write_delimited_to(msg, send_buf, 2);
 	   
-	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, send_buf, DATA_LEN);
-
-	//actual sending
-	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3))
-	{
-		/*
-			display_goto_xy(0,7);
-			display_string("waiting f. con");
-			display_update();
-		*/
+		ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, send_buf, DATA_LEN);
+		ecrobot_wb_tcp_send(NXT_PORT_S3);
+		free(msg);
+		msg = NULL;
+		//if we are reaching this statement, everything went ok
+		return true;
 	}
+	return false;
 
-	ecrobot_wb_tcp_send(NXT_PORT_S3);
-
-	/*
-		display_goto_xy(0,7);
-		display_string("sending        ");
-		display_update();
-	*/
-
-	//wait for tcp to be "done" before reading received messages
-	while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
-	{
-	   ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
-
-	/*
-	   //display the stuff
-	   display_goto_xy(0, 6);
-	   display_string((char*)received);
-	   display_update();
-	*/
-	}
-
-
-	/**End of user code**/
-	//free the allocated memory for the message after it has been sent
-	free(msg);
-	msg = NULL;
-	//if we are reaching this statement, everything went ok
-	return true;
+	
 }
 
 
@@ -256,66 +227,84 @@ int myPortIds[14] = { PORT_APPROACHERMOTORRMOTORVELOCITYCONTR, PORT_APPROACHERMO
 static int counter = 0;
 
 
-MiddlewareMessage* networkInterface_VirtualWifiPort_receive(void){
-	//create new MiddlewareMessage
-	MiddlewareMessage * reqMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
-	U8* received;
+MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
+//return NULL;
+			 
 
-	//String such that the server knows we request a message
-	strcpy(reqMessage->_mumlMsg, "Req msg!(WK6Hmq)"); 
+	if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){ 
+		memset(receive_buf,0,DATA_LEN);
+		// MiddlewareMessage msg;
+		// msg._targetPort = 20;
+		// msg._msgID = 14;
+		// msg._mumlMsg_len =0;
+			 
 
-	reqMessage->_targetPort = myPortIds[counter];
-	counter ++;
-	if(counter == 14)
-		counter = 0;
+		///////////////////////////////
+		/** @TODO Start of user code networkInterface_VirtualWifiPort_receive **/ 
 
-	reqMessage->_mumlMsg_len = strlen(reqMessage->_mumlMsg);
-
-	MiddlewareMessage_write_delimited_to(reqMessage, receive_buf, 0);
-	free(reqMessage);
-
-	ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
-
-	//sending of the request
-	while(!ecrobot_wb_tcp_is_ready(NXT_PORT_S3))
-	{
-		/*
-		display_goto_xy(0,7);
-		display_string("waiting f. con");
-		display_update();
-		*/
-	}
-	ecrobot_wb_tcp_send(NXT_PORT_S3);
-	/*
-	display_goto_xy(0,7);
-	display_string("sending        ");
-	display_update();
-	*/
-
-	while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
-	{
-		received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+		//String such that the server knows we request a message
+		//strcpy(reqMessage._mumlMsg, "Req msg!(WK6Hm)"); 
+		
+		//The target port for which we want to receive a message
 
 		/*
-		//display the stuff
-		display_goto_xy(0, 6);
-		display_string("               ");
-		display_string((char*)mwmsg->_mumlMsg);
-		display_update();
-		*/
-	}
+			TODO: (Idea) Every time this function gets called we need to check for one of our PortIDs.
+			I think a simple solution is that we just check for a different PortID,
+			every time this function gets called
+		*/	
 
-	if(received <= 0){
-		return NULL;
+		counter++;
+		if(counter == 15)
+			counter = 0;
+		//request message
+		receive_buf[0]=0;
+		receive_buf[1]=myPortIds[counter];
+		//MiddlewareMessage_write_delimited_to(&msg, receive_buf, 2);
+		ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, DATA_LEN);
+		ecrobot_wb_tcp_send(NXT_PORT_S3);
+
+					 
+
+		while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
+		{
+			 
 		}
-	else{
-		//read the buffer and create the middlewareMessage
-		MiddlewareMessage * tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
-		MiddlewareMessage_read_delimited_from(received, tmpMessage, 0);
-		return tmpMessage;
+		U8* received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+		if(received <= 0){
+			return NULL;
 		}
-	//return the received message
+		else{
+						 
+
+			//read the buffer and create the middlewareMessage
+			//the server respone,
+			//if first byte != 0 , server response is MiddlewareMessage with offset 2
+			if(received[0] != 0){
+				MiddlewareMessage* tmpMessage = (MiddlewareMessage*) malloc(sizeof(MiddlewareMessage));
+				MiddlewareMessage_read_delimited_from(received, tmpMessage, 2);
+							 
+
+				// display_goto_xy(0,0);
+				// display_clear(0);
+				// display_int(tmpMessage->_targetPort,3);
+				// display_goto_xy(0,1);
+				// display_int(tmpMessage->_msgID,3);
+				// if(tmpMessage->_msgID==MESSAGE_CHANGEOVERTAKINGMESSAGESMESSAGE){
+				// 	struct changeOvertakingMessagesMessage msg;
+				// 	changeOvertakingMessagesMessage_read_delimited_from(tmpMessage->_mumlMsg,&msg,0);
+				// 	display_goto_xy(0,3);
+				// 	display_int(msg._secID,3);
+				// }
+				// display_update();
+				return tmpMessage;
+			}
+
+		}
+	}
+	
 	return NULL;
+
+	
 }
 
 	

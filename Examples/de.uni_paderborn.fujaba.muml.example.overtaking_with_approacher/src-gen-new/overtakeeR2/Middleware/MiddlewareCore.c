@@ -97,7 +97,7 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 	if(MW_getTargetECU(nwMsg->_targetPort) == mw->idOfECU){
 		Port* port = MW_getPortforIdentifier(nwMsg->_targetPort);
 
-	
+
 
 		return Port_addMessage(port, nwMsg);
 
