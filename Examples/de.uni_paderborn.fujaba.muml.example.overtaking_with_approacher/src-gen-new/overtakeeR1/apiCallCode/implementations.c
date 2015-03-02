@@ -103,6 +103,10 @@ void initAll(){
 
     power1=velocity-((int)(difference*p));
     power2=velocity+((int)(difference*p));
+    if(velocity == 0){
+    	power2 = 0;
+    	power1 = 0;
+    }
 
     if(power2>cutoff){
     	power2=cutoff;
