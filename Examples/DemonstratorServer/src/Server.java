@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -96,17 +97,19 @@ public class Server {
 		            byte receive[] = new byte[32];
 		            if (is.read(receive) != -1) {
 		
-			            System.out.println(Arrays.toString(receive));
+			            String clientName = getClientName(clientSocket.getInetAddress());
 			            
 			            boolean request = receive[0] == 0;
 			            if (request) {
 			            	int portId = receive[1];
+			            	if (portId == 0) {
+			            		pushMessage(0, START_MESSAGE);
+			            	}
 			            	byte[] message = popMessage(portId);
 			            	if (message == null) {
 			            		message = EMPTY_MESSAGE;
-			            		System.out.println(" -> no message for port id #" + portId);
 			            	} else {
-			            		System.out.println(" -> sending message for port id #" + portId);
+			            		System.out.println(" -> sending msg to '" + clientName + "' at port #" + portId + ": " + message);
 			            	}
 		            	
 		            		os.write(message);
@@ -116,7 +119,7 @@ public class Server {
 			            	int portId = receive[1];
 			            	if (portId > 0) {
 			            		pushMessage(portId, receive);
-			            		System.out.println("pushed message for port id #" + portId);
+			            		System.out.println(" <- received msg from '" + clientName + "' from port #" + portId + ": " + receive);
 			            		
 			            	} else {
 			            		System.err.println("invalid port id");
@@ -144,4 +147,21 @@ public class Server {
         	System.out.println();
         }
     }
+
+	public String getClientName(InetAddress inetAddress) {
+		String clientName = inetAddress.toString().substring(1);
+		if (clientName.equals("192.168.0.103")) {
+			return "ApproacherR2";
+		}
+		if (clientName.equals("192.168.0.104")) {
+			return "OvertakeeR2";
+		}
+		if (clientName.equals("192.168.0.105")) {
+			return "OvertakerR2";
+		}
+		if (clientName.equals("192.168.0.102")) {
+			return "SectionControl";
+		}
+		return clientName;
+	}
 }
