@@ -19,6 +19,9 @@
 #include "Middleware/MiddlewareCore.h"
 
 
+int doLinefollowing = 1;
+
+
 //declaring the middleware
 Middleware *mw;
 
