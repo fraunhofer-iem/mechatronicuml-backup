@@ -92,9 +92,17 @@ bool_t MW_sendMessage(PortID targetPort, MessageID id, void *msg){
 			nwMsg->_mumlMsg_len = 0;
 			break;
 	}
-	
-	NetworkMessageBuffer_enqueue(mw->outgoing, nwMsg);
-	return true;
+	//check if we have a local message
+	if(MW_getTargetECU(nwMsg->_targetPort) == mw->idOfECU){
+		Port* port = MW_getPortforIdentifier(nwMsg->_targetPort);
+
+		return Port_addMessage(port, nwMsg);
+
+	}
+	else{
+		return	NetworkMessageBuffer_enqueue(mw->outgoing, nwMsg);
+
+	}
 }
 
 /*
