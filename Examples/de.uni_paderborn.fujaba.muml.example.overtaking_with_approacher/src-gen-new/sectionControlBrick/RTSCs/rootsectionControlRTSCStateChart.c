@@ -62,10 +62,10 @@
 		void RootsectionControlRTSCStateChart_initialize(
 				RootsectionControlRTSCStateChart* stateChart) {
 		
-			stateChart->secIDapproacher = 0;
-			stateChart->secIDovertakee = 0;
-			stateChart->constNumSecDifference = 2;
-			stateChart->secIDovertaker = 0;
+			stateChart->secIDapproacher = 5;
+			stateChart->secIDovertakee = 2;
+			stateChart->constNumSecDifference = 0;
+			stateChart->secIDovertaker = 1;
 		
 			stateChart->currentStateOfRootsectionControlRTSC =
 					ROOTSECTIONCONTROLRTSC_INIT_STATE;
@@ -432,10 +432,11 @@
 		
 				if (
 		
-				stateChart->secIDovertakee - stateChart->secIDapproacher
+			//	stateChart->secIDovertakee - stateChart->secIDapproacher
 		
-				<= stateChart->constNumSecDifference
+			//	< stateChart->constNumSecDifference
 		
+				0
 				) {
 		
 					// execute exit actions
@@ -476,10 +477,11 @@
 		
 				} else if (
 		
-				stateChart->secIDovertakee - stateChart->secIDapproacher
+			//	stateChart->secIDovertakee - stateChart->secIDapproacher
 		
-				> stateChart->constNumSecDifference
+			//	>= stateChart->constNumSecDifference
 		
+				1
 				) {
 		
 					// execute exit actions
