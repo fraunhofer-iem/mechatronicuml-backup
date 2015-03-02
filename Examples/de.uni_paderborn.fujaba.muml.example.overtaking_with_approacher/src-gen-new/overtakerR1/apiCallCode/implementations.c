@@ -45,7 +45,7 @@ void initAll(){
 
 			if(doLinefollowing == 1){
 
-				elf_average[0] = 0;
+				self_average[0] = 0;
 
     float p = (float)pk/(float)pkd;
 
@@ -139,7 +139,7 @@ void initAll(){
 
 			if(doLinefollowing == 1){
 
-				elf_average[0] = 0;
+				self_average[0] = 0;
 
     float p = (float)pk/(float)pkd;
 

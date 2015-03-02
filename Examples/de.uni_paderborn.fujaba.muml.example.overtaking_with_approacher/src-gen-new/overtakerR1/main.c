@@ -56,6 +56,8 @@ void ecrobot_device_terminate()
 {
 }
 TASK(Task_initModel){
+	doLinefollowing = 1;
+
 	overtakerLine_lineLight_InitApi_real();
 	networkInterface_VirtualWifiPort_init();
 
