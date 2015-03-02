@@ -17,6 +17,7 @@
 #include "lib/NetworkInterface.h"
 #include "Middleware/NetworkInterfaceImplementation.h"
 #include "Middleware/MiddlewareCore.h"
+#include "GlobalIdentifier.h"
 
 int doLinefollowing = 1;
 

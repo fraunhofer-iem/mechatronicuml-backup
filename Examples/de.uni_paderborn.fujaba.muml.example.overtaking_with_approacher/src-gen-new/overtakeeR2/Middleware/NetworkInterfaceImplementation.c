@@ -264,7 +264,7 @@ MiddlewareMessage * networkInterface_VirtualWifiPort_receive(void){
 		*/	
 
 		counter++;
-		if(counter == 15)
+		if(counter == sizeof(myPortIds) / sizeof(int))
 			counter = 0;
 		//request message
 		receive_buf[0]=0;
