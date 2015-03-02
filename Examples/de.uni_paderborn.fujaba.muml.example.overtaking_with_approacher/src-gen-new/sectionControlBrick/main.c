@@ -28,12 +28,20 @@ DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
 DeclareTask(Task_sectionComponent);
+DeclareCounter(SysTimerCnt);
 
 
 
-
+int i = 0;
 /* nxtOSEK hook to be invoked from an ISR in category 2 */
-void user_1ms_isr_type2(void){ /* do nothing */ }
+void user_1ms_isr_type2(void){ 
+	StatusType ercd;
+
+	ercd = SignalCounter(SysTimerCnt); /* Increment OSEK Alarm Counter */
+	if (ercd != E_OK) {
+		ShutdownOS(ercd);
+	}
+}
 
 /* LEJOS OSEK hooks */
 void ecrobot_device_initialize()
@@ -43,6 +51,7 @@ void ecrobot_device_initialize()
 networkInterface_VirtualBluetoothPort_init();
 
 //initialize sensors and actors
+	initAll();
 }
 void ecrobot_device_terminate()
 {
@@ -60,19 +69,33 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	NetworkInterface_init(mw->virtualBluetoothPort,networkInterface_VirtualBluetoothPort_init, networkInterface_VirtualBluetoothPort_send, networkInterface_VirtualBluetoothPort_receive);
 	NetworkInterface_init(mw->VirtualWifiPort3,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 	NetworkInterface_init(mw->VirtualWifiPort2,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
-ChainTask(Task_Main);
+
+	while(true) {
+		U8 receive_buf[32];
+		if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){
+			memset(receive_buf,0,32);
+		
+			ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, 32);
+			ecrobot_wb_tcp_send(NXT_PORT_S3);
+
+					 
+
+			while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
+			{
+				 
+			}
+			U8* received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+			if(received[0] == 2){ // 2 means this is a START message.
+				ecrobot_sendData_rs485(received,0, 32);
+				break;
+			}
+		}
+		systick_wait_ms(5);
+	}
+	
+	TerminateTask();
 }
 
-
-TASK(Task_Main){
-
-	//Activate a task per component instance
-		ActivateTask(Task_sectionComponent);
-	ActivateTask(Task_MsgExchange);
-
-
-TerminateTask();
-}
 
 TASK(Task_sectionComponent){
 	SectionControlComponent_processStep(mw->sectionComponent);
@@ -83,5 +106,5 @@ TASK(Task_MsgExchange){
 	    MW_NIsendMessages();
 		MW_NIreceiveMessages();
         MW_deliverReceivedMessages();
-ChainTask(Task_Main);
+        TerminateTask();
 }

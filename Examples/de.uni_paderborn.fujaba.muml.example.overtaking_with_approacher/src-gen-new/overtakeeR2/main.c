@@ -24,12 +24,10 @@ Middleware *mw;
 
 
 //declare used OSEK tasks and counter
-//DeclareTask(Task_Main);
 DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
 DeclareTask(Task_overtakeeCommunicatorComponent);
 DeclareTask(Task_overtakeeColorComponent);
-//DeclareTask(Background);
 DeclareCounter(SysTimerCnt);
 
 
@@ -42,7 +40,8 @@ void user_1ms_isr_type2(void){
 	ercd = SignalCounter(SysTimerCnt); /* Increment OSEK Alarm Counter */
 	if (ercd != E_OK) {
 		ShutdownOS(ercd);
-	} }
+	}
+}
 
 /* LEJOS OSEK hooks */
 void ecrobot_device_initialize()
@@ -95,23 +94,9 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 		}
 		systick_wait_ms(5);
 	}
-
-//ChainTask(Task_Main);
 	
 	TerminateTask();
 }
-
-
-/* TASK(Task_Main){
-
-	//Activate a task per component instance
-		ActivateTask(Task_overtakeeCommunicatorComponent);
-		ActivateTask(Task_overtakeeColorComponent);
-	ActivateTask(Task_MsgExchange);
-
-
-TerminateTask();
-} */
 
 TASK(Task_overtakeeCommunicatorComponent){
 	
@@ -131,13 +116,4 @@ TASK(Task_MsgExchange){
 		MW_NIreceiveMessages();
         MW_deliverReceivedMessages();
         TerminateTask();
-//ChainTask(Task_Main);
 }
-
-//TASK(Background){
-	//while(1)
-//	{
-//		ecrobot_process_bg_nxtcolorsensor(); // communicates with NXT Color Sensor (this must be executed repeatedly in a background Task)
-//	}
-
-//}

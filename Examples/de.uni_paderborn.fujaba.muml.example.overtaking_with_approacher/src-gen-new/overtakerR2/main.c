@@ -29,12 +29,21 @@ DeclareTask(Task_initModel);
 DeclareTask(Task_MsgExchange);
 DeclareTask(Task_overtakerCommunicatorComponent);
 DeclareTask(Task_overtakerColorComponent);
+DeclareCounter(SysTimerCnt);
 
 
 
 
+int i = 0;
 /* nxtOSEK hook to be invoked from an ISR in category 2 */
-void user_1ms_isr_type2(void){ /* do nothing */ }
+void user_1ms_isr_type2(void){ 
+	StatusType ercd;
+
+	ercd = SignalCounter(SysTimerCnt); /* Increment OSEK Alarm Counter */
+	if (ercd != E_OK) {
+		ShutdownOS(ercd);
+	}
+}
 
 /* LEJOS OSEK hooks */
 void ecrobot_device_initialize()
@@ -45,7 +54,7 @@ networkInterface_InputPort4_init();
 networkInterface_UsbPort_init();
 
 //initialize sensors and actors
-		initAll();
+	initAll();
 
 }
 void ecrobot_device_terminate()
@@ -64,27 +73,43 @@ NetworkInterface_init(mw->intern, NetworkInterface_intern_init, NetworkInterface
 	NetworkInterface_init(mw->VirtualWifiPort,networkInterface_VirtualWifiPort_init, networkInterface_VirtualWifiPort_send, networkInterface_VirtualWifiPort_receive);
 	NetworkInterface_init(mw->inputPort4,networkInterface_InputPort4_init, networkInterface_InputPort4_send, networkInterface_InputPort4_receive);
 	NetworkInterface_init(mw->usbPort,networkInterface_UsbPort_init, networkInterface_UsbPort_send, networkInterface_UsbPort_receive);
-ChainTask(Task_Main);
+
+	while(true) {
+		U8 receive_buf[32];
+		if(ecrobot_wb_tcp_is_ready(NXT_PORT_S3)){
+			memset(receive_buf,0,32);
+		
+			ecrobot_wb_tcp_tx_write_data(NXT_PORT_S3, receive_buf, 32);
+			ecrobot_wb_tcp_send(NXT_PORT_S3);
+
+					 
+
+			while(!ecrobot_wb_tcp_is_done(NXT_PORT_S3))
+			{
+				 
+			}
+			U8* received = ecrobot_wb_tcp_rx_read_data(NXT_PORT_S3);
+			if(received[0] == 2){ // 2 means this is a START message.
+				ecrobot_sendData_rs485(received,0, 32);
+				break;
+			}
+		}
+		systick_wait_ms(5);
+	}
+	
+	TerminateTask();
 }
 
-
-TASK(Task_Main){
-
-	//Activate a task per component instance
-		ActivateTask(Task_overtakerCommunicatorComponent);
-		ActivateTask(Task_overtakerColorComponent);
-	ActivateTask(Task_MsgExchange);
-
-
-TerminateTask();
-}
 
 TASK(Task_overtakerCommunicatorComponent){
-	OvertakerCommunicatorComponent_processStep(mw->overtakerCommunicatorComponent);
+	
+		
 	TerminateTask();
 }	
 TASK(Task_overtakerColorComponent){
 	ColorComponent_processStep(mw->overtakerColorComponent);
+OvertakerCommunicatorComponent_processStep(mw->overtakerCommunicatorComponent);
+	
 	TerminateTask();
 }	
 
@@ -92,5 +117,5 @@ TASK(Task_MsgExchange){
 	    MW_NIsendMessages();
 		MW_NIreceiveMessages();
         MW_deliverReceivedMessages();
-ChainTask(Task_Main);
+        TerminateTask();
 }

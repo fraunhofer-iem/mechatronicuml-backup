@@ -18,15 +18,6 @@ CPU ATMEL_AT91SAM7S256
   	/* Definition of application mode */
   	APPMODE appmode1{};
 
-  /* Main Task - starts tasks for processing steps in automaton */
-  TASK Task_Main
-	{
-		AUTOSTART = FALSE;
-		PRIORITY = 1;
-		ACTIVATION = 1;
-		SCHEDULE = NON;
-		STACKSIZE = 512;
-	};
 
 
   /* Initialize Model and other stuff */
@@ -36,9 +27,9 @@ CPU ATMEL_AT91SAM7S256
 	  {
 		APPMODE = appmode1;
       };
-      PRIORITY = 10;
+      PRIORITY = 6;
       ACTIVATION = 1;
-      SCHEDULE = NON;
+      SCHEDULE = FULL;
       STACKSIZE = 512;
     };
 
@@ -46,9 +37,9 @@ CPU ATMEL_AT91SAM7S256
   TASK Task_MsgExchange
     {
       AUTOSTART = FALSE;
-      PRIORITY = 1;
+      PRIORITY = 2;
       ACTIVATION = 1;
-      SCHEDULE = NON;
+      SCHEDULE = FULL;
       STACKSIZE = 512;
     };
 
@@ -56,11 +47,54 @@ CPU ATMEL_AT91SAM7S256
 		 TASK Task_sectionComponent
 		   {
 		     AUTOSTART = FALSE;
-		     PRIORITY = 2; //standard priority
+		     PRIORITY = 3; //standard priority
 		     ACTIVATION = 1;
-		     SCHEDULE = NON;
+		     SCHEDULE = FULL;
 		     STACKSIZE = 512;
 		   };
 		 
+		 
+/* Definition of OSEK Alarm Counter */
+  COUNTER SysTimerCnt
+  {
+    MINCYCLE = 1;
+    MAXALLOWEDVALUE = 10000;
+    TICKSPERBASE = 1; /* One tick is equal to 1msec */ 
+  };
+
+
+/* Definition of Task2 execution timing */
+  ALARM cyclic_alarm
+  {
+    COUNTER = SysTimerCnt;
+    ACTION = ACTIVATETASK
+    {
+        TASK = Task_sectionComponent;
+    };
+    AUTOSTART = TRUE
+    {
+        ALARMTIME = 1;
+        CYCLETIME = 20;
+        APPMODE = appmode1;
+    };
+  };
+
+
+   /* Definition of Task2 execution timing */
+  ALARM cyclic_alarm3
+  {
+    COUNTER = SysTimerCnt;
+    ACTION = ACTIVATETASK
+    {
+        TASK = Task_MsgExchange;
+    };
+    AUTOSTART = TRUE
+    {
+        ALARMTIME = 1;
+        CYCLETIME = 100;
+        APPMODE = appmode1;
+    };
+  };
+  		
 };
 /* ----- End Of File ----- */

@@ -64,16 +64,6 @@ CPU ATMEL_AT91SAM7S256
 		   };
 
 
-  /*  TASK Background
-       {
-         AUTOSTART = TRUE;
-         PRIORITY = 1; //standard priority
-         ACTIVATION = 1;
-         SCHEDULE = FULL;
-         STACKSIZE = 512;
-       };
-*/
-
 /* Definition of OSEK Alarm Counter */
   COUNTER SysTimerCnt
   {
