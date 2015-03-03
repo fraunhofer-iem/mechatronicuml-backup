@@ -6,6 +6,7 @@
 		#include <stdlib.h>
 		#include "../GlobalIdentifier.h"
 		#include "rootapproacherDriverRTSCStateChart.h"
+		//#include "ecrobot_interface.h"
 		
 		
 
@@ -485,6 +486,8 @@
 					// execute entry actions
 		
 					stateChart->Vel = 0;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -541,6 +544,9 @@
 					// execute entry actions
 		
 					stateChart->Vel = 0;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+		
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -601,6 +607,9 @@
 					// execute entry actions
 		
 					stateChart->Vel = stateChart->constVelSlow;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+		
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -645,6 +654,9 @@
 					// execute entry actions
 		
 					stateChart->Vel = 0;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+		
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -652,8 +664,8 @@
 		
 				stateChart->distance_apiValue >= stateChart->constBreakDistance
 		
-				&& stateChart->fixedSlowFlag
-		
+				&& !stateChart->fixedSlowFlag
+				// added mannually negation by upohl
 				) {
 		
 					// execute exit actions
@@ -677,7 +689,7 @@
 							ROOTAPPROACHERDRIVERRTSC_INIT_STATE_APPROACHERDRIVINGRTSC_APPROACHERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_DRIVE_STATE;
 		
 					// execute entry actions
-		
+
 					// nothing to do
 		
 				} else if (
@@ -711,6 +723,9 @@
 					// execute entry actions
 		
 					stateChart->Vel = stateChart->constVelSlow;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+		
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -757,6 +772,9 @@
 					// execute entry actions
 		
 					stateChart->Vel = 0;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+		
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -779,12 +797,16 @@
 					if (stateChart->Vel == stateChart->constVelSlow) {
 		
 						stateChart->Vel = stateChart->constVelFast;
+						stateChart->velocityR_apiValue = stateChart->Vel;
+						stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					}
 		
 					else {
 		
 						stateChart->Vel = stateChart->constVelSlow;
+						stateChart->velocityR_apiValue = stateChart->Vel;
+						stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					}
 		
@@ -839,6 +861,8 @@
 					// execute entry actions
 		
 					stateChart->Vel = stateChart->constVelSlow;
+					stateChart->velocityR_apiValue = stateChart->Vel;
+					stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
