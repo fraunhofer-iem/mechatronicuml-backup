@@ -196,7 +196,7 @@ void initAll(){
 
 			if (i>10)
 				return i;
-			else return 255;
+			else return 0;
 /**End of user code**/
 }	
 		void overtakerLine_lineLight_InitApi(){
