@@ -44,11 +44,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_JD44PavCEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_EqzOwKMAEeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JD44MKvCEeS17_7FUkLEVQ" x="650" y="65" width="173" height="173"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JD44MKvCEeS17_7FUkLEVQ" x="395" y="65" width="173" height="173"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_fKmEMJOSEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7ZqgavCEeS17_7FUkLEVQ" width="1009" height="445"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I7ZqgavCEeS17_7FUkLEVQ" width="631" height="331"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zD5DAarBEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_fKmEMJOSEeSZM-zEIRk3lw"/>

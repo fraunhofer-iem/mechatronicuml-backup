@@ -65,7 +65,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_pksmLKvEEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_AvuwEKLvEeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pksmH6vEEeS17_7FUkLEVQ" x="446" y="50" width="145" height="217"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pksmH6vEEeS17_7FUkLEVQ" x="446" y="50" width="130" height="217"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_pksmLavEEeS17_7FUkLEVQ" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_pksmL6vEEeS17_7FUkLEVQ" type="5060"/>
@@ -86,7 +86,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_pksmO6vEEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_BUEzQKLvEeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pksmLqvEEeS17_7FUkLEVQ" x="842" y="74" width="205" height="145"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pksmLqvEEeS17_7FUkLEVQ" x="785" y="74" width="205" height="145"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_pksmPKvEEeS17_7FUkLEVQ" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_pksmPqvEEeS17_7FUkLEVQ" type="5060"/>
@@ -132,7 +132,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_JlgdwJQkEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pXIrIqvEEeS17_7FUkLEVQ" width="1165" height="577"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pXIrIqvEEeS17_7FUkLEVQ" width="1051" height="541"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zDvSAarBEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_JlgdwJQkEeSZM-zEIRk3lw"/>

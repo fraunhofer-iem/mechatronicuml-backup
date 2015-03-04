@@ -44,7 +44,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_e0WzjavFEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_qWfxUKL7EeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e0WzgKvFEeS17_7FUkLEVQ" x="458" y="41" width="169" height="145"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e0WzgKvFEeS17_7FUkLEVQ" x="500" y="35" width="169" height="145"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_xSEt0J6REeSNj-oH_1Kb-Q"/>

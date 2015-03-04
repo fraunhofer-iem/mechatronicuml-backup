@@ -117,7 +117,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_Bnfg3rdvEeSMqrGemIygLw"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_BnVv0LdvEeSMqrGemIygLw"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bnfg0bdvEeSMqrGemIygLw" x="404" y="18" width="121" height="73"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bnfg0bdvEeSMqrGemIygLw" x="425" y="12" width="136" height="73"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_iurwEJ9FEeSDApXOK6N3KA"/>
@@ -141,11 +141,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_xMyMDqu0EeSOh7ww5c64Rw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_wXdqwZOQEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xMyMAau0EeSOh7ww5c64Rw" width="807" height="510"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xMyMAau0EeSOh7ww5c64Rw" width="906" height="471"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_wXdqwJOQEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xF7WE6u0EeSOh7ww5c64Rw" width="853" height="589"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xF7WE6u0EeSOh7ww5c64Rw" width="946" height="571"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TUzTsarEEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_wXdqwJOQEeSZM-zEIRk3lw"/>
@@ -177,14 +177,14 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_xNhy4Ku0EeSOh7ww5c64Rw" type="4003" source="_xNFG86u0EeSOh7ww5c64Rw" target="_xNFG86u0EeSOh7ww5c64Rw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_xNhy46u0EeSOh7ww5c64Rw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_xNhy5Ku0EeSOh7ww5c64Rw" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_xNhy5Ku0EeSOh7ww5c64Rw" x="-1" y="-69"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_xNhy5au0EeSOh7ww5c64Rw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_xNhy5qu0EeSOh7ww5c64Rw" x="-10" y="20"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_xNhy4au0EeSOh7ww5c64Rw" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_hXkhQJ9HEeSDApXOK6N3KA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xNhy4qu0EeSOh7ww5c64Rw" points="[47, -5, 10, -19]$[178, -5, 141, -19]$[178, 14, 141, 0]$[47, 14, 10, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xNhy4qu0EeSOh7ww5c64Rw" points="[53, 0, 12, -16]$[148, 0, 107, -16]$[148, 16, 107, 0]$[53, 16, 12, 0]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wHtvcKu2EeSOh7ww5c64Rw" id="(0.8924731182795699,0.675)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_DdHlsbdvEeSMqrGemIygLw" type="4003" source="_xNFG86u0EeSOh7ww5c64Rw" target="_Bnfg0LdvEeSMqrGemIygLw" lineColor="0">
@@ -215,7 +215,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_Vee5YLdvEeSMqrGemIygLw" type="4003" source="_Bnfg0LdvEeSMqrGemIygLw" target="_Bnfg0LdvEeSMqrGemIygLw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_Vee5Y7dvEeSMqrGemIygLw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Vee5ZLdvEeSMqrGemIygLw" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Vee5ZLdvEeSMqrGemIygLw" x="45" y="-57"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_Vee5ZbdvEeSMqrGemIygLw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Vee5ZrdvEeSMqrGemIygLw" x="-10" y="20"/>

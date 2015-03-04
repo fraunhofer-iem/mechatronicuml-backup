@@ -23,7 +23,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_KeqNDqvCEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_50iXQZOSEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KeqNAavCEeS17_7FUkLEVQ" x="38" y="65" width="193" height="181"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KeqNAavCEeS17_7FUkLEVQ" x="38" y="65" width="133" height="181"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_KeqND6vCEeS17_7FUkLEVQ" type="3032" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_KeqNEavCEeS17_7FUkLEVQ" type="5060"/>
@@ -44,11 +44,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_KeqNHavCEeS17_7FUkLEVQ"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_zhAo0KLqEeSbmbyTJYAEVw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KeqNEKvCEeS17_7FUkLEVQ" x="698" y="77" width="301" height="173"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KeqNEKvCEeS17_7FUkLEVQ" x="755" y="73" width="133" height="173"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_50iXQJOSEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX4PkavCEeS17_7FUkLEVQ" y="12" width="1057" height="397"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KX4PkavCEeS17_7FUkLEVQ" y="12" width="916" height="334"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zDcXEarBEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_50iXQJOSEeSZM-zEIRk3lw"/>

@@ -200,11 +200,11 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_ycxtDLtGEeS2HMErEC_cHw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_bwVxkZOXEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ycxF8btGEeS2HMErEC_cHw" width="831" height="630"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ycxF8btGEeS2HMErEC_cHw" width="636" height="666"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_bwVxkJOXEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLiMAbtGEeS2HMErEC_cHw" height="697"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yLiMAbtGEeS2HMErEC_cHw" width="706" height="796"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TUzTs6rEEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_bwVxkJOXEeSZM-zEIRk3lw"/>
@@ -232,17 +232,6 @@
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_F14LAJ9AEeSDApXOK6N3KA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yh2aQrtGEeS2HMErEC_cHw" points="[-7, -36, 0, -33]$[0, -33, 7, -30]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5W8CwLtGEeS2HMErEC_cHw" id="(0.027586206896551724,0.6705882352941176)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_yk8KgLtGEeS2HMErEC_cHw" type="4003" source="_yc4asLtGEeS2HMErEC_cHw" target="_yc4asLtGEeS2HMErEC_cHw" lineColor="0">
-    <children xmi:type="notation:DecorationNode" xmi:id="_yk8Kg7tGEeS2HMErEC_cHw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_yk8KhLtGEeS2HMErEC_cHw" y="-20"/>
-    </children>
-    <children xmi:type="notation:DecorationNode" xmi:id="_yk8KhbtGEeS2HMErEC_cHw" type="6006">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_yk8KhrtGEeS2HMErEC_cHw" x="-10" y="20"/>
-    </children>
-    <styles xmi:type="notation:FontStyle" xmi:id="_yk8KgbtGEeS2HMErEC_cHw" fontName="Segoe UI"/>
-    <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_9WiJQJ_FEeSYU6UyOlfnUQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yk8KgrtGEeS2HMErEC_cHw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_ylHJoLtGEeS2HMErEC_cHw" type="4003" source="_ydkXMLtGEeS2HMErEC_cHw" target="_ydk-SbtGEeS2HMErEC_cHw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_ylHJo7tGEeS2HMErEC_cHw" type="6005">

@@ -85,7 +85,7 @@
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_U_DPAarEEeScJ-0YDJS4Tg" fontName="Segoe UI"/>
     <element xmi:type="realtimestatechart:Transition" href="../fraunhoferDemo.fujaba#_KyjlQKMCEeSbmbyTJYAEVw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U_DPAqrEEeScJ-0YDJS4Tg" points="[104, 49, 64, -25]$[152, 73, 112, -1]$[142, 115, 102, 41]$[52, 115, 12, 41]$[40, 75, 0, 1]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U_DPAqrEEeScJ-0YDJS4Tg" points="[104, 43, 64, -31]$[142, 60, 102, -14]$[142, 115, 102, 41]$[52, 115, 12, 41]$[40, 75, 0, 1]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_x7JuAKydEeSji-ld3aV1Pw" id="(0.6908212560386473,0.9933333333333333)"/>
   </edges>
 </notation:Diagram>

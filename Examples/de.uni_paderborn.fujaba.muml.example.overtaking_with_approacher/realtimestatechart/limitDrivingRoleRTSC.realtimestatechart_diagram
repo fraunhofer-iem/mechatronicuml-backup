@@ -48,7 +48,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_EacfYJQqEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_o-A6rBEeScJ-0YDJS4Tg" width="931" height="271"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0_o-A6rBEeScJ-0YDJS4Tg" width="1006" height="301"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zCswMarBEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_EacfYJQqEeSZM-zEIRk3lw"/>
@@ -78,7 +78,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_txu1oLE_EeSldMy5UHEeIQ" type="4003" source="_1F9of6rBEeScJ-0YDJS4Tg" target="_1F9of6rBEeScJ-0YDJS4Tg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_txvcsLE_EeSldMy5UHEeIQ" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_txvcsbE_EeSldMy5UHEeIQ" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_txvcsbE_EeSldMy5UHEeIQ" x="26" y="38"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_txvcsrE_EeSldMy5UHEeIQ" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_txvcs7E_EeSldMy5UHEeIQ" x="-10" y="20"/>
@@ -91,7 +91,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_urlOwLE_EeSldMy5UHEeIQ" type="4003" source="_1F9ocKrBEeScJ-0YDJS4Tg" target="_1F9ocKrBEeScJ-0YDJS4Tg" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_urlOw7E_EeSldMy5UHEeIQ" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_url10LE_EeSldMy5UHEeIQ" y="-20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_url10LE_EeSldMy5UHEeIQ" x="51" y="-16"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_url10bE_EeSldMy5UHEeIQ" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_url10rE_EeSldMy5UHEeIQ" x="-10" y="20"/>

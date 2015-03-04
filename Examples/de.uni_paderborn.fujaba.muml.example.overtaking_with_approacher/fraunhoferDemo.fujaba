@@ -716,7 +716,6 @@
             <variables xmi:id="_tM9LwLdtEeSMqrGemIygLw" name="fixedSlowFlag" dataType="_FB0TQ5J7EeSSMde45fnrcg">
               <initializeExpression xsi:type="sdcec:LiteralExpression" xmi:id="_yxSXALdtEeSMqrGemIygLw" value="false"/>
             </variables>
-            <transitions xmi:id="_kj1qwJ8MEeSDApXOK6N3KA" priority="1" target="_xJo1AJ8JEeSDApXOK6N3KA" source="_xJo1AJ8JEeSDApXOK6N3KA"/>
             <transitions xmi:id="_sQ75UJ8MEeSDApXOK6N3KA" priority="2" target="_g22jAZ8JEeSDApXOK6N3KA" source="_xJo1AJ8JEeSDApXOK6N3KA">
               <synchronization xmi:id="_x606AJ8MEeSDApXOK6N3KA" syncChannel="_RFfbsJ8MEeSDApXOK6N3KA" kind="RECEIVE"/>
             </transitions>
@@ -820,7 +819,7 @@
                 </rightExpression>
               </guard>
             </transitions>
-            <states xmi:id="_xJo1AJ8JEeSDApXOK6N3KA" name="fixedSlow" outgoingTransitions="_kj1qwJ8MEeSDApXOK6N3KA _sQ75UJ8MEeSDApXOK6N3KA _18IiYLdtEeSMqrGemIygLw" incomingTransitions="_kj1qwJ8MEeSDApXOK6N3KA _rHeW4J8MEeSDApXOK6N3KA _2wn6YLdtEeSMqrGemIygLw">
+            <states xmi:id="_xJo1AJ8JEeSDApXOK6N3KA" name="fixedSlow" outgoingTransitions="_sQ75UJ8MEeSDApXOK6N3KA _18IiYLdtEeSMqrGemIygLw" incomingTransitions="_rHeW4J8MEeSDApXOK6N3KA _2wn6YLdtEeSMqrGemIygLw">
               <entryEvent xmi:id="_FhohgJ8NEeSDApXOK6N3KA">
                 <action xmi:id="_Hp4AYJ8NEeSDApXOK6N3KA" name="setSlow">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="__p2hQMGnEeSapZ3kGFOIzw">
@@ -1016,8 +1015,7 @@
                 </message>
               </events>
             </transitions>
-            <transitions xmi:id="_9WiJQJ_FEeSYU6UyOlfnUQ" priority="1" target="_a3_gIpROEeSZM-zEIRk3lw" source="_a3_gIpROEeSZM-zEIRk3lw"/>
-            <states xmi:id="_a3_gIpROEeSZM-zEIRk3lw" name="init" outgoingTransitions="_9WiJQJ_FEeSYU6UyOlfnUQ _E0auAJ9AEeSDApXOK6N3KA" incomingTransitions="_F14LAJ9AEeSDApXOK6N3KA _9WiJQJ_FEeSYU6UyOlfnUQ" initial="true">
+            <states xmi:id="_a3_gIpROEeSZM-zEIRk3lw" name="init" outgoingTransitions="_E0auAJ9AEeSDApXOK6N3KA" incomingTransitions="_F14LAJ9AEeSDApXOK6N3KA" initial="true">
               <entryEvent xmi:id="_pYg7oJ_FEeSYU6UyOlfnUQ">
                 <action xmi:id="_pwNp8J_FEeSYU6UyOlfnUQ" name="checkColor">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_hWCZELtHEeS2HMErEC_cHw">
@@ -1268,8 +1266,7 @@
                 </message>
               </events>
             </transitions>
-            <transitions xmi:id="_lV0XsJ_EEeSYU6UyOlfnUQ" priority="1" target="_jo3f4pROEeSZM-zEIRk3lw" source="_jo3f4pROEeSZM-zEIRk3lw"/>
-            <states xmi:id="_jo3f4pROEeSZM-zEIRk3lw" name="init" outgoingTransitions="_lV0XsJ_EEeSYU6UyOlfnUQ __0DtUJ9REeSDApXOK6N3KA" incomingTransitions="_BLxuMJ9SEeSDApXOK6N3KA _lV0XsJ_EEeSYU6UyOlfnUQ" initial="true">
+            <states xmi:id="_jo3f4pROEeSZM-zEIRk3lw" name="init" outgoingTransitions="__0DtUJ9REeSDApXOK6N3KA" incomingTransitions="_BLxuMJ9SEeSDApXOK6N3KA" initial="true">
               <entryEvent xmi:id="_RYHdsJ_FEeSYU6UyOlfnUQ">
                 <action xmi:id="_WqTwEJ_FEeSYU6UyOlfnUQ" name="checkColor">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_SrGrILtGEeS2HMErEC_cHw">
@@ -1581,8 +1578,7 @@
                 </message>
               </events>
             </transitions>
-            <transitions xmi:id="_rPL6oJ_LEeSYU6UyOlfnUQ" priority="1" target="_mpVnQpROEeSZM-zEIRk3lw" source="_mpVnQpROEeSZM-zEIRk3lw"/>
-            <states xmi:id="_mpVnQpROEeSZM-zEIRk3lw" name="init" outgoingTransitions="_rPL6oJ_LEeSYU6UyOlfnUQ _4DBO8J_KEeSYU6UyOlfnUQ" incomingTransitions="_4nOvQJ_KEeSYU6UyOlfnUQ _rPL6oJ_LEeSYU6UyOlfnUQ" initial="true">
+            <states xmi:id="_mpVnQpROEeSZM-zEIRk3lw" name="init" outgoingTransitions="_4DBO8J_KEeSYU6UyOlfnUQ" incomingTransitions="_4nOvQJ_KEeSYU6UyOlfnUQ" initial="true">
               <entryEvent xmi:id="_BeCicJ_MEeSYU6UyOlfnUQ">
                 <action xmi:id="_B5cFAJ_MEeSYU6UyOlfnUQ" name="checkColor">
                   <expressions xsi:type="actionlanguage:Block" xmi:id="_3d8EULtHEeS2HMErEC_cHw">

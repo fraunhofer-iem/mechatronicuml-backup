@@ -27,7 +27,7 @@
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_tTuUMJKkEeSSMde45fnrcg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b1FbY6vEEeS17_7FUkLEVQ" width="529" height="325"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b1FbY6vEEeS17_7FUkLEVQ" width="316" height="301"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_zECM86rBEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_tTuUMJKkEeSSMde45fnrcg"/>

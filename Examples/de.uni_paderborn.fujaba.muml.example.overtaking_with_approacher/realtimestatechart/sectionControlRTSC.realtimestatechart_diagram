@@ -172,7 +172,7 @@
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_62Y6CrtfEeS2HMErEC_cHw"/>
                     </children>
                     <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_5Z8bkJ6LEeSNj-oH_1Kb-Q"/>
-                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_62Y5_btfEeS2HMErEC_cHw" x="536" y="23" width="121" height="121"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_62Y5_btfEeS2HMErEC_cHw" x="590" y="23" width="121" height="121"/>
                   </children>
                 </children>
                 <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_u9LwgJ6FEeSNj-oH_1Kb-Q"/>
@@ -196,17 +196,17 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_62DizrtfEeS2HMErEC_cHw"/>
         </children>
         <element xmi:type="realtimestatechart:State" href="../fraunhoferDemo.fujaba#_TSZNgZOaEeSZM-zEIRk3lw"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_62DiwbtfEeS2HMErEC_cHw" width="987" height="738"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_62DiwbtfEeS2HMErEC_cHw" width="771" height="786"/>
       </children>
     </children>
     <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_TSZNgJOaEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6zrkMbtfEeS2HMErEC_cHw" width="1021" height="805"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6zrkMbtfEeS2HMErEC_cHw" width="796" height="886"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_TU8do6rEEeScJ-0YDJS4Tg"/>
   <element xmi:type="realtimestatechart:RealtimeStatechart" href="../fraunhoferDemo.fujaba#_TSZNgJOaEeSZM-zEIRk3lw"/>
   <edges xmi:type="notation:Connector" xmi:id="_620XwLtfEeS2HMErEC_cHw" type="4003" source="_62JCULtfEeS2HMErEC_cHw" target="_62JCULtfEeS2HMErEC_cHw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_620Xw7tfEeS2HMErEC_cHw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_620-0LtfEeS2HMErEC_cHw" x="4" y="-89"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_620-0LtfEeS2HMErEC_cHw" x="-13" y="-118"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_620-0btfEeS2HMErEC_cHw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_620-0rtfEeS2HMErEC_cHw" x="-10" y="20"/>
@@ -218,7 +218,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_63GEkLtfEeS2HMErEC_cHw" type="4003" source="_62NTwLtfEeS2HMErEC_cHw" target="_62NTwLtfEeS2HMErEC_cHw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_63GEk7tfEeS2HMErEC_cHw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_63GElLtfEeS2HMErEC_cHw" x="-7" y="-95"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_63GElLtfEeS2HMErEC_cHw" x="1" y="-129"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_63GElbtfEeS2HMErEC_cHw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_63GElrtfEeS2HMErEC_cHw" x="-10" y="20"/>
@@ -231,7 +231,7 @@
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_63UHALtfEeS2HMErEC_cHw" type="4003" source="_62SMQLtfEeS2HMErEC_cHw" target="_62SMQLtfEeS2HMErEC_cHw" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_63UHA7tfEeS2HMErEC_cHw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_63UHBLtfEeS2HMErEC_cHw" x="-8" y="-97"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_63UHBLtfEeS2HMErEC_cHw" x="-5" y="-139"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_63UHBbtfEeS2HMErEC_cHw" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_63UHBrtfEeS2HMErEC_cHw" x="-10" y="20"/>
