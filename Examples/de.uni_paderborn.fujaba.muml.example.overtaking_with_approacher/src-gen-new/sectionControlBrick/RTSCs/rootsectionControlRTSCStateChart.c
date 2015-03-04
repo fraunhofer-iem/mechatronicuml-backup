@@ -157,6 +157,12 @@
 					// Transition Effects (incl. clock resets)
 		
 					stateChart->secIDovertakee = msg->_secID;
+					
+					display_goto_xy(0,4);
+					display_string("EE in ");
+					display_goto_xy(7,4);
+					display_int(msg->_secID, 2);
+					display_update();
 		
 					;
 		
@@ -233,6 +239,12 @@
 					// Transition Effects (incl. clock resets)
 		
 					stateChart->secIDovertaker = msg->_secID;
+
+					display_goto_xy(0,4);
+					display_string("ER in ");
+					display_goto_xy(7,4);
+					display_int(msg->_secID, 2);
+					display_update();
 		
 					;
 		
@@ -321,6 +333,12 @@
 					// Transition Effects (incl. clock resets)
 		
 					stateChart->secIDapproacher = msg->_secID;
+
+					display_goto_xy(0,4);
+					display_string("AP in ");
+					display_goto_xy(7,4);
+					display_int(msg->_secID, 2);
+					display_update();
 		
 					;
 		
