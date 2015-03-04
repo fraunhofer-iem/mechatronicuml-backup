@@ -30,7 +30,7 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_SY65sbtsEeSNn-5VJKJ8hg" y="5"/>
       </children>
       <element xmi:type="component:DiscretePort" href="../fraunhoferDemo.fujaba#_qJ-foJRSEeSZM-zEIRk3lw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY6SpbtsEeSNn-5VJKJ8hg" x="445" y="96"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY6SpbtsEeSNn-5VJKJ8hg" x="661" y="156"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_SY65srtsEeSNn-5VJKJ8hg" type="3013" fontName="Segoe UI" lineColor="0">
       <children xmi:type="notation:DecorationNode" xmi:id="_SY65tLtsEeSNn-5VJKJ8hg" type="5024">
@@ -50,7 +50,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SY65t7tsEeSNn-5VJKJ8hg" x="24" y="193"/>
     </children>
     <element xmi:type="component:StaticAtomicComponent" href="../fraunhoferDemo.fujaba#_1f2csJOXEeSZM-zEIRk3lw"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PvZBV6rGEeScJ-0YDJS4Tg" width="673" height="349"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PvZBV6rGEeScJ-0YDJS4Tg" x="44" y="84" width="673" height="349"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_PvZBVarGEeScJ-0YDJS4Tg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TTZJ7EeSSMde45fnrcg"/>
