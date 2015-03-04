@@ -178,7 +178,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_WE_4g6rGEeScJ-0YDJS4Tg"/>
     </children>
     <element xmi:type="msgtype:MessageTypeRepository" href="../fraunhoferDemo.fujaba#_NXVmMJKbEeSSMde45fnrcg"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE2Hg6rGEeScJ-0YDJS4Tg" height="325"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WE2Hg6rGEeScJ-0YDJS4Tg" x="30" y="15" height="436"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WE2HgarGEeScJ-0YDJS4Tg"/>
   <element xmi:type="modelinstance:ModelElementCategory" href="../fraunhoferDemo.fujaba#_FB0TS5J7EeSSMde45fnrcg"/>
