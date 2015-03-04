@@ -207,10 +207,10 @@ case ECU_OVERTAKEER1:
 	return mw->inputPort4;
 	break;
 case ECU_OVERTAKERR1:
-	return mw->virtualBluetoothPort;
+	return mw->VirtualWifiPort;
 	break;
 case ECU_OVERTAKERR2:
-	return mw->virtualBluetoothPort;
+	return mw->VirtualWifiPort;
 	break;
 case ECU_APPROACHERR1:
 	return mw->VirtualWifiPort2;
