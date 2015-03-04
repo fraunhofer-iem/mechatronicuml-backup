@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_5KkEgKiLEeSARpGDjsZEbA" type="PlatformInstance" name="HWPlatformInstanceConfiguration.platforminstance_diagram" measurementUnit="Pixel">
-  <styles xmi:type="notation:DiagramStyle" xmi:id="_5KkEgaiLEeSARpGDjsZEbA"/>
-  <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../../fraunhoferDemo.fujaba#_EDe2A6hkEeSJj6cnB4p9sw"/>
-</notation:Diagram>
