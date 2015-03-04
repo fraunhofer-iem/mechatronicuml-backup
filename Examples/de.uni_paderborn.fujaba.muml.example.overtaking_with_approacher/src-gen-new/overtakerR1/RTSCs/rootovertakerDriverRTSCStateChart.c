@@ -304,6 +304,22 @@
 			}
 
 			// finishO synchronization channel
+			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_statechart_statechart
+					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_EXECUTING_STATE
+					&& Port_doesMessageExist(
+							OvertakerDriverComponent_getinitiatorP(
+									stateChart->parentComponent),
+							MESSAGE_EXECUTEDOVERTAKINGMESSAGESMESSAGE)
+
+							) {
+				SyncChannel_enableSend(stateChart->startOSyncChannel);
+			}
+			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_driveOvertakingRTSC_driveOvertakingRTSC
+					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_DRIVETOMAINLINE_STATE
+
+					) {
+				SyncChannel_enableReceive(stateChart->startOSyncChannel);
+			}
 
 			// startAll synchronization channel
 			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_initiatorPortRTSC_initiatorPortRTSC
