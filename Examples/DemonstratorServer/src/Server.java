@@ -27,8 +27,8 @@ public class Server {
 	public static final byte[] EMPTY_MESSAGE = new byte[32]; // 32 zeroes
 	public static final byte[] START_MESSAGE = new byte[] { 2, 20, 6, 8, 20, 16, 14, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-	private Map<InetAddress, List<Integer>> registeredPortsIds = new HashMap<InetAddress, List<Integer>>();
-	private Map<Integer, List<byte[]>> messages = new HashMap<Integer, List<byte[]>>();
+	private volatile Map<InetAddress, List<Integer>> registeredPortsIds = new HashMap<InetAddress, List<Integer>>();
+	private volatile Map<Integer, List<byte[]>> messages = new HashMap<Integer, List<byte[]>>();
 
     public static void main(String[] args) throws IOException {
         new Server().startServer();
@@ -62,8 +62,8 @@ public class Server {
         String line = null;
         while(null != (line = console.readLine())) {
         	if ("start".equals(line)) {
-        		pushMessage(0, START_MESSAGE);
-        		System.out.println("*pushed start message*");
+        		//start = true;
+        		//System.out.println("*pushed start message*");
         	}
         }
         
@@ -133,6 +133,7 @@ public class Server {
 			            		for (int otherPortId : getPortIds(clientSocket.getInetAddress())) {
 			            			message = popMessage(otherPortId);
 			            			if (message != null) {
+			            				portId = otherPortId;
 			            				break;
 			            			}
 			            		}
@@ -198,7 +199,7 @@ public class Server {
 		return clientName;
 	}
 
-	public List<Integer> getPortIds(InetAddress inetAddress) {
+	public synchronized List<Integer> getPortIds(InetAddress inetAddress) {
 		List<Integer> portIds = registeredPortsIds.get(inetAddress);
 		if (portIds == null) {
 			portIds = Collections.emptyList();
@@ -206,7 +207,7 @@ public class Server {
 		return portIds;
 	}
 	
-	public void addPortIdRegistration(InetAddress inetAddress, int portId) {
+	public synchronized void addPortIdRegistration(InetAddress inetAddress, int portId) {
 		List<Integer> portIds = registeredPortsIds.get(inetAddress);
 		if (portIds == null) {
 			portIds = new ArrayList<Integer>();
