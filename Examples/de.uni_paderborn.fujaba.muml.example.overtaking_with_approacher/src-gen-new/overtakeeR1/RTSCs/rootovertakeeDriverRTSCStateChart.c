@@ -24,6 +24,8 @@
 		
 			// execute entry actions
 			stateChart->Vel = 0;
+			stateChart->velocityR_apiValue = stateChart->Vel;
+			stateChart->velocityL_apiValue = stateChart->Vel;
 			;
 		
 		}
@@ -36,6 +38,8 @@
 			// execute entry actions
 		
 			stateChart->Vel = stateChart->constVelSlow;
+			stateChart->velocityR_apiValue = stateChart->Vel;
+			stateChart->velocityL_apiValue = stateChart->Vel;
 		
 			;
 		
@@ -278,6 +282,7 @@
 					// execute entry actions
 		
 					stateChart->Vel = stateChart->constVelSlow;
+	
 		
 					;
 		
@@ -331,6 +336,7 @@
 					// execute entry actions
 		
 					stateChart->Vel = stateChart->constVelFast;
+
 		
 					;
 		
@@ -371,6 +377,9 @@ Port* port;
 					stateChart->parentComponent),
 		
 					MESSAGE_STARTALLOVERTAKINGMESSAGESMESSAGE);
+
+					display_string("here");
+					display_update();
 		
 					//printf("received message of type %d",mwMsg->_msgID );
 		
@@ -456,6 +465,8 @@ Port* port;
 					// execute entry actions
 		
 					stateChart->Vel = 0;
+				//	stateChart->velocityR_apiValue = stateChart->Vel;
+			//	stateChart->velocityL_apiValue = stateChart->Vel;
 		
 					;
 		
@@ -509,7 +520,9 @@ Port* port;
 		
 					// execute entry actions
 		
-					stateChart->Vel = 0;
+					//stateChart->Vel = 0;
+					stateChart->velocityR_apiValue = 0;
+					stateChart->velocityL_apiValue = 0;
 		
 					;
 		
@@ -585,7 +598,9 @@ Port* port;
 		
 					// execute entry actions
 		
-					stateChart->Vel = 0;
+				//	stateChart->Vel = 0;
+					stateChart->velocityR_apiValue = 0;
+					stateChart->velocityL_apiValue = 0;
 		
 					;
 		
