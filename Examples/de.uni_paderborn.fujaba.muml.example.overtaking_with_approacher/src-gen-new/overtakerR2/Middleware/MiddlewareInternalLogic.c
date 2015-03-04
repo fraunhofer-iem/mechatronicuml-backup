@@ -201,10 +201,10 @@ NetworkInterface* MW_getNetworkInterface(ECUID ecu)
 	switch (ecu)
 	{
 case ECU_OVERTAKEER2:
-	return mw->virtualBluetoothPort;
+	return mw->VirtualWifiPort;
 	break;
 case ECU_OVERTAKEER1:
-	return mw->virtualBluetoothPort;
+	return mw->VirtualWifiPort;
 	break;
 case ECU_OVERTAKERR1:
 	return mw->inputPort4;
