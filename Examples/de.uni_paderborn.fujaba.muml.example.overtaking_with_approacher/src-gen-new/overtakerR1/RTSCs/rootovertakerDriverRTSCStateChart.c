@@ -306,19 +306,15 @@
 			// finishO synchronization channel
 			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_statechart_statechart
 					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_EXECUTING_STATE
-					&& Port_doesMessageExist(
-							OvertakerDriverComponent_getinitiatorP(
-									stateChart->parentComponent),
-							MESSAGE_EXECUTEDOVERTAKINGMESSAGESMESSAGE)
 
 							) {
-				SyncChannel_enableSend(stateChart->startOSyncChannel);
+				SyncChannel_enableSend(stateChart->finishOSyncChannel);
 			}
 			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_driveOvertakingRTSC_driveOvertakingRTSC
 					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_DRIVETOMAINLINE_STATE
 
 					) {
-				SyncChannel_enableReceive(stateChart->startOSyncChannel);
+				SyncChannel_enableReceive(stateChart->finishOSyncChannel);
 			}
 
 			// startAll synchronization channel
@@ -633,7 +629,6 @@
 			switch (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_driveOvertakingRTSC_driveOvertakingRTSC) {
 		
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_TURNLEFT_STATE:
-		
 				if (Clock_getTime(
 		
 						stateChart->movingClock_ofcurrentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_overtakerDrivingRTSC_overtakerDrivingRTSCClock)
@@ -663,7 +658,7 @@
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_DRIVETOOPPOSITELINE_STATE;
 		
 					// execute entry actions
-										doLinefollowing = 0;
+					doLinefollowing = 0;
 
 					stateChart->velocityR_apiValue = stateChart->Vel;
 		
@@ -735,48 +730,12 @@
 		
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_FOLLOWOPPOSITELINE_STATE:
 		
-				if (1
-		
-				) {
-		
-					// execute exit actions
-		
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-					doLinefollowing = 1;
+				if (
 
-		
-					stateChart->velocityR_apiValue = stateChart->Vel;
-		
-					stateChart->velocityL_apiValue = stateChart->Vel;
-		
-					;
-		
-					// nothing to do			
-		
-					//release all created received events
-		
-					//release all created sent events
-		
-					// change the state
-		
-					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_driveOvertakingRTSC_driveOvertakingRTSC =
-		
-							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_FOLLOWOPPOSITELINE_STATE;
-		
-					// execute entry actions
-		
-					Clock_reset(
-		
-							stateChart->movingClock_ofcurrentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_overtakerDrivingRTSC_overtakerDrivingRTSCClock);
-		
-				} else if (
-		
 				Clock_getTime(
-		
+
 						stateChart->movingClock_ofcurrentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_overtakerDrivingRTSC_overtakerDrivingRTSCClock)
-		
+
 				>= stateChart->constFollowOppositeLineTime * 1.0
 		
 				) {
@@ -805,14 +764,46 @@
 					doLinefollowing = 0;
 
 					stateChart->velocityR_apiValue = 0;
-		
+
 					stateChart->velocityL_apiValue = stateChart->Vel;
-		
+
 					;
 		
 					Clock_reset(
 		
 							stateChart->movingClock_ofcurrentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_overtakerDrivingRTSC_overtakerDrivingRTSCClock);
+		
+				} else if (1
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					doLinefollowing = 1;
+
+		
+					stateChart->velocityR_apiValue = stateChart->Vel;
+
+					stateChart->velocityL_apiValue = stateChart->Vel;
+
+					;
+		
+					// nothing to do			
+		
+					//release all created received events
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_driveOvertakingRTSC_driveOvertakingRTSC =
+		
+							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_FOLLOWOPPOSITELINE_STATE;
+		
+					// execute entry actions
 		
 				} else {
 		
@@ -835,6 +826,9 @@
 				>= stateChart->constTurnRightTime * 1.0
 		
 				) {
+
+					ecrobot_sound_tone(2000, 100, 50);
+					systick_wait_ms(100);
 		
 					// execute exit actions
 		
@@ -959,9 +953,6 @@
 					display_goto_xy(0,3);
 					display_string("OVERTAKE ");
 					display_update();
-
-					ecrobot_sound_tone(400, 1000, 50);
-					systick_wait_ms(100);
 		
 				// nothing to do
 		
@@ -1007,41 +998,8 @@
 		
 					;
 		
-				} else if (1
-		
-				) {
-		
-					// execute exit actions
-		
-					// nothing to do
-		
-					// Transition Effects (incl. clock resets)
-					doLinefollowing = 1;
-		
-					stateChart->velocityR_apiValue = stateChart->Vel;
-		
-					stateChart->velocityL_apiValue = stateChart->Vel;
-		
-					;
-		
-					// nothing to do			
-		
-					//release all created received events
-		
-					//release all created sent events
-		
-					// change the state
-		
-					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_statechart_statechart =
-		
-							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_DRIVE_STATE;
-		
-					// execute entry actions
-		
-					// nothing to do
-		
 				} else if (SyncChannel_receive(
-		
+
 				(SyncChannel*) stateChart->startOSyncChannel)
 		
 				) {
@@ -1083,21 +1041,54 @@
 					// change the state
 		
 					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_driveOvertakingRTSC_driveOvertakingRTSC =
-		
+
 							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE_DRIVEOVERTAKINGRTSC_DRIVEOVERTAKINGRTSC_TURNLEFT_STATE;
-		
+
 					// execute entry actions
 					doLinefollowing = 0;
+
+					stateChart->velocityR_apiValue = stateChart->Vel;
+
+					stateChart->velocityL_apiValue = 0;
+
+					;
+
+					Clock_reset(
+
+							stateChart->movingClock_ofcurrentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_overtakerDrivingRTSC_overtakerDrivingRTSCClock);
+
+				}else if (1
+		
+				) {
+		
+					// execute exit actions
+		
+					// nothing to do
+		
+					// Transition Effects (incl. clock resets)
+					doLinefollowing = 1;
 		
 					stateChart->velocityR_apiValue = stateChart->Vel;
-		
-					stateChart->velocityL_apiValue = 0;
-		
+
+					stateChart->velocityL_apiValue = stateChart->Vel;
+
 					;
 		
-					Clock_reset(
+					// nothing to do			
 		
-							stateChart->movingClock_ofcurrentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_overtakerDrivingRTSC_overtakerDrivingRTSCClock);
+					//release all created received events
+		
+					//release all created sent events
+		
+					// change the state
+		
+					stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_statechart_statechart =
+		
+							ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_DRIVE_STATE;
+		
+					// execute entry actions
+		
+					// nothing to do
 		
 				} else {
 		
