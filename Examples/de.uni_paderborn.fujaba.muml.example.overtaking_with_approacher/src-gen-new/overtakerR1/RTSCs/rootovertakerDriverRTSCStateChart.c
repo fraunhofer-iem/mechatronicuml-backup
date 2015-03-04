@@ -286,7 +286,25 @@
 		static void verifySyncChannelsOfinit(
 				RootovertakerDriverRTSCStateChart* stateChart) {
 			// startO synchronization channel
+			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_statechart_statechart
+					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_INITIATE_STATE
+					&& Port_doesMessageExist(
+							OvertakerDriverComponent_getinitiatorP(
+									stateChart->parentComponent),
+							MESSAGE_EXECUTEOVERTAKINGMESSAGESMESSAGE)
+
+							) {
+				SyncChannel_enableSend(stateChart->startOSyncChannel);
+			}
+			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_statechart_statechart
+					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_DRIVE_STATE
+
+					) {
+				SyncChannel_enableReceive(stateChart->startOSyncChannel);
+			}
+
 			// finishO synchronization channel
+
 			// startAll synchronization channel
 			if (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_initiatorPortRTSC_initiatorPortRTSC
 					== ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S11_STATE
@@ -330,6 +348,11 @@
 				RootovertakerDriverRTSCStateChart* stateChart) {
 			switch (stateChart->currentStateOfROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_statechart_statechart) {
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_EXECUTING_STATE:
+
+					display_goto_xy(0,3);
+					display_string("EXECUTING ");
+					display_update();
+
 				if (SyncChannel_receive(
 						(SyncChannel*) stateChart->finishOSyncChannel)) {
 		
@@ -364,6 +387,16 @@
 				}
 				break;
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_INITIATE_STATE:
+
+					display_clear(0);
+
+					display_goto_xy(0,3);
+					display_string("INITIATE");
+					display_update();
+
+					//ecrobot_sound_tone(800, 1000, 50);
+					//systick_wait_ms(100);
+
 				if (SyncChannel_send((SyncChannel*) stateChart->startOSyncChannel)
 		
 				) {
@@ -372,6 +405,12 @@
 					OvertakerDriverComponent_getinitiatorP(stateChart->parentComponent),
 		
 					MESSAGE_EXECUTEOVERTAKINGMESSAGESMESSAGE);
+
+					display_clear(0);
+
+					display_goto_xy(0,3);
+					display_string("INITIATE SYNC");
+					display_update();
 		
 					//printf("received message of type %d",mwMsg->_msgID );
 		
@@ -409,6 +448,12 @@
 				}
 				break;
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_INITIATORPORTRTSC_INITIATORPORTRTSC_S22_STATE_STATECHART_STATECHART_INIT_STATE:
+
+						display_clear(0);
+
+					display_goto_xy(0,3);
+					display_string("INIT    ");
+					display_update();
 				if (
 		
 				stateChart->distance_apiValue < stateChart->constOvertakeDistance && stateChart->distance_apiValue > stateChart->constBreakDistance
@@ -892,6 +937,15 @@
 			case ROOTOVERTAKERDRIVERRTSC_INIT_STATE_OVERTAKERDRIVINGRTSC_OVERTAKERDRIVINGRTSC_S2_STATE_STATECHART_STATECHART_OVERTAKE_STATE:
 		
 				// execute do action
+
+				display_clear(0);
+
+					display_goto_xy(0,3);
+					display_string("OVERTAKE ");
+					display_update();
+
+					ecrobot_sound_tone(400, 1000, 50);
+					systick_wait_ms(100);
 		
 				// nothing to do
 		
