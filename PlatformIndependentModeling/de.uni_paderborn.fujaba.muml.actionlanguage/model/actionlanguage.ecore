@@ -63,7 +63,7 @@
       <details key="documentation" value="An assignment is used to assign a value to a variable. "/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="ValidLHS"/>
+      <details key="constraints" value=""/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="ValidLHS" value="-- a hybrid in port is not allowed as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(component::HybridPort).outPort&#xA;else&#xA;&#x9;true&#xA;endif"/>

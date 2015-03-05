@@ -1081,7 +1081,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (assignmentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ValidLHS"
+			 "constraints", ""
 		   });	
 		addAnnotation
 		  (operationCallEClass, 
