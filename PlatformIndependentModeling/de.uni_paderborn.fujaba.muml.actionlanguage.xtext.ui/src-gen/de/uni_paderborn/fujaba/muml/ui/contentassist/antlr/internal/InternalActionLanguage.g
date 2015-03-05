@@ -1942,6 +1942,13 @@ rule__MultiplicationOperator__Alternatives
 { after(grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1()); }
 )
 
+    |(
+{ before(grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2()); }
+(	'%' 
+)
+{ after(grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
