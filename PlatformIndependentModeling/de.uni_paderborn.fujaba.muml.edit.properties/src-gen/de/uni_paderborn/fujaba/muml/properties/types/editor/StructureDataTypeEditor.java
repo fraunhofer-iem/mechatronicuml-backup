@@ -23,6 +23,38 @@ public class StructureDataTypeEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addAttributes_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addAttributes_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createAttributes_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAttributes_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+				.getStructureDataType_Attributes();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
+
+		editor.setTooltipMessage("The attributes of this StructureDataType.");
+
+		return editor;
+
 	}
 
 	//
@@ -56,7 +88,8 @@ public class StructureDataTypeEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}

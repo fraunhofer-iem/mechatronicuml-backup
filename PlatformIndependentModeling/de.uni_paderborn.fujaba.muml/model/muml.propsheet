@@ -388,7 +388,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties category="//@packages.1/@classes.16/@propertyCategories.0">
+      <properties tooltip="" category="//@packages.1/@classes.16/@propertyCategories.0" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
@@ -643,6 +643,12 @@
     </classes>
     <classes superClasses="//@packages.4/@classes.2">
       <genClass href="muml.genmodel#//muml/types/StructureDataType"/>
+      <properties tooltip="" category="//@packages.4/@classes.4/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/types/StructureDataType/attributes"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.4/@classes.4/@properties.0"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/types/Attribute"/>
@@ -825,6 +831,12 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/OperationRepository"/>
+      <properties category="//@packages.7/@classes.7/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/behavior/OperationRepository/operations"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.7/@classes.7/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.5"/>
     </classes>
   </packages>

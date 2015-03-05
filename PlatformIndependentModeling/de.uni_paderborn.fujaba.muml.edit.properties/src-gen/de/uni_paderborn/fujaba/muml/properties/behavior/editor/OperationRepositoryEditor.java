@@ -23,6 +23,36 @@ public class OperationRepositoryEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addOperations_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addOperations_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createOperations_GeneralTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperations_GeneralTab_Editor() {
+		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+				.getOperationRepository_Operations();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory, feature);
+
+		return editor;
+
 	}
 
 	//
@@ -56,7 +86,8 @@ public class OperationRepositoryEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}

@@ -408,7 +408,7 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/RangedPrimitiveDataType/range"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//types/StructureDataType">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/StructureDataType/attributes"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/StructureDataType/attributes"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//types/Attribute">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -551,7 +551,7 @@
             ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/OperationRepository">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/OperationRepository/operations"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/OperationRepository/operations"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml"
