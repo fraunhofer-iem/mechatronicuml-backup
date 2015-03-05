@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'for'", "'('", "';'", "')'", "'while'", "'do'", "');'", "'if'", "'elseif'", "'else'", "'return'", "'['", "','", "']'", "':='", "'const'", "'<'", "'>'", "'null'", "'.'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'=='", "'<>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'for'", "'('", "';'", "')'", "'while'", "'do'", "');'", "'if'", "'elseif'", "'else'", "'return'", "'['", "','", "']'", "':='", "'const'", "'<'", "'>'", "'null'", "'.'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'=='", "'<>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'%'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
     };
     public static final int RULE_BOOLEAN=7;
     public static final int RULE_ID=4;
@@ -38,6 +38,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int EOF=-1;
+    public static final int T__55=55;
     public static final int T__19=19;
     public static final int T__16=16;
     public static final int T__51=51;
@@ -184,12 +185,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             case 16:
             case 33:
             case 46:
-            case 49:
             case 50:
             case 51:
             case 52:
             case 53:
             case 54:
+            case 55:
                 {
                 alt1=2;
                 }
@@ -4635,10 +4636,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==46||LA19_0==49) ) {
+            if ( (LA19_0==46||LA19_0==50) ) {
                 alt19=1;
             }
-            else if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_BOOLEAN)||LA19_0==16||LA19_0==33||(LA19_0>=50 && LA19_0<=54)) ) {
+            else if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_BOOLEAN)||LA19_0==16||LA19_0==33||(LA19_0>=51 && LA19_0<=55)) ) {
                 alt19=2;
             }
             else {
@@ -4690,7 +4691,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                         int alt18=2;
                         int LA18_0 = input.LA(1);
 
-                        if ( ((LA18_0>=47 && LA18_0<=48)) ) {
+                        if ( ((LA18_0>=47 && LA18_0<=49)) ) {
                             alt18=1;
                         }
 
@@ -4751,10 +4752,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     	    int alt17=2;
                     	    int LA17_0 = input.LA(1);
 
-                    	    if ( (LA17_0==46||LA17_0==49) ) {
+                    	    if ( (LA17_0==46||LA17_0==50) ) {
                     	        alt17=1;
                     	    }
-                    	    else if ( ((LA17_0>=RULE_ID && LA17_0<=RULE_BOOLEAN)||LA17_0==16||LA17_0==33||(LA17_0>=50 && LA17_0<=54)) ) {
+                    	    else if ( ((LA17_0>=RULE_ID && LA17_0<=RULE_BOOLEAN)||LA17_0==16||LA17_0==33||(LA17_0>=51 && LA17_0<=55)) ) {
                     	        alt17=2;
                     	    }
                     	    else {
@@ -5252,7 +5253,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     if ( (LA20_6==RULE_ID) ) {
                         alt20=5;
                     }
-                    else if ( ((LA20_6>=50 && LA20_6<=54)) ) {
+                    else if ( ((LA20_6>=51 && LA20_6<=55)) ) {
                         alt20=3;
                     }
                     else {
@@ -5284,6 +5285,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 case 46:
                 case 47:
                 case 48:
+                case 49:
                     {
                     alt20=3;
                     }
@@ -5297,11 +5299,11 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                 }
                 break;
-            case 50:
             case 51:
             case 52:
             case 53:
             case 54:
+            case 55:
                 {
                 alt20=6;
                 }
@@ -7618,34 +7620,44 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplicationOperator"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2968:1: ruleMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2968:1: ruleMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
     public final Enumerator ruleMultiplicationOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2970:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2970:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
-
-            if ( (LA34_0==47) ) {
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            int alt34=3;
+            switch ( input.LA(1) ) {
+            case 47:
+                {
                 alt34=1;
-            }
-            else if ( (LA34_0==48) ) {
+                }
+                break;
+            case 48:
+                {
                 alt34=2;
-            }
-            else {
+                }
+                break;
+            case 49:
+                {
+                alt34=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
+
             switch (alt34) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:2: (enumLiteral_0= '*' )
@@ -7681,6 +7693,23 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 3 :
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2983:6: (enumLiteral_2= '%' )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2983:6: (enumLiteral_2= '%' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2983:8: enumLiteral_2= '%'
+                    {
+                    enumLiteral_2=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleMultiplicationOperator6802); 
+
+                            current = grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_2, grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -7702,7 +7731,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryPreOperator"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2987:1: ruleUnaryPreOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2993:1: ruleUnaryPreOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleUnaryPreOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -7711,14 +7740,14 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2989:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2990:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2995:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2990:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
             int alt35=2;
             int LA35_0 = input.LA(1);
 
-            if ( (LA35_0==49) ) {
+            if ( (LA35_0==50) ) {
                 alt35=1;
             }
             else if ( (LA35_0==46) ) {
@@ -7732,12 +7761,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt35) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2990:2: (enumLiteral_0= 'not' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:2: (enumLiteral_0= 'not' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2990:2: (enumLiteral_0= 'not' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2990:4: enumLiteral_0= 'not'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:2: (enumLiteral_0= 'not' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:4: enumLiteral_0= 'not'
                     {
-                    enumLiteral_0=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleUnaryPreOperator6830); 
+                    enumLiteral_0=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleUnaryPreOperator6847); 
 
                             current = grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0()); 
@@ -7749,12 +7778,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3002:6: (enumLiteral_1= '-' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:6: (enumLiteral_1= '-' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2996:8: enumLiteral_1= '-'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3002:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3002:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleUnaryPreOperator6847); 
+                    enumLiteral_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleUnaryPreOperator6864); 
 
                             current = grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
@@ -7786,7 +7815,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePositionSelectorKind"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3006:1: rulePositionSelectorKind returns [Enumerator current=null] : ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3012:1: rulePositionSelectorKind returns [Enumerator current=null] : ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) ;
     public final Enumerator rulePositionSelectorKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -7798,33 +7827,33 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3008:28: ( ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3009:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3014:28: ( ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3009:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
             int alt36=5;
             switch ( input.LA(1) ) {
-            case 50:
+            case 51:
                 {
                 alt36=1;
                 }
                 break;
-            case 51:
+            case 52:
                 {
                 alt36=2;
                 }
                 break;
-            case 52:
+            case 53:
                 {
                 alt36=3;
                 }
                 break;
-            case 53:
+            case 54:
                 {
                 alt36=4;
                 }
                 break;
-            case 54:
+            case 55:
                 {
                 alt36=5;
                 }
@@ -7838,12 +7867,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             switch (alt36) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3009:2: (enumLiteral_0= 'self' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:2: (enumLiteral_0= 'self' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3009:2: (enumLiteral_0= 'self' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3009:4: enumLiteral_0= 'self'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:2: (enumLiteral_0= 'self' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:4: enumLiteral_0= 'self'
                     {
-                    enumLiteral_0=(Token)match(input,50,FollowSets000.FOLLOW_50_in_rulePositionSelectorKind6892); 
+                    enumLiteral_0=(Token)match(input,51,FollowSets000.FOLLOW_51_in_rulePositionSelectorKind6909); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0()); 
@@ -7855,12 +7884,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:6: (enumLiteral_1= 'first' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3021:6: (enumLiteral_1= 'first' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:6: (enumLiteral_1= 'first' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3015:8: enumLiteral_1= 'first'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3021:6: (enumLiteral_1= 'first' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3021:8: enumLiteral_1= 'first'
                     {
-                    enumLiteral_1=(Token)match(input,51,FollowSets000.FOLLOW_51_in_rulePositionSelectorKind6909); 
+                    enumLiteral_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_rulePositionSelectorKind6926); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1()); 
@@ -7872,12 +7901,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3021:6: (enumLiteral_2= 'last' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3027:6: (enumLiteral_2= 'last' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3021:6: (enumLiteral_2= 'last' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3021:8: enumLiteral_2= 'last'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3027:6: (enumLiteral_2= 'last' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3027:8: enumLiteral_2= 'last'
                     {
-                    enumLiteral_2=(Token)match(input,52,FollowSets000.FOLLOW_52_in_rulePositionSelectorKind6926); 
+                    enumLiteral_2=(Token)match(input,53,FollowSets000.FOLLOW_53_in_rulePositionSelectorKind6943); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2()); 
@@ -7889,12 +7918,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3027:6: (enumLiteral_3= 'prev' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3033:6: (enumLiteral_3= 'prev' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3027:6: (enumLiteral_3= 'prev' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3027:8: enumLiteral_3= 'prev'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3033:6: (enumLiteral_3= 'prev' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3033:8: enumLiteral_3= 'prev'
                     {
-                    enumLiteral_3=(Token)match(input,53,FollowSets000.FOLLOW_53_in_rulePositionSelectorKind6943); 
+                    enumLiteral_3=(Token)match(input,54,FollowSets000.FOLLOW_54_in_rulePositionSelectorKind6960); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3()); 
@@ -7906,12 +7935,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3033:6: (enumLiteral_4= 'next' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3039:6: (enumLiteral_4= 'next' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3033:6: (enumLiteral_4= 'next' )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3033:8: enumLiteral_4= 'next'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3039:6: (enumLiteral_4= 'next' )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3039:8: enumLiteral_4= 'next'
                     {
-                    enumLiteral_4=(Token)match(input,54,FollowSets000.FOLLOW_54_in_rulePositionSelectorKind6960); 
+                    enumLiteral_4=(Token)match(input,55,FollowSets000.FOLLOW_55_in_rulePositionSelectorKind6977); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4()); 
@@ -7953,7 +7982,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     static final String DFA6_minS =
         "\2\4\6\uffff\1\4\2\uffff\1\34\1\4";
     static final String DFA6_maxS =
-        "\1\36\1\46\6\uffff\1\66\2\uffff\1\60\1\46";
+        "\1\36\1\46\6\uffff\1\67\2\uffff\1\61\1\46";
     static final String DFA6_acceptS =
         "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\10\1\1\2\uffff";
     static final String DFA6_specialS =
@@ -7969,10 +7998,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             "",
             "",
             "\1\12\1\13\2\12\10\uffff\1\12\20\uffff\1\12\14\uffff\1\12"+
-            "\2\uffff\6\12",
+            "\3\uffff\6\12",
             "",
             "",
-            "\1\14\20\uffff\4\12",
+            "\1\14\20\uffff\5\12",
             "\1\7\25\uffff\1\10\2\uffff\1\12\5\uffff\4\12"
     };
 
@@ -8017,7 +8046,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         "\1\4\1\uffff\1\20\1\uffff\2\4\1\20\1\21\3\4\1\34\1\uffff\1\33\1"+
         "\22\1\4\1\uffff";
     static final String DFA8_maxS =
-        "\1\66\1\uffff\1\60\1\uffff\2\66\2\60\3\66\1\60\1\uffff\2\60\1\66"+
+        "\1\67\1\uffff\1\61\1\uffff\2\67\2\61\3\67\1\61\1\uffff\2\61\1\67"+
         "\1\uffff";
     static final String DFA8_acceptS =
         "\1\uffff\1\1\1\uffff\1\3\10\uffff\1\4\3\uffff\1\2";
@@ -8025,29 +8054,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         "\21\uffff}>";
     static final String[] DFA8_transitionS = {
             "\1\2\3\3\10\uffff\1\4\11\uffff\1\1\6\uffff\1\3\14\uffff\1\3"+
-            "\2\uffff\6\3",
+            "\3\uffff\6\3",
             "",
-            "\2\3\10\uffff\3\3\2\uffff\1\5\1\3\1\uffff\3\3\2\uffff\12\3",
+            "\2\3\10\uffff\3\3\2\uffff\1\5\1\3\1\uffff\3\3\2\uffff\13\3",
             "",
-            "\1\6\3\3\10\uffff\1\3\20\uffff\1\3\14\uffff\1\3\2\uffff\6"+
+            "\1\6\3\3\10\uffff\1\3\20\uffff\1\3\14\uffff\1\3\3\uffff\6"+
             "\3",
-            "\1\3\1\7\2\3\10\uffff\1\3\20\uffff\1\3\14\uffff\1\3\2\uffff"+
+            "\1\3\1\7\2\3\10\uffff\1\3\20\uffff\1\3\14\uffff\1\3\3\uffff"+
             "\6\3",
             "\1\3\1\uffff\1\11\7\uffff\1\10\4\uffff\2\3\1\uffff\3\3\2\uffff"+
-            "\12\3",
-            "\1\3\11\uffff\1\12\1\3\12\uffff\4\3\2\uffff\4\3",
-            "\1\3\1\13\2\3\10\uffff\1\3\20\uffff\1\3\14\uffff\1\3\2\uffff"+
+            "\13\3",
+            "\1\3\11\uffff\1\12\1\3\12\uffff\4\3\2\uffff\5\3",
+            "\1\3\1\13\2\3\10\uffff\1\3\20\uffff\1\3\14\uffff\1\3\3\uffff"+
             "\6\3",
             "\4\14\10\uffff\1\14\1\3\11\uffff\2\3\2\uffff\2\3\1\14\5\uffff"+
-            "\12\3\1\uffff\5\14",
+            "\13\3\1\uffff\5\14",
             "\1\3\1\15\2\3\10\uffff\1\3\11\uffff\1\3\6\uffff\1\3\14\uffff"+
-            "\1\3\2\uffff\6\3",
-            "\1\16\20\uffff\4\3",
+            "\1\3\3\uffff\6\3",
+            "\1\16\20\uffff\5\3",
             "",
-            "\2\3\2\uffff\1\3\1\17\6\uffff\12\3",
-            "\1\11\7\uffff\1\10\4\uffff\2\3\1\uffff\3\3\2\uffff\12\3",
+            "\2\3\2\uffff\1\3\1\17\6\uffff\13\3",
+            "\1\11\7\uffff\1\10\4\uffff\2\3\1\uffff\3\3\2\uffff\13\3",
             "\4\3\10\uffff\1\3\1\20\11\uffff\2\20\4\uffff\1\3\14\uffff"+
-            "\1\3\2\uffff\6\3",
+            "\1\3\3\uffff\6\3",
             ""
     };
 
@@ -8102,7 +8131,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_EOF_in_entryRuleForLoop371 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_15_in_ruleForLoop408 = new BitSet(new long[]{0x0000000000010000L});
         public static final BitSet FOLLOW_16_in_ruleForLoop420 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleAssignment_in_ruleForLoop441 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleAssignment_in_ruleForLoop441 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleForLoop462 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_17_in_ruleForLoop474 = new BitSet(new long[]{0x0000000000000010L});
         public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_ruleForLoop495 = new BitSet(new long[]{0x0000000000040000L});
@@ -8112,12 +8141,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_EOF_in_entryRuleForLoopCountingExpression574 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression620 = new BitSet(new long[]{0x0000007820000000L});
         public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleForLoopCountingExpression642 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression670 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression670 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleForLoopCountingExpression691 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleWhileLoop_in_entryRuleWhileLoop729 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleWhileLoop739 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_19_in_ruleWhileLoop776 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleWhileLoop788 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_16_in_ruleWhileLoop788 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleWhileLoop809 = new BitSet(new long[]{0x0000000000040000L});
         public static final BitSet FOLLOW_18_in_ruleWhileLoop821 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleWhileLoop842 = new BitSet(new long[]{0x0000000000000002L});
@@ -8126,18 +8155,18 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_20_in_ruleDoWhileLoop925 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleDoWhileLoop946 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_19_in_ruleDoWhileLoop958 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleDoWhileLoop970 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_16_in_ruleDoWhileLoop970 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleDoWhileLoop991 = new BitSet(new long[]{0x0000000000200000L});
         public static final BitSet FOLLOW_21_in_ruleDoWhileLoop1003 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIfStatement_in_entryRuleIfStatement1039 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleIfStatement1049 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_22_in_ruleIfStatement1086 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleIfStatement1098 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_16_in_ruleIfStatement1098 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement1119 = new BitSet(new long[]{0x0000000000040000L});
         public static final BitSet FOLLOW_18_in_ruleIfStatement1131 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement1152 = new BitSet(new long[]{0x0000000001800002L});
         public static final BitSet FOLLOW_23_in_ruleIfStatement1165 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleIfStatement1177 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_16_in_ruleIfStatement1177 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement1198 = new BitSet(new long[]{0x0000000000040000L});
         public static final BitSet FOLLOW_18_in_ruleIfStatement1210 = new BitSet(new long[]{0x0000000000002000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement1231 = new BitSet(new long[]{0x0000000001800002L});
@@ -8145,7 +8174,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement1267 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement1305 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleReturnStatement1315 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleReturnStatement1361 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_25_in_ruleReturnStatement1361 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleReturnStatement1382 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_17_in_ruleReturnStatement1394 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleOperationCallStatement_in_entryRuleOperationCallStatement1430 = new BitSet(new long[]{0x0000000000000000L});
@@ -8165,7 +8194,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleAssignment_in_entryRuleAssignment1815 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAssignment1825 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment1871 = new BitSet(new long[]{0x0000007820000000L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleAssignment1894 = new BitSet(new long[]{0x007E4002465980F0L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleAssignment1894 = new BitSet(new long[]{0x00FC4002465980F0L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleAssignment1915 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleAssignment1943 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_17_in_ruleAssignment1956 = new BitSet(new long[]{0x0000000000000002L});
@@ -8177,9 +8206,9 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression2130 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression2165 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression2175 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleArrayInitializeExpression2212 = new BitSet(new long[]{0x007E4002465980F0L});
+        public static final BitSet FOLLOW_26_in_ruleArrayInitializeExpression2212 = new BitSet(new long[]{0x00FC4002465980F0L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2233 = new BitSet(new long[]{0x0000000018000000L});
-        public static final BitSet FOLLOW_27_in_ruleArrayInitializeExpression2246 = new BitSet(new long[]{0x007E4002465980F0L});
+        public static final BitSet FOLLOW_27_in_ruleArrayInitializeExpression2246 = new BitSet(new long[]{0x00FC4002465980F0L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2267 = new BitSet(new long[]{0x0000000018000000L});
         public static final BitSet FOLLOW_28_in_ruleArrayInitializeExpression2281 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement2317 = new BitSet(new long[]{0x0000000000000000L});
@@ -8190,7 +8219,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration2441 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration2489 = new BitSet(new long[]{0x0000000000000010L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration2506 = new BitSet(new long[]{0x0000000020020000L});
-        public static final BitSet FOLLOW_29_in_ruleLocalVariableDeclaration2524 = new BitSet(new long[]{0x007E4002465980F0L});
+        public static final BitSet FOLLOW_29_in_ruleLocalVariableDeclaration2524 = new BitSet(new long[]{0x00FC4002465980F0L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration2545 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_17_in_ruleLocalVariableDeclaration2559 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration2595 = new BitSet(new long[]{0x0000000000000000L});
@@ -8198,7 +8227,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_30_in_ruleLocalConstantDeclaration2648 = new BitSet(new long[]{0x0000000000000010L});
         public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration2684 = new BitSet(new long[]{0x0000000000000010L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration2701 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleLocalConstantDeclaration2718 = new BitSet(new long[]{0x007E4002465980F0L});
+        public static final BitSet FOLLOW_29_in_ruleLocalConstantDeclaration2718 = new BitSet(new long[]{0x00FC4002465980F0L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration2739 = new BitSet(new long[]{0x0000000000020000L});
         public static final BitSet FOLLOW_17_in_ruleLocalConstantDeclaration2751 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression2787 = new BitSet(new long[]{0x0000000000000000L});
@@ -8224,22 +8253,22 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression3323 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression3333 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3380 = new BitSet(new long[]{0x0000008000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression3410 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression3410 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3431 = new BitSet(new long[]{0x0000008000000002L});
         public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression3469 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression3479 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3526 = new BitSet(new long[]{0x0000010000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression3556 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression3556 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3577 = new BitSet(new long[]{0x0000010000000002L});
         public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression3615 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression3625 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3672 = new BitSet(new long[]{0x0000060000000002L});
-        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression3702 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression3702 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3723 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression3761 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression3771 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3818 = new BitSet(new long[]{0x0000180180000002L});
-        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression3848 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression3848 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3869 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression3907 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression3917 = new BitSet(new long[]{0x0000000000000002L});
@@ -8247,28 +8276,28 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression3997 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression4007 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4054 = new BitSet(new long[]{0x0000600000000002L});
-        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression4084 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression4084 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4105 = new BitSet(new long[]{0x0000600000000002L});
         public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression4143 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression4153 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression4228 = new BitSet(new long[]{0x0001800000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression4258 = new BitSet(new long[]{0x007E4002425980F0L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4281 = new BitSet(new long[]{0x0001800000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression4300 = new BitSet(new long[]{0x0001800000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression4228 = new BitSet(new long[]{0x0003800000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression4258 = new BitSet(new long[]{0x00FC4002425980F0L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4281 = new BitSet(new long[]{0x0003800000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression4300 = new BitSet(new long[]{0x0003800000000002L});
         public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression4342 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression4352 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression4407 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression4407 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleOperand_in_ruleUnaryPreExpression4428 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression4464 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTypeCastExpression4474 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_16_in_ruleTypeCastExpression4520 = new BitSet(new long[]{0x0000000000000010L});
         public static final BitSet FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression4543 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleTypeCastExpression4555 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_18_in_ruleTypeCastExpression4555 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleOperand_in_ruleTypeCastExpression4576 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand4612 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleOperand4622 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_ruleOperand4660 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_16_in_ruleOperand4660 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleOperand4682 = new BitSet(new long[]{0x0000000000040000L});
         public static final BitSet FOLLOW_18_in_ruleOperand4693 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand4722 = new BitSet(new long[]{0x0000000000000002L});
@@ -8288,13 +8317,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression5134 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression5144 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression5191 = new BitSet(new long[]{0x0000001C00000002L});
-        public static final BitSet FOLLOW_34_in_ruleExtendedTypedNamedElementExpression5213 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_34_in_ruleExtendedTypedNamedElementExpression5213 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression5234 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression5272 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression5311 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTypedNamedElementExpression5321 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression5366 = new BitSet(new long[]{0x0000000004000002L});
-        public static final BitSet FOLLOW_26_in_ruleTypedNamedElementExpression5379 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_26_in_ruleTypedNamedElementExpression5379 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleTypedNamedElementExpression5400 = new BitSet(new long[]{0x0000000010000000L});
         public static final BitSet FOLLOW_28_in_ruleTypedNamedElementExpression5412 = new BitSet(new long[]{0x0000000004000002L});
         public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression5450 = new BitSet(new long[]{0x0000000000000000L});
@@ -8303,7 +8332,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression5540 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression5550 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression5596 = new BitSet(new long[]{0x0000000400000002L});
-        public static final BitSet FOLLOW_34_in_rulePositionSelectorExpression5609 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_34_in_rulePositionSelectorExpression5609 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression5630 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall5668 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall5678 = new BitSet(new long[]{0x0000000000000002L});
@@ -8316,7 +8345,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding5843 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleParamaterBinding5853 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleParamaterBinding5907 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleParamaterBinding5919 = new BitSet(new long[]{0x007E4002425980F0L});
+        public static final BitSet FOLLOW_29_in_ruleParamaterBinding5919 = new BitSet(new long[]{0x00FC4002425980F0L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleParamaterBinding5940 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression5976 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression5986 = new BitSet(new long[]{0x0000000000000002L});
@@ -8348,13 +8377,14 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_46_in_ruleAdditionOperator6723 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_47_in_ruleMultiplicationOperator6768 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_48_in_ruleMultiplicationOperator6785 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleUnaryPreOperator6830 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleUnaryPreOperator6847 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_rulePositionSelectorKind6892 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_ruleMultiplicationOperator6802 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleUnaryPreOperator6847 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleUnaryPreOperator6864 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_51_in_rulePositionSelectorKind6909 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_52_in_rulePositionSelectorKind6926 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_53_in_rulePositionSelectorKind6943 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_54_in_rulePositionSelectorKind6960 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_rulePositionSelectorKind6977 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

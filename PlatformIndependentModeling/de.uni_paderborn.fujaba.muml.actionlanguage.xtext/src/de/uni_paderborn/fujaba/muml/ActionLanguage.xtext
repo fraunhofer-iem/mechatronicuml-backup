@@ -255,7 +255,7 @@ MultiplicationExpression returns expressions::Expression:
 ;
 
 enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
-	TIMES='*' | DIVIDE='/'
+	TIMES='*' | DIVIDE='/' | MODULO='%'
 ;
 
 // end of ArithmeticExpression

@@ -1902,12 +1902,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTIMESAsteriskKeyword_0_0 = (Keyword)cTIMESEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cDIVIDEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cDIVIDESolidusKeyword_1_0 = (Keyword)cDIVIDEEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMODULOEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMODULOPercentSignKeyword_2_0 = (Keyword)cMODULOEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
-		//	TIMES="*" | DIVIDE="/";
+		//	TIMES="*" | DIVIDE="/" | MODULO="%";
 		public EnumRule getRule() { return rule; }
 
-		//TIMES="*" | DIVIDE="/"
+		//TIMES="*" | DIVIDE="/" | MODULO="%"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//TIMES="*"
@@ -1921,6 +1923,12 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"/"
 		public Keyword getDIVIDESolidusKeyword_1_0() { return cDIVIDESolidusKeyword_1_0; }
+
+		//MODULO="%"
+		public EnumLiteralDeclaration getMODULOEnumLiteralDeclaration_2() { return cMODULOEnumLiteralDeclaration_2; }
+
+		//"%"
+		public Keyword getMODULOPercentSignKeyword_2_0() { return cMODULOPercentSignKeyword_2_0; }
 	}
 
 	public class UnaryPreOperatorElements extends AbstractEnumRuleElementFinder {
@@ -2546,7 +2554,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum MultiplicationOperator returns commonExpressions::ArithmeticOperator:
-	//	TIMES="*" | DIVIDE="/";
+	//	TIMES="*" | DIVIDE="/" | MODULO="%";
 	public MultiplicationOperatorElements getMultiplicationOperatorAccess() {
 		return unknownRuleMultiplicationOperator;
 	}
