@@ -12,6 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.types.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.impl.TypedNamedElementImpl;
 import de.uni_paderborn.fujaba.muml.types.Attribute;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
@@ -23,6 +24,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 /**
@@ -32,23 +35,31 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.types.impl.AttributeImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.types.impl.AttributeImpl#getComment <em>Comment</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AttributeImpl extends NamedElementImpl implements Attribute {
+public class AttributeImpl extends TypedNamedElementImpl implements Attribute {
 	/**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataType()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType dataType;
-
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,16 +84,8 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getDataType() {
-		if (dataType != null && dataType.eIsProxy()) {
-			InternalEObject oldDataType = (InternalEObject)dataType;
-			dataType = (DataType)eResolveProxy(oldDataType);
-			if (dataType != oldDataType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TypesPackage.ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
-			}
-		}
-		return dataType;
+	public String getComment() {
+		return comment;
 	}
 
 	/**
@@ -90,20 +93,11 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetDataType() {
-		return dataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDataType(DataType newDataType) {
-		DataType oldDataType = dataType;
-		dataType = newDataType;
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypesPackage.ATTRIBUTE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -114,9 +108,8 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TypesPackage.ATTRIBUTE__DATA_TYPE:
-				if (resolve) return getDataType();
-				return basicGetDataType();
+			case TypesPackage.ATTRIBUTE__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -129,8 +122,8 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TypesPackage.ATTRIBUTE__DATA_TYPE:
-				setDataType((DataType)newValue);
+			case TypesPackage.ATTRIBUTE__COMMENT:
+				setComment((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -144,8 +137,8 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TypesPackage.ATTRIBUTE__DATA_TYPE:
-				setDataType((DataType)null);
+			case TypesPackage.ATTRIBUTE__COMMENT:
+				setComment(COMMENT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -159,10 +152,58 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TypesPackage.ATTRIBUTE__DATA_TYPE:
-				return dataType != null;
+			case TypesPackage.ATTRIBUTE__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case TypesPackage.ATTRIBUTE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return TypesPackage.ATTRIBUTE__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //AttributeImpl

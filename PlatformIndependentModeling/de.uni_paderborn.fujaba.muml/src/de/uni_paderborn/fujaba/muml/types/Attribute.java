@@ -12,6 +12,8 @@
  */
 package de.uni_paderborn.fujaba.muml.types;
 
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -23,43 +25,12 @@ import org.storydriven.core.NamedElement;
  * An attribute is a field of a StructType. An attribute specifies a name and a data type. Eligable data types are primitive data types, array data types, and structure data types.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.types.Attribute#getDataType <em>Data Type</em>}</li>
- * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getAttribute()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidAttributeDataType'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidAttributeDataType='-- An attribute may only use a Primtive Data Type, a Ranged Primitive Data Type, an Array Data Type, or a Structure Data Type\r\nself.dataType.oclIsTypeOf(PrimitiveDataType) or self.dataType.oclIsTypeOf(RangedPrimitiveDataType) or self.dataType.oclIsTypeOf(ArrayDataType) or self.dataType.oclIsTypeOf(StructureDataType)\r\n-- author: chris227'"
  * @generated
  */
-public interface Attribute extends NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Data Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Data Type</em>' reference.
-	 * @see #setDataType(DataType)
-	 * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getAttribute_DataType()
-	 * @model required="true"
-	 * @generated
-	 */
-	DataType getDataType();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.types.Attribute#getDataType <em>Data Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Data Type</em>' reference.
-	 * @see #getDataType()
-	 * @generated
-	 */
-	void setDataType(DataType value);
+public interface Attribute extends TypedNamedElement, CommentableElement {
 
 } // Attribute

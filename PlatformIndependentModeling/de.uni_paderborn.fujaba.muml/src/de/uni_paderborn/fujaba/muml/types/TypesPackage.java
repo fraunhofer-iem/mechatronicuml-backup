@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.types;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -1311,7 +1312,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int ATTRIBUTE__ANNOTATION = BehaviorPackage.TYPED_NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1320,7 +1321,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int ATTRIBUTE__EXTENSION = BehaviorPackage.TYPED_NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1329,7 +1330,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int ATTRIBUTE__NAME = BehaviorPackage.TYPED_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -1338,7 +1339,16 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__DATA_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ATTRIBUTE__DATA_TYPE = BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__COMMENT = BehaviorPackage.TYPED_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -1347,7 +1357,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ATTRIBUTE_FEATURE_COUNT = BehaviorPackage.TYPED_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1356,7 +1366,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+	int ATTRIBUTE___ECLASS = BehaviorPackage.TYPED_NAMED_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1365,7 +1375,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+	int ATTRIBUTE___EIS_PROXY = BehaviorPackage.TYPED_NAMED_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1374,7 +1384,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+	int ATTRIBUTE___ERESOURCE = BehaviorPackage.TYPED_NAMED_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1383,7 +1393,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+	int ATTRIBUTE___ECONTAINER = BehaviorPackage.TYPED_NAMED_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1392,7 +1402,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+	int ATTRIBUTE___ECONTAINING_FEATURE = BehaviorPackage.TYPED_NAMED_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1401,7 +1411,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+	int ATTRIBUTE___ECONTAINMENT_FEATURE = BehaviorPackage.TYPED_NAMED_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1410,7 +1420,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+	int ATTRIBUTE___ECONTENTS = BehaviorPackage.TYPED_NAMED_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1419,7 +1429,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+	int ATTRIBUTE___EALL_CONTENTS = BehaviorPackage.TYPED_NAMED_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1428,7 +1438,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+	int ATTRIBUTE___ECROSS_REFERENCES = BehaviorPackage.TYPED_NAMED_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1437,7 +1447,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int ATTRIBUTE___EGET__ESTRUCTURALFEATURE = BehaviorPackage.TYPED_NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1446,7 +1456,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ATTRIBUTE___EGET__ESTRUCTURALFEATURE_BOOLEAN = BehaviorPackage.TYPED_NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1455,7 +1465,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ATTRIBUTE___ESET__ESTRUCTURALFEATURE_OBJECT = BehaviorPackage.TYPED_NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1464,7 +1474,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int ATTRIBUTE___EIS_SET__ESTRUCTURALFEATURE = BehaviorPackage.TYPED_NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1473,7 +1483,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int ATTRIBUTE___EUNSET__ESTRUCTURALFEATURE = BehaviorPackage.TYPED_NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1482,7 +1492,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int ATTRIBUTE___EINVOKE__EOPERATION_ELIST = BehaviorPackage.TYPED_NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1491,7 +1501,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int ATTRIBUTE___GET_EXTENSION__ECLASS = BehaviorPackage.TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1500,7 +1510,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int ATTRIBUTE___PROVIDE_EXTENSION__ECLASS = BehaviorPackage.TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1509,7 +1519,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int ATTRIBUTE___GET_ANNOTATION__STRING = BehaviorPackage.TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1518,7 +1528,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int ATTRIBUTE___PROVIDE_ANNOTATION__STRING = BehaviorPackage.TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -1527,7 +1537,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ATTRIBUTE_OPERATION_COUNT = BehaviorPackage.TYPED_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes <em>Primitive Types</em>}' enum.
@@ -1665,17 +1675,6 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAttribute();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.types.Attribute#getDataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Data Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.types.Attribute#getDataType()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EReference getAttribute_DataType();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes <em>Primitive Types</em>}'.
@@ -1816,14 +1815,6 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ATTRIBUTE = eINSTANCE.getAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE__DATA_TYPE = eINSTANCE.getAttribute_DataType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes <em>Primitive Types</em>}' enum.

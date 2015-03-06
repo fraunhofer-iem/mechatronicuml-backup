@@ -13,6 +13,7 @@
 package de.uni_paderborn.fujaba.muml.types.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.provider.TypedNamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.types.Attribute;
@@ -29,6 +30,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 /**
@@ -37,7 +41,7 @@ import org.storydriven.core.provider.NamedElementItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttributeItemProvider extends NamedElementItemProvider {
+public class AttributeItemProvider extends TypedNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,29 +63,29 @@ public class AttributeItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataTypePropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Data Type feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Attribute_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_dataType_feature", "_UI_Attribute_type"),
-				 TypesPackage.Literals.ATTRIBUTE__DATA_TYPE,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -122,6 +126,12 @@ public class AttributeItemProvider extends NamedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Attribute.class)) {
+			case TypesPackage.ATTRIBUTE__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

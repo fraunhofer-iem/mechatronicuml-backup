@@ -652,12 +652,8 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/types/Attribute"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/types/Attribute/dataType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.7/@classes.6"/>
     </classes>
   </packages>
   <packages>

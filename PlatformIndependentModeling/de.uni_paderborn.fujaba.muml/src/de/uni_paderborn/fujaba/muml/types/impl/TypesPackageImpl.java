@@ -321,15 +321,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAttribute_DataType() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
 	}
@@ -379,7 +370,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		createEReference(structureDataTypeEClass, STRUCTURE_DATA_TYPE__ATTRIBUTES);
 
 		attributeEClass = createEClass(ATTRIBUTE);
-		createEReference(attributeEClass, ATTRIBUTE__DATA_TYPE);
 
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
@@ -411,6 +401,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		// Obtain other dependent packages
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -423,7 +414,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		dataTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		rangedPrimitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		structureDataTypeEClass.getESuperTypes().add(this.getDataType());
-		attributeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		attributeEClass.getESuperTypes().add(theBehaviorPackage.getTypedNamedElement());
+		attributeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -443,7 +435,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEReference(getStructureDataType_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, StructureDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_DataType(), this.getDataType(), null, "dataType", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");

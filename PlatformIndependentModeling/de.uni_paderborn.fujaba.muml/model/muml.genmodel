@@ -410,10 +410,7 @@
       <genClasses ecoreClass="muml.ecore#//types/StructureDataType">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/StructureDataType/attributes"/>
       </genClasses>
-      <genClasses ecoreClass="muml.ecore#//types/Attribute">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//types/Attribute/dataType"/>
-      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//types/Attribute"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Connector" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//connector">
