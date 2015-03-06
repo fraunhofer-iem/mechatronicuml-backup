@@ -6,7 +6,6 @@ package de.uni_paderborn.uppaal.expressions.validation;
 
 import de.uni_paderborn.uppaal.expressions.Expression;
 import de.uni_paderborn.uppaal.expressions.IncrementDecrementOperator;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition;
 
 /**
  * A sample validator interface for {@link de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression}.
@@ -18,6 +17,5 @@ public interface IncrementDecrementExpressionValidator {
 	boolean validate();
 
 	boolean validateExpression(Expression value);
-	boolean validatePosition(IncrementDecrementPosition value);
 	boolean validateOperator(IncrementDecrementOperator value);
 }

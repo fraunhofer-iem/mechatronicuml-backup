@@ -370,26 +370,49 @@ public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IncrementDecrementExpressionItemProvider incrementDecrementExpressionItemProvider;
+	protected PreIncrementDecrementExpressionItemProvider preIncrementDecrementExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression}.
+	 * This creates an adapter for a {@link de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createIncrementDecrementExpressionAdapter() {
-		if (incrementDecrementExpressionItemProvider == null) {
-			incrementDecrementExpressionItemProvider = new IncrementDecrementExpressionItemProvider(this);
+	public Adapter createPreIncrementDecrementExpressionAdapter() {
+		if (preIncrementDecrementExpressionItemProvider == null) {
+			preIncrementDecrementExpressionItemProvider = new PreIncrementDecrementExpressionItemProvider(this);
 		}
 
-		return incrementDecrementExpressionItemProvider;
+		return preIncrementDecrementExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PostIncrementDecrementExpressionItemProvider postIncrementDecrementExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPostIncrementDecrementExpressionAdapter() {
+		if (postIncrementDecrementExpressionItemProvider == null) {
+			postIncrementDecrementExpressionItemProvider = new PostIncrementDecrementExpressionItemProvider(this);
+		}
+
+		return postIncrementDecrementExpressionItemProvider;
 	}
 
 	/**
@@ -619,7 +642,8 @@ public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFac
 		if (compareExpressionItemProvider != null) compareExpressionItemProvider.dispose();
 		if (conditionExpressionItemProvider != null) conditionExpressionItemProvider.dispose();
 		if (quantificationExpressionItemProvider != null) quantificationExpressionItemProvider.dispose();
-		if (incrementDecrementExpressionItemProvider != null) incrementDecrementExpressionItemProvider.dispose();
+		if (preIncrementDecrementExpressionItemProvider != null) preIncrementDecrementExpressionItemProvider.dispose();
+		if (postIncrementDecrementExpressionItemProvider != null) postIncrementDecrementExpressionItemProvider.dispose();
 		if (bitShiftExpressionItemProvider != null) bitShiftExpressionItemProvider.dispose();
 		if (minMaxExpressionItemProvider != null) minMaxExpressionItemProvider.dispose();
 		if (bitwiseExpressionItemProvider != null) bitwiseExpressionItemProvider.dispose();

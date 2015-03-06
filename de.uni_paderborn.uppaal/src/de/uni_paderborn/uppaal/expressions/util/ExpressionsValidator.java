@@ -2,48 +2,19 @@
  */
 package de.uni_paderborn.uppaal.expressions.util;
 
+import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
+
+import de.uni_paderborn.uppaal.expressions.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
-import de.uni_paderborn.uppaal.expressions.*;
-import de.uni_paderborn.uppaal.expressions.ArithmeticExpression;
-import de.uni_paderborn.uppaal.expressions.ArithmeticOperator;
-import de.uni_paderborn.uppaal.expressions.AssignmentExpression;
-import de.uni_paderborn.uppaal.expressions.AssignmentOperator;
-import de.uni_paderborn.uppaal.expressions.BinaryExpression;
-import de.uni_paderborn.uppaal.expressions.BitShiftExpression;
-import de.uni_paderborn.uppaal.expressions.BitShiftOperator;
-import de.uni_paderborn.uppaal.expressions.BitwiseExpression;
-import de.uni_paderborn.uppaal.expressions.BitwiseOperator;
-import de.uni_paderborn.uppaal.expressions.ChannelPrefixExpression;
-import de.uni_paderborn.uppaal.expressions.CompareExpression;
-import de.uni_paderborn.uppaal.expressions.CompareOperator;
-import de.uni_paderborn.uppaal.expressions.ConditionExpression;
-import de.uni_paderborn.uppaal.expressions.DataPrefixExpression;
-import de.uni_paderborn.uppaal.expressions.Expression;
-import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
-import de.uni_paderborn.uppaal.expressions.FunctionCallExpression;
-import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementOperator;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition;
-import de.uni_paderborn.uppaal.expressions.LiteralExpression;
-import de.uni_paderborn.uppaal.expressions.LogicalExpression;
-import de.uni_paderborn.uppaal.expressions.LogicalOperator;
-import de.uni_paderborn.uppaal.expressions.MinMaxExpression;
-import de.uni_paderborn.uppaal.expressions.MinMaxOperator;
-import de.uni_paderborn.uppaal.expressions.MinusExpression;
-import de.uni_paderborn.uppaal.expressions.NegationExpression;
-import de.uni_paderborn.uppaal.expressions.PlusExpression;
-import de.uni_paderborn.uppaal.expressions.QuantificationExpression;
-import de.uni_paderborn.uppaal.expressions.Quantifier;
-import de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,6 +129,10 @@ public class ExpressionsValidator extends EObjectValidator {
 				return validateQuantificationExpression((QuantificationExpression)value, diagnostics, context);
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION:
 				return validateIncrementDecrementExpression((IncrementDecrementExpression)value, diagnostics, context);
+			case ExpressionsPackage.PRE_INCREMENT_DECREMENT_EXPRESSION:
+				return validatePreIncrementDecrementExpression((PreIncrementDecrementExpression)value, diagnostics, context);
+			case ExpressionsPackage.POST_INCREMENT_DECREMENT_EXPRESSION:
+				return validatePostIncrementDecrementExpression((PostIncrementDecrementExpression)value, diagnostics, context);
 			case ExpressionsPackage.BIT_SHIFT_EXPRESSION:
 				return validateBitShiftExpression((BitShiftExpression)value, diagnostics, context);
 			case ExpressionsPackage.MIN_MAX_EXPRESSION:
@@ -180,8 +155,6 @@ public class ExpressionsValidator extends EObjectValidator {
 				return validateQuantifier((Quantifier)value, diagnostics, context);
 			case ExpressionsPackage.INCREMENT_DECREMENT_OPERATOR:
 				return validateIncrementDecrementOperator((IncrementDecrementOperator)value, diagnostics, context);
-			case ExpressionsPackage.INCREMENT_DECREMENT_POSITION:
-				return validateIncrementDecrementPosition((IncrementDecrementPosition)value, diagnostics, context);
 			case ExpressionsPackage.BIT_SHIFT_OPERATOR:
 				return validateBitShiftOperator((BitShiftOperator)value, diagnostics, context);
 			case ExpressionsPackage.MIN_MAX_OPERATOR:
@@ -254,6 +227,15 @@ public class ExpressionsValidator extends EObjectValidator {
 	 */
 	public boolean validateIdentifierExpression(IdentifierExpression identifierExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(identifierExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateScopedIdentifierExpression(ScopedIdentifierExpression scopedIdentifierExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(scopedIdentifierExpression, diagnostics, context);
 	}
 
 	/**
@@ -356,15 +338,6 @@ public class ExpressionsValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateScopedIdentifierExpression(ScopedIdentifierExpression scopedIdentifierExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(scopedIdentifierExpression, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateQuantificationExpression(QuantificationExpression quantificationExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(quantificationExpression, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(quantificationExpression, diagnostics, context);
@@ -418,6 +391,24 @@ public class ExpressionsValidator extends EObjectValidator {
 	 */
 	public boolean validateIncrementDecrementExpression(IncrementDecrementExpression incrementDecrementExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(incrementDecrementExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePreIncrementDecrementExpression(PreIncrementDecrementExpression preIncrementDecrementExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(preIncrementDecrementExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePostIncrementDecrementExpression(PostIncrementDecrementExpression postIncrementDecrementExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(postIncrementDecrementExpression, diagnostics, context);
 	}
 
 	/**
@@ -631,15 +622,6 @@ public class ExpressionsValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateIncrementDecrementOperator(IncrementDecrementOperator incrementDecrementOperator, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncrementDecrementPosition(IncrementDecrementPosition incrementDecrementPosition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

@@ -1322,20 +1322,15 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="IncrementDecrementExpression" eSuperTypes="#//expressions/Expression">
+    <eClassifiers xsi:type="ecore:EClass" name="IncrementDecrementExpression" abstract="true"
+        eSuperTypes="#//expressions/Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An expression describing increment (++) or decrement (---) of an integer-based expression. "/>
+        <details key="documentation" value="Abstract base class for expressions describing increment (++) or decrement (--) of an integer-based expression. "/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
           eType="#//expressions/Expression" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The expression to be incremented or decremented."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
-          eType="#//expressions/IncrementDecrementPosition">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Specifies pre- or post-evaluation."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
@@ -1345,19 +1340,23 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PreIncrementDecrementExpression" eSuperTypes="#//expressions/IncrementDecrementExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Expression describing a prefixed increment (++x) or decrement (--x) of an integer-based expression."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PostIncrementDecrementExpression"
+        eSuperTypes="#//expressions/IncrementDecrementExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Expression describing a postfixed increment (x++) or decrement (x--) of an integer-based expression."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="IncrementDecrementOperator">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Representing increment and decrement operators."/>
       </eAnnotations>
       <eLiterals name="INCREMENT" literal="++"/>
       <eLiterals name="DECREMENT" value="1" literal="--"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="IncrementDecrementPosition">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Representing pre- or post-processing inside increment/decrement expressions."/>
-      </eAnnotations>
-      <eLiterals name="PRE" literal="PRE"/>
-      <eLiterals name="POST" value="1" literal="POST"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BitShiftExpression" eSuperTypes="#//expressions/BinaryExpression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

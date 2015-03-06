@@ -2,21 +2,26 @@
  */
 package de.uni_paderborn.uppaal.expressions.impl;
 
+import de.uni_paderborn.uppaal.declarations.Function;
+
+import de.uni_paderborn.uppaal.expressions.Expression;
+import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
+import de.uni_paderborn.uppaal.expressions.FunctionCallExpression;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import de.uni_paderborn.uppaal.declarations.Function;
-import de.uni_paderborn.uppaal.expressions.Expression;
-import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
-import de.uni_paderborn.uppaal.expressions.FunctionCallExpression;
 
 /**
  * <!-- begin-user-doc -->

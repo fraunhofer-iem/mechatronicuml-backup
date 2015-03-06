@@ -153,6 +153,14 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 				return createIncrementDecrementExpressionAdapter();
 			}
 			@Override
+			public Adapter casePreIncrementDecrementExpression(PreIncrementDecrementExpression object) {
+				return createPreIncrementDecrementExpressionAdapter();
+			}
+			@Override
+			public Adapter casePostIncrementDecrementExpression(PostIncrementDecrementExpression object) {
+				return createPostIncrementDecrementExpressionAdapter();
+			}
+			@Override
 			public Adapter caseBitShiftExpression(BitShiftExpression object) {
 				return createBitShiftExpressionAdapter();
 			}
@@ -417,6 +425,34 @@ public class ExpressionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIncrementDecrementExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression <em>Pre Increment Decrement Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression
+	 * @generated
+	 */
+	public Adapter createPreIncrementDecrementExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression <em>Post Increment Decrement Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression
+	 * @generated
+	 */
+	public Adapter createPostIncrementDecrementExpressionAdapter() {
 		return null;
 	}
 

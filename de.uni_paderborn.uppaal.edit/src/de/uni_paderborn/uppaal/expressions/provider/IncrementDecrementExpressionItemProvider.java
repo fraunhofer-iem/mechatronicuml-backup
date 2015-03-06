@@ -3,22 +3,25 @@
 package de.uni_paderborn.uppaal.expressions.provider;
 
 
+import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
+import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
+import de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression;
+import de.uni_paderborn.uppaal.expressions.IncrementDecrementOperator;
+
+import de.uni_paderborn.uppaal.types.TypesFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition;
-import de.uni_paderborn.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression} object.
@@ -26,8 +29,7 @@ import de.uni_paderborn.uppaal.types.TypesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class IncrementDecrementExpressionItemProvider
-	extends ExpressionItemProvider {
+public class IncrementDecrementExpressionItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -49,32 +51,9 @@ public class IncrementDecrementExpressionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPositionPropertyDescriptor(object);
 			addOperatorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Position feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPositionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IncrementDecrementExpression_position_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncrementDecrementExpression_position_feature", "_UI_IncrementDecrementExpression_type"),
-				 ExpressionsPackage.Literals.INCREMENT_DECREMENT_EXPRESSION__POSITION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -148,12 +127,13 @@ public class IncrementDecrementExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		IncrementDecrementPosition labelValue = ((IncrementDecrementExpression)object).getPosition();
+		IncrementDecrementOperator labelValue = ((IncrementDecrementExpression)object).getOperator();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_IncrementDecrementExpression_type") :
 			getString("_UI_IncrementDecrementExpression_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -167,7 +147,6 @@ public class IncrementDecrementExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(IncrementDecrementExpression.class)) {
-			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__POSITION:
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__OPERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -257,7 +236,12 @@ public class IncrementDecrementExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionsPackage.Literals.INCREMENT_DECREMENT_EXPRESSION__EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionsPackage.Literals.INCREMENT_DECREMENT_EXPRESSION__EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

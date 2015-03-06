@@ -86,14 +86,5 @@ public class UppaalXMLFormatter extends AbstractDeclarativeFormatter {
 		}
 		
 		val UppaalXMLGrammarAccess f = getGrammarAccess() as UppaalXMLGrammarAccess
-		
-		c.setNoSpace().before(f.postIncrementDecrementExpressionAccess.operatorAssignment_1_0_1_0_1)
-		c.setNoSpace().before(f.postIncrementDecrementExpressionAccess.operatorAssignment_1_0_1_1_1)
-		c.setNoSpace().around(f.postIncrementDecrementExpressionAccess.positionAssignment_1_0_1_0_0)
-		c.setNoSpace().around(f.postIncrementDecrementExpressionAccess.positionAssignment_1_0_1_1_0)
-		c.setNoSpace().around(f.preIncrementDecrementExpressionAccess.operatorAssignment_1_1_0_1)
-		c.setNoSpace().around(f.preIncrementDecrementExpressionAccess.operatorAssignment_1_1_1_1)
-		c.setNoSpace().after(f.preIncrementDecrementExpressionAccess.positionAssignment_1_1_0_0)
-		c.setNoSpace().after(f.preIncrementDecrementExpressionAccess.positionAssignment_1_1_1_0)
 	}
 }

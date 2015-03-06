@@ -3,44 +3,15 @@
 package de.uni_paderborn.uppaal.expressions.impl;
 
 import de.uni_paderborn.uppaal.expressions.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.expressions.ArithmeticExpression;
-import de.uni_paderborn.uppaal.expressions.ArithmeticOperator;
-import de.uni_paderborn.uppaal.expressions.AssignmentExpression;
-import de.uni_paderborn.uppaal.expressions.AssignmentOperator;
-import de.uni_paderborn.uppaal.expressions.BitShiftExpression;
-import de.uni_paderborn.uppaal.expressions.BitShiftOperator;
-import de.uni_paderborn.uppaal.expressions.BitwiseExpression;
-import de.uni_paderborn.uppaal.expressions.BitwiseOperator;
-import de.uni_paderborn.uppaal.expressions.ChannelPrefixExpression;
-import de.uni_paderborn.uppaal.expressions.CompareExpression;
-import de.uni_paderborn.uppaal.expressions.CompareOperator;
-import de.uni_paderborn.uppaal.expressions.ConditionExpression;
-import de.uni_paderborn.uppaal.expressions.DataPrefixExpression;
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
-import de.uni_paderborn.uppaal.expressions.FunctionCallExpression;
-import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementOperator;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition;
-import de.uni_paderborn.uppaal.expressions.LiteralExpression;
-import de.uni_paderborn.uppaal.expressions.LogicalExpression;
-import de.uni_paderborn.uppaal.expressions.LogicalOperator;
-import de.uni_paderborn.uppaal.expressions.MinMaxExpression;
-import de.uni_paderborn.uppaal.expressions.MinMaxOperator;
-import de.uni_paderborn.uppaal.expressions.MinusExpression;
-import de.uni_paderborn.uppaal.expressions.NegationExpression;
-import de.uni_paderborn.uppaal.expressions.PlusExpression;
-import de.uni_paderborn.uppaal.expressions.QuantificationExpression;
-import de.uni_paderborn.uppaal.expressions.Quantifier;
-import de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->
@@ -99,7 +70,8 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 			case ExpressionsPackage.COMPARE_EXPRESSION: return createCompareExpression();
 			case ExpressionsPackage.CONDITION_EXPRESSION: return createConditionExpression();
 			case ExpressionsPackage.QUANTIFICATION_EXPRESSION: return createQuantificationExpression();
-			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION: return createIncrementDecrementExpression();
+			case ExpressionsPackage.PRE_INCREMENT_DECREMENT_EXPRESSION: return createPreIncrementDecrementExpression();
+			case ExpressionsPackage.POST_INCREMENT_DECREMENT_EXPRESSION: return createPostIncrementDecrementExpression();
 			case ExpressionsPackage.BIT_SHIFT_EXPRESSION: return createBitShiftExpression();
 			case ExpressionsPackage.MIN_MAX_EXPRESSION: return createMinMaxExpression();
 			case ExpressionsPackage.BITWISE_EXPRESSION: return createBitwiseExpression();
@@ -130,8 +102,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 				return createQuantifierFromString(eDataType, initialValue);
 			case ExpressionsPackage.INCREMENT_DECREMENT_OPERATOR:
 				return createIncrementDecrementOperatorFromString(eDataType, initialValue);
-			case ExpressionsPackage.INCREMENT_DECREMENT_POSITION:
-				return createIncrementDecrementPositionFromString(eDataType, initialValue);
 			case ExpressionsPackage.BIT_SHIFT_OPERATOR:
 				return createBitShiftOperatorFromString(eDataType, initialValue);
 			case ExpressionsPackage.MIN_MAX_OPERATOR:
@@ -163,8 +133,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 				return convertQuantifierToString(eDataType, instanceValue);
 			case ExpressionsPackage.INCREMENT_DECREMENT_OPERATOR:
 				return convertIncrementDecrementOperatorToString(eDataType, instanceValue);
-			case ExpressionsPackage.INCREMENT_DECREMENT_POSITION:
-				return convertIncrementDecrementPositionToString(eDataType, instanceValue);
 			case ExpressionsPackage.BIT_SHIFT_OPERATOR:
 				return convertBitShiftOperatorToString(eDataType, instanceValue);
 			case ExpressionsPackage.MIN_MAX_OPERATOR:
@@ -224,6 +192,16 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	public IdentifierExpression createIdentifierExpression() {
 		IdentifierExpressionImpl identifierExpression = new IdentifierExpressionImpl();
 		return identifierExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScopedIdentifierExpression createScopedIdentifierExpression() {
+		ScopedIdentifierExpressionImpl scopedIdentifierExpression = new ScopedIdentifierExpressionImpl();
+		return scopedIdentifierExpression;
 	}
 
 	/**
@@ -291,16 +269,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScopedIdentifierExpression createScopedIdentifierExpression() {
-		ScopedIdentifierExpressionImpl scopedIdentifierExpression = new ScopedIdentifierExpressionImpl();
-		return scopedIdentifierExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public QuantificationExpression createQuantificationExpression() {
 		QuantificationExpressionImpl quantificationExpression = new QuantificationExpressionImpl();
 		return quantificationExpression;
@@ -311,9 +279,19 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IncrementDecrementExpression createIncrementDecrementExpression() {
-		IncrementDecrementExpressionImpl incrementDecrementExpression = new IncrementDecrementExpressionImpl();
-		return incrementDecrementExpression;
+	public PreIncrementDecrementExpression createPreIncrementDecrementExpression() {
+		PreIncrementDecrementExpressionImpl preIncrementDecrementExpression = new PreIncrementDecrementExpressionImpl();
+		return preIncrementDecrementExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PostIncrementDecrementExpression createPostIncrementDecrementExpression() {
+		PostIncrementDecrementExpressionImpl postIncrementDecrementExpression = new PostIncrementDecrementExpressionImpl();
+		return postIncrementDecrementExpression;
 	}
 
 	/**
@@ -483,26 +461,6 @@ public class ExpressionsFactoryImpl extends EFactoryImpl implements ExpressionsF
 	 * @generated
 	 */
 	public String convertIncrementDecrementOperatorToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IncrementDecrementPosition createIncrementDecrementPositionFromString(EDataType eDataType, String initialValue) {
-		IncrementDecrementPosition result = IncrementDecrementPosition.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIncrementDecrementPositionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

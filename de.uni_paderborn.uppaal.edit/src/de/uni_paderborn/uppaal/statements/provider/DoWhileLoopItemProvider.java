@@ -263,7 +263,12 @@ public class DoWhileLoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(StatementsPackage.Literals.DO_WHILE_LOOP__EXPRESSION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(StatementsPackage.Literals.DO_WHILE_LOOP__EXPRESSION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

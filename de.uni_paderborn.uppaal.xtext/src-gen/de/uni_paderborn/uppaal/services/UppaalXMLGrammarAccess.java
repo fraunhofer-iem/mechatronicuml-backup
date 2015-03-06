@@ -4496,21 +4496,21 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cNegationExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cNegatedExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cNegatedExpressionIncrementDecrementExpressionParserRuleCall_0_2_0 = (RuleCall)cNegatedExpressionAssignment_0_2.eContents().get(0);
-		private final RuleCall cIncrementDecrementExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cNegatedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0 = (RuleCall)cNegatedExpressionAssignment_0_2.eContents().get(0);
+		private final RuleCall cPlusExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//// NOTE: From this point on, I just assume that ++ and -- have a higher
-		//// precedence than ! and that the unary - can only be part of a LiteralExpression.
+		//// precedence than ! and the unary - and +.
 		//// Negation Expression Alternative (logical not, '!')
 		//// (unary, right-recursive,)
 		//NegationExpression_Alternative returns expressions::Expression:
-		//	{expressions::NegationExpression} "!" negatedExpression=IncrementDecrementExpression | IncrementDecrementExpression;
+		//	{expressions::NegationExpression} "!" negatedExpression=NegationExpression_Alternative | PlusExpression;
 		public ParserRule getRule() { return rule; }
 
-		//{expressions::NegationExpression} "!" negatedExpression=IncrementDecrementExpression | IncrementDecrementExpression
+		//{expressions::NegationExpression} "!" negatedExpression=NegationExpression_Alternative | PlusExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{expressions::NegationExpression} "!" negatedExpression=IncrementDecrementExpression
+		//{expressions::NegationExpression} "!" negatedExpression=NegationExpression_Alternative
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{expressions::NegationExpression}
@@ -4519,11 +4519,83 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//"!"
 		public Keyword getExclamationMarkKeyword_0_1() { return cExclamationMarkKeyword_0_1; }
 
-		//negatedExpression=IncrementDecrementExpression
+		//negatedExpression=NegationExpression_Alternative
 		public Assignment getNegatedExpressionAssignment_0_2() { return cNegatedExpressionAssignment_0_2; }
 
-		//IncrementDecrementExpression
-		public RuleCall getNegatedExpressionIncrementDecrementExpressionParserRuleCall_0_2_0() { return cNegatedExpressionIncrementDecrementExpressionParserRuleCall_0_2_0; }
+		//NegationExpression_Alternative
+		public RuleCall getNegatedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0() { return cNegatedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0; }
+
+		//PlusExpression
+		public RuleCall getPlusExpressionParserRuleCall_1() { return cPlusExpressionParserRuleCall_1; }
+	}
+
+	public class PlusExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PlusExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cPlusExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cPlusSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cConfirmedExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cConfirmedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0 = (RuleCall)cConfirmedExpressionAssignment_0_2.eContents().get(0);
+		private final RuleCall cMinusExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//PlusExpression returns expressions::Expression:
+		//	{expressions::PlusExpression} "+" confirmedExpression=NegationExpression_Alternative | MinusExpression;
+		public ParserRule getRule() { return rule; }
+
+		//{expressions::PlusExpression} "+" confirmedExpression=NegationExpression_Alternative | MinusExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//{expressions::PlusExpression} "+" confirmedExpression=NegationExpression_Alternative
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{expressions::PlusExpression}
+		public Action getPlusExpressionAction_0_0() { return cPlusExpressionAction_0_0; }
+
+		//"+"
+		public Keyword getPlusSignKeyword_0_1() { return cPlusSignKeyword_0_1; }
+
+		//confirmedExpression=NegationExpression_Alternative
+		public Assignment getConfirmedExpressionAssignment_0_2() { return cConfirmedExpressionAssignment_0_2; }
+
+		//NegationExpression_Alternative
+		public RuleCall getConfirmedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0() { return cConfirmedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0; }
+
+		//MinusExpression
+		public RuleCall getMinusExpressionParserRuleCall_1() { return cMinusExpressionParserRuleCall_1; }
+	}
+
+	public class MinusExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MinusExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cMinusExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cInvertedExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0 = (RuleCall)cInvertedExpressionAssignment_0_2.eContents().get(0);
+		private final RuleCall cIncrementDecrementExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//MinusExpression returns expressions::Expression:
+		//	{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | IncrementDecrementExpression;
+		public ParserRule getRule() { return rule; }
+
+		//{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | IncrementDecrementExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative
+		public Group getGroup_0() { return cGroup_0; }
+
+		//{expressions::MinusExpression}
+		public Action getMinusExpressionAction_0_0() { return cMinusExpressionAction_0_0; }
+
+		//"-"
+		public Keyword getHyphenMinusKeyword_0_1() { return cHyphenMinusKeyword_0_1; }
+
+		//invertedExpression=NegationExpression_Alternative
+		public Assignment getInvertedExpressionAssignment_0_2() { return cInvertedExpressionAssignment_0_2; }
+
+		//NegationExpression_Alternative
+		public RuleCall getInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0() { return cInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0; }
 
 		//IncrementDecrementExpression
 		public RuleCall getIncrementDecrementExpressionParserRuleCall_1() { return cIncrementDecrementExpressionParserRuleCall_1; }
@@ -4535,10 +4607,6 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// Increment/Decrement Expression (++,--, pre and post)
 		//// (unary, right-recursive)
-		//// "Hack": Two enums need to be set by one token, e.g. Operator.INCREMENT
-		//// and Position.PRE for ++variable. This is not that easy, so the ++ was
-		//// split up so each enum consumes one +. This leads to the need of splitting
-		//// up all possible cases into separate rules.
 		//IncrementDecrementExpression returns expressions::Expression:
 		//	PreIncrementDecrementExpression;
 		public ParserRule getRule() { return rule; }
@@ -4552,74 +4620,36 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cPostIncrementDecrementExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cIncrementDecrementExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Group cGroup_1_1_0 = (Group)cAlternatives_1_1.eContents().get(0);
-		private final Assignment cPositionAssignment_1_1_0_0 = (Assignment)cGroup_1_1_0.eContents().get(0);
-		private final RuleCall cPositionPreIncrementPositionEnumRuleCall_1_1_0_0_0 = (RuleCall)cPositionAssignment_1_1_0_0.eContents().get(0);
-		private final Assignment cOperatorAssignment_1_1_0_1 = (Assignment)cGroup_1_1_0.eContents().get(1);
-		private final RuleCall cOperatorIncrementOperatorEnumRuleCall_1_1_0_1_0 = (RuleCall)cOperatorAssignment_1_1_0_1.eContents().get(0);
-		private final Group cGroup_1_1_1 = (Group)cAlternatives_1_1.eContents().get(1);
-		private final Assignment cPositionAssignment_1_1_1_0 = (Assignment)cGroup_1_1_1.eContents().get(0);
-		private final RuleCall cPositionPreDecrementPositionEnumRuleCall_1_1_1_0_0 = (RuleCall)cPositionAssignment_1_1_1_0.eContents().get(0);
-		private final Assignment cOperatorAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
-		private final RuleCall cOperatorDecrementOperatorEnumRuleCall_1_1_1_1_0 = (RuleCall)cOperatorAssignment_1_1_1_1.eContents().get(0);
+		private final Action cPreIncrementDecrementExpressionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
 		private final Assignment cExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cExpressionPreIncrementDecrementExpressionParserRuleCall_1_2_0 = (RuleCall)cExpressionAssignment_1_2.eContents().get(0);
 		
 		//PreIncrementDecrementExpression returns expressions::Expression:
-		//	PostIncrementDecrementExpression | {expressions::IncrementDecrementExpression} (position=PreIncrementPosition
-		//	operator=IncrementOperator | position=PreDecrementPosition operator=DecrementOperator)
+		//	PostIncrementDecrementExpression | {expressions::PreIncrementDecrementExpression} operator=IncrementDecrementOperator
 		//	expression=PreIncrementDecrementExpression;
 		public ParserRule getRule() { return rule; }
 
-		//PostIncrementDecrementExpression | {expressions::IncrementDecrementExpression} (position=PreIncrementPosition
-		//operator=IncrementOperator | position=PreDecrementPosition operator=DecrementOperator)
+		//PostIncrementDecrementExpression | {expressions::PreIncrementDecrementExpression} operator=IncrementDecrementOperator
 		//expression=PreIncrementDecrementExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//PostIncrementDecrementExpression
 		public RuleCall getPostIncrementDecrementExpressionParserRuleCall_0() { return cPostIncrementDecrementExpressionParserRuleCall_0; }
 
-		//{expressions::IncrementDecrementExpression} (position=PreIncrementPosition operator=IncrementOperator |
-		//position=PreDecrementPosition operator=DecrementOperator) expression=PreIncrementDecrementExpression
+		//{expressions::PreIncrementDecrementExpression} operator=IncrementDecrementOperator
+		//expression=PreIncrementDecrementExpression
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{expressions::IncrementDecrementExpression}
-		public Action getIncrementDecrementExpressionAction_1_0() { return cIncrementDecrementExpressionAction_1_0; }
+		//{expressions::PreIncrementDecrementExpression}
+		public Action getPreIncrementDecrementExpressionAction_1_0() { return cPreIncrementDecrementExpressionAction_1_0; }
 
-		//position=PreIncrementPosition operator=IncrementOperator | position=PreDecrementPosition operator=DecrementOperator
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		//operator=IncrementDecrementOperator
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
 
-		//position=PreIncrementPosition operator=IncrementOperator
-		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
-
-		//position=PreIncrementPosition
-		public Assignment getPositionAssignment_1_1_0_0() { return cPositionAssignment_1_1_0_0; }
-
-		//PreIncrementPosition
-		public RuleCall getPositionPreIncrementPositionEnumRuleCall_1_1_0_0_0() { return cPositionPreIncrementPositionEnumRuleCall_1_1_0_0_0; }
-
-		//operator=IncrementOperator
-		public Assignment getOperatorAssignment_1_1_0_1() { return cOperatorAssignment_1_1_0_1; }
-
-		//IncrementOperator
-		public RuleCall getOperatorIncrementOperatorEnumRuleCall_1_1_0_1_0() { return cOperatorIncrementOperatorEnumRuleCall_1_1_0_1_0; }
-
-		//position=PreDecrementPosition operator=DecrementOperator
-		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
-
-		//position=PreDecrementPosition
-		public Assignment getPositionAssignment_1_1_1_0() { return cPositionAssignment_1_1_1_0; }
-
-		//PreDecrementPosition
-		public RuleCall getPositionPreDecrementPositionEnumRuleCall_1_1_1_0_0() { return cPositionPreDecrementPositionEnumRuleCall_1_1_1_0_0; }
-
-		//operator=DecrementOperator
-		public Assignment getOperatorAssignment_1_1_1_1() { return cOperatorAssignment_1_1_1_1; }
-
-		//DecrementOperator
-		public RuleCall getOperatorDecrementOperatorEnumRuleCall_1_1_1_1_0() { return cOperatorDecrementOperatorEnumRuleCall_1_1_1_1_0; }
+		//IncrementDecrementOperator
+		public RuleCall getOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0() { return cOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0; }
 
 		//expression=PreIncrementDecrementExpression
 		public Assignment getExpressionAssignment_1_2() { return cExpressionAssignment_1_2; }
@@ -4634,34 +4664,23 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cScopedIdentifierExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cIncrementDecrementExpressionExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Alternatives cAlternatives_1_0_1 = (Alternatives)cGroup_1_0.eContents().get(1);
-		private final Group cGroup_1_0_1_0 = (Group)cAlternatives_1_0_1.eContents().get(0);
-		private final Assignment cPositionAssignment_1_0_1_0_0 = (Assignment)cGroup_1_0_1_0.eContents().get(0);
-		private final RuleCall cPositionPostIncrementPositionEnumRuleCall_1_0_1_0_0_0 = (RuleCall)cPositionAssignment_1_0_1_0_0.eContents().get(0);
-		private final Assignment cOperatorAssignment_1_0_1_0_1 = (Assignment)cGroup_1_0_1_0.eContents().get(1);
-		private final RuleCall cOperatorIncrementOperatorEnumRuleCall_1_0_1_0_1_0 = (RuleCall)cOperatorAssignment_1_0_1_0_1.eContents().get(0);
-		private final Group cGroup_1_0_1_1 = (Group)cAlternatives_1_0_1.eContents().get(1);
-		private final Assignment cPositionAssignment_1_0_1_1_0 = (Assignment)cGroup_1_0_1_1.eContents().get(0);
-		private final RuleCall cPositionPostDecrementPositionEnumRuleCall_1_0_1_1_0_0 = (RuleCall)cPositionAssignment_1_0_1_1_0.eContents().get(0);
-		private final Assignment cOperatorAssignment_1_0_1_1_1 = (Assignment)cGroup_1_0_1_1.eContents().get(1);
-		private final RuleCall cOperatorDecrementOperatorEnumRuleCall_1_0_1_1_1_0 = (RuleCall)cOperatorAssignment_1_0_1_1_1.eContents().get(0);
+		private final Action cPostIncrementDecrementExpressionExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final RuleCall cOperatorIncrementDecrementOperatorEnumRuleCall_1_0_1_0 = (RuleCall)cOperatorAssignment_1_0_1.eContents().get(0);
 		
 		//PostIncrementDecrementExpression returns expressions::Expression:
 		//	ScopedIdentifierExpression // Note: For expressions like a+++b, two ways to split them up exist:
 		//	//   (a++)+b and a+(++b)
 		//	// As UPPAAL uses the former way a syntactic predicate ensures the
 		//	// higher precedence of the post-expression.
-		//	=> ({expressions::IncrementDecrementExpression.expression=current} (position=PostIncrementPosition
-		//	operator=IncrementOperator | position=PostDecrementPosition operator=DecrementOperator))*;
+		//	=> ({expressions::PostIncrementDecrementExpression.expression=current} operator=IncrementDecrementOperator)*;
 		public ParserRule getRule() { return rule; }
 
 		//ScopedIdentifierExpression // Note: For expressions like a+++b, two ways to split them up exist:
 		////   (a++)+b and a+(++b)
 		//// As UPPAAL uses the former way a syntactic predicate ensures the
 		//// higher precedence of the post-expression.
-		//=> ({expressions::IncrementDecrementExpression.expression=current} (position=PostIncrementPosition
-		//operator=IncrementOperator | position=PostDecrementPosition operator=DecrementOperator))*
+		//=> ({expressions::PostIncrementDecrementExpression.expression=current} operator=IncrementDecrementOperator)*
 		public Group getGroup() { return cGroup; }
 
 		//ScopedIdentifierExpression
@@ -4671,49 +4690,20 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		////   (a++)+b and a+(++b)
 		//// As UPPAAL uses the former way a syntactic predicate ensures the
 		//// higher precedence of the post-expression.
-		//=> ({expressions::IncrementDecrementExpression.expression=current} (position=PostIncrementPosition
-		//operator=IncrementOperator | position=PostDecrementPosition operator=DecrementOperator))*
+		//=> ({expressions::PostIncrementDecrementExpression.expression=current} operator=IncrementDecrementOperator)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{expressions::IncrementDecrementExpression.expression=current} (position=PostIncrementPosition
-		//operator=IncrementOperator | position=PostDecrementPosition operator=DecrementOperator)
+		//{expressions::PostIncrementDecrementExpression.expression=current} operator=IncrementDecrementOperator
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//{expressions::IncrementDecrementExpression.expression=current}
-		public Action getIncrementDecrementExpressionExpressionAction_1_0_0() { return cIncrementDecrementExpressionExpressionAction_1_0_0; }
+		//{expressions::PostIncrementDecrementExpression.expression=current}
+		public Action getPostIncrementDecrementExpressionExpressionAction_1_0_0() { return cPostIncrementDecrementExpressionExpressionAction_1_0_0; }
 
-		//position=PostIncrementPosition operator=IncrementOperator | position=PostDecrementPosition operator=DecrementOperator
-		public Alternatives getAlternatives_1_0_1() { return cAlternatives_1_0_1; }
+		//operator=IncrementDecrementOperator
+		public Assignment getOperatorAssignment_1_0_1() { return cOperatorAssignment_1_0_1; }
 
-		//position=PostIncrementPosition operator=IncrementOperator
-		public Group getGroup_1_0_1_0() { return cGroup_1_0_1_0; }
-
-		//position=PostIncrementPosition
-		public Assignment getPositionAssignment_1_0_1_0_0() { return cPositionAssignment_1_0_1_0_0; }
-
-		//PostIncrementPosition
-		public RuleCall getPositionPostIncrementPositionEnumRuleCall_1_0_1_0_0_0() { return cPositionPostIncrementPositionEnumRuleCall_1_0_1_0_0_0; }
-
-		//operator=IncrementOperator
-		public Assignment getOperatorAssignment_1_0_1_0_1() { return cOperatorAssignment_1_0_1_0_1; }
-
-		//IncrementOperator
-		public RuleCall getOperatorIncrementOperatorEnumRuleCall_1_0_1_0_1_0() { return cOperatorIncrementOperatorEnumRuleCall_1_0_1_0_1_0; }
-
-		//position=PostDecrementPosition operator=DecrementOperator
-		public Group getGroup_1_0_1_1() { return cGroup_1_0_1_1; }
-
-		//position=PostDecrementPosition
-		public Assignment getPositionAssignment_1_0_1_1_0() { return cPositionAssignment_1_0_1_1_0; }
-
-		//PostDecrementPosition
-		public RuleCall getPositionPostDecrementPositionEnumRuleCall_1_0_1_1_0_0() { return cPositionPostDecrementPositionEnumRuleCall_1_0_1_1_0_0; }
-
-		//operator=DecrementOperator
-		public Assignment getOperatorAssignment_1_0_1_1_1() { return cOperatorAssignment_1_0_1_1_1; }
-
-		//DecrementOperator
-		public RuleCall getOperatorDecrementOperatorEnumRuleCall_1_0_1_1_1_0() { return cOperatorDecrementOperatorEnumRuleCall_1_0_1_1_1_0; }
+		//IncrementDecrementOperator
+		public RuleCall getOperatorIncrementDecrementOperatorEnumRuleCall_1_0_1_0() { return cOperatorIncrementDecrementOperatorEnumRuleCall_1_0_1_0; }
 	}
 
 	public class ScopedIdentifierExpressionElements extends AbstractParserRuleElementFinder {
@@ -4816,15 +4806,13 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//LiteralExpressionText returns ecore::EString:
-		//	"true" | "false" | "-"? INT;
+		//	"true" | "false" | INT;
 		public ParserRule getRule() { return rule; }
 
-		//"true" | "false" | "-"? INT
+		//"true" | "false" | INT
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"true"
@@ -4833,14 +4821,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//"false"
 		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 
-		//"-"? INT
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"-"?
-		public Keyword getHyphenMinusKeyword_2_0() { return cHyphenMinusKeyword_2_0; }
-
 		//INT
-		public RuleCall getINTTerminalRuleCall_2_1() { return cINTTerminalRuleCall_2_1; }
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
 
 	public class FunctionCallExpressionElements extends AbstractParserRuleElementFinder {
@@ -5259,43 +5241,46 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSolidusKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
 		private final Keyword cPlusSignKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
 		private final Keyword cHyphenMinusKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cLtLtKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cGtGtKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cLtKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cGtKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cPlusSignPlusSignKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cHyphenMinusHyphenMinusKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cLtLtKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cGtGtKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
 		private final Keyword cLtKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
 		private final Keyword cGtKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
-		private final Keyword cEqualsSignEqualsSignKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
-		private final Keyword cExclamationMarkEqualsSignKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
-		private final Keyword cAmpersandKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
-		private final Keyword cAmpKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
-		private final Keyword cCircumflexAccentKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
-		private final Keyword cVerticalLineKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
-		private final Keyword cAmpersandAmpersandKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
-		private final Keyword cAmpAmpKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
-		private final Keyword cVerticalLineVerticalLineKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cEqualsSignKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cPlusSignEqualsSignKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cHyphenMinusEqualsSignKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cAsteriskEqualsSignKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cSolidusEqualsSignKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cPercentSignEqualsSignKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final Keyword cVerticalLineEqualsSignKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
-		private final Keyword cAmpersandEqualsSignKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cCircumflexAccentEqualsSignKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cLtLtKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cGtGtKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cColonKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cLtKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cGtKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cEqualsSignEqualsSignKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cExclamationMarkEqualsSignKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cAmpersandKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cAmpKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cCircumflexAccentKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cVerticalLineKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cAmpersandAmpersandKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cAmpAmpKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cVerticalLineVerticalLineKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cEqualsSignKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cPlusSignEqualsSignKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cHyphenMinusEqualsSignKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cAsteriskEqualsSignKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cSolidusEqualsSignKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cPercentSignEqualsSignKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cVerticalLineEqualsSignKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cAmpersandEqualsSignKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cCircumflexAccentEqualsSignKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cLtLtKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cGtGtKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cColonKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
 		
 		//UPPAAL_STRUCTURE_KEYWORDS:
-		//	"[" | "]" | "&lt;" | "&gt" | ";" | "," | "{" | "}" | "(" | ")" | "?" | "!" | "*" | "%" | "/" | "+" | "-" | "&lt;&lt;"
-		//	| "&gt;&gt" | "&lt;?" | "&gt;?" | "&lt;=" | "&gt;=" | "==" | "!=" | "&" | "&amp;" | "^" | "|" | "&&" | "&amp;&amp;" |
-		//	"||" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "|=" | "&=" | "^=" | "&lt;&lt;=" | "&gt;&gt;=" | ":";
+		//	"[" | "]" | "&lt;" | "&gt" | ";" | "," | "{" | "}" | "(" | ")" | "?" | "!" | "*" | "%" | "/" | "+" | "-" | "++" |
+		//	"--" | "&lt;&lt;" | "&gt;&gt" | "&lt;?" | "&gt;?" | "&lt;=" | "&gt;=" | "==" | "!=" | "&" | "&amp;" | "^" | "|" |
+		//	"&&" | "&amp;&amp;" | "||" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "|=" | "&=" | "^=" | "&lt;&lt;=" | "&gt;&gt;="
+		//	| ":";
 		public ParserRule getRule() { return rule; }
 
-		//"[" | "]" | "&lt;" | "&gt" | ";" | "," | "{" | "}" | "(" | ")" | "?" | "!" | "*" | "%" | "/" | "+" | "-" | "&lt;&lt;" |
-		//"&gt;&gt" | "&lt;?" | "&gt;?" | "&lt;=" | "&gt;=" | "==" | "!=" | "&" | "&amp;" | "^" | "|" | "&&" | "&amp;&amp;" |
-		//"||" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "|=" | "&=" | "^=" | "&lt;&lt;=" | "&gt;&gt;=" | ":"
+		//"[" | "]" | "&lt;" | "&gt" | ";" | "," | "{" | "}" | "(" | ")" | "?" | "!" | "*" | "%" | "/" | "+" | "-" | "++" | "--" |
+		//"&lt;&lt;" | "&gt;&gt" | "&lt;?" | "&gt;?" | "&lt;=" | "&gt;=" | "==" | "!=" | "&" | "&amp;" | "^" | "|" | "&&" |
+		//"&amp;&amp;" | "||" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "|=" | "&=" | "^=" | "&lt;&lt;=" | "&gt;&gt;=" | ":"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"["
@@ -5349,86 +5334,92 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//"-"
 		public Keyword getHyphenMinusKeyword_16() { return cHyphenMinusKeyword_16; }
 
+		//"++"
+		public Keyword getPlusSignPlusSignKeyword_17() { return cPlusSignPlusSignKeyword_17; }
+
+		//"--"
+		public Keyword getHyphenMinusHyphenMinusKeyword_18() { return cHyphenMinusHyphenMinusKeyword_18; }
+
 		//"&lt;&lt;"
-		public Keyword getLtLtKeyword_17() { return cLtLtKeyword_17; }
+		public Keyword getLtLtKeyword_19() { return cLtLtKeyword_19; }
 
 		//"&gt;&gt"
-		public Keyword getGtGtKeyword_18() { return cGtGtKeyword_18; }
+		public Keyword getGtGtKeyword_20() { return cGtGtKeyword_20; }
 
 		//"&lt;?"
-		public Keyword getLtKeyword_19() { return cLtKeyword_19; }
-
-		//"&gt;?"
-		public Keyword getGtKeyword_20() { return cGtKeyword_20; }
-
-		//"&lt;="
 		public Keyword getLtKeyword_21() { return cLtKeyword_21; }
 
-		//"&gt;="
+		//"&gt;?"
 		public Keyword getGtKeyword_22() { return cGtKeyword_22; }
 
+		//"&lt;="
+		public Keyword getLtKeyword_23() { return cLtKeyword_23; }
+
+		//"&gt;="
+		public Keyword getGtKeyword_24() { return cGtKeyword_24; }
+
 		//"=="
-		public Keyword getEqualsSignEqualsSignKeyword_23() { return cEqualsSignEqualsSignKeyword_23; }
+		public Keyword getEqualsSignEqualsSignKeyword_25() { return cEqualsSignEqualsSignKeyword_25; }
 
 		//"!="
-		public Keyword getExclamationMarkEqualsSignKeyword_24() { return cExclamationMarkEqualsSignKeyword_24; }
+		public Keyword getExclamationMarkEqualsSignKeyword_26() { return cExclamationMarkEqualsSignKeyword_26; }
 
 		//"&"
-		public Keyword getAmpersandKeyword_25() { return cAmpersandKeyword_25; }
+		public Keyword getAmpersandKeyword_27() { return cAmpersandKeyword_27; }
 
 		//"&amp;"
-		public Keyword getAmpKeyword_26() { return cAmpKeyword_26; }
+		public Keyword getAmpKeyword_28() { return cAmpKeyword_28; }
 
 		//"^"
-		public Keyword getCircumflexAccentKeyword_27() { return cCircumflexAccentKeyword_27; }
+		public Keyword getCircumflexAccentKeyword_29() { return cCircumflexAccentKeyword_29; }
 
 		//"|"
-		public Keyword getVerticalLineKeyword_28() { return cVerticalLineKeyword_28; }
+		public Keyword getVerticalLineKeyword_30() { return cVerticalLineKeyword_30; }
 
 		//"&&"
-		public Keyword getAmpersandAmpersandKeyword_29() { return cAmpersandAmpersandKeyword_29; }
+		public Keyword getAmpersandAmpersandKeyword_31() { return cAmpersandAmpersandKeyword_31; }
 
 		//"&amp;&amp;"
-		public Keyword getAmpAmpKeyword_30() { return cAmpAmpKeyword_30; }
+		public Keyword getAmpAmpKeyword_32() { return cAmpAmpKeyword_32; }
 
 		//"||"
-		public Keyword getVerticalLineVerticalLineKeyword_31() { return cVerticalLineVerticalLineKeyword_31; }
+		public Keyword getVerticalLineVerticalLineKeyword_33() { return cVerticalLineVerticalLineKeyword_33; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_32() { return cEqualsSignKeyword_32; }
+		public Keyword getEqualsSignKeyword_34() { return cEqualsSignKeyword_34; }
 
 		//"+="
-		public Keyword getPlusSignEqualsSignKeyword_33() { return cPlusSignEqualsSignKeyword_33; }
+		public Keyword getPlusSignEqualsSignKeyword_35() { return cPlusSignEqualsSignKeyword_35; }
 
 		//"-="
-		public Keyword getHyphenMinusEqualsSignKeyword_34() { return cHyphenMinusEqualsSignKeyword_34; }
+		public Keyword getHyphenMinusEqualsSignKeyword_36() { return cHyphenMinusEqualsSignKeyword_36; }
 
 		//"*="
-		public Keyword getAsteriskEqualsSignKeyword_35() { return cAsteriskEqualsSignKeyword_35; }
+		public Keyword getAsteriskEqualsSignKeyword_37() { return cAsteriskEqualsSignKeyword_37; }
 
 		//"/="
-		public Keyword getSolidusEqualsSignKeyword_36() { return cSolidusEqualsSignKeyword_36; }
+		public Keyword getSolidusEqualsSignKeyword_38() { return cSolidusEqualsSignKeyword_38; }
 
 		//"%="
-		public Keyword getPercentSignEqualsSignKeyword_37() { return cPercentSignEqualsSignKeyword_37; }
+		public Keyword getPercentSignEqualsSignKeyword_39() { return cPercentSignEqualsSignKeyword_39; }
 
 		//"|="
-		public Keyword getVerticalLineEqualsSignKeyword_38() { return cVerticalLineEqualsSignKeyword_38; }
+		public Keyword getVerticalLineEqualsSignKeyword_40() { return cVerticalLineEqualsSignKeyword_40; }
 
 		//"&="
-		public Keyword getAmpersandEqualsSignKeyword_39() { return cAmpersandEqualsSignKeyword_39; }
+		public Keyword getAmpersandEqualsSignKeyword_41() { return cAmpersandEqualsSignKeyword_41; }
 
 		//"^="
-		public Keyword getCircumflexAccentEqualsSignKeyword_40() { return cCircumflexAccentEqualsSignKeyword_40; }
+		public Keyword getCircumflexAccentEqualsSignKeyword_42() { return cCircumflexAccentEqualsSignKeyword_42; }
 
 		//"&lt;&lt;="
-		public Keyword getLtLtKeyword_41() { return cLtLtKeyword_41; }
+		public Keyword getLtLtKeyword_43() { return cLtLtKeyword_43; }
 
 		//"&gt;&gt;="
-		public Keyword getGtGtKeyword_42() { return cGtGtKeyword_42; }
+		public Keyword getGtGtKeyword_44() { return cGtGtKeyword_44; }
 
 		//":"
-		public Keyword getColonKeyword_43() { return cColonKeyword_43; }
+		public Keyword getColonKeyword_45() { return cColonKeyword_45; }
 	}
 
 	public class QUOTED_INTElements extends AbstractParserRuleElementFinder {
@@ -6245,100 +6236,32 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getMODULOPercentSignKeyword_2_0() { return cMODULOPercentSignKeyword_2_0; }
 	}
 
-	public class PreIncrementPositionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "PreIncrementPosition");
-		private final EnumLiteralDeclaration cPREEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cPREPlusSignKeyword_0 = (Keyword)cPREEnumLiteralDeclaration.eContents().get(0);
+	public class IncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementDecrementOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cINCREMENTPlusSignPlusSignKeyword_0_0 = (Keyword)cINCREMENTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDECREMENTHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cDECREMENTEnumLiteralDeclaration_1.eContents().get(0);
 		
-		//enum PreIncrementPosition returns expressions::IncrementDecrementPosition:
-		//	PRE="+";
+		//enum IncrementDecrementOperator returns expressions::IncrementDecrementOperator:
+		//	INCREMENT="++" | DECREMENT="--";
 		public EnumRule getRule() { return rule; }
 
-		//PRE="+"
-		public EnumLiteralDeclaration getPREEnumLiteralDeclaration() { return cPREEnumLiteralDeclaration; }
+		//INCREMENT="++" | DECREMENT="--"
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"+"
-		public Keyword getPREPlusSignKeyword_0() { return cPREPlusSignKeyword_0; }
-	}
+		//INCREMENT="++"
+		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration_0() { return cINCREMENTEnumLiteralDeclaration_0; }
 
-	public class PreDecrementPositionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "PreDecrementPosition");
-		private final EnumLiteralDeclaration cPREEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cPREHyphenMinusKeyword_0 = (Keyword)cPREEnumLiteralDeclaration.eContents().get(0);
-		
-		//enum PreDecrementPosition returns expressions::IncrementDecrementPosition:
-		//	PRE="-";
-		public EnumRule getRule() { return rule; }
+		//"++"
+		public Keyword getINCREMENTPlusSignPlusSignKeyword_0_0() { return cINCREMENTPlusSignPlusSignKeyword_0_0; }
 
-		//PRE="-"
-		public EnumLiteralDeclaration getPREEnumLiteralDeclaration() { return cPREEnumLiteralDeclaration; }
+		//DECREMENT="--"
+		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration_1() { return cDECREMENTEnumLiteralDeclaration_1; }
 
-		//"-"
-		public Keyword getPREHyphenMinusKeyword_0() { return cPREHyphenMinusKeyword_0; }
-	}
-
-	public class PostIncrementPositionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "PostIncrementPosition");
-		private final EnumLiteralDeclaration cPOSTEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cPOSTPlusSignKeyword_0 = (Keyword)cPOSTEnumLiteralDeclaration.eContents().get(0);
-		
-		//enum PostIncrementPosition returns expressions::IncrementDecrementPosition:
-		//	POST="+";
-		public EnumRule getRule() { return rule; }
-
-		//POST="+"
-		public EnumLiteralDeclaration getPOSTEnumLiteralDeclaration() { return cPOSTEnumLiteralDeclaration; }
-
-		//"+"
-		public Keyword getPOSTPlusSignKeyword_0() { return cPOSTPlusSignKeyword_0; }
-	}
-
-	public class PostDecrementPositionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "PostDecrementPosition");
-		private final EnumLiteralDeclaration cPOSTEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cPOSTHyphenMinusKeyword_0 = (Keyword)cPOSTEnumLiteralDeclaration.eContents().get(0);
-		
-		//enum PostDecrementPosition returns expressions::IncrementDecrementPosition:
-		//	POST="-";
-		public EnumRule getRule() { return rule; }
-
-		//POST="-"
-		public EnumLiteralDeclaration getPOSTEnumLiteralDeclaration() { return cPOSTEnumLiteralDeclaration; }
-
-		//"-"
-		public Keyword getPOSTHyphenMinusKeyword_0() { return cPOSTHyphenMinusKeyword_0; }
-	}
-
-	public class IncrementOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementOperator");
-		private final EnumLiteralDeclaration cINCREMENTEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cINCREMENTPlusSignKeyword_0 = (Keyword)cINCREMENTEnumLiteralDeclaration.eContents().get(0);
-		
-		//enum IncrementOperator returns expressions::IncrementDecrementOperator:
-		//	INCREMENT="+";
-		public EnumRule getRule() { return rule; }
-
-		//INCREMENT="+"
-		public EnumLiteralDeclaration getINCREMENTEnumLiteralDeclaration() { return cINCREMENTEnumLiteralDeclaration; }
-
-		//"+"
-		public Keyword getINCREMENTPlusSignKeyword_0() { return cINCREMENTPlusSignKeyword_0; }
-	}
-
-	public class DecrementOperatorElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "DecrementOperator");
-		private final EnumLiteralDeclaration cDECREMENTEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
-		private final Keyword cDECREMENTHyphenMinusKeyword_0 = (Keyword)cDECREMENTEnumLiteralDeclaration.eContents().get(0);
-		
-		//enum DecrementOperator returns expressions::IncrementDecrementOperator:
-		//	DECREMENT="-";
-		public EnumRule getRule() { return rule; }
-
-		//DECREMENT="-"
-		public EnumLiteralDeclaration getDECREMENTEnumLiteralDeclaration() { return cDECREMENTEnumLiteralDeclaration; }
-
-		//"-"
-		public Keyword getDECREMENTHyphenMinusKeyword_0() { return cDECREMENTHyphenMinusKeyword_0; }
+		//"--"
+		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
 	}
 	
 	private final NTAElements pNTA;
@@ -6434,15 +6357,12 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ArithmeticExpression_OtherElements pArithmeticExpression_Other;
 	private final ArithmeticOperator_OtherElements unknownRuleArithmeticOperator_Other;
 	private final NegationExpression_AlternativeElements pNegationExpression_Alternative;
+	private final PlusExpressionElements pPlusExpression;
+	private final MinusExpressionElements pMinusExpression;
 	private final IncrementDecrementExpressionElements pIncrementDecrementExpression;
 	private final PreIncrementDecrementExpressionElements pPreIncrementDecrementExpression;
 	private final PostIncrementDecrementExpressionElements pPostIncrementDecrementExpression;
-	private final PreIncrementPositionElements unknownRulePreIncrementPosition;
-	private final PreDecrementPositionElements unknownRulePreDecrementPosition;
-	private final PostIncrementPositionElements unknownRulePostIncrementPosition;
-	private final PostDecrementPositionElements unknownRulePostDecrementPosition;
-	private final IncrementOperatorElements unknownRuleIncrementOperator;
-	private final DecrementOperatorElements unknownRuleDecrementOperator;
+	private final IncrementDecrementOperatorElements unknownRuleIncrementDecrementOperator;
 	private final ScopedIdentifierExpressionElements pScopedIdentifierExpression;
 	private final TerminatingExpressionsElements pTerminatingExpressions;
 	private final LiteralExpressionElements pLiteralExpression;
@@ -6566,15 +6486,12 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pArithmeticExpression_Other = new ArithmeticExpression_OtherElements();
 		this.unknownRuleArithmeticOperator_Other = new ArithmeticOperator_OtherElements();
 		this.pNegationExpression_Alternative = new NegationExpression_AlternativeElements();
+		this.pPlusExpression = new PlusExpressionElements();
+		this.pMinusExpression = new MinusExpressionElements();
 		this.pIncrementDecrementExpression = new IncrementDecrementExpressionElements();
 		this.pPreIncrementDecrementExpression = new PreIncrementDecrementExpressionElements();
 		this.pPostIncrementDecrementExpression = new PostIncrementDecrementExpressionElements();
-		this.unknownRulePreIncrementPosition = new PreIncrementPositionElements();
-		this.unknownRulePreDecrementPosition = new PreDecrementPositionElements();
-		this.unknownRulePostIncrementPosition = new PostIncrementPositionElements();
-		this.unknownRulePostDecrementPosition = new PostDecrementPositionElements();
-		this.unknownRuleIncrementOperator = new IncrementOperatorElements();
-		this.unknownRuleDecrementOperator = new DecrementOperatorElements();
+		this.unknownRuleIncrementDecrementOperator = new IncrementDecrementOperatorElements();
 		this.pScopedIdentifierExpression = new ScopedIdentifierExpressionElements();
 		this.pTerminatingExpressions = new TerminatingExpressionsElements();
 		this.pLiteralExpression = new LiteralExpressionElements();
@@ -7672,11 +7589,11 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// NOTE: From this point on, I just assume that ++ and -- have a higher
-	//// precedence than ! and that the unary - can only be part of a LiteralExpression.
+	//// precedence than ! and the unary - and +.
 	//// Negation Expression Alternative (logical not, '!')
 	//// (unary, right-recursive,)
 	//NegationExpression_Alternative returns expressions::Expression:
-	//	{expressions::NegationExpression} "!" negatedExpression=IncrementDecrementExpression | IncrementDecrementExpression;
+	//	{expressions::NegationExpression} "!" negatedExpression=NegationExpression_Alternative | PlusExpression;
 	public NegationExpression_AlternativeElements getNegationExpression_AlternativeAccess() {
 		return pNegationExpression_Alternative;
 	}
@@ -7685,12 +7602,28 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getNegationExpression_AlternativeAccess().getRule();
 	}
 
+	//PlusExpression returns expressions::Expression:
+	//	{expressions::PlusExpression} "+" confirmedExpression=NegationExpression_Alternative | MinusExpression;
+	public PlusExpressionElements getPlusExpressionAccess() {
+		return pPlusExpression;
+	}
+	
+	public ParserRule getPlusExpressionRule() {
+		return getPlusExpressionAccess().getRule();
+	}
+
+	//MinusExpression returns expressions::Expression:
+	//	{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | IncrementDecrementExpression;
+	public MinusExpressionElements getMinusExpressionAccess() {
+		return pMinusExpression;
+	}
+	
+	public ParserRule getMinusExpressionRule() {
+		return getMinusExpressionAccess().getRule();
+	}
+
 	//// Increment/Decrement Expression (++,--, pre and post)
 	//// (unary, right-recursive)
-	//// "Hack": Two enums need to be set by one token, e.g. Operator.INCREMENT
-	//// and Position.PRE for ++variable. This is not that easy, so the ++ was
-	//// split up so each enum consumes one +. This leads to the need of splitting
-	//// up all possible cases into separate rules.
 	//IncrementDecrementExpression returns expressions::Expression:
 	//	PreIncrementDecrementExpression;
 	public IncrementDecrementExpressionElements getIncrementDecrementExpressionAccess() {
@@ -7702,8 +7635,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PreIncrementDecrementExpression returns expressions::Expression:
-	//	PostIncrementDecrementExpression | {expressions::IncrementDecrementExpression} (position=PreIncrementPosition
-	//	operator=IncrementOperator | position=PreDecrementPosition operator=DecrementOperator)
+	//	PostIncrementDecrementExpression | {expressions::PreIncrementDecrementExpression} operator=IncrementDecrementOperator
 	//	expression=PreIncrementDecrementExpression;
 	public PreIncrementDecrementExpressionElements getPreIncrementDecrementExpressionAccess() {
 		return pPreIncrementDecrementExpression;
@@ -7718,8 +7650,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	//   (a++)+b and a+(++b)
 	//	// As UPPAAL uses the former way a syntactic predicate ensures the
 	//	// higher precedence of the post-expression.
-	//	=> ({expressions::IncrementDecrementExpression.expression=current} (position=PostIncrementPosition
-	//	operator=IncrementOperator | position=PostDecrementPosition operator=DecrementOperator))*;
+	//	=> ({expressions::PostIncrementDecrementExpression.expression=current} operator=IncrementDecrementOperator)*;
 	public PostIncrementDecrementExpressionElements getPostIncrementDecrementExpressionAccess() {
 		return pPostIncrementDecrementExpression;
 	}
@@ -7728,64 +7659,14 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPostIncrementDecrementExpressionAccess().getRule();
 	}
 
-	//enum PreIncrementPosition returns expressions::IncrementDecrementPosition:
-	//	PRE="+";
-	public PreIncrementPositionElements getPreIncrementPositionAccess() {
-		return unknownRulePreIncrementPosition;
+	//enum IncrementDecrementOperator returns expressions::IncrementDecrementOperator:
+	//	INCREMENT="++" | DECREMENT="--";
+	public IncrementDecrementOperatorElements getIncrementDecrementOperatorAccess() {
+		return unknownRuleIncrementDecrementOperator;
 	}
 	
-	public EnumRule getPreIncrementPositionRule() {
-		return getPreIncrementPositionAccess().getRule();
-	}
-
-	//enum PreDecrementPosition returns expressions::IncrementDecrementPosition:
-	//	PRE="-";
-	public PreDecrementPositionElements getPreDecrementPositionAccess() {
-		return unknownRulePreDecrementPosition;
-	}
-	
-	public EnumRule getPreDecrementPositionRule() {
-		return getPreDecrementPositionAccess().getRule();
-	}
-
-	//enum PostIncrementPosition returns expressions::IncrementDecrementPosition:
-	//	POST="+";
-	public PostIncrementPositionElements getPostIncrementPositionAccess() {
-		return unknownRulePostIncrementPosition;
-	}
-	
-	public EnumRule getPostIncrementPositionRule() {
-		return getPostIncrementPositionAccess().getRule();
-	}
-
-	//enum PostDecrementPosition returns expressions::IncrementDecrementPosition:
-	//	POST="-";
-	public PostDecrementPositionElements getPostDecrementPositionAccess() {
-		return unknownRulePostDecrementPosition;
-	}
-	
-	public EnumRule getPostDecrementPositionRule() {
-		return getPostDecrementPositionAccess().getRule();
-	}
-
-	//enum IncrementOperator returns expressions::IncrementDecrementOperator:
-	//	INCREMENT="+";
-	public IncrementOperatorElements getIncrementOperatorAccess() {
-		return unknownRuleIncrementOperator;
-	}
-	
-	public EnumRule getIncrementOperatorRule() {
-		return getIncrementOperatorAccess().getRule();
-	}
-
-	//enum DecrementOperator returns expressions::IncrementDecrementOperator:
-	//	DECREMENT="-";
-	public DecrementOperatorElements getDecrementOperatorAccess() {
-		return unknownRuleDecrementOperator;
-	}
-	
-	public EnumRule getDecrementOperatorRule() {
-		return getDecrementOperatorAccess().getRule();
+	public EnumRule getIncrementDecrementOperatorRule() {
+		return getIncrementDecrementOperatorAccess().getRule();
 	}
 
 	//// ScopedIdentifier Expression (identifiers with .)
@@ -7822,7 +7703,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LiteralExpressionText returns ecore::EString:
-	//	"true" | "false" | "-"? INT;
+	//	"true" | "false" | INT;
 	public LiteralExpressionTextElements getLiteralExpressionTextAccess() {
 		return pLiteralExpressionText;
 	}
@@ -7903,9 +7784,10 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UPPAAL_STRUCTURE_KEYWORDS:
-	//	"[" | "]" | "&lt;" | "&gt" | ";" | "," | "{" | "}" | "(" | ")" | "?" | "!" | "*" | "%" | "/" | "+" | "-" | "&lt;&lt;"
-	//	| "&gt;&gt" | "&lt;?" | "&gt;?" | "&lt;=" | "&gt;=" | "==" | "!=" | "&" | "&amp;" | "^" | "|" | "&&" | "&amp;&amp;" |
-	//	"||" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "|=" | "&=" | "^=" | "&lt;&lt;=" | "&gt;&gt;=" | ":";
+	//	"[" | "]" | "&lt;" | "&gt" | ";" | "," | "{" | "}" | "(" | ")" | "?" | "!" | "*" | "%" | "/" | "+" | "-" | "++" |
+	//	"--" | "&lt;&lt;" | "&gt;&gt" | "&lt;?" | "&gt;?" | "&lt;=" | "&gt;=" | "==" | "!=" | "&" | "&amp;" | "^" | "|" |
+	//	"&&" | "&amp;&amp;" | "||" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "|=" | "&=" | "^=" | "&lt;&lt;=" | "&gt;&gt;="
+	//	| ":";
 	public UPPAAL_STRUCTURE_KEYWORDSElements getUPPAAL_STRUCTURE_KEYWORDSAccess() {
 		return pUPPAAL_STRUCTURE_KEYWORDS;
 	}

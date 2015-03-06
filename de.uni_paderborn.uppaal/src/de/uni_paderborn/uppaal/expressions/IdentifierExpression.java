@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.uppaal.expressions;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.uppaal.core.NamedElement;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

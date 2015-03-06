@@ -284,66 +284,6 @@ public interface ExpressionsPackage extends EPackage {
 	int IDENTIFIER_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.impl.LiteralExpressionImpl
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getLiteralExpression()
-	 * @generated
-	 */
-	int LITERAL_EXPRESSION = 8;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ArithmeticExpressionImpl
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getArithmeticExpression()
-	 * @generated
-	 */
-	int ARITHMETIC_EXPRESSION = 9;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.impl.LogicalExpressionImpl
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getLogicalExpression()
-	 * @generated
-	 */
-	int LOGICAL_EXPRESSION = 10;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.FunctionCallExpressionImpl <em>Function Call Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.impl.FunctionCallExpressionImpl
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getFunctionCallExpression()
-	 * @generated
-	 */
-	int FUNCTION_CALL_EXPRESSION = 11;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.CompareExpressionImpl <em>Compare Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.impl.CompareExpressionImpl
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getCompareExpression()
-	 * @generated
-	 */
-	int COMPARE_EXPRESSION = 12;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.ConditionExpressionImpl <em>Condition Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ConditionExpressionImpl
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getConditionExpression()
-	 * @generated
-	 */
-	int CONDITION_EXPRESSION = 13;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.ScopedIdentifierExpressionImpl <em>Scoped Identifier Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -381,6 +321,16 @@ public interface ExpressionsPackage extends EPackage {
 	int SCOPED_IDENTIFIER_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.LiteralExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getLiteralExpression()
+	 * @generated
+	 */
+	int LITERAL_EXPRESSION = 8;
+
+	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,6 +347,16 @@ public interface ExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int LITERAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ArithmeticExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getArithmeticExpression()
+	 * @generated
+	 */
+	int ARITHMETIC_EXPRESSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>First Expr</b></em>' containment reference.
@@ -435,6 +395,16 @@ public interface ExpressionsPackage extends EPackage {
 	int ARITHMETIC_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.LogicalExpressionImpl <em>Logical Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.LogicalExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getLogicalExpression()
+	 * @generated
+	 */
+	int LOGICAL_EXPRESSION = 10;
+
+	/**
 	 * The feature id for the '<em><b>First Expr</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -471,6 +441,16 @@ public interface ExpressionsPackage extends EPackage {
 	int LOGICAL_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.FunctionCallExpressionImpl <em>Function Call Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.FunctionCallExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getFunctionCallExpression()
+	 * @generated
+	 */
+	int FUNCTION_CALL_EXPRESSION = 11;
+
+	/**
 	 * The feature id for the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,6 +476,16 @@ public interface ExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUNCTION_CALL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.CompareExpressionImpl <em>Compare Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.CompareExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getCompareExpression()
+	 * @generated
+	 */
+	int COMPARE_EXPRESSION = 12;
 
 	/**
 	 * The feature id for the '<em><b>First Expr</b></em>' containment reference.
@@ -532,6 +522,16 @@ public interface ExpressionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPARE_EXPRESSION_FEATURE_COUNT = BINARY_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.ConditionExpressionImpl <em>Condition Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ConditionExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getConditionExpression()
+	 * @generated
+	 */
+	int CONDITION_EXPRESSION = 13;
 
 	/**
 	 * The feature id for the '<em><b>If Expression</b></em>' containment reference.
@@ -644,22 +644,13 @@ public interface ExpressionsPackage extends EPackage {
 	int INCREMENT_DECREMENT_EXPRESSION__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Position</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCREMENT_DECREMENT_EXPRESSION__POSITION = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCREMENT_DECREMENT_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 2;
+	int INCREMENT_DECREMENT_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Increment Decrement Expression</em>' class.
@@ -668,7 +659,81 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INCREMENT_DECREMENT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int INCREMENT_DECREMENT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.PreIncrementDecrementExpressionImpl <em>Pre Increment Decrement Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.PreIncrementDecrementExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getPreIncrementDecrementExpression()
+	 * @generated
+	 */
+	int PRE_INCREMENT_DECREMENT_EXPRESSION = 16;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_INCREMENT_DECREMENT_EXPRESSION__EXPRESSION = INCREMENT_DECREMENT_EXPRESSION__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_INCREMENT_DECREMENT_EXPRESSION__OPERATOR = INCREMENT_DECREMENT_EXPRESSION__OPERATOR;
+
+	/**
+	 * The number of structural features of the '<em>Pre Increment Decrement Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_INCREMENT_DECREMENT_EXPRESSION_FEATURE_COUNT = INCREMENT_DECREMENT_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.PostIncrementDecrementExpressionImpl <em>Post Increment Decrement Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.uppaal.expressions.impl.PostIncrementDecrementExpressionImpl
+	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getPostIncrementDecrementExpression()
+	 * @generated
+	 */
+	int POST_INCREMENT_DECREMENT_EXPRESSION = 17;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_INCREMENT_DECREMENT_EXPRESSION__EXPRESSION = INCREMENT_DECREMENT_EXPRESSION__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_INCREMENT_DECREMENT_EXPRESSION__OPERATOR = INCREMENT_DECREMENT_EXPRESSION__OPERATOR;
+
+	/**
+	 * The number of structural features of the '<em>Post Increment Decrement Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POST_INCREMENT_DECREMENT_EXPRESSION_FEATURE_COUNT = INCREMENT_DECREMENT_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.impl.BitShiftExpressionImpl <em>Bit Shift Expression</em>}' class.
@@ -678,7 +743,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getBitShiftExpression()
 	 * @generated
 	 */
-	int BIT_SHIFT_EXPRESSION = 16;
+	int BIT_SHIFT_EXPRESSION = 18;
 
 	/**
 	 * The feature id for the '<em><b>First Expr</b></em>' containment reference.
@@ -724,7 +789,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getMinMaxExpression()
 	 * @generated
 	 */
-	int MIN_MAX_EXPRESSION = 17;
+	int MIN_MAX_EXPRESSION = 19;
 
 	/**
 	 * The feature id for the '<em><b>First Expr</b></em>' containment reference.
@@ -770,7 +835,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getBitwiseExpression()
 	 * @generated
 	 */
-	int BITWISE_EXPRESSION = 18;
+	int BITWISE_EXPRESSION = 20;
 
 	/**
 	 * The feature id for the '<em><b>First Expr</b></em>' containment reference.
@@ -816,7 +881,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getChannelPrefixExpression()
 	 * @generated
 	 */
-	int CHANNEL_PREFIX_EXPRESSION = 19;
+	int CHANNEL_PREFIX_EXPRESSION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -862,7 +927,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getDataPrefixExpression()
 	 * @generated
 	 */
-	int DATA_PREFIX_EXPRESSION = 20;
+	int DATA_PREFIX_EXPRESSION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -899,7 +964,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getAssignmentOperator()
 	 * @generated
 	 */
-	int ASSIGNMENT_OPERATOR = 21;
+	int ASSIGNMENT_OPERATOR = 23;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
@@ -909,7 +974,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 22;
+	int ARITHMETIC_OPERATOR = 24;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.LogicalOperator <em>Logical Operator</em>}' enum.
@@ -919,7 +984,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getLogicalOperator()
 	 * @generated
 	 */
-	int LOGICAL_OPERATOR = 23;
+	int LOGICAL_OPERATOR = 25;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.CompareOperator <em>Compare Operator</em>}' enum.
@@ -929,7 +994,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getCompareOperator()
 	 * @generated
 	 */
-	int COMPARE_OPERATOR = 24;
+	int COMPARE_OPERATOR = 26;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.Quantifier <em>Quantifier</em>}' enum.
@@ -939,7 +1004,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getQuantifier()
 	 * @generated
 	 */
-	int QUANTIFIER = 25;
+	int QUANTIFIER = 27;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -949,17 +1014,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 26;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition <em>Increment Decrement Position</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition
-	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getIncrementDecrementPosition()
-	 * @generated
-	 */
-	int INCREMENT_DECREMENT_POSITION = 27;
+	int INCREMENT_DECREMENT_OPERATOR = 28;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.BitShiftOperator <em>Bit Shift Operator</em>}' enum.
@@ -969,7 +1024,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getBitShiftOperator()
 	 * @generated
 	 */
-	int BIT_SHIFT_OPERATOR = 28;
+	int BIT_SHIFT_OPERATOR = 29;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.MinMaxOperator <em>Min Max Operator</em>}' enum.
@@ -979,7 +1034,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getMinMaxOperator()
 	 * @generated
 	 */
-	int MIN_MAX_OPERATOR = 29;
+	int MIN_MAX_OPERATOR = 30;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.expressions.BitwiseOperator <em>Bitwise Operator</em>}' enum.
@@ -989,7 +1044,7 @@ public interface ExpressionsPackage extends EPackage {
 	 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getBitwiseOperator()
 	 * @generated
 	 */
-	int BITWISE_OPERATOR = 30;
+	int BITWISE_OPERATOR = 31;
 
 
 	/**
@@ -1151,6 +1206,38 @@ public interface ExpressionsPackage extends EPackage {
 	EReference getIdentifierExpression_Index();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression <em>Scoped Identifier Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scoped Identifier Expression</em>'.
+	 * @see de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression
+	 * @generated
+	 */
+	EClass getScopedIdentifierExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getScope <em>Scope</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Scope</em>'.
+	 * @see de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getScope()
+	 * @see #getScopedIdentifierExpression()
+	 * @generated
+	 */
+	EReference getScopedIdentifierExpression_Scope();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getIdentifier <em>Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Identifier</em>'.
+	 * @see de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getIdentifier()
+	 * @see #getScopedIdentifierExpression()
+	 * @generated
+	 */
+	EReference getScopedIdentifierExpression_Identifier();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.LiteralExpression <em>Literal Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1310,38 +1397,6 @@ public interface ExpressionsPackage extends EPackage {
 	EReference getConditionExpression_ElseExpression();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression <em>Scoped Identifier Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Scoped Identifier Expression</em>'.
-	 * @see de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression
-	 * @generated
-	 */
-	EClass getScopedIdentifierExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getScope <em>Scope</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Scope</em>'.
-	 * @see de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getScope()
-	 * @see #getScopedIdentifierExpression()
-	 * @generated
-	 */
-	EReference getScopedIdentifierExpression_Scope();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifier</em>'.
-	 * @see de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression#getIdentifier()
-	 * @see #getScopedIdentifierExpression()
-	 * @generated
-	 */
-	EReference getScopedIdentifierExpression_Identifier();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.QuantificationExpression <em>Quantification Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1395,17 +1450,6 @@ public interface ExpressionsPackage extends EPackage {
 	EReference getIncrementDecrementExpression_Expression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression#getPosition <em>Position</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Position</em>'.
-	 * @see de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression#getPosition()
-	 * @see #getIncrementDecrementExpression()
-	 * @generated
-	 */
-	EAttribute getIncrementDecrementExpression_Position();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1415,6 +1459,26 @@ public interface ExpressionsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIncrementDecrementExpression_Operator();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression <em>Pre Increment Decrement Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pre Increment Decrement Expression</em>'.
+	 * @see de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression
+	 * @generated
+	 */
+	EClass getPreIncrementDecrementExpression();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression <em>Post Increment Decrement Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Post Increment Decrement Expression</em>'.
+	 * @see de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression
+	 * @generated
+	 */
+	EClass getPostIncrementDecrementExpression();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.expressions.BitShiftExpression <em>Bit Shift Expression</em>}'.
@@ -1615,16 +1679,6 @@ public interface ExpressionsPackage extends EPackage {
 	EEnum getIncrementDecrementOperator();
 
 	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition <em>Increment Decrement Position</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Increment Decrement Position</em>'.
-	 * @see de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition
-	 * @generated
-	 */
-	EEnum getIncrementDecrementPosition();
-
-	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.uppaal.expressions.BitShiftOperator <em>Bit Shift Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1811,6 +1865,32 @@ public interface ExpressionsPackage extends EPackage {
 		EReference IDENTIFIER_EXPRESSION__INDEX = eINSTANCE.getIdentifierExpression_Index();
 
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.ScopedIdentifierExpressionImpl <em>Scoped Identifier Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.uppaal.expressions.impl.ScopedIdentifierExpressionImpl
+		 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getScopedIdentifierExpression()
+		 * @generated
+		 */
+		EClass SCOPED_IDENTIFIER_EXPRESSION = eINSTANCE.getScopedIdentifierExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Scope</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCOPED_IDENTIFIER_EXPRESSION__SCOPE = eINSTANCE.getScopedIdentifierExpression_Scope();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifier</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCOPED_IDENTIFIER_EXPRESSION__IDENTIFIER = eINSTANCE.getScopedIdentifierExpression_Identifier();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1943,32 +2023,6 @@ public interface ExpressionsPackage extends EPackage {
 		EReference CONDITION_EXPRESSION__ELSE_EXPRESSION = eINSTANCE.getConditionExpression_ElseExpression();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.ScopedIdentifierExpressionImpl <em>Scoped Identifier Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.uppaal.expressions.impl.ScopedIdentifierExpressionImpl
-		 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getScopedIdentifierExpression()
-		 * @generated
-		 */
-		EClass SCOPED_IDENTIFIER_EXPRESSION = eINSTANCE.getScopedIdentifierExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Scope</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCOPED_IDENTIFIER_EXPRESSION__SCOPE = eINSTANCE.getScopedIdentifierExpression_Scope();
-
-		/**
-		 * The meta object literal for the '<em><b>Identifier</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCOPED_IDENTIFIER_EXPRESSION__IDENTIFIER = eINSTANCE.getScopedIdentifierExpression_Identifier();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.QuantificationExpressionImpl <em>Quantification Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2013,20 +2067,32 @@ public interface ExpressionsPackage extends EPackage {
 		EReference INCREMENT_DECREMENT_EXPRESSION__EXPRESSION = eINSTANCE.getIncrementDecrementExpression_Expression();
 
 		/**
-		 * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCREMENT_DECREMENT_EXPRESSION__POSITION = eINSTANCE.getIncrementDecrementExpression_Position();
-
-		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute INCREMENT_DECREMENT_EXPRESSION__OPERATOR = eINSTANCE.getIncrementDecrementExpression_Operator();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.PreIncrementDecrementExpressionImpl <em>Pre Increment Decrement Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.uppaal.expressions.impl.PreIncrementDecrementExpressionImpl
+		 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getPreIncrementDecrementExpression()
+		 * @generated
+		 */
+		EClass PRE_INCREMENT_DECREMENT_EXPRESSION = eINSTANCE.getPreIncrementDecrementExpression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.PostIncrementDecrementExpressionImpl <em>Post Increment Decrement Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.uppaal.expressions.impl.PostIncrementDecrementExpressionImpl
+		 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getPostIncrementDecrementExpression()
+		 * @generated
+		 */
+		EClass POST_INCREMENT_DECREMENT_EXPRESSION = eINSTANCE.getPostIncrementDecrementExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.impl.BitShiftExpressionImpl <em>Bit Shift Expression</em>}' class.
@@ -2201,16 +2267,6 @@ public interface ExpressionsPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum INCREMENT_DECREMENT_OPERATOR = eINSTANCE.getIncrementDecrementOperator();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition <em>Increment Decrement Position</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition
-		 * @see de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl#getIncrementDecrementPosition()
-		 * @generated
-		 */
-		EEnum INCREMENT_DECREMENT_POSITION = eINSTANCE.getIncrementDecrementPosition();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.expressions.BitShiftOperator <em>Bit Shift Operator</em>}' enum.

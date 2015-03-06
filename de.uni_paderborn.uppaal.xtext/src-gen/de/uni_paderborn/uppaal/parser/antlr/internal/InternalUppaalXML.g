@@ -7211,9 +7211,9 @@ ruleNegationExpression_Alternative returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNegationExpression_AlternativeAccess().getNegatedExpressionIncrementDecrementExpressionParserRuleCall_0_2_0()); 
+	        newCompositeNode(grammarAccess.getNegationExpression_AlternativeAccess().getNegatedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0()); 
 	    }
-		lv_negatedExpression_2_0=ruleIncrementDecrementExpression		{
+		lv_negatedExpression_2_0=ruleNegationExpression_Alternative		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNegationExpression_AlternativeRule());
 	        }
@@ -7221,7 +7221,7 @@ ruleNegationExpression_Alternative returns [EObject current=null]
        			$current, 
        			"negatedExpression",
         		lv_negatedExpression_2_0, 
-        		"IncrementDecrementExpression");
+        		"NegationExpression_Alternative");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7229,7 +7229,125 @@ ruleNegationExpression_Alternative returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getNegationExpression_AlternativeAccess().getIncrementDecrementExpressionParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getNegationExpression_AlternativeAccess().getPlusExpressionParserRuleCall_1()); 
+    }
+    this_PlusExpression_3=rulePlusExpression
+    { 
+        $current = $this_PlusExpression_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulePlusExpression
+entryRulePlusExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPlusExpressionRule()); }
+	 iv_rulePlusExpression=rulePlusExpression 
+	 { $current=$iv_rulePlusExpression.current; } 
+	 EOF 
+;
+
+// Rule PlusExpression
+rulePlusExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getPlusExpressionAccess().getPlusExpressionAction_0_0(),
+            $current);
+    }
+)	otherlv_1='+' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getPlusExpressionAccess().getPlusSignKeyword_0_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPlusExpressionAccess().getConfirmedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0()); 
+	    }
+		lv_confirmedExpression_2_0=ruleNegationExpression_Alternative		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPlusExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"confirmedExpression",
+        		lv_confirmedExpression_2_0, 
+        		"NegationExpression_Alternative");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |
+    { 
+        newCompositeNode(grammarAccess.getPlusExpressionAccess().getMinusExpressionParserRuleCall_1()); 
+    }
+    this_MinusExpression_3=ruleMinusExpression
+    { 
+        $current = $this_MinusExpression_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMinusExpression
+entryRuleMinusExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMinusExpressionRule()); }
+	 iv_ruleMinusExpression=ruleMinusExpression 
+	 { $current=$iv_ruleMinusExpression.current; } 
+	 EOF 
+;
+
+// Rule MinusExpression
+ruleMinusExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMinusExpressionAccess().getMinusExpressionAction_0_0(),
+            $current);
+    }
+)	otherlv_1='-' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getMinusExpressionAccess().getHyphenMinusKeyword_0_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMinusExpressionAccess().getInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0()); 
+	    }
+		lv_invertedExpression_2_0=ruleNegationExpression_Alternative		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMinusExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"invertedExpression",
+        		lv_invertedExpression_2_0, 
+        		"NegationExpression_Alternative");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |
+    { 
+        newCompositeNode(grammarAccess.getMinusExpressionAccess().getIncrementDecrementExpressionParserRuleCall_1()); 
     }
     this_IncrementDecrementExpression_3=ruleIncrementDecrementExpression
     { 
@@ -7300,95 +7418,40 @@ rulePreIncrementDecrementExpression returns [EObject current=null]
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPreIncrementDecrementExpressionAccess().getIncrementDecrementExpressionAction_1_0(),
+            grammarAccess.getPreIncrementDecrementExpressionAccess().getPreIncrementDecrementExpressionAction_1_0(),
             $current);
     }
-)(((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getPositionPreIncrementPositionEnumRuleCall_1_1_0_0_0()); 
-	    }
-		lv_position_2_0=rulePreIncrementPosition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPreIncrementDecrementExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"position",
-        		lv_position_2_0, 
-        		"PreIncrementPosition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getOperatorIncrementOperatorEnumRuleCall_1_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0()); 
 	    }
-		lv_operator_3_0=ruleIncrementOperator		{
+		lv_operator_2_0=ruleIncrementDecrementOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPreIncrementDecrementExpressionRule());
 	        }
        		set(
        			$current, 
        			"operator",
-        		lv_operator_3_0, 
-        		"IncrementOperator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getPositionPreDecrementPositionEnumRuleCall_1_1_1_0_0()); 
-	    }
-		lv_position_4_0=rulePreDecrementPosition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPreIncrementDecrementExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"position",
-        		lv_position_4_0, 
-        		"PreDecrementPosition");
+        		lv_operator_2_0, 
+        		"IncrementDecrementOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getOperatorDecrementOperatorEnumRuleCall_1_1_1_1_0()); 
-	    }
-		lv_operator_5_0=ruleDecrementOperator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPreIncrementDecrementExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"operator",
-        		lv_operator_5_0, 
-        		"DecrementOperator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)))(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getExpressionPreIncrementDecrementExpressionParserRuleCall_1_2_0()); 
 	    }
-		lv_expression_6_0=rulePreIncrementDecrementExpression		{
+		lv_expression_3_0=rulePreIncrementDecrementExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPreIncrementDecrementExpressionRule());
 	        }
        		set(
        			$current, 
        			"expression",
-        		lv_expression_6_0, 
+        		lv_expression_3_0, 
         		"PreIncrementDecrementExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -7425,103 +7488,35 @@ rulePostIncrementDecrementExpression returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 ((((
-)(((
-(
-rulePostIncrementPosition
-)
 )(
 (
-ruleIncrementOperator
+ruleIncrementDecrementOperator
 )
-))
-    |((
-(
-rulePostDecrementPosition
-)
-)(
-(
-ruleDecrementOperator
-)
-)))))=>((
+)))=>((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getPostIncrementDecrementExpressionAccess().getIncrementDecrementExpressionExpressionAction_1_0_0(),
+            grammarAccess.getPostIncrementDecrementExpressionAccess().getPostIncrementDecrementExpressionExpressionAction_1_0_0(),
             $current);
     }
-)(((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getPositionPostIncrementPositionEnumRuleCall_1_0_1_0_0_0()); 
-	    }
-		lv_position_2_0=rulePostIncrementPosition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPostIncrementDecrementExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"position",
-        		lv_position_2_0, 
-        		"PostIncrementPosition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getOperatorIncrementOperatorEnumRuleCall_1_0_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getOperatorIncrementDecrementOperatorEnumRuleCall_1_0_1_0()); 
 	    }
-		lv_operator_3_0=ruleIncrementOperator		{
+		lv_operator_2_0=ruleIncrementDecrementOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPostIncrementDecrementExpressionRule());
 	        }
        		set(
        			$current, 
        			"operator",
-        		lv_operator_3_0, 
-        		"IncrementOperator");
+        		lv_operator_2_0, 
+        		"IncrementDecrementOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getPositionPostDecrementPositionEnumRuleCall_1_0_1_1_0_0()); 
-	    }
-		lv_position_4_0=rulePostDecrementPosition		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPostIncrementDecrementExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"position",
-        		lv_position_4_0, 
-        		"PostDecrementPosition");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getOperatorDecrementOperatorEnumRuleCall_1_0_1_1_1_0()); 
-	    }
-		lv_operator_5_0=ruleDecrementOperator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPostIncrementDecrementExpressionRule());
-	        }
-       		set(
-       			$current, 
-       			"operator",
-        		lv_operator_5_0, 
-        		"DecrementOperator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)))))*)
+)))*)
 ;
 
 
@@ -7721,20 +7716,14 @@ ruleLiteralExpressionText returns [AntlrDatatypeRuleToken current=new AntlrDatat
         newLeafNode(kw, grammarAccess.getLiteralExpressionTextAccess().getFalseKeyword_1()); 
     }
 
-    |((
-	kw='-' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getLiteralExpressionTextAccess().getHyphenMinusKeyword_2_0()); 
-    }
-)?    this_INT_3=RULE_INT    {
-		$current.merge(this_INT_3);
+    |    this_INT_2=RULE_INT    {
+		$current.merge(this_INT_2);
     }
 
     { 
-    newLeafNode(this_INT_3, grammarAccess.getLiteralExpressionTextAccess().getINTTerminalRuleCall_2_1()); 
+    newLeafNode(this_INT_2, grammarAccess.getLiteralExpressionTextAccess().getINTTerminalRuleCall_2()); 
     }
-))
+)
     ;
 
 
@@ -8513,192 +8502,206 @@ ruleUPPAAL_STRUCTURE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrD
     }
 
     |
+	kw='++' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getPlusSignPlusSignKeyword_17()); 
+    }
+
+    |
+	kw='--' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getHyphenMinusHyphenMinusKeyword_18()); 
+    }
+
+    |
 	kw='&lt;&lt;' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtLtKeyword_17()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtLtKeyword_19()); 
     }
 
     |
 	kw='&gt;&gt' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtGtKeyword_18()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtGtKeyword_20()); 
     }
 
     |
 	kw='&lt;?' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtKeyword_19()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtKeyword_21()); 
     }
 
     |
 	kw='&gt;?' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtKeyword_20()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtKeyword_22()); 
     }
 
     |
 	kw='&lt;=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtKeyword_21()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtKeyword_23()); 
     }
 
     |
 	kw='&gt;=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtKeyword_22()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtKeyword_24()); 
     }
 
     |
 	kw='==' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getEqualsSignEqualsSignKeyword_23()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getEqualsSignEqualsSignKeyword_25()); 
     }
 
     |
 	kw='!=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getExclamationMarkEqualsSignKeyword_24()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getExclamationMarkEqualsSignKeyword_26()); 
     }
 
     |
 	kw='&' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpersandKeyword_25()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpersandKeyword_27()); 
     }
 
     |
 	kw='&amp;' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpKeyword_26()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpKeyword_28()); 
     }
 
     |
 	kw='^' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getCircumflexAccentKeyword_27()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getCircumflexAccentKeyword_29()); 
     }
 
     |
 	kw='|' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getVerticalLineKeyword_28()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getVerticalLineKeyword_30()); 
     }
 
     |
 	kw='&&' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpersandAmpersandKeyword_29()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpersandAmpersandKeyword_31()); 
     }
 
     |
 	kw='&amp;&amp;' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpAmpKeyword_30()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpAmpKeyword_32()); 
     }
 
     |
 	kw='||' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getVerticalLineVerticalLineKeyword_31()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getVerticalLineVerticalLineKeyword_33()); 
     }
 
     |
 	kw='=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getEqualsSignKeyword_32()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getEqualsSignKeyword_34()); 
     }
 
     |
 	kw='+=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getPlusSignEqualsSignKeyword_33()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getPlusSignEqualsSignKeyword_35()); 
     }
 
     |
 	kw='-=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getHyphenMinusEqualsSignKeyword_34()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getHyphenMinusEqualsSignKeyword_36()); 
     }
 
     |
 	kw='*=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAsteriskEqualsSignKeyword_35()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAsteriskEqualsSignKeyword_37()); 
     }
 
     |
 	kw='/=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getSolidusEqualsSignKeyword_36()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getSolidusEqualsSignKeyword_38()); 
     }
 
     |
 	kw='%=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getPercentSignEqualsSignKeyword_37()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getPercentSignEqualsSignKeyword_39()); 
     }
 
     |
 	kw='|=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getVerticalLineEqualsSignKeyword_38()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getVerticalLineEqualsSignKeyword_40()); 
     }
 
     |
 	kw='&=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpersandEqualsSignKeyword_39()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getAmpersandEqualsSignKeyword_41()); 
     }
 
     |
 	kw='^=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getCircumflexAccentEqualsSignKeyword_40()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getCircumflexAccentEqualsSignKeyword_42()); 
     }
 
     |
 	kw='&lt;&lt;=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtLtKeyword_41()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getLtLtKeyword_43()); 
     }
 
     |
 	kw='&gt;&gt;=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtGtKeyword_42()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getGtGtKeyword_44()); 
     }
 
     |
 	kw=':' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getColonKeyword_43()); 
+        newLeafNode(kw, grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSAccess().getColonKeyword_45()); 
     }
 )
     ;
@@ -9547,81 +9550,22 @@ ruleArithmeticOperator_Other returns [Enumerator current=null]
 
 
 
-// Rule PreIncrementPosition
-rulePreIncrementPosition returns [Enumerator current=null] 
+// Rule IncrementDecrementOperator
+ruleIncrementDecrementOperator returns [Enumerator current=null] 
     @init { enterRule(); }
     @after { leaveRule(); }:
-(	enumLiteral_0='+' 
+((	enumLiteral_0='++' 
 	{
-        $current = grammarAccess.getPreIncrementPositionAccess().getPREEnumLiteralDeclaration().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getPreIncrementPositionAccess().getPREEnumLiteralDeclaration()); 
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); 
     }
-);
-
-
-
-// Rule PreDecrementPosition
-rulePreDecrementPosition returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-(	enumLiteral_0='-' 
+)
+    |(	enumLiteral_1='--' 
 	{
-        $current = grammarAccess.getPreDecrementPositionAccess().getPREEnumLiteralDeclaration().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getPreDecrementPositionAccess().getPREEnumLiteralDeclaration()); 
+        $current = grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); 
     }
-);
-
-
-
-// Rule PostIncrementPosition
-rulePostIncrementPosition returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-(	enumLiteral_0='+' 
-	{
-        $current = grammarAccess.getPostIncrementPositionAccess().getPOSTEnumLiteralDeclaration().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getPostIncrementPositionAccess().getPOSTEnumLiteralDeclaration()); 
-    }
-);
-
-
-
-// Rule PostDecrementPosition
-rulePostDecrementPosition returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-(	enumLiteral_0='-' 
-	{
-        $current = grammarAccess.getPostDecrementPositionAccess().getPOSTEnumLiteralDeclaration().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getPostDecrementPositionAccess().getPOSTEnumLiteralDeclaration()); 
-    }
-);
-
-
-
-// Rule IncrementOperator
-ruleIncrementOperator returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-(	enumLiteral_0='+' 
-	{
-        $current = grammarAccess.getIncrementOperatorAccess().getINCREMENTEnumLiteralDeclaration().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getIncrementOperatorAccess().getINCREMENTEnumLiteralDeclaration()); 
-    }
-);
-
-
-
-// Rule DecrementOperator
-ruleDecrementOperator returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-(	enumLiteral_0='-' 
-	{
-        $current = grammarAccess.getDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration()); 
-    }
-);
+));
 
 
 

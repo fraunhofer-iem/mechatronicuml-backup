@@ -2,11 +2,12 @@
  */
 package de.uni_paderborn.uppaal.expressions.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import de.uni_paderborn.uppaal.expressions.Expression;
 import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

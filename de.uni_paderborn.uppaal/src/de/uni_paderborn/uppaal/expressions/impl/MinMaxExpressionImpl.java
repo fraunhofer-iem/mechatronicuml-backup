@@ -2,13 +2,15 @@
  */
 package de.uni_paderborn.uppaal.expressions.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
 import de.uni_paderborn.uppaal.expressions.MinMaxExpression;
 import de.uni_paderborn.uppaal.expressions.MinMaxOperator;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

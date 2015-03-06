@@ -204,6 +204,22 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ExpressionsPackage.PRE_INCREMENT_DECREMENT_EXPRESSION: {
+				PreIncrementDecrementExpression preIncrementDecrementExpression = (PreIncrementDecrementExpression)theEObject;
+				T result = casePreIncrementDecrementExpression(preIncrementDecrementExpression);
+				if (result == null) result = caseIncrementDecrementExpression(preIncrementDecrementExpression);
+				if (result == null) result = caseExpression(preIncrementDecrementExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionsPackage.POST_INCREMENT_DECREMENT_EXPRESSION: {
+				PostIncrementDecrementExpression postIncrementDecrementExpression = (PostIncrementDecrementExpression)theEObject;
+				T result = casePostIncrementDecrementExpression(postIncrementDecrementExpression);
+				if (result == null) result = caseIncrementDecrementExpression(postIncrementDecrementExpression);
+				if (result == null) result = caseExpression(postIncrementDecrementExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ExpressionsPackage.BIT_SHIFT_EXPRESSION: {
 				BitShiftExpression bitShiftExpression = (BitShiftExpression)theEObject;
 				T result = caseBitShiftExpression(bitShiftExpression);
@@ -483,6 +499,36 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIncrementDecrementExpression(IncrementDecrementExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pre Increment Decrement Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pre Increment Decrement Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePreIncrementDecrementExpression(PreIncrementDecrementExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Post Increment Decrement Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Post Increment Decrement Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePostIncrementDecrementExpression(PostIncrementDecrementExpression object) {
 		return null;
 	}
 

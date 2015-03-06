@@ -67,6 +67,15 @@ public interface ExpressionsFactory extends EFactory {
 	IdentifierExpression createIdentifierExpression();
 
 	/**
+	 * Returns a new object of class '<em>Scoped Identifier Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scoped Identifier Expression</em>'.
+	 * @generated
+	 */
+	ScopedIdentifierExpression createScopedIdentifierExpression();
+
+	/**
 	 * Returns a new object of class '<em>Literal Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,15 +130,6 @@ public interface ExpressionsFactory extends EFactory {
 	ConditionExpression createConditionExpression();
 
 	/**
-	 * Returns a new object of class '<em>Scoped Identifier Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Scoped Identifier Expression</em>'.
-	 * @generated
-	 */
-	ScopedIdentifierExpression createScopedIdentifierExpression();
-
-	/**
 	 * Returns a new object of class '<em>Quantification Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,13 +139,22 @@ public interface ExpressionsFactory extends EFactory {
 	QuantificationExpression createQuantificationExpression();
 
 	/**
-	 * Returns a new object of class '<em>Increment Decrement Expression</em>'.
+	 * Returns a new object of class '<em>Pre Increment Decrement Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Increment Decrement Expression</em>'.
+	 * @return a new object of class '<em>Pre Increment Decrement Expression</em>'.
 	 * @generated
 	 */
-	IncrementDecrementExpression createIncrementDecrementExpression();
+	PreIncrementDecrementExpression createPreIncrementDecrementExpression();
+
+	/**
+	 * Returns a new object of class '<em>Post Increment Decrement Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Post Increment Decrement Expression</em>'.
+	 * @generated
+	 */
+	PostIncrementDecrementExpression createPostIncrementDecrementExpression();
 
 	/**
 	 * Returns a new object of class '<em>Bit Shift Expression</em>'.

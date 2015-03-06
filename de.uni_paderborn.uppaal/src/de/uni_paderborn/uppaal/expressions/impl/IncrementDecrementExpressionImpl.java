@@ -2,17 +2,18 @@
  */
 package de.uni_paderborn.uppaal.expressions.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import de.uni_paderborn.uppaal.expressions.Expression;
 import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
 import de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression;
 import de.uni_paderborn.uppaal.expressions.IncrementDecrementOperator;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,14 +23,13 @@ import de.uni_paderborn.uppaal.expressions.IncrementDecrementPosition;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.uppaal.expressions.impl.IncrementDecrementExpressionImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link de.uni_paderborn.uppaal.expressions.impl.IncrementDecrementExpressionImpl#getPosition <em>Position</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.expressions.impl.IncrementDecrementExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IncrementDecrementExpressionImpl extends ExpressionImpl implements IncrementDecrementExpression {
+public abstract class IncrementDecrementExpressionImpl extends ExpressionImpl implements IncrementDecrementExpression {
 	/**
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -39,26 +39,6 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 	 * @ordered
 	 */
 	protected Expression expression;
-
-	/**
-	 * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPosition()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final IncrementDecrementPosition POSITION_EDEFAULT = IncrementDecrementPosition.PRE;
-
-	/**
-	 * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPosition()
-	 * @generated
-	 * @ordered
-	 */
-	protected IncrementDecrementPosition position = POSITION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -147,27 +127,6 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IncrementDecrementPosition getPosition() {
-		return position;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPosition(IncrementDecrementPosition newPosition) {
-		IncrementDecrementPosition oldPosition = position;
-		position = newPosition == null ? POSITION_EDEFAULT : newPosition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__POSITION, oldPosition, position));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public IncrementDecrementOperator getOperator() {
 		return operator;
 	}
@@ -208,8 +167,6 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 		switch (featureID) {
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__EXPRESSION:
 				return getExpression();
-			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__POSITION:
-				return getPosition();
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__OPERATOR:
 				return getOperator();
 		}
@@ -226,9 +183,6 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 		switch (featureID) {
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__EXPRESSION:
 				setExpression((Expression)newValue);
-				return;
-			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__POSITION:
-				setPosition((IncrementDecrementPosition)newValue);
 				return;
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__OPERATOR:
 				setOperator((IncrementDecrementOperator)newValue);
@@ -248,9 +202,6 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__EXPRESSION:
 				setExpression((Expression)null);
 				return;
-			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__POSITION:
-				setPosition(POSITION_EDEFAULT);
-				return;
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
@@ -268,8 +219,6 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 		switch (featureID) {
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__EXPRESSION:
 				return expression != null;
-			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__POSITION:
-				return position != POSITION_EDEFAULT;
 			case ExpressionsPackage.INCREMENT_DECREMENT_EXPRESSION__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
 		}
@@ -286,9 +235,7 @@ public class IncrementDecrementExpressionImpl extends ExpressionImpl implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (position: ");
-		result.append(position);
-		result.append(", operator: ");
+		result.append(" (operator: ");
 		result.append(operator);
 		result.append(')');
 		return result.toString();

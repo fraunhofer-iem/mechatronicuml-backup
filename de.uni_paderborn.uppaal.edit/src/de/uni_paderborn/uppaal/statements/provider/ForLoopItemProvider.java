@@ -222,7 +222,12 @@ public class ForLoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(StatementsPackage.Literals.FOR_LOOP__INITIALIZATION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(StatementsPackage.Literals.FOR_LOOP__INITIALIZATION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -332,7 +337,12 @@ public class ForLoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(StatementsPackage.Literals.FOR_LOOP__CONDITION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(StatementsPackage.Literals.FOR_LOOP__CONDITION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -442,7 +452,12 @@ public class ForLoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(StatementsPackage.Literals.FOR_LOOP__ITERATION,
-				 ExpressionsFactory.eINSTANCE.createIncrementDecrementExpression()));
+				 ExpressionsFactory.eINSTANCE.createPreIncrementDecrementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(StatementsPackage.Literals.FOR_LOOP__ITERATION,
+				 ExpressionsFactory.eINSTANCE.createPostIncrementDecrementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

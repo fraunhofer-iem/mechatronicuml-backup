@@ -745,40 +745,47 @@ enum ArithmeticOperator_Other returns expressions::ArithmeticOperator:
 ;
 
 // NOTE: From this point on, I just assume that ++ and -- have a higher
-// precedence than ! and that the unary - can only be part of a LiteralExpression.
+// precedence than ! and the unary - and +.
 
 // Negation Expression Alternative (logical not, '!')
 // (unary, right-recursive,)
 NegationExpression_Alternative returns expressions::Expression:
 	(
 		{expressions::NegationExpression}
-		'!' negatedExpression=IncrementDecrementExpression
-	) | IncrementDecrementExpression
+		'!' negatedExpression=NegationExpression_Alternative
+	) | PlusExpression
 ;
 
-// Increment/Decrement Expression (++,--, pre and post)
-// (unary, right-recursive)
-// "Hack": Two enums need to be set by one token, e.g. Operator.INCREMENT
-// and Position.PRE for ++variable. This is not that easy, so the ++ was
-// split up so each enum consumes one +. This leads to the need of splitting
-// up all possible cases into separate rules.
-IncrementDecrementExpression returns expressions::Expression:
-	PreIncrementDecrementExpression
+// Plus Expression ('+')
+// (unary, right-recursive,)
+PlusExpression returns expressions::Expression:
+	(
+		{expressions::PlusExpression}
+		'+' confirmedExpression=NegationExpression_Alternative
+	) | MinusExpression
 ;
+
+// Minus Expression ('-')
+// (unary, right-recursive,)
+MinusExpression returns expressions::Expression:
+	(
+		{expressions::MinusExpression}
+		'-' invertedExpression=NegationExpression_Alternative
+	) | PreIncrementDecrementExpression
+;
+
+// Pre Increment/Decrement Expression ('++', '--', pre)
+// (unary, right-recursive)
 PreIncrementDecrementExpression returns expressions::Expression:
 	PostIncrementDecrementExpression | (
-	{expressions::IncrementDecrementExpression}
-	((
-		position=PreIncrementPosition
-		operator=IncrementOperator
-	) | (
-		position=PreDecrementPosition
-		operator=DecrementOperator
-	))
-	expression=PreIncrementDecrementExpression
+		{expressions::PreIncrementDecrementExpression}
+		operator=IncrementDecrementOperator
+		expression=PreIncrementDecrementExpression
 	)
 ;
 
+// Post Increment/Decrement Expression ('++', '--', post)
+// (unary, right-recursive)
 PostIncrementDecrementExpression returns expressions::Expression:
 	ScopedIdentifierExpression
 	// Note: For expressions like a+++b, two ways to split them up exist:
@@ -786,33 +793,12 @@ PostIncrementDecrementExpression returns expressions::Expression:
 	// As UPPAAL uses the former way a syntactic predicate ensures the
 	// higher precedence of the post-expression.
 	=>(
-		{expressions::IncrementDecrementExpression.expression=current}
-		((
-			position=PostIncrementPosition
-			operator=IncrementOperator
-		) | (
-			position=PostDecrementPosition
-			operator=DecrementOperator
-		))
+		{expressions::PostIncrementDecrementExpression.expression=current}
+		operator=IncrementDecrementOperator
 	)*
 ;
-enum PreIncrementPosition returns expressions::IncrementDecrementPosition:
-	PRE='+'
-;
-enum PreDecrementPosition returns expressions::IncrementDecrementPosition:
-	PRE='-'
-;
-enum PostIncrementPosition returns expressions::IncrementDecrementPosition:
-	POST='+'
-;
-enum PostDecrementPosition returns expressions::IncrementDecrementPosition:
-	POST='-'
-;
-enum IncrementOperator returns expressions::IncrementDecrementOperator:
-	INCREMENT='+'
-;
-enum DecrementOperator returns expressions::IncrementDecrementOperator:
-	DECREMENT='-'
+enum IncrementDecrementOperator returns expressions::IncrementDecrementOperator:
+	INCREMENT='++' | DECREMENT='--'
 ;
 
 // ScopedIdentifier Expression (identifiers with .)
@@ -832,7 +818,7 @@ LiteralExpression returns expressions::LiteralExpression:
 	text=LiteralExpressionText
 ;
 LiteralExpressionText returns ecore::EString:
-	'true' | 'false' | ('-'? INT)
+	'true' | 'false' | INT
 ;
 
 // Function Calls
@@ -881,7 +867,7 @@ UPPAAL_KEYWORDS:
 
 UPPAAL_STRUCTURE_KEYWORDS:
 	'[' | ']' | '&lt;' | '&gt' | ';' | ',' | '{' | '}' | '(' | ')' | '?' | '!' |
-	'*' | '%' | '/' | '+' | '-' | 
+	'*' | '%' | '/' | '+' | '-' | '++' | '--' |
 	'&lt;&lt;' | '&gt;&gt' | '&lt;?' | '&gt;?' | '&lt;=' | '&gt;=' | '==' | '!=' |
 	'&' | '&amp;' | '^' | '|' | '&&' | '&amp;&amp;' | '||' | '=' | '+=' | '-=' | '*=' | '/=' | '%=' | '|='|
 	'&=' | '^=' | '&lt;&lt;=' | '&gt;&gt;=' | ':'
