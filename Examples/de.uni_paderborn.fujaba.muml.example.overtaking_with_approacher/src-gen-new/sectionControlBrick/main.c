@@ -49,6 +49,20 @@ void ecrobot_device_initialize()
 //initialize all network interfaces
 networkInterface_VirtualBluetoothPort_init();
 
+//Read wifi bat: WB_I2C_REG_BATTERYLEVEL
+ecrobot_wb_init(NXT_PORT_S3);
+ecrobot_wb_wait_for_i2c(NXT_PORT_S3);
+U8 batt = 0;
+ecrobot_wb_read_batterylevel(NXT_PORT_S3, &batt);
+
+display_goto_xy(8,3);
+display_string("WBAT:");
+display_update();
+
+display_goto_xy(11,3);
+display_int(batt, 3);
+display_update();
+
 //initialize sensors and actors
 	//initAll();
 }
