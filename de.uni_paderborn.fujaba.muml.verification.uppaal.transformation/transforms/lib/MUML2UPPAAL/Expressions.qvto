@@ -871,9 +871,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	
 	mapping muml_actionLanguage::Assignment :: createIncrementDecrement(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : ExpressionStatement when {self.assignOperator = AssignOperator::UNSET} {
 		
-		expression := object IncrementDecrementExpression {
-		
-			position := IncrementDecrementPosition::POST;
+		expression := object PostIncrementDecrementExpression {
 			
 			operator := self.incrementDecrementOperator.mapOperator();
 			

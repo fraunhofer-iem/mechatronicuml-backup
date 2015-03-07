@@ -73,13 +73,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
 					
 					operator := IncrementDecrementOperator::INCREMENT;
 
@@ -276,13 +274,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
 					
 					operator := IncrementDecrementOperator::INCREMENT;
 	
@@ -353,13 +349,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 					}
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 							
 					expression := object IdentifierExpression {
 						identifier := i
 					};
-					
-					position := IncrementDecrementPosition::POST;
 					
 					operator := IncrementDecrementOperator::INCREMENT;
 	
@@ -488,13 +482,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 			
 			statement += object ExpressionStatement {
 				
-				expression := object IncrementDecrementExpression {
+				expression := object PostIncrementDecrementExpression {
 				
 					expression := object IdentifierExpression {
 						identifier := self.map createParameterTypeTailVariable();
 					};
-					
-					position := IncrementDecrementPosition::POST;
 					
 					operator := IncrementDecrementOperator::INCREMENT;
 				
@@ -590,13 +582,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 				
 				};
 				
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 					
 					expression := object IdentifierExpression {
 						identifier := i;
 					};
-					
-					position := IncrementDecrementPosition::POST;
 					
 					operator := IncrementDecrementOperator::INCREMENT;
 					
@@ -693,13 +683,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 								
 								};
 								
-								iteration := object IncrementDecrementExpression {
+								iteration := object PostIncrementDecrementExpression {
 									
 									expression := object IdentifierExpression {
 										identifier := j;
 									};
-									
-									position := IncrementDecrementPosition::POST;
 									
 									operator := IncrementDecrementOperator::INCREMENT;
 									
@@ -780,13 +768,11 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 							
 							statement += object ExpressionStatement {
 								
-								expression := object IncrementDecrementExpression {
+								expression := object PostIncrementDecrementExpression {
 								
 									expression := object IdentifierExpression {
 										identifier := self.map createParameterTypeTailVariable();
 									};
-									
-									position := IncrementDecrementPosition::POST;
 									
 									operator := IncrementDecrementOperator::DECREMENT;
 								
@@ -1093,15 +1079,13 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 							
 						};
 						
-						iteration := object IncrementDecrementExpression {
+						iteration := object PostIncrementDecrementExpression {
 							
 							expression := object IdentifierExpression {
 								
 								identifier := i
 								
 							};
-							
-							position := IncrementDecrementPosition::POST;
 							
 							operator := IncrementDecrementOperator::INCREMENT;
 							
@@ -1233,7 +1217,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 					
 					statement += object ExpressionStatement {
 						
-						expression := object IncrementDecrementExpression {
+						expression := object PostIncrementDecrementExpression {
 							
 							expression := object ScopedIdentifierExpression {
 								
@@ -1250,8 +1234,6 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 								}
 								
 							};
-							
-							position := IncrementDecrementPosition::POST;
 							
 							operator := IncrementDecrementOperator::DECREMENT
 							
@@ -1307,9 +1289,8 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 					operator := CompareOperator::LESS;
 					secondExpr := object IdentifierExpression {identifier := map createCapacityVariable();};
 				};
-				iteration := object IncrementDecrementExpression {
+				iteration := object PostIncrementDecrementExpression {
 					expression := object IdentifierExpression {	identifier := i };
-					position := IncrementDecrementPosition::POST;
 					operator := IncrementDecrementOperator::INCREMENT;
 				}; 
 				
@@ -1455,7 +1436,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 			
 			statement += object ExpressionStatement {
 							
-				expression := object IncrementDecrementExpression {
+				expression := object PostIncrementDecrementExpression {
 					
 					expression := object ScopedIdentifierExpression {
 						
@@ -1472,8 +1453,6 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 						}
 						
 					};
-					
-					position := IncrementDecrementPosition::POST;
 					
 					operator := IncrementDecrementOperator::INCREMENT
 					
@@ -1851,7 +1830,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 								
 							};
 							
-							elseExpression := object IncrementDecrementExpression {
+							elseExpression := object PostIncrementDecrementExpression {
 								
 								-- latest[sender]++
 								
@@ -1862,8 +1841,6 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 										identifier := sender
 									}
 								};
-								
-								position := IncrementDecrementPosition::POST;
 								
 								operator := IncrementDecrementOperator::INCREMENT;
 								

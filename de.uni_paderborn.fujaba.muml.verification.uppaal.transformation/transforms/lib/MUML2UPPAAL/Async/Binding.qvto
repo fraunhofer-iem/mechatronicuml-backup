@@ -239,13 +239,11 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 				}
 			};
 			
-			iteration := object IncrementDecrementExpression {
+			iteration := object PostIncrementDecrementExpression {
 						
 				expression := object IdentifierExpression {
 					identifier := i
 				};
-				
-				position := IncrementDecrementPosition::POST;
 				
 				operator := uppaal_expressions::IncrementDecrementOperator::INCREMENT;
 

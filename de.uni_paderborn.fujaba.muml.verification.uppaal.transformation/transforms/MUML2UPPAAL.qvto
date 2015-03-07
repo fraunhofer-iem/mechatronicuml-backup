@@ -410,11 +410,13 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 		Types::initialize();
 		
+		/*
 		int := INT;		
 		bool := BOOL;
 		clock := CLOCK;
 		chan := CHAN;
 		void := VOID;
+		*/
 	
 		-- create global declarations
 		globalDeclarations := self.map CIC2GlobalDeclarations();
@@ -886,7 +888,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	mapping Transition :: Transition2IntermediateLocation() : Location when {self.shouldCreateIntermediateLocation()} {
 		name := intermediateLocationName.addSuffixNumber();
 		locationTimeKind := LocationKind::COMMITED;
-		color := ColorKind::WHITE;
+		colorCode := "#ffffff";
 	}
 	
 	mapping Transition :: Transition2InitialEdge(rtsc : RealtimeStatechart, componentInstanceID : Variable, portOrRoleInstanceID : Variable, subPortOrRoleInstanceID : Variable) : Edge when {self.shouldCreateIntermediateLocation()} {
@@ -938,9 +940,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 		
 		-- increment intermediate location semaphore (because we're entering an intermediate location)
-		update += object IncrementDecrementExpression { // intermediateLocationSemaphore++;
+		update += object PostIncrementDecrementExpression { // intermediateLocationSemaphore++;
 			expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
-			position := IncrementDecrementPosition::POST;
 			operator := IncrementDecrementOperator::INCREMENT;
 		};
 	}
@@ -948,9 +949,8 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	mapping Transition :: Transition2FinalEdge() : Edge when {self.shouldCreateIntermediateLocation()} {
 		source := self.map Transition2IntermediateLocation();
 		target := self.target.resolveoneIn(State::State2Location, Location);
-		update := object IncrementDecrementExpression { // intermediateLocationSemaphore--;
+		update := object PostIncrementDecrementExpression { // intermediateLocationSemaphore--;
 			expression := object IdentifierExpression { identifier := map createIntermediateLocationSemaphoreVariable() };
-			position := IncrementDecrementPosition::POST;
 			operator := IncrementDecrementOperator::DECREMENT;
 		};
 	}

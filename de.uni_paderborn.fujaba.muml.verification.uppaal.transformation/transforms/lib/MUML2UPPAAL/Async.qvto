@@ -1021,7 +1021,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 				
 			};
 			
-			elseExpression := object IncrementDecrementExpression {
+			elseExpression := object PostIncrementDecrementExpression {
 				
 				-- earliest[sender]++
 				
@@ -1032,8 +1032,6 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 						identifier := map createSenderParameter()
 					};
 				};
-				
-				position := IncrementDecrementPosition::POST;
 				
 				operator := IncrementDecrementOperator::INCREMENT;
 				
