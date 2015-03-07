@@ -659,7 +659,7 @@
       <details key="documentation" value="Support for Timed Automata templates consisting of locations and edges."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractTemplate" abstract="true"
-        eSuperTypes="#//core/NamedElement #//core/CommentableElement">
+        eSuperTypes="#//core/NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract base class for ordinary timed automata templates as well as redefined templates."/>
       </eAnnotations>

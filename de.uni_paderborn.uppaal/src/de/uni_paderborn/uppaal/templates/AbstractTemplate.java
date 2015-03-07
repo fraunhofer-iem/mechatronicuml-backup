@@ -30,7 +30,7 @@ import de.uni_paderborn.uppaal.declarations.ParameterContainer;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueParameterNames'"
  * @generated
  */
-public interface AbstractTemplate extends NamedElement, CommentableElement {
+public interface AbstractTemplate extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Parameter</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.uppaal.declarations.ParameterContainer}.

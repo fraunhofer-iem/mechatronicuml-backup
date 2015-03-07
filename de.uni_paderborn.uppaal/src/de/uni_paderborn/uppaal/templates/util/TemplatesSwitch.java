@@ -83,7 +83,6 @@ public class TemplatesSwitch<T> extends Switch<T> {
 				AbstractTemplate abstractTemplate = (AbstractTemplate)theEObject;
 				T result = caseAbstractTemplate(abstractTemplate);
 				if (result == null) result = caseNamedElement(abstractTemplate);
-				if (result == null) result = caseCommentableElement(abstractTemplate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -92,7 +91,6 @@ public class TemplatesSwitch<T> extends Switch<T> {
 				T result = caseTemplate(template);
 				if (result == null) result = caseAbstractTemplate(template);
 				if (result == null) result = caseNamedElement(template);
-				if (result == null) result = caseCommentableElement(template);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -101,7 +99,6 @@ public class TemplatesSwitch<T> extends Switch<T> {
 				T result = caseRedefinedTemplate(redefinedTemplate);
 				if (result == null) result = caseAbstractTemplate(redefinedTemplate);
 				if (result == null) result = caseNamedElement(redefinedTemplate);
-				if (result == null) result = caseCommentableElement(redefinedTemplate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

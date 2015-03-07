@@ -27,7 +27,6 @@ import de.uni_paderborn.uppaal.templates.TemplatesPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.uppaal.templates.impl.AbstractTemplateImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.impl.AbstractTemplateImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  * </p>
@@ -35,26 +34,6 @@ import de.uni_paderborn.uppaal.templates.TemplatesPackage;
  * @generated
  */
 public abstract class AbstractTemplateImpl extends NamedElementImpl implements AbstractTemplate {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -82,27 +61,6 @@ public abstract class AbstractTemplateImpl extends NamedElementImpl implements A
 	@Override
 	protected EClass eStaticClass() {
 		return TemplatesPackage.Literals.ABSTRACT_TEMPLATE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -139,8 +97,6 @@ public abstract class AbstractTemplateImpl extends NamedElementImpl implements A
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT:
-				return getComment();
 			case TemplatesPackage.ABSTRACT_TEMPLATE__PARAMETER:
 				return getParameter();
 		}
@@ -156,9 +112,6 @@ public abstract class AbstractTemplateImpl extends NamedElementImpl implements A
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT:
-				setComment((String)newValue);
-				return;
 			case TemplatesPackage.ABSTRACT_TEMPLATE__PARAMETER:
 				getParameter().clear();
 				getParameter().addAll((Collection<? extends ParameterContainer>)newValue);
@@ -175,9 +128,6 @@ public abstract class AbstractTemplateImpl extends NamedElementImpl implements A
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case TemplatesPackage.ABSTRACT_TEMPLATE__PARAMETER:
 				getParameter().clear();
 				return;
@@ -193,60 +143,10 @@ public abstract class AbstractTemplateImpl extends NamedElementImpl implements A
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case TemplatesPackage.ABSTRACT_TEMPLATE__PARAMETER:
 				return parameter != null && !parameter.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return TemplatesPackage.ABSTRACT_TEMPLATE__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AbstractTemplateImpl

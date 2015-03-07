@@ -84,22 +84,13 @@ public interface TemplatesPackage extends EPackage {
 	int ABSTRACT_TEMPLATE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_TEMPLATE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TEMPLATE__PARAMETER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_TEMPLATE__PARAMETER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Template</em>' class.
@@ -108,7 +99,7 @@ public interface TemplatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_TEMPLATE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_TEMPLATE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.templates.impl.TemplateImpl <em>Template</em>}' class.
@@ -128,15 +119,6 @@ public interface TemplatesPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEMPLATE__NAME = ABSTRACT_TEMPLATE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPLATE__COMMENT = ABSTRACT_TEMPLATE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -210,15 +192,6 @@ public interface TemplatesPackage extends EPackage {
 	 * @ordered
 	 */
 	int REDEFINED_TEMPLATE__NAME = ABSTRACT_TEMPLATE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REDEFINED_TEMPLATE__COMMENT = ABSTRACT_TEMPLATE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.

@@ -568,7 +568,6 @@ public class TemplatesPackageImpl extends EPackageImpl implements TemplatesPacka
 
 		// Add supertypes to classes
 		abstractTemplateEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		abstractTemplateEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		templateEClass.getESuperTypes().add(this.getAbstractTemplate());
 		redefinedTemplateEClass.getESuperTypes().add(this.getAbstractTemplate());
 		locationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
