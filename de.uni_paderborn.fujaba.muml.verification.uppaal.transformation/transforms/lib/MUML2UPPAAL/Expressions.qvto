@@ -201,8 +201,8 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	mapping muml_behavior::Parameter :: Parameter2ParameterContainer() : ParameterContainer
 		merges muml_behavior::Parameter::Parameter2TypedElementContainer;		
 			
-	//mapping Parameter :: Parameter2Variable() : uppaal_declarations::Variable
-	//	inherits TypedNamedElement::TypedNamedElement2Variable {};
+	mapping Parameter :: Parameter2Variable() : uppaal_declarations::Variable
+		inherits TypedNamedElement::TypedNamedElement2Variable {};
 	
 	mapping Parameter :: Parameter2Parameter() : uppaal_declarations::Parameter
 		inherits TypedNamedElement::TypedNamedElement2Variable {
