@@ -3,20 +3,16 @@
 package de.uni_paderborn.uppaal.declarations.global.util;
 
 import de.uni_paderborn.uppaal.declarations.global.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.declarations.global.ChannelItem;
-import de.uni_paderborn.uppaal.declarations.global.ChannelPriorityDeclaration;
-import de.uni_paderborn.uppaal.declarations.global.ChannelPriorityGroup;
-import de.uni_paderborn.uppaal.declarations.global.DefaultItem;
-import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
-import de.uni_paderborn.uppaal.declarations.global.PriorityItem;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->

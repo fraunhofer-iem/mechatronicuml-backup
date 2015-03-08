@@ -3,12 +3,19 @@
 package de.uni_paderborn.uppaal.core.provider;
 
 
+import de.uni_paderborn.uppaal.core.CommentableElement;
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,17 +27,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.uppaal.core.CommentableElement;
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.core.CommentableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommentableElementItemProvider
+public class CommentableElementItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -110,6 +113,7 @@ public class CommentableElementItemProvider
 			getString("_UI_CommentableElement_type") :
 			getString("_UI_CommentableElement_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

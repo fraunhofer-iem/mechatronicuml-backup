@@ -2,27 +2,34 @@
  */
 package de.uni_paderborn.uppaal.declarations.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import de.uni_paderborn.uppaal.core.CorePackage;
 import de.uni_paderborn.uppaal.core.TypedElement;
+
 import de.uni_paderborn.uppaal.core.impl.NamedElementImpl;
+
 import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
 import de.uni_paderborn.uppaal.declarations.Initializer;
 import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
 import de.uni_paderborn.uppaal.declarations.Variable;
+
 import de.uni_paderborn.uppaal.expressions.Expression;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,18 +102,6 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getIndex() {
-		if (index == null) {
-			index = new EObjectContainmentEList<Expression>(Expression.class, this, DeclarationsPackage.VARIABLE__INDEX);
-		}
-		return index;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TypedElementContainer getContainer() {
 		if (eContainerFeatureID() != DeclarationsPackage.VARIABLE__CONTAINER) return null;
 		return (TypedElementContainer)eInternalContainer();
@@ -159,6 +154,18 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 	 */
 	public Expression basicGetTypeDefinition() {
 		return (Expression)TYPE_DEFINITION__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Expression> getIndex() {
+		if (index == null) {
+			index = new EObjectContainmentEList<Expression>(Expression.class, this, DeclarationsPackage.VARIABLE__INDEX);
+		}
+		return index;
 	}
 
 	/**

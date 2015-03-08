@@ -3,18 +3,19 @@
 package de.uni_paderborn.uppaal.types.provider;
 
 
+import de.uni_paderborn.uppaal.types.PredefinedType;
+import de.uni_paderborn.uppaal.types.TypesPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.types.PredefinedType;
-import de.uni_paderborn.uppaal.types.TypesPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.types.PredefinedType} object.
@@ -22,8 +23,7 @@ import de.uni_paderborn.uppaal.types.TypesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PredefinedTypeItemProvider
-	extends TypeItemProvider {
+public class PredefinedTypeItemProvider extends TypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -96,6 +96,7 @@ public class PredefinedTypeItemProvider
 			getString("_UI_PredefinedType_type") :
 			getString("_UI_PredefinedType_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

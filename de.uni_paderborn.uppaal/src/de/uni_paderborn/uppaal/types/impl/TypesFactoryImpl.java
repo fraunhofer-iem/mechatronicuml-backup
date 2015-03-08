@@ -3,23 +3,15 @@
 package de.uni_paderborn.uppaal.types.impl;
 
 import de.uni_paderborn.uppaal.types.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.types.BuiltInType;
-import de.uni_paderborn.uppaal.types.DeclaredType;
-import de.uni_paderborn.uppaal.types.IntegerBounds;
-import de.uni_paderborn.uppaal.types.Library;
-import de.uni_paderborn.uppaal.types.PredefinedType;
-import de.uni_paderborn.uppaal.types.RangeTypeSpecification;
-import de.uni_paderborn.uppaal.types.ScalarTypeSpecification;
-import de.uni_paderborn.uppaal.types.StructTypeSpecification;
-import de.uni_paderborn.uppaal.types.TypesFactory;
-import de.uni_paderborn.uppaal.types.TypesPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

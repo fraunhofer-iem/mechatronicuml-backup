@@ -2,17 +2,19 @@
  */
 package de.uni_paderborn.uppaal.declarations.system.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import de.uni_paderborn.uppaal.declarations.system.InstantiationList;
 import de.uni_paderborn.uppaal.declarations.system.ProgressMeasure;
 import de.uni_paderborn.uppaal.declarations.system.SystemFactory;
 import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
 import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

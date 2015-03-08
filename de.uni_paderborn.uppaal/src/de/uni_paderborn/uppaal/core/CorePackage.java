@@ -115,7 +115,6 @@ public interface CorePackage extends EPackage {
 	 */
 	int COMMENTABLE_ELEMENT_FEATURE_COUNT = 1;
 
-
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.core.impl.TypedElementImpl <em>Typed Element</em>}' class.
 	 * <!-- begin-user-doc -->

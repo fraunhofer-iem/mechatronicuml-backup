@@ -2,12 +2,14 @@
  */
 package de.uni_paderborn.uppaal.templates;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.uppaal.core.CommentableElement;
+
 import de.uni_paderborn.uppaal.expressions.Expression;
+
 import de.uni_paderborn.uppaal.visuals.ColoredElement;
 import de.uni_paderborn.uppaal.visuals.LinearElement;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

@@ -4,7 +4,6 @@ package de.uni_paderborn.uppaal.visuals;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -180,6 +179,7 @@ public interface VisualsPackage extends EPackage {
 	 * @ordered
 	 */
 	int POINT_FEATURE_COUNT = 2;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.visuals.ColoredElement <em>Colored Element</em>}'.

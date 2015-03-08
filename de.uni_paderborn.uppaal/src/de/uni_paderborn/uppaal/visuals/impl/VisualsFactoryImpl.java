@@ -3,17 +3,14 @@
 package de.uni_paderborn.uppaal.visuals.impl;
 
 import de.uni_paderborn.uppaal.visuals.*;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.visuals.ColorKind;
-import de.uni_paderborn.uppaal.visuals.Point;
-import de.uni_paderborn.uppaal.visuals.VisualsFactory;
-import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

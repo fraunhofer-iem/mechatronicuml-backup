@@ -2,25 +2,30 @@
  */
 package de.uni_paderborn.uppaal.statements.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import de.uni_paderborn.uppaal.UppaalPackage;
+
 import de.uni_paderborn.uppaal.core.CorePackage;
+
 import de.uni_paderborn.uppaal.core.impl.CorePackageImpl;
+
 import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+
 import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
+
 import de.uni_paderborn.uppaal.declarations.global.impl.GlobalPackageImpl;
+
 import de.uni_paderborn.uppaal.declarations.impl.DeclarationsPackageImpl;
+
 import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
+
 import de.uni_paderborn.uppaal.declarations.system.impl.SystemPackageImpl;
+
 import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
+
 import de.uni_paderborn.uppaal.expressions.impl.ExpressionsPackageImpl;
+
 import de.uni_paderborn.uppaal.impl.UppaalPackageImpl;
+
 import de.uni_paderborn.uppaal.statements.Block;
 import de.uni_paderborn.uppaal.statements.DoWhileLoop;
 import de.uni_paderborn.uppaal.statements.EmptyStatement;
@@ -33,13 +38,28 @@ import de.uni_paderborn.uppaal.statements.Statement;
 import de.uni_paderborn.uppaal.statements.StatementsFactory;
 import de.uni_paderborn.uppaal.statements.StatementsPackage;
 import de.uni_paderborn.uppaal.statements.WhileLoop;
+
 import de.uni_paderborn.uppaal.statements.util.StatementsValidator;
+
 import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
 import de.uni_paderborn.uppaal.templates.impl.TemplatesPackageImpl;
+
 import de.uni_paderborn.uppaal.types.TypesPackage;
+
 import de.uni_paderborn.uppaal.types.impl.TypesPackageImpl;
+
 import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+
 import de.uni_paderborn.uppaal.visuals.impl.VisualsPackageImpl;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

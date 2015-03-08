@@ -3,25 +3,33 @@
 package de.uni_paderborn.uppaal.declarations.provider;
 
 
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import de.uni_paderborn.uppaal.declarations.Variable;
+
+import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.types.TypesFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
-import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.Variable;
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.declarations.Variable} object.
@@ -29,8 +37,7 @@ import de.uni_paderborn.uppaal.types.TypesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VariableItemProvider
-	extends NamedElementItemProvider {
+public class VariableItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -134,6 +141,7 @@ public class VariableItemProvider
 			getString("_UI_Variable_type") :
 			getString("_UI_Variable_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

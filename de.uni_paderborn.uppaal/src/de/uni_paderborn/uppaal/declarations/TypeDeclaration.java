@@ -2,10 +2,11 @@
  */
 package de.uni_paderborn.uppaal.declarations;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.uppaal.expressions.Expression;
+
 import de.uni_paderborn.uppaal.types.DeclaredType;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

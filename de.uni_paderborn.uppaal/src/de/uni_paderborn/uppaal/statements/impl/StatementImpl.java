@@ -2,11 +2,12 @@
  */
 package de.uni_paderborn.uppaal.statements.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import de.uni_paderborn.uppaal.statements.Statement;
 import de.uni_paderborn.uppaal.statements.StatementsPackage;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,10 +2,11 @@
  */
 package de.uni_paderborn.uppaal.core;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
+
 import de.uni_paderborn.uppaal.expressions.Expression;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

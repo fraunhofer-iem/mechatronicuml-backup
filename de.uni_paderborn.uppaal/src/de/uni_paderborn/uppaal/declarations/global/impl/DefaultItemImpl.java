@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.uppaal.declarations.global.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.uni_paderborn.uppaal.declarations.global.DefaultItem;
 import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

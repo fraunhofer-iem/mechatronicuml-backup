@@ -2,34 +2,14 @@
  */
 package de.uni_paderborn.uppaal.expressions.util;
 
+import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
+
+import de.uni_paderborn.uppaal.expressions.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
-import de.uni_paderborn.uppaal.expressions.*;
-import de.uni_paderborn.uppaal.expressions.ArithmeticExpression;
-import de.uni_paderborn.uppaal.expressions.AssignmentExpression;
-import de.uni_paderborn.uppaal.expressions.BinaryExpression;
-import de.uni_paderborn.uppaal.expressions.BitShiftExpression;
-import de.uni_paderborn.uppaal.expressions.BitwiseExpression;
-import de.uni_paderborn.uppaal.expressions.ChannelPrefixExpression;
-import de.uni_paderborn.uppaal.expressions.CompareExpression;
-import de.uni_paderborn.uppaal.expressions.ConditionExpression;
-import de.uni_paderborn.uppaal.expressions.DataPrefixExpression;
-import de.uni_paderborn.uppaal.expressions.Expression;
-import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
-import de.uni_paderborn.uppaal.expressions.FunctionCallExpression;
-import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
-import de.uni_paderborn.uppaal.expressions.IncrementDecrementExpression;
-import de.uni_paderborn.uppaal.expressions.LiteralExpression;
-import de.uni_paderborn.uppaal.expressions.LogicalExpression;
-import de.uni_paderborn.uppaal.expressions.MinMaxExpression;
-import de.uni_paderborn.uppaal.expressions.MinusExpression;
-import de.uni_paderborn.uppaal.expressions.NegationExpression;
-import de.uni_paderborn.uppaal.expressions.PlusExpression;
-import de.uni_paderborn.uppaal.expressions.QuantificationExpression;
-import de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -368,6 +348,21 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scoped Identifier Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scoped Identifier Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScopedIdentifierExpression(ScopedIdentifierExpression object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -454,21 +449,6 @@ public class ExpressionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConditionExpression(ConditionExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Scoped Identifier Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Scoped Identifier Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseScopedIdentifierExpression(ScopedIdentifierExpression object) {
 		return null;
 	}
 

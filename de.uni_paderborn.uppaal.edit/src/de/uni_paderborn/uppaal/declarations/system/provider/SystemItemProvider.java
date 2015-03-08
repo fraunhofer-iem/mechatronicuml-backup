@@ -3,13 +3,21 @@
 package de.uni_paderborn.uppaal.declarations.system.provider;
 
 
+import de.uni_paderborn.uppaal.declarations.system.SystemFactory;
+import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -19,17 +27,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.uppaal.declarations.system.SystemFactory;
-import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.declarations.system.System} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SystemItemProvider
+public class SystemItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -113,6 +117,7 @@ public class SystemItemProvider
 	public String getText(Object object) {
 		return getString("_UI_System_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

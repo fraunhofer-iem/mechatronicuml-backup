@@ -3,15 +3,11 @@
 package de.uni_paderborn.uppaal.visuals.util;
 
 import de.uni_paderborn.uppaal.visuals.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.uni_paderborn.uppaal.visuals.ColoredElement;
-import de.uni_paderborn.uppaal.visuals.LinearElement;
-import de.uni_paderborn.uppaal.visuals.PlanarElement;
-import de.uni_paderborn.uppaal.visuals.Point;
-import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

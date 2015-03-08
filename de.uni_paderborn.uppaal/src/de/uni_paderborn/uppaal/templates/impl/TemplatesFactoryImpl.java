@@ -3,23 +3,15 @@
 package de.uni_paderborn.uppaal.templates.impl;
 
 import de.uni_paderborn.uppaal.templates.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.templates.Edge;
-import de.uni_paderborn.uppaal.templates.Location;
-import de.uni_paderborn.uppaal.templates.LocationKind;
-import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
-import de.uni_paderborn.uppaal.templates.Selection;
-import de.uni_paderborn.uppaal.templates.Synchronization;
-import de.uni_paderborn.uppaal.templates.SynchronizationKind;
-import de.uni_paderborn.uppaal.templates.Template;
-import de.uni_paderborn.uppaal.templates.TemplatesFactory;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

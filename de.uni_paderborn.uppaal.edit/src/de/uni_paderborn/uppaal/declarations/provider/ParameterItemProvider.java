@@ -3,18 +3,19 @@
 package de.uni_paderborn.uppaal.declarations.provider;
 
 
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import de.uni_paderborn.uppaal.declarations.Parameter;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.Parameter;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.declarations.Parameter} object.
@@ -22,8 +23,7 @@ import de.uni_paderborn.uppaal.declarations.Parameter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ParameterItemProvider
-	extends VariableItemProvider {
+public class ParameterItemProvider extends VariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -96,6 +96,7 @@ public class ParameterItemProvider
 			getString("_UI_Parameter_type") :
 			getString("_UI_Parameter_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

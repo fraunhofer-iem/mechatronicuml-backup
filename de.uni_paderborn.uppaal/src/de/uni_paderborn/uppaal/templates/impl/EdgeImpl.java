@@ -2,31 +2,38 @@
  */
 package de.uni_paderborn.uppaal.templates.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.CorePackage;
+
 import de.uni_paderborn.uppaal.expressions.Expression;
+
 import de.uni_paderborn.uppaal.templates.Edge;
 import de.uni_paderborn.uppaal.templates.Location;
 import de.uni_paderborn.uppaal.templates.Selection;
 import de.uni_paderborn.uppaal.templates.Synchronization;
 import de.uni_paderborn.uppaal.templates.Template;
 import de.uni_paderborn.uppaal.templates.TemplatesPackage;
-import de.uni_paderborn.uppaal.visuals.ColorKind;
+
 import de.uni_paderborn.uppaal.visuals.ColoredElement;
 import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+
 import de.uni_paderborn.uppaal.visuals.impl.LinearElementImpl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->

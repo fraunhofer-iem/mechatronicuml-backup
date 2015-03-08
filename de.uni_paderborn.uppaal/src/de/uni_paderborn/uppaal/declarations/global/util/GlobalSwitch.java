@@ -2,18 +2,14 @@
  */
 package de.uni_paderborn.uppaal.declarations.global.util;
 
+import de.uni_paderborn.uppaal.declarations.Declaration;
+
+import de.uni_paderborn.uppaal.declarations.global.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.uni_paderborn.uppaal.declarations.Declaration;
-import de.uni_paderborn.uppaal.declarations.global.*;
-import de.uni_paderborn.uppaal.declarations.global.ChannelItem;
-import de.uni_paderborn.uppaal.declarations.global.ChannelPriorityDeclaration;
-import de.uni_paderborn.uppaal.declarations.global.ChannelPriorityGroup;
-import de.uni_paderborn.uppaal.declarations.global.DefaultItem;
-import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
-import de.uni_paderborn.uppaal.declarations.global.PriorityItem;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

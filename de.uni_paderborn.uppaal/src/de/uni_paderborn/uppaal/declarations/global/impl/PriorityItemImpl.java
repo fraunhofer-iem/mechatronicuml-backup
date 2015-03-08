@@ -2,11 +2,12 @@
  */
 package de.uni_paderborn.uppaal.declarations.global.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
 import de.uni_paderborn.uppaal.declarations.global.PriorityItem;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

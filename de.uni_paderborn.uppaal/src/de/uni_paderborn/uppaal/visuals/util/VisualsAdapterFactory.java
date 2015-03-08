@@ -3,16 +3,13 @@
 package de.uni_paderborn.uppaal.visuals.util;
 
 import de.uni_paderborn.uppaal.visuals.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.uppaal.visuals.ColoredElement;
-import de.uni_paderborn.uppaal.visuals.LinearElement;
-import de.uni_paderborn.uppaal.visuals.PlanarElement;
-import de.uni_paderborn.uppaal.visuals.Point;
-import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

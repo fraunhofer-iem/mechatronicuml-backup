@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.uppaal.templates;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

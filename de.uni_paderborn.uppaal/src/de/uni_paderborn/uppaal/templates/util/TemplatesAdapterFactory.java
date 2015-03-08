@@ -2,26 +2,23 @@
  */
 package de.uni_paderborn.uppaal.templates.util;
 
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
+
 import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
+
 import de.uni_paderborn.uppaal.templates.*;
-import de.uni_paderborn.uppaal.templates.AbstractTemplate;
-import de.uni_paderborn.uppaal.templates.Edge;
-import de.uni_paderborn.uppaal.templates.Location;
-import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
-import de.uni_paderborn.uppaal.templates.Selection;
-import de.uni_paderborn.uppaal.templates.Synchronization;
-import de.uni_paderborn.uppaal.templates.Template;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
 import de.uni_paderborn.uppaal.visuals.ColoredElement;
 import de.uni_paderborn.uppaal.visuals.LinearElement;
 import de.uni_paderborn.uppaal.visuals.PlanarElement;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,14 +2,15 @@
  */
 package de.uni_paderborn.uppaal;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
+
 import de.uni_paderborn.uppaal.declarations.GlobalDeclarations;
 import de.uni_paderborn.uppaal.declarations.SystemDeclarations;
+
 import de.uni_paderborn.uppaal.templates.Template;
-import de.uni_paderborn.uppaal.types.PredefinedType;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

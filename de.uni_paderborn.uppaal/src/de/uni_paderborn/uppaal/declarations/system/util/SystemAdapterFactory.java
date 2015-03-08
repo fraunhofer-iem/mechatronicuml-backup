@@ -2,16 +2,19 @@
  */
 package de.uni_paderborn.uppaal.declarations.system.util;
 
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.uppaal.declarations.Declaration;
+
 import de.uni_paderborn.uppaal.declarations.system.InstantiationList;
 import de.uni_paderborn.uppaal.declarations.system.ProgressMeasure;
 import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
 import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,11 +2,12 @@
  */
 package de.uni_paderborn.uppaal.types.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.uni_paderborn.uppaal.expressions.impl.ExpressionImpl;
+
 import de.uni_paderborn.uppaal.types.TypeExpression;
 import de.uni_paderborn.uppaal.types.TypesPackage;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

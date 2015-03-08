@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.uppaal.statements.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.uni_paderborn.uppaal.statements.EmptyStatement;
 import de.uni_paderborn.uppaal.statements.StatementsPackage;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

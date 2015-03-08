@@ -3,15 +3,13 @@
 package de.uni_paderborn.uppaal.core.util;
 
 import de.uni_paderborn.uppaal.core.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.uppaal.core.CommentableElement;
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.core.NamedElement;
-import de.uni_paderborn.uppaal.core.TypedElement;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

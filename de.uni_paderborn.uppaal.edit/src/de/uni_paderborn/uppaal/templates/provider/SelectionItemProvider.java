@@ -3,16 +3,19 @@
 package de.uni_paderborn.uppaal.templates.provider;
 
 
+import de.uni_paderborn.uppaal.declarations.provider.TypedElementContainerItemProvider;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import de.uni_paderborn.uppaal.declarations.provider.TypedElementContainerItemProvider;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.templates.Selection} object.

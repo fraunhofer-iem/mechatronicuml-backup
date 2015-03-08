@@ -2,26 +2,33 @@
  */
 package de.uni_paderborn.uppaal.impl;
 
+import de.uni_paderborn.uppaal.NTA;
+import de.uni_paderborn.uppaal.UppaalPackage;
+
+import de.uni_paderborn.uppaal.core.CommentableElement;
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.core.impl.NamedElementImpl;
+
+import de.uni_paderborn.uppaal.declarations.GlobalDeclarations;
+import de.uni_paderborn.uppaal.declarations.SystemDeclarations;
+
+import de.uni_paderborn.uppaal.templates.Template;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.UppaalPackage;
-import de.uni_paderborn.uppaal.core.CommentableElement;
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.core.impl.NamedElementImpl;
-import de.uni_paderborn.uppaal.declarations.GlobalDeclarations;
-import de.uni_paderborn.uppaal.declarations.SystemDeclarations;
-import de.uni_paderborn.uppaal.templates.Template;
-import de.uni_paderborn.uppaal.types.PredefinedType;
 
 /**
  * <!-- begin-user-doc -->

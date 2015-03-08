@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.uppaal.templates;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.uppaal.declarations.LocalDeclarations;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

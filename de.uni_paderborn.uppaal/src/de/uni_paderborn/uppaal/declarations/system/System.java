@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.declarations.system;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

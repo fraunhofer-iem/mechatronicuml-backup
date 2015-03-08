@@ -2,12 +2,15 @@
  */
 package de.uni_paderborn.uppaal.expressions.provider;
 
+import de.uni_paderborn.uppaal.expressions.util.ExpressionsAdapterFactory;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -19,8 +22,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
-import de.uni_paderborn.uppaal.expressions.util.ExpressionsAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -186,6 +187,29 @@ public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScopedIdentifierExpressionItemProvider scopedIdentifierExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScopedIdentifierExpressionAdapter() {
+		if (scopedIdentifierExpressionItemProvider == null) {
+			scopedIdentifierExpressionItemProvider = new ScopedIdentifierExpressionItemProvider(this);
+		}
+
+		return scopedIdentifierExpressionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.uppaal.expressions.LiteralExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,29 +345,6 @@ public class ExpressionsItemProviderAdapterFactory extends ExpressionsAdapterFac
 		}
 
 		return conditionExpressionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ScopedIdentifierExpressionItemProvider scopedIdentifierExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createScopedIdentifierExpressionAdapter() {
-		if (scopedIdentifierExpressionItemProvider == null) {
-			scopedIdentifierExpressionItemProvider = new ScopedIdentifierExpressionItemProvider(this);
-		}
-
-		return scopedIdentifierExpressionItemProvider;
 	}
 
 	/**

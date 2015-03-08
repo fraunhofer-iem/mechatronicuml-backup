@@ -2,15 +2,17 @@
  */
 package de.uni_paderborn.uppaal.templates;
 
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+
+import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.visuals.VisualsPackage;
 
 /**
  * <!-- begin-user-doc -->

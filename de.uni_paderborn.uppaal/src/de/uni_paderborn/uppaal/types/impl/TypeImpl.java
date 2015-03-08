@@ -2,13 +2,14 @@
  */
 package de.uni_paderborn.uppaal.types.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import de.uni_paderborn.uppaal.core.impl.NamedElementImpl;
+
 import de.uni_paderborn.uppaal.types.BuiltInType;
 import de.uni_paderborn.uppaal.types.Type;
 import de.uni_paderborn.uppaal.types.TypesPackage;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * <!-- begin-user-doc -->

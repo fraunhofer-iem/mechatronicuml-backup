@@ -3,27 +3,36 @@
 package de.uni_paderborn.uppaal.templates.provider;
 
 
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.templates.Edge;
+import de.uni_paderborn.uppaal.templates.TemplatesFactory;
+import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
+import de.uni_paderborn.uppaal.types.TypesFactory;
+
+import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+
+import de.uni_paderborn.uppaal.visuals.provider.LinearElementItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.templates.Edge;
-import de.uni_paderborn.uppaal.templates.TemplatesFactory;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
-import de.uni_paderborn.uppaal.types.TypesFactory;
-import de.uni_paderborn.uppaal.visuals.VisualsPackage;
-import de.uni_paderborn.uppaal.visuals.provider.LinearElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.templates.Edge} object.
@@ -31,8 +40,7 @@ import de.uni_paderborn.uppaal.visuals.provider.LinearElementItemProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EdgeItemProvider
-	extends LinearElementItemProvider {
+public class EdgeItemProvider extends LinearElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -207,6 +215,7 @@ public class EdgeItemProvider
 			getString("_UI_Edge_type") :
 			getString("_UI_Edge_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

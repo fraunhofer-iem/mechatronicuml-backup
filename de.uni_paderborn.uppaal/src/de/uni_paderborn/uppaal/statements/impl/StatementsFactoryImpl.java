@@ -3,23 +3,14 @@
 package de.uni_paderborn.uppaal.statements.impl;
 
 import de.uni_paderborn.uppaal.statements.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.statements.Block;
-import de.uni_paderborn.uppaal.statements.DoWhileLoop;
-import de.uni_paderborn.uppaal.statements.EmptyStatement;
-import de.uni_paderborn.uppaal.statements.ExpressionStatement;
-import de.uni_paderborn.uppaal.statements.ForLoop;
-import de.uni_paderborn.uppaal.statements.IfStatement;
-import de.uni_paderborn.uppaal.statements.Iteration;
-import de.uni_paderborn.uppaal.statements.ReturnStatement;
-import de.uni_paderborn.uppaal.statements.StatementsFactory;
-import de.uni_paderborn.uppaal.statements.StatementsPackage;
-import de.uni_paderborn.uppaal.statements.WhileLoop;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,16 +2,20 @@
  */
 package de.uni_paderborn.uppaal.declarations.system.impl;
 
+import de.uni_paderborn.uppaal.declarations.system.InstantiationList;
+import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
+
+import de.uni_paderborn.uppaal.templates.AbstractTemplate;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import de.uni_paderborn.uppaal.declarations.system.InstantiationList;
-import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
-import de.uni_paderborn.uppaal.templates.AbstractTemplate;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->

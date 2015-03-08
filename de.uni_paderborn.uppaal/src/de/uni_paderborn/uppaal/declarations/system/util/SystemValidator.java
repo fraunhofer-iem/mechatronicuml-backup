@@ -2,18 +2,20 @@
  */
 package de.uni_paderborn.uppaal.declarations.system.util;
 
+import de.uni_paderborn.uppaal.declarations.system.InstantiationList;
+import de.uni_paderborn.uppaal.declarations.system.ProgressMeasure;
+import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
+import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.declarations.system.InstantiationList;
-import de.uni_paderborn.uppaal.declarations.system.ProgressMeasure;
-import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
-import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->

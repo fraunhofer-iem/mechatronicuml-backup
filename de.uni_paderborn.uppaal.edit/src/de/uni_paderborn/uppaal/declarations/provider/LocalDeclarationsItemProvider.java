@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -16,8 +17,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LocalDeclarationsItemProvider
-	extends DeclarationsItemProvider {
+public class LocalDeclarationsItemProvider extends DeclarationsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,6 +64,7 @@ public class LocalDeclarationsItemProvider
 	public String getText(Object object) {
 		return getString("_UI_LocalDeclarations_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

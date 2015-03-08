@@ -3,15 +3,14 @@
 package de.uni_paderborn.uppaal.impl;
 
 import de.uni_paderborn.uppaal.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.UppaalFactory;
-import de.uni_paderborn.uppaal.UppaalPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

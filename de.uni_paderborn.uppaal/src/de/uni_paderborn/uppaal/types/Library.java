@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.types;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Library extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Types</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.uppaal.types.PredefinedType}.
@@ -38,4 +38,5 @@ public interface Library extends EObject {
 	 * @generated
 	 */
 	EList<PredefinedType> getTypes();
+
 } // Library

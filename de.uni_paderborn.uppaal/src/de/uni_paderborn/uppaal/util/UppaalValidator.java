@@ -3,17 +3,18 @@
 package de.uni_paderborn.uppaal.util;
 
 import de.uni_paderborn.uppaal.*;
+
+import de.uni_paderborn.uppaal.core.util.CoreValidator;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.UppaalPackage;
-import de.uni_paderborn.uppaal.core.util.CoreValidator;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->

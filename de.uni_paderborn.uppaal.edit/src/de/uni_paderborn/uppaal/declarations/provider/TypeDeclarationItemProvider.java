@@ -3,19 +3,23 @@
 package de.uni_paderborn.uppaal.declarations.provider;
 
 
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
+
+import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
+
+import de.uni_paderborn.uppaal.types.TypesFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.declarations.TypeDeclaration} object.
@@ -23,8 +27,7 @@ import de.uni_paderborn.uppaal.types.TypesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TypeDeclarationItemProvider
-	extends DeclarationItemProvider {
+public class TypeDeclarationItemProvider extends DeclarationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -102,6 +105,7 @@ public class TypeDeclarationItemProvider
 	public String getText(Object object) {
 		return getString("_UI_TypeDeclaration_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

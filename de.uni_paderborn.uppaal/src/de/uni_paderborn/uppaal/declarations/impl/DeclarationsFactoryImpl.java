@@ -3,28 +3,15 @@
 package de.uni_paderborn.uppaal.declarations.impl;
 
 import de.uni_paderborn.uppaal.declarations.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.declarations.ArrayInitializer;
-import de.uni_paderborn.uppaal.declarations.CallType;
-import de.uni_paderborn.uppaal.declarations.DataVariablePrefix;
-import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.ExpressionInitializer;
-import de.uni_paderborn.uppaal.declarations.Function;
-import de.uni_paderborn.uppaal.declarations.GlobalDeclarations;
-import de.uni_paderborn.uppaal.declarations.LocalDeclarations;
-import de.uni_paderborn.uppaal.declarations.Parameter;
-import de.uni_paderborn.uppaal.declarations.ParameterContainer;
-import de.uni_paderborn.uppaal.declarations.SystemDeclarations;
-import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
-import de.uni_paderborn.uppaal.declarations.TypedDeclaration;
-import de.uni_paderborn.uppaal.declarations.Variable;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

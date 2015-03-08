@@ -3,23 +3,31 @@
 package de.uni_paderborn.uppaal.declarations.system.provider;
 
 
+import de.uni_paderborn.uppaal.declarations.provider.DeclarationItemProvider;
+
+import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
+import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration;
+
+import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.templates.TemplatesFactory;
+
+import de.uni_paderborn.uppaal.types.TypesFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.declarations.provider.DeclarationItemProvider;
-import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
-import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration;
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.templates.TemplatesFactory;
-import de.uni_paderborn.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration} object.
@@ -27,8 +35,7 @@ import de.uni_paderborn.uppaal.types.TypesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplateDeclarationItemProvider
-	extends DeclarationItemProvider {
+public class TemplateDeclarationItemProvider extends DeclarationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -106,6 +113,7 @@ public class TemplateDeclarationItemProvider
 	public String getText(Object object) {
 		return getString("_UI_TemplateDeclaration_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

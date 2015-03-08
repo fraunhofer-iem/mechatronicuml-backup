@@ -3,24 +3,31 @@
 package de.uni_paderborn.uppaal.declarations.provider;
 
 
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import de.uni_paderborn.uppaal.declarations.Function;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.statements.StatementsFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
-import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.Function;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.statements.StatementsFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.declarations.Function} object.
@@ -28,8 +35,7 @@ import de.uni_paderborn.uppaal.statements.StatementsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FunctionItemProvider
-	extends NamedElementItemProvider {
+public class FunctionItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -133,6 +139,7 @@ public class FunctionItemProvider
 			getString("_UI_Function_type") :
 			getString("_UI_Function_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.uppaal.types;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.uppaal.expressions.Expression;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

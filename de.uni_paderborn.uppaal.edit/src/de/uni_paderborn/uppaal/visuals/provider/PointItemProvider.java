@@ -3,12 +3,19 @@
 package de.uni_paderborn.uppaal.visuals.provider;
 
 
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.visuals.Point;
+import de.uni_paderborn.uppaal.visuals.VisualsPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,17 +27,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.visuals.Point;
-import de.uni_paderborn.uppaal.visuals.VisualsPackage;
-
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.visuals.Point} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PointItemProvider
+public class PointItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -131,6 +134,7 @@ public class PointItemProvider
 		Point point = (Point)object;
 		return getString("_UI_Point_type") + " " + point.getX();
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

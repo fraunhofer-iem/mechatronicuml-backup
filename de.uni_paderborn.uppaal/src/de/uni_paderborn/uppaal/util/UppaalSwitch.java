@@ -3,14 +3,14 @@
 package de.uni_paderborn.uppaal.util;
 
 import de.uni_paderborn.uppaal.*;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.UppaalPackage;
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,11 +2,12 @@
  */
 package de.uni_paderborn.uppaal.templates.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.uni_paderborn.uppaal.declarations.impl.TypedElementContainerImpl;
+
 import de.uni_paderborn.uppaal.templates.Selection;
 import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

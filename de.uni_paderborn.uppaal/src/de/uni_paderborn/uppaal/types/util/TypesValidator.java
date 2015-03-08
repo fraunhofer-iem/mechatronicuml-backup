@@ -2,27 +2,19 @@
  */
 package de.uni_paderborn.uppaal.types.util;
 
+import de.uni_paderborn.uppaal.core.util.CoreValidator;
+
+import de.uni_paderborn.uppaal.types.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.core.util.CoreValidator;
-import de.uni_paderborn.uppaal.types.*;
-import de.uni_paderborn.uppaal.types.BuiltInType;
-import de.uni_paderborn.uppaal.types.DeclaredType;
-import de.uni_paderborn.uppaal.types.IntegerBounds;
-import de.uni_paderborn.uppaal.types.Library;
-import de.uni_paderborn.uppaal.types.PredefinedType;
-import de.uni_paderborn.uppaal.types.RangeTypeSpecification;
-import de.uni_paderborn.uppaal.types.ScalarTypeSpecification;
-import de.uni_paderborn.uppaal.types.StructTypeSpecification;
-import de.uni_paderborn.uppaal.types.Type;
-import de.uni_paderborn.uppaal.types.TypeExpression;
-import de.uni_paderborn.uppaal.types.TypesPackage;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->

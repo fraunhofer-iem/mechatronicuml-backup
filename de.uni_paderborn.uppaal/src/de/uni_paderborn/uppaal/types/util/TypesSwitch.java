@@ -2,23 +2,16 @@
  */
 package de.uni_paderborn.uppaal.types.util;
 
+import de.uni_paderborn.uppaal.core.NamedElement;
+
+import de.uni_paderborn.uppaal.expressions.Expression;
+
+import de.uni_paderborn.uppaal.types.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.uni_paderborn.uppaal.core.NamedElement;
-import de.uni_paderborn.uppaal.expressions.Expression;
-import de.uni_paderborn.uppaal.types.*;
-import de.uni_paderborn.uppaal.types.DeclaredType;
-import de.uni_paderborn.uppaal.types.IntegerBounds;
-import de.uni_paderborn.uppaal.types.Library;
-import de.uni_paderborn.uppaal.types.PredefinedType;
-import de.uni_paderborn.uppaal.types.RangeTypeSpecification;
-import de.uni_paderborn.uppaal.types.ScalarTypeSpecification;
-import de.uni_paderborn.uppaal.types.StructTypeSpecification;
-import de.uni_paderborn.uppaal.types.Type;
-import de.uni_paderborn.uppaal.types.TypeExpression;
-import de.uni_paderborn.uppaal.types.TypesPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

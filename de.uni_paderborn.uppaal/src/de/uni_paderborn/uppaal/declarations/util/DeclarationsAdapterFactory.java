@@ -2,30 +2,17 @@
  */
 package de.uni_paderborn.uppaal.declarations.util;
 
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.uppaal.core.NamedElement;
 import de.uni_paderborn.uppaal.core.TypedElement;
+
 import de.uni_paderborn.uppaal.declarations.*;
-import de.uni_paderborn.uppaal.declarations.ArrayInitializer;
-import de.uni_paderborn.uppaal.declarations.Declaration;
-import de.uni_paderborn.uppaal.declarations.Declarations;
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.ExpressionInitializer;
-import de.uni_paderborn.uppaal.declarations.Function;
-import de.uni_paderborn.uppaal.declarations.GlobalDeclarations;
-import de.uni_paderborn.uppaal.declarations.Initializer;
-import de.uni_paderborn.uppaal.declarations.LocalDeclarations;
-import de.uni_paderborn.uppaal.declarations.Parameter;
-import de.uni_paderborn.uppaal.declarations.ParameterContainer;
-import de.uni_paderborn.uppaal.declarations.SystemDeclarations;
-import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
-import de.uni_paderborn.uppaal.declarations.TypedDeclaration;
-import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
-import de.uni_paderborn.uppaal.declarations.Variable;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

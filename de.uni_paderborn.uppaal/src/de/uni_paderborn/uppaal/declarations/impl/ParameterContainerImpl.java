@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.uppaal.declarations.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
 import de.uni_paderborn.uppaal.declarations.ParameterContainer;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

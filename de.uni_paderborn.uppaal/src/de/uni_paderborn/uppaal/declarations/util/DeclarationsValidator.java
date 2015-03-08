@@ -2,34 +2,19 @@
  */
 package de.uni_paderborn.uppaal.declarations.util;
 
+import de.uni_paderborn.uppaal.core.util.CoreValidator;
+
+import de.uni_paderborn.uppaal.declarations.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.core.util.CoreValidator;
-import de.uni_paderborn.uppaal.declarations.*;
-import de.uni_paderborn.uppaal.declarations.ArrayInitializer;
-import de.uni_paderborn.uppaal.declarations.CallType;
-import de.uni_paderborn.uppaal.declarations.DataVariablePrefix;
-import de.uni_paderborn.uppaal.declarations.Declaration;
-import de.uni_paderborn.uppaal.declarations.Declarations;
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.ExpressionInitializer;
-import de.uni_paderborn.uppaal.declarations.Function;
-import de.uni_paderborn.uppaal.declarations.GlobalDeclarations;
-import de.uni_paderborn.uppaal.declarations.Initializer;
-import de.uni_paderborn.uppaal.declarations.LocalDeclarations;
-import de.uni_paderborn.uppaal.declarations.Parameter;
-import de.uni_paderborn.uppaal.declarations.ParameterContainer;
-import de.uni_paderborn.uppaal.declarations.SystemDeclarations;
-import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
-import de.uni_paderborn.uppaal.declarations.TypedDeclaration;
-import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
-import de.uni_paderborn.uppaal.declarations.Variable;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->

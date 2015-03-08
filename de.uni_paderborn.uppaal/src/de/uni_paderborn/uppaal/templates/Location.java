@@ -4,7 +4,9 @@ package de.uni_paderborn.uppaal.templates;
 
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
+
 import de.uni_paderborn.uppaal.expressions.Expression;
+
 import de.uni_paderborn.uppaal.visuals.ColoredElement;
 import de.uni_paderborn.uppaal.visuals.PlanarElement;
 

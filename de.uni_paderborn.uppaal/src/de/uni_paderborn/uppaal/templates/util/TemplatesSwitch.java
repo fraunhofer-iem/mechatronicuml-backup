@@ -2,25 +2,21 @@
  */
 package de.uni_paderborn.uppaal.templates.util;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
-
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
+
 import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
+
 import de.uni_paderborn.uppaal.templates.*;
-import de.uni_paderborn.uppaal.templates.AbstractTemplate;
-import de.uni_paderborn.uppaal.templates.Edge;
-import de.uni_paderborn.uppaal.templates.Location;
-import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
-import de.uni_paderborn.uppaal.templates.Selection;
-import de.uni_paderborn.uppaal.templates.Synchronization;
-import de.uni_paderborn.uppaal.templates.Template;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
 import de.uni_paderborn.uppaal.visuals.ColoredElement;
 import de.uni_paderborn.uppaal.visuals.LinearElement;
 import de.uni_paderborn.uppaal.visuals.PlanarElement;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

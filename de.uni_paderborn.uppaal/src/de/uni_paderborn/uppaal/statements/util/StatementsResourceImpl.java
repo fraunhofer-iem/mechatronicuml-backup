@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.statements.util;
 
 import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
 /**

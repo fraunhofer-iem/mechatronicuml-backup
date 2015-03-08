@@ -2,27 +2,21 @@
  */
 package de.uni_paderborn.uppaal.templates.util;
 
+import de.uni_paderborn.uppaal.core.util.CoreValidator;
+
+import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
+
+import de.uni_paderborn.uppaal.templates.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.uppaal.core.util.CoreValidator;
-import de.uni_paderborn.uppaal.declarations.util.DeclarationsValidator;
-import de.uni_paderborn.uppaal.templates.*;
-import de.uni_paderborn.uppaal.templates.AbstractTemplate;
-import de.uni_paderborn.uppaal.templates.Edge;
-import de.uni_paderborn.uppaal.templates.Location;
-import de.uni_paderborn.uppaal.templates.LocationKind;
-import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
-import de.uni_paderborn.uppaal.templates.Selection;
-import de.uni_paderborn.uppaal.templates.Synchronization;
-import de.uni_paderborn.uppaal.templates.SynchronizationKind;
-import de.uni_paderborn.uppaal.templates.Template;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,14 +2,15 @@
  */
 package de.uni_paderborn.uppaal.types;
 
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->

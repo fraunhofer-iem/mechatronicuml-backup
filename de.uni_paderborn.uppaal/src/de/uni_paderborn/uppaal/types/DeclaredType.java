@@ -3,6 +3,7 @@
 package de.uni_paderborn.uppaal.types;
 
 import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
+
 import de.uni_paderborn.uppaal.expressions.Expression;
 
 /**

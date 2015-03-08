@@ -3,18 +3,14 @@
 package de.uni_paderborn.uppaal.declarations.global.impl;
 
 import de.uni_paderborn.uppaal.declarations.global.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.uppaal.declarations.global.ChannelItem;
-import de.uni_paderborn.uppaal.declarations.global.ChannelPriorityDeclaration;
-import de.uni_paderborn.uppaal.declarations.global.ChannelPriorityGroup;
-import de.uni_paderborn.uppaal.declarations.global.DefaultItem;
-import de.uni_paderborn.uppaal.declarations.global.GlobalFactory;
-import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

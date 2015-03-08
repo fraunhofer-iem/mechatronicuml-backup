@@ -2,19 +2,24 @@
  */
 package de.uni_paderborn.uppaal.types.impl;
 
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
+
+import de.uni_paderborn.uppaal.expressions.Expression;
+
+import de.uni_paderborn.uppaal.types.DeclaredType;
+import de.uni_paderborn.uppaal.types.TypesPackage;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
-import de.uni_paderborn.uppaal.declarations.TypeDeclaration;
-import de.uni_paderborn.uppaal.expressions.Expression;
-import de.uni_paderborn.uppaal.types.DeclaredType;
-import de.uni_paderborn.uppaal.types.TypesPackage;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->

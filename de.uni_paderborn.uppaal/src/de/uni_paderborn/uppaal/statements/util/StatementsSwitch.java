@@ -2,23 +2,14 @@
  */
 package de.uni_paderborn.uppaal.statements.util;
 
+import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
+
+import de.uni_paderborn.uppaal.statements.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.uni_paderborn.uppaal.declarations.TypedElementContainer;
-import de.uni_paderborn.uppaal.statements.*;
-import de.uni_paderborn.uppaal.statements.Block;
-import de.uni_paderborn.uppaal.statements.DoWhileLoop;
-import de.uni_paderborn.uppaal.statements.EmptyStatement;
-import de.uni_paderborn.uppaal.statements.ExpressionStatement;
-import de.uni_paderborn.uppaal.statements.ForLoop;
-import de.uni_paderborn.uppaal.statements.IfStatement;
-import de.uni_paderborn.uppaal.statements.Iteration;
-import de.uni_paderborn.uppaal.statements.ReturnStatement;
-import de.uni_paderborn.uppaal.statements.Statement;
-import de.uni_paderborn.uppaal.statements.StatementsPackage;
-import de.uni_paderborn.uppaal.statements.WhileLoop;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

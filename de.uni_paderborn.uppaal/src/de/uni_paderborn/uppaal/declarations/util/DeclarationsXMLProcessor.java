@@ -2,13 +2,15 @@
  */
 package de.uni_paderborn.uppaal.declarations.util;
 
+import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 
-import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents

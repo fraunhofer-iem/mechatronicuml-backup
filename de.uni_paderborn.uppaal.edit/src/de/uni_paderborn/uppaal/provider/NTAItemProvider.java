@@ -3,25 +3,31 @@
 package de.uni_paderborn.uppaal.provider;
 
 
+import de.uni_paderborn.uppaal.NTA;
+import de.uni_paderborn.uppaal.UppaalPackage;
+
+import de.uni_paderborn.uppaal.core.CorePackage;
+
+import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
+
+import de.uni_paderborn.uppaal.templates.TemplatesFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.UppaalPackage;
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
-import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
-import de.uni_paderborn.uppaal.templates.TemplatesFactory;
-import de.uni_paderborn.uppaal.types.TypesFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.NTA} object.
@@ -29,8 +35,7 @@ import de.uni_paderborn.uppaal.types.TypesFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NTAItemProvider
-	extends NamedElementItemProvider {
+public class NTAItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -135,6 +140,7 @@ public class NTAItemProvider
 			getString("_UI_NTA_type") :
 			getString("_UI_NTA_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

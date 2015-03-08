@@ -3,13 +3,24 @@
 package de.uni_paderborn.uppaal.templates.provider;
 
 
+import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.templates.Synchronization;
+import de.uni_paderborn.uppaal.templates.SynchronizationKind;
+import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,19 +32,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.uppaal.expressions.ExpressionsFactory;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.templates.Synchronization;
-import de.uni_paderborn.uppaal.templates.SynchronizationKind;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
-
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.templates.Synchronization} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SynchronizationItemProvider
+public class SynchronizationItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -144,6 +149,7 @@ public class SynchronizationItemProvider
 			getString("_UI_Synchronization_type") :
 			getString("_UI_Synchronization_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

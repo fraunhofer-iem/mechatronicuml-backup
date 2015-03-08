@@ -3,24 +3,27 @@
 package de.uni_paderborn.uppaal.templates.provider;
 
 
+import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
+
+import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
+
+import de.uni_paderborn.uppaal.templates.AbstractTemplate;
+import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.uppaal.core.CorePackage;
-import de.uni_paderborn.uppaal.core.provider.NamedElementItemProvider;
-import de.uni_paderborn.uppaal.declarations.DeclarationsFactory;
-import de.uni_paderborn.uppaal.provider.UppaalEditPlugin;
-import de.uni_paderborn.uppaal.templates.AbstractTemplate;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.templates.AbstractTemplate} object.
@@ -28,8 +31,7 @@ import de.uni_paderborn.uppaal.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractTemplateItemProvider
-	extends NamedElementItemProvider {
+public class AbstractTemplateItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -98,6 +100,7 @@ public class AbstractTemplateItemProvider
 			getString("_UI_AbstractTemplate_type") :
 			getString("_UI_AbstractTemplate_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

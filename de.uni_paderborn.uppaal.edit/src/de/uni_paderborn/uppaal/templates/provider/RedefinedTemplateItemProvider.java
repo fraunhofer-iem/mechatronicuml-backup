@@ -3,19 +3,21 @@
 package de.uni_paderborn.uppaal.templates.provider;
 
 
+import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
+import de.uni_paderborn.uppaal.templates.TemplatesFactory;
+import de.uni_paderborn.uppaal.templates.TemplatesPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
-import de.uni_paderborn.uppaal.templates.TemplatesFactory;
-import de.uni_paderborn.uppaal.templates.TemplatesPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.uppaal.templates.RedefinedTemplate} object.
@@ -23,8 +25,7 @@ import de.uni_paderborn.uppaal.templates.TemplatesPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RedefinedTemplateItemProvider
-	extends AbstractTemplateItemProvider {
+public class RedefinedTemplateItemProvider extends AbstractTemplateItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -150,6 +151,7 @@ public class RedefinedTemplateItemProvider
 			getString("_UI_RedefinedTemplate_type") :
 			getString("_UI_RedefinedTemplate_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
