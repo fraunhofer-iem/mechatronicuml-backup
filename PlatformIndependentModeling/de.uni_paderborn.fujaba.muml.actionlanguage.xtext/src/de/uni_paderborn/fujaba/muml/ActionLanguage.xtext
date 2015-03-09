@@ -311,11 +311,15 @@ ExtendedTypedNamedElementExpression returns expressions::Expression:
 ;
 
 TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-	typedNamedElement=[behavior::TypedNamedElement](elementAccessors+= (ArrayIndexExpression))* 
+	typedNamedElement=[behavior::TypedNamedElement](elementAccessors+= (ArrayIndexExpression | AttributeAccessorExpression))* 
 ;
 
 ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
 	'['index=ArithmeticExpression']'
+;
+
+AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
+	'.'attribute=[types::Attribute]
 ;
 
 NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:
@@ -343,7 +347,7 @@ ParamaterBinding returns behavior::ParameterBinding:
 // TriggerMessageExpression
 
 TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
-	messageType=[msgtype::MessageType] '.' parameter=[behavior::Parameter]
+	messageType=[msgtype::MessageType] '->' parameter=[behavior::Parameter]
 ;
 
 // end of TriggerMessageExpression

@@ -64,11 +64,12 @@ protected class ThisRootNode extends RootToken {
 			case 31: return new ExtendedTypedNamedElementExpression_Group(this, this, 31, inst);
 			case 32: return new TypedNamedElementExpression_Group(this, this, 32, inst);
 			case 33: return new ArrayIndexExpression_Group(this, this, 33, inst);
-			case 34: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 34, inst);
-			case 35: return new PositionSelectorExpression_Group(this, this, 35, inst);
-			case 36: return new OperationCall_Group(this, this, 36, inst);
-			case 37: return new ParamaterBinding_Group(this, this, 37, inst);
-			case 38: return new TriggerMessageExpression_Group(this, this, 38, inst);
+			case 34: return new AttributeAccessorExpression_Group(this, this, 34, inst);
+			case 35: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 35, inst);
+			case 36: return new PositionSelectorExpression_Group(this, this, 36, inst);
+			case 37: return new OperationCall_Group(this, this, 37, inst);
+			case 38: return new ParamaterBinding_Group(this, this, 38, inst);
+			case 39: return new TriggerMessageExpression_Group(this, this, 39, inst);
 			default: return null;
 		}	
 	}	
@@ -6728,11 +6729,12 @@ protected class ExtendedTypedNamedElementExpression_IncrementDecrementOperatorAs
 /************ begin Rule TypedNamedElementExpression ****************
  *
  * TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
- * 	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*;
+ * 	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression |
+ * 	AttributeAccessorExpression)*;
  *
  **/
 
-// typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*
+// typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression | AttributeAccessorExpression)*
 protected class TypedNamedElementExpression_Group extends GroupToken {
 	
 	public TypedNamedElementExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6798,7 +6800,7 @@ protected class TypedNamedElementExpression_TypedNamedElementAssignment_0 extend
 
 }
 
-// elementAccessors+=ArrayIndexExpression*
+// elementAccessors+=(ArrayIndexExpression | AttributeAccessorExpression)*
 protected class TypedNamedElementExpression_ElementAccessorsAssignment_1 extends AssignmentToken  {
 	
 	public TypedNamedElementExpression_ElementAccessorsAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6814,6 +6816,7 @@ protected class TypedNamedElementExpression_ElementAccessorsAssignment_1 extends
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new ArrayIndexExpression_Group(this, this, 0, inst);
+			case 1: return new AttributeAccessorExpression_Group(this, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -6826,7 +6829,16 @@ protected class TypedNamedElementExpression_ElementAccessorsAssignment_1 extends
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getArrayIndexExpressionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0(); 
+				element = grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getAttributeAccessorExpressionRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1(); 
 				consumed = obj;
 				return param;
 			}
@@ -6976,6 +6988,104 @@ protected class ArrayIndexExpression_RightSquareBracketKeyword_2 extends Keyword
 
 
 /************ end Rule ArrayIndexExpression ****************/
+
+
+/************ begin Rule AttributeAccessorExpression ****************
+ *
+ * AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
+ * 	"." attribute=[types::Attribute];
+ *
+ **/
+
+// "." attribute=[types::Attribute]
+protected class AttributeAccessorExpression_Group extends GroupToken {
+	
+	public AttributeAccessorExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getAttributeAccessorExpressionAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new AttributeAccessorExpression_AttributeAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getAttributeAccessorExpressionRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// "."
+protected class AttributeAccessorExpression_FullStopKeyword_0 extends KeywordToken  {
+	
+	public AttributeAccessorExpression_FullStopKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getAttributeAccessorExpressionAccess().getFullStopKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// attribute=[types::Attribute]
+protected class AttributeAccessorExpression_AttributeAssignment_1 extends AssignmentToken  {
+	
+	public AttributeAccessorExpression_AttributeAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new AttributeAccessorExpression_FullStopKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("attribute",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("attribute");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAttributeCrossReference_1_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAttributeCrossReference_1_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+
+/************ end Rule AttributeAccessorExpression ****************/
 
 
 /************ begin Rule NoAttributeSelectorExpression ****************
@@ -7659,11 +7769,11 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
  *
  * // TriggerMessageExpression
  *  TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
- * 	messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter];
+ * 	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
  *
  **/
 
-// messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter]
+// messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter]
 protected class TriggerMessageExpression_Group extends GroupToken {
 	
 	public TriggerMessageExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7728,16 +7838,16 @@ protected class TriggerMessageExpression_MessageTypeAssignment_0 extends Assignm
 
 }
 
-// "."
-protected class TriggerMessageExpression_FullStopKeyword_1 extends KeywordToken  {
+// "->"
+protected class TriggerMessageExpression_HyphenMinusGreaterThanSignKeyword_1 extends KeywordToken  {
 	
-	public TriggerMessageExpression_FullStopKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public TriggerMessageExpression_HyphenMinusGreaterThanSignKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1();
+		return grammarAccess.getTriggerMessageExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1();
 	}
 
     @Override
@@ -7765,7 +7875,7 @@ protected class TriggerMessageExpression_ParameterAssignment_2 extends Assignmen
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new TriggerMessageExpression_FullStopKeyword_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new TriggerMessageExpression_HyphenMinusGreaterThanSignKeyword_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

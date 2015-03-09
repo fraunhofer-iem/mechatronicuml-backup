@@ -1407,13 +1407,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTypedNamedElementTypedNamedElementCrossReference_0_0 = (CrossReference)cTypedNamedElementAssignment_0.eContents().get(0);
 		private final RuleCall cTypedNamedElementTypedNamedElementIDTerminalRuleCall_0_0_1 = (RuleCall)cTypedNamedElementTypedNamedElementCrossReference_0_0.eContents().get(1);
 		private final Assignment cElementAccessorsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementAccessorsArrayIndexExpressionParserRuleCall_1_0 = (RuleCall)cElementAccessorsAssignment_1.eContents().get(0);
+		private final Alternatives cElementAccessorsAlternatives_1_0 = (Alternatives)cElementAccessorsAssignment_1.eContents().get(0);
+		private final RuleCall cElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0 = (RuleCall)cElementAccessorsAlternatives_1_0.eContents().get(0);
+		private final RuleCall cElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1 = (RuleCall)cElementAccessorsAlternatives_1_0.eContents().get(1);
 		
 		//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-		//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*;
+		//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression |
+		//	AttributeAccessorExpression)*;
 		public ParserRule getRule() { return rule; }
 
-		//typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*
+		//typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression | AttributeAccessorExpression)*
 		public Group getGroup() { return cGroup; }
 
 		//typedNamedElement=[behavior::TypedNamedElement]
@@ -1425,11 +1428,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getTypedNamedElementTypedNamedElementIDTerminalRuleCall_0_0_1() { return cTypedNamedElementTypedNamedElementIDTerminalRuleCall_0_0_1; }
 
-		//elementAccessors+=ArrayIndexExpression*
+		//elementAccessors+=(ArrayIndexExpression | AttributeAccessorExpression)*
 		public Assignment getElementAccessorsAssignment_1() { return cElementAccessorsAssignment_1; }
 
+		//ArrayIndexExpression | AttributeAccessorExpression
+		public Alternatives getElementAccessorsAlternatives_1_0() { return cElementAccessorsAlternatives_1_0; }
+
 		//ArrayIndexExpression
-		public RuleCall getElementAccessorsArrayIndexExpressionParserRuleCall_1_0() { return cElementAccessorsArrayIndexExpressionParserRuleCall_1_0; }
+		public RuleCall getElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0() { return cElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0; }
+
+		//AttributeAccessorExpression
+		public RuleCall getElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1() { return cElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1; }
 	}
 
 	public class ArrayIndexExpressionElements extends AbstractParserRuleElementFinder {
@@ -1458,6 +1467,34 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
+	}
+
+	public class AttributeAccessorExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeAccessorExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
+		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
+		
+		//AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
+		//	"." attribute=[types::Attribute];
+		public ParserRule getRule() { return rule; }
+
+		//"." attribute=[types::Attribute]
+		public Group getGroup() { return cGroup; }
+
+		//"."
+		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
+
+		//attribute=[types::Attribute]
+		public Assignment getAttributeAssignment_1() { return cAttributeAssignment_1; }
+
+		//[types::Attribute]
+		public CrossReference getAttributeAttributeCrossReference_1_0() { return cAttributeAttributeCrossReference_1_0; }
+
+		//ID
+		public RuleCall getAttributeAttributeIDTerminalRuleCall_1_0_1() { return cAttributeAttributeIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class NoAttributeSelectorExpressionElements extends AbstractParserRuleElementFinder {
@@ -1619,17 +1656,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMessageTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cMessageTypeMessageTypeCrossReference_0_0 = (CrossReference)cMessageTypeAssignment_0.eContents().get(0);
 		private final RuleCall cMessageTypeMessageTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cMessageTypeMessageTypeCrossReference_0_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cParameterParameterCrossReference_2_0 = (CrossReference)cParameterAssignment_2.eContents().get(0);
 		private final RuleCall cParameterParameterIDTerminalRuleCall_2_0_1 = (RuleCall)cParameterParameterCrossReference_2_0.eContents().get(1);
 		
 		//// TriggerMessageExpression
 		// TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
-		//	messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter];
+		//	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
 		public ParserRule getRule() { return rule; }
 
-		//messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter]
+		//messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter]
 		public Group getGroup() { return cGroup; }
 
 		//messageType=[msgtype::MessageType]
@@ -1641,8 +1678,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getMessageTypeMessageTypeIDTerminalRuleCall_0_0_1() { return cMessageTypeMessageTypeIDTerminalRuleCall_0_0_1; }
 
-		//"."
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
 
 		//parameter=[behavior::Parameter]
 		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
@@ -2073,6 +2110,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExtendedTypedNamedElementExpressionElements pExtendedTypedNamedElementExpression;
 	private final TypedNamedElementExpressionElements pTypedNamedElementExpression;
 	private final ArrayIndexExpressionElements pArrayIndexExpression;
+	private final AttributeAccessorExpressionElements pAttributeAccessorExpression;
 	private final NoAttributeSelectorExpressionElements pNoAttributeSelectorExpression;
 	private final PositionSelectorExpressionElements pPositionSelectorExpression;
 	private final PositionSelectorKindElements unknownRulePositionSelectorKind;
@@ -2139,6 +2177,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExtendedTypedNamedElementExpression = new ExtendedTypedNamedElementExpressionElements();
 		this.pTypedNamedElementExpression = new TypedNamedElementExpressionElements();
 		this.pArrayIndexExpression = new ArrayIndexExpressionElements();
+		this.pAttributeAccessorExpression = new AttributeAccessorExpressionElements();
 		this.pNoAttributeSelectorExpression = new NoAttributeSelectorExpressionElements();
 		this.pPositionSelectorExpression = new PositionSelectorExpressionElements();
 		this.unknownRulePositionSelectorKind = new PositionSelectorKindElements();
@@ -2663,7 +2702,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-	//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*;
+	//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=(ArrayIndexExpression |
+	//	AttributeAccessorExpression)*;
 	public TypedNamedElementExpressionElements getTypedNamedElementExpressionAccess() {
 		return pTypedNamedElementExpression;
 	}
@@ -2680,6 +2720,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getArrayIndexExpressionRule() {
 		return getArrayIndexExpressionAccess().getRule();
+	}
+
+	//AttributeAccessorExpression returns actionlanguage::AttributeAccessorExpression:
+	//	"." attribute=[types::Attribute];
+	public AttributeAccessorExpressionElements getAttributeAccessorExpressionAccess() {
+		return pAttributeAccessorExpression;
+	}
+	
+	public ParserRule getAttributeAccessorExpressionRule() {
+		return getAttributeAccessorExpressionAccess().getRule();
 	}
 
 	//NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:
@@ -2735,7 +2785,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// TriggerMessageExpression
 	// TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
-	//	messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter];
+	//	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
 	public TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
 		return pTriggerMessageExpression;
 	}

@@ -2433,20 +2433,38 @@ ruleTypedNamedElementExpression returns [EObject current=null]
 )
 )(
 (
+(
 		{ 
-	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0()); 
 	    }
-		lv_elementAccessors_1_0=ruleArrayIndexExpression		{
+		lv_elementAccessors_1_1=ruleArrayIndexExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
 	        }
        		add(
        			$current, 
        			"elementAccessors",
-        		lv_elementAccessors_1_0, 
+        		lv_elementAccessors_1_1, 
         		"ArrayIndexExpression");
 	        afterParserOrEnumRuleCall();
 	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1()); 
+	    }
+		lv_elementAccessors_1_2=ruleAttributeAccessorExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
+	        }
+       		add(
+       			$current, 
+       			"elementAccessors",
+        		lv_elementAccessors_1_2, 
+        		"AttributeAccessorExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 
 )
 )*)
@@ -2497,6 +2515,44 @@ ruleArrayIndexExpression returns [EObject current=null]
     	newLeafNode(otherlv_2, grammarAccess.getArrayIndexExpressionAccess().getRightSquareBracketKeyword_2());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleAttributeAccessorExpression
+entryRuleAttributeAccessorExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAttributeAccessorExpressionRule()); }
+	 iv_ruleAttributeAccessorExpression=ruleAttributeAccessorExpression 
+	 { $current=$iv_ruleAttributeAccessorExpression.current; } 
+	 EOF 
+;
+
+// Rule AttributeAccessorExpression
+ruleAttributeAccessorExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='.' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getAttributeAccessorExpressionAccess().getFullStopKeyword_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAttributeAccessorExpressionRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAttributeCrossReference_1_0()); 
+	}
+
+)
+))
 ;
 
 
@@ -2774,9 +2830,9 @@ ruleTriggerMessageExpression returns [EObject current=null]
 	}
 
 )
-)	otherlv_1='.' 
+)	otherlv_1='->' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1());
     }
 (
 (
