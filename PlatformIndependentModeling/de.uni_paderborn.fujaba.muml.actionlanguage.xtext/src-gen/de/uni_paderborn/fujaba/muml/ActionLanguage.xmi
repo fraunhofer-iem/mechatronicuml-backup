@@ -769,7 +769,7 @@
                 <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//DiscreteInteractionEndpointReference"/>
               </type>
             </elements>
-            <elements xsi:type="xtext:Keyword" value="."/>
+            <elements xsi:type="xtext:Keyword" value="->"/>
             <elements xsi:type="xtext:Assignment" feature="position" operator="=">
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
             </elements>
@@ -834,7 +834,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.48"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="."/>
+          <elements xsi:type="xtext:Keyword" value="->"/>
           <elements xsi:type="xtext:Assignment" feature="successor" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
           </elements>

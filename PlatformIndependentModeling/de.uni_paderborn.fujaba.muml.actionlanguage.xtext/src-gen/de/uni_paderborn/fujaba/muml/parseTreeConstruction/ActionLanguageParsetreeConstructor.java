@@ -6381,7 +6381,7 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
  *
  * ExtendedTypedNamedElementExpression returns expressions::Expression:
  * 	TypedNamedElementExpression
- * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+ * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
  * 	position=PositionSelectorExpression | // unary post increment/decrement			
  * 
  * 	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
@@ -6390,7 +6390,7 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
  **/
 
 // TypedNamedElementExpression ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
-// "." position=PositionSelectorExpression | // unary post increment/decrement			
+// "->" position=PositionSelectorExpression | // unary post increment/decrement			
 // 
 // {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression)?
@@ -6461,7 +6461,7 @@ protected class ExtendedTypedNamedElementExpression_TypedNamedElementExpressionP
 	}	
 }
 
-// ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+// ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 // position=PositionSelectorExpression | // unary post increment/decrement			
 // 
 // {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
@@ -6496,7 +6496,7 @@ protected class ExtendedTypedNamedElementExpression_Alternatives_1 extends Alter
 
 }
 
-// {actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+// {actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 // position=PositionSelectorExpression
 protected class ExtendedTypedNamedElementExpression_Group_1_0 extends GroupToken {
 	
@@ -6555,16 +6555,16 @@ protected class ExtendedTypedNamedElementExpression_DiscreteInteractionEndpointR
 	}
 }
 
-// "."
-protected class ExtendedTypedNamedElementExpression_FullStopKeyword_1_0_1 extends KeywordToken  {
+// "->"
+protected class ExtendedTypedNamedElementExpression_HyphenMinusGreaterThanSignKeyword_1_0_1 extends KeywordToken  {
 	
-	public ExtendedTypedNamedElementExpression_FullStopKeyword_1_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ExtendedTypedNamedElementExpression_HyphenMinusGreaterThanSignKeyword_1_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getExtendedTypedNamedElementExpressionAccess().getFullStopKeyword_1_0_1();
+		return grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1();
 	}
 
     @Override
@@ -6617,7 +6617,7 @@ protected class ExtendedTypedNamedElementExpression_PositionAssignment_1_0_2 ext
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new ExtendedTypedNamedElementExpression_FullStopKeyword_1_0_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ExtendedTypedNamedElementExpression_HyphenMinusGreaterThanSignKeyword_1_0_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -7038,11 +7038,11 @@ protected class NoAttributeSelectorExpression_PositionAssignment extends Assignm
 /************ begin Rule PositionSelectorExpression ****************
  *
  * PositionSelectorExpression returns actionlanguage::PositionSelector:
- * 	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
+ * 	kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?;
  *
  **/
 
-// kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?
+// kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?
 protected class PositionSelectorExpression_Group extends GroupToken {
 	
 	public PositionSelectorExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7105,7 +7105,7 @@ protected class PositionSelectorExpression_KindAssignment_0 extends AssignmentTo
 
 }
 
-// ("." successor=PositionSelectorExpression)?
+// ("->" successor=PositionSelectorExpression)?
 protected class PositionSelectorExpression_Group_1 extends GroupToken {
 	
 	public PositionSelectorExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -7127,16 +7127,16 @@ protected class PositionSelectorExpression_Group_1 extends GroupToken {
 
 }
 
-// "."
-protected class PositionSelectorExpression_FullStopKeyword_1_0 extends KeywordToken  {
+// "->"
+protected class PositionSelectorExpression_HyphenMinusGreaterThanSignKeyword_1_0 extends KeywordToken  {
 	
-	public PositionSelectorExpression_FullStopKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public PositionSelectorExpression_HyphenMinusGreaterThanSignKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getPositionSelectorExpressionAccess().getFullStopKeyword_1_0();
+		return grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0();
 	}
 
     @Override
@@ -7189,7 +7189,7 @@ protected class PositionSelectorExpression_SuccessorAssignment_1_1 extends Assig
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new PositionSelectorExpression_FullStopKeyword_1_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new PositionSelectorExpression_HyphenMinusGreaterThanSignKeyword_1_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	

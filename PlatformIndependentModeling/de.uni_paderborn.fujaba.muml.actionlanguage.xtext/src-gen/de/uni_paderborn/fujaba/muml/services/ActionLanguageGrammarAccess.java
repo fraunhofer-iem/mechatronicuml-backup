@@ -1334,7 +1334,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Action cDiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1_0_1 = (Keyword)cGroup_1_0.eContents().get(1);
 		private final Assignment cPositionAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
 		private final RuleCall cPositionPositionSelectorExpressionParserRuleCall_1_0_2_0 = (RuleCall)cPositionAssignment_1_0_2.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
@@ -1344,7 +1344,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ExtendedTypedNamedElementExpression returns expressions::Expression:
 		//	TypedNamedElementExpression
-		//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+		//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 		//	position=PositionSelectorExpression | // unary post increment/decrement			
 		//
 		//	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
@@ -1352,7 +1352,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public ParserRule getRule() { return rule; }
 
 		//TypedNamedElementExpression ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
-		//"." position=PositionSelectorExpression | // unary post increment/decrement			
+		//"->" position=PositionSelectorExpression | // unary post increment/decrement			
 		//
 		//{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 		//incrementDecrementOperator=IncrementDecrementOperatorExpression)?
@@ -1361,22 +1361,22 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//TypedNamedElementExpression
 		public RuleCall getTypedNamedElementExpressionParserRuleCall_0() { return cTypedNamedElementExpressionParserRuleCall_0; }
 
-		//({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+		//({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 		//position=PositionSelectorExpression | // unary post increment/decrement			
 		//
 		//{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 		//incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+		//{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 		//position=PositionSelectorExpression
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
 		public Action getDiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0_0() { return cDiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0_0; }
 
-		//"."
-		public Keyword getFullStopKeyword_1_0_1() { return cFullStopKeyword_1_0_1; }
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1_0_1() { return cHyphenMinusGreaterThanSignKeyword_1_0_1; }
 
 		//position=PositionSelectorExpression
 		public Assignment getPositionAssignment_1_0_2() { return cPositionAssignment_1_0_2; }
@@ -1482,15 +1482,15 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cKindAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cKindPositionSelectorKindEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cSuccessorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cSuccessorPositionSelectorExpressionParserRuleCall_1_1_0 = (RuleCall)cSuccessorAssignment_1_1.eContents().get(0);
 		
 		//PositionSelectorExpression returns actionlanguage::PositionSelector:
-		//	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
+		//	kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?;
 		public ParserRule getRule() { return rule; }
 
-		//kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?
+		//kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?
 		public Group getGroup() { return cGroup; }
 
 		//kind=PositionSelectorKind
@@ -1499,11 +1499,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//PositionSelectorKind
 		public RuleCall getKindPositionSelectorKindEnumRuleCall_0_0() { return cKindPositionSelectorKindEnumRuleCall_0_0; }
 
-		//("." successor=PositionSelectorExpression)?
+		//("->" successor=PositionSelectorExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		//"->"
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1_0() { return cHyphenMinusGreaterThanSignKeyword_1_0; }
 
 		//successor=PositionSelectorExpression
 		public Assignment getSuccessorAssignment_1_1() { return cSuccessorAssignment_1_1; }
@@ -2649,7 +2649,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ExtendedTypedNamedElementExpression returns expressions::Expression:
 	//	TypedNamedElementExpression
-	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 	//	position=PositionSelectorExpression | // unary post increment/decrement			
 	//
 	//	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
@@ -2693,7 +2693,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PositionSelectorExpression returns actionlanguage::PositionSelector:
-	//	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
+	//	kind=PositionSelectorKind ("->" successor=PositionSelectorExpression)?;
 	public PositionSelectorExpressionElements getPositionSelectorExpressionAccess() {
 		return pPositionSelectorExpression;
 	}

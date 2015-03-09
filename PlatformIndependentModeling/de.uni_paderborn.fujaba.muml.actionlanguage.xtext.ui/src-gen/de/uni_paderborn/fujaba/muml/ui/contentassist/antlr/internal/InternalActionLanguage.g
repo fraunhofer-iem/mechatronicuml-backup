@@ -5945,11 +5945,11 @@ rule__ExtendedTypedNamedElementExpression__Group_1_0__1__Impl
     }
 :
 (
-{ before(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getFullStopKeyword_1_0_1()); }
+{ before(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1()); }
 
-	'.' 
+	'->' 
 
-{ after(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getFullStopKeyword_1_0_1()); }
+{ after(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1()); }
 )
 
 ;
@@ -6291,11 +6291,11 @@ rule__PositionSelectorExpression__Group_1__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPositionSelectorExpressionAccess().getFullStopKeyword_1_0()); }
+{ before(grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); }
 
-	'.' 
+	'->' 
 
-{ after(grammarAccess.getPositionSelectorExpressionAccess().getFullStopKeyword_1_0()); }
+{ after(grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); }
 )
 
 ;

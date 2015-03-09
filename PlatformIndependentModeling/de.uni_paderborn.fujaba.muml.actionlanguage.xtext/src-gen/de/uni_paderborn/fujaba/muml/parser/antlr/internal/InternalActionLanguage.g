@@ -2350,9 +2350,9 @@ ruleExtendedTypedNamedElementExpression returns [EObject current=null]
             grammarAccess.getExtendedTypedNamedElementExpressionAccess().getDiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0_0(),
             $current);
     }
-)	otherlv_2='.' 
+)	otherlv_2='->' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getFullStopKeyword_1_0_1());
+    	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1());
     }
 (
 (
@@ -2574,9 +2574,9 @@ rulePositionSelectorExpression returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_1='.' 
+)(	otherlv_1='->' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getFullStopKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
     }
 (
 (

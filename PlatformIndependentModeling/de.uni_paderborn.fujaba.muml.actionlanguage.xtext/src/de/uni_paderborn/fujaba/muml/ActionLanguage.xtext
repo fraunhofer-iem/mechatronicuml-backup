@@ -300,7 +300,7 @@ ExtendedTypedNamedElementExpression returns expressions::Expression:
 	(
 		(
 			{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression = current}
-			'.' position=PositionSelectorExpression			
+			'->' position=PositionSelectorExpression			
 		) |
 		(
 			// unary post increment/decrement			
@@ -311,7 +311,7 @@ ExtendedTypedNamedElementExpression returns expressions::Expression:
 ;
 
 TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-	typedNamedElement=[behavior::TypedNamedElement](elementAccessors+=ArrayIndexExpression)* 
+	typedNamedElement=[behavior::TypedNamedElement](elementAccessors+= (ArrayIndexExpression))* 
 ;
 
 ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
@@ -323,7 +323,7 @@ NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpoin
 ;
 
 PositionSelectorExpression returns actionlanguage::PositionSelector:
-	kind=PositionSelectorKind ('.' successor=PositionSelectorExpression)?
+	kind=PositionSelectorKind ('->' successor=PositionSelectorExpression)?
 ;
 
 enum PositionSelectorKind returns actionlanguage::PositionSelectorKind:
