@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AttributeAccessorExpression extends EObject {
+public interface AttributeAccessorExpression extends ElementAccessorExpression {
 	/**
 	 * Returns the value of the '<em><b>Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->

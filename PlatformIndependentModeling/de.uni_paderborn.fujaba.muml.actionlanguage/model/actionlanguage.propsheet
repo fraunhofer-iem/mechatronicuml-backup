@@ -255,7 +255,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.19">
       <genClass href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression"/>
       <properties>
         <genFeature href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression/attribute"/>

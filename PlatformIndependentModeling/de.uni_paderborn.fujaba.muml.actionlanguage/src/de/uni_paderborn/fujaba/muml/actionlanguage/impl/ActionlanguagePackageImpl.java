@@ -1039,6 +1039,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		typeCastExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		elementAccessorExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		arrayIndexExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
+		attributeAccessorExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

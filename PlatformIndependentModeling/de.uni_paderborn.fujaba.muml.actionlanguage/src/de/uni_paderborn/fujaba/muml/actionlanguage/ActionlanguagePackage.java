@@ -5236,13 +5236,40 @@ public interface ActionlanguagePackage extends EPackage {
 	int ATTRIBUTE_ACCESSOR_EXPRESSION = 21;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION__ANNOTATION = ELEMENT_ACCESSOR_EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION__EXTENSION = ELEMENT_ACCESSOR_EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION__COMMENT = ELEMENT_ACCESSOR_EXPRESSION__COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_ACCESSOR_EXPRESSION__ATTRIBUTE = 0;
+	int ATTRIBUTE_ACCESSOR_EXPRESSION__ATTRIBUTE = ELEMENT_ACCESSOR_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Attribute Accessor Expression</em>' class.
@@ -5251,7 +5278,178 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_ACCESSOR_EXPRESSION_FEATURE_COUNT = 1;
+	int ATTRIBUTE_ACCESSOR_EXPRESSION_FEATURE_COUNT = ELEMENT_ACCESSOR_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ECLASS = ELEMENT_ACCESSOR_EXPRESSION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EIS_PROXY = ELEMENT_ACCESSOR_EXPRESSION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ERESOURCE = ELEMENT_ACCESSOR_EXPRESSION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ECONTAINER = ELEMENT_ACCESSOR_EXPRESSION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ECONTAINING_FEATURE = ELEMENT_ACCESSOR_EXPRESSION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ECONTAINMENT_FEATURE = ELEMENT_ACCESSOR_EXPRESSION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ECONTENTS = ELEMENT_ACCESSOR_EXPRESSION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EALL_CONTENTS = ELEMENT_ACCESSOR_EXPRESSION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ECROSS_REFERENCES = ELEMENT_ACCESSOR_EXPRESSION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EGET__ESTRUCTURALFEATURE = ELEMENT_ACCESSOR_EXPRESSION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN = ELEMENT_ACCESSOR_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT = ELEMENT_ACCESSOR_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE = ELEMENT_ACCESSOR_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EUNSET__ESTRUCTURALFEATURE = ELEMENT_ACCESSOR_EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___EINVOKE__EOPERATION_ELIST = ELEMENT_ACCESSOR_EXPRESSION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___GET_EXTENSION__ECLASS = ELEMENT_ACCESSOR_EXPRESSION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___PROVIDE_EXTENSION__ECLASS = ELEMENT_ACCESSOR_EXPRESSION___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___GET_ANNOTATION__STRING = ELEMENT_ACCESSOR_EXPRESSION___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_ACCESSOR_EXPRESSION___PROVIDE_ANNOTATION__STRING = ELEMENT_ACCESSOR_EXPRESSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Attribute Accessor Expression</em>' class.
@@ -5260,7 +5458,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_ACCESSOR_EXPRESSION_OPERATION_COUNT = 0;
+	int ATTRIBUTE_ACCESSOR_EXPRESSION_OPERATION_COUNT = ELEMENT_ACCESSOR_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.

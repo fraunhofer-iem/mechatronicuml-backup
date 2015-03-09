@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class AttributeAccessorExpressionImpl extends EObjectImpl implements AttributeAccessorExpression {
+public class AttributeAccessorExpressionImpl extends ElementAccessorExpressionImpl implements AttributeAccessorExpression {
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->

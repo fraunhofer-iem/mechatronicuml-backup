@@ -289,6 +289,10 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION: {
 				AttributeAccessorExpression attributeAccessorExpression = (AttributeAccessorExpression)theEObject;
 				T result = caseAttributeAccessorExpression(attributeAccessorExpression);
+				if (result == null) result = caseElementAccessorExpression(attributeAccessorExpression);
+				if (result == null) result = caseExpression(attributeAccessorExpression);
+				if (result == null) result = caseCommentableElement(attributeAccessorExpression);
+				if (result == null) result = caseExtendableElement(attributeAccessorExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

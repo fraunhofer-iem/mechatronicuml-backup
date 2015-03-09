@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.ed
  */
 public class AttributeAccessorExpressionEditor
 		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.ElementAccessorExpressionEditor {
 
 	/**
 	 * @generated

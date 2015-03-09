@@ -198,6 +198,11 @@ public class TypedNamedElementExpressionItemProvider
 			(createChildParameter
 				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS,
 				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS,
+				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
 	}
 
 	/**

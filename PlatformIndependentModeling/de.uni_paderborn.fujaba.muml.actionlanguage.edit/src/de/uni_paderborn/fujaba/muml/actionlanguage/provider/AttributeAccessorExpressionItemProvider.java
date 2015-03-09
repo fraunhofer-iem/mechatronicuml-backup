@@ -15,6 +15,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.provider;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression;
 import java.util.Collection;
 import java.util.List;
 
@@ -39,13 +40,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * @generated
  */
 public class AttributeAccessorExpressionItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ElementAccessorExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -113,7 +108,10 @@ public class AttributeAccessorExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AttributeAccessorExpression_type");
+		String label = ((AttributeAccessorExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AttributeAccessorExpression_type") :
+			getString("_UI_AttributeAccessorExpression_type") + " " + label;
 	}
 	
 
@@ -140,17 +138,6 @@ public class AttributeAccessorExpressionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }
