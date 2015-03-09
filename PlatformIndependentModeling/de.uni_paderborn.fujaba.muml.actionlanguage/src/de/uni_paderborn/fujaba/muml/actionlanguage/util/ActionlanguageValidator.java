@@ -146,6 +146,12 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateTimeValueExpression((TimeValueExpression)value, diagnostics, context);
 			case ActionlanguagePackage.TYPE_CAST_EXPRESSION:
 				return validateTypeCastExpression((TypeCastExpression)value, diagnostics, context);
+			case ActionlanguagePackage.ELEMENT_ACCESSOR_EXPRESSION:
+				return validateElementAccessorExpression((ElementAccessorExpression)value, diagnostics, context);
+			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION:
+				return validateArrayIndexExpression((ArrayIndexExpression)value, diagnostics, context);
+			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION:
+				return validateAttributeAccessorExpression((AttributeAccessorExpression)value, diagnostics, context);
 			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
 			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
@@ -416,6 +422,33 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateTypeCastExpression(TypeCastExpression typeCastExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(typeCastExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateElementAccessorExpression(ElementAccessorExpression elementAccessorExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(elementAccessorExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateArrayIndexExpression(ArrayIndexExpression arrayIndexExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(arrayIndexExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAttributeAccessorExpression(AttributeAccessorExpression attributeAccessorExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(attributeAccessorExpression, diagnostics, context);
 	}
 
 	/**

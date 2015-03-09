@@ -166,6 +166,18 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 				return createTypeCastExpressionAdapter();
 			}
 			@Override
+			public Adapter caseElementAccessorExpression(ElementAccessorExpression object) {
+				return createElementAccessorExpressionAdapter();
+			}
+			@Override
+			public Adapter caseArrayIndexExpression(ArrayIndexExpression object) {
+				return createArrayIndexExpressionAdapter();
+			}
+			@Override
+			public Adapter caseAttributeAccessorExpression(AttributeAccessorExpression object) {
+				return createAttributeAccessorExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -460,6 +472,48 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeCastExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression <em>Element Accessor Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression
+	 * @generated
+	 */
+	public Adapter createElementAccessorExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression <em>Array Index Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression
+	 * @generated
+	 */
+	public Adapter createArrayIndexExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression <em>Attribute Accessor Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression
+	 * @generated
+	 */
+	public Adapter createAttributeAccessorExpressionAdapter() {
 		return null;
 	}
 

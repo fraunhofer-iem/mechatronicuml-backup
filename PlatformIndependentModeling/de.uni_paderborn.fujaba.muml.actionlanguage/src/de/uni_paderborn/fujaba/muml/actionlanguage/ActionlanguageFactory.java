@@ -188,6 +188,24 @@ public interface ActionlanguageFactory extends EFactory {
 	TypeCastExpression createTypeCastExpression();
 
 	/**
+	 * Returns a new object of class '<em>Array Index Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array Index Expression</em>'.
+	 * @generated
+	 */
+	ArrayIndexExpression createArrayIndexExpression();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Accessor Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Accessor Expression</em>'.
+	 * @generated
+	 */
+	AttributeAccessorExpression createAttributeAccessorExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

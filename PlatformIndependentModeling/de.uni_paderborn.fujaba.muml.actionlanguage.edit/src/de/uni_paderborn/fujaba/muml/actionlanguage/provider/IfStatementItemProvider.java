@@ -365,6 +365,11 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
@@ -501,6 +506,11 @@ public class IfStatementItemProvider
 			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

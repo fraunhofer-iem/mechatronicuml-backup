@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression#getTypedNamedElement <em>Typed Named Element</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression#getIndices <em>Indices</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression#getElementAccessors <em>Element Accessors</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,18 +60,19 @@ public interface TypedNamedElementExpression extends Expression {
 	void setTypedNamedElement(TypedNamedElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Indices</b></em>' containment reference list.
-	 * The list contents are of type {@link org.storydriven.core.expressions.Expression}.
+	 * Returns the value of the '<em><b>Element Accessors</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Element Accessors</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Indices which refer to an concrete index of an array.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Indices</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_Indices()
+	 * @return the value of the '<em>Element Accessors</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_ElementAccessors()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Expression> getIndices();
+	EList<ElementAccessorExpression> getElementAccessors();
 
 } // TypedNamedElementExpression

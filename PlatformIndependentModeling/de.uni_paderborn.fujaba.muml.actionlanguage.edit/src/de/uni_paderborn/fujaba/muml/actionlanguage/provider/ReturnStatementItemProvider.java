@@ -264,6 +264,11 @@ public class ReturnStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
