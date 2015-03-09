@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
@@ -37,8 +38,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.types.Attribute;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 
 /**
  * This class contains custom scoping description.
@@ -52,6 +55,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	private List<DataType> typeList;
 	private List<Operation> operationList;
 	private List<MessageType> messageTypeList;
+	private List<Attribute>  attributeList;
 	
 	// TODO: make this string public in class TypeCategoryInitializer
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
@@ -78,6 +82,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	IScope scope_DataType(Variable variable, EReference ref) {
 		return createScope(typeList);
+	}
+	
+	IScope scope_AttributeAccessorExpression_attribute(AttributeAccessorExpression expression, EReference ref){
+		return createScope(attributeList);
 	}
 	
 	IScope scope_TypedNamedElement_dataType(EObject context, EReference ref) {
@@ -242,6 +250,11 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 				.getModelElementCategory(rootNode, TYPES_CATEGORY_KEY);
 		for (EObject type : modelElementCategory.getModelElements()) {
 			typeList.add((DataType) type);
+			
+			attributeList = new ArrayList<Attribute>();			
+			if(type instanceof StructureDataType){
+				attributeList.addAll(((StructureDataType)type).getAttributes());
+			}
 		}
 	}
 	
@@ -271,6 +284,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		typedNamedElementList = Collections.<TypedNamedElement>emptyList();
 		operationList = Collections.<Operation>emptyList();
 		messageTypeList = Collections.<MessageType>emptyList();
+		attributeList = Collections.<Attribute>emptyList();
 	}
 	
 	private List<TypedNamedElement> getAvailableTypedNamedElementList(EObject context) {
