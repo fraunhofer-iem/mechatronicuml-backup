@@ -311,7 +311,11 @@ ExtendedTypedNamedElementExpression returns expressions::Expression:
 ;
 
 TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-	typedNamedElement=[behavior::TypedNamedElement]('['indices+=ArithmeticExpression']')*
+	typedNamedElement=[behavior::TypedNamedElement](elementAccessors+=ArrayIndexExpression)* 
+;
+
+ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
+	'['index=ArithmeticExpression']'
 ;
 
 NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:

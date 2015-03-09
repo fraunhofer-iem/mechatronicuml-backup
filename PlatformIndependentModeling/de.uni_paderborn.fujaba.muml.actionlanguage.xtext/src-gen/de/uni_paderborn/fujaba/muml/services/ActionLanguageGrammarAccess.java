@@ -1406,17 +1406,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypedNamedElementAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cTypedNamedElementTypedNamedElementCrossReference_0_0 = (CrossReference)cTypedNamedElementAssignment_0.eContents().get(0);
 		private final RuleCall cTypedNamedElementTypedNamedElementIDTerminalRuleCall_0_0_1 = (RuleCall)cTypedNamedElementTypedNamedElementCrossReference_0_0.eContents().get(1);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cIndicesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cIndicesArithmeticExpressionParserRuleCall_1_1_0 = (RuleCall)cIndicesAssignment_1_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cElementAccessorsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementAccessorsArrayIndexExpressionParserRuleCall_1_0 = (RuleCall)cElementAccessorsAssignment_1.eContents().get(0);
 		
 		//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-		//	typedNamedElement=[behavior::TypedNamedElement] ("[" indices+=ArithmeticExpression "]")*;
+		//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*;
 		public ParserRule getRule() { return rule; }
 
-		//typedNamedElement=[behavior::TypedNamedElement] ("[" indices+=ArithmeticExpression "]")*
+		//typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*
 		public Group getGroup() { return cGroup; }
 
 		//typedNamedElement=[behavior::TypedNamedElement]
@@ -1428,20 +1425,39 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getTypedNamedElementTypedNamedElementIDTerminalRuleCall_0_0_1() { return cTypedNamedElementTypedNamedElementIDTerminalRuleCall_0_0_1; }
 
-		//("[" indices+=ArithmeticExpression "]")*
-		public Group getGroup_1() { return cGroup_1; }
+		//elementAccessors+=ArrayIndexExpression*
+		public Assignment getElementAccessorsAssignment_1() { return cElementAccessorsAssignment_1; }
+
+		//ArrayIndexExpression
+		public RuleCall getElementAccessorsArrayIndexExpressionParserRuleCall_1_0() { return cElementAccessorsArrayIndexExpressionParserRuleCall_1_0; }
+	}
+
+	public class ArrayIndexExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayIndexExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIndexAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIndexArithmeticExpressionParserRuleCall_1_0 = (RuleCall)cIndexAssignment_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
+		//	"[" index=ArithmeticExpression "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" index=ArithmeticExpression "]"
+		public Group getGroup() { return cGroup; }
 
 		//"["
-		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
-		//indices+=ArithmeticExpression
-		public Assignment getIndicesAssignment_1_1() { return cIndicesAssignment_1_1; }
+		//index=ArithmeticExpression
+		public Assignment getIndexAssignment_1() { return cIndexAssignment_1; }
 
 		//ArithmeticExpression
-		public RuleCall getIndicesArithmeticExpressionParserRuleCall_1_1_0() { return cIndicesArithmeticExpressionParserRuleCall_1_1_0; }
+		public RuleCall getIndexArithmeticExpressionParserRuleCall_1_0() { return cIndexArithmeticExpressionParserRuleCall_1_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
 	}
 
 	public class NoAttributeSelectorExpressionElements extends AbstractParserRuleElementFinder {
@@ -2056,6 +2072,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final LiteralElements pLiteral;
 	private final ExtendedTypedNamedElementExpressionElements pExtendedTypedNamedElementExpression;
 	private final TypedNamedElementExpressionElements pTypedNamedElementExpression;
+	private final ArrayIndexExpressionElements pArrayIndexExpression;
 	private final NoAttributeSelectorExpressionElements pNoAttributeSelectorExpression;
 	private final PositionSelectorExpressionElements pPositionSelectorExpression;
 	private final PositionSelectorKindElements unknownRulePositionSelectorKind;
@@ -2121,6 +2138,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pLiteral = new LiteralElements();
 		this.pExtendedTypedNamedElementExpression = new ExtendedTypedNamedElementExpressionElements();
 		this.pTypedNamedElementExpression = new TypedNamedElementExpressionElements();
+		this.pArrayIndexExpression = new ArrayIndexExpressionElements();
 		this.pNoAttributeSelectorExpression = new NoAttributeSelectorExpressionElements();
 		this.pPositionSelectorExpression = new PositionSelectorExpressionElements();
 		this.unknownRulePositionSelectorKind = new PositionSelectorKindElements();
@@ -2645,13 +2663,23 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-	//	typedNamedElement=[behavior::TypedNamedElement] ("[" indices+=ArithmeticExpression "]")*;
+	//	typedNamedElement=[behavior::TypedNamedElement] elementAccessors+=ArrayIndexExpression*;
 	public TypedNamedElementExpressionElements getTypedNamedElementExpressionAccess() {
 		return pTypedNamedElementExpression;
 	}
 	
 	public ParserRule getTypedNamedElementExpressionRule() {
 		return getTypedNamedElementExpressionAccess().getRule();
+	}
+
+	//ArrayIndexExpression returns actionlanguage::ArrayIndexExpression:
+	//	"[" index=ArithmeticExpression "]";
+	public ArrayIndexExpressionElements getArrayIndexExpressionAccess() {
+		return pArrayIndexExpression;
+	}
+	
+	public ParserRule getArrayIndexExpressionRule() {
+		return getArrayIndexExpressionAccess().getRule();
 	}
 
 	//NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:

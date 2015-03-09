@@ -2431,33 +2431,72 @@ ruleTypedNamedElementExpression returns [EObject current=null]
 	}
 
 )
-)(	otherlv_1='[' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getTypedNamedElementExpressionAccess().getLeftSquareBracketKeyword_1_0());
-    }
-(
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getIndicesArithmeticExpressionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0()); 
 	    }
-		lv_indices_2_0=ruleArithmeticExpression		{
+		lv_elementAccessors_1_0=ruleArrayIndexExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
 	        }
        		add(
        			$current, 
-       			"indices",
-        		lv_indices_2_0, 
+       			"elementAccessors",
+        		lv_elementAccessors_1_0, 
+        		"ArrayIndexExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
+;
+
+
+
+
+
+// Entry rule entryRuleArrayIndexExpression
+entryRuleArrayIndexExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getArrayIndexExpressionRule()); }
+	 iv_ruleArrayIndexExpression=ruleArrayIndexExpression 
+	 { $current=$iv_ruleArrayIndexExpression.current; } 
+	 EOF 
+;
+
+// Rule ArrayIndexExpression
+ruleArrayIndexExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='[' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getArrayIndexExpressionAccess().getLeftSquareBracketKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getArrayIndexExpressionAccess().getIndexArithmeticExpressionParserRuleCall_1_0()); 
+	    }
+		lv_index_1_0=ruleArithmeticExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getArrayIndexExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"index",
+        		lv_index_1_0, 
         		"ArithmeticExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_3=']' 
+)	otherlv_2=']' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getTypedNamedElementExpressionAccess().getRightSquareBracketKeyword_1_2());
+    	newLeafNode(otherlv_2, grammarAccess.getArrayIndexExpressionAccess().getRightSquareBracketKeyword_2());
     }
-)*)
+)
 ;
 
 
