@@ -186,13 +186,13 @@
     </classes>
     <classes>
       <genClass href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression"/>
-      <properties>
+      <properties tooltip="" initializeOCLExpression="">
         <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/typedNamedElement"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties category="//@packages.0/@classes.13/@propertyCategories.0">
-        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/indices"/>
+      <properties tooltip="" category="//@packages.0/@classes.13/@propertyCategories.0" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/TypedNamedElementExpression/elementAccessors"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
@@ -240,6 +240,25 @@
       <genClass href="actionlanguage.genmodel#//actionlanguage/TypeCastExpression"/>
       <properties>
         <genFeature href="actionlanguage.genmodel#//actionlanguage/TypeCastExpression/dataType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ElementAccessorExpression"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.19">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/ArrayIndexExpression"/>
+      <properties tooltip="" initializeOCLExpression="">
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/ArrayIndexExpression/index"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.19">
+      <genClass href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression"/>
+      <properties>
+        <genFeature href="actionlanguage.genmodel#//actionlanguage/AttributeAccessorExpression/attribute"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>

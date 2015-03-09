@@ -264,6 +264,16 @@ public class ArrayInitializeExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

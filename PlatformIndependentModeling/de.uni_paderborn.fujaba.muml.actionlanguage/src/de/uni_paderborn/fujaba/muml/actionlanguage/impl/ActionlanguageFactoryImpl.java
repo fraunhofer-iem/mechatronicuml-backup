@@ -97,6 +97,8 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 			case ActionlanguagePackage.PARAMETER_EXPRESSION: return createParameterExpression();
 			case ActionlanguagePackage.TIME_VALUE_EXPRESSION: return createTimeValueExpression();
 			case ActionlanguagePackage.TYPE_CAST_EXPRESSION: return createTypeCastExpression();
+			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION: return createArrayIndexExpression();
+			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION: return createAttributeAccessorExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -318,6 +320,26 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	public TypeCastExpression createTypeCastExpression() {
 		TypeCastExpressionImpl typeCastExpression = new TypeCastExpressionImpl();
 		return typeCastExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArrayIndexExpression createArrayIndexExpression() {
+		ArrayIndexExpressionImpl arrayIndexExpression = new ArrayIndexExpressionImpl();
+		return arrayIndexExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeAccessorExpression createAttributeAccessorExpression() {
+		AttributeAccessorExpressionImpl attributeAccessorExpression = new AttributeAccessorExpressionImpl();
+		return attributeAccessorExpression;
 	}
 
 	/**

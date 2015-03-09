@@ -1,50 +1,52 @@
 /**
  * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
  * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.provider;
 
+
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.storydriven.core.expressions.ExpressionsFactory;
+
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReturnStatementItemProvider
-	extends ExpressionItemProvider {
+public class ArrayIndexExpressionItemProvider extends ElementAccessorExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReturnStatementItemProvider(AdapterFactory adapterFactory) {
+	public ArrayIndexExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,26 +61,26 @@ public class ReturnStatementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addExpressionPropertyDescriptor(object);
+			addIndexPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Expression feature.
+	 * This adds a property descriptor for the Index feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addExpressionPropertyDescriptor(Object object) {
+	protected void addIndexPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReturnStatement_expression_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReturnStatement_expression_feature", "_UI_ReturnStatement_type"),
-				 ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 true,
+				 getString("_UI_ArrayIndexExpression_index_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayIndexExpression_index_feature", "_UI_ArrayIndexExpression_type"),
+				 ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
+				 false,
 				 false,
 				 false,
 				 null,
@@ -98,7 +100,7 @@ public class ReturnStatementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX);
 		}
 		return childrenFeatures;
 	}
@@ -117,14 +119,14 @@ public class ReturnStatementItemProvider
 	}
 
 	/**
-	 * This returns ReturnStatement.gif.
+	 * This returns ArrayIndexExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReturnStatement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ArrayIndexExpression"));
 	}
 
 	/**
@@ -135,11 +137,12 @@ public class ReturnStatementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReturnStatement)object).getComment();
+		String label = ((ArrayIndexExpression)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReturnStatement_type") :
-			getString("_UI_ReturnStatement_type") + " " + label;
+			getString("_UI_ArrayIndexExpression_type") :
+			getString("_UI_ArrayIndexExpression_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -152,8 +155,8 @@ public class ReturnStatementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReturnStatement.class)) {
-			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
+		switch (notification.getFeatureID(ArrayIndexExpression.class)) {
+			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION__INDEX:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -173,144 +176,133 @@ public class ReturnStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createArrayInitializeExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }
