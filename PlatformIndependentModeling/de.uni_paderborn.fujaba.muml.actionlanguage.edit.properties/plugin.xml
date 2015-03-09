@@ -122,16 +122,6 @@
              type="http://www.fujaba.de/muml/actionlanguage/0.4.0#TypeCastExpression">
        </propertyEditor>
     
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.ArrayIndexExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/actionlanguage/0.4.0#ArrayIndexExpression">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.AttributeAccessorExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/actionlanguage/0.4.0#AttributeAccessorExpression">
-       </propertyEditor>
-    
     </propertyEditors>
  </extension>
 

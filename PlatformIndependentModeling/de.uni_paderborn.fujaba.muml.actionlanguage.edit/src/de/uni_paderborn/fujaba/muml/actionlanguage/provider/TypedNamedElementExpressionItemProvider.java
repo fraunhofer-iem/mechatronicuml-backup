@@ -60,7 +60,7 @@ public class TypedNamedElementExpressionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypedNamedElementPropertyDescriptor(object);
-			addElementAccessorsPropertyDescriptor(object);
+			addIndicesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,20 +88,20 @@ public class TypedNamedElementExpressionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Element Accessors feature.
+	 * This adds a property descriptor for the Indices feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addElementAccessorsPropertyDescriptor(Object object) {
+	protected void addIndicesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TypedNamedElementExpression_elementAccessors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElementExpression_elementAccessors_feature", "_UI_TypedNamedElementExpression_type"),
-				 ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS,
-				 false,
+				 getString("_UI_TypedNamedElementExpression_indices_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElementExpression_indices_feature", "_UI_TypedNamedElementExpression_type"),
+				 ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 true,
 				 false,
 				 false,
 				 null,
@@ -121,7 +121,7 @@ public class TypedNamedElementExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS);
+			childrenFeatures.add(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES);
 		}
 		return childrenFeatures;
 	}
@@ -176,7 +176,7 @@ public class TypedNamedElementExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(TypedNamedElementExpression.class)) {
-			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS:
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -196,13 +196,123 @@ public class TypedNamedElementExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS,
-				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS,
-				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createArrayInitializeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 	/**

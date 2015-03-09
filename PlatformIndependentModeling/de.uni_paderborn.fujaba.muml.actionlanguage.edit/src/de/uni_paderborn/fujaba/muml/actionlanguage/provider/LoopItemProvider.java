@@ -307,16 +307,6 @@ public class LoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionlanguageFactory.eINSTANCE.createArrayIndexExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionlanguageFactory.eINSTANCE.createAttributeAccessorExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

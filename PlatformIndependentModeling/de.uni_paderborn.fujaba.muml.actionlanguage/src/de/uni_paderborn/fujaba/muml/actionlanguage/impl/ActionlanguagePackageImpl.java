@@ -17,15 +17,12 @@ import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
@@ -194,27 +191,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	private EClass typeCastExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass elementAccessorExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass arrayIndexExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attributeAccessorExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -685,7 +661,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTypedNamedElementExpression_ElementAccessors() {
+	public EReference getTypedNamedElementExpression_Indices() {
 		return (EReference)typedNamedElementExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -802,51 +778,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getElementAccessorExpression() {
-		return elementAccessorExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getArrayIndexExpression() {
-		return arrayIndexExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArrayIndexExpression_Index() {
-		return (EReference)arrayIndexExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAttributeAccessorExpression() {
-		return attributeAccessorExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttributeAccessorExpression_Attribute() {
-		return (EReference)attributeAccessorExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -950,7 +881,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		typedNamedElementExpressionEClass = createEClass(TYPED_NAMED_ELEMENT_EXPRESSION);
 		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT);
-		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS);
+		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__INDICES);
 
 		arrayInitializeExpressionEClass = createEClass(ARRAY_INITIALIZE_EXPRESSION);
 		createEReference(arrayInitializeExpressionEClass, ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS);
@@ -968,14 +899,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		typeCastExpressionEClass = createEClass(TYPE_CAST_EXPRESSION);
 		createEReference(typeCastExpressionEClass, TYPE_CAST_EXPRESSION__DATA_TYPE);
 		createEReference(typeCastExpressionEClass, TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION);
-
-		elementAccessorExpressionEClass = createEClass(ELEMENT_ACCESSOR_EXPRESSION);
-
-		arrayIndexExpressionEClass = createEClass(ARRAY_INDEX_EXPRESSION);
-		createEReference(arrayIndexExpressionEClass, ARRAY_INDEX_EXPRESSION__INDEX);
-
-		attributeAccessorExpressionEClass = createEClass(ATTRIBUTE_ACCESSOR_EXPRESSION);
-		createEReference(attributeAccessorExpressionEClass, ATTRIBUTE_ACCESSOR_EXPRESSION__ATTRIBUTE);
 
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
@@ -1037,9 +960,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		parameterExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		timeValueExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		typeCastExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		elementAccessorExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		arrayIndexExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
-		attributeAccessorExpressionEClass.getESuperTypes().add(this.getElementAccessorExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1095,7 +1015,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		initEClass(typedNamedElementExpressionEClass, TypedNamedElementExpression.class, "TypedNamedElementExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypedNamedElementExpression_TypedNamedElement(), theBehaviorPackage.getTypedNamedElement(), null, "typedNamedElement", null, 1, 1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTypedNamedElementExpression_ElementAccessors(), this.getElementAccessorExpression(), null, "elementAccessors", null, 0, -1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTypedNamedElementExpression_Indices(), theExpressionsPackage.getExpression(), null, "indices", null, 0, -1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrayInitializeExpressionEClass, ArrayInitializeExpression.class, "ArrayInitializeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayInitializeExpression_Expressions(), theExpressionsPackage.getExpression(), null, "expressions", null, 0, -1, ArrayInitializeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1113,14 +1033,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEClass(typeCastExpressionEClass, TypeCastExpression.class, "TypeCastExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypeCastExpression_DataType(), theTypesPackage.getDataType(), null, "dataType", null, 0, 1, TypeCastExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTypeCastExpression_EnclosedExpression(), theExpressionsPackage.getExpression(), null, "enclosedExpression", null, 1, 1, TypeCastExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(elementAccessorExpressionEClass, ElementAccessorExpression.class, "ElementAccessorExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(arrayIndexExpressionEClass, ArrayIndexExpression.class, "ArrayIndexExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArrayIndexExpression_Index(), theExpressionsPackage.getExpression(), null, "index", null, 1, 1, ArrayIndexExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(attributeAccessorExpressionEClass, AttributeAccessorExpression.class, "AttributeAccessorExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttributeAccessorExpression_Attribute(), theTypesPackage.getAttribute(), null, "attribute", null, 1, 1, AttributeAccessorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");
@@ -1169,7 +1081,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (assignmentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "ValidLHS"
 		   });	
 		addAnnotation
 		  (operationCallEClass, 

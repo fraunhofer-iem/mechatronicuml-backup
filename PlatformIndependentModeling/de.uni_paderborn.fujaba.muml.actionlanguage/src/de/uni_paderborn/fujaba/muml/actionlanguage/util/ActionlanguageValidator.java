@@ -146,12 +146,6 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateTimeValueExpression((TimeValueExpression)value, diagnostics, context);
 			case ActionlanguagePackage.TYPE_CAST_EXPRESSION:
 				return validateTypeCastExpression((TypeCastExpression)value, diagnostics, context);
-			case ActionlanguagePackage.ELEMENT_ACCESSOR_EXPRESSION:
-				return validateElementAccessorExpression((ElementAccessorExpression)value, diagnostics, context);
-			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION:
-				return validateArrayIndexExpression((ArrayIndexExpression)value, diagnostics, context);
-			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION:
-				return validateAttributeAccessorExpression((AttributeAccessorExpression)value, diagnostics, context);
 			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
 			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
@@ -205,7 +199,53 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssignment(Assignment assignment, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(assignment, diagnostics, context);
+		if (!validate_NoCircularContainment(assignment, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssignment_ValidLHS(assignment, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidLHS constraint of '<em>Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSIGNMENT__VALID_LHS__EEXPRESSION = "-- a hybrid in port is not allowed as a lhs of an assignment\n" +
+		"let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\n" +
+		"in\n" +
+		"if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n" +
+		"\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the ValidLHS constraint of '<em>Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssignment_ValidLHS(Assignment assignment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ActionlanguagePackage.Literals.ASSIGNMENT,
+				 assignment,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidLHS",
+				 ASSIGNMENT__VALID_LHS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -422,33 +462,6 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateTypeCastExpression(TypeCastExpression typeCastExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(typeCastExpression, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateElementAccessorExpression(ElementAccessorExpression elementAccessorExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(elementAccessorExpression, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateArrayIndexExpression(ArrayIndexExpression arrayIndexExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(arrayIndexExpression, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAttributeAccessorExpression(AttributeAccessorExpression attributeAccessorExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(attributeAccessorExpression, diagnostics, context);
 	}
 
 	/**

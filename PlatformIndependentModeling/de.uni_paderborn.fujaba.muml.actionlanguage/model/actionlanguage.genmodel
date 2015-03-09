@@ -77,7 +77,7 @@
     </genClasses>
     <genClasses ecoreClass="actionlanguage.ecore#//TypedNamedElementExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypedNamedElementExpression/typedNamedElement"/>
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypedNamedElementExpression/elementAccessors"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypedNamedElementExpression/indices"/>
     </genClasses>
     <genClasses ecoreClass="actionlanguage.ecore#//ArrayInitializeExpression">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ArrayInitializeExpression/expressions"/>
@@ -95,13 +95,6 @@
     <genClasses ecoreClass="actionlanguage.ecore#//TypeCastExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypeCastExpression/dataType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypeCastExpression/enclosedExpression"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="actionlanguage.ecore#//ElementAccessorExpression"/>
-    <genClasses ecoreClass="actionlanguage.ecore#//ArrayIndexExpression">
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ArrayIndexExpression/index"/>
-    </genClasses>
-    <genClasses ecoreClass="actionlanguage.ecore#//AttributeAccessorExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//AttributeAccessorExpression/attribute"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

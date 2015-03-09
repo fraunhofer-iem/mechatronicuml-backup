@@ -20,7 +20,6 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ElementAccessorExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 
@@ -32,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypedNamedElementExpressionImpl#getTypedNamedElement <em>Typed Named Element</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypedNamedElementExpressionImpl#getElementAccessors <em>Element Accessors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypedNamedElementExpressionImpl#getIndices <em>Indices</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,14 +49,14 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 	protected TypedNamedElement typedNamedElement;
 
 	/**
-	 * The cached value of the '{@link #getElementAccessors() <em>Element Accessors</em>}' containment reference list.
+	 * The cached value of the '{@link #getIndices() <em>Indices</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getElementAccessors()
+	 * @see #getIndices()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ElementAccessorExpression> elementAccessors;
+	protected EList<Expression> indices;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,11 +120,11 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ElementAccessorExpression> getElementAccessors() {
-		if (elementAccessors == null) {
-			elementAccessors = new EObjectContainmentEList<ElementAccessorExpression>(ElementAccessorExpression.class, this, ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS);
+	public EList<Expression> getIndices() {
+		if (indices == null) {
+			indices = new EObjectContainmentEList<Expression>(Expression.class, this, ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES);
 		}
-		return elementAccessors;
+		return indices;
 	}
 
 	/**
@@ -136,8 +135,8 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS:
-				return ((InternalEList<?>)getElementAccessors()).basicRemove(otherEnd, msgs);
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES:
+				return ((InternalEList<?>)getIndices()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,8 +152,8 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT:
 				if (resolve) return getTypedNamedElement();
 				return basicGetTypedNamedElement();
-			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS:
-				return getElementAccessors();
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES:
+				return getIndices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,9 +170,9 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT:
 				setTypedNamedElement((TypedNamedElement)newValue);
 				return;
-			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS:
-				getElementAccessors().clear();
-				getElementAccessors().addAll((Collection<? extends ElementAccessorExpression>)newValue);
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES:
+				getIndices().clear();
+				getIndices().addAll((Collection<? extends Expression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,8 +189,8 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT:
 				setTypedNamedElement((TypedNamedElement)null);
 				return;
-			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS:
-				getElementAccessors().clear();
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES:
+				getIndices().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,8 +206,8 @@ public class TypedNamedElementExpressionImpl extends ExpressionImpl implements T
 		switch (featureID) {
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT:
 				return typedNamedElement != null;
-			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__ELEMENT_ACCESSORS:
-				return elementAccessors != null && !elementAccessors.isEmpty();
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES:
+				return indices != null && !indices.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
