@@ -92,6 +92,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return createScope(typeList);
 	}
 	
+	IScope scope_TypeCastExpression_dataType(EObject context, EReference ref){
+		return createScope(typeList);
+	}
+	
 	IScope scope_NondeterministicChoiceExpression_dataType(NondeterministicChoiceExpression expression, EReference ref) {
 		List<PrimitiveDataType> scopeList = new ArrayList<PrimitiveDataType>();
 		for (DataType dataType : typeList) {
