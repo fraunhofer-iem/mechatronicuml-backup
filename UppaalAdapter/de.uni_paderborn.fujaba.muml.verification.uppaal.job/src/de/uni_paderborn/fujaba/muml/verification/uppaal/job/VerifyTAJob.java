@@ -153,6 +153,7 @@ public class VerifyTAJob extends SynchronousJob {
 			while (proc.isAlive()) {
 				if(monitor.isCanceled()) {
 					proc.destroy();
+					return Status.CANCEL_STATUS;
 				}
 				
 				try {

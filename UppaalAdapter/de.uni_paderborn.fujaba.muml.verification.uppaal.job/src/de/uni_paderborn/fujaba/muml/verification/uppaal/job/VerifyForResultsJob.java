@@ -41,7 +41,7 @@ public class VerifyForResultsJob extends SynchronousJob {
 	protected IStatus run(IProgressMonitor monitor) {
 		
 		try {
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
+			SubMonitor subMonitor = SubMonitor.convert(monitor, /*this.getName(),*/ 100);
 			
 			//Clone model, mark verifiable element, etc.
 			PrepareModelJob prepareJob = new PrepareModelJob(verifiableElement);

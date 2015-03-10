@@ -35,3 +35,5 @@ Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.job,
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Import-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.options
+Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.uppaal.job.Activator
+Bundle-ActivationPolicy: lazy

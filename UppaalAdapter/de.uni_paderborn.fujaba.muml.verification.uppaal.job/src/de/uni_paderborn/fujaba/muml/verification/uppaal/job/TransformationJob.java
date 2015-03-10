@@ -24,9 +24,9 @@ public class TransformationJob extends SynchronousJob {
 	protected ModelExtent params[] = null;
 	protected Map<String, Object> configProperties = null;
 	
-	private static IProgressMonitor currentMonitor = null;
+	//private static IProgressMonitor currentMonitor = null;
 	private static Map<URI, TransformationExecutor> executors = new HashMap<URI, TransformationExecutor>(); //maps a transformation URI to its executor
-	private static Map<URI, IStatus> loadStatus = new HashMap<URI, IStatus>(); //maps a transformation URI to the load status (null if not yet loaded)
+	//private static Map<URI, IStatus> loadStatus = new HashMap<URI, IStatus>(); //maps a transformation URI to the load status (null if not yet loaded)
 	
 	/**
 	 * 
@@ -46,17 +46,44 @@ public class TransformationJob extends SynchronousJob {
 		this.configProperties = configProperties;
 	}
 	
+	private static final boolean CACHING = !Activator.getDefault().isDebugging();
+	
 	/**
 	 * Loads and caches a transformation executor (may take some time)
 	 * @param uri
 	 * @return result of loading
 	 */
-	protected static IStatus loadTransformation(URI uri) {
-		if (!executors.containsKey(uri))
-			executors.put(uri, new TransformationExecutor(uri));
+	protected static IStatus loadTransformation(URI uri, IProgressMonitor monitor) {
 		
-		loadStatus.put(uri, BasicDiagnostic.toIStatus(executors.get(uri).loadTransformation())); 
-		return loadStatus.get(uri);
+		TransformationExecutor executor = getTransformationExecutor(uri);
+		
+		try {			
+			IStatus status = BasicDiagnostic.toIStatus(executor.loadTransformation(monitor));		
+			//loadStatus.put(uri, status);
+		
+			return status;	
+		} 
+		finally {
+			monitor.done();
+		}
+	}
+	
+	private static TransformationExecutor getTransformationExecutor(URI uri) {
+		
+		TransformationExecutor executor;
+		
+		if (executors.containsKey(uri)) {
+			return executor = executors.get(uri);
+		}
+		else {
+			executor = new TransformationExecutor(uri);
+			
+			if (CACHING) {
+				executors.put(uri, executor);
+			}
+		}
+		
+		return executor;
 	}
 	
 	/**
@@ -65,15 +92,15 @@ public class TransformationJob extends SynchronousJob {
 	 */
 	protected static void forgetTransformation(URI uri) {
 		executors.remove(uri);
-		loadStatus.remove(uri);
+		//loadStatus.remove(uri);
 	}
 	
 	/**
 	 * Returns the progress monitor of the currently running transformation
 	 */
-	public static IProgressMonitor getProgressMonitor() {
-		return currentMonitor;
-	}
+//	public static IProgressMonitor getProgressMonitor() {
+//		return currentMonitor;
+//	}
 		
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
@@ -83,16 +110,17 @@ public class TransformationJob extends SynchronousJob {
 		IStatus status;
 		
 		try {
-			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 100);
-			currentMonitor = subMonitor;
-			
-			if (loadStatus.get(uri) == null) {
+			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 120);
+			//currentMonitor = subMonitor;
+						
+			if (executors.get(uri) == null) {
 				subMonitor.subTask("Load Model-to-Model Transformation");
-				status = loadTransformation(uri); //(statically) load appropriate transformation
+				IProgressMonitor loadMonitor = subMonitor.newChild(20);
+				status = loadTransformation(uri, loadMonitor); //(statically) load appropriate transformation
 								
 				if(!status.isOK()) {
 					// re-initialize the transformation executor when the compilation fails
-					// this ensures a new compilation and allows possible fixes to be considered
+					// this ensures a new compilation and allows bugfixes to be considered
 					forgetTransformation(uri);
 					return status;
 				}
@@ -100,23 +128,25 @@ public class TransformationJob extends SynchronousJob {
 				if (monitor.isCanceled()) {
 					return Status.CANCEL_STATUS;
 				}
-				subMonitor.worked(20);
 			};
 			
 			subMonitor.setWorkRemaining(100);
 			subMonitor.subTask("Execute Model-to-Model Transformation");
 			
+			IProgressMonitor executeMonitor = subMonitor.newChild(90);
+			
 			//Set up
 			context = new ExecutionContextImpl();
 			context.setLog(new WriterLog(new OutputStreamWriter(System.out)));
+			context.setProgressMonitor(executeMonitor);
 			
 			if (configProperties != null)
 				for (Map.Entry<String, Object> entry : configProperties.entrySet())
 					context.setConfigProperty(entry.getKey(), entry.getValue());
 			
 			//Execute
-			diagnostic = executors.get(uri).execute(context, params);
-			subMonitor.worked(90);
+			diagnostic = getTransformationExecutor(uri).execute(context, params);
+			//subMonitor.worked(90);
 			
 			//Validate
 			status = BasicDiagnostic.toIStatus(diagnostic);
@@ -151,7 +181,7 @@ public class TransformationJob extends SynchronousJob {
 		}
 		finally {
 			monitor.done();
-			currentMonitor = null;
+			//currentMonitor = null;
 		}
 			
 	};	
