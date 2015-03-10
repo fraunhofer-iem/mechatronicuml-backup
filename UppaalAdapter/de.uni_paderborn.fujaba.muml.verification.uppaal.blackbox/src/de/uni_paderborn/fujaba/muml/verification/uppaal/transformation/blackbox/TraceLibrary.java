@@ -4,8 +4,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
+import org.eclipse.m2m.qvt.oml.util.IContext;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.TransformationJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.VerifyTAJob;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.uppaal.NTA;
@@ -16,13 +17,14 @@ public class TraceLibrary {
 
 	public TraceLibrary() {}
 	
-	public TraceRepository verifyta(NTA nta, PropertyRepository properties, Options options) throws CoreException {
+	@Operation(withExecutionContext=true)
+	public TraceRepository verifyta(IContext context, NTA nta, PropertyRepository properties, Options options) throws CoreException {
 		
 		assert nta != null && properties != null;
 		
 		VerifyTAJob uppaalJob = new VerifyTAJob(nta, properties, options);
 		
-		IProgressMonitor monitor = TransformationJob.getProgressMonitor();
+		IProgressMonitor monitor = context.getProgressMonitor();
 		if (monitor == null)
 			monitor = new NullProgressMonitor();
 		

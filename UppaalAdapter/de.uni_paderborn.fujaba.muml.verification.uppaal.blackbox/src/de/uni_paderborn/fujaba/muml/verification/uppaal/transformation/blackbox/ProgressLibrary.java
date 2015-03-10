@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.transformation.blackbox;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.job.TransformationJob;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
+import org.eclipse.m2m.qvt.oml.util.IContext;
 
 /**
  * Reports progress to either the running transformation job or the console
@@ -12,9 +14,11 @@ public class ProgressLibrary {
 	/**
 	 * Reports that nextTask now begins
 	 */
-	public void reportProgress(String nextTask) {
-		if (TransformationJob.getProgressMonitor() != null)
-			TransformationJob.getProgressMonitor().subTask(nextTask);
+	@Operation(withExecutionContext=true)
+	public void reportProgress(IContext context, String nextTask) {
+		IProgressMonitor monitor = context.getProgressMonitor();
+		if (monitor != null)
+			monitor.subTask(nextTask);
 		else
 			System.out.println("Starting \""+nextTask+"\"");
 	}
