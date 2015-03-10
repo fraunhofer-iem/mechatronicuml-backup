@@ -24,9 +24,7 @@ public class TransformationJob extends SynchronousJob {
 	protected ModelExtent params[] = null;
 	protected Map<String, Object> configProperties = null;
 	
-	//private static IProgressMonitor currentMonitor = null;
 	private static Map<URI, TransformationExecutor> executors = new HashMap<URI, TransformationExecutor>(); //maps a transformation URI to its executor
-	//private static Map<URI, IStatus> loadStatus = new HashMap<URI, IStatus>(); //maps a transformation URI to the load status (null if not yet loaded)
 	
 	/**
 	 * 
@@ -59,8 +57,7 @@ public class TransformationJob extends SynchronousJob {
 		
 		try {			
 			IStatus status = BasicDiagnostic.toIStatus(executor.loadTransformation(monitor));		
-			//loadStatus.put(uri, status);
-		
+					
 			return status;	
 		} 
 		finally {
@@ -92,16 +89,8 @@ public class TransformationJob extends SynchronousJob {
 	 */
 	protected static void forgetTransformation(URI uri) {
 		executors.remove(uri);
-		//loadStatus.remove(uri);
 	}
-	
-	/**
-	 * Returns the progress monitor of the currently running transformation
-	 */
-//	public static IProgressMonitor getProgressMonitor() {
-//		return currentMonitor;
-//	}
-		
+			
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 				
@@ -111,7 +100,6 @@ public class TransformationJob extends SynchronousJob {
 		
 		try {
 			SubMonitor subMonitor = SubMonitor.convert(monitor, this.getName(), 120);
-			//currentMonitor = subMonitor;
 						
 			if (executors.get(uri) == null) {
 				subMonitor.subTask("Load Model-to-Model Transformation");
@@ -146,7 +134,6 @@ public class TransformationJob extends SynchronousJob {
 			
 			//Execute
 			diagnostic = getTransformationExecutor(uri).execute(context, params);
-			//subMonitor.worked(90);
 			
 			//Validate
 			status = BasicDiagnostic.toIStatus(diagnostic);
@@ -181,7 +168,6 @@ public class TransformationJob extends SynchronousJob {
 		}
 		finally {
 			monitor.done();
-			//currentMonitor = null;
 		}
 			
 	};	
