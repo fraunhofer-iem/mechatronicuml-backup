@@ -38,6 +38,7 @@
           <propertyTab
              category="domain"
              id="property.tab.extensions"
+             afterTab="property.tab.documentation"
              label="Extensions"/>
           
       </propertyTabs>
@@ -83,11 +84,6 @@
 
  <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
     <propertyEditors>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.core.editor.RepositoryEditor$Factory"
-             type="http://www.storydriven.org/core/0.3.1#Repository">
-       </propertyEditor>
     
        <propertyEditor
              factory="org.storydriven.core.properties.expressions.editor.TextualExpressionEditor$Factory"

@@ -13,7 +13,7 @@
   </plugin>
   <tabs id="property.tab.general" name="General" afterTab=""/>
   <tabs id="property.tab.documentation" name="Documentation" afterTab="property.tab.general"/>
-  <tabs id="property.tab.extensions" name="Extensions" afterTab=""/>
+  <tabs id="property.tab.extensions" name="Extensions" afterTab="property.tab.documentation"/>
   <packages>
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
     <classes superClasses="//@packages.0/@classes.1">

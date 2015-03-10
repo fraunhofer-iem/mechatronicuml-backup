@@ -3,7 +3,7 @@ package org.storydriven.core.properties.core.editor;
 /**
  * @generated
  */
-public class RepositoryEditor
+public abstract class RepositoryEditor
 		extends
 			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
@@ -49,40 +49,6 @@ public class RepositoryEditor
 
 		return editor;
 
-	}
-
-	//
-	// instantiation
-	//
-
-	/**
-	 * @generated
-	 */
-	public RepositoryEditor(String tab) {
-		this(tab, org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory(),
-				org.storydriven.core.CorePackage.eINSTANCE.getRepository());
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
-			return new RepositoryEditor(tab);
-		}
-
-		@Override
-		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
-					.contains(tab);
-		}
 	}
 
 }
