@@ -482,7 +482,12 @@ when{self.oclIsTypeOf(TypedNamedElementExpression)}{
 	else {
 		typedNamedElement := self.typedNamedElement . late resolveoneIn(Parameter::copyParameter,Parameter);
 	}endif;
-	indices += self.indices -> map copyExpression();
+	elementAccessors += self.elementAccessors -> map copyAccessorExpression();
+}
+
+mapping ElementAccessorExpression::copyAccessorExpression() : ArrayIndexExpression
+when {self.oclIsTypeOf(ArrayIndexExpression)}{
+	index := self.oclAsType(ArrayIndexExpression).index . map copyExpression();
 }
 
 mapping ActivityCallExpression::copyActivityCallExpression() : ActivityCallExpression 
