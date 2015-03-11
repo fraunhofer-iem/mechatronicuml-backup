@@ -83,10 +83,19 @@ function «name»Out = «name»(«EXPAND parameter FOREACH parameters SEPARATOR ", "»
 
 «DEFINE expression FOR actionlanguage::TypedNamedElementExpression»
 «typedNamedElement.name»
-«FOREACH indices AS curIndex»
-  [ «EXPAND expression FOR curIndex» ]
+«FOREACH elementAccessors AS curAccessor»
+  «EXPAND expression FOR curAccessor» 
 «ENDFOREACH»
 «ENDDEFINE»
+
+«DEFINE expression FOR actionlanguage::ArrayIndexExpression»
+  [ «EXPAND expression FOR index» ]
+«ENDDEFINE»
+
+«DEFINE expression FOR actionlanguage::AttributeAccessorExpression»
+  . «attribute.name»
+«ENDDEFINE»
+
 
 «DEFINE expression FOR actionlanguage::ArrayInitializeExpression»
 [«FOREACH expressions AS curExpr SEPARATOR " "»
