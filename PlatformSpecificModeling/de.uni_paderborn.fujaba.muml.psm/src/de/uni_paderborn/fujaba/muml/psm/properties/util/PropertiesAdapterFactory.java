@@ -10,6 +10,8 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.Extension;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,16 +70,24 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	protected PropertiesSwitch<Adapter> modelSwitch =
 		new PropertiesSwitch<Adapter>() {
 			@Override
-			public Adapter caseComponentInstanceExecutionProperties(ComponentInstanceExecutionProperties object) {
-				return createComponentInstanceExecutionPropertiesAdapter();
+			public Adapter caseWCET(WCET object) {
+				return createWCETAdapter();
 			}
 			@Override
-			public Adapter caseWCETpair(WCETpair object) {
-				return createWCETpairAdapter();
+			public Adapter caseRequiredMemory(RequiredMemory object) {
+				return createRequiredMemoryAdapter();
 			}
 			@Override
-			public Adapter caseMemoryPair(MemoryPair object) {
-				return createMemoryPairAdapter();
+			public Adapter caseScheduling(Scheduling object) {
+				return createSchedulingAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseExtension(Extension object) {
+				return createExtensionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -100,44 +110,72 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties <em>Component Instance Execution Properties</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET <em>WCET</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCET
 	 * @generated
 	 */
-	public Adapter createComponentInstanceExecutionPropertiesAdapter() {
+	public Adapter createWCETAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair <em>WCE Tpair</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory <em>Required Memory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCETpair
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory
 	 * @generated
 	 */
-	public Adapter createWCETpairAdapter() {
+	public Adapter createRequiredMemoryAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair <em>Memory Pair</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling <em>Scheduling</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling
 	 * @generated
 	 */
-	public Adapter createMemoryPairAdapter() {
+	public Adapter createSchedulingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.ExtendableElement
+	 * @generated
+	 */
+	public Adapter createExtendableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.Extension <em>Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.Extension
+	 * @generated
+	 */
+	public Adapter createExtensionAdapter() {
 		return null;
 	}
 

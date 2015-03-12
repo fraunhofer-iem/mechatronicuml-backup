@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.psm.properties;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +19,9 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package provides classes to annotate component with non-functional requirements.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory
  * @model kind="package"
  * @generated
@@ -56,279 +60,933 @@ public interface PropertiesPackage extends EPackage {
 	PropertiesPackage eINSTANCE = de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.ComponentInstanceExecutionPropertiesImpl <em>Component Instance Execution Properties</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETImpl <em>WCET</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.ComponentInstanceExecutionPropertiesImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getComponentInstanceExecutionProperties()
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getWCET()
 	 * @generated
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES = 0;
+	int WCET = 0;
 
 	/**
-	 * The feature id for the '<em><b>Component Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES__COMPONENT_INSTANCE = 0;
+	int WCET__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Wcet</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES__WCET = 1;
+	int WCET__EXTENSION = CorePackage.EXTENSION__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Code Mem</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Base</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES__CODE_MEM = 2;
+	int WCET__BASE = CorePackage.EXTENSION__BASE;
 
 	/**
-	 * The feature id for the '<em><b>Ram Mem</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Model Base</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES__RAM_MEM = 3;
+	int WCET__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
 
 	/**
-	 * The number of structural features of the '<em>Component Instance Execution Properties</em>' class.
+	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES_FEATURE_COUNT = 4;
+	int WCET__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
 
 	/**
-	 * The number of operations of the '<em>Component Instance Execution Properties</em>' class.
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_EXECUTION_PROPERTIES_OPERATION_COUNT = 0;
+	int WCET__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETpairImpl <em>WCE Tpair</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETpairImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getWCETpair()
-	 * @generated
-	 */
-	int WCE_TPAIR = 1;
-
-	/**
-	 * The feature id for the '<em><b>Amount</b></em>' reference.
+	 * The feature id for the '<em><b>Wcet</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WCE_TPAIR__AMOUNT = 0;
+	int WCET__WCET = CorePackage.EXTENSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Resource</b></em>' reference.
+	 * The feature id for the '<em><b>Resource Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WCE_TPAIR__RESOURCE = 1;
+	int WCET__RESOURCE_INSTANCE = CorePackage.EXTENSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>WCE Tpair</em>' class.
+	 * The number of structural features of the '<em>WCET</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WCE_TPAIR_FEATURE_COUNT = 2;
+	int WCET_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>WCE Tpair</em>' class.
+	 * The operation id for the '<em>EClass</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WCE_TPAIR_OPERATION_COUNT = 0;
+	int WCET___ECLASS = CorePackage.EXTENSION___ECLASS;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MemoryPairImpl <em>Memory Pair</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MemoryPairImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMemoryPair()
-	 * @generated
-	 */
-	int MEMORY_PAIR = 2;
-
-	/**
-	 * The feature id for the '<em><b>Amount</b></em>' reference.
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_PAIR__AMOUNT = 0;
+	int WCET___EIS_PROXY = CorePackage.EXTENSION___EIS_PROXY;
 
 	/**
-	 * The feature id for the '<em><b>Resource</b></em>' reference.
+	 * The operation id for the '<em>EResource</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_PAIR__RESOURCE = 1;
+	int WCET___ERESOURCE = CorePackage.EXTENSION___ERESOURCE;
 
 	/**
-	 * The number of structural features of the '<em>Memory Pair</em>' class.
+	 * The operation id for the '<em>EContainer</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_PAIR_FEATURE_COUNT = 2;
+	int WCET___ECONTAINER = CorePackage.EXTENSION___ECONTAINER;
 
 	/**
-	 * The number of operations of the '<em>Memory Pair</em>' class.
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_PAIR_OPERATION_COUNT = 0;
-
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties <em>Component Instance Execution Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Instance Execution Properties</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties
-	 * @generated
-	 */
-	EClass getComponentInstanceExecutionProperties();
+	int WCET___ECONTAINING_FEATURE = CorePackage.EXTENSION___ECONTAINING_FEATURE;
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getComponentInstance <em>Component Instance</em>}'.
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getComponentInstance()
-	 * @see #getComponentInstanceExecutionProperties()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getComponentInstanceExecutionProperties_ComponentInstance();
+	int WCET___ECONTAINMENT_FEATURE = CorePackage.EXTENSION___ECONTAINMENT_FEATURE;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getWcet <em>Wcet</em>}'.
+	 * The operation id for the '<em>EContents</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Wcet</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getWcet()
-	 * @see #getComponentInstanceExecutionProperties()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getComponentInstanceExecutionProperties_Wcet();
+	int WCET___ECONTENTS = CorePackage.EXTENSION___ECONTENTS;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getCodeMem <em>Code Mem</em>}'.
+	 * The operation id for the '<em>EAll Contents</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Code Mem</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getCodeMem()
-	 * @see #getComponentInstanceExecutionProperties()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getComponentInstanceExecutionProperties_CodeMem();
+	int WCET___EALL_CONTENTS = CorePackage.EXTENSION___EALL_CONTENTS;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getRamMem <em>Ram Mem</em>}'.
+	 * The operation id for the '<em>ECross References</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ram Mem</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties#getRamMem()
-	 * @see #getComponentInstanceExecutionProperties()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getComponentInstanceExecutionProperties_RamMem();
+	int WCET___ECROSS_REFERENCES = CorePackage.EXTENSION___ECROSS_REFERENCES;
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair <em>WCE Tpair</em>}'.
+	 * The operation id for the '<em>EGet</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>WCE Tpair</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCETpair
 	 * @generated
+	 * @ordered
 	 */
-	EClass getWCETpair();
+	int WCET___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair#getAmount <em>Amount</em>}'.
+	 * The operation id for the '<em>EGet</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Amount</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCETpair#getAmount()
-	 * @see #getWCETpair()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getWCETpair_Amount();
+	int WCET___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair#getResource <em>Resource</em>}'.
+	 * The operation id for the '<em>ESet</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Resource</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCETpair#getResource()
-	 * @see #getWCETpair()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getWCETpair_Resource();
+	int WCET___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair <em>Memory Pair</em>}'.
+	 * The operation id for the '<em>EIs Set</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Memory Pair</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair
 	 * @generated
+	 * @ordered
 	 */
-	EClass getMemoryPair();
+	int WCET___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair#getAmount <em>Amount</em>}'.
+	 * The operation id for the '<em>EUnset</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Amount</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair#getAmount()
-	 * @see #getMemoryPair()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getMemoryPair_Amount();
+	int WCET___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair#getResource <em>Resource</em>}'.
+	 * The operation id for the '<em>EInvoke</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Resource</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair#getResource()
-	 * @see #getMemoryPair()
+	 * @generated
+	 * @ordered
+	 */
+	int WCET___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WCET___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WCET___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENSION___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WCET___GET_ANNOTATION__STRING = CorePackage.EXTENSION___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WCET___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENSION___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>WCET</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WCET_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.RequiredMemoryImpl <em>Required Memory</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.RequiredMemoryImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getRequiredMemory()
 	 * @generated
 	 */
-	EReference getMemoryPair_Resource();
+	int REQUIRED_MEMORY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__BASE = CorePackage.EXTENSION__BASE;
+
+	/**
+	 * The feature id for the '<em><b>Model Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Required Memory</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__REQUIRED_MEMORY = CorePackage.EXTENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Resource Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY__RESOURCE_INSTANCE = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Required Memory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ECLASS = CorePackage.EXTENSION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EIS_PROXY = CorePackage.EXTENSION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ERESOURCE = CorePackage.EXTENSION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ECONTAINER = CorePackage.EXTENSION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ECONTAINING_FEATURE = CorePackage.EXTENSION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ECONTAINMENT_FEATURE = CorePackage.EXTENSION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ECONTENTS = CorePackage.EXTENSION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EALL_CONTENTS = CorePackage.EXTENSION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ECROSS_REFERENCES = CorePackage.EXTENSION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENSION___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___GET_ANNOTATION__STRING = CorePackage.EXTENSION___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENSION___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Required Memory</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_MEMORY_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl <em>Scheduling</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getScheduling()
+	 * @generated
+	 */
+	int SCHEDULING = 2;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__ANNOTATION = CorePackage.EXTENSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__EXTENSION = CorePackage.EXTENSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__BASE = CorePackage.EXTENSION__BASE;
+
+	/**
+	 * The feature id for the '<em><b>Model Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__MODEL_BASE = CorePackage.EXTENSION__MODEL_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Annotation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__OWNING_ANNOTATION = CorePackage.EXTENSION__OWNING_ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extendable Base</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
+
+	/**
+	 * The feature id for the '<em><b>Deadline</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__DEADLINE = CorePackage.EXTENSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Period</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__PERIOD = CorePackage.EXTENSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING__PRIORITY = CorePackage.EXTENSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Scheduling</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_FEATURE_COUNT = CorePackage.EXTENSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ECLASS = CorePackage.EXTENSION___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EIS_PROXY = CorePackage.EXTENSION___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ERESOURCE = CorePackage.EXTENSION___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ECONTAINER = CorePackage.EXTENSION___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ECONTAINING_FEATURE = CorePackage.EXTENSION___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ECONTAINMENT_FEATURE = CorePackage.EXTENSION___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ECONTENTS = CorePackage.EXTENSION___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EALL_CONTENTS = CorePackage.EXTENSION___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ECROSS_REFERENCES = CorePackage.EXTENSION___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENSION___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENSION___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___GET_EXTENSION__ECLASS = CorePackage.EXTENSION___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENSION___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___GET_ANNOTATION__STRING = CorePackage.EXTENSION___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENSION___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Scheduling</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_OPERATION_COUNT = CorePackage.EXTENSION_OPERATION_COUNT + 0;
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET <em>WCET</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>WCET</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCET
+	 * @generated
+	 */
+	EClass getWCET();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet <em>Wcet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Wcet</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet()
+	 * @see #getWCET()
+	 * @generated
+	 */
+	EReference getWCET_Wcet();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET#getResourceInstance <em>Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resource Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCET#getResourceInstance()
+	 * @see #getWCET()
+	 * @generated
+	 */
+	EReference getWCET_ResourceInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory <em>Required Memory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Required Memory</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory
+	 * @generated
+	 */
+	EClass getRequiredMemory();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getRequiredMemory <em>Required Memory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Required Memory</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getRequiredMemory()
+	 * @see #getRequiredMemory()
+	 * @generated
+	 */
+	EReference getRequiredMemory_RequiredMemory();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getResourceInstance <em>Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resource Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getResourceInstance()
+	 * @see #getRequiredMemory()
+	 * @generated
+	 */
+	EReference getRequiredMemory_ResourceInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling <em>Scheduling</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scheduling</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling
+	 * @generated
+	 */
+	EClass getScheduling();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Deadline</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline()
+	 * @see #getScheduling()
+	 * @generated
+	 */
+	EReference getScheduling_Deadline();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Period</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod()
+	 * @see #getScheduling()
+	 * @generated
+	 */
+	EReference getScheduling_Period();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Priority</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority()
+	 * @see #getScheduling()
+	 * @generated
+	 */
+	EReference getScheduling_Priority();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -354,98 +1012,90 @@ public interface PropertiesPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.ComponentInstanceExecutionPropertiesImpl <em>Component Instance Execution Properties</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETImpl <em>WCET</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.ComponentInstanceExecutionPropertiesImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getComponentInstanceExecutionProperties()
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getWCET()
 		 * @generated
 		 */
-		EClass COMPONENT_INSTANCE_EXECUTION_PROPERTIES = eINSTANCE.getComponentInstanceExecutionProperties();
+		EClass WCET = eINSTANCE.getWCET();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Wcet</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_EXECUTION_PROPERTIES__COMPONENT_INSTANCE = eINSTANCE.getComponentInstanceExecutionProperties_ComponentInstance();
+		EReference WCET__WCET = eINSTANCE.getWCET_Wcet();
 
 		/**
-		 * The meta object literal for the '<em><b>Wcet</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Resource Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_EXECUTION_PROPERTIES__WCET = eINSTANCE.getComponentInstanceExecutionProperties_Wcet();
+		EReference WCET__RESOURCE_INSTANCE = eINSTANCE.getWCET_ResourceInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Code Mem</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.RequiredMemoryImpl <em>Required Memory</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.RequiredMemoryImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getRequiredMemory()
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_EXECUTION_PROPERTIES__CODE_MEM = eINSTANCE.getComponentInstanceExecutionProperties_CodeMem();
+		EClass REQUIRED_MEMORY = eINSTANCE.getRequiredMemory();
 
 		/**
-		 * The meta object literal for the '<em><b>Ram Mem</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Required Memory</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_EXECUTION_PROPERTIES__RAM_MEM = eINSTANCE.getComponentInstanceExecutionProperties_RamMem();
+		EReference REQUIRED_MEMORY__REQUIRED_MEMORY = eINSTANCE.getRequiredMemory_RequiredMemory();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETpairImpl <em>WCE Tpair</em>}' class.
+		 * The meta object literal for the '<em><b>Resource Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETpairImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getWCETpair()
 		 * @generated
 		 */
-		EClass WCE_TPAIR = eINSTANCE.getWCETpair();
+		EReference REQUIRED_MEMORY__RESOURCE_INSTANCE = eINSTANCE.getRequiredMemory_ResourceInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Amount</b></em>' reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl <em>Scheduling</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getScheduling()
 		 * @generated
 		 */
-		EReference WCE_TPAIR__AMOUNT = eINSTANCE.getWCETpair_Amount();
+		EClass SCHEDULING = eINSTANCE.getScheduling();
 
 		/**
-		 * The meta object literal for the '<em><b>Resource</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Deadline</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WCE_TPAIR__RESOURCE = eINSTANCE.getWCETpair_Resource();
+		EReference SCHEDULING__DEADLINE = eINSTANCE.getScheduling_Deadline();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.MemoryPairImpl <em>Memory Pair</em>}' class.
+		 * The meta object literal for the '<em><b>Period</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.MemoryPairImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl#getMemoryPair()
 		 * @generated
 		 */
-		EClass MEMORY_PAIR = eINSTANCE.getMemoryPair();
+		EReference SCHEDULING__PERIOD = eINSTANCE.getScheduling_Period();
 
 		/**
-		 * The meta object literal for the '<em><b>Amount</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Priority</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MEMORY_PAIR__AMOUNT = eINSTANCE.getMemoryPair_Amount();
-
-		/**
-		 * The meta object literal for the '<em><b>Resource</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MEMORY_PAIR__RESOURCE = eINSTANCE.getMemoryPair_Resource();
+		EReference SCHEDULING__PRIORITY = eINSTANCE.getScheduling_Priority();
 
 	}
 

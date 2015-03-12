@@ -22,31 +22,31 @@ public interface PropertiesFactory extends EFactory {
 	PropertiesFactory eINSTANCE = de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Component Instance Execution Properties</em>'.
+	 * Returns a new object of class '<em>WCET</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Instance Execution Properties</em>'.
+	 * @return a new object of class '<em>WCET</em>'.
 	 * @generated
 	 */
-	ComponentInstanceExecutionProperties createComponentInstanceExecutionProperties();
+	WCET createWCET();
 
 	/**
-	 * Returns a new object of class '<em>WCE Tpair</em>'.
+	 * Returns a new object of class '<em>Required Memory</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>WCE Tpair</em>'.
+	 * @return a new object of class '<em>Required Memory</em>'.
 	 * @generated
 	 */
-	WCETpair createWCETpair();
+	RequiredMemory createRequiredMemory();
 
 	/**
-	 * Returns a new object of class '<em>Memory Pair</em>'.
+	 * Returns a new object of class '<em>Scheduling</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Memory Pair</em>'.
+	 * @return a new object of class '<em>Scheduling</em>'.
 	 * @generated
 	 */
-	MemoryPair createMemoryPair();
+	Scheduling createScheduling();
 
 	/**
 	 * Returns the package supported by this factory.
