@@ -192,7 +192,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 			identifier := self.dataType.map DataType2Type();
 		};
 		
-		elements += self.map Parameter2Parameter();
+		elements += self.map MumlParameter2UppaalParameter();
 	}
 	
 	mapping muml_behavior::Parameter :: Parameter2TypedDeclaration() : TypedDeclaration
@@ -200,11 +200,9 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 			
 	mapping muml_behavior::Parameter :: Parameter2ParameterContainer() : ParameterContainer
 		merges muml_behavior::Parameter::Parameter2TypedElementContainer;		
-			
-	mapping Parameter :: Parameter2Variable() : uppaal_declarations::Variable
-		inherits TypedNamedElement::TypedNamedElement2Variable {};
 	
-	mapping Parameter :: Parameter2Parameter() : uppaal_declarations::Parameter
+	// TODO restore original name 'Parameter2Parameter' after removing the dependency from TraceQueriesAndHelpers to RTSCHierarchyNormalization (where the original name would therefore cause an ambiguity)		
+	mapping Parameter :: MumlParameter2UppaalParameter() : uppaal_declarations::Parameter
 		inherits TypedNamedElement::TypedNamedElement2Variable {
 			callType := CallType::CALL_BY_VALUE;
 	};
@@ -221,7 +219,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		init {
 			result := object TypedDeclaration {
 			
-				elements += self.map Parameter2Parameter();
+				elements += self.map MumlParameter2UppaalParameter();
 						
 				typeDefinition := object IdentifierExpression {
 				
@@ -503,7 +501,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		
 		identifier := object IdentifierExpression {
 			
-			identifier := self.parameter.map Parameter2Parameter()
+			identifier := self.parameter.map MumlParameter2UppaalParameter()
 			
 		};
 
@@ -764,7 +762,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	mapping TypedNamedElementExpression :: ParameterExpression2IdentifierExpression(componentInstanceID : uppaal_declarations::Variable, portOrRoleInstanceID : uppaal_declarations::Variable,  subPortOrRoleInstanceID : uppaal_declarations::Variable) : IdentifierExpression
 	when {self.typedNamedElement.oclIsKindOf(muml_behavior::Parameter)} {
 		
-		identifier := self.typedNamedElement.oclAsType(muml_behavior::Parameter).map Parameter2Parameter();
+		identifier := self.typedNamedElement.oclAsType(muml_behavior::Parameter).map MumlParameter2UppaalParameter();
 						
 		-- map indices
 				

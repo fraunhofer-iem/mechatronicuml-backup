@@ -62,7 +62,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 		name := 'initializeArray'.addSuffixNumber();
 		
 				
-		var arrayIdVar := self.parameter./*map MUML2MUML::Parameter2Parameter().map TypedNamedElement2Variable()*/map Parameter2Parameter();
+		var arrayIdVar := self.parameter./*map MUML2MUML::Parameter2Parameter().map TypedNamedElement2Variable()*/map MumlParameter2UppaalParameter();
 		
 		var iterVars : Set(Variable) := Set{};
 		

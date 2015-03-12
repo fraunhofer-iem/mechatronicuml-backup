@@ -1535,7 +1535,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 							
 								initializer += object ExpressionInitializer {
 									expression := object IdentifierExpression {
-										identifier := param.map Parameter2Parameter()
+										identifier := param.map MumlParameter2UppaalParameter()
 									};
 								};
 							
