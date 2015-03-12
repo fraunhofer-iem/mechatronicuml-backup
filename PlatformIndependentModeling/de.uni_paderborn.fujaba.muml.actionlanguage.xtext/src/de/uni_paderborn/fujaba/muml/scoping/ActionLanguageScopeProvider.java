@@ -248,14 +248,19 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	private void initDataTypes(EObject object) {
 		RootNode rootNode = (RootNode) object.eResource().getContents().get(0);
+		
+		//init lists
 		typeList = new ArrayList<DataType>();
+		attributeList = new ArrayList<Attribute>();	
+		
 		ModelElementCategory modelElementCategory = ModelInstancePlugin.getInstance()
 				.getModelElementCategoryRegistry()
 				.getModelElementCategory(rootNode, TYPES_CATEGORY_KEY);
+		
+		//fill lists
 		for (EObject type : modelElementCategory.getModelElements()) {
 			typeList.add((DataType) type);
-			
-			attributeList = new ArrayList<Attribute>();			
+					
 			if(type instanceof StructureDataType){
 				attributeList.addAll(((StructureDataType)type).getAttributes());
 			}
