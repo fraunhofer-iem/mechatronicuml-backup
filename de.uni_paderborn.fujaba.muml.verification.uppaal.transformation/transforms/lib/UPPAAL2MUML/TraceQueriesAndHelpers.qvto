@@ -387,7 +387,7 @@ query Parameter :: getVariable() : uppaal::declarations::Variable{
 		newSize := mumlResolves->size();
 	};
 	
-	var variable := mumlResolves->resolveIn(Parameter::Parameter2Parameter, uppaal::declarations::Parameter)->any(true);
+	var variable := mumlResolves->resolveIn(Parameter::MumlParameter2UppaalParameter, uppaal::declarations::Parameter)->any(true);
 	return variable;
 }
 
