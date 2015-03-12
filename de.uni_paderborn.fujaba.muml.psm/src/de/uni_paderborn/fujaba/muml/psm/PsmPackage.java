@@ -18,6 +18,9 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package provides all Classes for modeling a platform-specific model.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.PsmFactory
  * @model kind="package"
  * @generated

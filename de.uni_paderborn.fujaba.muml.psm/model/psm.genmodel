@@ -25,24 +25,25 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Properties" basePackage="de.uni_paderborn.fujaba.muml.psm"
         disposableProviderFactory="true" ecorePackage="psm.ecore#//properties">
-      <genClasses ecoreClass="psm.ecore#//properties/ComponentInstanceExecutionProperties">
+      <genClasses ecoreClass="psm.ecore#//properties/WCET">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/componentInstance"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/wcet"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/codeMem"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/ramMem"/>
+            ecoreFeature="ecore:EReference psm.ecore#//properties/WCET/wcet"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/WCET/resourceInstance"/>
       </genClasses>
-      <genClasses ecoreClass="psm.ecore#//properties/WCETpair">
+      <genClasses ecoreClass="psm.ecore#//properties/RequiredMemory">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//properties/WCETpair/amount"/>
+            ecoreFeature="ecore:EReference psm.ecore#//properties/RequiredMemory/requiredMemory"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//properties/WCETpair/resource"/>
+            ecoreFeature="ecore:EReference psm.ecore#//properties/RequiredMemory/resourceInstance"/>
       </genClasses>
-      <genClasses ecoreClass="psm.ecore#//properties/MemoryPair">
+      <genClasses ecoreClass="psm.ecore#//properties/Scheduling">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//properties/MemoryPair/amount"/>
+            ecoreFeature="ecore:EReference psm.ecore#//properties/Scheduling/deadline"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference psm.ecore#//properties/MemoryPair/resource"/>
+            ecoreFeature="ecore:EReference psm.ecore#//properties/Scheduling/period"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//properties/Scheduling/priority"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.psm"

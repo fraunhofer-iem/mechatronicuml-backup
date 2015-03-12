@@ -1,0 +1,107 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.psm.properties;
+
+import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+
+import org.storydriven.core.Extension;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Scheduling</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling()
+ * @model
+ * @generated
+ */
+public interface Scheduling extends Extension {
+	/**
+	 * Returns the value of the '<em><b>Deadline</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Deadline</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Deadline</em>' reference.
+	 * @see #setDeadline(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling_Deadline()
+	 * @model required="true"
+	 * @generated
+	 */
+	TimeValue getDeadline();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Deadline</em>' reference.
+	 * @see #getDeadline()
+	 * @generated
+	 */
+	void setDeadline(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Period</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Period</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Period</em>' reference.
+	 * @see #setPeriod(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling_Period()
+	 * @model required="true"
+	 * @generated
+	 */
+	TimeValue getPeriod();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Period</em>' reference.
+	 * @see #getPeriod()
+	 * @generated
+	 */
+	void setPeriod(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Priority</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Priority</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Priority</em>' reference.
+	 * @see #setPriority(NaturalNumber)
+	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling_Priority()
+	 * @model
+	 * @generated
+	 */
+	NaturalNumber getPriority();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Priority</em>' reference.
+	 * @see #getPriority()
+	 * @generated
+	 */
+	void setPriority(NaturalNumber value);
+
+} // Scheduling

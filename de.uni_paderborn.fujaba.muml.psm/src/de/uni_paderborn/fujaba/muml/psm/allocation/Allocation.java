@@ -13,6 +13,10 @@ import org.storydriven.core.ExtendableElement;
  * A representation of the model object '<em><b>Allocation</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents an allocation of exactly one Component Instance to exactly one Resource Instance.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -34,6 +38,9 @@ public interface Allocation extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The allocated Component Instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Instance</em>' reference.
 	 * @see #setComponentInstance(ComponentInstance)
 	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getAllocation_ComponentInstance()
@@ -60,6 +67,9 @@ public interface Allocation extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The allocated Resource Instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Resource Instance</em>' reference.
 	 * @see #setResourceInstance(StructuredResourceInstance)
 	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getAllocation_ResourceInstance()

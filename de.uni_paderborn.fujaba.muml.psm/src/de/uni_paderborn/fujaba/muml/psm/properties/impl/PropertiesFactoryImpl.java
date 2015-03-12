@@ -56,9 +56,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PropertiesPackage.COMPONENT_INSTANCE_EXECUTION_PROPERTIES: return createComponentInstanceExecutionProperties();
-			case PropertiesPackage.WCE_TPAIR: return createWCETpair();
-			case PropertiesPackage.MEMORY_PAIR: return createMemoryPair();
+			case PropertiesPackage.WCET: return createWCET();
+			case PropertiesPackage.REQUIRED_MEMORY: return createRequiredMemory();
+			case PropertiesPackage.SCHEDULING: return createScheduling();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -69,9 +69,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstanceExecutionProperties createComponentInstanceExecutionProperties() {
-		ComponentInstanceExecutionPropertiesImpl componentInstanceExecutionProperties = new ComponentInstanceExecutionPropertiesImpl();
-		return componentInstanceExecutionProperties;
+	public WCET createWCET() {
+		WCETImpl wcet = new WCETImpl();
+		return wcet;
 	}
 
 	/**
@@ -79,9 +79,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WCETpair createWCETpair() {
-		WCETpairImpl wceTpair = new WCETpairImpl();
-		return wceTpair;
+	public RequiredMemory createRequiredMemory() {
+		RequiredMemoryImpl requiredMemory = new RequiredMemoryImpl();
+		return requiredMemory;
 	}
 
 	/**
@@ -89,9 +89,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MemoryPair createMemoryPair() {
-		MemoryPairImpl memoryPair = new MemoryPairImpl();
-		return memoryPair;
+	public Scheduling createScheduling() {
+		SchedulingImpl scheduling = new SchedulingImpl();
+		return scheduling;
 	}
 
 	/**

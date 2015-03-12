@@ -39,8 +39,8 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getAnnotation <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExtension <em>Extension</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getAnnotations <em>Annotation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExtensions <em>Extension</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getImplementations <em>Implementations</em>}</li>
@@ -61,7 +61,7 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAnnotation> annotation;
+	protected EList<EAnnotation> annotations;
 
 	/**
 	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
@@ -71,7 +71,7 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Extension> extension;
+	protected EList<Extension> extensions;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -178,10 +178,10 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 */
 	public EList<EAnnotation> getAnnotations() {
-		if (annotation == null) {
-			annotation = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION);
+		if (annotations == null) {
+			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION);
 		}
-		return annotation;
+		return annotations;
 	}
 
 	/**
@@ -190,10 +190,10 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	 * @generated
 	 */
 	public EList<Extension> getExtensions() {
-		if (extension == null) {
-			extension = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+		if (extensions == null) {
+			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
-		return extension;
+		return extensions;
 	}
 
 	/**
@@ -531,9 +531,9 @@ public class APICallParameterBindingImpl extends RealtimeStatechartParameterBind
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__ANNOTATION:
-				return annotation != null && !annotation.isEmpty();
+				return annotations != null && !annotations.isEmpty();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__EXTENSION:
-				return extension != null && !extension.isEmpty();
+				return extensions != null && !extensions.isEmpty();
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartparameterbindingPackage.API_CALL_PARAMETER_BINDING__COMMENT:

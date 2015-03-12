@@ -20,6 +20,9 @@ import org.storydriven.core.CorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introdused.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory
  * @model kind="package"
  * @generated
