@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsFactory;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartFactory;
@@ -28,6 +29,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
 
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
@@ -179,6 +181,21 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
 				 RealtimestatechartFactory.eINSTANCE.createAPICall()));
 
@@ -271,6 +288,21 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
+				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -396,6 +428,21 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
+				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

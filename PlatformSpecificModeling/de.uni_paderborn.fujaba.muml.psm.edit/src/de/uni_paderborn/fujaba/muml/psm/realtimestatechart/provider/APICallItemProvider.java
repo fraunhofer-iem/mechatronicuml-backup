@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.provider.OperationCallItemProvider;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.APICall;
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.storydriven.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.APICall} object.
@@ -125,6 +127,21 @@ public class APICallItemProvider extends OperationCallItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
 	}
 
 	/**

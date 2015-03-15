@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.APICallExpression;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import java.util.Collection;
@@ -24,6 +25,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
 /**
@@ -166,6 +168,21 @@ public class APICallExpressionItemProvider extends ExpressionItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
 
 		newChildDescriptors.add
 			(createChildParameter
