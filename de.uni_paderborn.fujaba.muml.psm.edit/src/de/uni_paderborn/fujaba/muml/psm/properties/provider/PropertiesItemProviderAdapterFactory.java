@@ -72,72 +72,72 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.WCET} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentInstanceExecutionPropertiesItemProvider componentInstanceExecutionPropertiesItemProvider;
+	protected WCETItemProvider wcetItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.WCET}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComponentInstanceExecutionPropertiesAdapter() {
-		if (componentInstanceExecutionPropertiesItemProvider == null) {
-			componentInstanceExecutionPropertiesItemProvider = new ComponentInstanceExecutionPropertiesItemProvider(this);
+	public Adapter createWCETAdapter() {
+		if (wcetItemProvider == null) {
+			wcetItemProvider = new WCETItemProvider(this);
 		}
 
-		return componentInstanceExecutionPropertiesItemProvider;
+		return wcetItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WCETpairItemProvider wceTpairItemProvider;
+	protected RequiredMemoryItemProvider requiredMemoryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWCETpairAdapter() {
-		if (wceTpairItemProvider == null) {
-			wceTpairItemProvider = new WCETpairItemProvider(this);
+	public Adapter createRequiredMemoryAdapter() {
+		if (requiredMemoryItemProvider == null) {
+			requiredMemoryItemProvider = new RequiredMemoryItemProvider(this);
 		}
 
-		return wceTpairItemProvider;
+		return requiredMemoryItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MemoryPairItemProvider memoryPairItemProvider;
+	protected SchedulingItemProvider schedulingItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMemoryPairAdapter() {
-		if (memoryPairItemProvider == null) {
-			memoryPairItemProvider = new MemoryPairItemProvider(this);
+	public Adapter createSchedulingAdapter() {
+		if (schedulingItemProvider == null) {
+			schedulingItemProvider = new SchedulingItemProvider(this);
 		}
 
-		return memoryPairItemProvider;
+		return schedulingItemProvider;
 	}
 
 	/**
@@ -239,9 +239,9 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (componentInstanceExecutionPropertiesItemProvider != null) componentInstanceExecutionPropertiesItemProvider.dispose();
-		if (wceTpairItemProvider != null) wceTpairItemProvider.dispose();
-		if (memoryPairItemProvider != null) memoryPairItemProvider.dispose();
+		if (wcetItemProvider != null) wcetItemProvider.dispose();
+		if (requiredMemoryItemProvider != null) requiredMemoryItemProvider.dispose();
+		if (schedulingItemProvider != null) schedulingItemProvider.dispose();
 	}
 
 }

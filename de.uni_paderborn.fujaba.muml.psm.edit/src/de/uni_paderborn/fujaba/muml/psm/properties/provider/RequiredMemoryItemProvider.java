@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.psm.properties.provider;
 
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
@@ -16,35 +17,26 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+
+import org.storydriven.core.CorePackage;
+
+import org.storydriven.core.provider.ExtensionItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MemoryPairItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class RequiredMemoryItemProvider extends ExtensionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MemoryPairItemProvider(AdapterFactory adapterFactory) {
+	public RequiredMemoryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,26 +51,26 @@ public class MemoryPairItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAmountPropertyDescriptor(object);
-			addResourcePropertyDescriptor(object);
+			addRequiredMemoryPropertyDescriptor(object);
+			addResourceInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Amount feature.
+	 * This adds a property descriptor for the Required Memory feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAmountPropertyDescriptor(Object object) {
+	protected void addRequiredMemoryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MemoryPair_amount_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MemoryPair_amount_feature", "_UI_MemoryPair_type"),
-				 PropertiesPackage.Literals.MEMORY_PAIR__AMOUNT,
+				 getString("_UI_RequiredMemory_requiredMemory_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RequiredMemory_requiredMemory_feature", "_UI_RequiredMemory_type"),
+				 PropertiesPackage.Literals.REQUIRED_MEMORY__REQUIRED_MEMORY,
 				 true,
 				 false,
 				 true,
@@ -88,19 +80,19 @@ public class MemoryPairItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Resource feature.
+	 * This adds a property descriptor for the Resource Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResourcePropertyDescriptor(Object object) {
+	protected void addResourceInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MemoryPair_resource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MemoryPair_resource_feature", "_UI_MemoryPair_type"),
-				 PropertiesPackage.Literals.MEMORY_PAIR__RESOURCE,
+				 getString("_UI_RequiredMemory_resourceInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RequiredMemory_resourceInstance_feature", "_UI_RequiredMemory_type"),
+				 PropertiesPackage.Literals.REQUIRED_MEMORY__RESOURCE_INSTANCE,
 				 true,
 				 false,
 				 true,
@@ -110,14 +102,14 @@ public class MemoryPairItemProvider
 	}
 
 	/**
-	 * This returns MemoryPair.gif.
+	 * This returns RequiredMemory.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MemoryPair"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RequiredMemory"));
 	}
 
 	/**
@@ -128,7 +120,7 @@ public class MemoryPairItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_MemoryPair_type");
+		return getString("_UI_RequiredMemory_type");
 	}
 	
 
@@ -155,6 +147,21 @@ public class MemoryPairItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
 	}
 
 	/**

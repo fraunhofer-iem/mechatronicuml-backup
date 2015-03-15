@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.instance.provider.DiscreteSinglePortInstance
 import de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.RealtimestatechartparameterbindingFactory;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance} object.
@@ -142,6 +144,21 @@ public class ParameterisableDiscreteSinglePortInstanceItemProvider extends Discr
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
 
 		newChildDescriptors.add
 			(createChildParameter

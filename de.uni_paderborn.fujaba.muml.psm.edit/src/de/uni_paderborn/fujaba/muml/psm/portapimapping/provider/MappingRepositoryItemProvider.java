@@ -9,6 +9,7 @@ import de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingFactory;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import java.util.Collection;
@@ -175,6 +176,21 @@ public class MappingRepositoryItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
 
 		newChildDescriptors.add
 			(createChildParameter

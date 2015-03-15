@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsFactory;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.APICallParameterBinding;
@@ -281,6 +282,21 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 
 		newChildDescriptors.add
 			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 RealtimestatechartFactory.eINSTANCE.createAPICall()));
 
@@ -373,6 +389,21 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 			(createChildParameter
 				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -503,6 +534,21 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 			(createChildParameter
 				(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypeCastExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

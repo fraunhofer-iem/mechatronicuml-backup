@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.ParameterizedRealtimeStatechart} object.
@@ -170,6 +172,21 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createWCET()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createRequiredMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 PropertiesFactory.eINSTANCE.createScheduling()));
 
 		newChildDescriptors.add
 			(createChildParameter

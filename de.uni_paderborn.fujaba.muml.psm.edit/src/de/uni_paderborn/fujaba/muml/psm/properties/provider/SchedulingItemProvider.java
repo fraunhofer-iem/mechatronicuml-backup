@@ -1,13 +1,12 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.provider;
+package de.uni_paderborn.fujaba.muml.psm.properties.provider;
 
 
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
-import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
+import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
-import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
+import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,27 +18,25 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.storydriven.core.CorePackage;
 
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.storydriven.core.provider.ExtensionItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RealtimeStatechartParameterItemProvider extends NamedElementItemProvider {
+public class SchedulingItemProvider extends ExtensionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealtimeStatechartParameterItemProvider(AdapterFactory adapterFactory) {
+	public SchedulingItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -54,31 +51,88 @@ public class RealtimeStatechartParameterItemProvider extends NamedElementItemPro
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
+			addDeadlinePropertyDescriptor(object);
+			addPeriodPropertyDescriptor(object);
+			addPriorityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Deadline feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addDeadlinePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 getString("_UI_Scheduling_deadline_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduling_deadline_feature", "_UI_Scheduling_type"),
+				 PropertiesPackage.Literals.SCHEDULING__DEADLINE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Period feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPeriodPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scheduling_period_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduling_period_feature", "_UI_Scheduling_type"),
+				 PropertiesPackage.Literals.SCHEDULING__PERIOD,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Priority feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPriorityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scheduling_priority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scheduling_priority_feature", "_UI_Scheduling_type"),
+				 PropertiesPackage.Literals.SCHEDULING__PRIORITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Scheduling.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Scheduling"));
 	}
 
 	/**
@@ -89,10 +143,7 @@ public class RealtimeStatechartParameterItemProvider extends NamedElementItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RealtimeStatechartParameter)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_RealtimeStatechartParameter_type") :
-			getString("_UI_RealtimeStatechartParameter_type") + " " + label;
+		return getString("_UI_Scheduling_type");
 	}
 	
 
@@ -106,12 +157,6 @@ public class RealtimeStatechartParameterItemProvider extends NamedElementItemPro
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(RealtimeStatechartParameter.class)) {
-			case RealtimestatechartparameterPackage.REALTIME_STATECHART_PARAMETER__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
