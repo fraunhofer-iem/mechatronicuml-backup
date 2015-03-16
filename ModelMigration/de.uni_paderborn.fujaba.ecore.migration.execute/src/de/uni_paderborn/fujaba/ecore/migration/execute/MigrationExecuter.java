@@ -461,16 +461,32 @@ public class MigrationExecuter {
 			if (!eObject.eIsSet(feature)) {
 				return new ArrayList<Object>();
 			}
-			return toCollection(eObject.eGet(feature, true));
+			Object value = null;
+			try {
+				value = eObject.eGet(feature, true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return toCollection(value);
 		}
 
 		protected void writeFeature(EObject eObject, EStructuralFeature feature, List<Object> values) {
-			if (feature.isMany()) {
-				eObject.eSet(feature, values);
-			} else if (values.isEmpty()) {
-				eObject.eUnset(feature);
-			} else {
-				eObject.eSet(feature, values.get(0));
+			if (feature.isDerived() || !feature.isChangeable()) {
+				return;
+			}
+			try {
+				if (feature.isMany()) {
+					if (values.contains(null)) {
+						System.out.println("null?");
+					}
+					eObject.eSet(feature, values);
+				} else if (values.isEmpty()) {
+					eObject.eUnset(feature);
+				} else {
+					eObject.eSet(feature, values.get(0));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 
@@ -499,15 +515,22 @@ public class MigrationExecuter {
 						}
 					} else if (!targetReference.isContainment() && !targetReference.isContainer()) {
 						Object copyValue = copies.get(value);
-						boolean isBidirectional = targetReference.getEOpposite() != null;
-						if (isBidirectional && targetValues.contains(copyValue)) {
-							// Move implemented by remove & add.
-							// TODO: Will this reorder the opposite side again, or does EMF recognize it as a move?
-							targetValues.remove(copyValue);
-							targetValues.add(index, copyValue);
-						} else {
-							targetValues.add(index, copyValue);
-							++index;
+						if (copyValue == null) {
+							if (targetReference.getEType().isInstance(value)) {
+								copyValue = value;
+							}
+						}
+						if (copyValue != null) {
+							boolean isBidirectional = targetReference.getEOpposite() != null;
+							if (isBidirectional && targetValues.contains(copyValue)) {
+								// Move implemented by remove & add.
+								// TODO: Will this reorder the opposite side again, or does EMF recognize it as a move?
+								targetValues.remove(copyValue);
+								targetValues.add(index, copyValue);
+							} else {
+								targetValues.add(index, copyValue);
+								++index;
+							}
 						}
 					}
 				
