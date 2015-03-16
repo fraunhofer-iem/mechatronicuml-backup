@@ -15,20 +15,11 @@ public class PropertiesWizardDialog extends WizardDialog {
 	}
 	@Override
 	public boolean close() {
-		if (editingDomain != null) {
+		if (getReturnCode() == CANCEL) {
 			editingDomain.getCommandStack().undo();
 		}
 		editingDomain = null;
 		return super.close();
-	}
-	@Override
-	protected void cancelPressed() {
-		super.cancelPressed();
-	}
-	@Override
-	protected void okPressed() {
-		editingDomain = null;
-		super.okPressed();
 	}
 	@Override
 	public int open() {

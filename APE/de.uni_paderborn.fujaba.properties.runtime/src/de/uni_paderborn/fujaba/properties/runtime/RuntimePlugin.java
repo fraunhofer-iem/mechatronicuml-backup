@@ -410,7 +410,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
 		showEditElementDialog(adapterFactory, element, null);
 	}
-	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element, String title) {
+	public static PropertiesWizard showEditElementDialog(AdapterFactory adapterFactory, EObject element, String title) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(null, adapterFactory, "Object properties", true);
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
@@ -422,6 +422,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		wizard.addPage(page);
 		page.setInput(element);
 		showWizardWithUndo(wizard, element);
+		return wizard;
 	}
 
 	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
