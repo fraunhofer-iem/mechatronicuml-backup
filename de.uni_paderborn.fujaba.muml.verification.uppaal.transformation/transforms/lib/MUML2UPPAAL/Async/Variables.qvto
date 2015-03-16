@@ -681,42 +681,42 @@ modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 	}
 	
 	
-	mapping createSenderParameter() : Variable {
+	mapping createSenderParameter() : Parameter {
 		
 		name := 'sender'
 		
 	}
 	
 	
-	mapping createReceiverParameter() : Variable {
+	mapping createReceiverParameter() : Parameter {
 		
 		name := 'receiver'
 		
 	}
 	
 	
-	mapping createLossParameter() : Variable {
+	mapping createLossParameter() : Parameter {
 		
 		name := 'loss'
 		
 	}
 	
 	
-	mapping createMinDelayParameter() : Variable {
+	mapping createMinDelayParameter() : Parameter {
 		
 		name := 'min'
 		
 	}
 	
 	
-	mapping createMaxDelayParameter() : Variable {
+	mapping createMaxDelayParameter() : Parameter {
 		
 		name := 'max'
 		
 	}
 	
 	
-	mapping createBufferSizeParameter() : Variable {
+	mapping createBufferSizeParameter() : Parameter {
 		
 		name := 'bufferSize'
 		

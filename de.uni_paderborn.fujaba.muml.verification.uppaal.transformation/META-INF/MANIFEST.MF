@@ -17,4 +17,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.m2m.qvt.oml.project;bundle-version="3.2.0",
  de.uni_paderborn.fujaba.muml.verification.extension;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.cic;bundle-version="0.4.0",
+ de.uni_paderborn.uppaal.types.qvto;bundle-version="1.0.0"

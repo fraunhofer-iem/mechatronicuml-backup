@@ -87,7 +87,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		-- add additional parameter declarations 
 		-- parameters represent the component and port/role instance IDs to be used as an index for variable access inside the function's body
 		
-		var componentInstanceID : uppaal_declarations::Variable := self.map Operation2ComponentInstanceID(); 
+		var componentInstanceID : uppaal_declarations::Parameter := self.map Operation2ComponentInstanceID(); 
 		
 		parameter += object ParameterContainer {
 			typeDefinition := object DataPrefixExpression {
@@ -102,7 +102,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 			
 		};
 		
-		var portOrRoleInstanceID : uppaal_declarations::Variable := self.map Operation2PortOrRoleInstanceID();
+		var portOrRoleInstanceID : uppaal_declarations::Parameter := self.map Operation2PortOrRoleInstanceID();
 		
 		parameter += object ParameterContainer {
 			typeDefinition := object DataPrefixExpression {
@@ -118,7 +118,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		}; 
 		
 			
-		var subPortOrRoleInstanceID : uppaal_declarations::Variable := self.map Operation2SubPortOrRoleInstanceID();
+		var subPortOrRoleInstanceID : uppaal_declarations::Parameter := self.map Operation2SubPortOrRoleInstanceID();
 		
 		if(self.belongsToSubrole()) 
 		then {		
@@ -208,7 +208,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 	};
 	
 			
-	mapping Operation :: Operation2ComponentInstanceID() : uppaal_declarations::Variable {
+	mapping Operation :: Operation2ComponentInstanceID() : uppaal_declarations::Parameter {
 		
 		name := 'componentInstanceID';
 		
@@ -232,13 +232,13 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		
 	} 
 	
-	mapping Operation :: Operation2PortOrRoleInstanceID() : uppaal_declarations::Variable {
+	mapping Operation :: Operation2PortOrRoleInstanceID() : uppaal_declarations::Parameter {
 		
 		name := 'portOrRoleInstanceID';
 		
 	}
 	
-	mapping Operation :: Operation2SubPortOrRoleInstanceID() : uppaal_declarations::Variable {
+	mapping Operation :: Operation2SubPortOrRoleInstanceID() : uppaal_declarations::Parameter {
 		
 		name := 'subPortOrRoleInstanceID';
 		

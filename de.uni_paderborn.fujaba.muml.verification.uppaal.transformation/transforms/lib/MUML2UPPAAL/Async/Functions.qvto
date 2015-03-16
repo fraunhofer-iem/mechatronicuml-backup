@@ -212,7 +212,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 			name := 'i';
 		};
 		
-		var id : Variable := object Variable {
+		var id : Parameter := object Parameter {
 			name := 'id';
 		};
 		
@@ -440,7 +440,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'add' + self.name + 'Arguments';
 		
-		var m : Variable := object Variable {
+		var m : Parameter := object Parameter {
 			name := 'm';
 		};
 				
@@ -519,7 +519,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'remove' + self.name + 'Arguments';
 					
-		var mId : Variable := object Variable {
+		var mId : Parameter := object Parameter {
 			name := 'mId';
 		};
 		
@@ -809,13 +809,13 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'check';
 				
-		var buffer : Variable = object Variable { 
+		var buffer : Parameter = object Parameter { 
 				
 				name := 'buffer';
 								
 		};
 		
-		var mKind : Variable = object Variable { 
+		var mKind : Parameter = object Parameter { 
 				
 				name := 'mKind';
 								
@@ -947,12 +947,12 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'remove';
 				
-		var buffer : Variable = object Parameter { 
+		var buffer : Parameter = object Parameter { 
 			name := 'buffer';
 			callType := CallType::CALL_BY_REFERENCE
 		};
 		
-		var m : Variable = object Variable { 
+		var m : Parameter = object Parameter { 
 			name := 'm';					
 		};
 		
@@ -1253,8 +1253,8 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		name := 'checkMessageInBuffer';
 		
 				
-		var buffer : Variable = object Variable {name := 'buffer'};
-		var mKind : Variable = object Variable {name := 'mKind'};
+		var buffer : Parameter = object Parameter {name := 'buffer'};
+		var mKind : Parameter = object Parameter {name := 'mKind'};
 		
 		parameter += object ParameterContainer {
 			typeDefinition := object IdentifierExpression {
@@ -1323,7 +1323,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		//Signature
 		name := 'getNumberOfElementsInBuffer';
 				
-		var b : Variable = object Variable {name := 'b'};
+		var b : Parameter = object Parameter {name := 'b'};
 		parameter += object ParameterContainer {
 			typeDefinition := object IdentifierExpression {
 				identifier := map createBufferType();
@@ -1352,12 +1352,12 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'add';
 				
-		var b : Variable = object Parameter {
+		var b : Parameter = object Parameter {
 			name := 'b';
 			callType := CallType::CALL_BY_REFERENCE									
 		};
 		
-		var e : Variable = object Parameter { 	
+		var e : Parameter = object Parameter { 	
 			name := 'e';
 		};
 		
@@ -1468,7 +1468,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'send' + self.name;
 		
-		var sender : Variable = object Variable {
+		var sender : Parameter = object Parameter {
 			name := 'sender'
 		};
 		
@@ -1878,7 +1878,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'receive';
 		
-		var receiver : Variable = object Variable {
+		var receiver : Parameter = object Parameter {
 			name := 'receiver'
 		};
 		
@@ -1892,7 +1892,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		};
 		
-		var mKind : Variable = object Variable {
+		var mKind : Parameter = object Parameter {
 			name := 'mKind'
 		};
 		
@@ -1955,7 +1955,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		name := 'consume';
 		
-		var receiver : Variable = object Variable {
+		var receiver : Parameter = object Parameter {
 			name := 'receiver'
 		};
 		
@@ -1969,7 +1969,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		};
 		
-		var mKind : Variable = object Variable {
+		var mKind : Parameter = object Parameter {
 			name := 'mKind'
 		};
 		

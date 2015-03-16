@@ -1,5 +1,7 @@
 library Types;
 
+import de.uni_paderborn.uppaal.types.qvto.PredefinedTypeLibrary;
+
 modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
 modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
 modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderborn.de/uppaal/0.4.0');
@@ -9,43 +11,22 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 modeltype proto uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
 modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 
-	property INT : PredefinedType = null;
-	property BOOL : PredefinedType = null;
-	property CLOCK : PredefinedType = null;
-	property CHAN : PredefinedType = null;
-	property VOID : PredefinedType = null;
+blackbox helper getInt() : PredefinedType;
+blackbox helper getBool() : PredefinedType;
+blackbox helper getVoid() : PredefinedType;
+blackbox helper getChan() : PredefinedType;
+blackbox helper getClock() : PredefinedType;
+
+	property INT : PredefinedType = getInt();
+	property BOOL : PredefinedType = getBool();
+	property CLOCK : PredefinedType = getClock();
+	property CHAN : PredefinedType = getChan();
+	property VOID : PredefinedType = getVoid();
 	
-	property MUMLINT : DeclaredType = null;
-	property MUMLSHORT : DeclaredType = null;
-	property MUMLBYTE : DeclaredType = null;
+	property MUMLINT : DeclaredType = new DeclaredType("MUMLInt");
+	property MUMLSHORT : DeclaredType = new DeclaredType("MUMLShort");
+	property MUMLBYTE : DeclaredType = new DeclaredType("MUMLByte");
 	property MUMLBOOL : DeclaredType = null;
-	
-	helper initialize() {
-		
-		-- workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=392080
-		-- initialize constants only after module initialization (avoid missing out extent)
-		
-		INT := new PredefinedType(BuiltInType::INT);
-		BOOL := new PredefinedType(BuiltInType::BOOL);
-		CLOCK := new PredefinedType(BuiltInType::CLOCK);
-		CHAN := new PredefinedType(BuiltInType::CHAN);
-		VOID := new PredefinedType(BuiltInType::VOID);
-		
-		MUMLINT := new DeclaredType("MUMLInt");
-		MUMLSHORT := new DeclaredType("MUMLShort");
-		MUMLBYTE := new DeclaredType("MUMLByte");
-		
-		return
-		
-	}
-	
-	constructor PredefinedType::PredefinedType(t : BuiltInType) {
-		
-		type := t;
-				
-		name := t.repr();
-		
-	}
 	
 	constructor DeclaredType::DeclaredType(typeName : String) {
 		

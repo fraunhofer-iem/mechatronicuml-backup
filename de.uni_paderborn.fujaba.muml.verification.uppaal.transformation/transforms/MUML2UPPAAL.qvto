@@ -408,16 +408,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 		name := self.name;
 	
-		Types::initialize();
-		
-		/*
-		int := INT;		
-		bool := BOOL;
-		clock := CLOCK;
-		chan := CHAN;
-		void := VOID;
-		*/
-	
 		-- create global declarations
 		globalDeclarations := self.map CIC2GlobalDeclarations();
 		
@@ -733,9 +723,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		-- declare ID parameters 
 		-- parameters are to be used as an index for variable access inside the template
 		
-		var componentInstanceID : Variable = null;
-		var portOrRoleInstanceID : Variable = null;
-		var subPortOrRoleInstanceID : Variable = null;
+		var componentInstanceID : Parameter = null;
+		var portOrRoleInstanceID : Parameter = null;
+		var subPortOrRoleInstanceID : Parameter = null;
 		
 		
 		if (self.isComponentStatechart())
