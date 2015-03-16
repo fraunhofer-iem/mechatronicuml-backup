@@ -27,8 +27,8 @@
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import feature="org.eclipse.ocl" version="3.4.2.v20140725-2242"/>
-      <import feature="org.eclipse.emf.compare" version="3.0.1.201408191310"/>
+      <import feature="org.eclipse.ocl"/>
+      <import feature="org.eclipse.emf.compare"/>
    </requires>
 
    <plugin
