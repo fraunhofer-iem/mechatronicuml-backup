@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<release:ReleaseSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:release="http://migration/release/0.1" name="APE">
+  <releases name="0.5.1"/>
+</release:ReleaseSet>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="properties" nsURI="http://de.uni_paderborn.fujaba.properties/0.4.0"
+    nsPrefix="de.uni_paderborn.fujaba">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyGenerator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniquePackages NoSelfReference"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="UniquePackages" value="packages->isUnique(genPackage)"/>
+      <details key="NoSelfReference" value="not referencedGenerators->includes(self)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconciler" eType="#//Reconciler"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedGenerators" upperBound="-1"
+        eType="#//PropertyGenerator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plugin" lowerBound="1"
+        eType="#//Plugin" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultTab" eType="#//PropertyTab"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabs" upperBound="-1" eType="#//PropertyTab"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//Package" containment="true" eOpposite="#//Package/generator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contributorId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceFolder" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="src-gen"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reconciler">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcilePackages" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcileClasses" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcileProperties" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customTransformations"
+        upperBound="-1" eType="#//CustomTransformation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomTransformation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="#//TransformationPosition" defaultValueLiteral="POST_RECONCILE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransformationPosition">
+    <eLiterals name="PRE_RECONCILE" value="1"/>
+    <eLiterals name="POST_RECONCILE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plugin">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiredBundles" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyTab">
+    <eOperations name="getQualifiedId" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="generator.genModel.modelPluginId.concat('.').concat(id)"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="afterTab" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueClasses"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="UniqueClasses" value="classes->isUnique(genClass)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genPackage" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
+        eType="#//Class" containment="true" eOpposite="#//Class/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generator" lowerBound="1"
+        eType="#//PropertyGenerator" eOpposite="#//PropertyGenerator/packages"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueFeatures UniqueCategoryTitles PropertiesFromSelfOrSuperclasses"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="UniqueFeatures" value="true -- properties->isUnique(genFeature)"/>
+      <details key="UniqueCategoryTitles" value="propertyCategories->isUnique(title)"/>
+      <details key="PropertiesFromSelfOrSuperclasses" value="properties->forAll(p | Set { self }->union(allSuperClasses).genClass.ecoreClass->includes(p.genFeature.ecoreFeature.eContainingClass))"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genClass" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
+        eType="#//Package" eOpposite="#//Package/classes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true" eOpposite="#//Property/clazz"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyCategories" upperBound="-1"
+        eType="#//PropertyCategory" containment="true" eOpposite="#//PropertyCategory/clazz"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superClasses" upperBound="-1"
+        eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperClasses" upperBound="-1"
+        eType="#//Class">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self->closure(superClasses)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyCategory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="open" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
+        eOpposite="#//Class/propertyCategories"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" eOpposite="#//Property/category"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="CreationConstraintForContainments CreationOppositeConstraintForContainers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="CreationConstraintForContainments" value="-- Creation Constraint must only be defined for Properties of containment references.&#xA;(not creationConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).containment)"/>
+      <details key="CreationOppositeConstraintForContainers" value="-- Creation Opposite Constraint must only be defined for Properties with an EOpposite of type containment reference.&#xA;(not creationOppositeConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).container)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genFeature" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibilityFilters" upperBound="-1"
+        eType="#//Filter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tab" lowerBound="1" eType="#//PropertyTab"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editor" lowerBound="1"
+        eType="#//PropertyEditor" containment="true" eOpposite="#//PropertyEditor/property"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tooltip" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
+        eOpposite="#//Class/properties"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//PropertyCategory"
+        eOpposite="#//PropertyCategory/properties"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcile" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creationConstraint" eType="#//CreationConstraint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creationOppositeConstraint"
+        eType="#//CreationConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializeOCLExpression"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyEditor" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="#//Property" eOpposite="#//Property/editor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextPropertyEditor" eSuperTypes="#//PropertyEditor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLine" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpinnerPropertyEditor" eSuperTypes="#//PropertyEditor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="digits" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComboBoxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckboxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RadioPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ListPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlattenedListPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OCLPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomPropertyEditor" eSuperTypes="#//PropertyEditor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyQualifiedClassName"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter" abstract="true">
+    <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="object" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OCLFilter" eSuperTypes="#//Filter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreationConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
+        eType="#//Filter" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

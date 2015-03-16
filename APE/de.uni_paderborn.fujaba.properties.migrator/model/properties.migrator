@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migration:Migrator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:migration="http://migration/0.1">
+  <sourcePackages href="properties-0.4.0.ecore#/"/>
+  <targetPackages href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#/"/>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CreationConstraint"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CreationConstraint/filters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//CreationConstraint/filters"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//CreationConstraint"/>
+  </mappings>
+  <mappings>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyEditor/property"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyEditor/property"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//PropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/tooltip"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Property/tooltip"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/reconcile"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Property/reconcile"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/initializeOCLExpression"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Property/initializeOCLExpression"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/genFeature"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/genFeature"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/visibilityFilters"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/visibilityFilters"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/tab"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/tab"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/editor"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/editor"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//OrderedElement/clazz"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/clazz"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/category"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/category"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/creationConstraint"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/creationConstraint"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/creationOppositeConstraint"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/creationOppositeConstraint"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//Property"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyCategory"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyCategory/title"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyCategory/title"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyCategory/vertical"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyCategory/vertical"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyCategory/open"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyCategory/open"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//OrderedElement/clazz"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyCategory/clazz"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyCategory/properties"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyCategory/properties"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//PropertyCategory"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Class"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Class/genClass"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Class/genClass"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Class/package"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Class/package"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Class/superClasses"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Class/superClasses"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Class/allSuperClasses"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Class/allSuperClasses"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:SetFeatureInitializer" ocl="self.properties.oclAsType(ecore::EObject)->union(self.propertyCategories.oclAsType(ecore::EObject))">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Class/orderedElements"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//Class"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Package"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Package/genPackage"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Package/genPackage"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Package/classes"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Package/classes"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Package/generator"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Package/generator"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//Package"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Reconciler"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Reconciler/enabled"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Reconciler/enabled"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Reconciler/reconcilePackages"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Reconciler/reconcilePackages"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Reconciler/reconcileClasses"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Reconciler/reconcileClasses"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Reconciler/reconcileProperties"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Reconciler/reconcileProperties"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Reconciler/customTransformations"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Reconciler/customTransformations"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//Reconciler"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/contributorId"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyGenerator/contributorId"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/sourceFolder"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyGenerator/sourceFolder"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/reconciler"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/reconciler"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/genModel"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/genModel"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/referencedGenerators"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/referencedGenerators"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/plugin"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/plugin"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/defaultTab"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/defaultTab"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/tabs"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/tabs"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyGenerator/packages"/>
+      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//PropertyGenerator/packages"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//PropertyGenerator"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//OCLFilter"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//OCLFilter/expression"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//OCLFilter/expression"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//OCLFilter"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CustomPropertyEditor"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CustomPropertyEditor/fullyQualifiedClassName"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//CustomPropertyEditor/fullyQualifiedClassName"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//CustomPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//SpinnerPropertyEditor"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//SpinnerPropertyEditor/digits"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//SpinnerPropertyEditor/digits"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//SpinnerPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//TextPropertyEditor"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//TextPropertyEditor/multiLine"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//TextPropertyEditor/multiLine"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//TextPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyTab"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyTab/id"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyTab/id"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyTab/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyTab/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//PropertyTab/afterTab"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//PropertyTab/afterTab"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//PropertyTab"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Plugin"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Plugin/id"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Plugin/id"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Plugin/name"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Plugin/name"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Plugin/vendor"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Plugin/vendor"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Plugin/version"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Plugin/version"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Plugin/requiredBundles"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//Plugin/requiredBundles"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//Plugin"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CustomTransformation"/>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CustomTransformation/uri"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//CustomTransformation/uri"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CustomTransformation/enabled"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//CustomTransformation/enabled"/>
+    </featureInitializers>
+    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
+      <targetFeature xsi:type="ecore:EAttribute" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CustomTransformation/position"/>
+      <sourceFeature xsi:type="ecore:EAttribute" href="properties-0.4.0.ecore#//CustomTransformation/position"/>
+    </featureInitializers>
+    <sourceClass href="properties-0.4.0.ecore#//CustomTransformation"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//ComboBoxPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//ComboBoxPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//CheckboxPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//CheckboxPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//RadioPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//RadioPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//ListPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//ListPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//FlattenedListPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//FlattenedListPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//ObjectPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//ObjectPropertyEditor"/>
+  </mappings>
+  <mappings>
+    <targetClass href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//OCLPropertyEditor"/>
+    <sourceClass href="properties-0.4.0.ecore#//OCLPropertyEditor"/>
+  </mappings>
+  <release href="properties.releaseset#//@releases.0"/>
+</migration:Migrator>
