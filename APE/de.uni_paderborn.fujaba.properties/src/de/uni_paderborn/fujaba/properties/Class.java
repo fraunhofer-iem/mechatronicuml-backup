@@ -132,7 +132,8 @@ public interface Class extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Super Classes</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_AllSuperClasses()
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self->closure(superClasses)'"
+	 * @model derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self->closure(superClasses)'"
 	 * @generated
 	 */
 	EList<Class> getAllSuperClasses();
