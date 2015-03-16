@@ -467,9 +467,10 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 	}
 	
-	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject container, EStructuralFeature feature, EObject currentValue) {
+	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject container, EStructuralFeature feature, List<ICreationFilter> creationFilters, EObject currentValue) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true, currentValue);
+		editor.setCreationFilters(creationFilters);
 
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 
