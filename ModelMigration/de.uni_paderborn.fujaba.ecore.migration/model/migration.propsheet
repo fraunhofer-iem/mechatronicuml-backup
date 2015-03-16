@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" defaultTab="//@tabs.0" contributorId="">
   <reconciler/>
   <genModel href="migration.genmodel#/"/>
   <plugin id="de.uni_paderborn.fujaba.ecore.migration.edit.properties" name="Properties" vendor="ok" version="0.1">
@@ -10,6 +10,7 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>emf.migration</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.ecore.migration.edit</requiredBundles>
+    <requiredBundles>emf.migration.edit</requiredBundles>
   </plugin>
   <tabs id="migration" name="Migration" afterTab=""/>
   <packages>
@@ -24,13 +25,17 @@
         <genFeature href="migration.genmodel#//migration/Migrator/targetPackages"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="migration.genmodel#//migration/Migrator/release"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
       <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0 //@packages.0/@classes.0/@properties.1"/>
     </classes>
     <classes>
       <genClass href="migration.genmodel#//migration/OclExpression"/>
       <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="migration.genmodel#//migration/OclExpression/ocl"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes>
