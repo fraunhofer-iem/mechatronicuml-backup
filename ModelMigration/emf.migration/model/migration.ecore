@@ -14,7 +14,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
         eType="#//Mapping" containment="true" eOpposite="#//Mapping/migrator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="release" lowerBound="1"
-        eType="ecore:EClass ../../emf.migration.release/model/release.ecore#//Release"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.ecore.migration.release/model/release.ecore#//Release"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OclExpression" abstract="true">
     <eOperations name="getContext" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>

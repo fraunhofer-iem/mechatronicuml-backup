@@ -10,7 +10,7 @@
       <!-- @generated release -->
       <factory
             uri="http://migration/release/0.1"
-            class="emf.migration.release.provider.ReleaseItemProviderAdapterFactory"
+            class="de.uni_paderborn.fujaba.ecore.migration.release.provider.ReleaseItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

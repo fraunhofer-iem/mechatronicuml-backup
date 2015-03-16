@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: EMF Model Migration Unit-Tests
-Bundle-SymbolicName: emf.migration.tests
+Bundle-SymbolicName: de.uni_paderborn.fujaba.ecore.migration.tests
 Bundle-Version: 0.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.junit

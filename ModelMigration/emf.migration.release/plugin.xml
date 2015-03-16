@@ -10,7 +10,7 @@
       <!-- @generated release -->
       <package
             uri="http://migration/release/0.1"
-            class="emf.migration.release.ReleasePackage"
+            class="de.uni_paderborn.fujaba.ecore.migration.release.ReleasePackage"
             genModel="model/release.genmodel"/>
    </extension>
 

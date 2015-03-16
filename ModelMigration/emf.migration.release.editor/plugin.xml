@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="emf.migration.release.presentation.ReleaseModelWizardID"
+            id="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseModelWizardID"
             name="%_UI_ReleaseModelWizard_label"
-            class="emf.migration.release.presentation.ReleaseModelWizard"
+            class="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ReleaseModelFile.gif">
          <description>%_UI_ReleaseModelWizard_description</description>
@@ -25,12 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated release -->
       <editor
-            id="emf.migration.release.presentation.ReleaseEditorID"
+            id="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseEditorID"
             name="%_UI_ReleaseEditor_label"
             icon="icons/full/obj16/ReleaseModelFile.gif"
             extensions="release"
-            class="emf.migration.release.presentation.ReleaseEditor"
-            contributorClass="emf.migration.release.presentation.ReleaseActionBarContributor">
+            class="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseEditor"
+            contributorClass="de.uni_paderborn.fujaba.ecore.migration.release.presentation.ReleaseActionBarContributor">
       </editor>
    </extension>
 

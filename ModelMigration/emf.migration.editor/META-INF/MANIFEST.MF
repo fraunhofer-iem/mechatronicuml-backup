@@ -1,19 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: emf.migration.editor;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.ecore.migration.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: migration.presentation.MigrationEditorPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.ecore.migration.presentation.MigrationEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: migration.presentation
+Export-Package: de.uni_paderborn.fujaba.ecore.migration.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- emf.migration.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.ecore.migration.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- emf.migration.compare;bundle-version="0.1.0"
+ de.uni_paderborn.fujaba.ecore.migration.compare;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy

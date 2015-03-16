@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="emf.migration.buckminster"
+      id="de.uni_paderborn.fujaba.ecore.migration.buckminster"
       label="Buckminster"
-      version="1.0.0.qualifier">
+      version="0.1.0.qualifier">
 
    <description>
       [Enter Feature Description here.]
@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="emf.migration.feature"
+         id="de.uni_paderborn.fujaba.ecore.migration.feature"
          version="0.0.0"/>
 
    <requires>
@@ -25,7 +25,7 @@
    </requires>
 
    <plugin
-         id="emf.migration.tests"
+         id="de.uni_paderborn.fujaba.ecore.migration.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"

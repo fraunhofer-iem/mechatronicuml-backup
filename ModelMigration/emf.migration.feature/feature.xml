@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="emf.migration.feature"
+      id="de.uni_paderborn.fujaba.ecore.migration.feature"
       label="%featureName"
       version="0.1.0.qualifier"
       provider-name="%providerName">
@@ -32,63 +32,63 @@
    </requires>
 
    <plugin
-         id="emf.migration"
+         id="de.uni_paderborn.fujaba.ecore.migration"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.compare"
+         id="de.uni_paderborn.fujaba.ecore.migration.compare"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.edit"
+         id="de.uni_paderborn.fujaba.ecore.migration.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.editor"
+         id="de.uni_paderborn.fujaba.ecore.migration.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.execute"
+         id="de.uni_paderborn.fujaba.ecore.migration.execute"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.ui"
+         id="de.uni_paderborn.fujaba.ecore.migration.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.release"
+         id="de.uni_paderborn.fujaba.ecore.migration.release"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.release.edit"
+         id="de.uni_paderborn.fujaba.ecore.migration.release.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="emf.migration.release.editor"
+         id="de.uni_paderborn.fujaba.ecore.migration.release.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"

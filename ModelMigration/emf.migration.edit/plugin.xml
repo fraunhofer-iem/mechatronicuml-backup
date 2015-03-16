@@ -10,7 +10,7 @@
       <!-- @generated migration -->
       <factory
             uri="http://migration/0.1"
-            class="migration.provider.MigrationItemProviderAdapterFactory"
+            class="de.uni_paderborn.fujaba.ecore.migration.provider.MigrationItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

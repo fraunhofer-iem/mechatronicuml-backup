@@ -2,14 +2,14 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="">
   <reconciler/>
   <genModel href="migration.genmodel#/"/>
-  <plugin id="emf.migration.edit.properties" name="Properties" vendor="ok" version="0.1">
+  <plugin id="de.uni_paderborn.fujaba.ecore.migration.edit.properties" name="Properties" vendor="ok" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>emf.migration</requiredBundles>
-    <requiredBundles>emf.migration.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.ecore.migration.edit</requiredBundles>
   </plugin>
   <tabs id="migration" name="Migration" afterTab=""/>
   <packages>
