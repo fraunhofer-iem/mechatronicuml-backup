@@ -164,13 +164,13 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 			TypedElementContainer,
 			TypeDeclaration:
 				if ("typeDefinition".equals(identifier.eContainmentFeature.name))
-					return getRecursiveScope(identifier, ScopeMode.TYPES)
+					return getRecursiveScope(identifier, ScopeMode.TYPES, false)
 			DataPrefixExpression:
-				return getRecursiveScope(identifier, ScopeMode.TYPES)
+				return getRecursiveScope(identifier, ScopeMode.TYPES, false)
 		}
 		
 		// If none of the cases above happens, just return all TypedElements.
-		getRecursiveScope(identifier, ScopeMode.TYPED_ELEMENTS)
+		getRecursiveScope(identifier, ScopeMode.TYPED_ELEMENTS, false) 
 	}
 	
 	/**
@@ -269,9 +269,10 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 	 * 
 	 * @return An appropiate scope representation for the EObject.
 	 */
-	private def IScope getRecursiveScope(EObject obj, ScopeMode mode)
+	private def IScope getRecursiveScope(EObject obj, ScopeMode mode, boolean ignoreScopedIdentifier)
 	{
 		// Define local variables.
+		var localIgnoreScopedIdentifier = ignoreScopedIdentifier;
 		var Iterable<NamedElement> elements = emptyList
 		var EObject curObj = obj.eContainer
 		var EObject lastObj = obj
@@ -287,8 +288,12 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 					// In Variable indices, Type references are also allowed.
 					if ("index".equals(lastObj.eContainmentFeature.name))
 						curMode = ScopeMode.TYPES_AND_TYPED_ELEMENTS
+						
+				IdentifierExpression:
+					if ("index".equals(lastObj.eContainmentFeature.name))
+						localIgnoreScopedIdentifier = true
 				
-				ScopedIdentifierExpression:
+				ScopedIdentifierExpression case !localIgnoreScopedIdentifier:
 					// The ScopedIdentifierExpression needs custom scoping, because it
 					// may restrict the scope to certain structs etc.
 					// For purposes of simplicity, we only scope simple chains of the form
@@ -326,9 +331,12 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 						elements = elements + curObj.parameter
 							.bReduce(emptyList, TypedElementContainerReduction)
 					Block:
-						elements = elements + curObj.declarations.declaration
+					{
+						if (curObj.declarations != null)
+							elements = elements + curObj.declarations.declaration
 							.filter(typeof(TypedDeclaration))
 							.bReduce(emptyList, TypedElementContainerReduction)
+					}
 					Iteration:
 						elements = elements + curObj.elements.filter(typeof(NamedElement))
 					SystemDeclarations:
@@ -370,7 +378,7 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 			// Create a new scope if necessary.
 			if (elements.size > 0)
 			{
-				return Scopes::scopeFor(elements, getRecursiveScope(curObj, mode))
+				return Scopes::scopeFor(elements, getRecursiveScope(curObj, mode, localIgnoreScopedIdentifier))
 			}
 			
 			lastObj = curObj
@@ -400,7 +408,7 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 		if (LIBRARY == null)
 		{
 			// Check if there is already a Library loaded in the context.
-			if (context.eResource != null)
+			if (context.eResource != null && context.eResource.resourceSet != null)
 			{
 				for (Resource res : context.eResource.resourceSet.resources)
 				{

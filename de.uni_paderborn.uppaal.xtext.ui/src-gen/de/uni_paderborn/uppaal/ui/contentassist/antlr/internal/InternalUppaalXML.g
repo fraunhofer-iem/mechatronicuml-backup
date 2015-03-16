@@ -2287,34 +2287,6 @@ finally {
 
 
 
-// Entry rule entryRuleIncrementDecrementExpression
-entryRuleIncrementDecrementExpression 
-:
-{ before(grammarAccess.getIncrementDecrementExpressionRule()); }
-	 ruleIncrementDecrementExpression
-{ after(grammarAccess.getIncrementDecrementExpressionRule()); } 
-	 EOF 
-;
-
-// Rule IncrementDecrementExpression
-ruleIncrementDecrementExpression
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getIncrementDecrementExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall()); }
-	rulePreIncrementDecrementExpression
-{ after(grammarAccess.getIncrementDecrementExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRulePreIncrementDecrementExpression
 entryRulePreIncrementDecrementExpression 
 :
@@ -3785,9 +3757,9 @@ rule__MinusExpression__Alternatives
 )
 
     |(
-{ before(grammarAccess.getMinusExpressionAccess().getIncrementDecrementExpressionParserRuleCall_1()); }
-	ruleIncrementDecrementExpression
-{ after(grammarAccess.getMinusExpressionAccess().getIncrementDecrementExpressionParserRuleCall_1()); }
+{ before(grammarAccess.getMinusExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall_1()); }
+	rulePreIncrementDecrementExpression
+{ after(grammarAccess.getMinusExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall_1()); }
 )
 
 ;

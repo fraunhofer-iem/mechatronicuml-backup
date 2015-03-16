@@ -7347,44 +7347,14 @@ ruleMinusExpression returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getMinusExpressionAccess().getIncrementDecrementExpressionParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getMinusExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall_1()); 
     }
-    this_IncrementDecrementExpression_3=ruleIncrementDecrementExpression
+    this_PreIncrementDecrementExpression_3=rulePreIncrementDecrementExpression
     { 
-        $current = $this_IncrementDecrementExpression_3.current; 
+        $current = $this_PreIncrementDecrementExpression_3.current; 
         afterParserOrEnumRuleCall();
     }
 )
-;
-
-
-
-
-
-// Entry rule entryRuleIncrementDecrementExpression
-entryRuleIncrementDecrementExpression returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getIncrementDecrementExpressionRule()); }
-	 iv_ruleIncrementDecrementExpression=ruleIncrementDecrementExpression 
-	 { $current=$iv_ruleIncrementDecrementExpression.current; } 
-	 EOF 
-;
-
-// Rule IncrementDecrementExpression
-ruleIncrementDecrementExpression returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
-    { 
-        newCompositeNode(grammarAccess.getIncrementDecrementExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall()); 
-    }
-    this_PreIncrementDecrementExpression_0=rulePreIncrementDecrementExpression
-    { 
-        $current = $this_PreIncrementDecrementExpression_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
 ;
 
 

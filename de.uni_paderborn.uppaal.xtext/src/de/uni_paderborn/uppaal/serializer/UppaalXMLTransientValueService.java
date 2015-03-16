@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.parsetree.reconstr.impl.DefaultTransientValueService;
 
+import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.templates.AbstractTemplate;
 
 public class UppaalXMLTransientValueService extends DefaultTransientValueService {
@@ -31,6 +32,18 @@ public class UppaalXMLTransientValueService extends DefaultTransientValueService
 		//					return true;
 		//			}
 		//		}
+		
+		if (owner instanceof NTA)
+		{
+			// Ignore the name field.
+			if (feature instanceof EAttribute)
+			{
+				EAttribute attr = (EAttribute) feature;
+				if ("name".equals(attr.getName()))
+					return true;
+			}
+		}
+		
 		
 		return super.isTransient(owner, feature, index);
 	}

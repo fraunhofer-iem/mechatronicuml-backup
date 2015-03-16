@@ -4539,6 +4539,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConfirmedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0 = (RuleCall)cConfirmedExpressionAssignment_0_2.eContents().get(0);
 		private final RuleCall cMinusExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		//// Plus Expression ('+')
+		//// (unary, right-recursive,)
 		//PlusExpression returns expressions::Expression:
 		//	{expressions::PlusExpression} "+" confirmedExpression=NegationExpression_Alternative | MinusExpression;
 		public ParserRule getRule() { return rule; }
@@ -4573,13 +4575,16 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cInvertedExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0 = (RuleCall)cInvertedExpressionAssignment_0_2.eContents().get(0);
-		private final RuleCall cIncrementDecrementExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPreIncrementDecrementExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		//// Minus Expression ('-')
+		//// (unary, right-recursive,)
 		//MinusExpression returns expressions::Expression:
-		//	{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | IncrementDecrementExpression;
+		//	{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative |
+		//	PreIncrementDecrementExpression;
 		public ParserRule getRule() { return rule; }
 
-		//{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | IncrementDecrementExpression
+		//{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | PreIncrementDecrementExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative
@@ -4597,22 +4602,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//NegationExpression_Alternative
 		public RuleCall getInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0() { return cInvertedExpressionNegationExpression_AlternativeParserRuleCall_0_2_0; }
 
-		//IncrementDecrementExpression
-		public RuleCall getIncrementDecrementExpressionParserRuleCall_1() { return cIncrementDecrementExpressionParserRuleCall_1; }
-	}
-
-	public class IncrementDecrementExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IncrementDecrementExpression");
-		private final RuleCall cPreIncrementDecrementExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//// Increment/Decrement Expression (++,--, pre and post)
-		//// (unary, right-recursive)
-		//IncrementDecrementExpression returns expressions::Expression:
-		//	PreIncrementDecrementExpression;
-		public ParserRule getRule() { return rule; }
-
 		//PreIncrementDecrementExpression
-		public RuleCall getPreIncrementDecrementExpressionParserRuleCall() { return cPreIncrementDecrementExpressionParserRuleCall; }
+		public RuleCall getPreIncrementDecrementExpressionParserRuleCall_1() { return cPreIncrementDecrementExpressionParserRuleCall_1; }
 	}
 
 	public class PreIncrementDecrementExpressionElements extends AbstractParserRuleElementFinder {
@@ -4626,6 +4617,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cExpressionPreIncrementDecrementExpressionParserRuleCall_1_2_0 = (RuleCall)cExpressionAssignment_1_2.eContents().get(0);
 		
+		//// Pre Increment/Decrement Expression ('++', '--', pre)
+		//// (unary, right-recursive)
 		//PreIncrementDecrementExpression returns expressions::Expression:
 		//	PostIncrementDecrementExpression | {expressions::PreIncrementDecrementExpression} operator=IncrementDecrementOperator
 		//	expression=PreIncrementDecrementExpression;
@@ -4668,6 +4661,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOperatorAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
 		private final RuleCall cOperatorIncrementDecrementOperatorEnumRuleCall_1_0_1_0 = (RuleCall)cOperatorAssignment_1_0_1.eContents().get(0);
 		
+		//// Post Increment/Decrement Expression ('++', '--', post)
+		//// (unary, right-recursive)
 		//PostIncrementDecrementExpression returns expressions::Expression:
 		//	ScopedIdentifierExpression // Note: For expressions like a+++b, two ways to split them up exist:
 		//	//   (a++)+b and a+(++b)
@@ -6359,7 +6354,6 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final NegationExpression_AlternativeElements pNegationExpression_Alternative;
 	private final PlusExpressionElements pPlusExpression;
 	private final MinusExpressionElements pMinusExpression;
-	private final IncrementDecrementExpressionElements pIncrementDecrementExpression;
 	private final PreIncrementDecrementExpressionElements pPreIncrementDecrementExpression;
 	private final PostIncrementDecrementExpressionElements pPostIncrementDecrementExpression;
 	private final IncrementDecrementOperatorElements unknownRuleIncrementDecrementOperator;
@@ -6488,7 +6482,6 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNegationExpression_Alternative = new NegationExpression_AlternativeElements();
 		this.pPlusExpression = new PlusExpressionElements();
 		this.pMinusExpression = new MinusExpressionElements();
-		this.pIncrementDecrementExpression = new IncrementDecrementExpressionElements();
 		this.pPreIncrementDecrementExpression = new PreIncrementDecrementExpressionElements();
 		this.pPostIncrementDecrementExpression = new PostIncrementDecrementExpressionElements();
 		this.unknownRuleIncrementDecrementOperator = new IncrementDecrementOperatorElements();
@@ -7602,6 +7595,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getNegationExpression_AlternativeAccess().getRule();
 	}
 
+	//// Plus Expression ('+')
+	//// (unary, right-recursive,)
 	//PlusExpression returns expressions::Expression:
 	//	{expressions::PlusExpression} "+" confirmedExpression=NegationExpression_Alternative | MinusExpression;
 	public PlusExpressionElements getPlusExpressionAccess() {
@@ -7612,8 +7607,11 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPlusExpressionAccess().getRule();
 	}
 
+	//// Minus Expression ('-')
+	//// (unary, right-recursive,)
 	//MinusExpression returns expressions::Expression:
-	//	{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative | IncrementDecrementExpression;
+	//	{expressions::MinusExpression} "-" invertedExpression=NegationExpression_Alternative |
+	//	PreIncrementDecrementExpression;
 	public MinusExpressionElements getMinusExpressionAccess() {
 		return pMinusExpression;
 	}
@@ -7622,18 +7620,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getMinusExpressionAccess().getRule();
 	}
 
-	//// Increment/Decrement Expression (++,--, pre and post)
+	//// Pre Increment/Decrement Expression ('++', '--', pre)
 	//// (unary, right-recursive)
-	//IncrementDecrementExpression returns expressions::Expression:
-	//	PreIncrementDecrementExpression;
-	public IncrementDecrementExpressionElements getIncrementDecrementExpressionAccess() {
-		return pIncrementDecrementExpression;
-	}
-	
-	public ParserRule getIncrementDecrementExpressionRule() {
-		return getIncrementDecrementExpressionAccess().getRule();
-	}
-
 	//PreIncrementDecrementExpression returns expressions::Expression:
 	//	PostIncrementDecrementExpression | {expressions::PreIncrementDecrementExpression} operator=IncrementDecrementOperator
 	//	expression=PreIncrementDecrementExpression;
@@ -7645,6 +7633,8 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getPreIncrementDecrementExpressionAccess().getRule();
 	}
 
+	//// Post Increment/Decrement Expression ('++', '--', post)
+	//// (unary, right-recursive)
 	//PostIncrementDecrementExpression returns expressions::Expression:
 	//	ScopedIdentifierExpression // Note: For expressions like a+++b, two ways to split them up exist:
 	//	//   (a++)+b and a+(++b)

@@ -10037,11 +10037,11 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                 {
                 int LA55_1 = input.LA(2);
 
-                if ( (LA55_1==EOF||LA55_1==RULE_ID||LA55_1==15||LA55_1==17||(LA55_1>=19 && LA55_1<=21)||(LA55_1>=23 && LA55_1<=24)||(LA55_1>=26 && LA55_1<=27)||LA55_1==30||(LA55_1>=32 && LA55_1<=36)||(LA55_1>=39 && LA55_1<=41)||LA55_1==46||LA55_1==53||LA55_1==121||LA55_1==137) ) {
-                    alt55=4;
-                }
-                else if ( (LA55_1==55) ) {
+                if ( (LA55_1==55) ) {
                     alt55=1;
+                }
+                else if ( (LA55_1==EOF||LA55_1==RULE_ID||LA55_1==15||LA55_1==17||(LA55_1>=19 && LA55_1<=21)||(LA55_1>=23 && LA55_1<=24)||(LA55_1>=26 && LA55_1<=27)||LA55_1==30||(LA55_1>=32 && LA55_1<=36)||(LA55_1>=39 && LA55_1<=41)||LA55_1==46||LA55_1==53||LA55_1==121||LA55_1==137) ) {
+                    alt55=4;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -10942,11 +10942,11 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                 {
                 int LA59_1 = input.LA(2);
 
-                if ( (LA59_1==55) ) {
-                    alt59=1;
-                }
-                else if ( (LA59_1==EOF||LA59_1==RULE_ID||LA59_1==15||LA59_1==17||(LA59_1>=19 && LA59_1<=21)||(LA59_1>=23 && LA59_1<=24)||(LA59_1>=26 && LA59_1<=27)||LA59_1==30||(LA59_1>=32 && LA59_1<=36)||(LA59_1>=39 && LA59_1<=41)||LA59_1==46||LA59_1==53||LA59_1==121||LA59_1==137) ) {
+                if ( (LA59_1==EOF||LA59_1==RULE_ID||LA59_1==15||LA59_1==17||(LA59_1>=19 && LA59_1<=21)||(LA59_1>=23 && LA59_1<=24)||(LA59_1>=26 && LA59_1<=27)||LA59_1==30||(LA59_1>=32 && LA59_1<=36)||(LA59_1>=39 && LA59_1<=41)||LA59_1==46||LA59_1==53||LA59_1==121||LA59_1==137) ) {
                     alt59=4;
+                }
+                else if ( (LA59_1==55) ) {
+                    alt59=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return current;}
@@ -19920,23 +19920,23 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMinusExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7315:1: ruleMinusExpression returns [EObject current=null] : ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_IncrementDecrementExpression_3= ruleIncrementDecrementExpression ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7315:1: ruleMinusExpression returns [EObject current=null] : ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_PreIncrementDecrementExpression_3= rulePreIncrementDecrementExpression ) ;
     public final EObject ruleMinusExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         EObject lv_invertedExpression_2_0 = null;
 
-        EObject this_IncrementDecrementExpression_3 = null;
+        EObject this_PreIncrementDecrementExpression_3 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7318:28: ( ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_IncrementDecrementExpression_3= ruleIncrementDecrementExpression ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7319:1: ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_IncrementDecrementExpression_3= ruleIncrementDecrementExpression )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7318:28: ( ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_PreIncrementDecrementExpression_3= rulePreIncrementDecrementExpression ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7319:1: ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_PreIncrementDecrementExpression_3= rulePreIncrementDecrementExpression )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7319:1: ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_IncrementDecrementExpression_3= ruleIncrementDecrementExpression )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7319:1: ( ( () otherlv_1= '-' ( (lv_invertedExpression_2_0= ruleNegationExpression_Alternative ) ) ) | this_PreIncrementDecrementExpression_3= rulePreIncrementDecrementExpression )
             int alt95=2;
             int LA95_0 = input.LA(1);
 
@@ -20021,21 +20021,21 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7349:5: this_IncrementDecrementExpression_3= ruleIncrementDecrementExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7349:5: this_PreIncrementDecrementExpression_3= rulePreIncrementDecrementExpression
                     {
                     if ( state.backtracking==0 ) {
                        
-                              newCompositeNode(grammarAccess.getMinusExpressionAccess().getIncrementDecrementExpressionParserRuleCall_1()); 
+                              newCompositeNode(grammarAccess.getMinusExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementExpression_in_ruleMinusExpression17316);
-                    this_IncrementDecrementExpression_3=ruleIncrementDecrementExpression();
+                    pushFollow(FollowSets000.FOLLOW_rulePreIncrementDecrementExpression_in_ruleMinusExpression17316);
+                    this_PreIncrementDecrementExpression_3=rulePreIncrementDecrementExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
                        
-                              current = this_IncrementDecrementExpression_3; 
+                              current = this_PreIncrementDecrementExpression_3; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -20064,97 +20064,8 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMinusExpression"
 
 
-    // $ANTLR start "entryRuleIncrementDecrementExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7365:1: entryRuleIncrementDecrementExpression returns [EObject current=null] : iv_ruleIncrementDecrementExpression= ruleIncrementDecrementExpression EOF ;
-    public final EObject entryRuleIncrementDecrementExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleIncrementDecrementExpression = null;
-
-
-        try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7366:2: (iv_ruleIncrementDecrementExpression= ruleIncrementDecrementExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7367:2: iv_ruleIncrementDecrementExpression= ruleIncrementDecrementExpression EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getIncrementDecrementExpressionRule()); 
-            }
-            pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementExpression_in_entryRuleIncrementDecrementExpression17351);
-            iv_ruleIncrementDecrementExpression=ruleIncrementDecrementExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleIncrementDecrementExpression; 
-            }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIncrementDecrementExpression17361); if (state.failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleIncrementDecrementExpression"
-
-
-    // $ANTLR start "ruleIncrementDecrementExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7374:1: ruleIncrementDecrementExpression returns [EObject current=null] : this_PreIncrementDecrementExpression_0= rulePreIncrementDecrementExpression ;
-    public final EObject ruleIncrementDecrementExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_PreIncrementDecrementExpression_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7377:28: (this_PreIncrementDecrementExpression_0= rulePreIncrementDecrementExpression )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7379:5: this_PreIncrementDecrementExpression_0= rulePreIncrementDecrementExpression
-            {
-            if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getIncrementDecrementExpressionAccess().getPreIncrementDecrementExpressionParserRuleCall()); 
-                  
-            }
-            pushFollow(FollowSets000.FOLLOW_rulePreIncrementDecrementExpression_in_ruleIncrementDecrementExpression17407);
-            this_PreIncrementDecrementExpression_0=rulePreIncrementDecrementExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               
-                      current = this_PreIncrementDecrementExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
-            }
-
-            }
-
-            if ( state.backtracking==0 ) {
-               leaveRule(); 
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleIncrementDecrementExpression"
-
-
     // $ANTLR start "entryRulePreIncrementDecrementExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7395:1: entryRulePreIncrementDecrementExpression returns [EObject current=null] : iv_rulePreIncrementDecrementExpression= rulePreIncrementDecrementExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7365:1: entryRulePreIncrementDecrementExpression returns [EObject current=null] : iv_rulePreIncrementDecrementExpression= rulePreIncrementDecrementExpression EOF ;
     public final EObject entryRulePreIncrementDecrementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20162,13 +20073,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7396:2: (iv_rulePreIncrementDecrementExpression= rulePreIncrementDecrementExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7397:2: iv_rulePreIncrementDecrementExpression= rulePreIncrementDecrementExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7366:2: (iv_rulePreIncrementDecrementExpression= rulePreIncrementDecrementExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7367:2: iv_rulePreIncrementDecrementExpression= rulePreIncrementDecrementExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_rulePreIncrementDecrementExpression_in_entryRulePreIncrementDecrementExpression17441);
+            pushFollow(FollowSets000.FOLLOW_rulePreIncrementDecrementExpression_in_entryRulePreIncrementDecrementExpression17351);
             iv_rulePreIncrementDecrementExpression=rulePreIncrementDecrementExpression();
 
             state._fsp--;
@@ -20176,7 +20087,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePreIncrementDecrementExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePreIncrementDecrementExpression17451); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePreIncrementDecrementExpression17361); if (state.failed) return current;
 
             }
 
@@ -20194,7 +20105,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePreIncrementDecrementExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7404:1: rulePreIncrementDecrementExpression returns [EObject current=null] : (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7374:1: rulePreIncrementDecrementExpression returns [EObject current=null] : (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) ) ;
     public final EObject rulePreIncrementDecrementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20208,10 +20119,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7407:28: ( (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7408:1: (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7377:28: ( (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7378:1: (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7408:1: (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7378:1: (this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression | ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) ) )
             int alt96=2;
             int LA96_0 = input.LA(1);
 
@@ -20230,14 +20141,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt96) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7409:5: this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7379:5: this_PostIncrementDecrementExpression_0= rulePostIncrementDecrementExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getPostIncrementDecrementExpressionParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_rulePostIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17498);
+                    pushFollow(FollowSets000.FOLLOW_rulePostIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17408);
                     this_PostIncrementDecrementExpression_0=rulePostIncrementDecrementExpression();
 
                     state._fsp--;
@@ -20252,13 +20163,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7418:6: ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7388:6: ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7418:6: ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7418:7: () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7388:6: ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) ) )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7388:7: () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7418:7: ()
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7419:5: 
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7388:7: ()
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7389:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -20270,18 +20181,18 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7424:2: ( (lv_operator_2_0= ruleIncrementDecrementOperator ) )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7425:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7394:2: ( (lv_operator_2_0= ruleIncrementDecrementOperator ) )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7395:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7425:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7426:3: lv_operator_2_0= ruleIncrementDecrementOperator
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7395:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7396:3: lv_operator_2_0= ruleIncrementDecrementOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getOperatorIncrementDecrementOperatorEnumRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperator_in_rulePreIncrementDecrementExpression17534);
+                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperator_in_rulePreIncrementDecrementExpression17444);
                     lv_operator_2_0=ruleIncrementDecrementOperator();
 
                     state._fsp--;
@@ -20305,18 +20216,18 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7442:2: ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7443:1: (lv_expression_3_0= rulePreIncrementDecrementExpression )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7412:2: ( (lv_expression_3_0= rulePreIncrementDecrementExpression ) )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7413:1: (lv_expression_3_0= rulePreIncrementDecrementExpression )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7443:1: (lv_expression_3_0= rulePreIncrementDecrementExpression )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7444:3: lv_expression_3_0= rulePreIncrementDecrementExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7413:1: (lv_expression_3_0= rulePreIncrementDecrementExpression )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7414:3: lv_expression_3_0= rulePreIncrementDecrementExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getPreIncrementDecrementExpressionAccess().getExpressionPreIncrementDecrementExpressionParserRuleCall_1_2_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_rulePreIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17555);
+                    pushFollow(FollowSets000.FOLLOW_rulePreIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17465);
                     lv_expression_3_0=rulePreIncrementDecrementExpression();
 
                     state._fsp--;
@@ -20369,7 +20280,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePostIncrementDecrementExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7468:1: entryRulePostIncrementDecrementExpression returns [EObject current=null] : iv_rulePostIncrementDecrementExpression= rulePostIncrementDecrementExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7438:1: entryRulePostIncrementDecrementExpression returns [EObject current=null] : iv_rulePostIncrementDecrementExpression= rulePostIncrementDecrementExpression EOF ;
     public final EObject entryRulePostIncrementDecrementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20377,13 +20288,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7469:2: (iv_rulePostIncrementDecrementExpression= rulePostIncrementDecrementExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7470:2: iv_rulePostIncrementDecrementExpression= rulePostIncrementDecrementExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7439:2: (iv_rulePostIncrementDecrementExpression= rulePostIncrementDecrementExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7440:2: iv_rulePostIncrementDecrementExpression= rulePostIncrementDecrementExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_rulePostIncrementDecrementExpression_in_entryRulePostIncrementDecrementExpression17592);
+            pushFollow(FollowSets000.FOLLOW_rulePostIncrementDecrementExpression_in_entryRulePostIncrementDecrementExpression17502);
             iv_rulePostIncrementDecrementExpression=rulePostIncrementDecrementExpression();
 
             state._fsp--;
@@ -20391,7 +20302,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_rulePostIncrementDecrementExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePostIncrementDecrementExpression17602); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePostIncrementDecrementExpression17512); if (state.failed) return current;
 
             }
 
@@ -20409,7 +20320,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePostIncrementDecrementExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7477:1: rulePostIncrementDecrementExpression returns [EObject current=null] : (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7447:1: rulePostIncrementDecrementExpression returns [EObject current=null] : (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* ) ;
     public final EObject rulePostIncrementDecrementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20421,18 +20332,18 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7480:28: ( (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7481:1: (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7450:28: ( (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7451:1: (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7481:1: (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7482:5: this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7451:1: (this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7452:5: this_ScopedIdentifierExpression_0= ruleScopedIdentifierExpression ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )*
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getScopedIdentifierExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleScopedIdentifierExpression_in_rulePostIncrementDecrementExpression17649);
+            pushFollow(FollowSets000.FOLLOW_ruleScopedIdentifierExpression_in_rulePostIncrementDecrementExpression17559);
             this_ScopedIdentifierExpression_0=ruleScopedIdentifierExpression();
 
             state._fsp--;
@@ -20443,7 +20354,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:1: ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:1: ( ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) ) )*
             loop97:
             do {
                 int alt97=2;
@@ -20459,13 +20370,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                 switch (alt97) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:2: ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:2: ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )=> ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) )
             	    {
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7495:6: ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7495:7: () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7465:6: ( () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7465:7: () ( (lv_operator_2_0= ruleIncrementDecrementOperator ) )
             	    {
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7495:7: ()
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7496:5: 
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7465:7: ()
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7466:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -20477,18 +20388,18 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7501:2: ( (lv_operator_2_0= ruleIncrementDecrementOperator ) )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7502:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7471:2: ( (lv_operator_2_0= ruleIncrementDecrementOperator ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7472:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
             	    {
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7502:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7503:3: lv_operator_2_0= ruleIncrementDecrementOperator
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7472:1: (lv_operator_2_0= ruleIncrementDecrementOperator )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7473:3: lv_operator_2_0= ruleIncrementDecrementOperator
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getPostIncrementDecrementExpressionAccess().getOperatorIncrementDecrementOperatorEnumRuleCall_1_0_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperator_in_rulePostIncrementDecrementExpression17697);
+            	    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperator_in_rulePostIncrementDecrementExpression17607);
             	    lv_operator_2_0=ruleIncrementDecrementOperator();
 
             	    state._fsp--;
@@ -20547,7 +20458,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScopedIdentifierExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7527:1: entryRuleScopedIdentifierExpression returns [EObject current=null] : iv_ruleScopedIdentifierExpression= ruleScopedIdentifierExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7497:1: entryRuleScopedIdentifierExpression returns [EObject current=null] : iv_ruleScopedIdentifierExpression= ruleScopedIdentifierExpression EOF ;
     public final EObject entryRuleScopedIdentifierExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20555,13 +20466,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7528:2: (iv_ruleScopedIdentifierExpression= ruleScopedIdentifierExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7529:2: iv_ruleScopedIdentifierExpression= ruleScopedIdentifierExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7498:2: (iv_ruleScopedIdentifierExpression= ruleScopedIdentifierExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7499:2: iv_ruleScopedIdentifierExpression= ruleScopedIdentifierExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getScopedIdentifierExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleScopedIdentifierExpression_in_entryRuleScopedIdentifierExpression17736);
+            pushFollow(FollowSets000.FOLLOW_ruleScopedIdentifierExpression_in_entryRuleScopedIdentifierExpression17646);
             iv_ruleScopedIdentifierExpression=ruleScopedIdentifierExpression();
 
             state._fsp--;
@@ -20569,7 +20480,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleScopedIdentifierExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleScopedIdentifierExpression17746); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleScopedIdentifierExpression17656); if (state.failed) return current;
 
             }
 
@@ -20587,7 +20498,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScopedIdentifierExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7536:1: ruleScopedIdentifierExpression returns [EObject current=null] : (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7506:1: ruleScopedIdentifierExpression returns [EObject current=null] : (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* ) ;
     public final EObject ruleScopedIdentifierExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20600,18 +20511,18 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7539:28: ( (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7540:1: (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7509:28: ( (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7510:1: (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7540:1: (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7541:5: this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7510:1: (this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7511:5: this_TerminatingExpressions_0= ruleTerminatingExpressions ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
                
                       newCompositeNode(grammarAccess.getScopedIdentifierExpressionAccess().getTerminatingExpressionsParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTerminatingExpressions_in_ruleScopedIdentifierExpression17793);
+            pushFollow(FollowSets000.FOLLOW_ruleTerminatingExpressions_in_ruleScopedIdentifierExpression17703);
             this_TerminatingExpressions_0=ruleTerminatingExpressions();
 
             state._fsp--;
@@ -20622,7 +20533,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7549:1: ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7519:1: ( () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) ) )*
             loop98:
             do {
                 int alt98=2;
@@ -20635,10 +20546,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                 switch (alt98) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7549:2: () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7519:2: () otherlv_2= '.' ( (lv_identifier_3_0= ruleIdentifierExpression ) )
             	    {
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7549:2: ()
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7550:5: 
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7519:2: ()
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7520:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -20650,24 +20561,24 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_2=(Token)match(input,77,FollowSets000.FOLLOW_77_in_ruleScopedIdentifierExpression17814); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,77,FollowSets000.FOLLOW_77_in_ruleScopedIdentifierExpression17724); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_2, grammarAccess.getScopedIdentifierExpressionAccess().getFullStopKeyword_1_1());
             	          
             	    }
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7559:1: ( (lv_identifier_3_0= ruleIdentifierExpression ) )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7560:1: (lv_identifier_3_0= ruleIdentifierExpression )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7529:1: ( (lv_identifier_3_0= ruleIdentifierExpression ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7530:1: (lv_identifier_3_0= ruleIdentifierExpression )
             	    {
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7560:1: (lv_identifier_3_0= ruleIdentifierExpression )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7561:3: lv_identifier_3_0= ruleIdentifierExpression
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7530:1: (lv_identifier_3_0= ruleIdentifierExpression )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7531:3: lv_identifier_3_0= ruleIdentifierExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getScopedIdentifierExpressionAccess().getIdentifierIdentifierExpressionParserRuleCall_1_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleIdentifierExpression_in_ruleScopedIdentifierExpression17835);
+            	    pushFollow(FollowSets000.FOLLOW_ruleIdentifierExpression_in_ruleScopedIdentifierExpression17745);
             	    lv_identifier_3_0=ruleIdentifierExpression();
 
             	    state._fsp--;
@@ -20723,7 +20634,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTerminatingExpressions"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7585:1: entryRuleTerminatingExpressions returns [EObject current=null] : iv_ruleTerminatingExpressions= ruleTerminatingExpressions EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7555:1: entryRuleTerminatingExpressions returns [EObject current=null] : iv_ruleTerminatingExpressions= ruleTerminatingExpressions EOF ;
     public final EObject entryRuleTerminatingExpressions() throws RecognitionException {
         EObject current = null;
 
@@ -20731,13 +20642,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7586:2: (iv_ruleTerminatingExpressions= ruleTerminatingExpressions EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7587:2: iv_ruleTerminatingExpressions= ruleTerminatingExpressions EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7556:2: (iv_ruleTerminatingExpressions= ruleTerminatingExpressions EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7557:2: iv_ruleTerminatingExpressions= ruleTerminatingExpressions EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTerminatingExpressionsRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTerminatingExpressions_in_entryRuleTerminatingExpressions17873);
+            pushFollow(FollowSets000.FOLLOW_ruleTerminatingExpressions_in_entryRuleTerminatingExpressions17783);
             iv_ruleTerminatingExpressions=ruleTerminatingExpressions();
 
             state._fsp--;
@@ -20745,7 +20656,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleTerminatingExpressions; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTerminatingExpressions17883); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTerminatingExpressions17793); if (state.failed) return current;
 
             }
 
@@ -20763,7 +20674,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerminatingExpressions"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7594:1: ruleTerminatingExpressions returns [EObject current=null] : (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7564:1: ruleTerminatingExpressions returns [EObject current=null] : (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) ) ;
     public final EObject ruleTerminatingExpressions() throws RecognitionException {
         EObject current = null;
 
@@ -20781,22 +20692,22 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7597:28: ( (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7598:1: (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7567:28: ( (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7568:1: (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7598:1: (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7568:1: (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) )
             int alt99=4;
             alt99 = dfa99.predict(input);
             switch (alt99) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7599:5: this_IdentifierExpression_0= ruleIdentifierExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7569:5: this_IdentifierExpression_0= ruleIdentifierExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getTerminatingExpressionsAccess().getIdentifierExpressionParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleIdentifierExpression_in_ruleTerminatingExpressions17930);
+                    pushFollow(FollowSets000.FOLLOW_ruleIdentifierExpression_in_ruleTerminatingExpressions17840);
                     this_IdentifierExpression_0=ruleIdentifierExpression();
 
                     state._fsp--;
@@ -20811,14 +20722,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7609:5: this_FunctionCallExpression_1= ruleFunctionCallExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7579:5: this_FunctionCallExpression_1= ruleFunctionCallExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getTerminatingExpressionsAccess().getFunctionCallExpressionParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleFunctionCallExpression_in_ruleTerminatingExpressions17957);
+                    pushFollow(FollowSets000.FOLLOW_ruleFunctionCallExpression_in_ruleTerminatingExpressions17867);
                     this_FunctionCallExpression_1=ruleFunctionCallExpression();
 
                     state._fsp--;
@@ -20833,14 +20744,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7619:5: this_LiteralExpression_2= ruleLiteralExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7589:5: this_LiteralExpression_2= ruleLiteralExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getTerminatingExpressionsAccess().getLiteralExpressionParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleTerminatingExpressions17984);
+                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleTerminatingExpressions17894);
                     this_LiteralExpression_2=ruleLiteralExpression();
 
                     state._fsp--;
@@ -20855,12 +20766,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7628:6: (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7598:6: (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7628:6: (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7628:8: otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7598:6: (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7598:8: otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')'
                     {
-                    otherlv_3=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleTerminatingExpressions18002); if (state.failed) return current;
+                    otherlv_3=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleTerminatingExpressions17912); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_3, grammarAccess.getTerminatingExpressionsAccess().getLeftParenthesisKeyword_3_0());
@@ -20871,7 +20782,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                               newCompositeNode(grammarAccess.getTerminatingExpressionsAccess().getExpressionParserRuleCall_3_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleTerminatingExpressions18024);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleTerminatingExpressions17934);
                     this_Expression_4=ruleExpression();
 
                     state._fsp--;
@@ -20882,7 +20793,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_5=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleTerminatingExpressions18035); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleTerminatingExpressions17945); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_5, grammarAccess.getTerminatingExpressionsAccess().getRightParenthesisKeyword_3_2());
@@ -20917,7 +20828,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7653:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7623:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
     public final EObject entryRuleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20925,13 +20836,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7654:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7655:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7624:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7625:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression18072);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression17982);
             iv_ruleLiteralExpression=ruleLiteralExpression();
 
             state._fsp--;
@@ -20939,7 +20850,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLiteralExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression18082); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression17992); if (state.failed) return current;
 
             }
 
@@ -20957,7 +20868,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7662:1: ruleLiteralExpression returns [EObject current=null] : ( (lv_text_0_0= ruleLiteralExpressionText ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7632:1: ruleLiteralExpression returns [EObject current=null] : ( (lv_text_0_0= ruleLiteralExpressionText ) ) ;
     public final EObject ruleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -20967,21 +20878,21 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7665:28: ( ( (lv_text_0_0= ruleLiteralExpressionText ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7666:1: ( (lv_text_0_0= ruleLiteralExpressionText ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7635:28: ( ( (lv_text_0_0= ruleLiteralExpressionText ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7636:1: ( (lv_text_0_0= ruleLiteralExpressionText ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7666:1: ( (lv_text_0_0= ruleLiteralExpressionText ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7667:1: (lv_text_0_0= ruleLiteralExpressionText )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7636:1: ( (lv_text_0_0= ruleLiteralExpressionText ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7637:1: (lv_text_0_0= ruleLiteralExpressionText )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7667:1: (lv_text_0_0= ruleLiteralExpressionText )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7668:3: lv_text_0_0= ruleLiteralExpressionText
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7637:1: (lv_text_0_0= ruleLiteralExpressionText )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7638:3: lv_text_0_0= ruleLiteralExpressionText
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getLiteralExpressionAccess().getTextLiteralExpressionTextParserRuleCall_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpressionText_in_ruleLiteralExpression18127);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpressionText_in_ruleLiteralExpression18037);
             lv_text_0_0=ruleLiteralExpressionText();
 
             state._fsp--;
@@ -21025,7 +20936,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralExpressionText"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7692:1: entryRuleLiteralExpressionText returns [String current=null] : iv_ruleLiteralExpressionText= ruleLiteralExpressionText EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7662:1: entryRuleLiteralExpressionText returns [String current=null] : iv_ruleLiteralExpressionText= ruleLiteralExpressionText EOF ;
     public final String entryRuleLiteralExpressionText() throws RecognitionException {
         String current = null;
 
@@ -21033,13 +20944,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7693:2: (iv_ruleLiteralExpressionText= ruleLiteralExpressionText EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7694:2: iv_ruleLiteralExpressionText= ruleLiteralExpressionText EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7663:2: (iv_ruleLiteralExpressionText= ruleLiteralExpressionText EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7664:2: iv_ruleLiteralExpressionText= ruleLiteralExpressionText EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLiteralExpressionTextRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpressionText_in_entryRuleLiteralExpressionText18163);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpressionText_in_entryRuleLiteralExpressionText18073);
             iv_ruleLiteralExpressionText=ruleLiteralExpressionText();
 
             state._fsp--;
@@ -21047,7 +20958,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleLiteralExpressionText.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpressionText18174); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpressionText18084); if (state.failed) return current;
 
             }
 
@@ -21065,7 +20976,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralExpressionText"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7701:1: ruleLiteralExpressionText returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7671:1: ruleLiteralExpressionText returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleLiteralExpressionText() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -21075,10 +20986,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7704:28: ( (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7705:1: (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7674:28: ( (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7675:1: (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7705:1: (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7675:1: (kw= 'true' | kw= 'false' | this_INT_2= RULE_INT )
             int alt100=3;
             switch ( input.LA(1) ) {
             case 78:
@@ -21106,9 +21017,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt100) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7706:2: kw= 'true'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7676:2: kw= 'true'
                     {
-                    kw=(Token)match(input,78,FollowSets000.FOLLOW_78_in_ruleLiteralExpressionText18212); if (state.failed) return current;
+                    kw=(Token)match(input,78,FollowSets000.FOLLOW_78_in_ruleLiteralExpressionText18122); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21119,9 +21030,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7713:2: kw= 'false'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7683:2: kw= 'false'
                     {
-                    kw=(Token)match(input,79,FollowSets000.FOLLOW_79_in_ruleLiteralExpressionText18231); if (state.failed) return current;
+                    kw=(Token)match(input,79,FollowSets000.FOLLOW_79_in_ruleLiteralExpressionText18141); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21132,9 +21043,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7719:10: this_INT_2= RULE_INT
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7689:10: this_INT_2= RULE_INT
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteralExpressionText18252); if (state.failed) return current;
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteralExpressionText18162); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_INT_2);
@@ -21171,7 +21082,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionCallExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7734:1: entryRuleFunctionCallExpression returns [EObject current=null] : iv_ruleFunctionCallExpression= ruleFunctionCallExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7704:1: entryRuleFunctionCallExpression returns [EObject current=null] : iv_ruleFunctionCallExpression= ruleFunctionCallExpression EOF ;
     public final EObject entryRuleFunctionCallExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21179,13 +21090,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7735:2: (iv_ruleFunctionCallExpression= ruleFunctionCallExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7736:2: iv_ruleFunctionCallExpression= ruleFunctionCallExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7705:2: (iv_ruleFunctionCallExpression= ruleFunctionCallExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7706:2: iv_ruleFunctionCallExpression= ruleFunctionCallExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getFunctionCallExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleFunctionCallExpression_in_entryRuleFunctionCallExpression18297);
+            pushFollow(FollowSets000.FOLLOW_ruleFunctionCallExpression_in_entryRuleFunctionCallExpression18207);
             iv_ruleFunctionCallExpression=ruleFunctionCallExpression();
 
             state._fsp--;
@@ -21193,7 +21104,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleFunctionCallExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFunctionCallExpression18307); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleFunctionCallExpression18217); if (state.failed) return current;
 
             }
 
@@ -21211,7 +21122,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCallExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7743:1: ruleFunctionCallExpression returns [EObject current=null] : ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7713:1: ruleFunctionCallExpression returns [EObject current=null] : ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleFunctionCallExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21226,17 +21137,17 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7746:28: ( ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7747:1: ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7716:28: ( ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7717:1: ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7747:1: ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7747:2: ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7717:1: ( ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7717:2: ( ( ruleUPPAAL_IDENTIFIER ) ) otherlv_1= '(' ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )? otherlv_5= ')'
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7747:2: ( ( ruleUPPAAL_IDENTIFIER ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7748:1: ( ruleUPPAAL_IDENTIFIER )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7717:2: ( ( ruleUPPAAL_IDENTIFIER ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7718:1: ( ruleUPPAAL_IDENTIFIER )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7748:1: ( ruleUPPAAL_IDENTIFIER )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7749:3: ruleUPPAAL_IDENTIFIER
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7718:1: ( ruleUPPAAL_IDENTIFIER )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7719:3: ruleUPPAAL_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
 
@@ -21250,7 +21161,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getFunctionCallExpressionAccess().getFunctionFunctionCrossReference_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleFunctionCallExpression18355);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleFunctionCallExpression18265);
             ruleUPPAAL_IDENTIFIER();
 
             state._fsp--;
@@ -21266,13 +21177,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleFunctionCallExpression18367); if (state.failed) return current;
+            otherlv_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleFunctionCallExpression18277); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getFunctionCallExpressionAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7766:1: ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )?
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7736:1: ( ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )* )?
             int alt102=2;
             int LA102_0 = input.LA(1);
 
@@ -21281,20 +21192,20 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt102) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7766:2: ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )*
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7736:2: ( (lv_argument_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )*
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7766:2: ( (lv_argument_2_0= ruleExpression ) )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7767:1: (lv_argument_2_0= ruleExpression )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7736:2: ( (lv_argument_2_0= ruleExpression ) )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7737:1: (lv_argument_2_0= ruleExpression )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7767:1: (lv_argument_2_0= ruleExpression )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7768:3: lv_argument_2_0= ruleExpression
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7737:1: (lv_argument_2_0= ruleExpression )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7738:3: lv_argument_2_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getFunctionCallExpressionAccess().getArgumentExpressionParserRuleCall_2_0_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleFunctionCallExpression18389);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleFunctionCallExpression18299);
                     lv_argument_2_0=ruleExpression();
 
                     state._fsp--;
@@ -21318,7 +21229,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7784:2: (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )*
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7754:2: (otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) ) )*
                     loop101:
                     do {
                         int alt101=2;
@@ -21331,26 +21242,26 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                         switch (alt101) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7784:4: otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) )
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7754:4: otherlv_3= ',' ( (lv_argument_4_0= ruleExpression ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleFunctionCallExpression18402); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleFunctionCallExpression18312); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getFunctionCallExpressionAccess().getCommaKeyword_2_1_0());
                     	          
                     	    }
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7788:1: ( (lv_argument_4_0= ruleExpression ) )
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7789:1: (lv_argument_4_0= ruleExpression )
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7758:1: ( (lv_argument_4_0= ruleExpression ) )
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7759:1: (lv_argument_4_0= ruleExpression )
                     	    {
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7789:1: (lv_argument_4_0= ruleExpression )
-                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7790:3: lv_argument_4_0= ruleExpression
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7759:1: (lv_argument_4_0= ruleExpression )
+                    	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7760:3: lv_argument_4_0= ruleExpression
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getFunctionCallExpressionAccess().getArgumentExpressionParserRuleCall_2_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleFunctionCallExpression18423);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleFunctionCallExpression18333);
                     	    lv_argument_4_0=ruleExpression();
 
                     	    state._fsp--;
@@ -21389,7 +21300,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleFunctionCallExpression18439); if (state.failed) return current;
+            otherlv_5=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleFunctionCallExpression18349); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getFunctionCallExpressionAccess().getRightParenthesisKeyword_3());
@@ -21418,7 +21329,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdentifierExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7818:1: entryRuleIdentifierExpression returns [EObject current=null] : iv_ruleIdentifierExpression= ruleIdentifierExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7788:1: entryRuleIdentifierExpression returns [EObject current=null] : iv_ruleIdentifierExpression= ruleIdentifierExpression EOF ;
     public final EObject entryRuleIdentifierExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21426,13 +21337,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7819:2: (iv_ruleIdentifierExpression= ruleIdentifierExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7820:2: iv_ruleIdentifierExpression= ruleIdentifierExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7789:2: (iv_ruleIdentifierExpression= ruleIdentifierExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7790:2: iv_ruleIdentifierExpression= ruleIdentifierExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getIdentifierExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleIdentifierExpression_in_entryRuleIdentifierExpression18475);
+            pushFollow(FollowSets000.FOLLOW_ruleIdentifierExpression_in_entryRuleIdentifierExpression18385);
             iv_ruleIdentifierExpression=ruleIdentifierExpression();
 
             state._fsp--;
@@ -21440,7 +21351,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleIdentifierExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIdentifierExpression18485); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIdentifierExpression18395); if (state.failed) return current;
 
             }
 
@@ -21458,7 +21369,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdentifierExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7827:1: ruleIdentifierExpression returns [EObject current=null] : ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7797:1: ruleIdentifierExpression returns [EObject current=null] : ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* ) ;
     public final EObject ruleIdentifierExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21470,17 +21381,17 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7830:28: ( ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7831:1: ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7800:28: ( ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7801:1: ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7831:1: ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7831:2: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7801:1: ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )* )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7801:2: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )*
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7831:2: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7832:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7801:2: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7802:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7832:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7833:3: ruleUPPAAL_TYPE_OR_IDENTIFIER
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7802:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7803:3: ruleUPPAAL_TYPE_OR_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
 
@@ -21494,7 +21405,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getIdentifierExpressionAccess().getIdentifierNamedElementCrossReference_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleIdentifierExpression18533);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleIdentifierExpression18443);
             ruleUPPAAL_TYPE_OR_IDENTIFIER();
 
             state._fsp--;
@@ -21510,7 +21421,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7846:2: (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )*
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7816:2: (otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']' )*
             loop103:
             do {
                 int alt103=2;
@@ -21523,26 +21434,26 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                 switch (alt103) {
             	case 1 :
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7846:4: otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']'
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7816:4: otherlv_1= '[' ( (lv_index_2_0= ruleExpression ) ) otherlv_3= ']'
             	    {
-            	    otherlv_1=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleIdentifierExpression18546); if (state.failed) return current;
+            	    otherlv_1=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleIdentifierExpression18456); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_1, grammarAccess.getIdentifierExpressionAccess().getLeftSquareBracketKeyword_1_0());
             	          
             	    }
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7850:1: ( (lv_index_2_0= ruleExpression ) )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7851:1: (lv_index_2_0= ruleExpression )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7820:1: ( (lv_index_2_0= ruleExpression ) )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7821:1: (lv_index_2_0= ruleExpression )
             	    {
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7851:1: (lv_index_2_0= ruleExpression )
-            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7852:3: lv_index_2_0= ruleExpression
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7821:1: (lv_index_2_0= ruleExpression )
+            	    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7822:3: lv_index_2_0= ruleExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getIdentifierExpressionAccess().getIndexExpressionParserRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleIdentifierExpression18567);
+            	    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleIdentifierExpression18477);
             	    lv_index_2_0=ruleExpression();
 
             	    state._fsp--;
@@ -21566,7 +21477,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_3=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleIdentifierExpression18579); if (state.failed) return current;
+            	    otherlv_3=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleIdentifierExpression18489); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_3, grammarAccess.getIdentifierExpressionAccess().getRightSquareBracketKeyword_1_2());
@@ -21604,7 +21515,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleIdentifierExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7880:1: entryRuleSimpleIdentifierExpression returns [EObject current=null] : iv_ruleSimpleIdentifierExpression= ruleSimpleIdentifierExpression EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7850:1: entryRuleSimpleIdentifierExpression returns [EObject current=null] : iv_ruleSimpleIdentifierExpression= ruleSimpleIdentifierExpression EOF ;
     public final EObject entryRuleSimpleIdentifierExpression() throws RecognitionException {
         EObject current = null;
 
@@ -21612,13 +21523,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7881:2: (iv_ruleSimpleIdentifierExpression= ruleSimpleIdentifierExpression EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7882:2: iv_ruleSimpleIdentifierExpression= ruleSimpleIdentifierExpression EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7851:2: (iv_ruleSimpleIdentifierExpression= ruleSimpleIdentifierExpression EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7852:2: iv_ruleSimpleIdentifierExpression= ruleSimpleIdentifierExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getSimpleIdentifierExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleSimpleIdentifierExpression_in_entryRuleSimpleIdentifierExpression18617);
+            pushFollow(FollowSets000.FOLLOW_ruleSimpleIdentifierExpression_in_entryRuleSimpleIdentifierExpression18527);
             iv_ruleSimpleIdentifierExpression=ruleSimpleIdentifierExpression();
 
             state._fsp--;
@@ -21626,7 +21537,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleSimpleIdentifierExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSimpleIdentifierExpression18627); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleSimpleIdentifierExpression18537); if (state.failed) return current;
 
             }
 
@@ -21644,21 +21555,21 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleIdentifierExpression"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7889:1: ruleSimpleIdentifierExpression returns [EObject current=null] : ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7859:1: ruleSimpleIdentifierExpression returns [EObject current=null] : ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) ;
     public final EObject ruleSimpleIdentifierExpression() throws RecognitionException {
         EObject current = null;
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7892:28: ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7893:1: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7862:28: ( ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7863:1: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7893:1: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7894:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7863:1: ( ( ruleUPPAAL_TYPE_OR_IDENTIFIER ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7864:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7894:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7895:3: ruleUPPAAL_TYPE_OR_IDENTIFIER
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7864:1: ( ruleUPPAAL_TYPE_OR_IDENTIFIER )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7865:3: ruleUPPAAL_TYPE_OR_IDENTIFIER
             {
             if ( state.backtracking==0 ) {
 
@@ -21672,7 +21583,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
               	        newCompositeNode(grammarAccess.getSimpleIdentifierExpressionAccess().getIdentifierNamedElementCrossReference_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleSimpleIdentifierExpression18674);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleSimpleIdentifierExpression18584);
             ruleUPPAAL_TYPE_OR_IDENTIFIER();
 
             state._fsp--;
@@ -21708,7 +21619,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUPPAAL_TYPE_OR_IDENTIFIER"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7916:1: entryRuleUPPAAL_TYPE_OR_IDENTIFIER returns [String current=null] : iv_ruleUPPAAL_TYPE_OR_IDENTIFIER= ruleUPPAAL_TYPE_OR_IDENTIFIER EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7886:1: entryRuleUPPAAL_TYPE_OR_IDENTIFIER returns [String current=null] : iv_ruleUPPAAL_TYPE_OR_IDENTIFIER= ruleUPPAAL_TYPE_OR_IDENTIFIER EOF ;
     public final String entryRuleUPPAAL_TYPE_OR_IDENTIFIER() throws RecognitionException {
         String current = null;
 
@@ -21716,13 +21627,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7917:2: (iv_ruleUPPAAL_TYPE_OR_IDENTIFIER= ruleUPPAAL_TYPE_OR_IDENTIFIER EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7918:2: iv_ruleUPPAAL_TYPE_OR_IDENTIFIER= ruleUPPAAL_TYPE_OR_IDENTIFIER EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7887:2: (iv_ruleUPPAAL_TYPE_OR_IDENTIFIER= ruleUPPAAL_TYPE_OR_IDENTIFIER EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7888:2: iv_ruleUPPAAL_TYPE_OR_IDENTIFIER= ruleUPPAAL_TYPE_OR_IDENTIFIER EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUPPAAL_TYPE_OR_IDENTIFIERRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18710);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18620);
             iv_ruleUPPAAL_TYPE_OR_IDENTIFIER=ruleUPPAAL_TYPE_OR_IDENTIFIER();
 
             state._fsp--;
@@ -21730,7 +21641,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUPPAAL_TYPE_OR_IDENTIFIER.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18721); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18631); if (state.failed) return current;
 
             }
 
@@ -21748,7 +21659,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUPPAAL_TYPE_OR_IDENTIFIER"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7925:1: ruleUPPAAL_TYPE_OR_IDENTIFIER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7895:1: ruleUPPAAL_TYPE_OR_IDENTIFIER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' ) ;
     public final AntlrDatatypeRuleToken ruleUPPAAL_TYPE_OR_IDENTIFIER() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -21759,10 +21670,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7928:28: ( (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7929:1: (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7898:28: ( (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7899:1: (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7929:1: (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7899:1: (this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER | kw= 'int' | kw= 'bool' | kw= 'void' | kw= 'chan' | kw= 'clock' )
             int alt104=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -21825,14 +21736,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt104) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7930:5: this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7900:5: this_UPPAAL_IDENTIFIER_0= ruleUPPAAL_IDENTIFIER
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getUPPAAL_TYPE_OR_IDENTIFIERAccess().getUPPAAL_IDENTIFIERParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18768);
+                    pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18678);
                     this_UPPAAL_IDENTIFIER_0=ruleUPPAAL_IDENTIFIER();
 
                     state._fsp--;
@@ -21851,9 +21762,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7942:2: kw= 'int'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7912:2: kw= 'int'
                     {
-                    kw=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18792); if (state.failed) return current;
+                    kw=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18702); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21864,9 +21775,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7949:2: kw= 'bool'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7919:2: kw= 'bool'
                     {
-                    kw=(Token)match(input,80,FollowSets000.FOLLOW_80_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18811); if (state.failed) return current;
+                    kw=(Token)match(input,80,FollowSets000.FOLLOW_80_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18721); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21877,9 +21788,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7956:2: kw= 'void'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7926:2: kw= 'void'
                     {
-                    kw=(Token)match(input,81,FollowSets000.FOLLOW_81_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18830); if (state.failed) return current;
+                    kw=(Token)match(input,81,FollowSets000.FOLLOW_81_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18740); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21890,9 +21801,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7963:2: kw= 'chan'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7933:2: kw= 'chan'
                     {
-                    kw=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18849); if (state.failed) return current;
+                    kw=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18759); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21903,9 +21814,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7970:2: kw= 'clock'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7940:2: kw= 'clock'
                     {
-                    kw=(Token)match(input,82,FollowSets000.FOLLOW_82_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18868); if (state.failed) return current;
+                    kw=(Token)match(input,82,FollowSets000.FOLLOW_82_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18778); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -21938,7 +21849,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUPPAAL_IDENTIFIER"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7983:1: entryRuleUPPAAL_IDENTIFIER returns [String current=null] : iv_ruleUPPAAL_IDENTIFIER= ruleUPPAAL_IDENTIFIER EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7953:1: entryRuleUPPAAL_IDENTIFIER returns [String current=null] : iv_ruleUPPAAL_IDENTIFIER= ruleUPPAAL_IDENTIFIER EOF ;
     public final String entryRuleUPPAAL_IDENTIFIER() throws RecognitionException {
         String current = null;
 
@@ -21946,13 +21857,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7984:2: (iv_ruleUPPAAL_IDENTIFIER= ruleUPPAAL_IDENTIFIER EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7985:2: iv_ruleUPPAAL_IDENTIFIER= ruleUPPAAL_IDENTIFIER EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7954:2: (iv_ruleUPPAAL_IDENTIFIER= ruleUPPAAL_IDENTIFIER EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7955:2: iv_ruleUPPAAL_IDENTIFIER= ruleUPPAAL_IDENTIFIER EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUPPAAL_IDENTIFIERRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_IDENTIFIER_in_entryRuleUPPAAL_IDENTIFIER18909);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_IDENTIFIER_in_entryRuleUPPAAL_IDENTIFIER18819);
             iv_ruleUPPAAL_IDENTIFIER=ruleUPPAAL_IDENTIFIER();
 
             state._fsp--;
@@ -21960,7 +21871,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUPPAAL_IDENTIFIER.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_IDENTIFIER18920); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_IDENTIFIER18830); if (state.failed) return current;
 
             }
 
@@ -21978,7 +21889,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUPPAAL_IDENTIFIER"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7992:1: ruleUPPAAL_IDENTIFIER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7962:1: ruleUPPAAL_IDENTIFIER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS ) ;
     public final AntlrDatatypeRuleToken ruleUPPAAL_IDENTIFIER() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -21989,10 +21900,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7995:28: ( (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7996:1: (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7965:28: ( (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7966:1: (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7996:1: (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7966:1: (this_ID_0= RULE_ID | this_XML_KEYWORDS_1= ruleXML_KEYWORDS )
             int alt105=2;
             int LA105_0 = input.LA(1);
 
@@ -22011,9 +21922,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt105) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7996:6: this_ID_0= RULE_ID
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7966:6: this_ID_0= RULE_ID
                     {
-                    this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleUPPAAL_IDENTIFIER18960); if (state.failed) return current;
+                    this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleUPPAAL_IDENTIFIER18870); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_ID_0);
@@ -22028,14 +21939,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8005:5: this_XML_KEYWORDS_1= ruleXML_KEYWORDS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7975:5: this_XML_KEYWORDS_1= ruleXML_KEYWORDS
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getUPPAAL_IDENTIFIERAccess().getXML_KEYWORDSParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleXML_KEYWORDS_in_ruleUPPAAL_IDENTIFIER18993);
+                    pushFollow(FollowSets000.FOLLOW_ruleXML_KEYWORDS_in_ruleUPPAAL_IDENTIFIER18903);
                     this_XML_KEYWORDS_1=ruleXML_KEYWORDS();
 
                     state._fsp--;
@@ -22076,7 +21987,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUPPAAL_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8023:1: entryRuleUPPAAL_KEYWORDS returns [String current=null] : iv_ruleUPPAAL_KEYWORDS= ruleUPPAAL_KEYWORDS EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7993:1: entryRuleUPPAAL_KEYWORDS returns [String current=null] : iv_ruleUPPAAL_KEYWORDS= ruleUPPAAL_KEYWORDS EOF ;
     public final String entryRuleUPPAAL_KEYWORDS() throws RecognitionException {
         String current = null;
 
@@ -22084,13 +21995,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8024:2: (iv_ruleUPPAAL_KEYWORDS= ruleUPPAAL_KEYWORDS EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8025:2: iv_ruleUPPAAL_KEYWORDS= ruleUPPAAL_KEYWORDS EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7994:2: (iv_ruleUPPAAL_KEYWORDS= ruleUPPAAL_KEYWORDS EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7995:2: iv_ruleUPPAAL_KEYWORDS= ruleUPPAAL_KEYWORDS EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUPPAAL_KEYWORDSRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_KEYWORDS_in_entryRuleUPPAAL_KEYWORDS19039);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_KEYWORDS_in_entryRuleUPPAAL_KEYWORDS18949);
             iv_ruleUPPAAL_KEYWORDS=ruleUPPAAL_KEYWORDS();
 
             state._fsp--;
@@ -22098,7 +22009,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUPPAAL_KEYWORDS.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_KEYWORDS19050); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_KEYWORDS18960); if (state.failed) return current;
 
             }
 
@@ -22116,7 +22027,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUPPAAL_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8032:1: ruleUPPAAL_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8002:1: ruleUPPAAL_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' ) ;
     public final AntlrDatatypeRuleToken ruleUPPAAL_KEYWORDS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -22125,10 +22036,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8035:28: ( (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8036:1: (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8005:28: ( (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8006:1: (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8036:1: (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8006:1: (kw= 'chan' | kw= 'clock' | kw= 'bool' | kw= 'int' | kw= 'commit' | kw= 'const' | kw= 'urgent' | kw= 'broadcast' | kw= 'init' | kw= 'process' | kw= 'state' | kw= 'guard' | kw= 'sync' | kw= 'assign' | kw= 'system' | kw= 'trans' | kw= 'deadlock' | kw= 'and' | kw= 'or' | kw= 'not' | kw= 'imply' | kw= 'true' | kw= 'false' | kw= 'for' | kw= 'forall' | kw= 'exists' | kw= 'while' | kw= 'do' | kw= 'if' | kw= 'else' | kw= 'return' | kw= 'typedef' | kw= 'struct' | kw= 'rate' | kw= 'before_update' | kw= 'after_update' | kw= 'meta' | kw= 'priority' | kw= 'progress' | kw= 'scalar' | kw= 'select' | kw= 'void' | kw= 'switch' | kw= 'case' | kw= 'continue' | kw= 'break' | kw= 'default' )
             int alt106=47;
             switch ( input.LA(1) ) {
             case 57:
@@ -22376,9 +22287,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt106) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8037:2: kw= 'chan'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8007:2: kw= 'chan'
                     {
-                    kw=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleUPPAAL_KEYWORDS19088); if (state.failed) return current;
+                    kw=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleUPPAAL_KEYWORDS18998); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22389,9 +22300,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8044:2: kw= 'clock'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8014:2: kw= 'clock'
                     {
-                    kw=(Token)match(input,82,FollowSets000.FOLLOW_82_in_ruleUPPAAL_KEYWORDS19107); if (state.failed) return current;
+                    kw=(Token)match(input,82,FollowSets000.FOLLOW_82_in_ruleUPPAAL_KEYWORDS19017); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22402,9 +22313,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8051:2: kw= 'bool'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8021:2: kw= 'bool'
                     {
-                    kw=(Token)match(input,80,FollowSets000.FOLLOW_80_in_ruleUPPAAL_KEYWORDS19126); if (state.failed) return current;
+                    kw=(Token)match(input,80,FollowSets000.FOLLOW_80_in_ruleUPPAAL_KEYWORDS19036); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22415,9 +22326,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8058:2: kw= 'int'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8028:2: kw= 'int'
                     {
-                    kw=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleUPPAAL_KEYWORDS19145); if (state.failed) return current;
+                    kw=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleUPPAAL_KEYWORDS19055); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22428,9 +22339,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8065:2: kw= 'commit'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8035:2: kw= 'commit'
                     {
-                    kw=(Token)match(input,83,FollowSets000.FOLLOW_83_in_ruleUPPAAL_KEYWORDS19164); if (state.failed) return current;
+                    kw=(Token)match(input,83,FollowSets000.FOLLOW_83_in_ruleUPPAAL_KEYWORDS19074); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22441,9 +22352,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8072:2: kw= 'const'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8042:2: kw= 'const'
                     {
-                    kw=(Token)match(input,84,FollowSets000.FOLLOW_84_in_ruleUPPAAL_KEYWORDS19183); if (state.failed) return current;
+                    kw=(Token)match(input,84,FollowSets000.FOLLOW_84_in_ruleUPPAAL_KEYWORDS19093); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22454,9 +22365,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8079:2: kw= 'urgent'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8049:2: kw= 'urgent'
                     {
-                    kw=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleUPPAAL_KEYWORDS19202); if (state.failed) return current;
+                    kw=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleUPPAAL_KEYWORDS19112); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22467,9 +22378,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8086:2: kw= 'broadcast'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8056:2: kw= 'broadcast'
                     {
-                    kw=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleUPPAAL_KEYWORDS19221); if (state.failed) return current;
+                    kw=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleUPPAAL_KEYWORDS19131); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22480,9 +22391,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8093:2: kw= 'init'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8063:2: kw= 'init'
                     {
-                    kw=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleUPPAAL_KEYWORDS19240); if (state.failed) return current;
+                    kw=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleUPPAAL_KEYWORDS19150); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22493,9 +22404,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8100:2: kw= 'process'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8070:2: kw= 'process'
                     {
-                    kw=(Token)match(input,85,FollowSets000.FOLLOW_85_in_ruleUPPAAL_KEYWORDS19259); if (state.failed) return current;
+                    kw=(Token)match(input,85,FollowSets000.FOLLOW_85_in_ruleUPPAAL_KEYWORDS19169); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22506,9 +22417,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8107:2: kw= 'state'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8077:2: kw= 'state'
                     {
-                    kw=(Token)match(input,86,FollowSets000.FOLLOW_86_in_ruleUPPAAL_KEYWORDS19278); if (state.failed) return current;
+                    kw=(Token)match(input,86,FollowSets000.FOLLOW_86_in_ruleUPPAAL_KEYWORDS19188); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22519,9 +22430,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8114:2: kw= 'guard'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8084:2: kw= 'guard'
                     {
-                    kw=(Token)match(input,87,FollowSets000.FOLLOW_87_in_ruleUPPAAL_KEYWORDS19297); if (state.failed) return current;
+                    kw=(Token)match(input,87,FollowSets000.FOLLOW_87_in_ruleUPPAAL_KEYWORDS19207); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22532,9 +22443,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8121:2: kw= 'sync'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8091:2: kw= 'sync'
                     {
-                    kw=(Token)match(input,88,FollowSets000.FOLLOW_88_in_ruleUPPAAL_KEYWORDS19316); if (state.failed) return current;
+                    kw=(Token)match(input,88,FollowSets000.FOLLOW_88_in_ruleUPPAAL_KEYWORDS19226); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22545,9 +22456,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8128:2: kw= 'assign'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8098:2: kw= 'assign'
                     {
-                    kw=(Token)match(input,89,FollowSets000.FOLLOW_89_in_ruleUPPAAL_KEYWORDS19335); if (state.failed) return current;
+                    kw=(Token)match(input,89,FollowSets000.FOLLOW_89_in_ruleUPPAAL_KEYWORDS19245); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22558,9 +22469,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8135:2: kw= 'system'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8105:2: kw= 'system'
                     {
-                    kw=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleUPPAAL_KEYWORDS19354); if (state.failed) return current;
+                    kw=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleUPPAAL_KEYWORDS19264); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22571,9 +22482,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8142:2: kw= 'trans'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8112:2: kw= 'trans'
                     {
-                    kw=(Token)match(input,90,FollowSets000.FOLLOW_90_in_ruleUPPAAL_KEYWORDS19373); if (state.failed) return current;
+                    kw=(Token)match(input,90,FollowSets000.FOLLOW_90_in_ruleUPPAAL_KEYWORDS19283); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22584,9 +22495,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8149:2: kw= 'deadlock'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8119:2: kw= 'deadlock'
                     {
-                    kw=(Token)match(input,91,FollowSets000.FOLLOW_91_in_ruleUPPAAL_KEYWORDS19392); if (state.failed) return current;
+                    kw=(Token)match(input,91,FollowSets000.FOLLOW_91_in_ruleUPPAAL_KEYWORDS19302); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22597,9 +22508,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8156:2: kw= 'and'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8126:2: kw= 'and'
                     {
-                    kw=(Token)match(input,92,FollowSets000.FOLLOW_92_in_ruleUPPAAL_KEYWORDS19411); if (state.failed) return current;
+                    kw=(Token)match(input,92,FollowSets000.FOLLOW_92_in_ruleUPPAAL_KEYWORDS19321); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22610,9 +22521,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8163:2: kw= 'or'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8133:2: kw= 'or'
                     {
-                    kw=(Token)match(input,93,FollowSets000.FOLLOW_93_in_ruleUPPAAL_KEYWORDS19430); if (state.failed) return current;
+                    kw=(Token)match(input,93,FollowSets000.FOLLOW_93_in_ruleUPPAAL_KEYWORDS19340); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22623,9 +22534,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8170:2: kw= 'not'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8140:2: kw= 'not'
                     {
-                    kw=(Token)match(input,72,FollowSets000.FOLLOW_72_in_ruleUPPAAL_KEYWORDS19449); if (state.failed) return current;
+                    kw=(Token)match(input,72,FollowSets000.FOLLOW_72_in_ruleUPPAAL_KEYWORDS19359); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22636,9 +22547,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8177:2: kw= 'imply'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8147:2: kw= 'imply'
                     {
-                    kw=(Token)match(input,94,FollowSets000.FOLLOW_94_in_ruleUPPAAL_KEYWORDS19468); if (state.failed) return current;
+                    kw=(Token)match(input,94,FollowSets000.FOLLOW_94_in_ruleUPPAAL_KEYWORDS19378); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22649,9 +22560,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8184:2: kw= 'true'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8154:2: kw= 'true'
                     {
-                    kw=(Token)match(input,78,FollowSets000.FOLLOW_78_in_ruleUPPAAL_KEYWORDS19487); if (state.failed) return current;
+                    kw=(Token)match(input,78,FollowSets000.FOLLOW_78_in_ruleUPPAAL_KEYWORDS19397); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22662,9 +22573,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8191:2: kw= 'false'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8161:2: kw= 'false'
                     {
-                    kw=(Token)match(input,79,FollowSets000.FOLLOW_79_in_ruleUPPAAL_KEYWORDS19506); if (state.failed) return current;
+                    kw=(Token)match(input,79,FollowSets000.FOLLOW_79_in_ruleUPPAAL_KEYWORDS19416); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22675,9 +22586,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8198:2: kw= 'for'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8168:2: kw= 'for'
                     {
-                    kw=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleUPPAAL_KEYWORDS19525); if (state.failed) return current;
+                    kw=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleUPPAAL_KEYWORDS19435); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22688,9 +22599,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8205:2: kw= 'forall'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8175:2: kw= 'forall'
                     {
-                    kw=(Token)match(input,95,FollowSets000.FOLLOW_95_in_ruleUPPAAL_KEYWORDS19544); if (state.failed) return current;
+                    kw=(Token)match(input,95,FollowSets000.FOLLOW_95_in_ruleUPPAAL_KEYWORDS19454); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22701,9 +22612,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8212:2: kw= 'exists'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8182:2: kw= 'exists'
                     {
-                    kw=(Token)match(input,96,FollowSets000.FOLLOW_96_in_ruleUPPAAL_KEYWORDS19563); if (state.failed) return current;
+                    kw=(Token)match(input,96,FollowSets000.FOLLOW_96_in_ruleUPPAAL_KEYWORDS19473); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22714,9 +22625,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8219:2: kw= 'while'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8189:2: kw= 'while'
                     {
-                    kw=(Token)match(input,67,FollowSets000.FOLLOW_67_in_ruleUPPAAL_KEYWORDS19582); if (state.failed) return current;
+                    kw=(Token)match(input,67,FollowSets000.FOLLOW_67_in_ruleUPPAAL_KEYWORDS19492); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22727,9 +22638,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8226:2: kw= 'do'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8196:2: kw= 'do'
                     {
-                    kw=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleUPPAAL_KEYWORDS19601); if (state.failed) return current;
+                    kw=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleUPPAAL_KEYWORDS19511); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22740,9 +22651,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8233:2: kw= 'if'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8203:2: kw= 'if'
                     {
-                    kw=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleUPPAAL_KEYWORDS19620); if (state.failed) return current;
+                    kw=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleUPPAAL_KEYWORDS19530); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22753,9 +22664,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8240:2: kw= 'else'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8210:2: kw= 'else'
                     {
-                    kw=(Token)match(input,70,FollowSets000.FOLLOW_70_in_ruleUPPAAL_KEYWORDS19639); if (state.failed) return current;
+                    kw=(Token)match(input,70,FollowSets000.FOLLOW_70_in_ruleUPPAAL_KEYWORDS19549); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22766,9 +22677,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8247:2: kw= 'return'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8217:2: kw= 'return'
                     {
-                    kw=(Token)match(input,71,FollowSets000.FOLLOW_71_in_ruleUPPAAL_KEYWORDS19658); if (state.failed) return current;
+                    kw=(Token)match(input,71,FollowSets000.FOLLOW_71_in_ruleUPPAAL_KEYWORDS19568); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22779,9 +22690,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8254:2: kw= 'typedef'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8224:2: kw= 'typedef'
                     {
-                    kw=(Token)match(input,63,FollowSets000.FOLLOW_63_in_ruleUPPAAL_KEYWORDS19677); if (state.failed) return current;
+                    kw=(Token)match(input,63,FollowSets000.FOLLOW_63_in_ruleUPPAAL_KEYWORDS19587); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22792,9 +22703,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8261:2: kw= 'struct'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8231:2: kw= 'struct'
                     {
-                    kw=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleUPPAAL_KEYWORDS19696); if (state.failed) return current;
+                    kw=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleUPPAAL_KEYWORDS19606); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22805,9 +22716,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8268:2: kw= 'rate'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8238:2: kw= 'rate'
                     {
-                    kw=(Token)match(input,97,FollowSets000.FOLLOW_97_in_ruleUPPAAL_KEYWORDS19715); if (state.failed) return current;
+                    kw=(Token)match(input,97,FollowSets000.FOLLOW_97_in_ruleUPPAAL_KEYWORDS19625); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22818,9 +22729,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8275:2: kw= 'before_update'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8245:2: kw= 'before_update'
                     {
-                    kw=(Token)match(input,98,FollowSets000.FOLLOW_98_in_ruleUPPAAL_KEYWORDS19734); if (state.failed) return current;
+                    kw=(Token)match(input,98,FollowSets000.FOLLOW_98_in_ruleUPPAAL_KEYWORDS19644); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22831,9 +22742,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8282:2: kw= 'after_update'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8252:2: kw= 'after_update'
                     {
-                    kw=(Token)match(input,99,FollowSets000.FOLLOW_99_in_ruleUPPAAL_KEYWORDS19753); if (state.failed) return current;
+                    kw=(Token)match(input,99,FollowSets000.FOLLOW_99_in_ruleUPPAAL_KEYWORDS19663); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22844,9 +22755,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8289:2: kw= 'meta'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8259:2: kw= 'meta'
                     {
-                    kw=(Token)match(input,100,FollowSets000.FOLLOW_100_in_ruleUPPAAL_KEYWORDS19772); if (state.failed) return current;
+                    kw=(Token)match(input,100,FollowSets000.FOLLOW_100_in_ruleUPPAAL_KEYWORDS19682); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22857,9 +22768,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8296:2: kw= 'priority'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8266:2: kw= 'priority'
                     {
-                    kw=(Token)match(input,64,FollowSets000.FOLLOW_64_in_ruleUPPAAL_KEYWORDS19791); if (state.failed) return current;
+                    kw=(Token)match(input,64,FollowSets000.FOLLOW_64_in_ruleUPPAAL_KEYWORDS19701); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22870,9 +22781,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8303:2: kw= 'progress'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8273:2: kw= 'progress'
                     {
-                    kw=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleUPPAAL_KEYWORDS19810); if (state.failed) return current;
+                    kw=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleUPPAAL_KEYWORDS19720); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22883,9 +22794,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8310:2: kw= 'scalar'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8280:2: kw= 'scalar'
                     {
-                    kw=(Token)match(input,62,FollowSets000.FOLLOW_62_in_ruleUPPAAL_KEYWORDS19829); if (state.failed) return current;
+                    kw=(Token)match(input,62,FollowSets000.FOLLOW_62_in_ruleUPPAAL_KEYWORDS19739); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22896,9 +22807,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8317:2: kw= 'select'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8287:2: kw= 'select'
                     {
-                    kw=(Token)match(input,101,FollowSets000.FOLLOW_101_in_ruleUPPAAL_KEYWORDS19848); if (state.failed) return current;
+                    kw=(Token)match(input,101,FollowSets000.FOLLOW_101_in_ruleUPPAAL_KEYWORDS19758); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22909,9 +22820,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8324:2: kw= 'void'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8294:2: kw= 'void'
                     {
-                    kw=(Token)match(input,81,FollowSets000.FOLLOW_81_in_ruleUPPAAL_KEYWORDS19867); if (state.failed) return current;
+                    kw=(Token)match(input,81,FollowSets000.FOLLOW_81_in_ruleUPPAAL_KEYWORDS19777); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22922,9 +22833,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8331:2: kw= 'switch'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8301:2: kw= 'switch'
                     {
-                    kw=(Token)match(input,102,FollowSets000.FOLLOW_102_in_ruleUPPAAL_KEYWORDS19886); if (state.failed) return current;
+                    kw=(Token)match(input,102,FollowSets000.FOLLOW_102_in_ruleUPPAAL_KEYWORDS19796); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22935,9 +22846,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8338:2: kw= 'case'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8308:2: kw= 'case'
                     {
-                    kw=(Token)match(input,103,FollowSets000.FOLLOW_103_in_ruleUPPAAL_KEYWORDS19905); if (state.failed) return current;
+                    kw=(Token)match(input,103,FollowSets000.FOLLOW_103_in_ruleUPPAAL_KEYWORDS19815); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22948,9 +22859,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8345:2: kw= 'continue'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8315:2: kw= 'continue'
                     {
-                    kw=(Token)match(input,104,FollowSets000.FOLLOW_104_in_ruleUPPAAL_KEYWORDS19924); if (state.failed) return current;
+                    kw=(Token)match(input,104,FollowSets000.FOLLOW_104_in_ruleUPPAAL_KEYWORDS19834); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22961,9 +22872,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 46 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8352:2: kw= 'break'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8322:2: kw= 'break'
                     {
-                    kw=(Token)match(input,105,FollowSets000.FOLLOW_105_in_ruleUPPAAL_KEYWORDS19943); if (state.failed) return current;
+                    kw=(Token)match(input,105,FollowSets000.FOLLOW_105_in_ruleUPPAAL_KEYWORDS19853); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -22974,9 +22885,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 47 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8359:2: kw= 'default'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8329:2: kw= 'default'
                     {
-                    kw=(Token)match(input,65,FollowSets000.FOLLOW_65_in_ruleUPPAAL_KEYWORDS19962); if (state.failed) return current;
+                    kw=(Token)match(input,65,FollowSets000.FOLLOW_65_in_ruleUPPAAL_KEYWORDS19872); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23009,7 +22920,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUPPAAL_STRUCTURE_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8372:1: entryRuleUPPAAL_STRUCTURE_KEYWORDS returns [String current=null] : iv_ruleUPPAAL_STRUCTURE_KEYWORDS= ruleUPPAAL_STRUCTURE_KEYWORDS EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8342:1: entryRuleUPPAAL_STRUCTURE_KEYWORDS returns [String current=null] : iv_ruleUPPAAL_STRUCTURE_KEYWORDS= ruleUPPAAL_STRUCTURE_KEYWORDS EOF ;
     public final String entryRuleUPPAAL_STRUCTURE_KEYWORDS() throws RecognitionException {
         String current = null;
 
@@ -23017,13 +22928,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8373:2: (iv_ruleUPPAAL_STRUCTURE_KEYWORDS= ruleUPPAAL_STRUCTURE_KEYWORDS EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8374:2: iv_ruleUPPAAL_STRUCTURE_KEYWORDS= ruleUPPAAL_STRUCTURE_KEYWORDS EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8343:2: (iv_ruleUPPAAL_STRUCTURE_KEYWORDS= ruleUPPAAL_STRUCTURE_KEYWORDS EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8344:2: iv_ruleUPPAAL_STRUCTURE_KEYWORDS= ruleUPPAAL_STRUCTURE_KEYWORDS EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUPPAAL_STRUCTURE_KEYWORDSRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS20003);
+            pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS19913);
             iv_ruleUPPAAL_STRUCTURE_KEYWORDS=ruleUPPAAL_STRUCTURE_KEYWORDS();
 
             state._fsp--;
@@ -23031,7 +22942,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleUPPAAL_STRUCTURE_KEYWORDS.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS20014); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS19924); if (state.failed) return current;
 
             }
 
@@ -23049,7 +22960,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUPPAAL_STRUCTURE_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8381:1: ruleUPPAAL_STRUCTURE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8351:1: ruleUPPAAL_STRUCTURE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' ) ;
     public final AntlrDatatypeRuleToken ruleUPPAAL_STRUCTURE_KEYWORDS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -23058,10 +22969,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8384:28: ( (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8385:1: (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8354:28: ( (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8355:1: (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8385:1: (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8355:1: (kw= '[' | kw= ']' | kw= '&lt;' | kw= '&gt' | kw= ';' | kw= ',' | kw= '{' | kw= '}' | kw= '(' | kw= ')' | kw= '?' | kw= '!' | kw= '*' | kw= '%' | kw= '/' | kw= '+' | kw= '-' | kw= '++' | kw= '--' | kw= '&lt;&lt;' | kw= '&gt;&gt' | kw= '&lt;?' | kw= '&gt;?' | kw= '&lt;=' | kw= '&gt;=' | kw= '==' | kw= '!=' | kw= '&' | kw= '&amp;' | kw= '^' | kw= '|' | kw= '&&' | kw= '&amp;&amp;' | kw= '||' | kw= '=' | kw= '+=' | kw= '-=' | kw= '*=' | kw= '/=' | kw= '%=' | kw= '|=' | kw= '&=' | kw= '^=' | kw= '&lt;&lt;=' | kw= '&gt;&gt;=' | kw= ':' )
             int alt107=46;
             switch ( input.LA(1) ) {
             case 55:
@@ -23304,9 +23215,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt107) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8386:2: kw= '['
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8356:2: kw= '['
                     {
-                    kw=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleUPPAAL_STRUCTURE_KEYWORDS20052); if (state.failed) return current;
+                    kw=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleUPPAAL_STRUCTURE_KEYWORDS19962); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23317,9 +23228,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8393:2: kw= ']'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8363:2: kw= ']'
                     {
-                    kw=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleUPPAAL_STRUCTURE_KEYWORDS20071); if (state.failed) return current;
+                    kw=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleUPPAAL_STRUCTURE_KEYWORDS19981); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23330,9 +23241,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8400:2: kw= '&lt;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8370:2: kw= '&lt;'
                     {
-                    kw=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleUPPAAL_STRUCTURE_KEYWORDS20090); if (state.failed) return current;
+                    kw=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleUPPAAL_STRUCTURE_KEYWORDS20000); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23343,9 +23254,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8407:2: kw= '&gt'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8377:2: kw= '&gt'
                     {
-                    kw=(Token)match(input,106,FollowSets000.FOLLOW_106_in_ruleUPPAAL_STRUCTURE_KEYWORDS20109); if (state.failed) return current;
+                    kw=(Token)match(input,106,FollowSets000.FOLLOW_106_in_ruleUPPAAL_STRUCTURE_KEYWORDS20019); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23356,9 +23267,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8414:2: kw= ';'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8384:2: kw= ';'
                     {
-                    kw=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleUPPAAL_STRUCTURE_KEYWORDS20128); if (state.failed) return current;
+                    kw=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleUPPAAL_STRUCTURE_KEYWORDS20038); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23369,9 +23280,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8421:2: kw= ','
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8391:2: kw= ','
                     {
-                    kw=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleUPPAAL_STRUCTURE_KEYWORDS20147); if (state.failed) return current;
+                    kw=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleUPPAAL_STRUCTURE_KEYWORDS20057); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23382,9 +23293,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8428:2: kw= '{'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8398:2: kw= '{'
                     {
-                    kw=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleUPPAAL_STRUCTURE_KEYWORDS20166); if (state.failed) return current;
+                    kw=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleUPPAAL_STRUCTURE_KEYWORDS20076); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23395,9 +23306,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8435:2: kw= '}'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8405:2: kw= '}'
                     {
-                    kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleUPPAAL_STRUCTURE_KEYWORDS20185); if (state.failed) return current;
+                    kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleUPPAAL_STRUCTURE_KEYWORDS20095); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23408,9 +23319,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8442:2: kw= '('
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8412:2: kw= '('
                     {
-                    kw=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleUPPAAL_STRUCTURE_KEYWORDS20204); if (state.failed) return current;
+                    kw=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleUPPAAL_STRUCTURE_KEYWORDS20114); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23421,9 +23332,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8449:2: kw= ')'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8419:2: kw= ')'
                     {
-                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleUPPAAL_STRUCTURE_KEYWORDS20223); if (state.failed) return current;
+                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleUPPAAL_STRUCTURE_KEYWORDS20133); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23434,9 +23345,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8456:2: kw= '?'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8426:2: kw= '?'
                     {
-                    kw=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleUPPAAL_STRUCTURE_KEYWORDS20242); if (state.failed) return current;
+                    kw=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleUPPAAL_STRUCTURE_KEYWORDS20152); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23447,9 +23358,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8463:2: kw= '!'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8433:2: kw= '!'
                     {
-                    kw=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleUPPAAL_STRUCTURE_KEYWORDS20261); if (state.failed) return current;
+                    kw=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleUPPAAL_STRUCTURE_KEYWORDS20171); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23460,9 +23371,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8470:2: kw= '*'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8440:2: kw= '*'
                     {
-                    kw=(Token)match(input,107,FollowSets000.FOLLOW_107_in_ruleUPPAAL_STRUCTURE_KEYWORDS20280); if (state.failed) return current;
+                    kw=(Token)match(input,107,FollowSets000.FOLLOW_107_in_ruleUPPAAL_STRUCTURE_KEYWORDS20190); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23473,9 +23384,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8477:2: kw= '%'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8447:2: kw= '%'
                     {
-                    kw=(Token)match(input,108,FollowSets000.FOLLOW_108_in_ruleUPPAAL_STRUCTURE_KEYWORDS20299); if (state.failed) return current;
+                    kw=(Token)match(input,108,FollowSets000.FOLLOW_108_in_ruleUPPAAL_STRUCTURE_KEYWORDS20209); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23486,9 +23397,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8484:2: kw= '/'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8454:2: kw= '/'
                     {
-                    kw=(Token)match(input,109,FollowSets000.FOLLOW_109_in_ruleUPPAAL_STRUCTURE_KEYWORDS20318); if (state.failed) return current;
+                    kw=(Token)match(input,109,FollowSets000.FOLLOW_109_in_ruleUPPAAL_STRUCTURE_KEYWORDS20228); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23499,9 +23410,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8491:2: kw= '+'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8461:2: kw= '+'
                     {
-                    kw=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleUPPAAL_STRUCTURE_KEYWORDS20337); if (state.failed) return current;
+                    kw=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleUPPAAL_STRUCTURE_KEYWORDS20247); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23512,9 +23423,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8498:2: kw= '-'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8468:2: kw= '-'
                     {
-                    kw=(Token)match(input,76,FollowSets000.FOLLOW_76_in_ruleUPPAAL_STRUCTURE_KEYWORDS20356); if (state.failed) return current;
+                    kw=(Token)match(input,76,FollowSets000.FOLLOW_76_in_ruleUPPAAL_STRUCTURE_KEYWORDS20266); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23525,9 +23436,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8505:2: kw= '++'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8475:2: kw= '++'
                     {
-                    kw=(Token)match(input,110,FollowSets000.FOLLOW_110_in_ruleUPPAAL_STRUCTURE_KEYWORDS20375); if (state.failed) return current;
+                    kw=(Token)match(input,110,FollowSets000.FOLLOW_110_in_ruleUPPAAL_STRUCTURE_KEYWORDS20285); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23538,9 +23449,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8512:2: kw= '--'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8482:2: kw= '--'
                     {
-                    kw=(Token)match(input,111,FollowSets000.FOLLOW_111_in_ruleUPPAAL_STRUCTURE_KEYWORDS20394); if (state.failed) return current;
+                    kw=(Token)match(input,111,FollowSets000.FOLLOW_111_in_ruleUPPAAL_STRUCTURE_KEYWORDS20304); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23551,9 +23462,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8519:2: kw= '&lt;&lt;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8489:2: kw= '&lt;&lt;'
                     {
-                    kw=(Token)match(input,112,FollowSets000.FOLLOW_112_in_ruleUPPAAL_STRUCTURE_KEYWORDS20413); if (state.failed) return current;
+                    kw=(Token)match(input,112,FollowSets000.FOLLOW_112_in_ruleUPPAAL_STRUCTURE_KEYWORDS20323); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23564,9 +23475,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8526:2: kw= '&gt;&gt'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8496:2: kw= '&gt;&gt'
                     {
-                    kw=(Token)match(input,113,FollowSets000.FOLLOW_113_in_ruleUPPAAL_STRUCTURE_KEYWORDS20432); if (state.failed) return current;
+                    kw=(Token)match(input,113,FollowSets000.FOLLOW_113_in_ruleUPPAAL_STRUCTURE_KEYWORDS20342); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23577,9 +23488,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8533:2: kw= '&lt;?'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8503:2: kw= '&lt;?'
                     {
-                    kw=(Token)match(input,114,FollowSets000.FOLLOW_114_in_ruleUPPAAL_STRUCTURE_KEYWORDS20451); if (state.failed) return current;
+                    kw=(Token)match(input,114,FollowSets000.FOLLOW_114_in_ruleUPPAAL_STRUCTURE_KEYWORDS20361); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23590,9 +23501,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8540:2: kw= '&gt;?'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8510:2: kw= '&gt;?'
                     {
-                    kw=(Token)match(input,115,FollowSets000.FOLLOW_115_in_ruleUPPAAL_STRUCTURE_KEYWORDS20470); if (state.failed) return current;
+                    kw=(Token)match(input,115,FollowSets000.FOLLOW_115_in_ruleUPPAAL_STRUCTURE_KEYWORDS20380); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23603,9 +23514,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8547:2: kw= '&lt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8517:2: kw= '&lt;='
                     {
-                    kw=(Token)match(input,116,FollowSets000.FOLLOW_116_in_ruleUPPAAL_STRUCTURE_KEYWORDS20489); if (state.failed) return current;
+                    kw=(Token)match(input,116,FollowSets000.FOLLOW_116_in_ruleUPPAAL_STRUCTURE_KEYWORDS20399); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23616,9 +23527,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8554:2: kw= '&gt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8524:2: kw= '&gt;='
                     {
-                    kw=(Token)match(input,117,FollowSets000.FOLLOW_117_in_ruleUPPAAL_STRUCTURE_KEYWORDS20508); if (state.failed) return current;
+                    kw=(Token)match(input,117,FollowSets000.FOLLOW_117_in_ruleUPPAAL_STRUCTURE_KEYWORDS20418); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23629,9 +23540,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8561:2: kw= '=='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8531:2: kw= '=='
                     {
-                    kw=(Token)match(input,118,FollowSets000.FOLLOW_118_in_ruleUPPAAL_STRUCTURE_KEYWORDS20527); if (state.failed) return current;
+                    kw=(Token)match(input,118,FollowSets000.FOLLOW_118_in_ruleUPPAAL_STRUCTURE_KEYWORDS20437); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23642,9 +23553,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8568:2: kw= '!='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8538:2: kw= '!='
                     {
-                    kw=(Token)match(input,119,FollowSets000.FOLLOW_119_in_ruleUPPAAL_STRUCTURE_KEYWORDS20546); if (state.failed) return current;
+                    kw=(Token)match(input,119,FollowSets000.FOLLOW_119_in_ruleUPPAAL_STRUCTURE_KEYWORDS20456); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23655,9 +23566,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8575:2: kw= '&'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8545:2: kw= '&'
                     {
-                    kw=(Token)match(input,120,FollowSets000.FOLLOW_120_in_ruleUPPAAL_STRUCTURE_KEYWORDS20565); if (state.failed) return current;
+                    kw=(Token)match(input,120,FollowSets000.FOLLOW_120_in_ruleUPPAAL_STRUCTURE_KEYWORDS20475); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23668,9 +23579,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8582:2: kw= '&amp;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8552:2: kw= '&amp;'
                     {
-                    kw=(Token)match(input,121,FollowSets000.FOLLOW_121_in_ruleUPPAAL_STRUCTURE_KEYWORDS20584); if (state.failed) return current;
+                    kw=(Token)match(input,121,FollowSets000.FOLLOW_121_in_ruleUPPAAL_STRUCTURE_KEYWORDS20494); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23681,9 +23592,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8589:2: kw= '^'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8559:2: kw= '^'
                     {
-                    kw=(Token)match(input,122,FollowSets000.FOLLOW_122_in_ruleUPPAAL_STRUCTURE_KEYWORDS20603); if (state.failed) return current;
+                    kw=(Token)match(input,122,FollowSets000.FOLLOW_122_in_ruleUPPAAL_STRUCTURE_KEYWORDS20513); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23694,9 +23605,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8596:2: kw= '|'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8566:2: kw= '|'
                     {
-                    kw=(Token)match(input,123,FollowSets000.FOLLOW_123_in_ruleUPPAAL_STRUCTURE_KEYWORDS20622); if (state.failed) return current;
+                    kw=(Token)match(input,123,FollowSets000.FOLLOW_123_in_ruleUPPAAL_STRUCTURE_KEYWORDS20532); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23707,9 +23618,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8603:2: kw= '&&'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8573:2: kw= '&&'
                     {
-                    kw=(Token)match(input,124,FollowSets000.FOLLOW_124_in_ruleUPPAAL_STRUCTURE_KEYWORDS20641); if (state.failed) return current;
+                    kw=(Token)match(input,124,FollowSets000.FOLLOW_124_in_ruleUPPAAL_STRUCTURE_KEYWORDS20551); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23720,9 +23631,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8610:2: kw= '&amp;&amp;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8580:2: kw= '&amp;&amp;'
                     {
-                    kw=(Token)match(input,125,FollowSets000.FOLLOW_125_in_ruleUPPAAL_STRUCTURE_KEYWORDS20660); if (state.failed) return current;
+                    kw=(Token)match(input,125,FollowSets000.FOLLOW_125_in_ruleUPPAAL_STRUCTURE_KEYWORDS20570); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23733,9 +23644,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8617:2: kw= '||'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8587:2: kw= '||'
                     {
-                    kw=(Token)match(input,126,FollowSets000.FOLLOW_126_in_ruleUPPAAL_STRUCTURE_KEYWORDS20679); if (state.failed) return current;
+                    kw=(Token)match(input,126,FollowSets000.FOLLOW_126_in_ruleUPPAAL_STRUCTURE_KEYWORDS20589); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23746,9 +23657,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8624:2: kw= '='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8594:2: kw= '='
                     {
-                    kw=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleUPPAAL_STRUCTURE_KEYWORDS20698); if (state.failed) return current;
+                    kw=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleUPPAAL_STRUCTURE_KEYWORDS20608); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23759,9 +23670,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8631:2: kw= '+='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8601:2: kw= '+='
                     {
-                    kw=(Token)match(input,127,FollowSets000.FOLLOW_127_in_ruleUPPAAL_STRUCTURE_KEYWORDS20717); if (state.failed) return current;
+                    kw=(Token)match(input,127,FollowSets000.FOLLOW_127_in_ruleUPPAAL_STRUCTURE_KEYWORDS20627); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23772,9 +23683,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8638:2: kw= '-='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8608:2: kw= '-='
                     {
-                    kw=(Token)match(input,128,FollowSets000.FOLLOW_128_in_ruleUPPAAL_STRUCTURE_KEYWORDS20736); if (state.failed) return current;
+                    kw=(Token)match(input,128,FollowSets000.FOLLOW_128_in_ruleUPPAAL_STRUCTURE_KEYWORDS20646); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23785,9 +23696,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8645:2: kw= '*='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8615:2: kw= '*='
                     {
-                    kw=(Token)match(input,129,FollowSets000.FOLLOW_129_in_ruleUPPAAL_STRUCTURE_KEYWORDS20755); if (state.failed) return current;
+                    kw=(Token)match(input,129,FollowSets000.FOLLOW_129_in_ruleUPPAAL_STRUCTURE_KEYWORDS20665); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23798,9 +23709,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8652:2: kw= '/='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8622:2: kw= '/='
                     {
-                    kw=(Token)match(input,130,FollowSets000.FOLLOW_130_in_ruleUPPAAL_STRUCTURE_KEYWORDS20774); if (state.failed) return current;
+                    kw=(Token)match(input,130,FollowSets000.FOLLOW_130_in_ruleUPPAAL_STRUCTURE_KEYWORDS20684); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23811,9 +23722,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8659:2: kw= '%='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8629:2: kw= '%='
                     {
-                    kw=(Token)match(input,131,FollowSets000.FOLLOW_131_in_ruleUPPAAL_STRUCTURE_KEYWORDS20793); if (state.failed) return current;
+                    kw=(Token)match(input,131,FollowSets000.FOLLOW_131_in_ruleUPPAAL_STRUCTURE_KEYWORDS20703); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23824,9 +23735,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8666:2: kw= '|='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8636:2: kw= '|='
                     {
-                    kw=(Token)match(input,132,FollowSets000.FOLLOW_132_in_ruleUPPAAL_STRUCTURE_KEYWORDS20812); if (state.failed) return current;
+                    kw=(Token)match(input,132,FollowSets000.FOLLOW_132_in_ruleUPPAAL_STRUCTURE_KEYWORDS20722); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23837,9 +23748,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8673:2: kw= '&='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8643:2: kw= '&='
                     {
-                    kw=(Token)match(input,133,FollowSets000.FOLLOW_133_in_ruleUPPAAL_STRUCTURE_KEYWORDS20831); if (state.failed) return current;
+                    kw=(Token)match(input,133,FollowSets000.FOLLOW_133_in_ruleUPPAAL_STRUCTURE_KEYWORDS20741); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23850,9 +23761,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8680:2: kw= '^='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8650:2: kw= '^='
                     {
-                    kw=(Token)match(input,134,FollowSets000.FOLLOW_134_in_ruleUPPAAL_STRUCTURE_KEYWORDS20850); if (state.failed) return current;
+                    kw=(Token)match(input,134,FollowSets000.FOLLOW_134_in_ruleUPPAAL_STRUCTURE_KEYWORDS20760); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23863,9 +23774,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8687:2: kw= '&lt;&lt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8657:2: kw= '&lt;&lt;='
                     {
-                    kw=(Token)match(input,135,FollowSets000.FOLLOW_135_in_ruleUPPAAL_STRUCTURE_KEYWORDS20869); if (state.failed) return current;
+                    kw=(Token)match(input,135,FollowSets000.FOLLOW_135_in_ruleUPPAAL_STRUCTURE_KEYWORDS20779); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23876,9 +23787,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8694:2: kw= '&gt;&gt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8664:2: kw= '&gt;&gt;='
                     {
-                    kw=(Token)match(input,136,FollowSets000.FOLLOW_136_in_ruleUPPAAL_STRUCTURE_KEYWORDS20888); if (state.failed) return current;
+                    kw=(Token)match(input,136,FollowSets000.FOLLOW_136_in_ruleUPPAAL_STRUCTURE_KEYWORDS20798); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23889,9 +23800,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 46 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8701:2: kw= ':'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8671:2: kw= ':'
                     {
-                    kw=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleUPPAAL_STRUCTURE_KEYWORDS20907); if (state.failed) return current;
+                    kw=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleUPPAAL_STRUCTURE_KEYWORDS20817); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -23924,7 +23835,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQUOTED_INT"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8714:1: entryRuleQUOTED_INT returns [String current=null] : iv_ruleQUOTED_INT= ruleQUOTED_INT EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8684:1: entryRuleQUOTED_INT returns [String current=null] : iv_ruleQUOTED_INT= ruleQUOTED_INT EOF ;
     public final String entryRuleQUOTED_INT() throws RecognitionException {
         String current = null;
 
@@ -23932,13 +23843,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8715:2: (iv_ruleQUOTED_INT= ruleQUOTED_INT EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8716:2: iv_ruleQUOTED_INT= ruleQUOTED_INT EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8685:2: (iv_ruleQUOTED_INT= ruleQUOTED_INT EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8686:2: iv_ruleQUOTED_INT= ruleQUOTED_INT EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQUOTED_INTRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQUOTED_INT_in_entryRuleQUOTED_INT20948);
+            pushFollow(FollowSets000.FOLLOW_ruleQUOTED_INT_in_entryRuleQUOTED_INT20858);
             iv_ruleQUOTED_INT=ruleQUOTED_INT();
 
             state._fsp--;
@@ -23946,7 +23857,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQUOTED_INT.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQUOTED_INT20959); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQUOTED_INT20869); if (state.failed) return current;
 
             }
 
@@ -23964,7 +23875,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQUOTED_INT"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8723:1: ruleQUOTED_INT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8693:1: ruleQUOTED_INT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleQUOTED_INT() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -23973,10 +23884,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8726:28: (this_STRING_0= RULE_STRING )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8727:5: this_STRING_0= RULE_STRING
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8696:28: (this_STRING_0= RULE_STRING )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8697:5: this_STRING_0= RULE_STRING
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleQUOTED_INT20998); if (state.failed) return current;
+            this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleQUOTED_INT20908); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_STRING_0);
@@ -24007,7 +23918,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleANY_TOKEN_BUT_XML_CLOSE"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8742:1: entryRuleANY_TOKEN_BUT_XML_CLOSE returns [String current=null] : iv_ruleANY_TOKEN_BUT_XML_CLOSE= ruleANY_TOKEN_BUT_XML_CLOSE EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8712:1: entryRuleANY_TOKEN_BUT_XML_CLOSE returns [String current=null] : iv_ruleANY_TOKEN_BUT_XML_CLOSE= ruleANY_TOKEN_BUT_XML_CLOSE EOF ;
     public final String entryRuleANY_TOKEN_BUT_XML_CLOSE() throws RecognitionException {
         String current = null;
 
@@ -24015,13 +23926,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8743:2: (iv_ruleANY_TOKEN_BUT_XML_CLOSE= ruleANY_TOKEN_BUT_XML_CLOSE EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8744:2: iv_ruleANY_TOKEN_BUT_XML_CLOSE= ruleANY_TOKEN_BUT_XML_CLOSE EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8713:2: (iv_ruleANY_TOKEN_BUT_XML_CLOSE= ruleANY_TOKEN_BUT_XML_CLOSE EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8714:2: iv_ruleANY_TOKEN_BUT_XML_CLOSE= ruleANY_TOKEN_BUT_XML_CLOSE EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getANY_TOKEN_BUT_XML_CLOSERule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleANY_TOKEN_BUT_XML_CLOSE_in_entryRuleANY_TOKEN_BUT_XML_CLOSE21043);
+            pushFollow(FollowSets000.FOLLOW_ruleANY_TOKEN_BUT_XML_CLOSE_in_entryRuleANY_TOKEN_BUT_XML_CLOSE20953);
             iv_ruleANY_TOKEN_BUT_XML_CLOSE=ruleANY_TOKEN_BUT_XML_CLOSE();
 
             state._fsp--;
@@ -24029,7 +23940,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleANY_TOKEN_BUT_XML_CLOSE.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleANY_TOKEN_BUT_XML_CLOSE21054); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleANY_TOKEN_BUT_XML_CLOSE20964); if (state.failed) return current;
 
             }
 
@@ -24047,7 +23958,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleANY_TOKEN_BUT_XML_CLOSE"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8751:1: ruleANY_TOKEN_BUT_XML_CLOSE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8721:1: ruleANY_TOKEN_BUT_XML_CLOSE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT ) ;
     public final AntlrDatatypeRuleToken ruleANY_TOKEN_BUT_XML_CLOSE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24072,10 +23983,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8754:28: ( (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8755:1: (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8724:28: ( (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8725:1: (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8755:1: (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8725:1: (this_XML_KEYWORDS_0= ruleXML_KEYWORDS | this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS | this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS | this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS | this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS | this_STRING_5= RULE_STRING | this_ID_6= RULE_ID | this_WS_7= RULE_WS | this_ANY_OTHER_8= RULE_ANY_OTHER | this_INT_9= RULE_INT | this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT | this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT )
             int alt108=12;
             switch ( input.LA(1) ) {
             case 15:
@@ -24267,14 +24178,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt108) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8756:5: this_XML_KEYWORDS_0= ruleXML_KEYWORDS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8726:5: this_XML_KEYWORDS_0= ruleXML_KEYWORDS
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getANY_TOKEN_BUT_XML_CLOSEAccess().getXML_KEYWORDSParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleXML_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21101);
+                    pushFollow(FollowSets000.FOLLOW_ruleXML_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21011);
                     this_XML_KEYWORDS_0=ruleXML_KEYWORDS();
 
                     state._fsp--;
@@ -24293,14 +24204,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8768:5: this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8738:5: this_XML_ATTRIBUTE_KEYWORDS_1= ruleXML_ATTRIBUTE_KEYWORDS
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getANY_TOKEN_BUT_XML_CLOSEAccess().getXML_ATTRIBUTE_KEYWORDSParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21134);
+                    pushFollow(FollowSets000.FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21044);
                     this_XML_ATTRIBUTE_KEYWORDS_1=ruleXML_ATTRIBUTE_KEYWORDS();
 
                     state._fsp--;
@@ -24319,14 +24230,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8780:5: this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8750:5: this_XML_STRUCTURE_KEYWORDS_2= ruleXML_STRUCTURE_KEYWORDS
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getANY_TOKEN_BUT_XML_CLOSEAccess().getXML_STRUCTURE_KEYWORDSParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21167);
+                    pushFollow(FollowSets000.FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21077);
                     this_XML_STRUCTURE_KEYWORDS_2=ruleXML_STRUCTURE_KEYWORDS();
 
                     state._fsp--;
@@ -24345,14 +24256,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8792:5: this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8762:5: this_UPPAAL_KEYWORDS_3= ruleUPPAAL_KEYWORDS
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getANY_TOKEN_BUT_XML_CLOSEAccess().getUPPAAL_KEYWORDSParserRuleCall_3()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21200);
+                    pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21110);
                     this_UPPAAL_KEYWORDS_3=ruleUPPAAL_KEYWORDS();
 
                     state._fsp--;
@@ -24371,14 +24282,14 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8804:5: this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8774:5: this_UPPAAL_STRUCTURE_KEYWORDS_4= ruleUPPAAL_STRUCTURE_KEYWORDS
                     {
                     if ( state.backtracking==0 ) {
                        
                               newCompositeNode(grammarAccess.getANY_TOKEN_BUT_XML_CLOSEAccess().getUPPAAL_STRUCTURE_KEYWORDSParserRuleCall_4()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21233);
+                    pushFollow(FollowSets000.FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21143);
                     this_UPPAAL_STRUCTURE_KEYWORDS_4=ruleUPPAAL_STRUCTURE_KEYWORDS();
 
                     state._fsp--;
@@ -24397,9 +24308,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8815:10: this_STRING_5= RULE_STRING
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8785:10: this_STRING_5= RULE_STRING
                     {
-                    this_STRING_5=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleANY_TOKEN_BUT_XML_CLOSE21259); if (state.failed) return current;
+                    this_STRING_5=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleANY_TOKEN_BUT_XML_CLOSE21169); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_STRING_5);
@@ -24414,9 +24325,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8823:10: this_ID_6= RULE_ID
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8793:10: this_ID_6= RULE_ID
                     {
-                    this_ID_6=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleANY_TOKEN_BUT_XML_CLOSE21285); if (state.failed) return current;
+                    this_ID_6=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleANY_TOKEN_BUT_XML_CLOSE21195); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_ID_6);
@@ -24431,9 +24342,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8831:10: this_WS_7= RULE_WS
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8801:10: this_WS_7= RULE_WS
                     {
-                    this_WS_7=(Token)match(input,RULE_WS,FollowSets000.FOLLOW_RULE_WS_in_ruleANY_TOKEN_BUT_XML_CLOSE21311); if (state.failed) return current;
+                    this_WS_7=(Token)match(input,RULE_WS,FollowSets000.FOLLOW_RULE_WS_in_ruleANY_TOKEN_BUT_XML_CLOSE21221); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_WS_7);
@@ -24448,9 +24359,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8839:10: this_ANY_OTHER_8= RULE_ANY_OTHER
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8809:10: this_ANY_OTHER_8= RULE_ANY_OTHER
                     {
-                    this_ANY_OTHER_8=(Token)match(input,RULE_ANY_OTHER,FollowSets000.FOLLOW_RULE_ANY_OTHER_in_ruleANY_TOKEN_BUT_XML_CLOSE21337); if (state.failed) return current;
+                    this_ANY_OTHER_8=(Token)match(input,RULE_ANY_OTHER,FollowSets000.FOLLOW_RULE_ANY_OTHER_in_ruleANY_TOKEN_BUT_XML_CLOSE21247); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_ANY_OTHER_8);
@@ -24465,9 +24376,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8847:10: this_INT_9= RULE_INT
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8817:10: this_INT_9= RULE_INT
                     {
-                    this_INT_9=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleANY_TOKEN_BUT_XML_CLOSE21363); if (state.failed) return current;
+                    this_INT_9=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleANY_TOKEN_BUT_XML_CLOSE21273); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_INT_9);
@@ -24482,9 +24393,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8855:10: this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8825:10: this_SINGLE_LINE_COMMENT_10= RULE_SINGLE_LINE_COMMENT
                     {
-                    this_SINGLE_LINE_COMMENT_10=(Token)match(input,RULE_SINGLE_LINE_COMMENT,FollowSets000.FOLLOW_RULE_SINGLE_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21389); if (state.failed) return current;
+                    this_SINGLE_LINE_COMMENT_10=(Token)match(input,RULE_SINGLE_LINE_COMMENT,FollowSets000.FOLLOW_RULE_SINGLE_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21299); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_SINGLE_LINE_COMMENT_10);
@@ -24499,9 +24410,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8863:10: this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8833:10: this_MULTI_LINE_COMMENT_11= RULE_MULTI_LINE_COMMENT
                     {
-                    this_MULTI_LINE_COMMENT_11=(Token)match(input,RULE_MULTI_LINE_COMMENT,FollowSets000.FOLLOW_RULE_MULTI_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21415); if (state.failed) return current;
+                    this_MULTI_LINE_COMMENT_11=(Token)match(input,RULE_MULTI_LINE_COMMENT,FollowSets000.FOLLOW_RULE_MULTI_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21325); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_MULTI_LINE_COMMENT_11);
@@ -24538,7 +24449,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXML_STRUCTURE_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8878:1: entryRuleXML_STRUCTURE_KEYWORDS returns [String current=null] : iv_ruleXML_STRUCTURE_KEYWORDS= ruleXML_STRUCTURE_KEYWORDS EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8848:1: entryRuleXML_STRUCTURE_KEYWORDS returns [String current=null] : iv_ruleXML_STRUCTURE_KEYWORDS= ruleXML_STRUCTURE_KEYWORDS EOF ;
     public final String entryRuleXML_STRUCTURE_KEYWORDS() throws RecognitionException {
         String current = null;
 
@@ -24546,13 +24457,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8879:2: (iv_ruleXML_STRUCTURE_KEYWORDS= ruleXML_STRUCTURE_KEYWORDS EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8880:2: iv_ruleXML_STRUCTURE_KEYWORDS= ruleXML_STRUCTURE_KEYWORDS EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8849:2: (iv_ruleXML_STRUCTURE_KEYWORDS= ruleXML_STRUCTURE_KEYWORDS EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8850:2: iv_ruleXML_STRUCTURE_KEYWORDS= ruleXML_STRUCTURE_KEYWORDS EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXML_STRUCTURE_KEYWORDSRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_entryRuleXML_STRUCTURE_KEYWORDS21461);
+            pushFollow(FollowSets000.FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_entryRuleXML_STRUCTURE_KEYWORDS21371);
             iv_ruleXML_STRUCTURE_KEYWORDS=ruleXML_STRUCTURE_KEYWORDS();
 
             state._fsp--;
@@ -24560,7 +24471,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXML_STRUCTURE_KEYWORDS.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleXML_STRUCTURE_KEYWORDS21472); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleXML_STRUCTURE_KEYWORDS21382); if (state.failed) return current;
 
             }
 
@@ -24578,7 +24489,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXML_STRUCTURE_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8887:1: ruleXML_STRUCTURE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8857:1: ruleXML_STRUCTURE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' ) ;
     public final AntlrDatatypeRuleToken ruleXML_STRUCTURE_KEYWORDS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24587,10 +24498,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8890:28: ( (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8891:1: (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8860:28: ( (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8861:1: (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8891:1: (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8861:1: (kw= '<' | kw= '>' | kw= '/>' | kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>' | kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>' | kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>' )
             int alt109=6;
             switch ( input.LA(1) ) {
             case 14:
@@ -24633,9 +24544,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt109) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8892:2: kw= '<'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8862:2: kw= '<'
                     {
-                    kw=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleXML_STRUCTURE_KEYWORDS21510); if (state.failed) return current;
+                    kw=(Token)match(input,14,FollowSets000.FOLLOW_14_in_ruleXML_STRUCTURE_KEYWORDS21420); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24646,9 +24557,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8899:2: kw= '>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8869:2: kw= '>'
                     {
-                    kw=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleXML_STRUCTURE_KEYWORDS21529); if (state.failed) return current;
+                    kw=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleXML_STRUCTURE_KEYWORDS21439); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24659,9 +24570,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8906:2: kw= '/>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8876:2: kw= '/>'
                     {
-                    kw=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleXML_STRUCTURE_KEYWORDS21548); if (state.failed) return current;
+                    kw=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleXML_STRUCTURE_KEYWORDS21458); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24672,9 +24583,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8913:2: kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8883:2: kw= '<?xml version=\"1.0\" encoding=\"utf-8\"?>'
                     {
-                    kw=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleXML_STRUCTURE_KEYWORDS21567); if (state.failed) return current;
+                    kw=(Token)match(input,11,FollowSets000.FOLLOW_11_in_ruleXML_STRUCTURE_KEYWORDS21477); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24685,9 +24596,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8920:2: kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8890:2: kw= '<?xml version=\\'1.0\\' encoding=\\'utf-8\\'?>'
                     {
-                    kw=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleXML_STRUCTURE_KEYWORDS21586); if (state.failed) return current;
+                    kw=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleXML_STRUCTURE_KEYWORDS21496); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24698,9 +24609,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8927:2: kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8897:2: kw= '<!DOCTYPE nta PUBLIC \\'-//Uppaal Team//DTD Flat System 1.1//EN\\' \\'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd\\'>'
                     {
-                    kw=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleXML_STRUCTURE_KEYWORDS21605); if (state.failed) return current;
+                    kw=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleXML_STRUCTURE_KEYWORDS21515); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24733,7 +24644,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXML_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8942:1: entryRuleXML_KEYWORDS returns [String current=null] : iv_ruleXML_KEYWORDS= ruleXML_KEYWORDS EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8912:1: entryRuleXML_KEYWORDS returns [String current=null] : iv_ruleXML_KEYWORDS= ruleXML_KEYWORDS EOF ;
     public final String entryRuleXML_KEYWORDS() throws RecognitionException {
         String current = null;
 
@@ -24741,13 +24652,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8943:2: (iv_ruleXML_KEYWORDS= ruleXML_KEYWORDS EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8944:2: iv_ruleXML_KEYWORDS= ruleXML_KEYWORDS EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8913:2: (iv_ruleXML_KEYWORDS= ruleXML_KEYWORDS EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8914:2: iv_ruleXML_KEYWORDS= ruleXML_KEYWORDS EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXML_KEYWORDSRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleXML_KEYWORDS_in_entryRuleXML_KEYWORDS21648);
+            pushFollow(FollowSets000.FOLLOW_ruleXML_KEYWORDS_in_entryRuleXML_KEYWORDS21558);
             iv_ruleXML_KEYWORDS=ruleXML_KEYWORDS();
 
             state._fsp--;
@@ -24755,7 +24666,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXML_KEYWORDS.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleXML_KEYWORDS21659); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleXML_KEYWORDS21569); if (state.failed) return current;
 
             }
 
@@ -24773,7 +24684,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXML_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8951:1: ruleXML_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8921:1: ruleXML_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' ) ;
     public final AntlrDatatypeRuleToken ruleXML_KEYWORDS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24782,10 +24693,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8954:28: ( (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8955:1: (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8924:28: ( (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8925:1: (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8955:1: (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8925:1: (kw= 'imports' | kw= 'nta' | kw= 'template' | kw= 'name' | kw= 'ref' | kw= 'location' | kw= 'id' | kw= 'color' | kw= 'transition' | kw= 'source' | kw= 'target' | kw= 'nail' | kw= 'label' | kw= 'kind' | kw= 'declaration' | kw= 'instantiation' | kw= 'parameter' | kw= 'committed' | kw= 'x' | kw= 'y' )
             int alt110=20;
             switch ( input.LA(1) ) {
             case 17:
@@ -24898,9 +24809,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt110) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8956:2: kw= 'imports'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8926:2: kw= 'imports'
                     {
-                    kw=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleXML_KEYWORDS21697); if (state.failed) return current;
+                    kw=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleXML_KEYWORDS21607); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24911,9 +24822,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8963:2: kw= 'nta'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8933:2: kw= 'nta'
                     {
-                    kw=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleXML_KEYWORDS21716); if (state.failed) return current;
+                    kw=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleXML_KEYWORDS21626); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24924,9 +24835,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8970:2: kw= 'template'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8940:2: kw= 'template'
                     {
-                    kw=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleXML_KEYWORDS21735); if (state.failed) return current;
+                    kw=(Token)match(input,20,FollowSets000.FOLLOW_20_in_ruleXML_KEYWORDS21645); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24937,9 +24848,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8977:2: kw= 'name'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8947:2: kw= 'name'
                     {
-                    kw=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleXML_KEYWORDS21754); if (state.failed) return current;
+                    kw=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleXML_KEYWORDS21664); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24950,9 +24861,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8984:2: kw= 'ref'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8954:2: kw= 'ref'
                     {
-                    kw=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleXML_KEYWORDS21773); if (state.failed) return current;
+                    kw=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleXML_KEYWORDS21683); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24963,9 +24874,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8991:2: kw= 'location'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8961:2: kw= 'location'
                     {
-                    kw=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleXML_KEYWORDS21792); if (state.failed) return current;
+                    kw=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleXML_KEYWORDS21702); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24976,9 +24887,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8998:2: kw= 'id'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8968:2: kw= 'id'
                     {
-                    kw=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleXML_KEYWORDS21811); if (state.failed) return current;
+                    kw=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleXML_KEYWORDS21721); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -24989,9 +24900,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9005:2: kw= 'color'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8975:2: kw= 'color'
                     {
-                    kw=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleXML_KEYWORDS21830); if (state.failed) return current;
+                    kw=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleXML_KEYWORDS21740); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25002,9 +24913,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9012:2: kw= 'transition'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8982:2: kw= 'transition'
                     {
-                    kw=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleXML_KEYWORDS21849); if (state.failed) return current;
+                    kw=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleXML_KEYWORDS21759); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25015,9 +24926,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9019:2: kw= 'source'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8989:2: kw= 'source'
                     {
-                    kw=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleXML_KEYWORDS21868); if (state.failed) return current;
+                    kw=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleXML_KEYWORDS21778); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25028,9 +24939,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9026:2: kw= 'target'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:8996:2: kw= 'target'
                     {
-                    kw=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleXML_KEYWORDS21887); if (state.failed) return current;
+                    kw=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleXML_KEYWORDS21797); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25041,9 +24952,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9033:2: kw= 'nail'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9003:2: kw= 'nail'
                     {
-                    kw=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleXML_KEYWORDS21906); if (state.failed) return current;
+                    kw=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleXML_KEYWORDS21816); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25054,9 +24965,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9040:2: kw= 'label'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9010:2: kw= 'label'
                     {
-                    kw=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleXML_KEYWORDS21925); if (state.failed) return current;
+                    kw=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleXML_KEYWORDS21835); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25067,9 +24978,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9047:2: kw= 'kind'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9017:2: kw= 'kind'
                     {
-                    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleXML_KEYWORDS21944); if (state.failed) return current;
+                    kw=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleXML_KEYWORDS21854); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25080,9 +24991,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9054:2: kw= 'declaration'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9024:2: kw= 'declaration'
                     {
-                    kw=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleXML_KEYWORDS21963); if (state.failed) return current;
+                    kw=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleXML_KEYWORDS21873); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25093,9 +25004,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9061:2: kw= 'instantiation'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9031:2: kw= 'instantiation'
                     {
-                    kw=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleXML_KEYWORDS21982); if (state.failed) return current;
+                    kw=(Token)match(input,21,FollowSets000.FOLLOW_21_in_ruleXML_KEYWORDS21892); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25106,9 +25017,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9068:2: kw= 'parameter'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9038:2: kw= 'parameter'
                     {
-                    kw=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleXML_KEYWORDS22001); if (state.failed) return current;
+                    kw=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleXML_KEYWORDS21911); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25119,9 +25030,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9075:2: kw= 'committed'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9045:2: kw= 'committed'
                     {
-                    kw=(Token)match(input,137,FollowSets000.FOLLOW_137_in_ruleXML_KEYWORDS22020); if (state.failed) return current;
+                    kw=(Token)match(input,137,FollowSets000.FOLLOW_137_in_ruleXML_KEYWORDS21930); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25132,9 +25043,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9082:2: kw= 'x'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9052:2: kw= 'x'
                     {
-                    kw=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleXML_KEYWORDS22039); if (state.failed) return current;
+                    kw=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleXML_KEYWORDS21949); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25145,9 +25056,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9089:2: kw= 'y'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9059:2: kw= 'y'
                     {
-                    kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleXML_KEYWORDS22058); if (state.failed) return current;
+                    kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleXML_KEYWORDS21968); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25180,7 +25091,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleXML_ATTRIBUTE_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9102:1: entryRuleXML_ATTRIBUTE_KEYWORDS returns [String current=null] : iv_ruleXML_ATTRIBUTE_KEYWORDS= ruleXML_ATTRIBUTE_KEYWORDS EOF ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9072:1: entryRuleXML_ATTRIBUTE_KEYWORDS returns [String current=null] : iv_ruleXML_ATTRIBUTE_KEYWORDS= ruleXML_ATTRIBUTE_KEYWORDS EOF ;
     public final String entryRuleXML_ATTRIBUTE_KEYWORDS() throws RecognitionException {
         String current = null;
 
@@ -25188,13 +25099,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9103:2: (iv_ruleXML_ATTRIBUTE_KEYWORDS= ruleXML_ATTRIBUTE_KEYWORDS EOF )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9104:2: iv_ruleXML_ATTRIBUTE_KEYWORDS= ruleXML_ATTRIBUTE_KEYWORDS EOF
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9073:2: (iv_ruleXML_ATTRIBUTE_KEYWORDS= ruleXML_ATTRIBUTE_KEYWORDS EOF )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9074:2: iv_ruleXML_ATTRIBUTE_KEYWORDS= ruleXML_ATTRIBUTE_KEYWORDS EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getXML_ATTRIBUTE_KEYWORDSRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_entryRuleXML_ATTRIBUTE_KEYWORDS22099);
+            pushFollow(FollowSets000.FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_entryRuleXML_ATTRIBUTE_KEYWORDS22009);
             iv_ruleXML_ATTRIBUTE_KEYWORDS=ruleXML_ATTRIBUTE_KEYWORDS();
 
             state._fsp--;
@@ -25202,7 +25113,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleXML_ATTRIBUTE_KEYWORDS.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleXML_ATTRIBUTE_KEYWORDS22110); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleXML_ATTRIBUTE_KEYWORDS22020); if (state.failed) return current;
 
             }
 
@@ -25220,7 +25131,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleXML_ATTRIBUTE_KEYWORDS"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9111:1: ruleXML_ATTRIBUTE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9081:1: ruleXML_ATTRIBUTE_KEYWORDS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' ) ;
     public final AntlrDatatypeRuleToken ruleXML_ATTRIBUTE_KEYWORDS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -25229,10 +25140,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9114:28: ( (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9115:1: (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9084:28: ( (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9085:1: (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9115:1: (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9085:1: (kw= '\"synchronisation\"' | kw= '\"guard\"' | kw= '\"assignment\"' | kw= '\"invariant\"' | kw= '\"comments\"' )
             int alt111=5;
             switch ( input.LA(1) ) {
             case 42:
@@ -25270,9 +25181,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt111) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9116:2: kw= '\"synchronisation\"'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9086:2: kw= '\"synchronisation\"'
                     {
-                    kw=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleXML_ATTRIBUTE_KEYWORDS22148); if (state.failed) return current;
+                    kw=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleXML_ATTRIBUTE_KEYWORDS22058); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25283,9 +25194,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9123:2: kw= '\"guard\"'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9093:2: kw= '\"guard\"'
                     {
-                    kw=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleXML_ATTRIBUTE_KEYWORDS22167); if (state.failed) return current;
+                    kw=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleXML_ATTRIBUTE_KEYWORDS22077); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25296,9 +25207,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9130:2: kw= '\"assignment\"'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9100:2: kw= '\"assignment\"'
                     {
-                    kw=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleXML_ATTRIBUTE_KEYWORDS22186); if (state.failed) return current;
+                    kw=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleXML_ATTRIBUTE_KEYWORDS22096); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25309,9 +25220,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9137:2: kw= '\"invariant\"'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9107:2: kw= '\"invariant\"'
                     {
-                    kw=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleXML_ATTRIBUTE_KEYWORDS22205); if (state.failed) return current;
+                    kw=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleXML_ATTRIBUTE_KEYWORDS22115); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25322,9 +25233,9 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9144:2: kw= '\"comments\"'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9114:2: kw= '\"comments\"'
                     {
-                    kw=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleXML_ATTRIBUTE_KEYWORDS22224); if (state.failed) return current;
+                    kw=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleXML_ATTRIBUTE_KEYWORDS22134); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -25357,7 +25268,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocationKind"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9157:1: ruleLocationKind returns [Enumerator current=null] : ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9127:1: ruleLocationKind returns [Enumerator current=null] : ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) ) ;
     public final Enumerator ruleLocationKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -25366,10 +25277,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9159:28: ( ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9160:1: ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9129:28: ( ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9130:1: ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9160:1: ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9130:1: ( (enumLiteral_0= '<urgent/>' ) | (enumLiteral_1= '<committed/>' ) )
             int alt112=2;
             int LA112_0 = input.LA(1);
 
@@ -25388,12 +25299,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt112) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9160:2: (enumLiteral_0= '<urgent/>' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9130:2: (enumLiteral_0= '<urgent/>' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9160:2: (enumLiteral_0= '<urgent/>' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9160:4: enumLiteral_0= '<urgent/>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9130:2: (enumLiteral_0= '<urgent/>' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9130:4: enumLiteral_0= '<urgent/>'
                     {
-                    enumLiteral_0=(Token)match(input,138,FollowSets000.FOLLOW_138_in_ruleLocationKind22278); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,138,FollowSets000.FOLLOW_138_in_ruleLocationKind22188); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLocationKindAccess().getURGENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -25407,12 +25318,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9166:6: (enumLiteral_1= '<committed/>' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9136:6: (enumLiteral_1= '<committed/>' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9166:6: (enumLiteral_1= '<committed/>' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9166:8: enumLiteral_1= '<committed/>'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9136:6: (enumLiteral_1= '<committed/>' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9136:8: enumLiteral_1= '<committed/>'
                     {
-                    enumLiteral_1=(Token)match(input,139,FollowSets000.FOLLOW_139_in_ruleLocationKind22295); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,139,FollowSets000.FOLLOW_139_in_ruleLocationKind22205); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLocationKindAccess().getCOMMITEDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -25448,7 +25359,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSynchronizationKind"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9176:1: ruleSynchronizationKind returns [Enumerator current=null] : ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9146:1: ruleSynchronizationKind returns [Enumerator current=null] : ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) ) ;
     public final Enumerator ruleSynchronizationKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -25457,10 +25368,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9178:28: ( ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9179:1: ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9148:28: ( ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9149:1: ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9179:1: ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9149:1: ( (enumLiteral_0= '!' ) | (enumLiteral_1= '?' ) )
             int alt113=2;
             int LA113_0 = input.LA(1);
 
@@ -25479,12 +25390,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt113) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9179:2: (enumLiteral_0= '!' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9149:2: (enumLiteral_0= '!' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9179:2: (enumLiteral_0= '!' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9179:4: enumLiteral_0= '!'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9149:2: (enumLiteral_0= '!' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9149:4: enumLiteral_0= '!'
                     {
-                    enumLiteral_0=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleSynchronizationKind22340); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleSynchronizationKind22250); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSynchronizationKindAccess().getSENDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -25498,12 +25409,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9185:6: (enumLiteral_1= '?' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9155:6: (enumLiteral_1= '?' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9185:6: (enumLiteral_1= '?' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9185:8: enumLiteral_1= '?'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9155:6: (enumLiteral_1= '?' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9155:8: enumLiteral_1= '?'
                     {
-                    enumLiteral_1=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleSynchronizationKind22357); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleSynchronizationKind22267); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getSynchronizationKindAccess().getRECEIVEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -25539,7 +25450,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataVariablePrefix"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9195:1: ruleDataVariablePrefix returns [Enumerator current=null] : ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9165:1: ruleDataVariablePrefix returns [Enumerator current=null] : ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) ) ;
     public final Enumerator ruleDataVariablePrefix() throws RecognitionException {
         Enumerator current = null;
 
@@ -25548,10 +25459,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9197:28: ( ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9198:1: ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9167:28: ( ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9168:1: ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9198:1: ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9168:1: ( (enumLiteral_0= 'const' ) | (enumLiteral_1= 'meta' ) )
             int alt114=2;
             int LA114_0 = input.LA(1);
 
@@ -25570,12 +25481,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt114) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9198:2: (enumLiteral_0= 'const' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9168:2: (enumLiteral_0= 'const' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9198:2: (enumLiteral_0= 'const' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9198:4: enumLiteral_0= 'const'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9168:2: (enumLiteral_0= 'const' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9168:4: enumLiteral_0= 'const'
                     {
-                    enumLiteral_0=(Token)match(input,84,FollowSets000.FOLLOW_84_in_ruleDataVariablePrefix22402); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,84,FollowSets000.FOLLOW_84_in_ruleDataVariablePrefix22312); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getDataVariablePrefixAccess().getCONSTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -25589,12 +25500,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9204:6: (enumLiteral_1= 'meta' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9174:6: (enumLiteral_1= 'meta' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9204:6: (enumLiteral_1= 'meta' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9204:8: enumLiteral_1= 'meta'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9174:6: (enumLiteral_1= 'meta' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9174:8: enumLiteral_1= 'meta'
                     {
-                    enumLiteral_1=(Token)match(input,100,FollowSets000.FOLLOW_100_in_ruleDataVariablePrefix22419); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,100,FollowSets000.FOLLOW_100_in_ruleDataVariablePrefix22329); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getDataVariablePrefixAccess().getMETAEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -25630,7 +25541,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCallType"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9214:1: ruleCallType returns [Enumerator current=null] : (enumLiteral_0= '&amp;' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9184:1: ruleCallType returns [Enumerator current=null] : (enumLiteral_0= '&amp;' ) ;
     public final Enumerator ruleCallType() throws RecognitionException {
         Enumerator current = null;
 
@@ -25638,13 +25549,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9216:28: ( (enumLiteral_0= '&amp;' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9217:1: (enumLiteral_0= '&amp;' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9186:28: ( (enumLiteral_0= '&amp;' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9187:1: (enumLiteral_0= '&amp;' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9217:1: (enumLiteral_0= '&amp;' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9217:3: enumLiteral_0= '&amp;'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9187:1: (enumLiteral_0= '&amp;' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9187:3: enumLiteral_0= '&amp;'
             {
-            enumLiteral_0=(Token)match(input,121,FollowSets000.FOLLOW_121_in_ruleCallType22463); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,121,FollowSets000.FOLLOW_121_in_ruleCallType22373); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getCallTypeAccess().getCALL_BY_REFERENCEEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -25674,7 +25585,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuantifier"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9227:1: ruleQuantifier returns [Enumerator current=null] : ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9197:1: ruleQuantifier returns [Enumerator current=null] : ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) ) ;
     public final Enumerator ruleQuantifier() throws RecognitionException {
         Enumerator current = null;
 
@@ -25683,10 +25594,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9229:28: ( ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9230:1: ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9199:28: ( ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9200:1: ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9230:1: ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9200:1: ( (enumLiteral_0= 'forall' ) | (enumLiteral_1= 'exists' ) )
             int alt115=2;
             int LA115_0 = input.LA(1);
 
@@ -25705,12 +25616,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt115) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9230:2: (enumLiteral_0= 'forall' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9200:2: (enumLiteral_0= 'forall' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9230:2: (enumLiteral_0= 'forall' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9230:4: enumLiteral_0= 'forall'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9200:2: (enumLiteral_0= 'forall' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9200:4: enumLiteral_0= 'forall'
                     {
-                    enumLiteral_0=(Token)match(input,95,FollowSets000.FOLLOW_95_in_ruleQuantifier22507); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,95,FollowSets000.FOLLOW_95_in_ruleQuantifier22417); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getQuantifierAccess().getUNIVERSALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -25724,12 +25635,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9236:6: (enumLiteral_1= 'exists' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9206:6: (enumLiteral_1= 'exists' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9236:6: (enumLiteral_1= 'exists' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9236:8: enumLiteral_1= 'exists'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9206:6: (enumLiteral_1= 'exists' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9206:8: enumLiteral_1= 'exists'
                     {
-                    enumLiteral_1=(Token)match(input,96,FollowSets000.FOLLOW_96_in_ruleQuantifier22524); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,96,FollowSets000.FOLLOW_96_in_ruleQuantifier22434); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getQuantifierAccess().getEXISTENTIALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -25765,7 +25676,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOperator_OrImply"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9246:1: ruleLogicalOperator_OrImply returns [Enumerator current=null] : ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9216:1: ruleLogicalOperator_OrImply returns [Enumerator current=null] : ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) ) ;
     public final Enumerator ruleLogicalOperator_OrImply() throws RecognitionException {
         Enumerator current = null;
 
@@ -25774,10 +25685,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9248:28: ( ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9249:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9218:28: ( ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9219:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9249:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9219:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'imply' ) )
             int alt116=2;
             int LA116_0 = input.LA(1);
 
@@ -25796,12 +25707,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt116) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9249:2: (enumLiteral_0= 'or' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9219:2: (enumLiteral_0= 'or' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9249:2: (enumLiteral_0= 'or' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9249:4: enumLiteral_0= 'or'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9219:2: (enumLiteral_0= 'or' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9219:4: enumLiteral_0= 'or'
                     {
-                    enumLiteral_0=(Token)match(input,93,FollowSets000.FOLLOW_93_in_ruleLogicalOperator_OrImply22569); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,93,FollowSets000.FOLLOW_93_in_ruleLogicalOperator_OrImply22479); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLogicalOperator_OrImplyAccess().getOREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -25815,12 +25726,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9255:6: (enumLiteral_1= 'imply' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9225:6: (enumLiteral_1= 'imply' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9255:6: (enumLiteral_1= 'imply' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9255:8: enumLiteral_1= 'imply'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9225:6: (enumLiteral_1= 'imply' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9225:8: enumLiteral_1= 'imply'
                     {
-                    enumLiteral_1=(Token)match(input,94,FollowSets000.FOLLOW_94_in_ruleLogicalOperator_OrImply22586); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,94,FollowSets000.FOLLOW_94_in_ruleLogicalOperator_OrImply22496); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLogicalOperator_OrImplyAccess().getIMPLYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -25856,7 +25767,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOperator_And"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9265:1: ruleLogicalOperator_And returns [Enumerator current=null] : (enumLiteral_0= 'and' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9235:1: ruleLogicalOperator_And returns [Enumerator current=null] : (enumLiteral_0= 'and' ) ;
     public final Enumerator ruleLogicalOperator_And() throws RecognitionException {
         Enumerator current = null;
 
@@ -25864,13 +25775,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9267:28: ( (enumLiteral_0= 'and' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9268:1: (enumLiteral_0= 'and' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9237:28: ( (enumLiteral_0= 'and' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9238:1: (enumLiteral_0= 'and' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9268:1: (enumLiteral_0= 'and' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9268:3: enumLiteral_0= 'and'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9238:1: (enumLiteral_0= 'and' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9238:3: enumLiteral_0= 'and'
             {
-            enumLiteral_0=(Token)match(input,92,FollowSets000.FOLLOW_92_in_ruleLogicalOperator_And22630); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,92,FollowSets000.FOLLOW_92_in_ruleLogicalOperator_And22540); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getLogicalOperator_AndAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -25900,7 +25811,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssignmentOperator"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9278:1: ruleAssignmentOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9248:1: ruleAssignmentOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) ) ;
     public final Enumerator ruleAssignmentOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -25919,10 +25830,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9280:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9250:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9251:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9251:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= ':=' ) | (enumLiteral_2= '+=' ) | (enumLiteral_3= '-=' ) | (enumLiteral_4= '*=' ) | (enumLiteral_5= '/=' ) | (enumLiteral_6= '%=' ) | (enumLiteral_7= '|=' ) | (enumLiteral_8= '&=' ) | (enumLiteral_9= '^=' ) | (enumLiteral_10= '&lt;&lt;=' ) | (enumLiteral_11= '&gt;&gt;=' ) )
             int alt117=12;
             switch ( input.LA(1) ) {
             case 25:
@@ -25995,12 +25906,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt117) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:2: (enumLiteral_0= '=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9251:2: (enumLiteral_0= '=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:2: (enumLiteral_0= '=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:4: enumLiteral_0= '='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9251:2: (enumLiteral_0= '=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9251:4: enumLiteral_0= '='
                     {
-                    enumLiteral_0=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleAssignmentOperator22674); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleAssignmentOperator22584); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -26014,12 +25925,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9287:6: (enumLiteral_1= ':=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9257:6: (enumLiteral_1= ':=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9287:6: (enumLiteral_1= ':=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9287:8: enumLiteral_1= ':='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9257:6: (enumLiteral_1= ':=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9257:8: enumLiteral_1= ':='
                     {
-                    enumLiteral_1=(Token)match(input,140,FollowSets000.FOLLOW_140_in_ruleAssignmentOperator22691); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,140,FollowSets000.FOLLOW_140_in_ruleAssignmentOperator22601); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -26033,12 +25944,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9293:6: (enumLiteral_2= '+=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9263:6: (enumLiteral_2= '+=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9293:6: (enumLiteral_2= '+=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9293:8: enumLiteral_2= '+='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9263:6: (enumLiteral_2= '+=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9263:8: enumLiteral_2= '+='
                     {
-                    enumLiteral_2=(Token)match(input,127,FollowSets000.FOLLOW_127_in_ruleAssignmentOperator22708); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,127,FollowSets000.FOLLOW_127_in_ruleAssignmentOperator22618); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -26052,12 +25963,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9299:6: (enumLiteral_3= '-=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9269:6: (enumLiteral_3= '-=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9299:6: (enumLiteral_3= '-=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9299:8: enumLiteral_3= '-='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9269:6: (enumLiteral_3= '-=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9269:8: enumLiteral_3= '-='
                     {
-                    enumLiteral_3=(Token)match(input,128,FollowSets000.FOLLOW_128_in_ruleAssignmentOperator22725); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,128,FollowSets000.FOLLOW_128_in_ruleAssignmentOperator22635); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -26071,12 +25982,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9305:6: (enumLiteral_4= '*=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9275:6: (enumLiteral_4= '*=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9305:6: (enumLiteral_4= '*=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9305:8: enumLiteral_4= '*='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9275:6: (enumLiteral_4= '*=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9275:8: enumLiteral_4= '*='
                     {
-                    enumLiteral_4=(Token)match(input,129,FollowSets000.FOLLOW_129_in_ruleAssignmentOperator22742); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,129,FollowSets000.FOLLOW_129_in_ruleAssignmentOperator22652); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getTIMES_EQUALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -26090,12 +26001,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9311:6: (enumLiteral_5= '/=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:6: (enumLiteral_5= '/=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9311:6: (enumLiteral_5= '/=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9311:8: enumLiteral_5= '/='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:6: (enumLiteral_5= '/=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9281:8: enumLiteral_5= '/='
                     {
-                    enumLiteral_5=(Token)match(input,130,FollowSets000.FOLLOW_130_in_ruleAssignmentOperator22759); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,130,FollowSets000.FOLLOW_130_in_ruleAssignmentOperator22669); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getDIVIDE_EQUALEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -26109,12 +26020,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9317:6: (enumLiteral_6= '%=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9287:6: (enumLiteral_6= '%=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9317:6: (enumLiteral_6= '%=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9317:8: enumLiteral_6= '%='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9287:6: (enumLiteral_6= '%=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9287:8: enumLiteral_6= '%='
                     {
-                    enumLiteral_6=(Token)match(input,131,FollowSets000.FOLLOW_131_in_ruleAssignmentOperator22776); if (state.failed) return current;
+                    enumLiteral_6=(Token)match(input,131,FollowSets000.FOLLOW_131_in_ruleAssignmentOperator22686); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getMODULO_EQUALEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
@@ -26128,12 +26039,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9323:6: (enumLiteral_7= '|=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9293:6: (enumLiteral_7= '|=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9323:6: (enumLiteral_7= '|=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9323:8: enumLiteral_7= '|='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9293:6: (enumLiteral_7= '|=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9293:8: enumLiteral_7= '|='
                     {
-                    enumLiteral_7=(Token)match(input,132,FollowSets000.FOLLOW_132_in_ruleAssignmentOperator22793); if (state.failed) return current;
+                    enumLiteral_7=(Token)match(input,132,FollowSets000.FOLLOW_132_in_ruleAssignmentOperator22703); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getBIT_OR_EQUALEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
@@ -26147,12 +26058,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9329:6: (enumLiteral_8= '&=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9299:6: (enumLiteral_8= '&=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9329:6: (enumLiteral_8= '&=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9329:8: enumLiteral_8= '&='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9299:6: (enumLiteral_8= '&=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9299:8: enumLiteral_8= '&='
                     {
-                    enumLiteral_8=(Token)match(input,133,FollowSets000.FOLLOW_133_in_ruleAssignmentOperator22810); if (state.failed) return current;
+                    enumLiteral_8=(Token)match(input,133,FollowSets000.FOLLOW_133_in_ruleAssignmentOperator22720); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getBIT_AND_EQUALEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
@@ -26166,12 +26077,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9335:6: (enumLiteral_9= '^=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9305:6: (enumLiteral_9= '^=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9335:6: (enumLiteral_9= '^=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9335:8: enumLiteral_9= '^='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9305:6: (enumLiteral_9= '^=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9305:8: enumLiteral_9= '^='
                     {
-                    enumLiteral_9=(Token)match(input,134,FollowSets000.FOLLOW_134_in_ruleAssignmentOperator22827); if (state.failed) return current;
+                    enumLiteral_9=(Token)match(input,134,FollowSets000.FOLLOW_134_in_ruleAssignmentOperator22737); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getBIT_XOR_EQUALEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
@@ -26185,12 +26096,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9341:6: (enumLiteral_10= '&lt;&lt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9311:6: (enumLiteral_10= '&lt;&lt;=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9341:6: (enumLiteral_10= '&lt;&lt;=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9341:8: enumLiteral_10= '&lt;&lt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9311:6: (enumLiteral_10= '&lt;&lt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9311:8: enumLiteral_10= '&lt;&lt;='
                     {
-                    enumLiteral_10=(Token)match(input,135,FollowSets000.FOLLOW_135_in_ruleAssignmentOperator22844); if (state.failed) return current;
+                    enumLiteral_10=(Token)match(input,135,FollowSets000.FOLLOW_135_in_ruleAssignmentOperator22754); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getBIT_LEFT_EQUALEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
@@ -26204,12 +26115,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9347:6: (enumLiteral_11= '&gt;&gt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9317:6: (enumLiteral_11= '&gt;&gt;=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9347:6: (enumLiteral_11= '&gt;&gt;=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9347:8: enumLiteral_11= '&gt;&gt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9317:6: (enumLiteral_11= '&gt;&gt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9317:8: enumLiteral_11= '&gt;&gt;='
                     {
-                    enumLiteral_11=(Token)match(input,136,FollowSets000.FOLLOW_136_in_ruleAssignmentOperator22861); if (state.failed) return current;
+                    enumLiteral_11=(Token)match(input,136,FollowSets000.FOLLOW_136_in_ruleAssignmentOperator22771); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignmentOperatorAccess().getBIT_RIGHT_EQUALEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
@@ -26245,7 +26156,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOperator_OrAlternative"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9357:1: ruleLogicalOperator_OrAlternative returns [Enumerator current=null] : (enumLiteral_0= '||' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9327:1: ruleLogicalOperator_OrAlternative returns [Enumerator current=null] : (enumLiteral_0= '||' ) ;
     public final Enumerator ruleLogicalOperator_OrAlternative() throws RecognitionException {
         Enumerator current = null;
 
@@ -26253,13 +26164,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9359:28: ( (enumLiteral_0= '||' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9360:1: (enumLiteral_0= '||' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9329:28: ( (enumLiteral_0= '||' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9330:1: (enumLiteral_0= '||' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9360:1: (enumLiteral_0= '||' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9360:3: enumLiteral_0= '||'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9330:1: (enumLiteral_0= '||' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9330:3: enumLiteral_0= '||'
             {
-            enumLiteral_0=(Token)match(input,126,FollowSets000.FOLLOW_126_in_ruleLogicalOperator_OrAlternative22905); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,126,FollowSets000.FOLLOW_126_in_ruleLogicalOperator_OrAlternative22815); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getLogicalOperator_OrAlternativeAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -26289,7 +26200,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOperator_AndAlternative"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9370:1: ruleLogicalOperator_AndAlternative returns [Enumerator current=null] : (enumLiteral_0= '&amp;&amp;' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9340:1: ruleLogicalOperator_AndAlternative returns [Enumerator current=null] : (enumLiteral_0= '&amp;&amp;' ) ;
     public final Enumerator ruleLogicalOperator_AndAlternative() throws RecognitionException {
         Enumerator current = null;
 
@@ -26297,13 +26208,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9372:28: ( (enumLiteral_0= '&amp;&amp;' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9373:1: (enumLiteral_0= '&amp;&amp;' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9342:28: ( (enumLiteral_0= '&amp;&amp;' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9343:1: (enumLiteral_0= '&amp;&amp;' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9373:1: (enumLiteral_0= '&amp;&amp;' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9373:3: enumLiteral_0= '&amp;&amp;'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9343:1: (enumLiteral_0= '&amp;&amp;' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9343:3: enumLiteral_0= '&amp;&amp;'
             {
-            enumLiteral_0=(Token)match(input,125,FollowSets000.FOLLOW_125_in_ruleLogicalOperator_AndAlternative22948); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,125,FollowSets000.FOLLOW_125_in_ruleLogicalOperator_AndAlternative22858); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getLogicalOperator_AndAlternativeAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -26333,7 +26244,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBitwiseOperator_Or"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9383:1: ruleBitwiseOperator_Or returns [Enumerator current=null] : (enumLiteral_0= '|' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9353:1: ruleBitwiseOperator_Or returns [Enumerator current=null] : (enumLiteral_0= '|' ) ;
     public final Enumerator ruleBitwiseOperator_Or() throws RecognitionException {
         Enumerator current = null;
 
@@ -26341,13 +26252,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9385:28: ( (enumLiteral_0= '|' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9386:1: (enumLiteral_0= '|' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9355:28: ( (enumLiteral_0= '|' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9356:1: (enumLiteral_0= '|' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9386:1: (enumLiteral_0= '|' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9386:3: enumLiteral_0= '|'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9356:1: (enumLiteral_0= '|' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9356:3: enumLiteral_0= '|'
             {
-            enumLiteral_0=(Token)match(input,123,FollowSets000.FOLLOW_123_in_ruleBitwiseOperator_Or22991); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,123,FollowSets000.FOLLOW_123_in_ruleBitwiseOperator_Or22901); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getBitwiseOperator_OrAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -26377,7 +26288,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBitwiseOperator_Xor"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9396:1: ruleBitwiseOperator_Xor returns [Enumerator current=null] : (enumLiteral_0= '^' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9366:1: ruleBitwiseOperator_Xor returns [Enumerator current=null] : (enumLiteral_0= '^' ) ;
     public final Enumerator ruleBitwiseOperator_Xor() throws RecognitionException {
         Enumerator current = null;
 
@@ -26385,13 +26296,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9398:28: ( (enumLiteral_0= '^' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9399:1: (enumLiteral_0= '^' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9368:28: ( (enumLiteral_0= '^' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9369:1: (enumLiteral_0= '^' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9399:1: (enumLiteral_0= '^' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9399:3: enumLiteral_0= '^'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9369:1: (enumLiteral_0= '^' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9369:3: enumLiteral_0= '^'
             {
-            enumLiteral_0=(Token)match(input,122,FollowSets000.FOLLOW_122_in_ruleBitwiseOperator_Xor23034); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,122,FollowSets000.FOLLOW_122_in_ruleBitwiseOperator_Xor22944); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getBitwiseOperator_XorAccess().getXOREnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -26421,7 +26332,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBitwiseOperator_And"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9409:1: ruleBitwiseOperator_And returns [Enumerator current=null] : (enumLiteral_0= '&amp;' ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9379:1: ruleBitwiseOperator_And returns [Enumerator current=null] : (enumLiteral_0= '&amp;' ) ;
     public final Enumerator ruleBitwiseOperator_And() throws RecognitionException {
         Enumerator current = null;
 
@@ -26429,13 +26340,13 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9411:28: ( (enumLiteral_0= '&amp;' ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9412:1: (enumLiteral_0= '&amp;' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9381:28: ( (enumLiteral_0= '&amp;' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9382:1: (enumLiteral_0= '&amp;' )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9412:1: (enumLiteral_0= '&amp;' )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9412:3: enumLiteral_0= '&amp;'
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9382:1: (enumLiteral_0= '&amp;' )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9382:3: enumLiteral_0= '&amp;'
             {
-            enumLiteral_0=(Token)match(input,121,FollowSets000.FOLLOW_121_in_ruleBitwiseOperator_And23077); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,121,FollowSets000.FOLLOW_121_in_ruleBitwiseOperator_And22987); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getBitwiseOperator_AndAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -26465,7 +26376,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompareOperator_EqualUnequal"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9422:1: ruleCompareOperator_EqualUnequal returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9392:1: ruleCompareOperator_EqualUnequal returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) ) ;
     public final Enumerator ruleCompareOperator_EqualUnequal() throws RecognitionException {
         Enumerator current = null;
 
@@ -26474,10 +26385,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9424:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9425:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9394:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9395:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9425:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9395:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '!=' ) )
             int alt118=2;
             int LA118_0 = input.LA(1);
 
@@ -26496,12 +26407,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt118) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9425:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9395:2: (enumLiteral_0= '==' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9425:2: (enumLiteral_0= '==' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9425:4: enumLiteral_0= '=='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9395:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9395:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,118,FollowSets000.FOLLOW_118_in_ruleCompareOperator_EqualUnequal23121); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,118,FollowSets000.FOLLOW_118_in_ruleCompareOperator_EqualUnequal23031); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCompareOperator_EqualUnequalAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -26515,12 +26426,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9431:6: (enumLiteral_1= '!=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9401:6: (enumLiteral_1= '!=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9431:6: (enumLiteral_1= '!=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9431:8: enumLiteral_1= '!='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9401:6: (enumLiteral_1= '!=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9401:8: enumLiteral_1= '!='
                     {
-                    enumLiteral_1=(Token)match(input,119,FollowSets000.FOLLOW_119_in_ruleCompareOperator_EqualUnequal23138); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,119,FollowSets000.FOLLOW_119_in_ruleCompareOperator_EqualUnequal23048); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCompareOperator_EqualUnequalAccess().getUNEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -26556,7 +26467,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompareOperator_Other"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9441:1: ruleCompareOperator_Other returns [Enumerator current=null] : ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9411:1: ruleCompareOperator_Other returns [Enumerator current=null] : ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) ) ;
     public final Enumerator ruleCompareOperator_Other() throws RecognitionException {
         Enumerator current = null;
 
@@ -26567,10 +26478,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9443:28: ( ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9444:1: ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9413:28: ( ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9414:1: ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9444:1: ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9414:1: ( (enumLiteral_0= '&gt;' ) | (enumLiteral_1= '&gt;=' ) | (enumLiteral_2= '&lt;' ) | (enumLiteral_3= '&lt;=' ) )
             int alt119=4;
             switch ( input.LA(1) ) {
             case 141:
@@ -26603,12 +26514,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt119) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9444:2: (enumLiteral_0= '&gt;' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9414:2: (enumLiteral_0= '&gt;' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9444:2: (enumLiteral_0= '&gt;' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9444:4: enumLiteral_0= '&gt;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9414:2: (enumLiteral_0= '&gt;' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9414:4: enumLiteral_0= '&gt;'
                     {
-                    enumLiteral_0=(Token)match(input,141,FollowSets000.FOLLOW_141_in_ruleCompareOperator_Other23183); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,141,FollowSets000.FOLLOW_141_in_ruleCompareOperator_Other23093); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCompareOperator_OtherAccess().getGREATEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -26622,12 +26533,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9450:6: (enumLiteral_1= '&gt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9420:6: (enumLiteral_1= '&gt;=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9450:6: (enumLiteral_1= '&gt;=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9450:8: enumLiteral_1= '&gt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9420:6: (enumLiteral_1= '&gt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9420:8: enumLiteral_1= '&gt;='
                     {
-                    enumLiteral_1=(Token)match(input,117,FollowSets000.FOLLOW_117_in_ruleCompareOperator_Other23200); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,117,FollowSets000.FOLLOW_117_in_ruleCompareOperator_Other23110); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCompareOperator_OtherAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -26641,12 +26552,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9456:6: (enumLiteral_2= '&lt;' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9426:6: (enumLiteral_2= '&lt;' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9456:6: (enumLiteral_2= '&lt;' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9456:8: enumLiteral_2= '&lt;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9426:6: (enumLiteral_2= '&lt;' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9426:8: enumLiteral_2= '&lt;'
                     {
-                    enumLiteral_2=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleCompareOperator_Other23217); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleCompareOperator_Other23127); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCompareOperator_OtherAccess().getLESSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -26660,12 +26571,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9462:6: (enumLiteral_3= '&lt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9432:6: (enumLiteral_3= '&lt;=' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9462:6: (enumLiteral_3= '&lt;=' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9462:8: enumLiteral_3= '&lt;='
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9432:6: (enumLiteral_3= '&lt;=' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9432:8: enumLiteral_3= '&lt;='
                     {
-                    enumLiteral_3=(Token)match(input,116,FollowSets000.FOLLOW_116_in_ruleCompareOperator_Other23234); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,116,FollowSets000.FOLLOW_116_in_ruleCompareOperator_Other23144); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getCompareOperator_OtherAccess().getLESS_OR_EQUALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -26701,7 +26612,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMinMaxOperator"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9472:1: ruleMinMaxOperator returns [Enumerator current=null] : ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9442:1: ruleMinMaxOperator returns [Enumerator current=null] : ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) ) ;
     public final Enumerator ruleMinMaxOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -26710,10 +26621,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9474:28: ( ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9475:1: ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9444:28: ( ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9445:1: ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9475:1: ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9445:1: ( (enumLiteral_0= '&lt;?' ) | (enumLiteral_1= '&gt;?' ) )
             int alt120=2;
             int LA120_0 = input.LA(1);
 
@@ -26732,12 +26643,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt120) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9475:2: (enumLiteral_0= '&lt;?' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9445:2: (enumLiteral_0= '&lt;?' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9475:2: (enumLiteral_0= '&lt;?' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9475:4: enumLiteral_0= '&lt;?'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9445:2: (enumLiteral_0= '&lt;?' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9445:4: enumLiteral_0= '&lt;?'
                     {
-                    enumLiteral_0=(Token)match(input,114,FollowSets000.FOLLOW_114_in_ruleMinMaxOperator23279); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,114,FollowSets000.FOLLOW_114_in_ruleMinMaxOperator23189); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMinMaxOperatorAccess().getMINEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -26751,12 +26662,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9481:6: (enumLiteral_1= '&gt;?' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9451:6: (enumLiteral_1= '&gt;?' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9481:6: (enumLiteral_1= '&gt;?' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9481:8: enumLiteral_1= '&gt;?'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9451:6: (enumLiteral_1= '&gt;?' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9451:8: enumLiteral_1= '&gt;?'
                     {
-                    enumLiteral_1=(Token)match(input,115,FollowSets000.FOLLOW_115_in_ruleMinMaxOperator23296); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,115,FollowSets000.FOLLOW_115_in_ruleMinMaxOperator23206); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMinMaxOperatorAccess().getMAXEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -26792,7 +26703,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBitShiftOperator"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9491:1: ruleBitShiftOperator returns [Enumerator current=null] : ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9461:1: ruleBitShiftOperator returns [Enumerator current=null] : ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) ) ;
     public final Enumerator ruleBitShiftOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -26801,10 +26712,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9493:28: ( ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9494:1: ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9463:28: ( ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9464:1: ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9494:1: ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9464:1: ( (enumLiteral_0= '&lt;&lt;' ) | (enumLiteral_1= '&gt;&gt' ) )
             int alt121=2;
             int LA121_0 = input.LA(1);
 
@@ -26823,12 +26734,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt121) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9494:2: (enumLiteral_0= '&lt;&lt;' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9464:2: (enumLiteral_0= '&lt;&lt;' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9494:2: (enumLiteral_0= '&lt;&lt;' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9494:4: enumLiteral_0= '&lt;&lt;'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9464:2: (enumLiteral_0= '&lt;&lt;' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9464:4: enumLiteral_0= '&lt;&lt;'
                     {
-                    enumLiteral_0=(Token)match(input,112,FollowSets000.FOLLOW_112_in_ruleBitShiftOperator23341); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,112,FollowSets000.FOLLOW_112_in_ruleBitShiftOperator23251); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBitShiftOperatorAccess().getLEFTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -26842,12 +26753,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9500:6: (enumLiteral_1= '&gt;&gt' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9470:6: (enumLiteral_1= '&gt;&gt' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9500:6: (enumLiteral_1= '&gt;&gt' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9500:8: enumLiteral_1= '&gt;&gt'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9470:6: (enumLiteral_1= '&gt;&gt' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9470:8: enumLiteral_1= '&gt;&gt'
                     {
-                    enumLiteral_1=(Token)match(input,113,FollowSets000.FOLLOW_113_in_ruleBitShiftOperator23358); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,113,FollowSets000.FOLLOW_113_in_ruleBitShiftOperator23268); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getBitShiftOperatorAccess().getRIGHTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -26883,7 +26794,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArithmeticOperator_PlusMinus"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9510:1: ruleArithmeticOperator_PlusMinus returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9480:1: ruleArithmeticOperator_PlusMinus returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleArithmeticOperator_PlusMinus() throws RecognitionException {
         Enumerator current = null;
 
@@ -26892,10 +26803,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9512:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9513:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9482:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9483:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9513:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9483:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             int alt122=2;
             int LA122_0 = input.LA(1);
 
@@ -26914,12 +26825,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt122) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9513:2: (enumLiteral_0= '+' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9483:2: (enumLiteral_0= '+' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9513:2: (enumLiteral_0= '+' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9513:4: enumLiteral_0= '+'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9483:2: (enumLiteral_0= '+' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9483:4: enumLiteral_0= '+'
                     {
-                    enumLiteral_0=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleArithmeticOperator_PlusMinus23403); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleArithmeticOperator_PlusMinus23313); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getArithmeticOperator_PlusMinusAccess().getADDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -26933,12 +26844,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9519:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9489:6: (enumLiteral_1= '-' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9519:6: (enumLiteral_1= '-' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9519:8: enumLiteral_1= '-'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9489:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9489:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,76,FollowSets000.FOLLOW_76_in_ruleArithmeticOperator_PlusMinus23420); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,76,FollowSets000.FOLLOW_76_in_ruleArithmeticOperator_PlusMinus23330); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getArithmeticOperator_PlusMinusAccess().getSUBTRACTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -26974,7 +26885,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArithmeticOperator_Other"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9529:1: ruleArithmeticOperator_Other returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9499:1: ruleArithmeticOperator_Other returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
     public final Enumerator ruleArithmeticOperator_Other() throws RecognitionException {
         Enumerator current = null;
 
@@ -26984,10 +26895,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9531:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9532:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9501:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9502:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9532:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9502:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             int alt123=3;
             switch ( input.LA(1) ) {
             case 107:
@@ -27015,12 +26926,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
             switch (alt123) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9532:2: (enumLiteral_0= '*' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9502:2: (enumLiteral_0= '*' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9532:2: (enumLiteral_0= '*' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9532:4: enumLiteral_0= '*'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9502:2: (enumLiteral_0= '*' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9502:4: enumLiteral_0= '*'
                     {
-                    enumLiteral_0=(Token)match(input,107,FollowSets000.FOLLOW_107_in_ruleArithmeticOperator_Other23465); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,107,FollowSets000.FOLLOW_107_in_ruleArithmeticOperator_Other23375); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getArithmeticOperator_OtherAccess().getMULTIPLICATEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -27034,12 +26945,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9538:6: (enumLiteral_1= '/' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9508:6: (enumLiteral_1= '/' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9538:6: (enumLiteral_1= '/' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9538:8: enumLiteral_1= '/'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9508:6: (enumLiteral_1= '/' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9508:8: enumLiteral_1= '/'
                     {
-                    enumLiteral_1=(Token)match(input,109,FollowSets000.FOLLOW_109_in_ruleArithmeticOperator_Other23482); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,109,FollowSets000.FOLLOW_109_in_ruleArithmeticOperator_Other23392); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getArithmeticOperator_OtherAccess().getDIVIDEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -27053,12 +26964,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9544:6: (enumLiteral_2= '%' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9514:6: (enumLiteral_2= '%' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9544:6: (enumLiteral_2= '%' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9544:8: enumLiteral_2= '%'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9514:6: (enumLiteral_2= '%' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9514:8: enumLiteral_2= '%'
                     {
-                    enumLiteral_2=(Token)match(input,108,FollowSets000.FOLLOW_108_in_ruleArithmeticOperator_Other23499); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,108,FollowSets000.FOLLOW_108_in_ruleArithmeticOperator_Other23409); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getArithmeticOperator_OtherAccess().getMODULOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -27094,7 +27005,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIncrementDecrementOperator"
-    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9554:1: ruleIncrementDecrementOperator returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
+    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9524:1: ruleIncrementDecrementOperator returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
     public final Enumerator ruleIncrementDecrementOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -27103,10 +27014,10 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9556:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9557:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9526:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9527:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
-            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9557:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9527:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             int alt124=2;
             int LA124_0 = input.LA(1);
 
@@ -27125,12 +27036,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             }
             switch (alt124) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9557:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9527:2: (enumLiteral_0= '++' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9557:2: (enumLiteral_0= '++' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9557:4: enumLiteral_0= '++'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9527:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9527:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,110,FollowSets000.FOLLOW_110_in_ruleIncrementDecrementOperator23544); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,110,FollowSets000.FOLLOW_110_in_ruleIncrementDecrementOperator23454); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -27144,12 +27055,12 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9563:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9533:6: (enumLiteral_1= '--' )
                     {
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9563:6: (enumLiteral_1= '--' )
-                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9563:8: enumLiteral_1= '--'
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9533:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:9533:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,111,FollowSets000.FOLLOW_111_in_ruleIncrementDecrementOperator23561); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,111,FollowSets000.FOLLOW_111_in_ruleIncrementDecrementOperator23471); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -27276,24 +27187,24 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred4_InternalUppaalXML
     public final void synpred4_InternalUppaalXML_fragment() throws RecognitionException {   
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:2: ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:3: ( () ( ( ruleIncrementDecrementOperator ) ) )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:2: ( ( () ( ( ruleIncrementDecrementOperator ) ) ) )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:3: ( () ( ( ruleIncrementDecrementOperator ) ) )
         {
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:3: ( () ( ( ruleIncrementDecrementOperator ) ) )
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:4: () ( ( ruleIncrementDecrementOperator ) )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:3: ( () ( ( ruleIncrementDecrementOperator ) ) )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:4: () ( ( ruleIncrementDecrementOperator ) )
         {
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7490:4: ()
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7491:1: 
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7460:4: ()
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7461:1: 
         {
         }
 
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7491:2: ( ( ruleIncrementDecrementOperator ) )
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7492:1: ( ruleIncrementDecrementOperator )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7461:2: ( ( ruleIncrementDecrementOperator ) )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7462:1: ( ruleIncrementDecrementOperator )
         {
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7492:1: ( ruleIncrementDecrementOperator )
-        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7493:1: ruleIncrementDecrementOperator
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7462:1: ( ruleIncrementDecrementOperator )
+        // ../de.uni_paderborn.uppaal.xtext/src-gen/de/uni_paderborn/uppaal/parser/antlr/internal/InternalUppaalXML.g:7463:1: ruleIncrementDecrementOperator
         {
-        pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperator_in_synpred4_InternalUppaalXML17667);
+        pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperator_in_synpred4_InternalUppaalXML17577);
         ruleIncrementDecrementOperator();
 
         state._fsp--;
@@ -27388,16 +27299,16 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
     static final String DFA31_maxS =
         "\1\22\1\56\1\uffff\1\44\1\31\1\55\5\uffff";
     static final String DFA31_acceptS =
-        "\2\uffff\1\6\3\uffff\1\5\1\1\1\3\1\2\1\4";
+        "\2\uffff\1\6\3\uffff\1\2\1\4\1\5\1\1\1\3";
     static final String DFA31_specialS =
-        "\1\uffff\1\1\1\uffff\1\3\1\0\1\2\5\uffff}>";
+        "\1\uffff\1\2\1\uffff\1\1\1\3\1\0\5\uffff}>";
     static final String[] DFA31_transitionS = {
             "\1\1\3\uffff\1\2",
             "\1\3\12\uffff\1\2",
             "",
             "\1\4",
             "\1\5",
-            "\1\7\4\uffff\1\11\1\10\1\12\1\6",
+            "\1\11\4\uffff\1\6\1\12\1\7\1\10",
             "",
             "",
             "",
@@ -27442,55 +27353,27 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA31_4 = input.LA(1);
-
-                         
-                        int index31_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( LA31_4 ==25 && ( getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 0) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 2) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 3) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 4) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 1) ) ) {s = 5;}
-
-                         
-                        input.seek(index31_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA31_1 = input.LA(1);
-
-                         
-                        int index31_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA31_1==46) ) {s = 2;}
-
-                        else if ( LA31_1 ==35 && ( getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 0) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 2) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 3) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 4) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 1) ) ) {s = 3;}
-
-                         
-                        input.seek(index31_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA31_5 = input.LA(1);
 
                          
                         int index31_5 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( LA31_5 ==45 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 4) ) {s = 6;}
+                        if ( LA31_5 ==42 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 1) ) {s = 6;}
 
-                        else if ( LA31_5 ==37 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 0) ) {s = 7;}
+                        else if ( LA31_5 ==44 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 3) ) {s = 7;}
 
-                        else if ( LA31_5 ==43 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 2) ) {s = 8;}
+                        else if ( LA31_5 ==45 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 4) ) {s = 8;}
 
-                        else if ( LA31_5 ==42 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 1) ) {s = 9;}
+                        else if ( LA31_5 ==37 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 0) ) {s = 9;}
 
-                        else if ( LA31_5 ==44 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 3) ) {s = 10;}
+                        else if ( LA31_5 ==43 && getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 2) ) {s = 10;}
 
                          
                         input.seek(index31_5);
                         if ( s>=0 ) return s;
                         break;
-                    case 3 : 
+                    case 1 : 
                         int LA31_3 = input.LA(1);
 
                          
@@ -27501,6 +27384,34 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index31_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA31_1 = input.LA(1);
+
+                         
+                        int index31_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( LA31_1 ==35 && ( getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 0) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 2) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 3) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 4) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 1) ) ) {s = 3;}
+
+                        else if ( (LA31_1==46) ) {s = 2;}
+
+                         
+                        input.seek(index31_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA31_4 = input.LA(1);
+
+                         
+                        int index31_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( LA31_4 ==25 && ( getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 0) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 2) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 3) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 4) || getUnorderedGroupHelper().canSelect(grammarAccess.getEdgeAccess().getUnorderedGroup_16(), 1) ) ) {s = 5;}
+
+                         
+                        input.seek(index31_4);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -27638,34 +27549,34 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
     static final String DFA48_maxS =
         "\1\u0089\25\67\2\uffff";
     static final String DFA48_acceptS =
-        "\26\uffff\1\2\1\1";
+        "\26\uffff\1\1\1\2";
     static final String DFA48_specialS =
         "\30\uffff}>";
     static final String[] DFA48_transitionS = {
             "\1\1\11\uffff\1\3\1\uffff\1\2\1\uffff\1\20\1\4\1\21\1\uffff"+
             "\1\5\1\24\1\uffff\1\25\1\22\2\uffff\1\6\1\uffff\1\7\1\10\1\11"+
             "\1\16\1\17\2\uffff\1\12\1\13\1\14\4\uffff\1\15\132\uffff\1\23",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
-            "\1\26\2\uffff\1\26\25\uffff\1\26\1\uffff\1\27\2\uffff\1\26",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
+            "\1\27\2\uffff\1\27\25\uffff\1\27\1\uffff\1\26\2\uffff\1\27",
             "",
             ""
     };
@@ -27708,12 +27619,11 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
     static final String DFA68_eofS =
         "\41\uffff";
     static final String DFA68_minS =
-        "\1\5\3\uffff\1\64\4\uffff\1\5\1\uffff\25\31\1\uffff";
+        "\1\5\3\uffff\1\64\4\uffff\1\5\25\31\2\uffff";
     static final String DFA68_maxS =
-        "\1\u0089\3\uffff\1\64\4\uffff\1\u0089\1\uffff\25\u008d\1\uffff";
+        "\1\u0089\3\uffff\1\64\4\uffff\1\u0089\25\u008d\2\uffff";
     static final String DFA68_acceptS =
-        "\1\uffff\1\1\1\2\1\3\1\uffff\1\6\1\7\1\10\1\11\1\uffff\1\4\25\uffff"+
-        "\1\5";
+        "\1\uffff\1\1\1\2\1\3\1\uffff\1\6\1\7\1\10\1\11\26\uffff\1\4\1\5";
     static final String DFA68_specialS =
         "\41\uffff}>";
     static final String[] DFA68_transitionS = {
@@ -27730,75 +27640,75 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\1\13\1\12\10\uffff\1\15\1\uffff\1\14\1\uffff\1\32\1\16\1"+
-            "\33\1\uffff\1\17\1\36\1\uffff\1\37\1\34\2\uffff\1\20\1\uffff"+
-            "\1\21\1\22\1\23\1\30\1\31\2\uffff\1\24\1\25\1\26\4\uffff\1\27"+
-            "\5\uffff\1\12\4\uffff\1\12\2\uffff\1\12\13\uffff\1\12\1\uffff"+
-            "\3\12\1\uffff\5\12\14\uffff\2\12\15\uffff\2\12\31\uffff\1\35",
+            "\1\12\1\37\10\uffff\1\14\1\uffff\1\13\1\uffff\1\31\1\15\1"+
+            "\32\1\uffff\1\16\1\35\1\uffff\1\36\1\33\2\uffff\1\17\1\uffff"+
+            "\1\20\1\21\1\22\1\27\1\30\2\uffff\1\23\1\24\1\25\4\uffff\1\26"+
+            "\5\uffff\1\37\4\uffff\1\37\2\uffff\1\37\13\uffff\1\37\1\uffff"+
+            "\3\37\1\uffff\5\37\14\uffff\2\37\15\uffff\2\37\31\uffff\1\34",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
+            "\1\37\25\uffff\1\40\2\uffff\1\37\1\uffff\1\37\1\uffff\2\37"+
+            "\21\uffff\1\37\1\uffff\3\37\16\uffff\3\37\14\uffff\15\37\1\uffff"+
+            "\3\37\1\uffff\14\37\3\uffff\2\37",
             "",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
-            "\1\12\25\uffff\1\40\2\uffff\1\12\1\uffff\1\12\1\uffff\2\12"+
-            "\21\uffff\1\12\1\uffff\3\12\16\uffff\3\12\14\uffff\15\12\1\uffff"+
-            "\3\12\1\uffff\14\12\3\uffff\2\12",
             ""
     };
 
@@ -29131,7 +29041,7 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
             this.transition = DFA99_transition;
         }
         public String getDescription() {
-            return "7598:1: (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) )";
+            return "7568:1: (this_IdentifierExpression_0= ruleIdentifierExpression | this_FunctionCallExpression_1= ruleFunctionCallExpression | this_LiteralExpression_2= ruleLiteralExpression | (otherlv_3= '(' this_Expression_4= ruleExpression otherlv_5= ')' ) )";
         }
     }
  
@@ -29834,271 +29744,268 @@ public class InternalUppaalXMLParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_EOF_in_entryRuleMinusExpression17219 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_76_in_ruleMinusExpression17266 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
         public static final BitSet FOLLOW_ruleNegationExpression_Alternative_in_ruleMinusExpression17287 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementExpression_in_ruleMinusExpression17316 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementExpression_in_entryRuleIncrementDecrementExpression17351 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIncrementDecrementExpression17361 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePreIncrementDecrementExpression_in_ruleIncrementDecrementExpression17407 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePreIncrementDecrementExpression_in_entryRulePreIncrementDecrementExpression17441 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePreIncrementDecrementExpression17451 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePostIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17498 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_rulePreIncrementDecrementExpression17534 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_rulePreIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17555 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePostIncrementDecrementExpression_in_entryRulePostIncrementDecrementExpression17592 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePostIncrementDecrementExpression17602 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleScopedIdentifierExpression_in_rulePostIncrementDecrementExpression17649 = new BitSet(new long[]{0x1210439F4DBA8062L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_rulePostIncrementDecrementExpression17697 = new BitSet(new long[]{0x1210439F4DBA8062L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleScopedIdentifierExpression_in_entryRuleScopedIdentifierExpression17736 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleScopedIdentifierExpression17746 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTerminatingExpressions_in_ruleScopedIdentifierExpression17793 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
-        public static final BitSet FOLLOW_77_in_ruleScopedIdentifierExpression17814 = new BitSet(new long[]{0x1200439F4DBA8020L,0x0000000000070000L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleIdentifierExpression_in_ruleScopedIdentifierExpression17835 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
-        public static final BitSet FOLLOW_ruleTerminatingExpressions_in_entryRuleTerminatingExpressions17873 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTerminatingExpressions17883 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIdentifierExpression_in_ruleTerminatingExpressions17930 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFunctionCallExpression_in_ruleTerminatingExpressions17957 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleTerminatingExpressions17984 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_ruleTerminatingExpressions18002 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleTerminatingExpressions18024 = new BitSet(new long[]{0x0020000000000000L});
-        public static final BitSet FOLLOW_53_in_ruleTerminatingExpressions18035 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression18072 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression18082 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpressionText_in_ruleLiteralExpression18127 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpressionText_in_entryRuleLiteralExpressionText18163 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpressionText18174 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_78_in_ruleLiteralExpressionText18212 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_79_in_ruleLiteralExpressionText18231 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteralExpressionText18252 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleFunctionCallExpression_in_entryRuleFunctionCallExpression18297 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCallExpression18307 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleFunctionCallExpression18355 = new BitSet(new long[]{0x0010000000000000L});
-        public static final BitSet FOLLOW_52_in_ruleFunctionCallExpression18367 = new BitSet(new long[]{0x1230439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCallExpression18389 = new BitSet(new long[]{0x0020000010000000L});
-        public static final BitSet FOLLOW_28_in_ruleFunctionCallExpression18402 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCallExpression18423 = new BitSet(new long[]{0x0020000010000000L});
-        public static final BitSet FOLLOW_53_in_ruleFunctionCallExpression18439 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIdentifierExpression_in_entryRuleIdentifierExpression18475 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIdentifierExpression18485 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleIdentifierExpression18533 = new BitSet(new long[]{0x0080000000000002L});
-        public static final BitSet FOLLOW_55_in_ruleIdentifierExpression18546 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleIdentifierExpression18567 = new BitSet(new long[]{0x0100000000000000L});
-        public static final BitSet FOLLOW_56_in_ruleIdentifierExpression18579 = new BitSet(new long[]{0x0080000000000002L});
-        public static final BitSet FOLLOW_ruleSimpleIdentifierExpression_in_entryRuleSimpleIdentifierExpression18617 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleSimpleIdentifierExpression18627 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleSimpleIdentifierExpression18674 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18710 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18721 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18768 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_60_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18792 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_80_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18811 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_81_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18830 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_57_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18849 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_82_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18868 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_IDENTIFIER_in_entryRuleUPPAAL_IDENTIFIER18909 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_IDENTIFIER18920 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleUPPAAL_IDENTIFIER18960 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_KEYWORDS_in_ruleUPPAAL_IDENTIFIER18993 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_KEYWORDS_in_entryRuleUPPAAL_KEYWORDS19039 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_KEYWORDS19050 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_57_in_ruleUPPAAL_KEYWORDS19088 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_82_in_ruleUPPAAL_KEYWORDS19107 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_80_in_ruleUPPAAL_KEYWORDS19126 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_60_in_ruleUPPAAL_KEYWORDS19145 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_83_in_ruleUPPAAL_KEYWORDS19164 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_84_in_ruleUPPAAL_KEYWORDS19183 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_58_in_ruleUPPAAL_KEYWORDS19202 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_59_in_ruleUPPAAL_KEYWORDS19221 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_ruleUPPAAL_KEYWORDS19240 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_85_in_ruleUPPAAL_KEYWORDS19259 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_86_in_ruleUPPAAL_KEYWORDS19278 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_87_in_ruleUPPAAL_KEYWORDS19297 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_88_in_ruleUPPAAL_KEYWORDS19316 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_89_in_ruleUPPAAL_KEYWORDS19335 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_ruleUPPAAL_KEYWORDS19354 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_90_in_ruleUPPAAL_KEYWORDS19373 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_91_in_ruleUPPAAL_KEYWORDS19392 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_92_in_ruleUPPAAL_KEYWORDS19411 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_93_in_ruleUPPAAL_KEYWORDS19430 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_72_in_ruleUPPAAL_KEYWORDS19449 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_94_in_ruleUPPAAL_KEYWORDS19468 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_78_in_ruleUPPAAL_KEYWORDS19487 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_79_in_ruleUPPAAL_KEYWORDS19506 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_66_in_ruleUPPAAL_KEYWORDS19525 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_95_in_ruleUPPAAL_KEYWORDS19544 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_96_in_ruleUPPAAL_KEYWORDS19563 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_67_in_ruleUPPAAL_KEYWORDS19582 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_68_in_ruleUPPAAL_KEYWORDS19601 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_69_in_ruleUPPAAL_KEYWORDS19620 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_70_in_ruleUPPAAL_KEYWORDS19639 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_71_in_ruleUPPAAL_KEYWORDS19658 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_63_in_ruleUPPAAL_KEYWORDS19677 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_61_in_ruleUPPAAL_KEYWORDS19696 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_97_in_ruleUPPAAL_KEYWORDS19715 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_98_in_ruleUPPAAL_KEYWORDS19734 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_99_in_ruleUPPAAL_KEYWORDS19753 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_100_in_ruleUPPAAL_KEYWORDS19772 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_64_in_ruleUPPAAL_KEYWORDS19791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_ruleUPPAAL_KEYWORDS19810 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_62_in_ruleUPPAAL_KEYWORDS19829 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_101_in_ruleUPPAAL_KEYWORDS19848 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_81_in_ruleUPPAAL_KEYWORDS19867 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_102_in_ruleUPPAAL_KEYWORDS19886 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_103_in_ruleUPPAAL_KEYWORDS19905 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_104_in_ruleUPPAAL_KEYWORDS19924 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_105_in_ruleUPPAAL_KEYWORDS19943 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_65_in_ruleUPPAAL_KEYWORDS19962 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS20003 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS20014 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_ruleUPPAAL_STRUCTURE_KEYWORDS20052 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_56_in_ruleUPPAAL_STRUCTURE_KEYWORDS20071 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_ruleUPPAAL_STRUCTURE_KEYWORDS20090 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_106_in_ruleUPPAAL_STRUCTURE_KEYWORDS20109 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleUPPAAL_STRUCTURE_KEYWORDS20128 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleUPPAAL_STRUCTURE_KEYWORDS20147 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleUPPAAL_STRUCTURE_KEYWORDS20166 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleUPPAAL_STRUCTURE_KEYWORDS20185 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_ruleUPPAAL_STRUCTURE_KEYWORDS20204 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_ruleUPPAAL_STRUCTURE_KEYWORDS20223 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_73_in_ruleUPPAAL_STRUCTURE_KEYWORDS20242 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_74_in_ruleUPPAAL_STRUCTURE_KEYWORDS20261 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_107_in_ruleUPPAAL_STRUCTURE_KEYWORDS20280 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_108_in_ruleUPPAAL_STRUCTURE_KEYWORDS20299 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_109_in_ruleUPPAAL_STRUCTURE_KEYWORDS20318 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_75_in_ruleUPPAAL_STRUCTURE_KEYWORDS20337 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_76_in_ruleUPPAAL_STRUCTURE_KEYWORDS20356 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_110_in_ruleUPPAAL_STRUCTURE_KEYWORDS20375 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_111_in_ruleUPPAAL_STRUCTURE_KEYWORDS20394 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_112_in_ruleUPPAAL_STRUCTURE_KEYWORDS20413 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_113_in_ruleUPPAAL_STRUCTURE_KEYWORDS20432 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_114_in_ruleUPPAAL_STRUCTURE_KEYWORDS20451 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_115_in_ruleUPPAAL_STRUCTURE_KEYWORDS20470 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_116_in_ruleUPPAAL_STRUCTURE_KEYWORDS20489 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_117_in_ruleUPPAAL_STRUCTURE_KEYWORDS20508 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_118_in_ruleUPPAAL_STRUCTURE_KEYWORDS20527 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_119_in_ruleUPPAAL_STRUCTURE_KEYWORDS20546 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_120_in_ruleUPPAAL_STRUCTURE_KEYWORDS20565 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_121_in_ruleUPPAAL_STRUCTURE_KEYWORDS20584 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_122_in_ruleUPPAAL_STRUCTURE_KEYWORDS20603 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_123_in_ruleUPPAAL_STRUCTURE_KEYWORDS20622 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_124_in_ruleUPPAAL_STRUCTURE_KEYWORDS20641 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_125_in_ruleUPPAAL_STRUCTURE_KEYWORDS20660 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_126_in_ruleUPPAAL_STRUCTURE_KEYWORDS20679 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleUPPAAL_STRUCTURE_KEYWORDS20698 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_127_in_ruleUPPAAL_STRUCTURE_KEYWORDS20717 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_128_in_ruleUPPAAL_STRUCTURE_KEYWORDS20736 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_129_in_ruleUPPAAL_STRUCTURE_KEYWORDS20755 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_130_in_ruleUPPAAL_STRUCTURE_KEYWORDS20774 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_131_in_ruleUPPAAL_STRUCTURE_KEYWORDS20793 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_132_in_ruleUPPAAL_STRUCTURE_KEYWORDS20812 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_133_in_ruleUPPAAL_STRUCTURE_KEYWORDS20831 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_134_in_ruleUPPAAL_STRUCTURE_KEYWORDS20850 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_135_in_ruleUPPAAL_STRUCTURE_KEYWORDS20869 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_136_in_ruleUPPAAL_STRUCTURE_KEYWORDS20888 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleUPPAAL_STRUCTURE_KEYWORDS20907 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQUOTED_INT_in_entryRuleQUOTED_INT20948 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleQUOTED_INT20959 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleQUOTED_INT20998 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleANY_TOKEN_BUT_XML_CLOSE_in_entryRuleANY_TOKEN_BUT_XML_CLOSE21043 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleANY_TOKEN_BUT_XML_CLOSE21054 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21101 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21134 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21167 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21233 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleANY_TOKEN_BUT_XML_CLOSE21259 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleANY_TOKEN_BUT_XML_CLOSE21285 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_WS_in_ruleANY_TOKEN_BUT_XML_CLOSE21311 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleANY_TOKEN_BUT_XML_CLOSE21337 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleANY_TOKEN_BUT_XML_CLOSE21363 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_SINGLE_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21389 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_MULTI_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21415 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_entryRuleXML_STRUCTURE_KEYWORDS21461 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleXML_STRUCTURE_KEYWORDS21472 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_ruleXML_STRUCTURE_KEYWORDS21510 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_ruleXML_STRUCTURE_KEYWORDS21529 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleXML_STRUCTURE_KEYWORDS21548 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_ruleXML_STRUCTURE_KEYWORDS21567 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_ruleXML_STRUCTURE_KEYWORDS21586 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_ruleXML_STRUCTURE_KEYWORDS21605 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_KEYWORDS_in_entryRuleXML_KEYWORDS21648 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleXML_KEYWORDS21659 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_ruleXML_KEYWORDS21697 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_ruleXML_KEYWORDS21716 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_ruleXML_KEYWORDS21735 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_23_in_ruleXML_KEYWORDS21754 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_ruleXML_KEYWORDS21773 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleXML_KEYWORDS21792 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_ruleXML_KEYWORDS21811 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_34_in_ruleXML_KEYWORDS21830 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_39_in_ruleXML_KEYWORDS21849 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleXML_KEYWORDS21868 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleXML_KEYWORDS21887 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleXML_KEYWORDS21906 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_ruleXML_KEYWORDS21925 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_ruleXML_KEYWORDS21944 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_ruleXML_KEYWORDS21963 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_ruleXML_KEYWORDS21982 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_ruleXML_KEYWORDS22001 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_137_in_ruleXML_KEYWORDS22020 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_ruleXML_KEYWORDS22039 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleXML_KEYWORDS22058 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_entryRuleXML_ATTRIBUTE_KEYWORDS22099 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleXML_ATTRIBUTE_KEYWORDS22110 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_ruleXML_ATTRIBUTE_KEYWORDS22148 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_43_in_ruleXML_ATTRIBUTE_KEYWORDS22167 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_ruleXML_ATTRIBUTE_KEYWORDS22186 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_38_in_ruleXML_ATTRIBUTE_KEYWORDS22205 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleXML_ATTRIBUTE_KEYWORDS22224 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_138_in_ruleLocationKind22278 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_139_in_ruleLocationKind22295 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_74_in_ruleSynchronizationKind22340 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_73_in_ruleSynchronizationKind22357 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_84_in_ruleDataVariablePrefix22402 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_100_in_ruleDataVariablePrefix22419 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_121_in_ruleCallType22463 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_95_in_ruleQuantifier22507 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_96_in_ruleQuantifier22524 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_93_in_ruleLogicalOperator_OrImply22569 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_94_in_ruleLogicalOperator_OrImply22586 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_92_in_ruleLogicalOperator_And22630 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleAssignmentOperator22674 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_140_in_ruleAssignmentOperator22691 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_127_in_ruleAssignmentOperator22708 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_128_in_ruleAssignmentOperator22725 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_129_in_ruleAssignmentOperator22742 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_130_in_ruleAssignmentOperator22759 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_131_in_ruleAssignmentOperator22776 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_132_in_ruleAssignmentOperator22793 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_133_in_ruleAssignmentOperator22810 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_134_in_ruleAssignmentOperator22827 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_135_in_ruleAssignmentOperator22844 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_136_in_ruleAssignmentOperator22861 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_126_in_ruleLogicalOperator_OrAlternative22905 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_125_in_ruleLogicalOperator_AndAlternative22948 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_123_in_ruleBitwiseOperator_Or22991 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_122_in_ruleBitwiseOperator_Xor23034 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_121_in_ruleBitwiseOperator_And23077 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_118_in_ruleCompareOperator_EqualUnequal23121 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_119_in_ruleCompareOperator_EqualUnequal23138 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_141_in_ruleCompareOperator_Other23183 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_117_in_ruleCompareOperator_Other23200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_ruleCompareOperator_Other23217 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_116_in_ruleCompareOperator_Other23234 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_114_in_ruleMinMaxOperator23279 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_115_in_ruleMinMaxOperator23296 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_112_in_ruleBitShiftOperator23341 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_113_in_ruleBitShiftOperator23358 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_75_in_ruleArithmeticOperator_PlusMinus23403 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_76_in_ruleArithmeticOperator_PlusMinus23420 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_107_in_ruleArithmeticOperator_Other23465 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_109_in_ruleArithmeticOperator_Other23482 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_108_in_ruleArithmeticOperator_Other23499 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_110_in_ruleIncrementDecrementOperator23544 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_111_in_ruleIncrementDecrementOperator23561 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePreIncrementDecrementExpression_in_ruleMinusExpression17316 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePreIncrementDecrementExpression_in_entryRulePreIncrementDecrementExpression17351 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePreIncrementDecrementExpression17361 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePostIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17408 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_rulePreIncrementDecrementExpression17444 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_rulePreIncrementDecrementExpression_in_rulePreIncrementDecrementExpression17465 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePostIncrementDecrementExpression_in_entryRulePostIncrementDecrementExpression17502 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePostIncrementDecrementExpression17512 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleScopedIdentifierExpression_in_rulePostIncrementDecrementExpression17559 = new BitSet(new long[]{0x1210439F4DBA8062L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_rulePostIncrementDecrementExpression17607 = new BitSet(new long[]{0x1210439F4DBA8062L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleScopedIdentifierExpression_in_entryRuleScopedIdentifierExpression17646 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleScopedIdentifierExpression17656 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTerminatingExpressions_in_ruleScopedIdentifierExpression17703 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
+        public static final BitSet FOLLOW_77_in_ruleScopedIdentifierExpression17724 = new BitSet(new long[]{0x1200439F4DBA8020L,0x0000000000070000L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleIdentifierExpression_in_ruleScopedIdentifierExpression17745 = new BitSet(new long[]{0x0000000000000002L,0x0000000000002000L});
+        public static final BitSet FOLLOW_ruleTerminatingExpressions_in_entryRuleTerminatingExpressions17783 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTerminatingExpressions17793 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIdentifierExpression_in_ruleTerminatingExpressions17840 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFunctionCallExpression_in_ruleTerminatingExpressions17867 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleTerminatingExpressions17894 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_ruleTerminatingExpressions17912 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleTerminatingExpressions17934 = new BitSet(new long[]{0x0020000000000000L});
+        public static final BitSet FOLLOW_53_in_ruleTerminatingExpressions17945 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression17982 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression17992 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpressionText_in_ruleLiteralExpression18037 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpressionText_in_entryRuleLiteralExpressionText18073 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpressionText18084 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_78_in_ruleLiteralExpressionText18122 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_79_in_ruleLiteralExpressionText18141 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteralExpressionText18162 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleFunctionCallExpression_in_entryRuleFunctionCallExpression18207 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleFunctionCallExpression18217 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleFunctionCallExpression18265 = new BitSet(new long[]{0x0010000000000000L});
+        public static final BitSet FOLLOW_52_in_ruleFunctionCallExpression18277 = new BitSet(new long[]{0x1230439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCallExpression18299 = new BitSet(new long[]{0x0020000010000000L});
+        public static final BitSet FOLLOW_28_in_ruleFunctionCallExpression18312 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleFunctionCallExpression18333 = new BitSet(new long[]{0x0020000010000000L});
+        public static final BitSet FOLLOW_53_in_ruleFunctionCallExpression18349 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIdentifierExpression_in_entryRuleIdentifierExpression18385 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleIdentifierExpression18395 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleIdentifierExpression18443 = new BitSet(new long[]{0x0080000000000002L});
+        public static final BitSet FOLLOW_55_in_ruleIdentifierExpression18456 = new BitSet(new long[]{0x1210439F4DBA8060L,0x0000C0018007DD00L,0x0000000000000200L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleIdentifierExpression18477 = new BitSet(new long[]{0x0100000000000000L});
+        public static final BitSet FOLLOW_56_in_ruleIdentifierExpression18489 = new BitSet(new long[]{0x0080000000000002L});
+        public static final BitSet FOLLOW_ruleSimpleIdentifierExpression_in_entryRuleSimpleIdentifierExpression18527 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleSimpleIdentifierExpression18537 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_ruleSimpleIdentifierExpression18584 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_TYPE_OR_IDENTIFIER_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18620 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_TYPE_OR_IDENTIFIER18631 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_IDENTIFIER_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18678 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_60_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18702 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_80_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18721 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_81_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18740 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_57_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18759 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_82_in_ruleUPPAAL_TYPE_OR_IDENTIFIER18778 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_IDENTIFIER_in_entryRuleUPPAAL_IDENTIFIER18819 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_IDENTIFIER18830 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleUPPAAL_IDENTIFIER18870 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_KEYWORDS_in_ruleUPPAAL_IDENTIFIER18903 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_KEYWORDS_in_entryRuleUPPAAL_KEYWORDS18949 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_KEYWORDS18960 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_57_in_ruleUPPAAL_KEYWORDS18998 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_82_in_ruleUPPAAL_KEYWORDS19017 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_80_in_ruleUPPAAL_KEYWORDS19036 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_60_in_ruleUPPAAL_KEYWORDS19055 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_83_in_ruleUPPAAL_KEYWORDS19074 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_84_in_ruleUPPAAL_KEYWORDS19093 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_58_in_ruleUPPAAL_KEYWORDS19112 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_59_in_ruleUPPAAL_KEYWORDS19131 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_ruleUPPAAL_KEYWORDS19150 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_85_in_ruleUPPAAL_KEYWORDS19169 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_86_in_ruleUPPAAL_KEYWORDS19188 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_87_in_ruleUPPAAL_KEYWORDS19207 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_88_in_ruleUPPAAL_KEYWORDS19226 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_89_in_ruleUPPAAL_KEYWORDS19245 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_ruleUPPAAL_KEYWORDS19264 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_90_in_ruleUPPAAL_KEYWORDS19283 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_91_in_ruleUPPAAL_KEYWORDS19302 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_92_in_ruleUPPAAL_KEYWORDS19321 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_93_in_ruleUPPAAL_KEYWORDS19340 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_72_in_ruleUPPAAL_KEYWORDS19359 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_94_in_ruleUPPAAL_KEYWORDS19378 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_78_in_ruleUPPAAL_KEYWORDS19397 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_79_in_ruleUPPAAL_KEYWORDS19416 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_66_in_ruleUPPAAL_KEYWORDS19435 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_95_in_ruleUPPAAL_KEYWORDS19454 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_96_in_ruleUPPAAL_KEYWORDS19473 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_67_in_ruleUPPAAL_KEYWORDS19492 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_68_in_ruleUPPAAL_KEYWORDS19511 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_69_in_ruleUPPAAL_KEYWORDS19530 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_70_in_ruleUPPAAL_KEYWORDS19549 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_71_in_ruleUPPAAL_KEYWORDS19568 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_63_in_ruleUPPAAL_KEYWORDS19587 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_61_in_ruleUPPAAL_KEYWORDS19606 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_97_in_ruleUPPAAL_KEYWORDS19625 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_98_in_ruleUPPAAL_KEYWORDS19644 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_99_in_ruleUPPAAL_KEYWORDS19663 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_100_in_ruleUPPAAL_KEYWORDS19682 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_64_in_ruleUPPAAL_KEYWORDS19701 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_48_in_ruleUPPAAL_KEYWORDS19720 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_62_in_ruleUPPAAL_KEYWORDS19739 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_101_in_ruleUPPAAL_KEYWORDS19758 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_81_in_ruleUPPAAL_KEYWORDS19777 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_102_in_ruleUPPAAL_KEYWORDS19796 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_103_in_ruleUPPAAL_KEYWORDS19815 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_104_in_ruleUPPAAL_KEYWORDS19834 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_105_in_ruleUPPAAL_KEYWORDS19853 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_65_in_ruleUPPAAL_KEYWORDS19872 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS19913 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUPPAAL_STRUCTURE_KEYWORDS19924 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_ruleUPPAAL_STRUCTURE_KEYWORDS19962 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_ruleUPPAAL_STRUCTURE_KEYWORDS19981 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_ruleUPPAAL_STRUCTURE_KEYWORDS20000 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_106_in_ruleUPPAAL_STRUCTURE_KEYWORDS20019 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleUPPAAL_STRUCTURE_KEYWORDS20038 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleUPPAAL_STRUCTURE_KEYWORDS20057 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_ruleUPPAAL_STRUCTURE_KEYWORDS20076 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleUPPAAL_STRUCTURE_KEYWORDS20095 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_ruleUPPAAL_STRUCTURE_KEYWORDS20114 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_ruleUPPAAL_STRUCTURE_KEYWORDS20133 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_73_in_ruleUPPAAL_STRUCTURE_KEYWORDS20152 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_74_in_ruleUPPAAL_STRUCTURE_KEYWORDS20171 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_107_in_ruleUPPAAL_STRUCTURE_KEYWORDS20190 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_108_in_ruleUPPAAL_STRUCTURE_KEYWORDS20209 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_109_in_ruleUPPAAL_STRUCTURE_KEYWORDS20228 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_75_in_ruleUPPAAL_STRUCTURE_KEYWORDS20247 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_76_in_ruleUPPAAL_STRUCTURE_KEYWORDS20266 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_110_in_ruleUPPAAL_STRUCTURE_KEYWORDS20285 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_111_in_ruleUPPAAL_STRUCTURE_KEYWORDS20304 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_112_in_ruleUPPAAL_STRUCTURE_KEYWORDS20323 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_113_in_ruleUPPAAL_STRUCTURE_KEYWORDS20342 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_114_in_ruleUPPAAL_STRUCTURE_KEYWORDS20361 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_115_in_ruleUPPAAL_STRUCTURE_KEYWORDS20380 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_116_in_ruleUPPAAL_STRUCTURE_KEYWORDS20399 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_117_in_ruleUPPAAL_STRUCTURE_KEYWORDS20418 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_118_in_ruleUPPAAL_STRUCTURE_KEYWORDS20437 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_119_in_ruleUPPAAL_STRUCTURE_KEYWORDS20456 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_120_in_ruleUPPAAL_STRUCTURE_KEYWORDS20475 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_121_in_ruleUPPAAL_STRUCTURE_KEYWORDS20494 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_122_in_ruleUPPAAL_STRUCTURE_KEYWORDS20513 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_123_in_ruleUPPAAL_STRUCTURE_KEYWORDS20532 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_124_in_ruleUPPAAL_STRUCTURE_KEYWORDS20551 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_125_in_ruleUPPAAL_STRUCTURE_KEYWORDS20570 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_126_in_ruleUPPAAL_STRUCTURE_KEYWORDS20589 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_ruleUPPAAL_STRUCTURE_KEYWORDS20608 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_127_in_ruleUPPAAL_STRUCTURE_KEYWORDS20627 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_128_in_ruleUPPAAL_STRUCTURE_KEYWORDS20646 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_129_in_ruleUPPAAL_STRUCTURE_KEYWORDS20665 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_130_in_ruleUPPAAL_STRUCTURE_KEYWORDS20684 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_131_in_ruleUPPAAL_STRUCTURE_KEYWORDS20703 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_132_in_ruleUPPAAL_STRUCTURE_KEYWORDS20722 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_133_in_ruleUPPAAL_STRUCTURE_KEYWORDS20741 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_134_in_ruleUPPAAL_STRUCTURE_KEYWORDS20760 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_135_in_ruleUPPAAL_STRUCTURE_KEYWORDS20779 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_136_in_ruleUPPAAL_STRUCTURE_KEYWORDS20798 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleUPPAAL_STRUCTURE_KEYWORDS20817 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQUOTED_INT_in_entryRuleQUOTED_INT20858 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleQUOTED_INT20869 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleQUOTED_INT20908 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleANY_TOKEN_BUT_XML_CLOSE_in_entryRuleANY_TOKEN_BUT_XML_CLOSE20953 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleANY_TOKEN_BUT_XML_CLOSE20964 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21011 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21044 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21077 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21110 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUPPAAL_STRUCTURE_KEYWORDS_in_ruleANY_TOKEN_BUT_XML_CLOSE21143 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleANY_TOKEN_BUT_XML_CLOSE21169 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleANY_TOKEN_BUT_XML_CLOSE21195 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_WS_in_ruleANY_TOKEN_BUT_XML_CLOSE21221 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleANY_TOKEN_BUT_XML_CLOSE21247 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleANY_TOKEN_BUT_XML_CLOSE21273 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_SINGLE_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21299 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_MULTI_LINE_COMMENT_in_ruleANY_TOKEN_BUT_XML_CLOSE21325 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_STRUCTURE_KEYWORDS_in_entryRuleXML_STRUCTURE_KEYWORDS21371 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleXML_STRUCTURE_KEYWORDS21382 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_ruleXML_STRUCTURE_KEYWORDS21420 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_ruleXML_STRUCTURE_KEYWORDS21439 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleXML_STRUCTURE_KEYWORDS21458 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_11_in_ruleXML_STRUCTURE_KEYWORDS21477 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_ruleXML_STRUCTURE_KEYWORDS21496 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_ruleXML_STRUCTURE_KEYWORDS21515 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_KEYWORDS_in_entryRuleXML_KEYWORDS21558 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleXML_KEYWORDS21569 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_ruleXML_KEYWORDS21607 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_ruleXML_KEYWORDS21626 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_ruleXML_KEYWORDS21645 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_ruleXML_KEYWORDS21664 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_ruleXML_KEYWORDS21683 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_ruleXML_KEYWORDS21702 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_ruleXML_KEYWORDS21721 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_34_in_ruleXML_KEYWORDS21740 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_39_in_ruleXML_KEYWORDS21759 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleXML_KEYWORDS21778 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleXML_KEYWORDS21797 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleXML_KEYWORDS21816 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_ruleXML_KEYWORDS21835 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_ruleXML_KEYWORDS21854 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_ruleXML_KEYWORDS21873 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_ruleXML_KEYWORDS21892 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_ruleXML_KEYWORDS21911 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_137_in_ruleXML_KEYWORDS21930 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleXML_KEYWORDS21949 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleXML_KEYWORDS21968 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleXML_ATTRIBUTE_KEYWORDS_in_entryRuleXML_ATTRIBUTE_KEYWORDS22009 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleXML_ATTRIBUTE_KEYWORDS22020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleXML_ATTRIBUTE_KEYWORDS22058 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_ruleXML_ATTRIBUTE_KEYWORDS22077 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_44_in_ruleXML_ATTRIBUTE_KEYWORDS22096 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleXML_ATTRIBUTE_KEYWORDS22115 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleXML_ATTRIBUTE_KEYWORDS22134 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_138_in_ruleLocationKind22188 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_139_in_ruleLocationKind22205 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_74_in_ruleSynchronizationKind22250 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_73_in_ruleSynchronizationKind22267 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_84_in_ruleDataVariablePrefix22312 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_100_in_ruleDataVariablePrefix22329 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_121_in_ruleCallType22373 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_95_in_ruleQuantifier22417 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_96_in_ruleQuantifier22434 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_93_in_ruleLogicalOperator_OrImply22479 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_94_in_ruleLogicalOperator_OrImply22496 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_92_in_ruleLogicalOperator_And22540 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_ruleAssignmentOperator22584 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_140_in_ruleAssignmentOperator22601 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_127_in_ruleAssignmentOperator22618 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_128_in_ruleAssignmentOperator22635 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_129_in_ruleAssignmentOperator22652 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_130_in_ruleAssignmentOperator22669 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_131_in_ruleAssignmentOperator22686 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_132_in_ruleAssignmentOperator22703 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_133_in_ruleAssignmentOperator22720 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_134_in_ruleAssignmentOperator22737 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_135_in_ruleAssignmentOperator22754 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_136_in_ruleAssignmentOperator22771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_126_in_ruleLogicalOperator_OrAlternative22815 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_125_in_ruleLogicalOperator_AndAlternative22858 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_123_in_ruleBitwiseOperator_Or22901 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_122_in_ruleBitwiseOperator_Xor22944 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_121_in_ruleBitwiseOperator_And22987 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_118_in_ruleCompareOperator_EqualUnequal23031 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_119_in_ruleCompareOperator_EqualUnequal23048 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_141_in_ruleCompareOperator_Other23093 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_117_in_ruleCompareOperator_Other23110 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_ruleCompareOperator_Other23127 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_116_in_ruleCompareOperator_Other23144 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_114_in_ruleMinMaxOperator23189 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_115_in_ruleMinMaxOperator23206 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_112_in_ruleBitShiftOperator23251 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_113_in_ruleBitShiftOperator23268 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_75_in_ruleArithmeticOperator_PlusMinus23313 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_76_in_ruleArithmeticOperator_PlusMinus23330 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_107_in_ruleArithmeticOperator_Other23375 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_109_in_ruleArithmeticOperator_Other23392 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_108_in_ruleArithmeticOperator_Other23409 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_110_in_ruleIncrementDecrementOperator23454 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_111_in_ruleIncrementDecrementOperator23471 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleBlockDeclarations_in_synpred1_InternalUppaalXML12604 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleBlockTypedDeclaration_in_synpred2_InternalUppaalXML12752 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypeDeclaration_in_synpred2_InternalUppaalXML12759 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_70_in_synpred3_InternalUppaalXML14042 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_synpred4_InternalUppaalXML17667 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_synpred4_InternalUppaalXML17577 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 
