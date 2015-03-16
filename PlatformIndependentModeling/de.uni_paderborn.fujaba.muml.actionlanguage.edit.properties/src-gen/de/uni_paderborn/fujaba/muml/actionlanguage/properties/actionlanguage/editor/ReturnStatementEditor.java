@@ -21,36 +21,24 @@ public class ReturnStatementEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addExpression_GeneralTab_Editor(null, false);
+		addPropertyEditor(createExpression_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpression_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExpression_GeneralTab_Editor() {
+		if (this.editorExpression_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getReturnStatement_Expression();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Return expression which blongs to a return statement.");
+
+			this.editorExpression_GeneralTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addExpression_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createExpression_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExpression_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getReturnStatement_Expression();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("Return expression which blongs to a return statement.");
-
-		return editor;
-
+		return this.editorExpression_GeneralTab;
 	}
 
 	//

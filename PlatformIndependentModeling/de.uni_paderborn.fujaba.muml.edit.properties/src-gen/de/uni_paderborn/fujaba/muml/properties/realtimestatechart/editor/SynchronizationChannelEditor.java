@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class SynchronizationChannelEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,88 +21,102 @@ public class SynchronizationChannelEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addState_GeneralTab_Editor(null, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createExtension_ExtensionsTab_Editor(), false);
+
+		addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createExtension_ExtensionsTab_Editor(), false);
+
+		addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+		addPropertyEditor(createState_GeneralTab_Editor(), false);
+
+		addPropertyEditor(createSelectorType_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorState_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createState_GeneralTab_Editor() {
+		if (this.editorState_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getSynchronizationChannel_State();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The state in which this synchronization channel is defined.");
+
+			this.editorState_GeneralTab = editor;
 		}
+		return this.editorState_GeneralTab;
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSelectorType_GeneralTab_Editor(null, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSelectorType_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createSelectorType_GeneralTab_Editor() {
+		if (this.editorSelectorType_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getSynchronizationChannel_SelectorType();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel.");
+
+			this.editorSelectorType_GeneralTab = editor;
 		}
+		return this.editorSelectorType_GeneralTab;
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addName_GeneralTab_Editor(null, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createComment_DocumentationTab_Editor() {
+		if (this.editorComment_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getCommentableElement_Comment();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+			this.editorComment_DocumentationTab = editor;
 		}
-
+		return this.editorComment_DocumentationTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addState_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createState_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+		if (this.editorExtension_ExtensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorExtension_ExtensionsTab = editor;
+		}
+		return this.editorExtension_ExtensionsTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createState_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getSynchronizationChannel_State();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createName_GeneralTab_Editor() {
+		if (this.editorName_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getNamedElement_Name();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
 
-		editor.setTooltipMessage("The state in which this synchronization channel is defined.");
+			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addSelectorType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createSelectorType_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSelectorType_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getSynchronizationChannel_SelectorType();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addName_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createName_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-				.getNamedElement_Name();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory, feature, false);
-
-		editor.setTooltipMessage("The name attribute of a meta-model element.");
-
-		return editor;
-
+			this.editorName_GeneralTab = editor;
+		}
+		return this.editorName_GeneralTab;
 	}
 
 	//

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.msgtype.editor;
  */
 public class MessageTypeEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,94 +21,97 @@ public class MessageTypeEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+
+		addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+		addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+		addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+		addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+		addPropertyEditor(createRepository_GeneralTab_Editor(), false);
 
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParameters_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createParameters_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameters_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createParameters_GeneralTab_Editor() {
+		if (this.editorParameters_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
+					.getMessageType_Parameters();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.");
+
+			this.editorParameters_GeneralTab = editor;
 		}
+		return this.editorParameters_GeneralTab;
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRepository_GeneralTab_Editor(null, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRepository_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createRepository_GeneralTab_Editor() {
+		if (this.editorRepository_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
+					.getMessageType_Repository();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes.");
+
+			this.editorRepository_GeneralTab = editor;
 		}
+		return this.editorRepository_GeneralTab;
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addName_GeneralTab_Editor(null, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createComment_DocumentationTab_Editor() {
+		if (this.editorComment_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getCommentableElement_Comment();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+			this.editorComment_DocumentationTab = editor;
 		}
-
+		return this.editorComment_DocumentationTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addParameters_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createParameters_GeneralTab_Editor(),
-				front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+		if (this.editorExtension_ExtensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorExtension_ExtensionsTab = editor;
+		}
+		return this.editorExtension_ExtensionsTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameters_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-				.getMessageType_Parameters();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createName_GeneralTab_Editor() {
+		if (this.editorName_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getNamedElement_Name();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
 
-		editor.setTooltipMessage("This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.");
+			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addRepository_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRepository_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRepository_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-				.getMessageType_Repository();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addName_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createName_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-				.getNamedElement_Name();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory, feature, false);
-
-		editor.setTooltipMessage("The name attribute of a meta-model element.");
-
-		return editor;
-
+			this.editorName_GeneralTab = editor;
+		}
+		return this.editorName_GeneralTab;
 	}
 
 	//

@@ -21,7 +21,6 @@ public abstract class ElementAccessorExpressionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

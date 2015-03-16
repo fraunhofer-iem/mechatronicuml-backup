@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class AbsoluteDeadlineEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DeadlineEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,34 +21,58 @@ public class AbsoluteDeadlineEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClock_GeneralTab_Editor(null, true);
+		addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+
+		addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+
+		addPropertyEditor(createClock_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClock_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createClock_GeneralTab_Editor() {
+		if (this.editorClock_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getAbsoluteDeadline_Clock();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("the references clock of the absolute deadline.");
+
+			this.editorClock_GeneralTab = editor;
 		}
-
+		return this.editorClock_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addClock_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createClock_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUpperBound_GeneralTab_Editor() {
+		if (this.editorUpperBound_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getDeadline_UpperBound();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The upper bound of a deadline is a natural number.");
+
+			this.editorUpperBound_GeneralTab = editor;
+		}
+		return this.editorUpperBound_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClock_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getAbsoluteDeadline_Clock();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLowerBound_GeneralTab_Editor() {
+		if (this.editorLowerBound_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getDeadline_LowerBound();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("the references clock of the absolute deadline.");
+			editor.setTooltipMessage("The lower bound of a deadline is a natural number.");
 
-		return editor;
-
+			this.editorLowerBound_GeneralTab = editor;
+		}
+		return this.editorLowerBound_GeneralTab;
 	}
 
 	//

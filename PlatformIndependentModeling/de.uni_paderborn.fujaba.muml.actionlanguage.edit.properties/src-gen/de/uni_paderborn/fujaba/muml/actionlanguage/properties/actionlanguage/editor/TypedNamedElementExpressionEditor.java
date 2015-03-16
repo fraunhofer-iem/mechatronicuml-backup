@@ -21,64 +21,42 @@ public class TypedNamedElementExpressionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+
+		addPropertyEditor(createTypedNamedElement_GeneralTab_Editor(), false);
 
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTypedNamedElement_GeneralTab_Editor(null, true);
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createElementAccessors_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTypedNamedElement_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createTypedNamedElement_GeneralTab_Editor() {
+		if (this.editorTypedNamedElement_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getTypedNamedElementExpression_TypedNamedElement();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorTypedNamedElement_GeneralTab = editor;
 		}
+		return this.editorTypedNamedElement_GeneralTab;
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addElementAccessors_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorElementAccessors_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createElementAccessors_GeneralTab_Editor() {
+		if (this.editorElementAccessors_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getTypedNamedElementExpression_ElementAccessors();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorElementAccessors_GeneralTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addTypedNamedElement_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createTypedNamedElement_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElement_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getTypedNamedElementExpression_TypedNamedElement();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addElementAccessors_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createElementAccessors_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createElementAccessors_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getTypedNamedElementExpression_ElementAccessors();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
+		return this.editorElementAccessors_GeneralTab;
 	}
 
 	//

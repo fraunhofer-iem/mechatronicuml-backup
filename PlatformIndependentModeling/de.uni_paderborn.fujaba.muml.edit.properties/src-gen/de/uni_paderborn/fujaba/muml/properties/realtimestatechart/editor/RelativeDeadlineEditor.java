@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class RelativeDeadlineEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DeadlineEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,41 @@ public class RelativeDeadlineEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
+		addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+
+		addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUpperBound_GeneralTab_Editor() {
+		if (this.editorUpperBound_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getDeadline_UpperBound();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The upper bound of a deadline is a natural number.");
+
+			this.editorUpperBound_GeneralTab = editor;
+		}
+		return this.editorUpperBound_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLowerBound_GeneralTab_Editor() {
+		if (this.editorLowerBound_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getDeadline_LowerBound();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The lower bound of a deadline is a natural number.");
+
+			this.editorLowerBound_GeneralTab = editor;
+		}
+		return this.editorLowerBound_GeneralTab;
 	}
 
 	//

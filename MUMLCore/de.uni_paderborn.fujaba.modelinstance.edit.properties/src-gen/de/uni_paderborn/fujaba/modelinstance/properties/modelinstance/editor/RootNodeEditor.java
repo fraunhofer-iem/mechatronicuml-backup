@@ -21,40 +21,29 @@ public class RootNodeEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCategories_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createCategories_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCategories_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createCategories_GeneralTab_Editor() {
+		if (this.editorCategories_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+					.getRootNode_Categories();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The model element categories which are contained in this RootNode.");
+
+			this.editorCategories_GeneralTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCategories_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCategories_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCategories_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-				.getRootNode_Categories();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The model element categories which are contained in this RootNode.");
-
-		return editor;
-
+		return this.editorCategories_GeneralTab;
 	}
 
 	//

@@ -5,7 +5,7 @@ package org.storydriven.core.properties.common.editor;
  */
 public class ArithmeticExpressionEditor
 		extends
-			org.storydriven.core.properties.common.editor.BinaryExpressionEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,34 +21,61 @@ public class ArithmeticExpressionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addOperator_GeneralTab_Editor(null, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createExtension_ExtensionsTab_Editor(), false);
+
+		addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+		addPropertyEditor(createOperator_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperator_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createOperator_GeneralTab_Editor() {
+		if (this.editorOperator_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
+					.getArithmeticExpression_Operator();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO.");
+
+			this.editorOperator_GeneralTab = editor;
 		}
-
+		return this.editorOperator_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addOperator_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createOperator_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createComment_DocumentationTab_Editor() {
+		if (this.editorComment_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getCommentableElement_Comment();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+			this.editorComment_DocumentationTab = editor;
+		}
+		return this.editorComment_DocumentationTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperator_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
-				.getArithmeticExpression_Operator();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+		if (this.editorExtension_ExtensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO.");
-
-		return editor;
-
+			this.editorExtension_ExtensionsTab = editor;
+		}
+		return this.editorExtension_ExtensionsTab;
 	}
 
 	//

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.ed
  */
 public class ArrayIndexExpressionEditor
 		extends
-			de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.ElementAccessorExpressionEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,34 +21,24 @@ public class ArrayIndexExpressionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addIndex_GeneralTab_Editor(null, false);
+		addPropertyEditor(createIndex_GeneralTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIndex_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createIndex_GeneralTab_Editor() {
+		if (this.editorIndex_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getArrayIndexExpression_Index();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Indices which refer to an concrete index of an array.");
+
+			this.editorIndex_GeneralTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addIndex_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createIndex_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createIndex_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getArrayIndexExpression_Index();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("Indices which refer to an concrete index of an array.");
-
-		return editor;
-
+		return this.editorIndex_GeneralTab;
 	}
 
 	//

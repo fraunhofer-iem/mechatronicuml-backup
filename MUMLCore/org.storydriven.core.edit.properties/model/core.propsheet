@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-  <reconciler/>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_VZGBYMwbEeSjx7OWZCcdLw" defaultTab="_VZGBY8wbEeSjx7OWZCcdLw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler xmi:id="_VZGBYcwbEeSjx7OWZCcdLw"/>
   <genModel href="../../org.storydriven.core/model/core.uml.genmodel#/"/>
-  <plugin id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.4.0.qualifier">
+  <plugin xmi:id="_VZGBYswbEeSjx7OWZCcdLw" id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.4.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.storydriven.core.edit</requiredBundles>
@@ -11,106 +11,106 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core</requiredBundles>
   </plugin>
-  <tabs id="property.tab.general" name="General" afterTab=""/>
-  <tabs id="property.tab.documentation" name="Documentation" afterTab="property.tab.general"/>
-  <tabs id="property.tab.extensions" name="Extensions" afterTab="property.tab.documentation"/>
-  <packages>
+  <tabs xmi:id="_VZGBY8wbEeSjx7OWZCcdLw" id="property.tab.general" name="General" afterTab=""/>
+  <tabs xmi:id="_VZGBZMwbEeSjx7OWZCcdLw" id="property.tab.documentation" name="Documentation" afterTab="property.tab.general"/>
+  <tabs xmi:id="_VZGBZcwbEeSjx7OWZCcdLw" id="property.tab.extensions" name="Extensions" afterTab="property.tab.documentation"/>
+  <packages xmi:id="_VZGBZswbEeSjx7OWZCcdLw">
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_VZGBZ8wbEeSjx7OWZCcdLw" superClasses="_VZGocMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement"/>
-      <properties tab="//@tabs.1" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZGBaMwbEeSjx7OWZCcdLw" tab="_VZGBZMwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_VZGBacwbEeSjx7OWZCcdLw" multiLine="true"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_VZGocMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement"/>
-      <properties tab="//@tabs.2" tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0" reconcile="false" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZGoccwbEeSjx7OWZCcdLw" tab="_VZGBZcwbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/extension"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:FlattenedListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:FlattenedListPropertyEditor" xmi:id="_VZGocswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZGoc8wbEeSjx7OWZCcdLw" title="Lists" properties="_VZGoccwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_VZGodMwbEeSjx7OWZCcdLw" superClasses="_VZGocMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension"/>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZGodcwbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
-      </properties>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_VZGodswbEeSjx7OWZCcdLw" superClasses="_VZGocMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement"/>
-      <properties tab="//@tabs.0" tooltip="" initializeOCLExpression="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZGod8wbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw" tooltip="" initializeOCLExpression="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_VZGoeMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_VZGoecwbEeSjx7OWZCcdLw" superClasses="_VZGocMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/TypedElement"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.0 //@packages.0/@classes.3">
+    <classes xmi:id="_VZGoeswbEeSjx7OWZCcdLw" superClasses="_VZGBZ8wbEeSjx7OWZCcdLw _VZGodswbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Repository"/>
     </classes>
   </packages>
-  <packages>
+  <packages xmi:id="_VZGoe8wbEeSjx7OWZCcdLw">
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions"/>
-    <classes superClasses="//@packages.0/@classes.0">
+    <classes xmi:id="_VZHPgMwbEeSjx7OWZCcdLw" superClasses="_VZGBZ8wbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/Expression"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.0">
+    <classes xmi:id="_VZHPgcwbEeSjx7OWZCcdLw" superClasses="_VZHPgMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZHPgswbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression/expressionText"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_VZHPg8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZHPhMwbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression/language"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_VZHPhcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZHPhswbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression/languageVersion"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_VZHPh8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
   </packages>
-  <packages>
+  <packages xmi:id="_VZHPiMwbEeSjx7OWZCcdLw">
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common"/>
-    <classes superClasses="//@packages.1/@classes.0">
+    <classes xmi:id="_VZHPicwbEeSjx7OWZCcdLw" superClasses="_VZHPgMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZHPiswbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression/operator"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_VZHPi8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.0">
+    <classes xmi:id="_VZHPjMwbEeSjx7OWZCcdLw" superClasses="_VZHPgMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/BinaryExpression"/>
     </classes>
-    <classes superClasses="//@packages.2/@classes.1">
+    <classes xmi:id="_VZHPjcwbEeSjx7OWZCcdLw" superClasses="_VZHPjMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZHPjswbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression/operator"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_VZHPj8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.2/@classes.1">
+    <classes xmi:id="_VZHPkMwbEeSjx7OWZCcdLw" superClasses="_VZHPjMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ArithmeticExpression"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZH2kMwbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ArithmeticExpression/operator"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_VZH2kcwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.2/@classes.1">
+    <classes xmi:id="_VZH2kswbEeSjx7OWZCcdLw" superClasses="_VZHPjMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LogicalExpression"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZH2k8wbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LogicalExpression/operator"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_VZH2lMwbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.0">
+    <classes xmi:id="_VZH2lcwbEeSjx7OWZCcdLw" superClasses="_VZHPgMwbEeSjx7OWZCcdLw">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZH2lswbEeSjx7OWZCcdLw" tab="_VZGBY8wbEeSjx7OWZCcdLw">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression/value"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_VZH2l8wbEeSjx7OWZCcdLw"/>
+      </orderedElements>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
