@@ -107,6 +107,7 @@ public class CreateClassItemProvider
 		Migrator migrator = (Migrator) container;
 		
 		Collection<EClass> targetClasses = new ArrayList<EClass>();
+		targetClasses.add(null);
 		if (migrator != null) {
 			for (EPackage targetPackage : migrator.getTargetPackages()) {
 				for (EClassifier classifier : targetPackage.getEClassifiers()) {
