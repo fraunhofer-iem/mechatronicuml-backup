@@ -34,6 +34,7 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.Resource
 import de.uni_paderborn.uppaal.types.Library
+import de.uni_paderborn.uppaal.expressions.FunctionCallExpression
 
 /**
  * This class contains custom scoping description.
@@ -82,6 +83,20 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 	def scope_IdentifierExpression_identifier(EObject context, EReference ref)
 	{
 		getIdentifierScope(context as IdentifierExpression)
+	}
+	
+	/**
+	 * Method that is called via reflection whenever the function reference of a
+	 * FunctionCallExpression needs to be resolved.
+	 * 
+	 * @param context Instance of FunctionCallExpression.
+	 * @param ref Instance of the reference, i.e. the function reference.
+	 * 
+	 * @return Hopefully a matching scope for the given function.
+	 */
+	def scope_FunctionCallExpression_function(EObject context, EReference ref)
+	{
+		getRecursiveScope(context, ScopeMode.TYPED_ELEMENTS, false) 
 	}
 	
 	/**
