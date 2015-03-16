@@ -8,9 +8,9 @@
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
-    <requiredBundles>emf.migration</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.ecore.migration</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.ecore.migration.edit</requiredBundles>
-    <requiredBundles>emf.migration.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.ecore.migration.edit</requiredBundles>
   </plugin>
   <tabs id="migration" name="Migration" afterTab=""/>
   <packages>
