@@ -634,13 +634,13 @@ public class MigrationPackageImpl extends EPackageImpl implements MigrationPacka
 		  (createClassEClass, 
 		   source, 
 		   new String[] {
-			 "NoAbstractTarget", "not targetClass.abstract"
+			 "NoAbstractTarget", "not targetClass.oclIsUndefined() implies not targetClass.abstract"
 		   });	
 		addAnnotation
 		  (mappingEClass, 
 		   source, 
 		   new String[] {
-			 "NoTargetForAbstractSourceAllowed", "sourceClass.abstract implies targetClass.oclIsUndefined()"
+			 "NoTargetForAbstractSourceAllowed", "(not sourceClass.oclIsUndefined()) implies \n(sourceClass.abstract implies targetClass.oclIsUndefined())"
 		   });
 	}
 

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @see de.uni_paderborn.fujaba.ecore.migration.MigrationPackage#getMapping()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoTargetForAbstractSourceAllowed'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoTargetForAbstractSourceAllowed='sourceClass.abstract implies targetClass.oclIsUndefined()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoTargetForAbstractSourceAllowed='(not sourceClass.oclIsUndefined()) implies \n(sourceClass.abstract implies targetClass.oclIsUndefined())'"
  * @generated
  */
 public interface Mapping extends CreateClass {

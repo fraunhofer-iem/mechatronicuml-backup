@@ -150,7 +150,7 @@ public class MigrationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CREATE_CLASS__NO_ABSTRACT_TARGET__EEXPRESSION = "not targetClass.abstract";
+	protected static final String CREATE_CLASS__NO_ABSTRACT_TARGET__EEXPRESSION = "not targetClass.oclIsUndefined() implies not targetClass.abstract";
 
 	/**
 	 * Validates the NoAbstractTarget constraint of '<em>Create Class</em>'.
@@ -199,7 +199,8 @@ public class MigrationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MAPPING__NO_TARGET_FOR_ABSTRACT_SOURCE_ALLOWED__EEXPRESSION = "sourceClass.abstract implies targetClass.oclIsUndefined()";
+	protected static final String MAPPING__NO_TARGET_FOR_ABSTRACT_SOURCE_ALLOWED__EEXPRESSION = "(not sourceClass.oclIsUndefined()) implies \n" +
+		"(sourceClass.abstract implies targetClass.oclIsUndefined())";
 
 	/**
 	 * Validates the NoTargetForAbstractSourceAllowed constraint of '<em>Mapping</em>'.

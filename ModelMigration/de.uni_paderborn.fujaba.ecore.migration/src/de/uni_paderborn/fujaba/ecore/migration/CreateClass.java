@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see de.uni_paderborn.fujaba.ecore.migration.MigrationPackage#getCreateClass()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoAbstractTarget'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoAbstractTarget='not targetClass.abstract'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoAbstractTarget='not targetClass.oclIsUndefined() implies not targetClass.abstract'"
  * @generated
  */
 public interface CreateClass extends EObject {
