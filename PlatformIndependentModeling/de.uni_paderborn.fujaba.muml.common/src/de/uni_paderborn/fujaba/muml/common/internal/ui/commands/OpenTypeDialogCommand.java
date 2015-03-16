@@ -37,6 +37,7 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
+import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertiesWizard;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 
@@ -113,22 +114,33 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 		if (typeCategory != null) {
 			AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) TransactionUtil
 					.getEditingDomain(typeCategory);
-			ResourceSet rset = typeCategory.eResource().getResourceSet();
+			final ResourceSet rset = typeCategory.eResource().getResourceSet();
 			if (editingDomain == null) {
 				editingDomain = (AdapterFactoryEditingDomain) TransactionalEditingDomain.Factory.INSTANCE
 						.createEditingDomain(rset);
 			}
 
-			openTypeDialog(shell, typeCategory, editingDomain);
-
-			for (Resource resource : rset.getResources()) {
-				try {
-					resource.save(Collections.emptyMap());
-				} catch (IOException e) {
-					// TODO: Error Message in Error Log
-					e.printStackTrace();
+			PropertiesWizard wizard = RuntimePlugin.showEditElementDialog(editingDomain.getAdapterFactory(), typeCategory, "Data Type Editor");
+			wizard.addListener(new PropertiesWizard.Listener() {
+				@Override
+				public void wizardFinished() {
+					// save resource set after finish was pressed
+					for (Resource resource : rset.getResources()) {
+						try {
+							resource.save(Collections.emptyMap());
+						} catch (IOException e) {
+							// TODO: Error Message in Error Log
+							e.printStackTrace();
+						}
+					}
 				}
-			}
+				@Override
+				public void wizardCanceled() {
+					// do nothing
+				}
+			});
+
+			
 		} else {
 			// TODO: Display message box that the Fujaba Model is invalid.
 		}
@@ -146,10 +158,6 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 		return null;
 	}
 	
-	private void openTypeDialog(Shell shell, ModelElementCategory typeCategory,
-			AdapterFactoryEditingDomain editingDomain) {
-		RuntimePlugin.showEditElementDialog(editingDomain.getAdapterFactory(), typeCategory, "Data Type Editor"); 
-	}
 
 
 }
