@@ -39,7 +39,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://de.uni_paderborn.fujaba.properties/0.4.0";
+	String eNS_URI = "http://de.uni_paderborn.fujaba.properties/0.5.1";
 
 	/**
 	 * The package namespace name.
@@ -452,22 +452,13 @@ public interface PropertiesPackage extends EPackage {
 	int CLASS__PACKAGE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ordered Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__PROPERTIES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Property Categories</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__PROPERTY_CATEGORIES = 3;
+	int CLASS__ORDERED_ELEMENTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Super Classes</b></em>' reference list.
@@ -476,7 +467,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__SUPER_CLASSES = 4;
+	int CLASS__SUPER_CLASSES = 3;
 
 	/**
 	 * The feature id for the '<em><b>All Super Classes</b></em>' reference list.
@@ -485,7 +476,34 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__ALL_SUPER_CLASSES = 5;
+	int CLASS__ALL_SUPER_CLASSES = 4;
+
+	/**
+	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__PROPERTIES = 5;
+
+	/**
+	 * The feature id for the '<em><b>Base Insert Points</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__BASE_INSERT_POINTS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Property Categories</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__PROPERTY_CATEGORIES = 7;
 
 	/**
 	 * The number of structural features of the '<em>Class</em>' class.
@@ -494,7 +512,72 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = 6;
+	int CLASS_FEATURE_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.OrderedElementImpl <em>Ordered Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.properties.impl.OrderedElementImpl
+	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOrderedElement()
+	 * @generated
+	 */
+	int ORDERED_ELEMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_ELEMENT__CLAZZ = 0;
+
+	/**
+	 * The number of structural features of the '<em>Ordered Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORDERED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.BaseInsertPointImpl <em>Base Insert Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.properties.impl.BaseInsertPointImpl
+	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getBaseInsertPoint()
+	 * @generated
+	 */
+	int BASE_INSERT_POINT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_INSERT_POINT__CLAZZ = ORDERED_ELEMENT__CLAZZ;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_INSERT_POINT__BASE_CLASS = ORDERED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Base Insert Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_INSERT_POINT_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyCategoryImpl <em>Property Category</em>}' class.
@@ -504,61 +587,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getPropertyCategory()
 	 * @generated
 	 */
-	int PROPERTY_CATEGORY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY__TITLE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Vertical</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY__VERTICAL = 1;
-
-	/**
-	 * The feature id for the '<em><b>Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY__OPEN = 2;
-
-	/**
-	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY__CLAZZ = 3;
-
-	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY__PROPERTIES = 4;
-
-	/**
-	 * The number of structural features of the '<em>Property Category</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY_FEATURE_COUNT = 5;
+	int PROPERTY_CATEGORY = 21;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
@@ -568,52 +597,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 8;
-
-	/**
-	 * The feature id for the '<em><b>Gen Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__GEN_FEATURE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Visibility Filters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__VISIBILITY_FILTERS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Tab</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__TAB = 2;
-
-	/**
-	 * The feature id for the '<em><b>Editor</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__EDITOR = 3;
-
-	/**
-	 * The feature id for the '<em><b>Tooltip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__TOOLTIP = 4;
+	int PROPERTY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
@@ -622,7 +606,52 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CLAZZ = 5;
+	int PROPERTY__CLAZZ = ORDERED_ELEMENT__CLAZZ;
+
+	/**
+	 * The feature id for the '<em><b>Gen Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__GEN_FEATURE = ORDERED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Visibility Filters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__VISIBILITY_FILTERS = ORDERED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tab</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__TAB = ORDERED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Editor</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__EDITOR = ORDERED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Tooltip</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__TOOLTIP = ORDERED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Category</b></em>' reference.
@@ -631,7 +660,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CATEGORY = 6;
+	int PROPERTY__CATEGORY = ORDERED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Reconcile</b></em>' attribute.
@@ -640,7 +669,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__RECONCILE = 7;
+	int PROPERTY__RECONCILE = ORDERED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Creation Constraint</b></em>' containment reference.
@@ -649,7 +678,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CREATION_CONSTRAINT = 8;
+	int PROPERTY__CREATION_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Creation Opposite Constraint</b></em>' containment reference.
@@ -658,7 +687,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = 9;
+	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Initialize OCL Expression</b></em>' attribute.
@@ -667,7 +696,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__INITIALIZE_OCL_EXPRESSION = 10;
+	int PROPERTY__INITIALIZE_OCL_EXPRESSION = ORDERED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -676,7 +705,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 11;
+	int PROPERTY_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -686,7 +715,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getPropertyEditor()
 	 * @generated
 	 */
-	int PROPERTY_EDITOR = 9;
+	int PROPERTY_EDITOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -714,7 +743,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertyEditor()
 	 * @generated
 	 */
-	int TEXT_PROPERTY_EDITOR = 10;
+	int TEXT_PROPERTY_EDITOR = 11;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.SpinnerPropertyEditorImpl <em>Spinner Property Editor</em>}' class.
@@ -724,7 +753,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getSpinnerPropertyEditor()
 	 * @generated
 	 */
-	int SPINNER_PROPERTY_EDITOR = 11;
+	int SPINNER_PROPERTY_EDITOR = 12;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.ComboBoxPropertyEditorImpl <em>Combo Box Property Editor</em>}' class.
@@ -734,7 +763,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertyEditor()
 	 * @generated
 	 */
-	int COMBO_BOX_PROPERTY_EDITOR = 12;
+	int COMBO_BOX_PROPERTY_EDITOR = 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.CheckboxPropertyEditorImpl <em>Checkbox Property Editor</em>}' class.
@@ -744,7 +773,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertyEditor()
 	 * @generated
 	 */
-	int CHECKBOX_PROPERTY_EDITOR = 13;
+	int CHECKBOX_PROPERTY_EDITOR = 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.RadioPropertyEditorImpl <em>Radio Property Editor</em>}' class.
@@ -754,7 +783,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertyEditor()
 	 * @generated
 	 */
-	int RADIO_PROPERTY_EDITOR = 14;
+	int RADIO_PROPERTY_EDITOR = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.ListPropertyEditorImpl <em>List Property Editor</em>}' class.
@@ -764,7 +793,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getListPropertyEditor()
 	 * @generated
 	 */
-	int LIST_PROPERTY_EDITOR = 15;
+	int LIST_PROPERTY_EDITOR = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.ObjectPropertyEditorImpl <em>Object Property Editor</em>}' class.
@@ -774,7 +803,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
 	 * @generated
 	 */
-	int OBJECT_PROPERTY_EDITOR = 17;
+	int OBJECT_PROPERTY_EDITOR = 18;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -910,7 +939,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getFlattenedListPropertyEditor()
 	 * @generated
 	 */
-	int FLATTENED_LIST_PROPERTY_EDITOR = 16;
+	int FLATTENED_LIST_PROPERTY_EDITOR = 17;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -956,7 +985,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyEditor()
 	 * @generated
 	 */
-	int OCL_PROPERTY_EDITOR = 18;
+	int OCL_PROPERTY_EDITOR = 19;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -984,7 +1013,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_EDITOR = 19;
+	int CUSTOM_PROPERTY_EDITOR = 20;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -1014,6 +1043,60 @@ public interface PropertiesPackage extends EPackage {
 	int CUSTOM_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__CLAZZ = ORDERED_ELEMENT__CLAZZ;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__TITLE = ORDERED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Vertical</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__VERTICAL = ORDERED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__OPEN = ORDERED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__PROPERTIES = ORDERED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Property Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.FilterImpl <em>Filter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1021,7 +1104,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getFilter()
 	 * @generated
 	 */
-	int FILTER = 20;
+	int FILTER = 22;
 
 	/**
 	 * The number of structural features of the '<em>Filter</em>' class.
@@ -1040,7 +1123,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLFilter()
 	 * @generated
 	 */
-	int OCL_FILTER = 21;
+	int OCL_FILTER = 23;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1068,7 +1151,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getCreationConstraint()
 	 * @generated
 	 */
-	int CREATION_CONSTRAINT = 22;
+	int CREATION_CONSTRAINT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
@@ -1096,7 +1179,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
 	 * @generated
 	 */
-	int TRANSFORMATION_POSITION = 23;
+	int TRANSFORMATION_POSITION = 25;
 
 
 	/**
@@ -1500,26 +1583,15 @@ public interface PropertiesPackage extends EPackage {
 	EReference getClass_Package();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.properties.Class#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.properties.Class#getOrderedElements <em>Ordered Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Properties</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.Class#getProperties()
+	 * @return the meta object for the containment reference list '<em>Ordered Elements</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Class#getOrderedElements()
 	 * @see #getClass_()
 	 * @generated
 	 */
-	EReference getClass_Properties();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Property Categories</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.Class#getPropertyCategories()
-	 * @see #getClass_()
-	 * @generated
-	 */
-	EReference getClass_PropertyCategories();
+	EReference getClass_OrderedElements();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.properties.Class#getSuperClasses <em>Super Classes</em>}'.
@@ -1542,6 +1614,81 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getClass_AllSuperClasses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.properties.Class#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Class#getProperties()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Properties();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.properties.Class#getBaseInsertPoints <em>Base Insert Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Base Insert Points</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Class#getBaseInsertPoints()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_BaseInsertPoints();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Property Categories</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Class#getPropertyCategories()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_PropertyCategories();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.OrderedElement <em>Ordered Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ordered Element</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.OrderedElement
+	 * @generated
+	 */
+	EClass getOrderedElement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.properties.OrderedElement#getClazz <em>Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Clazz</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.OrderedElement#getClazz()
+	 * @see #getOrderedElement()
+	 * @generated
+	 */
+	EReference getOrderedElement_Clazz();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.BaseInsertPoint <em>Base Insert Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Base Insert Point</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.BaseInsertPoint
+	 * @generated
+	 */
+	EClass getBaseInsertPoint();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.properties.BaseInsertPoint#getBaseClass <em>Base Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Class</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.BaseInsertPoint#getBaseClass()
+	 * @see #getBaseInsertPoint()
+	 * @generated
+	 */
+	EReference getBaseInsertPoint_BaseClass();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.PropertyCategory <em>Property Category</em>}'.
@@ -1585,17 +1732,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPropertyCategory_Open();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Clazz</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.PropertyCategory#getClazz()
-	 * @see #getPropertyCategory()
-	 * @generated
-	 */
-	EReference getPropertyCategory_Clazz();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}'.
@@ -1672,17 +1808,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProperty_Tooltip();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.properties.Property#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Clazz</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.Property#getClazz()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EReference getProperty_Clazz();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}'.
@@ -2288,20 +2413,12 @@ public interface PropertiesPackage extends EPackage {
 		EReference CLASS__PACKAGE = eINSTANCE.getClass_Package();
 
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ordered Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CLASS__PROPERTIES = eINSTANCE.getClass_Properties();
-
-		/**
-		 * The meta object literal for the '<em><b>Property Categories</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASS__PROPERTY_CATEGORIES = eINSTANCE.getClass_PropertyCategories();
+		EReference CLASS__ORDERED_ELEMENTS = eINSTANCE.getClass_OrderedElements();
 
 		/**
 		 * The meta object literal for the '<em><b>Super Classes</b></em>' reference list feature.
@@ -2318,6 +2435,66 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CLASS__ALL_SUPER_CLASSES = eINSTANCE.getClass_AllSuperClasses();
+
+		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__PROPERTIES = eINSTANCE.getClass_Properties();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Insert Points</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__BASE_INSERT_POINTS = eINSTANCE.getClass_BaseInsertPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Property Categories</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__PROPERTY_CATEGORIES = eINSTANCE.getClass_PropertyCategories();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.OrderedElementImpl <em>Ordered Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.properties.impl.OrderedElementImpl
+		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOrderedElement()
+		 * @generated
+		 */
+		EClass ORDERED_ELEMENT = eINSTANCE.getOrderedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Clazz</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORDERED_ELEMENT__CLAZZ = eINSTANCE.getOrderedElement_Clazz();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.BaseInsertPointImpl <em>Base Insert Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.properties.impl.BaseInsertPointImpl
+		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getBaseInsertPoint()
+		 * @generated
+		 */
+		EClass BASE_INSERT_POINT = eINSTANCE.getBaseInsertPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BASE_INSERT_POINT__BASE_CLASS = eINSTANCE.getBaseInsertPoint_BaseClass();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyCategoryImpl <em>Property Category</em>}' class.
@@ -2352,14 +2529,6 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY_CATEGORY__OPEN = eINSTANCE.getPropertyCategory_Open();
-
-		/**
-		 * The meta object literal for the '<em><b>Clazz</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY_CATEGORY__CLAZZ = eINSTANCE.getPropertyCategory_Clazz();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
@@ -2418,14 +2587,6 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY__TOOLTIP = eINSTANCE.getProperty_Tooltip();
-
-		/**
-		 * The meta object literal for the '<em><b>Clazz</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY__CLAZZ = eINSTANCE.getProperty_Clazz();
 
 		/**
 		 * The meta object literal for the '<em><b>Category</b></em>' reference feature.

@@ -21,7 +21,6 @@ public abstract class FilterEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

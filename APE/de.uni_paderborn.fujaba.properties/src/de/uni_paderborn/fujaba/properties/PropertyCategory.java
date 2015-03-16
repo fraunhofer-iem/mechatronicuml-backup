@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getTitle <em>Title</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#isVertical <em>Vertical</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#isOpen <em>Open</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
@@ -26,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface PropertyCategory extends EObject {
+public interface PropertyCategory extends OrderedElement {
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -106,34 +105,6 @@ public interface PropertyCategory extends EObject {
 	 * @generated
 	 */
 	void setOpen(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Clazz</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Clazz</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Clazz</em>' container reference.
-	 * @see #setClazz(de.uni_paderborn.fujaba.properties.Class)
-	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyCategory_Clazz()
-	 * @see de.uni_paderborn.fujaba.properties.Class#getPropertyCategories
-	 * @model opposite="propertyCategories" required="true" transient="false"
-	 * @generated
-	 */
-	de.uni_paderborn.fujaba.properties.Class getClazz();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clazz</em>' container reference.
-	 * @see #getClazz()
-	 * @generated
-	 */
-	void setClazz(de.uni_paderborn.fujaba.properties.Class value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' reference list.

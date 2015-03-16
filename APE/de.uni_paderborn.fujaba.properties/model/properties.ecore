@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="properties" nsURI="http://de.uni_paderborn.fujaba.properties/0.4.0"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="properties" nsURI="http://de.uni_paderborn.fujaba.properties/0.5.1"
     nsPrefix="de.uni_paderborn.fujaba">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -105,10 +105,8 @@
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
         eType="#//Package" eOpposite="#//Package/classes"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//Property" containment="true" eOpposite="#//Property/clazz"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyCategories" upperBound="-1"
-        eType="#//PropertyCategory" containment="true" eOpposite="#//PropertyCategory/clazz"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orderedElements" upperBound="-1"
+        eType="#//OrderedElement" containment="true" eOpposite="#//OrderedElement/clazz"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superClasses" upperBound="-1"
         eType="#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperClasses" upperBound="-1"
@@ -117,20 +115,34 @@
         <details key="derivation" value="self->closure(superClasses)"/>
       </eAnnotations>
     </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyCategory">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-        defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="open" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
-        eOpposite="#//Class/propertyCategories"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//Property" eOpposite="#//Property/category"/>
+        eType="#//Property" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="orderedElements->select(p | p.oclIsKindOf(Property)).oclAsType(Property)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseInsertPoints" upperBound="-1"
+        eType="#//BaseInsertPoint" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="orderedElements->select(p | p.oclIsKindOf(BaseInsertPoint)).oclAsType(BaseInsertPoint)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyCategories" upperBound="-1"
+        eType="#//PropertyCategory" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="orderedElements->select(p | p.oclIsKindOf(PropertyCategory)).oclAsType(PropertyCategory)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property">
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
+        eOpposite="#//Class/orderedElements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseInsertPoint" eSuperTypes="#//OrderedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseClass" lowerBound="1"
+        eType="#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//OrderedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="CreationConstraintForContainments CreationOppositeConstraintForContainers"/>
     </eAnnotations>
@@ -143,11 +155,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="visibilityFilters" upperBound="-1"
         eType="#//Filter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tab" lowerBound="1" eType="#//PropertyTab"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="editor" lowerBound="1"
-        eType="#//PropertyEditor" containment="true" eOpposite="#//PropertyEditor/property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editor" eType="#//PropertyEditor"
+        containment="true" eOpposite="#//PropertyEditor/property"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tooltip" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
-        eOpposite="#//Class/properties"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//PropertyCategory"
         eOpposite="#//PropertyCategory/properties"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcile" lowerBound="1"
@@ -183,6 +193,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="CustomPropertyEditor" eSuperTypes="#//PropertyEditor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyQualifiedClassName"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyCategory" eSuperTypes="#//OrderedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="open" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" eOpposite="#//Property/category"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Filter" abstract="true">
     <eOperations name="isValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

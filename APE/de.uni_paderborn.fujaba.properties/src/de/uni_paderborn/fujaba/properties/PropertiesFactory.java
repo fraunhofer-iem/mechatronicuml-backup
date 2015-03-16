@@ -85,6 +85,15 @@ public interface PropertiesFactory extends EFactory {
 	Class createClass();
 
 	/**
+	 * Returns a new object of class '<em>Base Insert Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Base Insert Point</em>'.
+	 * @generated
+	 */
+	BaseInsertPoint createBaseInsertPoint();
+
+	/**
 	 * Returns a new object of class '<em>Property Category</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

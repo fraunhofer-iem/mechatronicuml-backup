@@ -70,12 +70,25 @@ String genQualifiedEditorName(properties::Class this) :
 String genCategoryKey(PropertyCategory this) :
 	"de.uni_paderborn.fujaba.properties.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
 
-String genAdder(Property this) :
-	'add'  + /*clazz.genClass.ecoreClass.name.toString().toFirstUpper() + */genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';
-
 String genCreator(Property this) :
-	'create'  + /*clazz.genClass.ecoreClass.name.toString().toFirstUpper() + */genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
+	'create' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
 
+Class getHighestContainer(Class this, Property property) :
+	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
+		superClasses.getHighestContainer(property).reject(c | c == null).selectFirst(true)
+	else if properties.selectFirst(p | p.genFeature == property.genFeature).shouldGenerateEditor() then
+		this
+	else
+		null;
+
+Class getHighestContainer(Class this, PropertyCategory category) :
+	if propertyCategories.select(c | c.title == category.title).isEmpty then
+		superClasses.getHighestContainer(category).reject(c | c == null).selectFirst(true)
+	else
+		this;
+
+List[Property] genProperties(Class this) :
+	properties;
 
 String genClassLiteral(GenClassifier this) :
 	'';
@@ -86,33 +99,6 @@ String genClassLiteral(GenClass this) :
 String genFeatureLiteral(GenFeature this) :
 	genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
 
-Set[Property] genLocalProperties(Class this) :
-	genSelfProperties().union(
-		genSuperProperties().reject(p | genSelfProperties().genFeature.contains(p.genFeature))
-	).reject(p | genInheritedProperties().genFeature.contains(p.genFeature)).
-	reject(p | genOverriddenProperties().genFeature.contains(p.genFeature));
-
-
-
-Set[Property] genSuperProperties(Class this) :
-	allSuperClasses.properties;
-
-Set[Property] genSelfProperties(Class this) :
-	{ this }.properties;
-
-Set[Property] genAllProperties(Class this) :
-	genSelfProperties().union(genSuperProperties());
-
-
-Set[Property] genInheritedProperties(Class this) :
-	/* This select makes sure we do not get a NullPointerException!*/
-	superClasses.select(e | e == superClasses.first()).union(superClasses.select(e | e == superClasses.first()).allSuperClasses).properties.
-	select(p | p.shouldGenerateEditor());
-
-Set[Property] genOverriddenProperties(Class this) :
-	properties.select(p | p.genFeature.ecoreFeature.eContainingClass != genClass.ecoreClass).select(p | genInheritedProperties().genFeature.contains(p.genFeature));
-
-	
 Boolean shouldGenerateEditor(Property this) :
 	editor != null;
 	
@@ -125,4 +111,4 @@ String genDocumentation(EAnnotation this) :
 	
 
 Set[PropertyTab] genAllTabs(Class this) :
-	{ this }.union(allSuperClasses).properties.tab;
+	{ this }.union(allSuperClasses).orderedElements.typeSelect(Property).tab;

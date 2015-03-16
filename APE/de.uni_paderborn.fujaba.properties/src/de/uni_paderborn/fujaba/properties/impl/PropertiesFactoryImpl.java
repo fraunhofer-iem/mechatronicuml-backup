@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.uni_paderborn.fujaba.properties.BaseInsertPoint;
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CreationConstraint;
@@ -18,7 +19,6 @@ import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
-import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
 import de.uni_paderborn.fujaba.properties.Plugin;
 import de.uni_paderborn.fujaba.properties.PropertiesFactory;
@@ -84,7 +84,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.PROPERTY_TAB: return createPropertyTab();
 			case PropertiesPackage.PACKAGE: return createPackage();
 			case PropertiesPackage.CLASS: return createClass();
-			case PropertiesPackage.PROPERTY_CATEGORY: return createPropertyCategory();
+			case PropertiesPackage.BASE_INSERT_POINT: return createBaseInsertPoint();
 			case PropertiesPackage.PROPERTY: return createProperty();
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR: return createTextPropertyEditor();
 			case PropertiesPackage.SPINNER_PROPERTY_EDITOR: return createSpinnerPropertyEditor();
@@ -96,6 +96,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.OBJECT_PROPERTY_EDITOR: return createObjectPropertyEditor();
 			case PropertiesPackage.OCL_PROPERTY_EDITOR: return createOCLPropertyEditor();
 			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR: return createCustomPropertyEditor();
+			case PropertiesPackage.PROPERTY_CATEGORY: return createPropertyCategory();
 			case PropertiesPackage.OCL_FILTER: return createOCLFilter();
 			case PropertiesPackage.CREATION_CONSTRAINT: return createCreationConstraint();
 			default:
@@ -201,6 +202,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public de.uni_paderborn.fujaba.properties.Class createClass() {
 		ClassImpl class_ = new ClassImpl();
 		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BaseInsertPoint createBaseInsertPoint() {
+		BaseInsertPointImpl baseInsertPoint = new BaseInsertPointImpl();
+		return baseInsertPoint;
 	}
 
 	/**

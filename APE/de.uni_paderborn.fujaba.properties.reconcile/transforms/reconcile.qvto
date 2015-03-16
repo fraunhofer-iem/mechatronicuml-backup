@@ -2,7 +2,7 @@ transformation reconcile(inout properties : Properties);
 
 modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
-modeltype Properties uses properties('http://de.uni_paderborn.fujaba.properties/0.4.0');
+modeltype Properties uses properties('http://de.uni_paderborn.fujaba.properties/0.5.1');
 
 main() {
 	log("QVT-O Script \"reconcile.qvto\" started.");
@@ -103,7 +103,7 @@ mapping inout Class::reconcileClass(tab : PropertyTab) {
 	-- generate missing properties
 	self.genClass.genFeatures->select(shouldGenerate())->forEach(feature) {
 		if (not self.properties.genFeature->includes(feature)) then {
-			self.properties += self->map createProperty(feature, tab);
+			self.orderedElements += self->map createProperty(feature, tab);
 		} endif;
 	};
 
@@ -142,18 +142,18 @@ mapping inout Class::initializeCategories() {
 	
 	-- booleans in one category
 	var booleanProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'EBoolean');
-	if (not booleanProperties->isEmpty()) then {
+	if (booleanProperties->size() > 1) then {
 		var category : PropertyCategory := new PropertyCategory('Booleans', true);
 		category.properties := booleanProperties;
-		propertyCategories := propertyCategories->including(category);
+		orderedElements += category;
 	} endif;
 	
 	-- lists in one category
-	var listProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.oclIsKindOf(EReference) and p.genFeature.ecoreFeature.upperBound > 1);
-	if (not listProperties->isEmpty()) then {
+	var listProperties : OrderedSet(Property) := self.orderedElements[Property]->select(p | p.genFeature.ecoreFeature.oclIsKindOf(EReference) and p.genFeature.ecoreFeature.upperBound > 1);
+	if (listProperties->size() > 1) then {
 		var category : PropertyCategory := new PropertyCategory('Lists', true);
 		category.properties := listProperties;
-		propertyCategories := propertyCategories->including(category);
+		orderedElements += category;
 	} endif;
 }
 

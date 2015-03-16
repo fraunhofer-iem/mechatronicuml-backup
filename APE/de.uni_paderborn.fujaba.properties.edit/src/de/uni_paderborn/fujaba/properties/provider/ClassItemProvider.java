@@ -53,7 +53,7 @@ public class ClassItemProvider
 	public ClassItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
-
+	
 	/**
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
@@ -68,6 +68,9 @@ public class ClassItemProvider
 			addGenClassPropertyDescriptor(object);
 			addSuperClassesPropertyDescriptor(object);
 			addAllSuperClassesPropertyDescriptor(object);
+			addPropertiesPropertyDescriptor(object);
+			addBaseInsertPointsPropertyDescriptor(object);
+			addPropertyCategoriesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -161,6 +164,72 @@ public class ClassItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Properties feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropertiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Class_properties_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Class_properties_feature", "_UI_Class_type"),
+				 PropertiesPackage.Literals.CLASS__PROPERTIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Base Insert Points feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBaseInsertPointsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Class_baseInsertPoints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Class_baseInsertPoints_feature", "_UI_Class_type"),
+				 PropertiesPackage.Literals.CLASS__BASE_INSERT_POINTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Property Categories feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropertyCategoriesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Class_propertyCategories_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Class_propertyCategories_feature", "_UI_Class_type"),
+				 PropertiesPackage.Literals.CLASS__PROPERTY_CATEGORIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -172,8 +241,7 @@ public class ClassItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PropertiesPackage.Literals.CLASS__PROPERTIES);
-			childrenFeatures.add(PropertiesPackage.Literals.CLASS__PROPERTY_CATEGORIES);
+			childrenFeatures.add(PropertiesPackage.Literals.CLASS__ORDERED_ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -211,12 +279,32 @@ public class ClassItemProvider
 	@Override
 	public String getText(Object object) {
 		de.uni_paderborn.fujaba.properties.Class _class = (de.uni_paderborn.fujaba.properties.Class) object;
+		String name = getString("_UI_Class_type");
 		if (_class != null && _class.getGenClass() != null && _class.getGenClass().getEcoreClassifier() != null
 				&& _class.getGenClass().getEcoreClassifier().getName() != null) {
-			return _class.getGenClass().getEcoreClassifier().getName();
+			name = _class.getGenClass().getEcoreClassifier().getName();
 		}
-		return getString("_UI_Class_type");
 		
+		if (!_class.getSuperClasses().isEmpty()) {
+			String superClassesNames = null;
+			for (de.uni_paderborn.fujaba.properties.Class superClass : _class.getSuperClasses()) {
+				String superClassName = "null";
+				if (superClass.getGenClass() != null && superClass.getGenClass().getName() != null) {
+					superClassName = superClass.getGenClass().getName();
+				}
+
+				// First?
+				if (superClassesNames == null) {
+					superClassesNames = superClassName;
+				} else {
+					superClassesNames += ", " + superClassName;
+				}
+			}
+			if (superClassesNames != null) {
+				name += " -> " + superClassesNames;
+			}
+		}
+		return name;
 	}
 
 	/**
@@ -231,8 +319,7 @@ public class ClassItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(de.uni_paderborn.fujaba.properties.Class.class)) {
-			case PropertiesPackage.CLASS__PROPERTIES:
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -252,12 +339,17 @@ public class ClassItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.CLASS__PROPERTIES,
+				(PropertiesPackage.Literals.CLASS__ORDERED_ELEMENTS,
+				 PropertiesFactory.eINSTANCE.createBaseInsertPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.CLASS__ORDERED_ELEMENTS,
 				 PropertiesFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.CLASS__PROPERTY_CATEGORIES,
+				(PropertiesPackage.Literals.CLASS__ORDERED_ELEMENTS,
 				 PropertiesFactory.eINSTANCE.createPropertyCategory()));
 	}
 

@@ -29,6 +29,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
 import org.eclipse.emf.codegen.ecore.genmodel.provider.GenModelItemProviderAdapterFactory;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
@@ -698,15 +699,11 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 		adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
-		adapterFactory
-				.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new PropertiesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new GenModelItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PropertiesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new GenModelItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are
 		// executed.
@@ -1070,8 +1067,9 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 									adapterFactory));
 
 					selectionViewer
-							.setLabelProvider(new AdapterFactoryLabelProvider(
-									adapterFactory));
+							.setLabelProvider(new AdapterFactoryLabelProvider.FontAndColorProvider(
+									adapterFactory, selectionViewer) {
+					});
 					selectionViewer.setInput(editingDomain.getResourceSet());
 					selectionViewer.setSelection(new StructuredSelection(
 							editingDomain.getResourceSet().getResources()

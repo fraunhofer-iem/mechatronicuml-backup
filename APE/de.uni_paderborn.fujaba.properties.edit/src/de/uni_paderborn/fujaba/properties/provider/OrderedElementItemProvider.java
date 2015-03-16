@@ -18,12 +18,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.properties.Filter} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.properties.OrderedElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FilterItemProvider
+public class OrderedElementItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -37,7 +37,7 @@ public class FilterItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FilterItemProvider(AdapterFactory adapterFactory) {
+	public OrderedElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,8 +64,9 @@ public class FilterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Filter_type");
+		return getString("_UI_OrderedElement_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.fujaba.properties.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

@@ -9,18 +9,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.properties.OrderedElement;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
@@ -32,13 +26,7 @@ import de.uni_paderborn.fujaba.properties.PropertyCategory;
  * @generated
  */
 public class PropertyCategoryItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends OrderedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -159,7 +147,7 @@ public class PropertyCategoryItemProvider
 				PropertyCategory category = (PropertyCategory) object;
 				
 				List<Property> properties = new ArrayList<Property>();
-				for (Property property: category.getClazz().getProperties()) {
+				for (Property property : category.getClazz().getProperties()) {
 					if (property.getCategory() == null || property.getCategory() == category) {
 						properties.add(property);
 					}
@@ -170,74 +158,6 @@ public class PropertyCategoryItemProvider
 		});
 	}
 
-//	/**
-//	 * This adds a property descriptor for the Overridden Properties feature.
-//	 * <!-- begin-user-doc -->
-//	 * <!-- end-user-doc -->
-//	 * @generated NOT
-//	 */
-//	protected void addOverriddenPropertiesPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//		(new ItemPropertyDescriptor
-//			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_PropertyCategory_overriddenProperties_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_overriddenProperties_feature", "_UI_PropertyCategory_type"),
-//				 PropertiesPackage.Literals.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES,
-//				 true,
-//				 false,
-//				 true,
-//				 null,
-//				 null,
-//				 null) { 
-//		@Override
-//		public Collection<?> getChoiceOfValues(Object object) {
-//			List<Property> choices = new ArrayList<Property>();
-//			PropertyCategory category = (PropertyCategory) object;
-//			for (de.uni_paderborn.fujaba.properties.Class clazz : category.getClazz().getAllSuperClasses()) {
-//				choices.addAll(clazz.getProperties());
-//			}
-//			return choices;
-//		}	
-//			
-//	});
-//	}
-
-//	/**
-//	 * This adds a property descriptor for the Local Properties feature.
-//	 * <!-- begin-user-doc -->
-//	 * <!-- end-user-doc -->
-//	 * @generated NOT
-//	 */
-//	protected void addLocalPropertiesPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(new ItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_PropertyCategory_localProperties_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_localProperties_feature", "_UI_PropertyCategory_type"),
-//				 PropertiesPackage.Literals.PROPERTY_CATEGORY__LOCAL_PROPERTIES,
-//				 true,
-//				 false,
-//				 true,
-//				 null,
-//				 null,
-//				 null) {
-//			@Override
-//			public Collection<?> getChoiceOfValues(Object object) {
-//				PropertyCategory category = (PropertyCategory) object;
-//				
-//				List<Property> properties = new ArrayList<Property>();
-//				for (Property property: category.getClazz().getProperties()) {
-//					if (property.getCategory() == null || property.getCategory() == category) {
-//						properties.add(property);
-//					}
-//				}
-//				
-//				return properties;
-//			}		
-//		});
-//	}
 
 	/**
 	 * This returns PropertyCategory.gif.
@@ -295,17 +215,6 @@ public class PropertyCategoryItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return PropertiesEditPlugin.INSTANCE;
 	}
 
 }

@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import de.uni_paderborn.fujaba.properties.BaseInsertPoint;
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CreationConstraint;
@@ -17,14 +18,13 @@ import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
-import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OrderedElement;
 import de.uni_paderborn.fujaba.properties.Plugin;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
 import de.uni_paderborn.fujaba.properties.PropertyEditor;
-import de.uni_paderborn.fujaba.properties.PropertyFilter;
 import de.uni_paderborn.fujaba.properties.PropertyGenerator;
 import de.uni_paderborn.fujaba.properties.PropertyTab;
 import de.uni_paderborn.fujaba.properties.RadioPropertyEditor;
@@ -117,8 +117,12 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 				return createClassAdapter();
 			}
 			@Override
-			public Adapter casePropertyCategory(PropertyCategory object) {
-				return createPropertyCategoryAdapter();
+			public Adapter caseOrderedElement(OrderedElement object) {
+				return createOrderedElementAdapter();
+			}
+			@Override
+			public Adapter caseBaseInsertPoint(BaseInsertPoint object) {
+				return createBaseInsertPointAdapter();
 			}
 			@Override
 			public Adapter caseProperty(Property object) {
@@ -167,6 +171,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCustomPropertyEditor(CustomPropertyEditor object) {
 				return createCustomPropertyEditorAdapter();
+			}
+			@Override
+			public Adapter casePropertyCategory(PropertyCategory object) {
+				return createPropertyCategoryAdapter();
 			}
 			@Override
 			public Adapter caseFilter(Filter object) {
@@ -295,6 +303,34 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.OrderedElement <em>Ordered Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.properties.OrderedElement
+	 * @generated
+	 */
+	public Adapter createOrderedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.BaseInsertPoint <em>Base Insert Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.properties.BaseInsertPoint
+	 * @generated
+	 */
+	public Adapter createBaseInsertPointAdapter() {
 		return null;
 	}
 

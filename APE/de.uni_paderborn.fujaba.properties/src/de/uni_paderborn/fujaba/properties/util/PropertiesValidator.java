@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreValidator;
 
+import de.uni_paderborn.fujaba.properties.BaseInsertPoint;
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CreationConstraint;
@@ -24,14 +25,13 @@ import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
-import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OrderedElement;
 import de.uni_paderborn.fujaba.properties.Plugin;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
 import de.uni_paderborn.fujaba.properties.PropertyEditor;
-import de.uni_paderborn.fujaba.properties.PropertyFilter;
 import de.uni_paderborn.fujaba.properties.PropertyGenerator;
 import de.uni_paderborn.fujaba.properties.PropertyTab;
 import de.uni_paderborn.fujaba.properties.RadioPropertyEditor;
@@ -126,8 +126,10 @@ public class PropertiesValidator extends EObjectValidator {
 				return validatePackage((de.uni_paderborn.fujaba.properties.Package)value, diagnostics, context);
 			case PropertiesPackage.CLASS:
 				return validateClass((de.uni_paderborn.fujaba.properties.Class)value, diagnostics, context);
-			case PropertiesPackage.PROPERTY_CATEGORY:
-				return validatePropertyCategory((PropertyCategory)value, diagnostics, context);
+			case PropertiesPackage.ORDERED_ELEMENT:
+				return validateOrderedElement((OrderedElement)value, diagnostics, context);
+			case PropertiesPackage.BASE_INSERT_POINT:
+				return validateBaseInsertPoint((BaseInsertPoint)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY:
 				return validateProperty((Property)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_EDITOR:
@@ -152,6 +154,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateOCLPropertyEditor((OCLPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR:
 				return validateCustomPropertyEditor((CustomPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.PROPERTY_CATEGORY:
+				return validatePropertyCategory((PropertyCategory)value, diagnostics, context);
 			case PropertiesPackage.FILTER:
 				return validateFilter((Filter)value, diagnostics, context);
 			case PropertiesPackage.OCL_FILTER:
@@ -440,6 +444,24 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateOrderedElement(OrderedElement orderedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(orderedElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBaseInsertPoint(BaseInsertPoint baseInsertPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(baseInsertPoint, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validatePropertyCategory(PropertyCategory propertyCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(propertyCategory, diagnostics, context);
 	}
@@ -673,32 +695,6 @@ public class PropertiesValidator extends EObjectValidator {
 		return super.getResourceLocator();
 	}
 	
-	// Added to modify error message, which is displayed, if no property editor was set.
-	@Override
-	protected boolean validate_MultiplicityConforms(EObject eObject,
-			EStructuralFeature eStructuralFeature, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		  if (eStructuralFeature == PropertiesPackage.Literals.PROPERTY__EDITOR)
-		    {
-		      if (eStructuralFeature.isUnsettable() ? !eObject.eIsSet(eStructuralFeature) : eObject.eGet(eStructuralFeature, false) == null)
-		      {
-		        if (diagnostics != null)
-		        {
-		          diagnostics.add
-		            (new BasicDiagnostic
-		              (Diagnostic.WARNING,
-		               EcoreValidator.DIAGNOSTIC_SOURCE,
-		               EcoreValidator.EOBJECT__EVERY_MULTIPCITY_CONFORMS,
-		               "Property Editor should be set for \"" + getObjectLabel(eObject, context) + "\".\nIf you do not need one, please explicitely set \"No Property Editor\".",
-		               new Object [] { eObject, eStructuralFeature }
-		               ));
-		        }
-		      }
-		      return true;
-		    }
-		
-		return super.validate_MultiplicityConforms(eObject, eStructuralFeature,
-				diagnostics, context);
-	}
+	
 
 } //PropertiesValidator

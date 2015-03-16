@@ -2,32 +2,19 @@
 «EXTENSION Metamodel»
 
 «DEFINE ClassEditor FOR Class»
+«FILE package.generator.sourceFolder + "/" + genQualifiedEditorName().replaceAll('\\.', '/').toString() + '.java'»
+package «package.genPackageName()».editor;
+
 /**
  * @generated
  */
-public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends «EXPAND extends-» {
+public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 	«EXPAND classBody»
 }
+«ENDFILE»
 «ENDDEFINE» 
 
-«DEFINE extends FOR Class-»
-«IF superClasses.isEmpty-»
-	de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor
-«ELSE-»
-	«superClasses.first().genQualifiedEditorName()»
-«ENDIF-»
-«ENDDEFINE»
-
-
 «DEFINE classBody FOR Class»
-«REM»debug output:
-/*
-«FOREACH genLocalProperties() AS this»
-«genFeature.ecoreFeature.name»
-
-«ENDFOREACH»
-*/
-«ENDREM»
 
 	/**
 	 * @generated
@@ -41,43 +28,22 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
-		«FOREACH propertyCategories.select(c | genLocalProperties().category.contains(c)) AS this»
-		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
-		«ENDFOREACH»
-		«REM»reject inherited properties that a super constructor already initialized«ENDREM»
-		«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()).
-			reject(p | genInheritedProperties().select(p.shouldGenerateEditor()).genFeature.contains(p.genFeature)) AS this»
-			«EXPAND addEditor FOR editor»
-		«ENDFOREACH»
+		«EXPAND createClassElements(this)»
 	}
-
-	«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()) AS this-»
-	/**
-	 * @generated
-	 */
-	protected void «genAdder()»(String category, boolean front) {
-		addEditorToCategory(category, «genCreator()»(), front);
-	}
-
-	«EXPAND createMethod(false)»
+	
+	«FOREACH { this }.union(allSuperClasses).properties.select(p | getHighestContainer(p) == p.clazz) AS this»
+		private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor «genCreator()»() {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
+			«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
+			«IF genDocumentation() != null»
+			editor.setTooltipMessage("«genDocumentation().escapeString()»");
+			«ENDIF»
+			«EXPAND addCreationConstraintFilter("editor", "feature") FOREACH creationConstraint.filters»
+			return editor;
+		}
 	«ENDFOREACH»
 
-	«FOREACH genOverriddenProperties() AS this»
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void «genAdder()»(String category, boolean front) {
-		«IF editor != null»
-		category = "«category.genCategoryKey()»";
-		front = «EXPAND front FOR editor»;
-		super.«genAdder()»(category, front);
-		«ENDIF»
-	}
-
-	«EXPAND createMethod(true)»
-	«ENDFOREACH»
 
 «IF !genClass.ecoreClass.abstract»
 
@@ -113,48 +79,37 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 «ENDIF»
 «ENDDEFINE»
 
-«DEFINE createMethod(Boolean override) FOR Property»
-	/**
-	 * @generated
-	 */
-	«IF override-»
-	@Override
-	«ENDIF-»
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
-		«IF !shouldGenerateEditor()-»
-			return null;
-		«ELSE-»
-			final org.eclipse.emf.ecore.EStructuralFeature feature = «genFeature.genFeatureLiteral()»;
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «IF editor == null»null;«ELSE»«EXPAND createEditor(this, "feature") FOR editor»«ENDIF»
-			«EXPAND addVisibilityFilter("editor", "feature") FOREACH visibilityFilters»
-			«IF genDocumentation() != null»
-			editor.setTooltipMessage("«genDocumentation().escapeString()»");
-			«ENDIF»
-			«EXPAND addCreationConstraintFilter("editor", "feature") FOREACH creationConstraint.filters»
-			return editor;
-		«ENDIF»
-	}
+«DEFINE createClassElements(Class originalClass) FOR Class»
+	«REM»my own order of elements«ENDREM»
+	«FOREACH orderedElements AS this»
+		«EXPAND createElement(originalClass)»
+	«ENDFOREACH»
+	«REM»Create Super Classes that are not positioend using base insert points. We put them at the bottom.«ENDREM»
+	«FOREACH superClasses.reject(s | baseInsertPoints.baseClass.contains(s)) AS this»
+		«EXPAND createClassElements(originalClass)»
+	«ENDFOREACH»
 «ENDDEFINE»
 
-«DEFINE addEditor FOR PropertyEditor»
-	if (getTab() == null || "«property.tab.id»".equals(getTab())) {
-«property.genAdder()»(«EXPAND categoryKey FOR property-», «EXPAND front»);
-	}
+«DEFINE createElement(Class originalClass) FOR OrderedElement»ERROR: No codegen for «this.toString()»«ENDDEFINE»
+«DEFINE createElement(Class originalClass) FOR Property»
+	«IF originalClass.getHighestContainer(this) == clazz»
+		addPropertyEditor(«this.genCreator()»());
+	«ENDIF»
 «ENDDEFINE»
 
-«DEFINE front FOR PropertyEditor»true«ENDDEFINE»
-«DEFINE front FOR ObjectPropertyEditor»false«ENDDEFINE»
-
-«DEFINE categoryKey FOR Property-»
-«IF category != null-»
-	"«category.genCategoryKey()-»"
-«ELSE-»
-	null
-«ENDIF-»
+«DEFINE createElement(Class originalClass) FOR PropertyCategory»
+	«IF originalClass.getHighestContainer(this) == clazz»
+		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
+	«ENDIF»
 «ENDDEFINE»
+
+«DEFINE createElement(Class originalClass) FOR BaseInsertPoint»
+	«EXPAND createClassElements(originalClass) FOR baseClass»
+«ENDDEFINE»
+
 
 «DEFINE createEditor(Property property, String featureVar) FOR PropertyEditor-»
-UNKNOWN PROPERTY EDITOR
+ERROR: No codegen for «this.toString()»
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property, String featureVar) FOR CheckboxPropertyEditor-»

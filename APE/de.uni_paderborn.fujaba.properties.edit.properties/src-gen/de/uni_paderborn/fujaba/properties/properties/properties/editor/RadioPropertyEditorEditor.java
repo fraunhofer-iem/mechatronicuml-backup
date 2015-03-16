@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.properties.properties.properties.editor;
  */
 public class RadioPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,7 +21,6 @@ public class RadioPropertyEditorEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

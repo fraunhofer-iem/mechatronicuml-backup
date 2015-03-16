@@ -2,23 +2,19 @@
  */
 package de.uni_paderborn.fujaba.properties.impl;
 
-import de.uni_paderborn.fujaba.properties.CreationConstraint;
-import de.uni_paderborn.fujaba.properties.Filter;
-import de.uni_paderborn.fujaba.properties.PropertiesPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
+import de.uni_paderborn.fujaba.properties.Filter;
+import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 
 /**
  * <!-- begin-user-doc -->

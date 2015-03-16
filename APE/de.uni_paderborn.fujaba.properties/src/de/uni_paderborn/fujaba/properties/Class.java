@@ -18,10 +18,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getGenClass <em>Gen Class</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getPackage <em>Package</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getProperties <em>Properties</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getOrderedElements <em>Ordered Elements</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getSuperClasses <em>Super Classes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getAllSuperClasses <em>All Super Classes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getBaseInsertPoints <em>Base Insert Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,40 +88,22 @@ public interface Class extends EObject {
 	void setPackage(de.uni_paderborn.fujaba.properties.Package value);
 
 	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.Property}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.Property#getClazz <em>Clazz</em>}'.
+	 * Returns the value of the '<em><b>Ordered Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.OrderedElement}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.OrderedElement#getClazz <em>Clazz</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Ordered Elements</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_Properties()
-	 * @see de.uni_paderborn.fujaba.properties.Property#getClazz
+	 * @return the value of the '<em>Ordered Elements</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_OrderedElements()
+	 * @see de.uni_paderborn.fujaba.properties.OrderedElement#getClazz
 	 * @model opposite="clazz" containment="true"
 	 * @generated
 	 */
-	EList<Property> getProperties();
-
-	/**
-	 * Returns the value of the '<em><b>Property Categories</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.PropertyCategory}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Property Categories</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Property Categories</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_PropertyCategories()
-	 * @see de.uni_paderborn.fujaba.properties.PropertyCategory#getClazz
-	 * @model opposite="clazz" containment="true"
-	 * @generated
-	 */
-	EList<PropertyCategory> getPropertyCategories();
+	EList<OrderedElement> getOrderedElements();
 
 	/**
 	 * Returns the value of the '<em><b>Super Classes</b></em>' reference list.
@@ -152,5 +136,56 @@ public interface Class extends EObject {
 	 * @generated
 	 */
 	EList<Class> getAllSuperClasses();
+
+	/**
+	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.Property}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Properties</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Properties</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_Properties()
+	 * @model transient="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='orderedElements->select(p | p.oclIsKindOf(Property)).oclAsType(Property)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<Property> getProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Base Insert Points</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.BaseInsertPoint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Base Insert Points</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Insert Points</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_BaseInsertPoints()
+	 * @model transient="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='orderedElements->select(p | p.oclIsKindOf(BaseInsertPoint)).oclAsType(BaseInsertPoint)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<BaseInsertPoint> getBaseInsertPoints();
+
+	/**
+	 * Returns the value of the '<em><b>Property Categories</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.PropertyCategory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Property Categories</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Property Categories</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getClass_PropertyCategories()
+	 * @model transient="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='orderedElements->select(p | p.oclIsKindOf(PropertyCategory)).oclAsType(PropertyCategory)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<PropertyCategory> getPropertyCategories();
 
 } // Class

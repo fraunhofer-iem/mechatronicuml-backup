@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#isReconcile <em>Reconcile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationConstraint <em>Creation Constraint</em>}</li>
@@ -35,7 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CreationConstraintForContainments='-- Creation Constraint must only be defined for Properties of containment references.\n(not creationConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).containment)' CreationOppositeConstraintForContainers='-- Creation Opposite Constraint must only be defined for Properties with an EOpposite of type containment reference.\n(not creationOppositeConstraint.oclIsUndefined()) implies (genFeature.ecoreFeature.oclIsKindOf(ecore::EReference) and genFeature.ecoreFeature.oclAsType(ecore::EReference).container)'"
  * @generated
  */
-public interface Property extends EObject {
+public interface Property extends OrderedElement {
 	/**
 	 * Returns the value of the '<em><b>Gen Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -117,7 +116,7 @@ public interface Property extends EObject {
 	 * @see #setEditor(PropertyEditor)
 	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_Editor()
 	 * @see de.uni_paderborn.fujaba.properties.PropertyEditor#getProperty
-	 * @model opposite="property" containment="true" required="true"
+	 * @model opposite="property" containment="true"
 	 * @generated
 	 */
 	PropertyEditor getEditor();
@@ -157,34 +156,6 @@ public interface Property extends EObject {
 	 * @generated
 	 */
 	void setTooltip(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Clazz</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.Class#getProperties <em>Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Clazz</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Clazz</em>' container reference.
-	 * @see #setClazz(de.uni_paderborn.fujaba.properties.Class)
-	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_Clazz()
-	 * @see de.uni_paderborn.fujaba.properties.Class#getProperties
-	 * @model opposite="properties" required="true" transient="false"
-	 * @generated
-	 */
-	de.uni_paderborn.fujaba.properties.Class getClazz();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.Property#getClazz <em>Clazz</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Clazz</em>' container reference.
-	 * @see #getClazz()
-	 * @generated
-	 */
-	void setClazz(de.uni_paderborn.fujaba.properties.Class value);
 
 	/**
 	 * Returns the value of the '<em><b>Category</b></em>' reference.

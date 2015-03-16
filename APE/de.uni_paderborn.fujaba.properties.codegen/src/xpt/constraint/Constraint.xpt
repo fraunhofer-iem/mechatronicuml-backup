@@ -8,7 +8,7 @@ public class CreationConstraintContributor
 	extends de.uni_paderborn.fujaba.properties.runtime.constraint.DefaultCreationConstraintContributor {
 	
 	public CreationConstraintContributor() {
-		«FOREACH packages.classes.properties AS property»
+		«FOREACH packages.classes.orderedElements.typeSelect(Property) AS property»
 			«EXPAND oppositeConstraintFilter(property.genFeature.ecoreFeature, property.clazz.genClass.ecoreClass, this) FOREACH property.creationOppositeConstraint.filters»
 		«ENDFOREACH»
 	}

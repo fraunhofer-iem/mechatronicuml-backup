@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import de.uni_paderborn.fujaba.properties.BaseInsertPoint;
 import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CreationConstraint;
@@ -16,14 +17,13 @@ import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLFilter;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
-import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
 import de.uni_paderborn.fujaba.properties.ObjectPropertyEditor;
+import de.uni_paderborn.fujaba.properties.OrderedElement;
 import de.uni_paderborn.fujaba.properties.Plugin;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
 import de.uni_paderborn.fujaba.properties.PropertyEditor;
-import de.uni_paderborn.fujaba.properties.PropertyFilter;
 import de.uni_paderborn.fujaba.properties.PropertyGenerator;
 import de.uni_paderborn.fujaba.properties.PropertyTab;
 import de.uni_paderborn.fujaba.properties.RadioPropertyEditor;
@@ -130,15 +130,23 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.PROPERTY_CATEGORY: {
-				PropertyCategory propertyCategory = (PropertyCategory)theEObject;
-				T result = casePropertyCategory(propertyCategory);
+			case PropertiesPackage.ORDERED_ELEMENT: {
+				OrderedElement orderedElement = (OrderedElement)theEObject;
+				T result = caseOrderedElement(orderedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.BASE_INSERT_POINT: {
+				BaseInsertPoint baseInsertPoint = (BaseInsertPoint)theEObject;
+				T result = caseBaseInsertPoint(baseInsertPoint);
+				if (result == null) result = caseOrderedElement(baseInsertPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PropertiesPackage.PROPERTY: {
 				Property property = (Property)theEObject;
 				T result = caseProperty(property);
+				if (result == null) result = caseOrderedElement(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -215,6 +223,13 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				CustomPropertyEditor customPropertyEditor = (CustomPropertyEditor)theEObject;
 				T result = caseCustomPropertyEditor(customPropertyEditor);
 				if (result == null) result = casePropertyEditor(customPropertyEditor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.PROPERTY_CATEGORY: {
+				PropertyCategory propertyCategory = (PropertyCategory)theEObject;
+				T result = casePropertyCategory(propertyCategory);
+				if (result == null) result = caseOrderedElement(propertyCategory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -343,6 +358,36 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClass(de.uni_paderborn.fujaba.properties.Class object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ordered Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ordered Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrderedElement(OrderedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Base Insert Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Base Insert Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBaseInsertPoint(BaseInsertPoint object) {
 		return null;
 	}
 

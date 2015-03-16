@@ -21,7 +21,6 @@ public abstract class PropertyEditorEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

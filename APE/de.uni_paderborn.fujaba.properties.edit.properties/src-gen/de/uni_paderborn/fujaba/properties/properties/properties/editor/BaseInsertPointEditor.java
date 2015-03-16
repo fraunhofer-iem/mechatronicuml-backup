@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.properties.properties.properties.editor;
 /**
  * @generated
  */
-public class ClassEditor
+public class BaseInsertPointEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ClassEditor(String tab,
+	public BaseInsertPointEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -22,25 +22,28 @@ public class ClassEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createGenClass_GeneralTab_Editor());
+		addPropertyEditor(createBaseClass_GeneralTab_Editor());
 
-		addPropertyEditor(createSuperClasses_GeneralTab_Editor());
+		addPropertyEditor(createClazz_GeneralTab_Editor());
+
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.a", "a",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createGenClass_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createBaseClass_GeneralTab_Editor() {
 		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-				.getClass_GenClass();
+				.getBaseInsertPoint_BaseClass();
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
 		return editor;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createSuperClasses_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createClazz_GeneralTab_Editor() {
 		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-				.getClass_SuperClasses();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				.getOrderedElement_Clazz();
+		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
 		return editor;
@@ -53,13 +56,13 @@ public class ClassEditor
 	/**
 	 * @generated
 	 */
-	public ClassEditor(String tab) {
+	public BaseInsertPointEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getClass_());
+						.getBaseInsertPoint());
 	}
 
 	/**
@@ -71,14 +74,13 @@ public class ClassEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new ClassEditor(tab);
+			return new BaseInsertPointEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{
-							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general"})
 					.contains(tab);

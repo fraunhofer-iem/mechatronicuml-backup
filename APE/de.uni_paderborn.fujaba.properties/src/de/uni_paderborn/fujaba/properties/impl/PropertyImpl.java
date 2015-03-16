@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.properties.impl;
 
-import de.uni_paderborn.fujaba.properties.CreationConstraint;
-import de.uni_paderborn.fujaba.properties.Filter;
 import java.util.Collection;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
@@ -13,16 +11,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.uni_paderborn.fujaba.properties.CreationConstraint;
+import de.uni_paderborn.fujaba.properties.Filter;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
 import de.uni_paderborn.fujaba.properties.PropertyEditor;
-import de.uni_paderborn.fujaba.properties.PropertyFilter;
 import de.uni_paderborn.fujaba.properties.PropertyTab;
 
 /**
@@ -37,7 +34,6 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#isReconcile <em>Reconcile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationConstraint <em>Creation Constraint</em>}</li>
@@ -48,7 +44,7 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  *
  * @generated
  */
-public class PropertyImpl extends EObjectImpl implements Property {
+public class PropertyImpl extends OrderedElementImpl implements Property {
 	/**
 	 * The cached value of the '{@link #getGenFeature() <em>Gen Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -355,47 +351,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.properties.Class getClazz() {
-		if (eContainerFeatureID() != PropertiesPackage.PROPERTY__CLAZZ) return null;
-		return (de.uni_paderborn.fujaba.properties.Class)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetClazz(de.uni_paderborn.fujaba.properties.Class newClazz, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newClazz, PropertiesPackage.PROPERTY__CLAZZ, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClazz(de.uni_paderborn.fujaba.properties.Class newClazz) {
-		if (newClazz != eInternalContainer() || (eContainerFeatureID() != PropertiesPackage.PROPERTY__CLAZZ && newClazz != null)) {
-			if (EcoreUtil.isAncestor(this, newClazz))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newClazz != null)
-				msgs = ((InternalEObject)newClazz).eInverseAdd(this, PropertiesPackage.CLASS__PROPERTIES, de.uni_paderborn.fujaba.properties.Class.class, msgs);
-			msgs = basicSetClazz(newClazz, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CLAZZ, newClazz, newClazz));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public PropertyCategory getCategory() {
 		if (category != null && category.eIsProxy()) {
 			InternalEObject oldCategory = (InternalEObject)category;
@@ -591,10 +546,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				if (editor != null)
 					msgs = ((InternalEObject)editor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__EDITOR, null, msgs);
 				return basicSetEditor((PropertyEditor)otherEnd, msgs);
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetClazz((de.uni_paderborn.fujaba.properties.Class)otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				if (category != null)
 					msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
@@ -615,8 +566,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return ((InternalEList<?>)getVisibilityFilters()).basicRemove(otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__EDITOR:
 				return basicSetEditor(null, msgs);
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				return basicSetClazz(null, msgs);
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				return basicSetCategory(null, msgs);
 			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
@@ -625,20 +574,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return basicSetCreationOppositeConstraint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				return eInternalContainer().eInverseRemove(this, PropertiesPackage.CLASS__PROPERTIES, de.uni_paderborn.fujaba.properties.Class.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -661,8 +596,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return getEditor();
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return getTooltip();
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				return getClazz();
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				if (resolve) return getCategory();
 				return basicGetCategory();
@@ -702,9 +635,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip((String)newValue);
-				return;
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				setClazz((de.uni_paderborn.fujaba.properties.Class)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				setCategory((PropertyCategory)newValue);
@@ -748,9 +678,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip(TOOLTIP_EDEFAULT);
 				return;
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				setClazz((de.uni_paderborn.fujaba.properties.Class)null);
-				return;
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				setCategory((PropertyCategory)null);
 				return;
@@ -788,8 +715,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return editor != null;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return TOOLTIP_EDEFAULT == null ? tooltip != null : !TOOLTIP_EDEFAULT.equals(tooltip);
-			case PropertiesPackage.PROPERTY__CLAZZ:
-				return getClazz() != null;
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				return category != null;
 			case PropertiesPackage.PROPERTY__RECONCILE:

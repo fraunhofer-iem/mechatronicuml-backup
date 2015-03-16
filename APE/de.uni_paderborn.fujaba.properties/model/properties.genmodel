@@ -55,17 +55,18 @@
     <genClasses ecoreClass="properties.ecore#//Class">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Class/genClass"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//Class/package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Class/properties"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Class/propertyCategories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Class/orderedElements"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Class/superClasses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Class/allSuperClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Class/properties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Class/baseInsertPoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Class/propertyCategories"/>
     </genClasses>
-    <genClasses ecoreClass="properties.ecore#//PropertyCategory">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/vertical"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/open"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/clazz"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/properties"/>
+    <genClasses image="false" ecoreClass="properties.ecore#//OrderedElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//OrderedElement/clazz"/>
+    </genClasses>
+    <genClasses ecoreClass="properties.ecore#//BaseInsertPoint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//BaseInsertPoint/baseClass"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//Property">
       <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/genFeature"/>
@@ -73,7 +74,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/tab"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/editor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/tooltip"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//Property/clazz"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/category"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/reconcile"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/creationConstraint"/>
@@ -98,6 +98,12 @@
     <genClasses ecoreClass="properties.ecore#//OCLPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//CustomPropertyEditor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//CustomPropertyEditor/fullyQualifiedClassName"/>
+    </genClasses>
+    <genClasses ecoreClass="properties.ecore#//PropertyCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/vertical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/open"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/properties"/>
     </genClasses>
     <genClasses image="false" ecoreClass="properties.ecore#//Filter">
       <genOperations ecoreOperation="properties.ecore#//Filter/isValid">

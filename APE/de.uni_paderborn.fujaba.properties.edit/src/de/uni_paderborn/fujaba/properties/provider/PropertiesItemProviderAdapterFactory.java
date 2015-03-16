@@ -236,6 +236,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.BaseInsertPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BaseInsertPointItemProvider baseInsertPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.properties.BaseInsertPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBaseInsertPointAdapter() {
+		if (baseInsertPointItemProvider == null) {
+			baseInsertPointItemProvider = new BaseInsertPointItemProvider(this);
+		}
+
+		return baseInsertPointItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.PropertyCategory} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,7 +686,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (propertyTabItemProvider != null) propertyTabItemProvider.dispose();
 		if (packageItemProvider != null) packageItemProvider.dispose();
 		if (classItemProvider != null) classItemProvider.dispose();
-		if (propertyCategoryItemProvider != null) propertyCategoryItemProvider.dispose();
+		if (baseInsertPointItemProvider != null) baseInsertPointItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (textPropertyEditorItemProvider != null) textPropertyEditorItemProvider.dispose();
 		if (spinnerPropertyEditorItemProvider != null) spinnerPropertyEditorItemProvider.dispose();
@@ -675,6 +698,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (objectPropertyEditorItemProvider != null) objectPropertyEditorItemProvider.dispose();
 		if (oclPropertyEditorItemProvider != null) oclPropertyEditorItemProvider.dispose();
 		if (customPropertyEditorItemProvider != null) customPropertyEditorItemProvider.dispose();
+		if (propertyCategoryItemProvider != null) propertyCategoryItemProvider.dispose();
 		if (oclFilterItemProvider != null) oclFilterItemProvider.dispose();
 		if (creationConstraintItemProvider != null) creationConstraintItemProvider.dispose();
 	}

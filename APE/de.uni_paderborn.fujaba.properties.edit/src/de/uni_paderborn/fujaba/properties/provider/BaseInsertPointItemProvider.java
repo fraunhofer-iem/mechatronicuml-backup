@@ -6,31 +6,30 @@ package de.uni_paderborn.fujaba.properties.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.properties.BaseInsertPoint;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
-import de.uni_paderborn.fujaba.properties.SpinnerPropertyEditor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.properties.SpinnerPropertyEditor} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.properties.BaseInsertPoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpinnerPropertyEditorItemProvider
-	extends PropertyEditorItemProvider {
+public class BaseInsertPointItemProvider extends OrderedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpinnerPropertyEditorItemProvider(AdapterFactory adapterFactory) {
+	public BaseInsertPointItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,55 +44,78 @@ public class SpinnerPropertyEditorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDigitsPropertyDescriptor(object);
+			addBaseClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Digits feature.
+	 * This adds a property descriptor for the Base Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected void addDigitsPropertyDescriptor(Object object) {
+	protected void addBaseClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SpinnerPropertyEditor_digits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SpinnerPropertyEditor_digits_feature", "_UI_SpinnerPropertyEditor_type"),
-				 PropertiesPackage.Literals.SPINNER_PROPERTY_EDITOR__DIGITS,
+				 getString("_UI_BaseInsertPoint_baseClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BaseInsertPoint_baseClass_feature", "_UI_BaseInsertPoint_type"),
+				 PropertiesPackage.Literals.BASE_INSERT_POINT__BASE_CLASS,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 true,
 				 null,
-				 null));
+				 null,
+				 null) {
+				
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					BaseInsertPoint baseInsertPoint = (BaseInsertPoint) object;
+					de.uni_paderborn.fujaba.properties.Class clazz = baseInsertPoint.getClazz();
+					return clazz.getAllSuperClasses();
+				}
+				
+		});
 	}
 
 	/**
-	 * This returns SpinnerPropertyEditor.gif.
+	 * This returns BaseInsertPoint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SpinnerPropertyEditor"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/BaseInsertPoint"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		SpinnerPropertyEditor spinnerPropertyEditor = (SpinnerPropertyEditor)object;
-		return getString("_UI_SpinnerPropertyEditor_type") + " " + spinnerPropertyEditor.getDigits();
+		BaseInsertPoint baseInsertPoint = (BaseInsertPoint) object;
+		
+		// Get name of base class
+		String name = "null";
+		if (baseInsertPoint.getBaseClass() != null) {
+			de.uni_paderborn.fujaba.properties.Class baseClass = baseInsertPoint.getBaseClass();
+			if (baseClass.getGenClass() != null) {
+				GenClass genClass = (GenClass) baseClass.getGenClass();
+				if (genClass.getName() != null) {
+					name = genClass.getName();
+				}
+			}
+		}
+		
+		return getString("_UI_BaseInsertPoint_type") + " " + name;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -105,12 +127,6 @@ public class SpinnerPropertyEditorItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(SpinnerPropertyEditor.class)) {
-			case PropertiesPackage.SPINNER_PROPERTY_EDITOR__DIGITS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

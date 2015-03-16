@@ -2,13 +2,12 @@
  */
 package de.uni_paderborn.fujaba.properties.impl;
 
-import de.uni_paderborn.fujaba.properties.Filter;
-import de.uni_paderborn.fujaba.properties.PropertiesPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import de.uni_paderborn.fujaba.properties.Filter;
+import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.uni_paderborn.fujaba.properties.BaseInsertPoint;
+import de.uni_paderborn.fujaba.properties.OrderedElement;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
@@ -31,10 +33,12 @@ import de.uni_paderborn.fujaba.properties.PropertyCategory;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getGenClass <em>Gen Class</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getProperties <em>Properties</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getPropertyCategories <em>Property Categories</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getOrderedElements <em>Ordered Elements</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getSuperClasses <em>Super Classes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getAllSuperClasses <em>All Super Classes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getBaseInsertPoints <em>Base Insert Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.ClassImpl#getPropertyCategories <em>Property Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,24 +56,14 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 	protected GenClass genClass;
 
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+	 * The cached value of the '{@link #getOrderedElements() <em>Ordered Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProperties()
+	 * @see #getOrderedElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> properties;
-
-	/**
-	 * The cached value of the '{@link #getPropertyCategories() <em>Property Categories</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPropertyCategories()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PropertyCategory> propertyCategories;
+	protected EList<OrderedElement> orderedElements;
 
 	/**
 	 * The cached value of the '{@link #getSuperClasses() <em>Super Classes</em>}' reference list.
@@ -90,6 +84,36 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_SUPER_CLASSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PropertiesPackage.Literals.CLASS__ALL_SUPER_CLASSES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getProperties() <em>Properties</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProperties()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PROPERTIES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PropertiesPackage.Literals.CLASS__PROPERTIES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getBaseInsertPoints() <em>Base Insert Points</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBaseInsertPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate BASE_INSERT_POINTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PropertiesPackage.Literals.CLASS__BASE_INSERT_POINTS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getPropertyCategories() <em>Property Categories</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPropertyCategories()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PROPERTY_CATEGORIES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PropertiesPackage.Literals.CLASS__PROPERTY_CATEGORIES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,23 +218,11 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getProperties() {
-		if (properties == null) {
-			properties = new EObjectContainmentWithInverseEList<Property>(Property.class, this, PropertiesPackage.CLASS__PROPERTIES, PropertiesPackage.PROPERTY__CLAZZ);
+	public EList<OrderedElement> getOrderedElements() {
+		if (orderedElements == null) {
+			orderedElements = new EObjectContainmentWithInverseEList<OrderedElement>(OrderedElement.class, this, PropertiesPackage.CLASS__ORDERED_ELEMENTS, PropertiesPackage.ORDERED_ELEMENT__CLAZZ);
 		}
-		return properties;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<PropertyCategory> getPropertyCategories() {
-		if (propertyCategories == null) {
-			propertyCategories = new EObjectContainmentWithInverseEList<PropertyCategory>(PropertyCategory.class, this, PropertiesPackage.CLASS__PROPERTY_CATEGORIES, PropertiesPackage.PROPERTY_CATEGORY__CLAZZ);
-		}
-		return propertyCategories;
+		return orderedElements;
 	}
 
 	/**
@@ -241,6 +253,36 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<Property> getProperties() {
+		return (EList<Property>)PROPERTIES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<BaseInsertPoint> getBaseInsertPoints() {
+		return (EList<BaseInsertPoint>)BASE_INSERT_POINTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<PropertyCategory> getPropertyCategories() {
+		return (EList<PropertyCategory>)PROPERTY_CATEGORIES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -248,10 +290,8 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPackage((de.uni_paderborn.fujaba.properties.Package)otherEnd, msgs);
-			case PropertiesPackage.CLASS__PROPERTIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProperties()).basicAdd(otherEnd, msgs);
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPropertyCategories()).basicAdd(otherEnd, msgs);
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOrderedElements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -266,10 +306,8 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 		switch (featureID) {
 			case PropertiesPackage.CLASS__PACKAGE:
 				return basicSetPackage(null, msgs);
-			case PropertiesPackage.CLASS__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
-				return ((InternalEList<?>)getPropertyCategories()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
+				return ((InternalEList<?>)getOrderedElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -301,14 +339,18 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 				return basicGetGenClass();
 			case PropertiesPackage.CLASS__PACKAGE:
 				return getPackage();
-			case PropertiesPackage.CLASS__PROPERTIES:
-				return getProperties();
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
-				return getPropertyCategories();
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
+				return getOrderedElements();
 			case PropertiesPackage.CLASS__SUPER_CLASSES:
 				return getSuperClasses();
 			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
 				return getAllSuperClasses();
+			case PropertiesPackage.CLASS__PROPERTIES:
+				return getProperties();
+			case PropertiesPackage.CLASS__BASE_INSERT_POINTS:
+				return getBaseInsertPoints();
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				return getPropertyCategories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -328,13 +370,9 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 			case PropertiesPackage.CLASS__PACKAGE:
 				setPackage((de.uni_paderborn.fujaba.properties.Package)newValue);
 				return;
-			case PropertiesPackage.CLASS__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends Property>)newValue);
-				return;
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
-				getPropertyCategories().clear();
-				getPropertyCategories().addAll((Collection<? extends PropertyCategory>)newValue);
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
+				getOrderedElements().clear();
+				getOrderedElements().addAll((Collection<? extends OrderedElement>)newValue);
 				return;
 			case PropertiesPackage.CLASS__SUPER_CLASSES:
 				getSuperClasses().clear();
@@ -343,6 +381,18 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
 				getAllSuperClasses().clear();
 				getAllSuperClasses().addAll((Collection<? extends de.uni_paderborn.fujaba.properties.Class>)newValue);
+				return;
+			case PropertiesPackage.CLASS__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends Property>)newValue);
+				return;
+			case PropertiesPackage.CLASS__BASE_INSERT_POINTS:
+				getBaseInsertPoints().clear();
+				getBaseInsertPoints().addAll((Collection<? extends BaseInsertPoint>)newValue);
+				return;
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				getPropertyCategories().clear();
+				getPropertyCategories().addAll((Collection<? extends PropertyCategory>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -362,17 +412,23 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 			case PropertiesPackage.CLASS__PACKAGE:
 				setPackage((de.uni_paderborn.fujaba.properties.Package)null);
 				return;
-			case PropertiesPackage.CLASS__PROPERTIES:
-				getProperties().clear();
-				return;
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
-				getPropertyCategories().clear();
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
+				getOrderedElements().clear();
 				return;
 			case PropertiesPackage.CLASS__SUPER_CLASSES:
 				getSuperClasses().clear();
 				return;
 			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
 				getAllSuperClasses().clear();
+				return;
+			case PropertiesPackage.CLASS__PROPERTIES:
+				getProperties().clear();
+				return;
+			case PropertiesPackage.CLASS__BASE_INSERT_POINTS:
+				getBaseInsertPoints().clear();
+				return;
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				getPropertyCategories().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -390,14 +446,18 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 				return genClass != null;
 			case PropertiesPackage.CLASS__PACKAGE:
 				return getPackage() != null;
-			case PropertiesPackage.CLASS__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
-				return propertyCategories != null && !propertyCategories.isEmpty();
+			case PropertiesPackage.CLASS__ORDERED_ELEMENTS:
+				return orderedElements != null && !orderedElements.isEmpty();
 			case PropertiesPackage.CLASS__SUPER_CLASSES:
 				return superClasses != null && !superClasses.isEmpty();
 			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
 				return ALL_SUPER_CLASSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PropertiesPackage.CLASS__PROPERTIES:
+				return PROPERTIES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PropertiesPackage.CLASS__BASE_INSERT_POINTS:
+				return BASE_INSERT_POINTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				return PROPERTY_CATEGORIES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

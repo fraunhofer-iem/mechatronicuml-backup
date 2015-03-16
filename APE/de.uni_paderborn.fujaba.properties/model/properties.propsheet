@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.properties.contributor">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.properties.contributor">
   <reconciler/>
   <genModel href="properties.genmodel#/"/>
   <plugin id="de.uni_paderborn.fujaba.properties.edit.properties" name="Fujaba Properties Editor-Support" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
@@ -16,198 +16,184 @@
     <genPackage href="properties.genmodel#//properties"/>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyGenerator"/>
-      <properties tab="//@tabs.0" tooltip="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/reconciler"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/genModel"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/referencedGenerators"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/plugin"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/defaultTab"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/contributorId"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/sourceFolder"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.2"/>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Reconciler"/>
-      <properties tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.1/@orderedElements.4" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Reconciler/enabled"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.1/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" category="//@packages.0/@classes.1/@orderedElements.4">
         <genFeature href="properties.genmodel#//properties/Reconciler/reconcilePackages"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.1/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" category="//@packages.0/@classes.1/@orderedElements.4">
         <genFeature href="properties.genmodel#//properties/Reconciler/reconcileClasses"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" category="//@packages.0/@classes.1/@orderedElements.4">
         <genFeature href="properties.genmodel#//properties/Reconciler/reconcileProperties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.1/@properties.0 //@packages.0/@classes.1/@properties.1 //@packages.0/@classes.1/@properties.2 //@packages.0/@classes.1/@properties.3"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Booleans" properties="//@packages.0/@classes.1/@orderedElements.0 //@packages.0/@classes.1/@orderedElements.1 //@packages.0/@classes.1/@orderedElements.2 //@packages.0/@classes.1/@orderedElements.3"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/CustomTransformation"/>
-      <properties tab="//@tabs.0" tooltip="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/CustomTransformation/uri"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/CustomTransformation/enabled"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/CustomTransformation/position"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.2/@properties.1"/>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Plugin"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Plugin/id"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Plugin/name"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Plugin/vendor"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Plugin/version"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Plugin/requiredBundles"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyTab"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyTab/id"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyTab/name"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyTab/afterTab"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Package"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Package/genPackage"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Class"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Class/genClass"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.6/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Class/superClasses"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.6/@propertyCategories.0" reconcile="false">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Class/allSuperClasses"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.6/@properties.1 //@packages.0/@classes.6/@properties.2"/>
+      </orderedElements>
     </classes>
     <classes>
-      <genClass href="properties.genmodel#//properties/PropertyCategory"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="properties.genmodel#//properties/PropertyCategory/title"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.7/@propertyCategories.0">
-        <genFeature href="properties.genmodel#//properties/PropertyCategory/vertical"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.7/@propertyCategories.0">
-        <genFeature href="properties.genmodel#//properties/PropertyCategory/open"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.7/@propertyCategories.1">
-        <genFeature href="properties.genmodel#//properties/PropertyCategory/properties"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.7/@properties.1 //@packages.0/@classes.7/@properties.2"/>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.7/@properties.3"/>
+      <genClass href="properties.genmodel#//properties/OrderedElement"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="properties.genmodel#//properties/OrderedElement/clazz"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="a"/>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.7">
       <genClass href="properties.genmodel#//properties/Property"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Property/genFeature"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Property/tab"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Property/tooltip"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Property/category"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.8/@propertyCategories.0">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Property/reconcile"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Property/initializeOCLExpression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.8/@properties.4"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:BaseInsertPoint" baseClass="//@packages.0/@classes.7"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="properties.genmodel#//properties/OrderedElement/clazz"/>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/TextPropertyEditor"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.10/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/TextPropertyEditor/multiLine"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.10/@properties.0"/>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/SpinnerPropertyEditor"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/SpinnerPropertyEditor/digits"/>
         <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
+      </orderedElements>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/ComboBoxPropertyEditor"/>
@@ -222,6 +208,9 @@
       <genClass href="properties.genmodel#//properties/ListPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="properties.genmodel#//properties/FlattenedListPropertyEditor"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/ObjectPropertyEditor"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
@@ -229,31 +218,54 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/CustomPropertyEditor"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/CustomPropertyEditor/fullyQualifiedClassName"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.9">
-      <genClass href="properties.genmodel#//properties/FlattenedListPropertyEditor"/>
+    <classes superClasses="//@packages.0/@classes.7">
+      <genClass href="properties.genmodel#//properties/PropertyCategory"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
+        <genFeature href="properties.genmodel#//properties/PropertyCategory/title"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" category="//@packages.0/@classes.20/@orderedElements.4">
+        <genFeature href="properties.genmodel#//properties/PropertyCategory/vertical"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" category="//@packages.0/@classes.20/@orderedElements.4">
+        <genFeature href="properties.genmodel#//properties/PropertyCategory/open"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
+        <genFeature href="properties.genmodel#//properties/PropertyCategory/properties"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Booleans" properties="//@packages.0/@classes.20/@orderedElements.1 //@packages.0/@classes.20/@orderedElements.2"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Filter"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.20">
+    <classes superClasses="//@packages.0/@classes.21">
       <genClass href="properties.genmodel#//properties/OCLFilter"/>
-      <properties tab="//@tabs.0" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/OCLFilter/expression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/CreationConstraint"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.22/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/CreationConstraint/filters"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.22/@properties.0"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.7">
+      <genClass href="properties.genmodel#//properties/BaseInsertPoint"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
+        <genFeature href="properties.genmodel#//properties/BaseInsertPoint/baseClass"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
