@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+       point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+    <unit
+          name="PredefinedTypeLibrary"
+          namespace="de.uni_paderborn.uppaal.types.qvto">
+       <library
+             class="de.uni_paderborn.uppaal.types.qvto.PredefinedTypeLibrary"
+             name="PredefinedTypeLibrary">
+          <metamodel
+                nsURI="http://www.eclipse.org/emf/2002/Ecore">
+          </metamodel>
+          <metamodel
+                nsURI="http://www.uni-paderborn.de/uppaal/0.4.0">
+          </metamodel>
+          <metamodel
+                nsURI="http://www.uni-paderborn.de/uppaal/types/0.4.0">
+          </metamodel>
+       </library>
+    </unit>
+   </extension>
+</plugin>
