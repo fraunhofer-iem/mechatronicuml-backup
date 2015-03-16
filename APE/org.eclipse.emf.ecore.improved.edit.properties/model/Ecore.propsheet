@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
-  <reconciler/>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_C71YsMwXEeSfkPntfQ2wPg" defaultTab="_C71_wcwXEeSfkPntfQ2wPg" contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+  <reconciler xmi:id="_C71YscwXEeSfkPntfQ2wPg"/>
   <genModel href="Ecore.genmodel#/"/>
-  <plugin id="org.eclipse.emf.ecore.improved.edit.properties" name="Properties" vendor="University of Paderborn" version="0.1">
+  <plugin xmi:id="_C71_wMwXEeSfkPntfQ2wPg" id="org.eclipse.emf.ecore.improved.edit.properties" name="Properties" vendor="University of Paderborn" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
@@ -10,233 +10,233 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore.edit</requiredBundles>
   </plugin>
-  <tabs id="tab.default" name="Default"/>
-  <tabs id="tab.documentation" name="Documentation" afterTab="tab.default"/>
-  <tabs id="tab.ocl" name="OCL" afterTab="tab.documentation"/>
-  <packages>
+  <tabs xmi:id="_C71_wcwXEeSfkPntfQ2wPg" id="tab.default" name="Default"/>
+  <tabs xmi:id="_C71_wswXEeSfkPntfQ2wPg" id="tab.documentation" name="Documentation" afterTab="tab.default"/>
+  <tabs xmi:id="_C71_w8wXEeSfkPntfQ2wPg" id="tab.ocl" name="OCL" afterTab="tab.documentation"/>
+  <packages xmi:id="_C71_xMwXEeSfkPntfQ2wPg">
     <genPackage href="Ecore.genmodel#//ecore"/>
-    <classes superClasses="//@packages.0/@classes.15">
+    <classes xmi:id="_C72m0MwXEeSfkPntfQ2wPg" superClasses="_C75DHMwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EAttribute"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C72m0cwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EAttribute/iD"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.0/@properties.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C72m0swXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C72m08wXEeSfkPntfQ2wPg" title="Booleans" properties="_C72m0cwXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.8">
+    <classes xmi:id="_C72m1MwXEeSfkPntfQ2wPg" superClasses="_C730_MwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EAnnotation"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C72m1cwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EAnnotation/source"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.1/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C72m1swXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C72m18wXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EAnnotation/references"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.1"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_C72m2MwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C72m2cwXEeSfkPntfQ2wPg" title="Lists" properties="_C72m18wXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.3">
+    <classes xmi:id="_C73N4MwXEeSfkPntfQ2wPg" superClasses="_C73N6cwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EClass"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C73N4cwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EClass/abstract"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C73N4swXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C73N48wXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EClass/interface"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.2/@propertyCategories.1">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C73N5MwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C73N5cwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EClass/eSuperTypes"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.2/@properties.0 //@packages.0/@classes.2/@properties.1"/>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.2/@properties.2"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_C73N5swXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C73N58wXEeSfkPntfQ2wPg" title="Booleans" properties="_C73N4cwXEeSfkPntfQ2wPg _C73N48wXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C73N6MwXEeSfkPntfQ2wPg" title="Lists" properties="_C73N5cwXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.9">
+    <classes xmi:id="_C73N6cwXEeSfkPntfQ2wPg" superClasses="_C74cAcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EClassifier"/>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C73N6swXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" tooltip="" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EClassifier/instanceClassName"/>
-      </properties>
-      <properties tab="//@tabs.0" reconcile="false">
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C73N68wXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EClassifier/instanceTypeName"/>
-      </properties>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.3">
+    <classes xmi:id="_C73N7MwXEeSfkPntfQ2wPg" superClasses="_C73N6cwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EDataType"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.4/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C7308MwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EDataType/serializable"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.4/@properties.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C7308cwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C7308swXEeSfkPntfQ2wPg" title="Booleans" properties="_C7308MwXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.4">
+    <classes xmi:id="_C73088wXEeSfkPntfQ2wPg" superClasses="_C73N7MwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EEnum"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.9">
+    <classes xmi:id="_C7309MwXEeSfkPntfQ2wPg" superClasses="_C74cAcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EEnumLiteral"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C7309cwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EEnumLiteral/value"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" xmi:id="_C7309swXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C73098wXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EEnumLiteral/literal"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C730-MwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.8">
+    <classes xmi:id="_C730-cwXEeSfkPntfQ2wPg" superClasses="_C730_MwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EFactory"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C730-swXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EFactory/ePackage"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C730-8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_C730_MwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EModelElement"/>
-      <properties tab="//@tabs.1" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C730_cwXEeSfkPntfQ2wPg" tab="_C71_wswXEeSfkPntfQ2wPg" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor"/>
-      </properties>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C730_swXEeSfkPntfQ2wPg" expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_C74cAMwXEeSfkPntfQ2wPg" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.8">
+    <classes xmi:id="_C74cAcwXEeSfkPntfQ2wPg" superClasses="_C730_MwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/ENamedElement"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C74cAswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/ENamedElement/name"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C74cA8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_C74cBMwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EObject"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.16">
+    <classes xmi:id="_C74cBcwXEeSfkPntfQ2wPg" superClasses="_C75qLcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EOperation"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.11/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C74cBswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EOperation/eExceptions"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.11/@properties.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_C74cB8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C74cCMwXEeSfkPntfQ2wPg" title="Lists" properties="_C74cBswXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.9">
+    <classes xmi:id="_C74cCcwXEeSfkPntfQ2wPg" superClasses="_C74cAcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EPackage"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C74cCswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EPackage/nsURI"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C74cC8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C74cDMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EPackage/nsPrefix"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" reconcile="false">
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C74cDcwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C74cDswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EPackage/eFactoryInstance"/>
-      </properties>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.16">
+    <classes xmi:id="_C75DEMwXEeSfkPntfQ2wPg" superClasses="_C75qLcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EParameter"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.15">
+    <classes xmi:id="_C75DEcwXEeSfkPntfQ2wPg" superClasses="_C75DHMwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EReference"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.14/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DEswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EReference/containment"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.14/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75DE8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DFMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EReference/resolveProxies"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75DFcwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DFswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EReference/eOpposite"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.14/@propertyCategories.1">
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C75DF8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DGMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EReference/eKeys"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.14/@properties.0 //@packages.0/@classes.14/@properties.1"/>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.14/@properties.3"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_C75DGcwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C75DGswXEeSfkPntfQ2wPg" title="Booleans" properties="_C75DEswXEeSfkPntfQ2wPg _C75DFMwXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C75DG8wXEeSfkPntfQ2wPg" title="Lists" properties="_C75DGMwXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.16">
+    <classes xmi:id="_C75DHMwXEeSfkPntfQ2wPg" superClasses="_C75qLcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EStructuralFeature"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DHcwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/changeable"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75qIMwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75qIcwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/volatile"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75qIswXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75qI8wXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/transient"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75qJMwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75qJcwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" tooltip="">
         <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/defaultValueLiteral"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(ecore::EAttribute)"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C75qJswXEeSfkPntfQ2wPg" expression="self.oclIsKindOf(ecore::EAttribute)"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C75qJ8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75qKMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/unsettable"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.15/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75qKcwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75qKswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EStructuralFeature/derived"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.15/@properties.0 //@packages.0/@classes.15/@properties.1 //@packages.0/@classes.15/@properties.2 //@packages.0/@classes.15/@properties.4 //@packages.0/@classes.15/@properties.5"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75qK8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C75qLMwXEeSfkPntfQ2wPg" title="Booleans" properties="_C75DHcwXEeSfkPntfQ2wPg _C75qIcwXEeSfkPntfQ2wPg _C75qI8wXEeSfkPntfQ2wPg _C75qKMwXEeSfkPntfQ2wPg _C75qKswXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.9">
+    <classes xmi:id="_C75qLcwXEeSfkPntfQ2wPg" superClasses="_C74cAcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/ETypedElement"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75qLswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/ETypedElement/ordered"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75qL8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C76RMMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/ETypedElement/unique"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.1" initializeOCLExpression="">
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C76RMcwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C76RMswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/ETypedElement/upperBound"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.16/@propertyCategories.1" initializeOCLExpression="">
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" xmi:id="_C76RM8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C76RNMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/ETypedElement/lowerBound"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" xmi:id="_C76RNcwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C76RNswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/ETypedElement/eType"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.0/@classes.16/@properties.0 //@packages.0/@classes.16/@properties.1"/>
-      <propertyCategories title="Cardinality" properties="//@packages.0/@classes.16/@properties.3 //@packages.0/@classes.16/@properties.2"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C76RN8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C76ROMwXEeSfkPntfQ2wPg" title="Booleans" properties="_C75qLswXEeSfkPntfQ2wPg _C76RMMwXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C76ROcwXEeSfkPntfQ2wPg" title="Cardinality" properties="_C76RMswXEeSfkPntfQ2wPg _C76RNMwXEeSfkPntfQ2wPg"/>
     </classes>
-    <classes>
+    <classes xmi:id="_C76ROswXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EStringToStringMapEntry"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C76RO8wXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/key"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C76RPMwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C76RPcwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
-      </properties>
-      <properties tab="//@tabs.2" tooltip="" reconcile="false" initializeOCLExpression="">
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C764QMwXEeSfkPntfQ2wPg" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C764QcwXEeSfkPntfQ2wPg" multiLine="true"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C764QswXEeSfkPntfQ2wPg" tab="_C71_w8wXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>
-      </properties>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C764Q8wXEeSfkPntfQ2wPg" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_C764RMwXEeSfkPntfQ2wPg" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_C764RcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EGenericType"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C764RswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EGenericType/eTypeParameter"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C764R8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C764SMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EGenericType/eClassifier"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C764ScwXEeSfkPntfQ2wPg"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.9">
+    <classes xmi:id="_C764SswXEeSfkPntfQ2wPg" superClasses="_C74cAcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/ETypeParameter"/>
     </classes>
   </packages>

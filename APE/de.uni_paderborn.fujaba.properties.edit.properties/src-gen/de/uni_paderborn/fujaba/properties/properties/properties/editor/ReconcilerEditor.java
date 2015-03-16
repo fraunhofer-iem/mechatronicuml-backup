@@ -22,16 +22,24 @@ public class ReconcilerEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createEnabled_GeneralTab_Editor());
-
-		addPropertyEditor(createReconcilePackages_GeneralTab_Editor());
-
-		addPropertyEditor(createReconcileClasses_GeneralTab_Editor());
-
-		addPropertyEditor(createReconcileProperties_GeneralTab_Editor());
-
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createEnabled_GeneralTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createReconcilePackages_GeneralTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createReconcileClasses_GeneralTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createReconcileProperties_GeneralTab_Editor(), false);
 
 	}
 

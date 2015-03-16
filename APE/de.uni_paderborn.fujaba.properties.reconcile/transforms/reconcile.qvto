@@ -10,7 +10,6 @@ main() {
 	properties.rootObjects()[PropertyGenerator]->forEach(generator) {
 		generator->map generator();
 	}
-	
 }
 
 mapping inout PropertyGenerator::generator() {

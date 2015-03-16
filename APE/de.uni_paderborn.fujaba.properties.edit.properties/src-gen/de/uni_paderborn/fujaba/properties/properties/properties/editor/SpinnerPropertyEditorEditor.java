@@ -22,7 +22,7 @@ public class SpinnerPropertyEditorEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createDigits_GeneralTab_Editor());
+		addPropertyEditor(createDigits_GeneralTab_Editor(), false);
 
 	}
 

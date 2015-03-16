@@ -22,9 +22,9 @@ public class ClassEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createGenClass_GeneralTab_Editor());
+		addPropertyEditor(createGenClass_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createSuperClasses_GeneralTab_Editor());
+		addPropertyEditor(createSuperClasses_GeneralTab_Editor(), false);
 
 	}
 

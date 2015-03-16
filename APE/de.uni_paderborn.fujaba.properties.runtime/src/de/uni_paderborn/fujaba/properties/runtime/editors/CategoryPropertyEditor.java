@@ -84,11 +84,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		addPropertyEditor(null, editor, front);
 	}
 	
-	public void sortEditors(Comparator<IPropertyEditor> comparator) {
-		java.util.Collections.sort(propertyEditors, comparator);
-		
-	}
-
 	public void addPropertyEditor(String key, IPropertyEditor editor,
 			boolean front) {
 		if (editor == null) {
@@ -112,7 +107,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 			childrenChanged();
 		}
-		
 	}
 
 	public void removePropertyEditor(IPropertyEditor editor) {

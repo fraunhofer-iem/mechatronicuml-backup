@@ -109,7 +109,6 @@ public interface PropertyCategory extends OrderedElement {
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.properties.Property}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Properties</em>' reference list isn't clear,
@@ -118,8 +117,7 @@ public interface PropertyCategory extends OrderedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyCategory_Properties()
-	 * @see de.uni_paderborn.fujaba.properties.Property#getCategory
-	 * @model opposite="category"
+	 * @model
 	 * @generated
 	 */
 	EList<Property> getProperties();

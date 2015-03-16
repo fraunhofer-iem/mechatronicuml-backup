@@ -22,21 +22,20 @@ public class PropertyCategoryEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createTitle_GeneralTab_Editor());
+		addPropertyEditor(createTitle_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createVertical_GeneralTab_Editor());
-
-		addPropertyEditor(createOpen_GeneralTab_Editor());
-
-		addPropertyEditor(createProperties_GeneralTab_Editor());
+		addPropertyEditor(createProperties_GeneralTab_Editor(), false);
 
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createClazz_GeneralTab_Editor());
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createVertical_GeneralTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.a", "a",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createOpen_GeneralTab_Editor(), false);
 
 	}
 
@@ -71,15 +70,6 @@ public class PropertyCategoryEditor
 		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 				.getPropertyCategory_Properties();
 		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createClazz_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-				.getOrderedElement_Clazz();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory, feature);
 
 		return editor;

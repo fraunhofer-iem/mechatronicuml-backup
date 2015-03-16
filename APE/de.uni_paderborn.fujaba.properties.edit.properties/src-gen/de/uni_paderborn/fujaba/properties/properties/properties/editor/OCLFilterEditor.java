@@ -22,7 +22,7 @@ public class OCLFilterEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createExpression_GeneralTab_Editor());
+		addPropertyEditor(createExpression_GeneralTab_Editor(), false);
 
 	}
 

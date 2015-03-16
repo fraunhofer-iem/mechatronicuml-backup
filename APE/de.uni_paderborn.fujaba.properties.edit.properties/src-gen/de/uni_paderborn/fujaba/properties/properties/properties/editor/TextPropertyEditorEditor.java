@@ -22,7 +22,7 @@ public class TextPropertyEditorEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createMultiLine_GeneralTab_Editor());
+		addPropertyEditor(createMultiLine_GeneralTab_Editor(), false);
 
 	}
 

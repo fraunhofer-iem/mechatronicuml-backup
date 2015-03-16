@@ -21,60 +21,37 @@ public class EGenericTypeEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addETypeParameter_DefaultTab_Editor(null, true);
+		addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
+
+		addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorETypeParameter_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createETypeParameter_DefaultTab_Editor() {
+		if (this.editorETypeParameter_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEGenericType_ETypeParameter();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorETypeParameter_DefaultTab = editor;
 		}
+		return this.editorETypeParameter_DefaultTab;
+	}
 
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEClassifier_DefaultTab_Editor(null, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEClassifier_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEClassifier_DefaultTab_Editor() {
+		if (this.editorEClassifier_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEGenericType_EClassifier();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorEClassifier_DefaultTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addETypeParameter_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createETypeParameter_DefaultTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypeParameter_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEGenericType_ETypeParameter();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addEClassifier_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEClassifier_DefaultTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEClassifier_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEGenericType_EClassifier();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
+		return this.editorEClassifier_DefaultTab;
 	}
 
 	//

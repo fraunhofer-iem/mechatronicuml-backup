@@ -5,7 +5,7 @@ package org.eclipse.emf.ecore.properties.ecore.editor;
  */
 public abstract class EStructuralFeatureEditor
 		extends
-			org.eclipse.emf.ecore.properties.ecore.editor.ETypedElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,200 +21,281 @@ public abstract class EStructuralFeatureEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+
+		addPropertyEditor(createEAnnotations_DocumentationTab_Editor(), false);
+
+		addPropertyEditor(createName_DefaultTab_Editor(), false);
+
+		addPropertyEditor(createOrdered_DefaultTab_Editor(), false);
+
+		addPropertyEditor(createUnique_DefaultTab_Editor(), false);
+
+		addPropertyEditor(createEType_DefaultTab_Editor(), false);
+
+		addSubCategory(
+				"de.uni_paderborn.fujaba.properties.category.Cardinality",
+				"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Cardinality",
+				createUpperBound_DefaultTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Cardinality",
+				createLowerBound_DefaultTab_Editor(), false);
+
+		addPropertyEditor(createDefaultValueLiteral_DefaultTab_Editor(), false);
 
 		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addChangeable_DefaultTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createChangeable_DefaultTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createVolatile_DefaultTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createTransient_DefaultTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createUnsettable_DefaultTab_Editor(), false);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Booleans",
+				createDerived_DefaultTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorChangeable_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createChangeable_DefaultTab_Editor() {
+		if (this.editorChangeable_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEStructuralFeature_Changeable();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorChangeable_DefaultTab = editor;
 		}
+		return this.editorChangeable_DefaultTab;
+	}
 
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addVolatile_DefaultTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVolatile_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createVolatile_DefaultTab_Editor() {
+		if (this.editorVolatile_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEStructuralFeature_Volatile();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorVolatile_DefaultTab = editor;
 		}
+		return this.editorVolatile_DefaultTab;
+	}
 
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addTransient_DefaultTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTransient_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createTransient_DefaultTab_Editor() {
+		if (this.editorTransient_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEStructuralFeature_Transient();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorTransient_DefaultTab = editor;
 		}
-
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addDefaultValueLiteral_DefaultTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addUnsettable_DefaultTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
-		}
-
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addDerived_DefaultTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
-		}
-
+		return this.editorTransient_DefaultTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addChangeable_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createChangeable_DefaultTab_Editor(),
-				front);
-	}
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDefaultValueLiteral_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createDefaultValueLiteral_DefaultTab_Editor() {
+		if (this.editorDefaultValueLiteral_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEStructuralFeature_DefaultValueLiteral();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createChangeable_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEStructuralFeature_Changeable();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"self.oclIsKindOf(ecore::EAttribute)", feature,
+								getEClass());
+				editor.registerOCLAdapter(expression,
+						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+							@Override
+							public void notifyChanged(
+									org.eclipse.emf.common.notify.Notification notification) {
+								editor.updateVisibility(true, true);
+							}
+						});
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
-		return editor;
+					@Override
+					public boolean select(Object object) {
+						return object != null
+								&& Boolean.TRUE.equals(query.evaluate(object));
+					}
 
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addVolatile_DefaultTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createVolatile_DefaultTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVolatile_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEStructuralFeature_Volatile();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addTransient_DefaultTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createTransient_DefaultTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTransient_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEStructuralFeature_Transient();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addDefaultValueLiteral_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createDefaultValueLiteral_DefaultTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDefaultValueLiteral_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEStructuralFeature_DefaultValueLiteral();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory, feature, false);
-
-		{
-			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-					.createOCLExpression("self.oclIsKindOf(ecore::EAttribute)",
-							feature, getEClass());
-			editor.registerOCLAdapter(expression,
-					new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-						@Override
-						public void notifyChanged(
-								org.eclipse.emf.common.notify.Notification notification) {
-							editor.updateVisibility(true, true);
-						}
-					});
-			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-					.createQuery(expression);
-			org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-				@Override
-				public boolean select(Object object) {
-					return object != null
-							&& Boolean.TRUE.equals(query.evaluate(object));
+				};
+				if (filter != null) {
+					editor.addVisibilityFilter(filter);
 				}
-
-			};
-			if (filter != null) {
-				editor.addVisibilityFilter(filter);
 			}
+
+			this.editorDefaultValueLiteral_DefaultTab = editor;
 		}
-
-		return editor;
-
+		return this.editorDefaultValueLiteral_DefaultTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addUnsettable_DefaultTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createUnsettable_DefaultTab_Editor(),
-				front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnsettable_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUnsettable_DefaultTab_Editor() {
+		if (this.editorUnsettable_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEStructuralFeature_Unsettable();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorUnsettable_DefaultTab = editor;
+		}
+		return this.editorUnsettable_DefaultTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUnsettable_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEStructuralFeature_Unsettable();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDerived_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createDerived_DefaultTab_Editor() {
+		if (this.editorDerived_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEStructuralFeature_Derived();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
 
-		return editor;
-
+			this.editorDerived_DefaultTab = editor;
+		}
+		return this.editorDerived_DefaultTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addDerived_DefaultTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createDerived_DefaultTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOrdered_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createOrdered_DefaultTab_Editor() {
+		if (this.editorOrdered_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getETypedElement_Ordered();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorOrdered_DefaultTab = editor;
+		}
+		return this.editorOrdered_DefaultTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDerived_DefaultTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-				.getEStructuralFeature_Derived();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnique_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUnique_DefaultTab_Editor() {
+		if (this.editorUnique_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getETypedElement_Unique();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
 
-		return editor;
+			this.editorUnique_DefaultTab = editor;
+		}
+		return this.editorUnique_DefaultTab;
+	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUpperBound_DefaultTab_Editor() {
+		if (this.editorUpperBound_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getETypedElement_UpperBound();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+					adapterFactory, feature, 0);
+
+			this.editorUpperBound_DefaultTab = editor;
+		}
+		return this.editorUpperBound_DefaultTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLowerBound_DefaultTab_Editor() {
+		if (this.editorLowerBound_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getETypedElement_LowerBound();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+					adapterFactory, feature, 0);
+
+			this.editorLowerBound_DefaultTab = editor;
+		}
+		return this.editorLowerBound_DefaultTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEType_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEType_DefaultTab_Editor() {
+		if (this.editorEType_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getETypedElement_EType();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorEType_DefaultTab = editor;
+		}
+		return this.editorEType_DefaultTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_DefaultTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createName_DefaultTab_Editor() {
+		if (this.editorName_DefaultTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getENamedElement_Name();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			this.editorName_DefaultTab = editor;
+		}
+		return this.editorName_DefaultTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEAnnotations_DocumentationTab_Editor() {
+		if (this.editorEAnnotations_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEModelElement_EAnnotations();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor(
+					adapterFactory, feature);
+
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()",
+								feature, getEClass());
+				editor.registerOCLAdapter(expression,
+						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+							@Override
+							public void notifyChanged(
+									org.eclipse.emf.common.notify.Notification notification) {
+								editor.updateVisibility(true, true);
+							}
+						});
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+
+					@Override
+					public boolean select(Object object) {
+						return object != null
+								&& Boolean.TRUE.equals(query.evaluate(object));
+					}
+
+				};
+				if (filter != null) {
+					editor.addVisibilityFilter(filter);
+				}
+			}
+
+			this.editorEAnnotations_DocumentationTab = editor;
+		}
+		return this.editorEAnnotations_DocumentationTab;
 	}
 
 }

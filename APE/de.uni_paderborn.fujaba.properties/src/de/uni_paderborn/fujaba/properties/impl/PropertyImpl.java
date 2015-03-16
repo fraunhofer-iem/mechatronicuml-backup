@@ -34,7 +34,6 @@ import de.uni_paderborn.fujaba.properties.PropertyTab;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#isReconcile <em>Reconcile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationConstraint <em>Creation Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PropertyImpl#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
@@ -104,16 +103,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 	 * @ordered
 	 */
 	protected String tooltip = TOOLTIP_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCategory() <em>Category</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCategory()
-	 * @generated
-	 * @ordered
-	 */
-	protected PropertyCategory category;
 
 	/**
 	 * The default value of the '{@link #isReconcile() <em>Reconcile</em>}' attribute.
@@ -351,66 +340,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyCategory getCategory() {
-		if (category != null && category.eIsProxy()) {
-			InternalEObject oldCategory = (InternalEObject)category;
-			category = (PropertyCategory)eResolveProxy(oldCategory);
-			if (category != oldCategory) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.PROPERTY__CATEGORY, oldCategory, category));
-			}
-		}
-		return category;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PropertyCategory basicGetCategory() {
-		return category;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCategory(PropertyCategory newCategory, NotificationChain msgs) {
-		PropertyCategory oldCategory = category;
-		category = newCategory;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CATEGORY, oldCategory, newCategory);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCategory(PropertyCategory newCategory) {
-		if (newCategory != category) {
-			NotificationChain msgs = null;
-			if (category != null)
-				msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
-			if (newCategory != null)
-				msgs = ((InternalEObject)newCategory).eInverseAdd(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
-			msgs = basicSetCategory(newCategory, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CATEGORY, newCategory, newCategory));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isReconcile() {
 		return reconcile;
 	}
@@ -546,10 +475,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				if (editor != null)
 					msgs = ((InternalEObject)editor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__EDITOR, null, msgs);
 				return basicSetEditor((PropertyEditor)otherEnd, msgs);
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				if (category != null)
-					msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
-				return basicSetCategory((PropertyCategory)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -566,8 +491,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				return ((InternalEList<?>)getVisibilityFilters()).basicRemove(otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__EDITOR:
 				return basicSetEditor(null, msgs);
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				return basicSetCategory(null, msgs);
 			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
 				return basicSetCreationConstraint(null, msgs);
 			case PropertiesPackage.PROPERTY__CREATION_OPPOSITE_CONSTRAINT:
@@ -596,9 +519,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				return getEditor();
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return getTooltip();
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				if (resolve) return getCategory();
-				return basicGetCategory();
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				return isReconcile();
 			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:
@@ -635,9 +555,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip((String)newValue);
-				return;
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				setCategory((PropertyCategory)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				setReconcile((Boolean)newValue);
@@ -678,9 +595,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip(TOOLTIP_EDEFAULT);
 				return;
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				setCategory((PropertyCategory)null);
-				return;
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				setReconcile(RECONCILE_EDEFAULT);
 				return;
@@ -715,8 +629,6 @@ public class PropertyImpl extends OrderedElementImpl implements Property {
 				return editor != null;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return TOOLTIP_EDEFAULT == null ? tooltip != null : !TOOLTIP_EDEFAULT.equals(tooltip);
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				return category != null;
 			case PropertiesPackage.PROPERTY__RECONCILE:
 				return reconcile != RECONCILE_EDEFAULT;
 			case PropertiesPackage.PROPERTY__CREATION_CONSTRAINT:

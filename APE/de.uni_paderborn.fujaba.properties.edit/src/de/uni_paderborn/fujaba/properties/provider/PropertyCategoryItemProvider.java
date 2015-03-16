@@ -147,8 +147,8 @@ public class PropertyCategoryItemProvider
 				PropertyCategory category = (PropertyCategory) object;
 				
 				List<Property> properties = new ArrayList<Property>();
-				for (Property property : category.getClazz().getProperties()) {
-					if (property.getCategory() == null || property.getCategory() == category) {
+				for (de.uni_paderborn.fujaba.properties.Class clazz : category.getClazz().getAllSuperClasses()) {
+					for (Property property : clazz.getProperties()) {
 						properties.add(property);
 					}
 				}

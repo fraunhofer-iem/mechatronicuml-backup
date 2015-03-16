@@ -61,7 +61,6 @@ public class PropertyItemProvider
 			addGenFeaturePropertyDescriptor(object);
 			addTabPropertyDescriptor(object);
 			addTooltipPropertyDescriptor(object);
-			addCategoryPropertyDescriptor(object);
 			addReconcilePropertyDescriptor(object);
 			addInitializeOCLExpressionPropertyDescriptor(object);
 		}
@@ -176,32 +175,6 @@ public class PropertyItemProvider
 				 null));
 	}
 
-	/**
-	 * This adds a property descriptor for the Category feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addCategoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Property_category_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Property_category_feature", "_UI_Property_type"),
-				 PropertiesPackage.Literals.PROPERTY__CATEGORY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				return ((Property) object).getClazz().getPropertyCategories();
-			}
-		});
-	}
 
 	/**
 	 * This adds a property descriptor for the Reconcile feature.

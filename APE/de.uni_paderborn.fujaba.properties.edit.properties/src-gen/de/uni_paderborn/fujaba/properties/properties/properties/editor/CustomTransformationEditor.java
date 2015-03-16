@@ -22,11 +22,11 @@ public class CustomTransformationEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createUri_GeneralTab_Editor());
+		addPropertyEditor(createUri_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createEnabled_GeneralTab_Editor());
+		addPropertyEditor(createEnabled_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createPosition_GeneralTab_Editor());
+		addPropertyEditor(createPosition_GeneralTab_Editor(), false);
 
 	}
 

@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTab <em>Tab</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#isReconcile <em>Reconcile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationConstraint <em>Creation Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Property#getCreationOppositeConstraint <em>Creation Opposite Constraint</em>}</li>
@@ -156,34 +155,6 @@ public interface Property extends OrderedElement {
 	 * @generated
 	 */
 	void setTooltip(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Category</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Category</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Category</em>' reference.
-	 * @see #setCategory(PropertyCategory)
-	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getProperty_Category()
-	 * @see de.uni_paderborn.fujaba.properties.PropertyCategory#getProperties
-	 * @model opposite="properties"
-	 * @generated
-	 */
-	PropertyCategory getCategory();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Category</em>' reference.
-	 * @see #getCategory()
-	 * @generated
-	 */
-	void setCategory(PropertyCategory value);
 
 	/**
 	 * Returns the value of the '<em><b>Reconcile</b></em>' attribute.

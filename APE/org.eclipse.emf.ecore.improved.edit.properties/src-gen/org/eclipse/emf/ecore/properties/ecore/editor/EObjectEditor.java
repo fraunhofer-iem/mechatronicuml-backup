@@ -21,7 +21,6 @@ public class EObjectEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

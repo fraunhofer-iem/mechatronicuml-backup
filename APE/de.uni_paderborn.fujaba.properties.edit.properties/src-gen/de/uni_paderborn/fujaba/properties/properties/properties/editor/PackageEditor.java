@@ -22,7 +22,7 @@ public class PackageEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createGenPackage_GeneralTab_Editor());
+		addPropertyEditor(createGenPackage_GeneralTab_Editor(), false);
 
 	}
 

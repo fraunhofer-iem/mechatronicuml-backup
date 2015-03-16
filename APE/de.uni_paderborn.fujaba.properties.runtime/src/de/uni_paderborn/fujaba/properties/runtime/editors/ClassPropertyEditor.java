@@ -28,7 +28,6 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 		this.tab = tab;
 		initiallyExpanded = true;
 		createProperties();
-		sortProperties();
 	}
 	
 	public String getTab() {
@@ -53,53 +52,10 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 		categoryEditor.addPropertyEditor(null, editor, front);
 	}
 	
+	
+	
 	protected void createProperties() {
 		
-	}
-	
-	protected void sortProperties() {
-		final List<EClass> sortedSuperTypes = getSortedSuperTypes();
-		sortedSuperTypes.add(eClass);
-		
-		sortEditors(new Comparator<IPropertyEditor>() {
-
-			@Override
-			public int compare(IPropertyEditor e1, IPropertyEditor e2) {
-				if (false == e1 instanceof IStructuralFeaturePropertyEditor) {
-					return 0;
-				}
-				if (false == e2 instanceof IStructuralFeaturePropertyEditor) {
-					return 0;
-				}
-				IStructuralFeaturePropertyEditor se1 = (IStructuralFeaturePropertyEditor) e1;
-				IStructuralFeaturePropertyEditor se2 = (IStructuralFeaturePropertyEditor) e2;
-				
-				EClass eClass1 = se1.getFeature().getEContainingClass();
-				EClass eClass2 = se2.getFeature().getEContainingClass();
-				
-				return sortedSuperTypes.indexOf(eClass1) - sortedSuperTypes.indexOf(eClass2);
-			}
-			
-		});
-	}
-
-	private List<EClass> getSortedSuperTypes() {
-		// Get list of super classes in inverse BFS order
-		List<EClass> allClasses = new ArrayList<EClass>();
-		List<EClass> newClasses = new ArrayList<EClass>();
-		List<EClass> nextClasses = new ArrayList<EClass>();
-		nextClasses.add(eClass);
-
-		do {
-			for (EClass nextClass : nextClasses) {
-				newClasses.addAll(nextClass.getESuperTypes());
-			}
-			allClasses.addAll(0, newClasses); // put to front to get inverse order
-			nextClasses = newClasses;
-			newClasses = new ArrayList<EClass>();
-		} while (!nextClasses.isEmpty());
-
-		return allClasses;
 	}
 	
 	public EClass getEClass() {

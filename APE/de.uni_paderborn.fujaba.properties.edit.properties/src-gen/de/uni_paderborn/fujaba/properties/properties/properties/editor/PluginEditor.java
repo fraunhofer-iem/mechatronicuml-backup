@@ -22,15 +22,15 @@ public class PluginEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createId_GeneralTab_Editor());
+		addPropertyEditor(createId_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createName_GeneralTab_Editor());
+		addPropertyEditor(createName_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createVendor_GeneralTab_Editor());
+		addPropertyEditor(createVendor_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createVersion_GeneralTab_Editor());
+		addPropertyEditor(createVersion_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createRequiredBundles_GeneralTab_Editor());
+		addPropertyEditor(createRequiredBundles_GeneralTab_Editor(), false);
 
 	}
 

@@ -654,22 +654,13 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__TOOLTIP = ORDERED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Category</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__CATEGORY = ORDERED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Reconcile</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__RECONCILE = ORDERED_ELEMENT_FEATURE_COUNT + 6;
+	int PROPERTY__RECONCILE = ORDERED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Creation Constraint</b></em>' containment reference.
@@ -678,7 +669,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CREATION_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 7;
+	int PROPERTY__CREATION_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Creation Opposite Constraint</b></em>' containment reference.
@@ -687,7 +678,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 8;
+	int PROPERTY__CREATION_OPPOSITE_CONSTRAINT = ORDERED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Initialize OCL Expression</b></em>' attribute.
@@ -696,7 +687,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__INITIALIZE_OCL_EXPRESSION = ORDERED_ELEMENT_FEATURE_COUNT + 9;
+	int PROPERTY__INITIALIZE_OCL_EXPRESSION = ORDERED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -705,7 +696,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 10;
+	int PROPERTY_FEATURE_COUNT = ORDERED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -1810,17 +1801,6 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getProperty_Tooltip();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.properties.Property#getCategory <em>Category</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Category</em>'.
-	 * @see de.uni_paderborn.fujaba.properties.Property#getCategory()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EReference getProperty_Category();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.properties.Property#isReconcile <em>Reconcile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2587,14 +2567,6 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY__TOOLTIP = eINSTANCE.getProperty_Tooltip();
-
-		/**
-		 * The meta object literal for the '<em><b>Category</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY__CATEGORY = eINSTANCE.getProperty_Category();
 
 		/**
 		 * The meta object literal for the '<em><b>Reconcile</b></em>' attribute feature.

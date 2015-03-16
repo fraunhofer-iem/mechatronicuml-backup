@@ -73,6 +73,9 @@ String genCategoryKey(PropertyCategory this) :
 String genCreator(Property this) :
 	'create' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
 
+String genField(Property this) :
+	'editor' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab';	
+
 Class getHighestContainer(Class this, Property property) :
 	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
 		superClasses.getHighestContainer(property).reject(c | c == null).selectFirst(true)
@@ -80,12 +83,20 @@ Class getHighestContainer(Class this, Property property) :
 		this
 	else
 		null;
-
+		
 Class getHighestContainer(Class this, PropertyCategory category) :
 	if propertyCategories.select(c | c.title == category.title).isEmpty then
 		superClasses.getHighestContainer(category).reject(c | c == null).selectFirst(true)
 	else
 		this;
+		
+Property findHighestProperty(Class this, Property property) :
+	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
+		superClasses.findHighestProperty(property).reject(p | p == null).selectFirst(true)
+	else if properties.selectFirst(p | p.genFeature == property.genFeature).shouldGenerateEditor() then
+		properties.selectFirst(p | p.genFeature == property.genFeature)
+	else
+		null;
 
 List[Property] genProperties(Class this) :
 	properties;

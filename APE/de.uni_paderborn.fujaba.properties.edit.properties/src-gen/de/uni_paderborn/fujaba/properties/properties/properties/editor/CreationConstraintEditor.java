@@ -22,7 +22,7 @@ public class CreationConstraintEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createFilters_GeneralTab_Editor());
+		addPropertyEditor(createFilters_GeneralTab_Editor(), false);
 
 	}
 

@@ -22,7 +22,8 @@ public class CustomPropertyEditorEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createFullyQualifiedClassName_GeneralTab_Editor());
+		addPropertyEditor(createFullyQualifiedClassName_GeneralTab_Editor(),
+				false);
 
 	}
 

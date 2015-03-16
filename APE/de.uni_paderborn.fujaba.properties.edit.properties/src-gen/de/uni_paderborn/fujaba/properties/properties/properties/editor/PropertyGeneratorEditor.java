@@ -22,19 +22,19 @@ public class PropertyGeneratorEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createReconciler_GeneralTab_Editor());
+		addPropertyEditor(createReconciler_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createGenModel_GeneralTab_Editor());
+		addPropertyEditor(createGenModel_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createReferencedGenerators_GeneralTab_Editor());
+		addPropertyEditor(createReferencedGenerators_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createPlugin_GeneralTab_Editor());
+		addPropertyEditor(createPlugin_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createDefaultTab_GeneralTab_Editor());
+		addPropertyEditor(createDefaultTab_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createContributorId_GeneralTab_Editor());
+		addPropertyEditor(createContributorId_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createSourceFolder_GeneralTab_Editor());
+		addPropertyEditor(createSourceFolder_GeneralTab_Editor(), false);
 
 	}
 

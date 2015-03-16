@@ -22,11 +22,11 @@ public class PropertyTabEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createId_GeneralTab_Editor());
+		addPropertyEditor(createId_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createName_GeneralTab_Editor());
+		addPropertyEditor(createName_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createAfterTab_GeneralTab_Editor());
+		addPropertyEditor(createAfterTab_GeneralTab_Editor(), false);
 
 	}
 
