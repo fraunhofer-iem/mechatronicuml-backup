@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
+  
   <rm:locator searchPathRef="muml" failOnError="false"/>
   <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
   <rm:searchPath name="eclipse_luna">
