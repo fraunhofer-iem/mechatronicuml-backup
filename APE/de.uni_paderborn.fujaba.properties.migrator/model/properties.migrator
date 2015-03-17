@@ -52,10 +52,6 @@
       <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/clazz"/>
     </featureInitializers>
     <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
-      <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/category"/>
-      <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/category"/>
-    </featureInitializers>
-    <featureInitializers xsi:type="migration:IdentityFeatureInitializer">
       <targetFeature xsi:type="ecore:EReference" href="../../de.uni_paderborn.fujaba.properties/model/properties.ecore#//Property/creationConstraint"/>
       <sourceFeature xsi:type="ecore:EReference" href="properties-0.4.0.ecore#//Property/creationConstraint"/>
     </featureInitializers>

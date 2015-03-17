@@ -458,13 +458,19 @@ public class MigrationExecuter {
 		}
 
 		protected List<Object> readFeature(EObject eObject, EStructuralFeature feature) {
-			if (!eObject.eIsSet(feature)) {
-				return new ArrayList<Object>();
-			}
 			Object value = null;
 			try {
 				value = eObject.eGet(feature, true);
+				if (!eObject.eIsSet(feature)) {
+					return new ArrayList<Object>();
+				}
 			} catch (Exception e) {
+				// java.lang.IllegalArgumentException: The feature 'null' is not a valid feature
+				// -> Problem: Feature that is referenced in migrator does not really exist (metamodel had changed after migrator was created).
+
+				// java.lang.ClassCastException:
+				// -> Multiple XMI files that reference each other; one already uses a different metamodel version.
+
 				e.printStackTrace();
 			}
 			return toCollection(value);
