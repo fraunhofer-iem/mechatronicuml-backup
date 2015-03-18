@@ -32,7 +32,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 			«EXPAND createClassElements(this, null)»
 		}
 		«FOREACH package.generator.allGenerators().tabs AS tab»
-		if (tab == null || "«tab.id»".equals(getTab())) { // Tab «tab.name»
+		if (tab == null || "«tab.id»".equals(tab)) { // Tab «tab.name»
 			«EXPAND createClassElements(this, tab)»
 		} else
 		«ENDFOREACH»
