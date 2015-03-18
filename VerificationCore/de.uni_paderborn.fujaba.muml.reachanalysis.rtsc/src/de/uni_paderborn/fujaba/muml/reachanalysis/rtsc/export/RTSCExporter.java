@@ -10,19 +10,19 @@ import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.DelayTr
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphState;
 import de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc.ZoneGraphTransition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
 
 public class RTSCExporter extends GraphVizExport {
-	
-	public RTSCExporter(){
+
+	public RTSCExporter() {
 		super();
 	}
-	
-	public RTSCExporter(ApplicationSpecificDecorator decorator){
+
+	public RTSCExporter(ApplicationSpecificDecorator decorator) {
 		super(decorator);
 	}
-	
 
 	@Override
 	public String getStateLabel(ReachabilityGraphState state) {
@@ -33,38 +33,50 @@ public class RTSCExporter extends GraphVizExport {
 				.getLocations()) {
 			if (!(result.length() == 0))
 				result.append("\\n");
+			//TODO replace with MumlQualifiedNameProvider
 			result.append(location.getInstanceOf().getName());
 			result.append(".");
-			// TODO extend for multiple instances of one rtsc
-		//	result.append(location.getActiveState().getName());
-			if(location.getVariableBindings()!=null && !location.getVariableBindings().isEmpty()){
-			result.append("\\n");
-			result.append("Variables of "+location.getInstanceOf().getName()+": ");}
-			for (VariableBinding curVarBinding : location
-					.getVariableBindings()) {
-				if(curVarBinding.getValue()==null)
-					result.append(curVarBinding.getVariable().getName().toString()
+			
+			// states
+			if (location.getActiveTransition() != null)
+				result.append(location.getActiveVertex().getName());
+			
+			// transitions
+			else if (location.getActiveTransition() != null) {
+				Vertex source = location.getActiveTransition().getSource();
+				Vertex target = location.getActiveTransition().getTarget();
+				if (source != null && target != null)
+					result.append(source.getName() + "_to_" + target.getName());
+			}
+
+			// variable bindings
+			if (location.getVariableBindings() != null
+					&& !location.getVariableBindings().isEmpty()) {
+				result.append("\\n");
+				result.append("Variables of "
+						+ location.getInstanceOf().getName() + ": ");
+			}
+			for (VariableBinding curVarBinding : location.getVariableBindings()) {
+				if (curVarBinding.getValue() == null)
+					result.append(curVarBinding.getVariable().getName()
+							.toString()
 							+ "=" + "null" + " ");
 				else
-				result.append(curVarBinding.getVariable().getName().toString()
-						+ "=" + curVarBinding.getValue().toString() + " ");
+					result.append(curVarBinding.getVariable().getName()
+							.toString()
+							+ "=" + curVarBinding.getValue().toString() + " ");
 			}
 		}
 		result.append(";\\n");
-	
-//		if (((ZoneGraphState) state).getFederation() != null){
-//			String fed = ((ZoneGraphState) state).getFederation().toString();
-//			fed.replaceAll(" & ", " &\\n");
-//	//		fed.replaceAll(" | ", " |\\n");
-//			result.append(fed);
-//			}
 
-		if (((ZoneGraphState) state).getFederation() != null){
-			String fed = ((ZoneGraphState) state).getFederation().toString().replaceAll("&", "&\\\\n");
+		// federation
+		if (((ZoneGraphState) state).getFederation() != null) {
+			String fed = ((ZoneGraphState) state).getFederation().toString()
+					.replaceAll("&", "&\\\\n");
 			String or = "\\|";
 			String fed2 = fed.replaceAll(or, "|\\\\n");
 			result.append(fed2);
-			}
+		}
 		result.append("\"");
 		return result.toString();
 	}
