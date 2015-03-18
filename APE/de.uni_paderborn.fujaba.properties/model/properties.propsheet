@@ -2,7 +2,7 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.properties.contributor">
   <reconciler/>
   <genModel href="properties.genmodel#/"/>
-  <plugin id="de.uni_paderborn.fujaba.properties.edit.properties" name="Fujaba Properties Editor-Support" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+  <plugin id="de.uni_paderborn.fujaba.properties.edit.properties" name="Fujaba Properties Editor-Support" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>

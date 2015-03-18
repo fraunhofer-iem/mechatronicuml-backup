@@ -44,6 +44,8 @@ public class SynthesizableBehaviorEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor(
 					adapterFactory, feature);
 
+			editor.setTooltipMessage("Container for all Dependency of one Atomic Component, Input for the XText Editor.");
+
 			this.editorDependencyModel_DependenciesTab = editor;
 		}
 		return this.editorDependencyModel_DependenciesTab;
