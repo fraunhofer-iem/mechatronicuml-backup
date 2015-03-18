@@ -38,7 +38,7 @@ public class RTSCExporter extends GraphVizExport {
 			result.append(".");
 			
 			// states
-			if (location.getActiveTransition() != null)
+			if (location.getActiveVertex() != null)
 				result.append(location.getActiveVertex().getName());
 			
 			// transitions
