@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
-  <reconciler enabled="false"/>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RlP3oM1gEeSIgPDefa6ZBw" defaultTab="_RlQesc1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+  <reconciler xmi:id="_RlP3oc1gEeSIgPDefa6ZBw" enabled="false"/>
   <genModel href="dependencylanguage.genmodel#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.dependencylanguage.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4">
+  <plugin xmi:id="_RlQesM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.dependencylanguage.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4">
     <requiredBundles>de.uni_paderborn.fujaba.muml.dependencylanguage</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
@@ -11,15 +11,15 @@
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
   </plugin>
-  <tabs id="de.uni_paderborn.fujaba.muml.dependencylanguage" name="Dependencies"/>
-  <packages>
+  <tabs xmi:id="_RlQesc1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.dependencylanguage" name="Dependencies"/>
+  <packages xmi:id="_RlQess1gEeSIgPDefa6ZBw">
     <genPackage href="dependencylanguage.genmodel#//dependencylanguage"/>
-    <classes>
+    <classes xmi:id="_RlQes81gEeSIgPDefa6ZBw">
       <genClass href="dependencylanguage.genmodel#//dependencylanguage/SynthesizableBehavior"/>
-      <properties tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlQetM1gEeSIgPDefa6ZBw" tab="_RlQesc1gEeSIgPDefa6ZBw">
         <genFeature href="dependencylanguage.genmodel#//dependencylanguage/SynthesizableBehavior/dependencyModel"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor"/>
-      </properties>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_RlQetc1gEeSIgPDefa6ZBw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor"/>
+      </orderedElements>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
