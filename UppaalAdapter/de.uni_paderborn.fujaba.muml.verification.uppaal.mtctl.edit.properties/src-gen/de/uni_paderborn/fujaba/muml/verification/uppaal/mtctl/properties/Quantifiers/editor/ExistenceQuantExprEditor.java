@@ -22,6 +22,10 @@ public class ExistenceQuantExprEditor
 	@Override
 	protected void createProperties() {
 
+		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+
+		}
+
 	}
 
 	//

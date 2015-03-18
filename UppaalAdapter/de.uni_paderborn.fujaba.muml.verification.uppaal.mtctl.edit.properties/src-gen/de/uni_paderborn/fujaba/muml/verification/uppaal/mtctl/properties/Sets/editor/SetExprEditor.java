@@ -22,6 +22,10 @@ public abstract class SetExprEditor
 	@Override
 	protected void createProperties() {
 
+		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+
+		}
+
 	}
 
 }

@@ -22,27 +22,59 @@ public class LinkConstraintEditor
 	@Override
 	protected void createProperties() {
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createExtension_ExtensionsTab_Editor(), false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createIndex_GeneralTab_Editor(), false);
+			addPropertyEditor(createIndex_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createConstraintType_GeneralTab_Editor(), false);
+			addPropertyEditor(createConstraintType_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createFirstLink_GeneralTab_Editor(), false);
+			addPropertyEditor(createFirstLink_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createSecondLink_GeneralTab_Editor(), false);
+			addPropertyEditor(createSecondLink_GeneralTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Booleans",
-				createNegative_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createNegative_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createExtension_ExtensionsTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		}
 
 	}
 

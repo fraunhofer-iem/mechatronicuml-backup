@@ -22,67 +22,111 @@ public class StateEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createName_GeneralTab_Editor(), false);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createDoEvent_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addPropertyEditor(createExitEvent_GeneralTab_Editor(), false);
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createEntryEvent_GeneralTab_Editor(), false);
+			addPropertyEditor(createDoEvent_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createParentStatechart_GeneralTab_Editor(), false);
+			addPropertyEditor(createExitEvent_GeneralTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEntryEvent_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Booleans",
-				createInitial_GeneralTab_Editor(), false);
+			addPropertyEditor(createParentStatechart_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Booleans",
-				createFinal_GeneralTab_Editor(), false);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Booleans",
-				createUrgent_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createInitial_GeneralTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createFinal_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createEmbeddedRegions_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createUrgent_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createInvariants_GeneralTab_Editor(), false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createChannels_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createEmbeddedRegions_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createConnectionPoints_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createInvariants_GeneralTab_Editor(), false);
 
-		addSubCategory(
-				"de.uni_paderborn.fujaba.properties.category.Transitions",
-				"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createChannels_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Transitions",
-				createOutgoingTransitions_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createConnectionPoints_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Transitions",
-				createIncomingTransitions_GeneralTab_Editor(), false);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					createOutgoingTransitions_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					createIncomingTransitions_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		}
 
 	}
 

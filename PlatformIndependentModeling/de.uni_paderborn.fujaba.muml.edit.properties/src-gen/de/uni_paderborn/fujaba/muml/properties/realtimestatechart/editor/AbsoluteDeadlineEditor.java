@@ -22,11 +22,21 @@ public class AbsoluteDeadlineEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addPropertyEditor(createClock_GeneralTab_Editor(), false);
+			addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createClock_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		}
 
 	}
 

@@ -22,22 +22,46 @@ public class ReconfigurableAtomicComponentInstanceEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createName_GeneralTab_Editor(), false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createComponentType_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addPropertyEditor(createComponentPart_GeneralTab_Editor(), false);
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createParentCIC_GeneralTab_Editor(), false);
+			addPropertyEditor(createComponentType_GeneralTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createComponentPart_GeneralTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createPortInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createParentCIC_GeneralTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createPortInstances_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		}
 
 	}
 

@@ -22,7 +22,11 @@ public class PropertyRepositoryEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createProperties_MtctlTab_Editor(), false);
+		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+
+			addPropertyEditor(createProperties_MtctlTab_Editor(), false);
+
+		}
 
 	}
 

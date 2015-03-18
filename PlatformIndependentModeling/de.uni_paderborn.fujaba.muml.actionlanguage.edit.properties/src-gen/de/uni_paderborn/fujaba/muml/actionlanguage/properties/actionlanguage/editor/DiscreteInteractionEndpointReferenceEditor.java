@@ -22,10 +22,21 @@ public class DiscreteInteractionEndpointReferenceEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(
-				createTypedNamedElementExpression_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createPosition_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+
+			addPropertyEditor(
+					createTypedNamedElementExpression_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createPosition_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		}
 
 	}
 

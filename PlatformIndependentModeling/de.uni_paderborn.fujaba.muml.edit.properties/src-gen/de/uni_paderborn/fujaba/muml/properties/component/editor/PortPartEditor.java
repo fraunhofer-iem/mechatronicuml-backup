@@ -22,23 +22,42 @@ public class PortPartEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createConnectors_GeneralTab_Editor(), false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPropertyEditor(createPortType_GeneralTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createConnectors_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createComponentPart_GeneralTab_Editor(), false);
+			addPropertyEditor(createPortType_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createCoordinationProtocolPart_GeneralTab_Editor(),
-				false);
+			addPropertyEditor(createComponentPart_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createCoordinationProtocolPart_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		}
 
 	}
 

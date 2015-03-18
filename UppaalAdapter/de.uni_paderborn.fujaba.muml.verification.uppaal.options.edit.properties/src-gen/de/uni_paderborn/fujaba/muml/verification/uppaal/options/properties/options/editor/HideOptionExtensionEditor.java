@@ -22,7 +22,11 @@ public class HideOptionExtensionEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createOption_OptionsTab_Editor(), false);
+		if (tab == null || "options".equals(getTab())) { // Tab Options
+
+			addPropertyEditor(createOption_OptionsTab_Editor(), false);
+
+		}
 
 	}
 

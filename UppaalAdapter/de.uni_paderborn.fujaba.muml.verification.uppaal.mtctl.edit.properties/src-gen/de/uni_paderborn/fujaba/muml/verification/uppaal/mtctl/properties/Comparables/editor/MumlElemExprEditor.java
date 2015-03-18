@@ -22,7 +22,11 @@ public class MumlElemExprEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createInstance_MtctlTab_Editor(), false);
+		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+
+			addPropertyEditor(createInstance_MtctlTab_Editor(), false);
+
+		}
 
 	}
 

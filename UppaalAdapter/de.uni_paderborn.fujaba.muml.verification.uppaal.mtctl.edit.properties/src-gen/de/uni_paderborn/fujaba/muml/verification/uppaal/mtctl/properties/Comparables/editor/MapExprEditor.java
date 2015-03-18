@@ -22,6 +22,10 @@ public abstract class MapExprEditor
 	@Override
 	protected void createProperties() {
 
+		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+
+		}
+
 	}
 
 }

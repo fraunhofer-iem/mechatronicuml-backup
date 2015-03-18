@@ -22,7 +22,17 @@ public class AttributeAssignmentEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createAttribute_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+
+			addPropertyEditor(createAttribute_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+
+		}
 
 	}
 

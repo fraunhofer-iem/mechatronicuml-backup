@@ -22,11 +22,21 @@ public class EdgeEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createSourceNode_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addPropertyEditor(createTargetNode_GeneralTab_Editor(), false);
+			addPropertyEditor(createSourceNode_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createType_GeneralTab_Editor(), false);
+			addPropertyEditor(createTargetNode_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createType_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+
+		}
 
 	}
 

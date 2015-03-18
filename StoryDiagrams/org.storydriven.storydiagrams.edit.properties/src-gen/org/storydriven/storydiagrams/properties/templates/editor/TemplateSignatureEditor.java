@@ -22,6 +22,16 @@ public class TemplateSignatureEditor
 	@Override
 	protected void createProperties() {
 
+		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+
+		}
+
 	}
 
 	//

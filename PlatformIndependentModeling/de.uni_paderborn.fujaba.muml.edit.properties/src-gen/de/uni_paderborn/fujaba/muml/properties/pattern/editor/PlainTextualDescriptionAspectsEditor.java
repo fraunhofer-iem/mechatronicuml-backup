@@ -22,27 +22,37 @@ public class PlainTextualDescriptionAspectsEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createOverview_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createContext_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addPropertyEditor(createProblem_GeneralTab_Editor(), false);
+			addPropertyEditor(createOverview_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createSolution_GeneralTab_Editor(), false);
+			addPropertyEditor(createContext_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createStructure_GeneralTab_Editor(), false);
+			addPropertyEditor(createProblem_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createBehavior_GeneralTab_Editor(), false);
+			addPropertyEditor(createSolution_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createExamples_GeneralTab_Editor(), false);
+			addPropertyEditor(createStructure_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createConsequences_GeneralTab_Editor(), false);
+			addPropertyEditor(createBehavior_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createCombineability_GeneralTab_Editor(), false);
+			addPropertyEditor(createExamples_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createVariants_GeneralTab_Editor(), false);
+			addPropertyEditor(createConsequences_GeneralTab_Editor(), false);
 
-		addPropertyEditor(createAlternatives_GeneralTab_Editor(), false);
+			addPropertyEditor(createCombineability_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createVariants_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createAlternatives_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		}
 
 	}
 

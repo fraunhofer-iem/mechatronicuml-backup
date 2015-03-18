@@ -22,7 +22,11 @@ public class ConstExprEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createTimeUnit_MtctlTab_Editor(), false);
+		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+
+			addPropertyEditor(createTimeUnit_MtctlTab_Editor(), false);
+
+		}
 
 	}
 

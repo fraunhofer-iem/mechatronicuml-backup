@@ -22,9 +22,19 @@ public class NondeterministicChoiceExpressionEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createRange_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createDataType_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+
+			addPropertyEditor(createRange_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createDataType_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		}
 
 	}
 

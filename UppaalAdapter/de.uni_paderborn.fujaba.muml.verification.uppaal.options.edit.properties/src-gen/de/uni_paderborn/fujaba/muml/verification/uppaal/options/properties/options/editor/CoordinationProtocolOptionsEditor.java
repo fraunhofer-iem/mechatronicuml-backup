@@ -22,16 +22,21 @@ public class CoordinationProtocolOptionsEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createConnectorOutBufferSize_OptionsTab_Editor(),
-				false);
+		if (tab == null || "options".equals(getTab())) { // Tab Options
 
-		addPropertyEditor(createHashTableSize_OptionsTab_Editor(), false);
+			addPropertyEditor(createConnectorOutBufferSize_OptionsTab_Editor(),
+					false);
 
-		addPropertyEditor(createStateSpaceReduction_OptionsTab_Editor(), false);
+			addPropertyEditor(createHashTableSize_OptionsTab_Editor(), false);
 
-		addPropertyEditor(createTraceOptions_OptionsTab_Editor(), false);
+			addPropertyEditor(createStateSpaceReduction_OptionsTab_Editor(),
+					false);
 
-		addPropertyEditor(createRoleMultiplicity_OptionsTab_Editor(), false);
+			addPropertyEditor(createTraceOptions_OptionsTab_Editor(), false);
+
+			addPropertyEditor(createRoleMultiplicity_OptionsTab_Editor(), false);
+
+		}
 
 	}
 
