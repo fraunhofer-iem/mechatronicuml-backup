@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  */
 public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 	
-	private String tab;
+	protected String tab;
 	
 	private EClass eClass;
 

@@ -28,7 +28,11 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	 */
 	@Override
 	protected void createProperties() {
-		«EXPAND createClassElements(this)»
+		«FOREACH package.generator.allGenerators().tabs AS tab SEPARATOR ' else '»
+		if (tab == null || "«tab.id»".equals(getTab())) { // Tab «tab.name»
+			«EXPAND createClassElements(this, tab)»
+		}
+		«ENDFOREACH»
 	}
 	
 	«FOREACH { this }.union(allSuperClasses).properties.select(p | getHighestContainer(p) == p.clazz) AS this»
@@ -83,30 +87,32 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 «ENDIF»
 «ENDDEFINE»
 
-«DEFINE createClassElements(Class originalClass) FOR Class»
+«DEFINE createClassElements(Class originalClass, PropertyTab tab) FOR Class»
 	«REM»Create Super Classes that are not positioend using base insert points. We put them at the top.«ENDREM»
 	«FOREACH superClasses.reject(s | baseInsertPoints.baseClass.contains(s)) AS this»
-		«EXPAND createClassElements(originalClass)»
+		«EXPAND createClassElements(originalClass, tab)»
 	«ENDFOREACH»
 	«REM»my own order of elements«ENDREM»
 	«FOREACH orderedElements AS this»
-		«EXPAND createElement(originalClass)»
+		«EXPAND createElement(originalClass, tab)»
 	«ENDFOREACH»
 «ENDDEFINE»
 
-«DEFINE createElement(Class originalClass) FOR OrderedElement»ERROR: No codegen for «this.toString()»«ENDDEFINE»
-«DEFINE createElement(Class originalClass) FOR Property»
+«DEFINE createElement(Class originalClass, PropertyTab _tab) FOR OrderedElement»ERROR: No codegen for «this.toString()»«ENDDEFINE»
+«DEFINE createElement(Class originalClass, PropertyTab _tab) FOR Property»
 	«IF originalClass.getHighestContainer(this) == clazz && { originalClass }.union(originalClass.allSuperClasses).propertyCategories.select(c | c.properties.contains(this) && originalClass.getHighestContainer(c) == c.clazz).isEmpty»
+		«IF this.tab == _tab»
 		addPropertyEditor(«genCreator()»(), false);
+		«ENDIF»
 	«ENDIF»
 «ENDDEFINE»
 
-«DEFINE createElement(Class originalClass) FOR PropertyCategory»
+«DEFINE createElement(Class originalClass, PropertyTab tab) FOR PropertyCategory»
 	«IF originalClass.getHighestContainer(this) == clazz»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«FOREACH properties AS property»
 			«LET findHighestProperty(originalClass, property) AS highestProperty»
-			«IF property != null»«REM»should never be null«ENDREM»
+			«IF property != null && property.tab == tab»«REM»should never be null«ENDREM»
 			addEditorToCategory("«genCategoryKey()»", «highestProperty.genCreator()»(), false);
 			«ENDIF»
 			«ENDLET»
@@ -114,8 +120,8 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	«ENDIF»
 «ENDDEFINE»
 
-«DEFINE createElement(Class originalClass) FOR BaseInsertPoint»
-	«EXPAND createClassElements(originalClass) FOR baseClass»
+«DEFINE createElement(Class originalClass, PropertyTab tab) FOR BaseInsertPoint»
+	«EXPAND createClassElements(originalClass, tab) FOR baseClass»
 «ENDDEFINE»
 
 
