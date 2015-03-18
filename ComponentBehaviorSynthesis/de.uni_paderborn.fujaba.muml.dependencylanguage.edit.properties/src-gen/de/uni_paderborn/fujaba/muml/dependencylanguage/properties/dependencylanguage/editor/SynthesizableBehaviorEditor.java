@@ -22,7 +22,14 @@ public class SynthesizableBehaviorEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createDependencyModel_DependenciesTab_Editor(), false);
+		if (tab == null
+				|| "de.uni_paderborn.fujaba.muml.dependencylanguage"
+						.equals(getTab())) { // Tab Dependencies
+
+			addPropertyEditor(createDependencyModel_DependenciesTab_Editor(),
+					false);
+
+		}
 
 	}
 
@@ -33,8 +40,6 @@ public class SynthesizableBehaviorEditor
 					.getSynthesizableBehavior_DependencyModel();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor(
 					adapterFactory, feature);
-
-			editor.setTooltipMessage("Container for all Dependency of one Atomic Component, Input for the XText Editor.");
 
 			this.editorDependencyModel_DependenciesTab = editor;
 		}

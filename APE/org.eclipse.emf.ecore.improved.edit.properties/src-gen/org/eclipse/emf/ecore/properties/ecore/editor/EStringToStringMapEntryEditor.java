@@ -22,11 +22,19 @@ public class EStringToStringMapEntryEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createKey_DefaultTab_Editor(), false);
+		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
 
-		addPropertyEditor(createValue_DefaultTab_Editor(), false);
+			addPropertyEditor(createKey_DefaultTab_Editor(), false);
 
-		addPropertyEditor(createValue_OCLTab_Editor(), false);
+			addPropertyEditor(createValue_DefaultTab_Editor(), false);
+
+		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+
+			addPropertyEditor(createValue_OCLTab_Editor(), false);
+
+		}
 
 	}
 

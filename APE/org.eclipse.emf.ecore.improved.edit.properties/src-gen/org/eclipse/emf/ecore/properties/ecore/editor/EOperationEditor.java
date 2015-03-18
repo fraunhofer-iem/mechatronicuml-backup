@@ -22,41 +22,73 @@ public class EOperationEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createEAnnotations_DocumentationTab_Editor(), false);
+		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
 
-		addPropertyEditor(createName_DefaultTab_Editor(), false);
+			addPropertyEditor(createName_DefaultTab_Editor(), false);
 
-		addPropertyEditor(createEType_DefaultTab_Editor(), false);
+			addPropertyEditor(createEType_DefaultTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Booleans",
-				createOrdered_DefaultTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createOrdered_DefaultTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Booleans",
-				createUnique_DefaultTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createUnique_DefaultTab_Editor(), false);
 
-		addSubCategory(
-				"de.uni_paderborn.fujaba.properties.category.Cardinality",
-				"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Cardinality",
-				createUpperBound_DefaultTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					createUpperBound_DefaultTab_Editor(), false);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Cardinality",
-				createLowerBound_DefaultTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					createLowerBound_DefaultTab_Editor(), false);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addEditorToCategory(
-				"de.uni_paderborn.fujaba.properties.category.Lists",
-				createEExceptions_DefaultTab_Editor(), false);
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createEExceptions_DefaultTab_Editor(), false);
+
+		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+
+			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
+					false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		}
 
 	}
 

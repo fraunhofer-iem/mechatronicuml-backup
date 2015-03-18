@@ -22,7 +22,16 @@ public abstract class EModelElementEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createEAnnotations_DocumentationTab_Editor(), false);
+		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
+
+		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+
+			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
+					false);
+
+		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+
+		}
 
 	}
 

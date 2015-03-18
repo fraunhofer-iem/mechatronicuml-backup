@@ -22,6 +22,12 @@ public abstract class PropertyEditorEditor
 	@Override
 	protected void createProperties() {
 
+		if (tab == null
+				|| "de.uni_paderborn.fujaba.properties.tab.general"
+						.equals(getTab())) { // Tab General
+
+		}
+
 	}
 
 }

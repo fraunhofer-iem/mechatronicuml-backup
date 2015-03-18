@@ -22,18 +22,28 @@ public class CustomPropertyEditorEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createFullyQualifiedClassName_GeneralTab_Editor(),
-				false);
+		if (tab == null
+				|| "de.uni_paderborn.fujaba.properties.tab.general"
+						.equals(getTab())) { // Tab General
+
+			addPropertyEditor(
+					createFullyQualifiedClassName_GeneralTab_Editor(), false);
+
+		}
 
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFullyQualifiedClassName_GeneralTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createFullyQualifiedClassName_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-				.getCustomPropertyEditor_FullyQualifiedClassName();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory, feature, false);
+		if (this.editorFullyQualifiedClassName_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+					.getCustomPropertyEditor_FullyQualifiedClassName();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
 
-		return editor;
+			this.editorFullyQualifiedClassName_GeneralTab = editor;
+		}
+		return this.editorFullyQualifiedClassName_GeneralTab;
 	}
 
 	//

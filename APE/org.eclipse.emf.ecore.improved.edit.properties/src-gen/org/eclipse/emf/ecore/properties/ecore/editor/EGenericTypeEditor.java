@@ -22,9 +22,17 @@ public class EGenericTypeEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
+		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
 
-		addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
+			addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
+
+		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+
+		}
 
 	}
 

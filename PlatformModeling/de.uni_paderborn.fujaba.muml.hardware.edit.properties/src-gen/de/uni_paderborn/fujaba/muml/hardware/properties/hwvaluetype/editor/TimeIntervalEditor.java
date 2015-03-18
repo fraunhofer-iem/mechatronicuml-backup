@@ -22,11 +22,23 @@ public class TimeIntervalEditor
 	@Override
 	protected void createProperties() {
 
-		addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
 
-		addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
 
-		addPropertyEditor(createUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createUnit_GeneralTab_Editor(), false);
+
+		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+
+		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+
+		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+
+		}
 
 	}
 
