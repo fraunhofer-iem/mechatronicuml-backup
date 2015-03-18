@@ -21,10 +21,7 @@ public class AssignmentEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
-
-		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createAssignOperator_GeneralTab_Editor(), false);
 
@@ -38,12 +35,28 @@ public class AssignmentEditor
 					createLhs_typedNamedElementExpression_GeneralTab_Editor(),
 					false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createAssignOperator_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createRhs_assignExpression_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createIncrementDecrementOperator_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createLhs_typedNamedElementExpression_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssignOperator_GeneralTab;

@@ -21,17 +21,18 @@ public class TemplateSignatureEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
+		} else {
 		}
-
 	}
 
 	//

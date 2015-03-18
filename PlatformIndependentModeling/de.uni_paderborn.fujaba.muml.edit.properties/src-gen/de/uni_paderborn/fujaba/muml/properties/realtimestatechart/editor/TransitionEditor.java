@@ -21,17 +21,11 @@ public class TransitionEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createPriority_GeneralTab_Editor(), false);
 
@@ -80,7 +74,65 @@ public class TransitionEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEvents_GeneralTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createPriority_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createSynchronization_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createTarget_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createSource_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createStatechart_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createRelativeDeadline_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createGuard_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createAction_GeneralTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createBlockable_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createUrgent_GeneralTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createClockResets_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createClockConstraints_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createAbsoluteDeadlines_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createEvents_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
 
@@ -91,7 +143,7 @@ public class TransitionEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
 
@@ -102,8 +154,8 @@ public class TransitionEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSynchronization_GeneralTab;

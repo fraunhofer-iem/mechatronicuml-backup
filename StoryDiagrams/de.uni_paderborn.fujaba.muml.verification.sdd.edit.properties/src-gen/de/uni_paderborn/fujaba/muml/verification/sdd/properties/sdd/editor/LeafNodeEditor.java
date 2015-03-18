@@ -21,8 +21,7 @@ public class LeafNodeEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createOutgoingEdges_GeneralTab_Editor(), false);
 
@@ -36,26 +35,40 @@ public class LeafNodeEditor
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					createValue_GeneralTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createOutgoingEdges_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createIncomingEdges_GeneralTab_Editor(), false);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createValue_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_GeneralTab;

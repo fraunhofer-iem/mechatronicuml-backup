@@ -21,13 +21,16 @@ public class HideOptionExtensionEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "options".equals(getTab())) { // Tab Options
+		if (tab == null) {
 
 			addPropertyEditor(createOption_OptionsTab_Editor(), false);
 
-		}
+		} else if ("options".equals(tab)) { // Tab Options
 
+			addPropertyEditor(createOption_OptionsTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOption_OptionsTab;

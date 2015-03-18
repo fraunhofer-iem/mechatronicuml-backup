@@ -21,11 +21,12 @@ public class ImplyExprEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+		} else if ("property.tab.mtctl".equals(tab)) { // Tab Mtctl
 
+		} else {
 		}
-
 	}
 
 	//

@@ -21,13 +21,7 @@ public class ArrayInitializeExpressionEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -36,18 +30,32 @@ public class ArrayInitializeExpressionEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createExpressions_GeneralTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createExpressions_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressions_GeneralTab;

@@ -21,8 +21,68 @@ public class RoleEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createBehavior_GeneralTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addPropertyEditor(createConnectors_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createSenderMessageTypes_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createReceiverMessageTypes_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createAdaptationBehavior_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createCardinality_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createReceiverMessageBuffer_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createSubroleBehavior_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createCoordinationProtocol_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -36,7 +96,7 @@ public class RoleEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -77,7 +137,7 @@ public class RoleEditor
 			addPropertyEditor(createCoordinationProtocol_GeneralTab_Editor(),
 					false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -95,7 +155,7 @@ public class RoleEditor
 
 			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -125,8 +185,8 @@ public class RoleEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createExtension_ExtensionsTab_Editor(), false);
 
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationProtocol_GeneralTab;

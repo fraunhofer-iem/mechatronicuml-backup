@@ -21,13 +21,16 @@ public class ConstExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "property.tab.mtctl".equals(getTab())) { // Tab Mtctl
+		if (tab == null) {
 
 			addPropertyEditor(createTimeUnit_MtctlTab_Editor(), false);
 
-		}
+		} else if ("property.tab.mtctl".equals(tab)) { // Tab Mtctl
 
+			addPropertyEditor(createTimeUnit_MtctlTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTimeUnit_MtctlTab;

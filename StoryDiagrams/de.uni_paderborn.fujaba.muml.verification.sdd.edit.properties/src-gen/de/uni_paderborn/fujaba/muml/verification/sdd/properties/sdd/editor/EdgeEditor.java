@@ -21,8 +21,7 @@ public class EdgeEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createSourceNode_GeneralTab_Editor(), false);
 
@@ -30,14 +29,22 @@ public class EdgeEditor
 
 			addPropertyEditor(createType_GeneralTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+			addPropertyEditor(createSourceNode_GeneralTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+			addPropertyEditor(createTargetNode_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createType_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSourceNode_GeneralTab;

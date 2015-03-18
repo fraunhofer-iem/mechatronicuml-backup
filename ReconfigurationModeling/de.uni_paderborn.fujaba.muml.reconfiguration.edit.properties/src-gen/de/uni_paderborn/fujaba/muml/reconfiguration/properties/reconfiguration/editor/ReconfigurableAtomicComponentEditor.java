@@ -21,8 +21,67 @@ public class ReconfigurableAtomicComponentEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addPropertyEditor(createComponentKind_GeneralTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createPorts_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createBehavior_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(
+					createVerificationConstraintRepositories_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
+
+			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+
+			addPropertyEditor(createComponentKind_GeneralTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createPorts_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -30,7 +89,7 @@ public class ReconfigurableAtomicComponentEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.general".equals(getTab())) { // Tab General
+		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createName_GeneralTab_Editor(), false);
 
@@ -64,7 +123,7 @@ public class ReconfigurableAtomicComponentEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createPorts_GeneralTab_Editor(), false);
 
-		} else if (tab == null || "property.tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
 
@@ -80,7 +139,7 @@ public class ReconfigurableAtomicComponentEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.extensions".equals(getTab())) { // Tab Extensions
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addPropertyEditor(createExtension_ExtensionsTab_Editor(), false);
 
@@ -106,7 +165,7 @@ public class ReconfigurableAtomicComponentEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "property.tab.constraint".equals(getTab())) { // Tab Constraint
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -114,8 +173,8 @@ public class ReconfigurableAtomicComponentEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPorts_GeneralTab;
