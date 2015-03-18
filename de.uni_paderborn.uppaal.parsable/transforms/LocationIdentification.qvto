@@ -1,0 +1,35 @@
+transformation LocationIdentification(inout u : uppaal);
+
+modeltype parsable uses parsable::templates_parsable('http://www.uni-paderborn.de/uppaal/parsable/0.4.0');
+modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
+
+main() {
+	u.objectsOfType(Template)->forEach(template) {
+		template.location := template.location.map Location2IdentifiableLocation();
+		template.edge := template.edge.map Edge2Edge();
+	};
+	
+	assert fatal (u.objectsOfType(Location)->isEmpty());
+}
+
+mapping Location :: Location2IdentifiableLocation() : IdentifiableLocation {
+	name := self.name;
+	comment := self.comment;
+	position := self.position;
+	colorCode := self.colorCode;
+	parentTemplate := self.parentTemplate;
+	invariant := self.invariant;
+	locationTimeKind := self.locationTimeKind;
+	
+	id := self.name.addSuffixNumber();	
+}
+
+mapping Edge :: Edge2Edge() : Edge {
+	init {
+		result := self;
+	}
+	
+	source := self.source.map Location2IdentifiableLocation();
+	target := self.target.map Location2IdentifiableLocation();
+}
