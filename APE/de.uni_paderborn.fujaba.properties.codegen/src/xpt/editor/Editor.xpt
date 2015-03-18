@@ -28,11 +28,15 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	 */
 	@Override
 	protected void createProperties() {
-		«FOREACH package.generator.allGenerators().tabs AS tab SEPARATOR ' else '»
+		if (tab == null) {
+			«EXPAND createClassElements(this, null)»
+		}
+		«FOREACH package.generator.allGenerators().tabs AS tab»
 		if (tab == null || "«tab.id»".equals(getTab())) { // Tab «tab.name»
 			«EXPAND createClassElements(this, tab)»
-		}
+		} else
 		«ENDFOREACH»
+		{ }
 	}
 	
 	«FOREACH { this }.union(allSuperClasses).properties.select(p | getHighestContainer(p) == p.clazz) AS this»
@@ -101,7 +105,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 «DEFINE createElement(Class originalClass, PropertyTab _tab) FOR OrderedElement»ERROR: No codegen for «this.toString()»«ENDDEFINE»
 «DEFINE createElement(Class originalClass, PropertyTab _tab) FOR Property»
 	«IF originalClass.getHighestContainer(this) == clazz && { originalClass }.union(originalClass.allSuperClasses).propertyCategories.select(c | c.properties.contains(this) && originalClass.getHighestContainer(c) == c.clazz).isEmpty»
-		«IF this.tab == _tab»
+		«IF _tab == null || this.tab == _tab»
 		addPropertyEditor(«genCreator()»(), false);
 		«ENDIF»
 	«ENDIF»
@@ -112,7 +116,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«FOREACH properties AS property»
 			«LET findHighestProperty(originalClass, property) AS highestProperty»
-			«IF property != null && property.tab == tab»«REM»should never be null«ENDREM»
+			«IF property != null && property.tab == tab || tab == null»«REM»should never be null«ENDREM»
 			addEditorToCategory("«genCategoryKey()»", «highestProperty.genCreator()»(), false);
 			«ENDIF»
 			«ENDLET»
