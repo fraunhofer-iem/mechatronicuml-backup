@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Compar
  */
 public class MumlElemExprEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.MapExprEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,34 +21,24 @@ public class MumlElemExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
-		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
-			addInstance_MtctlTab_Editor(null, true);
+		addPropertyEditor(createInstance_MtctlTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInstance_MtctlTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createInstance_MtctlTab_Editor() {
+		if (this.editorInstance_MtctlTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage.eINSTANCE
+					.getMumlElemExpr_Instance();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The concrete instance which this Muml element belongs to (in case there are multiple at runtime). E.g., a ConnectorEndpointInstance for Role RTSC elements");
+
+			this.editorInstance_MtctlTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addInstance_MtctlTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createInstance_MtctlTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInstance_MtctlTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage.eINSTANCE
-				.getMumlElemExpr_Instance();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The concrete instance which this Muml element belongs to (in case there are multiple at runtime). E.g., a ConnectorEndpointInstance for Role RTSC elements");
-
-		return editor;
-
+		return this.editorInstance_MtctlTab;
 	}
 
 	//

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-  <reconciler>
-    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
-    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_Rk4rQM1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler xmi:id="_Rk4rQc1gEeSIgPDefa6ZBw">
+    <customTransformations xmi:id="_Rk4rQs1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_Rk4rQ81gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="ComponentStoryPattern.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties" name="ComponentStoryPattern Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#_RmFlIM1gEeSIgPDefa6ZBw"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <plugin xmi:id="_Rk4rRM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.componentstorypattern.edit.properties" name="ComponentStoryPattern Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
@@ -23,140 +23,145 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-  <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
-  <packages>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+  <tabs xmi:id="_Rk5SUM1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <packages xmi:id="_Rk5SUc1gEeSIgPDefa6ZBw">
     <genPackage href="ComponentStoryPattern.genmodel#//componentstorypattern"/>
-    <classes>
+    <classes xmi:id="_Rk5SUs1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPattern"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk5SU81gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk5SVM1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties tooltip="" initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rk5SVc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk55YM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="let&#xD;&#xA;&#x9;parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_Rk55Yc1gEeSIgPDefa6ZBw" expression="let&#xD;&#xA;&#x9;parents : OrderedSet(OclAny) = self.eContainer()->closure(eContainer())->asOrderedSet()&#xD;&#xA;in&#xD;&#xA;&#x9;not parents->select(oclIsTypeOf(componentstorydiagram::ComponentStoryNode))->isEmpty()"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rk55Ys1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk55Y81gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rk55ZM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_Rk55Zc1gEeSIgPDefa6ZBw" superClasses="_Rk5SU81gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk6gcM1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentVariable/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rk6gcc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk6gcs1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PortVariable"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.6"/>
-      <superClasses href="#//@packages.0/@classes.1"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.0"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZUq5cwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#_Rk5SU81gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk6gc81gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/PartVariable"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.6"/>
-      <superClasses href="#//@packages.0/@classes.1"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZUq5cwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#_Rk5SU81gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk6gdM1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ConnectorVariable"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.1"/>
-      <superClasses href="#//@packages.0/@classes.1"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHMMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#_Rk5SU81gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.5">
+    <classes xmi:id="_Rk7HgM1gEeSIgPDefa6ZBw" superClasses="_Rk6gdM1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk7Hgc1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/AssemblyVariable/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rk7Hgs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.5">
+    <classes xmi:id="_Rk7Hg81gEeSIgPDefa6ZBw" superClasses="_Rk6gdM1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk7HhM1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/DelegationVariable/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rk7Hhc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.3">
+    <classes xmi:id="_Rk7Hhs1gEeSIgPDefa6ZBw" superClasses="_Rk6gcs1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable"/>
-      <properties tooltip="" category="//@packages.0/@classes.8/@propertyCategories.0" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk7Hh81gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable/positionConstraints"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="-- only show this editor if SinglePortVariable is &quot;embedded&quot; in MultiPortVariable&#xD;&#xA;if &#xD;&#xA;&#x9;self.eContainer().oclIsUndefined() or not (self.eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))&#xD;&#xA;then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;self.eContainer().oclIsTypeOf(ComponentVariable)&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;let container: ComponentVariable = self.eContainer().oclAsType(ComponentVariable) in&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;let container: PartVariable = self.eContainer().oclAsType(PartVariable) in&#xD;&#xA;&#x9;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;endif"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.0/@classes.8/@properties.0"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_Rk7ukM1gEeSIgPDefa6ZBw" expression="-- only show this editor if SinglePortVariable is &quot;embedded&quot; in MultiPortVariable&#xD;&#xA;if &#xD;&#xA;&#x9;self.eContainer().oclIsUndefined() or not (self.eContainer().oclIsTypeOf(ComponentVariable) or self.eContainer().oclIsKindOf(PartVariable))&#xD;&#xA;then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;if&#xD;&#xA;&#x9;&#x9;self.eContainer().oclIsTypeOf(ComponentVariable)&#xD;&#xA;&#x9;then&#xD;&#xA;&#x9;&#x9;let container: ComponentVariable = self.eContainer().oclAsType(ComponentVariable) in&#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;self.eContainer().oclIsKindOf(PartVariable)&#xD;&#xA;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;let container: PartVariable = self.eContainer().oclAsType(PartVariable) in&#xD;&#xA;&#x9;&#x9;&#x9;if&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;container.portVariables->select(oclIsTypeOf(MultiPortVariable))->exists(mPV |mPV.oclAsType(MultiPortVariable).gmfSubPortVariables->includes(self))&#xD;&#xA;&#x9;&#x9;&#x9;then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;false&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;endif"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rk7ukc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rk7uks1gEeSIgPDefa6ZBw" title="Lists" properties="_Rk7Hh81gEeSIgPDefa6ZBw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/SinglePortVariable/multiPortVariable"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.3">
+    <classes xmi:id="_Rk7uk81gEeSIgPDefa6ZBw" superClasses="_Rk6gcs1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable"/>
-      <properties tooltip="" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk7ulM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortVariable/subPortVariables"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rk7ulc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rk7uls1gEeSIgPDefa6ZBw" title="Lists"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk7ul81gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/TriggerEmbeddedComponentExpression"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZHPgMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.4">
+    <classes xmi:id="_Rk7umM1gEeSIgPDefa6ZBw" superClasses="_Rk6gc81gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk7umc1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/FadingComponentPartVariable/appliedFadingFunction"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rk8VoM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.0/@classes.4">
+    <classes xmi:id="_Rk8Voc1gEeSIgPDefa6ZBw" superClasses="_Rk6gc81gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk8Vos1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_Rk8Vo81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk8VpM1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk_Y8M1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/srcSubPortVariable"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties tooltip="" initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rk_Y8c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk_Y8s1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/orderConstraintType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rk_Y881gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rk_Y9M1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortOrderConstraint/tgtSubPortVariable"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rk_Y9c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_Rk_Y9s1gEeSIgPDefa6ZBw">
       <genClass href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortPositionConstraint"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlAAAM1gEeSIgPDefa6ZBw">
         <genFeature href="ComponentStoryPattern.genmodel#//componentstorypattern/MultiPortPositionConstraint/positionConstraintType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RlAAAc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predic
  */
 public class StateActiveExprEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.DynamicPredicateExprEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,7 +21,6 @@ public class StateActiveExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

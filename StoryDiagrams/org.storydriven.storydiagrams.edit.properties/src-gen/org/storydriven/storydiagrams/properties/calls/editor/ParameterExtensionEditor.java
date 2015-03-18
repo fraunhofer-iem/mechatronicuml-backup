@@ -5,7 +5,7 @@ package org.storydriven.storydiagrams.properties.calls.editor;
  */
 public class ParameterExtensionEditor
 		extends
-			org.storydriven.storydiagrams.properties.storydiagrams.editor.VariableEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,34 @@ public class ParameterExtensionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createExtension_ExtensionsTab_Editor(), false);
+
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEditorToCategory(
+				"de.uni_paderborn.fujaba.properties.category.Lists",
+				createExtension_ExtensionsTab_Editor(), false);
+
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+		if (this.editorExtension_ExtensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorExtension_ExtensionsTab = editor;
+		}
+		return this.editorExtension_ExtensionsTab;
 	}
 
 	//

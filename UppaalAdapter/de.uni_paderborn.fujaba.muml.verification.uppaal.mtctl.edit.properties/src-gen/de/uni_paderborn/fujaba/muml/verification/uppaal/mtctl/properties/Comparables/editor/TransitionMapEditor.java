@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Compar
  */
 public abstract class TransitionMapEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.MapExprEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,7 +21,6 @@ public abstract class TransitionMapEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

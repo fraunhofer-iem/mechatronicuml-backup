@@ -21,7 +21,6 @@ public class PropertyEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

@@ -21,7 +21,6 @@ public class ConstraintEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

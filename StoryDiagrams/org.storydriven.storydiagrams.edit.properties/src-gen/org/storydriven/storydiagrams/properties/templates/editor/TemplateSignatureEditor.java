@@ -21,7 +21,6 @@ public class TemplateSignatureEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 

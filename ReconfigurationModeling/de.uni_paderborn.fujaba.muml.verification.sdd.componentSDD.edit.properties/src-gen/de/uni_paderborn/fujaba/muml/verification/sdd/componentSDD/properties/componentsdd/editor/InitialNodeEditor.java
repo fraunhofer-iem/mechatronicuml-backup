@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.sdd.componentSDD.properties.co
  */
 public class InitialNodeEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.sdd.properties.sdd.editor.NodeEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,7 +21,6 @@ public class InitialNodeEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
 
 	}
 
