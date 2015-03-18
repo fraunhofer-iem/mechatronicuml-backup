@@ -21,16 +21,19 @@ public class SynthesizableBehaviorEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.muml.dependencylanguage"
-						.equals(getTab())) { // Tab Dependencies
+		if (tab == null) {
 
 			addPropertyEditor(createDependencyModel_DependenciesTab_Editor(),
 					false);
 
-		}
+		} else if ("de.uni_paderborn.fujaba.muml.dependencylanguage"
+				.equals(tab)) { // Tab Dependencies
 
+			addPropertyEditor(createDependencyModel_DependenciesTab_Editor(),
+					false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDependencyModel_DependenciesTab;

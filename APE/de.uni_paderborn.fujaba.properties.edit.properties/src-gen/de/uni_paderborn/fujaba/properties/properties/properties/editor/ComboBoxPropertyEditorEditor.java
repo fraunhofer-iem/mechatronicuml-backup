@@ -21,13 +21,12 @@ public class ComboBoxPropertyEditorEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.properties.tab.general"
-						.equals(getTab())) { // Tab General
+		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
+		} else {
 		}
-
 	}
 
 	//

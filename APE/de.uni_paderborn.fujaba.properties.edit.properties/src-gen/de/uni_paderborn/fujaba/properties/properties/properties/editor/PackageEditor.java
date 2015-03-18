@@ -21,15 +21,16 @@ public class PackageEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.properties.tab.general"
-						.equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createGenPackage_GeneralTab_Editor(), false);
 
-		}
+		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createGenPackage_GeneralTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenPackage_GeneralTab;

@@ -21,19 +21,24 @@ public class EGenericTypeEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
+		if (tab == null) {
 
 			addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
 
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("tab.default".equals(tab)) { // Tab Default
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+			addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
 
+			addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
+
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorETypeParameter_DefaultTab;

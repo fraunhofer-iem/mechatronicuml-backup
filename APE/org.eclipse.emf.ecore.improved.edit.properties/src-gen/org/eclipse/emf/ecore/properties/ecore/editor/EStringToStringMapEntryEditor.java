@@ -21,21 +21,28 @@ public class EStringToStringMapEntryEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
+		if (tab == null) {
 
 			addPropertyEditor(createKey_DefaultTab_Editor(), false);
 
 			addPropertyEditor(createValue_DefaultTab_Editor(), false);
 
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+			addPropertyEditor(createValue_OCLTab_Editor(), false);
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+		} else if ("tab.default".equals(tab)) { // Tab Default
+
+			addPropertyEditor(createKey_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createValue_DefaultTab_Editor(), false);
+
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
 			addPropertyEditor(createValue_OCLTab_Editor(), false);
 
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_DefaultTab;

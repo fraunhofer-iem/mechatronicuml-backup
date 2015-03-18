@@ -21,15 +21,16 @@ public class EObjectEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
+		} else if ("tab.default".equals(tab)) { // Tab Default
 
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
+		} else {
 		}
-
 	}
 
 	//

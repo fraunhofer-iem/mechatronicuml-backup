@@ -21,10 +21,7 @@ public class PropertyGeneratorEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.properties.tab.general"
-						.equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createReconciler_GeneralTab_Editor(), false);
 
@@ -41,8 +38,25 @@ public class PropertyGeneratorEditor
 
 			addPropertyEditor(createSourceFolder_GeneralTab_Editor(), false);
 
-		}
+		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createReconciler_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createGenModel_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createReferencedGenerators_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createPlugin_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createDefaultTab_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createContributorId_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createSourceFolder_GeneralTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconciler_GeneralTab;

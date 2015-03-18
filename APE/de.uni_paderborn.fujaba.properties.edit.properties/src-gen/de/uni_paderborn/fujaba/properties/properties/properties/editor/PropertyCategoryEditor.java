@@ -21,10 +21,7 @@ public class PropertyCategoryEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.properties.tab.general"
-						.equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createTitle_GeneralTab_Editor(), false);
 
@@ -42,8 +39,26 @@ public class PropertyCategoryEditor
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					createOpen_GeneralTab_Editor(), false);
 
-		}
+		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createTitle_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createProperties_GeneralTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createVertical_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createOpen_GeneralTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTitle_GeneralTab;

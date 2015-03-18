@@ -21,20 +21,26 @@ public class EFactoryEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
-
-			addPropertyEditor(createEPackage_DefaultTab_Editor(), false);
-
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+		if (tab == null) {
 
 			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
 					false);
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+			addPropertyEditor(createEPackage_DefaultTab_Editor(), false);
 
+		} else if ("tab.default".equals(tab)) { // Tab Default
+
+			addPropertyEditor(createEPackage_DefaultTab_Editor(), false);
+
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
+
+			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
+					false);
+
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEPackage_DefaultTab;

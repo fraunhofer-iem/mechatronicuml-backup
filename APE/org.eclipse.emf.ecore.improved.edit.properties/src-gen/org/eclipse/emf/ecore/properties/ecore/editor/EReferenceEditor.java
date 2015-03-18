@@ -21,8 +21,10 @@ public class EReferenceEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
+			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
+					false);
 
 			addPropertyEditor(createName_DefaultTab_Editor(), false);
 
@@ -78,7 +80,63 @@ public class EReferenceEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEKeys_DefaultTab_Editor(), false);
 
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("tab.default".equals(tab)) { // Tab Default
+
+			addPropertyEditor(createName_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createOrdered_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createUnique_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createEType_DefaultTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					createUpperBound_DefaultTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Cardinality",
+					createLowerBound_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createChangeable_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createVolatile_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createTransient_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createDefaultValueLiteral_DefaultTab_Editor(),
+					false);
+
+			addPropertyEditor(createUnsettable_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createDerived_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createEOpposite_DefaultTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createContainment_DefaultTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createResolveProxies_DefaultTab_Editor(), false);
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createEKeys_DefaultTab_Editor(), false);
+
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
 					false);
@@ -94,7 +152,7 @@ public class EReferenceEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Cardinality",
@@ -107,8 +165,8 @@ public class EReferenceEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorContainment_DefaultTab;

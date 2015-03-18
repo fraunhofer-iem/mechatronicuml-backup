@@ -21,10 +21,7 @@ public class PropertyTabEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.properties.tab.general"
-						.equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createId_GeneralTab_Editor(), false);
 
@@ -32,8 +29,16 @@ public class PropertyTabEditor
 
 			addPropertyEditor(createAfterTab_GeneralTab_Editor(), false);
 
-		}
+		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createId_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createAfterTab_GeneralTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorId_GeneralTab;

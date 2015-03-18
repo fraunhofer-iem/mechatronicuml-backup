@@ -21,8 +21,10 @@ public class EPackageEditor
 	 */
 	@Override
 	protected void createProperties() {
+		if (tab == null) {
 
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
+			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
+					false);
 
 			addPropertyEditor(createName_DefaultTab_Editor(), false);
 
@@ -30,15 +32,23 @@ public class EPackageEditor
 
 			addPropertyEditor(createNsPrefix_DefaultTab_Editor(), false);
 
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+		} else if ("tab.default".equals(tab)) { // Tab Default
+
+			addPropertyEditor(createName_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createNsURI_DefaultTab_Editor(), false);
+
+			addPropertyEditor(createNsPrefix_DefaultTab_Editor(), false);
+
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
 					false);
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorNsURI_DefaultTab;

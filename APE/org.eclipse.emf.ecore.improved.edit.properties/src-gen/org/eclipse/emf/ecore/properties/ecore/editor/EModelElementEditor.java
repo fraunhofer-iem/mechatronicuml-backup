@@ -21,18 +21,22 @@ public abstract class EModelElementEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null || "tab.default".equals(getTab())) { // Tab Default
-
-		} else if (tab == null || "tab.documentation".equals(getTab())) { // Tab Documentation
+		if (tab == null) {
 
 			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
 					false);
 
-		} else if (tab == null || "tab.ocl".equals(getTab())) { // Tab OCL
+		} else if ("tab.default".equals(tab)) { // Tab Default
 
+		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
+
+			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
+					false);
+
+		} else if ("tab.ocl".equals(tab)) { // Tab OCL
+
+		} else {
 		}
-
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab;

@@ -21,10 +21,7 @@ public class PropertyEditor
 	 */
 	@Override
 	protected void createProperties() {
-
-		if (tab == null
-				|| "de.uni_paderborn.fujaba.properties.tab.general"
-						.equals(getTab())) { // Tab General
+		if (tab == null) {
 
 			addPropertyEditor(createGenFeature_GeneralTab_Editor(), false);
 
@@ -37,8 +34,21 @@ public class PropertyEditor
 			addPropertyEditor(
 					createInitializeOCLExpression_GeneralTab_Editor(), false);
 
-		}
+		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createGenFeature_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createTab_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createTooltip_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createReconcile_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createInitializeOCLExpression_GeneralTab_Editor(), false);
+
+		} else {
+		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenFeature_GeneralTab;
