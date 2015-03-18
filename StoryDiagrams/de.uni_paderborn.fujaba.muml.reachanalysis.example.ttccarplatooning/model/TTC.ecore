@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ttccarplatooning"
+    nsURI="http://www.fujaba.de/reachabilityAnalysis/ttcExample/0.1.0" nsPrefix="ttccarplatooning">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxNumOfCars" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cars" upperBound="-1" eType="#//Carprocess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Carprocess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="curState" lowerBound="1"
+        eType="#//ActiveState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queue" lowerBound="1" eType="#//MessageQueue"
+        containment="true" eOpposite="#//MessageQueue/carprocess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//Statechart"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="follower" upperBound="-1"
+        eType="#//Carprocess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leader" eType="#//Carprocess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aux" eType="#//Carprocess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bldr" eType="#//Carprocess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="carParameter" upperBound="-1"
+        eType="#//CarParameter" eOpposite="#//CarParameter/car"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CarParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="car" lowerBound="1" eType="#//Carprocess"
+        eOpposite="#//Carprocess/carParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageQueue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="carprocess" eType="#//Carprocess"
+        eOpposite="#//Carprocess/queue"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//Message" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//CarParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statechart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true" eOpposite="#//State/statechart"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
+        eType="#//Statechart" eOpposite="#//Statechart/states"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActiveState">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="active" lowerBound="1"
+        eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="in" eType="#//Statechart"/>
+  </eClassifiers>
+</ecore:EPackage>

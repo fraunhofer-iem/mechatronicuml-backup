@@ -1,0 +1,7 @@
+# Tracing options for the de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.diagram plug-in
+
+# Common issues
+de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.diagram/debug=false
+
+# Visual IDs
+de.uni_paderborn.fujaba.pgSafeBots.verification.constraints.diagram/debug/visualID=false
