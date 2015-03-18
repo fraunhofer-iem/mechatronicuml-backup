@@ -3,7 +3,7 @@
   <reconciler xmi:id="_VaCckcwbEeSjx7OWZCcdLw"/>
   <genModel href="actionlanguage.genmodel#/"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
-  <plugin xmi:id="_VaCckswbEeSjx7OWZCcdLw" id="de.uni_paderborn.fujaba.muml.actionlanguage.edit.properties" name="ActionLanguage Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+  <plugin xmi:id="_VaCckswbEeSjx7OWZCcdLw" id="de.uni_paderborn.fujaba.muml.actionlanguage.edit.properties" name="ActionLanguage Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>

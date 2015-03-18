@@ -2,7 +2,7 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_VZGBYMwbEeSjx7OWZCcdLw" defaultTab="_VZGBY8wbEeSjx7OWZCcdLw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler xmi:id="_VZGBYcwbEeSjx7OWZCcdLw"/>
   <genModel href="../../org.storydriven.core/model/core.uml.genmodel#/"/>
-  <plugin xmi:id="_VZGBYswbEeSjx7OWZCcdLw" id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.4.0.qualifier">
+  <plugin xmi:id="_VZGBYswbEeSjx7OWZCcdLw" id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.storydriven.core.edit</requiredBundles>
