@@ -1,8 +1,8 @@
 /**
  */
-package de.uni_paderborn.uppaal.parsable.templates_parsable.impl;
+package de.uni_paderborn.uppaal.parsable.impl;
 
-import de.uni_paderborn.uppaal.parsable.templates_parsable.*;
+import de.uni_paderborn.uppaal.parsable.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesParsableFactoryImpl extends EFactoryImpl implements TemplatesParsableFactory {
+public class ParsableFactoryImpl extends EFactoryImpl implements ParsableFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static TemplatesParsableFactory init() {
+	public static ParsableFactory init() {
 		try {
-			TemplatesParsableFactory theTemplatesParsableFactory = (TemplatesParsableFactory)EPackage.Registry.INSTANCE.getEFactory(TemplatesParsablePackage.eNS_URI);
-			if (theTemplatesParsableFactory != null) {
-				return theTemplatesParsableFactory;
+			ParsableFactory theParsableFactory = (ParsableFactory)EPackage.Registry.INSTANCE.getEFactory(ParsablePackage.eNS_URI);
+			if (theParsableFactory != null) {
+				return theParsableFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new TemplatesParsableFactoryImpl();
+		return new ParsableFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class TemplatesParsableFactoryImpl extends EFactoryImpl implements Templa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplatesParsableFactoryImpl() {
+	public ParsableFactoryImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class TemplatesParsableFactoryImpl extends EFactoryImpl implements Templa
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION: return createIdentifiableLocation();
+			case ParsablePackage.IDENTIFIABLE_LOCATION: return createIdentifiableLocation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,8 +77,8 @@ public class TemplatesParsableFactoryImpl extends EFactoryImpl implements Templa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplatesParsablePackage getTemplatesParsablePackage() {
-		return (TemplatesParsablePackage)getEPackage();
+	public ParsablePackage getParsablePackage() {
+		return (ParsablePackage)getEPackage();
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class TemplatesParsableFactoryImpl extends EFactoryImpl implements Templa
 	 * @generated
 	 */
 	@Deprecated
-	public static TemplatesParsablePackage getPackage() {
-		return TemplatesParsablePackage.eINSTANCE;
+	public static ParsablePackage getPackage() {
+		return ParsablePackage.eINSTANCE;
 	}
 
-} //TemplatesParsableFactoryImpl
+} //ParsableFactoryImpl

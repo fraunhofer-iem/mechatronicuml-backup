@@ -14,7 +14,7 @@ public class AbstractUppaalXMLValidator extends org.eclipse.xtext.validation.Abs
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/0.4.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/templates/0.4.0"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/parsable/templates_parsable/0.4.0"));
+	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/parsable/0.4.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/visuals/0.4.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/declarations/0.4.0"));
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.uni-paderborn.de/uppaal/declarations/system"));

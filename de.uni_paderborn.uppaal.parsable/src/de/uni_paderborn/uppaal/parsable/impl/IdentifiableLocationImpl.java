@@ -1,9 +1,9 @@
 /**
  */
-package de.uni_paderborn.uppaal.parsable.templates_parsable.impl;
+package de.uni_paderborn.uppaal.parsable.impl;
 
-import de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation;
-import de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage;
+import de.uni_paderborn.uppaal.parsable.IdentifiableLocation;
+import de.uni_paderborn.uppaal.parsable.ParsablePackage;
 
 import de.uni_paderborn.uppaal.templates.impl.LocationImpl;
 
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.uppaal.parsable.templates_parsable.impl.IdentifiableLocationImpl#getId <em>Id</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.parsable.impl.IdentifiableLocationImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,7 +63,7 @@ public class IdentifiableLocationImpl extends LocationImpl implements Identifiab
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TemplatesParsablePackage.Literals.IDENTIFIABLE_LOCATION;
+		return ParsablePackage.Literals.IDENTIFIABLE_LOCATION;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class IdentifiableLocationImpl extends LocationImpl implements Identifiab
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesParsablePackage.IDENTIFIABLE_LOCATION__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, ParsablePackage.IDENTIFIABLE_LOCATION__ID, oldId, id));
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class IdentifiableLocationImpl extends LocationImpl implements Identifiab
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION__ID:
+			case ParsablePackage.IDENTIFIABLE_LOCATION__ID:
 				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -109,7 +109,7 @@ public class IdentifiableLocationImpl extends LocationImpl implements Identifiab
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION__ID:
+			case ParsablePackage.IDENTIFIABLE_LOCATION__ID:
 				setId((String)newValue);
 				return;
 		}
@@ -124,7 +124,7 @@ public class IdentifiableLocationImpl extends LocationImpl implements Identifiab
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION__ID:
+			case ParsablePackage.IDENTIFIABLE_LOCATION__ID:
 				setId(ID_EDEFAULT);
 				return;
 		}
@@ -139,7 +139,7 @@ public class IdentifiableLocationImpl extends LocationImpl implements Identifiab
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION__ID:
+			case ParsablePackage.IDENTIFIABLE_LOCATION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);

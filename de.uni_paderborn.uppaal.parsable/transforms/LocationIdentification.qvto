@@ -1,21 +1,21 @@
 transformation LocationIdentification(inout u : uppaal);
 
-modeltype parsable uses parsable::templates_parsable('http://www.uni-paderborn.de/uppaal/parsable/0.4.0');
 modeltype uppaal uses 'http://www.uni-paderborn.de/uppaal/0.4.0';
+modeltype parsable uses 'http://www.uni-paderborn.de/uppaal/parsable/0.4.0';
 modeltype templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0.4.0');
 
-main() {
+main() { 
 	u.objectsOfType(Template)->forEach(template) {
 		template.location := template.location.map Location2IdentifiableLocation();
-		template.edge := template.edge.map Edge2Edge();
+		template.edge := template.edge.map Edge2Edge(); 
 	};
 	
-	assert fatal (u.objectsOfType(Location)->isEmpty());
+	--assert fatal (u.objectsOfType(Location)->isEmpty());
 }
 
-mapping Location :: Location2IdentifiableLocation() : IdentifiableLocation {
+mapping templates::Location :: Location2IdentifiableLocation() : parsable::IdentifiableLocation {
 	name := self.name;
-	comment := self.comment;
+	comment := self.comment; 
 	position := self.position;
 	colorCode := self.colorCode;
 	parentTemplate := self.parentTemplate;

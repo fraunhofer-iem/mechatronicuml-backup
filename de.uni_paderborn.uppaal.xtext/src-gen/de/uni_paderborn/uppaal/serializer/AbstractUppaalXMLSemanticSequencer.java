@@ -46,8 +46,8 @@ import de.uni_paderborn.uppaal.expressions.PostIncrementDecrementExpression;
 import de.uni_paderborn.uppaal.expressions.PreIncrementDecrementExpression;
 import de.uni_paderborn.uppaal.expressions.QuantificationExpression;
 import de.uni_paderborn.uppaal.expressions.ScopedIdentifierExpression;
-import de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation;
-import de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage;
+import de.uni_paderborn.uppaal.parsable.IdentifiableLocation;
+import de.uni_paderborn.uppaal.parsable.ParsablePackage;
 import de.uni_paderborn.uppaal.services.UppaalXMLGrammarAccess;
 import de.uni_paderborn.uppaal.statements.Block;
 import de.uni_paderborn.uppaal.statements.DoWhileLoop;
@@ -1076,6 +1076,14 @@ public abstract class AbstractUppaalXMLSemanticSequencer extends AbstractDelegat
 				}
 				else break;
 			}
+		else if(semanticObject.eClass().getEPackage() == ParsablePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case ParsablePackage.IDENTIFIABLE_LOCATION:
+				if(context == grammarAccess.getLocationRule()) {
+					sequence_Location(context, (IdentifiableLocation) semanticObject); 
+					return; 
+				}
+				else break;
+			}
 		else if(semanticObject.eClass().getEPackage() == StatementsPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case StatementsPackage.BLOCK:
 				if(context == grammarAccess.getBlockRule() ||
@@ -1195,14 +1203,6 @@ public abstract class AbstractUppaalXMLSemanticSequencer extends AbstractDelegat
 			case TemplatesPackage.TEMPLATE:
 				if(context == grammarAccess.getTemplateRule()) {
 					sequence_Template(context, (Template) semanticObject); 
-					return; 
-				}
-				else break;
-			}
-		else if(semanticObject.eClass().getEPackage() == TemplatesParsablePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION:
-				if(context == grammarAccess.getLocationRule()) {
-					sequence_Location(context, (IdentifiableLocation) semanticObject); 
 					return; 
 				}
 				else break;

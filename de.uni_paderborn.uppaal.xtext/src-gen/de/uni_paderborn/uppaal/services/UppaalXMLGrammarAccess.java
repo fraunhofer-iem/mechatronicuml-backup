@@ -595,7 +595,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLocationKeyword_3_1_5 = (Keyword)cGroup_3_1.eContents().get(5);
 		private final Keyword cGreaterThanSignKeyword_3_1_6 = (Keyword)cGroup_3_1.eContents().get(6);
 		
-		//Location returns parsable_templates::IdentifiableLocation hidden(WS):
+		//Location returns parsable::IdentifiableLocation hidden(WS):
 		//	"<" "location" // Parse the attributes. 
 		//	("id" "=" id=STRING & position=Point? & ("color" "=" colorCode=STRING)?) // Locations without any subelements and stuff are also allowed.
 		//	("/>" | // Close the tag.
@@ -6577,7 +6577,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getTemplateAccess().getRule();
 	}
 
-	//Location returns parsable_templates::IdentifiableLocation hidden(WS):
+	//Location returns parsable::IdentifiableLocation hidden(WS):
 	//	"<" "location" // Parse the attributes. 
 	//	("id" "=" id=STRING & position=Point? & ("color" "=" colorCode=STRING)?) // Locations without any subelements and stuff are also allowed.
 	//	("/>" | // Close the tag.

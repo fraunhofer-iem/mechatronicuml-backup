@@ -13,7 +13,6 @@ import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//template
 import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore#//visuals" as visuals
 import "platform:/resource/de.uni_paderborn.uppaal/model/uppaal.ecore" as uppaal
 import "platform:/resource/de.uni_paderborn.uppaal.parsable/model/uppaal_parsable.ecore" as parsable
-import "platform:/resource/de.uni_paderborn.uppaal.parsable/model/uppaal_parsable.ecore#//templates_parsable" as parsable_templates
 
 //---------------------------------------------------------------------------------------------------------------------------------
 // XML STRUCTURE
@@ -79,7 +78,7 @@ Template returns templates::Template hidden(WS):
 	(edge+=Edge)*
 ;
 
-Location returns parsable_templates::IdentifiableLocation hidden(WS):
+Location returns parsable::IdentifiableLocation hidden(WS):
 	'<' 'location'
 
 	// Parse the attributes. 

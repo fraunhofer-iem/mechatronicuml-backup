@@ -1,12 +1,12 @@
 /**
  */
-package de.uni_paderborn.uppaal.parsable.templates_parsable.impl;
+package de.uni_paderborn.uppaal.parsable.impl;
 
 import de.uni_paderborn.uppaal.UppaalPackage;
 
-import de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation;
-import de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsableFactory;
-import de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage;
+import de.uni_paderborn.uppaal.parsable.IdentifiableLocation;
+import de.uni_paderborn.uppaal.parsable.ParsableFactory;
+import de.uni_paderborn.uppaal.parsable.ParsablePackage;
 
 import de.uni_paderborn.uppaal.templates.TemplatesPackage;
 
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemplatesParsablePackageImpl extends EPackageImpl implements TemplatesParsablePackage {
+public class ParsablePackageImpl extends EPackageImpl implements ParsablePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -41,12 +41,12 @@ public class TemplatesParsablePackageImpl extends EPackageImpl implements Templa
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage#eNS_URI
+	 * @see de.uni_paderborn.uppaal.parsable.ParsablePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private TemplatesParsablePackageImpl() {
-		super(eNS_URI, TemplatesParsableFactory.eINSTANCE);
+	private ParsablePackageImpl() {
+		super(eNS_URI, ParsableFactory.eINSTANCE);
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class TemplatesParsablePackageImpl extends EPackageImpl implements Templa
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link TemplatesParsablePackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ParsablePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,11 +68,11 @@ public class TemplatesParsablePackageImpl extends EPackageImpl implements Templa
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static TemplatesParsablePackage init() {
-		if (isInited) return (TemplatesParsablePackage)EPackage.Registry.INSTANCE.getEPackage(TemplatesParsablePackage.eNS_URI);
+	public static ParsablePackage init() {
+		if (isInited) return (ParsablePackage)EPackage.Registry.INSTANCE.getEPackage(ParsablePackage.eNS_URI);
 
 		// Obtain or create and register package
-		TemplatesParsablePackageImpl theTemplatesParsablePackage = (TemplatesParsablePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TemplatesParsablePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TemplatesParsablePackageImpl());
+		ParsablePackageImpl theParsablePackage = (ParsablePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ParsablePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ParsablePackageImpl());
 
 		isInited = true;
 
@@ -80,18 +80,18 @@ public class TemplatesParsablePackageImpl extends EPackageImpl implements Templa
 		UppaalPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
-		theTemplatesParsablePackage.createPackageContents();
+		theParsablePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theTemplatesParsablePackage.initializePackageContents();
+		theParsablePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theTemplatesParsablePackage.freeze();
+		theParsablePackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(TemplatesParsablePackage.eNS_URI, theTemplatesParsablePackage);
-		return theTemplatesParsablePackage;
+		EPackage.Registry.INSTANCE.put(ParsablePackage.eNS_URI, theParsablePackage);
+		return theParsablePackage;
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class TemplatesParsablePackageImpl extends EPackageImpl implements Templa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplatesParsableFactory getTemplatesParsableFactory() {
-		return (TemplatesParsableFactory)getEFactoryInstance();
+	public ParsableFactory getParsableFactory() {
+		return (ParsableFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -185,4 +185,4 @@ public class TemplatesParsablePackageImpl extends EPackageImpl implements Templa
 		createResource(eNS_URI);
 	}
 
-} //TemplatesParsablePackageImpl
+} //ParsablePackageImpl

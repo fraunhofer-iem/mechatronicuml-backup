@@ -6,3 +6,6 @@ code generator can be extended.
 This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator=false.
 
 Package parsable <http://www.uni-paderborn.de/uppaal/parsable/0.4.0>
+
+  Class IdentifiableLocation -> Location
+    Attribute id : EString

@@ -3,7 +3,7 @@ package de.uni_paderborn.uppaal.scoping;
 import org.eclipse.xtext.naming.QualifiedName;
 
 import de.uni_paderborn.uppaal.core.NamedElement;
-import de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation;
+import de.uni_paderborn.uppaal.parsable.IdentifiableLocation;
 import de.uni_paderborn.uppaal.templates.Location;
 import de.uni_paderborn.uppaal.types.Type;
 

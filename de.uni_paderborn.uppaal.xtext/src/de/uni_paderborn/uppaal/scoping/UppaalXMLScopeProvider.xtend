@@ -10,7 +10,7 @@ import de.uni_paderborn.uppaal.templates.Template
 
 import org.eclipse.xtext.scoping.Scopes
 import com.google.common.base.Function
-import de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation
+import de.uni_paderborn.uppaal.parsable.IdentifiableLocation
 import org.eclipse.xtext.naming.QualifiedName
 import de.uni_paderborn.uppaal.expressions.IdentifierExpression
 import de.uni_paderborn.uppaal.NTA

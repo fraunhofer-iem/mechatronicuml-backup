@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: de.uni_paderborn.uppaal.parsable.templates_parsable,
- de.uni_paderborn.uppaal.parsable.templates_parsable.impl,
- de.uni_paderborn.uppaal.parsable.templates_parsable.util
+Export-Package: de.uni_paderborn.uppaal.parsable,
+ de.uni_paderborn.uppaal.parsable.impl,
+ de.uni_paderborn.uppaal.parsable.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

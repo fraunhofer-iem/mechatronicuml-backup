@@ -1,11 +1,11 @@
 /**
  */
-package de.uni_paderborn.uppaal.parsable.templates_parsable.util;
+package de.uni_paderborn.uppaal.parsable.util;
 
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
 
-import de.uni_paderborn.uppaal.parsable.templates_parsable.*;
+import de.uni_paderborn.uppaal.parsable.*;
 
 import de.uni_paderborn.uppaal.templates.Location;
 
@@ -27,17 +27,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage
+ * @see de.uni_paderborn.uppaal.parsable.ParsablePackage
  * @generated
  */
-public class TemplatesParsableSwitch<T> extends Switch<T> {
+public class ParsableSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TemplatesParsablePackage modelPackage;
+	protected static ParsablePackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -45,9 +45,9 @@ public class TemplatesParsableSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplatesParsableSwitch() {
+	public ParsableSwitch() {
 		if (modelPackage == null) {
-			modelPackage = TemplatesParsablePackage.eINSTANCE;
+			modelPackage = ParsablePackage.eINSTANCE;
 		}
 	}
 
@@ -74,7 +74,7 @@ public class TemplatesParsableSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TemplatesParsablePackage.IDENTIFIABLE_LOCATION: {
+			case ParsablePackage.IDENTIFIABLE_LOCATION: {
 				IdentifiableLocation identifiableLocation = (IdentifiableLocation)theEObject;
 				T result = caseIdentifiableLocation(identifiableLocation);
 				if (result == null) result = caseLocation(identifiableLocation);
@@ -195,4 +195,4 @@ public class TemplatesParsableSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //TemplatesParsableSwitch
+} //ParsableSwitch

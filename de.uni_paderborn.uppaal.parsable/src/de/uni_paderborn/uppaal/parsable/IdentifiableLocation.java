@@ -1,6 +1,6 @@
 /**
  */
-package de.uni_paderborn.uppaal.parsable.templates_parsable;
+package de.uni_paderborn.uppaal.parsable;
 
 import de.uni_paderborn.uppaal.templates.Location;
 
@@ -12,11 +12,11 @@ import de.uni_paderborn.uppaal.templates.Location;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation#getId <em>Id</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.parsable.IdentifiableLocation#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage#getIdentifiableLocation()
+ * @see de.uni_paderborn.uppaal.parsable.ParsablePackage#getIdentifiableLocation()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface IdentifiableLocation extends Location {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
-	 * @see de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage#getIdentifiableLocation_Id()
+	 * @see de.uni_paderborn.uppaal.parsable.ParsablePackage#getIdentifiableLocation_Id()
 	 * @model
 	 * @generated
 	 */
 	String getId();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.uppaal.parsable.IdentifiableLocation#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.

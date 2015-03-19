@@ -1,11 +1,11 @@
 /**
  */
-package de.uni_paderborn.uppaal.parsable.templates_parsable.util;
+package de.uni_paderborn.uppaal.parsable.util;
 
 import de.uni_paderborn.uppaal.core.CommentableElement;
 import de.uni_paderborn.uppaal.core.NamedElement;
 
-import de.uni_paderborn.uppaal.parsable.templates_parsable.*;
+import de.uni_paderborn.uppaal.parsable.*;
 
 import de.uni_paderborn.uppaal.templates.Location;
 
@@ -24,17 +24,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.uppaal.parsable.templates_parsable.TemplatesParsablePackage
+ * @see de.uni_paderborn.uppaal.parsable.ParsablePackage
  * @generated
  */
-public class TemplatesParsableAdapterFactory extends AdapterFactoryImpl {
+public class ParsableAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TemplatesParsablePackage modelPackage;
+	protected static ParsablePackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -42,9 +42,9 @@ public class TemplatesParsableAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemplatesParsableAdapterFactory() {
+	public ParsableAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = TemplatesParsablePackage.eINSTANCE;
+			modelPackage = ParsablePackage.eINSTANCE;
 		}
 	}
 
@@ -73,8 +73,8 @@ public class TemplatesParsableAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TemplatesParsableSwitch<Adapter> modelSwitch =
-		new TemplatesParsableSwitch<Adapter>() {
+	protected ParsableSwitch<Adapter> modelSwitch =
+		new ParsableSwitch<Adapter>() {
 			@Override
 			public Adapter caseIdentifiableLocation(IdentifiableLocation object) {
 				return createIdentifiableLocationAdapter();
@@ -120,13 +120,13 @@ public class TemplatesParsableAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation <em>Identifiable Location</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.uppaal.parsable.IdentifiableLocation <em>Identifiable Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.uppaal.parsable.templates_parsable.IdentifiableLocation
+	 * @see de.uni_paderborn.uppaal.parsable.IdentifiableLocation
 	 * @generated
 	 */
 	public Adapter createIdentifiableLocationAdapter() {
@@ -215,4 +215,4 @@ public class TemplatesParsableAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //TemplatesParsableAdapterFactory
+} //ParsableAdapterFactory
