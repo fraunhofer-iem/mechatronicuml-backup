@@ -27,7 +27,7 @@ modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
 mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
 
 
-property bindings : Set(ParameterBinding);
+
 
 
 mapping CommittedExtension :: CommittedExtension2CommittedExtension() : CommittedExtension{

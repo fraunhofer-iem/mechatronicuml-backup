@@ -155,22 +155,9 @@
       </category>
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.ExportWizardPatternToProtocol"
+            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
             id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizard"
             name="Pattern To Protocol Transformation Wizard">
       </wizard>
-   </extension>
-     <extension
-         point="org.eclipse.ui.exportWizards">
-      <category
-            id="de.uni_paderborn.fujaba.export"
-            name="MechatronicUML">
-      </category>
-      <wizard
-            category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.ExportWizardPatternToProtocol2"
-            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizard2"
-            name="Pattern To Protocol Transformation Wizard NEW">
-      </wizard>
-   </extension>
+   </extension>  
 </plugin>

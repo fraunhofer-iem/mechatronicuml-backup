@@ -14,7 +14,9 @@ public class Activator extends AbstractUIPlugin {
 
 	public static final String CREATE_ROLE_RTSC = "/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom/transforms/CreateRoleRTSC.qvto";
 
-	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
+	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
+	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep2.qvto";
+	
 	private static Activator instance;
 
 	private Map<String, TransformationExecutor> transformationExecutors = new HashMap<String, TransformationExecutor>();
@@ -28,7 +30,8 @@ public class Activator extends AbstractUIPlugin {
 
 		// Create transformation executor
 
-		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL);
+		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2);
+		getTransformationExecutor(TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1);
 		getTransformationExecutor(CREATE_ROLE_RTSC);
 	}
 
