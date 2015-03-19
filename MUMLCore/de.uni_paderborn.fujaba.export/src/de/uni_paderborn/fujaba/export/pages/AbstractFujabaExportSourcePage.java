@@ -151,7 +151,7 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 	
 	public class DomainElementPageExtension implements ModelSelectionPageExtension {
 		
-		private CheckboxTreeViewer treeViewer;
+		protected CheckboxTreeViewer treeViewer;
 
 
 		@Override
