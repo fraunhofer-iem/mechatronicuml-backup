@@ -34,13 +34,15 @@ public class SelectFujabaModelPage extends WizardPage
 	private RootNode model = null;
 	IStructuredSelection selection = null;
 	
+	//TODO: Externalize Strings and use the same ones in FujabaSelectionEditor
+	
 	public SelectFujabaModelPage(String pageName, IStructuredSelection selection) 
 	{
 		super(pageName);
 		this.selection = selection;
 		this.setPageComplete(false);
-		this.setTitle("Fujaba Model");
-		this.setDescription("Select a Fujaba Model");
+		this.setTitle("MechatronicUML Model");
+		this.setDescription("Select a MechatronicUML Model");
 	}
 
 	@Override
@@ -54,7 +56,7 @@ public class SelectFujabaModelPage extends WizardPage
 		
 		this.setControl(topLevel);
 		
-		this.modelEditor = new FujabaSelectionEditor("modelEditor", "Fujaba Model", topLevel);
+		this.modelEditor = new FujabaSelectionEditor("modelEditor", "MechatronicUML Model", topLevel);
 		this.modelEditor.setPropertyChangeListener(new IPropertyChangeListener() {
 			@Override
 			public void propertyChange(PropertyChangeEvent event) {
@@ -66,7 +68,7 @@ public class SelectFujabaModelPage extends WizardPage
 		if(selection.getFirstElement() instanceof IFile)
 		{
 			IFile initial = (IFile) selection.getFirstElement();
-			if("fujaba".equals(initial.getFileExtension()))
+			if("fujaba".equals(initial.getFileExtension()) || "muml".equals(initial.getFileExtension()))
 					this.modelEditor.setStringValue(initial.getFullPath().toString());
 		}		
 		
@@ -82,12 +84,13 @@ public class SelectFujabaModelPage extends WizardPage
 	{	
 		String filename = this.modelEditor.getStringValue();
 		
-		if(!filename.endsWith(".fujaba"))
+		if(!(filename.endsWith(".fujaba") || filename.endsWith(".muml")))
 			return;
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("fujaba", new XMIResourceFactoryImpl());
+		m.put("muml", new XMIResourceFactoryImpl());
 
 		// Obtain a new resource set
 		ResourceSet resSet = new ResourceSetImpl();

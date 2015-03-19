@@ -18,9 +18,10 @@ public class FujabaSelectionEditor extends FileFieldEditor
 	@Override
 	protected String changePressed()
 	{
+		//TODO: Externalize strings
 		ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(this.getShell(),new WorkbenchLabelProvider(), new BaseWorkbenchContentProvider());
-    	dialog.setTitle("Select Fujaba Model");
-    	dialog.setMessage("Select Fujaba Model from workspace");
+    	dialog.setTitle("Select MechatronicUML Model");
+    	dialog.setMessage("Select MechatronicUML Model from workspace");
     	dialog.setInput(ResourcesPlugin.getWorkspace().getRoot());
     	dialog.setAllowMultiple(false);		    	
 		dialog.open();
@@ -29,7 +30,7 @@ public class FujabaSelectionEditor extends FileFieldEditor
 		if(dialog.getFirstResult() instanceof IFile)
 		{
 			IFile file = (IFile)dialog.getFirstResult();
-			if("fujaba".equals(file.getFileExtension()))
+			if("fujaba".equals(file.getFileExtension()) || "muml".equals(file.getFileExtension()))
 				return file.getFullPath().toPortableString();
 		}
 		return null;
