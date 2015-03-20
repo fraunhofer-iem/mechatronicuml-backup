@@ -9,12 +9,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.properties.OrderedElement;
 import de.uni_paderborn.fujaba.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.properties.Property;
 import de.uni_paderborn.fujaba.properties.PropertyCategory;
@@ -147,7 +147,16 @@ public class PropertyCategoryItemProvider
 				PropertyCategory category = (PropertyCategory) object;
 				
 				List<Property> properties = new ArrayList<Property>();
-				for (de.uni_paderborn.fujaba.properties.Class clazz : category.getClazz().getAllSuperClasses()) {
+
+				// Get super classes
+				List<de.uni_paderborn.fujaba.properties.Class> superClasses = category.getClazz().getAllSuperClasses();
+				
+				// Copy super classes and add this class
+				List<de.uni_paderborn.fujaba.properties.Class> classes = new ArrayList<de.uni_paderborn.fujaba.properties.Class>(superClasses);
+				classes.add(0, category.getClazz());
+				
+				// Walk through all classes and collect properties
+				for (de.uni_paderborn.fujaba.properties.Class clazz : classes) {
 					for (Property property : clazz.getProperties()) {
 						properties.add(property);
 					}
