@@ -152,8 +152,16 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 	public class DomainElementPageExtension implements ModelSelectionPageExtension {
 		
 		protected CheckboxTreeViewer treeViewer;
-
-
+		protected Resource resource;
+		public Resource getResource()
+		{
+			return resource;
+		}
+		
+		public CheckboxTreeViewer getTreeViewer()
+		{
+			return treeViewer;
+		}
 		@Override
 		public void createControl(Composite parent) {
 			int sectionStyle = Section.TITLE_BAR
@@ -206,6 +214,7 @@ public abstract class AbstractFujabaExportSourcePage extends ExtensibleModelSele
 
 		@Override
 		public void setResource(Resource resource) {
+			this.resource = resource;
 			ISelection selection = null;
 			AdapterFactory adapterFactory = null;							
 			if (resource != null && !resource.getContents().isEmpty()) {
