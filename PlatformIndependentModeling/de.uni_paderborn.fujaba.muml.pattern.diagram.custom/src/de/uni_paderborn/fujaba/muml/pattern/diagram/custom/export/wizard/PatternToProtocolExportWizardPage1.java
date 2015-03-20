@@ -18,6 +18,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
 import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
+import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage.DomainElementPageExtension;
 import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
 import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
@@ -46,9 +47,9 @@ public class PatternToProtocolExportWizardPage1 extends
 	public void addExtensions() {
 		ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
 		if (elementSelectionMode.supportsElementSelection()) {
-			domainElementExtension = new DomainPageExtension();
-			addExtension("add", domainElementExtension); //$NON-NLS-1$
-		}
+			domainElementExtension = new ModifiedDomainElementPageExtension();
+			addExtension("add", domainElementExtension); //$NON-NLS-1$		
+		}	
 	}
 
 	public CoordinationPattern getSelectedPattern() {
@@ -86,7 +87,7 @@ public class PatternToProtocolExportWizardPage1 extends
 	}
 
 	public Resource getSelectedResource() {
-		return ((DomainPageExtension) domainElementExtension).getResource();
+		return domainElementExtension.getResource();
 	}
 
 	@Override
@@ -102,16 +103,14 @@ public class PatternToProtocolExportWizardPage1 extends
 
 	@Override
 	public void validatePage() {
-		ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
-		Assert.isNotNull(
-				elementSelectionMode,
-				"Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your fujaba export wizard supports.");
+		super.validatePage();
+		if (this.isPageComplete()) {
+			ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
+			Assert.isNotNull(
+					elementSelectionMode,
+					"Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your fujaba export wizard supports.");
 
-		String errorMessage = null;
-		if (elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_NONE
-				&& getSourceElements().length == 0) {
-			errorMessage = "Please select a domain element.";
-		} else {
+			String errorMessage = null;
 			ArrayList<LegalConfiguration> selectedLegalConfigurations = new ArrayList<LegalConfiguration>();
 			ArrayList<CoordinationPattern> selectedPatterns = new ArrayList<CoordinationPattern>();
 			ArrayList<CoordinationPattern> referencedPatterns = new ArrayList<CoordinationPattern>();
@@ -136,11 +135,6 @@ public class PatternToProtocolExportWizardPage1 extends
 				if (element instanceof CoordinationPattern)
 					selectedPatterns.add((CoordinationPattern) element);
 			}
-			if (errorMessage == null
-					&& elementSelectionMode != ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI
-					&& getSourceElements().length > 1) {
-				errorMessage = "Multiple source elements are not supported.";
-			}
 			if (errorMessage == null) {
 				if (selectedPatterns.size() != 1)
 					errorMessage = "Choose exactly one CoordinationPattern.";
@@ -158,75 +152,38 @@ public class PatternToProtocolExportWizardPage1 extends
 					}
 				}
 			}
+
+			setErrorMessage(errorMessage);
+			setPageComplete(errorMessage == null);
 		}
-		setErrorMessage(errorMessage);
-		setPageComplete(errorMessage == null);
 	}
 
 	@Override
 	public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
 		return ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI;
 	}
-
-	public class DomainPageExtension
-			extends
-			de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage.DomainElementPageExtension {
-		Resource resource;
-
-		@Override
-		public void setResource(Resource resource) {
-			this.resource = resource;
-			ISelection selection = null;
-			AdapterFactory adapterFactory = null;
-			if (resource != null && !resource.getContents().isEmpty()) {
-				EditingDomain editingDomain = AdapterFactoryEditingDomain
-						.getEditingDomainFor(resource.getContents().get(0));
-				if (editingDomain instanceof AdapterFactoryEditingDomain) {
-					adapterFactory = ((AdapterFactoryEditingDomain) editingDomain)
-							.getAdapterFactory();
+	
+	class ModifiedDomainElementPageExtension extends DomainElementPageExtension
+	{
+		@Override public void setResource(Resource resource)
+		{
+			super.setResource(resource);
+			treeViewer.addFilter(new ViewerFilter() {
+				@Override
+				public boolean select(Viewer viewer,
+						Object parentElement, Object element) {
+					// TODO Auto-generated method stub
+					if (element instanceof CoordinationPattern
+							|| element instanceof LegalConfiguration
+							|| element instanceof RootNode
+							|| (element instanceof ModelElementCategory && ((ModelElementCategory) element)
+									.getName().contains("pattern")))
+						return true;
+					return false;
 				}
-			}
-			if (adapterFactory != null) {
-				treeViewer
-						.setContentProvider(new AdapterFactoryContentProvider(
-								adapterFactory));
-				treeViewer
-						.setLabelProvider(new GreyedAdapterFactoryLabelProvider(
-								adapterFactory) {
-							@Override
-							public boolean isEnabled(Object object) {
-								return object instanceof EObject
-										&& wizardPageSupportsSourceModelElement((EObject) object);
-							}
-						});
-
-				treeViewer.setFilters(new ViewerFilter[] { new ViewerFilter() {
-
-					@Override
-					public boolean select(Viewer viewer, Object parentElement,
-							Object element) {
-						// TODO Auto-generated method stub
-						if (element instanceof CoordinationPattern
-								|| element instanceof LegalConfiguration
-								|| element instanceof RootNode
-								|| (element instanceof ModelElementCategory && ((ModelElementCategory) element)
-										.getName().contains("pattern")))
-							return true;
-						return false;
-					}
-				} });
-				treeViewer.setInput(resource);
-				selection = wizardPageGetDefaultSelection(resource);
-			} else {
-				treeViewer.setContentProvider(NullContentProvider.DEFAULT);
-				treeViewer.setInput(null);
-			}
-			setCheckedElements(selection);
-		}
-
-		public Resource getResource() {
-			return resource;
+			});
 		}
 	}
+
 
 }

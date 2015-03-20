@@ -93,7 +93,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 	@Override
 	public IFujabaExportOperation wizardCreateExportOperation() {
 		// final EObject[] sourceElements = page1.getSourceElements();
-
+		
 		return new AbstractFujabaExportOperation() {
 			@Override
 			protected IStatus doExecute(IProgressMonitor progressMonitor) {
