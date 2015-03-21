@@ -35,6 +35,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.Resource
 import de.uni_paderborn.uppaal.types.Library
 import de.uni_paderborn.uppaal.expressions.FunctionCallExpression
+import de.uni_paderborn.uppaal.templates.RedefinedTemplate
+import de.uni_paderborn.uppaal.declarations.system.TemplateDeclaration
+import java.util.List
 
 /**
  * This class contains custom scoping description.
@@ -149,6 +152,44 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 		Scopes::scopeFor(
 			template.location.filter(typeof(IdentifiableLocation)),
 			getNameOfLocation, IScope::NULLSCOPE
+		)
+	}
+	
+	/**
+	 * Method that is called when the referredTemplate attribute of a RedefinedTemplate needs to be resolved.
+	 * 
+	 * @param context RedefinedTemplate instance.
+	 * @param ref EReference instance for the referredTemplate attribute.
+	 * 
+	 * @return Scope for the referredTemplate attribute.
+	 */
+	def IScope scope_RedefinedTemplate_referredTemplate(EObject context, EReference ref)
+	{
+		val nta = context.eContainer.eContainer.eContainer as NTA;
+		val List<NamedElement> redefinedTemplates = newArrayList
+		nta.systemDeclarations.declaration.filter(typeof(TemplateDeclaration)).forall[redefinedTemplates.add(it.declaredTemplate)]
+		
+		return Scopes::scopeFor(
+			nta.template + redefinedTemplates
+		)
+	}
+	
+	/**
+	 * Method that is called when the template attribute of a InstantiationList needs to be resolved.
+	 * 
+	 * @param context InstantiationList instance.
+	 * @param ref EReference instance for the template attribute.
+	 * 
+	 * @return Scope for the template attribute.
+	 */
+	def IScope scope_InstantiationList_template(EObject context, EReference ref)
+	{
+		val nta = context.eContainer.eContainer.eContainer as NTA;
+		val List<NamedElement> redefinedTemplates = newArrayList
+		nta.systemDeclarations.declaration.filter(typeof(TemplateDeclaration)).forall[redefinedTemplates.add(it.declaredTemplate)]
+		
+		return Scopes::scopeFor(
+			nta.template + redefinedTemplates
 		)
 	}
 	
