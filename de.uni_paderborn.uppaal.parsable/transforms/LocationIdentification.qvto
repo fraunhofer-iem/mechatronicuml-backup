@@ -7,7 +7,8 @@ modeltype templates uses uppaal::templates('http://www.uni-paderborn.de/uppaal/0
 main() { 
 	u.objectsOfType(Template)->forEach(template) {
 		template.location := template.location.map Location2IdentifiableLocation();
-		template.edge := template.edge.map Edge2Edge(); 
+		template._init := template._init.map Location2IdentifiableLocation();
+		template.edge := template.edge.map Edge2Edge();
 	};
 	
 	--assert fatal (u.objectsOfType(Location)->isEmpty());
@@ -15,7 +16,7 @@ main() {
 
 mapping templates::Location :: Location2IdentifiableLocation() : parsable::IdentifiableLocation {
 	name := self.name;
-	comment := self.comment; 
+	comment := self.comment;
 	position := self.position;
 	colorCode := self.colorCode;
 	parentTemplate := self.parentTemplate;
