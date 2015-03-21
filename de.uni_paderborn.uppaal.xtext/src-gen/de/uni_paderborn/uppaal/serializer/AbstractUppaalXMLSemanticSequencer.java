@@ -1895,7 +1895,7 @@ public abstract class AbstractUppaalXMLSemanticSequencer extends AbstractDelegat
 	
 	/**
 	 * Constraint:
-	 *     (name=UPPAAL_IDENTIFIER referredTemplate=[Template|ID])
+	 *     (name=UPPAAL_IDENTIFIER referredTemplate=[AbstractTemplate|UPPAAL_IDENTIFIER])
 	 */
 	protected void sequence_RedefinedTemplate(EObject context, RedefinedTemplate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

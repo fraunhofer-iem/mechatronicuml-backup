@@ -143,8 +143,13 @@ class UppaalXMLScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDecl
 	 */
 	def IScope scope_Template_init(EObject context, EReference ref)
 	{
-		val template = context.eContainer as Template
-		Scopes::scopeFor( template.location )
+		if (context == null || !(context instanceof Template))
+			return IScope::NULLSCOPE;
+		val template = context as Template
+		Scopes::scopeFor(
+			template.location.filter(typeof(IdentifiableLocation)),
+			getNameOfLocation, IScope::NULLSCOPE
+		)
 	}
 	
 	/**

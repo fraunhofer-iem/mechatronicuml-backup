@@ -2080,14 +2080,14 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameUPPAAL_IDENTIFIERParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cReferredTemplateAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cReferredTemplateTemplateCrossReference_2_0 = (CrossReference)cReferredTemplateAssignment_2.eContents().get(0);
-		private final RuleCall cReferredTemplateTemplateIDTerminalRuleCall_2_0_1 = (RuleCall)cReferredTemplateTemplateCrossReference_2_0.eContents().get(1);
+		private final CrossReference cReferredTemplateAbstractTemplateCrossReference_2_0 = (CrossReference)cReferredTemplateAssignment_2.eContents().get(0);
+		private final RuleCall cReferredTemplateAbstractTemplateUPPAAL_IDENTIFIERParserRuleCall_2_0_1 = (RuleCall)cReferredTemplateAbstractTemplateCrossReference_2_0.eContents().get(1);
 		
 		//RedefinedTemplate returns templates::RedefinedTemplate:
-		//	name=UPPAAL_IDENTIFIER "=" referredTemplate=[templates::Template];
+		//	name=UPPAAL_IDENTIFIER "=" referredTemplate=[templates::AbstractTemplate|UPPAAL_IDENTIFIER];
 		public ParserRule getRule() { return rule; }
 
-		//name=UPPAAL_IDENTIFIER "=" referredTemplate=[templates::Template]
+		//name=UPPAAL_IDENTIFIER "=" referredTemplate=[templates::AbstractTemplate|UPPAAL_IDENTIFIER]
 		public Group getGroup() { return cGroup; }
 
 		//name=UPPAAL_IDENTIFIER
@@ -2099,14 +2099,14 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 
-		//referredTemplate=[templates::Template]
+		//referredTemplate=[templates::AbstractTemplate|UPPAAL_IDENTIFIER]
 		public Assignment getReferredTemplateAssignment_2() { return cReferredTemplateAssignment_2; }
 
-		//[templates::Template]
-		public CrossReference getReferredTemplateTemplateCrossReference_2_0() { return cReferredTemplateTemplateCrossReference_2_0; }
+		//[templates::AbstractTemplate|UPPAAL_IDENTIFIER]
+		public CrossReference getReferredTemplateAbstractTemplateCrossReference_2_0() { return cReferredTemplateAbstractTemplateCrossReference_2_0; }
 
-		//ID
-		public RuleCall getReferredTemplateTemplateIDTerminalRuleCall_2_0_1() { return cReferredTemplateTemplateIDTerminalRuleCall_2_0_1; }
+		//UPPAAL_IDENTIFIER
+		public RuleCall getReferredTemplateAbstractTemplateUPPAAL_IDENTIFIERParserRuleCall_2_0_1() { return cReferredTemplateAbstractTemplateUPPAAL_IDENTIFIERParserRuleCall_2_0_1; }
 	}
 
 	public class SystemElements extends AbstractParserRuleElementFinder {
@@ -6736,7 +6736,7 @@ public class UppaalXMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RedefinedTemplate returns templates::RedefinedTemplate:
-	//	name=UPPAAL_IDENTIFIER "=" referredTemplate=[templates::Template];
+	//	name=UPPAAL_IDENTIFIER "=" referredTemplate=[templates::AbstractTemplate|UPPAAL_IDENTIFIER];
 	public RedefinedTemplateElements getRedefinedTemplateAccess() {
 		return pRedefinedTemplate;
 	}

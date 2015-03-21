@@ -257,7 +257,7 @@ TemplateDeclaration returns system::TemplateDeclaration:
 RedefinedTemplate returns templates::RedefinedTemplate:
 	name=UPPAAL_IDENTIFIER
 	'='
-	referredTemplate=[templates::Template|ID]
+	referredTemplate=[templates::AbstractTemplate|UPPAAL_IDENTIFIER]
 ;
 
 System returns system::System:

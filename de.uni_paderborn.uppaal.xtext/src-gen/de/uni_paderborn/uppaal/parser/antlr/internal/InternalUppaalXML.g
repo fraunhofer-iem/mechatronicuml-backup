@@ -3160,10 +3160,12 @@ ruleRedefinedTemplate returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getRedefinedTemplateRule());
 	        }
         }
-	otherlv_2=RULE_ID
-	{
-		newLeafNode(otherlv_2, grammarAccess.getRedefinedTemplateAccess().getReferredTemplateTemplateCrossReference_2_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateAbstractTemplateCrossReference_2_0()); 
+	    }
+		ruleUPPAAL_IDENTIFIER		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))
