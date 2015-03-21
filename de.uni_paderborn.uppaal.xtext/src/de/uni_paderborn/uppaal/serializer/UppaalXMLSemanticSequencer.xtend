@@ -3,5 +3,100 @@
  */
 package de.uni_paderborn.uppaal.serializer
 
+import org.eclipse.emf.ecore.EObject
+import de.uni_paderborn.uppaal.templates.Edge
+import de.uni_paderborn.uppaal.services.UppaalXMLGrammarAccess
+import com.google.inject.Inject
+
 class UppaalXMLSemanticSequencer extends AbstractUppaalXMLSemanticSequencer {
+
+	@Inject extension UppaalXMLGrammarAccess grammarAccess;
+
+	/**
+	 * This method needed to be overwritten in order to solve a serializing problem concerning
+	 * edges with more than one update or selection. For example, an edge with the updates
+	 * <ul>
+	 * <li>x=1</li>
+	 * <li>y=2</li>
+	 * <li>z=3</li>
+	 * </ul>
+	 * should serialize to
+	 * <pre>
+	 * {@code
+	 * <label kind="assignment">x=1, y=2, z=3</label>
+	 * }
+	 * </pre>
+	 * but was actually serialized to
+	 * <pre>
+	 * {@code
+	 * <label kind="assignment">x=1</label>
+	 * <label kind="assignment">y=2</label>
+	 * <label kind="assignment">z=3</label>
+	 * }
+	 * </pre>
+	 * in which case UPPAAL ignores the second and third update. The solution is to manually
+	 * tell the serializer which rules to follow in the grammer which is exactly what is done
+	 * in the following.
+	 * 
+	 * @param context Context of the serializer.
+	 * @param semanticObject The specific instance of Edge.
+	 */
+	override def sequence_Edge(EObject context, Edge semanticObject) {
+		val feeder = createSequencerFeeder(semanticObject)
+		
+		if (semanticObject.colorCode != null && !("".equals(semanticObject.colorCode)))
+		{
+			feeder.accept(grammarAccess.edgeAccess.colorCodeSTRINGTerminalRuleCall_2_2_2_0, semanticObject.colorCode)
+		}
+		
+		feeder.accept(grammarAccess.edgeAccess.sourceLocationSTRINGTerminalRuleCall_8_0_1, semanticObject.source)
+		feeder.accept(grammarAccess.edgeAccess.targetLocationSTRINGTerminalRuleCall_14_0_1, semanticObject.target)
+		
+		if (semanticObject.comment != null && !("".equals(semanticObject.comment)))
+		{
+			feeder.accept(grammarAccess.edgeAccess.commentCommentLabelParserRuleCall_16_0_7_0, semanticObject.comment)
+		}
+		
+		if (semanticObject.synchronization != null)
+		{
+			feeder.accept(grammarAccess.edgeAccess.synchronizationSynchronizationLabelParserRuleCall_16_1_7_0, semanticObject.synchronization)
+		}
+		
+		if (semanticObject.guard != null)
+		{
+			feeder.accept(grammarAccess.edgeAccess.guardExpressionParserRuleCall_16_2_7_0, semanticObject.guard)
+		}
+		
+		{
+			var first = 1
+			for (child : semanticObject.update) {
+				if (first == 1) {
+					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_7_0, child, first)
+				} else {
+					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_8_1_0, child, first)
+				}
+				first++
+			}
+		}
+		
+		{
+			var first = 1;
+			for (child : semanticObject.selection) {
+				if (first == 1) {
+					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_7_0, child, first)
+				} else {
+					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_8_1_0, child, first)
+				}
+				first++
+			}
+		}
+		
+		for (child : semanticObject.bendPoint)
+		{
+			feeder.accept(grammarAccess.edgeAccess.bendPointPointParserRuleCall_17_2_0, child)
+		}
+		
+		feeder.finish()
+	}
+
 }
