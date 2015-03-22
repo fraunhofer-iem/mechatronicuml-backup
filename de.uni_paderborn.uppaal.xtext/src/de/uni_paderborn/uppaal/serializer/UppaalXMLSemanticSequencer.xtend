@@ -68,32 +68,36 @@ class UppaalXMLSemanticSequencer extends AbstractUppaalXMLSemanticSequencer {
 		}
 		
 		{
-			var first = 1
+			var count = 1
 			for (child : semanticObject.update) {
-				if (first == 1) {
-					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_7_0, child, first)
+				if (count == 1) {
+					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_7_0, child, count)
 				} else {
-					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_8_1_0, child, first)
+					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_8_1_0, child, count)
 				}
-				first++
+				count++
 			}
 		}
 		
 		{
-			var first = 1;
+			var count = 1
 			for (child : semanticObject.selection) {
-				if (first == 1) {
-					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_7_0, child, first)
+				if (count == 1) {
+					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_7_0, child, count)
 				} else {
-					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_8_1_0, child, first)
+					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_8_1_0, child, count)
 				}
-				first++
+				count++
 			}
 		}
 		
-		for (child : semanticObject.bendPoint)
 		{
-			feeder.accept(grammarAccess.edgeAccess.bendPointPointParserRuleCall_17_2_0, child)
+			var count = 1
+			for (child : semanticObject.bendPoint)
+			{
+				feeder.accept(grammarAccess.edgeAccess.bendPointPointParserRuleCall_17_2_0, child, count)
+				count++
+			}
 		}
 		
 		feeder.finish()
