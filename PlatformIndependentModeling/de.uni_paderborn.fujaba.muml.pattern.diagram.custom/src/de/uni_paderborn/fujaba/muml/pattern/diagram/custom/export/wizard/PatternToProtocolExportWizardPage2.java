@@ -1,10 +1,9 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -39,7 +38,7 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 	Label selectionLabel;
 	FormToolkit toolkit;
 	PatternToProtocolExportWizardPage1 page1;
-	HashMap<Parameter, Text> hm;
+	HashMap<Parameter, Text> parameterToTextMapping;
 
 	public PatternToProtocolExportWizardPage2(String pageName,
 			FormToolkit toolkit, PatternToProtocolExportWizardPage1 page1) {
@@ -126,7 +125,7 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 			return;
 		}
 		LegalConfiguration lc = page1.getSelectedLegalConfiguration();
-		hm = new HashMap<Parameter, Text>();
+		parameterToTextMapping = new HashMap<Parameter, Text>();
 		int counter = 1;
 		List<Parameter> parameterList = p.getPatternParameters();
 		if (parameterList.size() == 0) {
@@ -143,12 +142,12 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 			l.setText(parameter.getName() + " ["
 					+ parameter.getDataType().getName() + "]:");
 			t.setText("");
-			hm.put(parameter, t);
+			parameterToTextMapping.put(parameter, t);
 			counter++;
 		}
 		if (lc != null) {
 			for (ParameterBinding binding : lc.getParameterBindings()) {
-				Text t = hm.get(binding.getParameter());
+				Text t = parameterToTextMapping.get(binding.getParameter());
 				if (t != null) {
 					t.setText(LanguageResource.serializeEObjectSafe(
 							binding.getValue(), binding));
@@ -158,22 +157,22 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 		}
 	}
 
-	public EList<ParameterBinding> getParameterBindings() {
+	public ArrayList<ParameterBinding> getParameterBindings() {
 
-		EList<ParameterBinding> bindingList = new BasicEList<ParameterBinding>();
+		ArrayList<ParameterBinding> bindingList = new ArrayList<ParameterBinding>();
 		/*
 		 * LegalConfiguration lc = page1.getSelectedLegalConfiguration(); if(lc
 		 * !=null){ for(ParameterBinding binding : lc.getParameterBindings()) {
 		 * Text t = hm.get(binding.getParameter()); if(t!=null) {
 		 * hm.remove(binding.getParameter()); bindingList.add(binding); } } }
 		 */
-		for (Parameter p : hm.keySet()) {
+		for (Parameter p : parameterToTextMapping.keySet()) {
 			ParameterBinding binding = BehaviorFactory.eINSTANCE
 					.createParameterBinding();
 			binding.setParameter(p);
 			LiteralExpression le = CommonExpressionsFactory.eINSTANCE
 					.createLiteralExpression();
-			le.setValue(hm.get(p).getText());
+			le.setValue(parameterToTextMapping.get(p).getText());
 			binding.setValue(le);
 			bindingList.add(binding);
 		}
