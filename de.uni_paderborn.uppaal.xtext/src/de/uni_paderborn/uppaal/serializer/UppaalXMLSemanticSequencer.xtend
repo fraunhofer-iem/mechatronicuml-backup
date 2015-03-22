@@ -57,6 +57,18 @@ class UppaalXMLSemanticSequencer extends AbstractUppaalXMLSemanticSequencer {
 			feeder.accept(grammarAccess.edgeAccess.commentCommentLabelParserRuleCall_16_0_7_0, semanticObject.comment)
 		}
 		
+		{
+			var count = 1
+			for (child : semanticObject.selection) {
+				if (count == 1) {
+					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_7_0, child, count)
+				} else {
+					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_8_1_0, child, count)
+				}
+				count++
+			}
+		}
+		
 		if (semanticObject.synchronization != null)
 		{
 			feeder.accept(grammarAccess.edgeAccess.synchronizationSynchronizationLabelParserRuleCall_16_1_7_0, semanticObject.synchronization)
@@ -74,18 +86,6 @@ class UppaalXMLSemanticSequencer extends AbstractUppaalXMLSemanticSequencer {
 					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_7_0, child, count)
 				} else {
 					feeder.accept(grammarAccess.edgeAccess.updateExpressionParserRuleCall_16_3_8_1_0, child, count)
-				}
-				count++
-			}
-		}
-		
-		{
-			var count = 1
-			for (child : semanticObject.selection) {
-				if (count == 1) {
-					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_7_0, child, count)
-				} else {
-					feeder.accept(grammarAccess.edgeAccess.selectionSelectionParserRuleCall_16_4_8_1_0, child, count)
 				}
 				count++
 			}

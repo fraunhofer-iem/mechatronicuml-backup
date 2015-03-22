@@ -27548,12 +27548,12 @@ rule__RedefinedTemplate__ReferredTemplateAssignment_2
     }
 :
 (
-{ before(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateTemplateCrossReference_2_0()); }
+{ before(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateAbstractTemplateCrossReference_2_0()); }
 (
-{ before(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateTemplateIDTerminalRuleCall_2_0_1()); }
-	RULE_ID{ after(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateTemplateIDTerminalRuleCall_2_0_1()); }
+{ before(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateAbstractTemplateUPPAAL_IDENTIFIERParserRuleCall_2_0_1()); }
+	ruleUPPAAL_IDENTIFIER{ after(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateAbstractTemplateUPPAAL_IDENTIFIERParserRuleCall_2_0_1()); }
 )
-{ after(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateTemplateCrossReference_2_0()); }
+{ after(grammarAccess.getRedefinedTemplateAccess().getReferredTemplateAbstractTemplateCrossReference_2_0()); }
 )
 
 ;
