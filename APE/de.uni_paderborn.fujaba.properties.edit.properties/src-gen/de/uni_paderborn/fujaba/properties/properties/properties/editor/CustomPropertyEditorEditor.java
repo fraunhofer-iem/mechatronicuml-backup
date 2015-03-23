@@ -24,19 +24,21 @@ public class CustomPropertyEditorEditor
 		if (tab == null) {
 
 			addPropertyEditor(
-					createFullyQualifiedClassName_GeneralTab_Editor(), false);
+					createEditorFullyQualifiedClassName_GeneralTab_Editor(),
+					false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(
-					createFullyQualifiedClassName_GeneralTab_Editor(), false);
+					createEditorFullyQualifiedClassName_GeneralTab_Editor(),
+					false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFullyQualifiedClassName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createFullyQualifiedClassName_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFullyQualifiedClassName_GeneralTab_Editor() {
 		if (this.editorFullyQualifiedClassName_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getCustomPropertyEditor_FullyQualifiedClassName();

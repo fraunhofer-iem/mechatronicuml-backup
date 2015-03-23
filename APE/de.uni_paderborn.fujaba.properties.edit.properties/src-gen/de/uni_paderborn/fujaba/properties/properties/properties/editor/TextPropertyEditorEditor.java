@@ -23,18 +23,18 @@ public class TextPropertyEditorEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createMultiLine_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMultiLine_GeneralTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createMultiLine_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMultiLine_GeneralTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMultiLine_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createMultiLine_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMultiLine_GeneralTab_Editor() {
 		if (this.editorMultiLine_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getTextPropertyEditor_MultiLine();

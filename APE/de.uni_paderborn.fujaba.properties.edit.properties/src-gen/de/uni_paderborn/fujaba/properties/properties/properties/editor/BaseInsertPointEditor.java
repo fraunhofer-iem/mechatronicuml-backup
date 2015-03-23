@@ -23,18 +23,18 @@ public class BaseInsertPointEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createBaseClass_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBaseClass_GeneralTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createBaseClass_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBaseClass_GeneralTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBaseClass_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createBaseClass_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBaseClass_GeneralTab_Editor() {
 		if (this.editorBaseClass_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getBaseInsertPoint_BaseClass();

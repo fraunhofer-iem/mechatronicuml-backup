@@ -23,22 +23,24 @@ public class ClassEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createGenClass_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorGenClass_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createSuperClasses_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSuperClasses_GeneralTab_Editor(),
+					false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createGenClass_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorGenClass_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createSuperClasses_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSuperClasses_GeneralTab_Editor(),
+					false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenClass_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createGenClass_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenClass_GeneralTab_Editor() {
 		if (this.editorGenClass_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getClass_GenClass();
@@ -51,7 +53,7 @@ public class ClassEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSuperClasses_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createSuperClasses_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSuperClasses_GeneralTab_Editor() {
 		if (this.editorSuperClasses_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getClass_SuperClasses();

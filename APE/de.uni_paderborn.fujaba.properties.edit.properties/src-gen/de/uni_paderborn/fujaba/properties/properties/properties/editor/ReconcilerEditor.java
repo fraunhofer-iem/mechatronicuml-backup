@@ -29,19 +29,19 @@ public class ReconcilerEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEnabled_GeneralTab_Editor(), false);
+					createEditorEnabled_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createReconcilePackages_GeneralTab_Editor(), false);
+					createEditorReconcilePackages_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createReconcileClasses_GeneralTab_Editor(), false);
+					createEditorReconcileClasses_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createReconcileProperties_GeneralTab_Editor(), false);
+					createEditorReconcileProperties_GeneralTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
@@ -51,26 +51,26 @@ public class ReconcilerEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createEnabled_GeneralTab_Editor(), false);
+					createEditorEnabled_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createReconcilePackages_GeneralTab_Editor(), false);
+					createEditorReconcilePackages_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createReconcileClasses_GeneralTab_Editor(), false);
+					createEditorReconcileClasses_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createReconcileProperties_GeneralTab_Editor(), false);
+					createEditorReconcileProperties_GeneralTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEnabled_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEnabled_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEnabled_GeneralTab_Editor() {
 		if (this.editorEnabled_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getReconciler_Enabled();
@@ -83,7 +83,7 @@ public class ReconcilerEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconcilePackages_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createReconcilePackages_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconcilePackages_GeneralTab_Editor() {
 		if (this.editorReconcilePackages_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getReconciler_ReconcilePackages();
@@ -96,7 +96,7 @@ public class ReconcilerEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconcileClasses_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createReconcileClasses_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconcileClasses_GeneralTab_Editor() {
 		if (this.editorReconcileClasses_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getReconciler_ReconcileClasses();
@@ -109,7 +109,7 @@ public class ReconcilerEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconcileProperties_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createReconcileProperties_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconcileProperties_GeneralTab_Editor() {
 		if (this.editorReconcileProperties_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getReconciler_ReconcileProperties();

@@ -23,36 +23,38 @@ public class PropertyEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createGenFeature_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorGenFeature_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createTab_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTab_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createTooltip_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTooltip_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createReconcile_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconcile_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
-					createInitializeOCLExpression_GeneralTab_Editor(), false);
+					createEditorInitializeOCLExpression_GeneralTab_Editor(),
+					false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createGenFeature_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorGenFeature_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createTab_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTab_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createTooltip_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTooltip_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createReconcile_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconcile_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
-					createInitializeOCLExpression_GeneralTab_Editor(), false);
+					createEditorInitializeOCLExpression_GeneralTab_Editor(),
+					false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorGenFeature_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createGenFeature_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorGenFeature_GeneralTab_Editor() {
 		if (this.editorGenFeature_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getProperty_GenFeature();
@@ -65,7 +67,7 @@ public class PropertyEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTab_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createTab_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTab_GeneralTab_Editor() {
 		if (this.editorTab_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getProperty_Tab();
@@ -78,7 +80,7 @@ public class PropertyEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTooltip_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createTooltip_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTooltip_GeneralTab_Editor() {
 		if (this.editorTooltip_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getProperty_Tooltip();
@@ -91,7 +93,7 @@ public class PropertyEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconcile_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createReconcile_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconcile_GeneralTab_Editor() {
 		if (this.editorReconcile_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getProperty_Reconcile();
@@ -104,7 +106,7 @@ public class PropertyEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInitializeOCLExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createInitializeOCLExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInitializeOCLExpression_GeneralTab_Editor() {
 		if (this.editorInitializeOCLExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getProperty_InitializeOCLExpression();

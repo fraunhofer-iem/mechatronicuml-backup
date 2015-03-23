@@ -245,9 +245,9 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.21">
       <genClass href="properties.genmodel#//properties/OCLFilter"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/OCLFilter/expression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes>

@@ -23,34 +23,36 @@ public class PluginEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createId_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorId_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createVendor_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVendor_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createVersion_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVersion_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createRequiredBundles_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRequiredBundles_GeneralTab_Editor(),
+					false);
 
 			addPropertyEditor(
-					createRequiredExecutionEnvironment_GeneralTab_Editor(),
+					createEditorRequiredExecutionEnvironment_GeneralTab_Editor(),
 					false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createId_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorId_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createName_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createVendor_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVendor_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createVersion_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVersion_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createRequiredBundles_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRequiredBundles_GeneralTab_Editor(),
+					false);
 
 			addPropertyEditor(
-					createRequiredExecutionEnvironment_GeneralTab_Editor(),
+					createEditorRequiredExecutionEnvironment_GeneralTab_Editor(),
 					false);
 
 		} else {
@@ -58,7 +60,7 @@ public class PluginEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorId_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createId_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorId_GeneralTab_Editor() {
 		if (this.editorId_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getPlugin_Id();
@@ -71,7 +73,7 @@ public class PluginEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createName_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
 		if (this.editorName_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getPlugin_Name();
@@ -84,7 +86,7 @@ public class PluginEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVendor_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createVendor_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVendor_GeneralTab_Editor() {
 		if (this.editorVendor_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getPlugin_Vendor();
@@ -97,7 +99,7 @@ public class PluginEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVersion_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createVersion_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVersion_GeneralTab_Editor() {
 		if (this.editorVersion_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getPlugin_Version();
@@ -110,7 +112,7 @@ public class PluginEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRequiredBundles_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createRequiredBundles_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRequiredBundles_GeneralTab_Editor() {
 		if (this.editorRequiredBundles_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getPlugin_RequiredBundles();
@@ -123,7 +125,7 @@ public class PluginEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRequiredExecutionEnvironment_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createRequiredExecutionEnvironment_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRequiredExecutionEnvironment_GeneralTab_Editor() {
 		if (this.editorRequiredExecutionEnvironment_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getPlugin_RequiredExecutionEnvironment();

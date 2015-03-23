@@ -23,26 +23,26 @@ public class CustomTransformationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createUri_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUri_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEnabled_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorEnabled_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createPosition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createUri_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUri_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEnabled_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorEnabled_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createPosition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUri_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUri_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUri_GeneralTab_Editor() {
 		if (this.editorUri_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getCustomTransformation_Uri();
@@ -55,7 +55,7 @@ public class CustomTransformationEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEnabled_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEnabled_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEnabled_GeneralTab_Editor() {
 		if (this.editorEnabled_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getCustomTransformation_Enabled();
@@ -68,7 +68,7 @@ public class CustomTransformationEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPosition_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createPosition_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPosition_GeneralTab_Editor() {
 		if (this.editorPosition_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getCustomTransformation_Position();

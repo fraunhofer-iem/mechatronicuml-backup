@@ -23,18 +23,18 @@ public class CreationConstraintEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createFilters_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFilters_GeneralTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createFilters_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorFilters_GeneralTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFilters_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createFilters_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFilters_GeneralTab_Editor() {
 		if (this.editorFilters_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getCreationConstraint_Filters();

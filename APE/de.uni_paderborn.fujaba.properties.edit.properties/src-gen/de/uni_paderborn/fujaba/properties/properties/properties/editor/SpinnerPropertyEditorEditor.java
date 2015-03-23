@@ -23,18 +23,18 @@ public class SpinnerPropertyEditorEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createDigits_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDigits_GeneralTab_Editor(), false);
 
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createDigits_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDigits_GeneralTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDigits_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createDigits_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDigits_GeneralTab_Editor() {
 		if (this.editorDigits_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 					.getSpinnerPropertyEditor_Digits();
