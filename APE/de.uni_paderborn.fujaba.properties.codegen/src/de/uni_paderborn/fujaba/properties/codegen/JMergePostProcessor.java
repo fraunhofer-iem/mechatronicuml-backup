@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.properties.codegen;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -11,8 +10,6 @@ import org.eclipse.emf.codegen.merge.java.JMerger;
 import org.eclipse.xpand2.output.FileHandle;
 import org.eclipse.xpand2.output.PostProcessor;
 
-import com.sun.org.apache.bcel.internal.util.ByteSequence;
-
 public class JMergePostProcessor implements PostProcessor {
 	private final JControlModel model;
 
@@ -20,7 +17,7 @@ public class JMergePostProcessor implements PostProcessor {
 		this.model = model;
 	}
 
-	//@Override This override causes problems when deploying as plugin.
+	// @Override This override causes problems when deploying as plugin.
 	public void beforeWriteAndClose(FileHandle file) {
 		if (model == null || !model.canMerge()) {
 			return;
@@ -29,15 +26,17 @@ public class JMergePostProcessor implements PostProcessor {
 			return;
 		}
 		try {
-			//if (1 == 1 ) {throw new Exception();}
+			// if (1 == 1 ) {throw new Exception();}
 			JMerger merger = new JMerger(model);
 
 			String oldText = getFileContents(file.getAbsolutePath());
 			String newText = file.getBuffer().toString();
 			merger.setSourceCompilationUnit(merger
-					.createCompilationUnitForContents(newText)); // oldText vs. newText?
+					.createCompilationUnitForContents(newText)); // oldText vs.
+																	// newText?
 			merger.setTargetCompilationUnit(merger
-					.createCompilationUnitForContents(oldText));// oldText vs. newText?
+					.createCompilationUnitForContents(oldText));// oldText vs.
+																// newText?
 			merger.merge();
 			file.setBuffer(merger.getTargetCompilationUnitContents());
 		} catch (Exception e) {
@@ -48,15 +47,19 @@ public class JMergePostProcessor implements PostProcessor {
 	private String getFileContents(String absolutePath) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
 				new FileInputStream(absolutePath)));
-		StringBuilder builder = new StringBuilder();
-		String line = "";
-		while ((line = reader.readLine()) != null) {
-			builder.append(line);
+		try {
+			StringBuilder builder = new StringBuilder();
+			String line = "";
+			while ((line = reader.readLine()) != null) {
+				builder.append(line);
+			}
+			return builder.toString();
+		} finally {
+			reader.close();
 		}
-		return builder.toString();
 	}
 
-	//@Override This override causes problems when deploying as plugin.
+	// @Override This override causes problems when deploying as plugin.
 	public void afterClose(FileHandle impl) {
 		// do nothing
 	}
