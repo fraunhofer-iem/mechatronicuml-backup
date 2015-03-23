@@ -285,15 +285,8 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		boolean changed = (value == null) != (newValue == null) || (value != null && newValue != null && !value.equals(newValue));
 		EditingDomain editingDomain = getEditingDomain(element);
 		if (changed && editingDomain != null) {
-			editingDomain.getCommandStack().execute(new ChangeCommand(element) {
-	
-				@Override
-				protected void doExecute() {
-					doSetValue(newValue);
-				}
+			doSetValue(newValue);
 			
-			}); 
-
 			// If the value could not be applied, refresh editor!
 			if ((value != null && !value.equals(newValue))
 					|| (newValue != null && !newValue.equals(value))
@@ -317,7 +310,16 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		if (itemPropertyDescriptor != null) {
 			itemPropertyDescriptor.setPropertyValue(element, newValue);
 		} else {
-			element.eSet(feature, newValue);
+			final Object finalNewValue = newValue;
+			EditingDomain editingDomain = getEditingDomain(element);
+			editingDomain.getCommandStack().execute(new ChangeCommand(element) {
+				
+				@Override
+				protected void doExecute() {
+					element.eSet(feature, finalNewValue);
+				}
+			
+			});
 		}
 		
 

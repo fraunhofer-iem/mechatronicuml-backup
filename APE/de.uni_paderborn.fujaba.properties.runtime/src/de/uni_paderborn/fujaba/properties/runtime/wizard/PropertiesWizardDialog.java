@@ -1,45 +1,54 @@
 package de.uni_paderborn.fujaba.properties.runtime.wizard;
 
+import java.util.ArrayList;
+import java.util.EventObject;
+import java.util.List;
+
+import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 
-public class PropertiesWizardDialog extends WizardDialog {
+public class PropertiesWizardDialog extends WizardDialog implements CommandStackListener {
 	private EditingDomain editingDomain;
+	private List<org.eclipse.emf.common.command.Command> commands = new ArrayList<org.eclipse.emf.common.command.Command>();
 
 	public PropertiesWizardDialog(Shell parentShell, IWizard newWizard) {
 		super(parentShell, newWizard);
 	}
 	@Override
 	public boolean close() {
-		if (getReturnCode() == CANCEL) {
-			editingDomain.getCommandStack().undo();
+
+		if (editingDomain != null) {
+			editingDomain.getCommandStack().removeCommandStackListener(this);
+			if (getReturnCode() == CANCEL) {
+				org.eclipse.emf.common.command.Command undoCommand = editingDomain.getCommandStack().getUndoCommand();
+				while (editingDomain.getCommandStack().canUndo() && commands.contains(undoCommand)) {
+					editingDomain.getCommandStack().undo();
+					if (undoCommand == editingDomain.getCommandStack().getUndoCommand()) {
+						break;
+					}
+					undoCommand = editingDomain.getCommandStack().getUndoCommand();
+				}
+			}
+			commands.clear();
+			editingDomain = null;
 		}
-		editingDomain = null;
 		return super.close();
-	}
-	@Override
-	public int open() {
-		return super.open();
 	}
 
 	public void openWithUndo(EditingDomain editingDomain, Notifier notifier) {
+		commands.clear();
 		this.editingDomain = editingDomain;
-		ChangeCommand changeCommand = new ChangeCommand(notifier) {
-			@Override
-			protected void doExecute() {
-				// MUML #734
-				// Disable block on open, so that Eclipse can process UI events (necessary for starting jobs)
-				setBlockOnOpen(false);
-
-				// Open the wizard
-				open();
-			}
-		};
-		changeCommand.setLabel("Modify Properties");
-		editingDomain.getCommandStack().execute(changeCommand);
+		editingDomain.getCommandStack().addCommandStackListener(this);
+		setBlockOnOpen(false);
+		open();
+	}
+	
+	@Override
+	public void commandStackChanged(EventObject event) {
+		commands.add(editingDomain.getCommandStack().getUndoCommand());
 	}
 }
