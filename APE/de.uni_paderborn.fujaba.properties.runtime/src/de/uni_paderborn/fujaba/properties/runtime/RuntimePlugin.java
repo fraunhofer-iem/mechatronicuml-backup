@@ -572,7 +572,15 @@ public class RuntimePlugin extends AbstractUIPlugin {
 				if (part instanceof IAdaptable) {
 					Object model = ((IAdaptable) part).getAdapter(EObject.class);
 					if (selection.contains(model) && ((EditPart) part).isSelectable()) {
-						selectedElements.add(part);
+						// Make sure this edit part has no parent edit part with the same model.
+						EditPart editPart = ((EditPart) part).getParent();
+						while (editPart != null && editPart.getModel() != model) {
+							editPart = editPart.getParent();
+						}
+						if (editPart == null || editPart == viewer.getRootEditPart()) {
+							// no parent with same model found, allow selection.
+							selectedElements.add(part);
+						}
 					}
 				}
 			}
