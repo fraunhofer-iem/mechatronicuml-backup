@@ -27,8 +27,6 @@ String fullyQualifiedName(genmodel::GenPackage this) :
 	else
 		'') + ecorePackage.name;
 
-String toFirstUp(String this) : "";
-
 //String sectionName(Property this) :
 //	genFeature.genClass.ecoreClass.name + genFeature.ecoreFeature.name;
 
@@ -75,10 +73,16 @@ String genCategoryKey(PropertyCategory this) :
 	"de.uni_paderborn.fujaba.properties.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
 
 String genCreator(Property this) :
-	'create' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
+	'create' + genField().toFirstUpper() + "_Editor";	
+
+String genEditorIndexSuffix(Property this) : 
+	if (clazz.properties.select(p | p.genFeature == genFeature && p != this).isEmpty) then
+		""
+	else
+		"_" + clazz.properties.select(p | p.genFeature == genFeature).indexOf(this).toString();
 
 String genField(Property this) :
-	'editor' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab';	
+	'editor' /* + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + "_" */ + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab' + genEditorIndexSuffix();	
 
 Class getHighestContainer(Class this, Property property) :
 	if properties.select(p | p.genFeature == property.genFeature).isEmpty then
