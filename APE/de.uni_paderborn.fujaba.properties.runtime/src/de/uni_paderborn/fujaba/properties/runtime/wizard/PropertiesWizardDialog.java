@@ -9,7 +9,6 @@ import org.eclipse.swt.widgets.Shell;
 
 public class PropertiesWizardDialog extends WizardDialog {
 	private EditingDomain editingDomain;
-	private ChangeCommand changeCommand;
 
 	public PropertiesWizardDialog(Shell parentShell, IWizard newWizard) {
 		super(parentShell, newWizard);
@@ -17,8 +16,7 @@ public class PropertiesWizardDialog extends WizardDialog {
 	@Override
 	public boolean close() {
 		if (getReturnCode() == CANCEL) {
-			//editingDomain.getCommandStack().undo();
-			changeCommand.undo();
+			editingDomain.getCommandStack().undo();
 		}
 		editingDomain = null;
 		return super.close();
@@ -30,7 +28,7 @@ public class PropertiesWizardDialog extends WizardDialog {
 
 	public void openWithUndo(EditingDomain editingDomain, Notifier notifier) {
 		this.editingDomain = editingDomain;
-		changeCommand = new ChangeCommand(notifier) {
+		ChangeCommand changeCommand = new ChangeCommand(notifier) {
 			@Override
 			protected void doExecute() {
 				// MUML #734
