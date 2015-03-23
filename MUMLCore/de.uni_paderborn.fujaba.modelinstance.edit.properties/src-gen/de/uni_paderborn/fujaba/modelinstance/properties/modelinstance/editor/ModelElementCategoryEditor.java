@@ -30,11 +30,6 @@ public class ModelElementCategoryEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createModelElements_GeneralTab_Editor(), false);
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",

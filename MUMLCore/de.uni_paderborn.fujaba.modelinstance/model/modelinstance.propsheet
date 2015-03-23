@@ -2,7 +2,7 @@
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_VZEMMMwbEeSjx7OWZCcdLw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler xmi:id="_VZEMMcwbEeSjx7OWZCcdLw"/>
   <genModel href="modelinstance.genmodel#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_VZEMMswbEeSjx7OWZCcdLw" id="de.uni_paderborn.fujaba.modelinstance.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
@@ -11,8 +11,8 @@
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
-    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
   <packages xmi:id="_VZEMM8wbEeSjx7OWZCcdLw">
