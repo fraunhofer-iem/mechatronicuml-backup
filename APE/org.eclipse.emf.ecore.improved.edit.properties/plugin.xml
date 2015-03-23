@@ -41,6 +41,11 @@
              id="tab.ocl"
              afterTab="tab.documentation"
              label="OCL"/>
+          <propertyTab
+             category="domain"
+             id="tab.filter"
+             afterTab="tab.ocl"
+             label="Filter"/>
           
       </propertyTabs>
   </extension>
@@ -73,6 +78,15 @@
             filter="org.eclipse.emf.ecore.properties.tabs.OCLTabElementFilter"
             id="tab.ocl"
             tab="tab.ocl">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.FilterTabElementFilter"
+            id="tab.filter"
+            tab="tab.filter">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>

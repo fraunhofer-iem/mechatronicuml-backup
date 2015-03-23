@@ -13,6 +13,7 @@
   <tabs xmi:id="_C71_wcwXEeSfkPntfQ2wPg" id="tab.default" name="Default"/>
   <tabs xmi:id="_C71_wswXEeSfkPntfQ2wPg" id="tab.documentation" name="Documentation" afterTab="tab.default"/>
   <tabs xmi:id="_C71_w8wXEeSfkPntfQ2wPg" id="tab.ocl" name="OCL" afterTab="tab.documentation"/>
+  <tabs id="tab.filter" name="Filter" afterTab="tab.ocl"/>
   <packages xmi:id="_C71_xMwXEeSfkPntfQ2wPg">
     <genPackage href="Ecore.genmodel#//ecore"/>
     <classes xmi:id="_C72m0MwXEeSfkPntfQ2wPg" superClasses="_C75DHMwXEeSfkPntfQ2wPg">
@@ -51,6 +52,31 @@
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C73N58wXEeSfkPntfQ2wPg" title="Booleans" properties="_C73N4cwXEeSfkPntfQ2wPg _C73N48wXEeSfkPntfQ2wPg"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C73N6MwXEeSfkPntfQ2wPg" title="Lists" properties="_C73N5cwXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_C71_wswXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterFeaturePropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterAllowEmptyPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterCustomChoicesPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eAnnotations->select(source = 'http://www.muml.org/emf/OCLFilter').details->select(key = 'choices')->isEmpty()"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterChoicesPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes xmi:id="_C73N6cwXEeSfkPntfQ2wPg" superClasses="_C74cAcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EClassifier"/>
@@ -92,10 +118,9 @@
     </classes>
     <classes xmi:id="_C730_MwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EModelElement"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C730_cwXEeSfkPntfQ2wPg" tab="_C71_wswXEeSfkPntfQ2wPg" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C730_cwXEeSfkPntfQ2wPg" tab="_C71_wswXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
-        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C730_swXEeSfkPntfQ2wPg" expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_C74cAMwXEeSfkPntfQ2wPg" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_C74cAMwXEeSfkPntfQ2wPg" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_C74cAcwXEeSfkPntfQ2wPg" superClasses="_C730_MwXEeSfkPntfQ2wPg">
@@ -135,6 +160,10 @@
     </classes>
     <classes xmi:id="_C75DEcwXEeSfkPntfQ2wPg" superClasses="_C75DHMwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EReference"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DFswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" tooltip="" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EReference/eOpposite"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C75DF8wXEeSfkPntfQ2wPg"/>
+      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DEswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
         <genFeature href="Ecore.genmodel#//ecore/EReference/containment"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75DE8wXEeSfkPntfQ2wPg"/>
@@ -143,16 +172,34 @@
         <genFeature href="Ecore.genmodel#//ecore/EReference/resolveProxies"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_C75DFcwXEeSfkPntfQ2wPg"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DFswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
-        <genFeature href="Ecore.genmodel#//ecore/EReference/eOpposite"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C75DF8wXEeSfkPntfQ2wPg"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DGMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C75DGMwXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" tooltip="" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EReference/eKeys"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_C75DGcwXEeSfkPntfQ2wPg"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C75DGswXEeSfkPntfQ2wPg" title="Booleans" properties="_C75DEswXEeSfkPntfQ2wPg _C75DFMwXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Cardinality" properties="_C76RNMwXEeSfkPntfQ2wPg _C76RMswXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C75DGswXEeSfkPntfQ2wPg" title="Booleans" properties="_C75DHcwXEeSfkPntfQ2wPg _C75DEswXEeSfkPntfQ2wPg _C75DFMwXEeSfkPntfQ2wPg _C75qIcwXEeSfkPntfQ2wPg _C75qI8wXEeSfkPntfQ2wPg _C75qKMwXEeSfkPntfQ2wPg _C75qKswXEeSfkPntfQ2wPg _C75qLswXEeSfkPntfQ2wPg _C76RMMwXEeSfkPntfQ2wPg"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C75DG8wXEeSfkPntfQ2wPg" title="Lists" properties="_C75DGMwXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_C71_wswXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterAllowEmptyPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterCustomChoicesPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="not eAnnotations->select(source = 'http://www.muml.org/emf/OCLFilter').details->select(key = 'choices')->isEmpty()"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterChoicesPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.3" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes xmi:id="_C75DHMwXEeSfkPntfQ2wPg" superClasses="_C75qLcwXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EStructuralFeature"/>
@@ -206,7 +253,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_C76RN8wXEeSfkPntfQ2wPg"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C76ROMwXEeSfkPntfQ2wPg" title="Booleans" properties="_C75qLswXEeSfkPntfQ2wPg _C76RMMwXEeSfkPntfQ2wPg"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C76ROcwXEeSfkPntfQ2wPg" title="Cardinality" properties="_C76RMswXEeSfkPntfQ2wPg _C76RNMwXEeSfkPntfQ2wPg"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_C76ROcwXEeSfkPntfQ2wPg" title="Cardinality" properties="_C76RNMwXEeSfkPntfQ2wPg _C76RMswXEeSfkPntfQ2wPg"/>
     </classes>
     <classes xmi:id="_C76ROswXEeSfkPntfQ2wPg">
       <genClass href="Ecore.genmodel#//ecore/EStringToStringMapEntry"/>
@@ -219,7 +266,7 @@
         <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C764QMwXEeSfkPntfQ2wPg" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_C764QcwXEeSfkPntfQ2wPg" multiLine="true"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C764QswXEeSfkPntfQ2wPg" tab="_C71_w8wXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_C764QswXEeSfkPntfQ2wPg" tab="_C71_wcwXEeSfkPntfQ2wPg" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
         <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_C764Q8wXEeSfkPntfQ2wPg" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_C764RMwXEeSfkPntfQ2wPg" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>

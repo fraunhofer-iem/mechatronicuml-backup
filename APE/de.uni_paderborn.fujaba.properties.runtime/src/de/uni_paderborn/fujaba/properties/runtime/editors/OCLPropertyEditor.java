@@ -145,12 +145,16 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
+		updateText();
+		refresh();
+	}
+
+	protected void updateText() {
 		if (value == null) {
 			updateText("");
 		} else {
 			updateText(value.toString());
 		}
-		refresh();
 	}
 
 	protected void updateText(String text) {

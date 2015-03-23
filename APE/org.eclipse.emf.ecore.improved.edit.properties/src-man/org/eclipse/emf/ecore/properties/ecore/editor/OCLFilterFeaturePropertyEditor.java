@@ -11,36 +11,35 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor;
 
-public class EcoreDocumentationPropertyEditor extends TextPropertyEditor {
+public class OCLFilterFeaturePropertyEditor extends TextPropertyEditor {
 
-	public EcoreDocumentationPropertyEditor(AdapterFactory adapterFactory,
+	public OCLFilterFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
-		super(adapterFactory, feature, true);
+		super(adapterFactory, feature, false);
 	}
 	
 
 	protected void setText(Object value) {
-		String val = getDocumentation(value);
+		String val = getFeature(value);
 
 		if (text != null && !text.isDisposed() && !text.getText().equals(val)) {
 			text.setText(val);
-		}		
+		}
 	}
 	
 	@Override
 	public String getLabelText() {
-		return "Documentation:";
+		return "Feature:";
 	}
 	
-	protected String getDocumentation(Object value) {
+	protected String getFeature(Object value) {
 		String val = "";
-		EModelElement modelElement = getModelElement();
-		if (element != null) {
-			EAnnotation annotation = modelElement.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel");
-			if (annotation != null && annotation.getDetails().containsKey("documentation")) {
-				val = annotation.getDetails().get("documentation");
-			}
+		
+		EAnnotation annotation = getAnnotation();
+		if (annotation != null && annotation.getDetails().containsKey("feature")) {
+			val = annotation.getDetails().get("feature");
 		}
+
 		return val;
 	}
 
@@ -53,23 +52,30 @@ public class EcoreDocumentationPropertyEditor extends TextPropertyEditor {
 		return (EModelElement) object;
 	}
 
+	protected EAnnotation getAnnotation() {
+		EModelElement modelElement = getModelElement();
+		if (modelElement != null) {
+			EAnnotation annotation = modelElement.getEAnnotation("http://www.muml.org/emf/OCLFilter");
+			return annotation;
+		}
+		return null;
+	}
 
 	@Override
 	protected void doSetValue(Object newObject) {
 		String newValue = newObject.toString();
-		String documentation = getDocumentation(value);
-		if (text != null && !newValue.equals(documentation)) {
-			//setValue(newValue);
-			EModelElement modelElement = (EModelElement) element;
-			EAnnotation annotation = modelElement.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel");
+		String feature = getFeature(value);
+		if (text != null && !newValue.equals(feature)) {
+			EAnnotation annotation = getAnnotation();
 		
 			if (annotation == null) {
 				annotation = (EAnnotation) EcoreUtil.create(EcorePackage.Literals.EANNOTATION);
-				annotation.setSource("http://www.eclipse.org/emf/2002/GenModel");
+				annotation.setSource("http://www.muml.org/emf/OCLFilter");
+				EModelElement modelElement = (EModelElement) element;
 				modelElement.getEAnnotations().add(annotation);
 			}
 			
-			annotation.getDetails().put("documentation", newValue);
+			annotation.getDetails().put("feature", newValue);
 		}
 	}
 

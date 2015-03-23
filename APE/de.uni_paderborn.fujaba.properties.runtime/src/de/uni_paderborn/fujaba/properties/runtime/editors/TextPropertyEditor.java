@@ -93,6 +93,10 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				newValue = Long.parseLong(currentValue);
 			} else if (EcorePackage.Literals.EFLOAT.equals(feature.getEType())) {
 				newValue = Float.parseFloat(currentValue);
+			} else if (EcorePackage.Literals.ESTRING.equals(feature.getEType())) {
+				if (currentValue.isEmpty() && value == null) {
+					newValue = null;
+				}
 			}
 			setValue(newValue);
 		}

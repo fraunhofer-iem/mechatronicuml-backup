@@ -23,28 +23,30 @@ public class EFactoryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorEAnnotations_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEPackage_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEPackage_DefaultTab_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createEPackage_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEPackage_DefaultTab_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEAnnotations_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorEAnnotations_DocumentationTab_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
+
+		} else if ("tab.filter".equals(tab)) { // Tab Filter
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEPackage_DefaultTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEPackage_DefaultTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEPackage_DefaultTab_Editor() {
 		if (this.editorEPackage_DefaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEFactory_EPackage();
@@ -57,41 +59,12 @@ public class EFactoryEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEAnnotations_DocumentationTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_DocumentationTab_Editor() {
 		if (this.editorEAnnotations_DocumentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor(
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor(
 					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression(
-								"true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()",
-								feature, getEClass());
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
-							}
-						});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addVisibilityFilter(filter);
-				}
-			}
 
 			this.editorEAnnotations_DocumentationTab = editor;
 		}

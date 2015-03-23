@@ -23,30 +23,32 @@ public class EStringToStringMapEntryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createKey_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorKey_DefaultTab_Editor(), false);
 
-			addPropertyEditor(createValue_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorValue_DefaultTab_0_Editor(), false);
 
-			addPropertyEditor(createValue_OCLTab_Editor(), false);
+			addPropertyEditor(createEditorValue_DefaultTab_1_Editor(), false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createKey_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorKey_DefaultTab_Editor(), false);
 
-			addPropertyEditor(createValue_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorValue_DefaultTab_0_Editor(), false);
+
+			addPropertyEditor(createEditorValue_DefaultTab_1_Editor(), false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
-			addPropertyEditor(createValue_OCLTab_Editor(), false);
+		} else if ("tab.filter".equals(tab)) { // Tab Filter
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKey_DefaultTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createKey_DefaultTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKey_DefaultTab_Editor() {
 		if (this.editorKey_DefaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStringToStringMapEntry_Key();
@@ -58,9 +60,9 @@ public class EStringToStringMapEntryEditor
 		return this.editorKey_DefaultTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_DefaultTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createValue_DefaultTab_Editor() {
-		if (this.editorValue_DefaultTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_DefaultTab_0;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_DefaultTab_0_Editor() {
+		if (this.editorValue_DefaultTab_0 == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStringToStringMapEntry_Value();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
@@ -95,14 +97,14 @@ public class EStringToStringMapEntryEditor
 				}
 			}
 
-			this.editorValue_DefaultTab = editor;
+			this.editorValue_DefaultTab_0 = editor;
 		}
-		return this.editorValue_DefaultTab;
+		return this.editorValue_DefaultTab_0;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_OCLTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createValue_OCLTab_Editor() {
-		if (this.editorValue_OCLTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_DefaultTab_1;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_DefaultTab_1_Editor() {
+		if (this.editorValue_DefaultTab_1 == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEStringToStringMapEntry_Value();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor(
@@ -137,9 +139,9 @@ public class EStringToStringMapEntryEditor
 				}
 			}
 
-			this.editorValue_OCLTab = editor;
+			this.editorValue_DefaultTab_1 = editor;
 		}
-		return this.editorValue_OCLTab;
+		return this.editorValue_DefaultTab_1;
 	}
 
 	//
@@ -172,7 +174,7 @@ public class EStringToStringMapEntryEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.ocl"}).contains(tab);
+							"tab.default"}).contains(tab);
 		}
 	}
 

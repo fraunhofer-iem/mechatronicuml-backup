@@ -23,26 +23,32 @@ public class EGenericTypeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(),
+					false);
 
-			addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(),
+					false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
-			addPropertyEditor(createETypeParameter_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorETypeParameter_DefaultTab_Editor(),
+					false);
 
-			addPropertyEditor(createEClassifier_DefaultTab_Editor(), false);
+			addPropertyEditor(createEditorEClassifier_DefaultTab_Editor(),
+					false);
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
+
+		} else if ("tab.filter".equals(tab)) { // Tab Filter
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorETypeParameter_DefaultTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createETypeParameter_DefaultTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorETypeParameter_DefaultTab_Editor() {
 		if (this.editorETypeParameter_DefaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEGenericType_ETypeParameter();
@@ -55,7 +61,7 @@ public class EGenericTypeEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEClassifier_DefaultTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEClassifier_DefaultTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEClassifier_DefaultTab_Editor() {
 		if (this.editorEClassifier_DefaultTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 					.getEGenericType_EClassifier();

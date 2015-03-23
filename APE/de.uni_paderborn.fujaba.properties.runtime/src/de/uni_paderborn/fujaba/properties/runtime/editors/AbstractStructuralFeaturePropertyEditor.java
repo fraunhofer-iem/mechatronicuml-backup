@@ -281,10 +281,19 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		return defaultValue;
 	}
 
-	public void setValue(final Object newValue) {
+	public void setValue(Object newValue) {
+		// Do not set value other than default value for invisible editors
+		if (!isVisible()) {
+			newValue = feature.getDefaultValue();
+		}
+
 		boolean changed = (value == null) != (newValue == null) || (value != null && newValue != null && !value.equals(newValue));
+		
 		EditingDomain editingDomain = getEditingDomain(element);
 		if (changed && editingDomain != null) {
+
+		
+			
 			doSetValue(newValue);
 			
 			// If the value could not be applied, refresh editor!
@@ -300,11 +309,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		Object oldValue = value;
 		if (feature.isMany()) { // copy list
 			oldValue = new ArrayList<Object>((Collection<?>)oldValue);
-		}
-		
-		// Do not set value other than default value for invisible editors
-		if (!isVisible()) {
-			newValue = feature.getDefaultValue();
 		}
 
 		if (itemPropertyDescriptor != null) {

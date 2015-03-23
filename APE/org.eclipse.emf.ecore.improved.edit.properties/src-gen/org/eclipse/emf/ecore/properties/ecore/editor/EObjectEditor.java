@@ -29,6 +29,8 @@ public class EObjectEditor
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
+		} else if ("tab.filter".equals(tab)) { // Tab Filter
+
 		} else {
 		}
 	}
