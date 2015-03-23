@@ -577,7 +577,15 @@ public class RuntimePlugin extends AbstractUIPlugin {
 				}
 			}
 			if (!selectedElements.isEmpty() || allowEmpty) {
-				selectionProvider.setSelection(new StructuredSelection(selectedElements));
+				try {
+					selectionProvider.setSelection(new StructuredSelection());
+					selectionProvider.setSelection(new StructuredSelection(selectedElements));
+				} catch (IllegalArgumentException iae) {
+					// java.lang.IllegalArgumentException: An EditPart has to be selectable (isSelectable() == true) in order to get selected.
+					// is sometimes thrown; although we make sure that isSelectable() returns true, above.
+					// So at this point we have no other possibility, than ignoring it
+					// and preventing the exception to propagate further. 
+				}
 			}
 		} else if (selectionProvider != null) {
 			// Currently we only want to set the selection of graphical editors
