@@ -544,6 +544,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPlugin_RequiredExecutionEnvironment() {
+		return (EAttribute)pluginEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPropertyTab() {
 		return propertyTabEClass;
 	}
@@ -1109,6 +1118,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEAttribute(pluginEClass, PLUGIN__VENDOR);
 		createEAttribute(pluginEClass, PLUGIN__VERSION);
 		createEAttribute(pluginEClass, PLUGIN__REQUIRED_BUNDLES);
+		createEAttribute(pluginEClass, PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT);
 
 		propertyTabEClass = createEClass(PROPERTY_TAB);
 		createEAttribute(propertyTabEClass, PROPERTY_TAB__ID);
@@ -1268,6 +1278,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEAttribute(getPlugin_Vendor(), theEcorePackage.getEString(), "vendor", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlugin_Version(), theEcorePackage.getEString(), "version", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlugin_RequiredBundles(), theEcorePackage.getEString(), "requiredBundles", null, 0, -1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlugin_RequiredExecutionEnvironment(), theEcorePackage.getEString(), "requiredExecutionEnvironment", "JavaSE-1.6", 0, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyTabEClass, PropertyTab.class, "PropertyTab", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPropertyTab_Id(), theEcorePackage.getEString(), "id", null, 1, 1, PropertyTab.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

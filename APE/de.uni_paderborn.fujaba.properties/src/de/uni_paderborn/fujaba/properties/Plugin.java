@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getVendor <em>Vendor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getVersion <em>Version</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getRequiredBundles <em>Required Bundles</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.Plugin#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,5 +147,32 @@ public interface Plugin extends EObject {
 	 * @generated
 	 */
 	EList<String> getRequiredBundles();
+
+	/**
+	 * Returns the value of the '<em><b>Required Execution Environment</b></em>' attribute.
+	 * The default value is <code>"JavaSE-1.6"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Required Execution Environment</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Execution Environment</em>' attribute.
+	 * @see #setRequiredExecutionEnvironment(String)
+	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPlugin_RequiredExecutionEnvironment()
+	 * @model default="JavaSE-1.6"
+	 * @generated
+	 */
+	String getRequiredExecutionEnvironment();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.properties.Plugin#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Required Execution Environment</em>' attribute.
+	 * @see #getRequiredExecutionEnvironment()
+	 * @generated
+	 */
+	void setRequiredExecutionEnvironment(String value);
 
 } // Plugin

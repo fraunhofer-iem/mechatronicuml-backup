@@ -323,13 +323,22 @@ public interface PropertiesPackage extends EPackage {
 	int PLUGIN__REQUIRED_BUNDLES = 4;
 
 	/**
+	 * The feature id for the '<em><b>Required Execution Environment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT = 5;
+
+	/**
 	 * The number of structural features of the '<em>Plugin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGIN_FEATURE_COUNT = 5;
+	int PLUGIN_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyTabImpl <em>Property Tab</em>}' class.
@@ -1456,6 +1465,17 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getPlugin_RequiredBundles();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.properties.Plugin#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required Execution Environment</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.Plugin#getRequiredExecutionEnvironment()
+	 * @see #getPlugin()
+	 * @generated
+	 */
+	EAttribute getPlugin_RequiredExecutionEnvironment();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.PropertyTab <em>Property Tab</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2297,6 +2317,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PLUGIN__REQUIRED_BUNDLES = eINSTANCE.getPlugin_RequiredBundles();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Execution Environment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT = eINSTANCE.getPlugin_RequiredExecutionEnvironment();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.PropertyTabImpl <em>Property Tab</em>}' class.

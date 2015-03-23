@@ -33,6 +33,10 @@ public class PluginEditor
 
 			addPropertyEditor(createRequiredBundles_GeneralTab_Editor(), false);
 
+			addPropertyEditor(
+					createRequiredExecutionEnvironment_GeneralTab_Editor(),
+					false);
+
 		} else if ("de.uni_paderborn.fujaba.properties.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createId_GeneralTab_Editor(), false);
@@ -44,6 +48,10 @@ public class PluginEditor
 			addPropertyEditor(createVersion_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createRequiredBundles_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createRequiredExecutionEnvironment_GeneralTab_Editor(),
+					false);
 
 		} else {
 		}
@@ -114,6 +122,19 @@ public class PluginEditor
 		return this.editorRequiredBundles_GeneralTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRequiredExecutionEnvironment_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createRequiredExecutionEnvironment_GeneralTab_Editor() {
+		if (this.editorRequiredExecutionEnvironment_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
+					.getPlugin_RequiredExecutionEnvironment();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			this.editorRequiredExecutionEnvironment_GeneralTab = editor;
+		}
+		return this.editorRequiredExecutionEnvironment_GeneralTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -146,6 +167,7 @@ public class PluginEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{
+							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",
 							"de.uni_paderborn.fujaba.properties.tab.general",

@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.properties.PropertiesPackage;
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getVendor <em>Vendor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getRequiredBundles <em>Required Bundles</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.properties.impl.PluginImpl#getRequiredExecutionEnvironment <em>Required Execution Environment</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,6 +122,26 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	 * @ordered
 	 */
 	protected EList<String> requiredBundles;
+
+	/**
+	 * The default value of the '{@link #getRequiredExecutionEnvironment() <em>Required Execution Environment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredExecutionEnvironment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRED_EXECUTION_ENVIRONMENT_EDEFAULT = "JavaSE-1.6";
+
+	/**
+	 * The cached value of the '{@link #getRequiredExecutionEnvironment() <em>Required Execution Environment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredExecutionEnvironment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiredExecutionEnvironment = REQUIRED_EXECUTION_ENVIRONMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,6 +263,27 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiredExecutionEnvironment() {
+		return requiredExecutionEnvironment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiredExecutionEnvironment(String newRequiredExecutionEnvironment) {
+		String oldRequiredExecutionEnvironment = requiredExecutionEnvironment;
+		requiredExecutionEnvironment = newRequiredExecutionEnvironment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT, oldRequiredExecutionEnvironment, requiredExecutionEnvironment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -255,6 +297,8 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 				return getVersion();
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
 				return getRequiredBundles();
+			case PropertiesPackage.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT:
+				return getRequiredExecutionEnvironment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,6 +328,9 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 				getRequiredBundles().clear();
 				getRequiredBundles().addAll((Collection<? extends String>)newValue);
 				return;
+			case PropertiesPackage.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT:
+				setRequiredExecutionEnvironment((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -311,6 +358,9 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
 				getRequiredBundles().clear();
 				return;
+			case PropertiesPackage.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT:
+				setRequiredExecutionEnvironment(REQUIRED_EXECUTION_ENVIRONMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -333,6 +383,8 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
 				return requiredBundles != null && !requiredBundles.isEmpty();
+			case PropertiesPackage.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT:
+				return REQUIRED_EXECUTION_ENVIRONMENT_EDEFAULT == null ? requiredExecutionEnvironment != null : !REQUIRED_EXECUTION_ENVIRONMENT_EDEFAULT.equals(requiredExecutionEnvironment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -357,6 +409,8 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 		result.append(version);
 		result.append(", requiredBundles: ");
 		result.append(requiredBundles);
+		result.append(", requiredExecutionEnvironment: ");
+		result.append(requiredExecutionEnvironment);
 		result.append(')');
 		return result.toString();
 	}

@@ -40,6 +40,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/vendor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/requiredBundles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/requiredExecutionEnvironment"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//PropertyTab">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyTab/id"/>

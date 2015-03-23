@@ -67,6 +67,7 @@ public class PluginItemProvider
 			addVendorPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 			addRequiredBundlesPropertyDescriptor(object);
+			addRequiredExecutionEnvironmentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -182,6 +183,28 @@ public class PluginItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Required Execution Environment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredExecutionEnvironmentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Plugin_requiredExecutionEnvironment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Plugin_requiredExecutionEnvironment_feature", "_UI_Plugin_type"),
+				 PropertiesPackage.Literals.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Plugin.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -223,6 +246,7 @@ public class PluginItemProvider
 			case PropertiesPackage.PLUGIN__VENDOR:
 			case PropertiesPackage.PLUGIN__VERSION:
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
+			case PropertiesPackage.PLUGIN__REQUIRED_EXECUTION_ENVIRONMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -102,6 +102,10 @@
         <genFeature href="properties.genmodel#//properties/Plugin/requiredBundles"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+        <genFeature href="properties.genmodel#//properties/Plugin/requiredExecutionEnvironment"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyTab"/>
@@ -163,9 +167,9 @@
         <genFeature href="properties.genmodel#//properties/Property/reconcile"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Property/initializeOCLExpression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/OrderedElement/clazz"/>
