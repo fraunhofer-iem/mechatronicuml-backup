@@ -2,6 +2,16 @@ package de.uni_paderborn.uppaal.serialization
 
 import de.uni_paderborn.uppaal.expressions.*
 import de.uni_paderborn.uppaal.core.NamedElement
+import de.uni_paderborn.uppaal.types.Type
+import de.uni_paderborn.uppaal.types.RangeTypeSpecification
+import de.uni_paderborn.uppaal.types.ScalarTypeSpecification
+import de.uni_paderborn.uppaal.types.StructTypeSpecification
+import de.uni_paderborn.uppaal.declarations.TypedDeclaration
+import de.uni_paderborn.uppaal.core.TypedElement
+import de.uni_paderborn.uppaal.declarations.Variable
+import de.uni_paderborn.uppaal.declarations.ExpressionInitializer
+import de.uni_paderborn.uppaal.declarations.ArrayInitializer
+import de.uni_paderborn.uppaal.declarations.DataVariablePrefix
 
 class UppaalSerialization {
 //	var moveEdgeLabelsAway = false;
@@ -63,7 +73,7 @@ class UppaalSerialization {
 //	«ENDFOR»
 //}'''
 //	
-//	def dispatch declaration(TypeDeclaration it) '''typedef «typedefinition(typeDefinition)» «FOR DeclaredType i : type ?:emptyList SEPARATOR ', '»«typedeclaration(i)»«ENDFOR»;'''
+	def dispatch declaration(TypedDeclaration it) '''«typedefinition(typeDefinition)» «FOR TypedElement i : elements ?:emptyList SEPARATOR ', '»«(i as NamedElement).name.toString()»«ENDFOR»;'''
 //	
 //	def typedeclaration(Type it) '''«typename(it)»«FOR i : index ?:emptyList»«index(i)»«ENDFOR»'''
 //	
@@ -89,108 +99,52 @@ class UppaalSerialization {
 //	
 //	def dispatch item(DefaultChannelPriority it) '''default'''
 //	
-//	def dispatch typedefinition(Void it) '''
-//	'''
-//	
+	def dispatch typedefinition(Void it) '''
+	'''
+	
 //	def dispatch typedefinition(TypeReference it) '''«typename(referredType)»'''
-//	
-//	def dispatch typedefinition(RangeTypeSpecification it) '''«baseType.toString()»[«expression(bounds.lowerBound)»,«expression(bounds.upperBound)»]'''
-//	
-//	def dispatch typedefinition(ScalarTypeSpecification it) '''scalar [«expression(sizeExpression)»]'''
-//	
-//	def dispatch typedefinition(StructTypeSpecification it) '''struct {
-//	«FOR DataVariableDeclaration i : declaration ?:emptyList»
-//	«declaration(i)»
-//	«ENDFOR»
-//}'''
+
+	def dispatch typedefinition(IdentifierExpression it) '''«
+		(it.identifier as Type).name.toString()
+	»'''
+	
+	def dispatch typedefinition(RangeTypeSpecification it) '''int[«expression(bounds.lowerBound)»,«expression(bounds.upperBound)»]'''
+	
+	def dispatch typedefinition(ScalarTypeSpecification it) '''scalar [«expression(sizeExpression)»]'''
+	
+	def dispatch typedefinition(StructTypeSpecification it) '''struct {
+	«FOR TypedDeclaration i : declaration ?:emptyList»
+	«declaration(i)»
+	«ENDFOR»
+}'''
+
+	def dispatch typedefinition(ChannelPrefixExpression it) '''«IF it.urgent»urgent «ENDIF»«IF it.broadcast»broadcast «ENDIF»chan'''
+	
+	def dispatch typedefinition(DataPrefixExpression it) '''«IF it.prefix == DataVariablePrefix::CONST»const «ENDIF»«IF it.prefix == DataVariablePrefix::META»meta «ENDIF»«typedefinition(it.dataTypeExpression)»'''
+
 //	
 //	def typename(Type it) '''«name»'''
 //	
-//	def variable(Variable it) '''«name(it)»«FOR i : index ?:emptyList»«index(i)»«ENDFOR»«IF initializer != null» = «initializer(initializer)»«ENDIF»'''
+	def variable(Variable it) '''«name(it)»«FOR i : index ?:emptyList»«index(i)»«ENDFOR»«IF initializer != null» = «initializer(initializer)»«ENDIF»'''
 //	
-//	def dispatch index(Void it) ''''''
-//	
-//	def dispatch index(ValueIndex it) '''[«expression(sizeExpression)»]'''
+	def dispatch index(Void it) ''''''
+	
+	def dispatch index(Expression it) '''[«expression(it)»]'''
 //	
 //	def dispatch index(TypeIndex it) '''[«typedefinition(typeDefinition)»]'''
 //	
-//	def dispatch initializer(Void it) ''''''
+	def dispatch initializer(Void it) ''''''
 //	
-//	def dispatch initializer(ExpressionInitializer it) '''«expression(expression)»'''
-//	
-//	def dispatch initializer(ArrayInitializer it) '''{«FOR i : initializer ?:emptyList SEPARATOR ','»«initializer(i)»«ENDFOR»}'''
-//	
-//	/* define templates */
-//	def template(Template it) '''
-//	<template>
-//	<name>«name(it)»</name>
-//	«IF (parameter.size > 0)»
-//	<parameter>
-//	«FOR i : parameter ?:emptyList SEPARATOR ', '»«parameter(i)»«ENDFOR»
-//	</parameter>
-//	«ENDIF»
-//	<declaration>
-//	«declarations(declarations)»
-//	</declaration>	
-//	«FOR i : location ?:emptyList»«location(i)»«ENDFOR»
-//	<init ref="«init.name+"_"+name»"/>
-//	«FOR i : edge ?:emptyList»«edge(i)»«ENDFOR»
-//	</template>
-//	'''
+	def dispatch initializer(ExpressionInitializer it) '''«expression(expression)»'''
+	
+	def dispatch initializer(ArrayInitializer it) '''{«FOR i : initializer ?:emptyList SEPARATOR ','»«initializer(i)»«ENDFOR»}'''
 //	
 //	def parameter(Parameter it) '''«declaration(variableDeclaration, callType == CallType::CALL_BY_REFERENCE)»'''
 //	
 //	def id(Location it) '''«name»_«parentTemplate.name»'''
 //	
 	def name(NamedElement it) '''«name.replaceAll('\\.','')»'''
-//	
-//	def location(Location it) '''
-//	<location id="«id(it)»" x="«if (position == null) "" else position.x»" y="«if (position == null) "" else position.y»" «IF colorToString(it) != null»color="«colorToString(it)»"«ENDIF»>
-//		<name>«name(it)»</name>
-//		«IF !(invariant == null)»<label kind="invariant">«expression(invariant)»</label>«ENDIF»
-//		«IF locationTimeKind == LocationKind::URGENT»<urgent/>«ENDIF»
-//		«IF locationTimeKind == LocationKind::COMMITED»<committed/>«ENDIF»
-//	</location>
-//	'''
-//	
-//	def colorToString(Location it) {
-//		if (color == null)
-//			return null;
-//		switch (color) {
-//			case ColorKind.BLACK: return "#000000"
-//			case ColorKind.BLUE: return "#0000ff"
-//			case ColorKind.CYAN: return "#00ffff"
-//			case ColorKind.DARKGREY: return "#a9a9a9"
-//			case ColorKind.DEFAULT: return null
-//			case ColorKind.GREEN: return "#00ff00"
-//			case ColorKind.LIGHTGREY: return "#c0c0c0"
-//			case ColorKind.MAGENTA: return "#ff00ff"
-//			case ColorKind.ORANGE: return "#ffa500"
-//			case ColorKind.PINK: return "#ffc0cb"
-//			case ColorKind.RED: return "#ff0000"
-//			case ColorKind.SELF_DEFINED: return colorCode
-//			case ColorKind.WHITE: return "#ffffff"
-//			case ColorKind.YELLOW: return "#ffff00"
-//			default: return null
-//		}
-//	}
-//	
-//	def edge(Edge it) '''
-//	<transition>
-//	<source ref="«id(source)»"/>
-//	<target ref="«id(target)»"/>
-//	«IF !(selection == null)»<label kind="select"«IF moveEdgeLabelsAway» x="-100" y="-100"«ENDIF»>«FOR i : selection ?:emptyList SEPARATOR ', '»«selection(i)»«ENDFOR»</label>«ENDIF»
-//	«IF !(guard == null)»<label kind="guard"«IF moveEdgeLabelsAway» x="-100" y="-100"«ENDIF»>«expression(guard)»</label>«ENDIF»
-//	«IF !(synchronization == null)»<label kind="synchronisation"«IF moveEdgeLabelsAway» x="-100" y="-100"«ENDIF»>«synchronization(synchronization)»</label>«ENDIF»
-//	«IF !(update == null)»<label kind="assignment"«IF moveEdgeLabelsAway» x="-100" y="-100"«ENDIF»>«FOR i : update ?:emptyList SEPARATOR ","»
-//	«expression(i)»
-//	«ENDFOR»</label>«ENDIF»
-//	«IF !(bendPoint == null)»«FOR i : bendPoint ?:emptyList»
-//	<nail x="«i.x»" y="«i.y»"/>
-//	«ENDFOR»«ENDIF»
-//	</transition>
-//	'''
-//	
+
 //	def selection(Selection it) '''«variable(variable.get(0))» : «typedefinition(typeDefinition)»'''
 //	
 //	def synchronization(Synchronization it) '''«expression(channelExpression)»«IF kind == SynchronizationKind::RECEIVE»?«ELSE»!«ENDIF»'''
@@ -257,7 +211,7 @@ class UppaalSerialization {
 	
 	def dispatch expression(ScopedIdentifierExpression it) '''«expressionOptionalParentheses(scope)».«expressionOptionalParentheses(identifier)»'''
 	
-//	def dispatch expression(QuantificationExpression it) '''«quantifier(quantifier)» («variable(elements.get(0))» : «typedefinition(typeDefinition)») «expressionOptionalParentheses(expression)»'''
+	def dispatch expression(QuantificationExpression it) '''«quantifier(quantifier)» («variable(elements.get(0) as Variable)» : «typedefinition(typeDefinition)») «expressionOptionalParentheses(expression)»'''
 	
 	def quantifier(Quantifier it) '''«IF it==Quantifier::UNIVERSAL»forall«ENDIF»«IF it==Quantifier::EXISTENTIAL»exists«ENDIF»'''
 	
