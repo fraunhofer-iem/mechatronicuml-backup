@@ -1,24 +1,28 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
-//import org.eclipse.swt.custom.CCombo;
-import org.eclipse.swt.widgets.Combo;
+import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.dialogs.WizardDataTransferPage;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.forms.widgets.Section;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
+import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
+import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage.DomainElementPageExtension;
+import de.uni_paderborn.fujaba.export.providers.GreyedAdapterFactoryLabelProvider;
+import de.uni_paderborn.fujaba.export.providers.NullContentProvider;
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
 
@@ -29,175 +33,157 @@ import de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration;
  * @author sthiele2
  *
  */
-public class PatternToProtocolExportWizardPage1 extends WizardDataTransferPage
-		implements IWizardPage, SelectionListener {
+public class PatternToProtocolExportWizardPage1 extends
+		AbstractFujabaExportSourcePage {
 
-	HashMap<Parameter, Text> parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
-	Combo legalConfigurationCombo;
-	FormToolkit toolkit;
-	Combo patternSelectionCombo;
+	public PatternToProtocolExportWizardPage1(String pageId,
+			FormToolkit toolkit, ResourceSet resourceSet, ISelection selection) {
+		super(pageId, toolkit, resourceSet, selection);
+		// TODO Auto-generated constructor stub
 
-	// Composite parameterBindingComp;
+	}
 
-	public PatternToProtocolExportWizardPage1(String pageName,
-			FormToolkit toolkit) {
-		super(pageName);
-		this.toolkit = toolkit;
-		this.setTitle("Step 1: Selection of a Coordination Pattern");
+	@Override
+	public void addExtensions() {
+		ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
+		if (elementSelectionMode.supportsElementSelection()) {
+			domainElementExtension = new ModifiedDomainElementPageExtension();
+			addExtension("add", domainElementExtension); //$NON-NLS-1$		
+		}	
 	}
 
 	public CoordinationPattern getSelectedPattern() {
-		int index = patternSelectionCombo.getSelectionIndex();
-		if (index >= 0)
-			return this.getPatternList().get(index);
-		else
-			return null;
+		for (Object element : domainElementExtension.getCheckedElements()) {
+			if (element instanceof CoordinationPattern)
+				return (CoordinationPattern) element;
+		}
+		return null;
 	}
 
 	public LegalConfiguration getSelectedLegalConfiguration() {
-		CoordinationPattern selectedPattern = this.getSelectedPattern();
-		if (selectedPattern == null)
-			return null;
-		int lcIndex = legalConfigurationCombo.getSelectionIndex();
-		if (lcIndex != legalConfigurationCombo.getItemCount() - 1
-				&& lcIndex >= 0) {
-			return selectedPattern.getLegalConfigurations().get(lcIndex);
-		} else
-			return null;
+		for (Object element : domainElementExtension.getCheckedElements()) {
+			if (element instanceof LegalConfiguration)
+				return (LegalConfiguration) element;
+		}
+		return null;
 	}
 
-	private ArrayList<CoordinationPattern> getPatternList() {
-		return ((ExportWizardPatternToProtocol) this.getWizard())
-				.getPatternList();
-	}
-
-	public int getSelectedPatternIndex() {
-		return patternSelectionCombo.getSelectionIndex();
-	}
+	/*
+	 * @Override protected void resourceChanged() { super.resourceChanged();
+	 * //initialize();
+	 * de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export
+	 * .wizard.ExportWizardPatternToProtocol2 myWizard=
+	 * (ExportWizardPatternToProtocol2)this.getWizard(); if(myWizard != null) {
+	 * myWizard.getNextPage(this).createControl(parent);
+	 * myWizard.getNextPage(this).getControl().redraw(); }* }
+	 */
+	Composite parent;
 
 	@Override
 	public void createControl(Composite parent) {
 		// TODO Auto-generated method stub
+		super.createControl(parent);
+		this.parent = parent;
+	}
 
-		initializeDialogUnits(parent);
-		int sectionStyle = Section.TITLE_BAR | Section.CLIENT_INDENT
-				| Section.EXPANDED;
-		// Section mainSelection = toolkit.createSection(parent, sectionStyle);
-		// mainSelection.setLayout(new GridLayout());
-		Composite mainComposite = toolkit.createComposite(parent);
-		mainComposite.setLayout(new GridLayout());
-		Section patternSelectionsection = toolkit.createSection(mainComposite,
-				sectionStyle);
-		patternSelectionsection.setText("Select a Coordination Pattern");
-		patternSelectionsection.setLayout(new GridLayout());
-		Composite patternSelectionComp = toolkit
-				.createComposite(patternSelectionsection);
-		patternSelectionComp.setLayout(new GridLayout());
-		patternSelectionsection.setClient(patternSelectionComp);
-		patternSelectionCombo = new Combo(patternSelectionComp, SWT.Selection);
-		patternSelectionCombo.setLayoutData(new GridData());
-
-		// getPatternList().
-		for (CoordinationPattern pattern : this.getPatternList()) {
-			patternSelectionCombo.add(pattern.getName());
-		}
-
-		// create ui part for selecting the legal configuration
-		Section configurationSelection = toolkit.createSection(mainComposite,
-				sectionStyle);
-		configurationSelection
-				.setText("You can select a legal configuration in order to bind the pattern's parameters to values. If you"
-						+ "do not choose a legal configuration, you have to set the parameter bindings by hand:");
-		Composite configComposite = toolkit
-				.createComposite(configurationSelection);
-		configComposite.setLayout(new GridLayout());
-		configurationSelection.setClient(configComposite);
-
-		legalConfigurationCombo = new Combo(configComposite, SWT.Selection);
-
-		legalConfigurationCombo.addSelectionListener(this);
-		patternSelectionCombo.addSelectionListener(this);
-
-		// parameterBindingComp = toolkit.createComposite(mainComposite);
-		// parameterBindingComp.setLayout(new GridLayout(2, false));
-		this.setControl(mainComposite);
-
+	public Resource getSelectedResource() {
+		return domainElementExtension.getResource();
 	}
 
 	@Override
-	public void handleEvent(Event event) {
-		// TODO Auto-generated method stub
-
+	public String wizardPageGetSourceFileExtension() {
+		return "muml";
 	}
 
 	@Override
-	protected boolean allowNewContainerName() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean wizardPageSupportsSourceModelElement(EObject element) {
+		return element.getClass().getName().contains("CoordinationPattern")
+				|| element.getClass().getName().contains("LegalConfiguration");
 	}
 
 	@Override
-	public void widgetSelected(SelectionEvent e) {
-		// TODO Auto-generated method stub
-		int selectedPatternIndex = patternSelectionCombo.getSelectionIndex();
-		CoordinationPattern selectedPattern = null;
-		if (selectedPatternIndex >= 0) {
-			selectedPattern = this.getPatternList().get(selectedPatternIndex);
-		}
-		if (selectedPattern != null) {
-			if (e.getSource() == patternSelectionCombo) {
-				legalConfigurationCombo.removeAll();
-				for (LegalConfiguration configuration : selectedPattern
-						.getLegalConfigurations()) {
-					legalConfigurationCombo.add(configuration.getName());
+	public void validatePage() {
+		super.validatePage();
+		if (this.isPageComplete()) {
+			ElementSelectionMode elementSelectionMode = wizardPageGetSupportedSelectionMode();
+			Assert.isNotNull(
+					elementSelectionMode,
+					"Please implement 'wizardGetSupportedSelectionMode()' to provide a non-null selection mode that your fujaba export wizard supports.");
+
+			String errorMessage = null;
+			ArrayList<LegalConfiguration> selectedLegalConfigurations = new ArrayList<LegalConfiguration>();
+			ArrayList<CoordinationPattern> selectedPatterns = new ArrayList<CoordinationPattern>();
+			ArrayList<CoordinationPattern> referencedPatterns = new ArrayList<CoordinationPattern>();
+			for (Object element : domainElementExtension.getCheckedElements()) {
+				if (!wizardPageSupportsSourceModelElement((EObject) element)) {
+					errorMessage = "Selection contains unsupported elements.";
+					break;
 				}
-				legalConfigurationCombo.add("No legal configuration selected!");
-				legalConfigurationCombo.select(legalConfigurationCombo
-						.getItemCount() - 1);
-				// delete old children
-				/*
-				 * Control[] children = parameterBindingComp.getChildren(); for
-				 * (Control child : children) { child.dispose(); }
-				 * parameterToTextfieldHashMap = new HashMap<Parameter, Text>();
-				 * for (Parameter parameter : selectedPattern
-				 * .getPatternParameters()) { Label l =
-				 * toolkit.createLabel(parameterBindingComp,
-				 * parameter.getName()); l.setLayoutData(new
-				 * GridData(GridData.VERTICAL_ALIGN_FILL |
-				 * GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
-				 * Text t = toolkit.createText(parameterBindingComp, "");
-				 * t.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_FILL |
-				 * GridData.HORIZONTAL_ALIGN_FILL | GridData.GRAB_HORIZONTAL));
-				 * parameterToTextfieldHashMap.put(parameter, t); }
-				 * parameterBindingComp.layout(); parameterBindingComp.redraw();
-				 * this.getControl().redraw(); this.getShell().redraw();
-				 */
+				if (element instanceof LegalConfiguration) {
+					selectedLegalConfigurations
+							.add((LegalConfiguration) element);
+					if (!referencedPatterns
+							.contains(((LegalConfiguration) element)
+									.getCoordinationPattern()))
+						referencedPatterns.add(((LegalConfiguration) element)
+								.getCoordinationPattern());
+					else {
+						errorMessage = "Only one legal configuration may be selected for the transformation.";
+						break;
+					}
+				}
+				if (element instanceof CoordinationPattern)
+					selectedPatterns.add((CoordinationPattern) element);
 			}
-			/*
-			 * if (e.getSource() == legalConfigurationCombo) { int lcIndex =
-			 * legalConfigurationCombo.getSelectionIndex(); if (lcIndex !=
-			 * legalConfigurationCombo.getItemCount() - 1 && lcIndex >= 0) {
-			 * LegalConfiguration lc = selectedPattern
-			 * .getLegalConfigurations().get(lcIndex); Collection<Text> coll =
-			 * parameterToTextfieldHashMap .values(); for (Text t : coll) {
-			 * t.setText(""); } for (ParameterBinding binding :
-			 * lc.getParameterBindings()) { Parameter p =
-			 * binding.getParameter(); Text t =
-			 * parameterToTextfieldHashMap.get(p);
-			 * 
-			 * if (t != null) { t.setText(binding.getValue().toString()); } } }
-			 * else if (lcIndex == legalConfigurationCombo.getItemCount() - 1 &&
-			 * lcIndex >= 0) { for (Text t :
-			 * parameterToTextfieldHashMap.values()) { t.setText(""); } } }
-			 */
-		}
+			if (errorMessage == null) {
+				if (selectedPatterns.size() != 1)
+					errorMessage = "Choose exactly one CoordinationPattern.";
+				if (errorMessage == null
+						&& selectedLegalConfigurations.size() > 1)
+					errorMessage = "Choose at most one LegalConfiguration.";
+			}
+			if (errorMessage == null) {
+				for (LegalConfiguration config : selectedLegalConfigurations) {
+					boolean corrspondentPatternSelected = selectedPatterns
+							.contains(config.getCoordinationPattern());
+					if (!corrspondentPatternSelected) {
+						errorMessage = "Selecting a LegalConfiguration requires the selection of the correspondent CoordinationPattern.";
+						break;
+					}
+				}
+			}
 
+			setErrorMessage(errorMessage);
+			setPageComplete(errorMessage == null);
+		}
 	}
 
 	@Override
-	public void widgetDefaultSelected(SelectionEvent e) {
-		// TODO Auto-generated method stub
-
+	public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
+		return ElementSelectionMode.ELEMENT_SELECTION_MODE_MULTI;
 	}
+	
+	class ModifiedDomainElementPageExtension extends DomainElementPageExtension
+	{
+		@Override public void setResource(Resource resource)
+		{
+			super.setResource(resource);
+			treeViewer.addFilter(new ViewerFilter() {
+				@Override
+				public boolean select(Viewer viewer,
+						Object parentElement, Object element) {
+					// TODO Auto-generated method stub
+					if (element instanceof CoordinationPattern
+							|| element instanceof LegalConfiguration
+							|| element instanceof RootNode
+							|| (element instanceof ModelElementCategory && ((ModelElementCategory) element)
+									.getName().contains("pattern")))
+						return true;
+					return false;
+				}
+			});
+		}
+	}
+
 
 }

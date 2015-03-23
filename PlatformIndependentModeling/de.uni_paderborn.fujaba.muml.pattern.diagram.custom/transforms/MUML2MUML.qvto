@@ -27,7 +27,7 @@ modeltype mumlConstraint uses 'http://www.fujaba.de/muml/constraint/0.4.0';
 mapping Extension :: Extension2Extension() : Extension disjuncts CommittedExtension::CommittedExtension2CommittedExtension, ElementToVerifyExtension::ElementToVerifyExtension2ElementToVerifyExtension;
 
 
-property bindings : Set(ParameterBinding);
+
 
 
 mapping CommittedExtension :: CommittedExtension2CommittedExtension() : CommittedExtension{
@@ -150,7 +150,7 @@ mapping actionlanguage::TypedNamedElementExpression :: TypedNamedElementExpressi
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
     	_typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
-    	_indices := self._indices.map Expression2Expression();
+    	//_indices := self._indices.map Expression2Expression();
    		 }
    		 
 mapping actionlanguage::ArrayInitializeExpression :: ArrayInitializeExpression2ArrayInitializeExpression() : actionlanguage::ArrayInitializeExpression{
