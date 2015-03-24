@@ -23,6 +23,9 @@ public class EClassEditor
 	protected void createProperties() {
 		if (tab == null) {
 
+			addPropertyEditor(
+					createEditorEAnnotations_DocumentationTab_Editor(), false);
+
 			addPropertyEditor(createEditorName_DefaultTab_Editor(), false);
 
 			addSubCategory(
@@ -43,24 +46,6 @@ public class EClassEditor
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorESuperTypes_DefaultTab_Editor(), false);
-
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_0_Editor(), false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_1_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_2_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_3_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_4_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_5_Editor(),
-					false);
 
 		} else if ("tab.default".equals(tab)) { // Tab Default
 
@@ -87,15 +72,15 @@ public class EClassEditor
 
 		} else if ("tab.documentation".equals(tab)) { // Tab Documentation
 
+			addPropertyEditor(
+					createEditorEAnnotations_DocumentationTab_Editor(), false);
+
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addPropertyEditor(
-					createEditorEAnnotations_DocumentationTab_0_Editor(), false);
 
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
@@ -114,21 +99,6 @@ public class EClassEditor
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_1_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_2_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_3_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_4_Editor(),
-					false);
-
-			addPropertyEditor(createEditorEAnnotations_FilterTab_5_Editor(),
-					false);
 
 		} else {
 		}
@@ -173,113 +143,6 @@ public class EClassEditor
 		return this.editorESuperTypes_DefaultTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab_0;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_DocumentationTab_0_Editor() {
-		if (this.editorEAnnotations_DocumentationTab_0 == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorEAnnotations_DocumentationTab_0 = editor;
-		}
-		return this.editorEAnnotations_DocumentationTab_0;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_FilterTab_1;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_FilterTab_1_Editor() {
-		if (this.editorEAnnotations_FilterTab_1 == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			this.editorEAnnotations_FilterTab_1 = editor;
-		}
-		return this.editorEAnnotations_FilterTab_1;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_FilterTab_2;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_FilterTab_2_Editor() {
-		if (this.editorEAnnotations_FilterTab_2 == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterAllowEmptyPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorEAnnotations_FilterTab_2 = editor;
-		}
-		return this.editorEAnnotations_FilterTab_2;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_FilterTab_3;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_FilterTab_3_Editor() {
-		if (this.editorEAnnotations_FilterTab_3 == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterCustomChoicesPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorEAnnotations_FilterTab_3 = editor;
-		}
-		return this.editorEAnnotations_FilterTab_3;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_FilterTab_4;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_FilterTab_4_Editor() {
-		if (this.editorEAnnotations_FilterTab_4 == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterChoicesPropertyEditor(
-					adapterFactory, feature);
-
-			{
-				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
-						.createOCLExpression(
-								"not eAnnotations->select(source = 'http://www.muml.org/emf/OCLFilter').details->select(key = 'choices')->isEmpty()",
-								feature, getEClass());
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
-							}
-						});
-				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
-						.createQuery(expression);
-				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
-
-					@Override
-					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
-					}
-
-				};
-				if (filter != null) {
-					editor.addVisibilityFilter(filter);
-				}
-			}
-
-			this.editorEAnnotations_FilterTab_4 = editor;
-		}
-		return this.editorEAnnotations_FilterTab_4;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_FilterTab_5;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_FilterTab_5_Editor() {
-		if (this.editorEAnnotations_FilterTab_5 == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-					.getEModelElement_EAnnotations();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.OCLFilterPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorEAnnotations_FilterTab_5 = editor;
-		}
-		return this.editorEAnnotations_FilterTab_5;
-	}
-
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_DefaultTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_DefaultTab_Editor() {
 		if (this.editorName_DefaultTab == null) {
@@ -291,6 +154,19 @@ public class EClassEditor
 			this.editorName_DefaultTab = editor;
 		}
 		return this.editorName_DefaultTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorEAnnotations_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorEAnnotations_DocumentationTab_Editor() {
+		if (this.editorEAnnotations_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.eclipse.emf.ecore.EcorePackage.eINSTANCE
+					.getEModelElement_EAnnotations();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new org.eclipse.emf.ecore.properties.ecore.editor.DocumentationAnnotationPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorEAnnotations_DocumentationTab = editor;
+		}
+		return this.editorEAnnotations_DocumentationTab;
 	}
 
 	//
@@ -322,9 +198,7 @@ public class EClassEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default", "tab.documentation", "tab.filter",
-							"tab.filter", "tab.filter", "tab.filter",
-							"tab.filter", "tab.default", "tab.default",
+							"tab.default", "tab.default", "tab.default",
 							"tab.default", "tab.documentation"}).contains(tab);
 		}
 	}
