@@ -1,17 +1,23 @@
 package de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -35,6 +41,40 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.utilities.batch.BatchDiagramCreationWizard;
 
 public class PatternToProtocolTransformation {
+	
+	
+	public static void saveInput(CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
+	{
+		
+		EObject[] input = new EObject[bindings.size()+2];
+		input[0]= rootNode;
+		input[1]=selectedPattern;	
+		for(int i=0; i< bindings.size();i++)
+		{
+			input[i+2] = bindings.get(i);
+		}
+		final EObject[] in = input;
+		editingDomain.getCommandStack().execute(new ChangeCommand(selectedPattern) {
+
+			@Override
+			protected void doExecute() {
+
+				ResourceSet resourceSet = new ResourceSetImpl();
+				Resource resource = resourceSet.createResource(URI.createPlatformResourceURI("Test/input.xmi", true));
+				Collection<EObject> c = Arrays.asList(in);
+				resource.getContents().addAll(c);
+				try {
+					resource.save(Collections.emptyMap());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+		});
+	}
+	
+	
+	
 
 	public static CoordinationProtocol TransformPatternToProtocolStep1 (CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
 	{
@@ -179,8 +219,9 @@ public class PatternToProtocolTransformation {
 		}
 		return null;
 	}
-	/* Example Code for saving the input before executing the transformation. Important for debugging
-	 * final EObject[] in = input;
+	// Example Code for saving the input before executing the transformation. Important for debugging
+	/*
+	  final EObject[] in = input;
 	editingDomain.getCommandStack().execute(new ChangeCommand(thePattern) {
 
 		@Override
@@ -197,5 +238,6 @@ public class PatternToProtocolTransformation {
 			}
 
 		}
-	});*/
+	});
+	 */
 }

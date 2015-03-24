@@ -14,8 +14,10 @@ modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
+// @author sthiele2
 transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
 property bindings : Set(ParameterBinding);
+//property parameter2VariableDict : Dict(Parameter, Variable);
 main()
 { 
 // get the input parameters. There is exactly one root and exactly one coordination pattern
@@ -33,16 +35,31 @@ main()
 	//var theRootNode : RootNode := thePattern.eContainer().eContainer().oclAsType(RootNode);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");
 	
+	
     bindings := input.rootObjects()[ParameterBinding];
+    //bindings-> forEach(parameterBinding)
+    //{
+    //	parameter2RTSC->put(parameterBinding.parameter, Set{});
+    //};
+    
     assert fatal (bindings != null) with log ("Parameter Bindings are null!");
     
 	createProtocol(thePattern, theRootNode);
    
     assert warning (false)  with log ("Transformation PatternToProtocol Finished");
+    
 //	input.objects()[ParameterExpression];
 	//theRootNode.oclAsType(EObject)->asSet()->closure(e:EObject|e.eContents()->collect(oclAsType(EObject)))[ParameterExpression];
 }
 
+
+constructor Variable::Variable(parameter : Parameter)
+{
+	_constant := true;
+	_name := parameter.name;
+	_dataType:= parameter.dataType;
+	_comment :=parameter.comment;
+}
 
 helper createProtocol(pattern : CoordinationPattern, root : RootNode)
 {
@@ -68,16 +85,7 @@ helper createProtocol(pattern : CoordinationPattern, root : RootNode)
 }
 
 
-mapping CoordinationProtocol :: coordinationPattern2CoordinationProtocol(): CoordinationPattern
-{
-	_name := self._name;
-    _comment := self._comment;
-    _annotation := self._annotation.map EAnnotation2EAnnotation();
-    _extension := self._extension.map Extension2Extension();
-    _verificationConstraintRepositories := self._verificationConstraintRepositories.map VerificationConstraintRepository2VerificationConstraintRepository();
-    _roles := self._roles.map Role2Role();
-    _roleConnector := self._roleConnector.map RoleConnector2RoleConnector();
-}
+
 
 
 query getRealtimeStatechartCategory(in theRootNode : RootNode) : ModelElementCategory {
@@ -161,21 +169,84 @@ mapping core::expressions::Expression :: Expression2Expression() : core::express
 
 mapping actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpression() : actionLanguage::TimeValueExpression{    	
     	_comment := comment;
-    	_timeValue := timeValue.map TimeValue2TimeValue();   
+    	_timeValue := timeValue.map TimeValue2TimeValue();  
+    	_annotation := annotation.map EAnnotation2EAnnotation();
    		 }      	
 
 
 
+property parameterAndRTSC2Variable : Dict(Parameter, Dict(RealtimeStatechart,Variable));
+
 
 mapping actionLanguage::ParameterExpression :: ParameterExpression2Expression() : core::expressions::Expression {		
 	init {
+		var rtsc2 : RealtimeStatechart := getHighestParentStatechart(self);
 		var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(self.parameter);
+		
 		assert fatal (myExp != null) with log ("There is no parameter binding for the parameter"+ self.parameter.name);
-		result := myExp.map Expression2Expression();
-		}	
+		if(rtsc2 =null)
+		{			
+			result := myExp.map Expression2Expression();
+		}
+		else
+		{
+			var rtsc: RealtimeStatechart := rtsc2.resolveone(RealtimeStatechart);
+			var dictionary : Dict(RealtimeStatechart, Variable) := parameterAndRTSC2Variable->get(self.parameter);
+			var variable : Variable;
+			if(dictionary->oclIsInvalid()  or dictionary=null) then
+			{
+				// case no parameter in parameterAndRTSC2Variable yet
+				dictionary := Dict{};
+				parameterAndRTSC2Variable->put(self.parameter, dictionary);
+				variable := new Variable(self.parameter);
+				variable.initializeExpression := myExp.map Expression2Expression();
+				rtsc.variables+=variable;
+				dictionary ->put(rtsc,variable);				
+			}
+			else 
+			{
+				variable := dictionary->get(rtsc);
+				// case no variable for parameter created in rtsc
+				if(variable.oclIsInvalid())
+				{
+					variable := new Variable(self.parameter);
+					variable.initializeExpression := myExp.map Expression2Expression();
+					rtsc.variables+=variable;
+					dictionary->put(rtsc, variable);
+				}		
+				endif;							
+			}endif;	
+			result := new TypedNamedElementExpression(variable);
+					
+		}endif;	
 	
+		//result := myExp.map Expression2Expression();
+		}
 	}
+constructor TypedNamedElementExpression ::TypedNamedElementExpression(variable : Variable)
+{
+	_typedNamedElement := variable;
+	_annotation := annotation.map EAnnotation2EAnnotation();
+}
+query getHighestParentStatechart(in expr : ParameterExpression) : RealtimeStatechart
+{
+	var root : EObject := expr;
+	while(root.oclIsTypeOf(core::expressions::Expression))
+	{
+		root := root.eContainer();		
+	};
+	if(root.eContainer().oclIsKindOf(ConnectorQualityOfServiceAssumptions))
+	{
+		return null;
+	}endif;
 	
+	while(not root.oclIsTypeOf(RealtimeStatechart))
+	{
+		root:=root.eContainer();		
+		assert fatal (not root.oclIsInvalid()) with log ("The parameter "+ expr.parameter.name + " is not contained in a RealtimeStatechart or a ConnectorQualityOfServiceAssumptions!");
+	};
+	return root.oclAsType(RealtimeStatechart).getHighestParentStatechart();	
+}
 	
 	
 	query getBoundExpressionToGivenParameter(in parameter : Parameter) : core::expressions::Expression {	
