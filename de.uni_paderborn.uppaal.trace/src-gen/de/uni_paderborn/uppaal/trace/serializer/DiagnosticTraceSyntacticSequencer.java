@@ -94,7 +94,7 @@ public class DiagnosticTraceSyntacticSequencer extends AbstractSyntacticSequence
 	
 	/**
 	 * Syntax:
-	 *     'Showing example trace.' | 'Showing counter example.'
+	 *     'Showing counter example.' | 'Showing example trace.'
 	 */
 	protected void emit_Trace_ShowingCounterExampleKeyword_5_0_0_or_ShowingExampleTraceKeyword_5_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

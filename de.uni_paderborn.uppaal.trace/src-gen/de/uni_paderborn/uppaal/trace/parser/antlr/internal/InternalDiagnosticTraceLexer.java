@@ -797,10 +797,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -818,10 +818,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -837,23 +837,15 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -878,10 +870,10 @@ public class InternalDiagnosticTraceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -897,23 +889,15 @@ public class InternalDiagnosticTraceLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.uppaal.trace/src-gen/de/uni_paderborn/uppaal/trace/parser/antlr/internal/InternalDiagnosticTrace.g:1078:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();

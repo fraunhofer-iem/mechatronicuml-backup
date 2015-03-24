@@ -24,15 +24,17 @@ import de.uni_paderborn.uppaal.NTA;
 import de.uni_paderborn.uppaal.UppaalPackage;
 import de.uni_paderborn.uppaal.core.CorePackage;
 import de.uni_paderborn.uppaal.core.NamedElement;
-import de.uni_paderborn.uppaal.declarations.DataVariableDeclaration;
+import de.uni_paderborn.uppaal.core.TypedElement;
 import de.uni_paderborn.uppaal.declarations.Declaration;
 import de.uni_paderborn.uppaal.declarations.Declarations;
 import de.uni_paderborn.uppaal.declarations.DeclarationsPackage;
+import de.uni_paderborn.uppaal.declarations.TypedDeclaration;
 import de.uni_paderborn.uppaal.declarations.Variable;
-import de.uni_paderborn.uppaal.declarations.VariableDeclaration;
 import de.uni_paderborn.uppaal.declarations.global.GlobalPackage;
 import de.uni_paderborn.uppaal.declarations.system.SystemPackage;
+import de.uni_paderborn.uppaal.expressions.Expression;
 import de.uni_paderborn.uppaal.expressions.ExpressionsPackage;
+import de.uni_paderborn.uppaal.expressions.IdentifierExpression;
 import de.uni_paderborn.uppaal.statements.StatementsPackage;
 import de.uni_paderborn.uppaal.templates.AbstractTemplate;
 import de.uni_paderborn.uppaal.templates.RedefinedTemplate;
@@ -45,9 +47,6 @@ import de.uni_paderborn.uppaal.trace.diagnosticTrace.SingleNamedElementReference
 import de.uni_paderborn.uppaal.types.DeclaredType;
 import de.uni_paderborn.uppaal.types.StructTypeSpecification;
 import de.uni_paderborn.uppaal.types.Type;
-import de.uni_paderborn.uppaal.types.TypeDefinition;
-import de.uni_paderborn.uppaal.types.TypeReference;
-import de.uni_paderborn.uppaal.types.TypeSpecification;
 import de.uni_paderborn.uppaal.types.TypesPackage;
 import de.uni_paderborn.uppaal.visuals.VisualsPackage;
 
@@ -62,28 +61,28 @@ public class DiagnosticTraceScopeProvider extends
 		AbstractDeclarativeScopeProvider {
 
 	private NTA nta;
-	
+
 	public void setNTA(NTA nta) {
 		this.nta = nta;
 	}
-	
+
 	private NTA getNTA() {
-		
+
 		if (nta == null) {
 			setNTA(loadNTA());
-		};
-		
+		}
+		;
+
 		return nta;
-		
+
 	}
-	
+
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
 		IScope scope = super.getScope(context, reference);
 		return scope;
 	}
-	
-	
+
 	// XXX: only for debugging purposes
 	static NTA loadNTA() {
 
@@ -151,11 +150,11 @@ public class DiagnosticTraceScopeProvider extends
 		return null;
 
 	}
-	
+
 	IScope scope_AbstractTemplate(ProcessIdentifier process, EReference ref) {
-		
+
 		return Scopes.scopeFor(getTemplates(getNTA()));
-		
+
 	}
 
 	IScope scope_Location(LocationActivity locationActivity, EReference ref) {
@@ -251,11 +250,15 @@ public class DiagnosticTraceScopeProvider extends
 
 		for (Declaration declaration : declarations.getDeclaration()) {
 
-			if (declaration instanceof VariableDeclaration) {
+			if (declaration instanceof TypedDeclaration) {
 
-				VariableDeclaration variableDeclaration = (VariableDeclaration) declaration;
+				TypedDeclaration typedDeclaration = (TypedDeclaration) declaration;
 
-				variables.addAll(variableDeclaration.getVariable());
+				for (TypedElement variable : typedDeclaration.getElements()) {
+					if (variable instanceof Variable) {
+						variables.add((Variable) variable);
+					}
+				}
 
 			}
 
@@ -269,44 +272,79 @@ public class DiagnosticTraceScopeProvider extends
 
 		List<Variable> fields = new ArrayList<Variable>();
 
-		TypeSpecification typeSpecification = getTypeSpecification(variable
-				.getTypeDefinition());
+		Expression typeDefinition = variable.getTypeDefinition();
 
-		if (typeSpecification instanceof StructTypeSpecification) {
+		boolean done = false;
+		while (!done) {
+			done = true;
 
-			StructTypeSpecification struct = (StructTypeSpecification) typeSpecification;
+			if (typeDefinition instanceof IdentifierExpression) {
+				IdentifierExpression identifier = (IdentifierExpression) typeDefinition;
 
-			for (DataVariableDeclaration declaration : struct.getDeclaration()) {
-				fields.addAll((declaration.getVariable()));
+				if (identifier.getIdentifier() instanceof TypedElement) {
+					TypedElement element = (TypedElement) identifier
+							.getIdentifier();
+
+					if (element.getTypeDefinition() instanceof IdentifierExpression
+							|| element.getTypeDefinition() instanceof StructTypeSpecification) {
+						typeDefinition = element.getTypeDefinition();
+						done = false;
+					}
+				}
+			} else if (typeDefinition instanceof StructTypeSpecification) {
+				StructTypeSpecification struct = (StructTypeSpecification) typeDefinition;
+
+				for (TypedDeclaration typedDeclaration : struct
+						.getDeclaration()) {
+
+					for (TypedElement var : typedDeclaration.getElements()) {
+						if (var instanceof Variable) {
+							fields.add((Variable) var);
+						}
+					}
+				}
 			}
-
 		}
+
+		// TypeSpecification typeSpecification = getTypeSpecification(variable
+		// .getTypeDefinition());
+		//
+		// if (typeSpecification instanceof StructTypeSpecification) {
+		//
+		// StructTypeSpecification struct = (StructTypeSpecification)
+		// typeSpecification;
+		//
+		// for (DataVariableDeclaration declaration : struct.getDeclaration()) {
+		// fields.addAll((declaration.getVariable()));
+		// }
+		//
+		// }
 
 		return fields;
 
 	}
 
-	TypeSpecification getTypeSpecification(TypeDefinition typeDefinition) {
-
-		if (typeDefinition instanceof TypeSpecification) {
-			return (TypeSpecification) typeDefinition;
-		}
-
-		if (typeDefinition instanceof TypeReference) {
-
-			Type type = ((TypeReference) typeDefinition).getReferredType();
-
-			if (type instanceof DeclaredType) {
-
-				return getTypeSpecification(((DeclaredType) type)
-						.getTypeDefinition());
-
-			}
-
-		}
-
-		return null;
-
-	}
+	// TypeSpecification getTypeSpecification(Expression typeDefinition) {
+	//
+	// if (typeDefinition instanceof TypeSpecification) {
+	// return (TypeSpecification) typeDefinition;
+	// }
+	//
+	// if (typeDefinition instanceof TypeReference) {
+	//
+	// Type type = ((TypeReference) typeDefinition).getReferredType();
+	//
+	// if (type instanceof DeclaredType) {
+	//
+	// return getTypeSpecification(((DeclaredType) type)
+	// .getTypeDefinition());
+	//
+	// }
+	//
+	// }
+	//
+	// return null;
+	//
+	// }
 
 }

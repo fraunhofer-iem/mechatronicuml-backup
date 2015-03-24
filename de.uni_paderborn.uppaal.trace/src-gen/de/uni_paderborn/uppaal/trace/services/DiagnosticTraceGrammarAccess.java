@@ -702,38 +702,60 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSENDExclamationMarkKeyword_1_0() { return cSENDExclamationMarkKeyword_1_0; }
 	}
 	
-	private TraceRepositoryElements pTraceRepository;
-	private TraceElements pTrace;
-	private ResultElements unknownRuleResult;
-	private ProcessIdentifierElements pProcessIdentifier;
-	private LocationActivityElements pLocationActivity;
-	private VariableValueElements pVariableValue;
-	private CompareOperatorElements unknownRuleCompareOperator;
-	private SingleNamedElementReferenceElements pSingleNamedElementReference;
-	private TerminalRule tDEPTH;
-	private NamedElementReferenceElements pNamedElementReference;
-	private TraceItemElements pTraceItem;
-	private StateElements pState;
-	private EdgeActivityElements pEdgeActivity;
-	private TerminalRule tEDGE;
-	private SynchronizationElements pSynchronization;
-	private ChannelSynchronizationElements pChannelSynchronization;
-	private SynchronizationKindElements unknownRuleSynchronizationKind;
-	private TauSynchronizationElements pTauSynchronization;
-	private DelayTransitionElements pDelayTransition;
-	private ActionTransitionElements pActionTransition;
-	private TransitionElements pTransition;
-	private TerminalRule tINT;
+	private final TraceRepositoryElements pTraceRepository;
+	private final TraceElements pTrace;
+	private final ResultElements unknownRuleResult;
+	private final ProcessIdentifierElements pProcessIdentifier;
+	private final LocationActivityElements pLocationActivity;
+	private final VariableValueElements pVariableValue;
+	private final CompareOperatorElements unknownRuleCompareOperator;
+	private final SingleNamedElementReferenceElements pSingleNamedElementReference;
+	private final TerminalRule tDEPTH;
+	private final NamedElementReferenceElements pNamedElementReference;
+	private final TraceItemElements pTraceItem;
+	private final StateElements pState;
+	private final EdgeActivityElements pEdgeActivity;
+	private final TerminalRule tEDGE;
+	private final SynchronizationElements pSynchronization;
+	private final ChannelSynchronizationElements pChannelSynchronization;
+	private final SynchronizationKindElements unknownRuleSynchronizationKind;
+	private final TauSynchronizationElements pTauSynchronization;
+	private final DelayTransitionElements pDelayTransition;
+	private final ActionTransitionElements pActionTransition;
+	private final TransitionElements pTransition;
+	private final TerminalRule tINT;
 	
 	private final Grammar grammar;
 
-	private TerminalsGrammarAccess gaTerminals;
+	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public DiagnosticTraceGrammarAccess(GrammarProvider grammarProvider,
 		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pTraceRepository = new TraceRepositoryElements();
+		this.pTrace = new TraceElements();
+		this.unknownRuleResult = new ResultElements();
+		this.pProcessIdentifier = new ProcessIdentifierElements();
+		this.pLocationActivity = new LocationActivityElements();
+		this.pVariableValue = new VariableValueElements();
+		this.unknownRuleCompareOperator = new CompareOperatorElements();
+		this.pSingleNamedElementReference = new SingleNamedElementReferenceElements();
+		this.tDEPTH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DEPTH");
+		this.pNamedElementReference = new NamedElementReferenceElements();
+		this.pTraceItem = new TraceItemElements();
+		this.pState = new StateElements();
+		this.pEdgeActivity = new EdgeActivityElements();
+		this.tEDGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EDGE");
+		this.pSynchronization = new SynchronizationElements();
+		this.pChannelSynchronization = new ChannelSynchronizationElements();
+		this.unknownRuleSynchronizationKind = new SynchronizationKindElements();
+		this.pTauSynchronization = new TauSynchronizationElements();
+		this.pDelayTransition = new DelayTransitionElements();
+		this.pActionTransition = new ActionTransitionElements();
+		this.pTransition = new TransitionElements();
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -766,7 +788,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//TraceRepository:
 	//	"Cannot reuse state space when trace length optimisation is used."? traces+=Trace*;
 	public TraceRepositoryElements getTraceRepositoryAccess() {
-		return (pTraceRepository != null) ? pTraceRepository : (pTraceRepository = new TraceRepositoryElements());
+		return pTraceRepository;
 	}
 	
 	public ParserRule getTraceRepositoryRule() {
@@ -777,7 +799,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//	"Verifying property" property=INT "at line" line=INT result=Result (("Showing counter example." |
 	//	"Showing example trace.") traceItems+=TraceItem+)?;
 	public TraceElements getTraceAccess() {
-		return (pTrace != null) ? pTrace : (pTrace = new TraceElements());
+		return pTrace;
 	}
 	
 	public ParserRule getTraceRule() {
@@ -787,7 +809,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//enum Result:
 	//	SUCCESS="-- Property is satisfied." | FAILURE="-- Property is NOT satisfied.";
 	public ResultElements getResultAccess() {
-		return (unknownRuleResult != null) ? unknownRuleResult : (unknownRuleResult = new ResultElements());
+		return unknownRuleResult;
 	}
 	
 	public EnumRule getResultRule() {
@@ -797,7 +819,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//ProcessIdentifier:
 	//	template=[templates::AbstractTemplate] ("(" arguments+=INT ("," arguments+=INT)* ")")?;
 	public ProcessIdentifierElements getProcessIdentifierAccess() {
-		return (pProcessIdentifier != null) ? pProcessIdentifier : (pProcessIdentifier = new ProcessIdentifierElements());
+		return pProcessIdentifier;
 	}
 	
 	public ParserRule getProcessIdentifierRule() {
@@ -807,7 +829,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//LocationActivity:
 	//	process=ProcessIdentifier "." location=[templates::Location];
 	public LocationActivityElements getLocationActivityAccess() {
-		return (pLocationActivity != null) ? pLocationActivity : (pLocationActivity = new LocationActivityElements());
+		return pLocationActivity;
 	}
 	
 	public ParserRule getLocationActivityRule() {
@@ -818,7 +840,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//	firstNamedElementReference=NamedElementReference ("-" secondNamedElementReference=NamedElementReference)?
 	//	operator=CompareOperator value=INT;
 	public VariableValueElements getVariableValueAccess() {
-		return (pVariableValue != null) ? pVariableValue : (pVariableValue = new VariableValueElements());
+		return pVariableValue;
 	}
 	
 	public ParserRule getVariableValueRule() {
@@ -828,7 +850,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//enum CompareOperator:
 	//	EQ="=" | LEQ="<=" | GEQ=">=";
 	public CompareOperatorElements getCompareOperatorAccess() {
-		return (unknownRuleCompareOperator != null) ? unknownRuleCompareOperator : (unknownRuleCompareOperator = new CompareOperatorElements());
+		return unknownRuleCompareOperator;
 	}
 	
 	public EnumRule getCompareOperatorRule() {
@@ -838,7 +860,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//SingleNamedElementReference:
 	//	namedElement=[core::NamedElement] ("[" indexes+=INT "]")*;
 	public SingleNamedElementReferenceElements getSingleNamedElementReferenceAccess() {
-		return (pSingleNamedElementReference != null) ? pSingleNamedElementReference : (pSingleNamedElementReference = new SingleNamedElementReferenceElements());
+		return pSingleNamedElementReference;
 	}
 	
 	public ParserRule getSingleNamedElementReferenceRule() {
@@ -848,13 +870,13 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal DEPTH:
 	//	"#depth=" INT;
 	public TerminalRule getDEPTHRule() {
-		return (tDEPTH != null) ? tDEPTH : (tDEPTH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DEPTH"));
+		return tDEPTH;
 	} 
 
 	//NamedElementReference:
 	//	singleNamedElementReference=SingleNamedElementReference ("." namedElementReference=NamedElementReference)?;
 	public NamedElementReferenceElements getNamedElementReferenceAccess() {
-		return (pNamedElementReference != null) ? pNamedElementReference : (pNamedElementReference = new NamedElementReferenceElements());
+		return pNamedElementReference;
 	}
 	
 	public ParserRule getNamedElementReferenceRule() {
@@ -864,7 +886,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//TraceItem:
 	//	State | Transition;
 	public TraceItemElements getTraceItemAccess() {
-		return (pTraceItem != null) ? pTraceItem : (pTraceItem = new TraceItemElements());
+		return pTraceItem;
 	}
 	
 	public ParserRule getTraceItemRule() {
@@ -876,7 +898,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//	"(" locationActivities+=LocationActivity+ ")" (variableValues+=VariableValue (","? variableValues+=VariableValue)*)? // declare comma as optional since the list of UPPAAL variable values is sometimes comma-separated, sometimes not
 	//;
 	public StateElements getStateAccess() {
-		return (pState != null) ? pState : (pState = new StateElements());
+		return pState;
 	}
 	
 	public ParserRule getStateRule() {
@@ -886,7 +908,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//EdgeActivity:
 	//	source=LocationActivity "->" target=LocationActivity details=EDGE;
 	public EdgeActivityElements getEdgeActivityAccess() {
-		return (pEdgeActivity != null) ? pEdgeActivity : (pEdgeActivity = new EdgeActivityElements());
+		return pEdgeActivity;
 	}
 	
 	public ParserRule getEdgeActivityRule() {
@@ -896,13 +918,13 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal EDGE:
 	//	"{"->"}";
 	public TerminalRule getEDGERule() {
-		return (tEDGE != null) ? tEDGE : (tEDGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EDGE"));
+		return tEDGE;
 	} 
 
 	//Synchronization:
 	//	ChannelSynchronization | {Synchronization} TauSynchronization;
 	public SynchronizationElements getSynchronizationAccess() {
-		return (pSynchronization != null) ? pSynchronization : (pSynchronization = new SynchronizationElements());
+		return pSynchronization;
 	}
 	
 	public ParserRule getSynchronizationRule() {
@@ -912,7 +934,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//ChannelSynchronization:
 	//	channel=[declarations::Variable] kind=SynchronizationKind;
 	public ChannelSynchronizationElements getChannelSynchronizationAccess() {
-		return (pChannelSynchronization != null) ? pChannelSynchronization : (pChannelSynchronization = new ChannelSynchronizationElements());
+		return pChannelSynchronization;
 	}
 	
 	public ParserRule getChannelSynchronizationRule() {
@@ -922,7 +944,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//enum SynchronizationKind returns templates::SynchronizationKind:
 	//	RECEIVE="?" | SEND="!";
 	public SynchronizationKindElements getSynchronizationKindAccess() {
-		return (unknownRuleSynchronizationKind != null) ? unknownRuleSynchronizationKind : (unknownRuleSynchronizationKind = new SynchronizationKindElements());
+		return unknownRuleSynchronizationKind;
 	}
 	
 	public EnumRule getSynchronizationKindRule() {
@@ -932,7 +954,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//TauSynchronization:
 	//	"tau";
 	public TauSynchronizationElements getTauSynchronizationAccess() {
-		return (pTauSynchronization != null) ? pTauSynchronization : (pTauSynchronization = new TauSynchronizationElements());
+		return pTauSynchronization;
 	}
 	
 	public ParserRule getTauSynchronizationRule() {
@@ -942,7 +964,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//DelayTransition:
 	//	"Delay:" duration=INT;
 	public DelayTransitionElements getDelayTransitionAccess() {
-		return (pDelayTransition != null) ? pDelayTransition : (pDelayTransition = new DelayTransitionElements());
+		return pDelayTransition;
 	}
 	
 	public ParserRule getDelayTransitionRule() {
@@ -952,7 +974,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//ActionTransition:
 	//	"Transitions:" edgeActivities+=EdgeActivity+;
 	public ActionTransitionElements getActionTransitionAccess() {
-		return (pActionTransition != null) ? pActionTransition : (pActionTransition = new ActionTransitionElements());
+		return pActionTransition;
 	}
 	
 	public ParserRule getActionTransitionRule() {
@@ -962,7 +984,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//Transition:
 	//	ActionTransition | DelayTransition;
 	public TransitionElements getTransitionAccess() {
-		return (pTransition != null) ? pTransition : (pTransition = new TransitionElements());
+		return pTransition;
 	}
 	
 	public ParserRule getTransitionRule() {
@@ -973,7 +995,7 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal INT returns ecore::EInt:
 	//	"-"? "0".."9"+;
 	public TerminalRule getINTRule() {
-		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
+		return tINT;
 	} 
 
 	//terminal ID:
@@ -983,8 +1005,8 @@ public class DiagnosticTraceGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
-	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
+	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
