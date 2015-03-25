@@ -20,7 +20,6 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.reachanalysis.reachabilityGraph.rtsc;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.modelinstance;bundle-version="0.4.0",
- de.uni_paderborn.uppaal.serialization;bundle-version="0.1.0",
  de.uni_paderborn.uppaal.requirements,
  de.uni_paderborn.fujaba.muml.runtime,
  de.uni_paderborn.fujaba.udbm,
@@ -29,7 +28,9 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.8.1",
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.results,
  de.uni_paderborn.fujaba.graphviz.blackbox;resolution:=optional,
- de.uni_paderborn.fujaba.graphviz;resolution:=optional
+ de.uni_paderborn.fujaba.graphviz;resolution:=optional,
+ de.uni_paderborn.uppaal.xtext;bundle-version="1.0.0",
+ de.uni_paderborn.uppaal.serialization;bundle-version="0.1.0"
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.job,
  de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces
 Bundle-Vendor: %providerName

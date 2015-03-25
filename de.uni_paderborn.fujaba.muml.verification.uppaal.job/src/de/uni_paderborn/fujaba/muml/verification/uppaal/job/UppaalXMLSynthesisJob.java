@@ -12,6 +12,16 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
+import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
+import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.xtext.serializer.ISerializer;
+import org.eclipse.xtext.serializer.impl.Serializer;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.job.layout.Layouter;
 import de.uni_paderborn.uppaal.NTA;
@@ -78,7 +88,21 @@ public class UppaalXMLSynthesisJob extends SynchronousJob {
 			subMonitor.subTask("Execute Model-to-Text Transformation");
 			// generate Uppaal xml
 			{
-				UppaalSerialization serializer = new UppaalSerialization();
+//				UppaalSerialization serializer = new UppaalSerialization();
+				
+				URI realURI = URI.createURI("platform:/plugin/de.uni_paderborn.uppaal.parsable/transforms/LocationIdentification.qvto");
+				TransformationExecutor executor = new TransformationExecutor(realURI);
+				executor.loadTransformation();
+				ExecutionContextImpl context = new ExecutionContextImpl();
+				BasicModelExtent extent = new BasicModelExtent();
+				extent.add(nta);
+				ExecutionDiagnostic diagnostic = executor.execute(context, extent);
+				
+				Injector injector = Guice
+						.createInjector(new de.uni_paderborn.uppaal.UppaalXMLRuntimeModule());
+				ISerializer serializer = injector.getInstance(Serializer.class);
+				String s = serializer.serialize(nta);
+				
 				/*if (layout)
 					serializer.setMoveEdgeLabelsAway(true);*/
 				BufferedWriter writer = null;
@@ -88,7 +112,7 @@ public class UppaalXMLSynthesisJob extends SynchronousJob {
 					if (file.isDirectory())
 						file = targetPath.append(nta.getName()+".xml").toFile();
 					writer = new BufferedWriter(new FileWriter(file));
-					writer.write(serializer.main(nta).toString()); //write m2t result to file
+					writer.write(s); //write m2t result to file
 				} catch (IOException e) {
 					e.printStackTrace();
 					return Status.CANCEL_STATUS;
@@ -113,7 +137,8 @@ public class UppaalXMLSynthesisJob extends SynchronousJob {
 					if (file.isDirectory())
 						file = targetPath.append(nta.getName()+".q").toFile();
 					writer = new BufferedWriter(new FileWriter(file));
-					writer.write(serializer.serializePropertyRepository(properties).toString()); //write m2t result to file
+					String serialized = serializer.serializePropertyRepository(properties).toString();
+					writer.write(serialized); //write m2t result to file
 				} catch (IOException e) {
 					e.printStackTrace();
 					return Status.CANCEL_STATUS;
@@ -142,7 +167,13 @@ public class UppaalXMLSynthesisJob extends SynchronousJob {
 
 			return Status.OK_STATUS;
 
-		} finally {
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+			return Status.OK_STATUS;
+		}
+		finally {
 			monitor.done();
 		}
 
