@@ -180,6 +180,7 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 «DEFINE addVisibilityFilter(String editorVar, String featureVar) FOR OCLFilter»
 	{
 		final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«expression.escapeString()»", «featureVar», getEClass());
+		«editorVar».setInput(input);
 		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 			@Override
 			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {

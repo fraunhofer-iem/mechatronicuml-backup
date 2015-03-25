@@ -159,25 +159,27 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	}
 	
 	private void setInput() {
-		Object value = this.value;
-
-		Collection<Object> choices = getChoices();
-		
-		// Problem: AbstractListViewer does not allow null, use NULL_HELPER
-		List<Object> safeChoices = new ArrayList<Object>();
-		for (Object choice : choices) {
-			if (choice == null) {
-				choice = NULL_HELPER;
+		if (!isDisposed()) {
+			Object value = this.value;
+	
+			Collection<Object> choices = getChoices();
+			
+			// Problem: AbstractListViewer does not allow null, use NULL_HELPER
+			List<Object> safeChoices = new ArrayList<Object>();
+			for (Object choice : choices) {
+				if (choice == null) {
+					choice = NULL_HELPER;
+				}
+				safeChoices.add(choice);
 			}
-			safeChoices.add(choice);
+			choices = safeChoices;
+	
+			if (comboViewer != null) {
+				comboViewer.setInput(choices);
+			}
+	
+			applySelection(value);
 		}
-		choices = safeChoices;
-
-		if (comboViewer != null) {
-			comboViewer.setInput(choices);
-		}
-
-		applySelection(value);
 	}
 
 	@Override
@@ -244,7 +246,8 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	
 	@Override
 	public void setFocus() {
-		if (comboViewer != null && !comboViewer.getCombo().isDisposed())
-		comboViewer.getCombo().setFocus();
+		if (comboViewer != null && !comboViewer.getCombo().isDisposed()) {
+			comboViewer.getCombo().setFocus();
+		}
 	}
 }

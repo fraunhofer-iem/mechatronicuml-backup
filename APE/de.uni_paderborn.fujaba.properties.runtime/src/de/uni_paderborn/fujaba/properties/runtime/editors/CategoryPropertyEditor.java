@@ -329,7 +329,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		
 		if (input != object) {
 			super.setInput(object);
-			for (IPropertyEditor editor : propertyEditors) {
+			for (IPropertyEditor editor : new ArrayList<IPropertyEditor>(propertyEditors)) {
 				if (!editor.isDisposed()) {
 					editor.setInput(object);
 				}

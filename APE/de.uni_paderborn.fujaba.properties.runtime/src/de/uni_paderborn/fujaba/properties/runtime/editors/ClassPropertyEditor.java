@@ -1,11 +1,8 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 
 
 /**
@@ -21,13 +18,25 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 	protected String tab;
 	
 	private EClass eClass;
+	
+	private boolean created;
 
 	public ClassPropertyEditor(String tab, AdapterFactory adapterFactory, EClass eClass) {
 		super(adapterFactory);
 		this.eClass = eClass;
 		this.tab = tab;
 		initiallyExpanded = true;
-		createProperties();
+	}
+	
+	@Override
+	protected void inputChanged(Object oldObject) {
+		super.inputChanged(oldObject);
+		if (!created && input != null) {
+			if (input instanceof EObject && ((EObject)input).eResource() != null) {
+				created = true;
+				createProperties();
+			}
+		}
 	}
 	
 	public String getTab() {
