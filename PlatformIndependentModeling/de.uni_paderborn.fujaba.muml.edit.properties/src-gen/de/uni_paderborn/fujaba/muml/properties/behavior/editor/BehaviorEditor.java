@@ -23,19 +23,19 @@ public abstract class BehaviorEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createBehavioralElement_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorBehavioralElement_GeneralTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createOperations_GeneralTab_Editor(), false);
+					createEditorOperations_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createVariables_GeneralTab_Editor(), false);
+					createEditorVariables_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -44,19 +44,19 @@ public abstract class BehaviorEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createBehavioralElement_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorBehavioralElement_GeneralTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createOperations_GeneralTab_Editor(), false);
+					createEditorOperations_GeneralTab_Editor(), false);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createVariables_GeneralTab_Editor(), false);
+					createEditorVariables_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -73,7 +73,7 @@ public abstract class BehaviorEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavioralElement_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createBehavioralElement_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBehavioralElement_GeneralTab_Editor() {
 		if (this.editorBehavioralElement_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_BehavioralElement();
@@ -88,7 +88,7 @@ public abstract class BehaviorEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOperations_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createOperations_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOperations_GeneralTab_Editor() {
 		if (this.editorOperations_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_Operations();
@@ -103,7 +103,7 @@ public abstract class BehaviorEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariables_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createVariables_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariables_GeneralTab_Editor() {
 		if (this.editorVariables_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getBehavior_Variables();

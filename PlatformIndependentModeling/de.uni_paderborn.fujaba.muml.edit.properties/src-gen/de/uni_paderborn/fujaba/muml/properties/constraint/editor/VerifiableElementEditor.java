@@ -28,10 +28,10 @@ public abstract class VerifiableElementEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+					createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(
-					createVerificationConstraintRepositories_GeneralTab_Editor(),
+					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
 					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -45,7 +45,7 @@ public abstract class VerifiableElementEditor
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addPropertyEditor(
-					createVerificationConstraintRepositories_GeneralTab_Editor(),
+					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
 					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -60,14 +60,14 @@ public abstract class VerifiableElementEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+					createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerificationConstraintRepositories_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createVerificationConstraintRepositories_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerificationConstraintRepositories_GeneralTab_Editor() {
 		if (this.editorVerificationConstraintRepositories_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 					.getVerifiableElement_VerificationConstraintRepositories();
@@ -82,7 +82,7 @@ public abstract class VerifiableElementEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
 		if (this.editorExtension_ExtensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();

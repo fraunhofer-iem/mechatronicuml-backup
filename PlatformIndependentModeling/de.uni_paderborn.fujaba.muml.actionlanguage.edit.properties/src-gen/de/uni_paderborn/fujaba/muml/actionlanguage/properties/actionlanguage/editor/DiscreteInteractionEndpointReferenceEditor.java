@@ -24,20 +24,20 @@ public class DiscreteInteractionEndpointReferenceEditor
 		if (tab == null) {
 
 			addPropertyEditor(
-					createTypedNamedElementExpression_GeneralTab_Editor(),
+					createEditorTypedNamedElementExpression_GeneralTab_Editor(),
 					false);
 
-			addPropertyEditor(createPosition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(
-					createTypedNamedElementExpression_GeneralTab_Editor(),
+					createEditorTypedNamedElementExpression_GeneralTab_Editor(),
 					false);
 
-			addPropertyEditor(createPosition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPosition_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -48,7 +48,7 @@ public class DiscreteInteractionEndpointReferenceEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTypedNamedElementExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createTypedNamedElementExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTypedNamedElementExpression_GeneralTab_Editor() {
 		if (this.editorTypedNamedElementExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getDiscreteInteractionEndpointReference_TypedNamedElementExpression();
@@ -63,7 +63,7 @@ public class DiscreteInteractionEndpointReferenceEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPosition_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createPosition_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPosition_GeneralTab_Editor() {
 		if (this.editorPosition_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getDiscreteInteractionEndpointReference_Position();

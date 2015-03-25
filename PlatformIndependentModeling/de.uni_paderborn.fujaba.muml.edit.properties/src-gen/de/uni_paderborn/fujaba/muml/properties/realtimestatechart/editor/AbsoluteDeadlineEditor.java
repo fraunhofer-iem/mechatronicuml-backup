@@ -23,21 +23,21 @@ public class AbsoluteDeadlineEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createClock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorClock_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createClock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorClock_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -48,7 +48,7 @@ public class AbsoluteDeadlineEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClock_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createClock_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClock_GeneralTab_Editor() {
 		if (this.editorClock_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getAbsoluteDeadline_Clock();
@@ -63,7 +63,7 @@ public class AbsoluteDeadlineEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUpperBound_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_GeneralTab_Editor() {
 		if (this.editorUpperBound_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDeadline_UpperBound();
@@ -78,7 +78,7 @@ public class AbsoluteDeadlineEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLowerBound_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_GeneralTab_Editor() {
 		if (this.editorLowerBound_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDeadline_LowerBound();

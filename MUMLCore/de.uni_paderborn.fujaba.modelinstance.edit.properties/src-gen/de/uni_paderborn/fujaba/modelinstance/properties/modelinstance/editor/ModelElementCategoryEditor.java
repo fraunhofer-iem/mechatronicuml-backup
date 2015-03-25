@@ -28,7 +28,7 @@ public class ModelElementCategoryEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createModelElements_GeneralTab_Editor(), false);
+					createEditorModelElements_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -37,7 +37,7 @@ public class ModelElementCategoryEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createModelElements_GeneralTab_Editor(), false);
+					createEditorModelElements_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -54,7 +54,7 @@ public class ModelElementCategoryEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorModelElements_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createModelElements_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorModelElements_GeneralTab_Editor() {
 		if (this.editorModelElements_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
 					.getModelElementCategory_ModelElements();

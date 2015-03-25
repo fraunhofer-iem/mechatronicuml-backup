@@ -23,17 +23,17 @@ public class NondeterministicChoiceExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createRange_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRange_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createDataType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createRange_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorRange_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createDataType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -44,7 +44,7 @@ public class NondeterministicChoiceExpressionEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRange_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createRange_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRange_GeneralTab_Editor() {
 		if (this.editorRange_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getNondeterministicChoiceExpression_Range();
@@ -59,7 +59,7 @@ public class NondeterministicChoiceExpressionEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createDataType_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataType_GeneralTab_Editor() {
 		if (this.editorDataType_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getNondeterministicChoiceExpression_DataType();

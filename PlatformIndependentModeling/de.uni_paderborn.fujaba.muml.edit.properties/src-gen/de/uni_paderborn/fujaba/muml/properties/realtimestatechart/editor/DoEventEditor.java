@@ -23,21 +23,21 @@ public class DoEventEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createPeriod_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPeriod_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createAction_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createPeriod_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorPeriod_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -48,7 +48,7 @@ public class DoEventEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAction_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createAction_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAction_GeneralTab_Editor() {
 		if (this.editorAction_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDoEvent_Action();
@@ -63,7 +63,7 @@ public class DoEventEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPeriod_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createPeriod_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPeriod_GeneralTab_Editor() {
 		if (this.editorPeriod_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getDoEvent_Period();
@@ -78,7 +78,7 @@ public class DoEventEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createKind_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
 		if (this.editorKind_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEvent_Kind();

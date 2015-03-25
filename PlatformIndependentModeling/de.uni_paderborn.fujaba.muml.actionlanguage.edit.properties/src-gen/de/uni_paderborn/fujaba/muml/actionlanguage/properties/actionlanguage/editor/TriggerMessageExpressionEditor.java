@@ -23,17 +23,19 @@ public class TriggerMessageExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createMessageType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(),
+					false);
 
-			addPropertyEditor(createParameter_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParameter_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createMessageType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(),
+					false);
 
-			addPropertyEditor(createParameter_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParameter_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -44,7 +46,7 @@ public class TriggerMessageExpressionEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessageType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createMessageType_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessageType_GeneralTab_Editor() {
 		if (this.editorMessageType_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getTriggerMessageExpression_MessageType();
@@ -57,7 +59,7 @@ public class TriggerMessageExpressionEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameter_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createParameter_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameter_GeneralTab_Editor() {
 		if (this.editorParameter_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getTriggerMessageExpression_Parameter();

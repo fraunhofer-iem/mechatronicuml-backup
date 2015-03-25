@@ -23,13 +23,13 @@ public class LocalVariableDeclarationStatementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createVariable_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVariable_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createVariable_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorVariable_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -40,7 +40,7 @@ public class LocalVariableDeclarationStatementEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVariable_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createVariable_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVariable_GeneralTab_Editor() {
 		if (this.editorVariable_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getLocalVariableDeclarationStatement_Variable();

@@ -28,14 +28,15 @@ public class SynchronizationEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+					createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createSyncChannel_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createKind_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createSelectorExpression_GeneralTab_Editor(),
+			addPropertyEditor(createEditorSyncChannel_GeneralTab_Editor(),
 					false);
+
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorSelectorExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -47,12 +48,13 @@ public class SynchronizationEditor
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addPropertyEditor(createSyncChannel_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createKind_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createSelectorExpression_GeneralTab_Editor(),
+			addPropertyEditor(createEditorSyncChannel_GeneralTab_Editor(),
 					false);
+
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorSelectorExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -66,14 +68,14 @@ public class SynchronizationEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+					createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSyncChannel_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createSyncChannel_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSyncChannel_GeneralTab_Editor() {
 		if (this.editorSyncChannel_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getSynchronization_SyncChannel();
@@ -88,7 +90,7 @@ public class SynchronizationEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createKind_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
 		if (this.editorKind_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getSynchronization_Kind();
@@ -103,7 +105,7 @@ public class SynchronizationEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSelectorExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createSelectorExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSelectorExpression_GeneralTab_Editor() {
 		if (this.editorSelectorExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getSynchronization_SelectorExpression();
@@ -118,7 +120,7 @@ public class SynchronizationEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
 		if (this.editorExtension_ExtensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();

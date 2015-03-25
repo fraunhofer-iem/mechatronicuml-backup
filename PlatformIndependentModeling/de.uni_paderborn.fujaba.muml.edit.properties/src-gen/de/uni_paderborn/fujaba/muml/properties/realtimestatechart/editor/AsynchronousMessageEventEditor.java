@@ -23,17 +23,17 @@ public class AsynchronousMessageEventEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createMessage_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMessage_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createKind_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createMessage_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorMessage_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -44,7 +44,7 @@ public class AsynchronousMessageEventEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessage_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createMessage_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessage_GeneralTab_Editor() {
 		if (this.editorMessage_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getAsynchronousMessageEvent_Message();
@@ -59,7 +59,7 @@ public class AsynchronousMessageEventEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createKind_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
 		if (this.editorKind_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEvent_Kind();

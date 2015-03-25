@@ -23,32 +23,36 @@ public class AssignmentEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createAssignOperator_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createRhs_assignExpression_GeneralTab_Editor(),
+			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(),
 					false);
 
 			addPropertyEditor(
-					createIncrementDecrementOperator_GeneralTab_Editor(), false);
+					createEditorRhs_assignExpression_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
-					createLhs_typedNamedElementExpression_GeneralTab_Editor(),
+					createEditorIncrementDecrementOperator_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(),
 					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createAssignOperator_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createRhs_assignExpression_GeneralTab_Editor(),
+			addPropertyEditor(createEditorAssignOperator_GeneralTab_Editor(),
 					false);
 
 			addPropertyEditor(
-					createIncrementDecrementOperator_GeneralTab_Editor(), false);
+					createEditorRhs_assignExpression_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
-					createLhs_typedNamedElementExpression_GeneralTab_Editor(),
+					createEditorIncrementDecrementOperator_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorLhs_typedNamedElementExpression_GeneralTab_Editor(),
 					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -60,7 +64,7 @@ public class AssignmentEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAssignOperator_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createAssignOperator_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAssignOperator_GeneralTab_Editor() {
 		if (this.editorAssignOperator_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_AssignOperator();
@@ -75,7 +79,7 @@ public class AssignmentEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorRhs_assignExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createRhs_assignExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorRhs_assignExpression_GeneralTab_Editor() {
 		if (this.editorRhs_assignExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_Rhs_assignExpression();
@@ -90,7 +94,7 @@ public class AssignmentEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncrementDecrementOperator_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createIncrementDecrementOperator_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncrementDecrementOperator_GeneralTab_Editor() {
 		if (this.editorIncrementDecrementOperator_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_IncrementDecrementOperator();
@@ -105,7 +109,7 @@ public class AssignmentEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLhs_typedNamedElementExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLhs_typedNamedElementExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLhs_typedNamedElementExpression_GeneralTab_Editor() {
 		if (this.editorLhs_typedNamedElementExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getAssignment_Lhs_typedNamedElementExpression();

@@ -23,17 +23,17 @@ public class CardinalityEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createLowerBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLowerBound_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createUpperBound_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUpperBound_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -44,7 +44,7 @@ public class CardinalityEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLowerBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLowerBound_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLowerBound_GeneralTab_Editor() {
 		if (this.editorLowerBound_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 					.getCardinality_LowerBound();
@@ -59,7 +59,7 @@ public class CardinalityEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUpperBound_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUpperBound_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUpperBound_GeneralTab_Editor() {
 		if (this.editorUpperBound_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 					.getCardinality_UpperBound();

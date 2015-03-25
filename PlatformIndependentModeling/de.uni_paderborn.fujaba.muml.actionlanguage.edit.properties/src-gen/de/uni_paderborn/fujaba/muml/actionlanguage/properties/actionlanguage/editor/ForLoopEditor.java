@@ -28,17 +28,17 @@ public class ForLoopEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExpressions_GeneralTab_Editor(), false);
+					createEditorExpressions_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createBlock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBlock_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createLoopTest_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLoopTest_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createInitializeExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorInitializeExpression_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createCountingExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorCountingExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -52,17 +52,17 @@ public class ForLoopEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExpressions_GeneralTab_Editor(), false);
+					createEditorExpressions_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createBlock_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBlock_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createLoopTest_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorLoopTest_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createInitializeExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorInitializeExpression_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createCountingExpression_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(
+					createEditorCountingExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -79,7 +79,7 @@ public class ForLoopEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInitializeExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createInitializeExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInitializeExpression_GeneralTab_Editor() {
 		if (this.editorInitializeExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getForLoop_InitializeExpression();
@@ -94,7 +94,7 @@ public class ForLoopEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCountingExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createCountingExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCountingExpression_GeneralTab_Editor() {
 		if (this.editorCountingExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getForLoop_CountingExpression();
@@ -109,7 +109,7 @@ public class ForLoopEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlock_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createBlock_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlock_GeneralTab_Editor() {
 		if (this.editorBlock_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getLoop_Block();
@@ -124,7 +124,7 @@ public class ForLoopEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLoopTest_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createLoopTest_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLoopTest_GeneralTab_Editor() {
 		if (this.editorLoopTest_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getLoop_LoopTest();
@@ -139,7 +139,7 @@ public class ForLoopEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressions_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExpressions_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressions_GeneralTab_Editor() {
 		if (this.editorExpressions_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getBlock_Expressions();

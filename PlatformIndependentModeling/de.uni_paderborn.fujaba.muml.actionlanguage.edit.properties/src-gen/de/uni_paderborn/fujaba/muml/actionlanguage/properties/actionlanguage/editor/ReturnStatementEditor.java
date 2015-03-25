@@ -23,13 +23,13 @@ public class ReturnStatementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -40,7 +40,7 @@ public class ReturnStatementEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpression_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExpression_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpression_GeneralTab_Editor() {
 		if (this.editorExpression_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
 					.getReturnStatement_Expression();
