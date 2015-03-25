@@ -338,6 +338,7 @@ public class EReferenceEditor
 						.createOCLExpression(
 								"not eAnnotations->select(source = 'http://www.muml.org/emf/OCLFilter').details->select(key = 'choices')->isEmpty()",
 								feature, getEClass());
+				editor.setInput(input);
 				editor.registerOCLAdapter(expression,
 						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 							@Override
@@ -432,6 +433,7 @@ public class EReferenceEditor
 						.createOCLExpression(
 								"self.oclIsKindOf(ecore::EAttribute)", feature,
 								getEClass());
+				editor.setInput(input);
 				editor.registerOCLAdapter(expression,
 						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 							@Override

@@ -212,6 +212,7 @@ public class EAttributeEditor
 						.createOCLExpression(
 								"self.oclIsKindOf(ecore::EAttribute)", feature,
 								getEClass());
+				editor.setInput(input);
 				editor.registerOCLAdapter(expression,
 						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 							@Override

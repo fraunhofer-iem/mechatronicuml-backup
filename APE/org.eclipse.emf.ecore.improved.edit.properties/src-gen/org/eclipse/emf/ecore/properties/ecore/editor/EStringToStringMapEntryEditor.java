@@ -73,6 +73,7 @@ public class EStringToStringMapEntryEditor
 						.createOCLExpression(
 								"not eContainer().oclIsKindOf(ecore::EAnnotation) or not (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')",
 								feature, getEClass());
+				editor.setInput(input);
 				editor.registerOCLAdapter(expression,
 						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 							@Override
@@ -115,6 +116,7 @@ public class EStringToStringMapEntryEditor
 						.createOCLExpression(
 								"eContainer().oclIsKindOf(ecore::EAnnotation) and (eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL' or eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.muml.org/emf/OCLFilter')",
 								feature, getEClass());
+				editor.setInput(input);
 				editor.registerOCLAdapter(expression,
 						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 							@Override
