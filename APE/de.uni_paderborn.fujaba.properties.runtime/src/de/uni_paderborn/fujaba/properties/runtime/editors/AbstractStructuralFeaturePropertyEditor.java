@@ -195,7 +195,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			//         so we only react on the second notification.
 			if (hasResource) {
 				value = newValue;
-				if (feature.isMany()) { // copy collection
+				if (feature.isMany() && value != null) { // copy collection
 					value = new ArrayList<Object>((Collection<?>) value);
 				}
 				valueChanged();
@@ -282,10 +282,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	public void setValue(Object newValue) {
+		// XXX This is bad if the opposite is the containment reference! and we just want to hide the container reference.
 		// Do not set value other than default value for invisible editors
-		if (!isVisible()) {
-			newValue = feature.getDefaultValue();
-		}
+		//if (!isVisible()) {
+		//	newValue = feature.getDefaultValue();
+		//}
 
 		boolean changed = (value == null) != (newValue == null) || (value != null && newValue != null && !value.equals(newValue));
 		
