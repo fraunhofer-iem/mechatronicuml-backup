@@ -1,0 +1,26 @@
+module de.uni_paderborn.fujaba.oclgenerator.QVTOGenerator
+
+import org.eclipse.emf.mwe.utils.*
+
+var targetDir = "src-gen"
+var modelPath = "model"
+
+Workflow {
+
+
+	component = de.uni_paderborn.fujaba.qvtogenerator.QVTOGeneratorSupport {}
+	component = org.eclipse.xtext.mwe.Reader {
+		path = modelPath
+		register = de.uni_paderborn.fujaba.qvtogenerator.QVTOGeneratorSetup {}
+		loadResource = {
+			slot = "model"
+		}
+	}
+	component = org.eclipse.xtext.generator.GeneratorComponent {
+		register = de.uni_paderborn.fujaba.qvtogenerator.QVTOGeneratorSetup {}
+		slot = 'model'
+		outlet = {
+			path = targetDir
+		}
+	}
+}
