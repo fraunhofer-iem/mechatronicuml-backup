@@ -774,6 +774,10 @@
           <details key="documentation" value="Specifies the kind of location (default, urgent, or committed)."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdges" upperBound="-1"
+          eType="#//templates/Edge" eOpposite="#//templates/Edge/target"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1"
+          eType="#//templates/Edge" eOpposite="#//templates/Edge/source"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="LocationKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -798,7 +802,7 @@
         <details key="constraints" value="UniqueParentTemplate"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-          eType="#//templates/Location">
+          eType="#//templates/Location" eOpposite="#//templates/Location/outgoingEdges">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="source"/>
@@ -808,7 +812,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-          eType="#//templates/Location">
+          eType="#//templates/Location" eOpposite="#//templates/Location/incomingEdges">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="attribute"/>
           <details key="name" value="target"/>

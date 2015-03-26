@@ -305,13 +305,31 @@ public interface TemplatesPackage extends EPackage {
 	int LOCATION__LOCATION_TIME_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Incoming Edges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION__INCOMING_EDGES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Edges</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION__OUTGOING_EDGES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Location</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int LOCATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl <em>Edge</em>}' class.
@@ -668,6 +686,28 @@ public interface TemplatesPackage extends EPackage {
 	EAttribute getLocation_LocationTimeKind();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.uppaal.templates.Location#getIncomingEdges <em>Incoming Edges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Incoming Edges</em>'.
+	 * @see de.uni_paderborn.uppaal.templates.Location#getIncomingEdges()
+	 * @see #getLocation()
+	 * @generated
+	 */
+	EReference getLocation_IncomingEdges();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.uppaal.templates.Location#getOutgoingEdges <em>Outgoing Edges</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outgoing Edges</em>'.
+	 * @see de.uni_paderborn.uppaal.templates.Location#getOutgoingEdges()
+	 * @see #getLocation()
+	 * @generated
+	 */
+	EReference getLocation_OutgoingEdges();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.uppaal.templates.Edge <em>Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,6 +997,22 @@ public interface TemplatesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LOCATION__LOCATION_TIME_KIND = eINSTANCE.getLocation_LocationTimeKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Edges</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCATION__INCOMING_EDGES = eINSTANCE.getLocation_IncomingEdges();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Edges</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCATION__OUTGOING_EDGES = eINSTANCE.getLocation_OutgoingEdges();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.uppaal.templates.impl.EdgeImpl <em>Edge</em>}' class.

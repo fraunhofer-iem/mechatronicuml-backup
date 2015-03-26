@@ -249,11 +249,33 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(Location newSource) {
+	public NotificationChain basicSetSource(Location newSource, NotificationChain msgs) {
 		Location oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__SOURCE, oldSource, source));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__SOURCE, oldSource, newSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(Location newSource) {
+		if (newSource != source) {
+			NotificationChain msgs = null;
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, TemplatesPackage.LOCATION__OUTGOING_EDGES, Location.class, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, TemplatesPackage.LOCATION__OUTGOING_EDGES, Location.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -287,11 +309,33 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Location newTarget) {
+	public NotificationChain basicSetTarget(Location newTarget, NotificationChain msgs) {
 		Location oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__TARGET, oldTarget, target));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(Location newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, TemplatesPackage.LOCATION__INCOMING_EDGES, Location.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, TemplatesPackage.LOCATION__INCOMING_EDGES, Location.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TemplatesPackage.EDGE__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -453,6 +497,14 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case TemplatesPackage.EDGE__SOURCE:
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, TemplatesPackage.LOCATION__OUTGOING_EDGES, Location.class, msgs);
+				return basicSetSource((Location)otherEnd, msgs);
+			case TemplatesPackage.EDGE__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, TemplatesPackage.LOCATION__INCOMING_EDGES, Location.class, msgs);
+				return basicSetTarget((Location)otherEnd, msgs);
 			case TemplatesPackage.EDGE__PARENT_TEMPLATE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -469,6 +521,10 @@ public class EdgeImpl extends LinearElementImpl implements Edge {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case TemplatesPackage.EDGE__SOURCE:
+				return basicSetSource(null, msgs);
+			case TemplatesPackage.EDGE__TARGET:
+				return basicSetTarget(null, msgs);
 			case TemplatesPackage.EDGE__PARENT_TEMPLATE:
 				return basicSetParentTemplate(null, msgs);
 			case TemplatesPackage.EDGE__GUARD:

@@ -6,8 +6,10 @@ package de.uni_paderborn.uppaal.templates.validation;
 
 import de.uni_paderborn.uppaal.expressions.Expression;
 
+import de.uni_paderborn.uppaal.templates.Edge;
 import de.uni_paderborn.uppaal.templates.LocationKind;
 import de.uni_paderborn.uppaal.templates.Template;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * A sample validator interface for {@link de.uni_paderborn.uppaal.templates.Location}.
@@ -21,4 +23,8 @@ public interface LocationValidator {
 	boolean validateParentTemplate(Template value);
 	boolean validateInvariant(Expression value);
 	boolean validateLocationTimeKind(LocationKind value);
+
+	boolean validateIncomingEdges(EList<Edge> value);
+
+	boolean validateOutgoingEdges(EList<Edge> value);
 }

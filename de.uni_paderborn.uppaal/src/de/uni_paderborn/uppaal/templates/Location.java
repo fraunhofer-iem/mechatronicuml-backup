@@ -9,6 +9,7 @@ import de.uni_paderborn.uppaal.expressions.Expression;
 
 import de.uni_paderborn.uppaal.visuals.ColoredElement;
 import de.uni_paderborn.uppaal.visuals.PlanarElement;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,8 @@ import de.uni_paderborn.uppaal.visuals.PlanarElement;
  *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getParentTemplate <em>Parent Template</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getInvariant <em>Invariant</em>}</li>
  *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getLocationTimeKind <em>Location Time Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getIncomingEdges <em>Incoming Edges</em>}</li>
+ *   <li>{@link de.uni_paderborn.uppaal.templates.Location#getOutgoingEdges <em>Outgoing Edges</em>}</li>
  * </ul>
  * </p>
  *
@@ -112,5 +115,41 @@ public interface Location extends NamedElement, CommentableElement, PlanarElemen
 	 * @generated
 	 */
 	void setLocationTimeKind(LocationKind value);
+
+	/**
+	 * Returns the value of the '<em><b>Incoming Edges</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.uppaal.templates.Edge}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.uppaal.templates.Edge#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming Edges</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming Edges</em>' reference list.
+	 * @see de.uni_paderborn.uppaal.templates.TemplatesPackage#getLocation_IncomingEdges()
+	 * @see de.uni_paderborn.uppaal.templates.Edge#getTarget
+	 * @model opposite="target"
+	 * @generated
+	 */
+	EList<Edge> getIncomingEdges();
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing Edges</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.uppaal.templates.Edge}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.uppaal.templates.Edge#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing Edges</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing Edges</em>' reference list.
+	 * @see de.uni_paderborn.uppaal.templates.TemplatesPackage#getLocation_OutgoingEdges()
+	 * @see de.uni_paderborn.uppaal.templates.Edge#getSource
+	 * @model opposite="source"
+	 * @generated
+	 */
+	EList<Edge> getOutgoingEdges();
 
 } // Location

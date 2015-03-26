@@ -42,6 +42,7 @@ import org.eclipse.emf.common.util.EList;
 public interface Edge extends LinearElement, CommentableElement, ColoredElement {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.uppaal.templates.Location#getOutgoingEdges <em>Outgoing Edges</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -50,7 +51,8 @@ public interface Edge extends LinearElement, CommentableElement, ColoredElement 
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Location)
 	 * @see de.uni_paderborn.uppaal.templates.TemplatesPackage#getEdge_Source()
-	 * @model required="true"
+	 * @see de.uni_paderborn.uppaal.templates.Location#getOutgoingEdges
+	 * @model opposite="outgoingEdges" required="true"
 	 *        extendedMetaData="kind='attribute' name='source'"
 	 * @generated
 	 */
@@ -68,6 +70,7 @@ public interface Edge extends LinearElement, CommentableElement, ColoredElement 
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.uppaal.templates.Location#getIncomingEdges <em>Incoming Edges</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -76,7 +79,8 @@ public interface Edge extends LinearElement, CommentableElement, ColoredElement 
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Location)
 	 * @see de.uni_paderborn.uppaal.templates.TemplatesPackage#getEdge_Target()
-	 * @model required="true"
+	 * @see de.uni_paderborn.uppaal.templates.Location#getIncomingEdges
+	 * @model opposite="incomingEdges" required="true"
 	 *        extendedMetaData="kind='attribute' name='target'"
 	 * @generated
 	 */

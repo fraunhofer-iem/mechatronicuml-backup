@@ -65,6 +65,8 @@ public class LocationItemProvider extends NamedElementItemProvider {
 			addCommentPropertyDescriptor(object);
 			addColorCodePropertyDescriptor(object);
 			addLocationTimeKindPropertyDescriptor(object);
+			addIncomingEdgesPropertyDescriptor(object);
+			addOutgoingEdgesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,6 +133,50 @@ public class LocationItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Edges feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncomingEdgesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Location_incomingEdges_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Location_incomingEdges_feature", "_UI_Location_type"),
+				 TemplatesPackage.Literals.LOCATION__INCOMING_EDGES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Outgoing Edges feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutgoingEdgesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Location_outgoingEdges_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Location_outgoingEdges_feature", "_UI_Location_type"),
+				 TemplatesPackage.Literals.LOCATION__OUTGOING_EDGES,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
