@@ -25,4 +25,5 @@ Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Import-Package: de.uni_paderborn.fujaba.muml.verification.uppaal
+Import-Package: de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard,
+ de.uni_paderborn.fujaba.muml.verification.uppaal
