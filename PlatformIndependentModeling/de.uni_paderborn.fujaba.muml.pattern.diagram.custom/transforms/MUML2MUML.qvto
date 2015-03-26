@@ -888,7 +888,7 @@ mapping muml::behavior::Variable :: Variable2Variable() : muml::behavior::Variab
     	_constant := self._constant;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
-    	_dataType := self._dataType.map DataType2DataType();
+    	_dataType := self._dataType;
     	_initializeExpression := self._initializeExpression.map Expression2Expression();
    		 }
    		 

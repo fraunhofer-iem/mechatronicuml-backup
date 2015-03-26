@@ -79,8 +79,8 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 		// TODO Auto-generated method stub
 		super.performFinish();
 
-		PatternToProtocolTransformation.saveInput(selectedPattern, (RootNode)selectedPattern.eContainer().eContainer(), p2.getBindings(), editingDomain);
-		//this.startUppaalModelChecking();
+		//PatternToProtocolTransformation.saveInput(selectedPattern, (RootNode)selectedPattern.eContainer().eContainer(), p2.getBindings(), editingDomain);
+		this.startUppaalModelChecking();
 		return true;
 	}
 
