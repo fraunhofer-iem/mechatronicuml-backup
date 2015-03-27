@@ -2,11 +2,12 @@ package de.uni_paderborn.uppaal.serializer;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.parsetree.reconstr.impl.DefaultTransientValueService;
 
 import de.uni_paderborn.uppaal.NTA;
-import de.uni_paderborn.uppaal.templates.AbstractTemplate;
+import de.uni_paderborn.uppaal.templates.Location;
 
 public class UppaalXMLTransientValueService extends DefaultTransientValueService {
 	
@@ -20,27 +21,27 @@ public class UppaalXMLTransientValueService extends DefaultTransientValueService
 		 * the aforementioned comment-attribute of AbstractTemplate is ignored for the
 		 * serialization.
 		 */
-
-		
-		//		if (owner instanceof AbstractTemplate)
-		//		{
-		//			// Ignore the comment field.
-		//			if (feature instanceof EAttribute)
-		//			{
-		//				EAttribute attr = (EAttribute) feature;
-		//				if ("comment".equals(attr.getName()))
-		//					return true;
-		//			}
-		//		}
 		
 		if (owner instanceof NTA)
 		{
-			// Ignore the name field.
 			if (feature instanceof EAttribute)
 			{
 				EAttribute attr = (EAttribute) feature;
 				if ("name".equals(attr.getName()))
 					return true;
+			}
+		}
+		
+		if (owner instanceof Location)
+		{
+			if (feature instanceof EReference)
+			{
+				EReference ref = (EReference) feature;
+				if ("incomingEdges".equals(ref.getName()) ||
+					"outgoingEdges".equals(ref.getName()))
+				{
+					return true;
+				}
 			}
 		}
 		
