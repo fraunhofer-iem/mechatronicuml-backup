@@ -11,7 +11,7 @@ main() {
 		template.edge := template.edge.map Edge2Edge();
 	};
 	
-	--assert fatal (u.objectsOfType(Location)->isEmpty());
+	assert fatal (u.objectsOfType(Location)->isEmpty());
 }
 
 mapping templates::Location :: Location2IdentifiableLocation() : parsable::IdentifiableLocation {

@@ -408,6 +408,16 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 		name := self.name;
 	
+		Types::initialize();
+		
+		/*
+		int := INT;		
+		bool := BOOL;
+		clock := CLOCK;
+		chan := CHAN;
+		void := VOID;
+		*/
+	
 		-- create global declarations
 		globalDeclarations := self.map CIC2GlobalDeclarations();
 		
