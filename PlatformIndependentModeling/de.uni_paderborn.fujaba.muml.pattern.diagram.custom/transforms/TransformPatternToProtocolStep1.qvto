@@ -1,4 +1,5 @@
 import MUML2MUML;
+import PatternProtocolTransformationLibrary;
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -28,7 +29,7 @@ main()
 	//bindings :=thePattern.legalConfigurations->any(true).parameterBindings;
 	
 	
-	assert warning (false)  with log ("Transformation PatternToProtocol Started!");
+	
 	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
 	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
 
@@ -41,12 +42,12 @@ main()
     //{
     //	parameter2RTSC->put(parameterBinding.parameter, Set{});
     //};
-    
+   	
     assert fatal (bindings != null) with log ("Parameter Bindings are null!");
     
 	createProtocol(thePattern, theRootNode);
    
-    assert warning (false)  with log ("Transformation PatternToProtocol Finished");
+    
     
 //	input.objects()[ParameterExpression];
 	//theRootNode.oclAsType(EObject)->asSet()->closure(e:EObject|e.eContents()->collect(oclAsType(EObject)))[ParameterExpression];
@@ -88,19 +89,6 @@ helper createProtocol(pattern : CoordinationPattern, root : RootNode)
 
 
 
-query getRealtimeStatechartCategory(in theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
-}
-query getProtocolCategory(in theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
-}
-query getPatternCategory(in theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
-}
-helper copyMessageBuffer(protocol : CoordinationProtocol, pattern : CoordinationPattern)
-{
-	protocol.verificationConstraintRepositories
-}
 
 constructor muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository(rep : muml::constraint::VerificationConstraintRepository)
 {
@@ -111,45 +99,9 @@ constructor CoordinationProtocol::CoordinationProtocol(pattern : CoordinationPat
 	comment := pattern.comment;
 	
 }
-constructor MessageBuffer::MessageBuffer(buffer : MessageBuffer, sourceRole : Role)
-{
-	name := buffer.name;
-	bufferSize := new NaturalNumber(buffer.bufferSize);
-	comment := buffer.comment;
-	buffer.messageType->forEach(type)
-	{
-		messageType+= type;
-	};
-	bufferOverflowAvoidanceStrategy := buffer.bufferOverflowAvoidanceStrategy;
-	discreteInteractionEndpoint := sourceRole;
-	
-}
-constructor Role::Role(roleToCopy : Role, protocol : CoordinationProtocol)
-{
-	// behavior is missing --> maybe we can use the existing transformation for copying the role to port properties
-	//roleconnector is read only
-	name :=  roleToCopy.name;
-	// no new objects, since it is a reference to a given message type!
-	senderMessageTypes := roleToCopy.senderMessageTypes; 
-	receiverMessageTypes := roleToCopy.receiverMessageTypes;
-	comment := roleToCopy.comment;
-	// role 
-	coordinationProtocol := protocol;
-	
-	cardinality := new Cardinality(roleToCopy.cardinality);
-	
-}
-constructor Cardinality::Cardinality(c :Cardinality)
-{
-	lowerBound := new NaturalNumber(c.lowerBound);
-	upperBound := new NaturalNumber(c.upperBound);
-}
 
-constructor NaturalNumber::NaturalNumber(nn : NaturalNumber)
-{
-	value := nn.value;
-	infinity := nn.infinity;	
-}
+
+
 
 
 mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{

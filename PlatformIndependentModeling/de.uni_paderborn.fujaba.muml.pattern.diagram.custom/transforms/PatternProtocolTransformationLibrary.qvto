@@ -1,0 +1,67 @@
+library PatternProtocolTransformationLibrary;
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+
+
+query getRealtimeStatechartCategory(in theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+}
+query getProtocolCategory(in theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
+}
+query getPatternCategory(in theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
+}
+
+constructor Role::Role(roleToCopy : Role, coordination : AbstractCoordinationSpecification)
+{
+	// behavior is missing --> maybe we can use the existing transformation for copying the role to port properties
+	//roleconnector is read only
+	name :=  roleToCopy.name;
+	// no new objects, since it is a reference to a given message type!
+	senderMessageTypes := roleToCopy.senderMessageTypes; 
+	receiverMessageTypes := roleToCopy.receiverMessageTypes;
+	comment := roleToCopy.comment;
+	// role 
+	coordinationProtocol := coordination;
+	
+	cardinality := new Cardinality(roleToCopy.cardinality);	
+}
+
+constructor Cardinality::Cardinality(c :Cardinality)
+{
+	lowerBound := new NaturalNumber(c.lowerBound);
+	upperBound := new NaturalNumber(c.upperBound);
+}
+
+constructor NaturalNumber::NaturalNumber(nn : NaturalNumber)
+{
+	value := nn.value;
+	infinity := nn.infinity;	
+}
+
+constructor MessageBuffer::MessageBuffer(buffer : MessageBuffer, sourceRole : Role)
+{
+	name := buffer.name;
+	bufferSize := new NaturalNumber(buffer.bufferSize);
+	comment := buffer.comment;
+	buffer.messageType->forEach(type)
+	{
+		messageType+= type;
+	};
+	bufferOverflowAvoidanceStrategy := buffer.bufferOverflowAvoidanceStrategy;
+	discreteInteractionEndpoint := sourceRole;
+	
+}
