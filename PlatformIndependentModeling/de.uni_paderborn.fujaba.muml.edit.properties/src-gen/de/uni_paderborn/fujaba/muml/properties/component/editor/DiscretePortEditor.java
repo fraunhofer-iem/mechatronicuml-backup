@@ -221,11 +221,11 @@ public class DiscretePortEditor
 							@Override
 							public void notifyChanged(
 									org.eclipse.emf.common.notify.Notification notification) {
-									boolean visibleBefore = editor.isVisible();
+								boolean visibleBefore = editor.isVisible();
 								editor.updateVisibility(true);
 
 								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!isVisible() && visibleBefore) {
+								if (!editor.isVisible() && visibleBefore) {
 									editor.setDefaultValue();
 								}
 							}
@@ -303,6 +303,18 @@ public class DiscretePortEditor
 					.getNamedElement_Name();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
+
+			{
+				final org.eclipse.ocl.ecore.OCLExpression initExpression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)",
+								feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(initExpression);
+				if (query != null) {
+					editor.setInitializeQuery(query);
+				}
+			}
 
 			editor.setTooltipMessage("The name attribute of a meta-model element.");
 
