@@ -210,8 +210,8 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 «DEFINE setInitializeOCLExpression(String editorVar, String featureVar) FOR Property»
 	{
 		final org.eclipse.ocl.ecore.OCLExpression initExpression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.createOCLExpression("«initializeOCLExpression.toString().escapeString()»", «featureVar», getEClass());
-		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);
-		if (filter != null) {
+		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(initExpression);
+		if (query != null) {
 			«editorVar».setInitializeQuery(query);
 		}
 	}
