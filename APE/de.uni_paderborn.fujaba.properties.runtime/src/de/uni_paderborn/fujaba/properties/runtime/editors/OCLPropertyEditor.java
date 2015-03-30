@@ -97,6 +97,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 
 				});
 		updateContext();
+		updateText();
 		refresh();
 		textModified();
 	}
@@ -158,7 +159,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	}
 
 	protected void updateText(String text) {
-		if (text != null
+		if (text != null && embeddedXtextEditor != null
 				&& !text.equals(embeddedXtextEditor.getDocument().get())
 				&& saving == 0) {
 			embeddedXtextEditor.update(text);
