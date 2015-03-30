@@ -103,11 +103,13 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	@Override
 	public void addVisibilityFilter(IFilter filter) {
 		visibilityFilters.add(filter);
+		updateVisibility(true);
 	}
 
 	@Override
 	public void removeVisibilityFilter(IFilter filter) {
 		visibilityFilters.remove(filter);
+		updateVisibility(true);
 	}
 
 	public void updateVisibility(boolean relayout) {

@@ -206,8 +206,12 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 		if (embeddedXtextEditor != null) {
 			controls.add(embeddedXtextEditor.getViewer().getTextWidget());
 		}
-		controls.add(label);
-		controls.add(composite);
+		if (label != null) {
+			controls.add(label);
+		}
+		if (composite != null) {
+			controls.add(composite);
+		}
 		return controls;
 	}
 	
