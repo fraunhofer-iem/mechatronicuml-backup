@@ -86,9 +86,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 	
 	@Override
-	public void createControls(Composite parent,
+	public void doCreateControls(Composite parent,
 			FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
 
 		// Outer container
 		boolean useContainer = parent.getLayout() instanceof RowLayout;

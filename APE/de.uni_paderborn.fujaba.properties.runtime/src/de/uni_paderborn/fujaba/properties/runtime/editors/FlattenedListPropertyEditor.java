@@ -43,8 +43,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 	}
 	
 	@Override
-	public void createControls(Composite parent, FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
+	public void doCreateControls(Composite parent, FormToolkit toolkit) {
 		categoryPropertyEditor.createControls(parent, toolkit);
 	}
 
@@ -143,8 +142,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		}
 
 		@Override
-		public void createControls(Composite parent, FormToolkit toolkit) {
-			super.createControls(parent, toolkit);
+		public void doCreateControls(Composite parent, FormToolkit toolkit) {
 			
 			combo = new Combo(parent, SWT.BORDER | SWT.READ_ONLY);
 			classViewer = new ComboViewer(combo);

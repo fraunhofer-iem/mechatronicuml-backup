@@ -72,10 +72,15 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		refresh();
 	}
 
+	
 	@Override
-	public void createControls(Composite parent, FormToolkit toolkit) {
+	public final void createControls(Composite parent, FormToolkit toolkit) {
 		parentComposite = parent;
+		doCreateControls(parent, toolkit);
+		updateVisibility(true, true);
 	}
+	
+	protected abstract void doCreateControls(Composite parent, FormToolkit toolkit);
 
 	public void dispose() {
 		disposed = true;
@@ -113,6 +118,10 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	}
 
 	public void updateVisibility(boolean relayout) {
+		updateVisibility(relayout, false);
+	}
+
+	public void updateVisibility(boolean relayout, boolean force) {
 		if (!isControllingVisibility()) {
 			return;
 		}

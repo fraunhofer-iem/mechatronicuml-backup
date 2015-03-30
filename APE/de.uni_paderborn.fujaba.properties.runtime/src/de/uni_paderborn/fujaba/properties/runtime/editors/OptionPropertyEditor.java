@@ -34,9 +34,9 @@ public class OptionPropertyEditor extends
 	}
 
 	@Override
-	public void createControls(Composite parent,
+	public void doCreateControls(Composite parent,
 			FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
+
 		labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
 
 		this.toolkit = toolkit;

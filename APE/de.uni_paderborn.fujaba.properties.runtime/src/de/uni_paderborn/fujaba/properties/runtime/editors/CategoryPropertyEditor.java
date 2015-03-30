@@ -195,9 +195,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 
 	@Override
-	public void createControls(Composite parent,
+	public void doCreateControls(Composite parent,
 			FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
 		this.toolkit = toolkit;
 		Object layoutData = createLayoutData(parent);
 

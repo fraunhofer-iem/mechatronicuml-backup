@@ -67,12 +67,6 @@ public class NavigationFeaturePropertyEditor extends
 
 	
 	@Override
-	public void updateVisibility(boolean relayout, boolean setDefaultValue) {
-		super.updateVisibility(relayout, setDefaultValue);
-	}
-	
-	
-	@Override
 	public void updateVisibility(boolean relayout) {
 		super.updateVisibility(relayout);
 	}
@@ -92,8 +86,7 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	@Override
-	public void createControls(Composite parent, FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
+	public void doCreateControls(Composite parent, FormToolkit toolkit) {
 
 		navigatedEditor.createControls(parent, toolkit);
 

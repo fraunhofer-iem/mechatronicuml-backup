@@ -430,22 +430,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			unregisterEventAdapter(adapter);
 		}
 	}
-	
-	public void updateVisibility(boolean relayout, boolean setDefaultValue) {
-		boolean visibleBefore = isVisible();
-		
-		super.updateVisibility(relayout);
-
-		// Only set default value, if we are hiding the editor and it was not hidden before.
-		if (isVisible() || !visibleBefore) {
-			setDefaultValue = false;
-		}
-
-		// Set default value if necessary and requested.
-		if (setDefaultValue) {
-			setDefaultValue();
-		}
-	}
 
 	public List<EClass> getCreationEClasses() {
 		List<EClass> eClasses = new ArrayList<EClass>();

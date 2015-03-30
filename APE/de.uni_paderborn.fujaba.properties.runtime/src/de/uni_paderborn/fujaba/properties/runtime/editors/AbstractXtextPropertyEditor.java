@@ -161,7 +161,7 @@ public abstract class AbstractXtextPropertyEditor extends
 	}
 
 	@Override
-	public void createControls(Composite parent, FormToolkit toolkit) {
+	public void doCreateControls(Composite parent, FormToolkit toolkit) {
 		boolean useContainer = parent.getLayout() instanceof RowLayout;
 		if (useContainer) {
 			// Outer container

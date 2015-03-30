@@ -188,7 +188,13 @@ new «fullyQualifiedClassName»(adapterFactory, «featureVar»);
 		«editorVar».registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
 			@Override
 			public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
-				«editorVar».updateVisibility(true, true);
+				boolean visibleBefore = «editorVar».isVisible();
+				«editorVar».updateVisibility(true);
+
+				// Set default value, if we are hiding the editor and it was not hidden before.
+				if (!«editorVar».isVisible() && visibleBefore) {
+					«editorVar».setDefaultValue();
+				}
 			}
 		});
 		final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE.createQuery(expression);

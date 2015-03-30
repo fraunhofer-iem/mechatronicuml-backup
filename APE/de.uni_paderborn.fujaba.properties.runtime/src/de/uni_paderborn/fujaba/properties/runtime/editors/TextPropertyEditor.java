@@ -32,9 +32,9 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	@Override
-	public void createControls(Composite parent,
+	public void doCreateControls(Composite parent,
 			FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
+
 		label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));

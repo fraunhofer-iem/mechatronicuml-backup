@@ -28,8 +28,7 @@ public class CheckboxPropertyEditor extends
 	}
 
 	@Override
-	public void createControls(Composite parent, FormToolkit toolkit) {
-		super.createControls(parent, toolkit);
+	public void doCreateControls(Composite parent, FormToolkit toolkit) {
 
 		// Create one checkbox for a boolean feature, or enumeration with
 		// two selectable enumerators
