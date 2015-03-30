@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -26,6 +27,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.ocl.Query;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.examples.eventmanager.EventFilter;
 import org.eclipse.ocl.examples.eventmanager.EventManager;
@@ -445,6 +447,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			}
 		}
 		return eClasses;
+	}
+
+	public void setInitializeQuery(Query<EClassifier, ?, ?> query) {
+		// TODO: Implement
 	}
 	
 }

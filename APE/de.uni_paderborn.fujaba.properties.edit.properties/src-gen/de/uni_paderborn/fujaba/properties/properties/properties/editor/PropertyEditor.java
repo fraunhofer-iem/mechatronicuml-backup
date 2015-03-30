@@ -124,11 +124,11 @@ public class PropertyEditor
 							@Override
 							public void notifyChanged(
 									org.eclipse.emf.common.notify.Notification notification) {
-									boolean visibleBefore = editor.isVisible();
+								boolean visibleBefore = editor.isVisible();
 								editor.updateVisibility(true);
 
 								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!isVisible() && visibleBefore) {
+								if (!editor.isVisible() && visibleBefore) {
 									editor.setDefaultValue();
 								}
 							}
