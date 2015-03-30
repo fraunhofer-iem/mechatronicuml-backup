@@ -97,23 +97,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		// Add new editors for new values
 		for (Object object : (Collection<?>) value) {
 			if (!editors.containsKey(object)) {
-				IPropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, false, (EObject) object) {
-					protected boolean hasRemoveButton() {
-						return true;
-					};
-					@Override
-					protected boolean shouldShowClassesCombo() {
-						return false;
-					}
-					@Override
-					protected void updateTitle() {
-						String title = "";
-						if (manyValue != null && manyValue.eClass() != null && manyValue.eClass().getName() != null) {
-							title = manyValue.eClass().getName();
-						}
-						navigatedEditor.setTitle(RuntimePlugin.makeHumanReadable(title, true));
-					}
-				};
+				IPropertyEditor editor = createSubEditor(object);
 				editor.setInput(element);
 				categoryPropertyEditor.addPropertyEditor(editor);
 				editors.put(object, editor);
@@ -126,6 +110,26 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 		if (parentComposite != null) {
 			RuntimePlugin.revalidateLayout(parentComposite);
 		}
+	}
+
+	protected IPropertyEditor createSubEditor(Object object) {
+		return new NavigationFeaturePropertyEditor(adapterFactory, feature, false, (EObject) object) {
+			protected boolean hasRemoveButton() {
+				return true;
+			};
+			@Override
+			protected boolean shouldShowClassesCombo() {
+				return false;
+			}
+			@Override
+			protected void updateTitle() {
+				String title = "";
+				if (manyValue != null && manyValue.eClass() != null && manyValue.eClass().getName() != null) {
+					title = manyValue.eClass().getName();
+				}
+				navigatedEditor.setTitle(RuntimePlugin.makeHumanReadable(title, true));
+			}
+		};
 	}
 	
 	protected class CreateElementEditor extends AbstractPropertyEditor {
@@ -223,7 +227,7 @@ public class FlattenedListPropertyEditor extends AbstractStructuralFeatureProper
 			}
 		}
 
-		private void create() {
+		protected void create() {
 			if (selectedClass != null) {
 				Object newValue = EcoreUtil.create(selectedClass);
 				if (feature.isMany()) {
