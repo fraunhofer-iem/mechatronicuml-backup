@@ -169,6 +169,7 @@
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">
         <genFeature href="properties.genmodel#//properties/Property/initializeOCLExpression"/>
+        <visibilityFilters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.genFeature.ecoreFeature.oclIsKindOf(ecore::EAttribute)"/>
         <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="//@tabs.0" tooltip="" reconcile="false" initializeOCLExpression="">

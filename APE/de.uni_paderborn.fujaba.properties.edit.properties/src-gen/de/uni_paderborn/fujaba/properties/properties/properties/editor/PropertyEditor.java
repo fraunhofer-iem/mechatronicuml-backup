@@ -113,6 +113,36 @@ public class PropertyEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(
 					adapterFactory, feature);
 
+			{
+				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"self.genFeature.ecoreFeature.oclIsKindOf(ecore::EAttribute)",
+								feature, getEClass());
+				editor.setInput(input);
+				editor.registerOCLAdapter(expression,
+						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+							@Override
+							public void notifyChanged(
+									org.eclipse.emf.common.notify.Notification notification) {
+								editor.updateVisibility(true, true);
+							}
+						});
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(expression);
+				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
+
+					@Override
+					public boolean select(Object object) {
+						return object != null
+								&& Boolean.TRUE.equals(query.evaluate(object));
+					}
+
+				};
+				if (filter != null) {
+					editor.addVisibilityFilter(filter);
+				}
+			}
+
 			this.editorInitializeOCLExpression_GeneralTab = editor;
 		}
 		return this.editorInitializeOCLExpression_GeneralTab;
