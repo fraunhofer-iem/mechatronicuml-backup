@@ -135,7 +135,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 			saving--;
 		}
 	}
-
+	
 	@Override
 	protected void inputChanged(Object oldObject) {
 		super.inputChanged(oldObject);
@@ -173,15 +173,17 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	}
 
 	protected void updateContext(final EClassifier contextClassifier) {
-		final BaseDocument editorDocument = (BaseDocument) embeddedXtextEditor
-				.getDocument();
-		editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
-			public Value exec(XtextResource resource) throws Exception {
-				editorDocument.setContext((EssentialOCLCSResource) resource,
-						contextClassifier, null);
-				return null;
-			}
-		});
+		if (embeddedXtextEditor != null) {
+			final BaseDocument editorDocument = (BaseDocument) embeddedXtextEditor
+					.getDocument();
+			editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
+				public Value exec(XtextResource resource) throws Exception {
+					editorDocument.setContext((EssentialOCLCSResource) resource,
+							contextClassifier, null);
+					return null;
+				}
+			});
+		}
 	}
 
 	@Override
