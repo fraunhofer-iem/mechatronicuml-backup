@@ -1,4 +1,4 @@
-import MUML2MUML;
+
 import PatternProtocolTransformationLibrary;
 
 
@@ -20,45 +20,56 @@ modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 // @author sthiele2
 transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
 
-
 property variablesToParameter : Set(Variable);
 property theProtocol : CoordinationProtocol;
+
 main()
 { 
-	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
-	var variablesToParameter := input.rootObjects()[Variable];
+	// fetch input
+	theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	variablesToParameter := input.rootObjects()[Variable];
 	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	
+	// check input
+	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!" + theProtocol.name);
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
+    assert fatal (variablesToParameter != null) with log ("variablesToParameter are null!");
+	
+	// start transformation
+	createPatternFromProtocol();
 }
 
-helper createPatternFromProtocol(root : RootNode)
+helper createPatternFromProtocol()
 {
-	var newPattern : CoordinationPattern := new CoordinationPattern(theProtocol);	
-	
-	
-	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(root);
-	newPattern.roleConnector := theProtocol.roleConnector.map RoleConnector2RoleConnector();
-	theProtocol.roles->forEach(role)
-	{
-		var newRole := new Role(role,newPattern);		
-		role.receiverMessageBuffer->forEach(buffer)
-		{
-			newRole.receiverMessageBuffer += new MessageBuffer(buffer,newRole);			
-		};
-		newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
-		//set behavorial element?? --> should be already considered when setting behavior of the role!
-		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
-		newPattern.roles+= newRole;
-		newPattern.roleConnector.connectorEndpoints+=newRole;
-	};
-	var patternCategory : ModelElementCategory := getPatternCategory(root);
+	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
+	var patternCategory : ModelElementCategory := getPatternCategory();	
 	patternCategory.modelElements +=newPattern;
 }
 
-constructor CoordinationPattern::CoordinationPattern(protocol : CoordinationProtocol)
+mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
 {
-	_name := protocol.name;
+	init{
+		result._name := self.name;
+		result._comment := self.comment;
+		result._annotation := self.annotation.map EAnnotation2EAnnotation();	
+		var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory();
+		result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+		result.roleConnector.coordinationProtocol := result;
+		self.roles->forEach(role)
+		{
+			// the role was already mapped in RoleConnector2RoleConnector
+			var newRole := role.resolveone(Role);
+			//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+			//set behavorial element?? --> should be already considered when setting behavior of the role!
+			newRole.coordinationProtocol := result;
+			statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+			result.roles+= newRole;
+		};
+		variablesToParameter-> forEach(variable){
+			result.patternParameters+= variable.resolveone(Parameter);
+		}
+	}
 }
-
 
 mapping Variable::Variable2Parameter(): Parameter
 {
@@ -67,26 +78,19 @@ mapping Variable::Variable2Parameter(): Parameter
 		_dataType := self.dataType;
 }
 
-mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() :core::expressions::Expression {
-    
-    	init{
-    	if(self._typedNamedElement.oclIsTypeOf(Variable) and variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
-    	{
-    		var pe  : ParameterExpression = new ParameterExpression();
-    		pe.annotation := self._annotation.map EAnnotation2EAnnotation();
-    		pe.extension := self._extension.map Extension2Extension();
-    		pe.comment := self._comment;
-    		pe.parameter := self._typedNamedElement.oclAsType(Variable).map Variable2Parameter();
-    		result := pe;
+mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() :actionlanguage::TypedNamedElementExpression {    
+	init{
+	    	result.annotation := self._annotation.map EAnnotation2EAnnotation();
+	    	result.extension := self._extension.map Extension2Extension();
+	    	result.comment := self._comment;
+	    	if(self._typedNamedElement.oclIsTypeOf(Variable) and  variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
+	    	{    		
+	    		var parameter : Parameter := self._typedNamedElement.oclAsType(Variable).map Variable2Parameter();
+	    		result.typedNamedElement := parameter;	    		
+	    	}
+	   		else 
+	   		{   		 	
+	    		result.typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
+	   		}
    		 }
-   		 else 
-   		 {
-   		 	var tne : TypedNamedElementExpression = new TypedNamedElementExpression();
-   		 	tne.comment := self._comment;
-    		tne.annotation := self._annotation.map EAnnotation2EAnnotation();
-    		tne.extension := self._extension.map Extension2Extension();
-    		tne.typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
-    		result := tne;
-   		 }}
 }
-

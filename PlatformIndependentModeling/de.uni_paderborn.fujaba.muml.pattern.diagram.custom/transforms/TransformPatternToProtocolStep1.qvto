@@ -1,4 +1,3 @@
-import MUML2MUML;
 import PatternProtocolTransformationLibrary;
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
@@ -18,7 +17,6 @@ modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 // @author sthiele2
 transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
 property bindings : Set(ParameterBinding);
-property parameterAndRTSC2Variable : Dict(Parameter, Dict(RealtimeStatechart,Variable));
 
 main()
 { 
@@ -30,46 +28,42 @@ main()
 	// check whether the input is correct: 
 	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
-    assert fatal (bindings != null) with log ("Parameter Bindings are null!");
+    assert fatal (bindings != null and bindings->size() = thePattern.patternParameters->size()) with log ("Parameter Bindings are null!");
     
+    // start transformation
 	createProtocol(thePattern, theRootNode);
 }
-
-
-
 helper createProtocol(pattern : CoordinationPattern, root : RootNode)
 {
-	var newProtocol : CoordinationProtocol := pattern.map CoordinationProtocol2CoordinationPattern();	
-	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(root);
-	newProtocol.roleConnector := pattern.roleConnector.map RoleConnector2RoleConnector();
-	pattern.roles->forEach(role)
-	{
-		var newRole := new Role(role,newProtocol);		
-		role.receiverMessageBuffer->forEach(buffer)
-		{
-			newRole.receiverMessageBuffer += new MessageBuffer(buffer,newRole);			
-		};
-		newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
-		//set behavorial element?? --> should be already considered when setting behavior of the role!
-		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
-		newProtocol.roles+= newRole;
-		newProtocol.roleConnector.connectorEndpoints+=newRole;
-	};
-	newProtocol.adaptedFromPattern += pattern;
-	var protocolCategory : ModelElementCategory := getProtocolCategory(root);
+	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
+	var protocolCategory : ModelElementCategory := getProtocolCategory();
 	protocolCategory.modelElements +=newProtocol;
 }
-
-mapping muml::pattern::CoordinationPattern :: CoordinationProtocol2CoordinationPattern() :  muml::protocol::CoordinationProtocol
+mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
 {
-	_name := self.name;
-	_comment := self.comment;
-	_annotation := self.annotation.map EAnnotation2EAnnotation();
-}
+	init{
+		result.name := self.name;
+		result.comment := self.comment;
+		result.annotation := self.annotation.map EAnnotation2EAnnotation();		
+		var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory();
+		result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+		result.roleConnector.coordinationProtocol := result;
+		result.adaptedFromPattern := self;
+		self.roles->forEach(role)
+		{
+			// the role was already mapped in RoleConnector2RoleConnector
+			var newRole := role.resolveone(Role);
+			//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+			//set behavorial element?? --> should be already considered when setting behavior of the role!
+			newRole.coordinationProtocol := result;
+			statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+			result.roles+= newRole;
+		};
+	}
+} 
 
 
-
-mapping muml::behavior::Parameter:: Parameter2Variable() : muml::behavior::Variable
+mapping muml::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart) : muml::behavior::Variable
 {
 	_constant := true;
 	_name := self.name;
@@ -77,87 +71,54 @@ mapping muml::behavior::Parameter:: Parameter2Variable() : muml::behavior::Varia
 	_comment := self.comment;
 }
 
-
-
-
-mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
-    	_name := self._name;
-    	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
-    //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
-    	_operations := self._operations.map Operation2Operation();
-    	_variables := self._variables.map Variable2Variable();
-    	_parentRegion := self._parentRegion.map Region2Region();
-    	_transitions := self._transitions.map Transition2Transition();
-    	_states := self._states.map State2State();
-    	_clocks := self._clocks.map Clock2Clock();
-   		 }
-mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2TypedNamedElementExpression, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall, actionLanguage::ParameterExpression :: ParameterExpression2Expression,actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpression;
-
-mapping actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpression() : actionLanguage::TimeValueExpression{    	
-    	_comment := comment;
-    	_timeValue := timeValue.map TimeValue2TimeValue();  
-    	_annotation := annotation.map EAnnotation2EAnnotation();
-   		 }      	
-
-
-
-
-
-
-mapping actionLanguage::ParameterExpression :: ParameterExpression2Expression() : core::expressions::Expression {		
-	init {
-		var rtsc2 : RealtimeStatechart := getHighestParentStatechart(self);
-		var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(self.parameter);
-		
-		assert fatal (myExp != null) with log ("There is no parameter binding for the parameter"+ self.parameter.name);
-		if(rtsc2 =null)
-		{			
-			result := myExp.map Expression2Expression();
-			
+mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2Expression, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall, actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpression;
+ 
+mapping  actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() : core::expressions::Expression
+{
+	init{
+		if(self.typedNamedElement.oclIsKindOf(Parameter)){
+			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
+			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);
+			var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (myExp != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			if(rtsc = null or rtsc.oclIsInvalid()){
+				// in case the rtsc is invalid means that the TypedNamedElementExpression referencing the Parameter is not contained in a rtsc but in a ConnectorQualityOfServiceAssumptions
+				// therefore, just replace the TypedNamedElementExpression by the bounded expression defined in the ParameterBinding
+				result:= myExp.map Expression2Expression();
+			}
+			else
+				result := self.map TypedNamedElementExpression2TypedNamedElementExpression();						
 		}
 		else
-		{
-			var rtsc: RealtimeStatechart := rtsc2.resolveone(RealtimeStatechart);
-			var dictionary : Dict(RealtimeStatechart, Variable) := parameterAndRTSC2Variable->get(self.parameter);
-			var variable : Variable;
-			if(dictionary->oclIsInvalid()  or dictionary=null) then
-			{
-				// case no parameter in parameterAndRTSC2Variable yet
-				dictionary := Dict{};
-				parameterAndRTSC2Variable->put(self.parameter, dictionary);
-				variable := self.parameter.map Parameter2Variable();
-				variable.initializeExpression := myExp.map Expression2Expression();
-				rtsc.variables+=variable;
-				dictionary ->put(rtsc,variable);				
-			}
-			else 
-			{
-				variable := dictionary->get(rtsc);
-				// case no variable for parameter created in rtsc
-				if(variable.oclIsInvalid())
-				{
-					variable := self.parameter.map Parameter2Variable();
-					variable.initializeExpression := myExp.map Expression2Expression();
-					rtsc.variables+=variable;
-					dictionary->put(rtsc, variable);
-				}		
-				endif;							
-			}endif;	
-			result := new TypedNamedElementExpression(variable);
-					
-		}endif;	
-	
-		//result := myExp.map Expression2Expression();
-		}
+			result := self.map TypedNamedElementExpression2TypedNamedElementExpression();
 	}
-constructor TypedNamedElementExpression ::TypedNamedElementExpression(variable : Variable)
-{
-	_typedNamedElement := variable;
-	_annotation := annotation.map EAnnotation2EAnnotation();
 }
-query getHighestParentStatechart(in expr : ParameterExpression) : RealtimeStatechart
+mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() : actionlanguage::TypedNamedElementExpression
+{
+	init{
+		result.annotation := self.annotation.map EAnnotation2EAnnotation();
+		result.comment := self.comment;
+		result.extension := self.extension.map Extension2Extension();
+		if(self.typedNamedElement.oclIsKindOf(Parameter)){
+			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
+			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);			
+			var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
+			var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
+			if(not mappedrtsc.variables->includes(mappedVariable)){
+				mappedrtsc.variables+=mappedVariable;
+				mappedVariable.initializeExpression := boundedExpression.map Expression2Expression();
+			};
+			result.typedNamedElement := mappedVariable;
+		}
+		else
+			result.typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement();
+	}			
+}
+
+
+query getHighestParentStatechart(in expr : TypedNamedElementExpression) : RealtimeStatechart
 {
 	var root : EObject := expr;
 	while(root.oclIsTypeOf(core::expressions::Expression))
@@ -172,13 +133,13 @@ query getHighestParentStatechart(in expr : ParameterExpression) : RealtimeStatec
 	while(not root.oclIsTypeOf(RealtimeStatechart))
 	{
 		root:=root.eContainer();		
-		assert fatal (not root.oclIsInvalid()) with log ("The parameter "+ expr.parameter.name + " is not contained in a RealtimeStatechart or a ConnectorQualityOfServiceAssumptions!");
+		assert fatal (not root.oclIsInvalid()) with log ("The parameter "+ expr.typedNamedElement.name + " is not contained in a RealtimeStatechart or a ConnectorQualityOfServiceAssumptions!");
 	};
 	return root.oclAsType(RealtimeStatechart).getHighestParentStatechart();	
 }
 	
 	
-	query getBoundExpressionToGivenParameter(in parameter : Parameter) : core::expressions::Expression {	
+query getBoundExpressionToGivenParameter(in parameter : Parameter) : core::expressions::Expression {	
 	if (bindings->one(p : ParameterBinding | p.parameter=parameter))
 	{
 		log ("parameter binding found for parameter: "+ parameter.name);
@@ -186,15 +147,3 @@ query getHighestParentStatechart(in expr : ParameterExpression) : RealtimeStatec
 	} endif;
 	return null;
 }		
-   		 
-
-mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
-    	_comment := self._comment;
-    	_annotation := self._annotation.map EAnnotation2EAnnotation();
-    	_extension := self._extension.map Extension2Extension();
-    	//_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint();
-    	//_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
-    	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
-   		 }
-
-

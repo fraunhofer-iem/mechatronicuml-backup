@@ -1,4 +1,5 @@
 library PatternProtocolTransformationLibrary;
+import MUML2MUML;
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -14,54 +15,63 @@ modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
-
-query getRealtimeStatechartCategory(in theRootNode : RootNode) : ModelElementCategory {
+property theRootNode : RootNode;
+query getRealtimeStatechartCategory() : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
 }
-query getProtocolCategory(in theRootNode : RootNode) : ModelElementCategory {
+query getProtocolCategory() : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
 }
-query getPatternCategory(in theRootNode : RootNode) : ModelElementCategory {
+query getPatternCategory() : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
 }
 
-constructor Role::Role(roleToCopy : Role, coordination : AbstractCoordinationSpecification)
-{
-	// behavior is missing --> maybe we can use the existing transformation for copying the role to port properties
-	//roleconnector is read only
-	name :=  roleToCopy.name;
-	// no new objects, since it is a reference to a given message type!
-	senderMessageTypes := roleToCopy.senderMessageTypes; 
-	receiverMessageTypes := roleToCopy.receiverMessageTypes;
-	comment := roleToCopy.comment;
-	// role 
-	coordinationProtocol := coordination;
+
+
+mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint(); // --> maybe this has to be deleted
+    //	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
+    	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
+   		 }
+
+
+
+mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
+    	_operations := self._operations.map Operation2Operation();
+    	_variables := self._variables.map Variable2Variable();
+    	_parentRegion := self._parentRegion.map Region2Region();
+    	_transitions := self._transitions.map Transition2Transition();
+    	_states := self._states.map State2State();
+    	_clocks := self._clocks.map Clock2Clock();
+   		 }
 	
-	cardinality := new Cardinality(roleToCopy.cardinality);	
-}
 
-constructor Cardinality::Cardinality(c :Cardinality)
-{
-	lowerBound := new NaturalNumber(c.lowerBound);
-	upperBound := new NaturalNumber(c.upperBound);
-}
 
-constructor NaturalNumber::NaturalNumber(nn : NaturalNumber)
-{
-	value := nn.value;
-	infinity := nn.infinity;	
-}
+mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	_behavior := self._behavior.map Behavior2Behavior();
+    	self._senderMessageTypes->forEach(messagetype){
+    		_senderMessageTypes += messagetype;
+    	};
+    	self._receiverMessageTypes->forEach(messagetype){
+    		_receiverMessageTypes+=messagetype;
+    	};
+    	_adaptationBehavior := self._adaptationBehavior.map Behavior2Behavior();
+    	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
+    	_cardinality := self._cardinality.map Cardinality2Cardinality();
+    	_receiverMessageBuffer := self._receiverMessageBuffer.map MessageBuffer2MessageBuffer();
+    	//_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
+   		 }
 
-constructor MessageBuffer::MessageBuffer(buffer : MessageBuffer, sourceRole : Role)
-{
-	name := buffer.name;
-	bufferSize := new NaturalNumber(buffer.bufferSize);
-	comment := buffer.comment;
-	buffer.messageType->forEach(type)
-	{
-		messageType+= type;
-	};
-	bufferOverflowAvoidanceStrategy := buffer.bufferOverflowAvoidanceStrategy;
-	discreteInteractionEndpoint := sourceRole;
-	
-}
