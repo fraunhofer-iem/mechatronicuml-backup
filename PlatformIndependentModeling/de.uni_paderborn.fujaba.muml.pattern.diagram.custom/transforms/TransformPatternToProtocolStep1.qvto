@@ -18,53 +18,28 @@ modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 // @author sthiele2
 transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
 property bindings : Set(ParameterBinding);
-//property parameter2VariableDict : Dict(Parameter, Variable);
+property parameterAndRTSC2Variable : Dict(Parameter, Dict(RealtimeStatechart,Variable));
+
 main()
 { 
-// get the input parameters. There is exactly one root and exactly one coordination pattern
-	
-	// test case: get Pattern P10
-	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);		
-	//var thePattern : CoordinationPattern := getPatternCategory(theRootNode).modelElements->select(p | p.oclAsType(CoordinationPattern).name.equalsIgnoreCase("P10"))->any(true).oclAsType(CoordinationPattern);
-	//bindings :=thePattern.legalConfigurations->any(true).parameterBindings;
-	
-	
-	
+	// get the input parameters. There is exactly one root and exactly one coordination pattern	
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
 	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	bindings := input.rootObjects()[ParameterBinding];
+	
+	// check whether the input is correct: 
 	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
-
-	//var theRootNode : RootNode := thePattern.eContainer().eContainer().oclAsType(RootNode);
-	assert fatal (theRootNode != null) with log ("RootNode is null!");
-	
-	
-    bindings := input.rootObjects()[ParameterBinding];
-    //bindings-> forEach(parameterBinding)
-    //{
-    //	parameter2RTSC->put(parameterBinding.parameter, Set{});
-    //};
-   	
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
     assert fatal (bindings != null) with log ("Parameter Bindings are null!");
     
 	createProtocol(thePattern, theRootNode);
-   
-    
-    
-//	input.objects()[ParameterExpression];
-	//theRootNode.oclAsType(EObject)->asSet()->closure(e:EObject|e.eContents()->collect(oclAsType(EObject)))[ParameterExpression];
 }
 
 
-constructor Variable::Variable(parameter : Parameter)
-{
-	_constant := true;
-	_name := parameter.name;
-	_dataType:= parameter.dataType;
-	_comment :=parameter.comment;
-}
 
 helper createProtocol(pattern : CoordinationPattern, root : RootNode)
 {
-	var newProtocol : CoordinationProtocol := new CoordinationProtocol(pattern);
+	var newProtocol : CoordinationProtocol := pattern.map CoordinationProtocol2CoordinationPattern();	
 	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(root);
 	newProtocol.roleConnector := pattern.roleConnector.map RoleConnector2RoleConnector();
 	pattern.roles->forEach(role)
@@ -85,21 +60,22 @@ helper createProtocol(pattern : CoordinationPattern, root : RootNode)
 	protocolCategory.modelElements +=newProtocol;
 }
 
-
-
-
-
-
-constructor muml::constraint::VerificationConstraintRepository::VerificationConstraintRepository(rep : muml::constraint::VerificationConstraintRepository)
+mapping muml::pattern::CoordinationPattern :: CoordinationProtocol2CoordinationPattern() :  muml::protocol::CoordinationProtocol
 {
-	
-}
-constructor CoordinationProtocol::CoordinationProtocol(pattern : CoordinationPattern) {	
-	name:=pattern.name;	
-	comment := pattern.comment;
-	
+	_name := self.name;
+	_comment := self.comment;
+	_annotation := self.annotation.map EAnnotation2EAnnotation();
 }
 
+
+
+mapping muml::behavior::Parameter:: Parameter2Variable() : muml::behavior::Variable
+{
+	_constant := true;
+	_name := self.name;
+	_dataType:= self.dataType;
+	_comment := self.comment;
+}
 
 
 
@@ -127,7 +103,7 @@ mapping actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpre
 
 
 
-property parameterAndRTSC2Variable : Dict(Parameter, Dict(RealtimeStatechart,Variable));
+
 
 
 mapping actionLanguage::ParameterExpression :: ParameterExpression2Expression() : core::expressions::Expression {		
@@ -139,6 +115,7 @@ mapping actionLanguage::ParameterExpression :: ParameterExpression2Expression() 
 		if(rtsc2 =null)
 		{			
 			result := myExp.map Expression2Expression();
+			
 		}
 		else
 		{
@@ -150,7 +127,7 @@ mapping actionLanguage::ParameterExpression :: ParameterExpression2Expression() 
 				// case no parameter in parameterAndRTSC2Variable yet
 				dictionary := Dict{};
 				parameterAndRTSC2Variable->put(self.parameter, dictionary);
-				variable := new Variable(self.parameter);
+				variable := self.parameter.map Parameter2Variable();
 				variable.initializeExpression := myExp.map Expression2Expression();
 				rtsc.variables+=variable;
 				dictionary ->put(rtsc,variable);				
@@ -161,7 +138,7 @@ mapping actionLanguage::ParameterExpression :: ParameterExpression2Expression() 
 				// case no variable for parameter created in rtsc
 				if(variable.oclIsInvalid())
 				{
-					variable := new Variable(self.parameter);
+					variable := self.parameter.map Parameter2Variable();
 					variable.initializeExpression := myExp.map Expression2Expression();
 					rtsc.variables+=variable;
 					dictionary->put(rtsc, variable);
