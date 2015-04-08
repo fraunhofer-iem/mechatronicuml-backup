@@ -17,7 +17,7 @@
 [let atomics : Sequence(AtomicComponent) = (CIs.eAllContents(AtomicComponentInstance).componentType)->select(c | c.componentKind = ComponentKind::SOFTWARE_COMPONENT)]
 
 RTSC = [for (comp : Component | CIs.componentType)][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
-COMP = [for (comp : Component | CIs.componentType)][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
+COMP = [for (comp : Component | CIs.componentType)][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
 LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
@@ -32,7 +32,7 @@ app : main.o $(RTSC) $(COMP) $(LIB) $(HYB) $(MW) [if (atomics.behavior.oclAsType
 	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
 [/let]
 [/for]
-[for (comp : Component | CIs.componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT))]
+[for (comp : Component | CIs.componentType) ? (not(componentKind=ComponentKind::CONTINUOUS_COMPONENT) and oclIsKindOf(AtomicComponent))]
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,false)/]
 [/for]

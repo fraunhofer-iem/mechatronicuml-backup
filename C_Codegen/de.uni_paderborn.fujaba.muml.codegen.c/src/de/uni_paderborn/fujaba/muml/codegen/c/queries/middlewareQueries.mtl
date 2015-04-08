@@ -10,21 +10,67 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwplatform/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwresource/1.0/',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/swplatform/0.4.0/',
+				'http://www.fujaba.de/muml/psm/0.4.0/')]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 
+[**
+ * returns true, if the given apiCall is an initialize-call for the sensor
+ * @param apiCall a API-Call
+*/]
+[query public isInitFunction(apiCall : APICallParameterBinding) : Boolean =
+(apiCall.getMethodName().substring(apiCall.getMethodName().toString().size()-6).toLowerFirst() = 'initApi')
+/]
 
+[**
+ * returns the IdentifierName (C-Macro definition) for a given DiscretePortInstance
+ * @param pi a DiscretePortInstance
+ * @return the IdentifierVarialbeName for the given DiscretePortInstance
+*/]
 [query public getIdentifierVariableName (pi: DiscretePortInstance) : String = 
 'PORT_'+pi.componentInstance.getName().toUpperCase()+pi.componentInstance.componentType.getName().toUpperCase()+pi.getName().toUpperCase()/]
 
+
+
+[**
+ * returns the IdentifierName (C-Macro definition) for a given MessageType
+ * @param msgT the MessageType
+ * @return the IdentifierVarialbeName for the given MessageType
+*/]
 [query public getIdentifierVariableName (msgT: MessageType) : String = 
-'MESSAGE_'+msgT.getName().toUpperCase()/]
+'MESSAGE_'+msgT.getVariableName().toUpperCase()/]
+
+[**
+ * returns the C-type name for a given MessageType
+ * @param msgT the message type
+ * @return C-type for a the given message type
+*/]
+[query public getTypeName (msgT: MessageType) : String = 
+msgT.getVariableName()+'_Message'/]
+
+
 
 [query public getStructName(msgType : MessageType) : String = 
 	msgType.getName() + msgType.repository.getName() +'Message'
 /]
+
+
+[**
+ * returns the name of the initialize-function for a given RefinedStructuredResourceInstance (ECU)
+ * e.g. initializeMyECUNameCIC . After using this template, you have to complete the signature of the function
+ * by providing brackets and a semicolon. This functions expects no parameters.
+ * @param rsri the RefinedStructuredResource
+ * @return the name of the initialize-function for the given RefinedStructuredResourceInstance (ECU)
+*/]
 
 [**
  * This query returns the Protobuf-Embedded-C specific Unmarshallaing-function name for a given

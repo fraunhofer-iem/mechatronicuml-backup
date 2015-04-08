@@ -10,7 +10,11 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/swplatform/0.4.0/',
+				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::middlewareQueries]
@@ -83,7 +87,7 @@
 [template public includes(rtsc : RealtimeStatechart, component : Component) post(cdtbeautifier())]
 	#include <stdio.h>
 	#include <stdlib.h>
-
+	#include "../Middleware/GlobalIdentifier.h"
 	#include "[getClassName(rtsc).toLowerFirst()/].h"
 
 [/template]
@@ -113,7 +117,11 @@
 				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]
 					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
 				[/for]
-			
+			[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
+				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable)) ]
+					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+				[/for]
+			[/if]
 			
 			[else]
 				static void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart) {
@@ -460,7 +468,9 @@ if (0){
  * @param transition the transition 
 */]
 [template private getClockConstraint(rtsc : RealtimeStatechart, transition : Transition) post(cdtbeautifier())]
-	[for (clockCons : ClockConstraint | transition.clockConstraints) separator (' && ')]Clock_getTime(stateChart->[clockCons.clock.getVariableName()/])[clockCons.operator.getOpSymbol()/][clockCons.bound.value.generateExpression('')/][/for]
+	[if (transition.clockConstraints->size()>0)]
+	[for (clockCons : ClockConstraint | transition.clockConstraints) separator (' && ')]Clock_getTime(stateChart->[clockCons.clock.getVariableName()/])[clockCons.operator.getOpSymbol()/][clockCons.bound.value.generateExpression('')/] * [clockCons.bound.getTimeUnitFactor()/] [/for]
+	[/if]
 [/template]
 
 
@@ -478,8 +488,8 @@ if (0){
  * @param expression the expression
 */]
 [template public getGuardExpression(expression : Expression)]
-[if expression.oclIsKindOf(ComparisonExpression) or expression.oclIsKindOf(LogicalExpression)]
-	[generateExpression(expression,'')/]
+[if expression.oclIsKindOf(ComparisonExpression) or expression.oclIsKindOf(LogicalExpression) or expression.oclIsKindOf(TypedNamedElementExpression)]
+	[generateExpression(expression, '')/]
 [elseif expression.oclIsKindOf(Block)]
 	[expression.oclAsType(Block).expressions->at(1).getGuardExpression()/]
 [elseif expression.oclIsKindOf(LiteralExpression)]

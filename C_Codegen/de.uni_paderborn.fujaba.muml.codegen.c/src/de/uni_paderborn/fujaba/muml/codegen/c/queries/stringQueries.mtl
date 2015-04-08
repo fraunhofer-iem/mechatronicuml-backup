@@ -10,13 +10,21 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwplatform/1.0/',
+				'http://www.fujaba.de/muml/hardware/hwresource/1.0/',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/swplatform/0.4.0/',
+				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [**
  * The documentation of the query generateElement.
  * @param anOclAny
  */]
-[query public getHeaderFile (rtsc : RealtimeStatechart) : String = rtsc.name.getName()+'.h'/]
+[query public getHeaderFile (rtsc : RealtimeStatechart) : String = rtsc.getName()+'.h'/]
 
 [query public getMessageBufferSize (mb : MessageBuffer) : String =
 	if (mb.bufferSize.toString() = '*') then '20' else mb.bufferSize endif
@@ -50,7 +58,7 @@ getName(mb.name) + pi.componentInstance.getName() /]
 
 /]
 
-[query public getHeaderFile (ci : ComponentInstance) : String = ci.name.getName()+ci.componentType.getName()+'.h'/]
+[query public getHeaderFile (ci : ComponentInstance) : String = ci.getName()+ci.componentType.getName()+'.h'/]
 
 [**
  * @param syncChannel
@@ -82,19 +90,27 @@ getName(mb.name) + pi.componentInstance.getName() /]
 /]
 
 [query public getName(op : Operation) : String =
-	op.name.getName().toLowerFirst()	
+if (op.oclIsUndefined()) then
+'#error null value '
+else
+	getQualifiedName(op).toLowerFirst()	
+endif
 /]
 
 [query public getName(parameter : Parameter) : String = 
-	parameter.name.getName().toLowerFirst()
+if (parameter.oclIsUndefined()) then
+'#error null value '
+else
+	getName(parameter.name).toLowerFirst()
+endif
 /]
 
 [query public getName(component : Component) : String = 
-	getName(component.name)
+	getQualifiedName(component)
 /]
 
 [query public getName(componentPart : ComponentPart) : String = 
-	getName(componentPart.name)
+	getQualifiedName(componentPart)
 /]
 
 [query public getName(cInst : ComponentInstance) : String = 
@@ -107,10 +123,11 @@ getName(mb.name) + pi.componentInstance.getName() /]
 /]
 
 [query public getName(msgType : MessageType) : String = 
-	getName(msgType.name)
+	getQualifiedName(msgType)
 /]
 
-[query public getName (rtsc : RealtimeStatechart) : String = 
+
+[**query public getName (rtsc : RealtimeStatechart) : String = 
 if (rtsc.parentRegion.oclIsUndefined()) then
 'Root'+getName(rtsc.name)
 else
@@ -118,21 +135,25 @@ getName(rtsc.parentRegion.name)
 endif
 /]
 
+[query public getName (rtsc : RealtimeStatechart) : String = 
+getQualifiedName(rtsc)
+/]
+
 [query public getName (region : Region) : String = 
-getName(region.name)
+getQualifiedName(region.embeddedStatechart)
 /]
 
 [query public getName (rep : MessageTypeRepository) : String = 
-getName(rep.name)
+getQualifiedName(rep)
 /]
 
 [query public getName (channel : SynchronizationChannel) : String = 
-getName(channel.name)
+getQualifiedName(channel)
 /]
 
 [query public getName(state : State) : String =
  
-	'STATE_' + getName(state.parentStatechart).toUpper() + '_' + getName(state.name).toUpper() 
+	'STATE_' + getQualifiedName(state).toUpper() 
 
 /]
 [**
@@ -152,13 +173,13 @@ getName(channel.name)
 [**
  * @param port
 */]
-[query public getName(port : PortInstance) : String = 
-	getName(port.name) 
+[query public getName(portInst : PortInstance) : String = 
+	getName(portInst.name) 
 /]
 [**
  * @param region
 */]
-[comment @TODO exitRegion...naming? /]
+[comment exitRegion...naming? /]
 [query public getExitMethodName(region : Region) : String =
 
 		getClassName(region.embeddedStatechart) + '_exit'
@@ -171,6 +192,9 @@ getName(channel.name)
  * @param component
 */]
 [query public getFileName(component : Component, header : Boolean) : String = 
+if (component.oclIsUndefined()) then
+'#error null value '
+else
 	'components/' + 
 		getClassName(component).toLowerFirst()
 	+
@@ -179,9 +203,13 @@ getName(channel.name)
 	else
 		'.c'
 	endif
+endif
 /]
 
 [query public getFileName(cpart : ComponentPart, header : Boolean) : String = 
+if (cpart.oclIsUndefined()) then
+'#error null value '
+else
 	'components/' + 
 		getClassName(cpart).toLowerFirst()
 	+
@@ -190,6 +218,7 @@ getName(channel.name)
 	else
 		'.c'
 	endif
+endif
 /]
 
 
@@ -197,15 +226,22 @@ getName(channel.name)
  * @param component
 */]
 [query public getFileName(sync : SynchronizationChannel, header : Boolean) : String =
+if (sync.oclIsUndefined()) then
+'#error null value '
+else
 	'syncChannels/' + getClassName(sync).toLowerFirst() +
 	if (header) then
 		'.h'
 	else
 		'.c'
 	endif
+endif
 /]
 
 [query public getFileName(rtsc : RealtimeStatechart, header : Boolean, operations : Boolean) : String = 
+if (rtsc.oclIsUndefined()) then
+'#error null value '
+else
 	if(operations) then
 		'impl/' + getClassName(rtsc).toLowerFirst() + 'Operations.c'
 	else
@@ -216,28 +252,34 @@ getName(channel.name)
 			'.c'
 		endif
 	endif
+endif
 /]
 
 [query public getFileName(ci : Component, header : Boolean, operations : Boolean) : String = 
-	
+	if (ci.oclIsUndefined()) then
+'#error null value '
+else
 		'components/' + getClassName(ci).toLowerFirst()  + 
 		if(header) then
 			'.h'
 		else
 			'.c'
 		endif
+endif
 
 /]
 
 [query public getFileName(rep : MessageTypeRepository, header : Boolean) : String = 
-	
+if (rep.oclIsUndefined()) then
+'#error null value '
+else	
 		'msg/' + rep.getName().toLowerFirst() + 'Messages'+
 		if(header) then
 			'.h'
 		else
 			'.c'
 		endif
-
+endif
 /]
 
 
@@ -324,11 +366,19 @@ getName(channel.name)
 /]
 
 [query public getVariableName(component : Component) : String =
+if (component.oclIsUndefined()) then
+'#error null value '
+else
 		getName(component).toLowerFirst() + 'Component'
+endif
 /]
 
 [query public getVariableName(cInst : ComponentInstance) : String =
+if (cInst.oclIsUndefined()) then
+'#error null value '
+else
 		getName(cInst).toLowerFirst() + 'Component'
+endif
 /]
 
 [query public getVariableName(var : Variable) : String = 
@@ -337,7 +387,11 @@ getName(channel.name)
 
 
 [query public getVariableName(syncChannel : SynchronizationChannel) : String = 
-	syncChannel.name.getName().toLowerFirst() + 'SyncChannel'
+if (syncChannel.oclIsUndefined()) then
+'#error null value '
+else
+	getName(syncChannel).getName().toLowerFirst() + 'SyncChannel'
+endif
 /]
 
 [query public getVariableName(rtsc : RealtimeStatechart) : String =
@@ -345,7 +399,11 @@ getName(channel.name)
 /]
 
 [query public getVariableName(clock : Clock) : String = 
+if (clock.oclIsUndefined()) then
+'#error null value '
+else
 	getName(clock).toLowerFirst() + 'Clock'
+endif
 /]
 
 
@@ -357,11 +415,15 @@ getName(channel.name)
  * @param port
 */]
 [query public getVariableName(part : ComponentPart) : String = 
+if (part.oclIsUndefined()) then
+'#error null value '
+else
 	getName(part).toLowerFirst() + 'Component'
+endif
 /]
 
 [query public getVariableName(region : Region) : String =
-	'currentStateOf' + getName(region).toUpperFirst()
+	'currentStateOf' + getName(region.embeddedStatechart).toUpperFirst()
 /]
 [**
  * @param port
@@ -375,23 +437,34 @@ getName(channel.name)
  * @param port
 */]
 [query public getVariableName(port : Port, classVariable : Boolean) : String = 
+if (port.oclIsUndefined()) then
+'#error null value '
+else
 	if (port.oclIsTypeOf(HybridPort) or port.oclIsTypeOf(ContinuousPort)) then
-			getName(port).toLowerFirst()
+			getStructVariableName(port).toLowerFirst()
 	else
 		getName(port).toLowerFirst() + 'Port'
 	endif
+endif
+/]
+
+[query public getStructVariableName(port : Port) : String = 
+	getName(port.name)
 /]
 
 [**
  * @param connector
 */]
 [query public getVariableName(connector : ConnectorInstance) : String = 
-
+if (connector.oclIsUndefined()) then
+'#error null value '
+else
 		if not (connector.connectorEndpointInstances->at(1).oclAsType(PortInstance).oclIsKindOf(DiscretePortInstance) and connector.connectorEndpointInstances->at(2).oclAsType(PortInstance).oclIsKindOf(DiscretePortInstance)) then
 		getName(connector.connectorEndpointInstances->at(1).oclAsType(PortInstance)).toLowerFirst() + 'Connection'
 	else
 		getName(connector.connectorEndpointInstances->at(1).oclAsType(PortInstance)).toLowerFirst() + getName(connector.connectorEndpointInstances->at(2).oclAsType(PortInstance)).toUpperFirst() + 'Connection'
 	endif
+endif
 /]
 
 
@@ -486,7 +559,7 @@ getName(channel.name)
  * @param port
 */]
 [query public getDestroyMethodName(port : Port) : String =
-	getClassName(port) + '_destroy'
+	'Port_destroy'
 /]
 
 [**
@@ -540,7 +613,7 @@ getName(channel.name)
 
 
 [query public replaceClockNames(rtsc : RealtimeStatechart, expression : String) : String = 
-	rtsc.availableClocks->collect(oclAsType(Clock))->iterate(clock : Clock; returnValue : String = expression | returnValue.replaceAll('\\b' + getName(clock.name) + '\\b', 'Clock_getTime(stateMachine->' + getVariableName(clock) + ')'))	
+	rtsc.availableClocks->collect(oclAsType(Clock))->iterate(clock : Clock; returnValue : String = expression | returnValue.replaceAll('\\b' + getName(clock) + '\\b', 'Clock_getTime(stateMachine->' + getVariableName(clock) + ')'))	
 /]
 
 [query public replaceLocalVariableNames(rtsc : RealtimeStatechart, expression : String) : String = 
@@ -552,7 +625,7 @@ getName(channel.name)
 /]
 
 [query public getVerifyMethodName(state : State) : String = 
-	'verifySyncChannelsOf' + getName(state.name)
+	'verifySyncChannelsOf' + getName(state)
 /]
 
 
@@ -560,7 +633,11 @@ getName(channel.name)
  * @param state
 */]
 [query public getClockVariableName(state : State) : String = 
-	getName(state.name).toLowerFirst() + 'DoClock'
+if (state.oclIsUndefined()) then
+'#error null value '
+else
+	getName(state).toLowerFirst() + 'DoClock'
+endif
 /]
 
 [**
@@ -622,6 +699,27 @@ getName(channel.name)
 [**
  * @param element
 */]
+[query public getTypeNameForProtoBuf(type : DataType) : String = 
+	if (type.name = 'BOOLEAN') then 'bool' else 
+	if (type.name = 'BYTE') then 'bool' else
+	if (type.name = 'DOUBLE') then 'double' else
+	if (type.name = 'INT') then 'int32' else
+	if (type.name = 'LONG') then 'int64' else
+	if (type.name = 'SHORT') then 'int32' else
+	if (type.name = 'VOID') then 'void' else
+	'TYPE UNDIFINED'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+[**
+ * @param element
+*/]
 [query public getDefaultReturn(op : Operation) : String = 
 	if (op.returnType.name = 'BOOLEAN') then 'false' else 
 	if (op.returnType.name = 'BYTE') then '0' else
@@ -665,12 +763,6 @@ getName(channel.name)
 /]
 
 
-
-[comment @TODO /]
-[query public getTriggerEvent(component : Component, rtsc : RealtimeStatechart, transition : Transition) : String =
-	'Trigger Event'
-/]
-
 [query public getOpSymbol(operator : ComparingOperator ) : String =
 	if (operator = ComparingOperator::LESS_OR_EQUAL) then '<=' else 
 	if (operator = ComparingOperator::EQUAL) then '==' else	
@@ -698,7 +790,7 @@ getName(channel.name)
  * @param port
 */]
 [query public getGetterName(port : Port) : String = 
-	getClassName(port.component) + '_get' + port.name.getName()
+	getClassName(port.component) + '_get' + port.getName()
 
 /]
 
@@ -733,23 +825,6 @@ if (type.name = 'BOOLEAN') then 'false' else
 
 /]
 
-[query public getTypeNameForProtoBuf(type : DataType) : String = 
-	if (type.name = 'BOOLEAN') then 'bool' else 
-	if (type.name = 'BYTE') then 'bool' else
-	if (type.name = 'DOUBLE') then 'double' else
-	if (type.name = 'INT') then 'int32' else
-	if (type.name = 'LONG') then 'int64' else
-	if (type.name = 'SHORT') then 'int32' else
-	if (type.name = 'VOID') then 'void' else
-	'TYPE UNDIFINED'
-	endif
-	endif
-	endif
-	endif
-	endif
-	endif
-	endif
-/]
 
 [query public getNumberOfMessageBuffers (port : DiscretePort) : String = 
 if (port.receiverMessageBuffer->size().toString() <> '*') then
@@ -783,8 +858,15 @@ endif
 /]
 
 
-
-
+[query public getQualifiedName(mumlObject : OclAny): String = 
+if (mumlObject.oclIsUndefined()) then
+''
+else
+getName(getQualifiedNameJava(mumlObject)) 
+endif
+/]
 
 [query public cdtbeautifier(a : String) : String = invoke('org.eclipse.acceleo.additions.beautifier.CdtBeautifier','beautify(java.lang.String)', Sequence{a}) /]
 
+ [query public getQualifiedNameJava(mumlObject : OclAny): String = invoke('de.uni_paderborn.fujaba.muml.codegen.c.helper.NamingHelper',
+						  'getName(org.eclipse.emf.ecore.EObject)',Sequence{mumlObject}) /]

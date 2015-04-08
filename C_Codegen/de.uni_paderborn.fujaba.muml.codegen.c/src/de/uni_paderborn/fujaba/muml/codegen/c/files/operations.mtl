@@ -68,7 +68,7 @@
 /**[/protected]**/
 [for (operation : Operation | allOperations)]
 
-[operation.returnType.getTypeName()/] [operation.name/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
+[operation.returnType.getTypeName()/] [operation.getName()/]([for (p: Parameter | operation.parameters) separator (', ')][p.dataType.getTypeName()/] [p.getName()/][/for]){
 
 [if (operation.implementations->at(1).oclIsUndefined())]
 /** [protected (operation.getName()+' **/')] 
