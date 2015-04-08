@@ -6,11 +6,7 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/hardware/1.0/',
-				'http://www.fujaba.de/muml/psm/0.4.0/',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
-				'http://www.fujaba.de/muml/swplatform/0.4.0/'/)]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')/]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression_queries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::variable_queries]
@@ -476,15 +472,7 @@ while ([generateExpression(expression.loopTest,  fqname) /]){
 [/template]
 
 
-[**
- * Generates an APICall
- * @param expression the OperationCall
- * @param usePre use pre construct for rhs variables (and for guards)
- * @param fqname a fully qualified name or the empty string
-*/]
-[template public generateExpression(expression : APICall , fqname : String)]
-stateChart->[expression.operation.getMethodName()/]([for (pBinding:ParameterBinding | expression.parameterBinding) separator (',')][pBinding.getValue()/][/for])
-[/template]
+
 
 
 [**

@@ -10,26 +10,12 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/hardware/1.0/',
-				'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/',
-				'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/',
-				'http://www.fujaba.de/muml/hardware/hwplatform/1.0/',
-				'http://www.fujaba.de/muml/hardware/hwresource/1.0/',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
-				'http://www.fujaba.de/muml/swplatform/0.4.0/',
-				'http://www.fujaba.de/muml/psm/0.4.0/')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 
-[**
- * returns true, if the given apiCall is an initialize-call for the sensor
- * @param apiCall a API-Call
-*/]
-[query public isInitFunction(apiCall : APICallParameterBinding) : Boolean =
-(apiCall.getMethodName().substring(apiCall.getMethodName().toString().size()-6).toLowerFirst() = 'initApi')
-/]
+
 
 [**
  * returns the IdentifierName (C-Macro definition) for a given DiscretePortInstance
