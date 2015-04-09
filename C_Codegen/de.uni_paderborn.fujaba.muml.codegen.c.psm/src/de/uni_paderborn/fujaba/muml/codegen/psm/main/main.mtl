@@ -17,6 +17,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::psm::middleware::InternalLogic]
 [import de::uni_paderborn::fujaba::muml::codegen::psm::middleware::NetworkInterfaces]
 [import de::uni_paderborn::fujaba::muml::codegen::psm::files::APICalls]
+[import de::uni_paderborn::fujaba::muml::codegen::psm::files::Message]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::main::main]
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::main::main]
@@ -50,6 +51,9 @@
 	[generateMiddlewareILFiles(rsri, path, cgm)/]
 	[generateNetworkInterfaces(rsri, path)/]
 	[generateGlobalIdentifierFiles(cgm, path)/]
+	[generateProtobufMessageFile(rsri, path)/]
+	[generateProtobufNewHeader(rsri, path)/]
+	
 [/template]
 
 

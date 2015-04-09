@@ -16,7 +16,7 @@
 				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
-
+[import de::uni_paderborn::fujaba::muml::codegen::psm::files::PSMQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::actionlanguage::expression]
 
@@ -43,12 +43,14 @@
 
 #include "../lib/types.h"
 
-[for (apiCall : Operation | rsri.allocatedAtomicComponentInstances.eAllContents(Operation))]
-[if (apiCall.oclIsKindOf(APICallParameterBinding))]
+[for (apiCallOp : Operation | rsri.allocatedAtomicComponentInstances.eAllContents(Operation))]
+[if (apiCallOp.oclIsKindOf(APICallParameterBinding))]
+[let apiCall : APICallParameterBinding = apiCallOp.oclAsType(APICallParameterBinding)]
 /**
  * @brief Implemtation of the Parameterbinding: [apiCall.getName()/] of the Port-Instance: PortInstance: [apiCall.eContainer().oclAsType(PortInstance).name/] of the ComponentInstance: [apiCall.eContainer().oclAsType(PortInstance).componentInstance.name/] 
  */
 		[apiCall.returnType.getTypeName()/] [apiCall.getMethodName()/]([for (p : Parameter | apiCall.parameters) separator (',')][p.dataType.getTypeName()/][/for]);	
+[/let]
 [/if]
 [/for]
 
@@ -75,13 +77,15 @@
 /**[/protected]**/
 
 [comment generate every API-Call. Add a protected area inside of each generated API-Call function/]
-[for (apiCall : Operation | rsri.allocatedAtomicComponentInstances.eAllContents(Operation))]
-[if (apiCall.oclIsKindOf(APICallParameterBinding))]
+[for (apiCallOp : Operation | rsri.allocatedAtomicComponentInstances.eAllContents(Operation))]
+[if (apiCallOp.oclIsKindOf(APICallParameterBinding))]
+[let apiCall : APICallParameterBinding = apiCallOp.oclAsType(APICallParameterBinding)]
 		[apiCall.returnType.getTypeName()/] [apiCall.getMethodName()/]([for (p : Parameter | apiCall.parameters) separator (',')][p.dataType.getTypeName()/] [p.getName()/][/for]){
 /** [protected (apiCall.getName()+' **/')] 
 		[apiCall.oclAsType(APICallParameterBinding).implementations.generateExpression('')/]
 /**[/protected]**/
 }	
+[/let]
 [/if]	
 [/for]
 [/file]

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Psm Module Runtime Plug-in
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.codegen.c.psm
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.codegen.c.psm;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.codegen.psm.Activator
 Bundle-Vendor: Eclipse Modeling Project
@@ -19,7 +19,20 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.guava,
  de.uni_paderborn.fujaba.muml.codegen.c;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.codegen.c.nxtOSEK;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.psm;bundle-version="1.0.0"
+ de.uni_paderborn.fujaba.muml.psm;bundle-version="1.0.0",
+ org.eclipse.acceleo.common.ui;bundle-version="3.5.1",
+ org.eclipse.acceleo.compatibility;bundle-version="3.5.1",
+ org.eclipse.acceleo.compatibility.ui;bundle-version="3.5.1",
+ org.eclipse.acceleo.doc;bundle-version="3.5.1",
+ org.eclipse.acceleo.ide.ui;bundle-version="3.5.1",
+ org.eclipse.acceleo.model.edit;bundle-version="3.5.1",
+ org.eclipse.acceleo.parser;bundle-version="3.5.1",
+ org.eclipse.acceleo.profiler.edit;bundle-version="3.5.1",
+ org.eclipse.acceleo.profiler.editor;bundle-version="3.5.1",
+ org.eclipse.acceleo.traceability;bundle-version="3.5.1",
+ org.eclipse.acceleo.traceability.model;bundle-version="3.5.1",
+ org.eclipse.acceleo.ui.interpreter;bundle-version="3.5.1",
+ org.eclipse.sirius.common.acceleo.mtl;bundle-version="1.0.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

@@ -9,9 +9,18 @@
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
 				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
-				'http://www.fujaba.de/muml/hardware/1.0/')]
+				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 
+
+[**
+ * returns true, if the given apiCall is an initialize-call for the sensor
+ * @param apiCall a API-Call
+*/]
+[query public isInitFunction(apiCall : APICallParameterBinding) : Boolean =
+(apiCall.getMethodName().substring(apiCall.getMethodName().toString().size()-6).toLowerFirst() = 'initApi')
+/]
 [**
  * @param hardware port
 */]
@@ -19,6 +28,14 @@
 	getName(port.name) 
 /]
 
+[query public getName(apiCall : APICallParameterBinding) : String =
+	apiCall.name.getName()	
+/]
+
+
+[query public getMethodName(apiCall : APICallParameterBinding) : String =
+	apiCall.name.getName()	
+/]
 
 [**
  * returns the IdentifierName (C-Macro definition) for a given RefinedStructuredResource (ECU)
@@ -29,7 +46,11 @@
 'ECU_'+rsri.getName().toUpperCase()/]
 
 [query public getName(rsri : RefinedStructuredResourceInstance) : String =
+if (rsri.oclIsUndefined()) then
+'#error null value '
+else
 	rsri.oclAsType(StructuredResourceInstance).name.getName().toLowerFirst()	
+endif
 /]
 
 
@@ -97,3 +118,5 @@ codegen.eAllContents(ComponentInstance)->collect(portInstances)->asOrderedSet() 
 */]
 [query public getInitMethodName (hwp: HWPort) : String = 
 'networkInterface_'+hwp.name.getName().toUpperFirst()+'_init'/]
+
+

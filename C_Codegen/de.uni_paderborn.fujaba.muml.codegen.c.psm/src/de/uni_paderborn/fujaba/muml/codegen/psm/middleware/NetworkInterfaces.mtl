@@ -53,7 +53,7 @@
 #ifndef NETWORKINTERFACEIMPLEMENTATION_H_
 #define NETWORKINTERFACEIMPLEMENTATION_H_
 
-#include "../GlobalIdentifier.h"
+#include "GlobalIdentifier.h"
 #include "MiddlewareCore.h"
 
 //Intern networkinterface

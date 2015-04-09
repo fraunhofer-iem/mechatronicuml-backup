@@ -39,7 +39,7 @@
 #include "../lib/NetworkInterface.h"
 #include "../lib/port.h"
 #include "MiddlewareCore.h"
-#include "../GlobalIdentifier.h"
+#include "GlobalIdentifier.h"
 
 [/template]
 

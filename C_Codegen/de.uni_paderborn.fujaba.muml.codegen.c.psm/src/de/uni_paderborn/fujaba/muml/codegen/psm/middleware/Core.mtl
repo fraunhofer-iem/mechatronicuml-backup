@@ -41,7 +41,7 @@
 #include "stdlib.h"
 #include "MiddlewareInternalLogic.h"
 #include "../lib/MiddlewareTypes.h"
-#include "../GlobalIdentifier.h"
+#include "GlobalIdentifier.h"
 #include "../lib/NetworkMessageBuffer.h"
 #include "../lib/NetworkInterface.h"
 #include "../messages/messages_types.h" 
