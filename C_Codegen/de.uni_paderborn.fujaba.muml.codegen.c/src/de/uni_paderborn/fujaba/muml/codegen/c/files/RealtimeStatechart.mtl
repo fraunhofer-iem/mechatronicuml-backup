@@ -10,7 +10,11 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/swplatform/0.4.0/',
+				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::middlewareQueries]
@@ -113,6 +117,11 @@
 				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]
 					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
 				[/for]
+			[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
+				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable)) ]
+					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+				[/for]
+			[/if]
 			
 			[else]
 				static void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart) {

@@ -71,6 +71,7 @@
 #include "GlobalIdentifier.h"
 #include "../lib/NetworkMessageBuffer.h"
 #include "../lib/NetworkInterface.h"
+#include "../lib/port.h"
 #include "../messages/messages_types.h" 
 #include <string.h>
 

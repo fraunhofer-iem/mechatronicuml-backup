@@ -10,7 +10,11 @@
 				'http://www.fujaba.de/modelinstance/0.4.0',
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
-				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/hardware/1.0/',
+				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
+				'http://www.fujaba.de/muml/swplatform/0.4.0/',
+				'http://www.fujaba.de/muml/psm/0.4.0/')]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
@@ -61,7 +65,8 @@
 #include "../lib/MiddlewareTypes.h"
 #include "../Middleware/MiddlewareCore.h"
 #include "../[comp.getFileName(true)/]"
-[if (rtsc.eAllContents(Operation)->size() > 0)]#include "../operations/operations.h"[/if]
+[if ((rtsc.eAllContents(Operation)->asSet() - rtsc.eAllContents(APICall)->asSet())->size() > 0)]#include "../operations/operations.h"[/if]
+[if (rtsc.eAllContents(APICall)->size() > 0)]#include "../apiCallCode/implementations.h"[/if]
 [/template]
 
 [**
@@ -118,12 +123,26 @@ struct [getClassName(rtsc)/] {
 			[/let]		
 		[/for]
 
+
+		
+
+		[if (rtsc.oclIsKindOf(ParameterizedRealtimeStatechart))]
+			[let prtsc : ParameterizedRealtimeStatechart = rtsc.oclAsType(ParameterizedRealtimeStatechart)]
+				[for (para : RealtimeStatechartParameter | prtsc.allParameters)]
+					[if (para.oclIsKindOf(APICallParameter))]
+					[let apiOp : Operation = para.oclAsType(Operation)]
+						[apiOp.returnType.getTypeName()/] (*[apiOp.getMethodName()/])([for (p : Parameter | apiOp.parameters) separator (',')][p.dataType.getTypeName()/][/for]); /**< A Function Pointer to the API-Call: [apiOp.getName()/] */
+					[/let]
+					[/if]
+				[/for]
+			[/let]
+		[/if]
 	} ;
 [/template]
 
 
-[template public getStateNames (state : State) post(trim())]
-[getName(state)/]
+[template private getStateNames (state : State) post(trim())]
+[getName(state)/] /**< Represents the State: [state.getName()/] of the Realtime-StateChart: [state.parentStatechart.getName()/] */
 [if not (state.simple)],
 	[for (innerState : State | state.embeddedRegions.embeddedStatechart.states) separator (',')]
 		[getStateNames(innerState)/]
