@@ -166,124 +166,10 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loadBalancing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOrWcetOfCommunication(loadBalancing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadBalancing_SchemaLoadbalancingMustBeSet(loadBalancing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOfCommunication(loadBalancing, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLoadBalancing_SchemaLoadbalancingMustBeTriggerMessage(loadBalancing, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLoadBalancing_LoadbalancingEitherHasResponseMessageOrWcet(loadBalancing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage(loadBalancing, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLoadBalancing_ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet(loadBalancing, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * Validates the ResponseMessageOrWcetOfCommunication constraint of '<em>Load Balancing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLoadBalancing_ResponseMessageOrWcetOfCommunication(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ResponseMessageOrWcetOfCommunication", getObjectLabel(loadBalancing, context) },
-						 new Object[] { loadBalancing },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the SchemaLoadbalancingMustBeSet constraint of '<em>Load Balancing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLoadBalancing_SchemaLoadbalancingMustBeSet(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "SchemaLoadbalancingMustBeSet", getObjectLabel(loadBalancing, context) },
-						 new Object[] { loadBalancing },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the ResponseMessageOfCommunication constraint of '<em>Load Balancing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLoadBalancing_ResponseMessageOfCommunication(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ResponseMessageOfCommunication", getObjectLabel(loadBalancing, context) },
-						 new Object[] { loadBalancing },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the SchemaLoadbalancingMustBeTriggerMessage constraint of '<em>Load Balancing</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLoadBalancing_SchemaLoadbalancingMustBeTriggerMessage(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "SchemaLoadbalancingMustBeTriggerMessage", getObjectLabel(loadBalancing, context) },
-						 new Object[] { loadBalancing },
-						 context));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -315,6 +201,75 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "LoadbalancingEitherHasResponseMessageOrWcet",
 				 LOAD_BALANCING__LOADBALANCING_EITHER_HAS_RESPONSE_MESSAGE_OR_WCET__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage constraint of '<em>Load Balancing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String LOAD_BALANCING__RESPONSE_MESSAGE_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_TRIGGER_MESSAGE__EEXPRESSION = "-- responseMessage must be a TRIGGER-MessageEvent\r\n" +
+		"if(self.responseMessage.oclIsUndefined()) then\r\n" +
+		"\ttrue\r\n" +
+		"else\r\n" +
+		"\tif self.responseMessage.kind=realtimestatechart::EventKind::TRIGGER then\r\n" +
+		"\t\ttrue\r\n" +
+		"\telse\r\n" +
+		"\t\tfalse\r\n" +
+		"\tendif\r\n" +
+		"endif\r\n" +
+		"";
+
+	/**
+	 * Validates the ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage constraint of '<em>Load Balancing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLoadBalancing_ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(One_to_n_schemataPackage.Literals.LOAD_BALANCING,
+				 loadBalancing,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage",
+				 LOAD_BALANCING__RESPONSE_MESSAGE_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_TRIGGER_MESSAGE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet constraint of '<em>Load Balancing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String LOAD_BALANCING__RESPONSE_MESSAGE_OR_WCET_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_SET__EEXPRESSION = "-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\n" +
+		"not self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()";
+
+	/**
+	 * Validates the ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet constraint of '<em>Load Balancing</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLoadBalancing_ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet(LoadBalancing loadBalancing, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(One_to_n_schemataPackage.Literals.LOAD_BALANCING,
+				 loadBalancing,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet",
+				 LOAD_BALANCING__RESPONSE_MESSAGE_OR_WCET_OF_COMMUNICATION_SCHEMA_LOADBALANCING_MUST_BE_SET__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

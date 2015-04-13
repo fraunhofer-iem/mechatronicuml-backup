@@ -546,13 +546,16 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- As soon as a One-To-Many Communication Schema is used, all message events of the RoleOrPortRTSC must use a One-To-Many Communication Schema \r\n" +
+		"let result : Boolean = (\r\n" +
 		"let selfStatechart : RealtimeStatechart = self.statechart in \r\n" +
-		"selfStatechart.usesOneToManyCommunicationSchemata implies (\r\n" +
-		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =\r\n" +
-		"selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) in \r\n" +
-		" let allTransitions : OrderedSet(Transition) =  allChildrenOfRoleOrPortStatechart->asOrderedSet()->append(selfStatechart.getPortOrRoleStatechart()).transitions->asOrderedSet() in \r\n" +
+		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =if selfStatechart.oclIsUndefined() then Set{} else selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) endif in \r\n" +
+		"let allTransitions : OrderedSet(Transition) =  allChildrenOfRoleOrPortStatechart->asOrderedSet()->append(selfStatechart.getPortOrRoleStatechart()).transitions->asOrderedSet() in \r\n" +
+		"\r\n" +
+		"(selfStatechart.usesOneToManyCommunicationSchemata and not (selfStatechart.getPortOrRoleStatechart() = null)) implies ( \r\n" +
 		"allTransitions->forAll(t : Transition |  (not(t.raiseMessageEvent = null) implies not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)) and ( not(t.triggerMessageEvent = null) implies not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)))\r\n" +
-		")";
+		")\r\n" +
+		") in not result.oclIsUndefined() and result\r\n" +
+		"";
 
 	/**
 	 * Validates the UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions constraint of '<em>Transition</em>'.
@@ -1029,7 +1032,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_SENDING_COMMUNICATION_SCHEMA__EEXPRESSION = "if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_SENDING_COMMUNICATION_SCHEMA__EEXPRESSION = "-- When using One-To-Many Communication Schemata, a RaiseMessageEvent may only use sending One-To-Many Communication Schemata.\r\n" +
+		"if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
 		"\ttrue \r\n" +
 		"else\r\n" +
 		"\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or\r\n" +
@@ -1065,7 +1069,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__TRIGGER_MESSAGE_EVENT_IMPLIES_RECEIVING_COMMUNICATION_SCHEMA__EEXPRESSION = "if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__TRIGGER_MESSAGE_EVENT_IMPLIES_RECEIVING_COMMUNICATION_SCHEMA__EEXPRESSION = "-- When using One-To-Many Communication Schemata, a TiggerMessageEvent may only use receiving One-To-Many Communication Schemata.\r\n" +
+		"if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
 		"\ttrue \r\n" +
 		"else\r\n" +
 		"\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or\r\n" +

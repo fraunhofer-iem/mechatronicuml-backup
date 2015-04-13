@@ -80,6 +80,7 @@ public class OneToManyCommunicationSchemaItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConditionPropertyDescriptor(object);
+			addAsynchronousMessageEventPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -100,6 +101,28 @@ public class OneToManyCommunicationSchemaItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_OneToManyCommunicationSchema_condition_feature", "_UI_OneToManyCommunicationSchema_type"),
 				 One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION,
 				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Asynchronous Message Event feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAsynchronousMessageEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OneToManyCommunicationSchema_asynchronousMessageEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OneToManyCommunicationSchema_asynchronousMessageEvent_feature", "_UI_OneToManyCommunicationSchema_type"),
+				 One_to_n_schemataPackage.Literals.ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT,
+				 false,
 				 false,
 				 false,
 				 null,

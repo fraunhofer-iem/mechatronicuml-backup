@@ -1230,6 +1230,11 @@
     </classes>
     <classes xmi:id="_VZaxgcwbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/pattern/LegalConfiguration"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/pattern/LegalConfiguration/coordinationPattern"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
@@ -1247,6 +1252,10 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" reconcile="false" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
       </orderedElements>
     </classes>
     <classes superClasses="//@packages.11/@classes.0">

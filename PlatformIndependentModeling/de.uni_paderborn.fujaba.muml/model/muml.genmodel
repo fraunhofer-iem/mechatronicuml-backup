@@ -373,7 +373,7 @@
           disposableProviderFactory="true" ecorePackage="muml.ecore#//realtimestatechart/one_to_n_schemata">
         <genClasses image="false" ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
@@ -601,7 +601,7 @@
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//pattern/LegalConfiguration">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//pattern/LegalConfiguration/parameterBindings"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/LegalConfiguration/coordinationPattern"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//pattern/LegalConfiguration/coordinationPattern"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

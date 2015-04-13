@@ -69,6 +69,7 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addCoordinationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +92,28 @@ public class LegalConfigurationItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Coordination Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LegalConfiguration_coordinationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LegalConfiguration_coordinationPattern_feature", "_UI_LegalConfiguration_type"),
+				 PatternPackage.Literals.LEGAL_CONFIGURATION__COORDINATION_PATTERN,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

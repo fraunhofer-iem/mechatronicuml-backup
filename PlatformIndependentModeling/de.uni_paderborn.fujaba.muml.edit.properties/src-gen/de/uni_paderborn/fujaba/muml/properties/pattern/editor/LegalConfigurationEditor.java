@@ -42,6 +42,9 @@ public class LegalConfigurationEditor
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
+			addPropertyEditor(
+					createEditorCoordinationPattern_GeneralTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
@@ -59,6 +62,9 @@ public class LegalConfigurationEditor
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addPropertyEditor(
+					createEditorCoordinationPattern_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -89,6 +95,21 @@ public class LegalConfigurationEditor
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinationPattern_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinationPattern_GeneralTab_Editor() {
+		if (this.editorCoordinationPattern_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
+					.getLegalConfiguration_CoordinationPattern();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The reverse reference to coordination pattern is required because it is easier for developing the dialogs and wizards. However, deriving it by finding out the parent is also a valid solution.");
+
+			this.editorCoordinationPattern_GeneralTab = editor;
+		}
+		return this.editorCoordinationPattern_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
@@ -178,7 +199,7 @@ public class LegalConfigurationEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.extensions",
+							"property.tab.general", "property.tab.extensions",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}

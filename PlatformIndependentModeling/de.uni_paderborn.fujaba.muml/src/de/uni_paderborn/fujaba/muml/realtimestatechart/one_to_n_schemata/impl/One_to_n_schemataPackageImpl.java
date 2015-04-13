@@ -520,7 +520,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		  (loadBalancingEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ResponseMessageOrWcetOfCommunication SchemaLoadbalancingMustBeSet ResponseMessageOfCommunication SchemaLoadbalancingMustBeTriggerMessage LoadbalancingEitherHasResponseMessageOrWcet"
+			 "constraints", "LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet"
 		   });
 	}
 
@@ -536,7 +536,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		  (loadBalancingEClass, 
 		   source, 
 		   new String[] {
-			 "ResponseMessageOrWcetOfCommunication SchemaLoadbalancingMustBeSet", "-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()",
+			 "ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet", "-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()",
 			 "ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage", "-- responseMessage must be a TRIGGER-MessageEvent\r\nif(self.responseMessage.oclIsUndefined()) then\r\n\ttrue\r\nelse\r\n\tif self.responseMessage.kind=realtimestatechart::EventKind::TRIGGER then\r\n\t\ttrue\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif\r\n",
 			 "LoadbalancingEitherHasResponseMessageOrWcet", "-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif"
 		   });

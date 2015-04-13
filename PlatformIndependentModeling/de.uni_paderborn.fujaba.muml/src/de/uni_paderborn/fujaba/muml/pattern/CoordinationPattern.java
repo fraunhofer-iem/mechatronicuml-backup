@@ -40,7 +40,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePatternNames'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePatternNames='CoordinationPattern.allInstances()->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePatternNames='-- A name of a CoordinationPattern must be unique.\r\nCoordinationPattern.allInstances()->isUnique(name)'"
  * @generated
  */
 public interface CoordinationPattern extends AbstractCoordinationSpecification {

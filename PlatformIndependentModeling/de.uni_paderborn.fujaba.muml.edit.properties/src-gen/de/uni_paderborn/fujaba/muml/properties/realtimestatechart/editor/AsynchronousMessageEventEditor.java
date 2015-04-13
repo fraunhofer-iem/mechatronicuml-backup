@@ -74,7 +74,7 @@ public class AsynchronousMessageEventEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A asynchronous message event must habe a one-to-many communication schema if the statechart defines the behavior of a multi role.");
+			editor.setTooltipMessage("An asynchronous message event must have a one-to-many communication schema if the statechart defines the behavior of a multi role.");
 
 			this.editorOneToManyCommunicationSchema_GeneralTab = editor;
 		}

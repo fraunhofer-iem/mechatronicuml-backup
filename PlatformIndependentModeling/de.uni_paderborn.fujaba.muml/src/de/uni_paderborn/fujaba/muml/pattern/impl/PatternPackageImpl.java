@@ -558,7 +558,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		  (coordinationPatternEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePatternNames", "CoordinationPattern.allInstances()->isUnique(name)"
+			 "UniquePatternNames", "-- A name of a CoordinationPattern must be unique.\r\nCoordinationPattern.allInstances()->isUnique(name)"
 		   });
 	}
 
