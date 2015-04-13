@@ -22,69 +22,71 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MappingRepository:'", "'{'", "','", "'}'", "'#'", "'import'", "'PortInstance:'", "'execCommand:'", "'initCommand:'", "'enum:'", "'API_Call:'", "'('", "')'", "':='", "'port:'", "'.'", "'for'", "';'", "'while'", "'do'", "');'", "'if'", "'elseif'", "'else'", "'return'", "'['", "']'", "'const'", "'<'", "'>'", "'null'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'=='", "'<>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'MappingRepository:'", "'{'", "','", "'}'", "'#'", "'import'", "'PortInstance:'", "'execCommand:'", "'initCommand:'", "'enum:'", "'API_Call:'", "'('", "')'", "':='", "'port:'", "'.'", "'for'", "';'", "'while'", "'do'", "');'", "'if'", "'elseif'", "'else'", "'return'", "'['", "']'", "'const'", "'<'", "'>'", "'null'", "'->'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'=='", "'<>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'%'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
     };
+    public static final int T__50=50;
     public static final int RULE_BOOLEAN=8;
-    public static final int RULE_ID=5;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__62=62;
-    public static final int T__27=27;
-    public static final int T__63=63;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int EOF=-1;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__19=19;
+    public static final int T__13=13;
     public static final int T__57=57;
+    public static final int T__14=14;
     public static final int T__58=58;
-    public static final int T__16=16;
     public static final int T__51=51;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int RULE_NUMBER=7;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int T__59=59;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=5;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=6;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int T__21=21;
+    public static final int T__65=65;
     public static final int RULE_STRING=4;
-    public static final int T__32=32;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int RULE_NUMBER=7;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -830,7 +832,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             if ( (LA6_0==23) ) {
                 alt6=1;
             }
-            else if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_BOOLEAN)||LA6_0==24||LA6_0==43||LA6_0==55||(LA6_0>=58 && LA6_0<=63)) ) {
+            else if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_BOOLEAN)||LA6_0==24||LA6_0==43||LA6_0==56||(LA6_0>=60 && LA6_0<=65)) ) {
                 alt6=2;
             }
             else {
@@ -1325,13 +1327,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             case 23:
             case 24:
             case 43:
-            case 55:
-            case 58:
-            case 59:
+            case 56:
             case 60:
             case 61:
             case 62:
             case 63:
+            case 64:
+            case 65:
                 {
                 alt9=1;
                 }
@@ -2130,13 +2132,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             case 23:
             case 24:
             case 43:
-            case 55:
-            case 58:
-            case 59:
+            case 56:
             case 60:
             case 61:
             case 62:
             case 63:
+            case 64:
+            case 65:
                 {
                 alt13=2;
                 }
@@ -2698,10 +2700,10 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( ((LA15_0>=44 && LA15_0<=45)) ) {
+            if ( ((LA15_0>=45 && LA15_0<=46)) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==26||(LA15_0>=46 && LA15_0<=47)) ) {
+            else if ( (LA15_0==26||(LA15_0>=47 && LA15_0<=48)) ) {
                 alt15=2;
             }
             else {
@@ -3776,10 +3778,10 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==26||(LA18_0>=46 && LA18_0<=47)) ) {
+            if ( (LA18_0==26||(LA18_0>=47 && LA18_0<=48)) ) {
                 alt18=1;
             }
-            else if ( ((LA18_0>=44 && LA18_0<=45)) ) {
+            else if ( ((LA18_0>=45 && LA18_0<=46)) ) {
                 alt18=2;
             }
             else {
@@ -3964,7 +3966,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1613:1: ruleInitializeExpression returns [EObject current=null] : (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1613:1: ruleInitializeExpression returns [EObject current=null] : (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression ) ;
     public final EObject ruleInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3974,15 +3976,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
         EObject this_Expression_2 = null;
 
+        EObject this_TypeCastExpression_3 = null;
+
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1616:28: ( (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1617:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1616:28: ( (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1617:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1617:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )
-            int alt19=3;
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1617:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )
+            int alt19=4;
             alt19 = dfa19.predict(input);
             switch (alt19) {
                 case 1 :
@@ -4039,6 +4043,24 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
                     break;
+                case 4 :
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1648:5: this_TypeCastExpression_3= ruleTypeCastExpression
+                    {
+                     
+                            newCompositeNode(grammarAccess.getInitializeExpressionAccess().getTypeCastExpressionParserRuleCall_3()); 
+                        
+                    pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression3658);
+                    this_TypeCastExpression_3=ruleTypeCastExpression();
+
+                    state._fsp--;
+
+                     
+                            current = this_TypeCastExpression_3; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
 
             }
 
@@ -4060,7 +4082,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleArrayInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1654:1: entryRuleArrayInitializeExpression returns [EObject current=null] : iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1664:1: entryRuleArrayInitializeExpression returns [EObject current=null] : iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF ;
     public final EObject entryRuleArrayInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4068,17 +4090,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1655:2: (iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1656:2: iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1665:2: (iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1666:2: iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF
             {
              newCompositeNode(grammarAccess.getArrayInitializeExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression3666);
+            pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression3693);
             iv_ruleArrayInitializeExpression=ruleArrayInitializeExpression();
 
             state._fsp--;
 
              current =iv_ruleArrayInitializeExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayInitializeExpression3676); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayInitializeExpression3703); 
 
             }
 
@@ -4096,7 +4118,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleArrayInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1663:1: ruleArrayInitializeExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1673:1: ruleArrayInitializeExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) ;
     public final EObject ruleArrayInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4111,26 +4133,26 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1666:28: ( (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1667:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1676:28: ( (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1677:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1667:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1667:3: otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1677:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1677:3: otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleArrayInitializeExpression3713); 
+            otherlv_0=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleArrayInitializeExpression3740); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getArrayInitializeExpressionAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1671:1: ( (lv_expressions_1_0= ruleInitializeExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1672:1: (lv_expressions_1_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1681:1: ( (lv_expressions_1_0= ruleInitializeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1682:1: (lv_expressions_1_0= ruleInitializeExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1672:1: (lv_expressions_1_0= ruleInitializeExpression )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1673:3: lv_expressions_1_0= ruleInitializeExpression
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1682:1: (lv_expressions_1_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1683:3: lv_expressions_1_0= ruleInitializeExpression
             {
              
             	        newCompositeNode(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsInitializeExpressionParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3734);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3761);
             lv_expressions_1_0=ruleInitializeExpression();
 
             state._fsp--;
@@ -4152,7 +4174,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1689:2: (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1699:2: (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )*
             loop20:
             do {
                 int alt20=2;
@@ -4165,22 +4187,22 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                 switch (alt20) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1689:4: otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1699:4: otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) )
             	    {
-            	    otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleArrayInitializeExpression3747); 
+            	    otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleArrayInitializeExpression3774); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getArrayInitializeExpressionAccess().getCommaKeyword_2_0());
             	        
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1693:1: ( (lv_expressions_3_0= ruleInitializeExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1694:1: (lv_expressions_3_0= ruleInitializeExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1703:1: ( (lv_expressions_3_0= ruleInitializeExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1704:1: (lv_expressions_3_0= ruleInitializeExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1694:1: (lv_expressions_3_0= ruleInitializeExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1695:3: lv_expressions_3_0= ruleInitializeExpression
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1704:1: (lv_expressions_3_0= ruleInitializeExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1705:3: lv_expressions_3_0= ruleInitializeExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsInitializeExpressionParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3768);
+            	    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3795);
             	    lv_expressions_3_0=ruleInitializeExpression();
 
             	    state._fsp--;
@@ -4211,7 +4233,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleArrayInitializeExpression3782); 
+            otherlv_4=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleArrayInitializeExpression3809); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getArrayInitializeExpressionAccess().getRightSquareBracketKeyword_3());
                 
@@ -4236,7 +4258,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLocalVariableOrConstantDeclarationStatement"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1723:1: entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1733:1: entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF ;
     public final EObject entryRuleLocalVariableOrConstantDeclarationStatement() throws RecognitionException {
         EObject current = null;
 
@@ -4244,17 +4266,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1724:2: (iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1725:2: iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1734:2: (iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1735:2: iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF
             {
              newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement3818);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement3845);
             iv_ruleLocalVariableOrConstantDeclarationStatement=ruleLocalVariableOrConstantDeclarationStatement();
 
             state._fsp--;
 
              current =iv_ruleLocalVariableOrConstantDeclarationStatement; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement3828); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement3855); 
 
             }
 
@@ -4272,7 +4294,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLocalVariableOrConstantDeclarationStatement"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1732:1: ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1742:1: ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) ;
     public final EObject ruleLocalVariableOrConstantDeclarationStatement() throws RecognitionException {
         EObject current = null;
 
@@ -4284,16 +4306,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1735:28: ( ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1736:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1745:28: ( ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1746:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1736:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1737:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1746:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1747:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1737:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1738:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1747:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1748:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1738:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1748:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -4311,12 +4333,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             }
             switch (alt21) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1739:3: lv_variable_0_1= ruleLocalVariableDeclaration
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1749:3: lv_variable_0_1= ruleLocalVariableDeclaration
                     {
                      
                     	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3875);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3902);
                     lv_variable_0_1=ruleLocalVariableDeclaration();
 
                     state._fsp--;
@@ -4336,12 +4358,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1754:8: lv_variable_0_2= ruleLocalConstantDeclaration
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1764:8: lv_variable_0_2= ruleLocalConstantDeclaration
                     {
                      
                     	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalConstantDeclarationParserRuleCall_0_1()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3894);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3921);
                     lv_variable_0_2=ruleLocalConstantDeclaration();
 
                     state._fsp--;
@@ -4387,7 +4409,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLocalVariableDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1780:1: entryRuleLocalVariableDeclaration returns [EObject current=null] : iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1790:1: entryRuleLocalVariableDeclaration returns [EObject current=null] : iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF ;
     public final EObject entryRuleLocalVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -4395,17 +4417,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1781:2: (iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1782:2: iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1791:2: (iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1792:2: iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF
             {
              newCompositeNode(grammarAccess.getLocalVariableDeclarationRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration3932);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration3959);
             iv_ruleLocalVariableDeclaration=ruleLocalVariableDeclaration();
 
             state._fsp--;
 
              current =iv_ruleLocalVariableDeclaration; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableDeclaration3942); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableDeclaration3969); 
 
             }
 
@@ -4423,7 +4445,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLocalVariableDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1789:1: ruleLocalVariableDeclaration returns [EObject current=null] : ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1799:1: ruleLocalVariableDeclaration returns [EObject current=null] : ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) ;
     public final EObject ruleLocalVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -4436,17 +4458,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1792:28: ( ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1793:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1802:28: ( ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1803:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1793:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1793:2: ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1803:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1803:2: ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1793:2: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1794:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1803:2: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1804:1: ( ruleDATATYPE )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1794:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1795:3: ruleDATATYPE
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1804:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1805:3: ruleDATATYPE
             {
 
             			if (current==null) {
@@ -4456,7 +4478,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
              
             	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeDataTypeCrossReference_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration3990);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration4017);
             ruleDATATYPE();
 
             state._fsp--;
@@ -4470,13 +4492,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1808:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1809:1: (lv_name_1_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1818:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1819:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1809:1: (lv_name_1_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1810:3: lv_name_1_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1819:1: (lv_name_1_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1820:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration4007); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration4034); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getLocalVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -4496,7 +4518,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1826:2: (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1836:2: (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -4505,22 +4527,22 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             }
             switch (alt22) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1826:4: otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1836:4: otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
                     {
-                    otherlv_2=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleLocalVariableDeclaration4025); 
+                    otherlv_2=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleLocalVariableDeclaration4052); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getLocalVariableDeclarationAccess().getColonEqualsSignKeyword_2_0());
                         
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1830:1: ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1831:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1840:1: ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1841:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1831:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1832:3: lv_initializeExpression_3_0= ruleInitializeExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1841:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1842:3: lv_initializeExpression_3_0= ruleInitializeExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration4046);
+                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration4073);
                     lv_initializeExpression_3_0=ruleInitializeExpression();
 
                     state._fsp--;
@@ -4548,7 +4570,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_4=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleLocalVariableDeclaration4060); 
+            otherlv_4=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleLocalVariableDeclaration4087); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getLocalVariableDeclarationAccess().getSemicolonKeyword_3());
                 
@@ -4573,7 +4595,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLocalConstantDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1860:1: entryRuleLocalConstantDeclaration returns [EObject current=null] : iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1870:1: entryRuleLocalConstantDeclaration returns [EObject current=null] : iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF ;
     public final EObject entryRuleLocalConstantDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -4581,17 +4603,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1861:2: (iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1862:2: iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1871:2: (iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1872:2: iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF
             {
              newCompositeNode(grammarAccess.getLocalConstantDeclarationRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration4096);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration4123);
             iv_ruleLocalConstantDeclaration=ruleLocalConstantDeclaration();
 
             state._fsp--;
 
              current =iv_ruleLocalConstantDeclaration; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalConstantDeclaration4106); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalConstantDeclaration4133); 
 
             }
 
@@ -4609,7 +4631,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLocalConstantDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1869:1: ruleLocalConstantDeclaration returns [EObject current=null] : ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1879:1: ruleLocalConstantDeclaration returns [EObject current=null] : ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) ;
     public final EObject ruleLocalConstantDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -4623,19 +4645,19 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1872:28: ( ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1873:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1882:28: ( ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1883:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1873:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1873:2: ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1883:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1883:2: ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1873:2: ( (lv_constant_0_0= 'const' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1874:1: (lv_constant_0_0= 'const' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1883:2: ( (lv_constant_0_0= 'const' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1884:1: (lv_constant_0_0= 'const' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1874:1: (lv_constant_0_0= 'const' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1875:3: lv_constant_0_0= 'const'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1884:1: (lv_constant_0_0= 'const' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1885:3: lv_constant_0_0= 'const'
             {
-            lv_constant_0_0=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleLocalConstantDeclaration4149); 
+            lv_constant_0_0=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleLocalConstantDeclaration4176); 
 
                     newLeafNode(lv_constant_0_0, grammarAccess.getLocalConstantDeclarationAccess().getConstantConstKeyword_0_0());
                 
@@ -4651,11 +4673,11 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1888:2: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1889:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1898:2: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1899:1: ( ruleDATATYPE )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1889:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1890:3: ruleDATATYPE
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1899:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1900:3: ruleDATATYPE
             {
 
             			if (current==null) {
@@ -4665,7 +4687,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
              
             	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getDataTypeDataTypeCrossReference_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration4185);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration4212);
             ruleDATATYPE();
 
             state._fsp--;
@@ -4679,13 +4701,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1903:2: ( (lv_name_2_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1904:1: (lv_name_2_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1913:2: ( (lv_name_2_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1914:1: (lv_name_2_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1904:1: (lv_name_2_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1905:3: lv_name_2_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1914:1: (lv_name_2_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1915:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration4202); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration4229); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getLocalConstantDeclarationAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -4705,20 +4727,20 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_3=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleLocalConstantDeclaration4219); 
+            otherlv_3=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleLocalConstantDeclaration4246); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getLocalConstantDeclarationAccess().getColonEqualsSignKeyword_3());
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1925:1: ( (lv_initializeExpression_4_0= ruleInitializeExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1926:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1935:1: ( (lv_initializeExpression_4_0= ruleInitializeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1936:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1926:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1927:3: lv_initializeExpression_4_0= ruleInitializeExpression
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1936:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1937:3: lv_initializeExpression_4_0= ruleInitializeExpression
             {
              
             	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_4_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration4240);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration4267);
             lv_initializeExpression_4_0=ruleInitializeExpression();
 
             state._fsp--;
@@ -4740,7 +4762,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_5=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleLocalConstantDeclaration4252); 
+            otherlv_5=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleLocalConstantDeclaration4279); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getLocalConstantDeclarationAccess().getSemicolonKeyword_5());
                 
@@ -4765,7 +4787,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleNondeterministicChoiceExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1955:1: entryRuleNondeterministicChoiceExpression returns [EObject current=null] : iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1965:1: entryRuleNondeterministicChoiceExpression returns [EObject current=null] : iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF ;
     public final EObject entryRuleNondeterministicChoiceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4773,17 +4795,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1956:2: (iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1957:2: iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1966:2: (iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1967:2: iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF
             {
              newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression4288);
+            pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression4315);
             iv_ruleNondeterministicChoiceExpression=ruleNondeterministicChoiceExpression();
 
             state._fsp--;
 
              current =iv_ruleNondeterministicChoiceExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression4298); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression4325); 
 
             }
 
@@ -4801,7 +4823,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleNondeterministicChoiceExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1964:1: ruleNondeterministicChoiceExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1974:1: ruleNondeterministicChoiceExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) ;
     public final EObject ruleNondeterministicChoiceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4812,24 +4834,24 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1967:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1968:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1977:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1978:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1968:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1968:2: ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1978:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1978:2: ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1968:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1969:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1978:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1979:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1969:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1970:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1979:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1980:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getNondeterministicChoiceExpressionRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression4343); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression4370); 
 
             		newLeafNode(otherlv_0, grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypePrimitiveDataTypeCrossReference_0_0()); 
             	
@@ -4839,16 +4861,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1981:2: ( (lv_range_1_0= ruleRange ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1982:1: (lv_range_1_0= ruleRange )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1991:2: ( (lv_range_1_0= ruleRange ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1992:1: (lv_range_1_0= ruleRange )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1982:1: (lv_range_1_0= ruleRange )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1983:3: lv_range_1_0= ruleRange
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1992:1: (lv_range_1_0= ruleRange )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:1993:3: lv_range_1_0= ruleRange
             {
              
             	        newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeRangeParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression4364);
+            pushFollow(FollowSets000.FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression4391);
             lv_range_1_0=ruleRange();
 
             state._fsp--;
@@ -4891,7 +4913,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleRange"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2007:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2017:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
     public final EObject entryRuleRange() throws RecognitionException {
         EObject current = null;
 
@@ -4899,17 +4921,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2008:2: (iv_ruleRange= ruleRange EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2009:2: iv_ruleRange= ruleRange EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2018:2: (iv_ruleRange= ruleRange EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2019:2: iv_ruleRange= ruleRange EOF
             {
              newCompositeNode(grammarAccess.getRangeRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRange_in_entryRuleRange4400);
+            pushFollow(FollowSets000.FOLLOW_ruleRange_in_entryRuleRange4427);
             iv_ruleRange=ruleRange();
 
             state._fsp--;
 
              current =iv_ruleRange; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRange4410); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRange4437); 
 
             }
 
@@ -4927,7 +4949,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleRange"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2016:1: ruleRange returns [EObject current=null] : (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2026:1: ruleRange returns [EObject current=null] : (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) ;
     public final EObject ruleRange() throws RecognitionException {
         EObject current = null;
 
@@ -4942,26 +4964,26 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2019:28: ( (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2020:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2029:28: ( (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2030:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2020:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2020:3: otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2030:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2030:3: otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>'
             {
-            otherlv_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleRange4447); 
+            otherlv_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleRange4474); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRangeAccess().getLessThanSignKeyword_0());
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2024:1: ( (lv_lowerBound_1_0= ruleLONG ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2025:1: (lv_lowerBound_1_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2034:1: ( (lv_lowerBound_1_0= ruleLONG ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2035:1: (lv_lowerBound_1_0= ruleLONG )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2025:1: (lv_lowerBound_1_0= ruleLONG )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2026:3: lv_lowerBound_1_0= ruleLONG
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2035:1: (lv_lowerBound_1_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2036:3: lv_lowerBound_1_0= ruleLONG
             {
              
             	        newCompositeNode(grammarAccess.getRangeAccess().getLowerBoundLONGParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange4468);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange4495);
             lv_lowerBound_1_0=ruleLONG();
 
             state._fsp--;
@@ -4983,20 +5005,20 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRange4480); 
+            otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRange4507); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRangeAccess().getCommaKeyword_2());
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2046:1: ( (lv_upperBound_3_0= ruleLONG ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2047:1: (lv_upperBound_3_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2056:1: ( (lv_upperBound_3_0= ruleLONG ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2057:1: (lv_upperBound_3_0= ruleLONG )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2047:1: (lv_upperBound_3_0= ruleLONG )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2048:3: lv_upperBound_3_0= ruleLONG
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2057:1: (lv_upperBound_3_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2058:3: lv_upperBound_3_0= ruleLONG
             {
              
             	        newCompositeNode(grammarAccess.getRangeAccess().getUpperBoundLONGParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange4501);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange4528);
             lv_upperBound_3_0=ruleLONG();
 
             state._fsp--;
@@ -5018,7 +5040,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_4=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleRange4513); 
+            otherlv_4=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleRange4540); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRangeAccess().getGreaterThanSignKeyword_4());
                 
@@ -5043,7 +5065,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLONG"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2076:1: entryRuleLONG returns [String current=null] : iv_ruleLONG= ruleLONG EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2086:1: entryRuleLONG returns [String current=null] : iv_ruleLONG= ruleLONG EOF ;
     public final String entryRuleLONG() throws RecognitionException {
         String current = null;
 
@@ -5051,17 +5073,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2077:2: (iv_ruleLONG= ruleLONG EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2078:2: iv_ruleLONG= ruleLONG EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2087:2: (iv_ruleLONG= ruleLONG EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2088:2: iv_ruleLONG= ruleLONG EOF
             {
              newCompositeNode(grammarAccess.getLONGRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_entryRuleLONG4550);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_entryRuleLONG4577);
             iv_ruleLONG=ruleLONG();
 
             state._fsp--;
 
              current =iv_ruleLONG.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLONG4561); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLONG4588); 
 
             }
 
@@ -5079,7 +5101,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLONG"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2085:1: ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2095:1: ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleLONG() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5088,10 +5110,10 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2088:28: (this_INT_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2089:5: this_INT_0= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2098:28: (this_INT_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2099:5: this_INT_0= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLONG4600); 
+            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLONG4627); 
 
             		current.merge(this_INT_0);
                 
@@ -5116,7 +5138,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLogicalExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2104:1: entryRuleLogicalExpression returns [EObject current=null] : iv_ruleLogicalExpression= ruleLogicalExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2114:1: entryRuleLogicalExpression returns [EObject current=null] : iv_ruleLogicalExpression= ruleLogicalExpression EOF ;
     public final EObject entryRuleLogicalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5124,17 +5146,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2105:2: (iv_ruleLogicalExpression= ruleLogicalExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2106:2: iv_ruleLogicalExpression= ruleLogicalExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2115:2: (iv_ruleLogicalExpression= ruleLogicalExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2116:2: iv_ruleLogicalExpression= ruleLogicalExpression EOF
             {
              newCompositeNode(grammarAccess.getLogicalExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression4644);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression4671);
             iv_ruleLogicalExpression=ruleLogicalExpression();
 
             state._fsp--;
 
              current =iv_ruleLogicalExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalExpression4654); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalExpression4681); 
 
             }
 
@@ -5152,7 +5174,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLogicalExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2113:1: ruleLogicalExpression returns [EObject current=null] : this_LogicalOrExpression_0= ruleLogicalOrExpression ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2123:1: ruleLogicalExpression returns [EObject current=null] : this_LogicalOrExpression_0= ruleLogicalOrExpression ;
     public final EObject ruleLogicalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5162,13 +5184,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2116:28: (this_LogicalOrExpression_0= ruleLogicalOrExpression )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2118:5: this_LogicalOrExpression_0= ruleLogicalOrExpression
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2126:28: (this_LogicalOrExpression_0= ruleLogicalOrExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2128:5: this_LogicalOrExpression_0= ruleLogicalOrExpression
             {
              
                     newCompositeNode(grammarAccess.getLogicalExpressionAccess().getLogicalOrExpressionParserRuleCall()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression4700);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression4727);
             this_LogicalOrExpression_0=ruleLogicalOrExpression();
 
             state._fsp--;
@@ -5195,7 +5217,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLogicalOrExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2134:1: entryRuleLogicalOrExpression returns [EObject current=null] : iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2144:1: entryRuleLogicalOrExpression returns [EObject current=null] : iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF ;
     public final EObject entryRuleLogicalOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5203,17 +5225,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2135:2: (iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2136:2: iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2145:2: (iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2146:2: iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF
             {
              newCompositeNode(grammarAccess.getLogicalOrExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression4734);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression4761);
             iv_ruleLogicalOrExpression=ruleLogicalOrExpression();
 
             state._fsp--;
 
              current =iv_ruleLogicalOrExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalOrExpression4744); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalOrExpression4771); 
 
             }
 
@@ -5231,7 +5253,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLogicalOrExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2143:1: ruleLogicalOrExpression returns [EObject current=null] : (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2153:1: ruleLogicalOrExpression returns [EObject current=null] : (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) ;
     public final EObject ruleLogicalOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5245,16 +5267,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2146:28: ( (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2147:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2156:28: ( (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2157:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2147:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2148:5: this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2157:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2158:5: this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getLogicalAndExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4791);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4818);
             this_LogicalAndExpression_0=ruleLogicalAndExpression();
 
             state._fsp--;
@@ -5263,23 +5285,23 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     current = this_LogicalAndExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2156:1: ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2166:1: ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
             loop23:
             do {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( (LA23_0==48) ) {
+                if ( (LA23_0==49) ) {
                     alt23=1;
                 }
 
 
                 switch (alt23) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2156:2: () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2166:2: () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2156:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2157:5: 
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2166:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2167:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -5289,16 +5311,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2162:2: ( (lv_operator_2_0= ruleLogicalOrOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2163:1: (lv_operator_2_0= ruleLogicalOrOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2172:2: ( (lv_operator_2_0= ruleLogicalOrOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2173:1: (lv_operator_2_0= ruleLogicalOrOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2163:1: (lv_operator_2_0= ruleLogicalOrOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2164:3: lv_operator_2_0= ruleLogicalOrOperator
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2173:1: (lv_operator_2_0= ruleLogicalOrOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2174:3: lv_operator_2_0= ruleLogicalOrOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getOperatorLogicalOrOperatorEnumRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression4821);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression4848);
             	    lv_operator_2_0=ruleLogicalOrOperator();
 
             	    state._fsp--;
@@ -5320,16 +5342,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2180:2: ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2181:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2190:2: ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2191:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2181:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2182:3: lv_rightExpression_3_0= ruleLogicalAndExpression
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2191:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2192:3: lv_rightExpression_3_0= ruleLogicalAndExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getRightExpressionLogicalAndExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4842);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4869);
             	    lv_rightExpression_3_0=ruleLogicalAndExpression();
 
             	    state._fsp--;
@@ -5381,7 +5403,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLogicalAndExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2206:1: entryRuleLogicalAndExpression returns [EObject current=null] : iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2216:1: entryRuleLogicalAndExpression returns [EObject current=null] : iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF ;
     public final EObject entryRuleLogicalAndExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5389,17 +5411,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2207:2: (iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2208:2: iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2217:2: (iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2218:2: iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF
             {
              newCompositeNode(grammarAccess.getLogicalAndExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression4880);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression4907);
             iv_ruleLogicalAndExpression=ruleLogicalAndExpression();
 
             state._fsp--;
 
              current =iv_ruleLogicalAndExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalAndExpression4890); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalAndExpression4917); 
 
             }
 
@@ -5417,7 +5439,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLogicalAndExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2215:1: ruleLogicalAndExpression returns [EObject current=null] : (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2225:1: ruleLogicalAndExpression returns [EObject current=null] : (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) ;
     public final EObject ruleLogicalAndExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5431,16 +5453,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2218:28: ( (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2219:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2228:28: ( (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2229:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2219:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2220:5: this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2229:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2230:5: this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getComparisonExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression4937);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression4964);
             this_ComparisonExpression_0=ruleComparisonExpression();
 
             state._fsp--;
@@ -5449,23 +5471,23 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     current = this_ComparisonExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2228:1: ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2238:1: ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
             loop24:
             do {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( (LA24_0==49) ) {
+                if ( (LA24_0==50) ) {
                     alt24=1;
                 }
 
 
                 switch (alt24) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2228:2: () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2238:2: () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2228:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2229:5: 
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2238:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2239:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -5475,16 +5497,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2234:2: ( (lv_operator_2_0= ruleLogicalAndOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2235:1: (lv_operator_2_0= ruleLogicalAndOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2244:2: ( (lv_operator_2_0= ruleLogicalAndOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2245:1: (lv_operator_2_0= ruleLogicalAndOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2235:1: (lv_operator_2_0= ruleLogicalAndOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2236:3: lv_operator_2_0= ruleLogicalAndOperator
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2245:1: (lv_operator_2_0= ruleLogicalAndOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2246:3: lv_operator_2_0= ruleLogicalAndOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getOperatorLogicalAndOperatorEnumRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression4967);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression4994);
             	    lv_operator_2_0=ruleLogicalAndOperator();
 
             	    state._fsp--;
@@ -5506,16 +5528,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2252:2: ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2253:1: (lv_rightExpression_3_0= ruleComparisonExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2262:2: ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2263:1: (lv_rightExpression_3_0= ruleComparisonExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2253:1: (lv_rightExpression_3_0= ruleComparisonExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2254:3: lv_rightExpression_3_0= ruleComparisonExpression
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2263:1: (lv_rightExpression_3_0= ruleComparisonExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2264:3: lv_rightExpression_3_0= ruleComparisonExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getRightExpressionComparisonExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression4988);
+            	    pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression5015);
             	    lv_rightExpression_3_0=ruleComparisonExpression();
 
             	    state._fsp--;
@@ -5567,7 +5589,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleComparisonExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2278:1: entryRuleComparisonExpression returns [EObject current=null] : iv_ruleComparisonExpression= ruleComparisonExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2288:1: entryRuleComparisonExpression returns [EObject current=null] : iv_ruleComparisonExpression= ruleComparisonExpression EOF ;
     public final EObject entryRuleComparisonExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5575,17 +5597,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2279:2: (iv_ruleComparisonExpression= ruleComparisonExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2280:2: iv_ruleComparisonExpression= ruleComparisonExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2289:2: (iv_ruleComparisonExpression= ruleComparisonExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2290:2: iv_ruleComparisonExpression= ruleComparisonExpression EOF
             {
              newCompositeNode(grammarAccess.getComparisonExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression5026);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression5053);
             iv_ruleComparisonExpression=ruleComparisonExpression();
 
             state._fsp--;
 
              current =iv_ruleComparisonExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonExpression5036); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonExpression5063); 
 
             }
 
@@ -5603,7 +5625,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleComparisonExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2287:1: ruleComparisonExpression returns [EObject current=null] : (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2297:1: ruleComparisonExpression returns [EObject current=null] : (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) ;
     public final EObject ruleComparisonExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5617,16 +5639,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2290:28: ( (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2291:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2300:28: ( (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2301:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2291:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2292:5: this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2301:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2302:5: this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getComparisonExpressionAccess().getComparisonHigherOpExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5083);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5110);
             this_ComparisonHigherOpExpression_0=ruleComparisonHigherOpExpression();
 
             state._fsp--;
@@ -5635,19 +5657,19 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     current = this_ComparisonHigherOpExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2300:1: ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2310:1: ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( ((LA25_0>=50 && LA25_0<=51)) ) {
+            if ( ((LA25_0>=51 && LA25_0<=52)) ) {
                 alt25=1;
             }
             switch (alt25) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2300:2: () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2310:2: () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2300:2: ()
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2301:5: 
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2310:2: ()
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2311:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -5657,16 +5679,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2306:2: ( (lv_operator_2_0= ruleComparingEQNEQOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2307:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2316:2: ( (lv_operator_2_0= ruleComparingEQNEQOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2317:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2307:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2308:3: lv_operator_2_0= ruleComparingEQNEQOperator
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2317:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2318:3: lv_operator_2_0= ruleComparingEQNEQOperator
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getOperatorComparingEQNEQOperatorEnumRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression5113);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression5140);
                     lv_operator_2_0=ruleComparingEQNEQOperator();
 
                     state._fsp--;
@@ -5688,16 +5710,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2324:2: ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2325:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2334:2: ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2335:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2325:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2326:3: lv_rightExpression_3_0= ruleComparisonHigherOpExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2335:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2336:3: lv_rightExpression_3_0= ruleComparisonHigherOpExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5134);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5161);
                     lv_rightExpression_3_0=ruleComparisonHigherOpExpression();
 
                     state._fsp--;
@@ -5746,7 +5768,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleComparisonHigherOpExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2350:1: entryRuleComparisonHigherOpExpression returns [EObject current=null] : iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2360:1: entryRuleComparisonHigherOpExpression returns [EObject current=null] : iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF ;
     public final EObject entryRuleComparisonHigherOpExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5754,17 +5776,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2351:2: (iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2352:2: iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2361:2: (iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2362:2: iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF
             {
              newCompositeNode(grammarAccess.getComparisonHigherOpExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression5172);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression5199);
             iv_ruleComparisonHigherOpExpression=ruleComparisonHigherOpExpression();
 
             state._fsp--;
 
              current =iv_ruleComparisonHigherOpExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression5182); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression5209); 
 
             }
 
@@ -5782,7 +5804,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleComparisonHigherOpExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2359:1: ruleComparisonHigherOpExpression returns [EObject current=null] : (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2369:1: ruleComparisonHigherOpExpression returns [EObject current=null] : (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) ;
     public final EObject ruleComparisonHigherOpExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5796,16 +5818,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2362:28: ( (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2363:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2372:28: ( (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2373:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2363:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2364:5: this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2373:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2374:5: this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getArithmeticExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5229);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5256);
             this_ArithmeticExpression_0=ruleArithmeticExpression();
 
             state._fsp--;
@@ -5814,19 +5836,19 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     current = this_ArithmeticExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2372:1: ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2382:1: ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( ((LA26_0>=41 && LA26_0<=42)||(LA26_0>=52 && LA26_0<=53)) ) {
+            if ( ((LA26_0>=41 && LA26_0<=42)||(LA26_0>=53 && LA26_0<=54)) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2372:2: () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2382:2: () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2372:2: ()
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2373:5: 
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2382:2: ()
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2383:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -5836,16 +5858,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2378:2: ( (lv_operator_2_0= ruleComparingRelOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2379:1: (lv_operator_2_0= ruleComparingRelOperator )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2388:2: ( (lv_operator_2_0= ruleComparingRelOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2389:1: (lv_operator_2_0= ruleComparingRelOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2379:1: (lv_operator_2_0= ruleComparingRelOperator )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2380:3: lv_operator_2_0= ruleComparingRelOperator
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2389:1: (lv_operator_2_0= ruleComparingRelOperator )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2390:3: lv_operator_2_0= ruleComparingRelOperator
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getOperatorComparingRelOperatorEnumRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression5259);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression5286);
                     lv_operator_2_0=ruleComparingRelOperator();
 
                     state._fsp--;
@@ -5867,16 +5889,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2396:2: ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2397:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2406:2: ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2407:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2397:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2398:3: lv_rightExpression_3_0= ruleArithmeticExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2407:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2408:3: lv_rightExpression_3_0= ruleArithmeticExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getRightExpressionArithmeticExpressionParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5280);
+                    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5307);
                     lv_rightExpression_3_0=ruleArithmeticExpression();
 
                     state._fsp--;
@@ -5925,7 +5947,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleArithmeticExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2422:1: entryRuleArithmeticExpression returns [EObject current=null] : iv_ruleArithmeticExpression= ruleArithmeticExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2432:1: entryRuleArithmeticExpression returns [EObject current=null] : iv_ruleArithmeticExpression= ruleArithmeticExpression EOF ;
     public final EObject entryRuleArithmeticExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5933,17 +5955,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2423:2: (iv_ruleArithmeticExpression= ruleArithmeticExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2424:2: iv_ruleArithmeticExpression= ruleArithmeticExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2433:2: (iv_ruleArithmeticExpression= ruleArithmeticExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2434:2: iv_ruleArithmeticExpression= ruleArithmeticExpression EOF
             {
              newCompositeNode(grammarAccess.getArithmeticExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression5318);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression5345);
             iv_ruleArithmeticExpression=ruleArithmeticExpression();
 
             state._fsp--;
 
              current =iv_ruleArithmeticExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArithmeticExpression5328); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArithmeticExpression5355); 
 
             }
 
@@ -5961,7 +5983,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleArithmeticExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2431:1: ruleArithmeticExpression returns [EObject current=null] : this_AdditionExpression_0= ruleAdditionExpression ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2441:1: ruleArithmeticExpression returns [EObject current=null] : this_AdditionExpression_0= ruleAdditionExpression ;
     public final EObject ruleArithmeticExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5971,13 +5993,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2434:28: (this_AdditionExpression_0= ruleAdditionExpression )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2436:5: this_AdditionExpression_0= ruleAdditionExpression
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2444:28: (this_AdditionExpression_0= ruleAdditionExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2446:5: this_AdditionExpression_0= ruleAdditionExpression
             {
              
                     newCompositeNode(grammarAccess.getArithmeticExpressionAccess().getAdditionExpressionParserRuleCall()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression5374);
+            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression5401);
             this_AdditionExpression_0=ruleAdditionExpression();
 
             state._fsp--;
@@ -6004,7 +6026,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleAdditionExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2452:1: entryRuleAdditionExpression returns [EObject current=null] : iv_ruleAdditionExpression= ruleAdditionExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2462:1: entryRuleAdditionExpression returns [EObject current=null] : iv_ruleAdditionExpression= ruleAdditionExpression EOF ;
     public final EObject entryRuleAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6012,17 +6034,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2453:2: (iv_ruleAdditionExpression= ruleAdditionExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2454:2: iv_ruleAdditionExpression= ruleAdditionExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2463:2: (iv_ruleAdditionExpression= ruleAdditionExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2464:2: iv_ruleAdditionExpression= ruleAdditionExpression EOF
             {
              newCompositeNode(grammarAccess.getAdditionExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression5408);
+            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression5435);
             iv_ruleAdditionExpression=ruleAdditionExpression();
 
             state._fsp--;
 
              current =iv_ruleAdditionExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAdditionExpression5418); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAdditionExpression5445); 
 
             }
 
@@ -6040,7 +6062,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAdditionExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2461:1: ruleAdditionExpression returns [EObject current=null] : (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2471:1: ruleAdditionExpression returns [EObject current=null] : (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) ;
     public final EObject ruleAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6054,16 +6076,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2464:28: ( (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2465:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2474:28: ( (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2475:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2465:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2466:5: this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2475:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2476:5: this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getAdditionExpressionAccess().getMultiplicationExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5465);
+            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5492);
             this_MultiplicationExpression_0=ruleMultiplicationExpression();
 
             state._fsp--;
@@ -6072,23 +6094,23 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     current = this_MultiplicationExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2474:1: ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2484:1: ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
             loop27:
             do {
                 int alt27=2;
                 int LA27_0 = input.LA(1);
 
-                if ( ((LA27_0>=54 && LA27_0<=55)) ) {
+                if ( ((LA27_0>=55 && LA27_0<=56)) ) {
                     alt27=1;
                 }
 
 
                 switch (alt27) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2474:2: () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2484:2: () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2474:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2475:5: 
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2484:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2485:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -6098,16 +6120,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2480:2: ( (lv_operator_2_0= ruleAdditionOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2481:1: (lv_operator_2_0= ruleAdditionOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2490:2: ( (lv_operator_2_0= ruleAdditionOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2491:1: (lv_operator_2_0= ruleAdditionOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2481:1: (lv_operator_2_0= ruleAdditionOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2482:3: lv_operator_2_0= ruleAdditionOperator
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2491:1: (lv_operator_2_0= ruleAdditionOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2492:3: lv_operator_2_0= ruleAdditionOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAdditionExpressionAccess().getOperatorAdditionOperatorEnumRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression5495);
+            	    pushFollow(FollowSets000.FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression5522);
             	    lv_operator_2_0=ruleAdditionOperator();
 
             	    state._fsp--;
@@ -6129,16 +6151,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2498:2: ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2499:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2508:2: ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2509:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2499:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2500:3: lv_rightExpression_3_0= ruleMultiplicationExpression
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2509:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2510:3: lv_rightExpression_3_0= ruleMultiplicationExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAdditionExpressionAccess().getRightExpressionMultiplicationExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5516);
+            	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5543);
             	    lv_rightExpression_3_0=ruleMultiplicationExpression();
 
             	    state._fsp--;
@@ -6190,7 +6212,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleMultiplicationExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2524:1: entryRuleMultiplicationExpression returns [EObject current=null] : iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2534:1: entryRuleMultiplicationExpression returns [EObject current=null] : iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF ;
     public final EObject entryRuleMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6198,17 +6220,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2525:2: (iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2526:2: iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2535:2: (iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2536:2: iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF
             {
              newCompositeNode(grammarAccess.getMultiplicationExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression5554);
+            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression5581);
             iv_ruleMultiplicationExpression=ruleMultiplicationExpression();
 
             state._fsp--;
 
              current =iv_ruleMultiplicationExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMultiplicationExpression5564); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMultiplicationExpression5591); 
 
             }
 
@@ -6226,7 +6248,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleMultiplicationExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2533:1: ruleMultiplicationExpression returns [EObject current=null] : (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2543:1: ruleMultiplicationExpression returns [EObject current=null] : (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) ;
     public final EObject ruleMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6244,17 +6266,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2536:28: ( (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2537:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2546:28: ( (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2547:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2537:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2547:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==55||LA30_0==58) ) {
+            if ( (LA30_0==56||LA30_0==60) ) {
                 alt30=1;
             }
-            else if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_BOOLEAN)||LA30_0==24||LA30_0==43||(LA30_0>=59 && LA30_0<=63)) ) {
+            else if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_BOOLEAN)||LA30_0==24||LA30_0==43||(LA30_0>=61 && LA30_0<=65)) ) {
                 alt30=2;
             }
             else {
@@ -6265,12 +6287,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             }
             switch (alt30) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2538:5: this_UnaryPreExpression_0= ruleUnaryPreExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2548:5: this_UnaryPreExpression_0= ruleUnaryPreExpression
                     {
                      
                             newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getUnaryPreExpressionParserRuleCall_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5611);
+                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5638);
                     this_UnaryPreExpression_0=ruleUnaryPreExpression();
 
                     state._fsp--;
@@ -6283,15 +6305,15 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2547:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2557:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2547:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2548:5: this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2557:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2558:5: this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
                     {
                      
                             newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperandParserRuleCall_1_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression5639);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression5666);
                     this_Operand_1=ruleOperand();
 
                     state._fsp--;
@@ -6300,23 +6322,23 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                             current = this_Operand_1; 
                             afterParserOrEnumRuleCall();
                         
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2556:1: ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2566:1: ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
                     loop29:
                     do {
                         int alt29=2;
                         int LA29_0 = input.LA(1);
 
-                        if ( ((LA29_0>=56 && LA29_0<=57)) ) {
+                        if ( ((LA29_0>=57 && LA29_0<=59)) ) {
                             alt29=1;
                         }
 
 
                         switch (alt29) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2556:2: () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2566:2: () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2556:2: ()
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2557:5: 
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2566:2: ()
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2567:5: 
                     	    {
 
                     	            current = forceCreateModelElementAndSet(
@@ -6326,16 +6348,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     	    }
 
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2562:2: ( (lv_operator_3_0= ruleMultiplicationOperator ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2563:1: (lv_operator_3_0= ruleMultiplicationOperator )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2572:2: ( (lv_operator_3_0= ruleMultiplicationOperator ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2573:1: (lv_operator_3_0= ruleMultiplicationOperator )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2563:1: (lv_operator_3_0= ruleMultiplicationOperator )
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2564:3: lv_operator_3_0= ruleMultiplicationOperator
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2573:1: (lv_operator_3_0= ruleMultiplicationOperator )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2574:3: lv_operator_3_0= ruleMultiplicationOperator
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperatorMultiplicationOperatorEnumRuleCall_1_1_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression5669);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression5696);
                     	    lv_operator_3_0=ruleMultiplicationOperator();
 
                     	    state._fsp--;
@@ -6357,20 +6379,20 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     	    }
 
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2580:2: ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2581:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2590:2: ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2591:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2581:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2582:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2591:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2592:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2582:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2592:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
                     	    int alt28=2;
                     	    int LA28_0 = input.LA(1);
 
-                    	    if ( (LA28_0==55||LA28_0==58) ) {
+                    	    if ( (LA28_0==56||LA28_0==60) ) {
                     	        alt28=1;
                     	    }
-                    	    else if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_BOOLEAN)||LA28_0==24||LA28_0==43||(LA28_0>=59 && LA28_0<=63)) ) {
+                    	    else if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_BOOLEAN)||LA28_0==24||LA28_0==43||(LA28_0>=61 && LA28_0<=65)) ) {
                     	        alt28=2;
                     	    }
                     	    else {
@@ -6381,12 +6403,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     	    }
                     	    switch (alt28) {
                     	        case 1 :
-                    	            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2583:3: lv_rightExpression_4_1= ruleUnaryPreExpression
+                    	            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2593:3: lv_rightExpression_4_1= ruleUnaryPreExpression
                     	            {
                     	             
                     	            	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0()); 
                     	            	    
-                    	            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5692);
+                    	            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5719);
                     	            lv_rightExpression_4_1=ruleUnaryPreExpression();
 
                     	            state._fsp--;
@@ -6406,12 +6428,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2598:8: lv_rightExpression_4_2= ruleOperand
+                    	            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2608:8: lv_rightExpression_4_2= ruleOperand
                     	            {
                     	             
                     	            	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionOperandParserRuleCall_1_1_2_0_1()); 
                     	            	    
-                    	            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression5711);
+                    	            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression5738);
                     	            lv_rightExpression_4_2=ruleOperand();
 
                     	            state._fsp--;
@@ -6475,7 +6497,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleUnaryPreExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2624:1: entryRuleUnaryPreExpression returns [EObject current=null] : iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2634:1: entryRuleUnaryPreExpression returns [EObject current=null] : iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF ;
     public final EObject entryRuleUnaryPreExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6483,17 +6505,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2625:2: (iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2626:2: iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2635:2: (iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2636:2: iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF
             {
              newCompositeNode(grammarAccess.getUnaryPreExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression5753);
+            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression5780);
             iv_ruleUnaryPreExpression=ruleUnaryPreExpression();
 
             state._fsp--;
 
              current =iv_ruleUnaryPreExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUnaryPreExpression5763); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUnaryPreExpression5790); 
 
             }
 
@@ -6511,7 +6533,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleUnaryPreExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2633:1: ruleUnaryPreExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2643:1: ruleUnaryPreExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) ;
     public final EObject ruleUnaryPreExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6523,14 +6545,14 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2636:28: ( ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2637:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2646:28: ( ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2647:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2637:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2637:2: () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2647:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2647:2: () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2637:2: ()
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2638:5: 
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2647:2: ()
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2648:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6540,16 +6562,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2643:2: ( (lv_operator_1_0= ruleUnaryPreOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2644:1: (lv_operator_1_0= ruleUnaryPreOperator )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2653:2: ( (lv_operator_1_0= ruleUnaryPreOperator ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2654:1: (lv_operator_1_0= ruleUnaryPreOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2644:1: (lv_operator_1_0= ruleUnaryPreOperator )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2645:3: lv_operator_1_0= ruleUnaryPreOperator
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2654:1: (lv_operator_1_0= ruleUnaryPreOperator )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2655:3: lv_operator_1_0= ruleUnaryPreOperator
             {
              
             	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getOperatorUnaryPreOperatorEnumRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression5818);
+            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression5845);
             lv_operator_1_0=ruleUnaryPreOperator();
 
             state._fsp--;
@@ -6571,16 +6593,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2661:2: ( (lv_enclosedExpression_2_0= ruleOperand ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2662:1: (lv_enclosedExpression_2_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2671:2: ( (lv_enclosedExpression_2_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2672:1: (lv_enclosedExpression_2_0= ruleOperand )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2662:1: (lv_enclosedExpression_2_0= ruleOperand )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2663:3: lv_enclosedExpression_2_0= ruleOperand
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2672:1: (lv_enclosedExpression_2_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2673:3: lv_enclosedExpression_2_0= ruleOperand
             {
              
             	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionOperandParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleUnaryPreExpression5839);
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleUnaryPreExpression5866);
             lv_enclosedExpression_2_0=ruleOperand();
 
             state._fsp--;
@@ -6622,8 +6644,161 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
     // $ANTLR end "ruleUnaryPreExpression"
 
 
+    // $ANTLR start "entryRuleTypeCastExpression"
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2697:1: entryRuleTypeCastExpression returns [EObject current=null] : iv_ruleTypeCastExpression= ruleTypeCastExpression EOF ;
+    public final EObject entryRuleTypeCastExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleTypeCastExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2698:2: (iv_ruleTypeCastExpression= ruleTypeCastExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2699:2: iv_ruleTypeCastExpression= ruleTypeCastExpression EOF
+            {
+             newCompositeNode(grammarAccess.getTypeCastExpressionRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression5902);
+            iv_ruleTypeCastExpression=ruleTypeCastExpression();
+
+            state._fsp--;
+
+             current =iv_ruleTypeCastExpression; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeCastExpression5912); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTypeCastExpression"
+
+
+    // $ANTLR start "ruleTypeCastExpression"
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2706:1: ruleTypeCastExpression returns [EObject current=null] : ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) ) ;
+    public final EObject ruleTypeCastExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_enclosedExpression_4_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2709:28: ( ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2710:1: ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2710:1: ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2710:2: () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2710:2: ()
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2711:5: 
+            {
+
+                    current = forceCreateModelElement(
+                        grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_0(),
+                        current);
+                
+
+            }
+
+            otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleTypeCastExpression5958); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1());
+                
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2720:1: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2721:1: ( ruleDATATYPE )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2721:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2722:3: ruleDATATYPE
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getTypeCastExpressionRule());
+            	        }
+                    
+             
+            	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_2_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression5981);
+            ruleDATATYPE();
+
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleTypeCastExpression5993); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_3());
+                
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2739:1: ( (lv_enclosedExpression_4_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2740:1: (lv_enclosedExpression_4_0= ruleOperand )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2740:1: (lv_enclosedExpression_4_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2741:3: lv_enclosedExpression_4_0= ruleOperand
+            {
+             
+            	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_4_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleTypeCastExpression6014);
+            lv_enclosedExpression_4_0=ruleOperand();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getTypeCastExpressionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"enclosedExpression",
+                    		lv_enclosedExpression_4_0, 
+                    		"Operand");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTypeCastExpression"
+
+
     // $ANTLR start "entryRuleOperand"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2687:1: entryRuleOperand returns [EObject current=null] : iv_ruleOperand= ruleOperand EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2765:1: entryRuleOperand returns [EObject current=null] : iv_ruleOperand= ruleOperand EOF ;
     public final EObject entryRuleOperand() throws RecognitionException {
         EObject current = null;
 
@@ -6631,17 +6806,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2688:2: (iv_ruleOperand= ruleOperand EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2689:2: iv_ruleOperand= ruleOperand EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2766:2: (iv_ruleOperand= ruleOperand EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2767:2: iv_ruleOperand= ruleOperand EOF
             {
              newCompositeNode(grammarAccess.getOperandRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_entryRuleOperand5875);
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_entryRuleOperand6050);
             iv_ruleOperand=ruleOperand();
 
             state._fsp--;
 
              current =iv_ruleOperand; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperand5885); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperand6060); 
 
             }
 
@@ -6659,7 +6834,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleOperand"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2696:1: ruleOperand returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2774:1: ruleOperand returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) ;
     public final EObject ruleOperand() throws RecognitionException {
         EObject current = null;
 
@@ -6681,10 +6856,10 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2699:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2700:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2777:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2778:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2700:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2778:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
             int alt31=6;
             switch ( input.LA(1) ) {
             case 24:
@@ -6708,15 +6883,15 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                 case 16:
                 case 21:
                 case 25:
+                case 28:
                 case 30:
                 case 33:
                 case 38:
                 case 39:
                 case 41:
                 case 42:
-                case 44:
                 case 45:
-                case 48:
+                case 46:
                 case 49:
                 case 50:
                 case 51:
@@ -6726,18 +6901,20 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                 case 55:
                 case 56:
                 case 57:
+                case 58:
+                case 59:
                     {
                     alt31=3;
                     }
                     break;
-                case 28:
+                case 44:
                     {
                     int LA31_6 = input.LA(3);
 
                     if ( (LA31_6==RULE_ID) ) {
                         alt31=5;
                     }
-                    else if ( ((LA31_6>=59 && LA31_6<=63)) ) {
+                    else if ( ((LA31_6>=61 && LA31_6<=65)) ) {
                         alt31=3;
                     }
                     else {
@@ -6762,11 +6939,11 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                 }
                 break;
-            case 59:
-            case 60:
             case 61:
             case 62:
             case 63:
+            case 64:
+            case 65:
                 {
                 alt31=6;
                 }
@@ -6780,19 +6957,19 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             switch (alt31) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2700:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2778:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2700:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2700:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2778:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2778:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleOperand5923); 
+                    otherlv_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleOperand6098); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getOperandAccess().getLeftParenthesisKeyword_0_0());
                         
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getExpressionParserRuleCall_0_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleOperand5945);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleOperand6120);
                     this_Expression_1=ruleExpression();
 
                     state._fsp--;
@@ -6801,7 +6978,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                             current = this_Expression_1; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_2=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleOperand5956); 
+                    otherlv_2=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleOperand6131); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getOperandAccess().getRightParenthesisKeyword_0_2());
                         
@@ -6812,12 +6989,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2719:5: this_LiteralExpression_3= ruleLiteralExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2797:5: this_LiteralExpression_3= ruleLiteralExpression
                     {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getLiteralExpressionParserRuleCall_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleOperand5985);
+                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleOperand6160);
                     this_LiteralExpression_3=ruleLiteralExpression();
 
                     state._fsp--;
@@ -6830,12 +7007,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2729:5: this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2807:5: this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression
                     {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getExtendedTypedNamedElementExpressionParserRuleCall_2()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand6012);
+                    pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand6187);
                     this_ExtendedTypedNamedElementExpression_4=ruleExtendedTypedNamedElementExpression();
 
                     state._fsp--;
@@ -6848,12 +7025,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2739:5: this_OperationCall_5= ruleOperationCall
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2817:5: this_OperationCall_5= ruleOperationCall
                     {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperand6039);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperand6214);
                     this_OperationCall_5=ruleOperationCall();
 
                     state._fsp--;
@@ -6866,12 +7043,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2749:5: this_TriggerMessageExpression_6= ruleTriggerMessageExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2827:5: this_TriggerMessageExpression_6= ruleTriggerMessageExpression
                     {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_ruleOperand6066);
+                    pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_ruleOperand6241);
                     this_TriggerMessageExpression_6=ruleTriggerMessageExpression();
 
                     state._fsp--;
@@ -6884,12 +7061,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2759:5: this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2837:5: this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression
                     {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand6093);
+                    pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand6268);
                     this_NoAttributeSelectorExpression_7=ruleNoAttributeSelectorExpression();
 
                     state._fsp--;
@@ -6922,7 +7099,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLiteralExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2775:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2853:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
     public final EObject entryRuleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6930,17 +7107,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2776:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2777:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2854:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2855:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
             {
              newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression6128);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression6303);
             iv_ruleLiteralExpression=ruleLiteralExpression();
 
             state._fsp--;
 
              current =iv_ruleLiteralExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression6138); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression6313); 
 
             }
 
@@ -6958,7 +7135,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLiteralExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2784:1: ruleLiteralExpression returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLiteral ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2862:1: ruleLiteralExpression returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLiteral ) ) ) ;
     public final EObject ruleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -6968,14 +7145,14 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2787:28: ( ( () ( (lv_value_1_0= ruleLiteral ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2788:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2865:28: ( ( () ( (lv_value_1_0= ruleLiteral ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2866:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2788:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2788:2: () ( (lv_value_1_0= ruleLiteral ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2866:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2866:2: () ( (lv_value_1_0= ruleLiteral ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2788:2: ()
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2789:5: 
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2866:2: ()
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2867:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6985,16 +7162,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2794:2: ( (lv_value_1_0= ruleLiteral ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2795:1: (lv_value_1_0= ruleLiteral )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2872:2: ( (lv_value_1_0= ruleLiteral ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2873:1: (lv_value_1_0= ruleLiteral )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2795:1: (lv_value_1_0= ruleLiteral )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2796:3: lv_value_1_0= ruleLiteral
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2873:1: (lv_value_1_0= ruleLiteral )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2874:3: lv_value_1_0= ruleLiteral
             {
              
             	        newCompositeNode(grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_ruleLiteralExpression6193);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_ruleLiteralExpression6368);
             lv_value_1_0=ruleLiteral();
 
             state._fsp--;
@@ -7037,7 +7214,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleLiteral"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2820:1: entryRuleLiteral returns [String current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2898:1: entryRuleLiteral returns [String current=null] : iv_ruleLiteral= ruleLiteral EOF ;
     public final String entryRuleLiteral() throws RecognitionException {
         String current = null;
 
@@ -7045,17 +7222,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2821:2: (iv_ruleLiteral= ruleLiteral EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2822:2: iv_ruleLiteral= ruleLiteral EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2899:2: (iv_ruleLiteral= ruleLiteral EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2900:2: iv_ruleLiteral= ruleLiteral EOF
             {
              newCompositeNode(grammarAccess.getLiteralRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_entryRuleLiteral6230);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_entryRuleLiteral6405);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
 
              current =iv_ruleLiteral.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteral6241); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteral6416); 
 
             }
 
@@ -7073,7 +7250,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLiteral"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2829:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2907:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' ) ;
     public final AntlrDatatypeRuleToken ruleLiteral() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7085,10 +7262,10 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2832:28: ( (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2833:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2910:28: ( (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2911:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2833:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2911:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
             int alt32=4;
             switch ( input.LA(1) ) {
             case RULE_NUMBER:
@@ -7120,9 +7297,9 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             switch (alt32) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2833:6: this_NUMBER_0= RULE_NUMBER
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2911:6: this_NUMBER_0= RULE_NUMBER
                     {
-                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_RULE_NUMBER_in_ruleLiteral6281); 
+                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_RULE_NUMBER_in_ruleLiteral6456); 
 
                     		current.merge(this_NUMBER_0);
                         
@@ -7133,9 +7310,9 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2841:10: this_BOOLEAN_1= RULE_BOOLEAN
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2919:10: this_BOOLEAN_1= RULE_BOOLEAN
                     {
-                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_ruleLiteral6307); 
+                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_ruleLiteral6482); 
 
                     		current.merge(this_BOOLEAN_1);
                         
@@ -7146,9 +7323,9 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2849:10: this_INT_2= RULE_INT
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2927:10: this_INT_2= RULE_INT
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteral6333); 
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteral6508); 
 
                     		current.merge(this_INT_2);
                         
@@ -7159,9 +7336,9 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2858:2: kw= 'null'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2936:2: kw= 'null'
                     {
-                    kw=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleLiteral6357); 
+                    kw=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleLiteral6532); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLiteralAccess().getNullKeyword_3()); 
@@ -7190,7 +7367,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleExtendedTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2871:1: entryRuleExtendedTypedNamedElementExpression returns [EObject current=null] : iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2949:1: entryRuleExtendedTypedNamedElementExpression returns [EObject current=null] : iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF ;
     public final EObject entryRuleExtendedTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7198,17 +7375,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2872:2: (iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2873:2: iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2950:2: (iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2951:2: iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF
             {
              newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression6397);
+            pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression6572);
             iv_ruleExtendedTypedNamedElementExpression=ruleExtendedTypedNamedElementExpression();
 
             state._fsp--;
 
              current =iv_ruleExtendedTypedNamedElementExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression6407); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression6582); 
 
             }
 
@@ -7226,7 +7403,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleExtendedTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2880:1: ruleExtendedTypedNamedElementExpression returns [EObject current=null] : (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2958:1: ruleExtendedTypedNamedElementExpression returns [EObject current=null] : (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) ;
     public final EObject ruleExtendedTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7241,16 +7418,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2883:28: ( (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2884:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2961:28: ( (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2962:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2884:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2885:5: this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2962:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2963:5: this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getTypedNamedElementExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression6454);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression6629);
             this_TypedNamedElementExpression_0=ruleTypedNamedElementExpression();
 
             state._fsp--;
@@ -7259,25 +7436,25 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     current = this_TypedNamedElementExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2893:1: ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2971:1: ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
             int alt33=3;
             int LA33_0 = input.LA(1);
 
-            if ( (LA33_0==28) ) {
+            if ( (LA33_0==44) ) {
                 alt33=1;
             }
-            else if ( ((LA33_0>=44 && LA33_0<=45)) ) {
+            else if ( ((LA33_0>=45 && LA33_0<=46)) ) {
                 alt33=2;
             }
             switch (alt33) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2893:2: ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2971:2: ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2893:2: ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2893:3: () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2971:2: ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2971:3: () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2893:3: ()
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2894:5: 
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2971:3: ()
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2972:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -7287,20 +7464,20 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    otherlv_2=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleExtendedTypedNamedElementExpression6476); 
+                    otherlv_2=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleExtendedTypedNamedElementExpression6651); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getFullStopKeyword_1_0_1());
+                        	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1());
                         
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2903:1: ( (lv_position_3_0= rulePositionSelectorExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2904:1: (lv_position_3_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2981:1: ( (lv_position_3_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2982:1: (lv_position_3_0= rulePositionSelectorExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2904:1: (lv_position_3_0= rulePositionSelectorExpression )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2905:3: lv_position_3_0= rulePositionSelectorExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2982:1: (lv_position_3_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2983:3: lv_position_3_0= rulePositionSelectorExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_1_0_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression6497);
+                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression6672);
                     lv_position_3_0=rulePositionSelectorExpression();
 
                     state._fsp--;
@@ -7329,13 +7506,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2922:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3000:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2922:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2922:7: () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3000:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3000:7: () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2922:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2923:5: 
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3000:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3001:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -7345,16 +7522,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2928:2: ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2929:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3006:2: ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3007:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2929:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2930:3: lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3007:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3008:3: lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorIncrementDecrementOperatorExpressionEnumRuleCall_1_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression6535);
+                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression6710);
                     lv_incrementDecrementOperator_5_0=ruleIncrementDecrementOperatorExpression();
 
                     state._fsp--;
@@ -7406,7 +7583,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2954:1: entryRuleTypedNamedElementExpression returns [EObject current=null] : iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3032:1: entryRuleTypedNamedElementExpression returns [EObject current=null] : iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF ;
     public final EObject entryRuleTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7414,17 +7591,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2955:2: (iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2956:2: iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3033:2: (iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3034:2: iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF
             {
              newCompositeNode(grammarAccess.getTypedNamedElementExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression6574);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression6749);
             iv_ruleTypedNamedElementExpression=ruleTypedNamedElementExpression();
 
             state._fsp--;
 
              current =iv_ruleTypedNamedElementExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypedNamedElementExpression6584); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypedNamedElementExpression6759); 
 
             }
 
@@ -7442,37 +7619,37 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2963:1: ruleTypedNamedElementExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3041:1: ruleTypedNamedElementExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* ) ;
     public final EObject ruleTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        EObject lv_indices_2_0 = null;
+        EObject lv_elementAccessors_1_1 = null;
+
+        EObject lv_elementAccessors_1_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2966:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2967:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3044:28: ( ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3045:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2967:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2967:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3045:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3045:2: ( (otherlv_0= RULE_ID ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )*
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2967:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2968:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3045:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3046:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2968:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2969:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3046:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3047:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getTypedNamedElementExpressionRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression6629); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression6804); 
 
             		newLeafNode(otherlv_0, grammarAccess.getTypedNamedElementExpressionAccess().getTypedNamedElementTypedNamedElementCrossReference_0_0()); 
             	
@@ -7482,66 +7659,103 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2980:2: (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )*
-            loop34:
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3058:2: ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )*
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA34_0==38) ) {
-                    alt34=1;
+                if ( (LA35_0==28||LA35_0==38) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2980:4: otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']'
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3059:1: ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) )
             	    {
-            	    otherlv_1=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleTypedNamedElementExpression6642); 
-
-            	        	newLeafNode(otherlv_1, grammarAccess.getTypedNamedElementExpressionAccess().getLeftSquareBracketKeyword_1_0());
-            	        
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2984:1: ( (lv_indices_2_0= ruleArithmeticExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2985:1: (lv_indices_2_0= ruleArithmeticExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3059:1: ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3060:1: (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2985:1: (lv_indices_2_0= ruleArithmeticExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:2986:3: lv_indices_2_0= ruleArithmeticExpression
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getIndicesArithmeticExpressionParserRuleCall_1_1_0()); 
-            	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleTypedNamedElementExpression6663);
-            	    lv_indices_2_0=ruleArithmeticExpression();
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3060:1: (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression )
+            	    int alt34=2;
+            	    int LA34_0 = input.LA(1);
 
-            	    state._fsp--;
+            	    if ( (LA34_0==38) ) {
+            	        alt34=1;
+            	    }
+            	    else if ( (LA34_0==28) ) {
+            	        alt34=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 34, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt34) {
+            	        case 1 :
+            	            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3061:3: lv_elementAccessors_1_1= ruleArrayIndexExpression
+            	            {
+            	             
+            	            	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0()); 
+            	            	    
+            	            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression6827);
+            	            lv_elementAccessors_1_1=ruleArrayIndexExpression();
+
+            	            state._fsp--;
 
 
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"indices",
-            	            		lv_indices_2_0, 
-            	            		"ArithmeticExpression");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
+            	            	        if (current==null) {
+            	            	            current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
+            	            	        }
+            	                   		add(
+            	                   			current, 
+            	                   			"elementAccessors",
+            	                    		lv_elementAccessors_1_1, 
+            	                    		"ArrayIndexExpression");
+            	            	        afterParserOrEnumRuleCall();
+            	            	    
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3076:8: lv_elementAccessors_1_2= ruleAttributeAccessorExpression
+            	            {
+            	             
+            	            	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1()); 
+            	            	    
+            	            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression6846);
+            	            lv_elementAccessors_1_2=ruleAttributeAccessorExpression();
+
+            	            state._fsp--;
+
+
+            	            	        if (current==null) {
+            	            	            current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
+            	            	        }
+            	                   		add(
+            	                   			current, 
+            	                   			"elementAccessors",
+            	                    		lv_elementAccessors_1_2, 
+            	                    		"AttributeAccessorExpression");
+            	            	        afterParserOrEnumRuleCall();
+            	            	    
+
+            	            }
+            	            break;
 
             	    }
 
 
             	    }
 
-            	    otherlv_3=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleTypedNamedElementExpression6675); 
-
-            	        	newLeafNode(otherlv_3, grammarAccess.getTypedNamedElementExpressionAccess().getRightSquareBracketKeyword_1_2());
-            	        
 
             	    }
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop35;
                 }
             } while (true);
 
@@ -7565,8 +7779,220 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
     // $ANTLR end "ruleTypedNamedElementExpression"
 
 
+    // $ANTLR start "entryRuleArrayIndexExpression"
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3102:1: entryRuleArrayIndexExpression returns [EObject current=null] : iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF ;
+    public final EObject entryRuleArrayIndexExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleArrayIndexExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3103:2: (iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3104:2: iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF
+            {
+             newCompositeNode(grammarAccess.getArrayIndexExpressionRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression6886);
+            iv_ruleArrayIndexExpression=ruleArrayIndexExpression();
+
+            state._fsp--;
+
+             current =iv_ruleArrayIndexExpression; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayIndexExpression6896); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleArrayIndexExpression"
+
+
+    // $ANTLR start "ruleArrayIndexExpression"
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3111:1: ruleArrayIndexExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' ) ;
+    public final EObject ruleArrayIndexExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        EObject lv_index_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3114:28: ( (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3115:1: (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3115:1: (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3115:3: otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']'
+            {
+            otherlv_0=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleArrayIndexExpression6933); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getArrayIndexExpressionAccess().getLeftSquareBracketKeyword_0());
+                
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3119:1: ( (lv_index_1_0= ruleArithmeticExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3120:1: (lv_index_1_0= ruleArithmeticExpression )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3120:1: (lv_index_1_0= ruleArithmeticExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3121:3: lv_index_1_0= ruleArithmeticExpression
+            {
+             
+            	        newCompositeNode(grammarAccess.getArrayIndexExpressionAccess().getIndexArithmeticExpressionParserRuleCall_1_0()); 
+            	    
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression6954);
+            lv_index_1_0=ruleArithmeticExpression();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getArrayIndexExpressionRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"index",
+                    		lv_index_1_0, 
+                    		"ArithmeticExpression");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleArrayIndexExpression6966); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getArrayIndexExpressionAccess().getRightSquareBracketKeyword_2());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleArrayIndexExpression"
+
+
+    // $ANTLR start "entryRuleAttributeAccessorExpression"
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3149:1: entryRuleAttributeAccessorExpression returns [EObject current=null] : iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF ;
+    public final EObject entryRuleAttributeAccessorExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAttributeAccessorExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3150:2: (iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3151:2: iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF
+            {
+             newCompositeNode(grammarAccess.getAttributeAccessorExpressionRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression7002);
+            iv_ruleAttributeAccessorExpression=ruleAttributeAccessorExpression();
+
+            state._fsp--;
+
+             current =iv_ruleAttributeAccessorExpression; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributeAccessorExpression7012); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAttributeAccessorExpression"
+
+
+    // $ANTLR start "ruleAttributeAccessorExpression"
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3158:1: ruleAttributeAccessorExpression returns [EObject current=null] : (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) ) ;
+    public final EObject ruleAttributeAccessorExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3161:28: ( (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3162:1: (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3162:1: (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3162:3: otherlv_0= '.' ( (otherlv_1= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleAttributeAccessorExpression7049); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getAttributeAccessorExpressionAccess().getFullStopKeyword_0());
+                
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3166:1: ( (otherlv_1= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3167:1: (otherlv_1= RULE_ID )
+            {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3167:1: (otherlv_1= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3168:3: otherlv_1= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getAttributeAccessorExpressionRule());
+            	        }
+                    
+            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression7069); 
+
+            		newLeafNode(otherlv_1, grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAttributeCrossReference_1_0()); 
+            	
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAttributeAccessorExpression"
+
+
     // $ANTLR start "entryRuleNoAttributeSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3014:1: entryRuleNoAttributeSelectorExpression returns [EObject current=null] : iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3187:1: entryRuleNoAttributeSelectorExpression returns [EObject current=null] : iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF ;
     public final EObject entryRuleNoAttributeSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7574,17 +8000,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3015:2: (iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3016:2: iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3188:2: (iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3189:2: iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF
             {
              newCompositeNode(grammarAccess.getNoAttributeSelectorExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression6713);
+            pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression7105);
             iv_ruleNoAttributeSelectorExpression=ruleNoAttributeSelectorExpression();
 
             state._fsp--;
 
              current =iv_ruleNoAttributeSelectorExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression6723); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression7115); 
 
             }
 
@@ -7602,7 +8028,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleNoAttributeSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3023:1: ruleNoAttributeSelectorExpression returns [EObject current=null] : ( (lv_position_0_0= rulePositionSelectorExpression ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3196:1: ruleNoAttributeSelectorExpression returns [EObject current=null] : ( (lv_position_0_0= rulePositionSelectorExpression ) ) ;
     public final EObject ruleNoAttributeSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7612,19 +8038,19 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3026:28: ( ( (lv_position_0_0= rulePositionSelectorExpression ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3027:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3199:28: ( ( (lv_position_0_0= rulePositionSelectorExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3200:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3027:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3028:1: (lv_position_0_0= rulePositionSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3200:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3201:1: (lv_position_0_0= rulePositionSelectorExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3028:1: (lv_position_0_0= rulePositionSelectorExpression )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3029:3: lv_position_0_0= rulePositionSelectorExpression
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3201:1: (lv_position_0_0= rulePositionSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3202:3: lv_position_0_0= rulePositionSelectorExpression
             {
              
             	        newCompositeNode(grammarAccess.getNoAttributeSelectorExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression6768);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression7160);
             lv_position_0_0=rulePositionSelectorExpression();
 
             state._fsp--;
@@ -7664,7 +8090,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRulePositionSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3053:1: entryRulePositionSelectorExpression returns [EObject current=null] : iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3226:1: entryRulePositionSelectorExpression returns [EObject current=null] : iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF ;
     public final EObject entryRulePositionSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7672,17 +8098,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3054:2: (iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3055:2: iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3227:2: (iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3228:2: iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF
             {
              newCompositeNode(grammarAccess.getPositionSelectorExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression6803);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression7195);
             iv_rulePositionSelectorExpression=rulePositionSelectorExpression();
 
             state._fsp--;
 
              current =iv_rulePositionSelectorExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePositionSelectorExpression6813); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePositionSelectorExpression7205); 
 
             }
 
@@ -7700,7 +8126,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "rulePositionSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3062:1: rulePositionSelectorExpression returns [EObject current=null] : ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3235:1: rulePositionSelectorExpression returns [EObject current=null] : ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) ;
     public final EObject rulePositionSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -7713,22 +8139,22 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3065:28: ( ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3066:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3238:28: ( ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3239:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3066:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3066:2: ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3239:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3239:2: ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3066:2: ( (lv_kind_0_0= rulePositionSelectorKind ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3067:1: (lv_kind_0_0= rulePositionSelectorKind )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3239:2: ( (lv_kind_0_0= rulePositionSelectorKind ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3240:1: (lv_kind_0_0= rulePositionSelectorKind )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3067:1: (lv_kind_0_0= rulePositionSelectorKind )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3068:3: lv_kind_0_0= rulePositionSelectorKind
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3240:1: (lv_kind_0_0= rulePositionSelectorKind )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3241:3: lv_kind_0_0= rulePositionSelectorKind
             {
              
             	        newCompositeNode(grammarAccess.getPositionSelectorExpressionAccess().getKindPositionSelectorKindEnumRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression6859);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression7251);
             lv_kind_0_0=rulePositionSelectorKind();
 
             state._fsp--;
@@ -7750,31 +8176,31 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3084:2: (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3257:2: (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA35_0==28) ) {
-                alt35=1;
+            if ( (LA36_0==44) ) {
+                alt36=1;
             }
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3084:4: otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3257:4: otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) )
                     {
-                    otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_rulePositionSelectorExpression6872); 
+                    otherlv_1=(Token)match(input,44,FollowSets000.FOLLOW_44_in_rulePositionSelectorExpression7264); 
 
-                        	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getFullStopKeyword_1_0());
+                        	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
                         
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3088:1: ( (lv_successor_2_0= rulePositionSelectorExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3089:1: (lv_successor_2_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3261:1: ( (lv_successor_2_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3262:1: (lv_successor_2_0= rulePositionSelectorExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3089:1: (lv_successor_2_0= rulePositionSelectorExpression )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3090:3: lv_successor_2_0= rulePositionSelectorExpression
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3262:1: (lv_successor_2_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3263:3: lv_successor_2_0= rulePositionSelectorExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getPositionSelectorExpressionAccess().getSuccessorPositionSelectorExpressionParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression6893);
+                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression7285);
                     lv_successor_2_0=rulePositionSelectorExpression();
 
                     state._fsp--;
@@ -7823,7 +8249,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleOperationCall"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3114:1: entryRuleOperationCall returns [EObject current=null] : iv_ruleOperationCall= ruleOperationCall EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3287:1: entryRuleOperationCall returns [EObject current=null] : iv_ruleOperationCall= ruleOperationCall EOF ;
     public final EObject entryRuleOperationCall() throws RecognitionException {
         EObject current = null;
 
@@ -7831,17 +8257,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3115:2: (iv_ruleOperationCall= ruleOperationCall EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3116:2: iv_ruleOperationCall= ruleOperationCall EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3288:2: (iv_ruleOperationCall= ruleOperationCall EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3289:2: iv_ruleOperationCall= ruleOperationCall EOF
             {
              newCompositeNode(grammarAccess.getOperationCallRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_entryRuleOperationCall6931);
+            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_entryRuleOperationCall7323);
             iv_ruleOperationCall=ruleOperationCall();
 
             state._fsp--;
 
              current =iv_ruleOperationCall; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCall6941); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCall7333); 
 
             }
 
@@ -7859,7 +8285,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleOperationCall"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3123:1: ruleOperationCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3296:1: ruleOperationCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleOperationCall() throws RecognitionException {
         EObject current = null;
 
@@ -7875,24 +8301,24 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3126:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3127:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3299:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3300:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3127:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3127:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3300:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3300:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')'
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3127:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3128:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3300:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3301:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3128:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3129:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3301:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3302:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getOperationCallRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleOperationCall6986); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleOperationCall7378); 
 
             		newLeafNode(otherlv_0, grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_0_0()); 
             	
@@ -7902,31 +8328,31 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleOperationCall6998); 
+            otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleOperationCall7390); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getOperationCallAccess().getLeftParenthesisKeyword_1());
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3144:1: ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3317:1: ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==RULE_ID) ) {
-                alt37=1;
+            if ( (LA38_0==RULE_ID) ) {
+                alt38=1;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3144:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3317:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3144:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3145:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3317:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3318:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3145:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3146:3: lv_parameterBinding_2_0= ruleParamaterBinding
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3318:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3319:3: lv_parameterBinding_2_0= ruleParamaterBinding
                     {
                      
                     	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall7020);
+                    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall7412);
                     lv_parameterBinding_2_0=ruleParamaterBinding();
 
                     state._fsp--;
@@ -7948,35 +8374,35 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3162:2: (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
-                    loop36:
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:2: (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
+                    loop37:
                     do {
-                        int alt36=2;
-                        int LA36_0 = input.LA(1);
+                        int alt37=2;
+                        int LA37_0 = input.LA(1);
 
-                        if ( (LA36_0==15) ) {
-                            alt36=1;
+                        if ( (LA37_0==15) ) {
+                            alt37=1;
                         }
 
 
-                        switch (alt36) {
+                        switch (alt37) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3162:4: otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:4: otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleOperationCall7033); 
+                    	    otherlv_3=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleOperationCall7425); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getOperationCallAccess().getCommaKeyword_2_1_0());
                     	        
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3166:1: ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3167:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3339:1: ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3340:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3167:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
-                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3168:3: lv_parameterBinding_4_0= ruleParamaterBinding
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3340:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
+                    	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3341:3: lv_parameterBinding_4_0= ruleParamaterBinding
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_2_1_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall7054);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall7446);
                     	    lv_parameterBinding_4_0=ruleParamaterBinding();
 
                     	    state._fsp--;
@@ -8003,7 +8429,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     	    break;
 
                     	default :
-                    	    break loop36;
+                    	    break loop37;
                         }
                     } while (true);
 
@@ -8013,7 +8439,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_5=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleOperationCall7070); 
+            otherlv_5=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleOperationCall7462); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_3());
                 
@@ -8038,7 +8464,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleTriggerMessageExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3196:1: entryRuleTriggerMessageExpression returns [EObject current=null] : iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3369:1: entryRuleTriggerMessageExpression returns [EObject current=null] : iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF ;
     public final EObject entryRuleTriggerMessageExpression() throws RecognitionException {
         EObject current = null;
 
@@ -8046,17 +8472,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3197:2: (iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3198:2: iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3370:2: (iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3371:2: iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF
             {
              newCompositeNode(grammarAccess.getTriggerMessageExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression7106);
+            pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression7498);
             iv_ruleTriggerMessageExpression=ruleTriggerMessageExpression();
 
             state._fsp--;
 
              current =iv_ruleTriggerMessageExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTriggerMessageExpression7116); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTriggerMessageExpression7508); 
 
             }
 
@@ -8074,7 +8500,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleTriggerMessageExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3205:1: ruleTriggerMessageExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3378:1: ruleTriggerMessageExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleTriggerMessageExpression() throws RecognitionException {
         EObject current = null;
 
@@ -8085,24 +8511,24 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3208:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3209:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3381:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3382:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3209:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3209:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3382:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3382:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3209:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3210:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3382:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3383:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3210:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3211:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3383:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3384:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getTriggerMessageExpressionRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7161); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7553); 
 
             		newLeafNode(otherlv_0, grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeCrossReference_0_0()); 
             	
@@ -8112,22 +8538,22 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleTriggerMessageExpression7173); 
+            otherlv_1=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleTriggerMessageExpression7565); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1());
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3226:1: ( (otherlv_2= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3227:1: (otherlv_2= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3399:1: ( (otherlv_2= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3400:1: (otherlv_2= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3227:1: (otherlv_2= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3228:3: otherlv_2= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3400:1: (otherlv_2= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3401:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getTriggerMessageExpressionRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7193); 
+            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7585); 
 
             		newLeafNode(otherlv_2, grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterCrossReference_2_0()); 
             	
@@ -8158,7 +8584,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleDATATYPE"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3247:1: entryRuleDATATYPE returns [String current=null] : iv_ruleDATATYPE= ruleDATATYPE EOF ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3420:1: entryRuleDATATYPE returns [String current=null] : iv_ruleDATATYPE= ruleDATATYPE EOF ;
     public final String entryRuleDATATYPE() throws RecognitionException {
         String current = null;
 
@@ -8166,17 +8592,17 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3248:2: (iv_ruleDATATYPE= ruleDATATYPE EOF )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3249:2: iv_ruleDATATYPE= ruleDATATYPE EOF
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3421:2: (iv_ruleDATATYPE= ruleDATATYPE EOF )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3422:2: iv_ruleDATATYPE= ruleDATATYPE EOF
             {
              newCompositeNode(grammarAccess.getDATATYPERule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE7230);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE7622);
             iv_ruleDATATYPE=ruleDATATYPE();
 
             state._fsp--;
 
              current =iv_ruleDATATYPE.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDATATYPE7241); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDATATYPE7633); 
 
             }
 
@@ -8194,7 +8620,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleDATATYPE"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3256:1: ruleDATATYPE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3429:1: ruleDATATYPE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) ;
     public final AntlrDatatypeRuleToken ruleDATATYPE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8205,47 +8631,47 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3259:28: ( (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3260:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3432:28: ( (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3433:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3260:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3260:6: this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )*
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3433:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3433:6: this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDATATYPE7281); 
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDATATYPE7673); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getDATATYPEAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3267:1: (kw= '[' this_INT_2= RULE_INT kw= ']' )*
-            loop38:
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3440:1: (kw= '[' this_INT_2= RULE_INT kw= ']' )*
+            loop39:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA38_0==38) ) {
-                    alt38=1;
+                if ( (LA39_0==38) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt39) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3268:2: kw= '[' this_INT_2= RULE_INT kw= ']'
+            	    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3441:2: kw= '[' this_INT_2= RULE_INT kw= ']'
             	    {
-            	    kw=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleDATATYPE7300); 
+            	    kw=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleDATATYPE7692); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getDATATYPEAccess().getLeftSquareBracketKeyword_1_0()); 
             	        
-            	    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDATATYPE7315); 
+            	    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDATATYPE7707); 
 
             	    		current.merge(this_INT_2);
             	        
             	     
             	        newLeafNode(this_INT_2, grammarAccess.getDATATYPEAccess().getINTTerminalRuleCall_1_1()); 
             	        
-            	    kw=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleDATATYPE7333); 
+            	    kw=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleDATATYPE7725); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getDATATYPEAccess().getRightSquareBracketKeyword_1_2()); 
@@ -8255,7 +8681,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop39;
                 }
             } while (true);
 
@@ -8280,7 +8706,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleUnaryPostIncrementDecrementOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3294:1: ruleUnaryPostIncrementDecrementOperator returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3467:1: ruleUnaryPostIncrementDecrementOperator returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
     public final Enumerator ruleUnaryPostIncrementDecrementOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8289,33 +8715,33 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3296:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3297:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3469:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3470:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3297:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3470:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==44) ) {
-                alt39=1;
+            if ( (LA40_0==45) ) {
+                alt40=1;
             }
-            else if ( (LA39_0==45) ) {
-                alt39=2;
+            else if ( (LA40_0==46) ) {
+                alt40=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3297:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3470:2: (enumLiteral_0= '++' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3297:2: (enumLiteral_0= '++' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3297:4: enumLiteral_0= '++'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3470:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3470:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleUnaryPostIncrementDecrementOperator7389); 
+                    enumLiteral_0=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleUnaryPostIncrementDecrementOperator7781); 
 
                             current = grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); 
@@ -8327,12 +8753,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3303:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3476:6: (enumLiteral_1= '--' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3303:6: (enumLiteral_1= '--' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3303:8: enumLiteral_1= '--'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3476:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3476:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleUnaryPostIncrementDecrementOperator7406); 
+                    enumLiteral_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleUnaryPostIncrementDecrementOperator7798); 
 
                             current = grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); 
@@ -8364,7 +8790,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleIncrementDecrementOperatorExpression"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3313:1: ruleIncrementDecrementOperatorExpression returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3486:1: ruleIncrementDecrementOperatorExpression returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
     public final Enumerator ruleIncrementDecrementOperatorExpression() throws RecognitionException {
         Enumerator current = null;
 
@@ -8373,33 +8799,33 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3315:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3316:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3488:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3489:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3316:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3489:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==44) ) {
-                alt40=1;
+            if ( (LA41_0==45) ) {
+                alt41=1;
             }
-            else if ( (LA40_0==45) ) {
-                alt40=2;
+            else if ( (LA41_0==46) ) {
+                alt41=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 40, 0, input);
+                    new NoViableAltException("", 41, 0, input);
 
                 throw nvae;
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3316:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3489:2: (enumLiteral_0= '++' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3316:2: (enumLiteral_0= '++' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3316:4: enumLiteral_0= '++'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3489:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3489:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleIncrementDecrementOperatorExpression7451); 
+                    enumLiteral_0=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleIncrementDecrementOperatorExpression7843); 
 
                             current = grammarAccess.getIncrementDecrementOperatorExpressionAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorExpressionAccess().getINCREMENTEnumLiteralDeclaration_0()); 
@@ -8411,12 +8837,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3322:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3495:6: (enumLiteral_1= '--' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3322:6: (enumLiteral_1= '--' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3322:8: enumLiteral_1= '--'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3495:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3495:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleIncrementDecrementOperatorExpression7468); 
+                    enumLiteral_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleIncrementDecrementOperatorExpression7860); 
 
                             current = grammarAccess.getIncrementDecrementOperatorExpressionAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorExpressionAccess().getDECREMENTEnumLiteralDeclaration_1()); 
@@ -8448,7 +8874,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAssignOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3332:1: ruleAssignOperator returns [Enumerator current=null] : ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3505:1: ruleAssignOperator returns [Enumerator current=null] : ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) ;
     public final Enumerator ruleAssignOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8458,42 +8884,42 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3334:28: ( ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3507:28: ( ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3508:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
-            int alt41=3;
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3508:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
+            int alt42=3;
             switch ( input.LA(1) ) {
             case 26:
                 {
-                alt41=1;
-                }
-                break;
-            case 46:
-                {
-                alt41=2;
+                alt42=1;
                 }
                 break;
             case 47:
                 {
-                alt41=3;
+                alt42=2;
+                }
+                break;
+            case 48:
+                {
+                alt42=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 42, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt41) {
+            switch (alt42) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:2: (enumLiteral_0= ':=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3508:2: (enumLiteral_0= ':=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:2: (enumLiteral_0= ':=' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3335:4: enumLiteral_0= ':='
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3508:2: (enumLiteral_0= ':=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3508:4: enumLiteral_0= ':='
                     {
-                    enumLiteral_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleAssignOperator7513); 
+                    enumLiteral_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleAssignOperator7905); 
 
                             current = grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0()); 
@@ -8505,12 +8931,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3341:6: (enumLiteral_1= '+=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3514:6: (enumLiteral_1= '+=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3341:6: (enumLiteral_1= '+=' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3341:8: enumLiteral_1= '+='
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3514:6: (enumLiteral_1= '+=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3514:8: enumLiteral_1= '+='
                     {
-                    enumLiteral_1=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleAssignOperator7530); 
+                    enumLiteral_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleAssignOperator7922); 
 
                             current = grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1()); 
@@ -8522,12 +8948,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3347:6: (enumLiteral_2= '-=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3520:6: (enumLiteral_2= '-=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3347:6: (enumLiteral_2= '-=' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3347:8: enumLiteral_2= '-='
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3520:6: (enumLiteral_2= '-=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3520:8: enumLiteral_2= '-='
                     {
-                    enumLiteral_2=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleAssignOperator7547); 
+                    enumLiteral_2=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleAssignOperator7939); 
 
                             current = grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2()); 
@@ -8559,7 +8985,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLogicalOrOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3357:1: ruleLogicalOrOperator returns [Enumerator current=null] : (enumLiteral_0= '||' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3530:1: ruleLogicalOrOperator returns [Enumerator current=null] : (enumLiteral_0= '||' ) ;
     public final Enumerator ruleLogicalOrOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8567,13 +8993,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3359:28: ( (enumLiteral_0= '||' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3360:1: (enumLiteral_0= '||' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3532:28: ( (enumLiteral_0= '||' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3533:1: (enumLiteral_0= '||' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3360:1: (enumLiteral_0= '||' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3360:3: enumLiteral_0= '||'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3533:1: (enumLiteral_0= '||' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3533:3: enumLiteral_0= '||'
             {
-            enumLiteral_0=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleLogicalOrOperator7591); 
+            enumLiteral_0=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleLogicalOrOperator7983); 
 
                     current = grammarAccess.getLogicalOrOperatorAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getLogicalOrOperatorAccess().getOREnumLiteralDeclaration()); 
@@ -8599,7 +9025,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLogicalAndOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3370:1: ruleLogicalAndOperator returns [Enumerator current=null] : (enumLiteral_0= '&&' ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3543:1: ruleLogicalAndOperator returns [Enumerator current=null] : (enumLiteral_0= '&&' ) ;
     public final Enumerator ruleLogicalAndOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8607,13 +9033,13 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3372:28: ( (enumLiteral_0= '&&' ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3373:1: (enumLiteral_0= '&&' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3545:28: ( (enumLiteral_0= '&&' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3546:1: (enumLiteral_0= '&&' )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3373:1: (enumLiteral_0= '&&' )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3373:3: enumLiteral_0= '&&'
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3546:1: (enumLiteral_0= '&&' )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3546:3: enumLiteral_0= '&&'
             {
-            enumLiteral_0=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleLogicalAndOperator7634); 
+            enumLiteral_0=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleLogicalAndOperator8026); 
 
                     current = grammarAccess.getLogicalAndOperatorAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getLogicalAndOperatorAccess().getANDEnumLiteralDeclaration()); 
@@ -8639,7 +9065,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleComparingEQNEQOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3383:1: ruleComparingEQNEQOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3556:1: ruleComparingEQNEQOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) ;
     public final Enumerator ruleComparingEQNEQOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8648,33 +9074,33 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3385:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3386:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3558:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3559:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3386:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3559:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA42_0==50) ) {
-                alt42=1;
+            if ( (LA43_0==51) ) {
+                alt43=1;
             }
-            else if ( (LA42_0==51) ) {
-                alt42=2;
+            else if ( (LA43_0==52) ) {
+                alt43=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 43, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt43) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3386:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3559:2: (enumLiteral_0= '==' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3386:2: (enumLiteral_0= '==' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3386:4: enumLiteral_0= '=='
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3559:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3559:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleComparingEQNEQOperator7678); 
+                    enumLiteral_0=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleComparingEQNEQOperator8070); 
 
                             current = grammarAccess.getComparingEQNEQOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getComparingEQNEQOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
@@ -8686,12 +9112,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3392:6: (enumLiteral_1= '<>' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3565:6: (enumLiteral_1= '<>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3392:6: (enumLiteral_1= '<>' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3392:8: enumLiteral_1= '<>'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3565:6: (enumLiteral_1= '<>' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3565:8: enumLiteral_1= '<>'
                     {
-                    enumLiteral_1=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleComparingEQNEQOperator7695); 
+                    enumLiteral_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleComparingEQNEQOperator8087); 
 
                             current = grammarAccess.getComparingEQNEQOperatorAccess().getUNEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getComparingEQNEQOperatorAccess().getUNEQUALEnumLiteralDeclaration_1()); 
@@ -8723,7 +9149,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleComparingRelOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3402:1: ruleComparingRelOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3575:1: ruleComparingRelOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) ;
     public final Enumerator ruleComparingRelOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8734,47 +9160,47 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3404:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3405:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3577:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3578:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3405:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
-            int alt43=4;
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3578:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
+            int alt44=4;
             switch ( input.LA(1) ) {
             case 41:
                 {
-                alt43=1;
-                }
-                break;
-            case 52:
-                {
-                alt43=2;
+                alt44=1;
                 }
                 break;
             case 53:
                 {
-                alt43=3;
+                alt44=2;
+                }
+                break;
+            case 54:
+                {
+                alt44=3;
                 }
                 break;
             case 42:
                 {
-                alt43=4;
+                alt44=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+                    new NoViableAltException("", 44, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3405:2: (enumLiteral_0= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3578:2: (enumLiteral_0= '<' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3405:2: (enumLiteral_0= '<' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3405:4: enumLiteral_0= '<'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3578:2: (enumLiteral_0= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3578:4: enumLiteral_0= '<'
                     {
-                    enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleComparingRelOperator7740); 
+                    enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleComparingRelOperator8132); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getComparingRelOperatorAccess().getLESSEnumLiteralDeclaration_0()); 
@@ -8786,12 +9212,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3411:6: (enumLiteral_1= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3584:6: (enumLiteral_1= '<=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3411:6: (enumLiteral_1= '<=' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3411:8: enumLiteral_1= '<='
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3584:6: (enumLiteral_1= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3584:8: enumLiteral_1= '<='
                     {
-                    enumLiteral_1=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleComparingRelOperator7757); 
+                    enumLiteral_1=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleComparingRelOperator8149); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getComparingRelOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_1()); 
@@ -8803,12 +9229,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3417:6: (enumLiteral_2= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3590:6: (enumLiteral_2= '>=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3417:6: (enumLiteral_2= '>=' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3417:8: enumLiteral_2= '>='
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3590:6: (enumLiteral_2= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3590:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleComparingRelOperator7774); 
+                    enumLiteral_2=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleComparingRelOperator8166); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getComparingRelOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2()); 
@@ -8820,12 +9246,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3423:6: (enumLiteral_3= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3596:6: (enumLiteral_3= '>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3423:6: (enumLiteral_3= '>' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3423:8: enumLiteral_3= '>'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3596:6: (enumLiteral_3= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3596:8: enumLiteral_3= '>'
                     {
-                    enumLiteral_3=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleComparingRelOperator7791); 
+                    enumLiteral_3=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleComparingRelOperator8183); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getGREATEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getComparingRelOperatorAccess().getGREATEREnumLiteralDeclaration_3()); 
@@ -8857,7 +9283,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAdditionOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3433:1: ruleAdditionOperator returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3606:1: ruleAdditionOperator returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleAdditionOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -8866,33 +9292,33 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3435:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3436:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3608:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3609:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3436:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3609:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==54) ) {
-                alt44=1;
+            if ( (LA45_0==55) ) {
+                alt45=1;
             }
-            else if ( (LA44_0==55) ) {
-                alt44=2;
+            else if ( (LA45_0==56) ) {
+                alt45=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 44, 0, input);
+                    new NoViableAltException("", 45, 0, input);
 
                 throw nvae;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3436:2: (enumLiteral_0= '+' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3609:2: (enumLiteral_0= '+' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3436:2: (enumLiteral_0= '+' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3436:4: enumLiteral_0= '+'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3609:2: (enumLiteral_0= '+' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3609:4: enumLiteral_0= '+'
                     {
-                    enumLiteral_0=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleAdditionOperator7836); 
+                    enumLiteral_0=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleAdditionOperator8228); 
 
                             current = grammarAccess.getAdditionOperatorAccess().getPLUSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAdditionOperatorAccess().getPLUSEnumLiteralDeclaration_0()); 
@@ -8904,12 +9330,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3442:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3615:6: (enumLiteral_1= '-' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3442:6: (enumLiteral_1= '-' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3442:8: enumLiteral_1= '-'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3615:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3615:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleAdditionOperator7853); 
+                    enumLiteral_1=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleAdditionOperator8245); 
 
                             current = grammarAccess.getAdditionOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAdditionOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
@@ -8941,42 +9367,52 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleMultiplicationOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3452:1: ruleMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3625:1: ruleMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
     public final Enumerator ruleMultiplicationOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3454:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3455:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3627:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3628:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3455:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
-            int alt45=2;
-            int LA45_0 = input.LA(1);
-
-            if ( (LA45_0==56) ) {
-                alt45=1;
-            }
-            else if ( (LA45_0==57) ) {
-                alt45=2;
-            }
-            else {
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3628:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            int alt46=3;
+            switch ( input.LA(1) ) {
+            case 57:
+                {
+                alt46=1;
+                }
+                break;
+            case 58:
+                {
+                alt46=2;
+                }
+                break;
+            case 59:
+                {
+                alt46=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 45, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
-            switch (alt45) {
+
+            switch (alt46) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3455:2: (enumLiteral_0= '*' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3628:2: (enumLiteral_0= '*' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3455:2: (enumLiteral_0= '*' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3455:4: enumLiteral_0= '*'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3628:2: (enumLiteral_0= '*' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3628:4: enumLiteral_0= '*'
                     {
-                    enumLiteral_0=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleMultiplicationOperator7898); 
+                    enumLiteral_0=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleMultiplicationOperator8290); 
 
                             current = grammarAccess.getMultiplicationOperatorAccess().getTIMESEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getMultiplicationOperatorAccess().getTIMESEnumLiteralDeclaration_0()); 
@@ -8988,15 +9424,32 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3461:6: (enumLiteral_1= '/' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3634:6: (enumLiteral_1= '/' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3461:6: (enumLiteral_1= '/' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3461:8: enumLiteral_1= '/'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3634:6: (enumLiteral_1= '/' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3634:8: enumLiteral_1= '/'
                     {
-                    enumLiteral_1=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleMultiplicationOperator7915); 
+                    enumLiteral_1=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleMultiplicationOperator8307); 
 
                             current = grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3640:6: (enumLiteral_2= '%' )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3640:6: (enumLiteral_2= '%' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3640:8: enumLiteral_2= '%'
+                    {
+                    enumLiteral_2=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleMultiplicationOperator8324); 
+
+                            current = grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_2, grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2()); 
                         
 
                     }
@@ -9025,7 +9478,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleUnaryPreOperator"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3471:1: ruleUnaryPreOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3650:1: ruleUnaryPreOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleUnaryPreOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -9034,33 +9487,33 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3473:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3474:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3652:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3653:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3474:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3653:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA46_0==58) ) {
-                alt46=1;
+            if ( (LA47_0==60) ) {
+                alt47=1;
             }
-            else if ( (LA46_0==55) ) {
-                alt46=2;
+            else if ( (LA47_0==56) ) {
+                alt47=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 46, 0, input);
+                    new NoViableAltException("", 47, 0, input);
 
                 throw nvae;
             }
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3474:2: (enumLiteral_0= 'not' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3653:2: (enumLiteral_0= 'not' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3474:2: (enumLiteral_0= 'not' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3474:4: enumLiteral_0= 'not'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3653:2: (enumLiteral_0= 'not' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3653:4: enumLiteral_0= 'not'
                     {
-                    enumLiteral_0=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleUnaryPreOperator7960); 
+                    enumLiteral_0=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleUnaryPreOperator8369); 
 
                             current = grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0()); 
@@ -9072,12 +9525,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3480:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3659:6: (enumLiteral_1= '-' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3480:6: (enumLiteral_1= '-' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3480:8: enumLiteral_1= '-'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3659:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3659:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleUnaryPreOperator7977); 
+                    enumLiteral_1=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleUnaryPreOperator8386); 
 
                             current = grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
@@ -9109,7 +9562,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "rulePositionSelectorKind"
-    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3490:1: rulePositionSelectorKind returns [Enumerator current=null] : ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3669:1: rulePositionSelectorKind returns [Enumerator current=null] : ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) ;
     public final Enumerator rulePositionSelectorKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -9121,52 +9574,52 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3492:28: ( ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3493:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3671:28: ( ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3672:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3493:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
-            int alt47=5;
+            // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3672:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
+            int alt48=5;
             switch ( input.LA(1) ) {
-            case 59:
-                {
-                alt47=1;
-                }
-                break;
-            case 60:
-                {
-                alt47=2;
-                }
-                break;
             case 61:
                 {
-                alt47=3;
+                alt48=1;
                 }
                 break;
             case 62:
                 {
-                alt47=4;
+                alt48=2;
                 }
                 break;
             case 63:
                 {
-                alt47=5;
+                alt48=3;
+                }
+                break;
+            case 64:
+                {
+                alt48=4;
+                }
+                break;
+            case 65:
+                {
+                alt48=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 47, 0, input);
+                    new NoViableAltException("", 48, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3493:2: (enumLiteral_0= 'self' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3672:2: (enumLiteral_0= 'self' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3493:2: (enumLiteral_0= 'self' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3493:4: enumLiteral_0= 'self'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3672:2: (enumLiteral_0= 'self' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3672:4: enumLiteral_0= 'self'
                     {
-                    enumLiteral_0=(Token)match(input,59,FollowSets000.FOLLOW_59_in_rulePositionSelectorKind8022); 
+                    enumLiteral_0=(Token)match(input,61,FollowSets000.FOLLOW_61_in_rulePositionSelectorKind8431); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0()); 
@@ -9178,12 +9631,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3499:6: (enumLiteral_1= 'first' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3678:6: (enumLiteral_1= 'first' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3499:6: (enumLiteral_1= 'first' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3499:8: enumLiteral_1= 'first'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3678:6: (enumLiteral_1= 'first' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3678:8: enumLiteral_1= 'first'
                     {
-                    enumLiteral_1=(Token)match(input,60,FollowSets000.FOLLOW_60_in_rulePositionSelectorKind8039); 
+                    enumLiteral_1=(Token)match(input,62,FollowSets000.FOLLOW_62_in_rulePositionSelectorKind8448); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1()); 
@@ -9195,12 +9648,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3505:6: (enumLiteral_2= 'last' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3684:6: (enumLiteral_2= 'last' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3505:6: (enumLiteral_2= 'last' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3505:8: enumLiteral_2= 'last'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3684:6: (enumLiteral_2= 'last' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3684:8: enumLiteral_2= 'last'
                     {
-                    enumLiteral_2=(Token)match(input,61,FollowSets000.FOLLOW_61_in_rulePositionSelectorKind8056); 
+                    enumLiteral_2=(Token)match(input,63,FollowSets000.FOLLOW_63_in_rulePositionSelectorKind8465); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2()); 
@@ -9212,12 +9665,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3511:6: (enumLiteral_3= 'prev' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3690:6: (enumLiteral_3= 'prev' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3511:6: (enumLiteral_3= 'prev' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3511:8: enumLiteral_3= 'prev'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3690:6: (enumLiteral_3= 'prev' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3690:8: enumLiteral_3= 'prev'
                     {
-                    enumLiteral_3=(Token)match(input,62,FollowSets000.FOLLOW_62_in_rulePositionSelectorKind8073); 
+                    enumLiteral_3=(Token)match(input,64,FollowSets000.FOLLOW_64_in_rulePositionSelectorKind8482); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3()); 
@@ -9229,12 +9682,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3517:6: (enumLiteral_4= 'next' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3696:6: (enumLiteral_4= 'next' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3517:6: (enumLiteral_4= 'next' )
-                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3517:8: enumLiteral_4= 'next'
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3696:6: (enumLiteral_4= 'next' )
+                    // ../de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage/src-gen/de/uni_paderborn/fujaba/muml/psm/api/apimappinglanguage/parser/antlr/internal/InternalAPIMappingLanguage.g:3696:8: enumLiteral_4= 'next'
                     {
-                    enumLiteral_4=(Token)match(input,63,FollowSets000.FOLLOW_63_in_rulePositionSelectorKind8090); 
+                    enumLiteral_4=(Token)match(input,65,FollowSets000.FOLLOW_65_in_rulePositionSelectorKind8499); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4()); 
@@ -9276,14 +9729,16 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
     static final String DFA10_minS =
         "\2\5\7\uffff\1\5\2\uffff\1\47\1\5";
     static final String DFA10_maxS =
-        "\1\50\1\57\7\uffff\1\77\2\uffff\1\71\1\57";
+        "\1\50\1\60\7\uffff\1\101\2\uffff\1\73\1\60";
     static final String DFA10_acceptS =
         "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\11\1\uffff\1\1\1\10\2\uffff";
     static final String DFA10_specialS =
         "\16\uffff}>";
     static final String[] DFA10_transitionS = {
-            "\1\1\21\uffff\1\10\5\uffff\1\2\1\uffff\1\3\1\4\1\uffff\1\5\2\uffff\1\6\2\uffff\1\7",
-            "\1\7\22\uffff\1\13\1\uffff\1\12\13\uffff\1\11\5\uffff\4\12",
+            "\1\1\21\uffff\1\10\5\uffff\1\2\1\uffff\1\3\1\4\1\uffff\1\5"+
+            "\2\uffff\1\6\2\uffff\1\7",
+            "\1\7\22\uffff\1\13\1\uffff\1\12\1\uffff\1\12\11\uffff\1\11"+
+            "\6\uffff\4\12",
             "",
             "",
             "",
@@ -9291,11 +9746,12 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             "",
             "",
             "",
-            "\1\12\1\14\2\12\17\uffff\1\12\22\uffff\1\12\13\uffff\1\12\2\uffff\6\12",
+            "\1\12\1\14\2\12\17\uffff\1\12\22\uffff\1\12\14\uffff\1\12"+
+            "\3\uffff\6\12",
             "",
             "",
-            "\1\15\16\uffff\4\12",
-            "\1\7\24\uffff\1\12\13\uffff\1\11\5\uffff\4\12"
+            "\1\15\17\uffff\5\12",
+            "\1\7\24\uffff\1\12\1\uffff\1\12\11\uffff\1\11\6\uffff\4\12"
     };
 
     static final short[] DFA10_eot = DFA.unpackEncodedString(DFA10_eotS);
@@ -9332,27 +9788,46 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         }
     }
     static final String DFA19_eotS =
-        "\12\uffff";
+        "\21\uffff";
     static final String DFA19_eofS =
-        "\2\uffff\1\3\2\uffff\1\3\2\uffff\1\11\1\uffff";
+        "\2\uffff\1\3\4\uffff\1\3\1\uffff\1\3\5\uffff\1\20\1\uffff";
     static final String DFA19_minS =
-        "\1\5\1\uffff\1\17\1\uffff\1\5\1\17\1\5\1\17\1\5\1\uffff";
+        "\1\5\1\uffff\1\17\1\uffff\2\5\1\30\1\17\3\5\1\47\1\uffff\1\17\1"+
+        "\31\1\5\1\uffff";
     static final String DFA19_maxS =
-        "\1\77\1\uffff\1\71\1\uffff\1\77\1\71\1\77\1\71\1\77\1\uffff";
+        "\1\101\1\uffff\1\73\1\uffff\2\101\2\73\3\101\1\73\1\uffff\2\73"+
+        "\1\101\1\uffff";
     static final String DFA19_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\5\uffff\1\2";
+        "\1\uffff\1\1\1\uffff\1\3\10\uffff\1\4\3\uffff\1\2";
     static final String DFA19_specialS =
-        "\12\uffff}>";
+        "\21\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\1\2\3\3\16\uffff\2\3\15\uffff\1\1\4\uffff\1\3\13\uffff\1\3\2\uffff\6\3",
+            "\1\2\3\3\16\uffff\1\3\1\4\15\uffff\1\1\4\uffff\1\3\14\uffff"+
+            "\1\3\3\uffff\6\3",
             "",
-            "\1\3\10\uffff\1\3\3\uffff\1\3\1\uffff\1\3\7\uffff\2\3\1\uffff\1\4\1\3\1\uffff\2\3\2\uffff\12\3",
+            "\1\3\10\uffff\1\3\3\uffff\1\3\1\uffff\1\3\7\uffff\2\3\1\uffff"+
+            "\1\5\1\3\1\uffff\3\3\2\uffff\13\3",
             "",
-            "\1\3\1\5\2\3\17\uffff\1\3\22\uffff\1\3\13\uffff\1\3\2\uffff\6\3",
-            "\1\6\16\uffff\1\3\10\uffff\1\3\10\uffff\4\3\2\uffff\4\3",
-            "\1\3\1\7\2\3\16\uffff\2\3\15\uffff\1\3\4\uffff\1\3\13\uffff\1\3\2\uffff\6\3",
-            "\1\3\27\uffff\1\3\1\uffff\1\3\1\10\5\uffff\12\3",
-            "\4\3\6\uffff\1\11\10\uffff\1\3\5\uffff\1\11\10\uffff\1\11\3\uffff\1\3\13\uffff\1\3\2\uffff\6\3",
+            "\1\6\3\3\16\uffff\2\3\22\uffff\1\3\14\uffff\1\3\3\uffff\6"+
+            "\3",
+            "\1\3\1\7\2\3\17\uffff\1\3\22\uffff\1\3\14\uffff\1\3\3\uffff"+
+            "\6\3",
+            "\1\3\1\11\2\uffff\1\3\11\uffff\1\10\2\uffff\2\3\1\uffff\3"+
+            "\3\2\uffff\13\3",
+            "\1\12\16\uffff\1\3\10\uffff\1\3\11\uffff\4\3\2\uffff\5\3",
+            "\1\3\1\13\2\3\17\uffff\1\3\22\uffff\1\3\14\uffff\1\3\3\uffff"+
+            "\6\3",
+            "\4\14\6\uffff\1\3\10\uffff\1\14\5\uffff\1\3\10\uffff\1\3\1"+
+            "\uffff\2\3\1\14\5\uffff\13\3\1\uffff\5\14",
+            "\1\3\1\15\2\3\16\uffff\2\3\15\uffff\1\3\4\uffff\1\3\14\uffff"+
+            "\1\3\3\uffff\6\3",
+            "\1\16\17\uffff\5\3",
+            "",
+            "\1\3\27\uffff\1\3\1\uffff\1\3\1\17\6\uffff\13\3",
+            "\1\11\2\uffff\1\3\11\uffff\1\10\2\uffff\2\3\1\uffff\3\3\2"+
+            "\uffff\13\3",
+            "\4\3\6\uffff\1\20\10\uffff\1\3\5\uffff\1\20\10\uffff\1\20"+
+            "\3\uffff\1\3\14\uffff\1\3\3\uffff\6\3",
             ""
     };
 
@@ -9386,7 +9861,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
             this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "1617:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )";
+            return "1617:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )";
         }
     }
  
@@ -9414,9 +9889,9 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_19_in_rulePortApiMapping473 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_ruleEString_in_rulePortApiMapping496 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_14_in_rulePortApiMapping508 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_20_in_rulePortApiMapping520 = new BitSet(new long[]{0xFC800840018041E0L});
+        public static final BitSet FOLLOW_20_in_rulePortApiMapping520 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleEntry_in_rulePortApiMapping541 = new BitSet(new long[]{0x0000000000210000L});
-        public static final BitSet FOLLOW_21_in_rulePortApiMapping554 = new BitSet(new long[]{0xFC800840018041E0L});
+        public static final BitSet FOLLOW_21_in_rulePortApiMapping554 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleEntry_in_rulePortApiMapping575 = new BitSet(new long[]{0x0000000000010000L});
         public static final BitSet FOLLOW_16_in_rulePortApiMapping589 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression625 = new BitSet(new long[]{0x0000000000000000L});
@@ -9439,7 +9914,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding1034 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleParamaterBinding1044 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_RULE_ID_in_ruleParamaterBinding1098 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleParamaterBinding1110 = new BitSet(new long[]{0xFC80080009C001E0L});
+        public static final BitSet FOLLOW_26_in_ruleParamaterBinding1110 = new BitSet(new long[]{0xF100080009C001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleParamaterBinding1133 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEnumerationValueExpression_in_ruleParamaterBinding1152 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleContiniousPortExpressions_in_ruleParamaterBinding1171 = new BitSet(new long[]{0x0000000000000002L});
@@ -9481,7 +9956,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_EOF_in_entryRuleForLoop2180 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_29_in_ruleForLoop2217 = new BitSet(new long[]{0x0000000001000000L});
         public static final BitSet FOLLOW_24_in_ruleForLoop2229 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_ruleAssignment_in_ruleForLoop2250 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_ruleAssignment_in_ruleForLoop2250 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleForLoop2271 = new BitSet(new long[]{0x0000000040000000L});
         public static final BitSet FOLLOW_30_in_ruleForLoop2283 = new BitSet(new long[]{0x0000000000000020L});
         public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_ruleForLoop2304 = new BitSet(new long[]{0x0000000002000000L});
@@ -9489,14 +9964,14 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_ruleBlock_in_ruleForLoop2337 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_entryRuleForLoopCountingExpression2373 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleForLoopCountingExpression2383 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression2429 = new BitSet(new long[]{0x0000F00004000000L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression2429 = new BitSet(new long[]{0x0001E00004000000L});
         public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleForLoopCountingExpression2451 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression2479 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression2479 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleForLoopCountingExpression2500 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleWhileLoop_in_entryRuleWhileLoop2538 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleWhileLoop2548 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_31_in_ruleWhileLoop2585 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_24_in_ruleWhileLoop2597 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_24_in_ruleWhileLoop2597 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleWhileLoop2618 = new BitSet(new long[]{0x0000000002000000L});
         public static final BitSet FOLLOW_25_in_ruleWhileLoop2630 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleWhileLoop2651 = new BitSet(new long[]{0x0000000000000002L});
@@ -9505,18 +9980,18 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_32_in_ruleDoWhileLoop2734 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleDoWhileLoop2755 = new BitSet(new long[]{0x0000000080000000L});
         public static final BitSet FOLLOW_31_in_ruleDoWhileLoop2767 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_24_in_ruleDoWhileLoop2779 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_24_in_ruleDoWhileLoop2779 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleDoWhileLoop2800 = new BitSet(new long[]{0x0000000200000000L});
         public static final BitSet FOLLOW_33_in_ruleDoWhileLoop2812 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIfStatement_in_entryRuleIfStatement2848 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleIfStatement2858 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_34_in_ruleIfStatement2895 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_24_in_ruleIfStatement2907 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_24_in_ruleIfStatement2907 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement2928 = new BitSet(new long[]{0x0000000002000000L});
         public static final BitSet FOLLOW_25_in_ruleIfStatement2940 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement2961 = new BitSet(new long[]{0x0000001800000002L});
         public static final BitSet FOLLOW_35_in_ruleIfStatement2974 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_24_in_ruleIfStatement2986 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_24_in_ruleIfStatement2986 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement3007 = new BitSet(new long[]{0x0000000002000000L});
         public static final BitSet FOLLOW_25_in_ruleIfStatement3019 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement3040 = new BitSet(new long[]{0x0000001800000002L});
@@ -9524,7 +9999,7 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement3076 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement3114 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleReturnStatement3124 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleReturnStatement3170 = new BitSet(new long[]{0xFC800800018001E0L});
+        public static final BitSet FOLLOW_37_in_ruleReturnStatement3170 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleReturnStatement3191 = new BitSet(new long[]{0x0000000040000000L});
         public static final BitSet FOLLOW_30_in_ruleReturnStatement3203 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleOperationCallStatement_in_entryRuleOperationCallStatement3239 = new BitSet(new long[]{0x0000000000000000L});
@@ -9533,8 +10008,8 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_30_in_ruleOperationCallStatement3307 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAssignment_in_entryRuleAssignment3343 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAssignment3353 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment3399 = new BitSet(new long[]{0x0000F00004000000L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleAssignment3422 = new BitSet(new long[]{0xFC800840018041E0L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment3399 = new BitSet(new long[]{0x0001E00004000000L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleAssignment3422 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleAssignment3443 = new BitSet(new long[]{0x0000000040000000L});
         public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleAssignment3471 = new BitSet(new long[]{0x0000000040000000L});
         public static final BitSet FOLLOW_30_in_ruleAssignment3484 = new BitSet(new long[]{0x0000000000000002L});
@@ -9543,172 +10018,188 @@ public class InternalAPIMappingLanguageParser extends AbstractInternalAntlrParse
         public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_ruleInitializeExpression3577 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_ruleInitializeExpression3604 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleInitializeExpression3631 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression3666 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression3676 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_38_in_ruleArrayInitializeExpression3713 = new BitSet(new long[]{0xFC800840018041E0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3734 = new BitSet(new long[]{0x0000008000008000L});
-        public static final BitSet FOLLOW_15_in_ruleArrayInitializeExpression3747 = new BitSet(new long[]{0xFC800840018041E0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3768 = new BitSet(new long[]{0x0000008000008000L});
-        public static final BitSet FOLLOW_39_in_ruleArrayInitializeExpression3782 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement3818 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement3828 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3875 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3894 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration3932 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration3942 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration3990 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration4007 = new BitSet(new long[]{0x0000000044000000L});
-        public static final BitSet FOLLOW_26_in_ruleLocalVariableDeclaration4025 = new BitSet(new long[]{0xFC800840018041E0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration4046 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_30_in_ruleLocalVariableDeclaration4060 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration4096 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalConstantDeclaration4106 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleLocalConstantDeclaration4149 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration4185 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration4202 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleLocalConstantDeclaration4219 = new BitSet(new long[]{0xFC800840018041E0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration4240 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_30_in_ruleLocalConstantDeclaration4252 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression4288 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression4298 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression4343 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression4364 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRange_in_entryRuleRange4400 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRange4410 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleRange4447 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleLONG_in_ruleRange4468 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleRange4480 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleLONG_in_ruleRange4501 = new BitSet(new long[]{0x0000040000000000L});
-        public static final BitSet FOLLOW_42_in_ruleRange4513 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLONG_in_entryRuleLONG4550 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLONG4561 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLONG4600 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression4644 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalExpression4654 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression4700 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression4734 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression4744 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4791 = new BitSet(new long[]{0x0001000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression4821 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4842 = new BitSet(new long[]{0x0001000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression4880 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression4890 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression4937 = new BitSet(new long[]{0x0002000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression4967 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression4988 = new BitSet(new long[]{0x0002000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression5026 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression5036 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5083 = new BitSet(new long[]{0x000C000000000002L});
-        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression5113 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5134 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression5172 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression5182 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5229 = new BitSet(new long[]{0x0030060000000002L});
-        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression5259 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5280 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression5318 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression5328 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression5374 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression5408 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression5418 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5465 = new BitSet(new long[]{0x00C0000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression5495 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5516 = new BitSet(new long[]{0x00C0000000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression5554 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression5564 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5611 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression5639 = new BitSet(new long[]{0x0300000000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression5669 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5692 = new BitSet(new long[]{0x0300000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression5711 = new BitSet(new long[]{0x0300000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression5753 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression5763 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression5818 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleUnaryPreExpression5839 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand5875 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperand5885 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_ruleOperand5923 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleOperand5945 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_25_in_ruleOperand5956 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand5985 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand6012 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperand6039 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_ruleOperand6066 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand6093 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression6128 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression6138 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteral_in_ruleLiteralExpression6193 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral6230 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteral6241 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_NUMBER_in_ruleLiteral6281 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleLiteral6307 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteral6333 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_43_in_ruleLiteral6357 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression6397 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression6407 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression6454 = new BitSet(new long[]{0x0000300010000002L});
-        public static final BitSet FOLLOW_28_in_ruleExtendedTypedNamedElementExpression6476 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression6497 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression6535 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression6574 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTypedNamedElementExpression6584 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression6629 = new BitSet(new long[]{0x0000004000000002L});
-        public static final BitSet FOLLOW_38_in_ruleTypedNamedElementExpression6642 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleTypedNamedElementExpression6663 = new BitSet(new long[]{0x0000008000000000L});
-        public static final BitSet FOLLOW_39_in_ruleTypedNamedElementExpression6675 = new BitSet(new long[]{0x0000004000000002L});
-        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression6713 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression6723 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression6768 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression6803 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression6813 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression6859 = new BitSet(new long[]{0x0000000010000002L});
-        public static final BitSet FOLLOW_28_in_rulePositionSelectorExpression6872 = new BitSet(new long[]{0xFC800800018001E0L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression6893 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall6931 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall6941 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleOperationCall6986 = new BitSet(new long[]{0x0000000001000000L});
-        public static final BitSet FOLLOW_24_in_ruleOperationCall6998 = new BitSet(new long[]{0x0000000002000020L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall7020 = new BitSet(new long[]{0x0000000002008000L});
-        public static final BitSet FOLLOW_15_in_ruleOperationCall7033 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall7054 = new BitSet(new long[]{0x0000000002008000L});
-        public static final BitSet FOLLOW_25_in_ruleOperationCall7070 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression7106 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression7116 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7161 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_28_in_ruleTriggerMessageExpression7173 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7193 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE7230 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDATATYPE7241 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleDATATYPE7281 = new BitSet(new long[]{0x0000004000000002L});
-        public static final BitSet FOLLOW_38_in_ruleDATATYPE7300 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleDATATYPE7315 = new BitSet(new long[]{0x0000008000000000L});
-        public static final BitSet FOLLOW_39_in_ruleDATATYPE7333 = new BitSet(new long[]{0x0000004000000002L});
-        public static final BitSet FOLLOW_44_in_ruleUnaryPostIncrementDecrementOperator7389 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_ruleUnaryPostIncrementDecrementOperator7406 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_ruleIncrementDecrementOperatorExpression7451 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_ruleIncrementDecrementOperatorExpression7468 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleAssignOperator7513 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleAssignOperator7530 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleAssignOperator7547 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_ruleLogicalOrOperator7591 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleLogicalAndOperator7634 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleComparingEQNEQOperator7678 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleComparingEQNEQOperator7695 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleComparingRelOperator7740 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_ruleComparingRelOperator7757 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_ruleComparingRelOperator7774 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_ruleComparingRelOperator7791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_ruleAdditionOperator7836 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_ruleAdditionOperator7853 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_56_in_ruleMultiplicationOperator7898 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_57_in_ruleMultiplicationOperator7915 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_58_in_ruleUnaryPreOperator7960 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_ruleUnaryPreOperator7977 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_59_in_rulePositionSelectorKind8022 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_60_in_rulePositionSelectorKind8039 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_61_in_rulePositionSelectorKind8056 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_62_in_rulePositionSelectorKind8073 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_63_in_rulePositionSelectorKind8090 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression3658 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression3693 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression3703 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleArrayInitializeExpression3740 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3761 = new BitSet(new long[]{0x0000008000008000L});
+        public static final BitSet FOLLOW_15_in_ruleArrayInitializeExpression3774 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression3795 = new BitSet(new long[]{0x0000008000008000L});
+        public static final BitSet FOLLOW_39_in_ruleArrayInitializeExpression3809 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement3845 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement3855 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3902 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement3921 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration3959 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration3969 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration4017 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration4034 = new BitSet(new long[]{0x0000000044000000L});
+        public static final BitSet FOLLOW_26_in_ruleLocalVariableDeclaration4052 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration4073 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_30_in_ruleLocalVariableDeclaration4087 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration4123 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalConstantDeclaration4133 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleLocalConstantDeclaration4176 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration4212 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration4229 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_26_in_ruleLocalConstantDeclaration4246 = new BitSet(new long[]{0xF1000840018041E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration4267 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_30_in_ruleLocalConstantDeclaration4279 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression4315 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression4325 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression4370 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression4391 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRange_in_entryRuleRange4427 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRange4437 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleRange4474 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleLONG_in_ruleRange4495 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleRange4507 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleLONG_in_ruleRange4528 = new BitSet(new long[]{0x0000040000000000L});
+        public static final BitSet FOLLOW_42_in_ruleRange4540 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLONG_in_entryRuleLONG4577 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLONG4588 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLONG4627 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression4671 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalExpression4681 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression4727 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression4761 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression4771 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4818 = new BitSet(new long[]{0x0002000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression4848 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression4869 = new BitSet(new long[]{0x0002000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression4907 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression4917 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression4964 = new BitSet(new long[]{0x0004000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression4994 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression5015 = new BitSet(new long[]{0x0004000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression5053 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression5063 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5110 = new BitSet(new long[]{0x0018000000000002L});
+        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression5140 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression5161 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression5199 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression5209 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5256 = new BitSet(new long[]{0x0060060000000002L});
+        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression5286 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression5307 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression5345 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression5355 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression5401 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression5435 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression5445 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5492 = new BitSet(new long[]{0x0180000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression5522 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression5543 = new BitSet(new long[]{0x0180000000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression5581 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression5591 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5638 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression5666 = new BitSet(new long[]{0x0E00000000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression5696 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression5719 = new BitSet(new long[]{0x0E00000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression5738 = new BitSet(new long[]{0x0E00000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression5780 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression5790 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression5845 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleUnaryPreExpression5866 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression5902 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTypeCastExpression5912 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleTypeCastExpression5958 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression5981 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_25_in_ruleTypeCastExpression5993 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleTypeCastExpression6014 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand6050 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperand6060 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleOperand6098 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleOperand6120 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_25_in_ruleOperand6131 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand6160 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand6187 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperand6214 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_ruleOperand6241 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand6268 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression6303 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression6313 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteral_in_ruleLiteralExpression6368 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral6405 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteral6416 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_NUMBER_in_ruleLiteral6456 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleLiteral6482 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteral6508 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_ruleLiteral6532 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression6572 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression6582 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression6629 = new BitSet(new long[]{0x0000700000000002L});
+        public static final BitSet FOLLOW_44_in_ruleExtendedTypedNamedElementExpression6651 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression6672 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression6710 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression6749 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTypedNamedElementExpression6759 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression6804 = new BitSet(new long[]{0x0000004010000002L});
+        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression6827 = new BitSet(new long[]{0x0000004010000002L});
+        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression6846 = new BitSet(new long[]{0x0000004010000002L});
+        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression6886 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArrayIndexExpression6896 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleArrayIndexExpression6933 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression6954 = new BitSet(new long[]{0x0000008000000000L});
+        public static final BitSet FOLLOW_39_in_ruleArrayIndexExpression6966 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression7002 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAttributeAccessorExpression7012 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_ruleAttributeAccessorExpression7049 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression7069 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression7105 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression7115 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression7160 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression7195 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression7205 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression7251 = new BitSet(new long[]{0x0000100000000002L});
+        public static final BitSet FOLLOW_44_in_rulePositionSelectorExpression7264 = new BitSet(new long[]{0xF1000800018001E0L,0x0000000000000003L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression7285 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall7323 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall7333 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleOperationCall7378 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_24_in_ruleOperationCall7390 = new BitSet(new long[]{0x0000000002000020L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall7412 = new BitSet(new long[]{0x0000000002008000L});
+        public static final BitSet FOLLOW_15_in_ruleOperationCall7425 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall7446 = new BitSet(new long[]{0x0000000002008000L});
+        public static final BitSet FOLLOW_25_in_ruleOperationCall7462 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression7498 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression7508 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7553 = new BitSet(new long[]{0x0000100000000000L});
+        public static final BitSet FOLLOW_44_in_ruleTriggerMessageExpression7565 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression7585 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE7622 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDATATYPE7633 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleDATATYPE7673 = new BitSet(new long[]{0x0000004000000002L});
+        public static final BitSet FOLLOW_38_in_ruleDATATYPE7692 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleDATATYPE7707 = new BitSet(new long[]{0x0000008000000000L});
+        public static final BitSet FOLLOW_39_in_ruleDATATYPE7725 = new BitSet(new long[]{0x0000004000000002L});
+        public static final BitSet FOLLOW_45_in_ruleUnaryPostIncrementDecrementOperator7781 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleUnaryPostIncrementDecrementOperator7798 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_ruleIncrementDecrementOperatorExpression7843 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleIncrementDecrementOperatorExpression7860 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleAssignOperator7905 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleAssignOperator7922 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_48_in_ruleAssignOperator7939 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_ruleLogicalOrOperator7983 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleLogicalAndOperator8026 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleComparingEQNEQOperator8070 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_ruleComparingEQNEQOperator8087 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleComparingRelOperator8132 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_ruleComparingRelOperator8149 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_ruleComparingRelOperator8166 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleComparingRelOperator8183 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_ruleAdditionOperator8228 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_ruleAdditionOperator8245 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_57_in_ruleMultiplicationOperator8290 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_58_in_ruleMultiplicationOperator8307 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_59_in_ruleMultiplicationOperator8324 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_60_in_ruleUnaryPreOperator8369 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_ruleUnaryPreOperator8386 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_61_in_rulePositionSelectorKind8431 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_62_in_rulePositionSelectorKind8448 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_63_in_rulePositionSelectorKind8465 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_64_in_rulePositionSelectorKind8482 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_65_in_rulePositionSelectorKind8499 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 
