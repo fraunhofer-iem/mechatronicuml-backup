@@ -216,8 +216,12 @@ DataCondition returns DataCondition:
 ///////////////////////////////////////
 // Reused Expressions of ActionLanguage only extended by QualifiedName References
 ///////////////////////////////////////
+//TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
+//	typedNamedElement=[behavior::TypedNamedElement|QualifiedName]('['indices+=ArithmeticExpression']')*
+//;
+
 TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
-	typedNamedElement=[behavior::TypedNamedElement|QualifiedName]('['indices+=ArithmeticExpression']')*
+    typedNamedElement=[behavior::TypedNamedElement|QualifiedName](elementAccessors+= (ArrayIndexExpression | AttributeAccessorExpression))* 
 ;
 
 OperationCall returns actionlanguage::OperationCall:

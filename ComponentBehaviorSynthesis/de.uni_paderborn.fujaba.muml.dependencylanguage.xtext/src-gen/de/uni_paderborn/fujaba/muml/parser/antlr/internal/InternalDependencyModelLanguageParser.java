@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalDependencyModelLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_WS", "RULE_ANY_OTHER", "';'", "'synchronize'", "','", "'with'", "'using'", "'['", "']'", "'of type'", "'forbid state combination of'", "'bound states'", "'by'", "'if'", "'{'", "'}'", "'when'", "'enable'", "'disable'", "'assign'", "'reset clocks'", "'and'", "'merge variable'", "'into'", "'merge variables'", "'merge clocks'", "'.'", "'transition'", "'the combination of'", "'('", "')'", "'when counted'", "'times'", "'delayed by'", "'state combination of'", "'between'", "'INIT'", "'INFINITE'", "'clock'", "'-'", "'null'", "'ns'", "'\\u00C2\\u00B5s'", "'ms'", "'s'", "'min'", "'h'", "'D'", "'for'", "'while'", "'do'", "');'", "'elseif'", "'else'", "'return'", "':='", "'const'", "'<'", "'>'", "'or'", "'=='", "'<>'", "'<='", "'>='", "'since exactly'", "'strictly short than'", "'shorter than'", "'strictly longer than'", "'longer than'", "'entering state'", "'leaving state'", "'is active'", "'is inactive'", "'consuming'", "'sending'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'+'", "'*'", "'/'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_WS", "RULE_ANY_OTHER", "';'", "'synchronize'", "','", "'with'", "'using'", "'['", "']'", "'of type'", "'forbid state combination of'", "'bound states'", "'by'", "'if'", "'{'", "'}'", "'when'", "'enable'", "'disable'", "'assign'", "'reset clocks'", "'and'", "'merge variable'", "'into'", "'merge variables'", "'merge clocks'", "'.'", "'transition'", "'the combination of'", "'('", "')'", "'when counted'", "'times'", "'delayed by'", "'state combination of'", "'between'", "'INIT'", "'INFINITE'", "'clock'", "'-'", "'null'", "'ns'", "'\\u00C2\\u00B5s'", "'ms'", "'s'", "'min'", "'h'", "'D'", "'for'", "'while'", "'do'", "');'", "'elseif'", "'else'", "'return'", "':='", "'const'", "'<'", "'>'", "'->'", "'or'", "'=='", "'<>'", "'<='", "'>='", "'since exactly'", "'strictly short than'", "'shorter than'", "'strictly longer than'", "'longer than'", "'entering state'", "'leaving state'", "'is active'", "'is inactive'", "'consuming'", "'sending'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'+'", "'*'", "'/'", "'%'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
     };
     public static final int RULE_ID=6;
     public static final int T__29=29;
@@ -110,6 +110,8 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     public static final int T__45=45;
     public static final int T__48=48;
     public static final int T__49=49;
+    public static final int T__102=102;
+    public static final int T__101=101;
     public static final int T__100=100;
     public static final int RULE_SL_COMMENT=5;
     public static final int T__30=30;
@@ -3182,10 +3184,10 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( (LA25_0==66||(LA25_0>=88 && LA25_0<=89)) ) {
+            if ( (LA25_0==66||(LA25_0>=89 && LA25_0<=90)) ) {
                 alt25=1;
             }
-            else if ( ((LA25_0>=86 && LA25_0<=87)) ) {
+            else if ( ((LA25_0>=87 && LA25_0<=88)) ) {
                 alt25=2;
             }
             else {
@@ -4271,7 +4273,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                 alt33=1;
                 }
                 break;
-            case 80:
+            case 81:
                 {
                 int LA33_2 = input.LA(2);
 
@@ -4290,7 +4292,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                 }
                 }
                 break;
-            case 81:
+            case 82:
                 {
                 int LA33_3 = input.LA(2);
 
@@ -4309,8 +4311,8 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                 }
                 }
                 break;
-            case 84:
             case 85:
+            case 86:
                 {
                 alt33=4;
                 }
@@ -5410,7 +5412,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( (LA37_0==40) ) {
                 alt37=1;
             }
-            else if ( (LA37_0==38||(LA37_0>=80 && LA37_0<=81)||(LA37_0>=84 && LA37_0<=85)) ) {
+            else if ( (LA37_0==38||(LA37_0>=81 && LA37_0<=82)||(LA37_0>=85 && LA37_0<=86)) ) {
                 alt37=2;
             }
             else {
@@ -6273,7 +6275,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             int alt38=2;
             int LA38_0 = input.LA(1);
 
-            if ( (LA38_0==70) ) {
+            if ( (LA38_0==71) ) {
                 alt38=1;
             }
             switch (alt38) {
@@ -7461,7 +7463,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     int alt43=2;
                     int LA43_0 = input.LA(1);
 
-                    if ( (LA43_0==38||LA43_0==40||(LA43_0>=80 && LA43_0<=81)||(LA43_0>=84 && LA43_0<=85)) ) {
+                    if ( (LA43_0==38||LA43_0==40||(LA43_0>=81 && LA43_0<=82)||(LA43_0>=85 && LA43_0<=86)) ) {
                         alt43=1;
                     }
                     else if ( (LA43_0==48) ) {
@@ -7650,10 +7652,10 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                 break;
             case 38:
             case 40:
-            case 80:
             case 81:
-            case 84:
+            case 82:
             case 85:
+            case 86:
                 {
                 alt45=2;
                 }
@@ -8498,23 +8500,23 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3020:1: ruleTypedNamedElementExpression returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3020:1: ruleTypedNamedElementExpression returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* ) ;
     public final EObject ruleTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        EObject lv_indices_2_0 = null;
+        EObject lv_elementAccessors_1_1 = null;
+
+        EObject lv_elementAccessors_1_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3023:28: ( ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:1: ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3023:28: ( ( ( ( ruleQualifiedName ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:1: ( ( ( ruleQualifiedName ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:1: ( ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )* )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:2: ( ( ruleQualifiedName ) ) (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:1: ( ( ( ruleQualifiedName ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:2: ( ( ruleQualifiedName ) ) ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )*
             {
             // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3024:2: ( ( ruleQualifiedName ) )
             // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3025:1: ( ruleQualifiedName )
@@ -8555,74 +8557,112 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3042:2: (otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']' )*
-            loop46:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3042:2: ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )*
+            loop47:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA46_0==18) ) {
-                    alt46=1;
+                if ( (LA47_0==18||LA47_0==37) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt47) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3042:4: otherlv_1= '[' ( (lv_indices_2_0= ruleArithmeticExpression ) ) otherlv_3= ']'
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3043:1: ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) )
             	    {
-            	    otherlv_1=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleTypedNamedElementExpression6371); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_1, grammarAccess.getTypedNamedElementExpressionAccess().getLeftSquareBracketKeyword_1_0());
-            	          
-            	    }
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3046:1: ( (lv_indices_2_0= ruleArithmeticExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3047:1: (lv_indices_2_0= ruleArithmeticExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3043:1: ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3044:1: (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3047:1: (lv_indices_2_0= ruleArithmeticExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3048:3: lv_indices_2_0= ruleArithmeticExpression
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getIndicesArithmeticExpressionParserRuleCall_1_1_0()); 
-            	      	    
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3044:1: (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression )
+            	    int alt46=2;
+            	    int LA46_0 = input.LA(1);
+
+            	    if ( (LA46_0==18) ) {
+            	        alt46=1;
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleTypedNamedElementExpression6392);
-            	    lv_indices_2_0=ruleArithmeticExpression();
+            	    else if ( (LA46_0==37) ) {
+            	        alt46=2;
+            	    }
+            	    else {
+            	        if (state.backtracking>0) {state.failed=true; return current;}
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 46, 0, input);
 
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
+            	        throw nvae;
+            	    }
+            	    switch (alt46) {
+            	        case 1 :
+            	            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3045:3: lv_elementAccessors_1_1= ruleArrayIndexExpression
+            	            {
+            	            if ( state.backtracking==0 ) {
+            	               
+            	              	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0()); 
+            	              	    
+            	            }
+            	            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression6381);
+            	            lv_elementAccessors_1_1=ruleArrayIndexExpression();
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"indices",
-            	              		lv_indices_2_0, 
-            	              		"ArithmeticExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	            state._fsp--;
+            	            if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              	        if (current==null) {
+            	              	            current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
+            	              	        }
+            	                     		add(
+            	                     			current, 
+            	                     			"elementAccessors",
+            	                      		lv_elementAccessors_1_1, 
+            	                      		"ArrayIndexExpression");
+            	              	        afterParserOrEnumRuleCall();
+            	              	    
+            	            }
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3060:8: lv_elementAccessors_1_2= ruleAttributeAccessorExpression
+            	            {
+            	            if ( state.backtracking==0 ) {
+            	               
+            	              	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1()); 
+            	              	    
+            	            }
+            	            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression6400);
+            	            lv_elementAccessors_1_2=ruleAttributeAccessorExpression();
+
+            	            state._fsp--;
+            	            if (state.failed) return current;
+            	            if ( state.backtracking==0 ) {
+
+            	              	        if (current==null) {
+            	              	            current = createModelElementForParent(grammarAccess.getTypedNamedElementExpressionRule());
+            	              	        }
+            	                     		add(
+            	                     			current, 
+            	                     			"elementAccessors",
+            	                      		lv_elementAccessors_1_2, 
+            	                      		"AttributeAccessorExpression");
+            	              	        afterParserOrEnumRuleCall();
+            	              	    
+            	            }
+
+            	            }
+            	            break;
+
             	    }
 
-            	    }
-
 
             	    }
 
-            	    otherlv_3=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleTypedNamedElementExpression6404); if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	          	newLeafNode(otherlv_3, grammarAccess.getTypedNamedElementExpressionAccess().getRightSquareBracketKeyword_1_2());
-            	          
-            	    }
 
             	    }
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop47;
                 }
             } while (true);
 
@@ -8649,7 +8689,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleOperationCall"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3076:1: entryRuleOperationCall returns [EObject current=null] : iv_ruleOperationCall= ruleOperationCall EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3086:1: entryRuleOperationCall returns [EObject current=null] : iv_ruleOperationCall= ruleOperationCall EOF ;
     public final EObject entryRuleOperationCall() throws RecognitionException {
         EObject current = null;
 
@@ -8657,13 +8697,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3077:2: (iv_ruleOperationCall= ruleOperationCall EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3078:2: iv_ruleOperationCall= ruleOperationCall EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3087:2: (iv_ruleOperationCall= ruleOperationCall EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3088:2: iv_ruleOperationCall= ruleOperationCall EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getOperationCallRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_entryRuleOperationCall6442);
+            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_entryRuleOperationCall6440);
             iv_ruleOperationCall=ruleOperationCall();
 
             state._fsp--;
@@ -8671,7 +8711,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleOperationCall; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCall6452); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCall6450); if (state.failed) return current;
 
             }
 
@@ -8689,7 +8729,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleOperationCall"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3085:1: ruleOperationCall returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3095:1: ruleOperationCall returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) ;
     public final EObject ruleOperationCall() throws RecognitionException {
         EObject current = null;
 
@@ -8704,17 +8744,17 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3088:28: ( ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3089:1: ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3098:28: ( ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3099:1: ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3089:1: ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3089:2: ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3099:1: ( ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3099:2: ( ( ruleQualifiedName ) ) otherlv_1= '(' ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )? otherlv_5= ')'
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3089:2: ( ( ruleQualifiedName ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3090:1: ( ruleQualifiedName )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3099:2: ( ( ruleQualifiedName ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3100:1: ( ruleQualifiedName )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3090:1: ( ruleQualifiedName )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3091:3: ruleQualifiedName
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3100:1: ( ruleQualifiedName )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3101:3: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                
@@ -8733,7 +8773,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        newCompositeNode(grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleOperationCall6504);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_ruleOperationCall6502);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8749,35 +8789,35 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleOperationCall6516); if (state.failed) return current;
+            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleOperationCall6514); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getOperationCallAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3111:1: ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3121:1: ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA48_0==RULE_ID) ) {
-                alt48=1;
+            if ( (LA49_0==RULE_ID) ) {
+                alt49=1;
             }
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3111:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3121:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3111:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3112:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3121:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3122:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3112:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3113:3: lv_parameterBinding_2_0= ruleParamaterBinding
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3122:1: (lv_parameterBinding_2_0= ruleParamaterBinding )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3123:3: lv_parameterBinding_2_0= ruleParamaterBinding
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_2_0_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall6538);
+                    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall6536);
                     lv_parameterBinding_2_0=ruleParamaterBinding();
 
                     state._fsp--;
@@ -8801,39 +8841,39 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3129:2: (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
-                    loop47:
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3139:2: (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
+                    loop48:
                     do {
-                        int alt47=2;
-                        int LA47_0 = input.LA(1);
+                        int alt48=2;
+                        int LA48_0 = input.LA(1);
 
-                        if ( (LA47_0==15) ) {
-                            alt47=1;
+                        if ( (LA48_0==15) ) {
+                            alt48=1;
                         }
 
 
-                        switch (alt47) {
+                        switch (alt48) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3129:4: otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3139:4: otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleOperationCall6551); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleOperationCall6549); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getOperationCallAccess().getCommaKeyword_2_1_0());
                     	          
                     	    }
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3133:1: ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3134:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3143:1: ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3144:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3134:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3135:3: lv_parameterBinding_4_0= ruleParamaterBinding
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3144:1: (lv_parameterBinding_4_0= ruleParamaterBinding )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3145:3: lv_parameterBinding_4_0= ruleParamaterBinding
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_2_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall6572);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall6570);
                     	    lv_parameterBinding_4_0=ruleParamaterBinding();
 
                     	    state._fsp--;
@@ -8862,7 +8902,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     	    break;
 
                     	default :
-                    	    break loop47;
+                    	    break loop48;
                         }
                     } while (true);
 
@@ -8872,7 +8912,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_5=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleOperationCall6588); if (state.failed) return current;
+            otherlv_5=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleOperationCall6586); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_3());
@@ -8901,7 +8941,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleTimeValue"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3163:1: entryRuleTimeValue returns [EObject current=null] : iv_ruleTimeValue= ruleTimeValue EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3173:1: entryRuleTimeValue returns [EObject current=null] : iv_ruleTimeValue= ruleTimeValue EOF ;
     public final EObject entryRuleTimeValue() throws RecognitionException {
         EObject current = null;
 
@@ -8909,13 +8949,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3164:2: (iv_ruleTimeValue= ruleTimeValue EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3165:2: iv_ruleTimeValue= ruleTimeValue EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3174:2: (iv_ruleTimeValue= ruleTimeValue EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3175:2: iv_ruleTimeValue= ruleTimeValue EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTimeValueRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTimeValue_in_entryRuleTimeValue6624);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeValue_in_entryRuleTimeValue6622);
             iv_ruleTimeValue=ruleTimeValue();
 
             state._fsp--;
@@ -8923,7 +8963,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleTimeValue; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeValue6634); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeValue6632); if (state.failed) return current;
 
             }
 
@@ -8941,7 +8981,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeValue"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3172:1: ruleTimeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3182:1: ruleTimeValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) ) ;
     public final EObject ruleTimeValue() throws RecognitionException {
         EObject current = null;
 
@@ -8953,24 +8993,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3175:28: ( ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3176:1: ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3185:28: ( ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3186:1: ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3176:1: ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3176:2: ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3186:1: ( ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3186:2: ( (lv_value_0_0= ruleExpression ) ) ( (lv_unit_1_0= ruleTimeUnit ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3176:2: ( (lv_value_0_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3177:1: (lv_value_0_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3186:2: ( (lv_value_0_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3187:1: (lv_value_0_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3177:1: (lv_value_0_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3178:3: lv_value_0_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3187:1: (lv_value_0_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3188:3: lv_value_0_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getTimeValueAccess().getValueExpressionParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleTimeValue6680);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleTimeValue6678);
             lv_value_0_0=ruleExpression();
 
             state._fsp--;
@@ -8994,18 +9034,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3194:2: ( (lv_unit_1_0= ruleTimeUnit ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3195:1: (lv_unit_1_0= ruleTimeUnit )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3204:2: ( (lv_unit_1_0= ruleTimeUnit ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3205:1: (lv_unit_1_0= ruleTimeUnit )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3195:1: (lv_unit_1_0= ruleTimeUnit )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3196:3: lv_unit_1_0= ruleTimeUnit
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3205:1: (lv_unit_1_0= ruleTimeUnit )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3206:3: lv_unit_1_0= ruleTimeUnit
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getTimeValueAccess().getUnitTimeUnitParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTimeUnit_in_ruleTimeValue6701);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeUnit_in_ruleTimeValue6699);
             lv_unit_1_0=ruleTimeUnit();
 
             state._fsp--;
@@ -9052,7 +9092,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLONG"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3220:1: entryRuleLONG returns [String current=null] : iv_ruleLONG= ruleLONG EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3230:1: entryRuleLONG returns [String current=null] : iv_ruleLONG= ruleLONG EOF ;
     public final String entryRuleLONG() throws RecognitionException {
         String current = null;
 
@@ -9060,13 +9100,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3221:2: (iv_ruleLONG= ruleLONG EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3222:2: iv_ruleLONG= ruleLONG EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3231:2: (iv_ruleLONG= ruleLONG EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3232:2: iv_ruleLONG= ruleLONG EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLONGRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_entryRuleLONG6738);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_entryRuleLONG6736);
             iv_ruleLONG=ruleLONG();
 
             state._fsp--;
@@ -9074,7 +9114,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLONG.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLONG6749); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLONG6747); if (state.failed) return current;
 
             }
 
@@ -9092,7 +9132,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLONG"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3229:1: ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3239:1: ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleLONG() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9101,10 +9141,10 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3232:28: (this_INT_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3233:5: this_INT_0= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3242:28: (this_INT_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3243:5: this_INT_0= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLONG6788); if (state.failed) return current;
+            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLONG6786); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_INT_0);
@@ -9135,7 +9175,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3248:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3258:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -9143,13 +9183,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3249:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3250:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3259:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3260:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName6833);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName6831);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
@@ -9157,7 +9197,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedName.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedName6844); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleQualifiedName6842); if (state.failed) return current;
 
             }
 
@@ -9175,7 +9215,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3257:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3267:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9186,13 +9226,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3260:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3261:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3270:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3271:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3261:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3261:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3271:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3271:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName6884); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName6882); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -9203,35 +9243,41 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                   newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3268:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop49:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3278:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop50:
             do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                if ( (LA49_0==37) ) {
-                    int LA49_2 = input.LA(2);
+                if ( (LA50_0==37) ) {
+                    int LA50_2 = input.LA(2);
 
-                    if ( (LA49_2==RULE_ID) ) {
-                        alt49=1;
+                    if ( (LA50_2==RULE_ID) ) {
+                        int LA50_3 = input.LA(3);
+
+                        if ( (synpred63_InternalDependencyModelLanguage()) ) {
+                            alt50=1;
+                        }
+
+
                     }
 
 
                 }
 
 
-                switch (alt49) {
+                switch (alt50) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3269:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3279:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleQualifiedName6903); if (state.failed) return current;
+            	    kw=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleQualifiedName6901); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
             	              newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             	          
             	    }
-            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName6918); if (state.failed) return current;
+            	    this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleQualifiedName6916); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_ID_2);
@@ -9247,7 +9293,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop50;
                 }
             } while (true);
 
@@ -9274,7 +9320,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleEString"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3289:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3299:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -9282,13 +9328,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3290:2: (iv_ruleEString= ruleEString EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3291:2: iv_ruleEString= ruleEString EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3300:2: (iv_ruleEString= ruleEString EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3301:2: iv_ruleEString= ruleEString EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEStringRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString6966);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString6964);
             iv_ruleEString=ruleEString();
 
             state._fsp--;
@@ -9296,7 +9342,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleEString.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString6977); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString6975); if (state.failed) return current;
 
             }
 
@@ -9314,7 +9360,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleEString"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3298:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3308:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9324,31 +9370,31 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3301:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3302:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3311:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3312:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3302:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3312:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==RULE_STRING) ) {
-                alt50=1;
+            if ( (LA51_0==RULE_STRING) ) {
+                alt51=1;
             }
-            else if ( (LA50_0==RULE_ID) ) {
-                alt50=2;
+            else if ( (LA51_0==RULE_ID) ) {
+                alt51=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 50, 0, input);
+                    new NoViableAltException("", 51, 0, input);
 
                 throw nvae;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3302:6: this_STRING_0= RULE_STRING
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3312:6: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString7017); if (state.failed) return current;
+                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString7015); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_STRING_0);
@@ -9363,9 +9409,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3310:10: this_ID_1= RULE_ID
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3320:10: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString7043); if (state.failed) return current;
+                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString7041); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_ID_1);
@@ -9402,7 +9448,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleEInt"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3325:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3335:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -9410,13 +9456,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3326:2: (iv_ruleEInt= ruleEInt EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3327:2: iv_ruleEInt= ruleEInt EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3336:2: (iv_ruleEInt= ruleEInt EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3337:2: iv_ruleEInt= ruleEInt EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getEIntRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt7089);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt7087);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
@@ -9424,7 +9470,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleEInt.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt7100); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt7098); if (state.failed) return current;
 
             }
 
@@ -9442,7 +9488,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleEInt"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3334:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3344:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9452,24 +9498,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3337:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3338:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3347:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3348:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3338:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3338:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3348:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3348:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3338:2: (kw= '-' )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3348:2: (kw= '-' )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==50) ) {
-                alt51=1;
+            if ( (LA52_0==50) ) {
+                alt52=1;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3339:2: kw= '-'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3349:2: kw= '-'
                     {
-                    kw=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleEInt7139); if (state.failed) return current;
+                    kw=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleEInt7137); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9482,7 +9528,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt7156); if (state.failed) return current;
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt7154); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_INT_1);
@@ -9516,7 +9562,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLiteral"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3359:1: entryRuleLiteral returns [String current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3369:1: entryRuleLiteral returns [String current=null] : iv_ruleLiteral= ruleLiteral EOF ;
     public final String entryRuleLiteral() throws RecognitionException {
         String current = null;
 
@@ -9524,13 +9570,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3360:2: (iv_ruleLiteral= ruleLiteral EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3361:2: iv_ruleLiteral= ruleLiteral EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3370:2: (iv_ruleLiteral= ruleLiteral EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3371:2: iv_ruleLiteral= ruleLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLiteralRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_entryRuleLiteral7202);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_entryRuleLiteral7200);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
@@ -9538,7 +9584,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLiteral.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteral7213); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteral7211); if (state.failed) return current;
 
             }
 
@@ -9556,7 +9602,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLiteral"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3368:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3378:1: ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' ) ;
     public final AntlrDatatypeRuleToken ruleLiteral() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9569,50 +9615,50 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3371:28: ( (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3372:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3381:28: ( (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3382:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3372:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' )
-            int alt52=5;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3382:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | this_STRING_3= RULE_STRING | kw= 'null' )
+            int alt53=5;
             switch ( input.LA(1) ) {
             case RULE_NUMBER:
                 {
-                alt52=1;
+                alt53=1;
                 }
                 break;
             case RULE_BOOLEAN:
                 {
-                alt52=2;
+                alt53=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt52=3;
+                alt53=3;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt52=4;
+                alt53=4;
                 }
                 break;
             case 51:
                 {
-                alt52=5;
+                alt53=5;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 53, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3372:6: this_NUMBER_0= RULE_NUMBER
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3382:6: this_NUMBER_0= RULE_NUMBER
                     {
-                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_RULE_NUMBER_in_ruleLiteral7253); if (state.failed) return current;
+                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_RULE_NUMBER_in_ruleLiteral7251); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_NUMBER_0);
@@ -9627,9 +9673,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3380:10: this_BOOLEAN_1= RULE_BOOLEAN
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3390:10: this_BOOLEAN_1= RULE_BOOLEAN
                     {
-                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_ruleLiteral7279); if (state.failed) return current;
+                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_ruleLiteral7277); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_BOOLEAN_1);
@@ -9644,9 +9690,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3388:10: this_INT_2= RULE_INT
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3398:10: this_INT_2= RULE_INT
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteral7305); if (state.failed) return current;
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteral7303); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_INT_2);
@@ -9661,9 +9707,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3396:10: this_STRING_3= RULE_STRING
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3406:10: this_STRING_3= RULE_STRING
                     {
-                    this_STRING_3=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleLiteral7331); if (state.failed) return current;
+                    this_STRING_3=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleLiteral7329); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       		current.merge(this_STRING_3);
@@ -9678,9 +9724,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3405:2: kw= 'null'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3415:2: kw= 'null'
                     {
-                    kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleLiteral7355); if (state.failed) return current;
+                    kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleLiteral7353); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9713,7 +9759,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleTimeUnit"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3418:1: entryRuleTimeUnit returns [String current=null] : iv_ruleTimeUnit= ruleTimeUnit EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3428:1: entryRuleTimeUnit returns [String current=null] : iv_ruleTimeUnit= ruleTimeUnit EOF ;
     public final String entryRuleTimeUnit() throws RecognitionException {
         String current = null;
 
@@ -9721,13 +9767,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3419:2: (iv_ruleTimeUnit= ruleTimeUnit EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3420:2: iv_ruleTimeUnit= ruleTimeUnit EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3429:2: (iv_ruleTimeUnit= ruleTimeUnit EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3430:2: iv_ruleTimeUnit= ruleTimeUnit EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTimeUnitRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTimeUnit_in_entryRuleTimeUnit7396);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeUnit_in_entryRuleTimeUnit7394);
             iv_ruleTimeUnit=ruleTimeUnit();
 
             state._fsp--;
@@ -9735,7 +9781,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleTimeUnit.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeUnit7407); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTimeUnit7405); if (state.failed) return current;
 
             }
 
@@ -9753,7 +9799,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeUnit"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3427:1: ruleTimeUnit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3437:1: ruleTimeUnit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnit() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9762,60 +9808,60 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3430:28: ( (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3431:1: (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3440:28: ( (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3441:1: (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3431:1: (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
-            int alt53=7;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3441:1: (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
+            int alt54=7;
             switch ( input.LA(1) ) {
             case 52:
                 {
-                alt53=1;
+                alt54=1;
                 }
                 break;
             case 53:
                 {
-                alt53=2;
+                alt54=2;
                 }
                 break;
             case 54:
                 {
-                alt53=3;
+                alt54=3;
                 }
                 break;
             case 55:
                 {
-                alt53=4;
+                alt54=4;
                 }
                 break;
             case 56:
                 {
-                alt53=5;
+                alt54=5;
                 }
                 break;
             case 57:
                 {
-                alt53=6;
+                alt54=6;
                 }
                 break;
             case 58:
                 {
-                alt53=7;
+                alt54=7;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3432:2: kw= 'ns'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3442:2: kw= 'ns'
                     {
-                    kw=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleTimeUnit7445); if (state.failed) return current;
+                    kw=(Token)match(input,52,FollowSets000.FOLLOW_52_in_ruleTimeUnit7443); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9826,9 +9872,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3439:2: kw= '\\u00C2\\u00B5s'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3449:2: kw= '\\u00C2\\u00B5s'
                     {
-                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleTimeUnit7464); if (state.failed) return current;
+                    kw=(Token)match(input,53,FollowSets000.FOLLOW_53_in_ruleTimeUnit7462); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9839,9 +9885,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3446:2: kw= 'ms'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3456:2: kw= 'ms'
                     {
-                    kw=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleTimeUnit7483); if (state.failed) return current;
+                    kw=(Token)match(input,54,FollowSets000.FOLLOW_54_in_ruleTimeUnit7481); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9852,9 +9898,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3453:2: kw= 's'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3463:2: kw= 's'
                     {
-                    kw=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleTimeUnit7502); if (state.failed) return current;
+                    kw=(Token)match(input,55,FollowSets000.FOLLOW_55_in_ruleTimeUnit7500); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9865,9 +9911,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3460:2: kw= 'min'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3470:2: kw= 'min'
                     {
-                    kw=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleTimeUnit7521); if (state.failed) return current;
+                    kw=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleTimeUnit7519); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9878,9 +9924,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3467:2: kw= 'h'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3477:2: kw= 'h'
                     {
-                    kw=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleTimeUnit7540); if (state.failed) return current;
+                    kw=(Token)match(input,57,FollowSets000.FOLLOW_57_in_ruleTimeUnit7538); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9891,9 +9937,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3474:2: kw= 'D'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3484:2: kw= 'D'
                     {
-                    kw=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleTimeUnit7559); if (state.failed) return current;
+                    kw=(Token)match(input,58,FollowSets000.FOLLOW_58_in_ruleTimeUnit7557); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current.merge(kw);
@@ -9926,7 +9972,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleBlock"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3489:1: entryRuleBlock returns [EObject current=null] : iv_ruleBlock= ruleBlock EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3499:1: entryRuleBlock returns [EObject current=null] : iv_ruleBlock= ruleBlock EOF ;
     public final EObject entryRuleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -9937,13 +9983,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
         	
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3493:2: (iv_ruleBlock= ruleBlock EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3494:2: iv_ruleBlock= ruleBlock EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3503:2: (iv_ruleBlock= ruleBlock EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3504:2: iv_ruleBlock= ruleBlock EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getBlockRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_entryRuleBlock7607);
+            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_entryRuleBlock7605);
             iv_ruleBlock=ruleBlock();
 
             state._fsp--;
@@ -9951,7 +9997,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleBlock; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBlock7617); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBlock7615); if (state.failed) return current;
 
             }
 
@@ -9972,7 +10018,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleBlock"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3504:1: ruleBlock returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3514:1: ruleBlock returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' ) ;
     public final EObject ruleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -9985,14 +10031,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3508:28: ( ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3509:1: ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3518:28: ( ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3519:1: ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3509:1: ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3509:2: () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3519:1: ( () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3519:2: () otherlv_1= '{' ( (lv_expressions_2_0= ruleExpressionStartRule ) )* otherlv_3= '}'
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3509:2: ()
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3510:2: 
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3519:2: ()
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3520:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -10009,36 +10055,36 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleBlock7670); if (state.failed) return current;
+            otherlv_1=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleBlock7668); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3522:1: ( (lv_expressions_2_0= ruleExpressionStartRule ) )*
-            loop54:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3532:1: ( (lv_expressions_2_0= ruleExpressionStartRule ) )*
+            loop55:
             do {
-                int alt54=2;
-                int LA54_0 = input.LA(1);
+                int alt55=2;
+                int LA55_0 = input.LA(1);
 
-                if ( (LA54_0==RULE_ID||LA54_0==24||(LA54_0>=59 && LA54_0<=61)||LA54_0==65||LA54_0==67) ) {
-                    alt54=1;
+                if ( (LA55_0==RULE_ID||LA55_0==24||(LA55_0>=59 && LA55_0<=61)||LA55_0==65||LA55_0==67) ) {
+                    alt55=1;
                 }
 
 
-                switch (alt54) {
+                switch (alt55) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3523:1: (lv_expressions_2_0= ruleExpressionStartRule )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3533:1: (lv_expressions_2_0= ruleExpressionStartRule )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3523:1: (lv_expressions_2_0= ruleExpressionStartRule )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3524:3: lv_expressions_2_0= ruleExpressionStartRule
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3533:1: (lv_expressions_2_0= ruleExpressionStartRule )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3534:3: lv_expressions_2_0= ruleExpressionStartRule
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getBlockAccess().getExpressionsExpressionStartRuleParserRuleCall_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleExpressionStartRule_in_ruleBlock7691);
+            	    pushFollow(FollowSets000.FOLLOW_ruleExpressionStartRule_in_ruleBlock7689);
             	    lv_expressions_2_0=ruleExpressionStartRule();
 
             	    state._fsp--;
@@ -10064,11 +10110,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	    break;
 
             	default :
-            	    break loop54;
+            	    break loop55;
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleBlock7704); if (state.failed) return current;
+            otherlv_3=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleBlock7702); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_3());
@@ -10100,7 +10146,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleForLoop"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3555:1: entryRuleForLoop returns [EObject current=null] : iv_ruleForLoop= ruleForLoop EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3565:1: entryRuleForLoop returns [EObject current=null] : iv_ruleForLoop= ruleForLoop EOF ;
     public final EObject entryRuleForLoop() throws RecognitionException {
         EObject current = null;
 
@@ -10108,13 +10154,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3556:2: (iv_ruleForLoop= ruleForLoop EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3557:2: iv_ruleForLoop= ruleForLoop EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3566:2: (iv_ruleForLoop= ruleForLoop EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3567:2: iv_ruleForLoop= ruleForLoop EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getForLoopRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleForLoop_in_entryRuleForLoop7744);
+            pushFollow(FollowSets000.FOLLOW_ruleForLoop_in_entryRuleForLoop7742);
             iv_ruleForLoop=ruleForLoop();
 
             state._fsp--;
@@ -10122,7 +10168,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleForLoop; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleForLoop7754); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleForLoop7752); if (state.failed) return current;
 
             }
 
@@ -10140,7 +10186,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleForLoop"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3564:1: ruleForLoop returns [EObject current=null] : (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3574:1: ruleForLoop returns [EObject current=null] : (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) ) ;
     public final EObject ruleForLoop() throws RecognitionException {
         EObject current = null;
 
@@ -10160,36 +10206,36 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3567:28: ( (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3568:1: (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3577:28: ( (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3578:1: (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3568:1: (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3568:3: otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3578:1: (otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3578:3: otherlv_0= 'for' otherlv_1= '(' ( (lv_initializeExpression_2_0= ruleAssignment ) ) ( (lv_loopTest_3_0= ruleExpression ) ) otherlv_4= ';' ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) ) otherlv_6= ')' ( (lv_block_7_0= ruleBlock ) )
             {
-            otherlv_0=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleForLoop7791); if (state.failed) return current;
+            otherlv_0=(Token)match(input,59,FollowSets000.FOLLOW_59_in_ruleForLoop7789); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getForLoopAccess().getForKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleForLoop7803); if (state.failed) return current;
+            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleForLoop7801); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getForLoopAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3576:1: ( (lv_initializeExpression_2_0= ruleAssignment ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3577:1: (lv_initializeExpression_2_0= ruleAssignment )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3586:1: ( (lv_initializeExpression_2_0= ruleAssignment ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3587:1: (lv_initializeExpression_2_0= ruleAssignment )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3577:1: (lv_initializeExpression_2_0= ruleAssignment )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3578:3: lv_initializeExpression_2_0= ruleAssignment
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3587:1: (lv_initializeExpression_2_0= ruleAssignment )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3588:3: lv_initializeExpression_2_0= ruleAssignment
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getForLoopAccess().getInitializeExpressionAssignmentParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleAssignment_in_ruleForLoop7824);
+            pushFollow(FollowSets000.FOLLOW_ruleAssignment_in_ruleForLoop7822);
             lv_initializeExpression_2_0=ruleAssignment();
 
             state._fsp--;
@@ -10213,18 +10259,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3594:2: ( (lv_loopTest_3_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3595:1: (lv_loopTest_3_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3604:2: ( (lv_loopTest_3_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3605:1: (lv_loopTest_3_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3595:1: (lv_loopTest_3_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3596:3: lv_loopTest_3_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3605:1: (lv_loopTest_3_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3606:3: lv_loopTest_3_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getForLoopAccess().getLoopTestExpressionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleForLoop7845);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleForLoop7843);
             lv_loopTest_3_0=ruleExpression();
 
             state._fsp--;
@@ -10248,24 +10294,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleForLoop7857); if (state.failed) return current;
+            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleForLoop7855); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getForLoopAccess().getSemicolonKeyword_4());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3616:1: ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3617:1: (lv_countingExpression_5_0= ruleForLoopCountingExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3626:1: ( (lv_countingExpression_5_0= ruleForLoopCountingExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3627:1: (lv_countingExpression_5_0= ruleForLoopCountingExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3617:1: (lv_countingExpression_5_0= ruleForLoopCountingExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3618:3: lv_countingExpression_5_0= ruleForLoopCountingExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3627:1: (lv_countingExpression_5_0= ruleForLoopCountingExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3628:3: lv_countingExpression_5_0= ruleForLoopCountingExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getForLoopAccess().getCountingExpressionForLoopCountingExpressionParserRuleCall_5_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleForLoopCountingExpression_in_ruleForLoop7878);
+            pushFollow(FollowSets000.FOLLOW_ruleForLoopCountingExpression_in_ruleForLoop7876);
             lv_countingExpression_5_0=ruleForLoopCountingExpression();
 
             state._fsp--;
@@ -10289,24 +10335,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_6=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleForLoop7890); if (state.failed) return current;
+            otherlv_6=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleForLoop7888); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_6, grammarAccess.getForLoopAccess().getRightParenthesisKeyword_6());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3638:1: ( (lv_block_7_0= ruleBlock ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3639:1: (lv_block_7_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3648:1: ( (lv_block_7_0= ruleBlock ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3649:1: (lv_block_7_0= ruleBlock )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3639:1: (lv_block_7_0= ruleBlock )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3640:3: lv_block_7_0= ruleBlock
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3649:1: (lv_block_7_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3650:3: lv_block_7_0= ruleBlock
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getForLoopAccess().getBlockBlockParserRuleCall_7_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleForLoop7911);
+            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleForLoop7909);
             lv_block_7_0=ruleBlock();
 
             state._fsp--;
@@ -10353,7 +10399,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleForLoopCountingExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3664:1: entryRuleForLoopCountingExpression returns [EObject current=null] : iv_ruleForLoopCountingExpression= ruleForLoopCountingExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3674:1: entryRuleForLoopCountingExpression returns [EObject current=null] : iv_ruleForLoopCountingExpression= ruleForLoopCountingExpression EOF ;
     public final EObject entryRuleForLoopCountingExpression() throws RecognitionException {
         EObject current = null;
 
@@ -10361,13 +10407,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3665:2: (iv_ruleForLoopCountingExpression= ruleForLoopCountingExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3666:2: iv_ruleForLoopCountingExpression= ruleForLoopCountingExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3675:2: (iv_ruleForLoopCountingExpression= ruleForLoopCountingExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3676:2: iv_ruleForLoopCountingExpression= ruleForLoopCountingExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getForLoopCountingExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleForLoopCountingExpression_in_entryRuleForLoopCountingExpression7947);
+            pushFollow(FollowSets000.FOLLOW_ruleForLoopCountingExpression_in_entryRuleForLoopCountingExpression7945);
             iv_ruleForLoopCountingExpression=ruleForLoopCountingExpression();
 
             state._fsp--;
@@ -10375,7 +10421,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleForLoopCountingExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleForLoopCountingExpression7957); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleForLoopCountingExpression7955); if (state.failed) return current;
 
             }
 
@@ -10393,7 +10439,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleForLoopCountingExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3673:1: ruleForLoopCountingExpression returns [EObject current=null] : ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3683:1: ruleForLoopCountingExpression returns [EObject current=null] : ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) ) ;
     public final EObject ruleForLoopCountingExpression() throws RecognitionException {
         EObject current = null;
 
@@ -10409,24 +10455,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3676:28: ( ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3677:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3686:28: ( ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3687:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3677:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3677:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3687:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3687:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3677:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3678:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3687:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3688:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3678:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3679:3: lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3688:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3689:3: lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression8003);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression8001);
             lv_lhs_typedNamedElementExpression_0_0=ruleTypedNamedElementExpression();
 
             state._fsp--;
@@ -10450,39 +10496,39 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3695:2: ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) )
-            int alt55=2;
-            int LA55_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3705:2: ( ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) ) | ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) ) )
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( ((LA55_0>=86 && LA55_0<=87)) ) {
-                alt55=1;
+            if ( ((LA56_0>=87 && LA56_0<=88)) ) {
+                alt56=1;
             }
-            else if ( (LA55_0==66||(LA55_0>=88 && LA55_0<=89)) ) {
-                alt55=2;
+            else if ( (LA56_0==66||(LA56_0>=89 && LA56_0<=90)) ) {
+                alt56=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 55, 0, input);
+                    new NoViableAltException("", 56, 0, input);
 
                 throw nvae;
             }
-            switch (alt55) {
+            switch (alt56) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3695:3: ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3705:3: ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3695:3: ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3696:1: (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3705:3: ( (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3706:1: (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3696:1: (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3697:3: lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3706:1: (lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3707:3: lv_incrementDecrementOperator_1_0= ruleUnaryPostIncrementDecrementOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getIncrementDecrementOperatorUnaryPostIncrementDecrementOperatorEnumRuleCall_1_0_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleForLoopCountingExpression8025);
+                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleForLoopCountingExpression8023);
                     lv_incrementDecrementOperator_1_0=ruleUnaryPostIncrementDecrementOperator();
 
                     state._fsp--;
@@ -10510,23 +10556,23 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3714:6: ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3724:6: ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3714:6: ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3714:7: ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3724:6: ( ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3724:7: ( (lv_assignOperator_2_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_3_0= ruleExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3714:7: ( (lv_assignOperator_2_0= ruleAssignOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3715:1: (lv_assignOperator_2_0= ruleAssignOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3724:7: ( (lv_assignOperator_2_0= ruleAssignOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3725:1: (lv_assignOperator_2_0= ruleAssignOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3715:1: (lv_assignOperator_2_0= ruleAssignOperator )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3716:3: lv_assignOperator_2_0= ruleAssignOperator
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3725:1: (lv_assignOperator_2_0= ruleAssignOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3726:3: lv_assignOperator_2_0= ruleAssignOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getAssignOperatorAssignOperatorEnumRuleCall_1_1_0_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression8053);
+                    pushFollow(FollowSets000.FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression8051);
                     lv_assignOperator_2_0=ruleAssignOperator();
 
                     state._fsp--;
@@ -10550,18 +10596,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3732:2: ( (lv_rhs_assignExpression_3_0= ruleExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3733:1: (lv_rhs_assignExpression_3_0= ruleExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3742:2: ( (lv_rhs_assignExpression_3_0= ruleExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3743:1: (lv_rhs_assignExpression_3_0= ruleExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3733:1: (lv_rhs_assignExpression_3_0= ruleExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3734:3: lv_rhs_assignExpression_3_0= ruleExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3743:1: (lv_rhs_assignExpression_3_0= ruleExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3744:3: lv_rhs_assignExpression_3_0= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getRhs_assignExpressionExpressionParserRuleCall_1_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleForLoopCountingExpression8074);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleForLoopCountingExpression8072);
                     lv_rhs_assignExpression_3_0=ruleExpression();
 
                     state._fsp--;
@@ -10617,7 +10663,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleWhileLoop"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3758:1: entryRuleWhileLoop returns [EObject current=null] : iv_ruleWhileLoop= ruleWhileLoop EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3768:1: entryRuleWhileLoop returns [EObject current=null] : iv_ruleWhileLoop= ruleWhileLoop EOF ;
     public final EObject entryRuleWhileLoop() throws RecognitionException {
         EObject current = null;
 
@@ -10625,13 +10671,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3759:2: (iv_ruleWhileLoop= ruleWhileLoop EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3760:2: iv_ruleWhileLoop= ruleWhileLoop EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3769:2: (iv_ruleWhileLoop= ruleWhileLoop EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3770:2: iv_ruleWhileLoop= ruleWhileLoop EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getWhileLoopRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleWhileLoop_in_entryRuleWhileLoop8112);
+            pushFollow(FollowSets000.FOLLOW_ruleWhileLoop_in_entryRuleWhileLoop8110);
             iv_ruleWhileLoop=ruleWhileLoop();
 
             state._fsp--;
@@ -10639,7 +10685,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleWhileLoop; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleWhileLoop8122); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleWhileLoop8120); if (state.failed) return current;
 
             }
 
@@ -10657,7 +10703,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleWhileLoop"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3767:1: ruleWhileLoop returns [EObject current=null] : (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3777:1: ruleWhileLoop returns [EObject current=null] : (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) ) ;
     public final EObject ruleWhileLoop() throws RecognitionException {
         EObject current = null;
 
@@ -10672,36 +10718,36 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3770:28: ( (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3771:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3780:28: ( (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3781:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3771:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3771:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3781:1: (otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3781:3: otherlv_0= 'while' otherlv_1= '(' ( (lv_loopTest_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_block_4_0= ruleBlock ) )
             {
-            otherlv_0=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleWhileLoop8159); if (state.failed) return current;
+            otherlv_0=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleWhileLoop8157); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getWhileLoopAccess().getWhileKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleWhileLoop8171); if (state.failed) return current;
+            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleWhileLoop8169); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getWhileLoopAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3779:1: ( (lv_loopTest_2_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3780:1: (lv_loopTest_2_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3789:1: ( (lv_loopTest_2_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3790:1: (lv_loopTest_2_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3780:1: (lv_loopTest_2_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3781:3: lv_loopTest_2_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3790:1: (lv_loopTest_2_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3791:3: lv_loopTest_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getWhileLoopAccess().getLoopTestExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleWhileLoop8192);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleWhileLoop8190);
             lv_loopTest_2_0=ruleExpression();
 
             state._fsp--;
@@ -10725,24 +10771,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_3=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleWhileLoop8204); if (state.failed) return current;
+            otherlv_3=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleWhileLoop8202); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getWhileLoopAccess().getRightParenthesisKeyword_3());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3801:1: ( (lv_block_4_0= ruleBlock ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3802:1: (lv_block_4_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3811:1: ( (lv_block_4_0= ruleBlock ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3812:1: (lv_block_4_0= ruleBlock )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3802:1: (lv_block_4_0= ruleBlock )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3803:3: lv_block_4_0= ruleBlock
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3812:1: (lv_block_4_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3813:3: lv_block_4_0= ruleBlock
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getWhileLoopAccess().getBlockBlockParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleWhileLoop8225);
+            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleWhileLoop8223);
             lv_block_4_0=ruleBlock();
 
             state._fsp--;
@@ -10789,7 +10835,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleDoWhileLoop"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3827:1: entryRuleDoWhileLoop returns [EObject current=null] : iv_ruleDoWhileLoop= ruleDoWhileLoop EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3837:1: entryRuleDoWhileLoop returns [EObject current=null] : iv_ruleDoWhileLoop= ruleDoWhileLoop EOF ;
     public final EObject entryRuleDoWhileLoop() throws RecognitionException {
         EObject current = null;
 
@@ -10797,13 +10843,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3828:2: (iv_ruleDoWhileLoop= ruleDoWhileLoop EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3829:2: iv_ruleDoWhileLoop= ruleDoWhileLoop EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3838:2: (iv_ruleDoWhileLoop= ruleDoWhileLoop EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3839:2: iv_ruleDoWhileLoop= ruleDoWhileLoop EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDoWhileLoopRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleDoWhileLoop_in_entryRuleDoWhileLoop8261);
+            pushFollow(FollowSets000.FOLLOW_ruleDoWhileLoop_in_entryRuleDoWhileLoop8259);
             iv_ruleDoWhileLoop=ruleDoWhileLoop();
 
             state._fsp--;
@@ -10811,7 +10857,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleDoWhileLoop; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDoWhileLoop8271); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDoWhileLoop8269); if (state.failed) return current;
 
             }
 
@@ -10829,7 +10875,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleDoWhileLoop"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3836:1: ruleDoWhileLoop returns [EObject current=null] : (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3846:1: ruleDoWhileLoop returns [EObject current=null] : (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' ) ;
     public final EObject ruleDoWhileLoop() throws RecognitionException {
         EObject current = null;
 
@@ -10845,30 +10891,30 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3839:28: ( (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3840:1: (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3849:28: ( (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3850:1: (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3840:1: (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3840:3: otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3850:1: (otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3850:3: otherlv_0= 'do' ( (lv_block_1_0= ruleBlock ) ) otherlv_2= 'while' otherlv_3= '(' ( (lv_loopTest_4_0= ruleExpression ) ) otherlv_5= ');'
             {
-            otherlv_0=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleDoWhileLoop8308); if (state.failed) return current;
+            otherlv_0=(Token)match(input,61,FollowSets000.FOLLOW_61_in_ruleDoWhileLoop8306); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getDoWhileLoopAccess().getDoKeyword_0());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3844:1: ( (lv_block_1_0= ruleBlock ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3845:1: (lv_block_1_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3854:1: ( (lv_block_1_0= ruleBlock ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3855:1: (lv_block_1_0= ruleBlock )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3845:1: (lv_block_1_0= ruleBlock )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3846:3: lv_block_1_0= ruleBlock
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3855:1: (lv_block_1_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3856:3: lv_block_1_0= ruleBlock
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getDoWhileLoopAccess().getBlockBlockParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleDoWhileLoop8329);
+            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleDoWhileLoop8327);
             lv_block_1_0=ruleBlock();
 
             state._fsp--;
@@ -10892,30 +10938,30 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleDoWhileLoop8341); if (state.failed) return current;
+            otherlv_2=(Token)match(input,60,FollowSets000.FOLLOW_60_in_ruleDoWhileLoop8339); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getDoWhileLoopAccess().getWhileKeyword_2());
                   
             }
-            otherlv_3=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleDoWhileLoop8353); if (state.failed) return current;
+            otherlv_3=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleDoWhileLoop8351); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getDoWhileLoopAccess().getLeftParenthesisKeyword_3());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3870:1: ( (lv_loopTest_4_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3871:1: (lv_loopTest_4_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3880:1: ( (lv_loopTest_4_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3881:1: (lv_loopTest_4_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3871:1: (lv_loopTest_4_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3872:3: lv_loopTest_4_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3881:1: (lv_loopTest_4_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3882:3: lv_loopTest_4_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getDoWhileLoopAccess().getLoopTestExpressionParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleDoWhileLoop8374);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleDoWhileLoop8372);
             lv_loopTest_4_0=ruleExpression();
 
             state._fsp--;
@@ -10939,7 +10985,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_5=(Token)match(input,62,FollowSets000.FOLLOW_62_in_ruleDoWhileLoop8386); if (state.failed) return current;
+            otherlv_5=(Token)match(input,62,FollowSets000.FOLLOW_62_in_ruleDoWhileLoop8384); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getDoWhileLoopAccess().getRightParenthesisSemicolonKeyword_5());
@@ -10968,7 +11014,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleIfStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3900:1: entryRuleIfStatement returns [EObject current=null] : iv_ruleIfStatement= ruleIfStatement EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3910:1: entryRuleIfStatement returns [EObject current=null] : iv_ruleIfStatement= ruleIfStatement EOF ;
     public final EObject entryRuleIfStatement() throws RecognitionException {
         EObject current = null;
 
@@ -10976,13 +11022,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3901:2: (iv_ruleIfStatement= ruleIfStatement EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3902:2: iv_ruleIfStatement= ruleIfStatement EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3911:2: (iv_ruleIfStatement= ruleIfStatement EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3912:2: iv_ruleIfStatement= ruleIfStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getIfStatementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleIfStatement_in_entryRuleIfStatement8422);
+            pushFollow(FollowSets000.FOLLOW_ruleIfStatement_in_entryRuleIfStatement8420);
             iv_ruleIfStatement=ruleIfStatement();
 
             state._fsp--;
@@ -10990,7 +11036,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleIfStatement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIfStatement8432); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleIfStatement8430); if (state.failed) return current;
 
             }
 
@@ -11008,7 +11054,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleIfStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3909:1: ruleIfStatement returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3919:1: ruleIfStatement returns [EObject current=null] : (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? ) ;
     public final EObject ruleIfStatement() throws RecognitionException {
         EObject current = null;
 
@@ -11033,36 +11079,36 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3912:28: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3913:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3922:28: ( (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3923:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3913:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3913:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3923:1: (otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3923:3: otherlv_0= 'if' otherlv_1= '(' ( (lv_ifCondition_2_0= ruleExpression ) ) otherlv_3= ')' ( (lv_ifBlock_4_0= ruleBlock ) ) (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )* (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )?
             {
-            otherlv_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleIfStatement8469); if (state.failed) return current;
+            otherlv_0=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleIfStatement8467); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getIfStatementAccess().getIfKeyword_0());
                   
             }
-            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleIfStatement8481); if (state.failed) return current;
+            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleIfStatement8479); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getIfStatementAccess().getLeftParenthesisKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3921:1: ( (lv_ifCondition_2_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3922:1: (lv_ifCondition_2_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3931:1: ( (lv_ifCondition_2_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3932:1: (lv_ifCondition_2_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3922:1: (lv_ifCondition_2_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3923:3: lv_ifCondition_2_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3932:1: (lv_ifCondition_2_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3933:3: lv_ifCondition_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getIfStatementAccess().getIfConditionExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleIfStatement8502);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleIfStatement8500);
             lv_ifCondition_2_0=ruleExpression();
 
             state._fsp--;
@@ -11086,24 +11132,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_3=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleIfStatement8514); if (state.failed) return current;
+            otherlv_3=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleIfStatement8512); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getIfStatementAccess().getRightParenthesisKeyword_3());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3943:1: ( (lv_ifBlock_4_0= ruleBlock ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3944:1: (lv_ifBlock_4_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3953:1: ( (lv_ifBlock_4_0= ruleBlock ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3954:1: (lv_ifBlock_4_0= ruleBlock )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3944:1: (lv_ifBlock_4_0= ruleBlock )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3945:3: lv_ifBlock_4_0= ruleBlock
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3954:1: (lv_ifBlock_4_0= ruleBlock )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3955:3: lv_ifBlock_4_0= ruleBlock
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getIfStatementAccess().getIfBlockBlockParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleIfStatement8535);
+            pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleIfStatement8533);
             lv_ifBlock_4_0=ruleBlock();
 
             state._fsp--;
@@ -11127,45 +11173,45 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3961:2: (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )*
-            loop56:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3971:2: (otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) ) )*
+            loop57:
             do {
-                int alt56=2;
-                int LA56_0 = input.LA(1);
+                int alt57=2;
+                int LA57_0 = input.LA(1);
 
-                if ( (LA56_0==63) ) {
-                    alt56=1;
+                if ( (LA57_0==63) ) {
+                    alt57=1;
                 }
 
 
-                switch (alt56) {
+                switch (alt57) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3961:4: otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3971:4: otherlv_5= 'elseif' otherlv_6= '(' ( (lv_elseIfConditions_7_0= ruleExpression ) ) otherlv_8= ')' ( (lv_elseIfBlocks_9_0= ruleBlock ) )
             	    {
-            	    otherlv_5=(Token)match(input,63,FollowSets000.FOLLOW_63_in_ruleIfStatement8548); if (state.failed) return current;
+            	    otherlv_5=(Token)match(input,63,FollowSets000.FOLLOW_63_in_ruleIfStatement8546); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_5, grammarAccess.getIfStatementAccess().getElseifKeyword_5_0());
             	          
             	    }
-            	    otherlv_6=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleIfStatement8560); if (state.failed) return current;
+            	    otherlv_6=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleIfStatement8558); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_6, grammarAccess.getIfStatementAccess().getLeftParenthesisKeyword_5_1());
             	          
             	    }
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3969:1: ( (lv_elseIfConditions_7_0= ruleExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3970:1: (lv_elseIfConditions_7_0= ruleExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3979:1: ( (lv_elseIfConditions_7_0= ruleExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3980:1: (lv_elseIfConditions_7_0= ruleExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3970:1: (lv_elseIfConditions_7_0= ruleExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3971:3: lv_elseIfConditions_7_0= ruleExpression
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3980:1: (lv_elseIfConditions_7_0= ruleExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3981:3: lv_elseIfConditions_7_0= ruleExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getIfStatementAccess().getElseIfConditionsExpressionParserRuleCall_5_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleIfStatement8581);
+            	    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleIfStatement8579);
             	    lv_elseIfConditions_7_0=ruleExpression();
 
             	    state._fsp--;
@@ -11189,24 +11235,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             	    }
 
-            	    otherlv_8=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleIfStatement8593); if (state.failed) return current;
+            	    otherlv_8=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleIfStatement8591); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_8, grammarAccess.getIfStatementAccess().getRightParenthesisKeyword_5_3());
             	          
             	    }
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3991:1: ( (lv_elseIfBlocks_9_0= ruleBlock ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3992:1: (lv_elseIfBlocks_9_0= ruleBlock )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4001:1: ( (lv_elseIfBlocks_9_0= ruleBlock ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4002:1: (lv_elseIfBlocks_9_0= ruleBlock )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3992:1: (lv_elseIfBlocks_9_0= ruleBlock )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3993:3: lv_elseIfBlocks_9_0= ruleBlock
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4002:1: (lv_elseIfBlocks_9_0= ruleBlock )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4003:3: lv_elseIfBlocks_9_0= ruleBlock
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getIfStatementAccess().getElseIfBlocksBlockParserRuleCall_5_4_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleIfStatement8614);
+            	    pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleIfStatement8612);
             	    lv_elseIfBlocks_9_0=ruleBlock();
 
             	    state._fsp--;
@@ -11235,39 +11281,39 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	    break;
 
             	default :
-            	    break loop56;
+            	    break loop57;
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4009:4: (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4019:4: (otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) ) )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA57_0==64) ) {
-                alt57=1;
+            if ( (LA58_0==64) ) {
+                alt58=1;
             }
-            switch (alt57) {
+            switch (alt58) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4009:6: otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4019:6: otherlv_10= 'else' ( (lv_elseBlock_11_0= ruleBlock ) )
                     {
-                    otherlv_10=(Token)match(input,64,FollowSets000.FOLLOW_64_in_ruleIfStatement8629); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,64,FollowSets000.FOLLOW_64_in_ruleIfStatement8627); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_10, grammarAccess.getIfStatementAccess().getElseKeyword_6_0());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4013:1: ( (lv_elseBlock_11_0= ruleBlock ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4014:1: (lv_elseBlock_11_0= ruleBlock )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4023:1: ( (lv_elseBlock_11_0= ruleBlock ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4024:1: (lv_elseBlock_11_0= ruleBlock )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4014:1: (lv_elseBlock_11_0= ruleBlock )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4015:3: lv_elseBlock_11_0= ruleBlock
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4024:1: (lv_elseBlock_11_0= ruleBlock )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4025:3: lv_elseBlock_11_0= ruleBlock
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getIfStatementAccess().getElseBlockBlockParserRuleCall_6_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleIfStatement8650);
+                    pushFollow(FollowSets000.FOLLOW_ruleBlock_in_ruleIfStatement8648);
                     lv_elseBlock_11_0=ruleBlock();
 
                     state._fsp--;
@@ -11320,7 +11366,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleReturnStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4039:1: entryRuleReturnStatement returns [EObject current=null] : iv_ruleReturnStatement= ruleReturnStatement EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4049:1: entryRuleReturnStatement returns [EObject current=null] : iv_ruleReturnStatement= ruleReturnStatement EOF ;
     public final EObject entryRuleReturnStatement() throws RecognitionException {
         EObject current = null;
 
@@ -11328,13 +11374,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4040:2: (iv_ruleReturnStatement= ruleReturnStatement EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4041:2: iv_ruleReturnStatement= ruleReturnStatement EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4050:2: (iv_ruleReturnStatement= ruleReturnStatement EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4051:2: iv_ruleReturnStatement= ruleReturnStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getReturnStatementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement8688);
+            pushFollow(FollowSets000.FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement8686);
             iv_ruleReturnStatement=ruleReturnStatement();
 
             state._fsp--;
@@ -11342,7 +11388,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleReturnStatement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleReturnStatement8698); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleReturnStatement8696); if (state.failed) return current;
 
             }
 
@@ -11360,7 +11406,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleReturnStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4048:1: ruleReturnStatement returns [EObject current=null] : ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4058:1: ruleReturnStatement returns [EObject current=null] : ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' ) ;
     public final EObject ruleReturnStatement() throws RecognitionException {
         EObject current = null;
 
@@ -11372,14 +11418,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4051:28: ( ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4052:1: ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4061:28: ( ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4062:1: ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4052:1: ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4052:2: () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4062:1: ( () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4062:2: () otherlv_1= 'return' ( (lv_expression_2_0= ruleExpression ) ) otherlv_3= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4052:2: ()
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4053:2: 
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4062:2: ()
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4063:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -11396,24 +11442,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_1=(Token)match(input,65,FollowSets000.FOLLOW_65_in_ruleReturnStatement8747); if (state.failed) return current;
+            otherlv_1=(Token)match(input,65,FollowSets000.FOLLOW_65_in_ruleReturnStatement8745); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getReturnStatementAccess().getReturnKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4065:1: ( (lv_expression_2_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4066:1: (lv_expression_2_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4075:1: ( (lv_expression_2_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4076:1: (lv_expression_2_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4066:1: (lv_expression_2_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4067:3: lv_expression_2_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4076:1: (lv_expression_2_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4077:3: lv_expression_2_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getReturnStatementAccess().getExpressionExpressionParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleReturnStatement8768);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleReturnStatement8766);
             lv_expression_2_0=ruleExpression();
 
             state._fsp--;
@@ -11437,7 +11483,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleReturnStatement8780); if (state.failed) return current;
+            otherlv_3=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleReturnStatement8778); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getReturnStatementAccess().getSemicolonKeyword_3());
@@ -11466,7 +11512,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleOperationCallStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4095:1: entryRuleOperationCallStatement returns [EObject current=null] : iv_ruleOperationCallStatement= ruleOperationCallStatement EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4105:1: entryRuleOperationCallStatement returns [EObject current=null] : iv_ruleOperationCallStatement= ruleOperationCallStatement EOF ;
     public final EObject entryRuleOperationCallStatement() throws RecognitionException {
         EObject current = null;
 
@@ -11474,13 +11520,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4096:2: (iv_ruleOperationCallStatement= ruleOperationCallStatement EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4097:2: iv_ruleOperationCallStatement= ruleOperationCallStatement EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4106:2: (iv_ruleOperationCallStatement= ruleOperationCallStatement EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4107:2: iv_ruleOperationCallStatement= ruleOperationCallStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getOperationCallStatementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleOperationCallStatement_in_entryRuleOperationCallStatement8816);
+            pushFollow(FollowSets000.FOLLOW_ruleOperationCallStatement_in_entryRuleOperationCallStatement8814);
             iv_ruleOperationCallStatement=ruleOperationCallStatement();
 
             state._fsp--;
@@ -11488,7 +11534,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleOperationCallStatement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCallStatement8826); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCallStatement8824); if (state.failed) return current;
 
             }
 
@@ -11506,7 +11552,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleOperationCallStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4104:1: ruleOperationCallStatement returns [EObject current=null] : (this_OperationCall_0= ruleOperationCall otherlv_1= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4114:1: ruleOperationCallStatement returns [EObject current=null] : (this_OperationCall_0= ruleOperationCall otherlv_1= ';' ) ;
     public final EObject ruleOperationCallStatement() throws RecognitionException {
         EObject current = null;
 
@@ -11517,11 +11563,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4107:28: ( (this_OperationCall_0= ruleOperationCall otherlv_1= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4108:1: (this_OperationCall_0= ruleOperationCall otherlv_1= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4117:28: ( (this_OperationCall_0= ruleOperationCall otherlv_1= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4118:1: (this_OperationCall_0= ruleOperationCall otherlv_1= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4108:1: (this_OperationCall_0= ruleOperationCall otherlv_1= ';' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4109:2: this_OperationCall_0= ruleOperationCall otherlv_1= ';'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4118:1: (this_OperationCall_0= ruleOperationCall otherlv_1= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4119:2: this_OperationCall_0= ruleOperationCall otherlv_1= ';'
             {
             if ( state.backtracking==0 ) {
                
@@ -11533,7 +11579,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getOperationCallStatementAccess().getOperationCallParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperationCallStatement8876);
+            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperationCallStatement8874);
             this_OperationCall_0=ruleOperationCall();
 
             state._fsp--;
@@ -11544,7 +11590,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       afterParserOrEnumRuleCall();
                   
             }
-            otherlv_1=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleOperationCallStatement8887); if (state.failed) return current;
+            otherlv_1=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleOperationCallStatement8885); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getOperationCallStatementAccess().getSemicolonKeyword_1());
@@ -11573,7 +11619,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleExpressionStartRule"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4132:1: entryRuleExpressionStartRule returns [EObject current=null] : iv_ruleExpressionStartRule= ruleExpressionStartRule EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4142:1: entryRuleExpressionStartRule returns [EObject current=null] : iv_ruleExpressionStartRule= ruleExpressionStartRule EOF ;
     public final EObject entryRuleExpressionStartRule() throws RecognitionException {
         EObject current = null;
 
@@ -11581,13 +11627,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4133:2: (iv_ruleExpressionStartRule= ruleExpressionStartRule EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4134:2: iv_ruleExpressionStartRule= ruleExpressionStartRule EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4143:2: (iv_ruleExpressionStartRule= ruleExpressionStartRule EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4144:2: iv_ruleExpressionStartRule= ruleExpressionStartRule EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionStartRuleRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpressionStartRule_in_entryRuleExpressionStartRule8923);
+            pushFollow(FollowSets000.FOLLOW_ruleExpressionStartRule_in_entryRuleExpressionStartRule8921);
             iv_ruleExpressionStartRule=ruleExpressionStartRule();
 
             state._fsp--;
@@ -11595,7 +11641,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleExpressionStartRule; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExpressionStartRule8933); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExpressionStartRule8931); if (state.failed) return current;
 
             }
 
@@ -11613,7 +11659,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleExpressionStartRule"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4141:1: ruleExpressionStartRule returns [EObject current=null] : (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4151:1: ruleExpressionStartRule returns [EObject current=null] : (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement ) ;
     public final EObject ruleExpressionStartRule() throws RecognitionException {
         EObject current = null;
 
@@ -11637,15 +11683,15 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4144:28: ( (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4145:1: (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4154:28: ( (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4155:1: (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4145:1: (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement )
-            int alt58=8;
-            alt58 = dfa58.predict(input);
-            switch (alt58) {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4155:1: (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement )
+            int alt59=8;
+            alt59 = dfa59.predict(input);
+            switch (alt59) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4146:2: this_Assignment_0= ruleAssignment
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4156:2: this_Assignment_0= ruleAssignment
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11657,7 +11703,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getAssignmentParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleAssignment_in_ruleExpressionStartRule8983);
+                    pushFollow(FollowSets000.FOLLOW_ruleAssignment_in_ruleExpressionStartRule8981);
                     this_Assignment_0=ruleAssignment();
 
                     state._fsp--;
@@ -11672,7 +11718,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4159:2: this_ForLoop_1= ruleForLoop
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4169:2: this_ForLoop_1= ruleForLoop
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11684,7 +11730,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getForLoopParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleForLoop_in_ruleExpressionStartRule9013);
+                    pushFollow(FollowSets000.FOLLOW_ruleForLoop_in_ruleExpressionStartRule9011);
                     this_ForLoop_1=ruleForLoop();
 
                     state._fsp--;
@@ -11699,7 +11745,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4172:2: this_WhileLoop_2= ruleWhileLoop
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4182:2: this_WhileLoop_2= ruleWhileLoop
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11711,7 +11757,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getWhileLoopParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleWhileLoop_in_ruleExpressionStartRule9043);
+                    pushFollow(FollowSets000.FOLLOW_ruleWhileLoop_in_ruleExpressionStartRule9041);
                     this_WhileLoop_2=ruleWhileLoop();
 
                     state._fsp--;
@@ -11726,7 +11772,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4185:2: this_DoWhileLoop_3= ruleDoWhileLoop
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4195:2: this_DoWhileLoop_3= ruleDoWhileLoop
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11738,7 +11784,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getDoWhileLoopParserRuleCall_3()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleDoWhileLoop_in_ruleExpressionStartRule9073);
+                    pushFollow(FollowSets000.FOLLOW_ruleDoWhileLoop_in_ruleExpressionStartRule9071);
                     this_DoWhileLoop_3=ruleDoWhileLoop();
 
                     state._fsp--;
@@ -11753,7 +11799,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4198:2: this_IfStatement_4= ruleIfStatement
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4208:2: this_IfStatement_4= ruleIfStatement
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11765,7 +11811,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getIfStatementParserRuleCall_4()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleIfStatement_in_ruleExpressionStartRule9103);
+                    pushFollow(FollowSets000.FOLLOW_ruleIfStatement_in_ruleExpressionStartRule9101);
                     this_IfStatement_4=ruleIfStatement();
 
                     state._fsp--;
@@ -11780,7 +11826,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4211:2: this_ReturnStatement_5= ruleReturnStatement
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4221:2: this_ReturnStatement_5= ruleReturnStatement
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11792,7 +11838,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getReturnStatementParserRuleCall_5()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleReturnStatement_in_ruleExpressionStartRule9133);
+                    pushFollow(FollowSets000.FOLLOW_ruleReturnStatement_in_ruleExpressionStartRule9131);
                     this_ReturnStatement_5=ruleReturnStatement();
 
                     state._fsp--;
@@ -11807,7 +11853,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 7 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4224:2: this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4234:2: this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11819,7 +11865,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getLocalVariableOrConstantDeclarationStatementParserRuleCall_6()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_ruleExpressionStartRule9163);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_ruleExpressionStartRule9161);
                     this_LocalVariableOrConstantDeclarationStatement_6=ruleLocalVariableOrConstantDeclarationStatement();
 
                     state._fsp--;
@@ -11834,7 +11880,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 8 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4237:2: this_OperationCallStatement_7= ruleOperationCallStatement
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4247:2: this_OperationCallStatement_7= ruleOperationCallStatement
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -11846,7 +11892,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getOperationCallStatementParserRuleCall_7()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleOperationCallStatement_in_ruleExpressionStartRule9193);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperationCallStatement_in_ruleExpressionStartRule9191);
                     this_OperationCallStatement_7=ruleOperationCallStatement();
 
                     state._fsp--;
@@ -11883,7 +11929,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleAssignment"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4256:1: entryRuleAssignment returns [EObject current=null] : iv_ruleAssignment= ruleAssignment EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4266:1: entryRuleAssignment returns [EObject current=null] : iv_ruleAssignment= ruleAssignment EOF ;
     public final EObject entryRuleAssignment() throws RecognitionException {
         EObject current = null;
 
@@ -11891,13 +11937,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4257:2: (iv_ruleAssignment= ruleAssignment EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4258:2: iv_ruleAssignment= ruleAssignment EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4267:2: (iv_ruleAssignment= ruleAssignment EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4268:2: iv_ruleAssignment= ruleAssignment EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAssignmentRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleAssignment_in_entryRuleAssignment9228);
+            pushFollow(FollowSets000.FOLLOW_ruleAssignment_in_entryRuleAssignment9226);
             iv_ruleAssignment=ruleAssignment();
 
             state._fsp--;
@@ -11905,7 +11951,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleAssignment; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAssignment9238); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAssignment9236); if (state.failed) return current;
 
             }
 
@@ -11923,7 +11969,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleAssignment"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4265:1: ruleAssignment returns [EObject current=null] : ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4275:1: ruleAssignment returns [EObject current=null] : ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' ) ;
     public final EObject ruleAssignment() throws RecognitionException {
         EObject current = null;
 
@@ -11940,24 +11986,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4268:28: ( ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4269:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4278:28: ( ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4279:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4269:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4269:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4279:1: ( ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4279:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) ) ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) ) otherlv_4= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4269:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4270:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4279:2: ( (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4280:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4270:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4271:3: lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4280:1: (lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4281:3: lv_lhs_typedNamedElementExpression_0_0= ruleTypedNamedElementExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getAssignmentAccess().getLhs_typedNamedElementExpressionTypedNamedElementExpressionParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment9284);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment9282);
             lv_lhs_typedNamedElementExpression_0_0=ruleTypedNamedElementExpression();
 
             state._fsp--;
@@ -11981,42 +12027,42 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4287:2: ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) )
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4297:2: ( ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) ) | ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) ) )
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA59_0==66||(LA59_0>=88 && LA59_0<=89)) ) {
-                alt59=1;
+            if ( (LA60_0==66||(LA60_0>=89 && LA60_0<=90)) ) {
+                alt60=1;
             }
-            else if ( ((LA59_0>=86 && LA59_0<=87)) ) {
-                alt59=2;
+            else if ( ((LA60_0>=87 && LA60_0<=88)) ) {
+                alt60=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 59, 0, input);
+                    new NoViableAltException("", 60, 0, input);
 
                 throw nvae;
             }
-            switch (alt59) {
+            switch (alt60) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4287:3: ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4297:3: ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4287:3: ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4287:4: ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4297:3: ( ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4297:4: ( (lv_assignOperator_1_0= ruleAssignOperator ) ) ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4287:4: ( (lv_assignOperator_1_0= ruleAssignOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4288:1: (lv_assignOperator_1_0= ruleAssignOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4297:4: ( (lv_assignOperator_1_0= ruleAssignOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4298:1: (lv_assignOperator_1_0= ruleAssignOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4288:1: (lv_assignOperator_1_0= ruleAssignOperator )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4289:3: lv_assignOperator_1_0= ruleAssignOperator
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4298:1: (lv_assignOperator_1_0= ruleAssignOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4299:3: lv_assignOperator_1_0= ruleAssignOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAssignmentAccess().getAssignOperatorAssignOperatorEnumRuleCall_1_0_0_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleAssignOperator_in_ruleAssignment9307);
+                    pushFollow(FollowSets000.FOLLOW_ruleAssignOperator_in_ruleAssignment9305);
                     lv_assignOperator_1_0=ruleAssignOperator();
 
                     state._fsp--;
@@ -12040,18 +12086,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4305:2: ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4306:1: (lv_rhs_assignExpression_2_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4315:2: ( (lv_rhs_assignExpression_2_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4316:1: (lv_rhs_assignExpression_2_0= ruleInitializeExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4306:1: (lv_rhs_assignExpression_2_0= ruleInitializeExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4307:3: lv_rhs_assignExpression_2_0= ruleInitializeExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4316:1: (lv_rhs_assignExpression_2_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4317:3: lv_rhs_assignExpression_2_0= ruleInitializeExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAssignmentAccess().getRhs_assignExpressionInitializeExpressionParserRuleCall_1_0_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleAssignment9328);
+                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleAssignment9326);
                     lv_rhs_assignExpression_2_0=ruleInitializeExpression();
 
                     state._fsp--;
@@ -12082,20 +12128,20 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4324:6: ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4334:6: ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4324:6: ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4325:1: (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4334:6: ( (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4335:1: (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4325:1: (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4326:3: lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4335:1: (lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4336:3: lv_incrementDecrementOperator_3_0= ruleUnaryPostIncrementDecrementOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getAssignmentAccess().getIncrementDecrementOperatorUnaryPostIncrementDecrementOperatorEnumRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleAssignment9356);
+                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleAssignment9354);
                     lv_incrementDecrementOperator_3_0=ruleUnaryPostIncrementDecrementOperator();
 
                     state._fsp--;
@@ -12125,7 +12171,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAssignment9369); if (state.failed) return current;
+            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleAssignment9367); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getAssignmentAccess().getSemicolonKeyword_2());
@@ -12154,7 +12200,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4354:1: entryRuleInitializeExpression returns [EObject current=null] : iv_ruleInitializeExpression= ruleInitializeExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4364:1: entryRuleInitializeExpression returns [EObject current=null] : iv_ruleInitializeExpression= ruleInitializeExpression EOF ;
     public final EObject entryRuleInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -12162,13 +12208,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4355:2: (iv_ruleInitializeExpression= ruleInitializeExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4356:2: iv_ruleInitializeExpression= ruleInitializeExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4365:2: (iv_ruleInitializeExpression= ruleInitializeExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4366:2: iv_ruleInitializeExpression= ruleInitializeExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getInitializeExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_entryRuleInitializeExpression9405);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_entryRuleInitializeExpression9403);
             iv_ruleInitializeExpression=ruleInitializeExpression();
 
             state._fsp--;
@@ -12176,7 +12222,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleInitializeExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInitializeExpression9415); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleInitializeExpression9413); if (state.failed) return current;
 
             }
 
@@ -12194,7 +12240,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4363:1: ruleInitializeExpression returns [EObject current=null] : (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4373:1: ruleInitializeExpression returns [EObject current=null] : (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression ) ;
     public final EObject ruleInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -12204,19 +12250,21 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
         EObject this_Expression_2 = null;
 
+        EObject this_TypeCastExpression_3 = null;
+
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4366:28: ( (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4367:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4376:28: ( (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4377:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4367:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )
-            int alt60=3;
-            alt60 = dfa60.predict(input);
-            switch (alt60) {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4377:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )
+            int alt61=4;
+            alt61 = dfa61.predict(input);
+            switch (alt61) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4368:2: this_ArrayInitializeExpression_0= ruleArrayInitializeExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4378:2: this_ArrayInitializeExpression_0= ruleArrayInitializeExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -12228,7 +12276,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getInitializeExpressionAccess().getArrayInitializeExpressionParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_ruleInitializeExpression9465);
+                    pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_ruleInitializeExpression9463);
                     this_ArrayInitializeExpression_0=ruleArrayInitializeExpression();
 
                     state._fsp--;
@@ -12243,7 +12291,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4381:2: this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4391:2: this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -12255,7 +12303,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getInitializeExpressionAccess().getNondeterministicChoiceExpressionParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_ruleInitializeExpression9495);
+                    pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_ruleInitializeExpression9493);
                     this_NondeterministicChoiceExpression_1=ruleNondeterministicChoiceExpression();
 
                     state._fsp--;
@@ -12270,7 +12318,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4394:2: this_Expression_2= ruleExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4404:2: this_Expression_2= ruleExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -12282,7 +12330,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getInitializeExpressionAccess().getExpressionParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleInitializeExpression9525);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleInitializeExpression9523);
                     this_Expression_2=ruleExpression();
 
                     state._fsp--;
@@ -12290,6 +12338,33 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     if ( state.backtracking==0 ) {
                        
                               current = this_Expression_2; 
+                              afterParserOrEnumRuleCall();
+                          
+                    }
+
+                    }
+                    break;
+                case 4 :
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4417:2: this_TypeCastExpression_3= ruleTypeCastExpression
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	  /* */ 
+                      	
+                    }
+                    if ( state.backtracking==0 ) {
+                       
+                              newCompositeNode(grammarAccess.getInitializeExpressionAccess().getTypeCastExpressionParserRuleCall_3()); 
+                          
+                    }
+                    pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression9553);
+                    this_TypeCastExpression_3=ruleTypeCastExpression();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+                       
+                              current = this_TypeCastExpression_3; 
                               afterParserOrEnumRuleCall();
                           
                     }
@@ -12319,7 +12394,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleArrayInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4413:1: entryRuleArrayInitializeExpression returns [EObject current=null] : iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4436:1: entryRuleArrayInitializeExpression returns [EObject current=null] : iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF ;
     public final EObject entryRuleArrayInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -12327,13 +12402,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4414:2: (iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4415:2: iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4437:2: (iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4438:2: iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArrayInitializeExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression9560);
+            pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression9588);
             iv_ruleArrayInitializeExpression=ruleArrayInitializeExpression();
 
             state._fsp--;
@@ -12341,7 +12416,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleArrayInitializeExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayInitializeExpression9570); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayInitializeExpression9598); if (state.failed) return current;
 
             }
 
@@ -12359,7 +12434,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleArrayInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4422:1: ruleArrayInitializeExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4445:1: ruleArrayInitializeExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) ;
     public final EObject ruleArrayInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -12374,30 +12449,30 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4425:28: ( (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4426:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4448:28: ( (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4449:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4426:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4426:3: otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4449:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4449:3: otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleArrayInitializeExpression9607); if (state.failed) return current;
+            otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleArrayInitializeExpression9635); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getArrayInitializeExpressionAccess().getLeftSquareBracketKeyword_0());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4430:1: ( (lv_expressions_1_0= ruleInitializeExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4431:1: (lv_expressions_1_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4453:1: ( (lv_expressions_1_0= ruleInitializeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4454:1: (lv_expressions_1_0= ruleInitializeExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4431:1: (lv_expressions_1_0= ruleInitializeExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4432:3: lv_expressions_1_0= ruleInitializeExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4454:1: (lv_expressions_1_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4455:3: lv_expressions_1_0= ruleInitializeExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsInitializeExpressionParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9628);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9656);
             lv_expressions_1_0=ruleInitializeExpression();
 
             state._fsp--;
@@ -12421,39 +12496,39 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4448:2: (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )*
-            loop61:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4471:2: (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )*
+            loop62:
             do {
-                int alt61=2;
-                int LA61_0 = input.LA(1);
+                int alt62=2;
+                int LA62_0 = input.LA(1);
 
-                if ( (LA61_0==15) ) {
-                    alt61=1;
+                if ( (LA62_0==15) ) {
+                    alt62=1;
                 }
 
 
-                switch (alt61) {
+                switch (alt62) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4448:4: otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4471:4: otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) )
             	    {
-            	    otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleArrayInitializeExpression9641); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleArrayInitializeExpression9669); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_2, grammarAccess.getArrayInitializeExpressionAccess().getCommaKeyword_2_0());
             	          
             	    }
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4452:1: ( (lv_expressions_3_0= ruleInitializeExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4453:1: (lv_expressions_3_0= ruleInitializeExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4475:1: ( (lv_expressions_3_0= ruleInitializeExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4476:1: (lv_expressions_3_0= ruleInitializeExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4453:1: (lv_expressions_3_0= ruleInitializeExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4454:3: lv_expressions_3_0= ruleInitializeExpression
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4476:1: (lv_expressions_3_0= ruleInitializeExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4477:3: lv_expressions_3_0= ruleInitializeExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsInitializeExpressionParserRuleCall_2_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9662);
+            	    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9690);
             	    lv_expressions_3_0=ruleInitializeExpression();
 
             	    state._fsp--;
@@ -12482,11 +12557,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	    break;
 
             	default :
-            	    break loop61;
+            	    break loop62;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleArrayInitializeExpression9676); if (state.failed) return current;
+            otherlv_4=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleArrayInitializeExpression9704); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getArrayInitializeExpressionAccess().getRightSquareBracketKeyword_3());
@@ -12515,7 +12590,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLocalVariableOrConstantDeclarationStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4482:1: entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4505:1: entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF ;
     public final EObject entryRuleLocalVariableOrConstantDeclarationStatement() throws RecognitionException {
         EObject current = null;
 
@@ -12523,13 +12598,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4483:2: (iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4484:2: iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4506:2: (iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4507:2: iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement9712);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement9740);
             iv_ruleLocalVariableOrConstantDeclarationStatement=ruleLocalVariableOrConstantDeclarationStatement();
 
             state._fsp--;
@@ -12537,7 +12612,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLocalVariableOrConstantDeclarationStatement; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement9722); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement9750); if (state.failed) return current;
 
             }
 
@@ -12555,7 +12630,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLocalVariableOrConstantDeclarationStatement"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4491:1: ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4514:1: ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) ;
     public final EObject ruleLocalVariableOrConstantDeclarationStatement() throws RecognitionException {
         EObject current = null;
 
@@ -12567,42 +12642,42 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4494:28: ( ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4495:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4517:28: ( ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4518:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4495:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4496:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4518:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4519:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4496:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4497:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4519:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4520:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4497:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4520:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA62_0==RULE_ID) ) {
-                alt62=1;
+            if ( (LA63_0==RULE_ID) ) {
+                alt63=1;
             }
-            else if ( (LA62_0==67) ) {
-                alt62=2;
+            else if ( (LA63_0==67) ) {
+                alt63=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 62, 0, input);
+                    new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
-            switch (alt62) {
+            switch (alt63) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4498:3: lv_variable_0_1= ruleLocalVariableDeclaration
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4521:3: lv_variable_0_1= ruleLocalVariableDeclaration
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9769);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9797);
                     lv_variable_0_1=ruleLocalVariableDeclaration();
 
                     state._fsp--;
@@ -12624,14 +12699,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4513:8: lv_variable_0_2= ruleLocalConstantDeclaration
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4536:8: lv_variable_0_2= ruleLocalConstantDeclaration
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalConstantDeclarationParserRuleCall_0_1()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9788);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9816);
                     lv_variable_0_2=ruleLocalConstantDeclaration();
 
                     state._fsp--;
@@ -12681,7 +12756,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLocalVariableDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4539:1: entryRuleLocalVariableDeclaration returns [EObject current=null] : iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4562:1: entryRuleLocalVariableDeclaration returns [EObject current=null] : iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF ;
     public final EObject entryRuleLocalVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -12689,13 +12764,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4540:2: (iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4541:2: iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4563:2: (iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4564:2: iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalVariableDeclarationRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration9826);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration9854);
             iv_ruleLocalVariableDeclaration=ruleLocalVariableDeclaration();
 
             state._fsp--;
@@ -12703,7 +12778,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLocalVariableDeclaration; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableDeclaration9836); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableDeclaration9864); if (state.failed) return current;
 
             }
 
@@ -12721,7 +12796,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLocalVariableDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4548:1: ruleLocalVariableDeclaration returns [EObject current=null] : ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4571:1: ruleLocalVariableDeclaration returns [EObject current=null] : ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) ;
     public final EObject ruleLocalVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -12734,17 +12809,17 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4551:28: ( ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4552:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4574:28: ( ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4575:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4552:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4552:2: ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4575:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4575:2: ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4552:2: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4553:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4575:2: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4576:1: ( ruleDATATYPE )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4553:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4554:3: ruleDATATYPE
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4576:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4577:3: ruleDATATYPE
             {
             if ( state.backtracking==0 ) {
                
@@ -12763,7 +12838,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeDataTypeCrossReference_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration9888);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration9916);
             ruleDATATYPE();
 
             state._fsp--;
@@ -12779,13 +12854,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4570:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4571:1: (lv_name_1_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4593:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4594:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4571:1: (lv_name_1_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4572:3: lv_name_1_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4594:1: (lv_name_1_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4595:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration9905); if (state.failed) return current;
+            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration9933); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_name_1_0, grammarAccess.getLocalVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -12809,35 +12884,35 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4588:2: (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )?
-            int alt63=2;
-            int LA63_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4611:2: (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )?
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA63_0==66) ) {
-                alt63=1;
+            if ( (LA64_0==66) ) {
+                alt64=1;
             }
-            switch (alt63) {
+            switch (alt64) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4588:4: otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4611:4: otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
                     {
-                    otherlv_2=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleLocalVariableDeclaration9923); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleLocalVariableDeclaration9951); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getLocalVariableDeclarationAccess().getColonEqualsSignKeyword_2_0());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4592:1: ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4593:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4615:1: ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4616:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4593:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4594:3: lv_initializeExpression_3_0= ruleInitializeExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4616:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4617:3: lv_initializeExpression_3_0= ruleInitializeExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_2_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration9944);
+                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration9972);
                     lv_initializeExpression_3_0=ruleInitializeExpression();
 
                     state._fsp--;
@@ -12867,7 +12942,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLocalVariableDeclaration9958); if (state.failed) return current;
+            otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLocalVariableDeclaration9986); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getLocalVariableDeclarationAccess().getSemicolonKeyword_3());
@@ -12896,7 +12971,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLocalConstantDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4622:1: entryRuleLocalConstantDeclaration returns [EObject current=null] : iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4645:1: entryRuleLocalConstantDeclaration returns [EObject current=null] : iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF ;
     public final EObject entryRuleLocalConstantDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -12904,13 +12979,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4623:2: (iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4624:2: iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4646:2: (iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4647:2: iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLocalConstantDeclarationRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration9994);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration10022);
             iv_ruleLocalConstantDeclaration=ruleLocalConstantDeclaration();
 
             state._fsp--;
@@ -12918,7 +12993,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLocalConstantDeclaration; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalConstantDeclaration10004); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalConstantDeclaration10032); if (state.failed) return current;
 
             }
 
@@ -12936,7 +13011,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLocalConstantDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4631:1: ruleLocalConstantDeclaration returns [EObject current=null] : ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4654:1: ruleLocalConstantDeclaration returns [EObject current=null] : ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) ;
     public final EObject ruleLocalConstantDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -12950,19 +13025,19 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4634:28: ( ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4635:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4657:28: ( ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4658:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4635:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4635:2: ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4658:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4658:2: ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4635:2: ( (lv_constant_0_0= 'const' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4636:1: (lv_constant_0_0= 'const' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4658:2: ( (lv_constant_0_0= 'const' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4659:1: (lv_constant_0_0= 'const' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4636:1: (lv_constant_0_0= 'const' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4637:3: lv_constant_0_0= 'const'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4659:1: (lv_constant_0_0= 'const' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4660:3: lv_constant_0_0= 'const'
             {
-            lv_constant_0_0=(Token)match(input,67,FollowSets000.FOLLOW_67_in_ruleLocalConstantDeclaration10047); if (state.failed) return current;
+            lv_constant_0_0=(Token)match(input,67,FollowSets000.FOLLOW_67_in_ruleLocalConstantDeclaration10075); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       newLeafNode(lv_constant_0_0, grammarAccess.getLocalConstantDeclarationAccess().getConstantConstKeyword_0_0());
@@ -12982,11 +13057,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4650:2: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4651:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4673:2: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4674:1: ( ruleDATATYPE )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4651:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4652:3: ruleDATATYPE
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4674:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4675:3: ruleDATATYPE
             {
             if ( state.backtracking==0 ) {
                
@@ -13005,7 +13080,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getDataTypeDataTypeCrossReference_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration10087);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration10115);
             ruleDATATYPE();
 
             state._fsp--;
@@ -13021,13 +13096,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4668:2: ( (lv_name_2_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4669:1: (lv_name_2_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4691:2: ( (lv_name_2_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4692:1: (lv_name_2_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4669:1: (lv_name_2_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4670:3: lv_name_2_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4692:1: (lv_name_2_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4693:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration10104); if (state.failed) return current;
+            lv_name_2_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration10132); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(lv_name_2_0, grammarAccess.getLocalConstantDeclarationAccess().getNameIDTerminalRuleCall_2_0()); 
@@ -13051,24 +13126,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_3=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleLocalConstantDeclaration10121); if (state.failed) return current;
+            otherlv_3=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleLocalConstantDeclaration10149); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_3, grammarAccess.getLocalConstantDeclarationAccess().getColonEqualsSignKeyword_3());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4690:1: ( (lv_initializeExpression_4_0= ruleInitializeExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4691:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4713:1: ( (lv_initializeExpression_4_0= ruleInitializeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4714:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4691:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4692:3: lv_initializeExpression_4_0= ruleInitializeExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4714:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4715:3: lv_initializeExpression_4_0= ruleInitializeExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_4_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration10142);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration10170);
             lv_initializeExpression_4_0=ruleInitializeExpression();
 
             state._fsp--;
@@ -13092,7 +13167,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_5=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLocalConstantDeclaration10154); if (state.failed) return current;
+            otherlv_5=(Token)match(input,13,FollowSets000.FOLLOW_13_in_ruleLocalConstantDeclaration10182); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_5, grammarAccess.getLocalConstantDeclarationAccess().getSemicolonKeyword_5());
@@ -13121,7 +13196,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleNondeterministicChoiceExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4720:1: entryRuleNondeterministicChoiceExpression returns [EObject current=null] : iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4743:1: entryRuleNondeterministicChoiceExpression returns [EObject current=null] : iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF ;
     public final EObject entryRuleNondeterministicChoiceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13129,13 +13204,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4721:2: (iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4722:2: iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4744:2: (iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4745:2: iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression10190);
+            pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression10218);
             iv_ruleNondeterministicChoiceExpression=ruleNondeterministicChoiceExpression();
 
             state._fsp--;
@@ -13143,7 +13218,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleNondeterministicChoiceExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression10200); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression10228); if (state.failed) return current;
 
             }
 
@@ -13161,7 +13236,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleNondeterministicChoiceExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4729:1: ruleNondeterministicChoiceExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4752:1: ruleNondeterministicChoiceExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) ;
     public final EObject ruleNondeterministicChoiceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13172,17 +13247,17 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4732:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4733:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4755:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4756:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4733:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4733:2: ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4756:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4756:2: ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4733:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4734:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4756:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4757:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4734:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4735:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4757:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4758:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
                
@@ -13196,7 +13271,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression10249); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression10277); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypePrimitiveDataTypeCrossReference_0_0()); 
@@ -13208,18 +13283,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4749:2: ( (lv_range_1_0= ruleRange ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4750:1: (lv_range_1_0= ruleRange )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4772:2: ( (lv_range_1_0= ruleRange ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4773:1: (lv_range_1_0= ruleRange )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4750:1: (lv_range_1_0= ruleRange )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4751:3: lv_range_1_0= ruleRange
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4773:1: (lv_range_1_0= ruleRange )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4774:3: lv_range_1_0= ruleRange
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeRangeParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression10270);
+            pushFollow(FollowSets000.FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression10298);
             lv_range_1_0=ruleRange();
 
             state._fsp--;
@@ -13266,7 +13341,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleRange"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4775:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4798:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
     public final EObject entryRuleRange() throws RecognitionException {
         EObject current = null;
 
@@ -13274,13 +13349,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4776:2: (iv_ruleRange= ruleRange EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4777:2: iv_ruleRange= ruleRange EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4799:2: (iv_ruleRange= ruleRange EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4800:2: iv_ruleRange= ruleRange EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getRangeRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleRange_in_entryRuleRange10306);
+            pushFollow(FollowSets000.FOLLOW_ruleRange_in_entryRuleRange10334);
             iv_ruleRange=ruleRange();
 
             state._fsp--;
@@ -13288,7 +13363,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleRange; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRange10316); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRange10344); if (state.failed) return current;
 
             }
 
@@ -13306,7 +13381,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleRange"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4784:1: ruleRange returns [EObject current=null] : (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4807:1: ruleRange returns [EObject current=null] : (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) ;
     public final EObject ruleRange() throws RecognitionException {
         EObject current = null;
 
@@ -13321,30 +13396,30 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4787:28: ( (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4788:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4810:28: ( (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4811:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4788:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4788:3: otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4811:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4811:3: otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>'
             {
-            otherlv_0=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleRange10353); if (state.failed) return current;
+            otherlv_0=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleRange10381); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getRangeAccess().getLessThanSignKeyword_0());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4792:1: ( (lv_lowerBound_1_0= ruleLONG ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4793:1: (lv_lowerBound_1_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4815:1: ( (lv_lowerBound_1_0= ruleLONG ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4816:1: (lv_lowerBound_1_0= ruleLONG )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4793:1: (lv_lowerBound_1_0= ruleLONG )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4794:3: lv_lowerBound_1_0= ruleLONG
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4816:1: (lv_lowerBound_1_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4817:3: lv_lowerBound_1_0= ruleLONG
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getRangeAccess().getLowerBoundLONGParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange10374);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange10402);
             lv_lowerBound_1_0=ruleLONG();
 
             state._fsp--;
@@ -13368,24 +13443,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRange10386); if (state.failed) return current;
+            otherlv_2=(Token)match(input,15,FollowSets000.FOLLOW_15_in_ruleRange10414); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getRangeAccess().getCommaKeyword_2());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4814:1: ( (lv_upperBound_3_0= ruleLONG ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4815:1: (lv_upperBound_3_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4837:1: ( (lv_upperBound_3_0= ruleLONG ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4838:1: (lv_upperBound_3_0= ruleLONG )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4815:1: (lv_upperBound_3_0= ruleLONG )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4816:3: lv_upperBound_3_0= ruleLONG
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4838:1: (lv_upperBound_3_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4839:3: lv_upperBound_3_0= ruleLONG
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getRangeAccess().getUpperBoundLONGParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange10407);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange10435);
             lv_upperBound_3_0=ruleLONG();
 
             state._fsp--;
@@ -13409,7 +13484,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_4=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleRange10419); if (state.failed) return current;
+            otherlv_4=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleRange10447); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getRangeAccess().getGreaterThanSignKeyword_4());
@@ -13438,7 +13513,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4844:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4867:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13446,13 +13521,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4845:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4846:2: iv_ruleExpression= ruleExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4868:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4869:2: iv_ruleExpression= ruleExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_entryRuleExpression10455);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_entryRuleExpression10483);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
@@ -13460,7 +13535,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExpression10465); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExpression10493); if (state.failed) return current;
 
             }
 
@@ -13478,7 +13553,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4853:1: ruleExpression returns [EObject current=null] : this_LogicalExpression_0= ruleLogicalExpression ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4876:1: ruleExpression returns [EObject current=null] : this_LogicalExpression_0= ruleLogicalExpression ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13488,8 +13563,8 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4856:28: (this_LogicalExpression_0= ruleLogicalExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4858:2: this_LogicalExpression_0= ruleLogicalExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4879:28: (this_LogicalExpression_0= ruleLogicalExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4881:2: this_LogicalExpression_0= ruleLogicalExpression
             {
             if ( state.backtracking==0 ) {
                
@@ -13501,7 +13576,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getExpressionAccess().getLogicalExpressionParserRuleCall()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_ruleExpression10514);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_ruleExpression10542);
             this_LogicalExpression_0=ruleLogicalExpression();
 
             state._fsp--;
@@ -13532,7 +13607,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLogicalExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4877:1: entryRuleLogicalExpression returns [EObject current=null] : iv_ruleLogicalExpression= ruleLogicalExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4900:1: entryRuleLogicalExpression returns [EObject current=null] : iv_ruleLogicalExpression= ruleLogicalExpression EOF ;
     public final EObject entryRuleLogicalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13540,13 +13615,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4878:2: (iv_ruleLogicalExpression= ruleLogicalExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4879:2: iv_ruleLogicalExpression= ruleLogicalExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4901:2: (iv_ruleLogicalExpression= ruleLogicalExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4902:2: iv_ruleLogicalExpression= ruleLogicalExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLogicalExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression10548);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression10576);
             iv_ruleLogicalExpression=ruleLogicalExpression();
 
             state._fsp--;
@@ -13554,7 +13629,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLogicalExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalExpression10558); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalExpression10586); if (state.failed) return current;
 
             }
 
@@ -13572,7 +13647,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLogicalExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4886:1: ruleLogicalExpression returns [EObject current=null] : this_LogicalOrExpression_0= ruleLogicalOrExpression ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4909:1: ruleLogicalExpression returns [EObject current=null] : this_LogicalOrExpression_0= ruleLogicalOrExpression ;
     public final EObject ruleLogicalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13582,8 +13657,8 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4889:28: (this_LogicalOrExpression_0= ruleLogicalOrExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4891:2: this_LogicalOrExpression_0= ruleLogicalOrExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4912:28: (this_LogicalOrExpression_0= ruleLogicalOrExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4914:2: this_LogicalOrExpression_0= ruleLogicalOrExpression
             {
             if ( state.backtracking==0 ) {
                
@@ -13595,7 +13670,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getLogicalExpressionAccess().getLogicalOrExpressionParserRuleCall()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression10607);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression10635);
             this_LogicalOrExpression_0=ruleLogicalOrExpression();
 
             state._fsp--;
@@ -13626,7 +13701,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLogicalOrExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4910:1: entryRuleLogicalOrExpression returns [EObject current=null] : iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4933:1: entryRuleLogicalOrExpression returns [EObject current=null] : iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF ;
     public final EObject entryRuleLogicalOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13634,13 +13709,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4911:2: (iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4912:2: iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4934:2: (iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4935:2: iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLogicalOrExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression10641);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression10669);
             iv_ruleLogicalOrExpression=ruleLogicalOrExpression();
 
             state._fsp--;
@@ -13648,7 +13723,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLogicalOrExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalOrExpression10651); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalOrExpression10679); if (state.failed) return current;
 
             }
 
@@ -13666,7 +13741,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLogicalOrExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4919:1: ruleLogicalOrExpression returns [EObject current=null] : (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4942:1: ruleLogicalOrExpression returns [EObject current=null] : (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) ;
     public final EObject ruleLogicalOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -13680,11 +13755,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4922:28: ( (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4923:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4945:28: ( (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4946:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4923:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4924:2: this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4946:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4947:2: this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
                
@@ -13696,7 +13771,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getLogicalAndExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10701);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10729);
             this_LogicalAndExpression_0=ruleLogicalAndExpression();
 
             state._fsp--;
@@ -13707,23 +13782,23 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4935:1: ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
-            loop64:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4958:1: ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
+            loop65:
             do {
-                int alt64=2;
-                int LA64_0 = input.LA(1);
+                int alt65=2;
+                int LA65_0 = input.LA(1);
 
-                if ( (LA64_0==90) ) {
-                    alt64=1;
+                if ( (LA65_0==91) ) {
+                    alt65=1;
                 }
 
 
-                switch (alt64) {
+                switch (alt65) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4935:2: () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4958:2: () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4935:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4936:2: 
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4958:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4959:2: 
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -13740,18 +13815,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4944:2: ( (lv_operator_2_0= ruleLogicalOrOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4945:1: (lv_operator_2_0= ruleLogicalOrOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4967:2: ( (lv_operator_2_0= ruleLogicalOrOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4968:1: (lv_operator_2_0= ruleLogicalOrOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4945:1: (lv_operator_2_0= ruleLogicalOrOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4946:3: lv_operator_2_0= ruleLogicalOrOperator
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4968:1: (lv_operator_2_0= ruleLogicalOrOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4969:3: lv_operator_2_0= ruleLogicalOrOperator
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getOperatorLogicalOrOperatorEnumRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression10734);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression10762);
             	    lv_operator_2_0=ruleLogicalOrOperator();
 
             	    state._fsp--;
@@ -13775,18 +13850,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4962:2: ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4963:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4985:2: ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4986:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4963:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4964:3: lv_rightExpression_3_0= ruleLogicalAndExpression
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4986:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4987:3: lv_rightExpression_3_0= ruleLogicalAndExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getRightExpressionLogicalAndExpressionParserRuleCall_1_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10755);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10783);
             	    lv_rightExpression_3_0=ruleLogicalAndExpression();
 
             	    state._fsp--;
@@ -13801,222 +13876,6 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	             			"rightExpression",
             	              		lv_rightExpression_3_0, 
             	              		"LogicalAndExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop64;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-               leaveRule(); 
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleLogicalOrExpression"
-
-
-    // $ANTLR start "entryRuleLogicalAndExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4988:1: entryRuleLogicalAndExpression returns [EObject current=null] : iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF ;
-    public final EObject entryRuleLogicalAndExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleLogicalAndExpression = null;
-
-
-        try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4989:2: (iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4990:2: iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getLogicalAndExpressionRule()); 
-            }
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression10793);
-            iv_ruleLogicalAndExpression=ruleLogicalAndExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleLogicalAndExpression; 
-            }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalAndExpression10803); if (state.failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleLogicalAndExpression"
-
-
-    // $ANTLR start "ruleLogicalAndExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:4997:1: ruleLogicalAndExpression returns [EObject current=null] : (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) ;
-    public final EObject ruleLogicalAndExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject this_ComparisonExpression_0 = null;
-
-        Enumerator lv_operator_2_0 = null;
-
-        EObject lv_rightExpression_3_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5000:28: ( (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5001:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
-            {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5001:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5002:2: this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
-            {
-            if ( state.backtracking==0 ) {
-               
-              	  /* */ 
-              	
-            }
-            if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getComparisonExpressionParserRuleCall_0()); 
-                  
-            }
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10853);
-            this_ComparisonExpression_0=ruleComparisonExpression();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               
-                      current = this_ComparisonExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
-            }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5013:1: ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
-            loop65:
-            do {
-                int alt65=2;
-                int LA65_0 = input.LA(1);
-
-                if ( (LA65_0==91) ) {
-                    alt65=1;
-                }
-
-
-                switch (alt65) {
-            	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5013:2: () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
-            	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5013:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5014:2: 
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	  /* */ 
-            	      	
-            	    }
-            	    if ( state.backtracking==0 ) {
-
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getLogicalAndExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0(),
-            	                  current);
-            	          
-            	    }
-
-            	    }
-
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5022:2: ( (lv_operator_2_0= ruleLogicalAndOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5023:1: (lv_operator_2_0= ruleLogicalAndOperator )
-            	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5023:1: (lv_operator_2_0= ruleLogicalAndOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5024:3: lv_operator_2_0= ruleLogicalAndOperator
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getOperatorLogicalAndOperatorEnumRuleCall_1_1_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression10886);
-            	    lv_operator_2_0=ruleLogicalAndOperator();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getLogicalAndExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"LogicalAndOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
-            	    }
-
-            	    }
-
-
-            	    }
-
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5040:2: ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5041:1: (lv_rightExpression_3_0= ruleComparisonExpression )
-            	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5041:1: (lv_rightExpression_3_0= ruleComparisonExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5042:3: lv_rightExpression_3_0= ruleComparisonExpression
-            	    {
-            	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getRightExpressionComparisonExpressionParserRuleCall_1_2_0()); 
-            	      	    
-            	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10907);
-            	    lv_rightExpression_3_0=ruleComparisonExpression();
-
-            	    state._fsp--;
-            	    if (state.failed) return current;
-            	    if ( state.backtracking==0 ) {
-
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getLogicalAndExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightExpression",
-            	              		lv_rightExpression_3_0, 
-            	              		"ComparisonExpression");
             	      	        afterParserOrEnumRuleCall();
             	      	    
             	    }
@@ -14054,11 +13913,227 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         }
         return current;
     }
+    // $ANTLR end "ruleLogicalOrExpression"
+
+
+    // $ANTLR start "entryRuleLogicalAndExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5011:1: entryRuleLogicalAndExpression returns [EObject current=null] : iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF ;
+    public final EObject entryRuleLogicalAndExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLogicalAndExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5012:2: (iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5013:2: iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getLogicalAndExpressionRule()); 
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression10821);
+            iv_ruleLogicalAndExpression=ruleLogicalAndExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleLogicalAndExpression; 
+            }
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalAndExpression10831); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLogicalAndExpression"
+
+
+    // $ANTLR start "ruleLogicalAndExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5020:1: ruleLogicalAndExpression returns [EObject current=null] : (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) ;
+    public final EObject ruleLogicalAndExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_ComparisonExpression_0 = null;
+
+        Enumerator lv_operator_2_0 = null;
+
+        EObject lv_rightExpression_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5023:28: ( (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5024:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5024:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5025:2: this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
+            {
+            if ( state.backtracking==0 ) {
+               
+              	  /* */ 
+              	
+            }
+            if ( state.backtracking==0 ) {
+               
+                      newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getComparisonExpressionParserRuleCall_0()); 
+                  
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10881);
+            this_ComparisonExpression_0=ruleComparisonExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               
+                      current = this_ComparisonExpression_0; 
+                      afterParserOrEnumRuleCall();
+                  
+            }
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5036:1: ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
+            loop66:
+            do {
+                int alt66=2;
+                int LA66_0 = input.LA(1);
+
+                if ( (LA66_0==92) ) {
+                    alt66=1;
+                }
+
+
+                switch (alt66) {
+            	case 1 :
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5036:2: () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
+            	    {
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5036:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5037:2: 
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	  /* */ 
+            	      	
+            	    }
+            	    if ( state.backtracking==0 ) {
+
+            	              current = forceCreateModelElementAndSet(
+            	                  grammarAccess.getLogicalAndExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0(),
+            	                  current);
+            	          
+            	    }
+
+            	    }
+
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5045:2: ( (lv_operator_2_0= ruleLogicalAndOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5046:1: (lv_operator_2_0= ruleLogicalAndOperator )
+            	    {
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5046:1: (lv_operator_2_0= ruleLogicalAndOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5047:3: lv_operator_2_0= ruleLogicalAndOperator
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getOperatorLogicalAndOperatorEnumRuleCall_1_1_0()); 
+            	      	    
+            	    }
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression10914);
+            	    lv_operator_2_0=ruleLogicalAndOperator();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getLogicalAndExpressionRule());
+            	      	        }
+            	             		set(
+            	             			current, 
+            	             			"operator",
+            	              		lv_operator_2_0, 
+            	              		"LogicalAndOperator");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5063:2: ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5064:1: (lv_rightExpression_3_0= ruleComparisonExpression )
+            	    {
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5064:1: (lv_rightExpression_3_0= ruleComparisonExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5065:3: lv_rightExpression_3_0= ruleComparisonExpression
+            	    {
+            	    if ( state.backtracking==0 ) {
+            	       
+            	      	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getRightExpressionComparisonExpressionParserRuleCall_1_2_0()); 
+            	      	    
+            	    }
+            	    pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10935);
+            	    lv_rightExpression_3_0=ruleComparisonExpression();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      	        if (current==null) {
+            	      	            current = createModelElementForParent(grammarAccess.getLogicalAndExpressionRule());
+            	      	        }
+            	             		set(
+            	             			current, 
+            	             			"rightExpression",
+            	              		lv_rightExpression_3_0, 
+            	              		"ComparisonExpression");
+            	      	        afterParserOrEnumRuleCall();
+            	      	    
+            	    }
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop66;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleLogicalAndExpression"
 
 
     // $ANTLR start "entryRuleComparisonExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5066:1: entryRuleComparisonExpression returns [EObject current=null] : iv_ruleComparisonExpression= ruleComparisonExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5089:1: entryRuleComparisonExpression returns [EObject current=null] : iv_ruleComparisonExpression= ruleComparisonExpression EOF ;
     public final EObject entryRuleComparisonExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14066,13 +14141,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5067:2: (iv_ruleComparisonExpression= ruleComparisonExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5068:2: iv_ruleComparisonExpression= ruleComparisonExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5090:2: (iv_ruleComparisonExpression= ruleComparisonExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5091:2: iv_ruleComparisonExpression= ruleComparisonExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getComparisonExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression10945);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression10973);
             iv_ruleComparisonExpression=ruleComparisonExpression();
 
             state._fsp--;
@@ -14080,7 +14155,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleComparisonExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonExpression10955); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonExpression10983); if (state.failed) return current;
 
             }
 
@@ -14098,7 +14173,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleComparisonExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5075:1: ruleComparisonExpression returns [EObject current=null] : (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5098:1: ruleComparisonExpression returns [EObject current=null] : (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) ;
     public final EObject ruleComparisonExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14112,11 +14187,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5078:28: ( (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5079:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5101:28: ( (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5102:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5079:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5080:2: this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5102:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5103:2: this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -14128,7 +14203,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getComparisonExpressionAccess().getComparisonHigherOpExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11005);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11033);
             this_ComparisonHigherOpExpression_0=ruleComparisonHigherOpExpression();
 
             state._fsp--;
@@ -14139,19 +14214,19 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5091:1: ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
-            int alt66=2;
-            int LA66_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5114:1: ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
+            int alt67=2;
+            int LA67_0 = input.LA(1);
 
-            if ( ((LA66_0>=71 && LA66_0<=72)) ) {
-                alt66=1;
+            if ( ((LA67_0>=72 && LA67_0<=73)) ) {
+                alt67=1;
             }
-            switch (alt66) {
+            switch (alt67) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5091:2: () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5114:2: () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5091:2: ()
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5092:2: 
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5114:2: ()
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5115:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -14168,18 +14243,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5100:2: ( (lv_operator_2_0= ruleComparingEQNEQOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5101:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5123:2: ( (lv_operator_2_0= ruleComparingEQNEQOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5124:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5101:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5102:3: lv_operator_2_0= ruleComparingEQNEQOperator
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5124:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5125:3: lv_operator_2_0= ruleComparingEQNEQOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getOperatorComparingEQNEQOperatorEnumRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression11038);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression11066);
                     lv_operator_2_0=ruleComparingEQNEQOperator();
 
                     state._fsp--;
@@ -14203,18 +14278,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5118:2: ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5119:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5141:2: ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5142:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5119:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5120:3: lv_rightExpression_3_0= ruleComparisonHigherOpExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5142:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5143:3: lv_rightExpression_3_0= ruleComparisonHigherOpExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11059);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11087);
                     lv_rightExpression_3_0=ruleComparisonHigherOpExpression();
 
                     state._fsp--;
@@ -14267,7 +14342,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleComparisonHigherOpExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5144:1: entryRuleComparisonHigherOpExpression returns [EObject current=null] : iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5167:1: entryRuleComparisonHigherOpExpression returns [EObject current=null] : iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF ;
     public final EObject entryRuleComparisonHigherOpExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14275,13 +14350,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5145:2: (iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5146:2: iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5168:2: (iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5169:2: iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getComparisonHigherOpExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression11097);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression11125);
             iv_ruleComparisonHigherOpExpression=ruleComparisonHigherOpExpression();
 
             state._fsp--;
@@ -14289,7 +14364,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleComparisonHigherOpExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression11107); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression11135); if (state.failed) return current;
 
             }
 
@@ -14307,7 +14382,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleComparisonHigherOpExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5153:1: ruleComparisonHigherOpExpression returns [EObject current=null] : (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5176:1: ruleComparisonHigherOpExpression returns [EObject current=null] : (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) ;
     public final EObject ruleComparisonHigherOpExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14321,11 +14396,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5156:28: ( (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5157:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5179:28: ( (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5180:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5157:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5158:2: this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5180:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5181:2: this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -14337,7 +14412,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getArithmeticExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11157);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11185);
             this_ArithmeticExpression_0=ruleArithmeticExpression();
 
             state._fsp--;
@@ -14348,19 +14423,19 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5169:1: ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5192:1: ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( ((LA67_0>=68 && LA67_0<=69)||(LA67_0>=73 && LA67_0<=74)) ) {
-                alt67=1;
+            if ( ((LA68_0>=68 && LA68_0<=69)||(LA68_0>=74 && LA68_0<=75)) ) {
+                alt68=1;
             }
-            switch (alt67) {
+            switch (alt68) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5169:2: () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5192:2: () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5169:2: ()
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5170:2: 
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5192:2: ()
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5193:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -14377,18 +14452,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5178:2: ( (lv_operator_2_0= ruleComparingRelOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5179:1: (lv_operator_2_0= ruleComparingRelOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5201:2: ( (lv_operator_2_0= ruleComparingRelOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5202:1: (lv_operator_2_0= ruleComparingRelOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5179:1: (lv_operator_2_0= ruleComparingRelOperator )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5180:3: lv_operator_2_0= ruleComparingRelOperator
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5202:1: (lv_operator_2_0= ruleComparingRelOperator )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5203:3: lv_operator_2_0= ruleComparingRelOperator
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getOperatorComparingRelOperatorEnumRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression11190);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression11218);
                     lv_operator_2_0=ruleComparingRelOperator();
 
                     state._fsp--;
@@ -14412,18 +14487,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5196:2: ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5197:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5219:2: ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5220:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5197:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5198:3: lv_rightExpression_3_0= ruleArithmeticExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5220:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5221:3: lv_rightExpression_3_0= ruleArithmeticExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getRightExpressionArithmeticExpressionParserRuleCall_1_2_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11211);
+                    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11239);
                     lv_rightExpression_3_0=ruleArithmeticExpression();
 
                     state._fsp--;
@@ -14476,7 +14551,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleArithmeticExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5222:1: entryRuleArithmeticExpression returns [EObject current=null] : iv_ruleArithmeticExpression= ruleArithmeticExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5245:1: entryRuleArithmeticExpression returns [EObject current=null] : iv_ruleArithmeticExpression= ruleArithmeticExpression EOF ;
     public final EObject entryRuleArithmeticExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14484,13 +14559,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5223:2: (iv_ruleArithmeticExpression= ruleArithmeticExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5224:2: iv_ruleArithmeticExpression= ruleArithmeticExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5246:2: (iv_ruleArithmeticExpression= ruleArithmeticExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5247:2: iv_ruleArithmeticExpression= ruleArithmeticExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getArithmeticExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression11249);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression11277);
             iv_ruleArithmeticExpression=ruleArithmeticExpression();
 
             state._fsp--;
@@ -14498,7 +14573,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleArithmeticExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArithmeticExpression11259); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArithmeticExpression11287); if (state.failed) return current;
 
             }
 
@@ -14516,7 +14591,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleArithmeticExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5231:1: ruleArithmeticExpression returns [EObject current=null] : this_AdditionExpression_0= ruleAdditionExpression ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5254:1: ruleArithmeticExpression returns [EObject current=null] : this_AdditionExpression_0= ruleAdditionExpression ;
     public final EObject ruleArithmeticExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14526,8 +14601,8 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5234:28: (this_AdditionExpression_0= ruleAdditionExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5236:2: this_AdditionExpression_0= ruleAdditionExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5257:28: (this_AdditionExpression_0= ruleAdditionExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5259:2: this_AdditionExpression_0= ruleAdditionExpression
             {
             if ( state.backtracking==0 ) {
                
@@ -14539,7 +14614,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getArithmeticExpressionAccess().getAdditionExpressionParserRuleCall()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression11308);
+            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression11336);
             this_AdditionExpression_0=ruleAdditionExpression();
 
             state._fsp--;
@@ -14570,7 +14645,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleAdditionExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5255:1: entryRuleAdditionExpression returns [EObject current=null] : iv_ruleAdditionExpression= ruleAdditionExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5278:1: entryRuleAdditionExpression returns [EObject current=null] : iv_ruleAdditionExpression= ruleAdditionExpression EOF ;
     public final EObject entryRuleAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14578,13 +14653,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5256:2: (iv_ruleAdditionExpression= ruleAdditionExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5257:2: iv_ruleAdditionExpression= ruleAdditionExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5279:2: (iv_ruleAdditionExpression= ruleAdditionExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5280:2: iv_ruleAdditionExpression= ruleAdditionExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getAdditionExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression11342);
+            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression11370);
             iv_ruleAdditionExpression=ruleAdditionExpression();
 
             state._fsp--;
@@ -14592,7 +14667,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleAdditionExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAdditionExpression11352); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAdditionExpression11380); if (state.failed) return current;
 
             }
 
@@ -14610,7 +14685,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleAdditionExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5264:1: ruleAdditionExpression returns [EObject current=null] : (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5287:1: ruleAdditionExpression returns [EObject current=null] : (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) ;
     public final EObject ruleAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14624,11 +14699,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5267:28: ( (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5268:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5290:28: ( (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5291:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5268:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5269:2: this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5291:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5292:2: this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
                
@@ -14640,7 +14715,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getAdditionExpressionAccess().getMultiplicationExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11402);
+            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11430);
             this_MultiplicationExpression_0=ruleMultiplicationExpression();
 
             state._fsp--;
@@ -14651,23 +14726,23 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5280:1: ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
-            loop68:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5303:1: ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
+            loop69:
             do {
-                int alt68=2;
-                int LA68_0 = input.LA(1);
+                int alt69=2;
+                int LA69_0 = input.LA(1);
 
-                if ( (LA68_0==50||LA68_0==92) ) {
-                    alt68=1;
+                if ( (LA69_0==50||LA69_0==93) ) {
+                    alt69=1;
                 }
 
 
-                switch (alt68) {
+                switch (alt69) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5280:2: () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5303:2: () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5280:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5281:2: 
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5303:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5304:2: 
             	    {
             	    if ( state.backtracking==0 ) {
             	       
@@ -14684,18 +14759,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5289:2: ( (lv_operator_2_0= ruleAdditionOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5290:1: (lv_operator_2_0= ruleAdditionOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5312:2: ( (lv_operator_2_0= ruleAdditionOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5313:1: (lv_operator_2_0= ruleAdditionOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5290:1: (lv_operator_2_0= ruleAdditionOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5291:3: lv_operator_2_0= ruleAdditionOperator
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5313:1: (lv_operator_2_0= ruleAdditionOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5314:3: lv_operator_2_0= ruleAdditionOperator
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getAdditionExpressionAccess().getOperatorAdditionOperatorEnumRuleCall_1_1_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression11435);
+            	    pushFollow(FollowSets000.FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression11463);
             	    lv_operator_2_0=ruleAdditionOperator();
 
             	    state._fsp--;
@@ -14719,18 +14794,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5307:2: ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5308:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5330:2: ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5331:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5308:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5309:3: lv_rightExpression_3_0= ruleMultiplicationExpression
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5331:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5332:3: lv_rightExpression_3_0= ruleMultiplicationExpression
             	    {
             	    if ( state.backtracking==0 ) {
             	       
             	      	        newCompositeNode(grammarAccess.getAdditionExpressionAccess().getRightExpressionMultiplicationExpressionParserRuleCall_1_2_0()); 
             	      	    
             	    }
-            	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11456);
+            	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11484);
             	    lv_rightExpression_3_0=ruleMultiplicationExpression();
 
             	    state._fsp--;
@@ -14759,7 +14834,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	    break;
 
             	default :
-            	    break loop68;
+            	    break loop69;
                 }
             } while (true);
 
@@ -14786,7 +14861,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleMultiplicationExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5333:1: entryRuleMultiplicationExpression returns [EObject current=null] : iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5356:1: entryRuleMultiplicationExpression returns [EObject current=null] : iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF ;
     public final EObject entryRuleMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14794,13 +14869,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5334:2: (iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5335:2: iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5357:2: (iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5358:2: iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getMultiplicationExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression11494);
+            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression11522);
             iv_ruleMultiplicationExpression=ruleMultiplicationExpression();
 
             state._fsp--;
@@ -14808,7 +14883,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleMultiplicationExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMultiplicationExpression11504); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMultiplicationExpression11532); if (state.failed) return current;
 
             }
 
@@ -14826,7 +14901,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleMultiplicationExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5342:1: ruleMultiplicationExpression returns [EObject current=null] : (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5365:1: ruleMultiplicationExpression returns [EObject current=null] : (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) ;
     public final EObject ruleMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -14844,29 +14919,29 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5345:28: ( (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5346:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5368:28: ( (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5369:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5346:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
-            int alt71=2;
-            int LA71_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5369:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA71_0==50||LA71_0==95) ) {
-                alt71=1;
+            if ( (LA72_0==50||LA72_0==97) ) {
+                alt72=1;
             }
-            else if ( ((LA71_0>=RULE_ID && LA71_0<=RULE_BOOLEAN)||LA71_0==40||LA71_0==51||(LA71_0>=96 && LA71_0<=100)) ) {
-                alt71=2;
+            else if ( ((LA72_0>=RULE_ID && LA72_0<=RULE_BOOLEAN)||LA72_0==40||LA72_0==51||(LA72_0>=98 && LA72_0<=102)) ) {
+                alt72=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 71, 0, input);
+                    new NoViableAltException("", 72, 0, input);
 
                 throw nvae;
             }
-            switch (alt71) {
+            switch (alt72) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5347:2: this_UnaryPreExpression_0= ruleUnaryPreExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5370:2: this_UnaryPreExpression_0= ruleUnaryPreExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -14878,7 +14953,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getUnaryPreExpressionParserRuleCall_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11554);
+                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11582);
                     this_UnaryPreExpression_0=ruleUnaryPreExpression();
 
                     state._fsp--;
@@ -14893,10 +14968,10 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5359:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5382:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5359:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5360:2: this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5382:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5383:2: this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -14908,7 +14983,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperandParserRuleCall_1_0()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression11585);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression11613);
                     this_Operand_1=ruleOperand();
 
                     state._fsp--;
@@ -14919,23 +14994,23 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               afterParserOrEnumRuleCall();
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5371:1: ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
-                    loop70:
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5394:1: ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
+                    loop71:
                     do {
-                        int alt70=2;
-                        int LA70_0 = input.LA(1);
+                        int alt71=2;
+                        int LA71_0 = input.LA(1);
 
-                        if ( ((LA70_0>=93 && LA70_0<=94)) ) {
-                            alt70=1;
+                        if ( ((LA71_0>=94 && LA71_0<=96)) ) {
+                            alt71=1;
                         }
 
 
-                        switch (alt70) {
+                        switch (alt71) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5371:2: () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5394:2: () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5371:2: ()
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5372:2: 
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5394:2: ()
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5395:2: 
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
@@ -14952,18 +15027,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     	    }
 
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5380:2: ( (lv_operator_3_0= ruleMultiplicationOperator ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5381:1: (lv_operator_3_0= ruleMultiplicationOperator )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5403:2: ( (lv_operator_3_0= ruleMultiplicationOperator ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5404:1: (lv_operator_3_0= ruleMultiplicationOperator )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5381:1: (lv_operator_3_0= ruleMultiplicationOperator )
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5382:3: lv_operator_3_0= ruleMultiplicationOperator
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5404:1: (lv_operator_3_0= ruleMultiplicationOperator )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5405:3: lv_operator_3_0= ruleMultiplicationOperator
                     	    {
                     	    if ( state.backtracking==0 ) {
                     	       
                     	      	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperatorMultiplicationOperatorEnumRuleCall_1_1_1_0()); 
                     	      	    
                     	    }
-                    	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression11618);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression11646);
                     	    lv_operator_3_0=ruleMultiplicationOperator();
 
                     	    state._fsp--;
@@ -14987,39 +15062,39 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     	    }
 
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5398:2: ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5399:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5421:2: ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5422:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5399:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5400:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5422:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5423:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5400:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
-                    	    int alt69=2;
-                    	    int LA69_0 = input.LA(1);
+                    	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5423:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
+                    	    int alt70=2;
+                    	    int LA70_0 = input.LA(1);
 
-                    	    if ( (LA69_0==50||LA69_0==95) ) {
-                    	        alt69=1;
+                    	    if ( (LA70_0==50||LA70_0==97) ) {
+                    	        alt70=1;
                     	    }
-                    	    else if ( ((LA69_0>=RULE_ID && LA69_0<=RULE_BOOLEAN)||LA69_0==40||LA69_0==51||(LA69_0>=96 && LA69_0<=100)) ) {
-                    	        alt69=2;
+                    	    else if ( ((LA70_0>=RULE_ID && LA70_0<=RULE_BOOLEAN)||LA70_0==40||LA70_0==51||(LA70_0>=98 && LA70_0<=102)) ) {
+                    	        alt70=2;
                     	    }
                     	    else {
                     	        if (state.backtracking>0) {state.failed=true; return current;}
                     	        NoViableAltException nvae =
-                    	            new NoViableAltException("", 69, 0, input);
+                    	            new NoViableAltException("", 70, 0, input);
 
                     	        throw nvae;
                     	    }
-                    	    switch (alt69) {
+                    	    switch (alt70) {
                     	        case 1 :
-                    	            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5401:3: lv_rightExpression_4_1= ruleUnaryPreExpression
+                    	            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5424:3: lv_rightExpression_4_1= ruleUnaryPreExpression
                     	            {
                     	            if ( state.backtracking==0 ) {
                     	               
                     	              	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0()); 
                     	              	    
                     	            }
-                    	            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11641);
+                    	            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11669);
                     	            lv_rightExpression_4_1=ruleUnaryPreExpression();
 
                     	            state._fsp--;
@@ -15041,14 +15116,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5416:8: lv_rightExpression_4_2= ruleOperand
+                    	            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5439:8: lv_rightExpression_4_2= ruleOperand
                     	            {
                     	            if ( state.backtracking==0 ) {
                     	               
                     	              	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionOperandParserRuleCall_1_1_2_0_1()); 
                     	              	    
                     	            }
-                    	            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression11660);
+                    	            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression11688);
                     	            lv_rightExpression_4_2=ruleOperand();
 
                     	            state._fsp--;
@@ -15083,7 +15158,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     	    break;
 
                     	default :
-                    	    break loop70;
+                    	    break loop71;
                         }
                     } while (true);
 
@@ -15116,7 +15191,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleUnaryPreExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5442:1: entryRuleUnaryPreExpression returns [EObject current=null] : iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5465:1: entryRuleUnaryPreExpression returns [EObject current=null] : iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF ;
     public final EObject entryRuleUnaryPreExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15124,13 +15199,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5443:2: (iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5444:2: iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5466:2: (iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5467:2: iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getUnaryPreExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression11702);
+            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression11730);
             iv_ruleUnaryPreExpression=ruleUnaryPreExpression();
 
             state._fsp--;
@@ -15138,7 +15213,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleUnaryPreExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUnaryPreExpression11712); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUnaryPreExpression11740); if (state.failed) return current;
 
             }
 
@@ -15156,7 +15231,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleUnaryPreExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5451:1: ruleUnaryPreExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5474:1: ruleUnaryPreExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) ;
     public final EObject ruleUnaryPreExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15168,14 +15243,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5454:28: ( ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5455:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5477:28: ( ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5478:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5455:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5455:2: () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5478:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5478:2: () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5455:2: ()
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5456:2: 
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5478:2: ()
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5479:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -15192,18 +15267,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5464:2: ( (lv_operator_1_0= ruleUnaryPreOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5465:1: (lv_operator_1_0= ruleUnaryPreOperator )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5487:2: ( (lv_operator_1_0= ruleUnaryPreOperator ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5488:1: (lv_operator_1_0= ruleUnaryPreOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5465:1: (lv_operator_1_0= ruleUnaryPreOperator )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5466:3: lv_operator_1_0= ruleUnaryPreOperator
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5488:1: (lv_operator_1_0= ruleUnaryPreOperator )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5489:3: lv_operator_1_0= ruleUnaryPreOperator
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getOperatorUnaryPreOperatorEnumRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression11770);
+            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression11798);
             lv_operator_1_0=ruleUnaryPreOperator();
 
             state._fsp--;
@@ -15227,18 +15302,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5482:2: ( (lv_enclosedExpression_2_0= ruleOperand ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5483:1: (lv_enclosedExpression_2_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5505:2: ( (lv_enclosedExpression_2_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5506:1: (lv_enclosedExpression_2_0= ruleOperand )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5483:1: (lv_enclosedExpression_2_0= ruleOperand )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5484:3: lv_enclosedExpression_2_0= ruleOperand
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5506:1: (lv_enclosedExpression_2_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5507:3: lv_enclosedExpression_2_0= ruleOperand
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionOperandParserRuleCall_2_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleUnaryPreExpression11791);
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleUnaryPreExpression11819);
             lv_enclosedExpression_2_0=ruleOperand();
 
             state._fsp--;
@@ -15284,8 +15359,193 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     // $ANTLR end "ruleUnaryPreExpression"
 
 
+    // $ANTLR start "entryRuleTypeCastExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5531:1: entryRuleTypeCastExpression returns [EObject current=null] : iv_ruleTypeCastExpression= ruleTypeCastExpression EOF ;
+    public final EObject entryRuleTypeCastExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleTypeCastExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5532:2: (iv_ruleTypeCastExpression= ruleTypeCastExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5533:2: iv_ruleTypeCastExpression= ruleTypeCastExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getTypeCastExpressionRule()); 
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression11855);
+            iv_ruleTypeCastExpression=ruleTypeCastExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleTypeCastExpression; 
+            }
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeCastExpression11865); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTypeCastExpression"
+
+
+    // $ANTLR start "ruleTypeCastExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5540:1: ruleTypeCastExpression returns [EObject current=null] : ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) ) ;
+    public final EObject ruleTypeCastExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_enclosedExpression_4_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5543:28: ( ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5544:1: ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5544:1: ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5544:2: () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5544:2: ()
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5545:2: 
+            {
+            if ( state.backtracking==0 ) {
+               
+              	  /* */ 
+              	
+            }
+            if ( state.backtracking==0 ) {
+
+                      current = forceCreateModelElement(
+                          grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_0(),
+                          current);
+                  
+            }
+
+            }
+
+            otherlv_1=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleTypeCastExpression11914); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_1, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1());
+                  
+            }
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5557:1: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5558:1: ( ruleDATATYPE )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5558:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5559:3: ruleDATATYPE
+            {
+            if ( state.backtracking==0 ) {
+               
+              		  /* */ 
+              		
+            }
+            if ( state.backtracking==0 ) {
+
+              			if (current==null) {
+              	            current = createModelElement(grammarAccess.getTypeCastExpressionRule());
+              	        }
+                      
+            }
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_2_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression11941);
+            ruleDATATYPE();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleTypeCastExpression11953); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_3, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_3());
+                  
+            }
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5579:1: ( (lv_enclosedExpression_4_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5580:1: (lv_enclosedExpression_4_0= ruleOperand )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5580:1: (lv_enclosedExpression_4_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5581:3: lv_enclosedExpression_4_0= ruleOperand
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_4_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleTypeCastExpression11974);
+            lv_enclosedExpression_4_0=ruleOperand();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getTypeCastExpressionRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"enclosedExpression",
+                      		lv_enclosedExpression_4_0, 
+                      		"Operand");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTypeCastExpression"
+
+
     // $ANTLR start "entryRuleOperand"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5508:1: entryRuleOperand returns [EObject current=null] : iv_ruleOperand= ruleOperand EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5605:1: entryRuleOperand returns [EObject current=null] : iv_ruleOperand= ruleOperand EOF ;
     public final EObject entryRuleOperand() throws RecognitionException {
         EObject current = null;
 
@@ -15293,13 +15553,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5509:2: (iv_ruleOperand= ruleOperand EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5510:2: iv_ruleOperand= ruleOperand EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5606:2: (iv_ruleOperand= ruleOperand EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5607:2: iv_ruleOperand= ruleOperand EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getOperandRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_entryRuleOperand11827);
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_entryRuleOperand12010);
             iv_ruleOperand=ruleOperand();
 
             state._fsp--;
@@ -15307,7 +15567,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleOperand; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperand11837); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperand12020); if (state.failed) return current;
 
             }
 
@@ -15325,7 +15585,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleOperand"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5517:1: ruleOperand returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5614:1: ruleOperand returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) ;
     public final EObject ruleOperand() throws RecognitionException {
         EObject current = null;
 
@@ -15347,20 +15607,20 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5520:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5521:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5617:28: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5618:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5521:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
-            int alt72=6;
-            alt72 = dfa72.predict(input);
-            switch (alt72) {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5618:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
+            int alt73=6;
+            alt73 = dfa73.predict(input);
+            switch (alt73) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5521:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5618:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5521:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5521:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5618:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5618:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleOperand11875); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleOperand12058); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_0, grammarAccess.getOperandAccess().getLeftParenthesisKeyword_0_0());
@@ -15376,7 +15636,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getOperandAccess().getExpressionParserRuleCall_0_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleOperand11900);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleOperand12083);
                     this_Expression_1=ruleExpression();
 
                     state._fsp--;
@@ -15387,7 +15647,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               afterParserOrEnumRuleCall();
                           
                     }
-                    otherlv_2=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleOperand11911); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleOperand12094); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getOperandAccess().getRightParenthesisKeyword_0_2());
@@ -15400,7 +15660,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5543:2: this_LiteralExpression_3= ruleLiteralExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5640:2: this_LiteralExpression_3= ruleLiteralExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15412,7 +15672,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getOperandAccess().getLiteralExpressionParserRuleCall_1()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleOperand11943);
+                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleOperand12126);
                     this_LiteralExpression_3=ruleLiteralExpression();
 
                     state._fsp--;
@@ -15427,7 +15687,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5556:2: this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5653:2: this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15439,7 +15699,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getOperandAccess().getExtendedTypedNamedElementExpressionParserRuleCall_2()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand11973);
+                    pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand12156);
                     this_ExtendedTypedNamedElementExpression_4=ruleExtendedTypedNamedElementExpression();
 
                     state._fsp--;
@@ -15454,7 +15714,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5569:2: this_OperationCall_5= ruleOperationCall
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5666:2: this_OperationCall_5= ruleOperationCall
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15466,7 +15726,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperand12003);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperand12186);
                     this_OperationCall_5=ruleOperationCall();
 
                     state._fsp--;
@@ -15481,7 +15741,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5582:2: this_TriggerMessageExpression_6= ruleTriggerMessageExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5679:2: this_TriggerMessageExpression_6= ruleTriggerMessageExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15493,7 +15753,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_ruleOperand12033);
+                    pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_ruleOperand12216);
                     this_TriggerMessageExpression_6=ruleTriggerMessageExpression();
 
                     state._fsp--;
@@ -15508,7 +15768,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5595:2: this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5692:2: this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15520,7 +15780,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                               newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); 
                           
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand12063);
+                    pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand12246);
                     this_NoAttributeSelectorExpression_7=ruleNoAttributeSelectorExpression();
 
                     state._fsp--;
@@ -15557,7 +15817,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleLiteralExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5614:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5711:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
     public final EObject entryRuleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15565,13 +15825,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5615:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5616:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5712:2: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5713:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression12098);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression12281);
             iv_ruleLiteralExpression=ruleLiteralExpression();
 
             state._fsp--;
@@ -15579,7 +15839,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleLiteralExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression12108); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression12291); if (state.failed) return current;
 
             }
 
@@ -15597,7 +15857,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLiteralExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5623:1: ruleLiteralExpression returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLiteral ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5720:1: ruleLiteralExpression returns [EObject current=null] : ( () ( (lv_value_1_0= ruleLiteral ) ) ) ;
     public final EObject ruleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15607,14 +15867,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5626:28: ( ( () ( (lv_value_1_0= ruleLiteral ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5627:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5723:28: ( ( () ( (lv_value_1_0= ruleLiteral ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5724:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5627:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5627:2: () ( (lv_value_1_0= ruleLiteral ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5724:1: ( () ( (lv_value_1_0= ruleLiteral ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5724:2: () ( (lv_value_1_0= ruleLiteral ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5627:2: ()
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5628:2: 
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5724:2: ()
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5725:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -15631,18 +15891,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5636:2: ( (lv_value_1_0= ruleLiteral ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5637:1: (lv_value_1_0= ruleLiteral )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5733:2: ( (lv_value_1_0= ruleLiteral ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5734:1: (lv_value_1_0= ruleLiteral )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5637:1: (lv_value_1_0= ruleLiteral )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5638:3: lv_value_1_0= ruleLiteral
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5734:1: (lv_value_1_0= ruleLiteral )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5735:3: lv_value_1_0= ruleLiteral
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_ruleLiteralExpression12166);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_ruleLiteralExpression12349);
             lv_value_1_0=ruleLiteral();
 
             state._fsp--;
@@ -15689,7 +15949,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleExtendedTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5662:1: entryRuleExtendedTypedNamedElementExpression returns [EObject current=null] : iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5759:1: entryRuleExtendedTypedNamedElementExpression returns [EObject current=null] : iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF ;
     public final EObject entryRuleExtendedTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15697,13 +15957,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5663:2: (iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5664:2: iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5760:2: (iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5761:2: iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression12202);
+            pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression12385);
             iv_ruleExtendedTypedNamedElementExpression=ruleExtendedTypedNamedElementExpression();
 
             state._fsp--;
@@ -15711,7 +15971,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleExtendedTypedNamedElementExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression12212); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression12395); if (state.failed) return current;
 
             }
 
@@ -15729,7 +15989,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleExtendedTypedNamedElementExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5671:1: ruleExtendedTypedNamedElementExpression returns [EObject current=null] : (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5768:1: ruleExtendedTypedNamedElementExpression returns [EObject current=null] : (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) ;
     public final EObject ruleExtendedTypedNamedElementExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15744,11 +16004,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5674:28: ( (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5675:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5771:28: ( (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5772:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5675:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5676:2: this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5772:1: (this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5773:2: this_TypedNamedElementExpression_0= ruleTypedNamedElementExpression ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
             {
             if ( state.backtracking==0 ) {
                
@@ -15760,7 +16020,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getTypedNamedElementExpressionParserRuleCall_0()); 
                   
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression12262);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression12445);
             this_TypedNamedElementExpression_0=ruleTypedNamedElementExpression();
 
             state._fsp--;
@@ -15771,25 +16031,25 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                       afterParserOrEnumRuleCall();
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5687:1: ( ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
-            int alt73=3;
-            int LA73_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5784:1: ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
+            int alt74=3;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA73_0==37) ) {
-                alt73=1;
+            if ( (LA74_0==70) ) {
+                alt74=1;
             }
-            else if ( ((LA73_0>=86 && LA73_0<=87)) ) {
-                alt73=2;
+            else if ( ((LA74_0>=87 && LA74_0<=88)) ) {
+                alt74=2;
             }
-            switch (alt73) {
+            switch (alt74) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5687:2: ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5784:2: ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5687:2: ( () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5687:3: () otherlv_2= '.' ( (lv_position_3_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5784:2: ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5784:3: () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5687:3: ()
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5688:2: 
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5784:3: ()
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5785:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15806,24 +16066,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    otherlv_2=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleExtendedTypedNamedElementExpression12287); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,70,FollowSets000.FOLLOW_70_in_ruleExtendedTypedNamedElementExpression12470); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getFullStopKeyword_1_0_1());
+                          	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5700:1: ( (lv_position_3_0= rulePositionSelectorExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5701:1: (lv_position_3_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5797:1: ( (lv_position_3_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5798:1: (lv_position_3_0= rulePositionSelectorExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5701:1: (lv_position_3_0= rulePositionSelectorExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5702:3: lv_position_3_0= rulePositionSelectorExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5798:1: (lv_position_3_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5799:3: lv_position_3_0= rulePositionSelectorExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_1_0_2_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression12308);
+                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression12491);
                     lv_position_3_0=rulePositionSelectorExpression();
 
                     state._fsp--;
@@ -15854,13 +16114,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5719:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5816:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5719:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5719:7: () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5816:6: ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5816:7: () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5719:7: ()
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5720:2: 
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5816:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5817:2: 
                     {
                     if ( state.backtracking==0 ) {
                        
@@ -15877,18 +16137,18 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5728:2: ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5729:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5825:2: ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5826:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5729:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5730:3: lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5826:1: (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5827:3: lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorIncrementDecrementOperatorExpressionEnumRuleCall_1_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression12349);
+                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression12532);
                     lv_incrementDecrementOperator_5_0=ruleIncrementDecrementOperatorExpression();
 
                     state._fsp--;
@@ -15943,8 +16203,251 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     // $ANTLR end "ruleExtendedTypedNamedElementExpression"
 
 
+    // $ANTLR start "entryRuleArrayIndexExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5851:1: entryRuleArrayIndexExpression returns [EObject current=null] : iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF ;
+    public final EObject entryRuleArrayIndexExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleArrayIndexExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5852:2: (iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5853:2: iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getArrayIndexExpressionRule()); 
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression12571);
+            iv_ruleArrayIndexExpression=ruleArrayIndexExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleArrayIndexExpression; 
+            }
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayIndexExpression12581); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleArrayIndexExpression"
+
+
+    // $ANTLR start "ruleArrayIndexExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5860:1: ruleArrayIndexExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' ) ;
+    public final EObject ruleArrayIndexExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        EObject lv_index_1_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5863:28: ( (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5864:1: (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5864:1: (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5864:3: otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']'
+            {
+            otherlv_0=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleArrayIndexExpression12618); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_0, grammarAccess.getArrayIndexExpressionAccess().getLeftSquareBracketKeyword_0());
+                  
+            }
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5868:1: ( (lv_index_1_0= ruleArithmeticExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5869:1: (lv_index_1_0= ruleArithmeticExpression )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5869:1: (lv_index_1_0= ruleArithmeticExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5870:3: lv_index_1_0= ruleArithmeticExpression
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getArrayIndexExpressionAccess().getIndexArithmeticExpressionParserRuleCall_1_0()); 
+              	    
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression12639);
+            lv_index_1_0=ruleArithmeticExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getArrayIndexExpressionRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"index",
+                      		lv_index_1_0, 
+                      		"ArithmeticExpression");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleArrayIndexExpression12651); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_2, grammarAccess.getArrayIndexExpressionAccess().getRightSquareBracketKeyword_2());
+                  
+            }
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleArrayIndexExpression"
+
+
+    // $ANTLR start "entryRuleAttributeAccessorExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5898:1: entryRuleAttributeAccessorExpression returns [EObject current=null] : iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF ;
+    public final EObject entryRuleAttributeAccessorExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAttributeAccessorExpression = null;
+
+
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5899:2: (iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5900:2: iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getAttributeAccessorExpressionRule()); 
+            }
+            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression12687);
+            iv_ruleAttributeAccessorExpression=ruleAttributeAccessorExpression();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleAttributeAccessorExpression; 
+            }
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributeAccessorExpression12697); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAttributeAccessorExpression"
+
+
+    // $ANTLR start "ruleAttributeAccessorExpression"
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5907:1: ruleAttributeAccessorExpression returns [EObject current=null] : (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) ) ;
+    public final EObject ruleAttributeAccessorExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+
+         enterRule(); 
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5910:28: ( (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5911:1: (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5911:1: (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5911:3: otherlv_0= '.' ( (otherlv_1= RULE_ID ) )
+            {
+            otherlv_0=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleAttributeAccessorExpression12734); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_0, grammarAccess.getAttributeAccessorExpressionAccess().getFullStopKeyword_0());
+                  
+            }
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5915:1: ( (otherlv_1= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5916:1: (otherlv_1= RULE_ID )
+            {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5916:1: (otherlv_1= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5917:3: otherlv_1= RULE_ID
+            {
+            if ( state.backtracking==0 ) {
+               
+              		  /* */ 
+              		
+            }
+            if ( state.backtracking==0 ) {
+
+              			if (current==null) {
+              	            current = createModelElement(grammarAccess.getAttributeAccessorExpressionRule());
+              	        }
+                      
+            }
+            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression12758); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              		newLeafNode(otherlv_1, grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAttributeCrossReference_1_0()); 
+              	
+            }
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAttributeAccessorExpression"
+
+
     // $ANTLR start "entryRuleNoAttributeSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5754:1: entryRuleNoAttributeSelectorExpression returns [EObject current=null] : iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5939:1: entryRuleNoAttributeSelectorExpression returns [EObject current=null] : iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF ;
     public final EObject entryRuleNoAttributeSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15952,13 +16455,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5755:2: (iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5756:2: iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5940:2: (iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5941:2: iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNoAttributeSelectorExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression12388);
+            pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression12794);
             iv_ruleNoAttributeSelectorExpression=ruleNoAttributeSelectorExpression();
 
             state._fsp--;
@@ -15966,7 +16469,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleNoAttributeSelectorExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression12398); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression12804); if (state.failed) return current;
 
             }
 
@@ -15984,7 +16487,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleNoAttributeSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5763:1: ruleNoAttributeSelectorExpression returns [EObject current=null] : ( (lv_position_0_0= rulePositionSelectorExpression ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5948:1: ruleNoAttributeSelectorExpression returns [EObject current=null] : ( (lv_position_0_0= rulePositionSelectorExpression ) ) ;
     public final EObject ruleNoAttributeSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -15994,21 +16497,21 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5766:28: ( ( (lv_position_0_0= rulePositionSelectorExpression ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5767:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5951:28: ( ( (lv_position_0_0= rulePositionSelectorExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5952:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5767:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5768:1: (lv_position_0_0= rulePositionSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5952:1: ( (lv_position_0_0= rulePositionSelectorExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5953:1: (lv_position_0_0= rulePositionSelectorExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5768:1: (lv_position_0_0= rulePositionSelectorExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5769:3: lv_position_0_0= rulePositionSelectorExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5953:1: (lv_position_0_0= rulePositionSelectorExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5954:3: lv_position_0_0= rulePositionSelectorExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getNoAttributeSelectorExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression12443);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression12849);
             lv_position_0_0=rulePositionSelectorExpression();
 
             state._fsp--;
@@ -16052,7 +16555,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRulePositionSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5793:1: entryRulePositionSelectorExpression returns [EObject current=null] : iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5978:1: entryRulePositionSelectorExpression returns [EObject current=null] : iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF ;
     public final EObject entryRulePositionSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -16060,13 +16563,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5794:2: (iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5795:2: iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5979:2: (iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5980:2: iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getPositionSelectorExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression12478);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression12884);
             iv_rulePositionSelectorExpression=rulePositionSelectorExpression();
 
             state._fsp--;
@@ -16074,7 +16577,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_rulePositionSelectorExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePositionSelectorExpression12488); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePositionSelectorExpression12894); if (state.failed) return current;
 
             }
 
@@ -16092,7 +16595,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "rulePositionSelectorExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5802:1: rulePositionSelectorExpression returns [EObject current=null] : ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5987:1: rulePositionSelectorExpression returns [EObject current=null] : ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) ;
     public final EObject rulePositionSelectorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -16105,24 +16608,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5805:28: ( ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5806:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5990:28: ( ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5991:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5806:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5806:2: ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5991:1: ( ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5991:2: ( (lv_kind_0_0= rulePositionSelectorKind ) ) (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5806:2: ( (lv_kind_0_0= rulePositionSelectorKind ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5807:1: (lv_kind_0_0= rulePositionSelectorKind )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5991:2: ( (lv_kind_0_0= rulePositionSelectorKind ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5992:1: (lv_kind_0_0= rulePositionSelectorKind )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5807:1: (lv_kind_0_0= rulePositionSelectorKind )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5808:3: lv_kind_0_0= rulePositionSelectorKind
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5992:1: (lv_kind_0_0= rulePositionSelectorKind )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5993:3: lv_kind_0_0= rulePositionSelectorKind
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getPositionSelectorExpressionAccess().getKindPositionSelectorKindEnumRuleCall_0_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression12534);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression12940);
             lv_kind_0_0=rulePositionSelectorKind();
 
             state._fsp--;
@@ -16146,35 +16649,35 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5824:2: (otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6009:2: (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
+            int alt75=2;
+            int LA75_0 = input.LA(1);
 
-            if ( (LA74_0==37) ) {
-                alt74=1;
+            if ( (LA75_0==70) ) {
+                alt75=1;
             }
-            switch (alt74) {
+            switch (alt75) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5824:4: otherlv_1= '.' ( (lv_successor_2_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6009:4: otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) )
                     {
-                    otherlv_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_rulePositionSelectorExpression12547); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,70,FollowSets000.FOLLOW_70_in_rulePositionSelectorExpression12953); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                          	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getFullStopKeyword_1_0());
+                          	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
                           
                     }
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5828:1: ( (lv_successor_2_0= rulePositionSelectorExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5829:1: (lv_successor_2_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6013:1: ( (lv_successor_2_0= rulePositionSelectorExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6014:1: (lv_successor_2_0= rulePositionSelectorExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5829:1: (lv_successor_2_0= rulePositionSelectorExpression )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5830:3: lv_successor_2_0= rulePositionSelectorExpression
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6014:1: (lv_successor_2_0= rulePositionSelectorExpression )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6015:3: lv_successor_2_0= rulePositionSelectorExpression
                     {
                     if ( state.backtracking==0 ) {
                        
                       	        newCompositeNode(grammarAccess.getPositionSelectorExpressionAccess().getSuccessorPositionSelectorExpressionParserRuleCall_1_1_0()); 
                       	    
                     }
-                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression12568);
+                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression12974);
                     lv_successor_2_0=rulePositionSelectorExpression();
 
                     state._fsp--;
@@ -16227,7 +16730,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleParamaterBinding"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5854:1: entryRuleParamaterBinding returns [EObject current=null] : iv_ruleParamaterBinding= ruleParamaterBinding EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6039:1: entryRuleParamaterBinding returns [EObject current=null] : iv_ruleParamaterBinding= ruleParamaterBinding EOF ;
     public final EObject entryRuleParamaterBinding() throws RecognitionException {
         EObject current = null;
 
@@ -16235,13 +16738,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5855:2: (iv_ruleParamaterBinding= ruleParamaterBinding EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5856:2: iv_ruleParamaterBinding= ruleParamaterBinding EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6040:2: (iv_ruleParamaterBinding= ruleParamaterBinding EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6041:2: iv_ruleParamaterBinding= ruleParamaterBinding EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getParamaterBindingRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding12606);
+            pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding13012);
             iv_ruleParamaterBinding=ruleParamaterBinding();
 
             state._fsp--;
@@ -16249,7 +16752,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleParamaterBinding; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleParamaterBinding12616); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleParamaterBinding13022); if (state.failed) return current;
 
             }
 
@@ -16267,7 +16770,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleParamaterBinding"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5863:1: ruleParamaterBinding returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6048:1: ruleParamaterBinding returns [EObject current=null] : ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) ) ;
     public final EObject ruleParamaterBinding() throws RecognitionException {
         EObject current = null;
 
@@ -16279,14 +16782,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5866:28: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5867:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6051:28: ( ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6052:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5867:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5867:2: () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6052:1: ( () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6052:2: () ( (otherlv_1= RULE_ID ) ) otherlv_2= ':=' ( (lv_value_3_0= ruleExpression ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5867:2: ()
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5868:2: 
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6052:2: ()
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6053:2: 
             {
             if ( state.backtracking==0 ) {
                
@@ -16303,11 +16806,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5876:2: ( (otherlv_1= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5877:1: (otherlv_1= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6061:2: ( (otherlv_1= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6062:1: (otherlv_1= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5877:1: (otherlv_1= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5878:3: otherlv_1= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6062:1: (otherlv_1= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6063:3: otherlv_1= RULE_ID
             {
             if ( state.backtracking==0 ) {
                
@@ -16321,7 +16824,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        }
                       
             }
-            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleParamaterBinding12677); if (state.failed) return current;
+            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleParamaterBinding13083); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_1, grammarAccess.getParamaterBindingAccess().getParameterParameterCrossReference_1_0()); 
@@ -16333,24 +16836,24 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_2=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleParamaterBinding12689); if (state.failed) return current;
+            otherlv_2=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleParamaterBinding13095); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_2, grammarAccess.getParamaterBindingAccess().getColonEqualsSignKeyword_2());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5896:1: ( (lv_value_3_0= ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5897:1: (lv_value_3_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6081:1: ( (lv_value_3_0= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6082:1: (lv_value_3_0= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5897:1: (lv_value_3_0= ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5898:3: lv_value_3_0= ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6082:1: (lv_value_3_0= ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6083:3: lv_value_3_0= ruleExpression
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); 
               	    
             }
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleParamaterBinding12710);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleParamaterBinding13116);
             lv_value_3_0=ruleExpression();
 
             state._fsp--;
@@ -16397,7 +16900,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleTriggerMessageExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5922:1: entryRuleTriggerMessageExpression returns [EObject current=null] : iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6107:1: entryRuleTriggerMessageExpression returns [EObject current=null] : iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF ;
     public final EObject entryRuleTriggerMessageExpression() throws RecognitionException {
         EObject current = null;
 
@@ -16405,13 +16908,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5923:2: (iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5924:2: iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6108:2: (iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6109:2: iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getTriggerMessageExpressionRule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression12746);
+            pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression13152);
             iv_ruleTriggerMessageExpression=ruleTriggerMessageExpression();
 
             state._fsp--;
@@ -16419,7 +16922,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleTriggerMessageExpression; 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTriggerMessageExpression12756); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTriggerMessageExpression13162); if (state.failed) return current;
 
             }
 
@@ -16437,7 +16940,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTriggerMessageExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5931:1: ruleTriggerMessageExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6116:1: ruleTriggerMessageExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleTriggerMessageExpression() throws RecognitionException {
         EObject current = null;
 
@@ -16448,17 +16951,17 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5934:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5935:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6119:28: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6120:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5935:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5935:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6120:1: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6120:2: ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (otherlv_2= RULE_ID ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5935:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5936:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6120:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6121:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5936:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5937:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6121:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6122:3: otherlv_0= RULE_ID
             {
             if ( state.backtracking==0 ) {
                
@@ -16472,7 +16975,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        }
                       
             }
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression12805); if (state.failed) return current;
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression13211); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_0, grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeCrossReference_0_0()); 
@@ -16484,17 +16987,17 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
             }
 
-            otherlv_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleTriggerMessageExpression12817); if (state.failed) return current;
+            otherlv_1=(Token)match(input,70,FollowSets000.FOLLOW_70_in_ruleTriggerMessageExpression13223); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getFullStopKeyword_1());
+                  	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1());
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5955:1: ( (otherlv_2= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5956:1: (otherlv_2= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6140:1: ( (otherlv_2= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6141:1: (otherlv_2= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5956:1: (otherlv_2= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5957:3: otherlv_2= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6141:1: (otherlv_2= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6142:3: otherlv_2= RULE_ID
             {
             if ( state.backtracking==0 ) {
                
@@ -16508,7 +17011,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
               	        }
                       
             }
-            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression12841); if (state.failed) return current;
+            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression13247); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		newLeafNode(otherlv_2, grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterCrossReference_2_0()); 
@@ -16543,7 +17046,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "entryRuleDATATYPE"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5979:1: entryRuleDATATYPE returns [String current=null] : iv_ruleDATATYPE= ruleDATATYPE EOF ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6164:1: entryRuleDATATYPE returns [String current=null] : iv_ruleDATATYPE= ruleDATATYPE EOF ;
     public final String entryRuleDATATYPE() throws RecognitionException {
         String current = null;
 
@@ -16551,13 +17054,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5980:2: (iv_ruleDATATYPE= ruleDATATYPE EOF )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5981:2: iv_ruleDATATYPE= ruleDATATYPE EOF
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6165:2: (iv_ruleDATATYPE= ruleDATATYPE EOF )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6166:2: iv_ruleDATATYPE= ruleDATATYPE EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getDATATYPERule()); 
             }
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE12878);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE13284);
             iv_ruleDATATYPE=ruleDATATYPE();
 
             state._fsp--;
@@ -16565,7 +17068,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             if ( state.backtracking==0 ) {
                current =iv_ruleDATATYPE.getText(); 
             }
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDATATYPE12889); if (state.failed) return current;
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDATATYPE13295); if (state.failed) return current;
 
             }
 
@@ -16583,7 +17086,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleDATATYPE"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5988:1: ruleDATATYPE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6173:1: ruleDATATYPE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) ;
     public final AntlrDatatypeRuleToken ruleDATATYPE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -16594,13 +17097,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5991:28: ( (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5992:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6176:28: ( (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6177:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5992:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5992:6: this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )*
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6177:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6177:6: this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDATATYPE12929); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDATATYPE13335); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -16611,29 +17114,29 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                   newLeafNode(this_ID_0, grammarAccess.getDATATYPEAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5999:1: (kw= '[' this_INT_2= RULE_INT kw= ']' )*
-            loop75:
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6184:1: (kw= '[' this_INT_2= RULE_INT kw= ']' )*
+            loop76:
             do {
-                int alt75=2;
-                int LA75_0 = input.LA(1);
+                int alt76=2;
+                int LA76_0 = input.LA(1);
 
-                if ( (LA75_0==18) ) {
-                    alt75=1;
+                if ( (LA76_0==18) ) {
+                    alt76=1;
                 }
 
 
-                switch (alt75) {
+                switch (alt76) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6000:2: kw= '[' this_INT_2= RULE_INT kw= ']'
+            	    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6185:2: kw= '[' this_INT_2= RULE_INT kw= ']'
             	    {
-            	    kw=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDATATYPE12948); if (state.failed) return current;
+            	    kw=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleDATATYPE13354); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
             	              newLeafNode(kw, grammarAccess.getDATATYPEAccess().getLeftSquareBracketKeyword_1_0()); 
             	          
             	    }
-            	    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDATATYPE12963); if (state.failed) return current;
+            	    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDATATYPE13369); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_INT_2);
@@ -16644,7 +17147,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	          newLeafNode(this_INT_2, grammarAccess.getDATATYPEAccess().getINTTerminalRuleCall_1_1()); 
             	          
             	    }
-            	    kw=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDATATYPE12981); if (state.failed) return current;
+            	    kw=(Token)match(input,19,FollowSets000.FOLLOW_19_in_ruleDATATYPE13387); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -16656,7 +17159,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             	    break;
 
             	default :
-            	    break loop75;
+            	    break loop76;
                 }
             } while (true);
 
@@ -16683,7 +17186,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleOrOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6026:1: ruleOrOperator returns [Enumerator current=null] : (enumLiteral_0= 'or' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6211:1: ruleOrOperator returns [Enumerator current=null] : (enumLiteral_0= 'or' ) ;
     public final Enumerator ruleOrOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -16691,13 +17194,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6028:28: ( (enumLiteral_0= 'or' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6029:1: (enumLiteral_0= 'or' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6213:28: ( (enumLiteral_0= 'or' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6214:1: (enumLiteral_0= 'or' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6029:1: (enumLiteral_0= 'or' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6029:3: enumLiteral_0= 'or'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6214:1: (enumLiteral_0= 'or' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6214:3: enumLiteral_0= 'or'
             {
-            enumLiteral_0=(Token)match(input,70,FollowSets000.FOLLOW_70_in_ruleOrOperator13036); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,71,FollowSets000.FOLLOW_71_in_ruleOrOperator13442); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getOrOperatorAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -16727,7 +17230,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleAndOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6039:1: ruleAndOperator returns [Enumerator current=null] : (enumLiteral_0= 'and' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6224:1: ruleAndOperator returns [Enumerator current=null] : (enumLiteral_0= 'and' ) ;
     public final Enumerator ruleAndOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -16735,13 +17238,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6041:28: ( (enumLiteral_0= 'and' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6042:1: (enumLiteral_0= 'and' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6226:28: ( (enumLiteral_0= 'and' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6227:1: (enumLiteral_0= 'and' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6042:1: (enumLiteral_0= 'and' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6042:3: enumLiteral_0= 'and'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6227:1: (enumLiteral_0= 'and' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6227:3: enumLiteral_0= 'and'
             {
-            enumLiteral_0=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleAndOperator13079); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleAndOperator13485); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getAndOperatorAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -16771,7 +17274,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLogicOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6052:1: ruleLogicOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6237:1: ruleLogicOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) ) ;
     public final Enumerator ruleLogicOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -16780,34 +17283,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6054:28: ( ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6055:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6239:28: ( ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6240:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6055:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) )
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6240:1: ( (enumLiteral_0= 'or' ) | (enumLiteral_1= 'and' ) )
+            int alt77=2;
+            int LA77_0 = input.LA(1);
 
-            if ( (LA76_0==70) ) {
-                alt76=1;
+            if ( (LA77_0==71) ) {
+                alt77=1;
             }
-            else if ( (LA76_0==32) ) {
-                alt76=2;
+            else if ( (LA77_0==32) ) {
+                alt77=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 76, 0, input);
+                    new NoViableAltException("", 77, 0, input);
 
                 throw nvae;
             }
-            switch (alt76) {
+            switch (alt77) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6055:2: (enumLiteral_0= 'or' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6240:2: (enumLiteral_0= 'or' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6055:2: (enumLiteral_0= 'or' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6055:4: enumLiteral_0= 'or'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6240:2: (enumLiteral_0= 'or' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6240:4: enumLiteral_0= 'or'
                     {
-                    enumLiteral_0=(Token)match(input,70,FollowSets000.FOLLOW_70_in_ruleLogicOperator13123); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,71,FollowSets000.FOLLOW_71_in_ruleLogicOperator13529); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLogicOperatorAccess().getOREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -16821,12 +17324,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6061:6: (enumLiteral_1= 'and' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6246:6: (enumLiteral_1= 'and' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6061:6: (enumLiteral_1= 'and' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6061:8: enumLiteral_1= 'and'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6246:6: (enumLiteral_1= 'and' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6246:8: enumLiteral_1= 'and'
                     {
-                    enumLiteral_1=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleLogicOperator13140); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleLogicOperator13546); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getLogicOperatorAccess().getANDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -16862,7 +17365,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleComparingOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6071:1: ruleComparingOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6256:1: ruleComparingOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) ) ;
     public final Enumerator ruleComparingOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -16875,58 +17378,58 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6073:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6074:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6258:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6259:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6074:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) )
-            int alt77=6;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6259:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) | (enumLiteral_2= '<' ) | (enumLiteral_3= '<=' ) | (enumLiteral_4= '>=' ) | (enumLiteral_5= '>' ) )
+            int alt78=6;
             switch ( input.LA(1) ) {
-            case 71:
-                {
-                alt77=1;
-                }
-                break;
             case 72:
                 {
-                alt77=2;
-                }
-                break;
-            case 68:
-                {
-                alt77=3;
+                alt78=1;
                 }
                 break;
             case 73:
                 {
-                alt77=4;
+                alt78=2;
+                }
+                break;
+            case 68:
+                {
+                alt78=3;
                 }
                 break;
             case 74:
                 {
-                alt77=5;
+                alt78=4;
+                }
+                break;
+            case 75:
+                {
+                alt78=5;
                 }
                 break;
             case 69:
                 {
-                alt77=6;
+                alt78=6;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 77, 0, input);
+                    new NoViableAltException("", 78, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt77) {
+            switch (alt78) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6074:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6259:2: (enumLiteral_0= '==' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6074:2: (enumLiteral_0= '==' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6074:4: enumLiteral_0= '=='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6259:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6259:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,71,FollowSets000.FOLLOW_71_in_ruleComparingOperator13185); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,72,FollowSets000.FOLLOW_72_in_ruleComparingOperator13591); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -16940,12 +17443,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6080:6: (enumLiteral_1= '<>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6265:6: (enumLiteral_1= '<>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6080:6: (enumLiteral_1= '<>' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6080:8: enumLiteral_1= '<>'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6265:6: (enumLiteral_1= '<>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6265:8: enumLiteral_1= '<>'
                     {
-                    enumLiteral_1=(Token)match(input,72,FollowSets000.FOLLOW_72_in_ruleComparingOperator13202); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleComparingOperator13608); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingOperatorAccess().getUNEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -16959,12 +17462,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6086:6: (enumLiteral_2= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6271:6: (enumLiteral_2= '<' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6086:6: (enumLiteral_2= '<' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6086:8: enumLiteral_2= '<'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6271:6: (enumLiteral_2= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6271:8: enumLiteral_2= '<'
                     {
-                    enumLiteral_2=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleComparingOperator13219); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleComparingOperator13625); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingOperatorAccess().getLESSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -16978,12 +17481,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6092:6: (enumLiteral_3= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6277:6: (enumLiteral_3= '<=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6092:6: (enumLiteral_3= '<=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6092:8: enumLiteral_3= '<='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6277:6: (enumLiteral_3= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6277:8: enumLiteral_3= '<='
                     {
-                    enumLiteral_3=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleComparingOperator13236); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleComparingOperator13642); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -16997,12 +17500,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6098:6: (enumLiteral_4= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6283:6: (enumLiteral_4= '>=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6098:6: (enumLiteral_4= '>=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6098:8: enumLiteral_4= '>='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6283:6: (enumLiteral_4= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6283:8: enumLiteral_4= '>='
                     {
-                    enumLiteral_4=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleComparingOperator13253); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleComparingOperator13659); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -17016,12 +17519,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6104:6: (enumLiteral_5= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6289:6: (enumLiteral_5= '>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6104:6: (enumLiteral_5= '>' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6104:8: enumLiteral_5= '>'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6289:6: (enumLiteral_5= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6289:8: enumLiteral_5= '>'
                     {
-                    enumLiteral_5=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleComparingOperator13270); if (state.failed) return current;
+                    enumLiteral_5=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleComparingOperator13676); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingOperatorAccess().getGREATEREnumLiteralDeclaration_5().getEnumLiteral().getInstance();
@@ -17057,7 +17560,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleNaturalLanguageComparingOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6114:1: ruleNaturalLanguageComparingOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6299:1: ruleNaturalLanguageComparingOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) ) ;
     public final Enumerator ruleNaturalLanguageComparingOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17069,53 +17572,53 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6116:28: ( ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6117:1: ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6301:28: ( ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6302:1: ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6117:1: ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) )
-            int alt78=5;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6302:1: ( (enumLiteral_0= 'since exactly' ) | (enumLiteral_1= 'strictly short than' ) | (enumLiteral_2= 'shorter than' ) | (enumLiteral_3= 'strictly longer than' ) | (enumLiteral_4= 'longer than' ) )
+            int alt79=5;
             switch ( input.LA(1) ) {
-            case 75:
-                {
-                alt78=1;
-                }
-                break;
             case 76:
                 {
-                alt78=2;
+                alt79=1;
                 }
                 break;
             case 77:
                 {
-                alt78=3;
+                alt79=2;
                 }
                 break;
             case 78:
                 {
-                alt78=4;
+                alt79=3;
                 }
                 break;
             case 79:
                 {
-                alt78=5;
+                alt79=4;
+                }
+                break;
+            case 80:
+                {
+                alt79=5;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 78, 0, input);
+                    new NoViableAltException("", 79, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt78) {
+            switch (alt79) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6117:2: (enumLiteral_0= 'since exactly' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6302:2: (enumLiteral_0= 'since exactly' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6117:2: (enumLiteral_0= 'since exactly' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6117:4: enumLiteral_0= 'since exactly'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6302:2: (enumLiteral_0= 'since exactly' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6302:4: enumLiteral_0= 'since exactly'
                     {
-                    enumLiteral_0=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleNaturalLanguageComparingOperator13315); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,76,FollowSets000.FOLLOW_76_in_ruleNaturalLanguageComparingOperator13721); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNaturalLanguageComparingOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17129,12 +17632,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6123:6: (enumLiteral_1= 'strictly short than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6308:6: (enumLiteral_1= 'strictly short than' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6123:6: (enumLiteral_1= 'strictly short than' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6123:8: enumLiteral_1= 'strictly short than'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6308:6: (enumLiteral_1= 'strictly short than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6308:8: enumLiteral_1= 'strictly short than'
                     {
-                    enumLiteral_1=(Token)match(input,76,FollowSets000.FOLLOW_76_in_ruleNaturalLanguageComparingOperator13332); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,77,FollowSets000.FOLLOW_77_in_ruleNaturalLanguageComparingOperator13738); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNaturalLanguageComparingOperatorAccess().getLESSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17148,12 +17651,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6129:6: (enumLiteral_2= 'shorter than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6314:6: (enumLiteral_2= 'shorter than' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6129:6: (enumLiteral_2= 'shorter than' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6129:8: enumLiteral_2= 'shorter than'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6314:6: (enumLiteral_2= 'shorter than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6314:8: enumLiteral_2= 'shorter than'
                     {
-                    enumLiteral_2=(Token)match(input,77,FollowSets000.FOLLOW_77_in_ruleNaturalLanguageComparingOperator13349); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,78,FollowSets000.FOLLOW_78_in_ruleNaturalLanguageComparingOperator13755); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNaturalLanguageComparingOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -17167,12 +17670,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6135:6: (enumLiteral_3= 'strictly longer than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6320:6: (enumLiteral_3= 'strictly longer than' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6135:6: (enumLiteral_3= 'strictly longer than' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6135:8: enumLiteral_3= 'strictly longer than'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6320:6: (enumLiteral_3= 'strictly longer than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6320:8: enumLiteral_3= 'strictly longer than'
                     {
-                    enumLiteral_3=(Token)match(input,78,FollowSets000.FOLLOW_78_in_ruleNaturalLanguageComparingOperator13366); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,79,FollowSets000.FOLLOW_79_in_ruleNaturalLanguageComparingOperator13772); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNaturalLanguageComparingOperatorAccess().getGREATEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -17186,12 +17689,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6141:6: (enumLiteral_4= 'longer than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6326:6: (enumLiteral_4= 'longer than' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6141:6: (enumLiteral_4= 'longer than' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6141:8: enumLiteral_4= 'longer than'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6326:6: (enumLiteral_4= 'longer than' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6326:8: enumLiteral_4= 'longer than'
                     {
-                    enumLiteral_4=(Token)match(input,79,FollowSets000.FOLLOW_79_in_ruleNaturalLanguageComparingOperator13383); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,80,FollowSets000.FOLLOW_80_in_ruleNaturalLanguageComparingOperator13789); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getNaturalLanguageComparingOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -17227,7 +17730,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleStateEventKind"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6151:1: ruleStateEventKind returns [Enumerator current=null] : ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6336:1: ruleStateEventKind returns [Enumerator current=null] : ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) ) ;
     public final Enumerator ruleStateEventKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -17236,34 +17739,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6153:28: ( ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6154:1: ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6338:28: ( ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6339:1: ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6154:1: ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) )
-            int alt79=2;
-            int LA79_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6339:1: ( (enumLiteral_0= 'entering state' ) | (enumLiteral_1= 'leaving state' ) )
+            int alt80=2;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA79_0==80) ) {
-                alt79=1;
+            if ( (LA80_0==81) ) {
+                alt80=1;
             }
-            else if ( (LA79_0==81) ) {
-                alt79=2;
+            else if ( (LA80_0==82) ) {
+                alt80=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 79, 0, input);
+                    new NoViableAltException("", 80, 0, input);
 
                 throw nvae;
             }
-            switch (alt79) {
+            switch (alt80) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6154:2: (enumLiteral_0= 'entering state' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6339:2: (enumLiteral_0= 'entering state' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6154:2: (enumLiteral_0= 'entering state' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6154:4: enumLiteral_0= 'entering state'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6339:2: (enumLiteral_0= 'entering state' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6339:4: enumLiteral_0= 'entering state'
                     {
-                    enumLiteral_0=(Token)match(input,80,FollowSets000.FOLLOW_80_in_ruleStateEventKind13428); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,81,FollowSets000.FOLLOW_81_in_ruleStateEventKind13834); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getStateEventKindAccess().getENTRYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17277,12 +17780,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6160:6: (enumLiteral_1= 'leaving state' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6345:6: (enumLiteral_1= 'leaving state' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6160:6: (enumLiteral_1= 'leaving state' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6160:8: enumLiteral_1= 'leaving state'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6345:6: (enumLiteral_1= 'leaving state' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6345:8: enumLiteral_1= 'leaving state'
                     {
-                    enumLiteral_1=(Token)match(input,81,FollowSets000.FOLLOW_81_in_ruleStateEventKind13445); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,82,FollowSets000.FOLLOW_82_in_ruleStateEventKind13851); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getStateEventKindAccess().getEXITEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17318,7 +17821,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleStateStatusKind"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6170:1: ruleStateStatusKind returns [Enumerator current=null] : ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6355:1: ruleStateStatusKind returns [Enumerator current=null] : ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) ) ;
     public final Enumerator ruleStateStatusKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -17327,34 +17830,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6172:28: ( ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6173:1: ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6357:28: ( ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6358:1: ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6173:1: ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) )
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6358:1: ( (enumLiteral_0= 'is active' ) | (enumLiteral_1= 'is inactive' ) )
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA80_0==82) ) {
-                alt80=1;
+            if ( (LA81_0==83) ) {
+                alt81=1;
             }
-            else if ( (LA80_0==83) ) {
-                alt80=2;
+            else if ( (LA81_0==84) ) {
+                alt81=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 80, 0, input);
+                    new NoViableAltException("", 81, 0, input);
 
                 throw nvae;
             }
-            switch (alt80) {
+            switch (alt81) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6173:2: (enumLiteral_0= 'is active' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6358:2: (enumLiteral_0= 'is active' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6173:2: (enumLiteral_0= 'is active' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6173:4: enumLiteral_0= 'is active'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6358:2: (enumLiteral_0= 'is active' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6358:4: enumLiteral_0= 'is active'
                     {
-                    enumLiteral_0=(Token)match(input,82,FollowSets000.FOLLOW_82_in_ruleStateStatusKind13490); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,83,FollowSets000.FOLLOW_83_in_ruleStateStatusKind13896); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getStateStatusKindAccess().getACTIVEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17368,12 +17871,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6179:6: (enumLiteral_1= 'is inactive' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6364:6: (enumLiteral_1= 'is inactive' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6179:6: (enumLiteral_1= 'is inactive' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6179:8: enumLiteral_1= 'is inactive'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6364:6: (enumLiteral_1= 'is inactive' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6364:8: enumLiteral_1= 'is inactive'
                     {
-                    enumLiteral_1=(Token)match(input,83,FollowSets000.FOLLOW_83_in_ruleStateStatusKind13507); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,84,FollowSets000.FOLLOW_84_in_ruleStateStatusKind13913); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getStateStatusKindAccess().getINACTIVEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17409,7 +17912,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleMessageEventKind"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6189:1: ruleMessageEventKind returns [Enumerator current=null] : ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6374:1: ruleMessageEventKind returns [Enumerator current=null] : ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) ) ;
     public final Enumerator ruleMessageEventKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -17418,34 +17921,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6191:28: ( ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6192:1: ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6376:28: ( ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6377:1: ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6192:1: ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) )
-            int alt81=2;
-            int LA81_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6377:1: ( (enumLiteral_0= 'consuming' ) | (enumLiteral_1= 'sending' ) )
+            int alt82=2;
+            int LA82_0 = input.LA(1);
 
-            if ( (LA81_0==84) ) {
-                alt81=1;
+            if ( (LA82_0==85) ) {
+                alt82=1;
             }
-            else if ( (LA81_0==85) ) {
-                alt81=2;
+            else if ( (LA82_0==86) ) {
+                alt82=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 81, 0, input);
+                    new NoViableAltException("", 82, 0, input);
 
                 throw nvae;
             }
-            switch (alt81) {
+            switch (alt82) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6192:2: (enumLiteral_0= 'consuming' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6377:2: (enumLiteral_0= 'consuming' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6192:2: (enumLiteral_0= 'consuming' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6192:4: enumLiteral_0= 'consuming'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6377:2: (enumLiteral_0= 'consuming' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6377:4: enumLiteral_0= 'consuming'
                     {
-                    enumLiteral_0=(Token)match(input,84,FollowSets000.FOLLOW_84_in_ruleMessageEventKind13552); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,85,FollowSets000.FOLLOW_85_in_ruleMessageEventKind13958); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMessageEventKindAccess().getCONSUMINGEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17459,12 +17962,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6198:6: (enumLiteral_1= 'sending' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6383:6: (enumLiteral_1= 'sending' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6198:6: (enumLiteral_1= 'sending' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6198:8: enumLiteral_1= 'sending'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6383:6: (enumLiteral_1= 'sending' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6383:8: enumLiteral_1= 'sending'
                     {
-                    enumLiteral_1=(Token)match(input,85,FollowSets000.FOLLOW_85_in_ruleMessageEventKind13569); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,86,FollowSets000.FOLLOW_86_in_ruleMessageEventKind13975); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMessageEventKindAccess().getSENDINGEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17500,7 +18003,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleUnaryPostIncrementDecrementOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6208:1: ruleUnaryPostIncrementDecrementOperator returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6393:1: ruleUnaryPostIncrementDecrementOperator returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
     public final Enumerator ruleUnaryPostIncrementDecrementOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17509,34 +18012,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6210:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6211:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6395:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6396:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6211:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
-            int alt82=2;
-            int LA82_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6396:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            int alt83=2;
+            int LA83_0 = input.LA(1);
 
-            if ( (LA82_0==86) ) {
-                alt82=1;
+            if ( (LA83_0==87) ) {
+                alt83=1;
             }
-            else if ( (LA82_0==87) ) {
-                alt82=2;
+            else if ( (LA83_0==88) ) {
+                alt83=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 82, 0, input);
+                    new NoViableAltException("", 83, 0, input);
 
                 throw nvae;
             }
-            switch (alt82) {
+            switch (alt83) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6211:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6396:2: (enumLiteral_0= '++' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6211:2: (enumLiteral_0= '++' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6211:4: enumLiteral_0= '++'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6396:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6396:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,86,FollowSets000.FOLLOW_86_in_ruleUnaryPostIncrementDecrementOperator13614); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,87,FollowSets000.FOLLOW_87_in_ruleUnaryPostIncrementDecrementOperator14020); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17550,12 +18053,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6217:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6402:6: (enumLiteral_1= '--' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6217:6: (enumLiteral_1= '--' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6217:8: enumLiteral_1= '--'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6402:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6402:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,87,FollowSets000.FOLLOW_87_in_ruleUnaryPostIncrementDecrementOperator13631); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,88,FollowSets000.FOLLOW_88_in_ruleUnaryPostIncrementDecrementOperator14037); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17591,7 +18094,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleIncrementDecrementOperatorExpression"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6227:1: ruleIncrementDecrementOperatorExpression returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6412:1: ruleIncrementDecrementOperatorExpression returns [Enumerator current=null] : ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) ;
     public final Enumerator ruleIncrementDecrementOperatorExpression() throws RecognitionException {
         Enumerator current = null;
 
@@ -17600,34 +18103,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6229:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6230:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6414:28: ( ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6415:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6230:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
-            int alt83=2;
-            int LA83_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6415:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            if ( (LA83_0==86) ) {
-                alt83=1;
+            if ( (LA84_0==87) ) {
+                alt84=1;
             }
-            else if ( (LA83_0==87) ) {
-                alt83=2;
+            else if ( (LA84_0==88) ) {
+                alt84=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 83, 0, input);
+                    new NoViableAltException("", 84, 0, input);
 
                 throw nvae;
             }
-            switch (alt83) {
+            switch (alt84) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6230:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6415:2: (enumLiteral_0= '++' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6230:2: (enumLiteral_0= '++' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6230:4: enumLiteral_0= '++'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6415:2: (enumLiteral_0= '++' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6415:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,86,FollowSets000.FOLLOW_86_in_ruleIncrementDecrementOperatorExpression13676); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,87,FollowSets000.FOLLOW_87_in_ruleIncrementDecrementOperatorExpression14082); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getIncrementDecrementOperatorExpressionAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17641,12 +18144,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6236:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6421:6: (enumLiteral_1= '--' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6236:6: (enumLiteral_1= '--' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6236:8: enumLiteral_1= '--'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6421:6: (enumLiteral_1= '--' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6421:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,87,FollowSets000.FOLLOW_87_in_ruleIncrementDecrementOperatorExpression13693); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,88,FollowSets000.FOLLOW_88_in_ruleIncrementDecrementOperatorExpression14099); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getIncrementDecrementOperatorExpressionAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17682,7 +18185,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleAssignOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6246:1: ruleAssignOperator returns [Enumerator current=null] : ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6431:1: ruleAssignOperator returns [Enumerator current=null] : ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) ;
     public final Enumerator ruleAssignOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17692,43 +18195,43 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6248:28: ( ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6249:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6433:28: ( ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6434:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6249:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
-            int alt84=3;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6434:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
+            int alt85=3;
             switch ( input.LA(1) ) {
             case 66:
                 {
-                alt84=1;
-                }
-                break;
-            case 88:
-                {
-                alt84=2;
+                alt85=1;
                 }
                 break;
             case 89:
                 {
-                alt84=3;
+                alt85=2;
+                }
+                break;
+            case 90:
+                {
+                alt85=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 84, 0, input);
+                    new NoViableAltException("", 85, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt84) {
+            switch (alt85) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6249:2: (enumLiteral_0= ':=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6434:2: (enumLiteral_0= ':=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6249:2: (enumLiteral_0= ':=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6249:4: enumLiteral_0= ':='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6434:2: (enumLiteral_0= ':=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6434:4: enumLiteral_0= ':='
                     {
-                    enumLiteral_0=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleAssignOperator13738); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,66,FollowSets000.FOLLOW_66_in_ruleAssignOperator14144); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17742,12 +18245,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6255:6: (enumLiteral_1= '+=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6440:6: (enumLiteral_1= '+=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6255:6: (enumLiteral_1= '+=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6255:8: enumLiteral_1= '+='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6440:6: (enumLiteral_1= '+=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6440:8: enumLiteral_1= '+='
                     {
-                    enumLiteral_1=(Token)match(input,88,FollowSets000.FOLLOW_88_in_ruleAssignOperator13755); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,89,FollowSets000.FOLLOW_89_in_ruleAssignOperator14161); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17761,12 +18264,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6261:6: (enumLiteral_2= '-=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6446:6: (enumLiteral_2= '-=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6261:6: (enumLiteral_2= '-=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6261:8: enumLiteral_2= '-='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6446:6: (enumLiteral_2= '-=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6446:8: enumLiteral_2= '-='
                     {
-                    enumLiteral_2=(Token)match(input,89,FollowSets000.FOLLOW_89_in_ruleAssignOperator13772); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,90,FollowSets000.FOLLOW_90_in_ruleAssignOperator14178); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -17802,7 +18305,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLogicalOrOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6271:1: ruleLogicalOrOperator returns [Enumerator current=null] : (enumLiteral_0= '||' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6456:1: ruleLogicalOrOperator returns [Enumerator current=null] : (enumLiteral_0= '||' ) ;
     public final Enumerator ruleLogicalOrOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17810,13 +18313,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6273:28: ( (enumLiteral_0= '||' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6274:1: (enumLiteral_0= '||' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6458:28: ( (enumLiteral_0= '||' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6459:1: (enumLiteral_0= '||' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6274:1: (enumLiteral_0= '||' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6274:3: enumLiteral_0= '||'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6459:1: (enumLiteral_0= '||' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6459:3: enumLiteral_0= '||'
             {
-            enumLiteral_0=(Token)match(input,90,FollowSets000.FOLLOW_90_in_ruleLogicalOrOperator13816); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,91,FollowSets000.FOLLOW_91_in_ruleLogicalOrOperator14222); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getLogicalOrOperatorAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -17846,7 +18349,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleLogicalAndOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6284:1: ruleLogicalAndOperator returns [Enumerator current=null] : (enumLiteral_0= '&&' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6469:1: ruleLogicalAndOperator returns [Enumerator current=null] : (enumLiteral_0= '&&' ) ;
     public final Enumerator ruleLogicalAndOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17854,13 +18357,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6286:28: ( (enumLiteral_0= '&&' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6287:1: (enumLiteral_0= '&&' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6471:28: ( (enumLiteral_0= '&&' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6472:1: (enumLiteral_0= '&&' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6287:1: (enumLiteral_0= '&&' )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6287:3: enumLiteral_0= '&&'
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6472:1: (enumLiteral_0= '&&' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6472:3: enumLiteral_0= '&&'
             {
-            enumLiteral_0=(Token)match(input,91,FollowSets000.FOLLOW_91_in_ruleLogicalAndOperator13859); if (state.failed) return current;
+            enumLiteral_0=(Token)match(input,92,FollowSets000.FOLLOW_92_in_ruleLogicalAndOperator14265); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                       current = grammarAccess.getLogicalAndOperatorAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
@@ -17890,7 +18393,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleComparingEQNEQOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6297:1: ruleComparingEQNEQOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6482:1: ruleComparingEQNEQOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) ;
     public final Enumerator ruleComparingEQNEQOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17899,34 +18402,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6299:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6300:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6484:28: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6485:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6300:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
-            int alt85=2;
-            int LA85_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6485:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA85_0==71) ) {
-                alt85=1;
+            if ( (LA86_0==72) ) {
+                alt86=1;
             }
-            else if ( (LA85_0==72) ) {
-                alt85=2;
+            else if ( (LA86_0==73) ) {
+                alt86=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 85, 0, input);
+                    new NoViableAltException("", 86, 0, input);
 
                 throw nvae;
             }
-            switch (alt85) {
+            switch (alt86) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6300:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6485:2: (enumLiteral_0= '==' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6300:2: (enumLiteral_0= '==' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6300:4: enumLiteral_0= '=='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6485:2: (enumLiteral_0= '==' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6485:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,71,FollowSets000.FOLLOW_71_in_ruleComparingEQNEQOperator13903); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,72,FollowSets000.FOLLOW_72_in_ruleComparingEQNEQOperator14309); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingEQNEQOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -17940,12 +18443,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6306:6: (enumLiteral_1= '<>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6491:6: (enumLiteral_1= '<>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6306:6: (enumLiteral_1= '<>' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6306:8: enumLiteral_1= '<>'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6491:6: (enumLiteral_1= '<>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6491:8: enumLiteral_1= '<>'
                     {
-                    enumLiteral_1=(Token)match(input,72,FollowSets000.FOLLOW_72_in_ruleComparingEQNEQOperator13920); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleComparingEQNEQOperator14326); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingEQNEQOperatorAccess().getUNEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -17981,7 +18484,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleComparingRelOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6316:1: ruleComparingRelOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6501:1: ruleComparingRelOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) ;
     public final Enumerator ruleComparingRelOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -17992,48 +18495,48 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6318:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6319:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6503:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6504:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6319:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
-            int alt86=4;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6504:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
+            int alt87=4;
             switch ( input.LA(1) ) {
             case 68:
                 {
-                alt86=1;
-                }
-                break;
-            case 73:
-                {
-                alt86=2;
+                alt87=1;
                 }
                 break;
             case 74:
                 {
-                alt86=3;
+                alt87=2;
+                }
+                break;
+            case 75:
+                {
+                alt87=3;
                 }
                 break;
             case 69:
                 {
-                alt86=4;
+                alt87=4;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 86, 0, input);
+                    new NoViableAltException("", 87, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt86) {
+            switch (alt87) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6319:2: (enumLiteral_0= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6504:2: (enumLiteral_0= '<' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6319:2: (enumLiteral_0= '<' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6319:4: enumLiteral_0= '<'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6504:2: (enumLiteral_0= '<' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6504:4: enumLiteral_0= '<'
                     {
-                    enumLiteral_0=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleComparingRelOperator13965); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,68,FollowSets000.FOLLOW_68_in_ruleComparingRelOperator14371); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingRelOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -18047,12 +18550,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6325:6: (enumLiteral_1= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6510:6: (enumLiteral_1= '<=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6325:6: (enumLiteral_1= '<=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6325:8: enumLiteral_1= '<='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6510:6: (enumLiteral_1= '<=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6510:8: enumLiteral_1= '<='
                     {
-                    enumLiteral_1=(Token)match(input,73,FollowSets000.FOLLOW_73_in_ruleComparingRelOperator13982); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleComparingRelOperator14388); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingRelOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -18066,12 +18569,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6331:6: (enumLiteral_2= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6516:6: (enumLiteral_2= '>=' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6331:6: (enumLiteral_2= '>=' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6331:8: enumLiteral_2= '>='
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6516:6: (enumLiteral_2= '>=' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6516:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,74,FollowSets000.FOLLOW_74_in_ruleComparingRelOperator13999); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,75,FollowSets000.FOLLOW_75_in_ruleComparingRelOperator14405); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingRelOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -18085,12 +18588,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6337:6: (enumLiteral_3= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6522:6: (enumLiteral_3= '>' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6337:6: (enumLiteral_3= '>' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6337:8: enumLiteral_3= '>'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6522:6: (enumLiteral_3= '>' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6522:8: enumLiteral_3= '>'
                     {
-                    enumLiteral_3=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleComparingRelOperator14016); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,69,FollowSets000.FOLLOW_69_in_ruleComparingRelOperator14422); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getComparingRelOperatorAccess().getGREATEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -18126,7 +18629,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleAdditionOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6347:1: ruleAdditionOperator returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6532:1: ruleAdditionOperator returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleAdditionOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -18135,34 +18638,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6349:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6350:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6534:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6535:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6350:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
-            int alt87=2;
-            int LA87_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6535:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            int alt88=2;
+            int LA88_0 = input.LA(1);
 
-            if ( (LA87_0==92) ) {
-                alt87=1;
+            if ( (LA88_0==93) ) {
+                alt88=1;
             }
-            else if ( (LA87_0==50) ) {
-                alt87=2;
+            else if ( (LA88_0==50) ) {
+                alt88=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 87, 0, input);
+                    new NoViableAltException("", 88, 0, input);
 
                 throw nvae;
             }
-            switch (alt87) {
+            switch (alt88) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6350:2: (enumLiteral_0= '+' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6535:2: (enumLiteral_0= '+' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6350:2: (enumLiteral_0= '+' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6350:4: enumLiteral_0= '+'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6535:2: (enumLiteral_0= '+' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6535:4: enumLiteral_0= '+'
                     {
-                    enumLiteral_0=(Token)match(input,92,FollowSets000.FOLLOW_92_in_ruleAdditionOperator14061); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,93,FollowSets000.FOLLOW_93_in_ruleAdditionOperator14467); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAdditionOperatorAccess().getPLUSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -18176,12 +18679,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6356:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6541:6: (enumLiteral_1= '-' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6356:6: (enumLiteral_1= '-' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6356:8: enumLiteral_1= '-'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6541:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6541:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleAdditionOperator14078); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleAdditionOperator14484); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getAdditionOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -18217,43 +18720,53 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleMultiplicationOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6366:1: ruleMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6551:1: ruleMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) ;
     public final Enumerator ruleMultiplicationOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6368:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6369:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6553:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6554:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6369:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
-            int alt88=2;
-            int LA88_0 = input.LA(1);
-
-            if ( (LA88_0==93) ) {
-                alt88=1;
-            }
-            else if ( (LA88_0==94) ) {
-                alt88=2;
-            }
-            else {
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6554:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
+            int alt89=3;
+            switch ( input.LA(1) ) {
+            case 94:
+                {
+                alt89=1;
+                }
+                break;
+            case 95:
+                {
+                alt89=2;
+                }
+                break;
+            case 96:
+                {
+                alt89=3;
+                }
+                break;
+            default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 88, 0, input);
+                    new NoViableAltException("", 89, 0, input);
 
                 throw nvae;
             }
-            switch (alt88) {
+
+            switch (alt89) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6369:2: (enumLiteral_0= '*' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6554:2: (enumLiteral_0= '*' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6369:2: (enumLiteral_0= '*' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6369:4: enumLiteral_0= '*'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6554:2: (enumLiteral_0= '*' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6554:4: enumLiteral_0= '*'
                     {
-                    enumLiteral_0=(Token)match(input,93,FollowSets000.FOLLOW_93_in_ruleMultiplicationOperator14123); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,94,FollowSets000.FOLLOW_94_in_ruleMultiplicationOperator14529); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMultiplicationOperatorAccess().getTIMESEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -18267,16 +18780,35 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6375:6: (enumLiteral_1= '/' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6560:6: (enumLiteral_1= '/' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6375:6: (enumLiteral_1= '/' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6375:8: enumLiteral_1= '/'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6560:6: (enumLiteral_1= '/' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6560:8: enumLiteral_1= '/'
                     {
-                    enumLiteral_1=(Token)match(input,94,FollowSets000.FOLLOW_94_in_ruleMultiplicationOperator14140); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,95,FollowSets000.FOLLOW_95_in_ruleMultiplicationOperator14546); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                               newLeafNode(enumLiteral_1, grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1()); 
+                          
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6566:6: (enumLiteral_2= '%' )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6566:6: (enumLiteral_2= '%' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6566:8: enumLiteral_2= '%'
+                    {
+                    enumLiteral_2=(Token)match(input,96,FollowSets000.FOLLOW_96_in_ruleMultiplicationOperator14563); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current = grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                              newLeafNode(enumLiteral_2, grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2()); 
                           
                     }
 
@@ -18308,7 +18840,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleUnaryPreOperator"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6385:1: ruleUnaryPreOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6576:1: ruleUnaryPreOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleUnaryPreOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -18317,34 +18849,34 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6387:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6388:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6578:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6579:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6388:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
-            int alt89=2;
-            int LA89_0 = input.LA(1);
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6579:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
+            int alt90=2;
+            int LA90_0 = input.LA(1);
 
-            if ( (LA89_0==95) ) {
-                alt89=1;
+            if ( (LA90_0==97) ) {
+                alt90=1;
             }
-            else if ( (LA89_0==50) ) {
-                alt89=2;
+            else if ( (LA90_0==50) ) {
+                alt90=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 89, 0, input);
+                    new NoViableAltException("", 90, 0, input);
 
                 throw nvae;
             }
-            switch (alt89) {
+            switch (alt90) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6388:2: (enumLiteral_0= 'not' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6579:2: (enumLiteral_0= 'not' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6388:2: (enumLiteral_0= 'not' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6388:4: enumLiteral_0= 'not'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6579:2: (enumLiteral_0= 'not' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6579:4: enumLiteral_0= 'not'
                     {
-                    enumLiteral_0=(Token)match(input,95,FollowSets000.FOLLOW_95_in_ruleUnaryPreOperator14185); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,97,FollowSets000.FOLLOW_97_in_ruleUnaryPreOperator14608); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -18358,12 +18890,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6394:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6585:6: (enumLiteral_1= '-' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6394:6: (enumLiteral_1= '-' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6394:8: enumLiteral_1= '-'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6585:6: (enumLiteral_1= '-' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6585:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleUnaryPreOperator14202); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleUnaryPreOperator14625); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -18399,7 +18931,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "rulePositionSelectorKind"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6404:1: rulePositionSelectorKind returns [Enumerator current=null] : ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6595:1: rulePositionSelectorKind returns [Enumerator current=null] : ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) ;
     public final Enumerator rulePositionSelectorKind() throws RecognitionException {
         Enumerator current = null;
 
@@ -18411,53 +18943,53 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
          enterRule(); 
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6406:28: ( ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6407:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6597:28: ( ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6598:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6407:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
-            int alt90=5;
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6598:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
+            int alt91=5;
             switch ( input.LA(1) ) {
-            case 96:
-                {
-                alt90=1;
-                }
-                break;
-            case 97:
-                {
-                alt90=2;
-                }
-                break;
             case 98:
                 {
-                alt90=3;
+                alt91=1;
                 }
                 break;
             case 99:
                 {
-                alt90=4;
+                alt91=2;
                 }
                 break;
             case 100:
                 {
-                alt90=5;
+                alt91=3;
+                }
+                break;
+            case 101:
+                {
+                alt91=4;
+                }
+                break;
+            case 102:
+                {
+                alt91=5;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 90, 0, input);
+                    new NoViableAltException("", 91, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt90) {
+            switch (alt91) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6407:2: (enumLiteral_0= 'self' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6598:2: (enumLiteral_0= 'self' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6407:2: (enumLiteral_0= 'self' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6407:4: enumLiteral_0= 'self'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6598:2: (enumLiteral_0= 'self' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6598:4: enumLiteral_0= 'self'
                     {
-                    enumLiteral_0=(Token)match(input,96,FollowSets000.FOLLOW_96_in_rulePositionSelectorKind14247); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,98,FollowSets000.FOLLOW_98_in_rulePositionSelectorKind14670); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -18471,12 +19003,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6413:6: (enumLiteral_1= 'first' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6604:6: (enumLiteral_1= 'first' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6413:6: (enumLiteral_1= 'first' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6413:8: enumLiteral_1= 'first'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6604:6: (enumLiteral_1= 'first' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6604:8: enumLiteral_1= 'first'
                     {
-                    enumLiteral_1=(Token)match(input,97,FollowSets000.FOLLOW_97_in_rulePositionSelectorKind14264); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,99,FollowSets000.FOLLOW_99_in_rulePositionSelectorKind14687); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -18490,12 +19022,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 3 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6419:6: (enumLiteral_2= 'last' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6610:6: (enumLiteral_2= 'last' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6419:6: (enumLiteral_2= 'last' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6419:8: enumLiteral_2= 'last'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6610:6: (enumLiteral_2= 'last' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6610:8: enumLiteral_2= 'last'
                     {
-                    enumLiteral_2=(Token)match(input,98,FollowSets000.FOLLOW_98_in_rulePositionSelectorKind14281); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,100,FollowSets000.FOLLOW_100_in_rulePositionSelectorKind14704); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -18509,12 +19041,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6425:6: (enumLiteral_3= 'prev' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6616:6: (enumLiteral_3= 'prev' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6425:6: (enumLiteral_3= 'prev' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6425:8: enumLiteral_3= 'prev'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6616:6: (enumLiteral_3= 'prev' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6616:8: enumLiteral_3= 'prev'
                     {
-                    enumLiteral_3=(Token)match(input,99,FollowSets000.FOLLOW_99_in_rulePositionSelectorKind14298); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,101,FollowSets000.FOLLOW_101_in_rulePositionSelectorKind14721); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
@@ -18528,12 +19060,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 5 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6431:6: (enumLiteral_4= 'next' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6622:6: (enumLiteral_4= 'next' )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6431:6: (enumLiteral_4= 'next' )
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6431:8: enumLiteral_4= 'next'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6622:6: (enumLiteral_4= 'next' )
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:6622:8: enumLiteral_4= 'next'
                     {
-                    enumLiteral_4=(Token)match(input,100,FollowSets000.FOLLOW_100_in_rulePositionSelectorKind14315); if (state.failed) return current;
+                    enumLiteral_4=(Token)match(input,102,FollowSets000.FOLLOW_102_in_rulePositionSelectorKind14738); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                               current = grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
@@ -18749,51 +19281,20 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     }
     // $ANTLR end synpred54_InternalDependencyModelLanguage
 
-    // $ANTLR start synpred102_InternalDependencyModelLanguage
-    public final void synpred102_InternalDependencyModelLanguage_fragment() throws RecognitionException {   
-        EObject this_ExtendedTypedNamedElementExpression_4 = null;
+    // $ANTLR start synpred63_InternalDependencyModelLanguage
+    public final void synpred63_InternalDependencyModelLanguage_fragment() throws RecognitionException {   
+        Token kw=null;
+        Token this_ID_2=null;
 
-
-        // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5556:2: (this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression )
-        // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5556:2: this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression
+        // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3279:2: (kw= '.' this_ID_2= RULE_ID )
+        // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3279:2: kw= '.' this_ID_2= RULE_ID
         {
-        if ( state.backtracking==0 ) {
-           
-          	  /* */ 
-          	
-        }
-        pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_synpred102_InternalDependencyModelLanguage11973);
-        this_ExtendedTypedNamedElementExpression_4=ruleExtendedTypedNamedElementExpression();
-
-        state._fsp--;
-        if (state.failed) return ;
+        kw=(Token)match(input,37,FollowSets000.FOLLOW_37_in_synpred63_InternalDependencyModelLanguage6901); if (state.failed) return ;
+        this_ID_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_synpred63_InternalDependencyModelLanguage6916); if (state.failed) return ;
 
         }
     }
-    // $ANTLR end synpred102_InternalDependencyModelLanguage
-
-    // $ANTLR start synpred104_InternalDependencyModelLanguage
-    public final void synpred104_InternalDependencyModelLanguage_fragment() throws RecognitionException {   
-        EObject this_TriggerMessageExpression_6 = null;
-
-
-        // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5582:2: (this_TriggerMessageExpression_6= ruleTriggerMessageExpression )
-        // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:5582:2: this_TriggerMessageExpression_6= ruleTriggerMessageExpression
-        {
-        if ( state.backtracking==0 ) {
-           
-          	  /* */ 
-          	
-        }
-        pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_synpred104_InternalDependencyModelLanguage12033);
-        this_TriggerMessageExpression_6=ruleTriggerMessageExpression();
-
-        state._fsp--;
-        if (state.failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred104_InternalDependencyModelLanguage
+    // $ANTLR end synpred63_InternalDependencyModelLanguage
 
     // Delegated rules
 
@@ -18802,6 +19303,20 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         int start = input.mark();
         try {
             synpred54_InternalDependencyModelLanguage_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred63_InternalDependencyModelLanguage() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred63_InternalDependencyModelLanguage_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -18830,34 +19345,6 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         int start = input.mark();
         try {
             synpred44_InternalDependencyModelLanguage_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred104_InternalDependencyModelLanguage() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred104_InternalDependencyModelLanguage_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred102_InternalDependencyModelLanguage() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred102_InternalDependencyModelLanguage_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -18915,50 +19402,50 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     protected DFA36 dfa36 = new DFA36(this);
     protected DFA40 dfa40 = new DFA40(this);
     protected DFA44 dfa44 = new DFA44(this);
-    protected DFA58 dfa58 = new DFA58(this);
-    protected DFA60 dfa60 = new DFA60(this);
-    protected DFA72 dfa72 = new DFA72(this);
+    protected DFA59 dfa59 = new DFA59(this);
+    protected DFA61 dfa61 = new DFA61(this);
+    protected DFA73 dfa73 = new DFA73(this);
     static final String DFA12_eotS =
         "\33\uffff";
     static final String DFA12_eofS =
         "\33\uffff";
     static final String DFA12_minS =
-        "\1\16\1\46\5\6\2\17\1\6\1\17\1\6\2\uffff\1\6\1\17\1\6\2\17\2\6"+
-        "\3\17\2\6\1\17";
+        "\1\16\1\46\5\6\1\17\1\6\2\17\1\6\2\uffff\1\17\2\6\1\17\2\6\4\17"+
+        "\2\6\1\17";
     static final String DFA12_maxS =
-        "\1\16\1\125\1\6\2\47\2\6\2\45\1\6\1\45\1\6\2\uffff\1\6\1\45\1\6"+
-        "\2\45\2\6\1\22\2\45\1\6\1\125\1\45";
+        "\1\16\1\126\1\6\2\47\2\6\1\45\1\6\2\45\1\6\2\uffff\1\45\2\6\1\45"+
+        "\2\6\1\45\1\22\2\45\1\6\1\126\1\45";
     static final String DFA12_acceptS =
         "\14\uffff\1\1\1\2\15\uffff";
     static final String DFA12_specialS =
         "\33\uffff}>";
     static final String[] DFA12_transitionS = {
             "\1\1",
-            "\1\2\51\uffff\1\3\1\4\2\uffff\1\5\1\6",
+            "\1\2\52\uffff\1\3\1\4\2\uffff\1\5\1\6",
             "\1\7",
-            "\1\10\40\uffff\1\11",
-            "\1\10\40\uffff\1\11",
+            "\1\11\40\uffff\1\10",
+            "\1\11\40\uffff\1\10",
             "\1\12",
             "\1\12",
             "\2\14\1\uffff\1\15\22\uffff\1\13",
-            "\2\14\1\uffff\1\15\22\uffff\1\16",
-            "\1\17",
+            "\1\16",
+            "\2\14\1\uffff\1\15\22\uffff\1\17",
             "\2\14\1\uffff\1\15\22\uffff\1\20",
             "\1\21",
             "",
             "",
-            "\1\22",
-            "\1\24\25\uffff\1\23",
+            "\1\23\25\uffff\1\22",
+            "\1\24",
             "\1\25",
             "\2\14\1\uffff\1\15\22\uffff\1\13",
-            "\2\14\1\uffff\1\15\22\uffff\1\16",
             "\1\26",
             "\1\27",
+            "\2\14\1\uffff\1\15\22\uffff\1\17",
             "\2\14\1\uffff\1\15",
-            "\1\24\25\uffff\1\23",
+            "\1\23\25\uffff\1\22",
             "\1\31\1\14\1\uffff\1\15\22\uffff\1\30",
             "\1\32",
-            "\1\27\37\uffff\1\14\51\uffff\2\14\2\uffff\2\14",
+            "\1\27\37\uffff\1\14\52\uffff\2\14\2\uffff\2\14",
             "\1\31\1\14\1\uffff\1\15\22\uffff\1\30"
     };
 
@@ -19002,13 +19489,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA36_minS =
         "\1\46\6\0\3\uffff";
     static final String DFA36_maxS =
-        "\1\125\6\0\3\uffff";
+        "\1\126\6\0\3\uffff";
     static final String DFA36_acceptS =
         "\7\uffff\1\1\1\2\1\3";
     static final String DFA36_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\3\uffff}>";
     static final String[] DFA36_transitionS = {
-            "\1\2\1\uffff\1\1\47\uffff\1\3\1\4\2\uffff\1\5\1\6",
+            "\1\2\1\uffff\1\1\50\uffff\1\3\1\4\2\uffff\1\5\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -19173,14 +19660,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA40_minS =
         "\1\6\1\uffff\1\0\5\uffff\2\0\17\uffff";
     static final String DFA40_maxS =
-        "\1\144\1\uffff\1\0\5\uffff\2\0\17\uffff";
+        "\1\146\1\uffff\1\0\5\uffff\2\0\17\uffff";
     static final String DFA40_acceptS =
         "\1\uffff\1\1\10\uffff\1\3\1\4\13\uffff\1\5\1\2";
     static final String DFA40_specialS =
         "\2\uffff\1\0\5\uffff\1\1\1\2\17\uffff}>";
     static final String[] DFA40_transitionS = {
             "\1\10\4\13\7\uffff\1\27\23\uffff\1\1\1\uffff\1\2\4\uffff\1"+
-            "\11\1\12\2\uffff\1\1\2\13\34\uffff\2\1\2\uffff\2\1\11\uffff"+
+            "\11\1\12\2\uffff\1\1\2\13\35\uffff\2\1\2\uffff\2\1\12\uffff"+
             "\6\13",
             "",
             "\1\uffff",
@@ -19306,13 +19793,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA44_minS =
         "\1\46\6\0\3\uffff";
     static final String DFA44_maxS =
-        "\1\125\6\0\3\uffff";
+        "\1\126\6\0\3\uffff";
     static final String DFA44_acceptS =
         "\7\uffff\1\2\1\1\1\3";
     static final String DFA44_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\3\uffff}>";
     static final String[] DFA44_transitionS = {
-            "\1\2\1\uffff\1\1\6\uffff\1\7\40\uffff\1\3\1\4\2\uffff\1\5\1"+
+            "\1\2\1\uffff\1\1\6\uffff\1\7\41\uffff\1\3\1\4\2\uffff\1\5\1"+
             "\6",
             "\1\uffff",
             "\1\uffff",
@@ -19459,222 +19946,213 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             throw nvae;
         }
     }
-    static final String DFA58_eotS =
+    static final String DFA59_eotS =
         "\17\uffff";
-    static final String DFA58_eofS =
+    static final String DFA59_eofS =
         "\17\uffff";
-    static final String DFA58_minS =
+    static final String DFA59_minS =
         "\2\6\6\uffff\2\6\2\uffff\1\23\1\22\1\6";
-    static final String DFA58_maxS =
-        "\1\103\1\131\6\uffff\1\144\1\6\2\uffff\1\136\2\131";
-    static final String DFA58_acceptS =
-        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\2\uffff\1\10\1\1\3\uffff";
-    static final String DFA58_specialS =
+    static final String DFA59_maxS =
+        "\1\103\1\132\6\uffff\1\146\1\6\2\uffff\1\140\2\132";
+    static final String DFA59_acceptS =
+        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\2\uffff\1\1\1\10\3\uffff";
+    static final String DFA59_specialS =
         "\17\uffff}>";
-    static final String[] DFA58_transitionS = {
+    static final String[] DFA59_transitionS = {
             "\1\1\21\uffff\1\5\42\uffff\1\2\1\3\1\4\3\uffff\1\6\1\uffff"+
             "\1\7",
-            "\1\7\13\uffff\1\10\22\uffff\1\11\2\uffff\1\12\31\uffff\1\13"+
-            "\23\uffff\4\13",
+            "\1\7\13\uffff\1\10\22\uffff\1\11\2\uffff\1\13\31\uffff\1\12"+
+            "\24\uffff\4\12",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\13\1\14\3\13\35\uffff\1\13\11\uffff\2\13\53\uffff\6\13",
+            "\1\12\1\14\3\12\35\uffff\1\12\11\uffff\2\12\55\uffff\6\12",
             "\1\15",
             "",
             "",
-            "\1\16\36\uffff\1\13\51\uffff\3\13",
-            "\1\13\22\uffff\1\11\2\uffff\1\12\31\uffff\1\13\23\uffff\4"+
-            "\13",
-            "\1\7\13\uffff\1\10\57\uffff\1\13\23\uffff\4\13"
+            "\1\16\36\uffff\1\12\52\uffff\4\12",
+            "\1\12\22\uffff\1\11\2\uffff\1\13\31\uffff\1\12\24\uffff\4"+
+            "\12",
+            "\1\7\13\uffff\1\10\22\uffff\1\12\34\uffff\1\12\24\uffff\4"+
+            "\12"
     };
 
-    static final short[] DFA58_eot = DFA.unpackEncodedString(DFA58_eotS);
-    static final short[] DFA58_eof = DFA.unpackEncodedString(DFA58_eofS);
-    static final char[] DFA58_min = DFA.unpackEncodedStringToUnsignedChars(DFA58_minS);
-    static final char[] DFA58_max = DFA.unpackEncodedStringToUnsignedChars(DFA58_maxS);
-    static final short[] DFA58_accept = DFA.unpackEncodedString(DFA58_acceptS);
-    static final short[] DFA58_special = DFA.unpackEncodedString(DFA58_specialS);
-    static final short[][] DFA58_transition;
+    static final short[] DFA59_eot = DFA.unpackEncodedString(DFA59_eotS);
+    static final short[] DFA59_eof = DFA.unpackEncodedString(DFA59_eofS);
+    static final char[] DFA59_min = DFA.unpackEncodedStringToUnsignedChars(DFA59_minS);
+    static final char[] DFA59_max = DFA.unpackEncodedStringToUnsignedChars(DFA59_maxS);
+    static final short[] DFA59_accept = DFA.unpackEncodedString(DFA59_acceptS);
+    static final short[] DFA59_special = DFA.unpackEncodedString(DFA59_specialS);
+    static final short[][] DFA59_transition;
 
     static {
-        int numStates = DFA58_transitionS.length;
-        DFA58_transition = new short[numStates][];
+        int numStates = DFA59_transitionS.length;
+        DFA59_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA58_transition[i] = DFA.unpackEncodedString(DFA58_transitionS[i]);
+            DFA59_transition[i] = DFA.unpackEncodedString(DFA59_transitionS[i]);
         }
     }
 
-    class DFA58 extends DFA {
+    class DFA59 extends DFA {
 
-        public DFA58(BaseRecognizer recognizer) {
+        public DFA59(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 58;
-            this.eot = DFA58_eot;
-            this.eof = DFA58_eof;
-            this.min = DFA58_min;
-            this.max = DFA58_max;
-            this.accept = DFA58_accept;
-            this.special = DFA58_special;
-            this.transition = DFA58_transition;
+            this.decisionNumber = 59;
+            this.eot = DFA59_eot;
+            this.eof = DFA59_eof;
+            this.min = DFA59_min;
+            this.max = DFA59_max;
+            this.accept = DFA59_accept;
+            this.special = DFA59_special;
+            this.transition = DFA59_transition;
         }
         public String getDescription() {
-            return "4145:1: (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement )";
+            return "4155:1: (this_Assignment_0= ruleAssignment | this_ForLoop_1= ruleForLoop | this_WhileLoop_2= ruleWhileLoop | this_DoWhileLoop_3= ruleDoWhileLoop | this_IfStatement_4= ruleIfStatement | this_ReturnStatement_5= ruleReturnStatement | this_LocalVariableOrConstantDeclarationStatement_6= ruleLocalVariableOrConstantDeclarationStatement | this_OperationCallStatement_7= ruleOperationCallStatement )";
         }
     }
-    static final String DFA60_eotS =
-        "\12\uffff";
-    static final String DFA60_eofS =
-        "\2\uffff\1\3\2\uffff\1\3\2\uffff\1\11\1\uffff";
-    static final String DFA60_minS =
-        "\1\6\1\uffff\1\15\1\uffff\1\6\1\15\1\6\1\17\1\6\1\uffff";
-    static final String DFA60_maxS =
-        "\1\144\1\uffff\1\136\1\uffff\1\144\1\136\1\144\1\136\1\144\1\uffff";
-    static final String DFA60_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\5\uffff\1\2";
-    static final String DFA60_specialS =
-        "\12\uffff}>";
-    static final String[] DFA60_transitionS = {
-            "\1\2\4\3\7\uffff\1\1\25\uffff\1\3\11\uffff\2\3\53\uffff\6\3",
+    static final String DFA61_eotS =
+        "\21\uffff";
+    static final String DFA61_eofS =
+        "\2\uffff\1\3\4\uffff\1\3\1\uffff\1\3\5\uffff\1\20\1\uffff";
+    static final String DFA61_minS =
+        "\1\6\1\uffff\1\15\1\uffff\2\6\1\22\1\15\3\6\1\23\1\uffff\1\17\1"+
+        "\22\1\6\1\uffff";
+    static final String DFA61_maxS =
+        "\1\146\1\uffff\1\140\1\uffff\2\146\2\140\3\146\1\140\1\uffff\2"+
+        "\140\1\146\1\uffff";
+    static final String DFA61_acceptS =
+        "\1\uffff\1\1\1\uffff\1\3\10\uffff\1\4\3\uffff\1\2";
+    static final String DFA61_specialS =
+        "\21\uffff}>";
+    static final String[] DFA61_transitionS = {
+            "\1\2\4\3\7\uffff\1\1\25\uffff\1\4\11\uffff\2\3\55\uffff\6\3",
             "",
             "\1\3\1\uffff\1\3\2\uffff\2\3\6\uffff\1\3\12\uffff\1\3\2\uffff"+
-            "\1\3\11\uffff\1\3\21\uffff\1\4\1\3\1\uffff\4\3\13\uffff\2\3"+
-            "\2\uffff\5\3",
+            "\1\3\11\uffff\1\3\21\uffff\1\5\2\3\1\uffff\4\3\13\uffff\2\3"+
+            "\2\uffff\6\3",
             "",
-            "\1\3\1\5\3\3\35\uffff\1\3\11\uffff\2\3\53\uffff\6\3",
-            "\1\3\1\uffff\1\6\3\uffff\1\3\6\uffff\1\3\27\uffff\1\3\24\uffff"+
-            "\2\3\21\uffff\5\3",
-            "\1\3\1\7\3\3\7\uffff\1\3\25\uffff\1\3\11\uffff\2\3\53\uffff"+
+            "\1\6\4\3\35\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
+            "\1\3\1\7\3\3\35\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
+            "\1\10\22\uffff\1\3\2\uffff\1\3\1\11\10\uffff\1\3\21\uffff"+
+            "\3\3\1\uffff\4\3\13\uffff\2\3\2\uffff\6\3",
+            "\1\3\1\uffff\1\12\3\uffff\1\3\6\uffff\1\3\27\uffff\1\3\25"+
+            "\uffff\2\3\21\uffff\6\3",
+            "\1\3\1\13\3\3\35\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
+            "\5\14\2\uffff\1\3\1\uffff\1\3\3\uffff\1\3\6\uffff\1\3\15\uffff"+
+            "\1\14\11\uffff\1\3\1\14\20\uffff\2\3\2\uffff\4\3\17\uffff\6"+
+            "\3\1\uffff\5\14",
+            "\1\3\1\15\3\3\7\uffff\1\3\25\uffff\1\3\11\uffff\2\3\55\uffff"+
             "\6\3",
-            "\1\3\3\uffff\1\3\36\uffff\1\3\21\uffff\1\3\1\10\1\uffff\4"+
-            "\3\17\uffff\5\3",
-            "\5\3\2\uffff\1\11\1\uffff\1\11\3\uffff\1\11\6\uffff\1\11\15"+
-            "\uffff\1\3\11\uffff\2\3\53\uffff\6\3",
+            "\1\16\36\uffff\1\3\52\uffff\4\3",
+            "",
+            "\1\3\3\uffff\1\3\36\uffff\1\3\21\uffff\1\3\1\17\2\uffff\4"+
+            "\3\17\uffff\6\3",
+            "\1\10\22\uffff\1\3\3\uffff\1\11\10\uffff\1\3\21\uffff\3\3"+
+            "\1\uffff\4\3\13\uffff\2\3\2\uffff\6\3",
+            "\5\3\2\uffff\1\20\1\uffff\1\20\3\uffff\1\20\6\uffff\1\20\15"+
+            "\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
             ""
     };
 
-    static final short[] DFA60_eot = DFA.unpackEncodedString(DFA60_eotS);
-    static final short[] DFA60_eof = DFA.unpackEncodedString(DFA60_eofS);
-    static final char[] DFA60_min = DFA.unpackEncodedStringToUnsignedChars(DFA60_minS);
-    static final char[] DFA60_max = DFA.unpackEncodedStringToUnsignedChars(DFA60_maxS);
-    static final short[] DFA60_accept = DFA.unpackEncodedString(DFA60_acceptS);
-    static final short[] DFA60_special = DFA.unpackEncodedString(DFA60_specialS);
-    static final short[][] DFA60_transition;
+    static final short[] DFA61_eot = DFA.unpackEncodedString(DFA61_eotS);
+    static final short[] DFA61_eof = DFA.unpackEncodedString(DFA61_eofS);
+    static final char[] DFA61_min = DFA.unpackEncodedStringToUnsignedChars(DFA61_minS);
+    static final char[] DFA61_max = DFA.unpackEncodedStringToUnsignedChars(DFA61_maxS);
+    static final short[] DFA61_accept = DFA.unpackEncodedString(DFA61_acceptS);
+    static final short[] DFA61_special = DFA.unpackEncodedString(DFA61_specialS);
+    static final short[][] DFA61_transition;
 
     static {
-        int numStates = DFA60_transitionS.length;
-        DFA60_transition = new short[numStates][];
+        int numStates = DFA61_transitionS.length;
+        DFA61_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA60_transition[i] = DFA.unpackEncodedString(DFA60_transitionS[i]);
+            DFA61_transition[i] = DFA.unpackEncodedString(DFA61_transitionS[i]);
         }
     }
 
-    class DFA60 extends DFA {
+    class DFA61 extends DFA {
 
-        public DFA60(BaseRecognizer recognizer) {
+        public DFA61(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 60;
-            this.eot = DFA60_eot;
-            this.eof = DFA60_eof;
-            this.min = DFA60_min;
-            this.max = DFA60_max;
-            this.accept = DFA60_accept;
-            this.special = DFA60_special;
-            this.transition = DFA60_transition;
+            this.decisionNumber = 61;
+            this.eot = DFA61_eot;
+            this.eof = DFA61_eof;
+            this.min = DFA61_min;
+            this.max = DFA61_max;
+            this.accept = DFA61_accept;
+            this.special = DFA61_special;
+            this.transition = DFA61_transition;
         }
         public String getDescription() {
-            return "4367:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )";
+            return "4377:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )";
         }
     }
-    static final String DFA72_eotS =
-        "\12\uffff";
-    static final String DFA72_eofS =
-        "\3\uffff\1\7\6\uffff";
-    static final String DFA72_minS =
-        "\1\6\2\uffff\1\15\1\uffff\1\6\2\uffff\1\45\1\uffff";
-    static final String DFA72_maxS =
-        "\1\144\2\uffff\1\136\1\uffff\1\144\2\uffff\1\50\1\uffff";
-    static final String DFA72_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\6\1\uffff\1\4\1\3\1\uffff\1\5";
-    static final String DFA72_specialS =
-        "\10\uffff\1\0\1\uffff}>";
-    static final String[] DFA72_transitionS = {
-            "\1\3\4\2\35\uffff\1\1\12\uffff\1\2\54\uffff\5\4",
+    static final String DFA73_eotS =
+        "\13\uffff";
+    static final String DFA73_eofS =
+        "\3\uffff\1\6\5\uffff\1\6\1\uffff";
+    static final String DFA73_minS =
+        "\1\6\2\uffff\1\15\1\uffff\1\6\1\uffff\1\6\1\uffff\1\15\1\uffff";
+    static final String DFA73_maxS =
+        "\1\146\2\uffff\1\140\1\uffff\1\6\1\uffff\1\146\1\uffff\1\140\1"+
+        "\uffff";
+    static final String DFA73_acceptS =
+        "\1\uffff\1\1\1\2\1\uffff\1\6\1\uffff\1\3\1\uffff\1\4\1\uffff\1"+
+        "\5";
+    static final String DFA73_specialS =
+        "\13\uffff}>";
+    static final String[] DFA73_transitionS = {
+            "\1\3\4\2\35\uffff\1\1\12\uffff\1\2\56\uffff\5\4",
             "",
             "",
-            "\1\7\1\uffff\1\7\2\uffff\2\7\6\uffff\1\7\12\uffff\1\5\2\uffff"+
-            "\1\6\1\7\10\uffff\1\7\1\uffff\7\7\3\uffff\1\7\5\uffff\2\7\1"+
-            "\uffff\4\7\13\uffff\2\7\2\uffff\5\7",
+            "\1\6\1\uffff\1\6\2\uffff\2\6\6\uffff\1\6\12\uffff\1\5\2\uffff"+
+            "\1\10\1\6\10\uffff\1\6\1\uffff\7\6\3\uffff\1\6\5\uffff\2\6\1"+
+            "\7\1\uffff\4\6\13\uffff\2\6\2\uffff\6\6",
             "",
-            "\1\10\131\uffff\5\7",
+            "\1\11",
             "",
+            "\1\12\133\uffff\5\6",
             "",
-            "\1\6\2\uffff\1\6",
+            "\1\6\1\uffff\1\6\2\uffff\2\6\6\uffff\1\6\12\uffff\1\5\2\uffff"+
+            "\1\10\1\6\10\uffff\1\6\1\uffff\7\6\3\uffff\1\6\5\uffff\3\6\1"+
+            "\uffff\4\6\13\uffff\2\6\2\uffff\6\6",
             ""
     };
 
-    static final short[] DFA72_eot = DFA.unpackEncodedString(DFA72_eotS);
-    static final short[] DFA72_eof = DFA.unpackEncodedString(DFA72_eofS);
-    static final char[] DFA72_min = DFA.unpackEncodedStringToUnsignedChars(DFA72_minS);
-    static final char[] DFA72_max = DFA.unpackEncodedStringToUnsignedChars(DFA72_maxS);
-    static final short[] DFA72_accept = DFA.unpackEncodedString(DFA72_acceptS);
-    static final short[] DFA72_special = DFA.unpackEncodedString(DFA72_specialS);
-    static final short[][] DFA72_transition;
+    static final short[] DFA73_eot = DFA.unpackEncodedString(DFA73_eotS);
+    static final short[] DFA73_eof = DFA.unpackEncodedString(DFA73_eofS);
+    static final char[] DFA73_min = DFA.unpackEncodedStringToUnsignedChars(DFA73_minS);
+    static final char[] DFA73_max = DFA.unpackEncodedStringToUnsignedChars(DFA73_maxS);
+    static final short[] DFA73_accept = DFA.unpackEncodedString(DFA73_acceptS);
+    static final short[] DFA73_special = DFA.unpackEncodedString(DFA73_specialS);
+    static final short[][] DFA73_transition;
 
     static {
-        int numStates = DFA72_transitionS.length;
-        DFA72_transition = new short[numStates][];
+        int numStates = DFA73_transitionS.length;
+        DFA73_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA72_transition[i] = DFA.unpackEncodedString(DFA72_transitionS[i]);
+            DFA73_transition[i] = DFA.unpackEncodedString(DFA73_transitionS[i]);
         }
     }
 
-    class DFA72 extends DFA {
+    class DFA73 extends DFA {
 
-        public DFA72(BaseRecognizer recognizer) {
+        public DFA73(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 72;
-            this.eot = DFA72_eot;
-            this.eof = DFA72_eof;
-            this.min = DFA72_min;
-            this.max = DFA72_max;
-            this.accept = DFA72_accept;
-            this.special = DFA72_special;
-            this.transition = DFA72_transition;
+            this.decisionNumber = 73;
+            this.eot = DFA73_eot;
+            this.eof = DFA73_eof;
+            this.min = DFA73_min;
+            this.max = DFA73_max;
+            this.accept = DFA73_accept;
+            this.special = DFA73_special;
+            this.transition = DFA73_transition;
         }
         public String getDescription() {
-            return "5521:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )";
-        }
-        public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
-            TokenStream input = (TokenStream)_input;
-        	int _s = s;
-            switch ( s ) {
-                    case 0 : 
-                        int LA72_8 = input.LA(1);
-
-                         
-                        int index72_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA72_8==37||LA72_8==40) ) {s = 6;}
-
-                        else if ( (synpred102_InternalDependencyModelLanguage()) ) {s = 7;}
-
-                        else if ( (synpred104_InternalDependencyModelLanguage()) ) {s = 9;}
-
-                         
-                        input.seek(index72_8);
-                        if ( s>=0 ) return s;
-                        break;
-            }
-            if (state.backtracking>0) {state.failed=true; return -1;}
-            NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 72, _s, input);
-            error(nvae);
-            throw nvae;
+            return "5618:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )";
         }
     }
  
@@ -19700,25 +20178,25 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_RULE_SL_COMMENT_in_ruleDependency520 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleSynchronization_in_entryRuleSynchronization565 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleSynchronization575 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_ruleSynchronization614 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_14_in_ruleSynchronization614 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleEvent_in_ruleSynchronization635 = new BitSet(new long[]{0x0000000000018000L});
-        public static final BitSet FOLLOW_15_in_ruleSynchronization648 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleSynchronization648 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleEvent_in_ruleSynchronization669 = new BitSet(new long[]{0x0000000000018000L});
-        public static final BitSet FOLLOW_16_in_ruleSynchronization683 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_16_in_ruleSynchronization683 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleEvent_in_ruleSynchronization704 = new BitSet(new long[]{0x0000000000068002L});
-        public static final BitSet FOLLOW_15_in_ruleSynchronization717 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleSynchronization717 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleEvent_in_ruleSynchronization738 = new BitSet(new long[]{0x0000000000068002L});
-        public static final BitSet FOLLOW_14_in_ruleSynchronization760 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_14_in_ruleSynchronization760 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleSynchronizationEvent_in_ruleSynchronization781 = new BitSet(new long[]{0x0000000000018000L});
-        public static final BitSet FOLLOW_15_in_ruleSynchronization794 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleSynchronization794 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleSynchronizationEvent_in_ruleSynchronization815 = new BitSet(new long[]{0x0000000000018000L});
-        public static final BitSet FOLLOW_16_in_ruleSynchronization829 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_16_in_ruleSynchronization829 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleSynchronizationEvent_in_ruleSynchronization850 = new BitSet(new long[]{0x0000000000068002L});
-        public static final BitSet FOLLOW_15_in_ruleSynchronization863 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleSynchronization863 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleSynchronizationEvent_in_ruleSynchronization884 = new BitSet(new long[]{0x0000000000068002L});
         public static final BitSet FOLLOW_17_in_ruleSynchronization901 = new BitSet(new long[]{0x0000000000000140L});
         public static final BitSet FOLLOW_ruleEString_in_ruleSynchronization922 = new BitSet(new long[]{0x0000000000040002L});
-        public static final BitSet FOLLOW_18_in_ruleSynchronization937 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_18_in_ruleSynchronization937 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleSynchronization958 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_19_in_ruleSynchronization970 = new BitSet(new long[]{0x0000000000100000L});
         public static final BitSet FOLLOW_20_in_ruleSynchronization982 = new BitSet(new long[]{0x0000000000000040L});
@@ -19736,7 +20214,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_15_in_ruleBoundedActiveState1283 = new BitSet(new long[]{0x0000000000000040L});
         public static final BitSet FOLLOW_ruleQualifiedName_in_ruleBoundedActiveState1310 = new BitSet(new long[]{0x0000000000808000L});
         public static final BitSet FOLLOW_23_in_ruleBoundedActiveState1324 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleBoundedActiveState1336 = new BitSet(new long[]{0x0002214000000040L,0x0000000000330000L});
+        public static final BitSet FOLLOW_18_in_ruleBoundedActiveState1336 = new BitSet(new long[]{0x0002214000000040L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleClockCondition_in_ruleBoundedActiveState1357 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_19_in_ruleBoundedActiveState1369 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleConditionalDependency_in_entryRuleConditionalDependency1405 = new BitSet(new long[]{0x0000000000000000L});
@@ -19750,7 +20228,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_13_in_ruleConditionalDependency1556 = new BitSet(new long[]{0x0000000004000000L});
         public static final BitSet FOLLOW_26_in_ruleConditionalDependency1570 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_27_in_ruleConditionalDependency1590 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleConditionalDependency1602 = new BitSet(new long[]{0x0000014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_18_in_ruleConditionalDependency1602 = new BitSet(new long[]{0x0000014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleConditionalDependency1623 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_19_in_ruleConditionalDependency1635 = new BitSet(new long[]{0x0000000002000000L});
         public static final BitSet FOLLOW_25_in_ruleConditionalDependency1647 = new BitSet(new long[]{0x00000000F0000000L});
@@ -19770,14 +20248,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_ruleClockResetEffect_in_ruleLimitedEffect2013 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEnableDisableEffect_in_entryRuleEnableDisableEffect2048 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleEnableDisableEffect2058 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleEnableDisableEffect2102 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
-        public static final BitSet FOLLOW_29_in_ruleEnableDisableEffect2133 = new BitSet(new long[]{0x0000004000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_28_in_ruleEnableDisableEffect2102 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
+        public static final BitSet FOLLOW_29_in_ruleEnableDisableEffect2133 = new BitSet(new long[]{0x0000004000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleEvent_in_ruleEnableDisableEffect2155 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDataAssignmentEffect_in_entryRuleDataAssignmentEffect2191 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDataAssignmentEffect2201 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_30_in_ruleDataAssignmentEffect2238 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleDataAssignmentEffect2259 = new BitSet(new long[]{0x0000000000000000L,0x0000000003C00004L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleDataAssignmentEffect2282 = new BitSet(new long[]{0x000C0100000407C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleDataAssignmentEffect2259 = new BitSet(new long[]{0x0000000000000000L,0x0000000007800004L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleDataAssignmentEffect2282 = new BitSet(new long[]{0x000C0100000407C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleDataAssignmentEffect2303 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleDataAssignmentEffect2331 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleClockResetEffect_in_entryRuleClockResetEffect2368 = new BitSet(new long[]{0x0000000000000000L});
@@ -19836,12 +20314,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_ruleSynchronizationEvent_in_entryRuleSynchronizationEvent3723 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleSynchronizationEvent3733 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEvent_in_ruleSynchronizationEvent3779 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleSynchronizationEvent3791 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_18_in_ruleSynchronizationEvent3791 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleSynchronizationEvent3812 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_19_in_ruleSynchronizationEvent3824 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_entryRuleComplexEvent3860 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleComplexEvent3870 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleComplexEvent3908 = new BitSet(new long[]{0x0000014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_40_in_ruleComplexEvent3908 = new BitSet(new long[]{0x0000014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleCompositionEvent_in_ruleComplexEvent3934 = new BitSet(new long[]{0x0000020000000000L});
         public static final BitSet FOLLOW_ruleCountedEvent_in_ruleComplexEvent3964 = new BitSet(new long[]{0x0000020000000000L});
         public static final BitSet FOLLOW_ruleDelayedEvent_in_ruleComplexEvent3994 = new BitSet(new long[]{0x0000020000000000L});
@@ -19849,8 +20327,8 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_ruleEvent_in_ruleComplexEvent4038 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCompositionEvent_in_entryRuleCompositionEvent4073 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleCompositionEvent4083 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComplexEvent_in_ruleCompositionEvent4129 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleLogicOperator_in_ruleCompositionEvent4150 = new BitSet(new long[]{0x0000014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_ruleComplexEvent_in_ruleCompositionEvent4129 = new BitSet(new long[]{0x0000000100000000L,0x0000000000000080L});
+        public static final BitSet FOLLOW_ruleLogicOperator_in_ruleCompositionEvent4150 = new BitSet(new long[]{0x0000014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleCompositionEvent4171 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCountedEvent_in_entryRuleCountedEvent4207 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleCountedEvent4217 = new BitSet(new long[]{0x0000000000000002L});
@@ -19861,14 +20339,14 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_ruleDelayedEvent_in_entryRuleDelayedEvent4344 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDelayedEvent4354 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleDelayedEvent4400 = new BitSet(new long[]{0x0000100000000000L});
-        public static final BitSet FOLLOW_44_in_ruleDelayedEvent4412 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_44_in_ruleDelayedEvent4412 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleTimeValue_in_ruleDelayedEvent4433 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition4469 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleCondition4479 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCompositionOrCondition_in_ruleCondition4528 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCompositionOrCondition_in_entryRuleCompositionOrCondition4562 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleCompositionOrCondition4572 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCompositionAndCondition_in_ruleCompositionOrCondition4622 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleCompositionAndCondition_in_ruleCompositionOrCondition4622 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000080L});
         public static final BitSet FOLLOW_ruleOrOperator_in_ruleCompositionOrCondition4655 = new BitSet(new long[]{0x0000000000040000L});
         public static final BitSet FOLLOW_ruleCompositionOrCondition_in_ruleCompositionOrCondition4676 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCompositionAndCondition_in_entryRuleCompositionAndCondition4714 = new BitSet(new long[]{0x0000000000000000L});
@@ -19878,7 +20356,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_ruleCompositionAndCondition_in_ruleCompositionAndCondition4828 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleConditionWithoutKeyword_in_entryRuleConditionWithoutKeyword4866 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleConditionWithoutKeyword4876 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_ruleConditionWithoutKeyword4913 = new BitSet(new long[]{0x000E6140000407C0L,0x0000001F80330000L});
+        public static final BitSet FOLLOW_18_in_ruleConditionWithoutKeyword4913 = new BitSet(new long[]{0x000E6140000407C0L,0x0000007E00660000L});
         public static final BitSet FOLLOW_ruleClockCondition_in_ruleConditionWithoutKeyword4939 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_ruleStateStatusCondition_in_ruleConditionWithoutKeyword4969 = new BitSet(new long[]{0x0000000000080000L});
         public static final BitSet FOLLOW_ruleEventConstrainedIntervalCondition_in_ruleConditionWithoutKeyword4999 = new BitSet(new long[]{0x0000000000080000L});
@@ -19887,23 +20365,23 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_19_in_ruleConditionWithoutKeyword5071 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleStateStatusCondition_in_entryRuleStateStatusCondition5107 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleStateStatusCondition5117 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleStateStatusCondition5170 = new BitSet(new long[]{0x0000000000000000L,0x00000000000C0000L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleStateStatusCondition5170 = new BitSet(new long[]{0x0000000000000000L,0x0000000000180000L});
         public static final BitSet FOLLOW_45_in_ruleStateStatusCondition5189 = new BitSet(new long[]{0x0000000000000040L});
         public static final BitSet FOLLOW_ruleQualifiedName_in_ruleStateStatusCondition5216 = new BitSet(new long[]{0x0000000000008000L});
         public static final BitSet FOLLOW_15_in_ruleStateStatusCondition5229 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleStateStatusCondition5256 = new BitSet(new long[]{0x0000000000008000L,0x00000000000C0000L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleStateStatusCondition5256 = new BitSet(new long[]{0x0000000000008000L,0x0000000000180000L});
         public static final BitSet FOLLOW_ruleStateStatusKind_in_ruleStateStatusCondition5281 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleEventConstrainedIntervalCondition_in_entryRuleEventConstrainedIntervalCondition5317 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleEventConstrainedIntervalCondition5327 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleEventConstrainedIntervalCondition5364 = new BitSet(new long[]{0x0000814000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_46_in_ruleEventConstrainedIntervalCondition5364 = new BitSet(new long[]{0x0000814000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleEventConstrainedIntervalCondition5387 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleEventConstrainedIntervalCondition5399 = new BitSet(new long[]{0x0000014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleEventConstrainedIntervalCondition5399 = new BitSet(new long[]{0x0000014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleEventConstrainedIntervalCondition5420 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_47_in_ruleEventConstrainedIntervalCondition5446 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleEventConstrainedIntervalCondition5471 = new BitSet(new long[]{0x0000014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleEventConstrainedIntervalCondition5471 = new BitSet(new long[]{0x0000014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleEventConstrainedIntervalCondition5492 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleEventConstrainedIntervalCondition5521 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleEventConstrainedIntervalCondition5533 = new BitSet(new long[]{0x0001014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_ruleEventConstrainedIntervalCondition5533 = new BitSet(new long[]{0x0001014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_ruleEventConstrainedIntervalCondition5555 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_48_in_ruleEventConstrainedIntervalCondition5579 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleClockCondition_in_entryRuleClockCondition5631 = new BitSet(new long[]{0x0000000000000000L});
@@ -19913,336 +20391,352 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         public static final BitSet FOLLOW_ruleHybridClockCondition_in_ruleClockCondition5751 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAuxiliaryClockCondition_in_entryRuleAuxiliaryClockCondition5786 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleAuxiliaryClockCondition5796 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComplexEvent_in_ruleAuxiliaryClockCondition5842 = new BitSet(new long[]{0x0000000000000000L,0x000000000000F800L});
-        public static final BitSet FOLLOW_ruleNaturalLanguageComparingOperator_in_ruleAuxiliaryClockCondition5863 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_ruleComplexEvent_in_ruleAuxiliaryClockCondition5842 = new BitSet(new long[]{0x0000000000000000L,0x000000000001F000L});
+        public static final BitSet FOLLOW_ruleNaturalLanguageComparingOperator_in_ruleAuxiliaryClockCondition5863 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleTimeValue_in_ruleAuxiliaryClockCondition5884 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleHybridClockCondition_in_entryRuleHybridClockCondition5920 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleHybridClockCondition5930 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleStateStatusCondition_in_ruleHybridClockCondition5976 = new BitSet(new long[]{0x0000000000000000L,0x000000000000F800L});
-        public static final BitSet FOLLOW_ruleNaturalLanguageComparingOperator_in_ruleHybridClockCondition5997 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_ruleStateStatusCondition_in_ruleHybridClockCondition5976 = new BitSet(new long[]{0x0000000000000000L,0x000000000001F000L});
+        public static final BitSet FOLLOW_ruleNaturalLanguageComparingOperator_in_ruleHybridClockCondition5997 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleTimeValue_in_ruleHybridClockCondition6018 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleBasicClockCondition_in_entryRuleBasicClockCondition6054 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleBasicClockCondition6064 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_49_in_ruleBasicClockCondition6101 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleBasicClockCondition6128 = new BitSet(new long[]{0x0000000000000000L,0x00000000000007B0L});
-        public static final BitSet FOLLOW_ruleComparingOperator_in_ruleBasicClockCondition6149 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleBasicClockCondition6128 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000F30L});
+        public static final BitSet FOLLOW_ruleComparingOperator_in_ruleBasicClockCondition6149 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
         public static final BitSet FOLLOW_ruleTimeValue_in_ruleBasicClockCondition6170 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDataCondition_in_entryRuleDataCondition6206 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDataCondition6216 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleLogicalExpression_in_ruleDataCondition6261 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression6296 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTypedNamedElementExpression6306 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypedNamedElementExpression6358 = new BitSet(new long[]{0x0000000000040002L});
-        public static final BitSet FOLLOW_18_in_ruleTypedNamedElementExpression6371 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleTypedNamedElementExpression6392 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_19_in_ruleTypedNamedElementExpression6404 = new BitSet(new long[]{0x0000000000040002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall6442 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall6452 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleOperationCall6504 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_40_in_ruleOperationCall6516 = new BitSet(new long[]{0x0000020000000040L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall6538 = new BitSet(new long[]{0x0000020000008000L});
-        public static final BitSet FOLLOW_15_in_ruleOperationCall6551 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall6572 = new BitSet(new long[]{0x0000020000008000L});
-        public static final BitSet FOLLOW_41_in_ruleOperationCall6588 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeValue_in_entryRuleTimeValue6624 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTimeValue6634 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleTimeValue6680 = new BitSet(new long[]{0x07F0000000000000L});
-        public static final BitSet FOLLOW_ruleTimeUnit_in_ruleTimeValue6701 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLONG_in_entryRuleLONG6738 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLONG6749 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLONG6788 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName6833 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName6844 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName6884 = new BitSet(new long[]{0x0000002000000002L});
-        public static final BitSet FOLLOW_37_in_ruleQualifiedName6903 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName6918 = new BitSet(new long[]{0x0000002000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString6966 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEString6977 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString7017 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleEString7043 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt7089 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEInt7100 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleEInt7139 = new BitSet(new long[]{0x0000000000000080L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt7156 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral7202 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteral7213 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_NUMBER_in_ruleLiteral7253 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleLiteral7279 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteral7305 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteral7331 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleLiteral7355 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeUnit_in_entryRuleTimeUnit7396 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTimeUnit7407 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_ruleTimeUnit7445 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_ruleTimeUnit7464 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_ruleTimeUnit7483 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_ruleTimeUnit7502 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_56_in_ruleTimeUnit7521 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_57_in_ruleTimeUnit7540 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_58_in_ruleTimeUnit7559 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBlock_in_entryRuleBlock7607 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleBlock7617 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_ruleBlock7670 = new BitSet(new long[]{0x3800000005000040L,0x000000000000000AL});
-        public static final BitSet FOLLOW_ruleExpressionStartRule_in_ruleBlock7691 = new BitSet(new long[]{0x3800000005000040L,0x000000000000000AL});
-        public static final BitSet FOLLOW_26_in_ruleBlock7704 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleForLoop_in_entryRuleForLoop7744 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleForLoop7754 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_59_in_ruleForLoop7791 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_40_in_ruleForLoop7803 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleAssignment_in_ruleForLoop7824 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleForLoop7845 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleForLoop7857 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_ruleForLoop7878 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_41_in_ruleForLoop7890 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_ruleBlock_in_ruleForLoop7911 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_entryRuleForLoopCountingExpression7947 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleForLoopCountingExpression7957 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression8003 = new BitSet(new long[]{0x0000000000000000L,0x0000000003C00004L});
-        public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleForLoopCountingExpression8025 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression8053 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleForLoopCountingExpression8074 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleWhileLoop_in_entryRuleWhileLoop8112 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleWhileLoop8122 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_60_in_ruleWhileLoop8159 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_40_in_ruleWhileLoop8171 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleWhileLoop8192 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_41_in_ruleWhileLoop8204 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_ruleBlock_in_ruleWhileLoop8225 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDoWhileLoop_in_entryRuleDoWhileLoop8261 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDoWhileLoop8271 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_61_in_ruleDoWhileLoop8308 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_ruleBlock_in_ruleDoWhileLoop8329 = new BitSet(new long[]{0x1000000000000000L});
-        public static final BitSet FOLLOW_60_in_ruleDoWhileLoop8341 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_40_in_ruleDoWhileLoop8353 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleDoWhileLoop8374 = new BitSet(new long[]{0x4000000000000000L});
-        public static final BitSet FOLLOW_62_in_ruleDoWhileLoop8386 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIfStatement_in_entryRuleIfStatement8422 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleIfStatement8432 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_ruleIfStatement8469 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_40_in_ruleIfStatement8481 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement8502 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_41_in_ruleIfStatement8514 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement8535 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
-        public static final BitSet FOLLOW_63_in_ruleIfStatement8548 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_40_in_ruleIfStatement8560 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement8581 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_41_in_ruleIfStatement8593 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement8614 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
-        public static final BitSet FOLLOW_64_in_ruleIfStatement8629 = new BitSet(new long[]{0x0000000002000000L});
-        public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement8650 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement8688 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleReturnStatement8698 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_65_in_ruleReturnStatement8747 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleReturnStatement8768 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleReturnStatement8780 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCallStatement_in_entryRuleOperationCallStatement8816 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCallStatement8826 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperationCallStatement8876 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleOperationCallStatement8887 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpressionStartRule_in_entryRuleExpressionStartRule8923 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleExpressionStartRule8933 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssignment_in_ruleExpressionStartRule8983 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleForLoop_in_ruleExpressionStartRule9013 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleWhileLoop_in_ruleExpressionStartRule9043 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDoWhileLoop_in_ruleExpressionStartRule9073 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIfStatement_in_ruleExpressionStartRule9103 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleReturnStatement_in_ruleExpressionStartRule9133 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_ruleExpressionStartRule9163 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCallStatement_in_ruleExpressionStartRule9193 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAssignment_in_entryRuleAssignment9228 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAssignment9238 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment9284 = new BitSet(new long[]{0x0000000000000000L,0x0000000003C00004L});
-        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleAssignment9307 = new BitSet(new long[]{0x000C0100000407C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleAssignment9328 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleAssignment9356 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleAssignment9369 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_entryRuleInitializeExpression9405 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleInitializeExpression9415 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_ruleInitializeExpression9465 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_ruleInitializeExpression9495 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleInitializeExpression9525 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression9560 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression9570 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_ruleArrayInitializeExpression9607 = new BitSet(new long[]{0x000C0100000407C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9628 = new BitSet(new long[]{0x0000000000088000L});
-        public static final BitSet FOLLOW_15_in_ruleArrayInitializeExpression9641 = new BitSet(new long[]{0x000C0100000407C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9662 = new BitSet(new long[]{0x0000000000088000L});
-        public static final BitSet FOLLOW_19_in_ruleArrayInitializeExpression9676 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement9712 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement9722 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9769 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9788 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration9826 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration9836 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration9888 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration9905 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000004L});
-        public static final BitSet FOLLOW_66_in_ruleLocalVariableDeclaration9923 = new BitSet(new long[]{0x000C0100000407C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration9944 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleLocalVariableDeclaration9958 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration9994 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalConstantDeclaration10004 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_67_in_ruleLocalConstantDeclaration10047 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration10087 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration10104 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-        public static final BitSet FOLLOW_66_in_ruleLocalConstantDeclaration10121 = new BitSet(new long[]{0x000C0100000407C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration10142 = new BitSet(new long[]{0x0000000000002000L});
-        public static final BitSet FOLLOW_13_in_ruleLocalConstantDeclaration10154 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression10190 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression10200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression10249 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression10270 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRange_in_entryRuleRange10306 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRange10316 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_68_in_ruleRange10353 = new BitSet(new long[]{0x0000000000000080L});
-        public static final BitSet FOLLOW_ruleLONG_in_ruleRange10374 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_ruleRange10386 = new BitSet(new long[]{0x0000000000000080L});
-        public static final BitSet FOLLOW_ruleLONG_in_ruleRange10407 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-        public static final BitSet FOLLOW_69_in_ruleRange10419 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression10455 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleExpression10465 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalExpression_in_ruleExpression10514 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression10548 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalExpression10558 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression10607 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression10641 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression10651 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10701 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
-        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression10734 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10755 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression10793 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression10803 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10853 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
-        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression10886 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10907 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression10945 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression10955 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11005 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000180L});
-        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression11038 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11059 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression11097 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression11107 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11157 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000630L});
-        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression11190 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11211 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression11249 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression11259 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression11308 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression11342 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression11352 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11402 = new BitSet(new long[]{0x0004000000000002L,0x0000000010000000L});
-        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression11435 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11456 = new BitSet(new long[]{0x0004000000000002L,0x0000000010000000L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression11494 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression11504 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11554 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression11585 = new BitSet(new long[]{0x0000000000000002L,0x0000000060000000L});
-        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression11618 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11641 = new BitSet(new long[]{0x0000000000000002L,0x0000000060000000L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression11660 = new BitSet(new long[]{0x0000000000000002L,0x0000000060000000L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression11702 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression11712 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression11770 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleUnaryPreExpression11791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand11827 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperand11837 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleOperand11875 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleOperand11900 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_41_in_ruleOperand11911 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand11943 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand11973 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperand12003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_ruleOperand12033 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand12063 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression12098 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression12108 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteral_in_ruleLiteralExpression12166 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression12202 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression12212 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression12262 = new BitSet(new long[]{0x0000002000000002L,0x0000000003C00004L});
-        public static final BitSet FOLLOW_37_in_ruleExtendedTypedNamedElementExpression12287 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression12308 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression12349 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression12388 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression12398 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression12443 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression12478 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression12488 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression12534 = new BitSet(new long[]{0x0000002000000002L});
-        public static final BitSet FOLLOW_37_in_rulePositionSelectorExpression12547 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression12568 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding12606 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleParamaterBinding12616 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleParamaterBinding12677 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-        public static final BitSet FOLLOW_66_in_ruleParamaterBinding12689 = new BitSet(new long[]{0x000C0100000007C0L,0x0000001F80000000L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleParamaterBinding12710 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression12746 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression12756 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression12805 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_37_in_ruleTriggerMessageExpression12817 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression12841 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE12878 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDATATYPE12889 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleDATATYPE12929 = new BitSet(new long[]{0x0000000000040002L});
-        public static final BitSet FOLLOW_18_in_ruleDATATYPE12948 = new BitSet(new long[]{0x0000000000000080L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleDATATYPE12963 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_19_in_ruleDATATYPE12981 = new BitSet(new long[]{0x0000000000040002L});
-        public static final BitSet FOLLOW_70_in_ruleOrOperator13036 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleAndOperator13079 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_70_in_ruleLogicOperator13123 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleLogicOperator13140 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_71_in_ruleComparingOperator13185 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_72_in_ruleComparingOperator13202 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_68_in_ruleComparingOperator13219 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_73_in_ruleComparingOperator13236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_74_in_ruleComparingOperator13253 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_69_in_ruleComparingOperator13270 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_75_in_ruleNaturalLanguageComparingOperator13315 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_76_in_ruleNaturalLanguageComparingOperator13332 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_77_in_ruleNaturalLanguageComparingOperator13349 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_78_in_ruleNaturalLanguageComparingOperator13366 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_79_in_ruleNaturalLanguageComparingOperator13383 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_80_in_ruleStateEventKind13428 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_81_in_ruleStateEventKind13445 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_82_in_ruleStateStatusKind13490 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_83_in_ruleStateStatusKind13507 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_84_in_ruleMessageEventKind13552 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_85_in_ruleMessageEventKind13569 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_86_in_ruleUnaryPostIncrementDecrementOperator13614 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_87_in_ruleUnaryPostIncrementDecrementOperator13631 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_86_in_ruleIncrementDecrementOperatorExpression13676 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_87_in_ruleIncrementDecrementOperatorExpression13693 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_66_in_ruleAssignOperator13738 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_88_in_ruleAssignOperator13755 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_89_in_ruleAssignOperator13772 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_90_in_ruleLogicalOrOperator13816 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_91_in_ruleLogicalAndOperator13859 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_71_in_ruleComparingEQNEQOperator13903 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_72_in_ruleComparingEQNEQOperator13920 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_68_in_ruleComparingRelOperator13965 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_73_in_ruleComparingRelOperator13982 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_74_in_ruleComparingRelOperator13999 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_69_in_ruleComparingRelOperator14016 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_92_in_ruleAdditionOperator14061 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleAdditionOperator14078 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_93_in_ruleMultiplicationOperator14123 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_94_in_ruleMultiplicationOperator14140 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_95_in_ruleUnaryPreOperator14185 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleUnaryPreOperator14202 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_96_in_rulePositionSelectorKind14247 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_97_in_rulePositionSelectorKind14264 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_98_in_rulePositionSelectorKind14281 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_99_in_rulePositionSelectorKind14298 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_100_in_rulePositionSelectorKind14315 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTypedNamedElementExpression6358 = new BitSet(new long[]{0x0000002000040002L});
+        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression6381 = new BitSet(new long[]{0x0000002000040002L});
+        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression6400 = new BitSet(new long[]{0x0000002000040002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall6440 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall6450 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_ruleOperationCall6502 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_40_in_ruleOperationCall6514 = new BitSet(new long[]{0x0000020000000040L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall6536 = new BitSet(new long[]{0x0000020000008000L});
+        public static final BitSet FOLLOW_15_in_ruleOperationCall6549 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall6570 = new BitSet(new long[]{0x0000020000008000L});
+        public static final BitSet FOLLOW_41_in_ruleOperationCall6586 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeValue_in_entryRuleTimeValue6622 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTimeValue6632 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleTimeValue6678 = new BitSet(new long[]{0x07F0000000000000L});
+        public static final BitSet FOLLOW_ruleTimeUnit_in_ruleTimeValue6699 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLONG_in_entryRuleLONG6736 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLONG6747 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLONG6786 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName6831 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName6842 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName6882 = new BitSet(new long[]{0x0000002000000002L});
+        public static final BitSet FOLLOW_37_in_ruleQualifiedName6901 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName6916 = new BitSet(new long[]{0x0000002000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString6964 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEString6975 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString7015 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleEString7041 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt7087 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEInt7098 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleEInt7137 = new BitSet(new long[]{0x0000000000000080L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt7154 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral7200 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteral7211 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_NUMBER_in_ruleLiteral7251 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleLiteral7277 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteral7303 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteral7329 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleLiteral7353 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeUnit_in_entryRuleTimeUnit7394 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTimeUnit7405 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_ruleTimeUnit7443 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_ruleTimeUnit7462 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_ruleTimeUnit7481 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_ruleTimeUnit7500 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_ruleTimeUnit7519 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_57_in_ruleTimeUnit7538 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_58_in_ruleTimeUnit7557 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBlock_in_entryRuleBlock7605 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleBlock7615 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_ruleBlock7668 = new BitSet(new long[]{0x3800000005000040L,0x000000000000000AL});
+        public static final BitSet FOLLOW_ruleExpressionStartRule_in_ruleBlock7689 = new BitSet(new long[]{0x3800000005000040L,0x000000000000000AL});
+        public static final BitSet FOLLOW_26_in_ruleBlock7702 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleForLoop_in_entryRuleForLoop7742 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleForLoop7752 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_59_in_ruleForLoop7789 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_40_in_ruleForLoop7801 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleAssignment_in_ruleForLoop7822 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleForLoop7843 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleForLoop7855 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_ruleForLoop7876 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_41_in_ruleForLoop7888 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_ruleBlock_in_ruleForLoop7909 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_entryRuleForLoopCountingExpression7945 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleForLoopCountingExpression7955 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleForLoopCountingExpression8001 = new BitSet(new long[]{0x0000000000000000L,0x0000000007800004L});
+        public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleForLoopCountingExpression8023 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleForLoopCountingExpression8051 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleForLoopCountingExpression8072 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleWhileLoop_in_entryRuleWhileLoop8110 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleWhileLoop8120 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_60_in_ruleWhileLoop8157 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_40_in_ruleWhileLoop8169 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleWhileLoop8190 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_41_in_ruleWhileLoop8202 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_ruleBlock_in_ruleWhileLoop8223 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDoWhileLoop_in_entryRuleDoWhileLoop8259 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDoWhileLoop8269 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_61_in_ruleDoWhileLoop8306 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_ruleBlock_in_ruleDoWhileLoop8327 = new BitSet(new long[]{0x1000000000000000L});
+        public static final BitSet FOLLOW_60_in_ruleDoWhileLoop8339 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_40_in_ruleDoWhileLoop8351 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleDoWhileLoop8372 = new BitSet(new long[]{0x4000000000000000L});
+        public static final BitSet FOLLOW_62_in_ruleDoWhileLoop8384 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIfStatement_in_entryRuleIfStatement8420 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleIfStatement8430 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleIfStatement8467 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_40_in_ruleIfStatement8479 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement8500 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_41_in_ruleIfStatement8512 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement8533 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
+        public static final BitSet FOLLOW_63_in_ruleIfStatement8546 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_40_in_ruleIfStatement8558 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleIfStatement8579 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_41_in_ruleIfStatement8591 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement8612 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
+        public static final BitSet FOLLOW_64_in_ruleIfStatement8627 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_ruleBlock_in_ruleIfStatement8648 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleReturnStatement_in_entryRuleReturnStatement8686 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleReturnStatement8696 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_65_in_ruleReturnStatement8745 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleReturnStatement8766 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleReturnStatement8778 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCallStatement_in_entryRuleOperationCallStatement8814 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCallStatement8824 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperationCallStatement8874 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleOperationCallStatement8885 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpressionStartRule_in_entryRuleExpressionStartRule8921 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleExpressionStartRule8931 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAssignment_in_ruleExpressionStartRule8981 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleForLoop_in_ruleExpressionStartRule9011 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleWhileLoop_in_ruleExpressionStartRule9041 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDoWhileLoop_in_ruleExpressionStartRule9071 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIfStatement_in_ruleExpressionStartRule9101 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleReturnStatement_in_ruleExpressionStartRule9131 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_ruleExpressionStartRule9161 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCallStatement_in_ruleExpressionStartRule9191 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAssignment_in_entryRuleAssignment9226 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAssignment9236 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleAssignment9282 = new BitSet(new long[]{0x0000000000000000L,0x0000000007800004L});
+        public static final BitSet FOLLOW_ruleAssignOperator_in_ruleAssignment9305 = new BitSet(new long[]{0x000C0100000407C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleAssignment9326 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_ruleUnaryPostIncrementDecrementOperator_in_ruleAssignment9354 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleAssignment9367 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_entryRuleInitializeExpression9403 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleInitializeExpression9413 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_ruleInitializeExpression9463 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_ruleInitializeExpression9493 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleInitializeExpression9523 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression9553 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression9588 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression9598 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_ruleArrayInitializeExpression9635 = new BitSet(new long[]{0x000C0100000407C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9656 = new BitSet(new long[]{0x0000000000088000L});
+        public static final BitSet FOLLOW_15_in_ruleArrayInitializeExpression9669 = new BitSet(new long[]{0x000C0100000407C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression9690 = new BitSet(new long[]{0x0000000000088000L});
+        public static final BitSet FOLLOW_19_in_ruleArrayInitializeExpression9704 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement9740 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement9750 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9797 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement9816 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration9854 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration9864 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration9916 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration9933 = new BitSet(new long[]{0x0000000000002000L,0x0000000000000004L});
+        public static final BitSet FOLLOW_66_in_ruleLocalVariableDeclaration9951 = new BitSet(new long[]{0x000C0100000407C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration9972 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleLocalVariableDeclaration9986 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration10022 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalConstantDeclaration10032 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_67_in_ruleLocalConstantDeclaration10075 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration10115 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration10132 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+        public static final BitSet FOLLOW_66_in_ruleLocalConstantDeclaration10149 = new BitSet(new long[]{0x000C0100000407C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration10170 = new BitSet(new long[]{0x0000000000002000L});
+        public static final BitSet FOLLOW_13_in_ruleLocalConstantDeclaration10182 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression10218 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression10228 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression10277 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression10298 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRange_in_entryRuleRange10334 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRange10344 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_68_in_ruleRange10381 = new BitSet(new long[]{0x0000000000000080L});
+        public static final BitSet FOLLOW_ruleLONG_in_ruleRange10402 = new BitSet(new long[]{0x0000000000008000L});
+        public static final BitSet FOLLOW_15_in_ruleRange10414 = new BitSet(new long[]{0x0000000000000080L});
+        public static final BitSet FOLLOW_ruleLONG_in_ruleRange10435 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+        public static final BitSet FOLLOW_69_in_ruleRange10447 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression10483 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleExpression10493 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalExpression_in_ruleExpression10542 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression10576 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalExpression10586 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression10635 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression10669 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression10679 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10729 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
+        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression10762 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression10783 = new BitSet(new long[]{0x0000000000000002L,0x0000000008000000L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression10821 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression10831 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10881 = new BitSet(new long[]{0x0000000000000002L,0x0000000010000000L});
+        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression10914 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression10935 = new BitSet(new long[]{0x0000000000000002L,0x0000000010000000L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression10973 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression10983 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11033 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000300L});
+        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression11066 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression11087 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression11125 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression11135 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11185 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000C30L});
+        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression11218 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression11239 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression11277 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression11287 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression11336 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression11370 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression11380 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11430 = new BitSet(new long[]{0x0004000000000002L,0x0000000020000000L});
+        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression11463 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression11484 = new BitSet(new long[]{0x0004000000000002L,0x0000000020000000L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression11522 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression11532 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11582 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression11613 = new BitSet(new long[]{0x0000000000000002L,0x00000001C0000000L});
+        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression11646 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression11669 = new BitSet(new long[]{0x0000000000000002L,0x00000001C0000000L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression11688 = new BitSet(new long[]{0x0000000000000002L,0x00000001C0000000L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression11730 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression11740 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression11798 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleUnaryPreExpression11819 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression11855 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTypeCastExpression11865 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleTypeCastExpression11914 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression11941 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_41_in_ruleTypeCastExpression11953 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleTypeCastExpression11974 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand12010 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperand12020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleOperand12058 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleOperand12083 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_41_in_ruleOperand12094 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand12126 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand12156 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperand12186 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_ruleOperand12216 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand12246 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression12281 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression12291 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteral_in_ruleLiteralExpression12349 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression12385 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression12395 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression12445 = new BitSet(new long[]{0x0000000000000002L,0x0000000007800044L});
+        public static final BitSet FOLLOW_70_in_ruleExtendedTypedNamedElementExpression12470 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression12491 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression12532 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression12571 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArrayIndexExpression12581 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_ruleArrayIndexExpression12618 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression12639 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_19_in_ruleArrayIndexExpression12651 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression12687 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAttributeAccessorExpression12697 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleAttributeAccessorExpression12734 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression12758 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression12794 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression12804 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression12849 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression12884 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression12894 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression12940 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000040L});
+        public static final BitSet FOLLOW_70_in_rulePositionSelectorExpression12953 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression12974 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding13012 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleParamaterBinding13022 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleParamaterBinding13083 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+        public static final BitSet FOLLOW_66_in_ruleParamaterBinding13095 = new BitSet(new long[]{0x000C0100000007C0L,0x0000007E00000000L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleParamaterBinding13116 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression13152 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression13162 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression13211 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+        public static final BitSet FOLLOW_70_in_ruleTriggerMessageExpression13223 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression13247 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE13284 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDATATYPE13295 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleDATATYPE13335 = new BitSet(new long[]{0x0000000000040002L});
+        public static final BitSet FOLLOW_18_in_ruleDATATYPE13354 = new BitSet(new long[]{0x0000000000000080L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleDATATYPE13369 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_19_in_ruleDATATYPE13387 = new BitSet(new long[]{0x0000000000040002L});
+        public static final BitSet FOLLOW_71_in_ruleOrOperator13442 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_ruleAndOperator13485 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_71_in_ruleLogicOperator13529 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_ruleLogicOperator13546 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_72_in_ruleComparingOperator13591 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_73_in_ruleComparingOperator13608 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_68_in_ruleComparingOperator13625 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_74_in_ruleComparingOperator13642 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_75_in_ruleComparingOperator13659 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_69_in_ruleComparingOperator13676 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_76_in_ruleNaturalLanguageComparingOperator13721 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_77_in_ruleNaturalLanguageComparingOperator13738 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_78_in_ruleNaturalLanguageComparingOperator13755 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_79_in_ruleNaturalLanguageComparingOperator13772 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_80_in_ruleNaturalLanguageComparingOperator13789 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_81_in_ruleStateEventKind13834 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_82_in_ruleStateEventKind13851 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_83_in_ruleStateStatusKind13896 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_84_in_ruleStateStatusKind13913 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_85_in_ruleMessageEventKind13958 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_86_in_ruleMessageEventKind13975 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_87_in_ruleUnaryPostIncrementDecrementOperator14020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_88_in_ruleUnaryPostIncrementDecrementOperator14037 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_87_in_ruleIncrementDecrementOperatorExpression14082 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_88_in_ruleIncrementDecrementOperatorExpression14099 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_66_in_ruleAssignOperator14144 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_89_in_ruleAssignOperator14161 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_90_in_ruleAssignOperator14178 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_91_in_ruleLogicalOrOperator14222 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_92_in_ruleLogicalAndOperator14265 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_72_in_ruleComparingEQNEQOperator14309 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_73_in_ruleComparingEQNEQOperator14326 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_68_in_ruleComparingRelOperator14371 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_74_in_ruleComparingRelOperator14388 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_75_in_ruleComparingRelOperator14405 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_69_in_ruleComparingRelOperator14422 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_93_in_ruleAdditionOperator14467 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleAdditionOperator14484 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_94_in_ruleMultiplicationOperator14529 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_95_in_ruleMultiplicationOperator14546 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_96_in_ruleMultiplicationOperator14563 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_97_in_ruleUnaryPreOperator14608 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleUnaryPreOperator14625 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_98_in_rulePositionSelectorKind14670 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_99_in_rulePositionSelectorKind14687 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_100_in_rulePositionSelectorKind14704 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_101_in_rulePositionSelectorKind14721 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_102_in_rulePositionSelectorKind14738 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCompositionEvent_in_synpred43_InternalDependencyModelLanguage3934 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleCountedEvent_in_synpred44_InternalDependencyModelLanguage3964 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleClockCondition_in_synpred48_InternalDependencyModelLanguage4939 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleStateStatusCondition_in_synpred49_InternalDependencyModelLanguage4969 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDataCondition_in_synpred51_InternalDependencyModelLanguage5029 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_synpred54_InternalDependencyModelLanguage5387 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_synpred54_InternalDependencyModelLanguage5399 = new BitSet(new long[]{0x0000014000000000L,0x0000000000330000L});
+        public static final BitSet FOLLOW_15_in_synpred54_InternalDependencyModelLanguage5399 = new BitSet(new long[]{0x0000014000000000L,0x0000000000660000L});
         public static final BitSet FOLLOW_ruleComplexEvent_in_synpred54_InternalDependencyModelLanguage5420 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_synpred102_InternalDependencyModelLanguage11973 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_synpred104_InternalDependencyModelLanguage12033 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_synpred63_InternalDependencyModelLanguage6901 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_ID_in_synpred63_InternalDependencyModelLanguage6916 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

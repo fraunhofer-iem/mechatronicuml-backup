@@ -110,7 +110,7 @@ mapping SynchronizationEvent::SychronizationEvent2Synchronization(channel:Synchr
 		result += self.event.map EventsOfSync2Synchronization(channel, isSending, self.selectorExpression);
 	}
 }
-	
+
 mapping depLang::TransitionEvent::TransitionEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
 	init{
 		if (result->isEmpty()) then{
