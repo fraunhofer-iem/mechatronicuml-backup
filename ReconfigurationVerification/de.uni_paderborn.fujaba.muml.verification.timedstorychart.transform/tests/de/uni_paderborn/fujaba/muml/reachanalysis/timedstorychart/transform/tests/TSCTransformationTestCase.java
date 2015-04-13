@@ -184,7 +184,7 @@ public abstract class TSCTransformationTestCase {
 
 		PrimitiveDataType dataType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 		dataType.setName("INT");
-		dataType.setPrimitiveType(PrimitiveTypes.INT);
+		dataType.setPrimitiveType(PrimitiveTypes.INT32);
 		Parameter parameter1 = BehaviorFactory.eINSTANCE.createParameter();
 		parameter1.setName("param1");
 		parameter1.setDataType(dataType);

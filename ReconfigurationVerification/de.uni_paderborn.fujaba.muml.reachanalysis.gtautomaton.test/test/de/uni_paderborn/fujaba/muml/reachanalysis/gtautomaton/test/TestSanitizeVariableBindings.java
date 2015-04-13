@@ -78,8 +78,8 @@ public class TestSanitizeVariableBindings {
 	public void testSanitizeVariableBindingsLongValue(){
 		
 		//create variable binding
-		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.LONG, "10");
-		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.LONG, "-5");
+		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.INT64, "10");
+		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.INT64, "-5");
 		
 		//create GtStepGraph containing the varBinding
 		GtStepGraph step = GtautomatonFactory.eINSTANCE.createGtStepGraph();
@@ -101,8 +101,8 @@ public class TestSanitizeVariableBindings {
 	public void testSanitizeVariableBindingsIntValue(){
 		
 		//create variable binding
-		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.INT, "10");
-		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.INT, "-5");
+		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.INT32, "10");
+		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.INT32, "-5");
 		
 		//create GtStepGraph containing the varBinding
 		GtStepGraph step = GtautomatonFactory.eINSTANCE.createGtStepGraph();
@@ -124,8 +124,8 @@ public class TestSanitizeVariableBindings {
 	public void testSanitizeVariableBindingsShortValue(){
 		
 		//create variable binding
-		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.SHORT, "10");
-		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.SHORT, "-5");
+		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.INT16, "10");
+		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.INT16, "-5");
 		
 		//create GtStepGraph containing the varBinding
 		GtStepGraph step = GtautomatonFactory.eINSTANCE.createGtStepGraph();
@@ -147,8 +147,8 @@ public class TestSanitizeVariableBindings {
 	public void testSanitizeVariableBindingsByteValue(){
 		
 		//create variable binding
-		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.BYTE, "10");
-		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.BYTE, "-5");
+		VariableBinding varBinding = createVariableBinding(PrimitiveTypes.INT8, "10");
+		VariableBinding varBinding2 = createVariableBinding(PrimitiveTypes.INT8, "-5");
 		
 		//create GtStepGraph containing the varBinding
 		GtStepGraph step = GtautomatonFactory.eINSTANCE.createGtStepGraph();

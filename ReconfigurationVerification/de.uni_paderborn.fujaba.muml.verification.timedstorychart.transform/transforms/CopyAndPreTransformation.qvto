@@ -183,10 +183,10 @@ helper Variable::createDefaultInitializeExpression() : Expression{
 		var primDataType : PrimitiveDataType := self.dataType.oclAsType(PrimitiveDataType);
 		
 		-- distinguish the different primitive types
-		if(primDataType.primitiveType = PrimitiveTypes::BYTE or
-		   primDataType.primitiveType = PrimitiveTypes::SHORT or
-		   primDataType.primitiveType = PrimitiveTypes::INT or
-		   primDataType.primitiveType = PrimitiveTypes::LONG) then{
+		if(primDataType.primitiveType = PrimitiveTypes::INT8 or
+		   primDataType.primitiveType = PrimitiveTypes::INT16 or
+		   primDataType.primitiveType = PrimitiveTypes::INT32 or
+		   primDataType.primitiveType = PrimitiveTypes::INT64) then{
 			return object LiteralExpression {
 				value := '0';
 			};
@@ -482,7 +482,12 @@ when{self.oclIsTypeOf(TypedNamedElementExpression)}{
 	else {
 		typedNamedElement := self.typedNamedElement . late resolveoneIn(Parameter::copyParameter,Parameter);
 	}endif;
-	indices += self.indices -> map copyExpression();
+	elementAccessors += self.elementAccessors -> map copyAccessorExpression();
+}
+
+mapping ElementAccessorExpression::copyAccessorExpression() : ArrayIndexExpression
+when {self.oclIsTypeOf(ArrayIndexExpression)}{
+	index := self.oclAsType(ArrayIndexExpression).index . map copyExpression();
 }
 
 mapping ActivityCallExpression::copyActivityCallExpression() : ActivityCallExpression 
