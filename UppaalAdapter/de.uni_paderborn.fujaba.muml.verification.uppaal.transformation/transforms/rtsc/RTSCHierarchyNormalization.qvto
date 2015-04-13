@@ -1060,10 +1060,10 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 		
 		return switch {
 			case (self = PrimitiveTypes::BOOLEAN) 'false';
-			case (self = PrimitiveTypes::BYTE) '';
-			case (self = PrimitiveTypes::SHORT) '0';
-			case (self = PrimitiveTypes::INT) '0';
-			case (self = PrimitiveTypes::LONG) '0L';
+			case (self = PrimitiveTypes::INT8) '';
+			case (self = PrimitiveTypes::INT16) '0';
+			case (self = PrimitiveTypes::INT32) '0';
+			case (self = PrimitiveTypes::INT64) '0L';
 			case (self = PrimitiveTypes::DOUBLE) '0.0d';
 			else assert fatal (false) with log("Illegal enum value");
 		}
@@ -1379,18 +1379,18 @@ transformation RTSCHierarchyNormalization(in input:rtsc, out output:rtsc);
 
 	helper getPrimitiveDataTypeInt(): PrimitiveDataType{
 	//search in input and return mapped type if type exists in input
-		var inputInt := input.objects()[PrimitiveDataType]->select(dT | dT.primitiveType = PrimitiveTypes::INT);
+		var inputInt := input.objects()[PrimitiveDataType]->select(dT | dT.primitiveType = PrimitiveTypes::INT32);
 		if(inputInt->size() > 0)
 			return inputInt->any(true).map PrimitiveDataType2PrimitiveDataType();
 	//search in output, because type could be explicitly created (see below)
-		var outputInt := output.objects()[PrimitiveDataType]->select(dT | dT.primitiveType = PrimitiveTypes::INT);
+		var outputInt := output.objects()[PrimitiveDataType]->select(dT | dT.primitiveType = PrimitiveTypes::INT32);
 		if(outputInt->size() > 0)
 			return outputInt->any(true);
 	
 	//no int type found so create one
 		var newInt := object PrimitiveDataType{
 			name := "INT";
-			primitiveType := PrimitiveTypes::INT
+			primitiveType := PrimitiveTypes::INT32
 		};
 		
 	//search types category

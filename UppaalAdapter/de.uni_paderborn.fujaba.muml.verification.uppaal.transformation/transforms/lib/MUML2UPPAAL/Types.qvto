@@ -82,11 +82,11 @@ modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 			
 			-- Long values are not supported due to missing Uppaal support
 			result := switch {
-				case (self.primitiveType = PrimitiveTypes::INT) MUMLINT;
+				case (self.primitiveType = PrimitiveTypes::INT32) MUMLINT;
 				case (self.primitiveType = PrimitiveTypes::VOID) VOID;
 				case (self.primitiveType = PrimitiveTypes::BOOLEAN) BOOL;
-				case (self.primitiveType = PrimitiveTypes::SHORT) MUMLSHORT;
-				case (self.primitiveType = PrimitiveTypes::BYTE) MUMLBYTE;
+				case (self.primitiveType = PrimitiveTypes::INT16) MUMLSHORT;
+				case (self.primitiveType = PrimitiveTypes::INT8) MUMLBYTE;
 				else assert fatal (false) with log("Illegal enum value");
 			}
 			

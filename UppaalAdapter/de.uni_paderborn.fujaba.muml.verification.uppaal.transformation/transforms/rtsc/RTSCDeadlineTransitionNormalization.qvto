@@ -112,10 +112,10 @@ query PrimitiveTypes :: getDefaultValue() : String {
 	
 	return switch {
 		case (self = PrimitiveTypes::BOOLEAN) 'false';
-		case (self = PrimitiveTypes::BYTE) ''; // FIXME
-		case (self = PrimitiveTypes::SHORT) '0';
-		case (self = PrimitiveTypes::INT) '0';
-		case (self = PrimitiveTypes::LONG) '0L';
+		case (self = PrimitiveTypes::INT8) ''; // FIXME
+		case (self = PrimitiveTypes::INT16) '0';
+		case (self = PrimitiveTypes::INT32) '0';
+		case (self = PrimitiveTypes::INT64) '0L';
 		case (self = PrimitiveTypes::DOUBLE) '0.0d';
 		else assert fatal (false) with log("Illegal enum value");
 	}
