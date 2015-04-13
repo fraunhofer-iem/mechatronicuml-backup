@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    <!--Set a providers for the parserfactory and for the editpartfactory in order to induce your own editparts/parsers. The priority needs to be hicher than "Lowest" -->
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+    
+ <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.providers.CustomPatternEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+
+  <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.layout.CoordinationProtocolLayoutProvider">
+            <Priority name="Highest"/>
+       </layoutProvider>
+   </extension>
+
+<!-- Here bind the EditHelperAdivices-->
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.pattern.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.RoleAdvice"/>
+         <advice
+               ref="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.CoordinationProtocolAdviceBinding">
+         </advice>
+      </binding>
+   </extension>
+   
+   
+     <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/pattern/0.3.18">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.RoleAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.Role_3002"
+		  class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+        <adviceBinding
+              class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.helpers.CoordinationProtocolEditHelperAdvice"
+              id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.CoordinationProtocolAdviceBinding"
+              inheritance="all"
+              typeId="de.uni_paderborn.fujaba.muml.pattern.diagram.CoordinationPattern_2001">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+
+<!-- Explaination -->
+  <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
+		<contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+   			checkPluginLoaded="false">
+			<Priority name="Low"/>
+			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart"/>
+				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+			</popupContribution>
+		</contributionItemProvider>
+   </extension>
+   
+   
+   <!-- Set a menu item (command) by adding a menuContribution to extension point "org.eclipse.ui.menus" and define the menu item (command) with a handler that defines
+   the behavior of the menu item when clicked by adding a command to extension point "org.eclipse.ui.commands"  -->
+   
+      <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <separator
+               name="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.createRoleRTSCCommand"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.pattern.diagram.custom.createRoleRTSC"
+               label="Create Role RTSC (incl. Diagram)"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+          <separator
+               name="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.separator1"
+               visible="true">
+         </separator>         
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.VerifyPattern"
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.createPatternToProtocolWizard.menuentry"
+               label="Verify Pattern"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command> 
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.VerifyPatternWithResult"
+               id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.createPatternToProtocolWizard.menuentry"
+               label="Verify Pattern with result"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.CoordinationPattern2EditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>         
+      </menuContribution>    
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.handlers.CreateRoleRTSCHandler"
+            description="Create the Role&apos;s RTSC and it&apos;s Diagram"
+            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.createRoleRTSCCommand"
+            name="Create Role RTSC">
+      </command>
+       <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.handlers.PatternVerificationHandler"
+            description="Transforms a Pattern to a Protocol"
+            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.VerifyPattern"
+            name="pattern verification">
+      </command>
+        <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.handlers.PatternVerificationWithResultHandler"
+            description="Transforms a Pattern to a Protocol"
+            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.VerifyPatternWithResult"
+            name="pattern verification with result">
+      </command>
+   </extension>
+   <!-- optionally, specify keybindings -->
+   
+   <!-- Define the export wizards for pattern to protocol transformation and vice versa -->
+   
+     <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="de.uni_paderborn.fujaba.export"
+            name="MechatronicUML">
+      </category>
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
+            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizard"
+            name="Pattern To Protocol Transformation Wizard">
+      </wizard>
+   </extension>  
+</plugin>

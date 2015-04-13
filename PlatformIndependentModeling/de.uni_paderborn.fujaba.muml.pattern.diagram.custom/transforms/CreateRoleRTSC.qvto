@@ -1,0 +1,100 @@
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+transformation CreateRoleRTSC(inout input : ModelInstancePackage);
+
+	
+
+main() {
+
+	-- parse input parameters
+	var theRole : Role := input.rootObjects()[Role] -> any(true);
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+
+	-- create the Role Behavior
+	createRoleBehavior(theRole, theRootNode);
+}
+
+
+
+helper createRoleBehavior(inout theRole : Role, inout theRootNode : RootNode){
+		//assert fatal (theRole.behavior = null) with log ("A Behavior is already specified");
+		var rootStateChart : RealtimeStatechart := new RealtimeStatechart(theRole.name);
+		var mainState : State := new State(true, false,theRole.name+"_Main");
+		rootStateChart.states+=mainState;
+		
+		theRole.behavior:=rootStateChart;
+		
+		//create the multiRole behavior
+		if(not (theRole.cardinality.oclIsUndefined()) and theRole.cardinality.upperBound.infinity or theRole.cardinality.upperBound.value>1) then {
+		
+		//create the Adaption Region
+		var adaptionRegion :Region:=new Region();
+		var adaptionStateStatchart:RealtimeStatechart :=  new RealtimeStatechart(theRole.name+"_Adaption");
+		adaptionStateStatchart.states+=new State(true, false,"init_Adaption");
+		adaptionRegion.embeddedStatechart :=adaptionStateStatchart;
+		adaptionRegion.priority:=2;
+		mainState.embeddedRegions+=adaptionRegion;
+		
+		//create the SubRole Region
+		var subroleRegion :Region:=new Region();
+		var subroleStateStatchart:RealtimeStatechart :=  new RealtimeStatechart(theRole.name+"_Subrole");
+		subroleStateStatchart.states+=new State(true, false,"init_Subrole");
+		subroleRegion.embeddedStatechart :=subroleStateStatchart;
+		subroleRegion.priority:=1;
+		mainState.embeddedRegions+=subroleRegion;
+		
+		theRole.adaptationBehavior:=adaptionStateStatchart;
+		theRole.subroleBehavior:=subroleStateStatchart;
+		
+		
+		}endif;
+	
+		
+		storeRealtimeStatechart(rootStateChart,theRootNode);
+	
+}
+
+
+
+-- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
+helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode){
+	
+		var category : ModelElementCategory := getRTSCCategory(theRootNode);
+		category.modelElements += rtsc;
+		return null;
+
+}
+
+
+
+-- return the RTSC category of the root node
+query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+}
+
+-- constructor for creating new regions
+constructor Region::Region() {
+	
+}
+
+constructor RealtimeStatechart::RealtimeStatechart(_name : String) {
+	name := _name;
+}
+
+constructor State::State(_initial : Boolean, _final : Boolean, _name:String) {
+	initial := _initial;
+	final := _final;
+	name:=_name;
+}
+
+

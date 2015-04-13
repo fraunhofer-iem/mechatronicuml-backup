@@ -1,0 +1,149 @@
+import PatternProtocolTransformationLibrary;
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+
+// @author sthiele2
+transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
+property bindings : Set(ParameterBinding);
+
+main()
+{ 
+	// get the input parameters. There is exactly one root and exactly one coordination pattern	
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	bindings := input.rootObjects()[ParameterBinding];
+	
+	// check whether the input is correct: 
+	assert fatal (thePattern != null) with log ("CoordinationPattern is null!" + thePattern.name);
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
+    assert fatal (bindings != null and bindings->size() = thePattern.patternParameters->size()) with log ("Parameter Bindings are null!");
+    
+    // start transformation
+	createProtocol(thePattern, theRootNode);
+}
+helper createProtocol(pattern : CoordinationPattern, root : RootNode)
+{
+	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
+	var protocolCategory : ModelElementCategory := getProtocolCategory();
+	protocolCategory.modelElements +=newProtocol;
+}
+mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
+{
+	init{
+		result.name := self.name;
+		result.comment := self.comment;
+		result.annotation := self.annotation.map EAnnotation2EAnnotation();		
+		var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory();
+		result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+		result.roleConnector.coordinationProtocol := result;
+		result.adaptedFromPattern := self;
+		self.roles->forEach(role)
+		{
+			// the role was already mapped in RoleConnector2RoleConnector
+			var newRole := role.resolveone(Role);
+			//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+			//set behavorial element?? --> should be already considered when setting behavior of the role!
+			newRole.coordinationProtocol := result;
+			statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+			result.roles+= newRole;
+		};
+	}
+} 
+
+
+mapping muml::behavior::Parameter:: Parameter2Variable(rtsc : RealtimeStatechart) : muml::behavior::Variable
+{
+	_constant := true;
+	_name := self.name;
+	_dataType:= self.dataType;
+	_comment := self.comment;
+}
+
+mapping core::expressions::Expression :: Expression2Expression() : core::expressions::Expression disjuncts core::expressions::common::LiteralExpression::LiteralExpression2LiteralExpression, actionlanguage::TypedNamedElementExpression::TypedNamedElementExpression2Expression, actionlanguage::LocalVariableDeclarationStatement::LocalVariableDeclarationStatement2LocalVariableDeclarationStatement, actionlanguage::IfStatement::IfStatement2IfStatement, actionlanguage::ReturnStatement::ReturnStatement2ReturnStatement, actionlanguage::Assignment::Assignment2Assignment, core::expressions::TextualExpression::TextualExpression2TextualExpression, actionlanguage::NondeterministicChoiceExpression::NondeterministicChoiceExpression2NondeterministicChoiceExpression, actionlanguage::PositionSelector::PositionSelector2PositionSelector, actionlanguage::ArrayInitializeExpression::ArrayInitializeExpression2ArrayInitializeExpression, actionlanguage::DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference2DiscreteInteractionEndpointReference, actionlanguage::TriggerMessageExpression::TriggerMessageExpression2TriggerMessageExpression, actionlanguage::Block::Block2Block, core::expressions::common::BinaryExpression::BinaryExpression2BinaryExpression, core::expressions::common::UnaryExpression::UnaryExpression2UnaryExpression, actionlanguage::OperationCall::OperationCall2OperationCall, actionLanguage::TimeValueExpression ::TimeValueExpression2TimeValueExpression;
+ 
+mapping  actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() : core::expressions::Expression
+{
+	init{
+		if(self.typedNamedElement.oclIsKindOf(Parameter)){
+			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
+			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);
+			var myExp : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (myExp != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			if(rtsc = null or rtsc.oclIsInvalid()){
+				// in case the rtsc is invalid means that the TypedNamedElementExpression referencing the Parameter is not contained in a rtsc but in a ConnectorQualityOfServiceAssumptions
+				// therefore, just replace the TypedNamedElementExpression by the bounded expression defined in the ParameterBinding
+				result:= myExp.map Expression2Expression();
+			}
+			else
+				result := self.map TypedNamedElementExpression2TypedNamedElementExpression();						
+		}
+		else
+			result := self.map TypedNamedElementExpression2TypedNamedElementExpression();
+	}
+}
+mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() : actionlanguage::TypedNamedElementExpression
+{
+	init{
+		result.annotation := self.annotation.map EAnnotation2EAnnotation();
+		result.comment := self.comment;
+		result.extension := self.extension.map Extension2Extension();
+		if(self.typedNamedElement.oclIsKindOf(Parameter)){
+			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
+			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);			
+			var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+			assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+			var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
+			var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
+			if(not mappedrtsc.variables->includes(mappedVariable)){
+				mappedrtsc.variables+=mappedVariable;
+				mappedVariable.initializeExpression := boundedExpression.map Expression2Expression();
+			};
+			result.typedNamedElement := mappedVariable;
+		}
+		else
+			result.typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement();
+	}			
+}
+
+
+query getHighestParentStatechart(in expr : TypedNamedElementExpression) : RealtimeStatechart
+{
+	var root : EObject := expr;
+	while(root.oclIsTypeOf(core::expressions::Expression))
+	{
+		root := root.eContainer();		
+	};
+	if(root.eContainer().oclIsKindOf(ConnectorQualityOfServiceAssumptions))
+	{
+		return null;
+	}endif;
+	
+	while(not root.oclIsTypeOf(RealtimeStatechart))
+	{
+		root:=root.eContainer();		
+		assert fatal (not root.oclIsInvalid()) with log ("The parameter "+ expr.typedNamedElement.name + " is not contained in a RealtimeStatechart or a ConnectorQualityOfServiceAssumptions!");
+	};
+	return root.oclAsType(RealtimeStatechart).getHighestParentStatechart();	
+}
+	
+	
+query getBoundExpressionToGivenParameter(in parameter : Parameter) : core::expressions::Expression {	
+	if (bindings->one(p : ParameterBinding | p.parameter=parameter))
+	{
+		log ("parameter binding found for parameter: "+ parameter.name);
+		return bindings->any(p : ParameterBinding | p.parameter=parameter).value;
+	} endif;
+	return null;
+}		

@@ -1,0 +1,77 @@
+library PatternProtocolTransformationLibrary;
+import MUML2MUML;
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+
+property theRootNode : RootNode;
+query getRealtimeStatechartCategory() : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+}
+query getProtocolCategory() : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
+}
+query getPatternCategory() : ModelElementCategory {
+	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
+}
+
+
+
+mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::protocol::RoleConnector{
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint(); // --> maybe this has to be deleted
+    //	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
+    	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
+   		 }
+
+
+
+mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
+    	_operations := self._operations.map Operation2Operation();
+    	_variables := self._variables.map Variable2Variable();
+    	_parentRegion := self._parentRegion.map Region2Region();
+    	_transitions := self._transitions.map Transition2Transition();
+    	_states := self._states.map State2State();
+    	_clocks := self._clocks.map Clock2Clock();
+   		 }
+	
+
+
+mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	connectors += self.connectors.map Connector2Connector();     				
+    	_behavior := self._behavior.map Behavior2Behavior();
+    	self._senderMessageTypes->forEach(messagetype){
+    		_senderMessageTypes += messagetype;
+    	};
+    	self._receiverMessageTypes->forEach(messagetype){
+    		_receiverMessageTypes+=messagetype;
+    	};
+    	_adaptationBehavior := self._adaptationBehavior.map Behavior2Behavior();
+    	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
+    	_cardinality := self._cardinality.map Cardinality2Cardinality();
+    	_receiverMessageBuffer := self._receiverMessageBuffer.map MessageBuffer2MessageBuffer();
+    	//_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
+   		 }
+

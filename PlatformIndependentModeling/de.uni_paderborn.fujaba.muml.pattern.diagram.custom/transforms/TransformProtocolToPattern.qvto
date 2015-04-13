@@ -1,0 +1,96 @@
+
+import PatternProtocolTransformationLibrary;
+
+
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype RTSCPackage uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype TypesPackage uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+
+// @author sthiele2
+transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
+
+property variablesToParameter : Set(Variable);
+property theProtocol : CoordinationProtocol;
+
+main()
+{ 
+	// fetch input
+	theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	variablesToParameter := input.rootObjects()[Variable];
+	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
+	
+	// check input
+	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!" + theProtocol.name);
+	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
+    assert fatal (variablesToParameter != null) with log ("variablesToParameter are null!");
+	
+	// start transformation
+	createPatternFromProtocol();
+}
+
+helper createPatternFromProtocol()
+{
+	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
+	var patternCategory : ModelElementCategory := getPatternCategory();	
+	patternCategory.modelElements +=newPattern;
+}
+
+mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
+{
+	init{
+		result._name := self.name;
+		result._comment := self.comment;
+		result._annotation := self.annotation.map EAnnotation2EAnnotation();	
+		var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory();
+		result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+		result.roleConnector.coordinationProtocol := result;
+		self.roles->forEach(role)
+		{
+			// the role was already mapped in RoleConnector2RoleConnector
+			var newRole := role.resolveone(Role);
+			//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+			//set behavorial element?? --> should be already considered when setting behavior of the role!
+			newRole.coordinationProtocol := result;
+			statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+			result.roles+= newRole;
+		};
+		variablesToParameter-> forEach(variable){
+			result.patternParameters+= variable.resolveone(Parameter);
+		}
+	}
+}
+
+mapping Variable::Variable2Parameter(): Parameter
+{
+		_name := self._name;
+		_comment := self._comment;
+		_dataType := self.dataType;
+}
+
+mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() :actionlanguage::TypedNamedElementExpression {    
+	init{
+	    	result.annotation := self._annotation.map EAnnotation2EAnnotation();
+	    	result.extension := self._extension.map Extension2Extension();
+	    	result.comment := self._comment;
+	    	if(self._typedNamedElement.oclIsTypeOf(Variable) and  variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
+	    	{    		
+	    		var parameter : Parameter := self._typedNamedElement.oclAsType(Variable).map Variable2Parameter();
+	    		result.typedNamedElement := parameter;	    		
+	    	}
+	   		else 
+	   		{   		 	
+	    		result.typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
+	   		}
+   		 }
+}
