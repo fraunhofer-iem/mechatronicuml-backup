@@ -15,7 +15,7 @@
     <path id="de.uni_paderborn.fujaba.muml.codegen.c.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c/bin"/>
         <pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.codegen.c.beautifier/bin"/>
-    	<pathelement location="${ECLIPSE_WORKSPACE}/sdm/org.storydriven.core/target/classes"/>
+    	<pathelement location="${ECLIPSE_WORKSPACE}/org.storydriven.core/target/classes"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.hardware/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.psm/bin"/>
