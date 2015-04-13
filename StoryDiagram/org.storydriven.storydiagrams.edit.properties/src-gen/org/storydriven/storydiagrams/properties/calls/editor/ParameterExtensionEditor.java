@@ -5,7 +5,7 @@ package org.storydriven.storydiagrams.properties.calls.editor;
  */
 public class ParameterExtensionEditor
 		extends
-			org.storydriven.storydiagrams.properties.storydiagrams.editor.VariableEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,12 @@ public class ParameterExtensionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
+		}
 	}
 
 	//
@@ -55,9 +59,8 @@ public class ParameterExtensionEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.extensions",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
+					tab);
 		}
 	}
 

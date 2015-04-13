@@ -5,7 +5,6 @@
     <customTransformations xmi:id="_Rnt80M1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="storydiagrams.uml.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_Rnuj4M1gEeSIgPDefa6ZBw" id="org.storydriven.storydiagrams.edit.properties" name="Storydiagrams Tabbed Properties" vendor="" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -21,379 +20,348 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
   <packages xmi:id="_RnvK8M1gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.uml.genmodel#//storydiagrams"/>
-    <classes xmi:id="_RnvK8c1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/Variable"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGoecwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
   <packages xmi:id="_RnvK8s1gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/activities"/>
-    <classes xmi:id="_RnvyAM1gEeSIgPDefa6ZBw" superClasses="_RnvK8c1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.0/@classes.0">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnvyAc1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/name"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_RnwZEM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnwZEc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/exceptionType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn0DcM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn0Dcc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ExceptionVariable/genericExceptionType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn0Dcs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn0Dc81gEeSIgPDefa6ZBw" title="Lists" properties="_RnwZEc1gEeSIgPDefa6ZBw _Rn0Dcc1gEeSIgPDefa6ZBw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.1/@classes.0/@orderedElements.1 //@packages.1/@classes.0/@orderedElements.2"/>
     </classes>
-    <classes xmi:id="_Rn0DdM1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn0Ddc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/target"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn0qgM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn0qgc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/source"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn0qgs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn0qg81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/guard"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rn0qhM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn0qhc1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
-        <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityEdge/guardExpression"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn0qiM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode/outgoing"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn0qic1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn1RkM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityNode/incoming"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn1Rkc1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn1Rks1gEeSIgPDefa6ZBw" title="Lists" properties="_Rn0qiM1gEeSIgPDefa6ZBw _Rn1RkM1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.1/@classes.2/@orderedElements.0 //@packages.1/@classes.2/@orderedElements.1"/>
     </classes>
-    <classes xmi:id="_Rn1Rk81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.2/@classes.4">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn1RlM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/precondition"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn1Rlc1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="#_Rn90cc1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rn3GwM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.2/@classes.4">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/OperationExtension"/>
-      <superClasses href="#_Rn90cc1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rn3t0M1gEeSIgPDefa6ZBw" superClasses="_Rn6KEM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.6">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/MatchingStoryNode"/>
     </classes>
-    <classes xmi:id="_Rn6KEM1gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StoryNode"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn6KEc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/StoryNode/forEach"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rn6KEs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn6KE81gEeSIgPDefa6ZBw" title="Booleans" properties="_Rn6KEc1gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes xmi:id="_Rn6KFM1gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StructuredNode"/>
     </classes>
-    <classes xmi:id="_Rn6xIM1gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/JunctionNode"/>
     </classes>
-    <classes xmi:id="_Rn6xIc1gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/InitialNode"/>
     </classes>
-    <classes xmi:id="_Rn6xIs1gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/StatementNode"/>
     </classes>
-    <classes xmi:id="_Rn6xI81gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn6xJM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityFinalNode/success"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rn6xJc1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn6xJs1gEeSIgPDefa6ZBw" title="Booleans" properties="_Rn6xJM1gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes xmi:id="_Rn6xJ81gEeSIgPDefa6ZBw" superClasses="_Rn0qh81gEeSIgPDefa6ZBw _Rn7YNM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.2 //@packages.2/@classes.0">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityCallNode"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn6xKM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/activities/ActivityCallNode/calledActivity"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn6xKc1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn7YMM1gEeSIgPDefa6ZBw" title="Lists" properties="_Rn6xKM1gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes xmi:id="_Rn7YMc1gEeSIgPDefa6ZBw" superClasses="_Rn6KEM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.6">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/ModifyingStoryNode"/>
     </classes>
-    <classes xmi:id="_Rn7YMs1gEeSIgPDefa6ZBw" superClasses="_Rn6xI81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.1/@classes.11">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/activities/FlowFinalNode"/>
     </classes>
   </packages>
   <packages xmi:id="_Rn7YM81gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/calls"/>
-    <classes xmi:id="_Rn7YNM1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Invocation"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn7YNc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Invocation/callee"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn7YNs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rn7YN81gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterBinding"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn7YOM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterBinding/parameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn8mUM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rn9NYM1gEeSIgPDefa6ZBw" superClasses="_Rn90cc1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.2/@classes.4">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/OpaqueCallable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn9NYc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/OpaqueCallable/name"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_Rn9NYs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_Rn90cM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.0/@classes.0">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/ParameterExtension"/>
-      <superClasses href="#_RnvK8c1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rn90cc1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn90cs1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable/inParameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn90c81gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn90dM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/calls/Callable/outParameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn90dc1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn-bgM1gEeSIgPDefa6ZBw" title="Lists" properties="_Rn90cs1gEeSIgPDefa6ZBw _Rn90dM1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.2/@classes.4/@orderedElements.0 //@packages.2/@classes.4/@orderedElements.1"/>
     </classes>
   </packages>
   <packages xmi:id="_Rn-bgc1gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/patterns"/>
-    <classes xmi:id="_Rn-bgs1gEeSIgPDefa6ZBw" superClasses="_Rn_Cks1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.1">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn-bg81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/outgoingLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn-bhM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn-bhc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rn-bhs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn-bh81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/bindingOperator"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rn-biM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn-bic1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/ObjectVariable/classifier"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn_CkM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn_Ckc1gEeSIgPDefa6ZBw" title="Lists" properties="_Rn-bg81gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes xmi:id="_Rn_Cks1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.0/@classes.0">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn_Ck81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable/bindingState"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rn_ClM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn_Clc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractVariable/incomingLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rn_Cls1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rn_Cl81gEeSIgPDefa6ZBw" title="Lists" properties="_Rn_Clc1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
-      <superClasses href="#_RnvK8c1gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes xmi:id="_Rn_CmM1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/Constraint"/>
     </classes>
-    <classes xmi:id="_Rn_poM1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn_poc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rn_pos1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn_po81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/bindingOperator"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_Rn_ppM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rn_ppc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/source"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rn_pps1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoCs8M1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/secondLinkConstraint"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RoCs8c1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoCs8s1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/firstLinkConstraint"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RoDUAM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoDUAc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AbstractLinkVariable/target"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoDUAs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RoDUA81gEeSIgPDefa6ZBw" title="Lists" properties="_RoCs8M1gEeSIgPDefa6ZBw _RoCs8s1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Lists" properties="//@packages.3/@classes.3/@orderedElements.3 //@packages.3/@classes.3/@orderedElements.4"/>
     </classes>
-    <classes xmi:id="_RoDUBM1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoDUBc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/index"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" xmi:id="_RoDUBs1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoDUB81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/constraintType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RoDUCM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoDUCc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/negative"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RoD7EM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoD7Ec1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/firstLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoFwQM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoFwQc1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkConstraint/secondLink"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoGXUM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RoGXUc1gEeSIgPDefa6ZBw" title="Booleans" properties="_RoDUCc1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_RoGXUs1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AttributeAssignment"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoGXU81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/AttributeAssignment/attribute"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoGXVM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_RoGXVc1gEeSIgPDefa6ZBw" superClasses="_Rn-bgs1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.0">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoGXVs1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable/atLeastOne"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RoGXV81gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoGXWM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/CollectionVariable/unique"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RoG-YM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RoG-Yc1gEeSIgPDefa6ZBw" title="Booleans" properties="_RoGXVs1gEeSIgPDefa6ZBw _RoGXWM1gEeSIgPDefa6ZBw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Booleans" properties="//@packages.3/@classes.6/@orderedElements.0 //@packages.3/@classes.6/@orderedElements.1"/>
     </classes>
-    <classes xmi:id="_RoG-Ys1gEeSIgPDefa6ZBw" superClasses="_Rn_Cks1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.1">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/PrimitiveVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoG-Y81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/PrimitiveVariable/classifier"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoG-ZM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_RoG-Zc1gEeSIgPDefa6ZBw" superClasses="_Rn_poM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.3">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/Path"/>
     </classes>
-    <classes xmi:id="_RoG-Zs1gEeSIgPDefa6ZBw" superClasses="_Rn_poM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.3">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkVariable"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoG-Z81gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/LinkVariable/targetEnd"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoG-aM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_RoHlcM1gEeSIgPDefa6ZBw" superClasses="_Rn_poM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.3">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/InclusionLink"/>
     </classes>
-    <classes xmi:id="_RoHlcc1gEeSIgPDefa6ZBw" superClasses="_RoHlc81gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.13">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/MatchingPattern"/>
     </classes>
-    <classes xmi:id="_RoHlcs1gEeSIgPDefa6ZBw" superClasses="_Rn_poM1gEeSIgPDefa6ZBw">
+    <classes superClasses="//@packages.3/@classes.3">
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/MaybeLink"/>
     </classes>
-    <classes xmi:id="_RoHlc81gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/patterns/StoryPattern"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoHldM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/patterns/StoryPattern/bindingSemantics"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RoHldc1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
   <packages xmi:id="_RoHlds1gEeSIgPDefa6ZBw">
     <genPackage href="storydiagrams.uml.genmodel#//storydiagrams/templates"/>
-    <classes xmi:id="_RoHld81gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateBinding"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoHleM1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateBinding/boundParameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoKowM1gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_RoKowc1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/PropertyBinding"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RoKows1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="storydiagrams.uml.genmodel#//storydiagrams/templates/PropertyBinding/boundProperty"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RoKow81gEeSIgPDefa6ZBw"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_RoKoxM1gEeSIgPDefa6ZBw">
+    <classes>
       <genClass href="storydiagrams.uml.genmodel#//storydiagrams/templates/TemplateSignature"/>
     </classes>
   </packages>

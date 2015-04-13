@@ -5,7 +5,7 @@ package org.storydriven.storydiagrams.properties.patterns.editor;
  */
 public class PrimitiveVariableEditor
 		extends
-			org.storydriven.storydiagrams.properties.patterns.editor.AbstractVariableEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,36 +21,63 @@ public class PrimitiveVariableEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClassifier_GeneralTab_Editor(null, true);
+			addPropertyEditor(createEditorBindingState_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorIncomingLink_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorClassifier_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addClassifier_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createClassifier_GeneralTab_Editor(),
-				front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorClassifier_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorClassifier_GeneralTab_Editor() {
+		if (this.editorClassifier_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.patterns.PatternsPackage.eINSTANCE
+					.getPrimitiveVariable_Classifier();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The type of the primitive variable which must be an EDataType.");
+
+			this.editorClassifier_GeneralTab = editor;
+		}
+		return this.editorClassifier_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClassifier_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.patterns.PatternsPackage.eINSTANCE
-				.getPrimitiveVariable_Classifier();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBindingState_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBindingState_GeneralTab_Editor() {
+		if (this.editorBindingState_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.patterns.PatternsPackage.eINSTANCE
+					.getAbstractVariable_BindingState();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("The type of the primitive variable which must be an EDataType.");
+			editor.setTooltipMessage("The binding state defines whether the variable is already bound or whether a match has to be obtained for it. The default value is \"unbound\".");
 
-		return editor;
+			this.editorBindingState_GeneralTab = editor;
+		}
+		return this.editorBindingState_GeneralTab;
+	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingLink_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIncomingLink_GeneralTab_Editor() {
+		if (this.editorIncomingLink_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.patterns.PatternsPackage.eINSTANCE
+					.getAbstractVariable_IncomingLink();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorIncomingLink_GeneralTab = editor;
+		}
+		return this.editorIncomingLink_GeneralTab;
 	}
 
 	//
@@ -85,8 +112,7 @@ public class PrimitiveVariableEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
+							"property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}
 	}

@@ -5,7 +5,7 @@ package org.storydriven.storydiagrams.properties.storydiagrams.editor;
  */
 public abstract class VariableEditor
 		extends
-			org.storydriven.core.properties.core.editor.TypedElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,12 @@ public abstract class VariableEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
+		}
 	}
 
 }

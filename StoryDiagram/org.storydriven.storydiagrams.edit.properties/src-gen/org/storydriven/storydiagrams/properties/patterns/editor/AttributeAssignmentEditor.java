@@ -21,35 +21,29 @@ public class AttributeAssignmentEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAttribute_GeneralTab_Editor(null, true);
+			addPropertyEditor(createEditorAttribute_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addAttribute_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createAttribute_GeneralTab_Editor(),
-				front);
-	}
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAttribute_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAttribute_GeneralTab_Editor() {
+		if (this.editorAttribute_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.patterns.PatternsPackage.eINSTANCE
+					.getAttributeAssignment_Attribute();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAttribute_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.patterns.PatternsPackage.eINSTANCE
-				.getAttributeAssignment_Attribute();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
+			editor.setTooltipMessage("The attribute whose value is set. It has to be an attribute of the objectVariable that contains the AttributeAssignment.");
 
-		editor.setTooltipMessage("The attribute whose value is set. It has to be an attribute of the objectVariable that contains the AttributeAssignment.");
-
-		return editor;
-
+			this.editorAttribute_GeneralTab = editor;
+		}
+		return this.editorAttribute_GeneralTab;
 	}
 
 	//
