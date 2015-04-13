@@ -79,10 +79,14 @@ String incDecOp (IncrementDecrementOperator op):
 String dataType(PrimitiveDataType type):
 	switch (type.primitiveType) {
 		case PrimitiveTypes::BOOLEAN : ''
-		case PrimitiveTypes::BYTE : 'int8('
-		case PrimitiveTypes::SHORT : 'int16('
-		case PrimitiveTypes::INT : 'int32('
-		case PrimitiveTypes::LONG : 'int32('
+		case PrimitiveTypes::INT8 : 'int8('
+		case PrimitiveTypes::UINT8 : 'uint8('
+		case PrimitiveTypes::INT16 : 'int16('
+		case PrimitiveTypes::UINT16 : 'uint16('
+		case PrimitiveTypes::INT32 : 'int32('
+		case PrimitiveTypes::UINT32 : 'uint32('
+		case PrimitiveTypes::INT64 : 'int32(' 		//32-bit MATLAB does not support 64-bit data types
+		case PrimitiveTypes::UINT64 : 'uint32('
 		case PrimitiveTypes::DOUBLE : 'double('
 		default: ""
 	}

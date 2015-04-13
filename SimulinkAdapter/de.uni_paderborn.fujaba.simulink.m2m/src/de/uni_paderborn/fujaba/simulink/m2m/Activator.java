@@ -1,4 +1,4 @@
-package fujaba2simulink;
+package de.uni_paderborn.fujaba.simulink.m2m;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
