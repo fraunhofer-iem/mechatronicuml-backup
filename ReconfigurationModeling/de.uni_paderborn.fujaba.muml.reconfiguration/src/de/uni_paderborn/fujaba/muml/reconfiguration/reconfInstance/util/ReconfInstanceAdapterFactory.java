@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
+import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ControllerInstance;
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ExecutorInstance;
 import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.InternalReconfigurationCommunicationPortInstance;

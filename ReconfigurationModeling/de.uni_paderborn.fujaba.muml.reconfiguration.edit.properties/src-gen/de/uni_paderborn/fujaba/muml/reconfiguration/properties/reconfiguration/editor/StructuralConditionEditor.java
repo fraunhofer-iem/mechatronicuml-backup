@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.
  */
 public abstract class StructuralConditionEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,88 +21,31 @@ public abstract class StructuralConditionEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurableComponent_GeneralTab_Editor(null, true);
+			addPropertyEditor(
+					createEditorReconfigurableComponent_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParameters_GeneralTab_Editor(null, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurableComponent_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfigurableComponent_GeneralTab_Editor() {
+		if (this.editorReconfigurableComponent_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getStructuralCondition_ReconfigurableComponent();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorReconfigurableComponent_GeneralTab = editor;
 		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addName_GeneralTab_Editor(null, true);
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addReconfigurableComponent_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createReconfigurableComponent_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurableComponent_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getStructuralCondition_ReconfigurableComponent();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addParameters_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createParameters_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameters_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getStructuralCondition_Parameters();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("Input parameters provided to the structural condition.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addName_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createName_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createName_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-				.getNamedElement_Name();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory, feature, false);
-
-		editor.setTooltipMessage("The name attribute of a meta-model element.");
-
-		return editor;
-
+		return this.editorReconfigurableComponent_GeneralTab;
 	}
 
 }

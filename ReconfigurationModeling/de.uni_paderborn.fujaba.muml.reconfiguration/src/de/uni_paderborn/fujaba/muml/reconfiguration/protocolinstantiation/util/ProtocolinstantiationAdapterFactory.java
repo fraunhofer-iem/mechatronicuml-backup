@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPortSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.DiscoveryPortSpecification;

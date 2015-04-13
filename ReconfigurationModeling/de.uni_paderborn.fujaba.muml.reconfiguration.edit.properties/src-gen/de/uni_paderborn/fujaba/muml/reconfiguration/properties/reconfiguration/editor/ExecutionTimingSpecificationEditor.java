@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.
  */
 public abstract class ExecutionTimingSpecificationEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,14 @@ public abstract class ExecutionTimingSpecificationEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
+		}
 	}
 
 }

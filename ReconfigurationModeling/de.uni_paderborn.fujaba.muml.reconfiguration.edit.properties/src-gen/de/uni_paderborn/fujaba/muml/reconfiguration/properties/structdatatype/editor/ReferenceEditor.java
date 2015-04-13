@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.structdatatype.e
  */
 public class ReferenceEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,34 +21,31 @@ public class ReferenceEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addType_GeneralTab_Editor(null, true);
+			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addType_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createType_GeneralTab_Editor(), front);
-	}
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorType_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorType_GeneralTab_Editor() {
+		if (this.editorType_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE
+					.getReference_Type();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createType_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage.eINSTANCE
-				.getReference_Type();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
+			editor.setTooltipMessage("The data type of this reference. The data type needs to be another struct type\nor an element of the MechatronicUML model such as a component or port.");
 
-		editor.setTooltipMessage("The data type of this reference. The data type needs to be another struct type\nor an element of the MechatronicUML model such as a component or port.");
-
-		return editor;
-
+			this.editorType_GeneralTab = editor;
+		}
+		return this.editorType_GeneralTab;
 	}
 
 	//
@@ -82,9 +79,8 @@ public class ReferenceEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+					new java.lang.String[]{"property.tab.general"}).contains(
+					tab);
 		}
 	}
 

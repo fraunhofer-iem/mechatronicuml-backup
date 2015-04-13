@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.protocolinstanti
  */
 public class ProtocolInstantiationPortSpecificationEditor
 		extends
-			de.uni_paderborn.fujaba.muml.reconfiguration.properties.protocolinstantiation.editor.BroadcastPortSpecificationEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,14 @@ public class ProtocolInstantiationPortSpecificationEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
+		}
 	}
 
 	//
@@ -55,9 +61,8 @@ public class ProtocolInstantiationPortSpecificationEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
+					tab);
 		}
 	}
 

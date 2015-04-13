@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.e
  */
 public class ManagerInstanceEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,62 +21,45 @@ public class ManagerInstanceEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorManager_GeneralTab_Editor(), false);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addManager_GeneralTab_Editor(null, true);
+			addPropertyEditor(createEditorPortInstances_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortInstances_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorManager_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorManager_GeneralTab_Editor() {
+		if (this.editorManager_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
+					.getManagerInstance_Manager();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorManager_GeneralTab = editor;
 		}
-
+		return this.editorManager_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addManager_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createManager_GeneralTab_Editor(), front);
-	}
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPortInstances_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPortInstances_GeneralTab_Editor() {
+		if (this.editorPortInstances_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
+					.getManagerInstance_PortInstances();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createManager_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
-				.getManagerInstance_Manager();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addPortInstances_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPortInstances_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstances_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
-				.getManagerInstance_PortInstances();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
+			this.editorPortInstances_GeneralTab = editor;
+		}
+		return this.editorPortInstances_GeneralTab;
 	}
 
 	//
@@ -111,8 +94,7 @@ public class ManagerInstanceEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

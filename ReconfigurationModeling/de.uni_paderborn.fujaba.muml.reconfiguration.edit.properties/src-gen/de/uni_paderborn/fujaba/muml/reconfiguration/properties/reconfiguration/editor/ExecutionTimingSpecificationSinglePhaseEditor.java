@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.
  */
 public class ExecutionTimingSpecificationSinglePhaseEditor
 		extends
-			de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ExecutionTimingSpecificationEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,36 +21,14 @@ public class ExecutionTimingSpecificationSinglePhaseEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTimeForExecution_GeneralTab_Editor(null, false);
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addTimeForExecution_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createTimeForExecution_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForExecution_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getExecutionTimingSpecificationSinglePhase_TimeForExecution();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The time necessary for executing a reconfiguration.");
-
-		return editor;
-
 	}
 
 	//
@@ -83,9 +61,8 @@ public class ExecutionTimingSpecificationSinglePhaseEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
+					tab);
 		}
 	}
 

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.e
  */
 public abstract class ReconfigurationControllerInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor.ControllerInstanceEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,8 +21,14 @@ public abstract class ReconfigurationControllerInstanceEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
+		}
 	}
 
 }

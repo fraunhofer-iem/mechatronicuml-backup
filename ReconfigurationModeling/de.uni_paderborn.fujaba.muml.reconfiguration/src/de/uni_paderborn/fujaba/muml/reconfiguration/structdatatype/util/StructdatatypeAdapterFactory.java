@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.util;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;

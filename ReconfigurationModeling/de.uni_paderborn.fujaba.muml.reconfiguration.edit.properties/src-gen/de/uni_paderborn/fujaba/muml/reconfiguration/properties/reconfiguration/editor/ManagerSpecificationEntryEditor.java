@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.
  */
 public class ManagerSpecificationEntryEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,239 +21,156 @@ public class ManagerSpecificationEntryEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(),
+					false);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTreat_GeneralTab_Editor(
+			addPropertyEditor(
+					createEditorStructuralCondition_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorReconfigurationRule_GeneralTab_Editor(), false);
+
+			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
-		}
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPropagate_GeneralTab_Editor(
+			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
-		}
+					createEditorTreat_GeneralTab_Editor(), false);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageType_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStructuralCondition_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfigurationRule_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addInvokePlanner_GeneralTab_Editor(
+			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
-		}
+					createEditorPropagate_GeneralTab_Editor(), false);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBlockable_GeneralTab_Editor(
+			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
+					createEditorInvokePlanner_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createEditorBlockable_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else {
 		}
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTimeForPlanning_GeneralTab_Editor(null, false);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorTreat_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorTreat_GeneralTab_Editor() {
+		if (this.editorTreat_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_Treat();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("If true, then message of the type referenced by this entry will be treated.");
+
+			this.editorTreat_GeneralTab = editor;
 		}
-
+		return this.editorTreat_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addTreat_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createTreat_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorPropagate_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorPropagate_GeneralTab_Editor() {
+		if (this.editorPropagate_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_Propagate();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("If true, then message of the type referenced by this entry will be propagated.");
+
+			this.editorPropagate_GeneralTab = editor;
+		}
+		return this.editorPropagate_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTreat_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_Treat();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessageType_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessageType_GeneralTab_Editor() {
+		if (this.editorMessageType_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_MessageType();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("If true, then message of the type referenced by this entry will be treated.");
+			editor.setTooltipMessage("The message type which is processed by this entry. This message type either \nneeds to be offered by the executor to the parent or it must be sent by one of\nthe embedded components.");
 
-		return editor;
-
+			this.editorMessageType_GeneralTab = editor;
+		}
+		return this.editorMessageType_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addPropagate_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createPropagate_GeneralTab_Editor(),
-				front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorStructuralCondition_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorStructuralCondition_GeneralTab_Editor() {
+		if (this.editorStructuralCondition_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_StructuralCondition();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The structural condition is a condition on the embedded components and ports\nof the component that must evaluate to true for being able to execute the\nreconfiguration.");
+
+			this.editorStructuralCondition_GeneralTab = editor;
+		}
+		return this.editorStructuralCondition_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropagate_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_Propagate();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfigurationRule_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfigurationRule_GeneralTab_Editor() {
+		if (this.editorReconfigurationRule_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_ReconfigurationRule();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("If true, then message of the type referenced by this entry will be propagated.");
+			editor.setTooltipMessage("The reconfiguration rule that will be executed by the executor if this entry\nis treated and all conditions evaluate to true during run-time.");
 
-		return editor;
-
+			this.editorReconfigurationRule_GeneralTab = editor;
+		}
+		return this.editorReconfigurationRule_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addMessageType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createMessageType_GeneralTab_Editor(),
-				front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInvokePlanner_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInvokePlanner_GeneralTab_Editor() {
+		if (this.editorInvokePlanner_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_InvokePlanner();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("If true, then a planner will be invoke at run-time to determine whether it is \nuseful to execute the requested reconfiguration.");
+
+			this.editorInvokePlanner_GeneralTab = editor;
+		}
+		return this.editorInvokePlanner_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageType_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_MessageType();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlockable_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlockable_GeneralTab_Editor() {
+		if (this.editorBlockable_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getManagerSpecificationEntry_Blockable();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("The message type which is processed by this entry. This message type either \nneeds to be offered by the executor to the parent or it must be sent by one of\nthe embedded components.");
+			editor.setTooltipMessage("If true, then the component checks whether it is safe to execute the reconfiguration\nusing a run-time safety analysis.");
 
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addStructuralCondition_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createStructuralCondition_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuralCondition_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_StructuralCondition();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The structural condition is a condition on the embedded components and ports\nof the component that must evaluate to true for being able to execute the\nreconfiguration.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addReconfigurationRule_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createReconfigurationRule_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationRule_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_ReconfigurationRule();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The reconfiguration rule that will be executed by the executor if this entry\nis treated and all conditions evaluate to true during run-time.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addInvokePlanner_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createInvokePlanner_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInvokePlanner_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_InvokePlanner();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("If true, then a planner will be invoke at run-time to determine whether it is \nuseful to execute the requested reconfiguration.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addBlockable_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createBlockable_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBlockable_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_Blockable();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("If true, then the component checks whether it is safe to execute the reconfiguration\nusing a run-time safety analysis.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addTimeForPlanning_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createTimeForPlanning_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeForPlanning_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getManagerSpecificationEntry_TimeForPlanning();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("If a planner should be invoke, then the time for planning denotes the maximum\ntime that the planner may run before returning a result.");
-
-		return editor;
-
+			this.editorBlockable_GeneralTab = editor;
+		}
+		return this.editorBlockable_GeneralTab;
 	}
 
 	//
@@ -290,10 +207,8 @@ public class ManagerSpecificationEntryEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

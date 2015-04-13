@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.
  */
 public abstract class ReconfigurationRuleEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,63 +21,33 @@ public abstract class ReconfigurationRuleEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addReconfiguredComponent_GeneralTab_Editor(null, true);
+			addPropertyEditor(
+					createEditorReconfiguredComponent_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else {
 		}
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSignature_GeneralTab_Editor(null, false);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorReconfiguredComponent_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorReconfiguredComponent_GeneralTab_Editor() {
+		if (this.editorReconfiguredComponent_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationRule_ReconfiguredComponent();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The component on which the reconfiguration rule is to be applied.");
+
+			this.editorReconfiguredComponent_GeneralTab = editor;
 		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addReconfiguredComponent_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createReconfiguredComponent_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfiguredComponent_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getReconfigurationRule_ReconfiguredComponent();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The component on which the reconfiguration rule is to be applied.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addSignature_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createSignature_GeneralTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSignature_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-				.getReconfigurationRule_Signature();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
-
-		editor.setTooltipMessage("The signature of the reconfiguration rule that defines the name as well as the\ninput and output parameters of this reconfiguration rule.");
-
-		return editor;
-
+		return this.editorReconfiguredComponent_GeneralTab;
 	}
 
 }
