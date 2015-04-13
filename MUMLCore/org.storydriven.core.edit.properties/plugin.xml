@@ -38,6 +38,7 @@
           <propertyTab
              category="domain"
              id="property.tab.extensions"
+             afterTab="property.tab.documentation"
              label="Extensions"/>
           
       </propertyTabs>
