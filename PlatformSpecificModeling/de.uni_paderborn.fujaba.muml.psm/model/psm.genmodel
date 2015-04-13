@@ -15,6 +15,10 @@
         disposableProviderFactory="true" ecorePackage="psm.ecore#//allocation">
       <genClasses ecoreClass="psm.ecore#//allocation/SystemAllocation">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//allocation/SystemAllocation/allocations"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//allocation/SystemAllocation/cic"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//allocation/SystemAllocation/hpic"/>
       </genClasses>
       <genClasses ecoreClass="psm.ecore#//allocation/Allocation">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
