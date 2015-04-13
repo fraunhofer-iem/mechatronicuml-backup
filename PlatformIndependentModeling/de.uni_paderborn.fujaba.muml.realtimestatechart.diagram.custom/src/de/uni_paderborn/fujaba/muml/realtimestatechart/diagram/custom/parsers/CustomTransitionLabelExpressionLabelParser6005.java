@@ -18,16 +18,18 @@ import org.storydriven.core.expressions.TextualExpression;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Iterate;
 
 public class CustomTransitionLabelExpressionLabelParser6005 extends
 		TransitionLabelExpressionLabelParser6005 implements ISemanticParser {
 	
-	static final int MAX_LINELENGTH = 50;
+	//static final int MAX_LINELENGTH = 50;
 
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = super.getPrintString(element, flags);
@@ -35,6 +37,15 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 
 		printString = printString.replaceAll("\\{guardExpression\\}",
 				getGuardExpression(transition));
+
+		printString = printString.replaceAll("\\{receivingTransSchemaCondition\\}",
+				getReceivingCommunicationSchemaConstraint(transition));
+		
+		printString = printString.replaceAll("\\{sendingTransSchemaCondition\\}",
+				getSendingCommunicationSchemaConstraint(transition));
+		
+		printString = printString.replaceAll("\\{transSchemaTermCondition\\}",
+				getTransferCommunicationTermConstraint(transition));
 
 		Message message = transition.getRaiseMessageEvent() == null ? null
 				: transition.getRaiseMessageEvent().getMessage();
@@ -206,4 +217,94 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		return FEATURES.contains(((ENotificationImpl) notification)
 				.getFeature());
 	}
+	private String getReceivingCommunicationSchemaConstraint(Transition transition) {
+		Expression condition = null;
+		AsynchronousMessageEvent triggerMsg = transition.getTriggerMessageEvent();
+		if(triggerMsg != null && triggerMsg.getOneToManyCommunicationSchema() != null){
+			condition = triggerMsg.getOneToManyCommunicationSchema().getCondition();
+		}
+		
+		if (condition != null) {
+			String text = null;
+			if (condition instanceof TextualExpression) {
+				// Textual Expressions are not part of the Action Language,
+				// so we process them separately here.
+				text = ((TextualExpression) condition).getExpressionText();
+			} else {
+				text = LanguageResource.serializeEObjectSafe(condition, transition);
+			}
+		
+			if (text != null && text.length() > 0) {
+				// remove some from the beginning...
+				char c = text.charAt(0);
+				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
+					text = text.substring(1);
+					c = text.charAt(0);
+				}
+				return text;
+			}
+		}
+		return "";
+	}
+	
+	private String getSendingCommunicationSchemaConstraint(Transition transition) {
+		Expression condition = null;
+		AsynchronousMessageEvent raiseMsg = transition.getRaiseMessageEvent();
+		if(raiseMsg != null && raiseMsg.getOneToManyCommunicationSchema() != null){
+			condition = raiseMsg.getOneToManyCommunicationSchema().getCondition();
+		}
+		
+		if (condition != null) {
+			String text = null;
+			if (condition instanceof TextualExpression) {
+				// Textual Expressions are not part of the Action Language,
+				// so we process them separately here.
+				text = ((TextualExpression) condition).getExpressionText();
+			} else {
+				text = LanguageResource.serializeEObjectSafe(condition, transition);
+			}
+		
+			if (text != null && text.length() > 0) {
+				// remove some from the beginning...
+				char c = text.charAt(0);
+				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
+					text = text.substring(1);
+					c = text.charAt(0);
+				}
+				return text;
+			}
+		}
+		return "";
+	}
+	
+	private String getTransferCommunicationTermConstraint(Transition transition) {
+		Expression condition = null;
+		AsynchronousMessageEvent raiseMsg = transition.getRaiseMessageEvent();
+		if(raiseMsg != null && raiseMsg.getOneToManyCommunicationSchema() != null && raiseMsg.getOneToManyCommunicationSchema() instanceof Iterate){
+			condition = ((Iterate)(raiseMsg.getOneToManyCommunicationSchema())).getTerminationCondition();
+		}
+		
+		if (condition != null) {
+			String text = null;
+			if (condition instanceof TextualExpression) {
+				// Textual Expressions are not part of the Action Language,
+				// so we process them separately here.
+				text = ((TextualExpression) condition).getExpressionText();
+			} else {
+				text = LanguageResource.serializeEObjectSafe(condition, transition);
+			}
+		
+			if (text != null && text.length() > 0) {
+				// remove some from the beginning...
+				char c = text.charAt(0);
+				while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
+					text = text.substring(1);
+					c = text.charAt(0);
+				}
+				return text;
+			}
+		}
+		return "";
+	}
+
 }
