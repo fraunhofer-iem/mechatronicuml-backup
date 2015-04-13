@@ -368,6 +368,36 @@
              type="http://www.fujaba.de/muml/pattern/0.3.18#LegalConfiguration">
        </propertyEditor>
     
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor.MulticastEditor$Factory"
+             type="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0#Multicast">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor.UnicastEditor$Factory"
+             type="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0#Unicast">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor.IterateEditor$Factory"
+             type="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0#Iterate">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor.LoadBalancingEditor$Factory"
+             type="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0#LoadBalancing">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor.SingleReceiveEditor$Factory"
+             type="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0#SingleReceive">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor.ConvergecastEditor$Factory"
+             type="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0#Convergecast">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

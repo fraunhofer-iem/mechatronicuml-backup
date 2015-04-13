@@ -71,6 +71,7 @@ public class RealtimeStatechartItemProvider
 			addAllAvailableVariablesPropertyDescriptor(object);
 			addAllAvailableOperationsPropertyDescriptor(object);
 			addUsedOperationRepositoriesPropertyDescriptor(object);
+			addUsesOneToManyCommunicationSchemataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -362,6 +363,28 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Uses One To Many Communication Schemata feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesOneToManyCommunicationSchemataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechart_usesOneToManyCommunicationSchemata_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_usesOneToManyCommunicationSchemata_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -438,6 +461,7 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
+			case RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:

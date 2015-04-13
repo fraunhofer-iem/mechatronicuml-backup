@@ -2489,13 +2489,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE = TRANSITION_EVENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>One To Many Communication Schema</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA = TRANSITION_EVENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Asynchronous Message Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_MESSAGE_EVENT_FEATURE_COUNT = TRANSITION_EVENT_FEATURE_COUNT + 1;
+	int ASYNCHRONOUS_MESSAGE_EVENT_FEATURE_COUNT = TRANSITION_EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Asynchronous Message Event</em>' class.
@@ -3264,13 +3273,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__USED_OPERATION_REPOSITORIES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
+	 * The feature id for the '<em><b>Uses One To Many Communication Schemata</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -5405,6 +5423,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getAsynchronousMessageEvent_Message();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent#getOneToManyCommunicationSchema <em>One To Many Communication Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>One To Many Communication Schema</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent#getOneToManyCommunicationSchema()
+	 * @see #getAsynchronousMessageEvent()
+	 * @generated
+	 */
+	EReference getAsynchronousMessageEvent_OneToManyCommunicationSchema();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent <em>Do Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5683,6 +5712,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRealtimeStatechart_UsedOperationRepositories();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isUsesOneToManyCommunicationSchemata <em>Uses One To Many Communication Schemata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uses One To Many Communication Schemata</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isUsesOneToManyCommunicationSchemata()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getRealtimeStatechart_UsesOneToManyCommunicationSchemata();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isSuperStatechartOf(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) <em>Is Super Statechart Of</em>}' operation.
@@ -6409,6 +6449,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE = eINSTANCE.getAsynchronousMessageEvent_Message();
 
 		/**
+		 * The meta object literal for the '<em><b>One To Many Communication Schema</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA = eINSTANCE.getAsynchronousMessageEvent_OneToManyCommunicationSchema();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl <em>Do Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6627,6 +6675,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART__USED_OPERATION_REPOSITORIES = eINSTANCE.getRealtimeStatechart_UsedOperationRepositories();
+
+		/**
+		 * The meta object literal for the '<em><b>Uses One To Many Communication Schemata</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA = eINSTANCE.getRealtimeStatechart_UsesOneToManyCommunicationSchemata();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Super Statechart Of</b></em>' operation.

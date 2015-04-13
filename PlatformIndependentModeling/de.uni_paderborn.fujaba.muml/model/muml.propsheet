@@ -246,7 +246,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_VZMIDMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZMIDcwbEeSjx7OWZCcdLw" reconcile="false">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZMIDcwbEeSjx7OWZCcdLw" reconcile="false" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/guard"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_VZMIDswbEeSjx7OWZCcdLw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
@@ -301,10 +301,15 @@
     </classes>
     <classes xmi:id="_VZNWIMwbEeSjx7OWZCcdLw" superClasses="_VZOkSswbEeSjx7OWZCcdLw">
       <genClass href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZNWIcwbEeSjx7OWZCcdLw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZNWIcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent/message"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_VZNWIswbEeSjx7OWZCcdLw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </orderedElements>
     </classes>
     <classes xmi:id="_VZNWI8wbEeSjx7OWZCcdLw" superClasses="_VZOkS8wbEeSjx7OWZCcdLw">
@@ -1227,6 +1232,65 @@
       <genClass href="muml.genmodel#//muml/pattern/LegalConfiguration"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Multicast"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Unicast"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Iterate"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Iterate/delay"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/LoadBalancing"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/SingleReceive"/>
+    </classes>
+    <classes superClasses="//@packages.11/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Convergecast"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

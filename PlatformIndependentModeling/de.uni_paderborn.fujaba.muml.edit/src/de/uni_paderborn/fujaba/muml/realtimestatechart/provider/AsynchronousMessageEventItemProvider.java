@@ -13,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -20,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent} object.
@@ -50,8 +52,31 @@ public class AsynchronousMessageEventItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOneToManyCommunicationSchemaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the One To Many Communication Schema feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOneToManyCommunicationSchemaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AsynchronousMessageEvent_oneToManyCommunicationSchema_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AsynchronousMessageEvent_oneToManyCommunicationSchema_feature", "_UI_AsynchronousMessageEvent_type"),
+				 RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -67,6 +92,7 @@ public class AsynchronousMessageEventItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA);
 		}
 		return childrenFeatures;
 	}
@@ -123,6 +149,7 @@ public class AsynchronousMessageEventItemProvider
 
 		switch (notification.getFeatureID(AsynchronousMessageEvent.class)) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -144,6 +171,36 @@ public class AsynchronousMessageEventItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
 				 RealtimestatechartFactory.eINSTANCE.createMessage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 One_to_n_schemataFactory.eINSTANCE.createMulticast()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 One_to_n_schemataFactory.eINSTANCE.createUnicast()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 One_to_n_schemataFactory.eINSTANCE.createIterate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 One_to_n_schemataFactory.eINSTANCE.createLoadBalancing()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 One_to_n_schemataFactory.eINSTANCE.createSingleReceive()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
+				 One_to_n_schemataFactory.eINSTANCE.createConvergecast()));
 	}
 
 }

@@ -65,6 +65,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.util.RealtimestatechartValidator;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
@@ -328,6 +330,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
+		One_to_n_schemataPackageImpl theOne_to_n_schemataPackage = (One_to_n_schemataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI) instanceof One_to_n_schemataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI) : One_to_n_schemataPackage.eINSTANCE);
 		MsgtypePackageImpl theMsgtypePackage = (MsgtypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) instanceof MsgtypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) : MsgtypePackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
@@ -341,6 +344,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
+		theOne_to_n_schemataPackage.createPackageContents();
 		theMsgtypePackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
@@ -354,6 +358,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
+		theOne_to_n_schemataPackage.initializePackageContents();
 		theMsgtypePackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
@@ -942,6 +947,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAsynchronousMessageEvent_OneToManyCommunicationSchema() {
+		return (EReference)asynchronousMessageEventEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDoEvent() {
 		return doEventEClass;
 	}
@@ -1169,6 +1183,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getRealtimeStatechart_UsedOperationRepositories() {
 		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRealtimeStatechart_UsesOneToManyCommunicationSchemata() {
+		return (EAttribute)realtimeStatechartEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1433,6 +1456,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		asynchronousMessageEventEClass = createEClass(ASYNCHRONOUS_MESSAGE_EVENT);
 		createEReference(asynchronousMessageEventEClass, ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE);
+		createEReference(asynchronousMessageEventEClass, ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA);
 
 		doEventEClass = createEClass(DO_EVENT);
 		createEReference(doEventEClass, DO_EVENT__ACTION);
@@ -1465,6 +1489,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__USED_OPERATION_REPOSITORIES);
+		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___IS_SUPER_STATECHART_OF__REALTIMESTATECHART);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART);
@@ -1520,6 +1545,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		One_to_n_schemataPackage theOne_to_n_schemataPackage = (One_to_n_schemataPackage)EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
@@ -1527,6 +1553,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theOne_to_n_schemataPackage);
 
 		// Create type parameters
 
@@ -1646,6 +1675,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(asynchronousMessageEventEClass, AsynchronousMessageEvent.class, "AsynchronousMessageEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAsynchronousMessageEvent_Message(), this.getMessage(), null, "message", null, 1, 1, AsynchronousMessageEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAsynchronousMessageEvent_OneToManyCommunicationSchema(), theOne_to_n_schemataPackage.getOneToManyCommunicationSchema(), theOne_to_n_schemataPackage.getOneToManyCommunicationSchema_AsynchronousMessageEvent(), "oneToManyCommunicationSchema", null, 0, 1, AsynchronousMessageEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(doEventEClass, DoEvent.class, "DoEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDoEvent_Action(), this.getAction(), null, "action", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1678,6 +1708,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getRealtimeStatechart_AllAvailableVariables(), theBehaviorPackage.getVariable(), null, "allAvailableVariables", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AllAvailableOperations(), theBehaviorPackage.getOperation(), null, "allAvailableOperations", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_UsedOperationRepositories(), theBehaviorPackage.getOperationRepository(), null, "usedOperationRepositories", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRealtimeStatechart_UsesOneToManyCommunicationSchemata(), ecorePackage.getEBoolean(), "usesOneToManyCommunicationSchemata", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart(), ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1753,13 +1784,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent"
+			 "constraints", "UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent"
 		   });	
 		addAnnotation
 		  (asynchronousMessageEventEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RaiseMessageEventImpliesParameterBinding"
+			 "constraints", "RaiseMessageEventImpliesParameterBinding RaiseMessageEventImpliesSendingCommunicationSchema TriggerMessageEventImpliesReceivingCommunicationSchema"
 		   });	
 		addAnnotation
 		  (synchronizationChannelEClass, 
@@ -1783,7 +1814,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (realtimeStatechartEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueNameOfStates NoCycles OneInitialState"
+			 "constraints", "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort UniqueNameOfStates NoCycles OneInitialState"
 		   });	
 		addAnnotation
 		  (stateConnectionPointEClass, 
@@ -1868,15 +1899,16 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "LegalTransitionsOnly", "-- Inter-level transitions are invalid\r\n\r\nif (self.source.oclIsUndefined() or self.target.oclIsUndefined()) then\r\ntrue\r\nelse\r\n-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))\t\r\nor\r\n-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))\t\r\nor\r\n-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))\r\nor\r\n-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))\r\n\r\nor \r\n-- State A to State B within the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)\r\nor\r\n-- State A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\nor\r\n-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\nor\r\n-- ExitPoint of A to State B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)\r\nendif",
 			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "-- Trigger Message Event must be parameterless (no parameter binding allowed)\r\nnot self.triggerMessageEvent.message.oclIsUndefined() implies\r\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
-			 "ValidTriggerMessageEvents", "-- Trigger message type must be added to receiver message types\nnot triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
-			 "ValidRaiseMessageEvents", "-- Raise message type must be added to sender message types\nnot raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
+			 "ValidTriggerMessageEvents", "-- Trigger message type must be added to receiver message types\r\nnot triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
+			 "ValidRaiseMessageEvents", "-- Raise message type must be added to sender message types\r\nnot raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
 			 "StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "-- Transitions to state connection points must not define side effects or deadlines\r\n(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
 			 "StateConnectionPointOutgoingTransitionsNoConditions", "-- Transitions from state connection points must not have conditions\r\n(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t)",
 			 "StateConnectionPointOutgoingTransitionsMustBeUrgent", "-- Transitions from state connection points must be urgent\r\n(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
 			 "NoCombinationOfRelativeAndAbsoluteDeadlines", "-- Defining both relative and absolute deadlines is forbidden\n(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())",
 			 "NoCombinationOfReceivedSynchronizationAndTriggerMessage", "-- A transition must not specify a received synchronization and a trigger message at the same time\r\n((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))\r\nimplies\r\nself.triggerMessageEvent.oclIsUndefined()",
 			 "TransitionMustBeContainedByCorrectStatechart", "-- A transition must be contained by its logical parent statechart\r\n(not self.statechart.oclIsUndefined()) implies (self.statechart.transitions->includes(self))",
-			 "OutgoingTransitionOfUrgentStateMustBeUrgent", "-- An outgoing transition of an urgent state must be urgent itself\r\n(self.source.oclIsKindOf(State) and self.source.oclAsType(State).urgent) implies self.urgent"
+			 "OutgoingTransitionOfUrgentStateMustBeUrgent", "-- An outgoing transition of an urgent state must be urgent itself\r\n(self.source.oclIsKindOf(State) and self.source.oclAsType(State).urgent) implies self.urgent",
+			 "UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions", "-- As soon as a One-To-Many Communication Schema is used, all message events of the RoleOrPortRTSC must use a One-To-Many Communication Schema \r\nlet selfStatechart : RealtimeStatechart = self.statechart in \r\nselfStatechart.usesOneToManyCommunicationSchemata implies (\r\nlet allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =\r\nselfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) in \r\n let allTransitions : OrderedSet(Transition) =  allChildrenOfRoleOrPortStatechart->asOrderedSet()->append(selfStatechart.getPortOrRoleStatechart()).transitions->asOrderedSet() in \r\nallTransitions->forAll(t : Transition |  (not(t.raiseMessageEvent = null) implies not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)) and ( not(t.triggerMessageEvent = null) implies not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)))\r\n)"
 		   });	
 		addAnnotation
 		  (getTransition_Statechart(), 
@@ -1912,7 +1944,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (asynchronousMessageEventEClass, 
 		   source, 
 		   new String[] {
-			 "RaiseMessageEventImpliesParameterBinding", "-- A raise message event must bind a value to every parameter\nlet messageType : msgtype::MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\n-- author: adann"
+			 "RaiseMessageEventImpliesParameterBinding", "-- A raise message event must bind a value to every parameter\r\nlet messageType : msgtype::MessageType = self.message.instanceOf in\r\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\r\n-- author: adann",
+			 "RaiseMessageEventImpliesSendingCommunicationSchema", "if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Unicast) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Iterate) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::LoadBalancing)\t)\r\nendif",
+			 "TriggerMessageEventImpliesReceivingCommunicationSchema", "if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Convergecast))\r\nendif"
 		   });	
 		addAnnotation
 		  (synchronizationChannelEClass, 
@@ -1939,7 +1973,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "UniqueNameOfStates", "-- State names must be unique\nself.states->isUnique(name)",
 			 "NoCycles", "-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))",
-			 "OneInitialState", "-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1"
+			 "OneInitialState", "-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1",
+			 "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort", "-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort\r\nself.usesOneToManyCommunicationSchemata implies (\r\nnot (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\nand self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)"
 		   });	
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
@@ -1970,6 +2005,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "-- consider operations defined by self and by all parent RTSCs and include operations of all used OperationRepositories (either by self or by parent)\r\nlet allParentRTSCs : Set(RealtimeStatechart) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif) in\r\nallParentRTSCs.operations ->union(allParentRTSCs.usedOperationRepositories.operations) ->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (getRealtimeStatechart_UsesOneToManyCommunicationSchemata(), 
+		   source, 
+		   new String[] {
+			 "derivation", "-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema\r\nself.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))\r\n"
 		   });	
 		addAnnotation
 		  (stateConnectionPointEClass, 

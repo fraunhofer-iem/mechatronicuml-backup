@@ -27,6 +27,10 @@ public class AsynchronousMessageEventEditor
 
 			addPropertyEditor(createEditorMessage_GeneralTab_Editor(), false);
 
+			addPropertyEditor(
+					createEditorOneToManyCommunicationSchema_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -34,6 +38,10 @@ public class AsynchronousMessageEventEditor
 			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorMessage_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorOneToManyCommunicationSchema_GeneralTab_Editor(),
+					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -56,6 +64,21 @@ public class AsynchronousMessageEventEditor
 			this.editorMessage_GeneralTab = editor;
 		}
 		return this.editorMessage_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOneToManyCommunicationSchema_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOneToManyCommunicationSchema_GeneralTab_Editor() {
+		if (this.editorOneToManyCommunicationSchema_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getAsynchronousMessageEvent_OneToManyCommunicationSchema();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("A asynchronous message event must habe a one-to-many communication schema if the statechart defines the behavior of a multi role.");
+
+			this.editorOneToManyCommunicationSchema_GeneralTab = editor;
+		}
+		return this.editorOneToManyCommunicationSchema_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
@@ -105,7 +128,8 @@ public class AsynchronousMessageEventEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

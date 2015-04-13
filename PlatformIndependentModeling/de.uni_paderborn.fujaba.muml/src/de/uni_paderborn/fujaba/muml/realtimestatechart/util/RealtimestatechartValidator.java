@@ -524,6 +524,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_LegalTransitionsOnly(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
@@ -536,6 +537,42 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_TransitionMustBeContainedByCorrectStatechart(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_OutgoingTransitionOfUrgentStateMustBeUrgent(transition, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION = "-- As soon as a One-To-Many Communication Schema is used, all message events of the RoleOrPortRTSC must use a One-To-Many Communication Schema \r\n" +
+		"let selfStatechart : RealtimeStatechart = self.statechart in \r\n" +
+		"selfStatechart.usesOneToManyCommunicationSchemata implies (\r\n" +
+		"let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =\r\n" +
+		"selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) in \r\n" +
+		" let allTransitions : OrderedSet(Transition) =  allChildrenOfRoleOrPortStatechart->asOrderedSet()->append(selfStatechart.getPortOrRoleStatechart()).transitions->asOrderedSet() in \r\n" +
+		"allTransitions->forAll(t : Transition |  (not(t.raiseMessageEvent = null) implies not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)) and ( not(t.triggerMessageEvent = null) implies not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)))\r\n" +
+		")";
+
+	/**
+	 * Validates the UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions",
+				 TRANSITION__USING_AONE_TO_MANY_SCHEMA_AT_ONE_TRANSITION_IMPLIES_USING_SCHEMA_AT_ALL_TRANSITIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -633,7 +670,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "-- Trigger message type must be added to receiver message types\n" +
+	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "-- Trigger message type must be added to receiver message types\r\n" +
 		"not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)";
 
 	/**
@@ -663,7 +700,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "-- Raise message type must be added to sender message types\n" +
+	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "-- Raise message type must be added to sender message types\r\n" +
 		"not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)";
 
 	/**
@@ -949,6 +986,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(asynchronousMessageEvent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(asynchronousMessageEvent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAsynchronousMessageEvent_RaiseMessageEventImpliesParameterBinding(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAsynchronousMessageEvent_RaiseMessageEventImpliesSendingCommunicationSchema(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAsynchronousMessageEvent_TriggerMessageEventImpliesReceivingCommunicationSchema(asynchronousMessageEvent, diagnostics, context);
 		return result;
 	}
 
@@ -958,9 +997,9 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION = "-- A raise message event must bind a value to every parameter\n" +
-		"let messageType : msgtype::MessageType = self.message.instanceOf in\n" +
-		"(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\n" +
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION = "-- A raise message event must bind a value to every parameter\r\n" +
+		"let messageType : msgtype::MessageType = self.message.instanceOf in\r\n" +
+		"(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\r\n" +
 		"-- author: adann";
 
 	/**
@@ -979,6 +1018,76 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RaiseMessageEventImpliesParameterBinding",
 				 ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the RaiseMessageEventImpliesSendingCommunicationSchema constraint of '<em>Asynchronous Message Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_SENDING_COMMUNICATION_SCHEMA__EEXPRESSION = "if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
+		"\ttrue \r\n" +
+		"else\r\n" +
+		"\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or\r\n" +
+		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Unicast) or\r\n" +
+		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Iterate) or\r\n" +
+		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::LoadBalancing)\t)\r\n" +
+		"endif";
+
+	/**
+	 * Validates the RaiseMessageEventImpliesSendingCommunicationSchema constraint of '<em>Asynchronous Message Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAsynchronousMessageEvent_RaiseMessageEventImpliesSendingCommunicationSchema(AsynchronousMessageEvent asynchronousMessageEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT,
+				 asynchronousMessageEvent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RaiseMessageEventImpliesSendingCommunicationSchema",
+				 ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_SENDING_COMMUNICATION_SCHEMA__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the TriggerMessageEventImpliesReceivingCommunicationSchema constraint of '<em>Asynchronous Message Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__TRIGGER_MESSAGE_EVENT_IMPLIES_RECEIVING_COMMUNICATION_SCHEMA__EEXPRESSION = "if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
+		"\ttrue \r\n" +
+		"else\r\n" +
+		"\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or\r\n" +
+		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Convergecast))\r\n" +
+		"endif";
+
+	/**
+	 * Validates the TriggerMessageEventImpliesReceivingCommunicationSchema constraint of '<em>Asynchronous Message Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAsynchronousMessageEvent_TriggerMessageEventImpliesReceivingCommunicationSchema(AsynchronousMessageEvent asynchronousMessageEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT,
+				 asynchronousMessageEvent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "TriggerMessageEventImpliesReceivingCommunicationSchema",
+				 ASYNCHRONOUS_MESSAGE_EVENT__TRIGGER_MESSAGE_EVENT_IMPLIES_RECEIVING_COMMUNICATION_SCHEMA__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1223,10 +1332,43 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_UniqueNameOfStates(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_OneInitialState(realtimeStatechart, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__COMMUNICATION_SCHEMA_ONLY_USED_IN_MULTI_ROLE_OR_MULTI_PORT__EEXPRESSION = "-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort\r\n" +
+		"self.usesOneToManyCommunicationSchemata implies (\r\n" +
+		"not (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\n" +
+		"and self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)";
+
+	/**
+	 * Validates the CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort",
+				 REALTIME_STATECHART__COMMUNICATION_SCHEMA_ONLY_USED_IN_MULTI_ROLE_OR_MULTI_PORT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

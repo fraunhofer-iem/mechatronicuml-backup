@@ -37,12 +37,13 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAllAvailableVariables <em>All Available Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getUsedOperationRepositories <em>Used Operation Repositories</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isUsesOneToManyCommunicationSchemata <em>Uses One To Many Communication Schemata</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='-- State names must be unique\nself.states->isUnique(name)' NoCycles='-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))' OneInitialState='-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueNameOfStates NoCycles OneInitialState'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='-- State names must be unique\nself.states->isUnique(name)' NoCycles='-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))' OneInitialState='-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1' CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort='-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort\r\nself.usesOneToManyCommunicationSchemata implies (\r\nnot (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\nand self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort UniqueNameOfStates NoCycles OneInitialState'"
  * @generated
  */
 public interface RealtimeStatechart extends NamedElement, CommentableElement, Behavior {
@@ -228,6 +229,33 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	EList<OperationRepository> getUsedOperationRepositories();
+
+	/**
+	 * Returns the value of the '<em><b>Uses One To Many Communication Schemata</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute allows to easily check whether a oneToManyCommunicationSchema is used or not. 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Uses One To Many Communication Schemata</em>' attribute.
+	 * @see #setUsesOneToManyCommunicationSchemata(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_UsesOneToManyCommunicationSchemata()
+	 * @model default="false" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema\r\nself.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))\r\n'"
+	 * @generated
+	 */
+	boolean isUsesOneToManyCommunicationSchemata();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isUsesOneToManyCommunicationSchemata <em>Uses One To Many Communication Schemata</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uses One To Many Communication Schemata</em>' attribute.
+	 * @see #isUsesOneToManyCommunicationSchemata()
+	 * @generated
+	 */
+	void setUsesOneToManyCommunicationSchemata(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->
