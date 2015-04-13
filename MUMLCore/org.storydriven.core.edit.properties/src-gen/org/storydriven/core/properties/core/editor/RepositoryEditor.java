@@ -3,14 +3,14 @@ package org.storydriven.core.properties.core.editor;
 /**
  * @generated
  */
-public abstract class NamedElementEditor
+public abstract class RepositoryEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public NamedElementEditor(String tab,
+	public RepositoryEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -28,13 +28,25 @@ public abstract class NamedElementEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
+
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
+
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
@@ -81,6 +93,21 @@ public abstract class NamedElementEditor
 			this.editorExtension_ExtensionsTab = editor;
 		}
 		return this.editorExtension_ExtensionsTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
+		if (this.editorComment_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getCommentableElement_Comment();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+			this.editorComment_DocumentationTab = editor;
+		}
+		return this.editorComment_DocumentationTab;
 	}
 
 }

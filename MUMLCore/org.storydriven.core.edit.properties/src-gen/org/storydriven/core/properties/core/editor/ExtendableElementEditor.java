@@ -21,34 +21,35 @@ public abstract class ExtendableElementEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtension_ExtensionsTab_Editor(null, true);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addExtension_ExtensionsTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createExtension_ExtensionsTab_Editor(),
-				front);
-	}
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
+		if (this.editorExtension_ExtensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtension_ExtensionsTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-				.getExtendableElement_Extension();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
-				adapterFactory, feature);
-
-		return editor;
-
+			this.editorExtension_ExtensionsTab = editor;
+		}
+		return this.editorExtension_ExtensionsTab;
 	}
 
 }

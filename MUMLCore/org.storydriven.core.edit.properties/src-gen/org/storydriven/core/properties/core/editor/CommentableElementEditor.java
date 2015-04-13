@@ -5,7 +5,7 @@ package org.storydriven.core.properties.core.editor;
  */
 public abstract class CommentableElementEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,36 +21,56 @@ public abstract class CommentableElementEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addComment_DocumentationTab_Editor(null, true);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addComment_DocumentationTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComment_DocumentationTab_Editor(),
-				front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
+		if (this.editorComment_DocumentationTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getCommentableElement_Comment();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, true);
+
+			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+			this.editorComment_DocumentationTab = editor;
+		}
+		return this.editorComment_DocumentationTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComment_DocumentationTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
-				.getCommentableElement_Comment();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory, feature, true);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
+		if (this.editorExtension_ExtensionsTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getExtendableElement_Extension();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
-
-		return editor;
-
+			this.editorExtension_ExtensionsTab = editor;
+		}
+		return this.editorExtension_ExtensionsTab;
 	}
 
 }
