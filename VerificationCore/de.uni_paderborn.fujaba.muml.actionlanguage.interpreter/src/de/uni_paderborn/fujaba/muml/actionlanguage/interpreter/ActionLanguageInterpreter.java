@@ -910,7 +910,7 @@ public class ActionLanguageInterpreter {
 			return (Boolean) value;
 
 			// cast to byte
-		case PrimitiveTypes.BYTE_VALUE:
+		case PrimitiveTypes.INT8_VALUE:
 			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Short) && !(value instanceof Double)
 					&& !(value instanceof Long) && !(value instanceof Integer)
@@ -967,7 +967,7 @@ public class ActionLanguageInterpreter {
 				return ((Number) value).doubleValue();
 
 			// cast to int
-		case PrimitiveTypes.INT_VALUE:
+		case PrimitiveTypes.INT32_VALUE:
 			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Long) && !(value instanceof Short)
 					&& !(value instanceof Double)
@@ -998,7 +998,7 @@ public class ActionLanguageInterpreter {
 			}
 
 			// cast to long
-		case PrimitiveTypes.LONG_VALUE:
+		case PrimitiveTypes.INT64_VALUE:
 			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Long) && !(value instanceof Short)
 					&& !(value instanceof Double)
@@ -1030,7 +1030,7 @@ public class ActionLanguageInterpreter {
 			}
 
 			// cast to short
-		case PrimitiveTypes.SHORT_VALUE:
+		case PrimitiveTypes.INT16_VALUE:
 			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Short) && !(value instanceof Long)
 					&& !(value instanceof Double)

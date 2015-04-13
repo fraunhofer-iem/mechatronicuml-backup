@@ -21,9 +21,7 @@ import org.storydriven.core.expressions.common.UnaryOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.ActionLanguageInterpreter;
-import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.IncompatibleTypeException;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.UnsupportedModellingElementException;
-import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.VariableNotInitializedException;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
@@ -524,17 +522,12 @@ public class TestAutomataGeneration {
 
 		switch (refinement.getRequirement().getValue()) {
 		case Requirement.R1_VALUE:
-			if (cTa == null) {
-				cTa = rtscFactory.createClock();
-				cTa.setName("cTa");
-				cTa.setStatechart(parentRtsc);
-			}
 			for (Transition tmpTransition : originalOutgoingTransitions
 					.get(source)) {
 
 				// add reset for cTa
-				if (!tmpTransition.getClockResets().contains(cTa))
-					tmpTransition.getClockResets().add(cTa);
+				if (!tmpTransition.getClockResets().contains(getCta()))
+					tmpTransition.getClockResets().add(getCta());
 
 				// add reset for cstep
 				// if (!tmpTransition.getClockResets().contains(cStep)
@@ -573,7 +566,7 @@ public class TestAutomataGeneration {
 
 					// create source -> cState transition
 					Transition transition = createTransition(source, cState,
-							highCConstraint, null, null, cTa, false);
+							highCConstraint, null, null, getCta(), false);
 					if (tmpTransition.getGuard() != null)
 						transition.setGuard(EcoreUtil.copy(tmpTransition
 								.getGuard()));
@@ -597,7 +590,7 @@ public class TestAutomataGeneration {
 					tvalue.setValue(boundMax);
 					tvalue.setUnit(smallestTimeUnit);
 					cCon.setBound(tvalue);
-					cCon.setClock(cTa);
+					cCon.setClock(getCta());
 					cCon.setOperator(ComparingOperator.EQUAL);
 					BasicEList<ClockConstraint> cTaCon = new BasicEList<ClockConstraint>();
 					cTaCon.add(cCon);
@@ -611,8 +604,8 @@ public class TestAutomataGeneration {
 			for (Transition tmpTransition : originalOutgoingTransitions
 					.get(source)) {
 				// add reset for cTa
-				if (!tmpTransition.getClockResets().contains(cTa))
-					tmpTransition.getClockResets().add(cTa);
+				if (!tmpTransition.getClockResets().contains(getCta()))
+					tmpTransition.getClockResets().add(getCta());
 
 				// add reset for cstep
 				// if (!tmpTransition.getClockResets().contains(cStep)
@@ -665,8 +658,8 @@ public class TestAutomataGeneration {
 					.get(source)) {
 
 				// add reset for cTa
-				if (!tmpTransition.getClockResets().contains(cTa))
-					tmpTransition.getClockResets().add(cTa);
+				if (!tmpTransition.getClockResets().contains(getCta()))
+					tmpTransition.getClockResets().add(getCta());
 
 				// add reset for cstep
 				// if (!tmpTransition.getClockResets().contains(cStep)
@@ -720,7 +713,7 @@ public class TestAutomataGeneration {
 					//TODO ??
 					tvalue2.setValue(boundMax);
 					cCon.setBound(tvalue2);
-					cCon.setClock(cTa);
+					cCon.setClock(getCta());
 					cCon.setOperator(ComparingOperator.EQUAL);
 					BasicEList<ClockConstraint> cTaCon = new BasicEList<ClockConstraint>();
 					cTaCon.add(cCon);
@@ -732,11 +725,6 @@ public class TestAutomataGeneration {
 
 		// TODO not needed yet and not implemented correctly
 		case Requirement.R4_VALUE:
-			if (cTa == null) {
-				cTa = rtscFactory.createClock();
-				cTa.setName("cTa");
-				cTa.setStatechart(parentRtsc);
-			}
 			for (Transition tmpTransition : originalOutgoingTransitions
 					.get(source)) {
 				// if (!cStateMapping.containsKey(tmpTransition.getTarget())) {
@@ -756,7 +744,7 @@ public class TestAutomataGeneration {
 						.get(tmpTransition.getSource())));
 				eliminateDispensableClockConstraints(highCConstraint);
 				createTransition(source, cState, highCConstraint, null, null,
-						cTa, false);
+						getCta(), false);
 				createTransition(cState, n, null, tmpTransition
 						.getSynchronization().getSyncChannel(), tmpTransition
 						.getSynchronization().getKind(), null, true);
@@ -887,11 +875,7 @@ public class TestAutomataGeneration {
 		eliminateDispensableClockConstraints(cConstraints);
 
 		EList<ClockConstraint> invariants = originalInvariants.get(source);
-		if (cTa == null) {
-			cTa = rtscFactory.createClock();
-			cTa.setName("cTa");
-			cTa.setStatechart(parentRtsc);
-		}
+
 
 		if (refinement.getTransitionType().getValue() == TransitionType.ALL_VALUE
 				|| ((refinement.getTransitionType().getValue() == TransitionType.URGENT_VALUE) && transition
@@ -2059,5 +2043,14 @@ public class TestAutomataGeneration {
 			}
 		}
 		return nondetHandler;
+	}
+	
+	protected Clock getCta(){
+		if (cTa == null) {
+			cTa = rtscFactory.createClock();
+			cTa.setName("cTa");
+			cTa.setStatechart(parentRtsc);
+		}
+		return cTa;
 	}
 }

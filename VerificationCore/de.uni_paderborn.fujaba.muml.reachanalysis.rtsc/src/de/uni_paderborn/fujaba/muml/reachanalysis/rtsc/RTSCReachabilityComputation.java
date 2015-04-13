@@ -80,9 +80,10 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	private RuntimeFactory runtimeFactory;
 
 	private static RealtimeStatechart rootRtsc;
-	
+
 	/**
-	 * Value used for normalization of clocks compared with expressions that can not be evaluated statically 
+	 * Value used for normalization of clocks compared with expressions that can
+	 * not be evaluated statically
 	 */
 	private final int clockMaxValue;
 
@@ -95,8 +96,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 	public RTSCReachabilityComputation(HashSet<RealtimeStatechart> rtscs) {
 		super();
-		
-		clockMaxValue = Integer.MAX_VALUE>>4;
+
+		clockMaxValue = Integer.MAX_VALUE >> 4;
 
 		// switch between RubyFederationFactory and JavaFederationFactory
 		fedFactory = new JavaFederationFactory();
@@ -494,7 +495,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 								DataType intType = TypesFactory.eINSTANCE
 										.createPrimitiveDataType();
 								((PrimitiveDataType) intType)
-										.setPrimitiveType(PrimitiveTypes.INT);
+										.setPrimitiveType(PrimitiveTypes.INT32);
 
 								for (ClockConstraint cCon : transition
 										.getClockConstraints()) {
@@ -601,7 +602,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					DataType intType = TypesFactory.eINSTANCE
 							.createPrimitiveDataType();
 					((PrimitiveDataType) intType)
-							.setPrimitiveType(PrimitiveTypes.INT);
+							.setPrimitiveType(PrimitiveTypes.INT32);
 
 					// if outgoing urgent tau transition was found, get its
 					// clock constraints for performing the delay in this case
@@ -771,8 +772,10 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			}
 			// if there are enabled urgent transitions, fire these and possible
 			// nonurgent transitions
-			if ((urgentEnabled && curTransIsUrgent) || !urgentFound
-					|| curNonUrgentIsEnabled) {
+			// if there are no enabled urgent transitions fire non-urgent
+			// transitions
+			if ((urgentEnabled && (curNonUrgentIsEnabled || curTransIsUrgent))
+					|| !urgentEnabled) {
 				ZoneGraphState newZone = (ZoneGraphState) copyState(state, null);
 
 				// change locations(s) according to taken transition(s)
@@ -788,7 +791,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 										transition.getStatechart())) {
 							newLocation = location;
 							// change active state
-							location.setActiveVertex((State) transition.getTarget());
+							location.setActiveVertex((State) transition
+									.getTarget());
 							// also remove locations corresponding embedded
 							// rtscs
 							toRemove.addAll(location
@@ -964,14 +968,15 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 				.getIncomingTransitions().get(0) instanceof DelayTransition))
 				&& !urgentEnabled) {
 			DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-			((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+			((PrimitiveDataType) intType)
+					.setPrimitiveType(PrimitiveTypes.INT32);
 
 			// compute invariants of old locations
 			HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint> invariants = new HashSet<de.uni_paderborn.fujaba.udbm.ClockConstraint>();
 			for (RealtimeStatechartInstance rtscInstance : ((ZoneGraphState) state)
 					.getLocations()) {
-				for (ClockConstraint cCon : ((State)rtscInstance.getActiveVertex())
-						.getInvariants()) {
+				for (ClockConstraint cCon : ((State) rtscInstance
+						.getActiveVertex()).getInvariants()) {
 					UDBMClock clockForCC = clockMapping.get(cCon.getClock());
 
 					Object value;
@@ -1028,7 +1033,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			RealtimeStatechartInstance secondLocation) {
 
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		// create new set of the two transitions that may sync
 		EList<Transition> transitionSet = new BasicEList<Transition>();
@@ -1167,10 +1172,12 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 		// evaluate entry actions of initial states
 		for (RealtimeStatechartInstance curRtscInstance : startLocations) {
-			if (((State)curRtscInstance.getActiveVertex()).getEntryEvent() != null
-					&& ((State)curRtscInstance.getActiveVertex()).getEntryEvent().getAction() != null)
-				for (Expression curExp : ((State)curRtscInstance.getActiveVertex())
-						.getEntryEvent().getAction().getExpressions()) {
+			if (((State) curRtscInstance.getActiveVertex()).getEntryEvent() != null
+					&& ((State) curRtscInstance.getActiveVertex())
+							.getEntryEvent().getAction() != null)
+				for (Expression curExp : ((State) curRtscInstance
+						.getActiveVertex()).getEntryEvent().getAction()
+						.getExpressions()) {
 					// the expression that is not instance of textual expression
 					// should be implementation in action language
 					if (!(curExp instanceof TextualExpression)) {
@@ -1375,73 +1382,37 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 	 *            VariableBindings in terms of constant variables
 	 * @return A map from UDBMClock to the maximum value
 	 */
-	protected HashMap<UDBMClock, Integer> collectClockMaxValues(EList<VariableBinding> constantVariableBindings) {
+	protected HashMap<UDBMClock, Integer> collectClockMaxValues(
+			EList<VariableBinding> constantVariableBindings) {
 
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		HashMap<UDBMClock, Integer> clockMaxValues = new HashMap<UDBMClock, Integer>();
 
-		//init
+		// init
 		for (UDBMClock curUDBMClock : clockMapping.values()) {
 			clockMaxValues.put(curUDBMClock, 0);
 		}
 
-		//TODO look for constants
+		// TODO look for constants
 		for (RealtimeStatechart curRtsc : parentRtscMapping.keySet()) {
 
 			// ClockConstraints and AbsoluteDeadlines
 			for (Transition curTransition : curRtsc.getTransitions()) {
-				
-				//ClockConstraints
+
+				// ClockConstraints
 				for (ClockConstraint curCConstraint : curTransition
 						.getClockConstraints()) {
 					// translate clock
 					UDBMClock curUDBMClock = clockMapping.get(curCConstraint
 							.getClock());
-					
-					Object expValue=null;
-					try {
-						expValue = alInterpreter.evaluateExpression(constantVariableBindings, curCConstraint.getBound().getValue());
-					} catch (UnsupportedModellingElementException e) {
-						e.printStackTrace();
-					} catch (VariableNotInitializedException e) {
-						// Expression contains non-constant variables
-						clockMaxValues.put(curUDBMClock, clockMaxValue);
-						continue;
-					} catch (IncompatibleTypeException e) {
-						e.printStackTrace();
-					}
-					
-					int expValueAsInt=-1;
-					if (expValue!=null) {
-						try {
-							expValueAsInt = (Integer) alInterpreter.castTo(
-									intType, expValue);
-						} catch (IncompatibleTypeException e) {
-							//should not happen since clocks can only be compared with integers
-							e.printStackTrace();
-						} catch (UnsupportedModellingElementException e) {
-							e.printStackTrace();
-						}
-					}
-					if (expValueAsInt != -1 && clockMaxValues.get(curUDBMClock) < expValueAsInt) 
 
-							clockMaxValues.put(curUDBMClock,
-									expValueAsInt);		
-				
-				}
-				
-				//Deadlines	
-				for (AbsoluteDeadline curDeadline : curTransition
-						.getAbsoluteDeadlines()) {
-					// translate clock
-					UDBMClock curUDBMClock = clockMapping.get(curDeadline
-							.getClock());
-					
-					Object expValue=null;
+					Object expValue = null;
 					try {
-						expValue = alInterpreter.evaluateExpression(constantVariableBindings, curDeadline.getUpperBound().getValue());
+						expValue = alInterpreter.evaluateExpression(
+								constantVariableBindings, curCConstraint
+										.getBound().getValue());
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
 					} catch (VariableNotInitializedException e) {
@@ -1451,30 +1422,68 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					} catch (IncompatibleTypeException e) {
 						e.printStackTrace();
 					}
-					int expValueAsInt=-1;
+
+					int expValueAsInt = -1;
 					if (expValue != null) {
 						try {
 							expValueAsInt = (Integer) alInterpreter.castTo(
 									intType, expValue);
 						} catch (IncompatibleTypeException e) {
-							//should not happen since clocks can only be compared with integers
+							// should not happen since clocks can only be
+							// compared with integers
 							e.printStackTrace();
 						} catch (UnsupportedModellingElementException e) {
 							e.printStackTrace();
 						}
 					}
-					if (expValueAsInt != -1 && clockMaxValues.get(curUDBMClock) < expValueAsInt)
+					if (expValueAsInt != -1
+							&& clockMaxValues.get(curUDBMClock) < expValueAsInt)
 
-						
+						clockMaxValues.put(curUDBMClock, expValueAsInt);
 
-								clockMaxValues.put(curUDBMClock,
-										expValueAsInt);
+				}
 
-						
+				// Deadlines
+				for (AbsoluteDeadline curDeadline : curTransition
+						.getAbsoluteDeadlines()) {
+					// translate clock
+					UDBMClock curUDBMClock = clockMapping.get(curDeadline
+							.getClock());
+
+					Object expValue = null;
+					try {
+						expValue = alInterpreter.evaluateExpression(
+								constantVariableBindings, curDeadline
+										.getUpperBound().getValue());
+					} catch (UnsupportedModellingElementException e) {
+						e.printStackTrace();
+					} catch (VariableNotInitializedException e) {
+						// Expression contains non-constant variables
+						clockMaxValues.put(curUDBMClock, clockMaxValue);
+						continue;
+					} catch (IncompatibleTypeException e) {
+						e.printStackTrace();
+					}
+					int expValueAsInt = -1;
+					if (expValue != null) {
+						try {
+							expValueAsInt = (Integer) alInterpreter.castTo(
+									intType, expValue);
+						} catch (IncompatibleTypeException e) {
+							// should not happen since clocks can only be
+							// compared with integers
+							e.printStackTrace();
+						} catch (UnsupportedModellingElementException e) {
+							e.printStackTrace();
+						}
+					}
+					if (expValueAsInt != -1
+							&& clockMaxValues.get(curUDBMClock) < expValueAsInt)
+
+						clockMaxValues.put(curUDBMClock, expValueAsInt);
 
 				}
 			}
-			
 
 			// invariants
 			for (State curState : curRtsc.getStates()) {
@@ -1482,10 +1491,12 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					// translate clock
 					UDBMClock curUDBMClock = clockMapping.get(curCConstraint
 							.getClock());
-					
-					Object expValue=null;
+
+					Object expValue = null;
 					try {
-						expValue = alInterpreter.evaluateExpression(constantVariableBindings, curCConstraint.getBound().getValue());
+						expValue = alInterpreter.evaluateExpression(
+								constantVariableBindings, curCConstraint
+										.getBound().getValue());
 					} catch (UnsupportedModellingElementException e) {
 						e.printStackTrace();
 					} catch (VariableNotInitializedException e) {
@@ -1495,24 +1506,26 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 					} catch (IncompatibleTypeException e) {
 						e.printStackTrace();
 					}
-					
-					int expValueAsInt=-1;
-					if (expValue!=null) {
+
+					int expValueAsInt = -1;
+					if (expValue != null) {
 						try {
 							expValueAsInt = (Integer) alInterpreter.castTo(
 									intType, expValue);
 						} catch (IncompatibleTypeException e) {
-							//should not happen since clocks can only be compared with integers
+							// should not happen since clocks can only be
+							// compared with integers
 							e.printStackTrace();
 						} catch (UnsupportedModellingElementException e) {
 							e.printStackTrace();
 						}
 					}
-					if (expValueAsInt != -1 && clockMaxValues.get(curUDBMClock) < expValueAsInt)
+					if (expValueAsInt != -1
+							&& clockMaxValues.get(curUDBMClock) < expValueAsInt)
 						clockMaxValues.put(curUDBMClock, expValueAsInt);
-			}
+				}
 
-		}
+			}
 		}
 
 		return clockMaxValues;
@@ -1590,7 +1603,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 
 			rtscHash = rtscHash * 31 + attributeHash;
 
-			rtscHash = rtscHash * 31 + (long) rtscInst.getActiveVertex().hashCode();
+			rtscHash = rtscHash * 31
+					+ (long) rtscInst.getActiveVertex().hashCode();
 
 			stateHashQueue.add(rtscHash);
 		}
@@ -1705,7 +1719,8 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			for (RealtimeStatechartInstance location2 : ((ZoneGraphState) state2)
 					.getLocations()) {
 				if (location1.getInstanceOf().equals(location2.getInstanceOf())
-						&& location1.getActiveVertex().equals(location2.getActiveVertex())) {
+						&& location1.getActiveVertex().equals(
+								location2.getActiveVertex())) {
 					locationInBoth = true;
 					break;
 				}
@@ -1732,7 +1747,7 @@ public class RTSCReachabilityComputation extends ReachabilityComputation {
 			ClockConstraint cc, Federation fed) {
 		UDBMClock clockForCC = clockMapping.get(cc.getClock());
 		DataType intType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
+		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT32);
 
 		((ZoneGraphState) state).getLocations().get(0)
 				.getAllAvailableVariableBindings();
