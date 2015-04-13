@@ -21,10 +21,10 @@ library TypeAndBehaviorLibrary;
 -- define string representations of the muml types
 property voidType : String = PrimitiveTypes::VOID.repr();
 property boolType : String = PrimitiveTypes::BOOLEAN.repr();
-property byteType : String = PrimitiveTypes::BYTE.repr();
-property shortType : String = PrimitiveTypes::SHORT.repr();
-property intType : String = PrimitiveTypes::INT.repr();
-property longType : String = PrimitiveTypes::LONG.repr();
+property byteType : String = PrimitiveTypes::INT8.repr();
+property shortType : String = PrimitiveTypes::INT16.repr();
+property intType : String = PrimitiveTypes::INT32.repr();
+property longType : String = PrimitiveTypes::INT64.repr();
 property doubleType : String = PrimitiveTypes::DOUBLE.repr();
 
 
@@ -139,9 +139,9 @@ constructor StructType::StructType(in newName : String){
 	name := newName;
 }
 
-constructor Attribute::Attribute(in newName : String, in dataType : DataType){
+constructor Attribute::Attribute(in newName : String, in type : DataType){
 	name := newName;
-	type := dataType;
+	dataType := type;
 }
 
 constructor Reference::Reference(in newName : String, in dataType : DataType, in card : Cardinality){

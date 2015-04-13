@@ -14,11 +14,11 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,10 +81,6 @@ public class StructdatatypeAdapterFactory extends AdapterFactoryImpl {
 				return createStructTypeAdapter();
 			}
 			@Override
-			public Adapter caseAttribute(Attribute object) {
-				return createAttributeAdapter();
-			}
-			@Override
 			public Adapter caseReference(Reference object) {
 				return createReferenceAdapter();
 			}
@@ -103,6 +99,10 @@ public class StructdatatypeAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDataType(DataType object) {
 				return createDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseStructureDataType(StructureDataType object) {
+				return createStructureDataTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -135,20 +135,6 @@ public class StructdatatypeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStructTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute
-	 * @generated
-	 */
-	public Adapter createAttributeAdapter() {
 		return null;
 	}
 
@@ -219,6 +205,20 @@ public class StructdatatypeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.StructureDataType <em>Structure Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.types.StructureDataType
+	 * @generated
+	 */
+	public Adapter createStructureDataTypeAdapter() {
 		return null;
 	}
 

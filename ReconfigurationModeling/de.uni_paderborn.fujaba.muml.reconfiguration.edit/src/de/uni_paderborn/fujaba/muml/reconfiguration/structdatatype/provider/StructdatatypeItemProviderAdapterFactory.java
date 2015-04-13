@@ -98,29 +98,6 @@ public class StructdatatypeItemProviderAdapterFactory extends StructdatatypeAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttributeItemProvider attributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttributeAdapter() {
-		if (attributeItemProvider == null) {
-			attributeItemProvider = new AttributeItemProvider(this);
-		}
-
-		return attributeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,7 +220,6 @@ public class StructdatatypeItemProviderAdapterFactory extends StructdatatypeAdap
 	 */
 	public void dispose() {
 		if (structTypeItemProvider != null) structTypeItemProvider.dispose();
-		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
 	}
 

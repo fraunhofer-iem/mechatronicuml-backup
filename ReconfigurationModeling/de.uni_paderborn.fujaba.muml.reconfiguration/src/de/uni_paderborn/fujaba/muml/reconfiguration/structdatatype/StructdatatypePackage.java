@@ -83,7 +83,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__ANNOTATION = TypesPackage.DATA_TYPE__ANNOTATION;
+	int STRUCT_TYPE__ANNOTATION = TypesPackage.STRUCTURE_DATA_TYPE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -92,7 +92,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__EXTENSION = TypesPackage.DATA_TYPE__EXTENSION;
+	int STRUCT_TYPE__EXTENSION = TypesPackage.STRUCTURE_DATA_TYPE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -101,7 +101,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__NAME = TypesPackage.DATA_TYPE__NAME;
+	int STRUCT_TYPE__NAME = TypesPackage.STRUCTURE_DATA_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -110,7 +110,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__COMMENT = TypesPackage.DATA_TYPE__COMMENT;
+	int STRUCT_TYPE__COMMENT = TypesPackage.STRUCTURE_DATA_TYPE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -119,7 +119,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__ATTRIBUTES = TypesPackage.DATA_TYPE_FEATURE_COUNT + 0;
+	int STRUCT_TYPE__ATTRIBUTES = TypesPackage.STRUCTURE_DATA_TYPE__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>References</b></em>' containment reference list.
@@ -128,7 +128,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE__REFERENCES = TypesPackage.DATA_TYPE_FEATURE_COUNT + 1;
+	int STRUCT_TYPE__REFERENCES = TypesPackage.STRUCTURE_DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Struct Type</em>' class.
@@ -137,7 +137,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE_FEATURE_COUNT = TypesPackage.DATA_TYPE_FEATURE_COUNT + 2;
+	int STRUCT_TYPE_FEATURE_COUNT = TypesPackage.STRUCTURE_DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -146,7 +146,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ECLASS = TypesPackage.DATA_TYPE___ECLASS;
+	int STRUCT_TYPE___ECLASS = TypesPackage.STRUCTURE_DATA_TYPE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -155,7 +155,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EIS_PROXY = TypesPackage.DATA_TYPE___EIS_PROXY;
+	int STRUCT_TYPE___EIS_PROXY = TypesPackage.STRUCTURE_DATA_TYPE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -164,7 +164,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ERESOURCE = TypesPackage.DATA_TYPE___ERESOURCE;
+	int STRUCT_TYPE___ERESOURCE = TypesPackage.STRUCTURE_DATA_TYPE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -173,7 +173,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ECONTAINER = TypesPackage.DATA_TYPE___ECONTAINER;
+	int STRUCT_TYPE___ECONTAINER = TypesPackage.STRUCTURE_DATA_TYPE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -182,7 +182,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ECONTAINING_FEATURE = TypesPackage.DATA_TYPE___ECONTAINING_FEATURE;
+	int STRUCT_TYPE___ECONTAINING_FEATURE = TypesPackage.STRUCTURE_DATA_TYPE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -191,7 +191,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ECONTAINMENT_FEATURE = TypesPackage.DATA_TYPE___ECONTAINMENT_FEATURE;
+	int STRUCT_TYPE___ECONTAINMENT_FEATURE = TypesPackage.STRUCTURE_DATA_TYPE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -200,7 +200,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ECONTENTS = TypesPackage.DATA_TYPE___ECONTENTS;
+	int STRUCT_TYPE___ECONTENTS = TypesPackage.STRUCTURE_DATA_TYPE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -209,7 +209,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EALL_CONTENTS = TypesPackage.DATA_TYPE___EALL_CONTENTS;
+	int STRUCT_TYPE___EALL_CONTENTS = TypesPackage.STRUCTURE_DATA_TYPE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -218,7 +218,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ECROSS_REFERENCES = TypesPackage.DATA_TYPE___ECROSS_REFERENCES;
+	int STRUCT_TYPE___ECROSS_REFERENCES = TypesPackage.STRUCTURE_DATA_TYPE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -227,7 +227,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EGET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EGET__ESTRUCTURALFEATURE;
+	int STRUCT_TYPE___EGET__ESTRUCTURALFEATURE = TypesPackage.STRUCTURE_DATA_TYPE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -236,7 +236,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN = TypesPackage.DATA_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int STRUCT_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN = TypesPackage.STRUCTURE_DATA_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -245,7 +245,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT = TypesPackage.DATA_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int STRUCT_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT = TypesPackage.STRUCTURE_DATA_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -254,7 +254,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EIS_SET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EIS_SET__ESTRUCTURALFEATURE;
+	int STRUCT_TYPE___EIS_SET__ESTRUCTURALFEATURE = TypesPackage.STRUCTURE_DATA_TYPE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -263,7 +263,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EUNSET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EUNSET__ESTRUCTURALFEATURE;
+	int STRUCT_TYPE___EUNSET__ESTRUCTURALFEATURE = TypesPackage.STRUCTURE_DATA_TYPE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -272,7 +272,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___EINVOKE__EOPERATION_ELIST = TypesPackage.DATA_TYPE___EINVOKE__EOPERATION_ELIST;
+	int STRUCT_TYPE___EINVOKE__EOPERATION_ELIST = TypesPackage.STRUCTURE_DATA_TYPE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -281,7 +281,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___GET_EXTENSION__ECLASS = TypesPackage.DATA_TYPE___GET_EXTENSION__ECLASS;
+	int STRUCT_TYPE___GET_EXTENSION__ECLASS = TypesPackage.STRUCTURE_DATA_TYPE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -290,7 +290,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___PROVIDE_EXTENSION__ECLASS = TypesPackage.DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
+	int STRUCT_TYPE___PROVIDE_EXTENSION__ECLASS = TypesPackage.STRUCTURE_DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -299,7 +299,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___GET_ANNOTATION__STRING = TypesPackage.DATA_TYPE___GET_ANNOTATION__STRING;
+	int STRUCT_TYPE___GET_ANNOTATION__STRING = TypesPackage.STRUCTURE_DATA_TYPE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -308,7 +308,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE___PROVIDE_ANNOTATION__STRING = TypesPackage.DATA_TYPE___PROVIDE_ANNOTATION__STRING;
+	int STRUCT_TYPE___PROVIDE_ANNOTATION__STRING = TypesPackage.STRUCTURE_DATA_TYPE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Struct Type</em>' class.
@@ -317,251 +317,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_TYPE_OPERATION_COUNT = TypesPackage.DATA_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.AttributeImpl <em>Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.AttributeImpl
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl#getAttribute()
-	 * @generated
-	 */
-	int ATTRIBUTE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Struct Type</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__STRUCT_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int STRUCT_TYPE_OPERATION_COUNT = TypesPackage.STRUCTURE_DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -571,7 +327,7 @@ public interface StructdatatypePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl#getReference()
 	 * @generated
 	 */
-	int REFERENCE = 2;
+	int REFERENCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -829,17 +585,6 @@ public interface StructdatatypePackage extends EPackage {
 	EClass getStructType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType#getAttributes()
-	 * @see #getStructType()
-	 * @generated
-	 */
-	EReference getStructType_Attributes();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType#getReferences <em>References</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -849,38 +594,6 @@ public interface StructdatatypePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructType_References();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute
-	 * @generated
-	 */
-	EClass getAttribute();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getStructType <em>Struct Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Struct Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getStructType()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EReference getAttribute_StructType();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getType()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EReference getAttribute_Type();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference <em>Reference</em>}'.
@@ -958,46 +671,12 @@ public interface StructdatatypePackage extends EPackage {
 		EClass STRUCT_TYPE = eINSTANCE.getStructType();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STRUCT_TYPE__ATTRIBUTES = eINSTANCE.getStructType_Attributes();
-
-		/**
 		 * The meta object literal for the '<em><b>References</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STRUCT_TYPE__REFERENCES = eINSTANCE.getStructType_References();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.AttributeImpl <em>Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.AttributeImpl
-		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl#getAttribute()
-		 * @generated
-		 */
-		EClass ATTRIBUTE = eINSTANCE.getAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Struct Type</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE__STRUCT_TYPE = eINSTANCE.getAttribute_StructType();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.ReferenceImpl <em>Reference</em>}' class.

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-  <reconciler>
-    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
-    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RmFlIM1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler xmi:id="_RmFlIc1gEeSIgPDefa6ZBw">
+    <customTransformations xmi:id="_RmGMMM1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_RmGMMc1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="MumlReconfiguration.genmodel#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
-  <referencedGenerators href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#_RnsusM1gEeSIgPDefa6ZBw"/>
+  <plugin xmi:id="_RmGMMs1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties" name="Reconfiguration Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
@@ -26,456 +26,447 @@
     <requiredBundles>org.storydriven.storydiagrams.edit</requiredBundles>
     <requiredBundles>org.storydriven.storydiagrams.edit.properties</requiredBundles>
   </plugin>
-  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-  <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
-  <packages>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+  <tabs xmi:id="_RmGzQM1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <packages xmi:id="_RmGzQc1gEeSIgPDefa6ZBw">
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation"/>
-    <classes>
+    <classes xmi:id="_RmGzQs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/BroadcastPort"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmGzQ81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/BroadcastPort/kind"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.1"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.4"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RmGzRM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZVR9MwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZYVQMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmGzRc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/BroadcastPortSpecification"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_RmHaUM1gEeSIgPDefa6ZBw" superClasses="_RmGzRc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/ProtocolInstantiationPortSpecification"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes xmi:id="_RmHaUc1gEeSIgPDefa6ZBw" superClasses="_RmGzRc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/protocolinstantiation/DiscoveryPortSpecification"/>
     </classes>
   </packages>
-  <packages>
+  <packages xmi:id="_RmHaUs1gEeSIgPDefa6ZBw">
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration"/>
-    <classes>
+    <classes xmi:id="_RmHaU81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurableComponent"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.0"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZUq7cwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmHaVM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurableAtomicComponent"/>
-      <superClasses href="#//@packages.1/@classes.0"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.6"/>
+      <superClasses href="#_RmHaU81gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZV5BMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmHaVc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurableStructuredComponent"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmHaVs1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurableStructuredComponent/initialConfiguration"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="#//@packages.1/@classes.0"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.11"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmIBYM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="#_RmHaU81gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZV5DcwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmIBYc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPort"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.1"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.4"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZVR9MwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZYVQMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmIBYs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortInterfaceEntry"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmIBY81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortInterfaceEntry/description"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" xmi:id="_RmIocM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmIocc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortInterfaceEntry/messageType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmIocs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.3">
+    <classes xmi:id="_RmIoc81gEeSIgPDefa6ZBw" superClasses="_RmIBYc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePort"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmIodM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePort/interfaceEntries"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmJPgM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.4">
+    <classes xmi:id="_RmJPgc1gEeSIgPDefa6ZBw" superClasses="_RmIBYs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmJPgs1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry/reconfigurationMessageType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor" xmi:id="_RmJPg81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmJPhM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry/expectedResponseTime"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmJPhc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.3">
+    <classes xmi:id="_RmJPhs1gEeSIgPDefa6ZBw" superClasses="_RmIBYc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmJPh81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPort/interfaceEntries"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmJPiM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.4">
+    <classes xmi:id="_RmJPic1gEeSIgPDefa6ZBw" superClasses="_RmIBYs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmJ2kM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/minimumCommitTime"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmJ2kc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmJ2ks1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForDecision"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmLrwM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmMS0M1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/timeForExecutionPhase"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmMS0c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmMS0s1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionPortInterfaceEntry/returnValues"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmMS081gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes>
+    <classes xmi:id="_RmMS1M1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecification"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.9">
+    <classes xmi:id="_RmMS1c1gEeSIgPDefa6ZBw" superClasses="_RmMS1M1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmMS1s1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationSinglePhase/timeForExecution"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmM54M1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.9">
+    <classes xmi:id="_RmM54c1gEeSIgPDefa6ZBw" superClasses="_RmMS1M1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmM54s1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForFading"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmM5481gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmM55M1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForSetup"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmM55c1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmM55s1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutionTimingSpecificationThreePhase/timeForTeardown"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmM5581gEeSIgPDefa6ZBw"/>
+      </orderedElements>
     </classes>
-    <classes superClasses="//@packages.1/@classes.3">
+    <classes xmi:id="_RmM56M1gEeSIgPDefa6ZBw" superClasses="_RmIBYc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/InternalReconfigurationCommunicationPort"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmM56c1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Controller"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZTcxMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.13">
+    <classes xmi:id="_RmOIAM1gEeSIgPDefa6ZBw" superClasses="_RmM56c1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationController"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.14">
+    <classes xmi:id="_RmOIAc1gEeSIgPDefa6ZBw" superClasses="_RmOIAM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/RuleBasedReconfigurationController"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmOIAs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Manager"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmOIA81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Manager/specificationEntries"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmOIBM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZTcxMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmOIBc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry"/>
-      <properties category="//@packages.1/@classes.17/@propertyCategories.0">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmOvEM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/treat"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.1/@classes.17/@propertyCategories.0">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RmOvEc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmOvEs1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/propagate"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RmOvE81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmOvFM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/messageType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmOvFc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmOvFs1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/structuralCondition"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmOvF81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmOvGM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/reconfigurationRule"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.1/@classes.17/@propertyCategories.0">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmPWIM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmPWIc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/invokePlanner"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.1/@classes.17/@propertyCategories.0">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RmPWIs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmPWI81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/blockable"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RmPWJM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmPWJc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ManagerSpecificationEntry/timeForPlanning"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.1/@classes.17/@properties.0 //@packages.1/@classes.17/@properties.1 //@packages.1/@classes.17/@properties.5 //@packages.1/@classes.17/@properties.6"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmPWJs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RmPWJ81gEeSIgPDefa6ZBw" title="Booleans" properties="_RmOvEM1gEeSIgPDefa6ZBw _RmOvEs1gEeSIgPDefa6ZBw _RmPWIc1gEeSIgPDefa6ZBw _RmPWI81gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmP9MM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Executor"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmP9Mc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Executor/specificationEntries"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.7/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmP9Ms1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZTcxMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmP9M81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmP9NM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry/reconfigurationRule"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmP9Nc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmP9Ns1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry/id"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
-      <properties tooltip="" initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor" xmi:id="_RmP9N81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmQkQM1gEeSIgPDefa6ZBw" tooltip="" initializeOCLExpression="">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ExecutorSpecificationEntry/wcet"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmQkQc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmQkQs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationRule"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmQkQ81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationRule/reconfiguredComponent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmQkRM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmQkRc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationRule/signature"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RmQkRs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmQkR81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/Signature"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmQkSM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Signature/parameters"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmRLUM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmRLUc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/Signature/returnParameters"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmRLUs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmRLU81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmRLVM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition/reconfigurableComponent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmRLVc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmRLVs1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/StructuralCondition/parameters"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmRLV81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmRLWM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortAssemblyConnector"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.9"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZV5B8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmRyYM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationPortDelegationConnector"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.9"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZV5B8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmRyYc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/FadingComponent"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmRyYs1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/FadingComponent/fadingFunction"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.6"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmRyY81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZV5BMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmRyZM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/FadingFunction"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmX5AM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/FadingFunction/fromPort"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmX5Ac1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmX5As1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/FadingFunction/toPort"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmYgEM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBZ8wbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
-  <packages>
+  <packages xmi:id="_RmYgEc1gEeSIgPDefa6ZBw">
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/expression"/>
-    <classes>
+    <classes xmi:id="_RmYgEs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/ActivityCallExpression"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
-      <superClasses href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#//@packages.2/@classes.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZHPgMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../org.storydriven.storydiagrams/model/storydiagrams.propsheet#_Rn7YNM1gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmYgE81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmYgFM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression/reconfigurationRule"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties initializeOCLExpression="">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmYgFc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmZHIM1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/expression/ReconfigurationRuleCallExpression/parameterBindings"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmZHIc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZHPgMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmZHIs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/expression/EvaluateStructuralConditionExpression"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmZHI81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/expression/EvaluateStructuralConditionExpression/structuralCondition"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.1/@classes.0"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmZHJM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZHPgMwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
-  <packages>
+  <packages xmi:id="_RmZHJc1gEeSIgPDefa6ZBw">
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype"/>
-    <classes>
+    <classes xmi:id="_RmZHJs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/StructType"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.4/@classes.2"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZSOocwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
-      <genClass href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/Attribute"/>
-      <properties>
-        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/Attribute/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes>
+    <classes xmi:id="_RmZHJ81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/Reference"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmZHKM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/structdatatype/Reference/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmZuMM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
-  <packages>
+  <packages xmi:id="_RmZuMc1gEeSIgPDefa6ZBw">
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance"/>
-    <classes>
+    <classes xmi:id="_RmZuMs1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableComponentInstance"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.2/@classes.0"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZPLW8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmZuM81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurationPortInstance"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.2/@classes.2"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.9/@classes.5"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZPyZswbEeSjx7OWZCcdLw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZYVTswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.4/@classes.1">
+    <classes xmi:id="_RmZuNM1gEeSIgPDefa6ZBw" superClasses="_RmZuM81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurationMessagePortInstance"/>
     </classes>
-    <classes superClasses="//@packages.4/@classes.1">
+    <classes xmi:id="_RmZuNc1gEeSIgPDefa6ZBw" superClasses="_RmZuM81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurationExecutionPortInstance"/>
     </classes>
-    <classes superClasses="//@packages.4/@classes.1">
+    <classes xmi:id="_RmZuNs1gEeSIgPDefa6ZBw" superClasses="_RmZuM81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/InternalReconfigurationCommunicationPortInstance"/>
     </classes>
-    <classes superClasses="//@packages.4/@classes.6">
+    <classes xmi:id="_RmaVQM1gEeSIgPDefa6ZBw" superClasses="_RmaVQc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurationControllerInstance"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmaVQc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ControllerInstance"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGocMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes superClasses="//@packages.4/@classes.5">
+    <classes xmi:id="_RmaVQs1gEeSIgPDefa6ZBw" superClasses="_RmaVQM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/RuleBasedReconfigurationControllerInstance"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmcKcM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ManagerInstance"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmcKcc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ManagerInstance/manager"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.4/@classes.8/@propertyCategories.0">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmcKcs1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmcKc81gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ManagerInstance/portInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.4/@classes.8/@properties.1"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_RmcKdM1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RmcxgM1gEeSIgPDefa6ZBw" title="Lists" properties="_RmcKc81gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rmcxgc1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ExecutorInstance"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rmcxgs1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ExecutorInstance/executor"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.4/@classes.9/@propertyCategories.0">
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rmcxg81gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmcxhM1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ExecutorInstance/portInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.4/@classes.9/@properties.1"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_Rmcxhc1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rmcxhs1gEeSIgPDefa6ZBw" title="Lists" properties="_RmcxhM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGodswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rmcxh81gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableAtomicComponentInstance"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.2/@classes.12"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZQZe8wbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_RmdYkM1gEeSIgPDefa6ZBw">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableStructuredComponentInstance"/>
-      <properties>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RmdYkc1gEeSIgPDefa6ZBw">
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/reconfInstance/ReconfigurableStructuredComponentInstance/controllerInstance"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.2/@classes.11"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RmdYks1gEeSIgPDefa6ZBw"/>
+      </orderedElements>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZQZeMwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

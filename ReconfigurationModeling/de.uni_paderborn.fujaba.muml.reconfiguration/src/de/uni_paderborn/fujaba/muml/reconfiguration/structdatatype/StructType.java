@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,13 +16,13 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A StructType is a complex data type which is comparable to a struct in C. It specifies a set of attributes and a set of references, but provides no inheritance.
+ * A StructType is a complex data type. It specifies a set of attributes and a set of (multi-valued) references, but provides no inheritance.
+ * \todoch{This type should be renamed! Maybe to SimpleClass}
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType#getReferences <em>References</em>}</li>
  * </ul>
  * </p>
@@ -31,30 +31,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * @model
  * @generated
  */
-public interface StructType extends DataType {
-	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getStructType <em>Struct Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The set of attributes of this struct type. An attribute either needs to have a
-	 * primitive data type or it needs to have an array datatype where the array elements
-	 * have a primitive data type.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Attributes</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getStructType_Attributes()
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getStructType
-	 * @model opposite="structType" containment="true"
-	 * @generated
-	 */
-	EList<Attribute> getAttributes();
-
+public interface StructType extends StructureDataType {
 	/**
 	 * Returns the value of the '<em><b>References</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference}.
