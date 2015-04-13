@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -33,13 +34,18 @@ import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl;
 import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.types.Attribute;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.types.util.TypesValidator;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl;
 
@@ -77,6 +83,20 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * @generated
 	 */
 	private EClass rangedPrimitiveDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass structureDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,6 +160,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
+		One_to_n_schemataPackageImpl theOne_to_n_schemataPackage = (One_to_n_schemataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI) instanceof One_to_n_schemataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI) : One_to_n_schemataPackage.eINSTANCE);
 		MsgtypePackageImpl theMsgtypePackage = (MsgtypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) instanceof MsgtypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) : MsgtypePackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
 		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
@@ -153,6 +174,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
+		theOne_to_n_schemataPackage.createPackageContents();
 		theMsgtypePackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
 		theValuetypePackage.createPackageContents();
@@ -166,11 +188,21 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
+		theOne_to_n_schemataPackage.initializePackageContents();
 		theMsgtypePackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		thePatternPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theTypesPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return TypesValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theTypesPackage.freeze();
@@ -267,6 +299,33 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStructureDataType() {
+		return structureDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructureDataType_Attributes() {
+		return (EReference)structureDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttribute() {
+		return attributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
 	}
@@ -312,6 +371,11 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		createEReference(rangedPrimitiveDataTypeEClass, RANGED_PRIMITIVE_DATA_TYPE__RANGED_TYPE);
 		createEReference(rangedPrimitiveDataTypeEClass, RANGED_PRIMITIVE_DATA_TYPE__RANGE);
 
+		structureDataTypeEClass = createEClass(STRUCTURE_DATA_TYPE);
+		createEReference(structureDataTypeEClass, STRUCTURE_DATA_TYPE__ATTRIBUTES);
+
+		attributeEClass = createEClass(ATTRIBUTE);
+
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
 	}
@@ -342,6 +406,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		// Obtain other dependent packages
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -353,6 +418,9 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		dataTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		dataTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		rangedPrimitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
+		structureDataTypeEClass.getESuperTypes().add(this.getDataType());
+		attributeEClass.getESuperTypes().add(theBehaviorPackage.getTypedNamedElement());
+		attributeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -368,18 +436,73 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEReference(getRangedPrimitiveDataType_RangedType(), this.getPrimitiveDataType(), null, "rangedType", null, 1, 1, RangedPrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRangedPrimitiveDataType_Range(), theValuetypePackage.getRange(), null, "range", null, 1, 1, RangedPrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(structureDataTypeEClass, StructureDataType.class, "StructureDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStructureDataType_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, StructureDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BOOLEAN);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BYTE);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.SHORT);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.LONG);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT8);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT16);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT32);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT64);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.DOUBLE);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.UINT8);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.UINT16);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.UINT32);
+		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.UINT64);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+		addAnnotation
+		  (attributeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ValidAttributeDataType"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (attributeEClass, 
+		   source, 
+		   new String[] {
+			 "ValidAttributeDataType", "-- An attribute may only use a Primtive Data Type, a Ranged Primitive Data Type, an Array Data Type, or a Structure Data Type\r\nself.dataType.oclIsTypeOf(PrimitiveDataType) or self.dataType.oclIsTypeOf(RangedPrimitiveDataType) or self.dataType.oclIsTypeOf(ArrayDataType) or self.dataType.oclIsTypeOf(StructureDataType)\r\n-- author: chris227"
+		   });
 	}
 
 } //TypesPackageImpl

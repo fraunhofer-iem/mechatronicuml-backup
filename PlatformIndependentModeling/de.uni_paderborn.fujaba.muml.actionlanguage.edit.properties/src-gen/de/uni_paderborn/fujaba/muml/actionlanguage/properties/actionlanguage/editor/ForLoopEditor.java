@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.ed
  */
 public class ForLoopEditor
 		extends
-			de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.LoopEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,64 +21,136 @@ public class ForLoopEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addInitializeExpression_GeneralTab_Editor(null, false);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorExpressions_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorBlock_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorLoopTest_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorInitializeExpression_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorCountingExpression_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorExpressions_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorBlock_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorLoopTest_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorInitializeExpression_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorCountingExpression_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else {
 		}
+	}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCountingExpression_GeneralTab_Editor(null, false);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorInitializeExpression_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorInitializeExpression_GeneralTab_Editor() {
+		if (this.editorInitializeExpression_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getForLoop_InitializeExpression();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Initialize a loop variable by the initialize expression.");
+
+			this.editorInitializeExpression_GeneralTab = editor;
 		}
-
+		return this.editorInitializeExpression_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addInitializeExpression_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createInitializeExpression_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCountingExpression_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCountingExpression_GeneralTab_Editor() {
+		if (this.editorCountingExpression_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getForLoop_CountingExpression();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence.");
+
+			this.editorCountingExpression_GeneralTab = editor;
+		}
+		return this.editorCountingExpression_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createInitializeExpression_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getForLoop_InitializeExpression();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBlock_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBlock_GeneralTab_Editor() {
+		if (this.editorBlock_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getLoop_Block();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("Initialize a loop variable by the initialize expression.");
+			editor.setTooltipMessage("Body block of the loop.");
 
-		return editor;
-
+			this.editorBlock_GeneralTab = editor;
+		}
+		return this.editorBlock_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addCountingExpression_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createCountingExpression_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorLoopTest_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorLoopTest_GeneralTab_Editor() {
+		if (this.editorLoopTest_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getLoop_LoopTest();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("If the loop test expression evaluates to true the block is executed. ");
+
+			this.editorLoopTest_GeneralTab = editor;
+		}
+		return this.editorLoopTest_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCountingExpression_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
-				.getForLoop_CountingExpression();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExpressions_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExpressions_GeneralTab_Editor() {
+		if (this.editorExpressions_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE
+					.getBlock_Expressions();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("Assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence.");
+			editor.setTooltipMessage("List of expressions may be attached as a body of a loop or represent a path of a conditional statement.");
 
-		return editor;
-
+			this.editorExpressions_GeneralTab = editor;
+		}
+		return this.editorExpressions_GeneralTab;
 	}
 
 	//

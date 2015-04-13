@@ -98,6 +98,29 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.behavior.OperationRepository} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperationRepositoryItemProvider operationRepositoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.behavior.OperationRepository}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOperationRepositoryAdapter() {
+		if (operationRepositoryItemProvider == null) {
+			operationRepositoryItemProvider = new OperationRepositoryItemProvider(this);
+		}
+
+		return operationRepositoryItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.behavior.Operation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +292,7 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
+		if (operationRepositoryItemProvider != null) operationRepositoryItemProvider.dispose();
 	}
 
 }

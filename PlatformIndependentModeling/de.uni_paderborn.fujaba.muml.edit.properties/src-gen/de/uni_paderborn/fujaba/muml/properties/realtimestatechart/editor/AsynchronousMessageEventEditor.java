@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class AsynchronousMessageEventEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEventEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,34 +21,79 @@ public class AsynchronousMessageEventEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessage_GeneralTab_Editor(null, false);
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorMessage_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorOneToManyCommunicationSchema_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorMessage_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorOneToManyCommunicationSchema_GeneralTab_Editor(),
+					false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addMessage_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createMessage_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMessage_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMessage_GeneralTab_Editor() {
+		if (this.editorMessage_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getAsynchronousMessageEvent_Message();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The message associated with this event. The message is either requested to be\nreceived (trigger event) or it will be sent (raise event).");
+
+			this.editorMessage_GeneralTab = editor;
+		}
+		return this.editorMessage_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessage_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getAsynchronousMessageEvent_Message();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOneToManyCommunicationSchema_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorOneToManyCommunicationSchema_GeneralTab_Editor() {
+		if (this.editorOneToManyCommunicationSchema_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getAsynchronousMessageEvent_OneToManyCommunicationSchema();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
 
-		editor.setTooltipMessage("The message associated with this event. The message is either requested to be\nreceived (trigger event) or it will be sent (raise event).");
+			editor.setTooltipMessage("A asynchronous message event must habe a one-to-many communication schema if the statechart defines the behavior of a multi role.");
 
-		return editor;
+			this.editorOneToManyCommunicationSchema_GeneralTab = editor;
+		}
+		return this.editorOneToManyCommunicationSchema_GeneralTab;
+	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorKind_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorKind_GeneralTab_Editor() {
+		if (this.editorKind_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getEvent_Kind();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Decides the kind: Is this a raise event or a trigger event?\n\nA event may either be a trigger event or a raise event. A trigger event triggers \nsome action within the statechart, a raise event is generated by the statechart \nand will be processed by another statechart.");
+
+			this.editorKind_GeneralTab = editor;
+		}
+		return this.editorKind_GeneralTab;
 	}
 
 	//
@@ -83,7 +128,8 @@ public class AsynchronousMessageEventEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

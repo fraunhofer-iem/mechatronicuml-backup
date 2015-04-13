@@ -489,6 +489,52 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArrayIndexExpressionItemProvider arrayIndexExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayIndexExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArrayIndexExpressionAdapter() {
+		if (arrayIndexExpressionItemProvider == null) {
+			arrayIndexExpressionItemProvider = new ArrayIndexExpressionItemProvider(this);
+		}
+
+		return arrayIndexExpressionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeAccessorExpressionItemProvider attributeAccessorExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeAccessorExpressionAdapter() {
+		if (attributeAccessorExpressionItemProvider == null) {
+			attributeAccessorExpressionItemProvider = new AttributeAccessorExpressionItemProvider(this);
+		}
+
+		return attributeAccessorExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -605,6 +651,8 @@ public class ActionlanguageItemProviderAdapterFactory extends ActionlanguageAdap
 		if (parameterExpressionItemProvider != null) parameterExpressionItemProvider.dispose();
 		if (timeValueExpressionItemProvider != null) timeValueExpressionItemProvider.dispose();
 		if (typeCastExpressionItemProvider != null) typeCastExpressionItemProvider.dispose();
+		if (arrayIndexExpressionItemProvider != null) arrayIndexExpressionItemProvider.dispose();
+		if (attributeAccessorExpressionItemProvider != null) attributeAccessorExpressionItemProvider.dispose();
 	}
 
 }

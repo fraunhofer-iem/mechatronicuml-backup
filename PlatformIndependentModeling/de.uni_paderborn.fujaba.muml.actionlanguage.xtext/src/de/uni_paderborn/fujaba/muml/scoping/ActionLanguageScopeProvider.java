@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.actionlanguage.AttributeAccessorExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
@@ -37,8 +38,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.types.Attribute;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.types.StructureDataType;
 
 /**
  * This class contains custom scoping description.
@@ -52,6 +55,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	private List<DataType> typeList;
 	private List<Operation> operationList;
 	private List<MessageType> messageTypeList;
+	private List<Attribute>  attributeList;
 	
 	// TODO: make this string public in class TypeCategoryInitializer
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
@@ -80,7 +84,15 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return createScope(typeList);
 	}
 	
+	IScope scope_AttributeAccessorExpression_attribute(AttributeAccessorExpression expression, EReference ref){
+		return createScope(attributeList);
+	}
+	
 	IScope scope_TypedNamedElement_dataType(EObject context, EReference ref) {
+		return createScope(typeList);
+	}
+	
+	IScope scope_TypeCastExpression_dataType(EObject context, EReference ref){
 		return createScope(typeList);
 	}
 	
@@ -182,7 +194,16 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}
 	
 	public void setScopeForEObject(Operation operation) {
-		setScopeForRTSC(operation.eContainer());
+		
+		//if operation is embedded in an RTSC, add RTSC elements to scope
+		if (operation.eContainer() instanceof RealtimeStatechart){
+			setScopeForRTSC(operation.eContainer());
+		} else {
+			//initialize containers -> has been done by setScopeForRTSC if operation is embedded in RTSC
+			typedNamedElementList = new ArrayList<TypedNamedElement>();
+			initDataTypes(operation);
+		}
+		
 		List<Parameter> parameterList = getScopeForOperation(operation);
 		for (Parameter parameter : parameterList) {
 			typedNamedElementList.add(parameter);
@@ -227,12 +248,22 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	private void initDataTypes(EObject object) {
 		RootNode rootNode = (RootNode) object.eResource().getContents().get(0);
+		
+		//init lists
 		typeList = new ArrayList<DataType>();
+		attributeList = new ArrayList<Attribute>();	
+		
 		ModelElementCategory modelElementCategory = ModelInstancePlugin.getInstance()
 				.getModelElementCategoryRegistry()
 				.getModelElementCategory(rootNode, TYPES_CATEGORY_KEY);
+		
+		//fill lists
 		for (EObject type : modelElementCategory.getModelElements()) {
 			typeList.add((DataType) type);
+					
+			if(type instanceof StructureDataType){
+				attributeList.addAll(((StructureDataType)type).getAttributes());
+			}
 		}
 	}
 	
@@ -262,6 +293,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		typedNamedElementList = Collections.<TypedNamedElement>emptyList();
 		operationList = Collections.<Operation>emptyList();
 		messageTypeList = Collections.<MessageType>emptyList();
+		attributeList = Collections.<Attribute>emptyList();
 	}
 	
 	private List<TypedNamedElement> getAvailableTypedNamedElementList(EObject context) {

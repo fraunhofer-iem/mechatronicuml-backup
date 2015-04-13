@@ -309,6 +309,7 @@
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/AsynchronousMessageEvent">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/DoEvent">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/DoEvent/action"/>
@@ -343,6 +344,9 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/allAvailableVariables"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/allAvailableOperations"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/usedOperationRepositories"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/RealtimeStatechart/usesOneToManyCommunicationSchemata"/>
         <genOperations ecoreOperation="muml.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf">
           <genParameters ecoreParameter="muml.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf/statechart"/>
         </genOperations>
@@ -365,6 +369,28 @@
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/EntryPoint"/>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/ExitPoint"/>
+      <nestedGenPackages prefix="One_to_n_schemata" basePackage="de.uni_paderborn.fujaba.muml.realtimestatechart"
+          disposableProviderFactory="true" ecorePackage="muml.ecore#//realtimestatechart/one_to_n_schemata">
+        <genClasses image="false" ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/Multicast"/>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/Unicast"/>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate">
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate/delay"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/one_to_n_schemata/Iterate/startFromFirst"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/responseMessage"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/Convergecast"/>
+      </nestedGenPackages>
     </nestedGenPackages>
     <nestedGenPackages prefix="Msgtype" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//msgtype">
@@ -381,11 +407,15 @@
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//types/PrimitiveTypes">
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/VOID"/>
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/BOOLEAN"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/BYTE"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/SHORT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/LONG"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT8"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT16"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT32"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/INT64"/>
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/DOUBLE"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/UINT8"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/UINT16"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/UINT32"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/UINT64"/>
       </genEnums>
       <genClasses ecoreClass="muml.ecore#//types/ArrayDataType">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -401,6 +431,10 @@
             ecoreFeature="ecore:EReference muml.ecore#//types/RangedPrimitiveDataType/rangedType"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/RangedPrimitiveDataType/range"/>
       </genClasses>
+      <genClasses ecoreClass="muml.ecore#//types/StructureDataType">
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/StructureDataType/attributes"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//types/Attribute"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Connector" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//connector">
@@ -536,6 +570,9 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//behavior/Variable/constant"/>
         <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//behavior/OperationRepository">
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/OperationRepository/operations"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.muml"

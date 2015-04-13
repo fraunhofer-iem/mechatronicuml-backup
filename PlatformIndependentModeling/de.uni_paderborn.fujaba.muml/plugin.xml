@@ -57,6 +57,14 @@
             class="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage"
             genModel="model/muml.genmodel"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated muml -->
+      <package
+            uri="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0"
+            class="de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated muml -->
       <package

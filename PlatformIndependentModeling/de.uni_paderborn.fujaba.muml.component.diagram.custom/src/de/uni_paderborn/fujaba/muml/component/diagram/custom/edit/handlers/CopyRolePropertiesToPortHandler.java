@@ -90,13 +90,15 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 		final Resource resource = port.eResource();
 		boolean hadReceiverMessageBuffer = !port.getReceiverMessageBuffer()
 				.isEmpty();
+		
+		//check if parent is an atomic component
 		AtomicComponent atomicComponent = null;
 		if (ComponentPackage.Literals.ATOMIC_COMPONENT.isSuperTypeOf(port
 				.getComponent().eClass())) {
 			atomicComponent = (AtomicComponent) port.getComponent();
-		} else {
-			return;
-		}
+		} 
+
+		//check whether role and all necessary behavior references are set
 		if (role == null) {
 			MessageDialog
 					.openInformation(shell, "Role not specified",
@@ -140,7 +142,8 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 				}
 			}
 
-			if (atomicComponent.getBehavior() == null) {
+			//create component RTSC if we have a port of an atomic component that has no behavior yet
+			if (atomicComponent != null && atomicComponent.getBehavior() == null) {
 
 				shallComponentRTSCbeCreated = true;
 
@@ -158,8 +161,9 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 						+ atomicComponent.getName() + ".";
 			}
 			
-			updatePort(editingDomain, port, true,
-					true);
+			//call the transformation
+			updatePort(editingDomain, port, shallPortRTSCbeReplaced,
+					shallComponentRTSCbeCreated);
 			/**
 			 * Create the Component RTSC Diagram
 			 */

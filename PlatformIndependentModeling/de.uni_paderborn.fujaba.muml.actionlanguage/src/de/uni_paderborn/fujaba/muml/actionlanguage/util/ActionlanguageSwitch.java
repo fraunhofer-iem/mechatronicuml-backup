@@ -267,6 +267,35 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ActionlanguagePackage.ELEMENT_ACCESSOR_EXPRESSION: {
+				ElementAccessorExpression elementAccessorExpression = (ElementAccessorExpression)theEObject;
+				T result = caseElementAccessorExpression(elementAccessorExpression);
+				if (result == null) result = caseExpression(elementAccessorExpression);
+				if (result == null) result = caseCommentableElement(elementAccessorExpression);
+				if (result == null) result = caseExtendableElement(elementAccessorExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION: {
+				ArrayIndexExpression arrayIndexExpression = (ArrayIndexExpression)theEObject;
+				T result = caseArrayIndexExpression(arrayIndexExpression);
+				if (result == null) result = caseElementAccessorExpression(arrayIndexExpression);
+				if (result == null) result = caseExpression(arrayIndexExpression);
+				if (result == null) result = caseCommentableElement(arrayIndexExpression);
+				if (result == null) result = caseExtendableElement(arrayIndexExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionlanguagePackage.ATTRIBUTE_ACCESSOR_EXPRESSION: {
+				AttributeAccessorExpression attributeAccessorExpression = (AttributeAccessorExpression)theEObject;
+				T result = caseAttributeAccessorExpression(attributeAccessorExpression);
+				if (result == null) result = caseElementAccessorExpression(attributeAccessorExpression);
+				if (result == null) result = caseExpression(attributeAccessorExpression);
+				if (result == null) result = caseCommentableElement(attributeAccessorExpression);
+				if (result == null) result = caseExtendableElement(attributeAccessorExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -553,6 +582,51 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTypeCastExpression(TypeCastExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Element Accessor Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Element Accessor Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementAccessorExpression(ElementAccessorExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array Index Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array Index Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayIndexExpression(ArrayIndexExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Accessor Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Accessor Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeAccessorExpression(AttributeAccessorExpression object) {
 		return null;
 	}
 

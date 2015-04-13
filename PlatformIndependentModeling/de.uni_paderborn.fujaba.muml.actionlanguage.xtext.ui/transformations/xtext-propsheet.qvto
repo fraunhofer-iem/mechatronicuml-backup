@@ -22,7 +22,7 @@ mapping inout PropertyGenerator::generator() {
 		--if (not prop.category.oclIsUndefined()) then {
 		--	prop.category := null;
 		--} endif;
-		prop.category := null;
+		--prop.category := null;
 
 
 		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor')->isEmpty()) then {

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.msgtype;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
+import org.storydriven.core.Repository;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +35,7 @@ import org.storydriven.core.NamedElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageType'"
  * @generated
  */
-public interface MessageTypeRepository extends NamedElement, CommentableElement {
+public interface MessageTypeRepository extends Repository {
 	/**
 	 * Returns the value of the '<em><b>Message Types</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.msgtype.MessageType}.

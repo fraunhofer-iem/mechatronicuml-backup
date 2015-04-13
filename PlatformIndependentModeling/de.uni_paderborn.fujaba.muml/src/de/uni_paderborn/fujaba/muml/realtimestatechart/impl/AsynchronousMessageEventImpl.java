@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.AsynchronousMessageEventImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.AsynchronousMessageEventImpl#getOneToManyCommunicationSchema <em>One To Many Communication Schema</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +42,16 @@ public class AsynchronousMessageEventImpl extends TransitionEventImpl implements
 	 * @ordered
 	 */
 	protected Message message;
+
+	/**
+	 * The cached value of the '{@link #getOneToManyCommunicationSchema() <em>One To Many Communication Schema</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOneToManyCommunicationSchema()
+	 * @generated
+	 * @ordered
+	 */
+	protected OneToManyCommunicationSchema oneToManyCommunicationSchema;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,11 +120,72 @@ public class AsynchronousMessageEventImpl extends TransitionEventImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OneToManyCommunicationSchema getOneToManyCommunicationSchema() {
+		return oneToManyCommunicationSchema;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOneToManyCommunicationSchema(OneToManyCommunicationSchema newOneToManyCommunicationSchema, NotificationChain msgs) {
+		OneToManyCommunicationSchema oldOneToManyCommunicationSchema = oneToManyCommunicationSchema;
+		oneToManyCommunicationSchema = newOneToManyCommunicationSchema;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA, oldOneToManyCommunicationSchema, newOneToManyCommunicationSchema);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOneToManyCommunicationSchema(OneToManyCommunicationSchema newOneToManyCommunicationSchema) {
+		if (newOneToManyCommunicationSchema != oneToManyCommunicationSchema) {
+			NotificationChain msgs = null;
+			if (oneToManyCommunicationSchema != null)
+				msgs = ((InternalEObject)oneToManyCommunicationSchema).eInverseRemove(this, One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT, OneToManyCommunicationSchema.class, msgs);
+			if (newOneToManyCommunicationSchema != null)
+				msgs = ((InternalEObject)newOneToManyCommunicationSchema).eInverseAdd(this, One_to_n_schemataPackage.ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT, OneToManyCommunicationSchema.class, msgs);
+			msgs = basicSetOneToManyCommunicationSchema(newOneToManyCommunicationSchema, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA, newOneToManyCommunicationSchema, newOneToManyCommunicationSchema));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				if (oneToManyCommunicationSchema != null)
+					msgs = ((InternalEObject)oneToManyCommunicationSchema).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA, null, msgs);
+				return basicSetOneToManyCommunicationSchema((OneToManyCommunicationSchema)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				return basicSetMessage(null, msgs);
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				return basicSetOneToManyCommunicationSchema(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -126,6 +200,8 @@ public class AsynchronousMessageEventImpl extends TransitionEventImpl implements
 		switch (featureID) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				return getMessage();
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				return getOneToManyCommunicationSchema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,6 +216,9 @@ public class AsynchronousMessageEventImpl extends TransitionEventImpl implements
 		switch (featureID) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				setMessage((Message)newValue);
+				return;
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				setOneToManyCommunicationSchema((OneToManyCommunicationSchema)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,6 +235,9 @@ public class AsynchronousMessageEventImpl extends TransitionEventImpl implements
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				setMessage((Message)null);
 				return;
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				setOneToManyCommunicationSchema((OneToManyCommunicationSchema)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -170,6 +252,8 @@ public class AsynchronousMessageEventImpl extends TransitionEventImpl implements
 		switch (featureID) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				return message != null;
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				return oneToManyCommunicationSchema != null;
 		}
 		return super.eIsSet(featureID);
 	}

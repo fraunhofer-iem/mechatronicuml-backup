@@ -110,6 +110,8 @@ public class BehaviorValidator extends MumlValidator {
 				return validateTypedNamedElement((TypedNamedElement)value, diagnostics, context);
 			case BehaviorPackage.VARIABLE:
 				return validateVariable((Variable)value, diagnostics, context);
+			case BehaviorPackage.OPERATION_REPOSITORY:
+				return validateOperationRepository((OperationRepository)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -180,6 +182,15 @@ public class BehaviorValidator extends MumlValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOperationRepository(OperationRepository operationRepository, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(operationRepository, diagnostics, context);
 	}
 
 	/**

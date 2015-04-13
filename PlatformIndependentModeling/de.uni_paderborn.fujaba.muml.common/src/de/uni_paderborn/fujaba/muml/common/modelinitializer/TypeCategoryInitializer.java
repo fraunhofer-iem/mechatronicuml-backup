@@ -30,7 +30,7 @@ public class TypeCategoryInitializer implements IModelInitializer {
 			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
 					.createPrimitiveDataType();
 			primitiveDataType.setPrimitiveType(type);
-			primitiveDataType.setName(type.getName());
+			primitiveDataType.setName(type.getName().toLowerCase());
 			typesCategory.getModelElements().add(primitiveDataType);
 		}
 

@@ -15,6 +15,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import org.storydriven.core.Repository;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
@@ -94,6 +95,10 @@ public class MsgtypeAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseRepository(Repository object) {
+				return createRepositoryAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -182,6 +187,20 @@ public class MsgtypeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.Repository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.Repository
+	 * @generated
+	 */
+	public Adapter createRepositoryAdapter() {
 		return null;
 	}
 

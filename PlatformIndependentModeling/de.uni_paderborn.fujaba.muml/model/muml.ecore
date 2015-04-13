@@ -222,7 +222,7 @@
         <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AssemblyNotBetweenHybridPorts AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"/>
+        <details key="constraints" value="AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SelfAssemblyOnlyForMultiPortsOrMultiParts" value="--  Self assembly only allowed for multi ports and multi component-parts&#xA;selfConnector implies&#xA;let portPart : PortPart = portParts->first() in&#xA;portPart.portType.oclIsKindOf(component::DiscretePort) and (portPart.portType.oclAsType(component::DiscretePort).multi or portPart.componentPart.multiPart)&#xA;-- author: bingo, cgerking, see MUML #872"/>
@@ -232,9 +232,8 @@
         <details key="ValidPortDirections" value="-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds&#xA;portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)&#xA;-- author: bingo, cgerking, see MUML #875"/>
         <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
             value="-- Assembly may only connect ports refining roles of the same coordination protocol&#xA;portParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)&#xA;-- author: bingo, cgerking, see MUML #876"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="-- Assembly may only connect ports refining different roles&#xA;portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)&#xA;-- author: bingo, cgerking, see MUML #877"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="-- Assembly may only connect ports refining different roles&#xD;&#xA;portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)&#xD;&#xA;-- author: bingo, cgerking, see MUML #877"/>
         <details key="AssemblyBetweenDiscretePortsCompatibleMessageTypes" value="-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)&#xA;portParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->&#xA;forAll(p1, p2 | p1 &lt;> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xA;-- author: bingo, cgerking, see MUML #878"/>
-        <details key="AssemblyNotBetweenHybridPorts" value="-- Assembly must not connect two Hybrid Ports&#xA;portParts->notEmpty() implies not portParts.portType->reject(oclIsUndefined())->forAll(oclIsKindOf(component::HybridPort))&#xA;"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
           eType="#//component/CoordinationProtocolPart" changeable="false" volatile="true"
@@ -1434,7 +1433,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//realtimestatechart/PrioritizedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent"/>
+        <details key="constraints" value="UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
@@ -1442,8 +1441,8 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="LegalTransitionsOnly" value="-- Inter-level transitions are invalid&#xD;&#xA;&#xD;&#xA;if (self.source.oclIsUndefined() or self.target.oclIsUndefined()) then&#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))&#x9;&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))&#x9;&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))&#xD;&#xA;&#xD;&#xA;or &#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)&#xD;&#xA;endif"/>
         <details key="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding" value="-- Trigger Message Event must be parameterless (no parameter binding allowed)&#xD;&#xA;not self.triggerMessageEvent.message.oclIsUndefined() implies&#xD;&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
-        <details key="ValidTriggerMessageEvents" value="-- Trigger message type must be added to receiver message types&#xA;not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
-        <details key="ValidRaiseMessageEvents" value="-- Raise message type must be added to sender message types&#xA;not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)"/>
+        <details key="ValidTriggerMessageEvents" value="-- Trigger message type must be added to receiver message types&#xD;&#xA;not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
+        <details key="ValidRaiseMessageEvents" value="-- Raise message type must be added to sender message types&#xD;&#xA;not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)"/>
         <details key="StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines"
             value="-- Transitions to state connection points must not define side effects or deadlines&#xD;&#xA;(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
         <details key="StateConnectionPointOutgoingTransitionsNoConditions" value="-- Transitions from state connection points must not have conditions&#xD;&#xA;(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
@@ -1452,6 +1451,8 @@
         <details key="NoCombinationOfReceivedSynchronizationAndTriggerMessage" value="-- A transition must not specify a received synchronization and a trigger message at the same time&#xD;&#xA;((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))&#xD;&#xA;implies&#xD;&#xA;self.triggerMessageEvent.oclIsUndefined()"/>
         <details key="TransitionMustBeContainedByCorrectStatechart" value="-- A transition must be contained by its logical parent statechart&#xD;&#xA;(not self.statechart.oclIsUndefined()) implies (self.statechart.transitions->includes(self))"/>
         <details key="OutgoingTransitionOfUrgentStateMustBeUrgent" value="-- An outgoing transition of an urgent state must be urgent itself&#xD;&#xA;(self.source.oclIsKindOf(State) and self.source.oclAsType(State).urgent) implies self.urgent"/>
+        <details key="UsingAOneToManySchemaAtOneTransitionImpliesUsingSchemaAtAllTransitions"
+            value="-- As soon as a One-To-Many Communication Schema is used, all message events of the RoleOrPortRTSC must use a One-To-Many Communication Schema &#xD;&#xA;let selfStatechart : RealtimeStatechart = self.statechart in &#xD;&#xA;selfStatechart.usesOneToManyCommunicationSchemata implies (&#xD;&#xA;let allChildrenOfRoleOrPortStatechart : Set(RealtimeStatechart) =&#xD;&#xA;selfStatechart.getPortOrRoleStatechart() -> closure(states.embeddedRegions.embeddedStatechart) in &#xD;&#xA; let allTransitions : OrderedSet(Transition) =  allChildrenOfRoleOrPortStatechart->asOrderedSet()->append(selfStatechart.getPortOrRoleStatechart()).transitions->asOrderedSet() in &#xD;&#xA;allTransitions->forAll(t : Transition |  (not(t.raiseMessageEvent = null) implies not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)) and ( not(t.triggerMessageEvent = null) implies not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)))&#xD;&#xA;)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="synchronization" eType="#//realtimestatechart/Synchronization"
           containment="true">
@@ -1616,15 +1617,24 @@
         <details key="documentation" value="An AsynchronousMessageEvent is a TransitionEvent that corresponds to &#xD;&#xA;receiving or sending a message. They are used to model asynchronous &#xD;&#xA;communication between realtime statecharts. A trigger events specifies&#xD;&#xA;that the corresponding message has to be received for the transition to be&#xD;&#xA;enabled, a raised event specifies that the corresponding message will be &#xD;&#xA;sent upon execution of the transition. "/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="RaiseMessageEventImpliesParameterBinding" value="-- A raise message event must bind a value to every parameter&#xA;let messageType : msgtype::MessageType = self.message.instanceOf in&#xA;(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))&#xA;-- author: adann"/>
+        <details key="RaiseMessageEventImpliesParameterBinding" value="-- A raise message event must bind a value to every parameter&#xD;&#xA;let messageType : msgtype::MessageType = self.message.instanceOf in&#xD;&#xA;(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))&#xD;&#xA;-- author: adann"/>
+        <details key="RaiseMessageEventImpliesSendingCommunicationSchema" value="if (self.oneToManyCommunicationSchema->isEmpty()) then &#xD;&#xA;&#x9;true &#xD;&#xA;else&#xD;&#xA;&#x9;self.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Unicast) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Iterate) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::LoadBalancing)&#x9;)&#xD;&#xA;endif"/>
+        <details key="TriggerMessageEventImpliesReceivingCommunicationSchema" value="if (self.oneToManyCommunicationSchema->isEmpty()) then &#xD;&#xA;&#x9;true &#xD;&#xA;else&#xD;&#xA;&#x9;self.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Convergecast))&#xD;&#xA;endif"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="RaiseMessageEventImpliesParameterBinding"/>
+        <details key="constraints" value="RaiseMessageEventImpliesParameterBinding RaiseMessageEventImpliesSendingCommunicationSchema TriggerMessageEventImpliesReceivingCommunicationSchema"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
           eType="#//realtimestatechart/Message" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The message associated with this event. The message is either requested to be&#xD;&#xA;received (trigger event) or it will be sent (raise event)."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="oneToManyCommunicationSchema"
+          eType="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"
+          containment="true" eOpposite="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/asynchronousMessageEvent">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An asynchronous message event must have a one-to-many communication schema if the statechart defines the behavior of a multi role."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1671,7 +1681,7 @@
         <details key="constraints" value="ValidSelectorType"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="ValidSelectorType" value="-- The selector type must be of type BOOLEAN, BYTE , SHORT, INT or of type role iff this RTSC is a multi-role RTSC, or of type port iff this RTSC is a multi-port RTSC &#xD;&#xA;let parentRtsc : realtimestatechart::RealtimeStatechart = self.state.parentStatechart in&#xD;&#xA;&#xD;&#xA;let behavElement : behavior::BehavioralElement = if (parentRtsc->isEmpty()) then null else parentRtsc.behavioralElement endif in&#xD;&#xA;&#xD;&#xA;let selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then &#xD;&#xA;self.selectorType.oclIsKindOf(types::PrimitiveDataType) &#xD;&#xA;and (self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BYTE &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::SHORT&#xD;&#xA;)&#xD;&#xA;else true endif in &#xD;&#xA;&#xD;&#xA;if self.selectorType.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else &#xD;&#xA;&#x9;if behavElement.oclIsUndefined() then &#xD;&#xA;&#x9;&#x9;selectorTypeIsValidPrimitiveType&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;selectorTypeIsValidPrimitiveType &#xD;&#xA;&#x9;&#x9;or (if behavElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) then behavElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and self.selectorType.oclIsKindOf(connector::DiscreteInteractionEndpoint) else false endif)&#xD;&#xA;&#x9;endif &#xD;&#xA;endif&#xA;-- adann, xell, chris227"/>
+        <details key="ValidSelectorType" value="-- The selector type must be of and Integer type or of type role iff this RTSC is a multi-role RTSC, or of type port iff this RTSC is a multi-port RTSC &#xD;&#xA;let parentRtsc : realtimestatechart::RealtimeStatechart = self.state.parentStatechart in&#xD;&#xA;&#xD;&#xA;let behavElement : behavior::BehavioralElement = if (parentRtsc->isEmpty()) then null else parentRtsc.behavioralElement endif in&#xD;&#xA;&#xD;&#xA;let selectorTypeIsValidPrimitiveType : Boolean = if (not self.selectorType.oclIsUndefined()) then &#xD;&#xA;self.selectorType.oclIsKindOf(types::PrimitiveDataType) &#xD;&#xA;and (self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::BOOLEAN &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT8 &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT16 &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT32&#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::INT64&#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT8 &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT16 &#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT32&#xD;&#xA;&#x9;or self.selectorType.oclAsType(types::PrimitiveDataType).primitiveType=types::PrimitiveTypes::UINT64&#xD;&#xA;)&#xD;&#xA;else true endif in &#xD;&#xA;&#xD;&#xA;if self.selectorType.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else &#xD;&#xA;&#x9;if behavElement.oclIsUndefined() then &#xD;&#xA;&#x9;&#x9;selectorTypeIsValidPrimitiveType&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;selectorTypeIsValidPrimitiveType &#xD;&#xA;&#x9;&#x9;or (if behavElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) then behavElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and self.selectorType.oclIsKindOf(connector::DiscreteInteractionEndpoint) else false endif)&#xD;&#xA;&#x9;endif &#xD;&#xA;endif&#xA;-- adann, xell, chris227"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
           eType="#//realtimestatechart/State" eOpposite="#//realtimestatechart/State/channels">
@@ -1738,9 +1748,10 @@
         <details key="UniqueNameOfStates" value="-- State names must be unique&#xA;self.states->isUnique(name)"/>
         <details key="NoCycles" value="-- If we are contained within a statechart...&#xD;&#xA;(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())&#xD;&#xA;&#xD;&#xA;implies&#xD;&#xA;&#xD;&#xA;-- ... then we must not be a super statechart of it.&#xD;&#xA;(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))"/>
         <details key="OneInitialState" value="-- An initial state is missing&#xA;self.states->select(s |  s.initial)->size() = 1"/>
+        <details key="CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort" value="-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort&#xD;&#xA;self.usesOneToManyCommunicationSchemata implies (&#xD;&#xA;not (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)&#xD;&#xA;and self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="UniqueNameOfStates NoCycles OneInitialState"/>
+        <details key="constraints" value="CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort UniqueNameOfStates NoCycles OneInitialState"/>
       </eAnnotations>
       <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1833,10 +1844,26 @@
           upperBound="-1" eType="#//behavior/Operation" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).operations ->asOrderedSet()"/>
+          <details key="derivation" value="-- consider operations defined by self and by all parent RTSCs and include operations of all used OperationRepositories (either by self or by parent)&#xD;&#xA;let allParentRTSCs : Set(RealtimeStatechart) = self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif) in&#xD;&#xA;allParentRTSCs.operations ->union(allParentRTSCs.usedOperationRepositories.operations) ->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="All operations accessible within this statechart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="usedOperationRepositories"
+          upperBound="-1" eType="#//behavior/OperationRepository">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="usesOneToManyCommunicationSchemata"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          volatile="true" transient="true" defaultValueLiteral="false" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute allows to easily check whether a oneToManyCommunicationSchema is used or not. "/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema&#xD;&#xA;self.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1961,6 +1988,111 @@
         <details key="AtMostOneConnectingRegionWithTriggerMessageEvents" value="-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point&#xD;&#xA;&#xD;&#xA;let exitTransitions : Collection(Transition) = &#xD;&#xA;&#xD;&#xA;self.incomingTransitions->union(&#xD;&#xA;   self.incomingTransitions->closure(t | &#xD;&#xA;&#x9;if t.source.oclIsKindOf(ExitPoint)&#xD;&#xA;&#x9;then t.source.incomingTransitions&#xD;&#xA;&#x9;else Sequence{}&#xD;&#xA;&#x9;endif&#xD;&#xA;   )&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;in exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 &lt;> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))"/>
       </eAnnotations>
     </eClassifiers>
+    <eSubpackages name="one_to_n_schemata" nsURI="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0"
+        nsPrefix="one_to_n_schemata">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This package provides communication schemata a message of a multi role Real-Time Statechart may contain. They allow for designing dependencies between multiple one-to-one coordinations."/>
+      </eAnnotations>
+      <eClassifiers xsi:type="ecore:EClass" name="OneToManyCommunicationSchema" abstract="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An abstract class all communication schemata inherit from."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A subrole only sends or receives a message if it satisfies this condition."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="asynchronousMessageEvent"
+            lowerBound="1" eType="#//realtimestatechart/AsynchronousMessageEvent"
+            eOpposite="#//realtimestatechart/AsynchronousMessageEvent/oneToManyCommunicationSchema">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The asynchronous message event that contains the communication schema."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//realtimestatechart/Action"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The action a subrole performs when sending or receiving a message with communication schema."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Multicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The communication schema allows for sending a message to all coordination partners."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Unicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Using this communication schema, only one subrole is allowed to send a message."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Iterate" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The communication schema iterate allows for an iterative sending of a message."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="terminationCondition"
+            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The condition under which the iteration terminates."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//valuetype/TimeValue"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The delay of an iteration."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="startFromFirst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            defaultValueLiteral="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If true, the iteration starts from the first subrole, otherwise it starts from the last subrole."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LoadBalancing" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ResponseMessageOrWcetOfCommunication SchemaLoadbalancingMustBeSet"
+              value="-- LoadBalancing must define the responseMessage or the maxWorkingTime&#xD;&#xA;not self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()"/>
+          <details key="ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage"
+              value="-- responseMessage must be a TRIGGER-MessageEvent&#xD;&#xA;if(self.responseMessage.oclIsUndefined()) then&#xD;&#xA;&#x9;true&#xD;&#xA;else&#xD;&#xA;&#x9;if self.responseMessage.kind=realtimestatechart::EventKind::TRIGGER then&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif&#xD;&#xA;endif&#xD;&#xA;"/>
+          <details key="LoadbalancingEitherHasResponseMessageOrWcet" value="-- responseMessage and maxWorkingTime exclude each other&#xD;&#xA;if not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ResponseMessageOrWcetOfCommunication SchemaLoadbalancingMustBeSet ResponseMessageOfCommunication SchemaLoadbalancingMustBeTriggerMessage LoadbalancingEitherHasResponseMessageOrWcet"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The communication schema allows for assigning a task to one coordination partner that is currently not working on a task assigned using the same message."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="responseMessage" eType="#//realtimestatechart/AsynchronousMessageEvent">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The response message must be a trigger message. By receiving the message, a subrole is allowed to assign a new task to the corresponding coordination partner."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="maxWorkingTime" eType="#//valuetype/TimeValue"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SingleReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentaion" value="Using this communication schema, only one subrole is allowed to receive a message."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Convergecast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The communication schema convergecast allows for receiving a message by each subrole."/>
+        </eAnnotations>
+      </eClassifiers>
+    </eSubpackages>
   </eSubpackages>
   <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/msgtype/0.4.0" nsPrefix="msgtype">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -1995,7 +2127,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Repository">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AtLeastOneMessageType" value="-- A MessageTypeRepository must contain at least one MessageType.&#xD;&#xA;self.messageTypes->notEmpty()"/>
       </eAnnotations>
@@ -2016,6 +2148,11 @@
   <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/types/0.4.0" nsPrefix="types">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This package provides modeling support for data types."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2056,11 +2193,15 @@
       </eAnnotations>
       <eLiterals name="VOID"/>
       <eLiterals name="BOOLEAN" value="1"/>
-      <eLiterals name="BYTE" value="2"/>
-      <eLiterals name="SHORT" value="3"/>
-      <eLiterals name="INT" value="4"/>
-      <eLiterals name="LONG" value="5"/>
+      <eLiterals name="INT8" value="2"/>
+      <eLiterals name="INT16" value="3"/>
+      <eLiterals name="INT32" value="4"/>
+      <eLiterals name="INT64" value="5"/>
       <eLiterals name="DOUBLE" value="6"/>
+      <eLiterals name="UINT8" value="7"/>
+      <eLiterals name="UINT16" value="8"/>
+      <eLiterals name="UINT32" value="9"/>
+      <eLiterals name="UINT64" value="10"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RangedPrimitiveDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2078,6 +2219,28 @@
           <details key="documentation" value="The range of values provided by this data type."/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructureDataType" eSuperTypes="#//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A StructType is a complex data type which is comparable to a struct in C. It specifies a set of attributes but provides neither multi-valued references nor inheritance."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//types/Attribute" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The attributes of this StructureDataType."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//behavior/TypedNamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An attribute is a field of a StructType. An attribute specifies a name and a data type. Eligable data types are primitive data types, array data types, and structure data types."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ValidAttributeDataType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ValidAttributeDataType" value="-- An attribute may only use a Primtive Data Type, a Ranged Primitive Data Type, an Array Data Type, or a Structure Data Type&#xD;&#xA;self.dataType.oclIsTypeOf(PrimitiveDataType) or self.dataType.oclIsTypeOf(RangedPrimitiveDataType) or self.dataType.oclIsTypeOf(ArrayDataType) or self.dataType.oclIsTypeOf(StructureDataType)&#xD;&#xA;-- author: chris227"/>
+      </eAnnotations>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/connector/0.4.0"
@@ -2646,6 +2809,13 @@
           <details key="documentation" value="A variable may have a value when it is initialized. The value is defined by an expression."/>
         </eAnnotations>
       </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Repository">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An OperationRepository groups a set of reusable Operations. Operations are not required to have an implementation."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+          eType="#//behavior/Operation" containment="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/pattern/0.3.18" nsPrefix="pattern">

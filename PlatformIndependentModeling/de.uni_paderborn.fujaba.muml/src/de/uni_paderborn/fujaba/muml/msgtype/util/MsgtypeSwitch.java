@@ -14,6 +14,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import org.storydriven.core.Repository;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
@@ -87,6 +88,7 @@ public class MsgtypeSwitch<T> extends Switch<T> {
 			case MsgtypePackage.MESSAGE_TYPE_REPOSITORY: {
 				MessageTypeRepository messageTypeRepository = (MessageTypeRepository)theEObject;
 				T result = caseMessageTypeRepository(messageTypeRepository);
+				if (result == null) result = caseRepository(messageTypeRepository);
 				if (result == null) result = caseNamedElement(messageTypeRepository);
 				if (result == null) result = caseCommentableElement(messageTypeRepository);
 				if (result == null) result = caseExtendableElement(messageTypeRepository);
@@ -169,6 +171,21 @@ public class MsgtypeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Repository</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRepository(Repository object) {
 		return null;
 	}
 

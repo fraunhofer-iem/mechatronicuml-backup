@@ -56,6 +56,8 @@ import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -255,6 +257,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
+		One_to_n_schemataPackageImpl theOne_to_n_schemataPackage = (One_to_n_schemataPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI) instanceof One_to_n_schemataPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(One_to_n_schemataPackage.eNS_URI) : One_to_n_schemataPackage.eINSTANCE);
 		MsgtypePackageImpl theMsgtypePackage = (MsgtypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) instanceof MsgtypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) : MsgtypePackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
@@ -268,6 +271,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
+		theOne_to_n_schemataPackage.createPackageContents();
 		theMsgtypePackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
@@ -281,6 +285,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
+		theOne_to_n_schemataPackage.initializePackageContents();
 		theMsgtypePackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
@@ -1158,7 +1163,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AssemblyNotBetweenHybridPorts AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
+			 "constraints", "AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
 		   });	
 		addAnnotation
 		  (delegationConnectorEClass, 
@@ -1294,9 +1299,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "AssemblyBetweenDiscretePortsOrDirectedTypedPorts", "-- Assembly may only connect exclusively Discrete Ports or exclusively Directed Typed Ports\n(portParts.portType->forAll(oclIsKindOf(component::DiscretePort)) or portParts.portType->forAll(oclIsKindOf(component::DirectedTypedPort)))\n-- author: bingo, cgerking, see MUML #874",
 			 "ValidPortDirections", "-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds\nportParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)\n-- author: bingo, cgerking, see MUML #875",
 			 "AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol", "-- Assembly may only connect ports refining roles of the same coordination protocol\nportParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)\n-- author: bingo, cgerking, see MUML #876",
-			 "AssemblyBetweenDiscretePortsRequiresDifferentRoles", "-- Assembly may only connect ports refining different roles\nportParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)\n-- author: bingo, cgerking, see MUML #877",
-			 "AssemblyBetweenDiscretePortsCompatibleMessageTypes", "-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)\nportParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->\nforAll(p1, p2 | p1 <> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())\n-- author: bingo, cgerking, see MUML #878",
-			 "AssemblyNotBetweenHybridPorts", "-- Assembly must not connect two Hybrid Ports\nportParts->notEmpty() implies not portParts.portType->reject(oclIsUndefined())->forAll(oclIsKindOf(component::HybridPort))\n"
+			 "AssemblyBetweenDiscretePortsRequiresDifferentRoles", "-- Assembly may only connect ports refining different roles\r\nportParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)\r\n-- author: bingo, cgerking, see MUML #877",
+			 "AssemblyBetweenDiscretePortsCompatibleMessageTypes", "-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)\nportParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->\nforAll(p1, p2 | p1 <> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())\n-- author: bingo, cgerking, see MUML #878"
 		   });	
 		addAnnotation
 		  (getAssemblyConnector_CoordinationProtocolPart(), 

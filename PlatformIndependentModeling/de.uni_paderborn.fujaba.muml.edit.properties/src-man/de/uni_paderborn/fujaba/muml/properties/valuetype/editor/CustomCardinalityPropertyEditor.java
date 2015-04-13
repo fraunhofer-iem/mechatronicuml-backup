@@ -39,8 +39,9 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 	}
 
 	@Override
-	public void createControls(Composite parent,
+	public void doCreateControls(Composite parent,
 			FormToolkit toolkit) {
+		
 		label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
@@ -116,7 +117,6 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 			}
 		});
 	
-		super.createControls(parent, toolkit);
 		refresh();
 	}
 
