@@ -19,7 +19,7 @@
 <rm:locator searchPathRef="Graphviz" failOnError="false"/>
 <rm:locator searchPathRef="ComponentBehaviorSynthesis" failOnError="false"/>
 <rm:locator searchPathRef="PlatformSpecificModeling" failOnError="false"/>
-<rm:locator searchPathRef="Utilities (External)" failOnError="false"/>
+<rm:locator searchPathRef="Utilities_External" failOnError="false"/>
 <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
 
 
@@ -207,7 +207,7 @@
   </rm:provider>
 </rm:searchPath>
 
-<rm:searchPath name="Utilities (External)">
+<rm:searchPath name="Utilities_External">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
