@@ -9,7 +9,13 @@ Require-Bundle: org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd,
  de.uni_paderborn.fujaba.properties.runtime,
  org.eclipse.emf.edit,
- de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit
+ de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit,
+ de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties,
+ de.uni_paderborn.fujaba.muml.edit,
+ de.uni_paderborn.fujaba.muml.edit.properties,
+ org.storydriven.core.edit,
+ org.storydriven.core.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.metamodel, de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.properties.constraint,

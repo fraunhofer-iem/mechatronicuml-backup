@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.sdd.properties.sdd.editor;
  */
 public class LeafNodeEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.sdd.properties.sdd.editor.NodeEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -21,37 +21,93 @@ public class LeafNodeEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createOutgoingEdges_GeneralTab_Editor(), false);
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addValue_GeneralTab_Editor(
+			addPropertyEditor(createIncomingEdges_GeneralTab_Editor(), false);
+
+			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					true);
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createValue_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createOutgoingEdges_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createIncomingEdges_GeneralTab_Editor(), false);
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createValue_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+			addSubCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		} else {
 		}
-
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addValue_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createValue_GeneralTab_Editor(), front);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createValue_GeneralTab_Editor() {
+		if (this.editorValue_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+					.getLeafNode_Value();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorValue_GeneralTab = editor;
+		}
+		return this.editorValue_GeneralTab;
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createValue_GeneralTab_Editor() {
-		final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
-				.getLeafNode_Value();
-		final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory, feature);
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorOutgoingEdges_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createOutgoingEdges_GeneralTab_Editor() {
+		if (this.editorOutgoingEdges_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+					.getNode_OutgoingEdges();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
 
-		return editor;
+			this.editorOutgoingEdges_GeneralTab = editor;
+		}
+		return this.editorOutgoingEdges_GeneralTab;
+	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIncomingEdges_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createIncomingEdges_GeneralTab_Editor() {
+		if (this.editorIncomingEdges_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.verification.sdd.SDDPackage.eINSTANCE
+					.getNode_IncomingEdges();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorIncomingEdges_GeneralTab = editor;
+		}
+		return this.editorIncomingEdges_GeneralTab;
 	}
 
 	//
@@ -85,8 +141,9 @@ public class LeafNodeEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general"}).contains(
-					tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

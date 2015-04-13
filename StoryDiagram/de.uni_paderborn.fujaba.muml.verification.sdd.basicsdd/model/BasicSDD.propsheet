@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.common.properties">
-  <reconciler/>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RmxhoM1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.common.properties">
+  <reconciler xmi:id="_Rmxhoc1gEeSIgPDefa6ZBw"/>
   <genModel href="BasicSDD.genmodel#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#/"/>
-  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
-  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
-  <plugin id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmkGQM1gEeSIgPDefa6ZBw"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBYMwbEeSjx7OWZCcdLw"/>
+  <plugin xmi:id="_RmyIsM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
@@ -13,14 +13,22 @@
     <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.basicsdd.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.sdd.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
   </plugin>
-  <packages>
+  <packages xmi:id="_RmyIsc1gEeSIgPDefa6ZBw">
     <genPackage href="BasicSDD.genmodel#//basicSDD"/>
-    <classes>
+    <classes xmi:id="_RmyvwM1gEeSIgPDefa6ZBw">
       <genClass href="BasicSDD.genmodel#//basicSDD/StoryDecisionDiagram"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_RmktUs1gEeSIgPDefa6ZBw"/>
     </classes>
-    <classes>
+    <classes xmi:id="_Rmyvwc1gEeSIgPDefa6ZBw">
       <genClass href="BasicSDD.genmodel#//basicSDD/StoryPatternNode"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.verification.sdd/model/sdd.propsheet#_Rml7dM1gEeSIgPDefa6ZBw"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
