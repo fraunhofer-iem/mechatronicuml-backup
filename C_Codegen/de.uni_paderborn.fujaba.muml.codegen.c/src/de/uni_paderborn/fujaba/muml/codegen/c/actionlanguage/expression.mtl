@@ -229,6 +229,26 @@
 [expression.typedNamedElement.getFullyQualifiedName(fqname)/]
 [/template]
 
+
+[**
+ * Generates indices for a TypedNamedElementExpression with indices
+ * @param expression the typed named element expression
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string 
+*/]
+[template private generateIndices(expression : TypedNamedElementExpression, usePre : Boolean, fqname : String) ? (expression.indices->notEmpty())]
+['['/][for (index : Expression | expression.indices) separator(', ')][generateExpression(index, fqname)/] + 1[/for][']'/]
+[/template]
+[**
+ * Generates an array initialize expression.
+ * @param expression the array initialize expression
+ * @param usePre use pre construct for rhs variables and for guards
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template private generateExpression(expression : ArrayInitializeExpression, usePre : Boolean, fqname : String)]
+{[for (expr : Expression | expression.expressions) separator(', ')][generateExpression(expr, fqname)/][/for]}
+[/template]
+
 [**
  * Generates a LiteralExpression
  * @param expression the expression
@@ -382,6 +402,22 @@ else {
 	[generateExpression(expression.elseBlock, fqname) /]
 }
 [/if]
+[/template]
+
+
+
+[**
+ * Generates a for loop (will be rewritten to a while loop).
+ * @param expression the expression
+ * @param usePre use pre construct for rhs variables
+ * @param fqname a fully qualified name or the empty string
+*/]
+[template public generateExpression(expression : ForLoop, usePre : Boolean, fqname : String)]
+[generateExpression(expression.initializeExpression, fqname)/]
+while ([generateExpression(expression.loopTest, fqname)/]) {
+	[generateExpression(expression.block, fqname)/]
+	[generateExpression(expression.countingExpression, fqname)/]
+}
 [/template]
 
 [**

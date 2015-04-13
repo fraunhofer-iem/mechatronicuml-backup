@@ -84,8 +84,11 @@
 		'++'
 	else if unaryOperator = UnaryOperator::DECREMENT then
 		'--'
+	else if unaryOperator = UnaryOperator::NOT then
+		'!'
 	else
 		'unsupported'
+	endif
 	endif
 	endif
 	endif

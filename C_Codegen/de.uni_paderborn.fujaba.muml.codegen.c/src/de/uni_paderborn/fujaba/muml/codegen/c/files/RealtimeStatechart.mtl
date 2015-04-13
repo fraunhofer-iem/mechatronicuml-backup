@@ -496,6 +496,8 @@ if (0){
 	[expression.oclAsType(LiteralExpression).value/]
 [elseif expression.oclIsKindOf(OperationCall)]
 [getOperationMethodCall(expression.oclAsType(OperationCall))/]
+[else]
+	[generateExpression(expression, '')/]
 [/if]
 
 [/template]

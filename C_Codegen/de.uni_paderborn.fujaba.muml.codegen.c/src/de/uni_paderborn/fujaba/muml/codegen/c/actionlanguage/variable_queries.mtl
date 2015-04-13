@@ -101,8 +101,12 @@
 [query public getAllLocalVariableDeclarationStatements(rtsc : RealtimeStatechart) : Set(LocalVariableDeclarationStatement) =
 	rtsc.transitions->select(
 		not action.oclIsUndefined() and action.expressions->notEmpty()
-	)->collect(
-		action.expressions->at(1).getAllLocalVariableDeclarationStatements()
+	)->collect(action)->union(rtsc.states->select(
+		not entryEvent.oclIsUndefined() and not entryEvent.action.oclIsUndefined() and entryEvent.action.expressions->notEmpty()
+	)->collect(entryEvent.action))->union(rtsc.states->select(
+		not exitEvent.oclIsUndefined() and not exitEvent.action.oclIsUndefined() and exitEvent.action.expressions->notEmpty()
+	)->collect(exitEvent.action))->collect(
+		expressions->at(1).getAllLocalVariableDeclarationStatements()
 	)->asSet()
 /]
 
