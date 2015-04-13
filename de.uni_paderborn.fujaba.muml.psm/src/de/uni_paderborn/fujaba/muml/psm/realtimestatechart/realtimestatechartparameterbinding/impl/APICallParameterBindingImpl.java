@@ -39,8 +39,8 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getAnnotation <em>Annotation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExtension <em>Extension</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getImplementations <em>Implementations</em>}</li>

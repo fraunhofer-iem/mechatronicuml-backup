@@ -28,5 +28,5 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.swplatform.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.psm;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.muml.psm.edit;bundle-version="1.0.0"
+ de.uni_paderborn.fujaba.muml.psm.edit;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

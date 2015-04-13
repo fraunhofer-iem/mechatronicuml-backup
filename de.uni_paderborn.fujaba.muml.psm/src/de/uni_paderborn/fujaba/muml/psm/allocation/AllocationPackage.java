@@ -21,10 +21,11 @@ import org.storydriven.core.CorePackage;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * The package extends the realtimestatechart-package of muml. Here a statechart with parameters is introdused.
+ * This package provides the modelelements to allocate a ComponentInstanceConfiguration to a HarwarePlatformInstanceConfiguration.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface AllocationPackage extends EPackage {
@@ -98,13 +99,31 @@ public interface AllocationPackage extends EPackage {
 	int SYSTEM_ALLOCATION__ALLOCATIONS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Cic</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_ALLOCATION__CIC = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Hpic</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_ALLOCATION__HPIC = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>System Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_ALLOCATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int SYSTEM_ALLOCATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -544,6 +563,28 @@ public interface AllocationPackage extends EPackage {
 	EReference getSystemAllocation_Allocations();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getCic <em>Cic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Cic</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getCic()
+	 * @see #getSystemAllocation()
+	 * @generated
+	 */
+	EReference getSystemAllocation_Cic();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getHpic <em>Hpic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Hpic</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getHpic()
+	 * @see #getSystemAllocation()
+	 * @generated
+	 */
+	EReference getSystemAllocation_Hpic();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.allocation.Allocation <em>Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -615,6 +656,22 @@ public interface AllocationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYSTEM_ALLOCATION__ALLOCATIONS = eINSTANCE.getSystemAllocation_Allocations();
+
+		/**
+		 * The meta object literal for the '<em><b>Cic</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_ALLOCATION__CIC = eINSTANCE.getSystemAllocation_Cic();
+
+		/**
+		 * The meta object literal for the '<em><b>Hpic</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_ALLOCATION__HPIC = eINSTANCE.getSystemAllocation_Hpic();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationImpl <em>Allocation</em>}' class.

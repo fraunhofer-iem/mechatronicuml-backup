@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 
+import de.uni_paderborn.fujaba.muml.psm.allocation.util.AllocationValidator;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
@@ -57,6 +58,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.storydriven.core.CorePackage;
@@ -169,6 +171,15 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theAllocationPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return AllocationValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theAllocationPackage.freeze();
 
@@ -194,6 +205,24 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 */
 	public EReference getSystemAllocation_Allocations() {
 		return (EReference)systemAllocationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSystemAllocation_Cic() {
+		return (EReference)systemAllocationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSystemAllocation_Hpic() {
+		return (EReference)systemAllocationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -253,6 +282,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Create classes and their features
 		systemAllocationEClass = createEClass(SYSTEM_ALLOCATION);
 		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__ALLOCATIONS);
+		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__CIC);
+		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__HPIC);
 
 		allocationEClass = createEClass(ALLOCATION);
 		createEReference(allocationEClass, ALLOCATION__COMPONENT_INSTANCE);
@@ -285,6 +316,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		de.uni_paderborn.fujaba.muml.instance.InstancePackage theInstancePackage_1 = (de.uni_paderborn.fujaba.muml.instance.InstancePackage)EPackage.Registry.INSTANCE.getEPackage(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eNS_URI);
+		HwplatforminstancePackage theHwplatforminstancePackage = (HwplatforminstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 
 		// Create type parameters
@@ -298,10 +330,58 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemAllocationEClass, SystemAllocation.class, "SystemAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystemAllocation_Allocations(), this.getAllocation(), null, "allocations", null, 1, -1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystemAllocation_Cic(), theInstancePackage_1.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSystemAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(allocationEClass, Allocation.class, "Allocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocation_ComponentInstance(), theInstancePackage_1.getComponentInstance(), null, "componentInstance", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAllocation_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+		addAnnotation
+		  (systemAllocationEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AllComponentInstancesAllocated"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (systemAllocationEClass, 
+		   source, 
+		   new String[] {
+			 "AllComponentInstancesAllocated", "-- All component instances must be allocated\r\n-- All component instances must be allocated\r\nlet cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC)->asOrderedSet() in\r\ncics.componentInstances->includesAll(self.allocations.componentInstance)"
+		   });
 	}
 
 } //AllocationPackageImpl

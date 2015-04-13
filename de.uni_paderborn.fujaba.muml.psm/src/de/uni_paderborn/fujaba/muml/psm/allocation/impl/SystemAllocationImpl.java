@@ -2,12 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation.impl;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +32,8 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getAllocations <em>Allocations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getCic <em>Cic</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getHpic <em>Hpic</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +49,25 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 	 * @ordered
 	 */
 	protected EList<Allocation> allocations;
+
+	/**
+	 * The cached value of the '{@link #getCic() <em>Cic</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCic()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentInstanceConfiguration cic;
+	/**
+	 * The cached value of the '{@link #getHpic() <em>Hpic</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHpic()
+	 * @generated
+	 * @ordered
+	 */
+	protected HWPlatformInstanceConfiguration hpic;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +105,82 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentInstanceConfiguration getCic() {
+		if (cic != null && cic.eIsProxy()) {
+			InternalEObject oldCic = (InternalEObject)cic;
+			cic = (ComponentInstanceConfiguration)eResolveProxy(oldCic);
+			if (cic != oldCic) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.SYSTEM_ALLOCATION__CIC, oldCic, cic));
+			}
+		}
+		return cic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstanceConfiguration basicGetCic() {
+		return cic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCic(ComponentInstanceConfiguration newCic) {
+		ComponentInstanceConfiguration oldCic = cic;
+		cic = newCic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.SYSTEM_ALLOCATION__CIC, oldCic, cic));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HWPlatformInstanceConfiguration getHpic() {
+		if (hpic != null && hpic.eIsProxy()) {
+			InternalEObject oldHpic = (InternalEObject)hpic;
+			hpic = (HWPlatformInstanceConfiguration)eResolveProxy(oldHpic);
+			if (hpic != oldHpic) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.SYSTEM_ALLOCATION__HPIC, oldHpic, hpic));
+			}
+		}
+		return hpic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HWPlatformInstanceConfiguration basicGetHpic() {
+		return hpic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHpic(HWPlatformInstanceConfiguration newHpic) {
+		HWPlatformInstanceConfiguration oldHpic = hpic;
+		hpic = newHpic;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.SYSTEM_ALLOCATION__HPIC, oldHpic, hpic));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -99,6 +200,12 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 		switch (featureID) {
 			case AllocationPackage.SYSTEM_ALLOCATION__ALLOCATIONS:
 				return getAllocations();
+			case AllocationPackage.SYSTEM_ALLOCATION__CIC:
+				if (resolve) return getCic();
+				return basicGetCic();
+			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
+				if (resolve) return getHpic();
+				return basicGetHpic();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +223,12 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 				getAllocations().clear();
 				getAllocations().addAll((Collection<? extends Allocation>)newValue);
 				return;
+			case AllocationPackage.SYSTEM_ALLOCATION__CIC:
+				setCic((ComponentInstanceConfiguration)newValue);
+				return;
+			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
+				setHpic((HWPlatformInstanceConfiguration)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +244,12 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 			case AllocationPackage.SYSTEM_ALLOCATION__ALLOCATIONS:
 				getAllocations().clear();
 				return;
+			case AllocationPackage.SYSTEM_ALLOCATION__CIC:
+				setCic((ComponentInstanceConfiguration)null);
+				return;
+			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
+				setHpic((HWPlatformInstanceConfiguration)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +264,10 @@ public class SystemAllocationImpl extends ExtendableElementImpl implements Syste
 		switch (featureID) {
 			case AllocationPackage.SYSTEM_ALLOCATION__ALLOCATIONS:
 				return allocations != null && !allocations.isEmpty();
+			case AllocationPackage.SYSTEM_ALLOCATION__CIC:
+				return cic != null;
+			case AllocationPackage.SYSTEM_ALLOCATION__HPIC:
+				return hpic != null;
 		}
 		return super.eIsSet(featureID);
 	}

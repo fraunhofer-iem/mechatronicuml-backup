@@ -216,6 +216,24 @@ public interface RealtimestatechartPackage extends EPackage {
 	int PARAMETERIZED_REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS;
 
 	/**
+	 * The feature id for the '<em><b>Used Operation Repositories</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_REALTIME_STATECHART__USED_OPERATION_REPOSITORIES = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__USED_OPERATION_REPOSITORIES;
+
+	/**
+	 * The feature id for the '<em><b>Uses One To Many Communication Schemata</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -178,6 +178,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeIte
 
 import de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory;
 
+import de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.provider.AllocationItemProviderAdapterFactory;
@@ -198,6 +199,7 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 
 import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.provider.RealtimestatechartparameterbindingItemProviderAdapterFactory;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.swplatform.provider.SwplatformItemProviderAdapterFactory;
 
 import de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory;
@@ -778,11 +780,13 @@ public class RealtimestatechartEditor
 		adapterFactory.addAdapterFactory(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ProtocolItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new One_to_n_schemataItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new MsgtypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ConnectorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ValuetypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BehaviorItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PatternItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SwplatformItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
