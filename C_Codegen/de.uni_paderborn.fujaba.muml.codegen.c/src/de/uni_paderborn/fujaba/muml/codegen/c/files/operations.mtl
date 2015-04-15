@@ -73,8 +73,9 @@
 [if (operation.implementations->at(1).oclIsUndefined())]
 /** [protected (operation.getName()+' **/')] 
 //add your implementation here
-	[if not (operation.returnType.name = 'VOID')]
+	[if not (operation.returnType.name = 'VOID' or operation.returnType.name = 'void')]
 		//default return value
+	[operation.returnType.name/]
 		return [getDefaultReturn(operation)/];
 	[/if]
 /**[/protected]**/

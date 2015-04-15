@@ -376,6 +376,9 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE);
         }
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

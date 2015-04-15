@@ -674,11 +674,17 @@ endif
 	if (type.name = 'BOOLEAN') then 'bool' else 
 	if (type.name = 'BYTE') then 'byte' else
 	if (type.name = 'DOUBLE') then 'double' else
-	if (type.name = 'INT') then 'int' else
+	if (type.name = 'INT') then 'int32' else
+	if (type.name = 'int8') then 'int' else
+	if (type.name = 'int16') then 'int' else
+	if (type.name = 'int32') then 'int32' else
 	if (type.name = 'LONG') then 'long' else
 	if (type.name = 'SHORT') then 'short' else
-	if (type.name = 'VOID') then 'void' else
-	'TYPE UNDIFINED'
+	if (type.name = 'VOID' or type.name = 'void' ) then 'void' else
+	'TYPE UNDEFINED: '+type.name
+	endif
+	endif
+	endif
 	endif
 	endif
 	endif
@@ -696,10 +702,16 @@ endif
 	if (type.name = 'BYTE') then 'bool' else
 	if (type.name = 'DOUBLE') then 'double' else
 	if (type.name = 'INT') then 'int32' else
+	if (type.name = 'int8') then 'int8' else
+	if (type.name = 'int16') then 'int16' else
+	if (type.name = 'int32') then 'int32' else
 	if (type.name = 'LONG') then 'int64' else
 	if (type.name = 'SHORT') then 'int32' else
 	if (type.name = 'VOID') then 'void' else
-	'TYPE UNDIFINED'
+	'TYPE UNDEFINED: '+type.name
+	endif
+	endif
+	endif
 	endif
 	endif
 	endif
@@ -713,14 +725,18 @@ endif
  * @param element
 */]
 [query public getDefaultReturn(op : Operation) : String = 
-	if (op.returnType.name = 'BOOLEAN') then 'false' else 
-	if (op.returnType.name = 'BYTE') then '0' else
-	if (op.returnType.name = 'DOUBLE') then '0.0' else
-	if (op.returnType.name = 'INT') then '0' else
-	if (op.returnType.name = 'LONG') then '0' else
-	if (op.returnType.name = 'SHORT') then '0' else
-	if (op.returnType.name = 'VOID') then 'void' else
-	'TYPE UNDIFINED'
+	getDefaultValue(op.returnType)
+/]
+
+[query public getDefaultValue(type : DataType) : String = 
+if (type.name = 'BOOLEAN') then 'false' else 
+	if (type.name = 'BYTE' or type.name = 'byte') then '0' else
+	if (type.name = 'DOUBLE' or type.name = 'double') then '0.0' else
+	if (type.name = 'INT' or type.name = 'int' or type.name = 'int8' or type.name = 'int16' or type.name = 'int32' or type.name = 'int64') then '0' else
+	if (type.name = 'LONG' or type.name = 'long') then '0' else
+	if (type.name = 'SHORT' or type.name = 'short') then '0' else
+	if (type.name = 'VOID' or type.name = 'void') then 'void' else
+	'TYPE UNDEFINED: '+type.name
 	endif
 	endif
 	endif
@@ -728,6 +744,7 @@ endif
 	endif
 	endif
 	endif
+
 /]
 
 [query public getTypeName(var : Variable) : String = 
@@ -798,24 +815,7 @@ endif
 	par.dataType.getTypeName() 
 /]
 
-[query public getDefaultValue(type : DataType) : String = 
-if (type.name = 'BOOLEAN') then 'false' else 
-	if (type.name = 'BYTE') then '0' else
-	if (type.name = 'DOUBLE') then '0.0' else
-	if (type.name = 'INT') then '0' else
-	if (type.name = 'LONG') then '0' else
-	if (type.name = 'SHORT') then '0' else
-	if (type.name = 'VOID') then 'void' else
-	'TYPE UNDIFINED'
-	endif
-	endif
-	endif
-	endif
-	endif
-	endif
-	endif
 
-/]
 
 
 [query public getNumberOfMessageBuffers (port : DiscretePort) : String = 
