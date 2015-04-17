@@ -316,11 +316,6 @@ public class TimeParameterItemProvider extends RealtimeStatechartParameterItemPr
 		newChildDescriptors.add
 			(createChildParameter
 				(BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add

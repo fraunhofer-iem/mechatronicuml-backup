@@ -205,6 +205,21 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 
 		newChildDescriptors.add
 			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES,
+				 RealtimestatechartparameterFactory.eINSTANCE.createTimeParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS,
+				 RealtimestatechartparameterFactory.eINSTANCE.createAPICallParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS,
+				 RealtimestatechartparameterbindingFactory.eINSTANCE.createAPICallParameterBinding()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(RealtimestatechartPackage.Literals.PARAMETERIZED_REALTIME_STATECHART__PARAMETERS,
 				 RealtimestatechartparameterFactory.eINSTANCE.createAPICallParameter()));
 
@@ -227,8 +242,12 @@ public class ParameterizedRealtimeStatechartItemProvider extends RealtimeStatech
 
 		boolean qualify =
 			childFeature == BehaviorPackage.Literals.BEHAVIOR__OPERATIONS ||
+			childFeature == de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS ||
 			childFeature == RealtimestatechartPackage.Literals.PARAMETERIZED_REALTIME_STATECHART__PARAMETERS ||
-			childFeature == BehaviorPackage.Literals.BEHAVIOR__VARIABLES;
+			childFeature == BehaviorPackage.Literals.BEHAVIOR__VARIABLES ||
+			childFeature == de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES ||
+			childFeature == de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS ||
+			childFeature == de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS;
 
 		if (qualify) {
 			return getString

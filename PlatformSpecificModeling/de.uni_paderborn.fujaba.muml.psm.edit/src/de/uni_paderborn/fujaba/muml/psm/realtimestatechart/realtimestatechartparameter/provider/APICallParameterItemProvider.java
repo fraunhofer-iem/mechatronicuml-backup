@@ -318,11 +318,6 @@ public class APICallParameterItemProvider extends RealtimeStatechartParameterIte
 		newChildDescriptors.add
 			(createChildParameter
 				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add
