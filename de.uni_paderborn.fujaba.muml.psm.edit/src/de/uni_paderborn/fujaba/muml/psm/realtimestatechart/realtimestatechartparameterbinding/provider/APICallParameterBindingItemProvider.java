@@ -393,11 +393,6 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 		newChildDescriptors.add
 			(createChildParameter
 				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add
@@ -544,11 +539,6 @@ public class APICallParameterBindingItemProvider extends RealtimeStatechartParam
 			(createChildParameter
 				(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartparameterbindingPackage.Literals.API_CALL_PARAMETER_BINDING__EXPRESSION,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -292,11 +292,6 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PortapimappingPackage.Literals.PORT_API_MAPPING__EXEC_COMMAND,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add
@@ -438,11 +433,6 @@ public class PortApiMappingItemProvider extends CommentableElementItemProvider {
 			(createChildParameter
 				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PortapimappingPackage.Literals.PORT_API_MAPPING__INIT_COMMAND,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
