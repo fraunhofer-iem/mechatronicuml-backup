@@ -42,7 +42,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @generated
  */
-public class IterateImpl extends OneToManyCommunicationSchemaImpl implements Iterate {
+public class IterateImpl extends SendingOneToManyCommunicationSchemaImpl implements Iterate {
 	/**
 	 * The cached value of the '{@link #getTerminationCondition() <em>Termination Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->

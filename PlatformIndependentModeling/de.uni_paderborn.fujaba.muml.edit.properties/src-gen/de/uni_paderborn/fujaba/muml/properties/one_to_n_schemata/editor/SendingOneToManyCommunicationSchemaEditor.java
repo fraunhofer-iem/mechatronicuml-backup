@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 /**
  * @generated
  */
-public abstract class OneToManyCommunicationSchemaEditor
+public abstract class SendingOneToManyCommunicationSchemaEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public OneToManyCommunicationSchemaEditor(String tab,
+	public SendingOneToManyCommunicationSchemaEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);

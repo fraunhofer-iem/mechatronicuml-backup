@@ -1036,10 +1036,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
 		"\ttrue \r\n" +
 		"else\r\n" +
-		"\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or\r\n" +
-		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Unicast) or\r\n" +
-		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Iterate) or\r\n" +
-		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::LoadBalancing)\t)\r\n" +
+		"\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::SendingOneToManyCommunicationSchema))\r\n" +
 		"endif";
 
 	/**
@@ -1073,8 +1070,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"if (self.oneToManyCommunicationSchema->isEmpty()) then \r\n" +
 		"\ttrue \r\n" +
 		"else\r\n" +
-		"\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or\r\n" +
-		"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Convergecast))\r\n" +
+		"\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::ReceivingOneToManyCommunicationSchema))\r\n" +
 		"endif";
 
 	/**

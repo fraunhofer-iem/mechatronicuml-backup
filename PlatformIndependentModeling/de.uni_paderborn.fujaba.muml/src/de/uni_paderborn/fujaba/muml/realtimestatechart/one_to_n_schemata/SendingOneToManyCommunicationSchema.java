@@ -15,17 +15,13 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Multicast</b></em>'.
+ * A representation of the model object '<em><b>Sending One To Many Communication Schema</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * The communication schema allows for sending a message to all coordination partners.
- * <!-- end-model-doc -->
  *
- *
- * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getMulticast()
- * @model
+ * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getSendingOneToManyCommunicationSchema()
+ * @model abstract="true"
  * @generated
  */
-public interface Multicast extends SendingOneToManyCommunicationSchema {
-} // Multicast
+public interface SendingOneToManyCommunicationSchema extends OneToManyCommunicationSchema {
+} // SendingOneToManyCommunicationSchema

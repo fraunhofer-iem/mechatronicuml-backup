@@ -15,17 +15,13 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Convergecast</b></em>'.
+ * A representation of the model object '<em><b>Receiving One To Many Communication Schema</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * The communication schema convergecast allows for receiving a message by each subrole.
- * <!-- end-model-doc -->
  *
- *
- * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getConvergecast()
- * @model
+ * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getReceivingOneToManyCommunicationSchema()
+ * @model abstract="true"
  * @generated
  */
-public interface Convergecast extends OneToManyCommunicationSchema {
-} // Convergecast
+public interface ReceivingOneToManyCommunicationSchema extends OneToManyCommunicationSchema {
+} // ReceivingOneToManyCommunicationSchema

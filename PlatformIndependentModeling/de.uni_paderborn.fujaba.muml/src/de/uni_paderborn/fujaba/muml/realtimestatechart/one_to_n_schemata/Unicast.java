@@ -27,5 +27,5 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
  * @model
  * @generated
  */
-public interface Unicast extends OneToManyCommunicationSchema {
+public interface Unicast extends SendingOneToManyCommunicationSchema {
 } // Unicast

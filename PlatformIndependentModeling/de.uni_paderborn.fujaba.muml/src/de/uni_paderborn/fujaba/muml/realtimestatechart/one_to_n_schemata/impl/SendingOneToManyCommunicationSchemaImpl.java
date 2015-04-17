@@ -12,27 +12,27 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Convergecast</b></em>'.
+ * An implementation of the model object '<em><b>Sending One To Many Communication Schema</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ConvergecastImpl extends OneToManyCommunicationSchemaImpl implements Convergecast {
+public abstract class SendingOneToManyCommunicationSchemaImpl extends OneToManyCommunicationSchemaImpl implements SendingOneToManyCommunicationSchema {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConvergecastImpl() {
+	protected SendingOneToManyCommunicationSchemaImpl() {
 		super();
 	}
 
@@ -43,7 +43,7 @@ public class ConvergecastImpl extends OneToManyCommunicationSchemaImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return One_to_n_schemataPackage.Literals.CONVERGECAST;
+		return One_to_n_schemataPackage.Literals.SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA;
 	}
 
-} //ConvergecastImpl
+} //SendingOneToManyCommunicationSchemaImpl

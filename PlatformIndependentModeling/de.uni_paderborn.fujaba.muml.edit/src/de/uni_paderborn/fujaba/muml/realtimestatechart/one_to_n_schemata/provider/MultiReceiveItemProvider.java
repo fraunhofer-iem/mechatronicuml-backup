@@ -22,19 +22,19 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SingleReceive} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SingleReceiveItemProvider extends ReceivingOneToManyCommunicationSchemaItemProvider {
+public class MultiReceiveItemProvider extends ReceivingOneToManyCommunicationSchemaItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SingleReceiveItemProvider(AdapterFactory adapterFactory) {
+	public MultiReceiveItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -54,14 +54,14 @@ public class SingleReceiveItemProvider extends ReceivingOneToManyCommunicationSc
 	}
 
 	/**
-	 * This returns SingleReceive.gif.
+	 * This returns MultiReceive.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SingleReceive"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MultiReceive"));
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class SingleReceiveItemProvider extends ReceivingOneToManyCommunicationSc
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SingleReceive_type");
+		return getString("_UI_MultiReceive_type");
 	}
 	
 

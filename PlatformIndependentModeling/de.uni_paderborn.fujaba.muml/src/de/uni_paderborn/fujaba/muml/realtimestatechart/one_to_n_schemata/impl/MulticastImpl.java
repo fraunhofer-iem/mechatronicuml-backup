@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class MulticastImpl extends OneToManyCommunicationSchemaImpl implements Multicast {
+public class MulticastImpl extends SendingOneToManyCommunicationSchemaImpl implements Multicast {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

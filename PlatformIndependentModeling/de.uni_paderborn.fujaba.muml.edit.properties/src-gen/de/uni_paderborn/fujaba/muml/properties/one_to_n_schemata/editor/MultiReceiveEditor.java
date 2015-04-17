@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 /**
  * @generated
  */
-public class LoadBalancingEditor
+public class MultiReceiveEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public LoadBalancingEditor(String tab,
+	public MultiReceiveEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -27,12 +27,6 @@ public class LoadBalancingEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(),
-					false);
-
-			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(),
-					false);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -41,48 +35,12 @@ public class LoadBalancingEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(),
-					false);
-
-			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(),
-					false);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorResponseMessage_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorResponseMessage_GeneralTab_Editor() {
-		if (this.editorResponseMessage_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-					.getLoadBalancing_ResponseMessage();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The response message must be a trigger message. By receiving the message, a subrole is allowed to assign a new task to the corresponding coordination partner.");
-
-			this.editorResponseMessage_GeneralTab = editor;
-		}
-		return this.editorResponseMessage_GeneralTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorMaxWorkingTime_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorMaxWorkingTime_GeneralTab_Editor() {
-		if (this.editorMaxWorkingTime_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-					.getLoadBalancing_MaxWorkingTime();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task.");
-
-			this.editorMaxWorkingTime_GeneralTab = editor;
-		}
-		return this.editorMaxWorkingTime_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_GeneralTab;
@@ -122,13 +80,13 @@ public class LoadBalancingEditor
 	/**
 	 * @generated
 	 */
-	public LoadBalancingEditor(String tab) {
+	public MultiReceiveEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-						.getLoadBalancing());
+						.getMultiReceive());
 	}
 
 	/**
@@ -140,14 +98,13 @@ public class LoadBalancingEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new LoadBalancingEditor(tab);
+			return new MultiReceiveEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}

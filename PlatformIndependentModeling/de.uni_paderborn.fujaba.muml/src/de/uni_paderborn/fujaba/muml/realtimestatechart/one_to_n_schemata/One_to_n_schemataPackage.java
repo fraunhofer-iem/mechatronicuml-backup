@@ -126,6 +126,61 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.SendingOneToManyCommunicationSchemaImpl <em>Sending One To Many Communication Schema</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.SendingOneToManyCommunicationSchemaImpl
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getSendingOneToManyCommunicationSchema()
+	 * @generated
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA = 8;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+
+	/**
+	 * The number of structural features of the '<em>Sending One To Many Communication Schema</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sending One To Many Communication Schema</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.MulticastImpl <em>Multicast</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -142,7 +197,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MULTICAST__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+	int MULTICAST__CONDITION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
@@ -151,7 +206,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MULTICAST__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+	int MULTICAST__ASYNCHRONOUS_MESSAGE_EVENT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -160,7 +215,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MULTICAST__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+	int MULTICAST__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
 	 * The number of structural features of the '<em>Multicast</em>' class.
@@ -169,7 +224,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MULTICAST_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int MULTICAST_FEATURE_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Multicast</em>' class.
@@ -178,7 +233,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MULTICAST_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+	int MULTICAST_OPERATION_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.UnicastImpl <em>Unicast</em>}' class.
@@ -197,7 +252,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNICAST__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+	int UNICAST__CONDITION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
@@ -206,7 +261,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNICAST__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+	int UNICAST__ASYNCHRONOUS_MESSAGE_EVENT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -215,7 +270,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNICAST__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+	int UNICAST__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
 	 * The number of structural features of the '<em>Unicast</em>' class.
@@ -224,7 +279,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNICAST_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int UNICAST_FEATURE_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Unicast</em>' class.
@@ -233,7 +288,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNICAST_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+	int UNICAST_OPERATION_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.IterateImpl <em>Iterate</em>}' class.
@@ -252,7 +307,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+	int ITERATE__CONDITION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
@@ -261,7 +316,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+	int ITERATE__ASYNCHRONOUS_MESSAGE_EVENT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -270,7 +325,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+	int ITERATE__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
 	 * The feature id for the '<em><b>Termination Condition</b></em>' containment reference.
@@ -279,7 +334,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE__TERMINATION_CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int ITERATE__TERMINATION_CONDITION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Delay</b></em>' containment reference.
@@ -288,7 +343,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE__DELAY = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 1;
+	int ITERATE__DELAY = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Start From First</b></em>' attribute.
@@ -297,7 +352,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE__START_FROM_FIRST = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 2;
+	int ITERATE__START_FROM_FIRST = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Iterate</em>' class.
@@ -306,7 +361,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 3;
+	int ITERATE_FEATURE_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Iterate</em>' class.
@@ -315,7 +370,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ITERATE_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+	int ITERATE_OPERATION_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.LoadBalancingImpl <em>Load Balancing</em>}' class.
@@ -334,7 +389,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+	int LOAD_BALANCING__CONDITION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
@@ -343,7 +398,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+	int LOAD_BALANCING__ASYNCHRONOUS_MESSAGE_EVENT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -352,7 +407,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+	int LOAD_BALANCING__ACTION = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
 	 * The feature id for the '<em><b>Response Message</b></em>' reference.
@@ -361,7 +416,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING__RESPONSE_MESSAGE = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int LOAD_BALANCING__RESPONSE_MESSAGE = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Working Time</b></em>' containment reference.
@@ -370,7 +425,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING__MAX_WORKING_TIME = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 1;
+	int LOAD_BALANCING__MAX_WORKING_TIME = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Load Balancing</em>' class.
@@ -379,7 +434,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 2;
+	int LOAD_BALANCING_FEATURE_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Load Balancing</em>' class.
@@ -388,7 +443,62 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOAD_BALANCING_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+	int LOAD_BALANCING_OPERATION_COUNT = SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ReceivingOneToManyCommunicationSchemaImpl <em>Receiving One To Many Communication Schema</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ReceivingOneToManyCommunicationSchemaImpl
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getReceivingOneToManyCommunicationSchema()
+	 * @generated
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA = 7;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+
+	/**
+	 * The number of structural features of the '<em>Receiving One To Many Communication Schema</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Receiving One To Many Communication Schema</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.SingleReceiveImpl <em>Single Receive</em>}' class.
@@ -407,7 +517,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_RECEIVE__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+	int SINGLE_RECEIVE__CONDITION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
@@ -416,7 +526,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_RECEIVE__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+	int SINGLE_RECEIVE__ASYNCHRONOUS_MESSAGE_EVENT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -425,7 +535,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_RECEIVE__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+	int SINGLE_RECEIVE__ACTION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
 	 * The number of structural features of the '<em>Single Receive</em>' class.
@@ -434,7 +544,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_RECEIVE_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int SINGLE_RECEIVE_FEATURE_COUNT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Single Receive</em>' class.
@@ -443,17 +553,17 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_RECEIVE_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
+	int SINGLE_RECEIVE_OPERATION_COUNT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ConvergecastImpl <em>Convergecast</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.MultiReceiveImpl <em>Multi Receive</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ConvergecastImpl
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getConvergecast()
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.MultiReceiveImpl
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getMultiReceive()
 	 * @generated
 	 */
-	int CONVERGECAST = 6;
+	int MULTI_RECEIVE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -462,7 +572,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONVERGECAST__CONDITION = ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
+	int MULTI_RECEIVE__CONDITION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Asynchronous Message Event</b></em>' container reference.
@@ -471,7 +581,7 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONVERGECAST__ASYNCHRONOUS_MESSAGE_EVENT = ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
+	int MULTI_RECEIVE__ASYNCHRONOUS_MESSAGE_EVENT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ASYNCHRONOUS_MESSAGE_EVENT;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -480,26 +590,25 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONVERGECAST__ACTION = ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
+	int MULTI_RECEIVE__ACTION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
-	 * The number of structural features of the '<em>Convergecast</em>' class.
+	 * The number of structural features of the '<em>Multi Receive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONVERGECAST_FEATURE_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int MULTI_RECEIVE_FEATURE_COUNT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Convergecast</em>' class.
+	 * The number of operations of the '<em>Multi Receive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONVERGECAST_OPERATION_COUNT = ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
-
+	int MULTI_RECEIVE_OPERATION_COUNT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema <em>One To Many Communication Schema</em>}'.
@@ -650,14 +759,34 @@ public interface One_to_n_schemataPackage extends EPackage {
 	EClass getSingleReceive();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast <em>Convergecast</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive <em>Multi Receive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Convergecast</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast
+	 * @return the meta object for class '<em>Multi Receive</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive
 	 * @generated
 	 */
-	EClass getConvergecast();
+	EClass getMultiReceive();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema <em>Receiving One To Many Communication Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Receiving One To Many Communication Schema</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema
+	 * @generated
+	 */
+	EClass getReceivingOneToManyCommunicationSchema();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema <em>Sending One To Many Communication Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sending One To Many Communication Schema</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema
+	 * @generated
+	 */
+	EClass getSendingOneToManyCommunicationSchema();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -807,14 +936,34 @@ public interface One_to_n_schemataPackage extends EPackage {
 		EClass SINGLE_RECEIVE = eINSTANCE.getSingleReceive();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ConvergecastImpl <em>Convergecast</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.MultiReceiveImpl <em>Multi Receive</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ConvergecastImpl
-		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getConvergecast()
+		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.MultiReceiveImpl
+		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getMultiReceive()
 		 * @generated
 		 */
-		EClass CONVERGECAST = eINSTANCE.getConvergecast();
+		EClass MULTI_RECEIVE = eINSTANCE.getMultiReceive();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ReceivingOneToManyCommunicationSchemaImpl <em>Receiving One To Many Communication Schema</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ReceivingOneToManyCommunicationSchemaImpl
+		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getReceivingOneToManyCommunicationSchema()
+		 * @generated
+		 */
+		EClass RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA = eINSTANCE.getReceivingOneToManyCommunicationSchema();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.SendingOneToManyCommunicationSchemaImpl <em>Sending One To Many Communication Schema</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.SendingOneToManyCommunicationSchemaImpl
+		 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.One_to_n_schemataPackageImpl#getSendingOneToManyCommunicationSchema()
+		 * @generated
+		 */
+		EClass SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA = eINSTANCE.getSendingOneToManyCommunicationSchema();
 
 	}
 

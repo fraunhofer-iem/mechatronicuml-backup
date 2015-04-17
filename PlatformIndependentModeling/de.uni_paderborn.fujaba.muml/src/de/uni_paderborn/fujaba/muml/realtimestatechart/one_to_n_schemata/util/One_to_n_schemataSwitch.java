@@ -85,6 +85,7 @@ public class One_to_n_schemataSwitch<T> extends Switch<T> {
 			case One_to_n_schemataPackage.MULTICAST: {
 				Multicast multicast = (Multicast)theEObject;
 				T result = caseMulticast(multicast);
+				if (result == null) result = caseSendingOneToManyCommunicationSchema(multicast);
 				if (result == null) result = caseOneToManyCommunicationSchema(multicast);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -92,6 +93,7 @@ public class One_to_n_schemataSwitch<T> extends Switch<T> {
 			case One_to_n_schemataPackage.UNICAST: {
 				Unicast unicast = (Unicast)theEObject;
 				T result = caseUnicast(unicast);
+				if (result == null) result = caseSendingOneToManyCommunicationSchema(unicast);
 				if (result == null) result = caseOneToManyCommunicationSchema(unicast);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -99,6 +101,7 @@ public class One_to_n_schemataSwitch<T> extends Switch<T> {
 			case One_to_n_schemataPackage.ITERATE: {
 				Iterate iterate = (Iterate)theEObject;
 				T result = caseIterate(iterate);
+				if (result == null) result = caseSendingOneToManyCommunicationSchema(iterate);
 				if (result == null) result = caseOneToManyCommunicationSchema(iterate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -106,6 +109,7 @@ public class One_to_n_schemataSwitch<T> extends Switch<T> {
 			case One_to_n_schemataPackage.LOAD_BALANCING: {
 				LoadBalancing loadBalancing = (LoadBalancing)theEObject;
 				T result = caseLoadBalancing(loadBalancing);
+				if (result == null) result = caseSendingOneToManyCommunicationSchema(loadBalancing);
 				if (result == null) result = caseOneToManyCommunicationSchema(loadBalancing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -113,14 +117,30 @@ public class One_to_n_schemataSwitch<T> extends Switch<T> {
 			case One_to_n_schemataPackage.SINGLE_RECEIVE: {
 				SingleReceive singleReceive = (SingleReceive)theEObject;
 				T result = caseSingleReceive(singleReceive);
+				if (result == null) result = caseReceivingOneToManyCommunicationSchema(singleReceive);
 				if (result == null) result = caseOneToManyCommunicationSchema(singleReceive);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case One_to_n_schemataPackage.CONVERGECAST: {
-				Convergecast convergecast = (Convergecast)theEObject;
-				T result = caseConvergecast(convergecast);
-				if (result == null) result = caseOneToManyCommunicationSchema(convergecast);
+			case One_to_n_schemataPackage.MULTI_RECEIVE: {
+				MultiReceive multiReceive = (MultiReceive)theEObject;
+				T result = caseMultiReceive(multiReceive);
+				if (result == null) result = caseReceivingOneToManyCommunicationSchema(multiReceive);
+				if (result == null) result = caseOneToManyCommunicationSchema(multiReceive);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case One_to_n_schemataPackage.RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA: {
+				ReceivingOneToManyCommunicationSchema receivingOneToManyCommunicationSchema = (ReceivingOneToManyCommunicationSchema)theEObject;
+				T result = caseReceivingOneToManyCommunicationSchema(receivingOneToManyCommunicationSchema);
+				if (result == null) result = caseOneToManyCommunicationSchema(receivingOneToManyCommunicationSchema);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case One_to_n_schemataPackage.SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA: {
+				SendingOneToManyCommunicationSchema sendingOneToManyCommunicationSchema = (SendingOneToManyCommunicationSchema)theEObject;
+				T result = caseSendingOneToManyCommunicationSchema(sendingOneToManyCommunicationSchema);
+				if (result == null) result = caseOneToManyCommunicationSchema(sendingOneToManyCommunicationSchema);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -219,17 +239,47 @@ public class One_to_n_schemataSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Convergecast</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Multi Receive</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Convergecast</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Multi Receive</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConvergecast(Convergecast object) {
+	public T caseMultiReceive(MultiReceive object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Receiving One To Many Communication Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Receiving One To Many Communication Schema</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReceivingOneToManyCommunicationSchema(ReceivingOneToManyCommunicationSchema object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sending One To Many Communication Schema</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sending One To Many Communication Schema</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSendingOneToManyCommunicationSchema(SendingOneToManyCommunicationSchema object) {
 		return null;
 	}
 

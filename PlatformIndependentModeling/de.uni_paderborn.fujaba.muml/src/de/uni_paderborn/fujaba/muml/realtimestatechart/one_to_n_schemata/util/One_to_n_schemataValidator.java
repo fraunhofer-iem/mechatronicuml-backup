@@ -108,8 +108,12 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 				return validateLoadBalancing((LoadBalancing)value, diagnostics, context);
 			case One_to_n_schemataPackage.SINGLE_RECEIVE:
 				return validateSingleReceive((SingleReceive)value, diagnostics, context);
-			case One_to_n_schemataPackage.CONVERGECAST:
-				return validateConvergecast((Convergecast)value, diagnostics, context);
+			case One_to_n_schemataPackage.MULTI_RECEIVE:
+				return validateMultiReceive((MultiReceive)value, diagnostics, context);
+			case One_to_n_schemataPackage.RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				return validateReceivingOneToManyCommunicationSchema((ReceivingOneToManyCommunicationSchema)value, diagnostics, context);
+			case One_to_n_schemataPackage.SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA:
+				return validateSendingOneToManyCommunicationSchema((SendingOneToManyCommunicationSchema)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -289,8 +293,26 @@ public class One_to_n_schemataValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConvergecast(Convergecast convergecast, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(convergecast, diagnostics, context);
+	public boolean validateMultiReceive(MultiReceive multiReceive, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(multiReceive, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReceivingOneToManyCommunicationSchema(ReceivingOneToManyCommunicationSchema receivingOneToManyCommunicationSchema, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(receivingOneToManyCommunicationSchema, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSendingOneToManyCommunicationSchema(SendingOneToManyCommunicationSchema sendingOneToManyCommunicationSchema, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(sendingOneToManyCommunicationSchema, diagnostics, context);
 	}
 
 	/**

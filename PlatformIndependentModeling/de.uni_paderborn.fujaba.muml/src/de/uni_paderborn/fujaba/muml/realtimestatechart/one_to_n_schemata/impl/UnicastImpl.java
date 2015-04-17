@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class UnicastImpl extends OneToManyCommunicationSchemaImpl implements Unicast {
+public class UnicastImpl extends SendingOneToManyCommunicationSchemaImpl implements Unicast {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

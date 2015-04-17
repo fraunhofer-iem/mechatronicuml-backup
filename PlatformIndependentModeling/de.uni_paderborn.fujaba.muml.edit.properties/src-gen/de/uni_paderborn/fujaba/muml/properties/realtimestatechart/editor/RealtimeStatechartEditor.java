@@ -64,6 +64,18 @@ public class RealtimeStatechartEditor
 					createEditorUsedOperationRepositories_GeneralTab_Editor(),
 					false);
 
+			addPropertyEditor(
+					createEditorSubRoleSpecificVariables_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorSubRoleSpecificClocks_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorSubRoleSpecificOperations_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
@@ -101,6 +113,18 @@ public class RealtimeStatechartEditor
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorUsedOperationRepositories_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorSubRoleSpecificVariables_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorSubRoleSpecificClocks_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorSubRoleSpecificOperations_GeneralTab_Editor(),
 					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -199,6 +223,45 @@ public class RealtimeStatechartEditor
 			this.editorUsedOperationRepositories_GeneralTab = editor;
 		}
 		return this.editorUsedOperationRepositories_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubRoleSpecificVariables_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubRoleSpecificVariables_GeneralTab_Editor() {
+		if (this.editorSubRoleSpecificVariables_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getRealtimeStatechart_SubRoleSpecificVariables();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorSubRoleSpecificVariables_GeneralTab = editor;
+		}
+		return this.editorSubRoleSpecificVariables_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubRoleSpecificClocks_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubRoleSpecificClocks_GeneralTab_Editor() {
+		if (this.editorSubRoleSpecificClocks_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getRealtimeStatechart_SubRoleSpecificClocks();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorSubRoleSpecificClocks_GeneralTab = editor;
+		}
+		return this.editorSubRoleSpecificClocks_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorSubRoleSpecificOperations_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorSubRoleSpecificOperations_GeneralTab_Editor() {
+		if (this.editorSubRoleSpecificOperations_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getRealtimeStatechart_SubRoleSpecificOperations();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorSubRoleSpecificOperations_GeneralTab = editor;
+		}
+		return this.editorSubRoleSpecificOperations_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
@@ -335,9 +398,10 @@ public class RealtimeStatechartEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general", "property.tab.general",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}

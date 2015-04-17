@@ -77,13 +77,13 @@ public interface One_to_n_schemataFactory extends EFactory {
 	SingleReceive createSingleReceive();
 
 	/**
-	 * Returns a new object of class '<em>Convergecast</em>'.
+	 * Returns a new object of class '<em>Multi Receive</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Convergecast</em>'.
+	 * @return a new object of class '<em>Multi Receive</em>'.
 	 * @generated
 	 */
-	Convergecast createConvergecast();
+	MultiReceive createMultiReceive();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -12,27 +12,27 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SingleReceive;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Single Receive</b></em>'.
+ * An implementation of the model object '<em><b>Multi Receive</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class SingleReceiveImpl extends ReceivingOneToManyCommunicationSchemaImpl implements SingleReceive {
+public class MultiReceiveImpl extends ReceivingOneToManyCommunicationSchemaImpl implements MultiReceive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SingleReceiveImpl() {
+	protected MultiReceiveImpl() {
 		super();
 	}
 
@@ -43,7 +43,7 @@ public class SingleReceiveImpl extends ReceivingOneToManyCommunicationSchemaImpl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return One_to_n_schemataPackage.Literals.SINGLE_RECEIVE;
+		return One_to_n_schemataPackage.Literals.MULTI_RECEIVE;
 	}
 
-} //SingleReceiveImpl
+} //MultiReceiveImpl

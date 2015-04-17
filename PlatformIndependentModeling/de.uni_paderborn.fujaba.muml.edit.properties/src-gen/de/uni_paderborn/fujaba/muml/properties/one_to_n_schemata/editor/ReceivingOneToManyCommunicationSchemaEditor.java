@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 /**
  * @generated
  */
-public class ConvergecastEditor
+public abstract class ReceivingOneToManyCommunicationSchemaEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ConvergecastEditor(String tab,
+	public ReceivingOneToManyCommunicationSchemaEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -48,7 +48,7 @@ public class ConvergecastEditor
 		if (this.editorCondition_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 					.getOneToManyCommunicationSchema_Condition();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("A subrole only sends or receives a message if it satisfies this condition.");
@@ -71,43 +71,6 @@ public class ConvergecastEditor
 			this.editorAction_GeneralTab = editor;
 		}
 		return this.editorAction_GeneralTab;
-	}
-
-	//
-	// instantiation
-	//
-
-	/**
-	 * @generated
-	 */
-	public ConvergecastEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
-						.getConvergecast());
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
-			return new ConvergecastEditor(tab);
-		}
-
-		@Override
-		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
-		}
 	}
 
 }

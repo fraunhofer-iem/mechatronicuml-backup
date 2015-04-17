@@ -1618,8 +1618,8 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="RaiseMessageEventImpliesParameterBinding" value="-- A raise message event must bind a value to every parameter&#xD;&#xA;let messageType : msgtype::MessageType = self.message.instanceOf in&#xD;&#xA;(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))&#xD;&#xA;-- author: adann"/>
-        <details key="RaiseMessageEventImpliesSendingCommunicationSchema" value="-- When using One-To-Many Communication Schemata, a RaiseMessageEvent may only use sending One-To-Many Communication Schemata.&#xD;&#xA;if (self.oneToManyCommunicationSchema->isEmpty()) then &#xD;&#xA;&#x9;true &#xD;&#xA;else&#xD;&#xA;&#x9;self.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Unicast) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Iterate) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::LoadBalancing)&#x9;)&#xD;&#xA;endif"/>
-        <details key="TriggerMessageEventImpliesReceivingCommunicationSchema" value="-- When using One-To-Many Communication Schemata, a TiggerMessageEvent may only use receiving One-To-Many Communication Schemata.&#xD;&#xA;if (self.oneToManyCommunicationSchema->isEmpty()) then &#xD;&#xA;&#x9;true &#xD;&#xA;else&#xD;&#xA;&#x9;self.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; &#x9; self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Convergecast))&#xD;&#xA;endif"/>
+        <details key="RaiseMessageEventImpliesSendingCommunicationSchema" value="-- When using One-To-Many Communication Schemata, a RaiseMessageEvent may only use sending One-To-Many Communication Schemata.&#xD;&#xA;if (self.oneToManyCommunicationSchema->isEmpty()) then &#xD;&#xA;&#x9;true &#xD;&#xA;else&#xD;&#xA;&#x9;self.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::SendingOneToManyCommunicationSchema))&#xD;&#xA;endif"/>
+        <details key="TriggerMessageEventImpliesReceivingCommunicationSchema" value="-- When using One-To-Many Communication Schemata, a TiggerMessageEvent may only use receiving One-To-Many Communication Schemata.&#xD;&#xA;if (self.oneToManyCommunicationSchema->isEmpty()) then &#xD;&#xA;&#x9;true &#xD;&#xA;else&#xD;&#xA;&#x9;self.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::ReceivingOneToManyCommunicationSchema))&#xD;&#xA;endif"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="RaiseMessageEventImpliesParameterBinding RaiseMessageEventImpliesSendingCommunicationSchema TriggerMessageEventImpliesReceivingCommunicationSchema"/>
@@ -1866,6 +1866,12 @@
           <details key="derivation" value="-- a RTSC uses OneToManyCommunicationSchemata  if itself uses a oneToManyCommunicationSchema&#xD;&#xA;self.transitions->exists(t : Transition | (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.triggerMessageEvent.oneToManyCommunicationSchema = null)) or (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsInvalid() and not (t.raiseMessageEvent.oneToManyCommunicationSchema = null)))&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificVariables"
+          upperBound="-1" eType="#//behavior/Variable" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificClocks"
+          upperBound="-1" eType="#//realtimestatechart/Clock" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subRoleSpecificOperations"
+          upperBound="-1" eType="#//behavior/Operation" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2022,17 +2028,17 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Multicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="Multicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The communication schema allows for sending a message to all coordination partners."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Unicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="Unicast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Using this communication schema, only one subrole is allowed to send a message."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Iterate" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="Iterate" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The communication schema iterate allows for an iterative sending of a message."/>
         </eAnnotations>
@@ -2056,7 +2062,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="LoadBalancing" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="LoadBalancing" eSuperTypes="#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet"
               value="-- LoadBalancing must define the responseMessage or the maxWorkingTime&#xD;&#xA;not self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()"/>
@@ -2082,16 +2088,20 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SingleReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="SingleReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentaion" value="Using this communication schema, only one subrole is allowed to receive a message."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Convergecast" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema">
+      <eClassifiers xsi:type="ecore:EClass" name="MultiReceive" eSuperTypes="#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The communication schema convergecast allows for receiving a message by each subrole."/>
         </eAnnotations>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ReceivingOneToManyCommunicationSchema"
+          abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
+      <eClassifiers xsi:type="ecore:EClass" name="SendingOneToManyCommunicationSchema"
+          abstract="true" eSuperTypes="#//realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
     </eSubpackages>
   </eSubpackages>
   <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/msgtype/0.4.0" nsPrefix="msgtype">

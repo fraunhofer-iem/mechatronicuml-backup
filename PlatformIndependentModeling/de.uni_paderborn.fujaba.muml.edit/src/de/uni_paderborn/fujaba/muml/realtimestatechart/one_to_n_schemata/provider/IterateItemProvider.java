@@ -41,7 +41,7 @@ import org.storydriven.core.expressions.common.CommonExpressionsFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class IterateItemProvider extends OneToManyCommunicationSchemaItemProvider {
+public class IterateItemProvider extends SendingOneToManyCommunicationSchemaItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -71,7 +71,7 @@ public class One_to_n_schemataFactoryImpl extends EFactoryImpl implements One_to
 			case One_to_n_schemataPackage.ITERATE: return createIterate();
 			case One_to_n_schemataPackage.LOAD_BALANCING: return createLoadBalancing();
 			case One_to_n_schemataPackage.SINGLE_RECEIVE: return createSingleReceive();
-			case One_to_n_schemataPackage.CONVERGECAST: return createConvergecast();
+			case One_to_n_schemataPackage.MULTI_RECEIVE: return createMultiReceive();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,9 +132,9 @@ public class One_to_n_schemataFactoryImpl extends EFactoryImpl implements One_to
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Convergecast createConvergecast() {
-		ConvergecastImpl convergecast = new ConvergecastImpl();
-		return convergecast;
+	public MultiReceive createMultiReceive() {
+		MultiReceiveImpl multiReceive = new MultiReceiveImpl();
+		return multiReceive;
 	}
 
 	/**

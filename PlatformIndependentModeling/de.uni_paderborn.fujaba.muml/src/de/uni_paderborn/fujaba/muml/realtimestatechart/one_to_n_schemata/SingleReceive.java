@@ -23,5 +23,5 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
  * @model annotation="http://www.eclipse.org/emf/2002/GenModel documentaion='Using this communication schema, only one subrole is allowed to receive a message.'"
  * @generated
  */
-public interface SingleReceive extends OneToManyCommunicationSchema {
+public interface SingleReceive extends ReceivingOneToManyCommunicationSchema {
 } // SingleReceive

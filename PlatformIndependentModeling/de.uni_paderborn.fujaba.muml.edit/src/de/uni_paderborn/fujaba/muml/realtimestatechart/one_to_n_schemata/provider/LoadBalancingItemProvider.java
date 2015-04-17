@@ -36,7 +36,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LoadBalancingItemProvider extends OneToManyCommunicationSchemaItemProvider {
+public class LoadBalancingItemProvider extends SendingOneToManyCommunicationSchemaItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

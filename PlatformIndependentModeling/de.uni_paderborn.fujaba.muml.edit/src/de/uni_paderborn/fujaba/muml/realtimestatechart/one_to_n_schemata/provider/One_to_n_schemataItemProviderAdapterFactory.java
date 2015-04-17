@@ -197,26 +197,26 @@ public class One_to_n_schemataItemProviderAdapterFactory extends One_to_n_schema
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConvergecastItemProvider convergecastItemProvider;
+	protected MultiReceiveItemProvider multiReceiveItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConvergecastAdapter() {
-		if (convergecastItemProvider == null) {
-			convergecastItemProvider = new ConvergecastItemProvider(this);
+	public Adapter createMultiReceiveAdapter() {
+		if (multiReceiveItemProvider == null) {
+			multiReceiveItemProvider = new MultiReceiveItemProvider(this);
 		}
 
-		return convergecastItemProvider;
+		return multiReceiveItemProvider;
 	}
 
 	/**
@@ -323,7 +323,7 @@ public class One_to_n_schemataItemProviderAdapterFactory extends One_to_n_schema
 		if (iterateItemProvider != null) iterateItemProvider.dispose();
 		if (loadBalancingItemProvider != null) loadBalancingItemProvider.dispose();
 		if (singleReceiveItemProvider != null) singleReceiveItemProvider.dispose();
-		if (convergecastItemProvider != null) convergecastItemProvider.dispose();
+		if (multiReceiveItemProvider != null) multiReceiveItemProvider.dispose();
 	}
 
 }

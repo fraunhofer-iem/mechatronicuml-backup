@@ -72,6 +72,9 @@ public class RealtimeStatechartItemProvider
 			addAllAvailableOperationsPropertyDescriptor(object);
 			addUsedOperationRepositoriesPropertyDescriptor(object);
 			addUsesOneToManyCommunicationSchemataPropertyDescriptor(object);
+			addSubRoleSpecificVariablesPropertyDescriptor(object);
+			addSubRoleSpecificClocksPropertyDescriptor(object);
+			addSubRoleSpecificOperationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -385,6 +388,72 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Sub Role Specific Variables feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubRoleSpecificVariablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechart_subRoleSpecificVariables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_subRoleSpecificVariables_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sub Role Specific Clocks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubRoleSpecificClocksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechart_subRoleSpecificClocks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_subRoleSpecificClocks_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sub Role Specific Operations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubRoleSpecificOperationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechart_subRoleSpecificOperations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_subRoleSpecificOperations_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -401,6 +470,9 @@ public class RealtimeStatechartItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -469,6 +541,9 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES:
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS:
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -510,6 +585,48 @@ public class RealtimeStatechartItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS,
 				 RealtimestatechartFactory.eINSTANCE.createClock()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES,
+				 BehaviorFactory.eINSTANCE.createVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS,
+				 RealtimestatechartFactory.eINSTANCE.createClock()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS,
+				 BehaviorFactory.eINSTANCE.createOperation()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == BehaviorPackage.Literals.BEHAVIOR__OPERATIONS ||
+			childFeature == RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS ||
+			childFeature == BehaviorPackage.Literals.BEHAVIOR__VARIABLES ||
+			childFeature == RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES ||
+			childFeature == RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS ||
+			childFeature == RealtimestatechartPackage.Literals.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

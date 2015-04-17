@@ -1199,6 +1199,33 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRealtimeStatechart_SubRoleSpecificVariables() {
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRealtimeStatechart_SubRoleSpecificClocks() {
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRealtimeStatechart_SubRoleSpecificOperations() {
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart() {
 		return realtimeStatechartEClass.getEOperations().get(0);
 	}
@@ -1490,6 +1517,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__USED_OPERATION_REPOSITORIES);
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___IS_SUPER_STATECHART_OF__REALTIMESTATECHART);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART);
 		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART);
@@ -1709,6 +1739,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getRealtimeStatechart_AllAvailableOperations(), theBehaviorPackage.getOperation(), null, "allAvailableOperations", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_UsedOperationRepositories(), theBehaviorPackage.getOperationRepository(), null, "usedOperationRepositories", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRealtimeStatechart_UsesOneToManyCommunicationSchemata(), ecorePackage.getEBoolean(), "usesOneToManyCommunicationSchemata", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_SubRoleSpecificVariables(), theBehaviorPackage.getVariable(), null, "subRoleSpecificVariables", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_SubRoleSpecificClocks(), this.getClock(), null, "subRoleSpecificClocks", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_SubRoleSpecificOperations(), theBehaviorPackage.getOperation(), null, "subRoleSpecificOperations", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart(), ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1945,8 +1978,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "RaiseMessageEventImpliesParameterBinding", "-- A raise message event must bind a value to every parameter\r\nlet messageType : msgtype::MessageType = self.message.instanceOf in\r\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\r\n-- author: adann",
-			 "RaiseMessageEventImpliesSendingCommunicationSchema", "-- When using One-To-Many Communication Schemata, a RaiseMessageEvent may only use sending One-To-Many Communication Schemata.\r\nif (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Multicast) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Unicast) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Iterate) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::LoadBalancing)\t)\r\nendif",
-			 "TriggerMessageEventImpliesReceivingCommunicationSchema", "-- When using One-To-Many Communication Schemata, a TiggerMessageEvent may only use receiving One-To-Many Communication Schemata.\r\nif (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::SingleReceive) or\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t self.oneToManyCommunicationSchema.oclIsTypeOf(one_to_n_schemata::Convergecast))\r\nendif"
+			 "RaiseMessageEventImpliesSendingCommunicationSchema", "-- When using One-To-Many Communication Schemata, a RaiseMessageEvent may only use sending One-To-Many Communication Schemata.\r\nif (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::SendingOneToManyCommunicationSchema))\r\nendif",
+			 "TriggerMessageEventImpliesReceivingCommunicationSchema", "-- When using One-To-Many Communication Schemata, a TiggerMessageEvent may only use receiving One-To-Many Communication Schemata.\r\nif (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::ReceivingOneToManyCommunicationSchema))\r\nendif"
 		   });	
 		addAnnotation
 		  (synchronizationChannelEClass, 

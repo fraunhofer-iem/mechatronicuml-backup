@@ -50,13 +50,15 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimestatechartPackageImpl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Iterate;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Multicast;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.OneToManyCommunicationSchema;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SingleReceive;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Unicast;
 
@@ -134,7 +136,21 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass convergecastEClass = null;
+	private EClass multiReceiveEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass receivingOneToManyCommunicationSchemaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sendingOneToManyCommunicationSchemaEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -375,8 +391,26 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConvergecast() {
-		return convergecastEClass;
+	public EClass getMultiReceive() {
+		return multiReceiveEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReceivingOneToManyCommunicationSchema() {
+		return receivingOneToManyCommunicationSchemaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSendingOneToManyCommunicationSchema() {
+		return sendingOneToManyCommunicationSchemaEClass;
 	}
 
 	/**
@@ -427,7 +461,11 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 
 		singleReceiveEClass = createEClass(SINGLE_RECEIVE);
 
-		convergecastEClass = createEClass(CONVERGECAST);
+		multiReceiveEClass = createEClass(MULTI_RECEIVE);
+
+		receivingOneToManyCommunicationSchemaEClass = createEClass(RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA);
+
+		sendingOneToManyCommunicationSchemaEClass = createEClass(SENDING_ONE_TO_MANY_COMMUNICATION_SCHEMA);
 	}
 
 	/**
@@ -463,12 +501,14 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		multicastEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
-		unicastEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
-		iterateEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
-		loadBalancingEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
-		singleReceiveEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
-		convergecastEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
+		multicastEClass.getESuperTypes().add(this.getSendingOneToManyCommunicationSchema());
+		unicastEClass.getESuperTypes().add(this.getSendingOneToManyCommunicationSchema());
+		iterateEClass.getESuperTypes().add(this.getSendingOneToManyCommunicationSchema());
+		loadBalancingEClass.getESuperTypes().add(this.getSendingOneToManyCommunicationSchema());
+		singleReceiveEClass.getESuperTypes().add(this.getReceivingOneToManyCommunicationSchema());
+		multiReceiveEClass.getESuperTypes().add(this.getReceivingOneToManyCommunicationSchema());
+		receivingOneToManyCommunicationSchemaEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
+		sendingOneToManyCommunicationSchemaEClass.getESuperTypes().add(this.getOneToManyCommunicationSchema());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(oneToManyCommunicationSchemaEClass, OneToManyCommunicationSchema.class, "OneToManyCommunicationSchema", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -491,7 +531,11 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 
 		initEClass(singleReceiveEClass, SingleReceive.class, "SingleReceive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(convergecastEClass, Convergecast.class, "Convergecast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(multiReceiveEClass, MultiReceive.class, "MultiReceive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(receivingOneToManyCommunicationSchemaEClass, ReceivingOneToManyCommunicationSchema.class, "ReceivingOneToManyCommunicationSchema", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sendingOneToManyCommunicationSchemaEClass, SendingOneToManyCommunicationSchema.class, "SendingOneToManyCommunicationSchema", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

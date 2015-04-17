@@ -38,6 +38,9 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getUsedOperationRepositories <em>Used Operation Repositories</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isUsesOneToManyCommunicationSchemata <em>Uses One To Many Communication Schemata</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificVariables <em>Sub Role Specific Variables</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificClocks <em>Sub Role Specific Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificOperations <em>Sub Role Specific Operations</em>}</li>
  * </ul>
  * </p>
  *
@@ -256,6 +259,54 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	void setUsesOneToManyCommunicationSchemata(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Sub Role Specific Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Variable}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sub Role Specific Variables</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub Role Specific Variables</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SubRoleSpecificVariables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Variable> getSubRoleSpecificVariables();
+
+	/**
+	 * Returns the value of the '<em><b>Sub Role Specific Clocks</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Clock}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sub Role Specific Clocks</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub Role Specific Clocks</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SubRoleSpecificClocks()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Clock> getSubRoleSpecificClocks();
+
+	/**
+	 * Returns the value of the '<em><b>Sub Role Specific Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sub Role Specific Operations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub Role Specific Operations</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_SubRoleSpecificOperations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Operation> getSubRoleSpecificOperations();
 
 	/**
 	 * <!-- begin-user-doc -->

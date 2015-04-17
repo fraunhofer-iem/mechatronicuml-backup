@@ -102,8 +102,16 @@ public class One_to_n_schemataAdapterFactory extends AdapterFactoryImpl {
 				return createSingleReceiveAdapter();
 			}
 			@Override
-			public Adapter caseConvergecast(Convergecast object) {
-				return createConvergecastAdapter();
+			public Adapter caseMultiReceive(MultiReceive object) {
+				return createMultiReceiveAdapter();
+			}
+			@Override
+			public Adapter caseReceivingOneToManyCommunicationSchema(ReceivingOneToManyCommunicationSchema object) {
+				return createReceivingOneToManyCommunicationSchemaAdapter();
+			}
+			@Override
+			public Adapter caseSendingOneToManyCommunicationSchema(SendingOneToManyCommunicationSchema object) {
+				return createSendingOneToManyCommunicationSchemaAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -210,16 +218,44 @@ public class One_to_n_schemataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast <em>Convergecast</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive <em>Multi Receive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Convergecast
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive
 	 * @generated
 	 */
-	public Adapter createConvergecastAdapter() {
+	public Adapter createMultiReceiveAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema <em>Receiving One To Many Communication Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema
+	 * @generated
+	 */
+	public Adapter createReceivingOneToManyCommunicationSchemaAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema <em>Sending One To Many Communication Schema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.SendingOneToManyCommunicationSchema
+	 * @generated
+	 */
+	public Adapter createSendingOneToManyCommunicationSchemaAdapter() {
 		return null;
 	}
 

@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LoadBalancingImpl extends OneToManyCommunicationSchemaImpl implements LoadBalancing {
+public class LoadBalancingImpl extends SendingOneToManyCommunicationSchemaImpl implements LoadBalancing {
 	/**
 	 * The cached value of the '{@link #getResponseMessage() <em>Response Message</em>}' reference.
 	 * <!-- begin-user-doc -->

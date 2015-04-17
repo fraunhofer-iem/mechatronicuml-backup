@@ -200,7 +200,7 @@ public class AsynchronousMessageEventItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__ONE_TO_MANY_COMMUNICATION_SCHEMA,
-				 One_to_n_schemataFactory.eINSTANCE.createConvergecast()));
+				 One_to_n_schemataFactory.eINSTANCE.createMultiReceive()));
 	}
 
 }

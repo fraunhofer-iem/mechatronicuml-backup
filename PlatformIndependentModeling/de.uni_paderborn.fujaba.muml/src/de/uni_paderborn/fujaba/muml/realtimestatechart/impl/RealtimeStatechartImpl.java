@@ -67,6 +67,9 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableOperations <em>All Available Operations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getUsedOperationRepositories <em>Used Operation Repositories</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isUsesOneToManyCommunicationSchemata <em>Uses One To Many Communication Schemata</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getSubRoleSpecificVariables <em>Sub Role Specific Variables</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getSubRoleSpecificClocks <em>Sub Role Specific Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getSubRoleSpecificOperations <em>Sub Role Specific Operations</em>}</li>
  * </ul>
  * </p>
  *
@@ -222,6 +225,36 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getSubRoleSpecificVariables() <em>Sub Role Specific Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubRoleSpecificVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Variable> subRoleSpecificVariables;
+
+	/**
+	 * The cached value of the '{@link #getSubRoleSpecificClocks() <em>Sub Role Specific Clocks</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubRoleSpecificClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Clock> subRoleSpecificClocks;
+
+	/**
+	 * The cached value of the '{@link #getSubRoleSpecificOperations() <em>Sub Role Specific Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubRoleSpecificOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Operation> subRoleSpecificOperations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -508,6 +541,42 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Variable> getSubRoleSpecificVariables() {
+		if (subRoleSpecificVariables == null) {
+			subRoleSpecificVariables = new EObjectContainmentEList<Variable>(Variable.class, this, RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES);
+		}
+		return subRoleSpecificVariables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Clock> getSubRoleSpecificClocks() {
+		if (subRoleSpecificClocks == null) {
+			subRoleSpecificClocks = new EObjectContainmentEList<Clock>(Clock.class, this, RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS);
+		}
+		return subRoleSpecificClocks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Operation> getSubRoleSpecificOperations() {
+		if (subRoleSpecificOperations == null) {
+			subRoleSpecificOperations = new EObjectContainmentEList<Operation>(Operation.class, this, RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS);
+		}
+		return subRoleSpecificOperations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isSuperStatechartOf(final RealtimeStatechart statechart) {
 		// TODO: Replace by OCL's transitive closure?
 				
@@ -623,6 +692,12 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES:
+				return ((InternalEList<?>)getSubRoleSpecificVariables()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS:
+				return ((InternalEList<?>)getSubRoleSpecificClocks()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS:
+				return ((InternalEList<?>)getSubRoleSpecificOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -680,6 +755,12 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getUsedOperationRepositories();
 			case RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA:
 				return isUsesOneToManyCommunicationSchemata();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES:
+				return getSubRoleSpecificVariables();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS:
+				return getSubRoleSpecificClocks();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS:
+				return getSubRoleSpecificOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -729,6 +810,18 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA:
 				setUsesOneToManyCommunicationSchemata((Boolean)newValue);
 				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES:
+				getSubRoleSpecificVariables().clear();
+				getSubRoleSpecificVariables().addAll((Collection<? extends Variable>)newValue);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS:
+				getSubRoleSpecificClocks().clear();
+				getSubRoleSpecificClocks().addAll((Collection<? extends Clock>)newValue);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS:
+				getSubRoleSpecificOperations().clear();
+				getSubRoleSpecificOperations().addAll((Collection<? extends Operation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -770,6 +863,15 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA:
 				USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES:
+				getSubRoleSpecificVariables().clear();
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS:
+				getSubRoleSpecificClocks().clear();
+				return;
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS:
+				getSubRoleSpecificOperations().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -813,6 +915,12 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return usedOperationRepositories != null && !usedOperationRepositories.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA:
 				return USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES:
+				return subRoleSpecificVariables != null && !subRoleSpecificVariables.isEmpty();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS:
+				return subRoleSpecificClocks != null && !subRoleSpecificClocks.isEmpty();
+			case RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS:
+				return subRoleSpecificOperations != null && !subRoleSpecificOperations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

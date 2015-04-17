@@ -38,7 +38,7 @@ import org.storydriven.core.expressions.Expression;
  * @model
  * @generated
  */
-public interface Iterate extends OneToManyCommunicationSchema {
+public interface Iterate extends SendingOneToManyCommunicationSchema {
 	/**
 	 * Returns the value of the '<em><b>Termination Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -3282,13 +3282,40 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
+	 * The feature id for the '<em><b>Sub Role Specific Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Sub Role Specific Clocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
+
+	/**
+	 * The feature id for the '<em><b>Sub Role Specific Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
+
+	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -5725,6 +5752,39 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getRealtimeStatechart_UsesOneToManyCommunicationSchemata();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificVariables <em>Sub Role Specific Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sub Role Specific Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificVariables()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getRealtimeStatechart_SubRoleSpecificVariables();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificClocks <em>Sub Role Specific Clocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sub Role Specific Clocks</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificClocks()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getRealtimeStatechart_SubRoleSpecificClocks();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificOperations <em>Sub Role Specific Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sub Role Specific Operations</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getSubRoleSpecificOperations()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getRealtimeStatechart_SubRoleSpecificOperations();
+
+	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isSuperStatechartOf(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) <em>Is Super Statechart Of</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6683,6 +6743,30 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA = eINSTANCE.getRealtimeStatechart_UsesOneToManyCommunicationSchemata();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Role Specific Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES = eINSTANCE.getRealtimeStatechart_SubRoleSpecificVariables();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Role Specific Clocks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS = eINSTANCE.getRealtimeStatechart_SubRoleSpecificClocks();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Role Specific Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS = eINSTANCE.getRealtimeStatechart_SubRoleSpecificOperations();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Super Statechart Of</b></em>' operation.

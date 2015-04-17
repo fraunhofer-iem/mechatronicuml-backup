@@ -38,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LoadbalancingEitherHasResponseMessageOrWcet ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet'"
  * @generated
  */
-public interface LoadBalancing extends OneToManyCommunicationSchema {
+public interface LoadBalancing extends SendingOneToManyCommunicationSchema {
 	/**
 	 * Returns the value of the '<em><b>Response Message</b></em>' reference.
 	 * <!-- begin-user-doc -->

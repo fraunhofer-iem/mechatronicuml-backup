@@ -27,7 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MulticastItemProvider extends OneToManyCommunicationSchemaItemProvider {
+public class MulticastItemProvider extends SendingOneToManyCommunicationSchemaItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
