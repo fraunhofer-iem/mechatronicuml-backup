@@ -252,11 +252,6 @@ public class ArrayIndexExpressionItemProvider extends ElementAccessorExpressionI
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.ARRAY_INDEX_EXPRESSION__INDEX,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add

@@ -94,7 +94,6 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION: return createTypedNamedElementExpression();
 			case ActionlanguagePackage.ARRAY_INITIALIZE_EXPRESSION: return createArrayInitializeExpression();
 			case ActionlanguagePackage.NONDETERMINISTIC_CHOICE_EXPRESSION: return createNondeterministicChoiceExpression();
-			case ActionlanguagePackage.PARAMETER_EXPRESSION: return createParameterExpression();
 			case ActionlanguagePackage.TIME_VALUE_EXPRESSION: return createTimeValueExpression();
 			case ActionlanguagePackage.TYPE_CAST_EXPRESSION: return createTypeCastExpression();
 			case ActionlanguagePackage.ARRAY_INDEX_EXPRESSION: return createArrayIndexExpression();
@@ -290,16 +289,6 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	public NondeterministicChoiceExpression createNondeterministicChoiceExpression() {
 		NondeterministicChoiceExpressionImpl nondeterministicChoiceExpression = new NondeterministicChoiceExpressionImpl();
 		return nondeterministicChoiceExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterExpression createParameterExpression() {
-		ParameterExpressionImpl parameterExpression = new ParameterExpressionImpl();
-		return parameterExpression;
 	}
 
 	/**

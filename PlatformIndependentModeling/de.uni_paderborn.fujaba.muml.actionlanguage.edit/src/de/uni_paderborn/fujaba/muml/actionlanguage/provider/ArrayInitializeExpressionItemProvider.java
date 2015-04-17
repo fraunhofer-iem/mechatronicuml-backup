@@ -249,11 +249,6 @@ public class ArrayInitializeExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add

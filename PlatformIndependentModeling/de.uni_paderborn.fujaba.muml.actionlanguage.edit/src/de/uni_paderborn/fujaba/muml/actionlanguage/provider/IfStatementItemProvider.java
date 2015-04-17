@@ -350,11 +350,6 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add
@@ -496,11 +491,6 @@ public class IfStatementItemProvider
 			(createChildParameter
 				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

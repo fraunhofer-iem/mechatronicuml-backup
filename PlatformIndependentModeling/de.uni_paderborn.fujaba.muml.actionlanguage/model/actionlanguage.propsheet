@@ -220,14 +220,6 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VaFf5swbEeSjx7OWZCcdLw"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_VaFf58wbEeSjx7OWZCcdLw">
-      <genClass href="actionlanguage.genmodel#//actionlanguage/ParameterExpression"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaFf6MwbEeSjx7OWZCcdLw">
-        <genFeature href="actionlanguage.genmodel#//actionlanguage/ParameterExpression/parameter"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_VZGBY8wbEeSjx7OWZCcdLw"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VaFf6cwbEeSjx7OWZCcdLw"/>
-      </orderedElements>
-    </classes>
     <classes xmi:id="_VaFf6swbEeSjx7OWZCcdLw">
       <genClass href="actionlanguage.genmodel#//actionlanguage/TimeValueExpression"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VaFf68wbEeSjx7OWZCcdLw">

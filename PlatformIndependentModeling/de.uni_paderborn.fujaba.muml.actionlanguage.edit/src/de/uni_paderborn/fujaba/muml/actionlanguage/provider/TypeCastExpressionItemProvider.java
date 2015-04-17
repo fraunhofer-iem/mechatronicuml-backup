@@ -262,11 +262,6 @@ public class TypeCastExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION,
-				 ActionlanguageFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionlanguagePackage.Literals.TYPE_CAST_EXPRESSION__ENCLOSED_EXPRESSION,
 				 ActionlanguageFactory.eINSTANCE.createTimeValueExpression()));
 
 		newChildDescriptors.add

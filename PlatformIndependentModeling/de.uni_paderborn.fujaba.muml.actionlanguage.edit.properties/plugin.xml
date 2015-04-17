@@ -108,11 +108,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.ParameterExpressionEditor$Factory"
-             type="http://www.fujaba.de/muml/actionlanguage/0.4.0#ParameterExpression">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.actionlanguage.properties.actionlanguage.editor.TimeValueExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/actionlanguage/0.4.0#TimeValueExpression">
        </propertyEditor>

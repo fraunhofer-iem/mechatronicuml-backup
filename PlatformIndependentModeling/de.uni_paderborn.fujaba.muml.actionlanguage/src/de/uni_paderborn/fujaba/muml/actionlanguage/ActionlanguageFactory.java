@@ -161,15 +161,6 @@ public interface ActionlanguageFactory extends EFactory {
 	NondeterministicChoiceExpression createNondeterministicChoiceExpression();
 
 	/**
-	 * Returns a new object of class '<em>Parameter Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter Expression</em>'.
-	 * @generated
-	 */
-	ParameterExpression createParameterExpression();
-
-	/**
 	 * Returns a new object of class '<em>Time Value Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

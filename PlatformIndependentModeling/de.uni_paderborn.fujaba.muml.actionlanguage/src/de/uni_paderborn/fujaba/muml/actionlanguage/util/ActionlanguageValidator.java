@@ -140,8 +140,6 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateArrayInitializeExpression((ArrayInitializeExpression)value, diagnostics, context);
 			case ActionlanguagePackage.NONDETERMINISTIC_CHOICE_EXPRESSION:
 				return validateNondeterministicChoiceExpression((NondeterministicChoiceExpression)value, diagnostics, context);
-			case ActionlanguagePackage.PARAMETER_EXPRESSION:
-				return validateParameterExpression((ParameterExpression)value, diagnostics, context);
 			case ActionlanguagePackage.TIME_VALUE_EXPRESSION:
 				return validateTimeValueExpression((TimeValueExpression)value, diagnostics, context);
 			case ActionlanguagePackage.TYPE_CAST_EXPRESSION:
@@ -395,15 +393,6 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateNondeterministicChoiceExpression(NondeterministicChoiceExpression nondeterministicChoiceExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(nondeterministicChoiceExpression, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateParameterExpression(ParameterExpression parameterExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameterExpression, diagnostics, context);
 	}
 
 	/**

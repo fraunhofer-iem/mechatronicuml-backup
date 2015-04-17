@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationState
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ParameterExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
@@ -173,13 +172,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	private EClass nondeterministicChoiceExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass parameterExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -739,24 +731,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getParameterExpression() {
-		return parameterExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getParameterExpression_Parameter() {
-		return (EReference)parameterExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTimeValueExpression() {
 		return timeValueExpressionEClass;
 	}
@@ -959,9 +933,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		createEReference(nondeterministicChoiceExpressionEClass, NONDETERMINISTIC_CHOICE_EXPRESSION__RANGE);
 		createEReference(nondeterministicChoiceExpressionEClass, NONDETERMINISTIC_CHOICE_EXPRESSION__DATA_TYPE);
 
-		parameterExpressionEClass = createEClass(PARAMETER_EXPRESSION);
-		createEReference(parameterExpressionEClass, PARAMETER_EXPRESSION__PARAMETER);
-
 		timeValueExpressionEClass = createEClass(TIME_VALUE_EXPRESSION);
 		createEReference(timeValueExpressionEClass, TIME_VALUE_EXPRESSION__TIME_VALUE);
 
@@ -1034,7 +1005,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		typedNamedElementExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		arrayInitializeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		nondeterministicChoiceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		parameterExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		timeValueExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		typeCastExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		elementAccessorExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
@@ -1103,9 +1073,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEClass(nondeterministicChoiceExpressionEClass, NondeterministicChoiceExpression.class, "NondeterministicChoiceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNondeterministicChoiceExpression_Range(), theValuetypePackage.getRange(), null, "range", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNondeterministicChoiceExpression_DataType(), theTypesPackage.getPrimitiveDataType(), null, "dataType", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(parameterExpressionEClass, ParameterExpression.class, "ParameterExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterExpression_Parameter(), theBehaviorPackage.getParameter(), null, "parameter", null, 1, 1, ParameterExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeValueExpressionEClass, TimeValueExpression.class, "TimeValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimeValueExpression_TimeValue(), theValuetypePackage.getTimeValue(), null, "timeValue", null, 1, 1, TimeValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
