@@ -14,7 +14,7 @@ modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 
 main() {
-	instance.rootObjects()[CodGenAllocation]->any(true).cic.flatComponentInstanceConfiguration();
+	instance.rootObjects()[CodeGenAllocation]->any(true).cic.flatComponentInstanceConfiguration();
 } 
 
 
