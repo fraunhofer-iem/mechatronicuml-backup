@@ -58,7 +58,7 @@ query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
 
 query getPrimitiveDataType(in theRootNode:RootNode) : Muml::types::PrimitiveDataType{
 	var category: ModelElementCategory :=theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
-	return category.modelElements[Muml::types::PrimitiveDataType]->select(type|type.primitiveType=Muml::types::PrimitiveTypes::UINT16)->any(true);
+	return category.modelElements[Muml::types::PrimitiveDataType]->select(type|type.primitiveType=Muml::types::PrimitiveTypes::INT32)->any(true);
 	
 }
 

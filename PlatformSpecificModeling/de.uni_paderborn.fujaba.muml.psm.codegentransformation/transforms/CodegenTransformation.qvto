@@ -232,6 +232,7 @@ mapping HWPlatformInstanceConfiguration::mapHWPlatformInstanceConfiguration():HW
 mapping HWPlatformInstance::mapHWPlatformInstance():HWPlatformInstance{
 	//resources:=self.resources->map mapResourceInstance();
 	name:=self.name;
+	hwplatformType:=self.hwplatformType;
 	//networkingHardwareInstances:=self.networkingHardwareInstances->map mapNetworkHardwareInstance();
 	delegationPorts:=self.delegationPorts->map mapHWPort().oclAsType(DelegationHWPortInstance);
 	embeddedHPIC:=self.embeddedHPIC.map mapHWPlatformInstanceConfiguration();
