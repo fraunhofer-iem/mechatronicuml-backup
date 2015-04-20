@@ -47,12 +47,6 @@ import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingFactory;
 
 public class CodegenTransformationWizard extends Wizard implements INewWizard {
 
-	// Transormations
-	public static final String API_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.api.transformation/transforms/apitransformation.qvto"; //$NON-NLS-1$
-
-	public static final String CODEGEN_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.codegentransformation/transforms/CodegenTransformation.qvto"; //$NON-NLS-1$
-
-	public static final String CODEGEN_HIERARCHY_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.codegentransformation/transforms/hierarchy_transformation.qvto"; //$NON-NLS-1$
 	// wizard pages
 	private MainCodeGenConfigPage mainConifgPage;
 
@@ -176,19 +170,19 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 							return;
 						}
 						MumlPIM2MumlPSMJob psmJob = new MumlPIM2MumlPSMJob(
-								rootNode, apiMapping, API_TRANSFORMATION);
+								rootNode, apiMapping, Messages.CodegenTransformationWizard_2);
 						psmJob.setProgressGroup(monitor, 10);
 						psmJob.setUser(true);
 
 						MumlPSM2CodegenJob codeGenJob = new MumlPSM2CodegenJob(
 								allocation, codgenModelPath,
-								CODEGEN_TRANSFORMATION);
+								Messages.CodegenTransformationWizard_0);
 						codeGenJob.setUser(true);
 						codeGenJob.setProgressGroup(monitor, 10);
 
 						CodegenFlatHierarchyJob hierarchyJob = new CodegenFlatHierarchyJob(
 								codgenModelPath,
-								CODEGEN_HIERARCHY_TRANSFORMATION);
+								Messages.CodegenTransformationWizard_1);
 						hierarchyJob.setUser(true);
 						hierarchyJob.setProgressGroup(monitor, 10);
 

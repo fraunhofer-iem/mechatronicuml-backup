@@ -4,7 +4,10 @@ import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.messages"; //$NON-NLS-1$
+	public static String CodegenTransformationWizard_0;
+	public static String CodegenTransformationWizard_1;
 	public static String CodegenTransformationWizard_13;
+	public static String CodegenTransformationWizard_2;
 	public static String CodegenTransformationWizard_3;
 	public static String CodegenTransformationWizard_4;
 	public static String CodegenTransformationWizard_9;
