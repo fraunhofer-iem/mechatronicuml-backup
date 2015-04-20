@@ -3,7 +3,7 @@ transformation hierarchy_transformation(inout instance : ModelInstancePackage);
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ModelInstancePackage uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
-modeltype Codegen uses codegen('http://www.fujaba.de/muml/psm/codegen/0.1.0');
+modeltype Codegen uses codegen('http://www.fujaba.de/muml/psm/codegen/0.4.0/');
 
 
 modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
