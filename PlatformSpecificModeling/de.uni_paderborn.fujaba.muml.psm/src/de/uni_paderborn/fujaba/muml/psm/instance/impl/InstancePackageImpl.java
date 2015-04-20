@@ -24,6 +24,8 @@ import de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.ApiexpressionsPackageImpl;
 
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
+import de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl;
 import de.uni_paderborn.fujaba.muml.psm.impl.PsmPackageImpl;
 
 import de.uni_paderborn.fujaba.muml.psm.instance.InstanceFactory;
@@ -136,6 +138,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		RealtimestatechartparameterbindingPackageImpl theRealtimestatechartparameterbindingPackage = (RealtimestatechartparameterbindingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) instanceof RealtimestatechartparameterbindingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartparameterbindingPackage.eNS_URI) : RealtimestatechartparameterbindingPackage.eINSTANCE);
 		PortapimappingPackageImpl thePortapimappingPackage = (PortapimappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) instanceof PortapimappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PortapimappingPackage.eNS_URI) : PortapimappingPackage.eINSTANCE);
 		ApiexpressionsPackageImpl theApiexpressionsPackage = (ApiexpressionsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) instanceof ApiexpressionsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ApiexpressionsPackage.eNS_URI) : ApiexpressionsPackage.eINSTANCE);
+		CodegenPackageImpl theCodegenPackage = (CodegenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) instanceof CodegenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CodegenPackage.eNS_URI) : CodegenPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theInstancePackage.createPackageContents();
@@ -147,6 +150,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theRealtimestatechartparameterbindingPackage.createPackageContents();
 		thePortapimappingPackage.createPackageContents();
 		theApiexpressionsPackage.createPackageContents();
+		theCodegenPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theInstancePackage.initializePackageContents();
@@ -158,6 +162,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theRealtimestatechartparameterbindingPackage.initializePackageContents();
 		thePortapimappingPackage.initializePackageContents();
 		theApiexpressionsPackage.initializePackageContents();
+		theCodegenPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theInstancePackage.freeze();

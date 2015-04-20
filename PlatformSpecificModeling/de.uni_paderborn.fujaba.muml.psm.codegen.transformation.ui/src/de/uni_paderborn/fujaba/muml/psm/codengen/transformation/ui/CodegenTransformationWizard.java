@@ -48,11 +48,11 @@ import de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingFactory;
 public class CodegenTransformationWizard extends Wizard implements INewWizard {
 
 	// Transormations
-	public static final String API_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.api.transformation/transforms/apitransformation.qvto";
+	public static final String API_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.api.transformation/transforms/apitransformation.qvto"; //$NON-NLS-1$
 
-	public static final String CODEGEN_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.codegentransformation/transforms/CodegenTransformation.qvto";
+	public static final String CODEGEN_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.codegentransformation/transforms/CodegenTransformation.qvto"; //$NON-NLS-1$
 
-	public static final String CODEGEN_HIERARCHY_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.codegentransformation/transforms/hierarchy_transformation.qvto";
+	public static final String CODEGEN_HIERARCHY_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.psm.codegentransformation/transforms/hierarchy_transformation.qvto"; //$NON-NLS-1$
 	// wizard pages
 	private MainCodeGenConfigPage mainConifgPage;
 
@@ -64,20 +64,20 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 	public CodegenTransformationWizard() {
 		super();
 		setNeedsProgressMonitor(true);
-		setDialogSettings(new DialogSettings("WizardSetting"));
+		setDialogSettings(new DialogSettings("WizardSetting")); //$NON-NLS-1$
 	}
 
 	@Override
 	public void addPages() {
 		mainConifgPage = new MainCodeGenConfigPage(
-				"Select A Fujaba and A API-Mapping Model", selection);
+				"Select A Fujaba and A API-Mapping Model", selection); //$NON-NLS-1$
 		addPage(mainConifgPage);
 
 	}
 
 	@Override
 	public String getWindowTitle() {
-		return "Export Fujaba-Model to Code-Gen Model";
+		return "Export Fujaba-Model to Code-Gen Model"; //$NON-NLS-1$
 	}
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
@@ -94,8 +94,8 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 				public void run(IProgressMonitor monitor) {
 
 					try {
-						monitor.beginTask("Create Code-Gen Model", 35);
-						monitor.subTask("Copy Files to model-gen");
+						monitor.beginTask("Create Code-Gen Model", 35); //$NON-NLS-1$
+						monitor.subTask("Copy Files to model-gen"); //$NON-NLS-1$
 						URI fujabaURI = URI.createURI(mainConifgPage.getFujabaFilePath());
 						IResource fujabaFile = ResourcesPlugin.getWorkspace()
 								.getRoot().findMember(fujabaURI.toPlatformString(true));
@@ -105,7 +105,7 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 								.getFolder(
 										fujabaFile.getFullPath()
 												.removeLastSegments(1)
-												.append("model-gen"));
+												.append("model-gen")); //$NON-NLS-1$
 						;
 
 						// take the orginal file name and store the copy in the
@@ -116,7 +116,7 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 
 						// path fopr the codegenModel
 						final IPath codgenModelPath = newFolder.getFullPath()
-								.append("CodeGenModel.codegen");
+								.append(Messages.CodegenTransformationWizard_9);
 						IFile newFujabaFile = null;
 						MappingRepository apiMapping = null;
 
@@ -246,12 +246,12 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 			IFolder targetFolder, IFile newFujabaFile, ResourceSet resourceSet,
 			IProgressMonitor monitor) throws CoreException, IOException {
 		MappingRepository apiMapping = null;
-		monitor.subTask("Adjusting Path in the API-Mapping Model");
+		monitor.subTask("Adjusting Path in the API-Mapping Model"); //$NON-NLS-1$
 		String apiMappingFilePath = mainConifgPage.getAPIMappingFilePath();
 		if (apiMappingFilePath.isEmpty()) {
 			apiMapping = PortapimappingFactory.eINSTANCE
 					.createMappingRepository();
-			apiMapping.setName("Dummy");
+			apiMapping.setName("Dummy"); //$NON-NLS-1$
 			monitor.worked(1);
 			return apiMapping;
 		}
@@ -297,12 +297,12 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 		FileWriter fstreamError = new FileWriter(newAPIMappingFile
 				.getLocation().toString());
 		BufferedWriter output = new BufferedWriter(fstreamError);
-		String regexeFujabaImport = "\\s*import\\s*\"(.*\\.fujaba)\"";
-		String replacementFujabaImport = "import \"platform:/resource"
-				+ newFujabaFile.getFullPath().removeLastSegments(1) + "/";
-		String regexeOSImport = "\\s*import\\s*\"(.*\\.osdsl)\"";
-		String replacementOSImport = "import \"platform:/resource"
-				+ orgAPIMappingFile.getFullPath().removeLastSegments(1) + "/";
+		String regexeFujabaImport = Messages.CodegenTransformationWizard_4;
+		String replacementFujabaImport = Messages.CodegenTransformationWizard_13
+				+ newFujabaFile.getFullPath().removeLastSegments(1) + "/"; //$NON-NLS-1$
+		String regexeOSImport = Messages.CodegenTransformationWizard_3;
+		String replacementOSImport = "import \"platform:/resource" //$NON-NLS-1$
+				+ orgAPIMappingFile.getFullPath().removeLastSegments(1) + "/"; //$NON-NLS-1$
 		Pattern fujabaImportPattern = Pattern.compile(regexeFujabaImport);
 		Pattern osImportPattern = Pattern.compile(regexeOSImport);
 
@@ -312,14 +312,14 @@ public class CodegenTransformationWizard extends Wizard implements INewWizard {
 			matcher = fujabaImportPattern.matcher(line);
 			if (matcher.matches()) {
 				output.write(matcher.replaceFirst(replacementFujabaImport
-						+ matcher.group(1) + "\"\n")
-						+ "\n");
+						+ matcher.group(1) + "\"\n") //$NON-NLS-1$
+						+ "\n"); //$NON-NLS-1$
 			} else {
 				matcher = osImportPattern.matcher(line);
 				if (matcher.matches()) {
 					output.write(matcher.replaceFirst(replacementOSImport
-							+ matcher.group(1) + "\"\n")
-							+ "\n");
+							+ matcher.group(1) + "\"\n") //$NON-NLS-1$
+							+ "\n"); //$NON-NLS-1$
 				} else {
 					output.write(line + '\n');
 

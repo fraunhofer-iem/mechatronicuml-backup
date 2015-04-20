@@ -27,11 +27,11 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.m2m.qvt.oml.util.WriterLog;
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 
 public class MumlPSM2CodegenJob extends Job {
 
-	private CodGenAllocation codegenModel;
+	private CodeGenAllocation codegenModel;
 	private SystemAllocation allocation;
 
 	private TransformationExecutor executor;
@@ -44,7 +44,7 @@ public class MumlPSM2CodegenJob extends Job {
 	public MumlPSM2CodegenJob(SystemAllocation allocation,
 			IPath targetFilePath, String transformation) {
 
-		super("MUML-PSM to CodeGen Model Transformation");
+		super("MUML-PSM to CodeGen Model Transformation"); //$NON-NLS-1$
 		this.allocation = allocation;
 		this.transformation = transformation;
 		this.targetFilePath = targetFilePath;
@@ -86,7 +86,7 @@ public class MumlPSM2CodegenJob extends Job {
 
 			if (loadStatus == null) {
 
-				subMonitor.subTask("Load Model-to-Model Transformation");
+				subMonitor.subTask("Load Model-to-Model Transformation"); //$NON-NLS-1$
 
 				status = loadTransformation();
 
@@ -113,7 +113,7 @@ public class MumlPSM2CodegenJob extends Job {
 
 			subMonitor.setWorkRemaining(30);
 
-			subMonitor.subTask("Execute MUML-PSM to Code-Gen Transformation");
+			subMonitor.subTask("Execute MUML-PSM to Code-Gen Transformation"); //$NON-NLS-1$
 			inputExtent = new BasicModelExtent();
 			inputExtent.add((EObject) allocation);
 			outputExtent = new BasicModelExtent();
@@ -126,12 +126,12 @@ public class MumlPSM2CodegenJob extends Job {
 			status = BasicDiagnostic.toIStatus(diagnostic);
 
 			if (status.isOK()) {
-				codegenModel = (CodGenAllocation) outputExtent.getContents()
+				codegenModel = (CodeGenAllocation) outputExtent.getContents()
 						.get(0);
 
 				Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 				Map<String, Object> m = reg.getExtensionToFactoryMap();
-				m.put("codegen", new XMIResourceFactoryImpl());
+				m.put(Messages.MumlPSM2CodegenJob_3, new XMIResourceFactoryImpl());
 
 				// Obtain a new resource set
 				ResourceSet resSet = new ResourceSetImpl();
@@ -146,7 +146,7 @@ public class MumlPSM2CodegenJob extends Job {
 				// Now save the content.
 				try {
 					Map<String, Object> options = new HashMap<String, Object>();
-					options.put(XMLResource.OPTION_ENCODING, "UTF-8");
+					options.put(XMLResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
 					resource.save(options);
 				} catch (IOException e) {
 					return BasicDiagnostic.toIStatus(BasicDiagnostic

@@ -78,6 +78,14 @@
             genModel="model/psm.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/codegen/0.4.0/"
+            class="de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
    <extension
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <category

@@ -7,7 +7,7 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>psm.ecore</foreignModel>
   <genPackages prefix="Psm" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
-      ecorePackage="psm.ecore#/">
+      fileExtensions="muml_psm" ecorePackage="psm.ecore#/">
     <genClasses ecoreClass="psm.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute psm.ecore#//Import/importURI"/>
     </genClasses>
@@ -118,6 +118,23 @@
       <genClasses ecoreClass="psm.ecore#//apiexpressions/ContinuousPortExpression">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//apiexpressions/ContinuousPortExpression/continuousPort"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Codegen" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//codegen">
+      <genClasses ecoreClass="psm.ecore#//codegen/RefinedAtomicComponentInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedAtomicComponentInstance/allocatedResourceInstance"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//codegen/RefinedStructuredResourceInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference psm.ecore#//codegen/RefinedStructuredResourceInstance/allUsedMessageTypes"/>
+      </genClasses>
+      <genClasses ecoreClass="psm.ecore#//codegen/CodeGenAllocation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/CodeGenAllocation/hpic"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//codegen/CodeGenAllocation/cic"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

@@ -234,6 +234,33 @@ public interface RealtimestatechartPackage extends EPackage {
 	int PARAMETERIZED_REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__USES_ONE_TO_MANY_COMMUNICATION_SCHEMATA;
 
 	/**
+	 * The feature id for the '<em><b>Sub Role Specific Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_VARIABLES;
+
+	/**
+	 * The feature id for the '<em><b>Sub Role Specific Clocks</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_CLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Sub Role Specific Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETERIZED_REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.REALTIME_STATECHART__SUB_ROLE_SPECIFIC_OPERATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
