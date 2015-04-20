@@ -97,6 +97,10 @@ else
 endif
 /]
 
+[query public getProtoBuffVariableName(parameter : Parameter) : String = 
+	'_'+getName(parameter)
+/]
+
 [query public getName(component : Component) : String = 
 	getQualifiedName(component)
 /]
@@ -350,7 +354,7 @@ endif
 
 
 [query public getName(clock : Clock) : String = 
-	getName(clock.name)
+	getQualifiedName(clock) + getQualifiedName(clock.statechart)
 /]
 
 [query public getTaskName(ci : ComponentInstance) : String = 
@@ -671,15 +675,15 @@ endif
  * @param element
 */]
 [query public getTypeName(type : DataType) : String = 
-	if (type.name = 'BOOLEAN') then 'bool' else 
-	if (type.name = 'BYTE') then 'byte' else
-	if (type.name = 'DOUBLE') then 'double' else
-	if (type.name = 'INT') then 'int32' else
-	if (type.name = 'int8') then 'int' else
-	if (type.name = 'int16') then 'int' else
-	if (type.name = 'int32') then 'int32' else
-	if (type.name = 'LONG') then 'long' else
-	if (type.name = 'SHORT') then 'short' else
+	if (type.name = 'BOOLEAN' or type.name = 'boolean') then 'bool' else 
+	if (type.name = 'BYTE' or type.name = 'byte') then 'byte' else
+	if (type.name = 'DOUBLE' or type.name = 'double') then 'double' else
+	if (type.name = 'INT' or type.name = 'int') then 'int' else
+	if (type.name = 'int8' or type.name = 'int') then 'int' else
+	if (type.name = 'int16' or type.name = 'int') then 'int' else
+	if (type.name = 'int32' or type.name = 'int') then 'int' else
+	if (type.name = 'LONG' or type.name = 'long') then 'long' else
+	if (type.name = 'SHORT' or type.name = 'short') then 'short' else
 	if (type.name = 'VOID' or type.name = 'void' ) then 'void' else
 	'TYPE UNDEFINED: '+type.name
 	endif
@@ -698,16 +702,16 @@ endif
  * @param element
 */]
 [query public getTypeNameForProtoBuf(type : DataType) : String = 
-	if (type.name = 'BOOLEAN') then 'bool' else 
-	if (type.name = 'BYTE') then 'bool' else
-	if (type.name = 'DOUBLE') then 'double' else
-	if (type.name = 'INT') then 'int32' else
-	if (type.name = 'int8') then 'int8' else
-	if (type.name = 'int16') then 'int16' else
-	if (type.name = 'int32') then 'int32' else
-	if (type.name = 'LONG') then 'int64' else
-	if (type.name = 'SHORT') then 'int32' else
-	if (type.name = 'VOID') then 'void' else
+	if (type.name = 'BOOLEAN' or type.name = 'boolean') then 'bool' else 
+	if (type.name = 'BYTE' or type.name = 'byte') then 'bool' else
+	if (type.name = 'DOUBLE' or type.name = 'double') then 'double' else
+	if (type.name = 'INT') then 'int' else
+	if (type.name = 'int8') then 'int' else
+	if (type.name = 'int16') then 'int' else
+	if (type.name = 'int32') then 'int' else
+	if (type.name = 'LONG' or type.name = 'long') then 'int64' else
+	if (type.name = 'SHORT' or type.name = 'short') then 'int32' else
+	if (type.name = 'VOID' or type.name = 'void') then 'void' else
 	'TYPE UNDEFINED: '+type.name
 	endif
 	endif
@@ -729,7 +733,7 @@ endif
 /]
 
 [query public getDefaultValue(type : DataType) : String = 
-if (type.name = 'BOOLEAN') then 'false' else 
+if (type.name = 'BOOLEAN' or type.name = 'boolean') then 'false' else 
 	if (type.name = 'BYTE' or type.name = 'byte') then '0' else
 	if (type.name = 'DOUBLE' or type.name = 'double') then '0.0' else
 	if (type.name = 'INT' or type.name = 'int' or type.name = 'int8' or type.name = 'int16' or type.name = 'int32' or type.name = 'int64') then '0' else

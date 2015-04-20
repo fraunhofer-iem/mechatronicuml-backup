@@ -12,7 +12,7 @@
 				'http://www.fujaba.de/muml/swplatform/0.4.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')/]
 
-
+[import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [**
  * Returns the operator of a comparing operator
  * @param comparingOperator the comparing operator
@@ -131,5 +131,5 @@
  * @param expression the trigger message expression
 */]
 [query public getTriggerMessageEventParameterVariableFullyQualifiedName(expression : TriggerMessageExpression) : String =
-	'event->value'
+	'msg->'+expression.parameter.getProtoBuffVariableName()
 /]
