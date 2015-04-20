@@ -1,6 +1,6 @@
-import MUML2MUML;
-import MUML2MUML_Context;
-import MUML2MUML_Context_Region;
+
+import SchemaSpecificMUML2MUML;
+
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -27,7 +27,6 @@ main() {
 query getRealtimeStatechartCategory() : ModelElementCategory {
 	return input.rootObjects()[RootNode]->any(true).categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
 }
-	
 helper  isClockSubRoleSpecific(c : Clock): Boolean
 {
 	return currentRealtimeStatechart.subRoleSpecificClocks->includes(c);
@@ -39,7 +38,8 @@ helper isVariableSubRoleSpecific(v : Variable): Boolean
 helper isOperationSubRoleSpecific(o : Operation): Boolean
 {
 	return currentRealtimeStatechart.subRoleSpecificOperations->includes(o);
-}
+}	
+
 mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		currentRealtimeStatechart:= self;
 		name := self.name + "Impl";
@@ -1655,7 +1655,81 @@ mapping Transition :: Iterate2TransReceiveDoneCoordinator(context:OclAny, region
 		action := self.map Iterate2Action(context, region, 1);
 			
 	}
+mapping OclAny :: Iterate2Action(context:OclAny, region:OclAny, transMapping:Integer) : Action {
 	
+		if(self.oclIsTypeOf(State) and  not self.oclAsType(State).entryEvent.action.oclIsUndefined()){
+			if(self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
+				name := self.oclAsType(State).entryEvent.action.name + "; curRole := last";
+			}else{
+				name := self.oclAsType(State).entryEvent.action.name + "; curRole := first";
+			}endif;	
+		}else{
+			if(self.oclIsTypeOf(State)){
+				if(self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
+					name := "curRole := last";
+				}else{
+					name := "curRole := first";
+				}endif;
+			}else{
+				if(self.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+					name := "curRole := curRole.next";
+				}else{
+					name := "curRole := curRole.prev";
+				}endif;
+			}endif;
+		}endif;
+
+		result.expressions += self.map Iterate2Block(context, transMapping);
+		
+	}
+
+	
+mapping OclAny :: Iterate2Block(context:OclAny, transMapping:Integer) : Block {
+
+		if(self.oclIsTypeOf(State)){
+			if(not self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
+				result.expressions += self.oclAsType(State).outgoingTransitions->first().map Iterate2Assignment(context, "curRole", "first", false, transMapping);
+			}else{
+				result.expressions += self.oclAsType(State).outgoingTransitions->first().map Iterate2Assignment(context, "curRole", "last", false, transMapping);
+			}endif;
+			
+		}else{
+			if(self.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+				result.expressions += self.oclAsType(Transition).map Iterate2Assignment(context, "curRole", "first",true, transMapping);
+			}else{
+				result.expressions += self.oclAsType(Transition).map Iterate2Assignment(context, "curRole", "last",true, transMapping);
+			}endif;
+			
+		}endif;
+		
+		if(self.oclIsTypeOf(State) and  not self.oclAsType(State).oclIsUndefined()){
+			result.expressions += self.oclAsType(State).entryEvent.action.expressions->first().oclAsType(Block).expressions.map Expression2Expression(context);
+		}endif;	
+		
+	}
+	
+mapping Transition :: Iterate2Assignment(context:OclAny, varName:String, assignValue:String, transition:Boolean, transMapping:Integer) : Assignment {
+		
+		lhs_typedNamedElementExpression := self.map Iterate2TypedNamedElementExpr(context, varName, transMapping);
+		
+		assignOperator := AssignOperator::ASSIGN;
+		
+		if(varName.equalsIgnoreCase("curRole") and transition){
+			rhs_assignExpression := self.map PositionCurRoleNextPres(context, 0,1);
+		}else{
+			rhs_assignExpression := self.map TransferSchemata2Literal(context, assignValue, transMapping);
+		}endif;
+		
+	}
+
+
+mapping State :: Iterate2CurRoleEntryEvent(context:OclAny, region:OclAny, transMapping:Integer) : EntryEvent {
+ 		
+ 		clockResets += self.entryEvent.clockResets.map Clock2Clock();
+		
+		action := self.map Iterate2Action(context, region, transMapping);
+					
+	}	
 mapping Transition :: Iterate2TransSendCoordinator(context:OclAny, region:OclAny) : Transition {
 
 		priority := 1;
@@ -2458,260 +2532,13 @@ mapping Transition :: TransferSchemataTimeValue(context:OclAny, region:OclAny, v
 		unit := timeUnit;
 		
 	}
-	
------------------------------------------------------XXXXXXXXXXXXXXXX--GENERAL MAPPINGS TO COPY ELEMENTS--XXXXXXXXXXXXXXXXXX----------------------------------------------
-	
--- Asynchronous Message Events
-
-mapping AsynchronousMessageEvent :: TriggerMessage2TriggerWithoutConsume(context:OclAny) : AsynchronousMessageEvent {
-		
-		//kind := EventKind::TRIGGER_WITHOUT_CONSUME;
-		
-		message := self.message.map Message2Message(context);
-		
-	}
-
-
-
 
 	
--- variables, operations, parametes... 
-
-	
-
-
-
-
--- Events
-
-mapping State :: Iterate2CurRoleEntryEvent(context:OclAny, region:OclAny, transMapping:Integer) : EntryEvent {
- 		
- 		clockResets += self.entryEvent.clockResets.map Clock2Clock();
-		
-		action := self.map Iterate2Action(context, region, transMapping);
-					
-	}
-	
-mapping OclAny :: Iterate2Action(context:OclAny, region:OclAny, transMapping:Integer) : Action {
-	
-		if(self.oclIsTypeOf(State) and  not self.oclAsType(State).entryEvent.action.oclIsUndefined()){
-			if(self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
-				name := self.oclAsType(State).entryEvent.action.name + "; curRole := last";
-			}else{
-				name := self.oclAsType(State).entryEvent.action.name + "; curRole := first";
-			}endif;	
-		}else{
-			if(self.oclIsTypeOf(State)){
-				if(self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
-					name := "curRole := last";
-				}else{
-					name := "curRole := first";
-				}endif;
-			}else{
-				if(self.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
-					name := "curRole := curRole.next";
-				}else{
-					name := "curRole := curRole.prev";
-				}endif;
-			}endif;
-		}endif;
-
-		result.expressions += self.map Iterate2Block(context, transMapping);
-		
-	}
-	
-mapping OclAny :: Iterate2Block(context:OclAny, transMapping:Integer) : Block {
-
-		if(self.oclIsTypeOf(State)){
-			if(not self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
-				result.expressions += self.oclAsType(State).outgoingTransitions->first().map Iterate2Assignment(context, "curRole", "first", false, transMapping);
-			}else{
-				result.expressions += self.oclAsType(State).outgoingTransitions->first().map Iterate2Assignment(context, "curRole", "last", false, transMapping);
-			}endif;
-			
-		}else{
-			if(self.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
-				result.expressions += self.oclAsType(Transition).map Iterate2Assignment(context, "curRole", "first",true, transMapping);
-			}else{
-				result.expressions += self.oclAsType(Transition).map Iterate2Assignment(context, "curRole", "last",true, transMapping);
-			}endif;
-			
-		}endif;
-		
-		if(self.oclIsTypeOf(State) and  not self.oclAsType(State).oclIsUndefined()){
-			result.expressions += self.oclAsType(State).entryEvent.action.expressions->first().oclAsType(Block).expressions.map Expression2Expression(context);
-		}endif;	
-		
-	}
-	
-mapping Transition :: Iterate2Assignment(context:OclAny, varName:String, assignValue:String, transition:Boolean, transMapping:Integer) : Assignment {
-		
-		lhs_typedNamedElementExpression := self.map Iterate2TypedNamedElementExpr(context, varName, transMapping);
-		
-		assignOperator := AssignOperator::ASSIGN;
-		
-		if(varName.equalsIgnoreCase("curRole") and transition){
-			rhs_assignExpression := self.map PositionCurRoleNextPres(context, 0,1);
-		}else{
-			rhs_assignExpression := self.map TransferSchemata2Literal(context, assignValue, transMapping);
-		}endif;
-		
-	}
-
-mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:OclAny) : EntryEvent {
-		
-		clockResets += self.clockResets.map Clock2Clock();
-		
-		action := self.action.map Action2Action(context, region);
-					
-	}
-	
-mapping ExitEvent :: ExitEvent2ExitEventCoordinator(context:OclAny, region:OclAny) : ExitEvent {
-		
-		clockResets += self.clockResets.map Clock2Clock();
-		
-		action := self.action.map Action2Action(context, region);
-					
-	}
-	
-mapping EntryEvent :: EntryEvent2EntryEventSubrole(context:OclAny, region:OclAny) : EntryEvent {
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		kind := self.kind;
-					
-	}
-	
-
-mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:OclAny) : ExitEvent {
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		kind := self.kind;
-					
-	}
-	
-mapping DoEvent :: Do2Do(context:OclAny, region:OclAny) : DoEvent {
-
-		kind := self.kind;
-	
-		action := self.action.map Action2Action(context, region);
-		
-		period := self.period.map TimeValue2TimeValue(context, region);
-			
-	}
-	
-mapping Action :: Action2Action(context:OclAny, region:OclAny) : Action {
-	
-		name := self.name;
-		
-		result.expressions += self.expressions->map Expression2Expression(context);
-		
-	}
-	
-
--- Entry/Exit Points and States
-
 mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:OclAny) : Vertex
 		disjuncts State::States2StatesCoordinator, StateConnectionPoint::StateConnectionPoint2StateConnectionPointCoordinator;
 		
 mapping Vertex :: Vertex2VertexSubrole(context:OclAny, region:OclAny) : Vertex
 		disjuncts State::States2StatesSubrole, StateConnectionPoint::StateConnectionPoint2StateConnectionPointSubrole;
 
-mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny, region:OclAny) : StateConnectionPoint
-		disjuncts EntryPoint::EntryPoint2EntryPointCoordinator, ExitPoint::ExitPoint2ExitPointCoordinator;
-		
-mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointSubrole(context:OclAny, region:OclAny) : StateConnectionPoint
-		disjuncts EntryPoint::EntryPoint2EntryPointSubrole, ExitPoint::ExitPoint2ExitPointSubrole;
-	
-	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:OclAny) : EntryPoint {
-		
-		name := self.name;
-		
-	}
-	
-	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny, region:OclAny) : ExitPoint {
-		
-		name := self.name;
-		
-	}
-	
-	mapping EntryPoint :: EntryPoint2EntryPointSubrole(context:OclAny, region:OclAny) : EntryPoint {
-		
-		name := self.name;
-		
-	}
-	
-	mapping ExitPoint :: ExitPoint2ExitPointSubrole(context:OclAny, region:OclAny) : ExitPoint {
-		
-		name := self.name;
-		
-	}
-
--- Clocks	
-mapping Clock :: Clock2Clock() : Clock {
-		
-		name := self.name;
-				
-	}
-	
-mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, region:OclAny) : ClockConstraint {
-				
-		clock := self.clock.map Clock2Clock();
-				
-		operator := self.operator;
-		
-		bound := self.bound.map TimeValue2TimeValue(context, region);
-	}
-	
-mapping TimeValue :: TimeValue2TimeValue(context:OclAny, region:OclAny) : TimeValue {
-	
-		value := self.value.map Expression2Expression(context);
-		unit := self.unit;
-		
-	}
-	
-mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, region:OclAny) : AbsoluteDeadline {
-		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context, region);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context, region);
-		
-		clock := self.clock.map Clock2Clock();
-		
-	}
-	
-mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, region:OclAny) : RelativeDeadline {
-		
-		upperBound := self.upperBound.map TimeValue2TimeValue(context, region);
-		lowerBound := self.lowerBound.map TimeValue2TimeValue(context, region);
-				
-	}
-	
-	
-	-- synchronizations
-	
-mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region:OclAny) : SynchronizationChannel {
-		
-		name := self.name;
-						
-		selectorType := self.selectorType;		
-						
-	}
-	
-mapping Synchronization :: Synchronization2Synchronization(context:OclAny, region:OclAny) : Synchronization {
-		
-			kind := self.kind;
-			
-			syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context, region);
-			
-			selectorExpression := self.selectorExpression.map Expression2Expression(context);
-		
-	}
-	
-	-- expressions
 
 
-	
-	
-
-	
