@@ -32,14 +32,14 @@ public class ComponentInstanceConfigurationEditor
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+			addPropertyEditor(
+					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
+					false);
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addPropertyEditor(
-					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
 					createEditorParentStructuredComponentInstance_GeneralTab_Editor(),
@@ -64,11 +64,11 @@ public class ComponentInstanceConfigurationEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
-
 			addPropertyEditor(
 					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
 					false);
+
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
 					createEditorParentStructuredComponentInstance_GeneralTab_Editor(),
@@ -185,6 +185,21 @@ public class ComponentInstanceConfigurationEditor
 		return this.editorExtension_ExtensionsTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerificationConstraintRepositories_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerificationConstraintRepositories_GeneralTab_Editor() {
+		if (this.editorVerificationConstraintRepositories_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+					.getVerifiableElement_VerificationConstraintRepositories();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
+
+			this.editorVerificationConstraintRepositories_GeneralTab = editor;
+		}
+		return this.editorVerificationConstraintRepositories_GeneralTab;
+	}
+
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
 		if (this.editorName_GeneralTab == null) {
@@ -210,21 +225,6 @@ public class ComponentInstanceConfigurationEditor
 			this.editorName_GeneralTab = editor;
 		}
 		return this.editorName_GeneralTab;
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorVerificationConstraintRepositories_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorVerificationConstraintRepositories_GeneralTab_Editor() {
-		if (this.editorVerificationConstraintRepositories_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-					.getVerifiableElement_VerificationConstraintRepositories();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
-
-			this.editorVerificationConstraintRepositories_GeneralTab = editor;
-		}
-		return this.editorVerificationConstraintRepositories_GeneralTab;
 	}
 
 	//

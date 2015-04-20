@@ -49,11 +49,6 @@ public class DiscretePortEditor
 
 			addPropertyEditor(createEditorComponent_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
-
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
-
 			addPropertyEditor(createEditorBehavior_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
@@ -68,6 +63,11 @@ public class DiscretePortEditor
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
 					createEditorSenderMessageTypes_GeneralTab_Editor(), false);
@@ -112,8 +112,6 @@ public class DiscretePortEditor
 
 			addPropertyEditor(createEditorComponent_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
-
 			addPropertyEditor(createEditorBehavior_GeneralTab_Editor(), false);
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
@@ -122,6 +120,8 @@ public class DiscretePortEditor
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
 					createEditorSenderMessageTypes_GeneralTab_Editor(), false);
@@ -179,11 +179,11 @@ public class DiscretePortEditor
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
-
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
 		} else {
 		}
