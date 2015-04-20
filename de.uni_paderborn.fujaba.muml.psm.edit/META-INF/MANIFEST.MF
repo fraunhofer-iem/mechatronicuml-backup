@@ -22,6 +22,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.provider;
    org.eclipse.emf.edit.provider,
    org.storydriven.core.expressions.provider,
    org.eclipse.emf.common.notify",
+ de.uni_paderborn.fujaba.muml.psm.codegen.provider,
  de.uni_paderborn.fujaba.muml.psm.instance.provider;
   uses:="org.eclipse.emf.ecore,
    de.uni_paderborn.fujaba.muml.instance.provider,

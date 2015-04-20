@@ -137,6 +137,7 @@ import de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterF
 import de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.apiexpressions.provider.ApiexpressionsItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.muml.psm.codegen.provider.CodegenItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.provider.PortapimappingItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.presentation.PsmEditorPlugin;
 import de.uni_paderborn.fujaba.muml.psm.properties.provider.PropertiesItemProviderAdapterFactory;
@@ -701,6 +702,7 @@ public class AllocationEditor
 		adapterFactory.addAdapterFactory(new de.uni_paderborn.fujaba.muml.psm.instance.provider.InstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new PortapimappingItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApiexpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CodegenItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ActionlanguageItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());

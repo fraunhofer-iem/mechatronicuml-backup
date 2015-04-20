@@ -61,10 +61,10 @@ public class MainCodeGenConfigPage extends WizardPage implements
 
 	private static final String SETTING_SELECTED_MODELELEMENT_URIFRAGMENT = "uriFragment"; //$NON-NLS-1$
 
-	private static final String FILE_EXTENSION_FUJABA = "fujaba";
-	private static final String FILE_EXTENSION_APIMAPPING = "apimapping";
+	private static final String FILE_EXTENSION_FUJABA = Messages.MainCodeGenConfigPage_0;
+	private static final String FILE_EXTENSION_APIMAPPING = Messages.MainCodeGenConfigPage_1;
 
-	private static final String MODEL_ELEMENT_CATEGORY = "de.uni_paderborn.fujaba.muml.psm.allocation.category";
+	private static final String MODEL_ELEMENT_CATEGORY = Messages.MainCodeGenConfigPage_2;
 
 	private ElementTreeSelectionDialog fujabaDialog;
 	private ElementTreeSelectionDialog apiMappingDialog;
@@ -98,23 +98,23 @@ public class MainCodeGenConfigPage extends WizardPage implements
 		configureDialogs();
 
 		Group inputs = new Group(composite, SWT.SHADOW_IN);
-		inputs.setText("Input");
+		inputs.setText("Input"); //$NON-NLS-1$
 		inputs.setLayout(new GridLayout(3, false));
 		inputs.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 
-		String tooltip = "A Fujaba-Model file has a \"."
-				+ FILE_EXTENSION_FUJABA + "\" extension";
+		String tooltip = "A Fujaba-Model file has a \"." //$NON-NLS-1$
+				+ FILE_EXTENSION_FUJABA + "\" extension"; //$NON-NLS-1$
 		textFujabaCatalog = addLabeledResourceSelection(inputs,
-				"Fujaba Model:", tooltip, fujabaDialog);
+				"Fujaba Model:", tooltip, fujabaDialog); //$NON-NLS-1$
 
-		tooltip = "A API-Mapping model file has a \"."
-				+ FILE_EXTENSION_APIMAPPING + "\" extension";
+		tooltip = "A API-Mapping model file has a \"." //$NON-NLS-1$
+				+ FILE_EXTENSION_APIMAPPING + "\" extension"; //$NON-NLS-1$
 		textAPIMappingGraph = addLabeledResourceSelection(inputs,
-				"API-Mapping Model:", tooltip, apiMappingDialog);
+				"API-Mapping Model:", tooltip, apiMappingDialog); //$NON-NLS-1$
 		// TODO Auto-generated method stub
 
 		Group modelElements = new Group(composite, SWT.SHADOW_IN);
-		modelElements.setText("System-Allocations:");
+		modelElements.setText("System-Allocations:"); //$NON-NLS-1$
 		modelElements.setLayout(new GridLayout(1, false));
 		modelElements
 				.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
@@ -176,7 +176,7 @@ public class MainCodeGenConfigPage extends WizardPage implements
 				return false;
 			}
 		});
-		fujabaDialog.setTitle("Choose a Fujaba File");
+		fujabaDialog.setTitle("Choose a Fujaba File"); //$NON-NLS-1$
 		fujabaDialog.setValidator(new ISelectionStatusValidator() {
 
 			@Override
@@ -187,11 +187,11 @@ public class MainCodeGenConfigPage extends WizardPage implements
 						&& ((IFile) selection[0]).getFileExtension()
 								.equalsIgnoreCase(FILE_EXTENSION_FUJABA)) {
 					// return new org.eclipse.core.runtime.S
-					return new Status(Status.OK, "FujabaWizard",
-							"Valid File selected");
+					return new Status(Status.OK, "FujabaWizard", //$NON-NLS-1$
+							"Valid File selected"); //$NON-NLS-1$
 				}
-				return new Status(Status.ERROR, "FujabaWizard",
-						"Select A Fujaba File");
+				return new Status(Status.ERROR, "FujabaWizard", //$NON-NLS-1$
+						"Select A Fujaba File"); //$NON-NLS-1$
 			}
 		});
 
@@ -217,7 +217,7 @@ public class MainCodeGenConfigPage extends WizardPage implements
 				return false;
 			}
 		});
-		apiMappingDialog.setTitle("Choose a API-Mapping File");
+		apiMappingDialog.setTitle("Choose a API-Mapping File"); //$NON-NLS-1$
 		apiMappingDialog.setValidator(new ISelectionStatusValidator() {
 
 			@Override
@@ -227,11 +227,11 @@ public class MainCodeGenConfigPage extends WizardPage implements
 						&& ((IFile) selection[0]).getFileExtension()
 								.equalsIgnoreCase(FILE_EXTENSION_APIMAPPING)) {
 					// return new org.eclipse.core.runtime.S
-					return new Status(Status.OK, "FujabaWizard",
-							"Valid File selected");
+					return new Status(Status.OK, "FujabaWizard", //$NON-NLS-1$
+							"Valid File selected"); //$NON-NLS-1$
 				}
-				return new Status(Status.ERROR, "FujabaWizard",
-						"Select A API-Mapping File");
+				return new Status(Status.ERROR, "FujabaWizard", //$NON-NLS-1$
+						"Select A API-Mapping File"); //$NON-NLS-1$
 			}
 		});
 
@@ -250,7 +250,7 @@ public class MainCodeGenConfigPage extends WizardPage implements
 
 		Button browse = new Button(parent, SWT.PUSH);
 		browse.setToolTipText(tooltip);
-		browse.setText("Select...");
+		browse.setText("Select..."); //$NON-NLS-1$
 		browse.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -300,7 +300,7 @@ public class MainCodeGenConfigPage extends WizardPage implements
 			IResource currentResource = (IResource) it.next();
 			if (currentResource.getType() == IResource.FILE
 					&& ((IFile) currentResource).getFileExtension()
-							.equalsIgnoreCase("fujaba")) {
+							.equalsIgnoreCase(Messages.MainCodeGenConfigPage_0)) {
 				fujabaDialog.setInitialSelection(currentResource);
 				textFujabaCatalog.setText(URI.createPlatformResourceURI(currentResource.getFullPath().toString(), true).toString());
 			
@@ -312,17 +312,17 @@ public class MainCodeGenConfigPage extends WizardPage implements
 
 	private boolean isValid() {
 		if (textFujabaCatalog.getText().isEmpty()
-				|| !textFujabaCatalog.getText().endsWith(".fujaba")) {
-			setMessage("A Fujaba Model has to be given.",
+				|| !textFujabaCatalog.getText().endsWith("."+Messages.MainCodeGenConfigPage_0)) {
+			setMessage("A Fujaba Model has to be given.", //$NON-NLS-1$
 					IMessageProvider.ERROR);
 		}
 
 		if (textAPIMappingGraph.getText().isEmpty()) {
-			setMessage("Select a API-Mapping File.",
+			setMessage("Select a API-Mapping File.", //$NON-NLS-1$
 					IMessageProvider.INFORMATION);
 		}
 		if (selectedElement == null) {
-			setMessage("Select an Allocation", IMessageProvider.ERROR);
+			setMessage("Select an Allocation", IMessageProvider.ERROR); //$NON-NLS-1$
 		}
 
 		if (!textFujabaCatalog.getText().isEmpty() && selectedElement != null) {
@@ -361,12 +361,12 @@ public class MainCodeGenConfigPage extends WizardPage implements
 
 	private ArrayList<ExtendableElement> collectSystemAllocations() {
 		ArrayList<ExtendableElement> newList = new ArrayList<ExtendableElement>();
-		if (!textFujabaCatalog.getText().endsWith(".fujaba")) {
+		if (!textFujabaCatalog.getText().endsWith("."+Messages.MainCodeGenConfigPage_0)) {
 			return newList;
 		}
 		
 		
-		if (textFujabaCatalog.getText().endsWith("fujaba")) {
+		if (textFujabaCatalog.getText().endsWith(Messages.MainCodeGenConfigPage_0)) {
 			if (fujabaResource != null) {
 				fujabaResource.unload();
 			}

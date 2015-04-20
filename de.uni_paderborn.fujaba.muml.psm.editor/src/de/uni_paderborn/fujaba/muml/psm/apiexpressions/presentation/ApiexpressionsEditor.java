@@ -183,6 +183,7 @@ import de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapte
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.provider.AllocationItemProviderAdapterFactory;
 
+import de.uni_paderborn.fujaba.muml.psm.codegen.provider.CodegenItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.psm.instance.provider.InstanceItemProviderAdapterFactory;
 
 import de.uni_paderborn.fujaba.muml.psm.portapimapping.provider.PortapimappingItemProviderAdapterFactory;
@@ -766,6 +767,7 @@ public class ApiexpressionsEditor
 		adapterFactory.addAdapterFactory(new InstanceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new PortapimappingItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApiexpressionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CodegenItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ActionlanguageItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionsItemProviderAdapterFactory());

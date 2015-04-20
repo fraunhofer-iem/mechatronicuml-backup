@@ -10,6 +10,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.presentation,
  de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation,
+ de.uni_paderborn.fujaba.muml.psm.codegen.presentation,
  de.uni_paderborn.fujaba.muml.psm.instance.presentation,
  de.uni_paderborn.fujaba.muml.psm.portapimapping.presentation,
  de.uni_paderborn.fujaba.muml.psm.presentation,

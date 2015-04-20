@@ -28,7 +28,7 @@
             id="de.uni_paderborn.fujaba.muml.psm.presentation.PsmEditorID"
             name="%_UI_PsmEditor_label"
             icon="icons/full/obj16/PsmModelFile.gif"
-            extensions="psm"
+            extensions="muml_psm"
             class="de.uni_paderborn.fujaba.muml.psm.presentation.PsmEditor"
             contributorClass="de.uni_paderborn.fujaba.muml.psm.presentation.PsmActionBarContributor">
       </editor>
@@ -255,6 +255,34 @@
             extensions="apiexpressions"
             class="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsEditor"
             contributorClass="de.uni_paderborn.fujaba.muml.psm.apiexpressions.presentation.ApiexpressionsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated psm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenModelWizardID"
+            name="%_UI_CodegenModelWizard_label"
+            class="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CodegenModelFile.gif">
+         <description>%_UI_CodegenModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated psm -->
+      <editor
+            id="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenEditorID"
+            name="%_UI_CodegenEditor_label"
+            icon="icons/full/obj16/CodegenModelFile.gif"
+            extensions="codegen"
+            class="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenEditor"
+            contributorClass="de.uni_paderborn.fujaba.muml.psm.codegen.presentation.CodegenActionBarContributor">
       </editor>
    </extension>
 
