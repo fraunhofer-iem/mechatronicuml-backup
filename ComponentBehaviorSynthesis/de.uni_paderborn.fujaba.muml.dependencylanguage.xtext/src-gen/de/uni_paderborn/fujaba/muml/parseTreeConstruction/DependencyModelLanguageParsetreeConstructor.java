@@ -342,13 +342,13 @@ protected class DependencyModel_DependenciesAssignment_2_1 extends AssignmentTok
  * // Dependencies
  * ///////////////////////////////////////
  * Dependency:
- * 	(Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge)
- * 	";" comment=(ML_COMMENT | SL_COMMENT)?;
+ * 	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";"
+ * 	| ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
  *
  **/
 
-// (Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge) ";"
-// comment=(ML_COMMENT | SL_COMMENT)?
+// (Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";" |
+// ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?
 protected class Dependency_Group extends GroupToken {
 	
 	public Dependency_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -363,8 +363,8 @@ protected class Dependency_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Dependency_CommentAssignment_2(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Dependency_SemicolonKeyword_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Dependency_CommentAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Dependency_Alternatives_0(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -383,7 +383,8 @@ protected class Dependency_Group extends GroupToken {
 
 }
 
-// Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge
+// Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";" |
+// ClockMerge ";"
 protected class Dependency_Alternatives_0 extends AlternativesToken {
 
 	public Dependency_Alternatives_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -398,28 +399,57 @@ protected class Dependency_Alternatives_0 extends AlternativesToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Dependency_SynchronizationParserRuleCall_0_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Dependency_ForbiddenStateCombinationParserRuleCall_0_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Dependency_Group_0_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Dependency_Group_0_1(lastRuleCallOrigin, this, 1, inst);
 			case 2: return new Dependency_ConditionalDependencyParserRuleCall_0_2(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new Dependency_BoundedActiveStateParserRuleCall_0_3(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new Dependency_DataMergeParserRuleCall_0_4(lastRuleCallOrigin, this, 4, inst);
-			case 5: return new Dependency_ClockMergeParserRuleCall_0_5(lastRuleCallOrigin, this, 5, inst);
+			case 3: return new Dependency_Group_0_3(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new Dependency_Group_0_4(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new Dependency_Group_0_5(lastRuleCallOrigin, this, 5, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// Synchronization
-protected class Dependency_SynchronizationParserRuleCall_0_0 extends RuleCallToken {
+// Synchronization ";"
+protected class Dependency_Group_0_0 extends GroupToken {
 	
-	public Dependency_SynchronizationParserRuleCall_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Dependency_Group_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getGroup_0_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_SemicolonKeyword_0_0_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSynchronizationRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// Synchronization
+protected class Dependency_SynchronizationParserRuleCall_0_0_0 extends RuleCallToken {
+	
+	public Dependency_SynchronizationParserRuleCall_0_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getSynchronizationParserRuleCall_0_0();
+		return grammarAccess.getDependencyAccess().getSynchronizationParserRuleCall_0_0_0();
 	}
 
     @Override
@@ -432,8 +462,6 @@ protected class Dependency_SynchronizationParserRuleCall_0_0 extends RuleCallTok
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSynchronizationRule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(Synchronization_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -446,16 +474,68 @@ protected class Dependency_SynchronizationParserRuleCall_0_0 extends RuleCallTok
 	}	
 }
 
-// ForbiddenStateCombination
-protected class Dependency_ForbiddenStateCombinationParserRuleCall_0_1 extends RuleCallToken {
+// ";"
+protected class Dependency_SemicolonKeyword_0_0_1 extends KeywordToken  {
 	
-	public Dependency_ForbiddenStateCombinationParserRuleCall_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Dependency_SemicolonKeyword_0_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getSemicolonKeyword_0_0_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_SynchronizationParserRuleCall_0_0_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// ForbiddenStateCombination ";"
+protected class Dependency_Group_0_1 extends GroupToken {
+	
+	public Dependency_Group_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getGroup_0_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_SemicolonKeyword_0_1_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getForbiddenStateCombinationRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// ForbiddenStateCombination
+protected class Dependency_ForbiddenStateCombinationParserRuleCall_0_1_0 extends RuleCallToken {
+	
+	public Dependency_ForbiddenStateCombinationParserRuleCall_0_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getForbiddenStateCombinationParserRuleCall_0_1();
+		return grammarAccess.getDependencyAccess().getForbiddenStateCombinationParserRuleCall_0_1_0();
 	}
 
     @Override
@@ -468,8 +548,6 @@ protected class Dependency_ForbiddenStateCombinationParserRuleCall_0_1 extends R
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getForbiddenStateCombinationRule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(ForbiddenStateCombination_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -481,6 +559,29 @@ protected class Dependency_ForbiddenStateCombinationParserRuleCall_0_1 extends R
 		}	
 	}	
 }
+
+// ";"
+protected class Dependency_SemicolonKeyword_0_1_1 extends KeywordToken  {
+	
+	public Dependency_SemicolonKeyword_0_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getSemicolonKeyword_0_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_ForbiddenStateCombinationParserRuleCall_0_1_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
 
 // ConditionalDependency
 protected class Dependency_ConditionalDependencyParserRuleCall_0_2 extends RuleCallToken {
@@ -518,16 +619,45 @@ protected class Dependency_ConditionalDependencyParserRuleCall_0_2 extends RuleC
 	}	
 }
 
-// BoundedActiveState
-protected class Dependency_BoundedActiveStateParserRuleCall_0_3 extends RuleCallToken {
+// BoundedActiveState ";"
+protected class Dependency_Group_0_3 extends GroupToken {
 	
-	public Dependency_BoundedActiveStateParserRuleCall_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Dependency_Group_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getGroup_0_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_SemicolonKeyword_0_3_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBoundedActiveStateRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// BoundedActiveState
+protected class Dependency_BoundedActiveStateParserRuleCall_0_3_0 extends RuleCallToken {
+	
+	public Dependency_BoundedActiveStateParserRuleCall_0_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getBoundedActiveStateParserRuleCall_0_3();
+		return grammarAccess.getDependencyAccess().getBoundedActiveStateParserRuleCall_0_3_0();
 	}
 
     @Override
@@ -540,8 +670,6 @@ protected class Dependency_BoundedActiveStateParserRuleCall_0_3 extends RuleCall
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getBoundedActiveStateRule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(BoundedActiveState_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -554,16 +682,68 @@ protected class Dependency_BoundedActiveStateParserRuleCall_0_3 extends RuleCall
 	}	
 }
 
-// DataMerge
-protected class Dependency_DataMergeParserRuleCall_0_4 extends RuleCallToken {
+// ";"
+protected class Dependency_SemicolonKeyword_0_3_1 extends KeywordToken  {
 	
-	public Dependency_DataMergeParserRuleCall_0_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Dependency_SemicolonKeyword_0_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getSemicolonKeyword_0_3_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_BoundedActiveStateParserRuleCall_0_3_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// DataMerge ";"
+protected class Dependency_Group_0_4 extends GroupToken {
+	
+	public Dependency_Group_0_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getGroup_0_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_SemicolonKeyword_0_4_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getDataMergeRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// DataMerge
+protected class Dependency_DataMergeParserRuleCall_0_4_0 extends RuleCallToken {
+	
+	public Dependency_DataMergeParserRuleCall_0_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getDataMergeParserRuleCall_0_4();
+		return grammarAccess.getDependencyAccess().getDataMergeParserRuleCall_0_4_0();
 	}
 
     @Override
@@ -576,8 +756,6 @@ protected class Dependency_DataMergeParserRuleCall_0_4 extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getDataMergeRule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(DataMerge_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -590,16 +768,68 @@ protected class Dependency_DataMergeParserRuleCall_0_4 extends RuleCallToken {
 	}	
 }
 
-// ClockMerge
-protected class Dependency_ClockMergeParserRuleCall_0_5 extends RuleCallToken {
+// ";"
+protected class Dependency_SemicolonKeyword_0_4_1 extends KeywordToken  {
 	
-	public Dependency_ClockMergeParserRuleCall_0_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Dependency_SemicolonKeyword_0_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getSemicolonKeyword_0_4_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_DataMergeParserRuleCall_0_4_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// ClockMerge ";"
+protected class Dependency_Group_0_5 extends GroupToken {
+	
+	public Dependency_Group_0_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getGroup_0_5();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_SemicolonKeyword_0_5_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getClockMergeRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// ClockMerge
+protected class Dependency_ClockMergeParserRuleCall_0_5_0 extends RuleCallToken {
+	
+	public Dependency_ClockMergeParserRuleCall_0_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getClockMergeParserRuleCall_0_5();
+		return grammarAccess.getDependencyAccess().getClockMergeParserRuleCall_0_5_0();
 	}
 
     @Override
@@ -612,8 +842,6 @@ protected class Dependency_ClockMergeParserRuleCall_0_5 extends RuleCallToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getClockMergeRule().getType().getClassifier())
-			return null;
 		if(checkForRecursion(ClockMerge_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
@@ -626,17 +854,40 @@ protected class Dependency_ClockMergeParserRuleCall_0_5 extends RuleCallToken {
 	}	
 }
 
-
 // ";"
-protected class Dependency_SemicolonKeyword_1 extends KeywordToken  {
+protected class Dependency_SemicolonKeyword_0_5_1 extends KeywordToken  {
 	
-	public Dependency_SemicolonKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Dependency_SemicolonKeyword_0_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getSemicolonKeyword_1();
+		return grammarAccess.getDependencyAccess().getSemicolonKeyword_0_5_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Dependency_ClockMergeParserRuleCall_0_5_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+
+// comment=(ML_COMMENT | SL_COMMENT)?
+protected class Dependency_CommentAssignment_1 extends AssignmentToken  {
+	
+	public Dependency_CommentAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDependencyAccess().getCommentAssignment_1();
 	}
 
     @Override
@@ -647,40 +898,18 @@ protected class Dependency_SemicolonKeyword_1 extends KeywordToken  {
 		}	
 	}
 
-}
-
-// comment=(ML_COMMENT | SL_COMMENT)?
-protected class Dependency_CommentAssignment_2 extends AssignmentToken  {
-	
-	public Dependency_CommentAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getDependencyAccess().getCommentAssignment_2();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new Dependency_SemicolonKeyword_1(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
     @Override	
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("comment",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("comment");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDependencyAccess().getCommentML_COMMENTTerminalRuleCall_2_0_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDependencyAccess().getCommentML_COMMENTTerminalRuleCall_1_0_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getDependencyAccess().getCommentML_COMMENTTerminalRuleCall_2_0_0();
+			element = grammarAccess.getDependencyAccess().getCommentML_COMMENTTerminalRuleCall_1_0_0();
 			return obj;
 		}
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDependencyAccess().getCommentSL_COMMENTTerminalRuleCall_2_0_1(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getDependencyAccess().getCommentSL_COMMENTTerminalRuleCall_1_0_1(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getDependencyAccess().getCommentSL_COMMENTTerminalRuleCall_2_0_1();
+			element = grammarAccess.getDependencyAccess().getCommentSL_COMMENTTerminalRuleCall_1_0_1();
 			return obj;
 		}
 		return null;
@@ -704,10 +933,9 @@ protected class Dependency_CommentAssignment_2 extends AssignmentToken  {
  **/
 
 // ("synchronize" sendingEvents+=Event ("," sendingEvents+=Event)* "with" receivingEvents+=Event (","
-// receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent (","
-// sendingEvents+=SynchronizationEvent)* "with" receivingEvents+=SynchronizationEvent (","
-// receivingEvents+=SynchronizationEvent)*) ("using" channelName=EString)? ("[" generalSelectorExpression=Expression "]"
-// "of type" selectorType=[types::DataType])?
+// receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent ("," sendingEvents+=SynchronizationEvent)*
+// "with" receivingEvents+=SynchronizationEvent ("," receivingEvents+=SynchronizationEvent)*) ("using"
+// channelName=EString)? ("[" generalSelectorExpression=Expression "]" "of type" selectorType=[types::DataType])?
 protected class Synchronization_Group extends GroupToken {
 	
 	public Synchronization_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -739,9 +967,8 @@ protected class Synchronization_Group extends GroupToken {
 }
 
 // "synchronize" sendingEvents+=Event ("," sendingEvents+=Event)* "with" receivingEvents+=Event (","
-// receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent (","
-// sendingEvents+=SynchronizationEvent)* "with" receivingEvents+=SynchronizationEvent (","
-// receivingEvents+=SynchronizationEvent)*
+// receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent ("," sendingEvents+=SynchronizationEvent)*
+// "with" receivingEvents+=SynchronizationEvent ("," receivingEvents+=SynchronizationEvent)*
 protected class Synchronization_Alternatives_0 extends AlternativesToken {
 
 	public Synchronization_Alternatives_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1714,12 +1941,12 @@ protected class Synchronization_SelectorTypeAssignment_2_4 extends AssignmentTok
 /************ begin Rule ForbiddenStateCombination ****************
  *
  * ForbiddenStateCombination:
- * 	"forbid state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+ * 	"forbid state combination" states+=[realtimestatechart::State|QualifiedName] (","
  * 	states+=[realtimestatechart::State|QualifiedName])+;
  *
  **/
 
-// "forbid state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+// "forbid state combination" states+=[realtimestatechart::State|QualifiedName] (","
 // states+=[realtimestatechart::State|QualifiedName])+
 protected class ForbiddenStateCombination_Group extends GroupToken {
 	
@@ -1749,16 +1976,16 @@ protected class ForbiddenStateCombination_Group extends GroupToken {
 
 }
 
-// "forbid state combination of"
-protected class ForbiddenStateCombination_ForbidStateCombinationOfKeyword_0 extends KeywordToken  {
+// "forbid state combination"
+protected class ForbiddenStateCombination_ForbidStateCombinationKeyword_0 extends KeywordToken  {
 	
-	public ForbiddenStateCombination_ForbidStateCombinationOfKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ForbiddenStateCombination_ForbidStateCombinationKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getForbiddenStateCombinationAccess().getForbidStateCombinationOfKeyword_0();
+		return grammarAccess.getForbiddenStateCombinationAccess().getForbidStateCombinationKeyword_0();
 	}
 
     @Override
@@ -1785,7 +2012,7 @@ protected class ForbiddenStateCombination_StatesAssignment_1 extends AssignmentT
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ForbiddenStateCombination_ForbidStateCombinationOfKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ForbiddenStateCombination_ForbidStateCombinationKeyword_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5020,12 +5247,12 @@ protected class StateEvent_StateAssignment_1 extends AssignmentToken  {
 /************ begin Rule StateCombinationEvent ****************
  *
  * StateCombinationEvent:
- * 	kind=StateEventKind "the combination of" states+=[realtimestatechart::State|QualifiedName] (","
+ * 	kind=StateEventKind "combination" states+=[realtimestatechart::State|QualifiedName] (","
  * 	states+=[realtimestatechart::State|QualifiedName])+;
  *
  **/
 
-// kind=StateEventKind "the combination of" states+=[realtimestatechart::State|QualifiedName] (","
+// kind=StateEventKind "combination" states+=[realtimestatechart::State|QualifiedName] (","
 // states+=[realtimestatechart::State|QualifiedName])+
 protected class StateCombinationEvent_Group extends GroupToken {
 	
@@ -5088,16 +5315,16 @@ protected class StateCombinationEvent_KindAssignment_0 extends AssignmentToken  
 
 }
 
-// "the combination of"
-protected class StateCombinationEvent_TheCombinationOfKeyword_1 extends KeywordToken  {
+// "combination"
+protected class StateCombinationEvent_CombinationKeyword_1 extends KeywordToken  {
 	
-	public StateCombinationEvent_TheCombinationOfKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StateCombinationEvent_CombinationKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getStateCombinationEventAccess().getTheCombinationOfKeyword_1();
+		return grammarAccess.getStateCombinationEventAccess().getCombinationKeyword_1();
 	}
 
     @Override
@@ -5125,7 +5352,7 @@ protected class StateCombinationEvent_StatesAssignment_2 extends AssignmentToken
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new StateCombinationEvent_TheCombinationOfKeyword_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new StateCombinationEvent_CombinationKeyword_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -6992,13 +7219,13 @@ protected class ConditionWithoutKeyword_RightSquareBracketKeyword_2 extends Keyw
 /************ begin Rule StateStatusCondition ****************
  *
  * StateStatusCondition:
- * 	(states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+ * 	(states+=[realtimestatechart::State|QualifiedName] | "state combination"
  * 	states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+)
  * 	kind=StateStatusKind;
  *
  **/
 
-// (states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+// (states+=[realtimestatechart::State|QualifiedName] | "state combination"
 // states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+)
 // kind=StateStatusKind
 protected class StateStatusCondition_Group extends GroupToken {
@@ -7029,7 +7256,7 @@ protected class StateStatusCondition_Group extends GroupToken {
 
 }
 
-// states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+// states+=[realtimestatechart::State|QualifiedName] | "state combination"
 // states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+
 protected class StateStatusCondition_Alternatives_0 extends AlternativesToken {
 
@@ -7089,7 +7316,7 @@ protected class StateStatusCondition_StatesAssignment_0_0 extends AssignmentToke
 
 }
 
-// "state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+// "state combination" states+=[realtimestatechart::State|QualifiedName] (","
 // states+=[realtimestatechart::State|QualifiedName])+
 protected class StateStatusCondition_Group_0_1 extends GroupToken {
 	
@@ -7112,16 +7339,16 @@ protected class StateStatusCondition_Group_0_1 extends GroupToken {
 
 }
 
-// "state combination of"
-protected class StateStatusCondition_StateCombinationOfKeyword_0_1_0 extends KeywordToken  {
+// "state combination"
+protected class StateStatusCondition_StateCombinationKeyword_0_1_0 extends KeywordToken  {
 	
-	public StateStatusCondition_StateCombinationOfKeyword_0_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StateStatusCondition_StateCombinationKeyword_0_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getStateStatusConditionAccess().getStateCombinationOfKeyword_0_1_0();
+		return grammarAccess.getStateStatusConditionAccess().getStateCombinationKeyword_0_1_0();
 	}
 
     @Override
@@ -7148,7 +7375,7 @@ protected class StateStatusCondition_StatesAssignment_0_1_1 extends AssignmentTo
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new StateStatusCondition_StateCombinationOfKeyword_0_1_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new StateStatusCondition_StateCombinationKeyword_0_1_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -9445,9 +9672,8 @@ protected class Block_RightCurlyBracketKeyword_3 extends KeywordToken  {
 /************ begin Rule ForLoop ****************
  *
  * // TODO: clarify if it makes sense to allow arbitrary expressions for
- * 
  * // the initializeExpression and countingExpression
- *  ForLoop returns actionlanguage::ForLoop:
+ * ForLoop returns actionlanguage::ForLoop:
  * 	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
  * 	block=Block;
  *
@@ -10428,8 +10654,8 @@ protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordTo
 /************ begin Rule IfStatement ****************
  *
  * IfStatement returns actionlanguage::IfStatement:
- * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")"
- * 	elseIfBlocks+=Block)* ("else" elseBlock=Block)?;
+ * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
+ * 	("else" elseBlock=Block)?;
  *
  **/
 
@@ -11499,7 +11725,7 @@ protected class ExpressionStartRule_OperationCallStatementParserRuleCall_7 exten
 /************ begin Rule Assignment ****************
  *
  * // Assignment
- *  Assignment returns actionlanguage::Assignment:
+ * Assignment returns actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
  * 	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";";
  *
@@ -11771,8 +11997,8 @@ protected class Assignment_SemicolonKeyword_2 extends KeywordToken  {
 /************ begin Rule InitializeExpression ****************
  *
  * // end of assignment
- *  // initialize expression
- *  InitializeExpression returns expressions::Expression:
+ * // initialize expression
+ * InitializeExpression returns expressions::Expression:
  * 	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression | TypeCastExpression;
  *
  **/
@@ -11981,9 +12207,8 @@ protected class InitializeExpression_TypeCastExpressionParserRuleCall_3 extends 
 /************ begin Rule ArrayInitializeExpression ****************
  *
  * // end of initialize expression
- *  // array initialization
- *  ArrayInitializeExpression returns
- * actionlanguage::ArrayInitializeExpression:
+ * // array initialization
+ * ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
  * 	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
  *
  **/
@@ -12206,9 +12431,8 @@ protected class ArrayInitializeExpression_RightSquareBracketKeyword_3 extends Ke
 /************ begin Rule LocalVariableOrConstantDeclarationStatement ****************
  *
  * // end of array initialization
- *  // local variable declaration
- *  LocalVariableOrConstantDeclarationStatement returns
- * actionlanguage::LocalVariableDeclarationStatement:
+ * // local variable declaration
+ * LocalVariableOrConstantDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
  * 	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
  *
  **/
@@ -12734,9 +12958,8 @@ protected class LocalConstantDeclaration_SemicolonKeyword_5 extends KeywordToken
 /************ begin Rule NondeterministicChoiceExpression ****************
  *
  * // end of local variable declaration
- *  // nondeterministic choice expression
- *  NondeterministicChoiceExpression returns
- * actionlanguage::NondeterministicChoiceExpression:
+ * // nondeterministic choice expression
+ * NondeterministicChoiceExpression returns actionlanguage::NondeterministicChoiceExpression:
  * 	dataType=[types::PrimitiveDataType] range=Range;
  *
  **/
@@ -13032,7 +13255,7 @@ protected class Range_GreaterThanSignKeyword_4 extends KeywordToken  {
 /************ begin Rule Expression ****************
  *
  * // end of nondeterministic choice expression
- *  Expression returns expressions::Expression:
+ * Expression returns expressions::Expression:
  * 	LogicalExpression;
  *
  **/
@@ -13088,7 +13311,7 @@ protected class Expression_LogicalExpressionParserRuleCall extends RuleCallToken
 /************ begin Rule LogicalExpression ****************
  *
  * // LogicalExpression
- *  LogicalExpression returns expressions::Expression:
+ * LogicalExpression returns expressions::Expression:
  * 	LogicalOrExpression;
  *
  **/
@@ -13598,8 +13821,8 @@ protected class LogicalAndExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonExpression ****************
  *
  * // end of LogicalExpression
- *  // ComparisonExpression
- *  ComparisonExpression returns expressions::Expression:
+ * // ComparisonExpression
+ * ComparisonExpression returns expressions::Expression:
  * 	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
  * 	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
  *
@@ -14052,8 +14275,8 @@ protected class ComparisonHigherOpExpression_RightExpressionAssignment_1_2 exten
 /************ begin Rule ArithmeticExpression ****************
  *
  * // end of ComparisonExpression
- *  // ArithmeticExpression	
- *  ArithmeticExpression returns expressions::Expression:
+ * // ArithmeticExpression	
+ * ArithmeticExpression returns expressions::Expression:
  * 	AdditionExpression;
  *
  **/
@@ -14634,8 +14857,8 @@ protected class MultiplicationExpression_RightExpressionAssignment_1_1_2 extends
 /************ begin Rule UnaryPreExpression ****************
  *
  * // end of ArithmeticExpression
- *  // UnaryPreExpression
- *  UnaryPreExpression returns expressions::Expression:
+ * // UnaryPreExpression
+ * UnaryPreExpression returns expressions::Expression:
  * 	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
  *
  **/
@@ -14782,7 +15005,7 @@ protected class UnaryPreExpression_EnclosedExpressionAssignment_2 extends Assign
 /************ begin Rule TypeCastExpression ****************
  *
  * // end of UnaryPreExpression
- *  TypeCastExpression returns expressions::Expression:
+ * TypeCastExpression returns expressions::Expression:
  * 	{actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand;
  *
  **/
@@ -14976,7 +15199,7 @@ protected class TypeCastExpression_EnclosedExpressionAssignment_4 extends Assign
 /************ begin Rule Operand ****************
  *
  * // Operand
- *  Operand returns expressions::Expression:
+ * Operand returns expressions::Expression:
  * 	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
  * 	TriggerMessageExpression | NoAttributeSelectorExpression;
  *
@@ -15316,7 +15539,7 @@ protected class Operand_NoAttributeSelectorExpressionParserRuleCall_5 extends Ru
 /************ begin Rule LiteralExpression ****************
  *
  * // end of Operand
- *  LiteralExpression returns commonExpressions::LiteralExpression:
+ * LiteralExpression returns commonExpressions::LiteralExpression:
  * 	{commonExpressions::LiteralExpression} value=Literal;
  *
  **/
@@ -15420,7 +15643,6 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
  * 	TypedNamedElementExpression
  * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
  * 	position=PositionSelectorExpression | // unary post increment/decrement			
- * 
  * 	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
  * 	incrementDecrementOperator=IncrementDecrementOperatorExpression)?;
  *
@@ -15428,7 +15650,6 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
 
 // TypedNamedElementExpression ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
 // "->" position=PositionSelectorExpression | // unary post increment/decrement			
-// 
 // {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 protected class ExtendedTypedNamedElementExpression_Group extends GroupToken {
@@ -15500,7 +15721,6 @@ protected class ExtendedTypedNamedElementExpression_TypedNamedElementExpressionP
 
 // ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 // position=PositionSelectorExpression | // unary post increment/decrement			
-// 
 // {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression)?
 protected class ExtendedTypedNamedElementExpression_Alternatives_1 extends AlternativesToken {
@@ -15662,7 +15882,7 @@ protected class ExtendedTypedNamedElementExpression_PositionAssignment_1_0_2 ext
 
 
 // // unary post increment/decrement			
-//  {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 // incrementDecrementOperator=IncrementDecrementOperatorExpression
 protected class ExtendedTypedNamedElementExpression_Group_1_1 extends GroupToken {
 	
@@ -15693,7 +15913,7 @@ protected class ExtendedTypedNamedElementExpression_Group_1_1 extends GroupToken
 }
 
 // // unary post increment/decrement			
-//  {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+// {actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 protected class ExtendedTypedNamedElementExpression_AssignmentLhs_typedNamedElementExpressionAction_1_1_0 extends ActionToken  {
 
 	public ExtendedTypedNamedElementExpression_AssignmentLhs_typedNamedElementExpressionAction_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -16385,7 +16605,7 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule TriggerMessageExpression ****************
  *
  * // TriggerMessageExpression
- *  TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
+ * TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
  * 	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
  *
  **/

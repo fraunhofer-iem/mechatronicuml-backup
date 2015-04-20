@@ -26,7 +26,7 @@
 'INFINITE'=48
 'INIT'=47
 '['=18
-'\u00C2\u00B5s'=53
+'\u00B5s'=53
 ']'=19
 'and'=32
 'assign'=30
@@ -34,6 +34,7 @@
 'bound states'=22
 'by'=23
 'clock'=49
+'combination'=39
 'const'=67
 'consuming'=85
 'delayed by'=44
@@ -45,7 +46,7 @@
 'entering state'=81
 'first'=99
 'for'=59
-'forbid state combination of'=21
+'forbid state combination'=21
 'h'=57
 'if'=24
 'into'=34
@@ -73,11 +74,10 @@
 'sending'=86
 'shorter than'=78
 'since exactly'=76
-'state combination of'=45
+'state combination'=45
 'strictly longer than'=79
 'strictly short than'=77
 'synchronize'=14
-'the combination of'=39
 'times'=43
 'transition'=38
 'using'=17

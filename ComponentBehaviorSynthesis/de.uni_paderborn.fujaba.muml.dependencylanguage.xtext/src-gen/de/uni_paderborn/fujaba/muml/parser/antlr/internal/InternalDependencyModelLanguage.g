@@ -186,32 +186,40 @@ ruleDependency returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 	{ 
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getDependencyAccess().getSynchronizationParserRuleCall_0_0()); 
+        newCompositeNode(grammarAccess.getDependencyAccess().getSynchronizationParserRuleCall_0_0_0()); 
     }
     this_Synchronization_0=ruleSynchronization
     { 
         $current = $this_Synchronization_0.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
+	otherlv_1=';' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getDependencyAccess().getSemicolonKeyword_0_0_1());
+    }
+)
+    |(
 	{ 
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getDependencyAccess().getForbiddenStateCombinationParserRuleCall_0_1()); 
+        newCompositeNode(grammarAccess.getDependencyAccess().getForbiddenStateCombinationParserRuleCall_0_1_0()); 
     }
-    this_ForbiddenStateCombination_1=ruleForbiddenStateCombination
+    this_ForbiddenStateCombination_2=ruleForbiddenStateCombination
     { 
-        $current = $this_ForbiddenStateCombination_1.current; 
+        $current = $this_ForbiddenStateCombination_2.current; 
         afterParserOrEnumRuleCall();
     }
-
+	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getDependencyAccess().getSemicolonKeyword_0_1_1());
+    }
+)
     |
 	{ 
 	  /* */ 
@@ -219,60 +227,68 @@ ruleDependency returns [EObject current=null]
     { 
         newCompositeNode(grammarAccess.getDependencyAccess().getConditionalDependencyParserRuleCall_0_2()); 
     }
-    this_ConditionalDependency_2=ruleConditionalDependency
+    this_ConditionalDependency_4=ruleConditionalDependency
     { 
-        $current = $this_ConditionalDependency_2.current; 
+        $current = $this_ConditionalDependency_4.current; 
         afterParserOrEnumRuleCall();
     }
 
-    |
+    |(
 	{ 
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getDependencyAccess().getBoundedActiveStateParserRuleCall_0_3()); 
+        newCompositeNode(grammarAccess.getDependencyAccess().getBoundedActiveStateParserRuleCall_0_3_0()); 
     }
-    this_BoundedActiveState_3=ruleBoundedActiveState
+    this_BoundedActiveState_5=ruleBoundedActiveState
     { 
-        $current = $this_BoundedActiveState_3.current; 
+        $current = $this_BoundedActiveState_5.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getDependencyAccess().getDataMergeParserRuleCall_0_4()); 
-    }
-    this_DataMerge_4=ruleDataMerge
-    { 
-        $current = $this_DataMerge_4.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getDependencyAccess().getClockMergeParserRuleCall_0_5()); 
-    }
-    this_ClockMerge_5=ruleClockMerge
-    { 
-        $current = $this_ClockMerge_5.current; 
-        afterParserOrEnumRuleCall();
-    }
-)	otherlv_6=';' 
+	otherlv_6=';' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getDependencyAccess().getSemicolonKeyword_1());
+    	newLeafNode(otherlv_6, grammarAccess.getDependencyAccess().getSemicolonKeyword_0_3_1());
     }
+)
+    |(
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getDependencyAccess().getDataMergeParserRuleCall_0_4_0()); 
+    }
+    this_DataMerge_7=ruleDataMerge
+    { 
+        $current = $this_DataMerge_7.current; 
+        afterParserOrEnumRuleCall();
+    }
+	otherlv_8=';' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getDependencyAccess().getSemicolonKeyword_0_4_1());
+    }
+)
+    |(
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getDependencyAccess().getClockMergeParserRuleCall_0_5_0()); 
+    }
+    this_ClockMerge_9=ruleClockMerge
+    { 
+        $current = $this_ClockMerge_9.current; 
+        afterParserOrEnumRuleCall();
+    }
+	otherlv_10=';' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getDependencyAccess().getSemicolonKeyword_0_5_1());
+    }
+))(
 (
 (
-(
-		lv_comment_7_1=RULE_ML_COMMENT
+		lv_comment_11_1=RULE_ML_COMMENT
 		{
-			newLeafNode(lv_comment_7_1, grammarAccess.getDependencyAccess().getCommentML_COMMENTTerminalRuleCall_2_0_0()); 
+			newLeafNode(lv_comment_11_1, grammarAccess.getDependencyAccess().getCommentML_COMMENTTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -281,13 +297,13 @@ ruleDependency returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"comment",
-        		lv_comment_7_1, 
+        		lv_comment_11_1, 
         		"ML_COMMENT");
 	    }
 
-    |		lv_comment_7_2=RULE_SL_COMMENT
+    |		lv_comment_11_2=RULE_SL_COMMENT
 		{
-			newLeafNode(lv_comment_7_2, grammarAccess.getDependencyAccess().getCommentSL_COMMENTTerminalRuleCall_2_0_1()); 
+			newLeafNode(lv_comment_11_2, grammarAccess.getDependencyAccess().getCommentSL_COMMENTTerminalRuleCall_1_0_1()); 
 		}
 		{
 	        if ($current==null) {
@@ -296,7 +312,7 @@ ruleDependency returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"comment",
-        		lv_comment_7_2, 
+        		lv_comment_11_2, 
         		"SL_COMMENT");
 	    }
 
@@ -590,9 +606,9 @@ ruleForbiddenStateCombination returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='forbid state combination of' 
+(	otherlv_0='forbid state combination' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getForbiddenStateCombinationAccess().getForbidStateCombinationOfKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getForbiddenStateCombinationAccess().getForbidStateCombinationKeyword_0());
     }
 (
 (
@@ -1739,9 +1755,9 @@ ruleStateCombinationEvent returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='the combination of' 
+)	otherlv_1='combination' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getStateCombinationEventAccess().getTheCombinationOfKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getStateCombinationEventAccess().getCombinationKeyword_1());
     }
 (
 (
@@ -2451,9 +2467,9 @@ ruleStateStatusCondition returns [EObject current=null]
 
 )
 )
-    |(	otherlv_1='state combination of' 
+    |(	otherlv_1='state combination' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getStateStatusConditionAccess().getStateCombinationOfKeyword_0_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getStateStatusConditionAccess().getStateCombinationKeyword_0_1_0());
     }
 (
 (
@@ -3446,7 +3462,7 @@ ruleTimeUnit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
     }
 
     |
-	kw='\u00C2\u00B5s' 
+	kw='\u00B5s' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getTimeUnitAccess().getSKeyword_1()); 

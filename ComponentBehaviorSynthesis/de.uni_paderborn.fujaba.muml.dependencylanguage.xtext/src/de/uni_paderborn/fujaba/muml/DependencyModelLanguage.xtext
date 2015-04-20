@@ -27,7 +27,7 @@ DependencyModel returns DependencyModel:
 // Dependencies
 ///////////////////////////////////////
 Dependency returns Dependency:
-	(Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge) ';' (comment=(ML_COMMENT|SL_COMMENT))?
+	(Synchronization ';' | ForbiddenStateCombination ';' | ConditionalDependency | BoundedActiveState ';' | DataMerge ';' | ClockMerge ';') (comment=(ML_COMMENT|SL_COMMENT))?
 ;
 
 Synchronization returns Synchronization:
@@ -40,7 +40,7 @@ Synchronization returns Synchronization:
 ;
 
 ForbiddenStateCombination returns ForbiddenStateCombination:
-	'forbid state combination of' states+=[realtimestatechart::State|QualifiedName] ( ',' states+=[realtimestatechart::State|QualifiedName])+
+	'forbid state combination' states+=[realtimestatechart::State|QualifiedName] ( ',' states+=[realtimestatechart::State|QualifiedName])+
 ;
 
 BoundedActiveState returns BoundedActiveState:
@@ -122,7 +122,7 @@ StateEvent returns StateEvent:
 ;
 
 StateCombinationEvent returns StateCombinationEvent:
-	kind=StateEventKind 'the combination of' states+=[realtimestatechart::State|QualifiedName] ( "," states+=[realtimestatechart::State|QualifiedName])+
+	kind=StateEventKind 'combination' states+=[realtimestatechart::State|QualifiedName] ( "," states+=[realtimestatechart::State|QualifiedName])+
 ;
 
 SynchronizationEvent returns SynchronizationEvent:
@@ -170,7 +170,7 @@ StateStatusCondition returns StateStatusCondition:
 	(
 		states+=[realtimestatechart::State|QualifiedName]
 		|
-		('state combination of' states+=[realtimestatechart::State|QualifiedName] ( "," states+=[realtimestatechart::State|QualifiedName])+)
+		('state combination' states+=[realtimestatechart::State|QualifiedName] ( "," states+=[realtimestatechart::State|QualifiedName])+)
 	)
 	kind=StateStatusKind
 ;

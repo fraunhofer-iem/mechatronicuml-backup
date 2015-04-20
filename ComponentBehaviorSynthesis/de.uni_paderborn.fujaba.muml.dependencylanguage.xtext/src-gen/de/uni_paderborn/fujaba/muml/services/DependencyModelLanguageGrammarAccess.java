@@ -74,65 +74,102 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Dependency");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cSynchronizationParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final RuleCall cForbiddenStateCombinationParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
+		private final RuleCall cSynchronizationParserRuleCall_0_0_0 = (RuleCall)cGroup_0_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final RuleCall cForbiddenStateCombinationParserRuleCall_0_1_0 = (RuleCall)cGroup_0_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
 		private final RuleCall cConditionalDependencyParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
-		private final RuleCall cBoundedActiveStateParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
-		private final RuleCall cDataMergeParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
-		private final RuleCall cClockMergeParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
-		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cCommentAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cCommentAlternatives_2_0 = (Alternatives)cCommentAssignment_2.eContents().get(0);
-		private final RuleCall cCommentML_COMMENTTerminalRuleCall_2_0_0 = (RuleCall)cCommentAlternatives_2_0.eContents().get(0);
-		private final RuleCall cCommentSL_COMMENTTerminalRuleCall_2_0_1 = (RuleCall)cCommentAlternatives_2_0.eContents().get(1);
+		private final Group cGroup_0_3 = (Group)cAlternatives_0.eContents().get(3);
+		private final RuleCall cBoundedActiveStateParserRuleCall_0_3_0 = (RuleCall)cGroup_0_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_3_1 = (Keyword)cGroup_0_3.eContents().get(1);
+		private final Group cGroup_0_4 = (Group)cAlternatives_0.eContents().get(4);
+		private final RuleCall cDataMergeParserRuleCall_0_4_0 = (RuleCall)cGroup_0_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_4_1 = (Keyword)cGroup_0_4.eContents().get(1);
+		private final Group cGroup_0_5 = (Group)cAlternatives_0.eContents().get(5);
+		private final RuleCall cClockMergeParserRuleCall_0_5_0 = (RuleCall)cGroup_0_5.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_5_1 = (Keyword)cGroup_0_5.eContents().get(1);
+		private final Assignment cCommentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cCommentAlternatives_1_0 = (Alternatives)cCommentAssignment_1.eContents().get(0);
+		private final RuleCall cCommentML_COMMENTTerminalRuleCall_1_0_0 = (RuleCall)cCommentAlternatives_1_0.eContents().get(0);
+		private final RuleCall cCommentSL_COMMENTTerminalRuleCall_1_0_1 = (RuleCall)cCommentAlternatives_1_0.eContents().get(1);
 		
 		/////////////////////////////////////////
 		//// Dependencies
 		/////////////////////////////////////////
 		//Dependency:
-		//	(Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge)
-		//	";" comment=(ML_COMMENT | SL_COMMENT)?;
+		//	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";"
+		//	| ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
 		public ParserRule getRule() { return rule; }
 
-		//(Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge) ";"
-		//comment=(ML_COMMENT | SL_COMMENT)?
+		//(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";" |
+		//ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?
 		public Group getGroup() { return cGroup; }
 
-		//Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge
+		//Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";" |
+		//ClockMerge ";"
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
+		//Synchronization ";"
+		public Group getGroup_0_0() { return cGroup_0_0; }
+
 		//Synchronization
-		public RuleCall getSynchronizationParserRuleCall_0_0() { return cSynchronizationParserRuleCall_0_0; }
+		public RuleCall getSynchronizationParserRuleCall_0_0_0() { return cSynchronizationParserRuleCall_0_0_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_0_0_1() { return cSemicolonKeyword_0_0_1; }
+
+		//ForbiddenStateCombination ";"
+		public Group getGroup_0_1() { return cGroup_0_1; }
 
 		//ForbiddenStateCombination
-		public RuleCall getForbiddenStateCombinationParserRuleCall_0_1() { return cForbiddenStateCombinationParserRuleCall_0_1; }
+		public RuleCall getForbiddenStateCombinationParserRuleCall_0_1_0() { return cForbiddenStateCombinationParserRuleCall_0_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_0_1_1() { return cSemicolonKeyword_0_1_1; }
 
 		//ConditionalDependency
 		public RuleCall getConditionalDependencyParserRuleCall_0_2() { return cConditionalDependencyParserRuleCall_0_2; }
 
+		//BoundedActiveState ";"
+		public Group getGroup_0_3() { return cGroup_0_3; }
+
 		//BoundedActiveState
-		public RuleCall getBoundedActiveStateParserRuleCall_0_3() { return cBoundedActiveStateParserRuleCall_0_3; }
-
-		//DataMerge
-		public RuleCall getDataMergeParserRuleCall_0_4() { return cDataMergeParserRuleCall_0_4; }
-
-		//ClockMerge
-		public RuleCall getClockMergeParserRuleCall_0_5() { return cClockMergeParserRuleCall_0_5; }
+		public RuleCall getBoundedActiveStateParserRuleCall_0_3_0() { return cBoundedActiveStateParserRuleCall_0_3_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
+		public Keyword getSemicolonKeyword_0_3_1() { return cSemicolonKeyword_0_3_1; }
+
+		//DataMerge ";"
+		public Group getGroup_0_4() { return cGroup_0_4; }
+
+		//DataMerge
+		public RuleCall getDataMergeParserRuleCall_0_4_0() { return cDataMergeParserRuleCall_0_4_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_0_4_1() { return cSemicolonKeyword_0_4_1; }
+
+		//ClockMerge ";"
+		public Group getGroup_0_5() { return cGroup_0_5; }
+
+		//ClockMerge
+		public RuleCall getClockMergeParserRuleCall_0_5_0() { return cClockMergeParserRuleCall_0_5_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_0_5_1() { return cSemicolonKeyword_0_5_1; }
 
 		//comment=(ML_COMMENT | SL_COMMENT)?
-		public Assignment getCommentAssignment_2() { return cCommentAssignment_2; }
+		public Assignment getCommentAssignment_1() { return cCommentAssignment_1; }
 
 		//ML_COMMENT | SL_COMMENT
-		public Alternatives getCommentAlternatives_2_0() { return cCommentAlternatives_2_0; }
+		public Alternatives getCommentAlternatives_1_0() { return cCommentAlternatives_1_0; }
 
 		//ML_COMMENT
-		public RuleCall getCommentML_COMMENTTerminalRuleCall_2_0_0() { return cCommentML_COMMENTTerminalRuleCall_2_0_0; }
+		public RuleCall getCommentML_COMMENTTerminalRuleCall_1_0_0() { return cCommentML_COMMENTTerminalRuleCall_1_0_0; }
 
 		//SL_COMMENT
-		public RuleCall getCommentSL_COMMENTTerminalRuleCall_2_0_1() { return cCommentSL_COMMENTTerminalRuleCall_2_0_1; }
+		public RuleCall getCommentSL_COMMENTTerminalRuleCall_1_0_1() { return cCommentSL_COMMENTTerminalRuleCall_1_0_1; }
 	}
 
 	public class SynchronizationElements extends AbstractParserRuleElementFinder {
@@ -192,16 +229,14 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		public ParserRule getRule() { return rule; }
 
 		//("synchronize" sendingEvents+=Event ("," sendingEvents+=Event)* "with" receivingEvents+=Event (","
-		//receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent (","
-		//sendingEvents+=SynchronizationEvent)* "with" receivingEvents+=SynchronizationEvent (","
-		//receivingEvents+=SynchronizationEvent)*) ("using" channelName=EString)? ("[" generalSelectorExpression=Expression "]"
-		//"of type" selectorType=[types::DataType])?
+		//receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent ("," sendingEvents+=SynchronizationEvent)*
+		//"with" receivingEvents+=SynchronizationEvent ("," receivingEvents+=SynchronizationEvent)*) ("using"
+		//channelName=EString)? ("[" generalSelectorExpression=Expression "]" "of type" selectorType=[types::DataType])?
 		public Group getGroup() { return cGroup; }
 
 		//"synchronize" sendingEvents+=Event ("," sendingEvents+=Event)* "with" receivingEvents+=Event (","
-		//receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent (","
-		//sendingEvents+=SynchronizationEvent)* "with" receivingEvents+=SynchronizationEvent (","
-		//receivingEvents+=SynchronizationEvent)*
+		//receivingEvents+=Event)* | "synchronize" sendingEvents+=SynchronizationEvent ("," sendingEvents+=SynchronizationEvent)*
+		//"with" receivingEvents+=SynchronizationEvent ("," receivingEvents+=SynchronizationEvent)*
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//"synchronize" sendingEvents+=Event ("," sendingEvents+=Event)* "with" receivingEvents+=Event (","
@@ -339,7 +374,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	public class ForbiddenStateCombinationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForbiddenStateCombination");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cForbidStateCombinationOfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cForbidStateCombinationKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cStatesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cStatesStateCrossReference_1_0 = (CrossReference)cStatesAssignment_1.eContents().get(0);
 		private final RuleCall cStatesStateQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cStatesStateCrossReference_1_0.eContents().get(1);
@@ -350,16 +385,16 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final RuleCall cStatesStateQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cStatesStateCrossReference_2_1_0.eContents().get(1);
 		
 		//ForbiddenStateCombination:
-		//	"forbid state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+		//	"forbid state combination" states+=[realtimestatechart::State|QualifiedName] (","
 		//	states+=[realtimestatechart::State|QualifiedName])+;
 		public ParserRule getRule() { return rule; }
 
-		//"forbid state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+		//"forbid state combination" states+=[realtimestatechart::State|QualifiedName] (","
 		//states+=[realtimestatechart::State|QualifiedName])+
 		public Group getGroup() { return cGroup; }
 
-		//"forbid state combination of"
-		public Keyword getForbidStateCombinationOfKeyword_0() { return cForbidStateCombinationOfKeyword_0; }
+		//"forbid state combination"
+		public Keyword getForbidStateCombinationKeyword_0() { return cForbidStateCombinationKeyword_0; }
 
 		//states+=[realtimestatechart::State|QualifiedName]
 		public Assignment getStatesAssignment_1() { return cStatesAssignment_1; }
@@ -1095,7 +1130,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cKindAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cKindStateEventKindEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
-		private final Keyword cTheCombinationOfKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cCombinationKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cStatesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cStatesStateCrossReference_2_0 = (CrossReference)cStatesAssignment_2.eContents().get(0);
 		private final RuleCall cStatesStateQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cStatesStateCrossReference_2_0.eContents().get(1);
@@ -1106,11 +1141,11 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final RuleCall cStatesStateQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cStatesStateCrossReference_3_1_0.eContents().get(1);
 		
 		//StateCombinationEvent:
-		//	kind=StateEventKind "the combination of" states+=[realtimestatechart::State|QualifiedName] (","
+		//	kind=StateEventKind "combination" states+=[realtimestatechart::State|QualifiedName] (","
 		//	states+=[realtimestatechart::State|QualifiedName])+;
 		public ParserRule getRule() { return rule; }
 
-		//kind=StateEventKind "the combination of" states+=[realtimestatechart::State|QualifiedName] (","
+		//kind=StateEventKind "combination" states+=[realtimestatechart::State|QualifiedName] (","
 		//states+=[realtimestatechart::State|QualifiedName])+
 		public Group getGroup() { return cGroup; }
 
@@ -1120,8 +1155,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//StateEventKind
 		public RuleCall getKindStateEventKindEnumRuleCall_0_0() { return cKindStateEventKindEnumRuleCall_0_0; }
 
-		//"the combination of"
-		public Keyword getTheCombinationOfKeyword_1() { return cTheCombinationOfKeyword_1; }
+		//"combination"
+		public Keyword getCombinationKeyword_1() { return cCombinationKeyword_1; }
 
 		//states+=[realtimestatechart::State|QualifiedName]
 		public Assignment getStatesAssignment_2() { return cStatesAssignment_2; }
@@ -1485,7 +1520,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final CrossReference cStatesStateCrossReference_0_0_0 = (CrossReference)cStatesAssignment_0_0.eContents().get(0);
 		private final RuleCall cStatesStateQualifiedNameParserRuleCall_0_0_0_1 = (RuleCall)cStatesStateCrossReference_0_0_0.eContents().get(1);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Keyword cStateCombinationOfKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Keyword cStateCombinationKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
 		private final Assignment cStatesAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
 		private final CrossReference cStatesStateCrossReference_0_1_1_0 = (CrossReference)cStatesAssignment_0_1_1.eContents().get(0);
 		private final RuleCall cStatesStateQualifiedNameParserRuleCall_0_1_1_0_1 = (RuleCall)cStatesStateCrossReference_0_1_1_0.eContents().get(1);
@@ -1498,17 +1533,17 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final RuleCall cKindStateStatusKindEnumRuleCall_1_0 = (RuleCall)cKindAssignment_1.eContents().get(0);
 		
 		//StateStatusCondition:
-		//	(states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+		//	(states+=[realtimestatechart::State|QualifiedName] | "state combination"
 		//	states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+)
 		//	kind=StateStatusKind;
 		public ParserRule getRule() { return rule; }
 
-		//(states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+		//(states+=[realtimestatechart::State|QualifiedName] | "state combination"
 		//states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+)
 		//kind=StateStatusKind
 		public Group getGroup() { return cGroup; }
 
-		//states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+		//states+=[realtimestatechart::State|QualifiedName] | "state combination"
 		//states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
@@ -1521,12 +1556,12 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//QualifiedName
 		public RuleCall getStatesStateQualifiedNameParserRuleCall_0_0_0_1() { return cStatesStateQualifiedNameParserRuleCall_0_0_0_1; }
 
-		//"state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+		//"state combination" states+=[realtimestatechart::State|QualifiedName] (","
 		//states+=[realtimestatechart::State|QualifiedName])+
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//"state combination of"
-		public Keyword getStateCombinationOfKeyword_0_1_0() { return cStateCombinationOfKeyword_0_1_0; }
+		//"state combination"
+		public Keyword getStateCombinationKeyword_0_1_0() { return cStateCombinationKeyword_0_1_0; }
 
 		//states+=[realtimestatechart::State|QualifiedName]
 		public Assignment getStatesAssignment_0_1_1() { return cStatesAssignment_0_1_1; }
@@ -2542,8 +2577,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//// Dependencies
 	/////////////////////////////////////////
 	//Dependency:
-	//	(Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge)
-	//	";" comment=(ML_COMMENT | SL_COMMENT)?;
+	//	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";"
+	//	| ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
 	public DependencyElements getDependencyAccess() {
 		return pDependency;
 	}
@@ -2567,7 +2602,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//ForbiddenStateCombination:
-	//	"forbid state combination of" states+=[realtimestatechart::State|QualifiedName] (","
+	//	"forbid state combination" states+=[realtimestatechart::State|QualifiedName] (","
 	//	states+=[realtimestatechart::State|QualifiedName])+;
 	public ForbiddenStateCombinationElements getForbiddenStateCombinationAccess() {
 		return pForbiddenStateCombination;
@@ -2719,7 +2754,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//StateCombinationEvent:
-	//	kind=StateEventKind "the combination of" states+=[realtimestatechart::State|QualifiedName] (","
+	//	kind=StateEventKind "combination" states+=[realtimestatechart::State|QualifiedName] (","
 	//	states+=[realtimestatechart::State|QualifiedName])+;
 	public StateCombinationEventElements getStateCombinationEventAccess() {
 		return pStateCombinationEvent;
@@ -2826,7 +2861,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//StateStatusCondition:
-	//	(states+=[realtimestatechart::State|QualifiedName] | "state combination of"
+	//	(states+=[realtimestatechart::State|QualifiedName] | "state combination"
 	//	states+=[realtimestatechart::State|QualifiedName] ("," states+=[realtimestatechart::State|QualifiedName])+)
 	//	kind=StateStatusKind;
 	public StateStatusConditionElements getStateStatusConditionAccess() {
@@ -2957,8 +2992,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	} 
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") (("a".."z" | "A".."Z" | "_" | "0".."9")+ (("(" "0".."9"+ ")-->") ("a".."z" |
-	//	"A".."Z" | "_" | "0".."9")+)?)?;
+	//	"^"? ("a".."z" | "A".."Z" | "_") (("a".."z" | "A".."Z" | "_" | "0".."9")+ (("(" "0".."9"+ ")-->") ("a".."z" | "A".."Z"
+	//	| "_" | "0".."9")+)?)?;
 	public TerminalRule getIDRule() {
 		return tID;
 	} 
@@ -3129,9 +3164,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// TODO: clarify if it makes sense to allow arbitrary expressions for
-	//
 	//// the initializeExpression and countingExpression
-	// ForLoop returns actionlanguage::ForLoop:
+	//ForLoop returns actionlanguage::ForLoop:
 	//	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
 	//	block=Block;
 	public ActionLanguageGrammarAccess.ForLoopElements getForLoopAccess() {
@@ -3175,8 +3209,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//IfStatement returns actionlanguage::IfStatement:
-	//	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")"
-	//	elseIfBlocks+=Block)* ("else" elseBlock=Block)?;
+	//	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
+	//	("else" elseBlock=Block)?;
 	public ActionLanguageGrammarAccess.IfStatementElements getIfStatementAccess() {
 		return gaActionLanguage.getIfStatementAccess();
 	}
@@ -3227,7 +3261,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// Assignment
-	// Assignment returns actionlanguage::Assignment:
+	//Assignment returns actionlanguage::Assignment:
 	//	lhs_typedNamedElementExpression=TypedNamedElementExpression (assignOperator=AssignOperator
 	//	rhs_assignExpression=InitializeExpression | incrementDecrementOperator=UnaryPostIncrementDecrementOperator) ";";
 	public ActionLanguageGrammarAccess.AssignmentElements getAssignmentAccess() {
@@ -3259,8 +3293,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of assignment
-	// // initialize expression
-	// InitializeExpression returns expressions::Expression:
+	//// initialize expression
+	//InitializeExpression returns expressions::Expression:
 	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression | TypeCastExpression;
 	public ActionLanguageGrammarAccess.InitializeExpressionElements getInitializeExpressionAccess() {
 		return gaActionLanguage.getInitializeExpressionAccess();
@@ -3271,9 +3305,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of initialize expression
-	// // array initialization
-	// ArrayInitializeExpression returns
-	//actionlanguage::ArrayInitializeExpression:
+	//// array initialization
+	//ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
 	//	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
 	public ActionLanguageGrammarAccess.ArrayInitializeExpressionElements getArrayInitializeExpressionAccess() {
 		return gaActionLanguage.getArrayInitializeExpressionAccess();
@@ -3284,9 +3317,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of array initialization
-	// // local variable declaration
-	// LocalVariableOrConstantDeclarationStatement returns
-	//actionlanguage::LocalVariableDeclarationStatement:
+	//// local variable declaration
+	//LocalVariableOrConstantDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
 	//	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
 	public ActionLanguageGrammarAccess.LocalVariableOrConstantDeclarationStatementElements getLocalVariableOrConstantDeclarationStatementAccess() {
 		return gaActionLanguage.getLocalVariableOrConstantDeclarationStatementAccess();
@@ -3317,9 +3349,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of local variable declaration
-	// // nondeterministic choice expression
-	// NondeterministicChoiceExpression returns
-	//actionlanguage::NondeterministicChoiceExpression:
+	//// nondeterministic choice expression
+	//NondeterministicChoiceExpression returns actionlanguage::NondeterministicChoiceExpression:
 	//	dataType=[types::PrimitiveDataType] range=Range;
 	public ActionLanguageGrammarAccess.NondeterministicChoiceExpressionElements getNondeterministicChoiceExpressionAccess() {
 		return gaActionLanguage.getNondeterministicChoiceExpressionAccess();
@@ -3340,7 +3371,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of nondeterministic choice expression
-	// Expression returns expressions::Expression:
+	//Expression returns expressions::Expression:
 	//	LogicalExpression;
 	public ActionLanguageGrammarAccess.ExpressionElements getExpressionAccess() {
 		return gaActionLanguage.getExpressionAccess();
@@ -3351,7 +3382,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// LogicalExpression
-	// LogicalExpression returns expressions::Expression:
+	//LogicalExpression returns expressions::Expression:
 	//	LogicalOrExpression;
 	public ActionLanguageGrammarAccess.LogicalExpressionElements getLogicalExpressionAccess() {
 		return gaActionLanguage.getLogicalExpressionAccess();
@@ -3404,8 +3435,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of LogicalExpression
-	// // ComparisonExpression
-	// ComparisonExpression returns expressions::Expression:
+	//// ComparisonExpression
+	//ComparisonExpression returns expressions::Expression:
 	//	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
 	//	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
 	public ActionLanguageGrammarAccess.ComparisonExpressionElements getComparisonExpressionAccess() {
@@ -3448,8 +3479,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of ComparisonExpression
-	// // ArithmeticExpression	
-	// ArithmeticExpression returns expressions::Expression:
+	//// ArithmeticExpression	
+	//ArithmeticExpression returns expressions::Expression:
 	//	AdditionExpression;
 	public ActionLanguageGrammarAccess.ArithmeticExpressionElements getArithmeticExpressionAccess() {
 		return gaActionLanguage.getArithmeticExpressionAccess();
@@ -3502,8 +3533,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of ArithmeticExpression
-	// // UnaryPreExpression
-	// UnaryPreExpression returns expressions::Expression:
+	//// UnaryPreExpression
+	//UnaryPreExpression returns expressions::Expression:
 	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
 	public ActionLanguageGrammarAccess.UnaryPreExpressionElements getUnaryPreExpressionAccess() {
 		return gaActionLanguage.getUnaryPreExpressionAccess();
@@ -3524,7 +3555,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of UnaryPreExpression
-	// TypeCastExpression returns expressions::Expression:
+	//TypeCastExpression returns expressions::Expression:
 	//	{actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand;
 	public ActionLanguageGrammarAccess.TypeCastExpressionElements getTypeCastExpressionAccess() {
 		return gaActionLanguage.getTypeCastExpressionAccess();
@@ -3535,7 +3566,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// Operand
-	// Operand returns expressions::Expression:
+	//Operand returns expressions::Expression:
 	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
 	//	TriggerMessageExpression | NoAttributeSelectorExpression;
 	public ActionLanguageGrammarAccess.OperandElements getOperandAccess() {
@@ -3547,7 +3578,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// end of Operand
-	// LiteralExpression returns commonExpressions::LiteralExpression:
+	//LiteralExpression returns commonExpressions::LiteralExpression:
 	//	{commonExpressions::LiteralExpression} value=Literal;
 	public ActionLanguageGrammarAccess.LiteralExpressionElements getLiteralExpressionAccess() {
 		return gaActionLanguage.getLiteralExpressionAccess();
@@ -3561,7 +3592,6 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//	TypedNamedElementExpression
 	//	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "->"
 	//	position=PositionSelectorExpression | // unary post increment/decrement			
-	//
 	//	{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
 	//	incrementDecrementOperator=IncrementDecrementOperatorExpression)?;
 	public ActionLanguageGrammarAccess.ExtendedTypedNamedElementExpressionElements getExtendedTypedNamedElementExpressionAccess() {
@@ -3633,7 +3663,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//// TriggerMessageExpression
-	// TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
+	//TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
 	//	messageType=[msgtype::MessageType] "->" parameter=[behavior::Parameter];
 	public ActionLanguageGrammarAccess.TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
 		return gaActionLanguage.getTriggerMessageExpressionAccess();

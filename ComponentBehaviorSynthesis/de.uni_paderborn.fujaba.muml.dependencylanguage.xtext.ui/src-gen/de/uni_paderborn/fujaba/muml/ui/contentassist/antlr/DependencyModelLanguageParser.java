@@ -39,7 +39,7 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getDependencyModelAccess().getCommentAlternatives_1_0(), "rule__DependencyModel__CommentAlternatives_1_0");
 					put(grammarAccess.getDependencyAccess().getAlternatives_0(), "rule__Dependency__Alternatives_0");
-					put(grammarAccess.getDependencyAccess().getCommentAlternatives_2_0(), "rule__Dependency__CommentAlternatives_2_0");
+					put(grammarAccess.getDependencyAccess().getCommentAlternatives_1_0(), "rule__Dependency__CommentAlternatives_1_0");
 					put(grammarAccess.getSynchronizationAccess().getAlternatives_0(), "rule__Synchronization__Alternatives_0");
 					put(grammarAccess.getConditionalDependencyAccess().getAlternatives(), "rule__ConditionalDependency__Alternatives");
 					put(grammarAccess.getEffectAccess().getAlternatives(), "rule__Effect__Alternatives");
@@ -87,6 +87,11 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDependencyModelAccess().getGroup(), "rule__DependencyModel__Group__0");
 					put(grammarAccess.getDependencyModelAccess().getGroup_2(), "rule__DependencyModel__Group_2__0");
 					put(grammarAccess.getDependencyAccess().getGroup(), "rule__Dependency__Group__0");
+					put(grammarAccess.getDependencyAccess().getGroup_0_0(), "rule__Dependency__Group_0_0__0");
+					put(grammarAccess.getDependencyAccess().getGroup_0_1(), "rule__Dependency__Group_0_1__0");
+					put(grammarAccess.getDependencyAccess().getGroup_0_3(), "rule__Dependency__Group_0_3__0");
+					put(grammarAccess.getDependencyAccess().getGroup_0_4(), "rule__Dependency__Group_0_4__0");
+					put(grammarAccess.getDependencyAccess().getGroup_0_5(), "rule__Dependency__Group_0_5__0");
 					put(grammarAccess.getSynchronizationAccess().getGroup(), "rule__Synchronization__Group__0");
 					put(grammarAccess.getSynchronizationAccess().getGroup_0_0(), "rule__Synchronization__Group_0_0__0");
 					put(grammarAccess.getSynchronizationAccess().getGroup_0_0_2(), "rule__Synchronization__Group_0_0_2__0");
@@ -201,7 +206,7 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDependencyModelAccess().getCommentAssignment_1(), "rule__DependencyModel__CommentAssignment_1");
 					put(grammarAccess.getDependencyModelAccess().getDependenciesAssignment_2_0(), "rule__DependencyModel__DependenciesAssignment_2_0");
 					put(grammarAccess.getDependencyModelAccess().getDependenciesAssignment_2_1(), "rule__DependencyModel__DependenciesAssignment_2_1");
-					put(grammarAccess.getDependencyAccess().getCommentAssignment_2(), "rule__Dependency__CommentAssignment_2");
+					put(grammarAccess.getDependencyAccess().getCommentAssignment_1(), "rule__Dependency__CommentAssignment_1");
 					put(grammarAccess.getSynchronizationAccess().getSendingEventsAssignment_0_0_1(), "rule__Synchronization__SendingEventsAssignment_0_0_1");
 					put(grammarAccess.getSynchronizationAccess().getSendingEventsAssignment_0_0_2_1(), "rule__Synchronization__SendingEventsAssignment_0_0_2_1");
 					put(grammarAccess.getSynchronizationAccess().getReceivingEventsAssignment_0_0_4(), "rule__Synchronization__ReceivingEventsAssignment_0_0_4");
