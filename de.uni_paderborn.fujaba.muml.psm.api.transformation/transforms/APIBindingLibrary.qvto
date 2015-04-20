@@ -299,19 +299,37 @@ return object Actionlanguage::TypedNamedElementExpression {
 					typedNamedElement := self
 							
 							.typedNamedElement;
-					indices := self
-							
-							.indices
-							->createMumlValidExpression()
-							;
+							elementAccessors:=self.elementAccessors->createMumlValidExpression().oclAsType(ElementAccessorExpression);
 				};
 }
 
 
-query Core::expressions::Expression::createMumlValidExpression() : Core::expressions::Expression {
 
+
+
+
+query Core::expressions::Expression::createMumlValidExpression() : Core::expressions::Expression {
 	return self;
 }
+
+
+ query Actionlanguage::ElementAccessorExpression::createMumlValidExpression(): Core::expressions::Expression {
+ return self;
+}
+
+ query Actionlanguage::ArrayIndexExpression::createMumlValidExpression(): Core::expressions::Expression {
+ 	return object Actionlanguage::ArrayIndexExpression{
+ 		index:=self.index.createMumlValidExpression();
+ 	}
+}
+
+ query Actionlanguage::AttributeAccessorExpression::createMumlValidExpression(): Core::expressions::Expression {
+ 	return object Actionlanguage::AttributeAccessorExpression{
+ 		attribute:=self.attribute;
+ 	}
+}
+
+
 
 query Core::expressions::Expression::getPureString() : String {
 	switch {

@@ -43,7 +43,7 @@ query ComponentInstance::getAllocatedResourceInstance():hardware::hwresourceinst
 /**
 * Creates a Codegen model from a given SystemAllocation
 **/
-mapping SystemAllocation::mapSystemAllocation2Codegen():Codegen::CodGenAllocation{
+mapping SystemAllocation::mapSystemAllocation2Codegen():Codegen::CodeGenAllocation{
 	cic:=self.unionCIC();
 	//flat the hierarchy
 	//cic.flatComponentInstanceConfiguration();	
