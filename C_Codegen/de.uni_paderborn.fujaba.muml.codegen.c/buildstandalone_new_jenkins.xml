@@ -19,7 +19,6 @@
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.hardware/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.psm/bin"/>
-    	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.psm.codegen/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelinstance/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.actionlanguage/bin"/>
     	<fileset dir="${ECLIPSE_HOME}/plugins">
