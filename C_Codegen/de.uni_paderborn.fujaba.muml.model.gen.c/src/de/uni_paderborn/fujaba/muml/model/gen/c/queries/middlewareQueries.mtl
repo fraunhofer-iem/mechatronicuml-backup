@@ -20,7 +20,6 @@
 				'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/',
 				'http://www.fujaba.de/muml/hardware/hwplatform/1.0/',
 				'http://www.fujaba.de/muml/hardware/hwresource/1.0/',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/swplatform/0.4.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')] 
 
@@ -43,13 +42,7 @@
 [query public getIdentifierVariableName (pi: DiscretePortInstance) : String = 
 'PORT_'+pi.componentInstance.getName().toUpperCase()+pi.componentInstance.componentType.getName().toUpperCase()+pi.getName().toUpperCase()/]
 
-[**
- * returns the IdentifierName (C-Macro definition) for a given RefinedStructuredResource (ECU)
- * @param rsri the RefinedStructuredResource
- * @return the IdentifierVarialbeName for the given RSRI
-*/]
-[query public getIdentifierVariableName (rsri: RefinedStructuredResourceInstance) : String = 
-'ECU_'+rsri.getName().toUpperCase()/]
+
 
 [**
  * returns the IdentifierName (C-Macro definition) for a given MessageType
@@ -149,7 +142,7 @@ msgT.getVariableName()+'_write_delimited_to'/]
  * @param codegen a codegen-model
  * @return Set of all messages used in the given codegen model
 */]
-[query public getAllUsedMessages (codegen: CodGenAllocation) : Set(MessageType) = 
+[query public getAllUsedMessages (codegen: CodeGenAllocation) : Set(MessageType) = 
 let receiverMessages:Set(MessageType) = codegen.eAllContents(RefinedStructuredResourceInstance).allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
 let senderMessages:Set(MessageType) = codegen.eAllContents(RefinedStructuredResourceInstance).allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
 receiverMessages->union(senderMessages)->asOrderedSet()
@@ -172,5 +165,5 @@ receiverMessages->union(senderMessages)->asOrderedSet()
  * @param codegen the codegen-model
  * @return Set of all DiscretePortInstances
 */]
-[query public getAllDiscretePortInstances (codegen: CodGenAllocation) : Set(DiscretePortInstance) = 
+[query public getAllDiscretePortInstances (codegen: CodeGenAllocation) : Set(DiscretePortInstance) = 
 codegen.eAllContents(ComponentInstance)->collect(portInstances)->asOrderedSet() /]

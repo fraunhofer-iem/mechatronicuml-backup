@@ -22,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
+import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
 
 public class Routing {
@@ -32,7 +32,7 @@ public class Routing {
 	public static RefinedStructuredResourceInstance getNextHopECU(
 			RefinedStructuredResourceInstance startECU,
 			RefinedStructuredResourceInstance targetECU,
-			CodGenAllocation codegenModel) {
+			CodeGenAllocation codegenModel) {
 		donePorts = new HashMap<EObject, Boolean>();
 		Pseudograph<EObject, DefaultWeightedEdge> graph = createPDMGraph(codegenModel
 				.getHpic());
@@ -72,7 +72,7 @@ public class Routing {
 	public static HWPortInstance getNetworkInterface(
 			RefinedStructuredResourceInstance startECU,
 			RefinedStructuredResourceInstance targetECU,
-			CodGenAllocation codegenModel) {
+			CodeGenAllocation codegenModel) {
 		donePorts = new HashMap<EObject, Boolean>();
 		Pseudograph<EObject, DefaultWeightedEdge> graph = createPDMGraph(codegenModel
 				.getHpic());

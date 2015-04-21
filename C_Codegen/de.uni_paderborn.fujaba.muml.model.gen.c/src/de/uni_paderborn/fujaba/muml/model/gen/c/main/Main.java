@@ -376,6 +376,9 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE);
         }
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE);
+        }
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.hardware.HardwarePackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.hardware.HardwarePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.hardware.HardwarePackage.eINSTANCE);
         }
@@ -393,9 +396,6 @@ public class Main extends AbstractAcceleoGenerator {
         }
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.class)) {
-            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE);
         }
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage.eINSTANCE);
@@ -426,6 +426,9 @@ public class Main extends AbstractAcceleoGenerator {
         }
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.apiexpressions.ApiexpressionsPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage.eINSTANCE);
         }
         
         /*

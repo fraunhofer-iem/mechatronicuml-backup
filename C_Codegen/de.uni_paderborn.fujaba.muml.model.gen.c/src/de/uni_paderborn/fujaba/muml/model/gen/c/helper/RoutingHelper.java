@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.BusInstance
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.LinkInstanceImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ActuatorInstanceImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.SensorInstanceImpl;
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
+import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
 import de.uni_paderborn.fujaba.muml.model.gen.c.helper.RoutingLabel;
 
@@ -36,7 +36,7 @@ public class RoutingHelper {
 	 * @param target_ecu the target of the routing
 	 * @return the 'nextHopECU', which can be used to reach target_ecu
 	 */
-	public static RefinedStructuredResourceInstance getNextHopEcu(CodGenAllocation codegen, RefinedStructuredResourceInstance my_ecu,
+	public static RefinedStructuredResourceInstance getNextHopEcu(CodeGenAllocation codegen, RefinedStructuredResourceInstance my_ecu,
 			RefinedStructuredResourceInstance target_ecu) {
 		//create routing table 
 		HashMap<RefinedStructuredResourceInstance, RoutingLabel> routingTable = genRoutingTable(codegen, my_ecu);
@@ -71,7 +71,7 @@ public class RoutingHelper {
  * @return the routing table
  */
 	public static HashMap<RefinedStructuredResourceInstance, RoutingLabel> genRoutingTable(
-			CodGenAllocation codegen, RefinedStructuredResourceInstance ecu) {
+			CodeGenAllocation codegen, RefinedStructuredResourceInstance ecu) {
 
 		// <ecuid, <target ecuid, nextHopEcus[]>>
 		HashMap<RefinedStructuredResourceInstance, RoutingLabel> routingTable = new HashMap<RefinedStructuredResourceInstance, RoutingLabel>();
@@ -122,7 +122,7 @@ public class RoutingHelper {
 	 * @param codegen the codegen model (which is the root model for the generation)
 	 * @return a list of all direct neighbors of the given ECU
 	 */
-private static ArrayList<ResourceInstance> getAllNeighbors(ResourceInstance ecu, CodGenAllocation codegen){
+private static ArrayList<ResourceInstance> getAllNeighbors(ResourceInstance ecu, CodeGenAllocation codegen){
 	ArrayList<ResourceInstance> neighbors = new ArrayList<ResourceInstance>();
 	Iterator<EObject> it = codegen.getHpic().getHwplatformInstances().get(0).eAllContents();
 	while (it.hasNext()){
@@ -166,7 +166,7 @@ private static ResourceInstance getTargetECU(CodGenAllocation codegen, ResourceI
 	 * @param nextHopEcu the ECU, which we want to reach via the generated network interface
 	 * @result the network interface to send messages from 'my_ecu' to 'nextHopEcu'
 	 */
-		public static HWPortInstance getNetworkInterface(CodGenAllocation codegen,RefinedStructuredResourceInstance my_ecu, RefinedStructuredResourceInstance nextHopEcu) {
+		public static HWPortInstance getNetworkInterface(CodeGenAllocation codegen,RefinedStructuredResourceInstance my_ecu, RefinedStructuredResourceInstance nextHopEcu) {
 			
 			if(my_ecu == nextHopEcu){
 				//this case will not happen (see InternalLogic.mtl)

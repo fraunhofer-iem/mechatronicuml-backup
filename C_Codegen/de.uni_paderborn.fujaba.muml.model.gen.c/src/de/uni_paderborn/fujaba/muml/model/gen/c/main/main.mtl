@@ -17,7 +17,6 @@
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/swplatform/0.4.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 
@@ -49,7 +48,7 @@
  * and execute a given MUML model for standard C99 command line tools.
  * @param codgen the created codegen model
  */]
-[template public generateANSIC(codgen : CodGenAllocation)]
+[template public generateANSIC(codgen : CodeGenAllocation)]
 [comment @main/]
 		[comment generate source-code for every ECU /]
 [for (rsri : RefinedStructuredResourceInstance | codgen.hpic.eAllContents(RefinedStructuredResourceInstance))]
@@ -163,7 +162,7 @@ possbile values for 'targetPlatform' are: 'C99' or 'nxtOSEK'
  * @param path the current path for generating files
  * @param cgm the corresponding codegen model (e.g. neede for routing)
  */]
-[template public generateMiddleware(rsri : RefinedStructuredResourceInstance, path:String, cgm : CodGenAllocation)]
+[template public generateMiddleware(rsri : RefinedStructuredResourceInstance, path:String, cgm : CodeGenAllocation)]
 	[generateMiddlewareCoreFiles(rsri, path)/]
 	[generateMiddlewareILFiles(rsri, path, cgm)/]
 	[generateNetworkInterfaces(rsri, path)/]
