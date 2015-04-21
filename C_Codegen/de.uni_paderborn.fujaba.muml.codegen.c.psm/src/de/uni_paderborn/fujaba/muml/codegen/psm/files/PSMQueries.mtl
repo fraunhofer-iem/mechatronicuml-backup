@@ -8,7 +8,6 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
@@ -59,7 +58,7 @@ endif
  * @param codegen a codegen-model
  * @return Set of all messages used in the given codegen model
 */]
-[query public getAllUsedMessages (codegen: CodGenAllocation) : Set(MessageType) = 
+[query public getAllUsedMessages (codegen: CodeGenAllocation) : Set(MessageType) = 
 let receiverMessages:Set(MessageType) = codegen.eAllContents(RefinedStructuredResourceInstance).allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
 let senderMessages:Set(MessageType) = codegen.eAllContents(RefinedStructuredResourceInstance).allocatedAtomicComponentInstances.portInstances.oclAsType(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
 receiverMessages->union(senderMessages)->asOrderedSet()
@@ -82,7 +81,7 @@ receiverMessages->union(senderMessages)->asOrderedSet()
  * @param codegen the codegen-model
  * @return Set of all DiscretePortInstances
 */]
-[query public getAllDiscretePortInstances (codegen: CodGenAllocation) : Set(DiscretePortInstance) = 
+[query public getAllDiscretePortInstances (codegen: CodeGenAllocation) : Set(DiscretePortInstance) = 
 codegen.eAllContents(ComponentInstance)->collect(portInstances)->asOrderedSet() /]
 
 

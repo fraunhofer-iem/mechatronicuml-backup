@@ -11,7 +11,6 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
@@ -29,7 +28,6 @@
 [comment for every network interface/]
 	[generateNetworkInterfaceHeader(rsri, path)/]
 	[generateNetworkInterfaceClass(rsri, path)/]
-[comment @TODO generate method stubs for every NI/]
 
 [/template]
 
@@ -53,7 +51,7 @@
 #ifndef NETWORKINTERFACEIMPLEMENTATION_H_
 #define NETWORKINTERFACEIMPLEMENTATION_H_
 
-#include "GlobalIdentifier.h"
+#include "../GlobalIdentifier.h"
 #include "MiddlewareCore.h"
 
 //Intern networkinterface

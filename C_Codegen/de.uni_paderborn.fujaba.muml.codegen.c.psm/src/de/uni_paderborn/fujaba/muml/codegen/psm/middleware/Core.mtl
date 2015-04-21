@@ -11,7 +11,6 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
@@ -41,7 +40,7 @@
 #include "stdlib.h"
 #include "MiddlewareInternalLogic.h"
 #include "../lib/MiddlewareTypes.h"
-#include "GlobalIdentifier.h"
+#include "../GlobalIdentifier.h"
 #include "../lib/NetworkMessageBuffer.h"
 #include "../lib/NetworkInterface.h"
 #include "../messages/messages_types.h" 

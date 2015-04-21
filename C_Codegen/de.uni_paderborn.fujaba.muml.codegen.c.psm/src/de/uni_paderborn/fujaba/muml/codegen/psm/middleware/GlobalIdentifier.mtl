@@ -13,7 +13,6 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
@@ -28,7 +27,7 @@
  * @param codegen The codegen model
  * @param path the current file-path for generating files
  */]
-[template public generateGlobalIdentifierFiles(codegen : CodGenAllocation, path : String)]
+[template public generateGlobalIdentifierFiles(codegen : CodeGenAllocation, path : String)]
 [file(path+'GlobalIdentifier.h', false, 'UTF-8')]
 /**
  * @file 

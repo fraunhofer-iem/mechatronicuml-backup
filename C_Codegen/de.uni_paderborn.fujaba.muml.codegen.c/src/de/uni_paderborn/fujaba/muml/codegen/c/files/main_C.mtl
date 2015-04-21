@@ -42,12 +42,12 @@
 #include "continuousComponents/ContImplementations.h"
 [/if]
 //including all files for used Components
-		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
+		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.getFileName(true, false)/]"
 		[/if]
 		[/for]
-		[for (comp : Component | CIs.componentType) ? (comp.oclIsKindOf(AtomicComponent))]
+		[for (comp : Component | CIs.componentType->asSet()) ? (comp.oclIsKindOf(AtomicComponent))]
 		[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 #include "[comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getFileName(true, false)/]"
 		[/if]

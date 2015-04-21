@@ -11,7 +11,6 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
@@ -25,7 +24,7 @@
  * component of the middleware.
  * @param anOclAny
  */]
-[template public generateMiddlewareILFiles(rsri : RefinedStructuredResourceInstance, path : String, cgm : CodGenAllocation)]
+[template public generateMiddlewareILFiles(rsri : RefinedStructuredResourceInstance, path : String, cgm : CodeGenAllocation)]
 [generateMiddlewareILHeader(rsri, path)/]
 [generateMiddlewareILClass(rsri, path, cgm)/]
 [/template]
@@ -39,7 +38,7 @@
 #include "../lib/NetworkInterface.h"
 #include "../lib/port.h"
 #include "MiddlewareCore.h"
-#include "GlobalIdentifier.h"
+#include "../GlobalIdentifier.h"
 
 [/template]
 
@@ -124,7 +123,7 @@ PortID MW_getTargetPortIDforIdentifier(PortID portID);
  * @param rsri the (home)-ECU
  * @param path the current file-path for generating files
 */]
-[template private generateMiddlewareILClass(rsri : RefinedStructuredResourceInstance, path : String, cgm : CodGenAllocation)]
+[template private generateMiddlewareILClass(rsri : RefinedStructuredResourceInstance, path : String, cgm : CodeGenAllocation)]
 [file(path+'/Middleware/MiddlewareInternalLogic.c',false,'UTF-8')]
 #include "MiddlewareInternalLogic.h"
 
@@ -232,7 +231,7 @@ switch (portID) {
 [/file]
 [/template]
 
-[query public getNetworkInterfaceJava(my_ecu : RefinedStructuredResourceInstance , target_ecu : RefinedStructuredResourceInstance, codegen : CodGenAllocation) : HWPortInstance = 
+[query public getNetworkInterfaceJava(my_ecu : RefinedStructuredResourceInstance , target_ecu : RefinedStructuredResourceInstance, codegen : CodeGenAllocation) : HWPortInstance = 
 invoke('de.uni_paderborn.fujaba.muml.codegen.c.psm.helper.Routing','getNetworkInterface(de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation)', Sequence{my_ecu, target_ecu, codegen}) /]
-[query public getNextHopEcuJava( my_ecu : RefinedStructuredResourceInstance , target_ecu : RefinedStructuredResourceInstance, codegen : CodGenAllocation,) : RefinedStructuredResourceInstance = 
+[query public getNextHopEcuJava( my_ecu : RefinedStructuredResourceInstance , target_ecu : RefinedStructuredResourceInstance, codegen : CodeGenAllocation,) : RefinedStructuredResourceInstance = 
 invoke('de.uni_paderborn.fujaba.muml.codegen.c.psm.helper.Routing','getNextHopECU(de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance, de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation)', Sequence{my_ecu, target_ecu, codegen}) /]

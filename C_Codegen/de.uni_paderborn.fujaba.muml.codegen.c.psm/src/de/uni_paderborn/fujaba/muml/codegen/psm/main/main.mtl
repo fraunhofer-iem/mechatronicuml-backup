@@ -8,7 +8,6 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
-				'http://www.fujaba.de/muml/psm/codegen/0.1.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 
@@ -23,7 +22,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::main::main]
 
 
-[template public generateForCodegenModel(codegen : CodGenAllocation)]
+[template public generateForCodegenModel(codegen : CodeGenAllocation)]
 [comment @main/]
 [for (rsri : RefinedStructuredResourceInstance | codegen.hpic.eAllContents(RefinedStructuredResourceInstance))]
 
@@ -46,7 +45,7 @@
  * @param path the current path for generating files
  * @param cgm the corresponding codegen model (e.g. neede for routing)
  */]
-[template public generateMiddleware(rsri : RefinedStructuredResourceInstance, path:String, cgm : CodGenAllocation)]
+[template public generateMiddleware(rsri : RefinedStructuredResourceInstance, path:String, cgm : CodeGenAllocation)]
 	[generateMiddlewareCoreFiles(rsri, path)/]
 	[generateMiddlewareILFiles(rsri, path, cgm)/]
 	[generateNetworkInterfaces(rsri, path)/]
