@@ -1,0 +1,525 @@
+import SchemaSpecificMUML2MUML;
+library AllSchemataMappings;
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
+
+
+
+mapping Transition :: PositionSelfSelector(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::SELF;
+			
+	}
+	
+mapping Transition :: PositionSelfCondition(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::SELF;
+			
+	}
+	
+mapping  Transition :: PositionFirst(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::FIRST;
+			
+	}
+	
+mapping Transition :: PositionLast(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::LAST;
+			
+	}
+	
+mapping Transition :: PositionNext(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::NEXT;
+			
+	}
+	
+mapping Transition :: PositionPrev(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::PREV;
+			
+	}
+	
+mapping Transition :: PositionSelfNext(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::SELF;
+		
+		successor := self.map PositionNext(context, region, transMapping);
+			
+	}
+	
+mapping Transition :: PositionSelfPrev(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		
+		kind := PositionSelectorKind::SELF;
+		
+		successor := self.map PositionPrev(context, region, transMapping);
+			
+	}
+	
+	--Transfer Schemata Guards, Clock Constraints, CLock Resets
+	
+mapping Transition :: TransferSchemataLogicalExpression(context:OclAny, region:OclAny, op: String, position:String, transMapping: Integer) : ComparisonExpression {
+		
+		if(position.equalsIgnoreCase("last")){
+			rightExpression := self.map TransferSchemataEndpointReference(context, region, "last", transMapping);
+		}else{
+			rightExpression := self.map TransferSchemataEndpointReference(context, region, "first", transMapping);
+		}endif;
+		
+		leftExpression := self.map TransferSchemataEndpointReference(context, region, "self", transMapping);		
+		
+		if(op.equalsIgnoreCase('==')){
+			operator := core::expressions::common::ComparingOperator::EQUAL;
+		}else{
+			if(op.equalsIgnoreCase('<>')){
+				operator := core::expressions::common::ComparingOperator::UNEQUAL;
+			}endif;		
+		}endif;
+		
+	}
+	
+
+	
+mapping Transition :: TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer) : DiscreteInteractionEndpointReference {
+		
+		if(pos.equalsIgnoreCase('self')){
+			position := self.map PositionSelfCondition(context, region, transMapping);
+		}else{
+			if(pos.equalsIgnoreCase('last')){
+				position := self.map PositionLast(context, region, transMapping);
+			}else{
+				position := self.map PositionFirst(context, region, transMapping);
+			}endif;		
+		}endif;
+
+	}
+	
+
+	
+mapping Transition :: TransferSchemataTimeValue(context:OclAny, region:OclAny, val:Expression, timeUnit:TimeUnit) : TimeValue {
+
+		value := val;
+		
+		unit := timeUnit;
+		
+	}
+	
+----------------------------------------------------XXXXXXXXXXXXXXXX--MAPPINGS FOR ALL TRANSFER SCHEMATA--XXXXXXXXXXXXXXXXXX--------------------------------------------
+	
+--Transfer Schemata State
+mapping Transition :: RegionState(context:OclAny, region:OclAny, StateName:String, ini:Boolean) : State {
+		
+		name := StateName;
+		
+		initial := ini;
+		
+	}
+	
+--Transfer Schemata Guard
+mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, context2:OclAny, region:OclAny, varName:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+		
+		if(notOp){
+			leftExpression := self.map TransferSchemaNotCondition(context2, region, transMapping);
+		}else{
+			if(not self.raiseMessageEvent.oclIsUndefined()){
+				leftExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context2);
+			}else{
+				leftExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context2);
+			}endif;
+			
+		}endif;
+		
+		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName, transMapping);
+		
+		operator := LogicOperator::AND;
+	
+	}
+	
+mapping Transition :: TransferSchemaNotVarAndVarGuard(context:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+		
+		if(notOp){
+			leftExpression := self.map TransferSchemaGuard(context, region, varName1, notOp, transMapping);
+		}else{
+			leftExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName1, transMapping);
+		}endif;
+		
+		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName2, transMapping);
+		
+		operator := LogicOperator::AND;
+	
+	}
+	
+mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, context2:OclAny, region:OclAny, varName:String, transMapping: Integer) : LogicalExpression {
+		
+		leftExpression := self.guard.map Expression2Expression(context2);
+		
+		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName, transMapping);
+		
+		operator := LogicOperator::AND;
+	
+	}
+	
+mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, context2:OclAny, region:OclAny, varName:String, transMapping: Integer) : LogicalExpression {
+		
+		leftExpression := self.guard.map Expression2Expression(context2);
+		
+		rightExpression := self.map TransferSchemaGuard(context1, region, varName, true, transMapping);
+		
+		operator := LogicOperator::AND;
+	
+	}
+	
+mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+		
+		if(notOp){
+			leftExpression := self.map TransferSchemaGuard(context1, region, varName1, true, transMapping);
+		}else{
+			leftExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName1, transMapping);
+		}endif;
+		
+		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName2, transMapping);
+		
+		operator := LogicOperator::AND;
+}
+
+mapping Transition :: TransferSchemaErrorOrNotPossibleGuard(context1:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+		
+		if(notOp){
+			rightExpression := self.map TransferSchemaGuard(context1, region, varName2, true, transMapping);
+		}else{
+			rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName2, transMapping);
+		}endif;
+		
+		leftExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName1, transMapping);
+		
+		operator := LogicOperator::OR;
+}
+
+mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context2:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+		
+		rightExpression := self.map TransferSchemaSingleSendAndPossibleGuard(context1, context2, region, varName1, varName2, true, transMapping);
+		
+		leftExpression := self.guard.map Expression2Expression(context2);
+		
+		operator := LogicOperator::AND;
+}
+	
+mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:OclAny, transMapping: Integer) : UnaryExpression {
+
+		if(not self.raiseMessageEvent.oclIsUndefined()){
+			enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
+		}else{
+			enclosedExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
+		}endif;	
+
+		operator := UnaryOperator::NOT;
+	
+	}
+	
+mapping Transition :: TransferSchemaGuard(context:OclAny, region:OclAny, varName:String, op:Boolean, transMapping: Integer) : UnaryExpression {
+
+		enclosedExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName, transMapping);
+		
+		if(op){
+			operator := UnaryOperator::NOT;
+		}endif
+	
+	}
+	
+mapping Transition :: TransferSchemata2TypedNamedElementExpr(context:OclAny, varName:String, transMapping: Integer) : TypedNamedElementExpression {
+			
+		typedNamedElement := context.oclAsType(RealtimeStatechart).map TransferSchemata2Variable(context, varName);
+					
+	}
+	
+
+	
+mapping RealtimeStatechart :: TransferSchemata2Variable(context:OclAny, varName:String) : Variable {
+		name := varName;
+		constant := false;
+		dataType := context.oclAsType(RealtimeStatechart).eContainer().oclAsType(ModelElementCategory).container().oclAsType(RootNode).categories->select(c|c.key.equalsIgnoreCase("de.uni_paderborn.fujaba.muml.types.category")).modelElements->at(2).oclAsType(DataType);
+	};
+	
+
+	
+--Transfer Schemata Action
+
+mapping Transition :: TransferSchemata2Action(context:OclAny, actionName:String, varName:String, assignValue:String, transMapping:Integer) : Action {
+	
+		name := actionName;
+		
+		result.expressions += self.map TransferSchemata2Block(context, varName, assignValue, transMapping);
+		
+	}
+	
+mapping Transition :: TransferSchemata2Block(context:OclAny, varName:String, assignValue:String, transMapping:Integer) : Block {
+		
+		result.expressions += self.map TransferSchemata2Assignment(context, varName, assignValue, transMapping);
+		
+	}
+	
+mapping Transition :: TransferSchemata2TwoActions(context:OclAny, actionName:String, varName1:String, varName2:String, assignValue:String, transMapping:Integer) : Action {
+	
+		name := actionName;
+		
+		result.expressions += self.map TransferSchemata2TwoActionsBlock(context, varName1, varName2, assignValue, transMapping);
+		
+	}
+	
+mapping Transition :: TransferSchemata2TwoActionsBlock(context:OclAny, varName1:String, varName2:String, assignValue:String, transMapping:Integer) : Block {
+		
+		result.expressions += self.map TransferSchemata2Assignment(context, varName1, assignValue, 20+transMapping);
+		result.expressions += self.map TransferSchemata2Assignment(context, varName2, assignValue, 21+transMapping);
+		
+	}
+	
+mapping Transition :: TransferSchemata2TwoActionsTransAct(context:OclAny, actionName:String, varName:String, assignValue:String, transMapping:Integer) : Action {
+	
+		name := actionName + ', ' + self.action.name;
+		
+		result.expressions += self.map TransferSchemata2TwoActionsTransActBlock(context, varName, assignValue, transMapping);
+		
+	}
+	
+mapping Transition :: TransferSchemata2TwoActionsTransActBlock(context:OclAny, varName1:String, assignValue:String, transMapping:Integer) : Block {
+		
+		result.expressions += self.map TransferSchemata2Assignment(context, varName1, assignValue, 20+transMapping);
+		
+		if(self.action.expressions->first().oclIsTypeOf(Block)){
+			result.expressions += self.action.expressions.oclAsType(Block).expressions.map Expression2Expression(context);
+		}else{
+			result.expressions += self.action.expressions.map Expression2Expression(context);
+		}endif;
+			
+	}
+	
+mapping Transition :: TransferSchemata2Assignment(context:OclAny, varName:String, assignValue:String, transMapping:Integer) : Assignment {
+		
+		lhs_typedNamedElementExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName, transMapping);
+		
+		assignOperator := AssignOperator::ASSIGN;
+		
+		rhs_assignExpression := self.map TransferSchemata2Literal(context, assignValue, transMapping);
+		
+	}
+	
+mapping Transition :: TransferSchemata2Literal(context:OclAny, assignValue:String, transMapping:Integer) : LiteralExpression {
+		
+		value := assignValue;		
+		
+	}
+
+--Transfer Schemata Synchronization
+
+mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:OclAny, syncKind:SynchronizationKind, selectorExp: String, channel:String, selector: Boolean, transMapping: Integer) : Synchronization {
+		
+		kind := syncKind;
+		
+		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector);
+		
+		if(selectorExp.equalsIgnoreCase('self')){
+			selectorExpression := self.map PositionSelfSelector(context, region, transMapping);
+		}else{
+			if(selectorExp.equalsIgnoreCase('first')){
+				selectorExpression := self.map PositionFirst(context, region, transMapping);
+			}else{
+				if(selectorExp.equalsIgnoreCase('self.next')){
+					selectorExpression := self.map PositionSelfNext(context, region, transMapping);
+				}else{
+					if(selectorExp.equalsIgnoreCase('self.prev')){
+						selectorExpression := self.map PositionSelfPrev(context, region, transMapping);
+					}else{
+						if(selectorExp.equalsIgnoreCase('curRole')){
+						
+					}endif
+					}endif;
+				}endif;
+			}endif;
+		}endif;
+	
+	};	
+
+	
+mapping RealtimeStatechart :: TransferSchemataChannel(context:OclAny, channelName: String, selector: Boolean) : SynchronizationChannel {
+		
+		name := channelName;
+		
+		state := context.oclAsType(RealtimeStatechart).map Rtsc2InitialState();
+		
+		if(selector){
+			selectorType := context.oclAsType(RealtimeStatechart).behavioralElement.oclAsType(Role);
+		}endif;		
+						
+	}
+	
+mapping RealtimeStatechart :: TransferSchemataClock(context:OclAny, region:OclAny, clockName:String, toplevel:Boolean) : Clock {
+		
+		name := clockName;
+		
+		statechart := self.map RTSC2CoordinatorRTSC(context, region);
+		
+	}
+	
+mapping Transition :: TransferSchemataClockConstraint(context:OclAny, region:OclAny, clockName:String, op:ComparingOperator, val:Expression, timeUnit:TimeUnit, toplevel:Boolean) : ClockConstraint {
+		
+		clock := self.statechart.map TransferSchemataClock(context, region, clockName, toplevel);
+		
+		operator := op;
+		
+		bound := self.map TransferSchemataTimeValue(context, region, val, timeUnit);
+		
+	}
+
+	
+mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:OclAny) : Vertex
+		disjuncts State::States2StatesCoordinator, StateConnectionPoint::StateConnectionPoint2StateConnectionPointCoordinator;
+		
+mapping Vertex :: Vertex2VertexSubrole(context:OclAny, region:OclAny) : Vertex
+		disjuncts State::States2StatesSubrole, StateConnectionPoint::StateConnectionPoint2StateConnectionPointSubrole;
+
+
+mapping RealtimeStatechart :: Rtsc2InitialState() : State {
+		
+		name := "Main";
+		
+		initial := true;
+		
+		embeddedRegions += self->map State2CoordinatorRegion(self,0);
+		
+		embeddedRegions += self.map State2SubroleRegion(self,1);
+					
+	}
+
+mapping RealtimeStatechart :: State2CoordinatorRegion(context:OclAny, region:OclAny) : Region {
+		
+		priority := 2;
+		
+		parentState := context.oclAsType(State);
+		
+		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, region);
+		
+					
+	}
+	
+mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny, region:OclAny) : Region {
+		
+		priority := 1;
+		
+		parentState := context.oclAsType(State);
+		
+		embeddedStatechart := self.map RTSC2SubroleRTSC(context, region);
+					
+	}
+	
+	
+mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny) : RealtimeStatechart {
+	assert fatal (false) with log ("Do not go here!");	}	
+mapping State :: States2StatesCoordinator(context:OclAny, region:OclAny) : State 
+{
+	assert fatal (false) with log ("Do not go here!");
+	
+	}
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny) : RealtimeStatechart 
+{
+		assert fatal (false) with log ("Do not go here!");
+}
+
+mapping State :: States2StatesSubrole(context:OclAny, region:OclAny) : State {assert fatal (false) with log ("Do not go here!");
+	}
+	
+	
+	
+	
+	
+	
+	
+-- to coordinator
+mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:OclAny) : Transition {
+		
+		source := self.source.oclAsType(State).map Vertex2VertexCoordinator(context, region);
+		target := self.target.oclAsType(State).map Vertex2VertexCoordinator(context, region);
+		
+		priority := self.priority;
+		
+		clockResets := self.clockResets->select(c|not isClockSubRoleSpecific(c))->map Clock2Clock();
+		
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock))->map ClockConstraint2ClockConstraint(context, region);
+		
+		guard := self.guard.map Expression2Expression(context);
+		
+		action := self.action.map Action2Action(context, region);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "switchState", true, 1);
+		
+		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context, region);
+		
+		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline(context, region);
+		
+		blockable := self.blockable;
+		
+		urgent := self.urgent;
+						
+	}
+	
+	mapping Transition :: Transition2TransitionSubrole(context:OclAny, region:OclAny) : Transition {
+		
+		source := self.source.map Vertex2VertexSubrole(context, region);
+		target := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region);
+		
+		priority := self.priority;
+		
+		clockResets := self.clockResets->select(c|isClockSubRoleSpecific(c))->map Clock2Clock();
+		
+		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(1, region);
+		
+		guard := self.guard.map Expression2Expression(1);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "switchState", true, 2);
+		
+	}
+	
+mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:OclAny) : Transition {
+		
+		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region);
+		target := self.target.map Vertex2VertexSubrole(context, region);
+		
+		priority := 2;
+		
+		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 1);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "switchState", true, 3);
+		
+	}
+	
+mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:OclAny) : Transition {
+		
+		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region);
+		target := self.target.map Vertex2VertexSubrole(context, region);
+		
+		priority := 1;
+		
+		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 2);
+		
+	}
+	
+mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:OclAny) : State {
+		
+		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_SwitchState";
+		
+		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);
+		
+	}
+	
+	

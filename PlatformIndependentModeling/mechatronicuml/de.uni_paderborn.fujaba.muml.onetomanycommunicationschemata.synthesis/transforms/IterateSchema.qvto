@@ -1,0 +1,610 @@
+library IterateSchema;
+import AllSchemataMappings;
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+	
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--ITERATE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
+
+--------------------------------------------------------------Transfer Schema Iterate of Coordinator----------------------------------------------------------------------
+property currentRealtimeStatechart : RealtimeStatechart;
+mapping Transition :: Iterate2TransSendSyncCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := self.priority;
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
+		 source := self.source.map Vertex2VertexCoordinator(context, region);
+		 guard := self.guard.map Expression2Expression(context);
+		 clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
+		}else{
+			source := self.map Iterate2StateCoordinator(context, "IteratePossible", region);
+		};
+		
+		target := self.map Iterate2StateCoordinator(context, "Waiting", region);
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+			synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "curRole", "iterate", true, 17);
+		}else{
+			synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "curRole", "iterate", true, 17);
+		}endif;
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).delay.oclIsUndefined()){
+			clockResets += context.oclAsType(RealtimeStatechart).map TransferSchemataClock(context, region, "c_delay", true);
+		}endif;
+	
+	}
+	
+mapping Transition :: Iterate2TransReceiveDoneCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := 2;
+			
+		source := self.map Iterate2StateCoordinator(context, "Waiting", region);
+		
+		target := self.map Iterate2StateCoordinator(context, "Sending", region);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "curRole", "iterateDone", true, 2);
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+			guard := self.map IterateLogicalExpression(context, region, "<>", "last", 6);
+		}else{
+			guard := self.map IterateLogicalExpression(context, region, "<>", "first", 6);
+		}endif;
+		
+		action := self.map Iterate2Action(context, region, 1);
+			
+	}
+mapping OclAny :: Iterate2Action(context:OclAny, region:OclAny, transMapping:Integer) : Action {
+	
+		if(self.oclIsTypeOf(State) and  not self.oclAsType(State).entryEvent.action.oclIsUndefined()){
+			if(self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
+				name := self.oclAsType(State).entryEvent.action.name + "; curRole := last";
+			}else{
+				name := self.oclAsType(State).entryEvent.action.name + "; curRole := first";
+			}endif;	
+		}else{
+			if(self.oclIsTypeOf(State)){
+				if(self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
+					name := "curRole := last";
+				}else{
+					name := "curRole := first";
+				}endif;
+			}else{
+				if(self.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+					name := "curRole := curRole.next";
+				}else{
+					name := "curRole := curRole.prev";
+				}endif;
+			}endif;
+		}endif;
+
+		result.expressions += self.map Iterate2Block(context, transMapping);
+		
+	}
+	
+mapping Transition :: Iterate2TypedNamedElementExpr(context:OclAny, varName:String, transMapping: Integer) : TypedNamedElementExpression {
+			
+		typedNamedElement := context.oclAsType(RealtimeStatechart).map Iterate2CurRoleVariable();
+					
+	}
+	
+mapping RealtimeStatechart :: Iterate2CurRoleVariable() : Variable {
+		name := "curRole";
+		constant := false;
+		dataType := currentRealtimeStatechart.behavioralElement.oclAsType(Role);
+	}; 	
+	
+mapping OclAny :: Iterate2Block(context:OclAny, transMapping:Integer) : Block {
+
+		if(self.oclIsTypeOf(State)){
+			if(not self.oclAsType(State).outgoingTransitions->select(t|t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst)->isEmpty()){
+				result.expressions += self.oclAsType(State).outgoingTransitions->first().map Iterate2Assignment(context, "curRole", "first", false, transMapping);
+			}else{
+				result.expressions += self.oclAsType(State).outgoingTransitions->first().map Iterate2Assignment(context, "curRole", "last", false, transMapping);
+			}endif;
+			
+		}else{
+			if(self.oclAsType(Transition).raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+				result.expressions += self.oclAsType(Transition).map Iterate2Assignment(context, "curRole", "first",true, transMapping);
+			}else{
+				result.expressions += self.oclAsType(Transition).map Iterate2Assignment(context, "curRole", "last",true, transMapping);
+			}endif;
+			
+		}endif;
+		
+		if(self.oclIsTypeOf(State) and  not self.oclAsType(State).oclIsUndefined()){
+			result.expressions += self.oclAsType(State).entryEvent.action.expressions->first().oclAsType(Block).expressions.map Expression2Expression(context);
+		}endif;	
+		
+	}
+	
+mapping Transition :: Iterate2Assignment(context:OclAny, varName:String, assignValue:String, transition:Boolean, transMapping:Integer) : Assignment {
+		
+		lhs_typedNamedElementExpression := self.map Iterate2TypedNamedElementExpr(context, varName, transMapping);
+		
+		assignOperator := AssignOperator::ASSIGN;
+		
+		if(varName.equalsIgnoreCase("curRole") and transition){
+			rhs_assignExpression := self.map PositionCurRoleNextPres(context, 0,1);
+		}else{
+			rhs_assignExpression := self.map TransferSchemata2Literal(context, assignValue, transMapping);
+		}endif;
+		
+	}
+
+
+mapping State :: Iterate2CurRoleEntryEvent(context:OclAny, region:OclAny, transMapping:Integer) : EntryEvent {
+ 		
+ 		clockResets += self.entryEvent.clockResets.map Clock2Clock();
+		
+		action := self.map Iterate2Action(context, region, transMapping);
+					
+	}	
+mapping Transition :: Iterate2TransSendCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := 1;
+			
+		target := self.map Iterate2StateCoordinator(context, "Waiting", region);
+		
+		source := self.map Iterate2StateCoordinator(context, "Sending", region);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "curRole", "iterate", true, 3);
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).delay.oclIsUndefined()){
+			clockResets += context.oclAsType(RealtimeStatechart).map TransferSchemataClock(context, region, "c_delay", true);
+			clockConstraints += self.map Iterate2DelayClockConstraint(context, region, ComparingOperator::GREATER_OR_EQUAL, 1);
+		}endif;
+		
+		if(not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).terminationCondition.oclIsUndefined()){
+			guard := self.map IterateTeminationGuard(context, region);
+		}endif;
+			
+	}
+	
+mapping Transition :: Iterate2TransLastSendDoneCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := 1;
+			
+		source := self.map Iterate2StateCoordinator(context, "Waiting", region);
+		
+		target := self.target.map Vertex2VertexCoordinator(context, region);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "curRole", "iterateDone", true, 4);
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+			guard := self.map IterateLogicalExpression(context, region, "==", "last", 9);
+		}else{
+			guard := self.map IterateLogicalExpression(context, region, "==", "first", 9);
+		}endif;
+	
+		if(self.action.oclIsUndefined() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
+			action := self.map TransferSchemata2Action(context, "iteratePossible:=false", "iteratePossible", "false", 10);
+		}else{
+			if(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined() and not self.action.oclIsUndefined()){
+				action := self.action.map Action2Action(context, region);
+			}else{
+				if((not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()) and not self.action.oclIsUndefined()){
+					action := self.map IterateConditionAction(context, region, 1);
+				}endif;
+			}endif;
+		}endif;
+		
+		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
+			
+	}
+
+mapping Transition :: IterateLogicalExpression(context:OclAny, region:OclAny, op: String, position:String, transMapping: Integer) : ComparisonExpression {
+		
+		if(position.equalsIgnoreCase("last")){
+			rightExpression := self.map TransferSchemataEndpointReference(context, region, "last", transMapping);
+		}else{
+			rightExpression := self.map TransferSchemataEndpointReference(context, region, "first", transMapping);
+		}endif;
+		
+		leftExpression := self.map Iterate2TypedNamedElementExpr(context, "curRole", transMapping);	
+		
+		if(op.equalsIgnoreCase('==')){
+			operator := core::expressions::common::ComparingOperator::EQUAL;
+		}else{
+			if(op.equalsIgnoreCase('<>')){
+				operator := core::expressions::common::ComparingOperator::UNEQUAL;
+			}endif;		
+		}endif;
+		
+	}	
+mapping Transition :: Iterate2TransTerminationCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := 2;
+			
+		source := self.map Iterate2StateCoordinator(context, "Sending", region);
+		
+		target := self.target.map Vertex2VertexCoordinator(context, region);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "curRole", "iterateTerminated", true, 5);
+		
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).terminationCondition.map Expression2Expression(1);
+	
+		if(self.action.oclIsUndefined() and not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
+			action := self.map TransferSchemata2Action(context, "iteratePossible:=false", "iteratePossible", "false", 11);
+		}else{
+			if(self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined() and not self.action.oclIsUndefined()){
+				action := self.action.map Action2Action(1, region);
+			}else{
+				if((not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()) and not self.action.oclIsUndefined()){
+					action := self.map IterateConditionAction(context, region, 2);
+				}endif;
+			}endif;
+		}endif;
+		
+		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
+			
+	}
+	
+mapping Transition :: Iterate2DelayClockConstraint(context:OclAny, region:OclAny, comOp:ComparingOperator, transMapping:Integer) : ClockConstraint {
+				
+		clock := context.oclAsType(RealtimeStatechart).map TransferSchemataClock(context, region, "c_delay", true);
+				
+		operator := comOp;
+		
+		bound := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).delay.map TimeValue2TimeValue(transMapping, transMapping);
+	}
+	
+mapping Transition :: IterateTeminationGuard(context:OclAny, region:OclAny) : UnaryExpression {
+
+		enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).terminationCondition.map Expression2Expression(context);		
+		
+		operator := UnaryOperator::NOT;
+	
+	}
+	
+mapping Transition :: IterateConditionAction(context:OclAny, region:OclAny, transMapping:Integer) : Action {
+
+		name := self.action.name + "; iteratePossible:=false";
+		
+		result.expressions += self.map IterateConditionActionBlock(context, region, transMapping);		
+	}
+	
+mapping Transition :: IterateConditionActionBlock(context:OclAny, region:OclAny, transMapping:Integer) : Block {
+
+		result.expressions += self.action.expressions->first().oclAsType(Block).expressions.map Expression2Expression(transMapping);
+		
+		result.expressions += self.map TransferSchemata2Assignment(context, "iteratePossible", "false", 20+transMapping);
+	}
+
+mapping Transition :: Iterate2SourceRegionCoordinator(context:OclAny, region:OclAny) : Region {
+		
+		priority := self.priority;
+		
+		parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);
+		
+		embeddedStatechart := self.map Iterate2SourceEmbeddedRTSCCoordinator(context, region);
+					
+	}
+	
+mapping Transition :: Iterate2SourceEmbeddedRTSCCoordinator(context:OclAny, region:OclAny) : RealtimeStatechart {
+		
+		name:= "iterateCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+		
+		states += self.map RegionState(context, region, "Idle", true);
+		states += self.map RegionState(context, region, "Requesting", false);
+		
+		transitions += self.map Iterate2TransCheckEmbeddedCoordinator(context, region);
+		transitions += self.map Iterate2TransCheckDoneEmbeddedCoordinator(context, region);
+					
+	}
+	
+mapping Transition :: Iterate2TransCheckEmbeddedCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := 1;
+		
+		source := self.map RegionState(context, region, "Idle", true);
+		
+		target := self.map RegionState(context, region, "Requesting", false);
+		
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(2, region);
+		
+		guard := self.guard.map Expression2Expression(context);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "iterateCheck", true, 2);
+			
+	}
+	
+mapping Transition :: Iterate2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:OclAny) : Transition {
+
+		priority := 1;
+		
+		target := self.map RegionState(context, region, "Idle", true);
+		
+		source := self.map RegionState(context, region, "Requesting", false);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "iterateCheckDone", false, 3);
+		
+		guard := self.map TransferSchemaGuard(context, region, "iteratePossible", true, 1);
+			
+	}
+	
+	
+mapping Transition :: Iterate2StateCoordinator(context:OclAny, stateName:String, region:OclAny) : State {
+	
+		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_" + stateName;
+		
+		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region);	
+		
+		if(stateName.equalsIgnoreCase("Sending") and not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).delay.oclIsUndefined()){
+			invariants += self.map Iterate2DelayClockConstraint(context, region, ComparingOperator::LESS, 2);
+		}endif;
+						
+	}
+	
+mapping Transition :: Iterate2TransReceiveSyncCoordinator(context:OclAny, region:OclAny) : Transition {
+	
+		priority := self.priority;
+		
+		target := self.map Iterate2StateCoordinator(context, "IteratePossible", region);
+		
+		source := self.source.map Vertex2VertexCoordinator(context, region);		
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "iterateCheckDone", false, 4);
+		
+		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
+		
+		if(self.guard.oclIsUndefined()){
+			guard := self.map TransferSchemata2TypedNamedElementExpr(context, "iteratePossible",2);
+		}else{
+			guard := self.map TransferSchemaGuardAndPossibleGuard(context, 2, region, "iteratePossible", 2);
+		}endif;
+					
+	}
+	
+--------------------------------------------------------------------- Transfer Schema Iterate of Subrole-----------------------------------------------------------------
+	
+mapping Transition :: Iterate2TransSendSyncSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+		
+		source := self.source.map Vertex2VertexSubrole(context, region);
+		
+		target := self.map Iterate2StateSubrole(context, region, "Sending", toplevel);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "iterate", true, 5);--error
+		
+		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
+		
+		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
+		
+		action := self.raiseMessageEvent.oneToManyCommunicationSchema.action.map Action2Action(context, region);
+		
+		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
+		
+		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+				
+			guard := self.map TransferSchemaConditionAndPossibleGuard(context, 1, region, "iteratePossible", false, 3);
+			priority := (self.priority-1)*2+2;
+			
+		}else{
+			priority := self.priority;
+		}endif;
+		
+	}
+	
+mapping Transition :: Iterate2TransReceiveSyncNotLastSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+	
+		priority := 1;
+		
+		target := self.target.map Vertex2VertexSubrole(context, region);
+		
+		source := self.map Iterate2StateSubrole(context, region, "Sending", toplevel);		
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self", "iterateDone", true, 6);
+					
+	}
+	
+mapping Transition :: Iterate2TransRecTerminationSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+		
+		source := self.source.map Vertex2VertexSubrole(context, region);
+		
+		target := self.map Iterate2StateSubrole(context, region, "Terminated", toplevel);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "iterateTerminated", true, 7);
+		
+		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) 
+				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
+
+			priority := (self.priority-1)*2+2+1;
+			
+		}else{
+			priority := self.priority+1;
+		}endif;
+		
+	}
+	
+mapping Transition :: Iterate2TransSendTerminationSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+	
+		priority := 2;
+		
+		target := self.target.map Vertex2VertexSubrole(context, region);
+		
+		source := self.map Iterate2StateSubrole(context, region, "Terminated", toplevel);		
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+			synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "iterateTerminated", true, 8);
+			guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 4);
+		}else{
+			synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.prev", "iterateTerminated", true, 8);
+			guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "first", 4);
+		}endif;	
+					
+	}
+			
+mapping Transition :: Iterate2TransTerminationLastSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+	
+		priority := 1;
+		
+		target := self.target.map Vertex2VertexSubrole(context, region);
+		
+		source := self.map Iterate2StateSubrole(context, region, "Terminated", toplevel);		
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+			guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 5)
+		}else{
+			guard := self.map TransferSchemataLogicalExpression(context, region, "==", "first", 5)
+		}endif;
+					
+	}
+
+	
+mapping Transition :: Iterate2StateSubrole(context:OclAny, region:OclAny, stateName:String, toplevel:Boolean) : State {
+	
+		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_" + stateName;
+		
+		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);			
+					
+	}
+	
+mapping Transition :: Iterate2SourceRegionSubrole(context:OclAny, region:OclAny) : Region {
+		
+		priority := self.priority;
+		
+		parentState := self.source.map Vertex2VertexSubrole(context, region).oclAsType(State);
+		
+		embeddedStatechart := self.map Iterate2SourceEmbeddedRTSCSubrole(context, region);
+					
+	}
+	
+mapping Transition :: Iterate2SourceEmbeddedRTSCSubrole(context:OclAny, region:OclAny) : RealtimeStatechart {
+		
+		name:= "iterateCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
+		
+		states += self.map RegionState(context, region, "Idle", true);
+		states += self.map RegionState(context, region, "Requested", false);
+		
+		transitions += self.map Iterate2RequestedIdleCheckSubrole(context, region);
+		transitions += self.map Iterate2RequestedIdleCheckDoneSubrole(context, region);
+		transitions += self.map Iterate2IdleRequestedFulfilledSubrole(context, region);
+		transitions += self.map Iterate2IdleRequestedNotFulfilledSubrole(context, region);
+					
+	}
+	
+mapping Transition :: Iterate2RequestedIdleCheckSubrole(context:OclAny, region:OclAny) : Transition {
+	
+		priority := 2;
+				
+		source := self.map RegionState(context, region, "Requested", false);
+		
+		target := self.map RegionState(context, region, "Idle", true);
+		
+		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 6);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "iterateCheck", true, 7);
+					
+	}
+	
+mapping Transition ::Iterate2RequestedIdleCheckDoneSubrole(context:OclAny, region:OclAny) : Transition {
+	
+		priority := 1;
+				
+		source := self.map RegionState(context, region, "Requested", false);
+		
+		target := self.map RegionState(context, region, "Idle", true);
+		
+		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 7);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "iterateCheckDone", false, 8);
+					
+	}
+	
+mapping Transition :: Iterate2IdleRequestedFulfilledSubrole(context:OclAny, region:OclAny) : Transition {
+	
+		priority := 2;
+				
+		target := self.map RegionState(context, region, "Requested", false);
+		
+		source := self.map RegionState(context, region, "Idle", true);
+		
+		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "iterateCheck", true, 9);
+		
+		action := self.map TransferSchemata2Action(context, "iteratePossible:=true", "iteratePossible", "true", 10);
+					
+	}
+	
+mapping Transition :: Iterate2IdleRequestedNotFulfilledSubrole(context:OclAny, region:OclAny) : Transition {
+	
+		priority := 1;
+				
+		target := self.map RegionState(context, region, "Requested", false);
+		
+		source := self.map RegionState(context, region, "Idle", true);
+		
+		guard := self.map TransferSchemaNotCondition(3, region, 3);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "iterateCheck", true, 10);
+					
+	}
+	
+mapping Transition :: Iterate2TransSendSyncNotConditionSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+		
+		source := self.source.map Vertex2VertexSubrole(context, region);
+		
+		target := self.map Iterate2StateSubrole(context, region, "Sending", toplevel);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "iterate", true, 11);--error
+		
+		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
+				
+		guard := self.map TransferSchemaConditionAndPossibleGuard(context, 4, region, "iteratePossible", true, 11);
+		
+		priority := (self.priority-1)*2+1;
+		
+	}
+
+
+mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:OclAny, syncKind:SynchronizationKind, selectorExp: String, channel:String, selector: Boolean, transMapping: Integer) : Synchronization {
+		
+		kind := syncKind;
+		
+		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector);
+		
+		if(selectorExp.equalsIgnoreCase('self')){
+			selectorExpression := self.map PositionSelfSelector(context, region, transMapping);
+		}else{
+			if(selectorExp.equalsIgnoreCase('first')){
+				selectorExpression := self.map PositionFirst(context, region, transMapping);
+			}else{
+				if(selectorExp.equalsIgnoreCase('self.next')){
+					selectorExpression := self.map PositionSelfNext(context, region, transMapping);
+				}else{
+					if(selectorExp.equalsIgnoreCase('self.prev')){
+						selectorExpression := self.map PositionSelfPrev(context, region, transMapping);
+					}else{
+						if(selectorExp.equalsIgnoreCase('curRole')){
+						selectorExpression := self.map Iterate2TypedNamedElementExpr(context, selectorExp, transMapping);
+					}endif
+					}endif;
+				}endif;
+			}endif;
+		}endif;
+	
+	};	
+	
+mapping Transition :: PositionCurRoleNextPres(context:OclAny, region:OclAny, transMapping: Integer) : DiscreteInteractionEndpointReference {
+		
+		typedNamedElementExpression := self.map Iterate2TypedNamedElementExpr(context, "curRole", 20);
+		
+		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
+			position := self.map PositionNext(context, region, transMapping);
+		}else{
+			position := self.map PositionPrev(context, region, transMapping);
+		}endif;
+		
+	}
