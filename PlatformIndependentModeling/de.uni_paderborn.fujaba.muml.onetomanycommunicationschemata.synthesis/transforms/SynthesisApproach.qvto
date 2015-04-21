@@ -19,17 +19,17 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 // Todo: the TriggerMessage2TriggerWithoutConsume should be replaced.
 		
-transformation SynthesisApproach(inout input:modelinstance);
+transformation SynthesisApproach(in input:rtsc, out output: rtsc);
 
 property currentRealtimeStatechart : RealtimeStatechart;
 
 main() {	
-	var root : RootNode := input.rootObjects()[RootNode]->any(true);
+	currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
 	getRealtimeStatechartCategory().modelElements.oclAsType(RealtimeStatechart).map RTSC2RTSC();
 }
 
 query getRealtimeStatechartCategory() : ModelElementCategory {
-	return input.rootObjects()[RootNode]->any(true).categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	return currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory)
 }
 helper  isClockSubRoleSpecific(c : Clock): Boolean
 {
@@ -46,7 +46,6 @@ helper isOperationSubRoleSpecific(o : Operation): Boolean
 
 
 mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
-		currentRealtimeStatechart:= self;
 		name := self.name + "Impl";
 		
 		// **select non subrolespecific elements
