@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r2996)-->
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hjT_4IS6EeKrXO1iCP2aTw">
+<!--muml metamodel version 0.3.2 (r14616)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:simulinkExtension="http://www.muml.org/simulink/simulinkExtension/0.6.0" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hjT_4IS6EeKrXO1iCP2aTw">
   <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ZOLusIS_EeKO9r0VL65xcg" name="overtaker_Role" behavioralElement="_GQwUAITCEeKO9r0VL65xcg">
       <transitions xmi:id="_yXwJQITBEeKO9r0VL65xcg" priority="3" target="_p05XYITBEeKO9r0VL65xcg" source="_YbeQgCngEeOLOOFBfu_IMg"/>
@@ -404,10 +404,10 @@
   <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sCqlEeOmGPWtq6tuHA" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sSqlEeOmGPWtq6tuHA" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_siqlEeOmGPWtq6tuHA" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_syqlEeOmGPWtq6tuHA" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tCqlEeOmGPWtq6tuHA" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tSqlEeOmGPWtq6tuHA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_siqlEeOmGPWtq6tuHA" name="BYTE" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_syqlEeOmGPWtq6tuHA" name="SHORT" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tCqlEeOmGPWtq6tuHA" name="INT" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tSqlEeOmGPWtq6tuHA" name="LONG" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tiqlEeOmGPWtq6tuHA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
@@ -510,6 +510,7 @@
   </categories>
   <categories xmi:id="_CDbBcEfREeOKy6HrV27eJQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_NdEG4E06EeORybsjuqdyww" name="systemconfiguration">
+      <extension xsi:type="simulinkExtension:CICToTranslate" xmi:id="_2TxnMOdNEeSuTJpBugK4Rw"/>
       <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_OBbYME06EeORybsjuqdyww" name="system" componentType="_BGDOQE03EeOI293nB1lGXQ">
         <embeddedCIC xmi:id="_P7AI8E06EeORybsjuqdyww" name="System">
           <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_P7AI8U06EeORybsjuqdyww" name="yellowSw1" componentType="_0IDksEfOEeO56fW-RvmTLw" componentPart="_MXNZcE03EeOI293nB1lGXQ">
