@@ -19,17 +19,20 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 // Todo: the TriggerMessage2TriggerWithoutConsume should be replaced.
 		
-transformation SynthesisApproach(in input:rtsc, out output: rtsc);
+transformation SynthesisApproach(inout input:rtsc);
 
 property currentRealtimeStatechart : RealtimeStatechart;
 
 main() {	
+	//assert fatal (false) with log("Transformation started");	
 	currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
-	getRealtimeStatechartCategory().modelElements.oclAsType(RealtimeStatechart).map RTSC2RTSC();
+	currentRealtimeStatechart.map RTSC2RTSC();
+	
 }
 
-query getRealtimeStatechartCategory() : ModelElementCategory {
-	return currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory)
+query getRealtimeStatechartCategory(): ModelElementCategory
+{
+	return currentRealtimeStatechart.eContainer().oclAsType(ModelElementCategory);
 }
 helper  isClockSubRoleSpecific(c : Clock): Boolean
 {
@@ -117,8 +120,8 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		}endif;
 		// normally override the behavorialElement
-		//behavioralElement := self.behavioralElement;
-		getRealtimeStatechartCategory().modelElements +=result;		
+		behavioralElement := self.behavioralElement;
+		getRealtimeStatechartCategory().modelElements +=result;
 	}
 	
 
