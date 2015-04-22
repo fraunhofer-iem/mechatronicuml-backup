@@ -20,8 +20,4 @@
          id="de.uni_paderborn.fujaba.muml.codegen.c.feature"
          version="0.0.0"/>
 
-   <includes
-         id="de.uni_paderborn.fujaba.muml.cybertron.codegen.feature"
-         version="0.0.0"/>
-
 </feature>
