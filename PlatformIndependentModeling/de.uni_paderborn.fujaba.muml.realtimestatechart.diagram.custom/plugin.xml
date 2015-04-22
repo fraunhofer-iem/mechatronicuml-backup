@@ -117,6 +117,57 @@
         </adviceBinding>
       </metamodel>
    </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
+               label="Disassemble One-To-Many Communication Schemata">
+            <visibleWhen>
+               <or>
+                  <and>
+                     <with
+                           variable="activePartId">
+                        <equals
+                              value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID">
+                        </equals>
+                     </with>
+                     <with
+                           variable="selection">
+                        <iterate
+                              ifEmpty="false">
+                           <or>
+                              <instanceof
+                                    value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart">
+                              </instanceof>
+                              <instanceof
+                                    value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart">
+                              </instanceof>
+                              <instanceof
+                                    value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart">
+                              </instanceof>
+                              <instanceof
+                                    value="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts">
+                              </instanceof>
+                           </or>
+                        </iterate>
+                     </with>
+                  </and>
+               </or>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.handlers.DisassembleOne2ManyComSchemataHandler"
+            id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.DisassembleOne2ManyComSchemata"
+            name="Disassemble One-To-Many Communication Schemata">
+      </command>
+   </extension>
    
 <!-- does not work -->
 <!--
