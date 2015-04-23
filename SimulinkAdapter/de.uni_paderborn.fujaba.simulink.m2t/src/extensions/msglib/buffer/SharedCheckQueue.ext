@@ -6,11 +6,9 @@ import model::msglib::buffer;
 String getCode(SharedCheckQueue function):
 'function available = ' + function.name + '(event, evtQueue) %eml 
  available = false; 
- for i = 1:length(evtQueue) 
-     if evtQueue(i) == event 
-         available = true;    
-         return 
-     end 
+   if evtQueue(1) == event 
+       available = true;    
+       return 
  end'
 ;
 
