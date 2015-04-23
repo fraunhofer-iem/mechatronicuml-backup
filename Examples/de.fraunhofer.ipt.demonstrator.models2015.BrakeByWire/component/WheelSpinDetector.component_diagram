@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_0oNNUOmqEeSE4Zrj1GnMCg" type="Component" name="WheelSpinDetector.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0oNNUumqEeSE4Zrj1GnMCg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0oNNVOmqEeSE4Zrj1GnMCg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_IzJcoOmrEeSE4Zrj1GnMCg" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_IzJcoumrEeSE4Zrj1GnMCg" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IzJco-mrEeSE4Zrj1GnMCg" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_Iy9PYOmrEeSE4Zrj1GnMCg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IzJcoemrEeSE4Zrj1GnMCg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_JKgMsemrEeSE4Zrj1GnMCg" type="3013" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_JKgMs-mrEeSE4Zrj1GnMCg" type="5024">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JKgMtOmrEeSE4Zrj1GnMCg" y="5"/>
+      </children>
+      <element xmi:type="component:HybridPort" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_JKgMsOmrEeSE4Zrj1GnMCg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JKgMsumrEeSE4Zrj1GnMCg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_LH7isOmrEeSE4Zrj1GnMCg" type="3010" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LH7isumrEeSE4Zrj1GnMCg" type="5012">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LH7is-mrEeSE4Zrj1GnMCg" y="5"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LH7itOmrEeSE4Zrj1GnMCg" type="5025">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LH7itemrEeSE4Zrj1GnMCg" y="5"/>
+      </children>
+      <element xmi:type="component:DiscretePort" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_LH1cEOmrEeSE4Zrj1GnMCg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LH7isemrEeSE4Zrj1GnMCg"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_heYSMOmpEeSsPdK-DtuwOA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0oNNU-mqEeSE4Zrj1GnMCg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0oNNUemqEeSE4Zrj1GnMCg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_P_fLLcvpEeSqLp1EdST_nQ"/>
+</notation:Diagram>

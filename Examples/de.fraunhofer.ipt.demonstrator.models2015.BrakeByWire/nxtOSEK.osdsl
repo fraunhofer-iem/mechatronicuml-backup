@@ -1,0 +1,5 @@
+ import "de.fraunhofer.ipt.demonstrator.delivery.muml"
+
+OperatingSystem:nxtOSEK{
+
+}

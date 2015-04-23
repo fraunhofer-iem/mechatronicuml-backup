@@ -1,0 +1,42 @@
+//File: messages.proto
+//@max_string_length=32
+//@max_repeated_length=100
+//@max_bytes_length=32
+
+//the following message types are not generated, because they have no parameters
+//stopDeliveryMessagesMessage
+//wait4unloadDeliveryMessagesMessage
+//goDeliveryMessagesMessage
+//unloadDeliveryMessagesMessage
+//initiateDeliveryDeliveryMessagesMessage
+//loadDeliveryMessagesMessage
+//wait4loadDeliveryMessagesMessage
+//finishedDeliveryDeliveryMessagesMessage
+
+//protobuf definition for message type ColorSensor_ColorPort_message
+message ColorSensor_ColorPort_messageapi_messageType_RepositoryMessage{
+	optional int32 colorPort_value = 1;
+}
+//protobuf definition for message type Motor_MotorPort_message
+message Motor_MotorPort_messageapi_messageType_RepositoryMessage{
+	optional int32 motorPort_value = 1;
+}
+//protobuf definition for message type LineLeaderSensor_LineLeaderPort_message
+message LineLeaderSensor_LineLeaderPort_messageapi_messageType_RepositoryMessage{
+	optional int32 lineLeaderPort_value = 1;
+}
+
+//message for QoS-props. This could be an optional parameter for the interface-methods between application layer and middleware
+//message QoSProps{
+//	optional int32 maxTime = 1;
+//	optional int32 minTime = 2;
+//	optional int32 arrivalProb = 3;
+//}
+
+//This is our more generic message, which is used in the middleware, it cointains a muml-message as a byte array
+message MiddlewareMessage{
+	optional int32 targetPort = 1;
+	optional int32 msgID = 2;
+	optional bytes mumlMsg = 3;
+	//repeated QoSProps qos = 4;
+}

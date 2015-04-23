@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_0oZakOmqEeSE4Zrj1GnMCg" type="Component" name="BrakeForceSensor.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0oZakumqEeSE4Zrj1GnMCg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0oZalOmqEeSE4Zrj1GnMCg" type="5028"/>
+    <children xmi:type="notation:Shape" xmi:id="_8VsdcOmqEeSE4Zrj1GnMCg" type="3011" fontName="Segoe UI" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8VsdcumqEeSE4Zrj1GnMCg" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8Vsdc-mqEeSE4Zrj1GnMCg" y="5"/>
+      </children>
+      <element xmi:type="component:ContinuousPort" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_8VN8UOmqEeSE4Zrj1GnMCg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8VsdcemqEeSE4Zrj1GnMCg"/>
+    </children>
+    <element xmi:type="component:StaticAtomicComponent" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_jzWlgOmpEeSsPdK-DtuwOA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0oZak-mqEeSE4Zrj1GnMCg" x="180" y="84"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0oZakemqEeSE4Zrj1GnMCg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_P_fLLcvpEeSqLp1EdST_nQ"/>
+</notation:Diagram>

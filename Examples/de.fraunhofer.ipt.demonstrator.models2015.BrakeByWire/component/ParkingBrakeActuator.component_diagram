@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_0pEI8OmqEeSE4Zrj1GnMCg" type="Component" name="ParkingBrakeActuator.component_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0pEI8umqEeSE4Zrj1GnMCg" type="2006" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0pEI9OmqEeSE4Zrj1GnMCg" type="5028"/>
+    <element xmi:type="component:StaticAtomicComponent" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_LO8bkOmpEeSsPdK-DtuwOA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0pEI8-mqEeSE4Zrj1GnMCg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_0pEI8emqEeSE4Zrj1GnMCg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../de.fraunhofer.ipt.demonstrator.models2015.fujaba#_P_fLLcvpEeSqLp1EdST_nQ"/>
+</notation:Diagram>
