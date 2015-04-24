@@ -2,74 +2,123 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 
-public class ResourceInstanceTypePropertyDescriptor  extends ItemPropertyDescriptor{
-	
-	//TODO: Use this instead of string matching for selecting resource types
-	
-//	public static final Map<EClass, EClass> map;
-//
-//	static {
-//	  Map<String, String> m = new HashMap<EClass, EClass>();
-//	  m.put("key1","value1");  
-//	  m.put("key2","value2");  
-//	  map = Collections.unmodifiableMap(m);
-//	}
-	
-	
-	
-	public ResourceInstanceTypePropertyDescriptor(AdapterFactory adapterFactory,
-			ResourceLocator resourceLocator, String displayName,
-			String description, EStructuralFeature feature, boolean isSettable,
-			boolean multiLine, boolean sortChoices, Object staticImage,
-			String category, String[] filterFlags) {
+public class ResourceInstanceTypePropertyDescriptor extends
+		ItemPropertyDescriptor {
+	/**
+	 * This hashmap stores the valid resourceInstance->resourceType relation
+	 */
+	private static final Map<EClass, EClass> resourceInstanceValidResourceType;
+	static {
+		Map<EClass, EClass> aMap = new HashMap<EClass, EClass>();
+		aMap.put(HwresourceinstancePackage.Literals.SENSOR_INSTANCE,
+				HwresourcePackage.Literals.DEVICE);
+		aMap.put(HwresourceinstancePackage.Literals.ACTUATOR_INSTANCE,
+				HwresourcePackage.Literals.DEVICE);
+		aMap.put(HwresourceinstancePackage.Literals.ATOMIC_RESOURCE_INSTANCE,
+				HwresourcePackage.Literals.ATOMIC_RESOURCE);
+		aMap.put(
+				HwresourceinstancePackage.Literals.STRUCTURED_RESOURCE_INSTANCE,
+				HwresourcePackage.Literals.STRUCTURED_RESOURCE);
+		aMap.put(HwresourceinstancePackage.Literals.STORAGE_MEMORY_INSTANCE,
+				HwresourcePackage.Literals.MEMORY_RESOURCE);
+		aMap.put(HwresourceinstancePackage.Literals.PROCESSING_MEMORY_INSTANCE,
+				HwresourcePackage.Literals.MEMORY_RESOURCE);
+		aMap.put(HwresourceinstancePackage.Literals.CACHE_INSTANCE,
+				HwresourcePackage.Literals.MEMORY_RESOURCE);
+		aMap.put(HwresourceinstancePackage.Literals.PROCESSOR_INSTANCE,
+				HwresourcePackage.Literals.PROCESSOR);
+		aMap.put(
+				HwresourceinstancePackage.Literals.PROGRAMMABLE_LOGIC_DEVICE_INSTANCE,
+				HwresourcePackage.Literals.PROGRAMMABLE_LOGIC_DEVICE);
+		resourceInstanceValidResourceType = Collections.unmodifiableMap(aMap);
+	}
+
+	public ResourceInstanceTypePropertyDescriptor(
+			AdapterFactory adapterFactory, ResourceLocator resourceLocator,
+			String displayName, String description, EStructuralFeature feature,
+			boolean isSettable, boolean multiLine, boolean sortChoices,
+			Object staticImage, String category, String[] filterFlags) {
 		super(adapterFactory, resourceLocator, displayName, description,
 				feature, isSettable, multiLine, sortChoices, staticImage,
 				category, filterFlags);
 	}
 	/**
-	 * Filters the ResourceTypes for a given ResourceInstance based on the name of the resourceType
-	 * If class name of ResourceInstance or the supertype of the resourceinstance corresponds to a ResourceType
-	 * then the value is shown as a choice
-	 * TODO: Maybe remove the logic with a HashMap ResourceInstance to allowed Resource Type
+	 * This function decides if a given resource type is valid for a given resource instance
+	 * 
+	 * @param instance the ResourceInstance
+	 * @param type the ResourceType
+	 * @return
+	 */
+	private boolean isValidChoice(EObject instance, EObject type) {
+
+		if (!resourceInstanceValidResourceType.get(instance.eClass())
+				.isSuperTypeOf(type.eClass())) {
+			return false;
+		}
+		// special case for ActuatorInstanceInstance
+		if (HwresourceinstancePackage.Literals.ACTUATOR_INSTANCE
+				.isSuperTypeOf(instance.eClass())) {
+			return (((Device) type).getDeviceType() == DeviceKind.ACTUATOR);
+		}
+		// special case for SensorInstanceInstance
+		if (HwresourceinstancePackage.Literals.SENSOR_INSTANCE
+				.isSuperTypeOf(instance.eClass())) {
+			return (((Device) type).getDeviceType() == DeviceKind.SENSOR);
+		}
+		// special case for StorageMemoryInstance
+		if (HwresourceinstancePackage.Literals.PROCESSING_MEMORY_INSTANCE
+				.isSuperTypeOf(instance.eClass())) {
+			return (((MemoryResource) type).isIsVolatile());
+		}
+
+		// special case for ProcessingMemoryInstance
+		if (HwresourceinstancePackage.Literals.STORAGE_MEMORY_INSTANCE
+				.isSuperTypeOf(instance.eClass())) {
+			return (!((MemoryResource) type).isIsVolatile());
+		}
+
+		return true;
+
+	}
+
+	/**
+	 * Filters the ResourceTypes for a given ResourceInstance based on 
+	 * the function {@link #isValidChoice(EObject, EObject)}}
 	 */
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 		EObject eobject = (EObject) object;
-		String classNameOfObject = eobject.eClass().getName().replace("Instance", "");
-		String classNameOfSuperClass = "";
-		if(!eobject.eClass().getEAllSuperTypes().isEmpty()){
-			int indexOflastSuperType = eobject.eClass().getEAllSuperTypes().size()-1;
-			classNameOfSuperClass = eobject.eClass().getEAllSuperTypes().get(indexOflastSuperType).getName().replace("Instance", "");
-		}
+
 		List<Resource> resourceTypes = new ArrayList<Resource>();
 		for (Object value : super.getChoiceOfValues(object)) {
-			if(value==null){
+			if (value == null) {
 				continue;
 			}
-			String classNameOfValue = ((EObject) value).eClass().getName();
-			if(classNameOfValue.contains(classNameOfObject)){
+
+			if (isValidChoice(eobject, (EObject) value)) {
 				resourceTypes.add((Resource) value);
 				continue;
 			}
-			/**
-			 * if the name of the super class is Resource, it is to general to make a decision
-			 */
-			if(classNameOfValue.contains(classNameOfSuperClass) && !classNameOfSuperClass.equalsIgnoreCase("Resource")){
-				resourceTypes.add((Resource) value);
-			}
-//			if (value instanceof StructuredResourceInstance || value instanceof DeviceInstance) {
-//				resourcInstances.add((ResourceInstance) value);
-//			}
+
 		}
 		return resourceTypes;
 	}
