@@ -337,11 +337,11 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(wcetEClass, de.uni_paderborn.fujaba.muml.psm.properties.WCET.class, "WCET", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWCET_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 1, 1, de.uni_paderborn.fujaba.muml.psm.properties.WCET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWCET_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 1, 1, de.uni_paderborn.fujaba.muml.psm.properties.WCET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWCET_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, de.uni_paderborn.fujaba.muml.psm.properties.WCET.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requiredMemoryEClass, RequiredMemory.class, "RequiredMemory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRequiredMemory_RequiredMemory(), theHwvaluetypePackage.getDataSize(), null, "requiredMemory", null, 1, 1, RequiredMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequiredMemory_RequiredMemory(), theHwvaluetypePackage.getDataSize(), null, "requiredMemory", null, 1, 1, RequiredMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRequiredMemory_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, RequiredMemory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schedulingEClass, Scheduling.class, "Scheduling", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

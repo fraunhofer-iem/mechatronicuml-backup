@@ -31,25 +31,25 @@ import org.storydriven.core.Extension;
  */
 public interface WCET extends Extension {
 	/**
-	 * Returns the value of the '<em><b>Wcet</b></em>' reference.
+	 * Returns the value of the '<em><b>Wcet</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The amount of the WCET.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Wcet</em>' reference.
+	 * @return the value of the '<em>Wcet</em>' containment reference.
 	 * @see #setWcet(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getWCET_Wcet()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	TimeValue getWcet();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet <em>Wcet</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet <em>Wcet</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Wcet</em>' reference.
+	 * @param value the new value of the '<em>Wcet</em>' containment reference.
 	 * @see #getWcet()
 	 * @generated
 	 */

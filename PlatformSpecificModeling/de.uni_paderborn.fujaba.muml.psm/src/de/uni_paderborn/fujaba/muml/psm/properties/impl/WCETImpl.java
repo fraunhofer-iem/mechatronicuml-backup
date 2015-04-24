@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -34,7 +35,7 @@ import org.storydriven.core.impl.ExtensionImpl;
  */
 public class WCETImpl extends ExtensionImpl implements WCET {
 	/**
-	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' reference.
+	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWcet()
@@ -78,14 +79,6 @@ public class WCETImpl extends ExtensionImpl implements WCET {
 	 * @generated
 	 */
 	public TimeValue getWcet() {
-		if (wcet != null && wcet.eIsProxy()) {
-			InternalEObject oldWcet = (InternalEObject)wcet;
-			wcet = (TimeValue)eResolveProxy(oldWcet);
-			if (wcet != oldWcet) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.WCET__WCET, oldWcet, wcet));
-			}
-		}
 		return wcet;
 	}
 
@@ -94,8 +87,14 @@ public class WCETImpl extends ExtensionImpl implements WCET {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue basicGetWcet() {
-		return wcet;
+	public NotificationChain basicSetWcet(TimeValue newWcet, NotificationChain msgs) {
+		TimeValue oldWcet = wcet;
+		wcet = newWcet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.WCET__WCET, oldWcet, newWcet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -104,10 +103,17 @@ public class WCETImpl extends ExtensionImpl implements WCET {
 	 * @generated
 	 */
 	public void setWcet(TimeValue newWcet) {
-		TimeValue oldWcet = wcet;
-		wcet = newWcet;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.WCET__WCET, oldWcet, wcet));
+		if (newWcet != wcet) {
+			NotificationChain msgs = null;
+			if (wcet != null)
+				msgs = ((InternalEObject)wcet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.WCET__WCET, null, msgs);
+			if (newWcet != null)
+				msgs = ((InternalEObject)newWcet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.WCET__WCET, null, msgs);
+			msgs = basicSetWcet(newWcet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.WCET__WCET, newWcet, newWcet));
 	}
 
 	/**
@@ -154,11 +160,24 @@ public class WCETImpl extends ExtensionImpl implements WCET {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.WCET__WCET:
+				return basicSetWcet(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PropertiesPackage.WCET__WCET:
-				if (resolve) return getWcet();
-				return basicGetWcet();
+				return getWcet();
 			case PropertiesPackage.WCET__RESOURCE_INSTANCE:
 				if (resolve) return getResourceInstance();
 				return basicGetResourceInstance();
