@@ -124,7 +124,7 @@ public interface PropertiesPackage extends EPackage {
 	int WCET__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
 
 	/**
-	 * The feature id for the '<em><b>Wcet</b></em>' reference.
+	 * The feature id for the '<em><b>Wcet</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -395,7 +395,7 @@ public interface PropertiesPackage extends EPackage {
 	int REQUIRED_MEMORY__EXTENDABLE_BASE = CorePackage.EXTENSION__EXTENDABLE_BASE;
 
 	/**
-	 * The feature id for the '<em><b>Required Memory</b></em>' reference.
+	 * The feature id for the '<em><b>Required Memory</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -892,10 +892,10 @@ public interface PropertiesPackage extends EPackage {
 	EClass getWCET();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet <em>Wcet</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet <em>Wcet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Wcet</em>'.
+	 * @return the meta object for the containment reference '<em>Wcet</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.WCET#getWcet()
 	 * @see #getWCET()
 	 * @generated
@@ -924,10 +924,10 @@ public interface PropertiesPackage extends EPackage {
 	EClass getRequiredMemory();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getRequiredMemory <em>Required Memory</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getRequiredMemory <em>Required Memory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required Memory</em>'.
+	 * @return the meta object for the containment reference '<em>Required Memory</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory#getRequiredMemory()
 	 * @see #getRequiredMemory()
 	 * @generated
@@ -1022,7 +1022,7 @@ public interface PropertiesPackage extends EPackage {
 		EClass WCET = eINSTANCE.getWCET();
 
 		/**
-		 * The meta object literal for the '<em><b>Wcet</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Wcet</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1048,7 +1048,7 @@ public interface PropertiesPackage extends EPackage {
 		EClass REQUIRED_MEMORY = eINSTANCE.getRequiredMemory();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Memory</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Required Memory</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

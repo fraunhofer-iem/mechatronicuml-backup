@@ -80,7 +80,8 @@
         <details key="documentation" value="The Worst-Case-Execution Time of a Component Instance, if its allocated to a specific Resource Instance."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue">
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+          containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The amount of the WCET."/>
         </eAnnotations>
@@ -97,7 +98,8 @@
         <details key="documentation" value="The amount of required memory of a Component Instance, if its allocated to a specific Resource Instance."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMemory" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize">
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"
+          containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The required amount of memory."/>
         </eAnnotations>

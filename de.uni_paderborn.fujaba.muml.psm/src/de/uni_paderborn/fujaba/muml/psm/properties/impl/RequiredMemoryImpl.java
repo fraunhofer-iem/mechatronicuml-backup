@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.muml.psm.properties.RequiredMemory;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -34,7 +35,7 @@ import org.storydriven.core.impl.ExtensionImpl;
  */
 public class RequiredMemoryImpl extends ExtensionImpl implements RequiredMemory {
 	/**
-	 * The cached value of the '{@link #getRequiredMemory() <em>Required Memory</em>}' reference.
+	 * The cached value of the '{@link #getRequiredMemory() <em>Required Memory</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequiredMemory()
@@ -78,14 +79,6 @@ public class RequiredMemoryImpl extends ExtensionImpl implements RequiredMemory 
 	 * @generated
 	 */
 	public DataSize getRequiredMemory() {
-		if (requiredMemory != null && requiredMemory.eIsProxy()) {
-			InternalEObject oldRequiredMemory = (InternalEObject)requiredMemory;
-			requiredMemory = (DataSize)eResolveProxy(oldRequiredMemory);
-			if (requiredMemory != oldRequiredMemory) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY, oldRequiredMemory, requiredMemory));
-			}
-		}
 		return requiredMemory;
 	}
 
@@ -94,8 +87,14 @@ public class RequiredMemoryImpl extends ExtensionImpl implements RequiredMemory 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataSize basicGetRequiredMemory() {
-		return requiredMemory;
+	public NotificationChain basicSetRequiredMemory(DataSize newRequiredMemory, NotificationChain msgs) {
+		DataSize oldRequiredMemory = requiredMemory;
+		requiredMemory = newRequiredMemory;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY, oldRequiredMemory, newRequiredMemory);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -104,10 +103,17 @@ public class RequiredMemoryImpl extends ExtensionImpl implements RequiredMemory 
 	 * @generated
 	 */
 	public void setRequiredMemory(DataSize newRequiredMemory) {
-		DataSize oldRequiredMemory = requiredMemory;
-		requiredMemory = newRequiredMemory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY, oldRequiredMemory, requiredMemory));
+		if (newRequiredMemory != requiredMemory) {
+			NotificationChain msgs = null;
+			if (requiredMemory != null)
+				msgs = ((InternalEObject)requiredMemory).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY, null, msgs);
+			if (newRequiredMemory != null)
+				msgs = ((InternalEObject)newRequiredMemory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY, null, msgs);
+			msgs = basicSetRequiredMemory(newRequiredMemory, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY, newRequiredMemory, newRequiredMemory));
 	}
 
 	/**
@@ -154,11 +160,24 @@ public class RequiredMemoryImpl extends ExtensionImpl implements RequiredMemory 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY:
+				return basicSetRequiredMemory(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PropertiesPackage.REQUIRED_MEMORY__REQUIRED_MEMORY:
-				if (resolve) return getRequiredMemory();
-				return basicGetRequiredMemory();
+				return getRequiredMemory();
 			case PropertiesPackage.REQUIRED_MEMORY__RESOURCE_INSTANCE:
 				if (resolve) return getResourceInstance();
 				return basicGetResourceInstance();
