@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
+package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
 
 import java.util.ArrayList;
 import java.util.Collection;
