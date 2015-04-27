@@ -4,9 +4,12 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider;
 
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPartCommunicationMediaPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -52,11 +55,11 @@ public class CommunicationMediaPartItemProvider
 	 * This adds a property descriptor for the Communication Media feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected void addCommunicationMediaPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new CommunicationMediaPartCommunicationMediaPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_CommunicationMediaPart_communicationMedia_feature"),
