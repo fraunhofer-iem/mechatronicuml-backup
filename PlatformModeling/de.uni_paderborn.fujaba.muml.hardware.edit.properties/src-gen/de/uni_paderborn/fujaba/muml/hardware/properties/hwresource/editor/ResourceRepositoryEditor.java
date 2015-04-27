@@ -23,52 +23,34 @@ public class ResourceRepositoryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
-
-			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createComment_DocumentationTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
 		if (this.editorComment_DocumentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
@@ -83,7 +65,7 @@ public class ResourceRepositoryEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
 		if (this.editorExtension_ExtensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();

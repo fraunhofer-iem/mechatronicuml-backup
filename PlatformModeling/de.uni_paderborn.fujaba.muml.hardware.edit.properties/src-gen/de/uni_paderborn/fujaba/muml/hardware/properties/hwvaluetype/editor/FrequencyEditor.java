@@ -23,17 +23,17 @@ public class FrequencyEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUnit_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createValue_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createUnit_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorUnit_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -46,7 +46,7 @@ public class FrequencyEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorValue_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createValue_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorValue_GeneralTab_Editor() {
 		if (this.editorValue_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 					.getFrequency_Value();
@@ -61,7 +61,7 @@ public class FrequencyEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUnit_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createUnit_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUnit_GeneralTab_Editor() {
 		if (this.editorUnit_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 					.getFrequency_Unit();

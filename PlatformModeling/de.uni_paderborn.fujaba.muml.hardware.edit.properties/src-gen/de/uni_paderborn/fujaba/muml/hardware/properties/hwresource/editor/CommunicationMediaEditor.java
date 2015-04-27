@@ -23,20 +23,18 @@ public abstract class CommunicationMediaEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
 
-			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorDataFrameSize_GeneralTab_Editor(),
+					false);
 
-			addPropertyEditor(createDataFrameSize_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBandwidth_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createBandwidth_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorProtocol_GeneralTab_Editor(), false);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
@@ -44,12 +42,9 @@ public abstract class CommunicationMediaEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createIsSerial_GeneralTab_Editor(), false);
+					createEditorIsSerial_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
@@ -57,14 +52,12 @@ public abstract class CommunicationMediaEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addPropertyEditor(createEditorDataFrameSize_GeneralTab_Editor(),
+					false);
 
-			addPropertyEditor(createDataFrameSize_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBandwidth_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createBandwidth_GeneralTab_Editor(), false);
-
-			addPropertyEditor(createProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorProtocol_GeneralTab_Editor(), false);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
@@ -72,14 +65,12 @@ public abstract class CommunicationMediaEditor
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					createIsSerial_GeneralTab_Editor(), false);
+					createEditorIsSerial_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addPropertyEditor(createComment_DocumentationTab_Editor(), false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
+					false);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
@@ -87,21 +78,14 @@ public abstract class CommunicationMediaEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createExtension_ExtensionsTab_Editor(), false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
@@ -112,7 +96,7 @@ public abstract class CommunicationMediaEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDataFrameSize_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createDataFrameSize_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDataFrameSize_GeneralTab_Editor() {
 		if (this.editorDataFrameSize_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationMedia_DataFrameSize();
@@ -127,7 +111,7 @@ public abstract class CommunicationMediaEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBandwidth_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createBandwidth_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorBandwidth_GeneralTab_Editor() {
 		if (this.editorBandwidth_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationMedia_Bandwidth();
@@ -142,7 +126,7 @@ public abstract class CommunicationMediaEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorProtocol_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createProtocol_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorProtocol_GeneralTab_Editor() {
 		if (this.editorProtocol_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationMedia_Protocol();
@@ -157,7 +141,7 @@ public abstract class CommunicationMediaEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsSerial_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createIsSerial_GeneralTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsSerial_GeneralTab_Editor() {
 		if (this.editorIsSerial_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 					.getCommunicationMedia_IsSerial();
@@ -172,7 +156,7 @@ public abstract class CommunicationMediaEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createComment_DocumentationTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorComment_DocumentationTab_Editor() {
 		if (this.editorComment_DocumentationTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getCommentableElement_Comment();
@@ -187,7 +171,7 @@ public abstract class CommunicationMediaEditor
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createExtension_ExtensionsTab_Editor() {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorExtension_ExtensionsTab_Editor() {
 		if (this.editorExtension_ExtensionsTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
 					.getExtendableElement_Extension();
