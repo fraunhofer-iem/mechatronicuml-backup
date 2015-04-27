@@ -79,7 +79,13 @@ public class EStringToStringMapEntryEditor
 							@Override
 							public void notifyChanged(
 									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
+								boolean visibleBefore = editor.isVisible();
+								editor.updateVisibility(true);
+
+								// Set default value, if we are hiding the editor and it was not hidden before.
+								if (!editor.isVisible() && visibleBefore) {
+									editor.setDefaultValue();
+								}
 							}
 						});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
@@ -122,7 +128,13 @@ public class EStringToStringMapEntryEditor
 							@Override
 							public void notifyChanged(
 									org.eclipse.emf.common.notify.Notification notification) {
-								editor.updateVisibility(true, true);
+								boolean visibleBefore = editor.isVisible();
+								editor.updateVisibility(true);
+
+								// Set default value, if we are hiding the editor and it was not hidden before.
+								if (!editor.isVisible() && visibleBefore) {
+									editor.setDefaultValue();
+								}
 							}
 						});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
