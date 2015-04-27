@@ -89,33 +89,9 @@ public abstract class ETypedElementEditor
 			addPropertyEditor(
 					createEditorEAnnotations_DocumentationTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("tab.ocl".equals(tab)) { // Tab OCL
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("tab.filter".equals(tab)) { // Tab Filter
-
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Cardinality",
-					"Cardinality", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
