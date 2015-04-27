@@ -2,13 +2,13 @@
 <!--muml metamodel version 0.3.2 (r2996)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_w_ysIB4KEeSKP_lLzmbIVg">
   <categories xmi:id="_w_ysIR4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIh4KEeSKP_lLzmbIVg" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIh4KEeSKP_lLzmbIVg" name="void"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_ysIx4KEeSKP_lLzmbIVg" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_zTMB4KEeSKP_lLzmbIVg" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6QB4KEeSKP_lLzmbIVg" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6QR4KEeSKP_lLzmbIVg" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6Qh4KEeSKP_lLzmbIVg" name="LONG" primitiveType="LONG"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6Qx4KEeSKP_lLzmbIVg" name="DOUBLE" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_zTMB4KEeSKP_lLzmbIVg" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6QB4KEeSKP_lLzmbIVg" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6QR4KEeSKP_lLzmbIVg" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6Qh4KEeSKP_lLzmbIVg" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_w_z6Qx4KEeSKP_lLzmbIVg" name="double" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_w_z6RB4KEeSKP_lLzmbIVg" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
     <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_u0GlwB4MEeSKP_lLzmbIVg" name="root-cic">
