@@ -26,7 +26,12 @@
 			targetElement = ((org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
 		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
-			doCanonicalRefresh();
+			org.eclipse.swt.widgets.Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 
 		super.handleNotificationEvent(notification);

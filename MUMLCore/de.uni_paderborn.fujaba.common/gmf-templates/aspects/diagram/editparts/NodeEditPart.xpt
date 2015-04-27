@@ -17,7 +17,12 @@
 		boolean update = false;
 		«EXPAND doSome FOREACH genOutgoingLinks»
 		if (update) {
-			doCanonicalRefresh();
+			org.eclipse.swt.widgets.Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 		super.handleNotificationEvent(event);	
 	}
