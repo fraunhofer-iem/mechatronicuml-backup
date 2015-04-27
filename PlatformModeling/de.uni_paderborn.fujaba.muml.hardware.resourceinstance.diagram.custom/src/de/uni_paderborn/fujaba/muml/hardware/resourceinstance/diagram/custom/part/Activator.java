@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.part;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +16,8 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 
 /**
@@ -50,14 +53,16 @@ public class Activator extends AbstractUIPlugin {
 		this.getTransformationExecutor(Activator.CREATEINSTANCE_TRANSFORMATION);
 	}
 
-	public TransformationExecutor getTransformationExecutor(String transformationPath) {
+	public TransformationExecutor getTransformationExecutor(
+			String transformationPath) {
 		return getTransformationExecutor(transformationPath, false);
 	}
 
-	
-	public TransformationExecutor getTransformationExecutor(String transformationPath, boolean reload) {
-		TransformationExecutor transformationExecutor = transformationExecutors.get(transformationPath);
-		
+	public TransformationExecutor getTransformationExecutor(
+			String transformationPath, boolean reload) {
+		TransformationExecutor transformationExecutor = transformationExecutors
+				.get(transformationPath);
+
 		if (reload) {
 			transformationExecutor = null;
 		}
@@ -69,27 +74,57 @@ public class Activator extends AbstractUIPlugin {
 			transformationExecutor = new TransformationExecutor(
 					transformationURI);
 			transformationExecutor.loadTransformation();
-			
-			transformationExecutors.put(transformationPath, transformationExecutor);
+
+			transformationExecutors.put(transformationPath,
+					transformationExecutor);
 		}
 		return transformationExecutor;
 	}
-	
-	public static void createInstance(EditingDomain editingDomain, ResourceInstance resourceInstance) {
-		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { resourceInstance }));
-		
-		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
+
+	public static void createInstance(EditingDomain editingDomain,
+			ResourceInstance resourceInstance) {
+		ModelExtent inputExtent = new BasicModelExtent(
+				Arrays.asList(new EObject[] { resourceInstance }));
+
+		List<ModelExtent> modelExtents = Arrays
+				.asList(new ModelExtent[] { inputExtent });
 
 		TransformationExecutor transformationExecutor = Activator.getDefault()
-						.getTransformationExecutor(Activator.CREATEINSTANCE_TRANSFORMATION, false);		
+				.getTransformationExecutor(
+						Activator.CREATEINSTANCE_TRANSFORMATION, false);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor,
-				modelExtents);
-		if(command.canExecute()){
+				transformationExecutor, modelExtents);
+		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
 		}
+
+		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
+			editingDomain.getCommandStack().undo();
+		}
+	}
+
+	public static void createInstance(EditingDomain editingDomain,
+			List<Resource> resources, RootNode rootNode) {
+		List<EObject> inputElements = new ArrayList<EObject>();
+		inputElements.addAll(resources);
+		inputElements.add(rootNode);
 		
+		ModelExtent inputExtent = new BasicModelExtent(inputElements);
+		
+		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] {
+				inputExtent});
+
+		TransformationExecutor transformationExecutor = Activator.getDefault()
+				.getTransformationExecutor(
+						Activator.CREATEINSTANCE_TRANSFORMATION, false);
+
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				transformationExecutor, modelExtents);
+		if (command.canExecute()) {
+			editingDomain.getCommandStack().execute(command);
+		}
+
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
@@ -116,5 +151,4 @@ public class Activator extends AbstractUIPlugin {
 		return plugin;
 	}
 
-	
 }

@@ -1,5 +1,6 @@
-transformation ResourceInstanceRepositoryTransformation(inout input: ResourceInstancePackage);
+transformation ResourceInstanceRepositoryTransformation(inout input : ModelInstancePackage);
 
+modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
@@ -36,6 +37,18 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 //		instances +=rip.resourceTypeRepository.resourceTypes[Device]->map mapDevice2DeviceInstance();
 //		rip.resourceInstances:=instances; 
 //	}; 
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+
+
+	//process ResourceType
+	var resourceInstances:Bag(ResourceInstance) := input.rootObjects()[Resource]->map mapResourceType();
+	if(resourceInstances->notEmpty()) then{
+		var modelElementCategory : ModelElementCategory := theRootNode.categories->select(cat | cat.key = "de.uni_paderborn.fujaba.muml.hardware.resource.category")->any(true);
+		var repository : ResourceInstanceRepository := new ResourceInstanceRepository();
+		repository.resourceInstances:=resourceInstances;
+		modelElementCategory.modelElements+=repository;
+		
+	}endif;
 	
 	// process StructuredResourceInstance
 	input.rootObjects()[StructuredResourceInstance]->forEach(sri){
@@ -69,6 +82,8 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 		
 }
 
+
+mapping Resource::mapResourceType() : ResourceInstance   disjuncts Device::mapDevice2DeviceInstance, StructuredResource::mapStructuredResource2StructuredResourceInstance, AtomicResource::mapAtomicResource2AtomicResourceInstance {}
 
 
 
