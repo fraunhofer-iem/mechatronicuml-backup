@@ -117,12 +117,12 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 
 «DEFINE createElement(Class originalClass, PropertyTab tab) FOR PropertyCategory»
 	«IF originalClass.getHighestContainer(this) == clazz»
+		«IF !properties.select(p | p != null && p.tab == tab || tab == null).isEmpty»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
-		«FOREACH properties AS property»
+		«ENDIF»
+		«FOREACH properties.select(p | p != null && p.tab == tab || tab == null) AS property»
 			«LET findHighestProperty(originalClass, property) AS highestProperty»
-			«IF property != null && property.tab == tab || tab == null»«REM»should never be null«ENDREM»
 			addEditorToCategory("«genCategoryKey()»", «highestProperty.genCreator()»(), false);
-			«ENDIF»
 			«ENDLET»
 		«ENDFOREACH»
 	«ENDIF»
