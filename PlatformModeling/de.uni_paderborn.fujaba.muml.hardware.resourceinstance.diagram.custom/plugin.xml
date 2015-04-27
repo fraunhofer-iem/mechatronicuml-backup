@@ -19,5 +19,45 @@
          </Priority>
       </ParserProvider>
    </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <separator
+               name="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.instantiateResource"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.instantiateResource"
+               label="Instantiate Resource"
+               style="push">
+            <visibleWhen>
+               <or>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource">
+                        </adapt>
+                     </iterate>
+                  </with></or>
+            </visibleWhen>
+         </command>
+         </menuContribution>
+         </extension>
+           <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.handlers.InstantiateResourceTypeHandler"
+            description="InstanticateResource"
+            id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.instantiateResource"
+            name="Instantiate Resource">
+      </command>
+      </extension>
 
 </plugin>
