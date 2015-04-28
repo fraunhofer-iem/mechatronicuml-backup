@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" defaultTab="_Rl8bMc1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler xmi:id="_Rl70Ic1gEeSIgPDefa6ZBw">
+    <customTransformations xmi:id="_Rl70Is1gEeSIgPDefa6ZBw" uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="psm.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.propsheet#_VZEMMMwbEeSjx7OWZCcdLw"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.propsheet#_RlRs0M1gEeSIgPDefa6ZBw"/>
+  <plugin xmi:id="_Rl8bMM1gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.psm.edit.properties" name="PSM Properties" vendor="Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT " version="0.5.0.qualifier">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.hardware</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.hardware.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.hardware.edit.properties</requiredBundles>
+    <requiredBundles>org.storydriven.core</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
+    <requiredBundles>org.eclipse.core.resources</requiredBundles>
+    <requiredBundles>org.eclipse.jface</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.psm</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.psm.edit</requiredBundles>
+  </plugin>
+  <tabs xmi:id="_Rl8bMc1gEeSIgPDefa6ZBw" id="property.tab.psm" name="PSM" afterTab=""/>
+  <packages>
+    <genPackage href="psm.genmodel#//psm/properties"/>
+    <classes>
+      <genClass href="psm.genmodel#//psm/properties/WCET"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="psm.genmodel#//psm/properties/WCET/wcet"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" initializeOCLExpression="">
+        <genFeature href="psm.genmodel#//psm/properties/WCET/resourceInstance"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="psm.genmodel#//psm/properties/RequiredMemory"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/RequiredMemory/requiredMemory"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/RequiredMemory/resourceInstance"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <creationOppositeConstraint>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="psm.genmodel#//psm/properties/Scheduling"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/Scheduling/deadline"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/properties/Scheduling/period"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw" reconcile="false" initializeOCLExpression="">
+        <genFeature href="psm.genmodel#//psm/properties/Scheduling/priority"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rl9CQs1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
+        <creationOppositeConstraint xmi:id="_Rl9CQ81gEeSIgPDefa6ZBw">
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(muml::instance::ComponentInstance)"/>
+        </creationOppositeConstraint>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="psm.genmodel#//psm/allocation"/>
+    <classes>
+      <genClass href="psm.genmodel#//psm/allocation/SystemAllocation"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/allocation/SystemAllocation/cic"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/allocation/SystemAllocation/hpic"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+    <classes>
+      <genClass href="psm.genmodel#//psm/allocation/Allocation"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/allocation/Allocation/componentInstance"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" tab="_Rl8bMc1gEeSIgPDefa6ZBw">
+        <genFeature href="psm.genmodel#//psm/allocation/Allocation/resourceInstance"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
