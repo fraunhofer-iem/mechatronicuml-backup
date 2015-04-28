@@ -21,7 +21,29 @@ brakeByWireAllocationSpecification {
 		;
 	}
 	
+	constraint requiredHardwareResourceInstance calliperToBrakeECU {
+		descriptors (first, second);
+		ocl
+			-- C1 = Calliper
+			self.allocateEmbeddedToPlatformInstance('C1', 'Brake.0')
+		;
+	}
+	
+	constraint sameLocation colocateBrakePedalComponents {
+		descriptors (first, second);
+		ocl
+			-- C2 = BrakePedal
+			self.colocateSCIAndEmbeddedParts('C2')
+		;
+	}
+	
 	context oclcontext::OCLContext
+		-- TODO: move into OCLContext.ocl operations file
+		def: colocateSCIAndEmbeddedParts(componentName : String) : Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance)) =
+			let ci : instance::ComponentInstance = self.getSWInstance(componentName)
+			in
+			ci->asSet()->product(ci.getAllEmbeddedInstances()->reject(c | c = ci))
+			
 		def: allowedECUNames(componentName : String) : Set(String) =
 			-- calliper component instances
 			if componentName = 'sc1' then
