@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Psm Module Runtime Plug-in
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.codegen.c.psm;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.codegen.psm.Activator
+Bundle-Activator: de.uni_paderborn.fujaba.muml.codegen.c.psm.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml,
@@ -34,9 +34,9 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: de.uni_paderborn.fujaba.muml.codegen.c.psm.helper,
- de.uni_paderborn.fujaba.muml.codegen.psm,
- de.uni_paderborn.fujaba.muml.codegen.psm.main
+Export-Package: de.uni_paderborn.fujaba.muml.codegen.c.psm,
+ de.uni_paderborn.fujaba.muml.codegen.c.psm.helper,
+ de.uni_paderborn.fujaba.muml.codegen.c.psm.main
 Bundle-ClassPath: .,
  jgrapht-0.9.0/lib/jgraph-5.13.0.0.jar,
  jgrapht-0.9.0/lib/jgrapht-core-0.9.0.jar,
