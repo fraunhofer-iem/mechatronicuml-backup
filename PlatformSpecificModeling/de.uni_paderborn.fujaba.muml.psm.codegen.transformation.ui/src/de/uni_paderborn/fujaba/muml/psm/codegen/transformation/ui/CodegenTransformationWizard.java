@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui;
+package de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -36,9 +36,9 @@ import org.eclipse.xtext.util.CancelIndicator;
 import com.google.inject.Injector;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.mum.psm.codengen.transformation.ui.jobs.CodegenFlatHierarchyJob;
-import de.uni_paderborn.fujaba.mum.psm.codengen.transformation.ui.jobs.MumlPIM2MumlPSMJob;
-import de.uni_paderborn.fujaba.mum.psm.codengen.transformation.ui.jobs.MumlPSM2CodegenJob;
+import de.uni_paderborn.fujaba.mum.psm.codegen.transformation.ui.jobs.CodegenFlatHierarchyJob;
+import de.uni_paderborn.fujaba.mum.psm.codegen.transformation.ui.jobs.MumlPIM2MumlPSMJob;
+import de.uni_paderborn.fujaba.mum.psm.codegen.transformation.ui.jobs.MumlPSM2CodegenJob;
 import de.uni_paderborn.fujaba.muml.pm.common.xtext.FujabaResourceServiceProvider;
 import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 import de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator;

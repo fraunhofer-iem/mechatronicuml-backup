@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.handlers;
+package de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.handlers;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -12,7 +12,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.wizards.IWizardDescriptor;
 
-import de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.CodegenTransformationWizard;
+import de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodegenTransformationWizard;
 
 public class CreateCodeGenHandler extends AbstractHandler {
 	public static final String CODEGEN_WIZARD_ID = "de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodeGenWizard";
