@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PSM Properties
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.psm.edit.properties; singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ de.uni_paderborn.fujaba.muml.hardware,
+ de.uni_paderborn.fujaba.muml.hardware.edit,
+ de.uni_paderborn.fujaba.muml.hardware.edit.properties,
+ org.storydriven.core,
+ org.storydriven.core.edit,
+ org.storydriven.core.edit.properties,
+ de.uni_paderborn.fujaba.muml,
+ de.uni_paderborn.fujaba.muml.edit,
+ de.uni_paderborn.fujaba.muml.edit.properties,
+ de.uni_paderborn.fujaba.modelinstance,
+ de.uni_paderborn.fujaba.modelinstance.edit,
+ de.uni_paderborn.fujaba.modelinstance.edit.properties,
+ de.uni_paderborn.fujaba.muml.common,
+ org.eclipse.core.resources,
+ org.eclipse.jface,
+ de.uni_paderborn.fujaba.muml.psm,
+ de.uni_paderborn.fujaba.muml.psm.edit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml.psm.properties.metamodel, de.uni_paderborn.fujaba.muml.psm.properties.constraint,
+ de.uni_paderborn.fujaba.muml.psm.properties.properties.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.allocation.editor,
+ de.uni_paderborn.fujaba.muml.psm.properties.tabs
+Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT 
