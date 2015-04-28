@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.exportWizards">
       <wizard
-            class="de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.CodegenTransformationWizard"
+            class="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodegenTransformationWizard"
             id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CodeGenWizard"
             name="Create Code-Generation Model">
          <selection
@@ -16,7 +16,7 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui.handlers.CreateCodeGenHandler"
+            defaultHandler="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.handlers.CreateCodeGenHandler"
             id="de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui.CreateCodgenModelCommand"
             name="Create CodeGen Model">
       </command>

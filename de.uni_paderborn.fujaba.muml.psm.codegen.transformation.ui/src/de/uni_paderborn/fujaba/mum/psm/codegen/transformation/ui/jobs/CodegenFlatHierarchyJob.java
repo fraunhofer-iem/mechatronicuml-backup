@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.mum.psm.codengen.transformation.ui.jobs;
+package de.uni_paderborn.fujaba.mum.psm.codegen.transformation.ui.jobs;
 
 import java.io.IOException;
 import java.util.Collections;

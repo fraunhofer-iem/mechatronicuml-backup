@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.psm.codengen.transformation.ui;
+package de.uni_paderborn.fujaba.muml.psm.codegen.transformation.ui;
 
 import java.util.ArrayList;
 import java.util.Iterator;
