@@ -16,7 +16,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::middlewareQueries]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::files::PSMQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::files::PSMQueries]
 
 
 [**

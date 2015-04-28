@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package de.uni_paderborn.fujaba.muml.codegen.psm.main;
+package de.uni_paderborn.fujaba.muml.codegen.c.psm.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Main extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/de/uni_paderborn/fujaba/muml/codegen/psm/main/main";
+    public static final String MODULE_FILE_NAME = "/de/uni_paderborn/fujaba/muml/codegen/c/psm/main/main";
     
     /**
      * The name of the templates that are to be generated.

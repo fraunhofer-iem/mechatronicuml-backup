@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package de.uni_paderborn.fujaba.muml.codegen.psm;
+package de.uni_paderborn.fujaba.muml.codegen.c.psm;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

@@ -11,12 +11,12 @@
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
 
-[import de::uni_paderborn::fujaba::muml::codegen::psm::middleware::GlobalIdentifier]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::middleware::Core]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::middleware::InternalLogic]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::middleware::NetworkInterfaces]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::files::APICalls]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::files::Message]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::middleware::GlobalIdentifier]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::middleware::Core]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::middleware::InternalLogic]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::middleware::NetworkInterfaces]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::files::APICalls]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::files::Message]
 
 [import de::uni_paderborn::fujaba::muml::codegen::c::main::main]
 [import de::uni_paderborn::fujaba::muml::codegen::c::nxtOSEK::main::main]

@@ -12,11 +12,12 @@
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
 				'http://www.fujaba.de/muml/hardware/1.0/',
-				'http://www.fujaba.de/muml/psm/0.4.0/')]
+				'http://www.fujaba.de/muml/psm/0.4.0/',
+				'http://www.fujaba.de/muml/psm/codegen/0.4.0/')]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::modelQueries]
 [import de::uni_paderborn::fujaba::muml::codegen::c::queries::middlewareQueries]
-[import de::uni_paderborn::fujaba::muml::codegen::psm::files::PSMQueries]
+[import de::uni_paderborn::fujaba::muml::codegen::c::psm::files::PSMQueries]
 [**
  * In this template all sub-templates are called, which are use to generate the middleware files.
  * Please use additional module-files to organize all templates.
@@ -40,7 +41,7 @@
 #include "stdlib.h"
 #include "MiddlewareInternalLogic.h"
 #include "../lib/MiddlewareTypes.h"
-#include "../GlobalIdentifier.h"
+#include "GlobalIdentifier.h"
 #include "../lib/NetworkMessageBuffer.h"
 #include "../lib/NetworkInterface.h"
 #include "../messages/messages_types.h" 
