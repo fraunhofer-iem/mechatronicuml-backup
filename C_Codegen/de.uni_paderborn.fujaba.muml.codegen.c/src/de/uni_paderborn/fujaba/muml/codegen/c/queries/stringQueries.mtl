@@ -705,10 +705,11 @@ endif
 	if (type.name = 'BOOLEAN' or type.name = 'boolean') then 'bool' else 
 	if (type.name = 'BYTE' or type.name = 'byte') then 'bool' else
 	if (type.name = 'DOUBLE' or type.name = 'double') then 'double' else
-	if (type.name = 'INT') then 'int' else
-	if (type.name = 'int8') then 'int' else
-	if (type.name = 'int16') then 'int' else
-	if (type.name = 'int32') then 'int' else
+	if (type.name = 'INT') then 'int32' else
+	if (type.name = 'int8') then 'int8' else
+	if (type.name = 'int16') then 'int16' else
+	if (type.name = 'int32') then 'int32' else
+	if (type.name = 'int64') then 'int64' else
 	if (type.name = 'LONG' or type.name = 'long') then 'int64' else
 	if (type.name = 'SHORT' or type.name = 'short') then 'int32' else
 	if (type.name = 'VOID' or type.name = 'void') then 'void' else
@@ -722,6 +723,7 @@ endif
 	endif
 	endif
 	endif
+endif
 	endif
 /]
 

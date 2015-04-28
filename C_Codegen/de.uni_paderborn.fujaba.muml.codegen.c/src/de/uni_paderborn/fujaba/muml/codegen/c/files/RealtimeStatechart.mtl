@@ -11,6 +11,7 @@
 				'http://www.fujaba.de/muml/component/0.4.0',
 				'http://www.fujaba.de/muml/instance/0.4.0',
 				'http://www.fujaba.de/muml/realtimestatechart/0.4.0',
+				'http://www.fujaba.de/muml/psm/codegen/0.4.0/',
 				'http://www.fujaba.de/muml/hardware/1.0/',
 				'http://www.fujaba.de/muml/swplatform/0.4.0/',
 				'http://www.fujaba.de/muml/psm/0.4.0/')]
@@ -86,7 +87,7 @@
 [template public includes(rtsc : RealtimeStatechart, component : Component) post(cdtbeautifier())]
 	#include <stdio.h>
 	#include <stdlib.h>
-	#include "../GlobalIdentifier.h"
+	#include "../Middleware/GlobalIdentifier.h"
 	#include "[getClassName(rtsc).toLowerFirst()/].h"
 
 [/template]

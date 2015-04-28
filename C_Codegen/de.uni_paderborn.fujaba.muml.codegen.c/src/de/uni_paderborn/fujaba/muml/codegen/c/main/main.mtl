@@ -91,7 +91,7 @@
  * @param modelElementCategory
  */]
 [template public generateTypeFiles(CIs : OrderedSet(ComponentInstance), path : String)]
-[for (component : Component | CIs.componentType) ? (component.oclIsKindOf(AtomicComponent))]
+[for (component : Component | CIs.componentType->asOrderedSet()) ? (component.oclIsKindOf(AtomicComponent))]
 [if ((component.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (component.componentKind = ComponentKind::HYBRID_COMPONENT))]
 [generate_ComponentHeader(component, path)/]
 [generate_ComponentClass(component, path)/]
@@ -107,7 +107,7 @@
  */]
 [template public generateRTSCFiles(CIs : OrderedSet(ComponentInstance), path: String) ]
 
-	[for (comp : Component | CIs.componentType) ? (oclIsKindOf(AtomicComponent))]
+	[for (comp : Component | CIs.componentType->asOrderedSet()) ? (oclIsKindOf(AtomicComponent))]
 	[if ((comp.componentKind = ComponentKind::SOFTWARE_COMPONENT) or (comp.componentKind = ComponentKind::HYBRID_COMPONENT))]
 	[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
 		[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
