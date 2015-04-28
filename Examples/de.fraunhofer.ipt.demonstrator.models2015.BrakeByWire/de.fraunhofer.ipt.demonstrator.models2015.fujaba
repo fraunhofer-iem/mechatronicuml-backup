@@ -912,10 +912,9 @@
       <hwplatformInstances xmi:id="_gwQJQOmbEeSsPdK-DtuwOA" name="Car.0" hwplatformType="_adXoMOmWEeSsPdK-DtuwOA">
         <embeddedHPIC xmi:id="_gwQJQembEeSsPdK-DtuwOA">
           <hwplatformInstances xmi:id="_Qxa1YOmYEeSsPdK-DtuwOA" name="Brake.0" hwplatformType="_FTX-YOmQEeSsPdK-DtuwOA">
-            <delegationPorts xmi:id="_Qxa1YemYEeSsPdK-DtuwOA" name="brakeD2.0" connectorInstances="_Qxa1ZemYEeSsPdK-DtuwOA _gwQwgumbEeSsPdK-DtuwOA" type="_DJRhgOmUEeSsPdK-DtuwOA"/>
+            <delegationPorts xmi:id="_Qxa1YemYEeSsPdK-DtuwOA" name="brakeD2.0" connectorInstances="_gwQwgumbEeSsPdK-DtuwOA _EiVEYO2gEeSpisK4sBe-bA" type="_DJRhgOmUEeSsPdK-DtuwOA"/>
             <embeddedHPIC xmi:id="_Qxa1YumYEeSsPdK-DtuwOA">
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_Qxa1Y-mYEeSsPdK-DtuwOA" communicationMediaPart="_KO1y0OmQEeSsPdK-DtuwOA" name="bus2" comment="&quot;no comment provided&quot;.0" connectorInstances="_Qxa1Z-mYEeSsPdK-DtuwOA _Qxa1aumYEeSsPdK-DtuwOA _Qxa1a-mYEeSsPdK-DtuwOA _Qxa1aOmYEeSsPdK-DtuwOA _Qxa1aemYEeSsPdK-DtuwOA _Qxa1ZumYEeSsPdK-DtuwOA _1FbaAOmYEeSsPdK-DtuwOA _41FioOmYEeSsPdK-DtuwOA" type="_KO1y0OmQEeSsPdK-DtuwOA"/>
-              <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_Qxa1ZemYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_FDvDEOmUEeSsPdK-DtuwOA" connectorEndpointInstances="_Qxa1YemYEeSsPdK-DtuwOA _QxbcdOmYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1ZumYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_Fwe0UOmUEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbcdOmYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1Z-mYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_g8_o8OmUEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbcjumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1aOmYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_hjY6kOmUEeSsPdK-DtuwOA" connectorEndpointInstances="_Qxa1b-mYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
@@ -924,6 +923,7 @@
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1a-mYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_suYMUOmUEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbccumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_1FbaAOmYEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbcfumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_41FioOmYEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbchumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
+              <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EiVEYO2gEeSpisK4sBe-bA" connectorEndpointInstances="_5EM0MO2fEeSpisK4sBe-bA _Qxa1YemYEeSsPdK-DtuwOA"/>
               <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_Qxa1bOmYEeSsPdK-DtuwOA" name="R5.0.1" resourceType="_8KmVoOmHEeSsPdK-DtuwOA">
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1bemYEeSsPdK-DtuwOA" name="hw-port" connectorInstances="_Qxa1aemYEeSsPdK-DtuwOA" type="_dTEU4OmUEeSsPdK-DtuwOA"/>
               </resources>
@@ -946,7 +946,8 @@
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbccumYEeSsPdK-DtuwOA" name="hw-port" connectorInstances="_Qxa1a-mYEeSsPdK-DtuwOA" type="_rLBjMOmUEeSsPdK-DtuwOA"/>
               </resources>
               <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_Qxbcc-mYEeSsPdK-DtuwOA" name="hw4.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbcdOmYEeSsPdK-DtuwOA" name="canPort" connectorInstances="_Qxa1ZemYEeSsPdK-DtuwOA _Qxa1ZumYEeSsPdK-DtuwOA" type="_yVuEwOmTEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbcdOmYEeSsPdK-DtuwOA" name="canPort" connectorInstances="_Qxa1ZumYEeSsPdK-DtuwOA" type="_yVuEwOmTEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_5EM0MO2fEeSpisK4sBe-bA" name="canPort2" connectorInstances="_EiVEYO2gEeSpisK4sBe-bA" type="_yVuEwOmTEeSsPdK-DtuwOA"/>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_QxbcdemYEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
                   <memorySize xmi:id="_QxbcdumYEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
@@ -992,20 +993,19 @@
           <hwplatformInstances xmi:id="_-pIIYOmZEeSsPdK-DtuwOA" name="HumanInterface.0" hwplatformType="_JAZ-4OmSEeSsPdK-DtuwOA">
             <delegationPorts xmi:id="_-pIIYemZEeSsPdK-DtuwOA" name="hmiD1.0" connectorInstances="_jfz8QOmaEeSsPdK-DtuwOA _gwQwg-mbEeSsPdK-DtuwOA" type="_Tch_gOmSEeSsPdK-DtuwOA"/>
             <embeddedHPIC xmi:id="_-pIIYumZEeSsPdK-DtuwOA">
-              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_-pIIY-mZEeSsPdK-DtuwOA" communicationMediaPart="_Qk_xsOmSEeSsPdK-DtuwOA" name="bus3" comment="&quot;no comment provided&quot;.0" connectorInstances="_-pIIaemZEeSsPdK-DtuwOA _-pIIZ-mZEeSsPdK-DtuwOA _-pIIZumZEeSsPdK-DtuwOA _-pIIaOmZEeSsPdK-DtuwOA _Ntm0MOmaEeSsPdK-DtuwOA _OVabEOmaEeSsPdK-DtuwOA _lXz_sOmaEeSsPdK-DtuwOA" type="_Qk_xsOmSEeSsPdK-DtuwOA"/>
+              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_-pIIY-mZEeSsPdK-DtuwOA" communicationMediaPart="_Qk_xsOmSEeSsPdK-DtuwOA" name="bus3" comment="&quot;no comment provided&quot;.0" connectorInstances="_-pIIaemZEeSsPdK-DtuwOA _-pIIZ-mZEeSsPdK-DtuwOA _-pIIZumZEeSsPdK-DtuwOA _-pIIaOmZEeSsPdK-DtuwOA _Ntm0MOmaEeSsPdK-DtuwOA _lXz_sOmaEeSsPdK-DtuwOA" type="_Qk_xsOmSEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_-pIIZumZEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_bx_ZIOmTEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIIdemZEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_-pIIZ-mZEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_c0Vm8OmTEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIId-mZEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_-pIIaOmZEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_dUr68OmTEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIIa-mZEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_-pIIaemZEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_eEHMwOmTEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIIeemZEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Ntm0MOmaEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIvcemZEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
-              <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_OVabEOmaEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIIbemZEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_jfz8QOmaEeSsPdK-DtuwOA" connectorEndpointInstances="_-pIIbemZEeSsPdK-DtuwOA _-pIIYemZEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_lXz_sOmaEeSsPdK-DtuwOA" connectorEndpointInstances="_fZp_MOmaEeSsPdK-DtuwOA _-pIIY-mZEeSsPdK-DtuwOA"/>
               <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-pIIaumZEeSsPdK-DtuwOA" name="9.0.1" resourceType="_BX0BYOmIEeSsPdK-DtuwOA">
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIa-mZEeSsPdK-DtuwOA" name="hw-port" connectorInstances="_-pIIaOmZEeSsPdK-DtuwOA" type="_Z2t_QOmTEeSsPdK-DtuwOA"/>
               </resources>
               <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-pIIbOmZEeSsPdK-DtuwOA" name="hw.0.8" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIbemZEeSsPdK-DtuwOA" name="canPort" connectorInstances="_OVabEOmaEeSsPdK-DtuwOA _jfz8QOmaEeSsPdK-DtuwOA" type="_MdH9YOmSEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIbemZEeSsPdK-DtuwOA" name="canPort" connectorInstances="_jfz8QOmaEeSsPdK-DtuwOA" type="_MdH9YOmSEeSsPdK-DtuwOA"/>
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fZp_MOmaEeSsPdK-DtuwOA" name="canPort2" connectorInstances="_lXz_sOmaEeSsPdK-DtuwOA" type="_MdH9YOmSEeSsPdK-DtuwOA"/>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-pIIbumZEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
                   <memorySize xmi:id="_-pIIb-mZEeSsPdK-DtuwOA"/>
@@ -1041,15 +1041,15 @@
             </embeddedHPIC>
           </hwplatformInstances>
           <hwplatformInstances xmi:id="_uBNl0OmXEeSsPdK-DtuwOA" name="Assistance.0" hwplatformType="_7j6W0OmMEeSsPdK-DtuwOA">
-            <delegationPorts xmi:id="_uBNl0emXEeSsPdK-DtuwOA" name="assistanceD1.0" connectorInstances="_uBNl1OmXEeSsPdK-DtuwOA _gwQwgembEeSsPdK-DtuwOA" type="_CAcVYOmNEeSsPdK-DtuwOA"/>
-            <delegationPorts xmi:id="_uBNl0umXEeSsPdK-DtuwOA" name="assitanceD2.0" connectorInstances="_uBNl1-mXEeSsPdK-DtuwOA _gwQwgOmbEeSsPdK-DtuwOA" type="_LouvMOmWEeSsPdK-DtuwOA"/>
+            <delegationPorts xmi:id="_uBNl0emXEeSsPdK-DtuwOA" name="assistanceD1.0" connectorInstances="_gwQwgembEeSsPdK-DtuwOA _1znXwO2gEeSpisK4sBe-bA" type="_CAcVYOmNEeSsPdK-DtuwOA"/>
+            <delegationPorts xmi:id="_uBNl0umXEeSsPdK-DtuwOA" name="assitanceD2.0" connectorInstances="_gwQwgOmbEeSsPdK-DtuwOA _9K6K4O2fEeSpisK4sBe-bA" type="_LouvMOmWEeSsPdK-DtuwOA"/>
             <embeddedHPIC xmi:id="_uBNl0-mXEeSsPdK-DtuwOA">
-              <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_uBNl1OmXEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_JA_nAOmNEeSsPdK-DtuwOA" connectorEndpointInstances="_uBNl0emXEeSsPdK-DtuwOA _uBNl4-mXEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_uBNl1emXEeSsPdK-DtuwOA" communicationMediaPart="_Spkq0OmNEeSsPdK-DtuwOA" name="bus1" comment="&quot;no comment provided&quot;.0" connectorInstances="_uBNl1umXEeSsPdK-DtuwOA _uBNl2OmXEeSsPdK-DtuwOA _uBNl2emXEeSsPdK-DtuwOA" type="_Spkq0OmNEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_uBNl1umXEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_CxGrYOmPEeSsPdK-DtuwOA" connectorEndpointInstances="_uBNl4-mXEeSsPdK-DtuwOA _uBNl1emXEeSsPdK-DtuwOA"/>
-              <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_uBNl1-mXEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_OrHiIOmWEeSsPdK-DtuwOA" connectorEndpointInstances="_uBNl0umXEeSsPdK-DtuwOA _uBNl6-mXEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_uBNl2OmXEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_Q96rMOmWEeSsPdK-DtuwOA" connectorEndpointInstances="_uBNl6-mXEeSsPdK-DtuwOA _uBNl1emXEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_uBNl2emXEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_T1QrwOmWEeSsPdK-DtuwOA" connectorEndpointInstances="_uBNl2-mXEeSsPdK-DtuwOA _uBNl1emXEeSsPdK-DtuwOA"/>
+              <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_9K6K4O2fEeSpisK4sBe-bA" connectorEndpointInstances="_kbPzMO2fEeSpisK4sBe-bA _uBNl0umXEeSsPdK-DtuwOA"/>
+              <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_1znXwO2gEeSpisK4sBe-bA" connectorEndpointInstances="_nuzOoO2fEeSpisK4sBe-bA _uBNl0emXEeSsPdK-DtuwOA"/>
               <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_uBNl2umXEeSsPdK-DtuwOA" name="hw1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl2-mXEeSsPdK-DtuwOA" name="canPort" connectorInstances="_uBNl2emXEeSsPdK-DtuwOA" type="_SyIa0OmWEeSsPdK-DtuwOA"/>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_uBNl3OmXEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
@@ -1063,7 +1063,8 @@
                 </embeddedAtomicResourceInstances>
               </resources>
               <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_uBNl4umXEeSsPdK-DtuwOA" name="hw3.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl4-mXEeSsPdK-DtuwOA" name="canPort" connectorInstances="_uBNl1OmXEeSsPdK-DtuwOA _uBNl1umXEeSsPdK-DtuwOA" type="__hyhoOmMEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl4-mXEeSsPdK-DtuwOA" name="canPort" connectorInstances="_uBNl1umXEeSsPdK-DtuwOA" type="__hyhoOmMEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_nuzOoO2fEeSpisK4sBe-bA" name="canPort2" connectorInstances="_1znXwO2gEeSpisK4sBe-bA" type="__hyhoOmMEeSsPdK-DtuwOA"/>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_uBNl5OmXEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
                   <memorySize xmi:id="_uBNl5emXEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
@@ -1075,7 +1076,8 @@
                 </embeddedAtomicResourceInstances>
               </resources>
               <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_uBNl6umXEeSsPdK-DtuwOA" name="hw2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl6-mXEeSsPdK-DtuwOA" name="canPort" connectorInstances="_uBNl1-mXEeSsPdK-DtuwOA _uBNl2OmXEeSsPdK-DtuwOA" type="_N7bKkOmWEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl6-mXEeSsPdK-DtuwOA" name="canPort" connectorInstances="_uBNl2OmXEeSsPdK-DtuwOA" type="_N7bKkOmWEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_kbPzMO2fEeSpisK4sBe-bA" name="canPort2" connectorInstances="_9K6K4O2fEeSpisK4sBe-bA" type="_N7bKkOmWEeSsPdK-DtuwOA"/>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_uBNl7OmXEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
                   <memorySize xmi:id="_uBNl7emXEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
