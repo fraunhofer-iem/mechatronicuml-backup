@@ -163,13 +163,38 @@ public class GraphVizReader
 			this.parseNode(nodeName);		
 	}
 	
+	protected String getCompleteLogicalLine(){
+		StringBuffer buffer = new StringBuffer();
+		
+		//get remaining information from the current line
+		while(this.scanner.hasNext()){
+			buffer.append(this.scanner.next());
+		}
+		
+		//continue extracting more lines until a line contains a ";" -> this finishes the logical line
+		while(true){
+			String line = this.scanner.nextLine();
+			buffer.append(line);
+			//check for ";"
+			if(line.contains(";")){
+				break;
+			}
+		}
+		
+		return buffer.toString();
+	}
+	
 
 	/**
 	 * Syntax: 
 	 * 	State [label=State, shape=box, pos="82.238,19.359", width="0.75", height="0.5"];
+	 * 
+	 * => in the latest version of GraphViz, these labels are scattered among several lines in the file
 	 */
 	protected void parseNode(String name) throws GraphVizReaderException
-	{	
+	{
+		String line = getCompleteLogicalLine();
+		
 		//We do not layout init states
 		if(name.endsWith(GraphVizWriter.INIT_STATE_NAME))
 		{
@@ -181,8 +206,6 @@ public class GraphVizReader
 		Element element = this.getElementByIdPath(name, this.currentChart);	
 		
 		Position pos = new Position(element);
-		
-		String line = this.scanner.nextLine();
 		
 		//Position
 		Matcher posMatcher = POSITION_PATTERN.matcher(line);	
@@ -219,6 +242,7 @@ public class GraphVizReader
 		this.setParameter(element, "position", pos.toString());
 		this.elementPositions.put(element, pos);
 
+		this.scanner.nextLine();//finish logical line
 	}
 	
 	/**
