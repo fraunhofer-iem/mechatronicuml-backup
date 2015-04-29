@@ -1,5 +1,8 @@
 brakeByWireAllocationSpecification {
 	
+	import 'http://www.fujaba.de/muml/psm/properties/0.4.0/'
+	import 'http://www.fujaba.de/muml/hardware/hwresource/1.0/'
+	
 	include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
 	
 	constraint requiredHardwareResourceInstance allowedECUs {
@@ -21,29 +24,42 @@ brakeByWireAllocationSpecification {
 		;
 	}
 	
-	constraint requiredHardwareResourceInstance calliperToBrakeECU {
-		descriptors (first, second);
-		ocl
-			-- C1 = Calliper
-			self.allocateEmbeddedToPlatformInstance('C1', 'Brake.0')
-		;
-	}
+	--constraint requiredHardwareResourceInstance calliperToBrakeECU {
+	--	descriptors (first, second);
+	--	ocl
+	--		-- C1 = Calliper
+	--		self.allocateEmbeddedToPlatformInstance('C1', 'Brake.0')
+	--	;
+	--}
 	
 	constraint sameLocation colocateBrakePedalComponents {
 		descriptors (first, second);
 		ocl
 			-- C2 = BrakePedal
-			self.colocateSCIAndEmbeddedParts('C2')
+			--self.colocateSCIAndEmbeddedParts('C2')
+			-- C3 = wheel (sc7, sc8)
+			self.colocateSCIAndEmbeddedParts('C3')->union(
+				Set{
+					Tuple{
+						first = self.getSWInstance('sc11'),
+						second = self.getSWInstance('sc12')
+					}
+				}
+			)
 		;
 	}
 	
-	context oclcontext::OCLContext
-		-- TODO: move into OCLContext.ocl operations file
-		def: colocateSCIAndEmbeddedParts(componentName : String) : Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance)) =
-			let ci : instance::ComponentInstance = self.getSWInstance(componentName)
-			in
-			ci->asSet()->product(ci.getAllEmbeddedInstances()->reject(c | c = ci))
-			
+	--constraint resource maxMemoryConsumption {
+	--	lhs requiredMemory;
+	---	rhs maxMemory;
+	--	descriptors (componentInstance, resourceInstance);
+	--	ocl
+	--		self.maxMemoryConsumption()
+			--1 / 2
+	--	;
+	--}
+	
+	context oclcontext::OCLContext		
 		def: allowedECUNames(componentName : String) : Set(String) =
 			-- calliper component instances
 			if componentName = 'sc1' then
@@ -94,6 +110,54 @@ brakeByWireAllocationSpecification {
 			else
 				ecuNames
 			endif
+
+		-- TODO: move below <<HERE>> into the OCLContext.ocl operations file
+		def: colocateSCIAndEmbeddedParts(componentName : String) : Set(Tuple(first : instance::ComponentInstance, second : instance::ComponentInstance)) =
+			let ci : instance::ComponentInstance = self.getSWInstance(componentName)
+			in
+			ci->asSet()->product(ci.getAllEmbeddedInstances()->reject(c | c = ci))
+			
+		def: getSWInstancesWithRequiredMemory() : Set(instance::ComponentInstance) =
+			self.getAllSWInstances()->select(ci |
+				ci.getMemoryExtensions()->notEmpty()
+			)
+			
+		def: getHWInstancesWithMaxMemory() : Set(hwresourceinstance::StructuredResourceInstance) =
+			self.getAllHWInstances()->select(
+				oclIsKindOf(hwresourceinstance::StructuredResourceInstance)
+			)->collect(
+				oclAsType(hwresourceinstance::StructuredResourceInstance)
+			)->select(
+				getMemoryResourceInstances()->notEmpty()
+			)
+			
+		def: maxMemoryConsumption() : Set(
+			Tuple(
+				requiredMemory : Set(
+						Tuple(
+							componentInstance : instance::ComponentInstance,
+							resourceInstance : hwresourceinstance::ResourceInstance,
+							requiredMemory : Real							
+						)
+				),
+				maxMemory : Real
+			)
+		)
+			=
+			let swInstances : Set(instance::ComponentInstance) = self.getSWInstancesWithRequiredMemory()
+			in
+			self.getHWInstancesWithMaxMemory()->collect(ecu |
+				Tuple{
+					maxMemory = ecu.getMemoryResourceInstances()->any(true).memorySize._'value',
+					requiredMemory = swInstances->product(ecu->asSet())->collect(t |
+						Tuple {
+							componentInstance = t.first,
+							resourceInstance = t.second,
+							requiredMemory = t.first.getMemoryExtensions()->any(true).requiredMemory._'value'
+						}
+					)->asSet()
+				}
+			)->asSet()
 			
 		-- just for testing	
 		def: getAllowedECUs(componentName : String, allIfNoRestriction : Boolean) : Set(hwresourceinstance::ResourceInstance) =
@@ -106,10 +170,30 @@ brakeByWireAllocationSpecification {
 			endif
 			->collect(ecu | ecu.resolveToStructuredResourceInstances())->asSet()
 	
+		context instance::ComponentInstance
+		def: getMemoryExtensions() : Set(properties::RequiredMemory) =
+			self.extension->select(oclIsKindOf(properties::RequiredMemory))->asSet()
+			
+	context hwresourceinstance::StructuredResourceInstance
+		def: getMemoryResourceInstances() : Set(hwresourceinstance::MemoryResourceInstance) =
+			self.embeddedAtomicResourceInstances->select(
+				oclIsKindOf(hwresourceinstance::MemoryResourceInstance)
+			)->collect(
+				oclAsType(hwresourceinstance::MemoryResourceInstance)
+			)->select(
+				memoryType = hwresource::MemoryKind::RAM
+			)->asSet()
+	
 	-- playground		
 	--constraint sameLocation test {
 	--	descriptors (foo, bar);
 	--	ocl
+	--		self.maxMemoryConsumption()
+			--self.getSWInstancesWithRequiredMemory()->any(true).getMemoryExtensions()->any(true).requiredMemory._'value' +
+			--self.getHWInstancesWithMaxMemory()->size()
+			--self.getAllHWInstances()->size().toString()
+			--self.getSWInstancesWithRequiredMemory()->size()
+			--self.getAllSWInstances()->select(oclIsKindOf(instance::StructuredComponentInstance))->size()
 			--self.getECU('R1.0.1').getConnectedECUs()->select(oclIsKindOf(hwresourceinstance::StructuredResourceInstance))->asSet()
 			--self.getAllSWInstances()->select(not name.oclIsUndefined())
 	--		self.componentInstanceConfiguration.getCommunicatingComponents()
