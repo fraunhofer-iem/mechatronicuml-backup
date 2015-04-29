@@ -9,26 +9,20 @@ brakeByWireAllocationSpecification {
 		descriptors (first, second);
 		ocl
 			self.getAllSWInstances()->collect(ci |
-				-- pass false in order to reduce the number of ilp constraints
-				self.allowedECUNames(ci.name, false)->collect(ecu |
+				-- do not pass false, otherwise we might allocate to a sensor
+				-- instead of a StructuredResourceInstance
+				self.allowedECUNames(ci.name, true)->collect(ecu |
 					self.allocateToECU(ci, ecu)
 				)
 			)->asSet()
 		;
 	}
 	
-	constraint requiredHardwareResourceInstance communicatingComponents {
-		descriptors (c1, e1), (c2, e2);
-		ocl
-			self.allocateCommunicatingComponentsToConnectedECUs()
-		;
-	}
-	
-	--constraint requiredHardwareResourceInstance calliperToBrakeECU {
-	--	descriptors (first, second);
+	--constraint requiredHardwareResourceInstance communicatingComponents {
+	--	descriptors (c1, e1), (c2, e2);
 	--	ocl
-	--		-- C1 = Calliper
-	--		self.allocateEmbeddedToPlatformInstance('C1', 'Brake.0')
+	--		--self.allocateCommunicatingComponentsToConnectedECUs()->collect(t | Tuple{c1 = t.c1, c2 = t.c2})->asSet()->sortedBy(t | t.c1.name + '_' + t.c2.name)
+	--		self.allocateCommunicatingComponentsToConnectedECUs()
 	--	;
 	--}
 	
@@ -49,15 +43,22 @@ brakeByWireAllocationSpecification {
 		;
 	}
 	
-	--constraint resource maxMemoryConsumption {
-	--	lhs requiredMemory;
-	---	rhs maxMemory;
-	--	descriptors (componentInstance, resourceInstance);
-	--	ocl
-	--		self.maxMemoryConsumption()
-			--1 / 2
-	--	;
-	--}
+	constraint resource maxMemoryConsumption {
+		lhs requiredMemory;
+		rhs maxMemory;
+		descriptors (componentInstance, resourceInstance);
+		ocl
+			self.maxMemoryConsumption()
+		;
+	}
+	
+	constraint requiredHardwareResourceInstance calliperToBrakeECU {
+		descriptors (first, second);
+		ocl
+			-- C1 = Calliper
+			self.allocateEmbeddedToPlatformInstance('C1', 'Brake.0')
+		;
+	}
 	
 	context oclcontext::OCLContext		
 		def: allowedECUNames(componentName : String) : Set(String) =
