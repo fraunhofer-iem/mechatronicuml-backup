@@ -914,7 +914,7 @@
           <hwplatformInstances xmi:id="_Qxa1YOmYEeSsPdK-DtuwOA" name="Brake.0" hwplatformType="_FTX-YOmQEeSsPdK-DtuwOA">
             <delegationPorts xmi:id="_Qxa1YemYEeSsPdK-DtuwOA" name="brakeD2.0" connectorInstances="_gwQwgumbEeSsPdK-DtuwOA _EiVEYO2gEeSpisK4sBe-bA" type="_DJRhgOmUEeSsPdK-DtuwOA"/>
             <embeddedHPIC xmi:id="_Qxa1YumYEeSsPdK-DtuwOA">
-              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_Qxa1Y-mYEeSsPdK-DtuwOA" communicationMediaPart="_KO1y0OmQEeSsPdK-DtuwOA" name="bus2" comment="&quot;no comment provided&quot;.0" connectorInstances="_Qxa1Z-mYEeSsPdK-DtuwOA _Qxa1aumYEeSsPdK-DtuwOA _Qxa1a-mYEeSsPdK-DtuwOA _Qxa1aOmYEeSsPdK-DtuwOA _Qxa1aemYEeSsPdK-DtuwOA _Qxa1ZumYEeSsPdK-DtuwOA _1FbaAOmYEeSsPdK-DtuwOA _41FioOmYEeSsPdK-DtuwOA" type="_KO1y0OmQEeSsPdK-DtuwOA"/>
+              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_Qxa1Y-mYEeSsPdK-DtuwOA" communicationMediaPart="_KO1y0OmQEeSsPdK-DtuwOA" name="bus2" comment="&quot;no comment provided&quot;.0" connectorInstances="_Qxa1Z-mYEeSsPdK-DtuwOA _Qxa1aumYEeSsPdK-DtuwOA _Qxa1a-mYEeSsPdK-DtuwOA _Qxa1aOmYEeSsPdK-DtuwOA _Qxa1aemYEeSsPdK-DtuwOA _Qxa1ZumYEeSsPdK-DtuwOA _1FbaAOmYEeSsPdK-DtuwOA _41FioOmYEeSsPdK-DtuwOA _-1lN0O5sEeSE6ppup-xcFg" type="_KO1y0OmQEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1ZumYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_Fwe0UOmUEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbcdOmYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1Z-mYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_g8_o8OmUEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbcjumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_Qxa1aOmYEeSsPdK-DtuwOA" comment="&quot;no comment provided&quot;.0" type="_hjY6kOmUEeSsPdK-DtuwOA" connectorEndpointInstances="_Qxa1b-mYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
@@ -924,6 +924,7 @@
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_1FbaAOmYEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbcfumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_41FioOmYEeSsPdK-DtuwOA" connectorEndpointInstances="_QxbchumYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EiVEYO2gEeSpisK4sBe-bA" connectorEndpointInstances="_5EM0MO2fEeSpisK4sBe-bA _Qxa1YemYEeSsPdK-DtuwOA"/>
+              <networkingHardwareInstances xsi:type="hwplatforminstance:BusConnectorInstance" xmi:id="_-1lN0O5sEeSE6ppup-xcFg" connectorEndpointInstances="_Qxa1cemYEeSsPdK-DtuwOA _Qxa1Y-mYEeSsPdK-DtuwOA"/>
               <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_Qxa1bOmYEeSsPdK-DtuwOA" name="R5.0.1" resourceType="_8KmVoOmHEeSsPdK-DtuwOA">
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1bemYEeSsPdK-DtuwOA" name="hw-port" connectorInstances="_Qxa1aemYEeSsPdK-DtuwOA" type="_dTEU4OmUEeSsPdK-DtuwOA"/>
               </resources>
@@ -931,12 +932,12 @@
                 <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1b-mYEeSsPdK-DtuwOA" name="hw-port" connectorInstances="_Qxa1aOmYEeSsPdK-DtuwOA" type="_a0NFwOmUEeSsPdK-DtuwOA"/>
               </resources>
               <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_Qxa1cOmYEeSsPdK-DtuwOA" name="hw.0.2" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1cemYEeSsPdK-DtuwOA" name="canPort" type="_Jj1G8OmQEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1cemYEeSsPdK-DtuwOA" name="canPort" connectorInstances="_-1lN0O5sEeSE6ppup-xcFg" type="_Jj1G8OmQEeSsPdK-DtuwOA"/>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_Qxa1cumYEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
                   <memorySize xmi:id="_Qxa1c-mYEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_Qxa1dOmYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_Qxa1demYEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_Qxa1demYEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_Qxa1dumYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_QxbccOmYEeSsPdK-DtuwOA"/>
@@ -952,7 +953,7 @@
                   <memorySize xmi:id="_QxbcdumYEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_Qxbcd-mYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_QxbceOmYEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_QxbceOmYEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_QxbceemYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_QxbceumYEeSsPdK-DtuwOA"/>
@@ -967,7 +968,7 @@
                   <memorySize xmi:id="_QxbcgOmYEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_QxbcgemYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_QxbcgumYEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_QxbcgumYEeSsPdK-DtuwOA" value="510.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_Qxbcg-mYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_QxbchOmYEeSsPdK-DtuwOA"/>
@@ -979,7 +980,7 @@
                   <memorySize xmi:id="_QxbciOmYEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_QxbciemYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_QxbciumYEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_QxbciumYEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_Qxbci-mYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_QxbcjOmYEeSsPdK-DtuwOA"/>
@@ -1011,7 +1012,7 @@
                   <memorySize xmi:id="_-pIIb-mZEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-pIIcOmZEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_-pIIcemZEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_-pIIcemZEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-pIIcumZEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_-pIIc-mZEeSsPdK-DtuwOA"/>
@@ -1032,7 +1033,7 @@
                   <memorySize xmi:id="_-pIvc-mZEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-pIvdOmZEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_-pIvdemZEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_-pIvdemZEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-pIvdumZEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_-pIvd-mZEeSsPdK-DtuwOA"/>
@@ -1056,7 +1057,7 @@
                   <memorySize xmi:id="_uBNl3emXEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_uBNl3umXEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_uBNl3-mXEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_uBNl3-mXEeSsPdK-DtuwOA" value="512.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_uBNl4OmXEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_uBNl4emXEeSsPdK-DtuwOA"/>
@@ -1069,7 +1070,7 @@
                   <memorySize xmi:id="_uBNl5emXEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_uBNl5umXEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_uBNl5-mXEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_uBNl5-mXEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_uBNl6OmXEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_uBNl6emXEeSsPdK-DtuwOA"/>
@@ -1082,7 +1083,7 @@
                   <memorySize xmi:id="_uBNl7emXEeSsPdK-DtuwOA"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_uBNl7umXEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
-                  <memorySize xmi:id="_uBNl7-mXEeSsPdK-DtuwOA"/>
+                  <memorySize xmi:id="_uBNl7-mXEeSsPdK-DtuwOA" value="512.0" unit="KByte"/>
                 </embeddedAtomicResourceInstances>
                 <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_uBNl8OmXEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
                   <frequency xmi:id="_uBNl8emXEeSsPdK-DtuwOA"/>
