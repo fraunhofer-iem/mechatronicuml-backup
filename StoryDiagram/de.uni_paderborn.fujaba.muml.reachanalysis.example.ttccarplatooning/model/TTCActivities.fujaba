@@ -3,10 +3,10 @@
   <categories xmi:id="_vcVl8QPpEeK6h-t5wiM1Gg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl8gPpEeK6h-t5wiM1Gg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl8wPpEeK6h-t5wiM1Gg" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9APpEeK6h-t5wiM1Gg" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9QPpEeK6h-t5wiM1Gg" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9gPpEeK6h-t5wiM1Gg" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9wPpEeK6h-t5wiM1Gg" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9APpEeK6h-t5wiM1Gg" name="BYTE" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9QPpEeK6h-t5wiM1Gg" name="SHORT" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9gPpEeK6h-t5wiM1Gg" name="INT" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl9wPpEeK6h-t5wiM1Gg" name="LONG" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_vcVl-APpEeK6h-t5wiM1Gg" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="__6vSEAPpEeK6h-t5wiM1Gg" key="org.storydriven.storydiagrams.category" name="storydiagrams">
