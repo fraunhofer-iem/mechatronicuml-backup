@@ -39,19 +39,9 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 	public DelegationConnectorCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.component.StructuredComponent container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
-
-		if (container == null) {
-			View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getSourceView(getRequest());
-			View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-					.getTargetView(getRequest());
-			container = deduceContainerUsingViews(sourceView, targetView);
-		}
-		this.container = container;
 	}
 
 	/**
@@ -76,24 +66,9 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getSourceView(getRequest());
-		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
-				.getTargetView(getRequest());
-		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateDelegationConnector_4002(
-						getContainer(), getSource(), getTarget(), sourceView,
-						targetView)) {
-			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorDelegationConnector_4002(
-							getContainer(), getSource(), getTarget(),
-							sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
-			return false;
-		}
-		return true;
+						getContainer(), getSource(), getTarget());
 	}
 
 	/**
@@ -184,23 +159,6 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
 				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) element;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Traverse the notation view hierarchy.
-	 * 
-	 * @generated
-	 */
-	private static de.uni_paderborn.fujaba.muml.component.StructuredComponent deduceContainerUsingViews(
-			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
-				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) view
-						.getElement();
 			}
 		}
 		return null;

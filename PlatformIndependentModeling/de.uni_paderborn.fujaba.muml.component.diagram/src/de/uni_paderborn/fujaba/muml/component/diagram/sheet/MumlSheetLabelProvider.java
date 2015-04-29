@@ -32,17 +32,6 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public String getText(Object element) {
 		element = unwrap(element);
-
-		// BEGIN: Added for MUML #912
-		if (element instanceof IAdaptable) {
-			IAdaptable adaptable = (IAdaptable) element;
-			EObject eObject = (EObject) adaptable.getAdapter(EObject.class);
-			if (eObject != null) {
-				return eObject.eClass().getName();
-			}
-		}
-		// END: Added for MUML #912
-
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
 	}

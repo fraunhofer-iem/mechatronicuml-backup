@@ -712,7 +712,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="muml"/>
+        	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
                <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem"/>
             </or>
@@ -834,6 +834,11 @@
              afterTab="property.tab.general"
              id="property.tab.documentation"
              label="%tab.documentation"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.extensions"
+             label="%tab.extensions"/>
       </propertyTabs>
    </extension>
 
@@ -878,6 +883,12 @@
             id="property.section.documentation" 
             tab="property.tab.documentation"
             filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.extensions" 
+            tab="property.tab.extensions"
+            filter="org.storydriven.core.properties.tabs.ExtensionsTabElementFilter"
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>

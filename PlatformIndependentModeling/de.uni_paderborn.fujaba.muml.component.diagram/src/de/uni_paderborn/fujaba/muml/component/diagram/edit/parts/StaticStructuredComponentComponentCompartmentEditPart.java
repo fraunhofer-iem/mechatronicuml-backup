@@ -31,29 +31,6 @@ public class StaticStructuredComponentComponentCompartmentEditPart extends
 	public static final int VISUAL_ID = 7005;
 
 	/**
-	 * MUML FIX, see code comments.
-	 *
-	 * @generated
-	 */
-	@Override
-	protected Collection<?> disableCanonicalFor(Request request) {
-
-		@SuppressWarnings("unchecked")
-		Collection<Object> hosts = super.disableCanonicalFor(request);
-
-		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
-		// because GMF supports adding additional commands using Edit Helpers concept,
-		// which could trigger refresh of any canonical edit policy.
-		// So it should be the cleanest solution to disable all canonical edit policies. 
-		EditPart part = this;
-		while (part != null) {
-			hosts.add(part);
-			part = part.getParent();
-		}
-		return hosts;
-	}
-
-	/**
 	 * @generated
 	 */
 	public StaticStructuredComponentComponentCompartmentEditPart(View view) {
@@ -73,19 +50,7 @@ public class StaticStructuredComponentComponentCompartmentEditPart extends
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
 				.createFigure();
-
 		result.setTitleVisibility(false);
-
-		// Begin added to always stretch list layouts
-		LayoutManager layoutManager = result.getContentPane()
-				.getLayoutManager();
-		if (layoutManager instanceof ConstrainedToolbarLayout) {
-			ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout) layoutManager;
-			constrainedToolbarLayout.setStretchMajorAxis(true);
-			constrainedToolbarLayout.setStretchMinorAxis(true);
-		}
-		// End added
-
 		return result;
 	}
 

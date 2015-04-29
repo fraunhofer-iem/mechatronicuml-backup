@@ -94,7 +94,7 @@ public class ComponentPartLabelExpressionLabelParser5017 extends
 	/**
 	 * @generated
 	 */
-	protected boolean validateValues(EObject target, String newString) {
+	private boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
@@ -102,7 +102,7 @@ public class ComponentPartLabelExpressionLabelParser5017 extends
 	/**
 	 * @generated
 	 */
-	protected IStatus updateValues(EObject target, String newString)
+	private IStatus updateValues(EObject target, String newString)
 			throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
