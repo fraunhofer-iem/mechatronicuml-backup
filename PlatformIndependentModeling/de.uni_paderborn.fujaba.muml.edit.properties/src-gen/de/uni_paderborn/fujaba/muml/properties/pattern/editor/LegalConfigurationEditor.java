@@ -37,6 +37,9 @@ public class LegalConfigurationEditor
 			addPropertyEditor(
 					createEditorCoordinationPattern_GeneralTab_Editor(), false);
 
+			addPropertyEditor(
+					createEditorParameterBindings_GeneralTab_Editor(), false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -45,6 +48,9 @@ public class LegalConfigurationEditor
 
 			addPropertyEditor(
 					createEditorCoordinationPattern_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorParameterBindings_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -76,6 +82,21 @@ public class LegalConfigurationEditor
 			this.editorCoordinationPattern_GeneralTab = editor;
 		}
 		return this.editorCoordinationPattern_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParameterBindings_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParameterBindings_GeneralTab_Editor() {
+		if (this.editorParameterBindings_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
+					.getLegalConfiguration_ParameterBindings();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("\\todosd{document!}");
+
+			this.editorParameterBindings_GeneralTab = editor;
+		}
+		return this.editorParameterBindings_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorComment_DocumentationTab;
@@ -165,6 +186,7 @@ public class LegalConfigurationEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
+							"property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);
