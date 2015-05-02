@@ -18,13 +18,12 @@ brakeByWireAllocationSpecification {
 		;
 	}
 	
-	--constraint requiredHardwareResourceInstance communicatingComponents {
-	--	descriptors (c1, e1), (c2, e2);
-	--	ocl
-	--		--self.allocateCommunicatingComponentsToConnectedECUs()->collect(t | Tuple{c1 = t.c1, c2 = t.c2})->asSet()->sortedBy(t | t.c1.name + '_' + t.c2.name)
-	--		self.allocateCommunicatingComponentsToConnectedECUs()
-	--	;
-	--}
+	constraint requiredHardwareResourceInstance communicatingComponents {
+		descriptors (c1, e1), (c2, e2);
+		ocl
+			self.allocateCommunicatingComponentsToConnectedECUs()
+		;
+	}
 	
 	constraint sameLocation colocateBrakePedalComponents {
 		descriptors (first, second);
@@ -60,7 +59,7 @@ brakeByWireAllocationSpecification {
 		;
 	}
 	
-	context oclcontext::OCLContext		
+	context oclcontext::OCLContext
 		def: allowedECUNames(componentName : String) : Set(String) =
 			-- calliper component instances
 			if componentName = 'sc1' then
