@@ -841,9 +841,9 @@ ruleConditionalDependency returns [EObject current=null]
     	newLeafNode(otherlv_7, grammarAccess.getConditionalDependencyAccess().getRightCurlyBracketKeyword_0_6());
     }
 )
-    |(	otherlv_8='when' 
+    |(	otherlv_8='if' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getConditionalDependencyAccess().getWhenKeyword_1_0());
+    	newLeafNode(otherlv_8, grammarAccess.getConditionalDependencyAccess().getIfKeyword_1_0());
     }
 	otherlv_9='[' 
     {
@@ -1293,9 +1293,9 @@ ruleDataMerge returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_2='into' 
+)(	otherlv_2='into variable' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getDataMergeAccess().getIntoKeyword_0_2_0());
+    	newLeafNode(otherlv_2, grammarAccess.getDataMergeAccess().getIntoVariableKeyword_0_2_0());
     }
 (
 (
@@ -1360,9 +1360,9 @@ ruleDataMerge returns [EObject current=null]
 	    }
 
 )
-))+(	otherlv_8='into' 
+))+(	otherlv_8='into variable' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getDataMergeAccess().getIntoKeyword_1_3_0());
+    	newLeafNode(otherlv_8, grammarAccess.getDataMergeAccess().getIntoVariableKeyword_1_3_0());
     }
 (
 (
@@ -1382,7 +1382,119 @@ ruleDataMerge returns [EObject current=null]
 	    }
 
 )
-))?))
+))?)
+    |(	otherlv_10='merge variable' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getDataMergeAccess().getMergeVariableKeyword_2_0());
+    }
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataMergeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_2_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_12='into port' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getDataMergeAccess().getIntoPortKeyword_2_2());
+    }
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataMergeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getDataMergeAccess().getPortHybridPortCrossReference_2_3_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |(	otherlv_14='merge variables' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getDataMergeAccess().getMergeVariablesKeyword_3_0());
+    }
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataMergeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_3_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_16=',' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getDataMergeAccess().getCommaKeyword_3_2_0());
+    }
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataMergeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_3_2_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))+	otherlv_18='into port' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getDataMergeAccess().getIntoPortKeyword_3_3());
+    }
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataMergeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getDataMergeAccess().getPortHybridPortCrossReference_3_4_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
 ;
 
 

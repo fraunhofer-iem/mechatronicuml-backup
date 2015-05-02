@@ -93,6 +93,7 @@ public interface HybridClockCondition extends ClockCondition {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link org.storydriven.core.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -107,7 +108,7 @@ public interface HybridClockCondition extends ClockCondition {
 	 * @see org.storydriven.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage#getHybridClockCondition_Operator()
-	 * @model required="true"
+	 * @model default="" required="true"
 	 * @generated
 	 */
 	ComparingOperator getOperator();

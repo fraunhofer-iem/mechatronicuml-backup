@@ -53,7 +53,7 @@ ConditionalDependency returns ConditionalDependency:
 		effects+=Effect (';'effects+=Effect)* (';')?
 	'}'
 	)|
-	('when' '['event=ComplexEvent']'
+	('if' '['event=ComplexEvent']'
 	'{'
 		effects+=LimitedEffect (';'effects+=LimitedEffect)* (';')?
 	'}')
@@ -92,9 +92,13 @@ ClockResetEffect returns ClockResetEffect:
 ;
 
 DataMerge returns DataMerge:
-	'merge variable' variables+=[behavior::Variable|QualifiedName] ('into' variableName=EString)?
+	'merge variable' variables+=[behavior::Variable|QualifiedName] ('into variable' variableName=EString)?
 	|
-	'merge variables' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ ('into' variableName=EString)?
+	'merge variables' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ ('into variable' variableName=EString)?
+	|
+	'merge variable' variables+=[behavior::Variable|QualifiedName] 'into port' port=[component::HybridPort|QualifiedName]
+	|
+	'merge variables' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ 'into port' port=[component::HybridPort|QualifiedName]
 ;
 
 ClockMerge returns ClockMerge:

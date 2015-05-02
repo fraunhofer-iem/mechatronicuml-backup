@@ -68,11 +68,14 @@ mapping RealtimeStatechart :: RTSC2RTSC(context:OclAny) : RealtimeStatechart {
 		clocks += self.clocks->map Clock2Clock(context);
 		if(self.parentRegion.oclIsUndefined()){
 			parentRegion := new Region(getFirstState());
+			parentRegion.priority:=1;
 		}
 		else{
 			parentRegion := self.parentRegion.map Region2Region(context);
 		}
-		endif;	
+		
+		endif;
+			
 	}
 	
 helper RealtimeStatechart::addToCategory(){

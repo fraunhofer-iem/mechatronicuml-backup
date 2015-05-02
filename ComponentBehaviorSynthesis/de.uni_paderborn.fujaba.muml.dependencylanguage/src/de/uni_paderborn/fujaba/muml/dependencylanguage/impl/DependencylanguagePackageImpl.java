@@ -14,6 +14,7 @@ import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.AssignmentDirection;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.AuxiliaryClockCondition;
@@ -559,6 +560,15 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 	 */
 	public EAttribute getDataMerge_VariableName() {
 		return (EAttribute)dataMergeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataMerge_Port() {
+		return (EReference)dataMergeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1254,6 +1264,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		dataMergeEClass = createEClass(DATA_MERGE);
 		createEReference(dataMergeEClass, DATA_MERGE__VARIABLES);
 		createEAttribute(dataMergeEClass, DATA_MERGE__VARIABLE_NAME);
+		createEReference(dataMergeEClass, DATA_MERGE__PORT);
 
 		conditionalDependencyEClass = createEClass(CONDITIONAL_DEPENDENCY);
 		createEReference(conditionalDependencyEClass, CONDITIONAL_DEPENDENCY__EVENT);
@@ -1383,6 +1394,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		ActionlanguagePackage theActionlanguagePackage = (ActionlanguagePackage)EPackage.Registry.INSTANCE.getEPackage(ActionlanguagePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		CommonExpressionsPackage theCommonExpressionsPackage = (CommonExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(CommonExpressionsPackage.eNS_URI);
@@ -1457,6 +1469,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		initEClass(dataMergeEClass, DataMerge.class, "DataMerge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataMerge_Variables(), theBehaviorPackage.getVariable(), null, "variables", null, 1, -1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataMerge_VariableName(), ecorePackage.getEString(), "variableName", "", 0, 1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataMerge_Port(), theComponentPackage.getHybridPort(), null, "port", null, 0, 1, DataMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalDependencyEClass, ConditionalDependency.class, "ConditionalDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConditionalDependency_Event(), this.getEvent(), null, "event", null, 0, 1, ConditionalDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1501,7 +1514,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		initEClass(hybridClockConditionEClass, HybridClockCondition.class, "HybridClockCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHybridClockCondition_Condition(), this.getCondition(), null, "condition", null, 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHybridClockCondition_Bound(), theValuetypePackage.getTimeValue(), null, "bound", null, 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHybridClockCondition_Operator(), theCommonExpressionsPackage.getComparingOperator(), "operator", null, 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHybridClockCondition_Operator(), theCommonExpressionsPackage.getComparingOperator(), "operator", "", 1, 1, HybridClockCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(basicClockConditionEClass, BasicClockCondition.class, "BasicClockCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

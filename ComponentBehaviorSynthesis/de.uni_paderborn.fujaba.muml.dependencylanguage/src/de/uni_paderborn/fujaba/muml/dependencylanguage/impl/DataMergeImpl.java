@@ -7,10 +7,12 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage;
 
@@ -23,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DataMergeImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DataMergeImpl#getVariableName <em>Variable Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DataMergeImpl#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +61,16 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 	 * @ordered
 	 */
 	protected String variableName = VARIABLE_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected HybridPort port;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,6 +129,44 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public HybridPort getPort() {
+		if (port != null && port.eIsProxy()) {
+			InternalEObject oldPort = (InternalEObject)port;
+			port = (HybridPort)eResolveProxy(oldPort);
+			if (port != oldPort) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DependencylanguagePackage.DATA_MERGE__PORT, oldPort, port));
+			}
+		}
+		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HybridPort basicGetPort() {
+		return port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPort(HybridPort newPort) {
+		HybridPort oldPort = port;
+		port = newPort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DependencylanguagePackage.DATA_MERGE__PORT, oldPort, port));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -123,6 +174,9 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 				return getVariables();
 			case DependencylanguagePackage.DATA_MERGE__VARIABLE_NAME:
 				return getVariableName();
+			case DependencylanguagePackage.DATA_MERGE__PORT:
+				if (resolve) return getPort();
+				return basicGetPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,6 +197,9 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 			case DependencylanguagePackage.DATA_MERGE__VARIABLE_NAME:
 				setVariableName((String)newValue);
 				return;
+			case DependencylanguagePackage.DATA_MERGE__PORT:
+				setPort((HybridPort)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -161,6 +218,9 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 			case DependencylanguagePackage.DATA_MERGE__VARIABLE_NAME:
 				setVariableName(VARIABLE_NAME_EDEFAULT);
 				return;
+			case DependencylanguagePackage.DATA_MERGE__PORT:
+				setPort((HybridPort)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,6 +237,8 @@ public class DataMergeImpl extends DependencyImpl implements DataMerge {
 				return variables != null && !variables.isEmpty();
 			case DependencylanguagePackage.DATA_MERGE__VARIABLE_NAME:
 				return VARIABLE_NAME_EDEFAULT == null ? variableName != null : !VARIABLE_NAME_EDEFAULT.equals(variableName);
+			case DependencylanguagePackage.DATA_MERGE__PORT:
+				return port != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.dependencylanguage;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.component.HybridPort;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge#getVariables <em>Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge#getVariableName <em>Variable Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,5 +78,31 @@ public interface DataMerge extends Dependency {
 	 * @generated
 	 */
 	void setVariableName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port</em>' reference.
+	 * @see #setPort(HybridPort)
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage#getDataMerge_Port()
+	 * @model
+	 * @generated
+	 */
+	HybridPort getPort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge#getPort <em>Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Port</em>' reference.
+	 * @see #getPort()
+	 * @generated
+	 */
+	void setPort(HybridPort value);
 
 } // DataMerge

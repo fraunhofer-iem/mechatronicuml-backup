@@ -1616,13 +1616,22 @@ public interface DependencylanguagePackage extends EPackage {
 	int DATA_MERGE__VARIABLE_NAME = DEPENDENCY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_MERGE__PORT = DEPENDENCY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Merge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_MERGE_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
+	int DATA_MERGE_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -6818,6 +6827,17 @@ public interface DependencylanguagePackage extends EPackage {
 	EAttribute getDataMerge_VariableName();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.DataMerge#getPort()
+	 * @see #getDataMerge()
+	 * @generated
+	 */
+	EReference getDataMerge_Port();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.ConditionalDependency <em>Conditional Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7765,6 +7785,14 @@ public interface DependencylanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_MERGE__VARIABLE_NAME = eINSTANCE.getDataMerge_VariableName();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_MERGE__PORT = eINSTANCE.getDataMerge_Port();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.impl.ConditionalDependencyImpl <em>Conditional Dependency</em>}' class.

@@ -119,6 +119,9 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataMergeAccess().getGroup_1(), "rule__DataMerge__Group_1__0");
 					put(grammarAccess.getDataMergeAccess().getGroup_1_2(), "rule__DataMerge__Group_1_2__0");
 					put(grammarAccess.getDataMergeAccess().getGroup_1_3(), "rule__DataMerge__Group_1_3__0");
+					put(grammarAccess.getDataMergeAccess().getGroup_2(), "rule__DataMerge__Group_2__0");
+					put(grammarAccess.getDataMergeAccess().getGroup_3(), "rule__DataMerge__Group_3__0");
+					put(grammarAccess.getDataMergeAccess().getGroup_3_2(), "rule__DataMerge__Group_3_2__0");
 					put(grammarAccess.getClockMergeAccess().getGroup(), "rule__ClockMerge__Group__0");
 					put(grammarAccess.getClockMergeAccess().getGroup_2(), "rule__ClockMerge__Group_2__0");
 					put(grammarAccess.getClockMergeAccess().getGroup_3(), "rule__ClockMerge__Group_3__0");
@@ -242,6 +245,11 @@ public class DependencyModelLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataMergeAccess().getVariablesAssignment_1_1(), "rule__DataMerge__VariablesAssignment_1_1");
 					put(grammarAccess.getDataMergeAccess().getVariablesAssignment_1_2_1(), "rule__DataMerge__VariablesAssignment_1_2_1");
 					put(grammarAccess.getDataMergeAccess().getVariableNameAssignment_1_3_1(), "rule__DataMerge__VariableNameAssignment_1_3_1");
+					put(grammarAccess.getDataMergeAccess().getVariablesAssignment_2_1(), "rule__DataMerge__VariablesAssignment_2_1");
+					put(grammarAccess.getDataMergeAccess().getPortAssignment_2_3(), "rule__DataMerge__PortAssignment_2_3");
+					put(grammarAccess.getDataMergeAccess().getVariablesAssignment_3_1(), "rule__DataMerge__VariablesAssignment_3_1");
+					put(grammarAccess.getDataMergeAccess().getVariablesAssignment_3_2_1(), "rule__DataMerge__VariablesAssignment_3_2_1");
+					put(grammarAccess.getDataMergeAccess().getPortAssignment_3_4(), "rule__DataMerge__PortAssignment_3_4");
 					put(grammarAccess.getClockMergeAccess().getClocksAssignment_1(), "rule__ClockMerge__ClocksAssignment_1");
 					put(grammarAccess.getClockMergeAccess().getClocksAssignment_2_1(), "rule__ClockMerge__ClocksAssignment_2_1");
 					put(grammarAccess.getClockMergeAccess().getClockNameAssignment_3_1(), "rule__ClockMerge__ClockNameAssignment_3_1");

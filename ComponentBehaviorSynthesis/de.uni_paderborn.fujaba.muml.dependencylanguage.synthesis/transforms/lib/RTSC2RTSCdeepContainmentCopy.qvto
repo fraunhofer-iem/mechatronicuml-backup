@@ -345,8 +345,8 @@ modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
 	mapping TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context:OclAny) : TypedNamedElementExpression {
 			
 		typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement(context);
-				
-		indices += self.indices->map Expression2Expression(context);
+
+//		indices += self.indices->map Expression2Expression(context);
 					
 	}
 			

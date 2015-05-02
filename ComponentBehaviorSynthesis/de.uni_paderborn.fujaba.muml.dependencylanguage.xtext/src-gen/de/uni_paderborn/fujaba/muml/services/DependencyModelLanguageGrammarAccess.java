@@ -508,7 +508,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final Keyword cSemicolonKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
 		private final Keyword cRightCurlyBracketKeyword_0_6 = (Keyword)cGroup_0.eContents().get(6);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cWhenKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cIfKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cEventAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cEventComplexEventParserRuleCall_1_2_0 = (RuleCall)cEventAssignment_1_2.eContents().get(0);
@@ -524,11 +524,11 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final Keyword cRightCurlyBracketKeyword_1_8 = (Keyword)cGroup_1.eContents().get(8);
 		
 		//ConditionalDependency:
-		//	"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "when" "[" event=ComplexEvent "]" "{"
+		//	"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "if" "[" event=ComplexEvent "]" "{"
 		//	effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}";
 		public ParserRule getRule() { return rule; }
 
-		//"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "when" "[" event=ComplexEvent "]" "{"
+		//"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "if" "[" event=ComplexEvent "]" "{"
 		//effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -571,11 +571,11 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_0_6() { return cRightCurlyBracketKeyword_0_6; }
 
-		//"when" "[" event=ComplexEvent "]" "{" effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}"
+		//"if" "[" event=ComplexEvent "]" "{" effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}"
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"when"
-		public Keyword getWhenKeyword_1_0() { return cWhenKeyword_1_0; }
+		//"if"
+		public Keyword getIfKeyword_1_0() { return cIfKeyword_1_0; }
 
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1_1() { return cLeftSquareBracketKeyword_1_1; }
@@ -816,7 +816,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final CrossReference cVariablesVariableCrossReference_0_1_0 = (CrossReference)cVariablesAssignment_0_1.eContents().get(0);
 		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_0_1_0_1 = (RuleCall)cVariablesVariableCrossReference_0_1_0.eContents().get(1);
 		private final Group cGroup_0_2 = (Group)cGroup_0.eContents().get(2);
-		private final Keyword cIntoKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
+		private final Keyword cIntoVariableKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
 		private final Assignment cVariableNameAssignment_0_2_1 = (Assignment)cGroup_0_2.eContents().get(1);
 		private final RuleCall cVariableNameEStringParserRuleCall_0_2_1_0 = (RuleCall)cVariableNameAssignment_0_2_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
@@ -830,22 +830,49 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final CrossReference cVariablesVariableCrossReference_1_2_1_0 = (CrossReference)cVariablesAssignment_1_2_1.eContents().get(0);
 		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_1_2_1_0_1 = (RuleCall)cVariablesVariableCrossReference_1_2_1_0.eContents().get(1);
 		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Keyword cIntoKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Keyword cIntoVariableKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
 		private final Assignment cVariableNameAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
 		private final RuleCall cVariableNameEStringParserRuleCall_1_3_1_0 = (RuleCall)cVariableNameAssignment_1_3_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cMergeVariableKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVariablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cVariablesVariableCrossReference_2_1_0 = (CrossReference)cVariablesAssignment_2_1.eContents().get(0);
+		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cVariablesVariableCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cIntoPortKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cPortAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final CrossReference cPortHybridPortCrossReference_2_3_0 = (CrossReference)cPortAssignment_2_3.eContents().get(0);
+		private final RuleCall cPortHybridPortQualifiedNameParserRuleCall_2_3_0_1 = (RuleCall)cPortHybridPortCrossReference_2_3_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cMergeVariablesKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cVariablesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cVariablesVariableCrossReference_3_1_0 = (CrossReference)cVariablesAssignment_3_1.eContents().get(0);
+		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cVariablesVariableCrossReference_3_1_0.eContents().get(1);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cVariablesAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final CrossReference cVariablesVariableCrossReference_3_2_1_0 = (CrossReference)cVariablesAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_3_2_1_0_1 = (RuleCall)cVariablesVariableCrossReference_3_2_1_0.eContents().get(1);
+		private final Keyword cIntoPortKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Assignment cPortAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final CrossReference cPortHybridPortCrossReference_3_4_0 = (CrossReference)cPortAssignment_3_4.eContents().get(0);
+		private final RuleCall cPortHybridPortQualifiedNameParserRuleCall_3_4_0_1 = (RuleCall)cPortHybridPortCrossReference_3_4_0.eContents().get(1);
 		
 		//DataMerge:
-		//	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)? | "merge variables"
-		//	variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ ("into"
-		//	variableName=EString)?;
+		//	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
+		//	"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+		//	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
+		//	port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
+		//	variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)? | "merge variables"
-		//variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ ("into"
-		//variableName=EString)?
+		//"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
+		//"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+		//("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
+		//port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
+		//variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)?
+		//"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"merge variable"
@@ -860,11 +887,11 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//QualifiedName
 		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_0_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_0_1_0_1; }
 
-		//("into" variableName=EString)?
+		//("into variable" variableName=EString)?
 		public Group getGroup_0_2() { return cGroup_0_2; }
 
-		//"into"
-		public Keyword getIntoKeyword_0_2_0() { return cIntoKeyword_0_2_0; }
+		//"into variable"
+		public Keyword getIntoVariableKeyword_0_2_0() { return cIntoVariableKeyword_0_2_0; }
 
 		//variableName=EString
 		public Assignment getVariableNameAssignment_0_2_1() { return cVariableNameAssignment_0_2_1; }
@@ -873,7 +900,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		public RuleCall getVariableNameEStringParserRuleCall_0_2_1_0() { return cVariableNameEStringParserRuleCall_0_2_1_0; }
 
 		//"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
-		//("into" variableName=EString)?
+		//("into variable" variableName=EString)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"merge variables"
@@ -903,17 +930,87 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//QualifiedName
 		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_1_2_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_1_2_1_0_1; }
 
-		//("into" variableName=EString)?
+		//("into variable" variableName=EString)?
 		public Group getGroup_1_3() { return cGroup_1_3; }
 
-		//"into"
-		public Keyword getIntoKeyword_1_3_0() { return cIntoKeyword_1_3_0; }
+		//"into variable"
+		public Keyword getIntoVariableKeyword_1_3_0() { return cIntoVariableKeyword_1_3_0; }
 
 		//variableName=EString
 		public Assignment getVariableNameAssignment_1_3_1() { return cVariableNameAssignment_1_3_1; }
 
 		//EString
 		public RuleCall getVariableNameEStringParserRuleCall_1_3_1_0() { return cVariableNameEStringParserRuleCall_1_3_1_0; }
+
+		//"merge variable" variables+=[behavior::Variable|QualifiedName] "into port" port=[component::HybridPort|QualifiedName]
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"merge variable"
+		public Keyword getMergeVariableKeyword_2_0() { return cMergeVariableKeyword_2_0; }
+
+		//variables+=[behavior::Variable|QualifiedName]
+		public Assignment getVariablesAssignment_2_1() { return cVariablesAssignment_2_1; }
+
+		//[behavior::Variable|QualifiedName]
+		public CrossReference getVariablesVariableCrossReference_2_1_0() { return cVariablesVariableCrossReference_2_1_0; }
+
+		//QualifiedName
+		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_2_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_2_1_0_1; }
+
+		//"into port"
+		public Keyword getIntoPortKeyword_2_2() { return cIntoPortKeyword_2_2; }
+
+		//port=[component::HybridPort|QualifiedName]
+		public Assignment getPortAssignment_2_3() { return cPortAssignment_2_3; }
+
+		//[component::HybridPort|QualifiedName]
+		public CrossReference getPortHybridPortCrossReference_2_3_0() { return cPortHybridPortCrossReference_2_3_0; }
+
+		//QualifiedName
+		public RuleCall getPortHybridPortQualifiedNameParserRuleCall_2_3_0_1() { return cPortHybridPortQualifiedNameParserRuleCall_2_3_0_1; }
+
+		//"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+		//"into port" port=[component::HybridPort|QualifiedName]
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"merge variables"
+		public Keyword getMergeVariablesKeyword_3_0() { return cMergeVariablesKeyword_3_0; }
+
+		//variables+=[behavior::Variable|QualifiedName]
+		public Assignment getVariablesAssignment_3_1() { return cVariablesAssignment_3_1; }
+
+		//[behavior::Variable|QualifiedName]
+		public CrossReference getVariablesVariableCrossReference_3_1_0() { return cVariablesVariableCrossReference_3_1_0; }
+
+		//QualifiedName
+		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_3_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_3_1_0_1; }
+
+		//("," variables+=[behavior::Variable|QualifiedName])+
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
+		//","
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+
+		//variables+=[behavior::Variable|QualifiedName]
+		public Assignment getVariablesAssignment_3_2_1() { return cVariablesAssignment_3_2_1; }
+
+		//[behavior::Variable|QualifiedName]
+		public CrossReference getVariablesVariableCrossReference_3_2_1_0() { return cVariablesVariableCrossReference_3_2_1_0; }
+
+		//QualifiedName
+		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_3_2_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_3_2_1_0_1; }
+
+		//"into port"
+		public Keyword getIntoPortKeyword_3_3() { return cIntoPortKeyword_3_3; }
+
+		//port=[component::HybridPort|QualifiedName]
+		public Assignment getPortAssignment_3_4() { return cPortAssignment_3_4; }
+
+		//[component::HybridPort|QualifiedName]
+		public CrossReference getPortHybridPortCrossReference_3_4_0() { return cPortHybridPortCrossReference_3_4_0; }
+
+		//QualifiedName
+		public RuleCall getPortHybridPortQualifiedNameParserRuleCall_3_4_0_1() { return cPortHybridPortQualifiedNameParserRuleCall_3_4_0_1; }
 	}
 
 	public class ClockMergeElements extends AbstractParserRuleElementFinder {
@@ -2624,7 +2721,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//ConditionalDependency:
-	//	"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "when" "[" event=ComplexEvent "]" "{"
+	//	"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "if" "[" event=ComplexEvent "]" "{"
 	//	effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}";
 	public ConditionalDependencyElements getConditionalDependencyAccess() {
 		return pConditionalDependency;
@@ -2688,9 +2785,11 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//DataMerge:
-	//	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)? | "merge variables"
-	//	variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ ("into"
-	//	variableName=EString)?;
+	//	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
+	//	"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+	//	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
+	//	port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
+	//	variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName];
 	public DataMergeElements getDataMergeAccess() {
 		return pDataMerge;
 	}

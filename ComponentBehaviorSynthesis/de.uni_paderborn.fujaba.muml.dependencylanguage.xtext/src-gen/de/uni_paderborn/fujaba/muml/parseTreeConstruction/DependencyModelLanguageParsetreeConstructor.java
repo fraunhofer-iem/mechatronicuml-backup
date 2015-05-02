@@ -2420,12 +2420,12 @@ protected class BoundedActiveState_RightSquareBracketKeyword_6 extends KeywordTo
 /************ begin Rule ConditionalDependency ****************
  *
  * ConditionalDependency:
- * 	"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "when" "[" event=ComplexEvent "]" "{"
+ * 	"if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "if" "[" event=ComplexEvent "]" "{"
  * 	effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}";
  *
  **/
 
-// "if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "when" "[" event=ComplexEvent "]" "{"
+// "if" condition=Condition "{" effects+=Effect (";" effects+=Effect)* ";"? "}" | "if" "[" event=ComplexEvent "]" "{"
 // effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}"
 protected class ConditionalDependency_Alternatives extends AlternativesToken {
 
@@ -2729,7 +2729,7 @@ protected class ConditionalDependency_RightCurlyBracketKeyword_0_6 extends Keywo
 }
 
 
-// "when" "[" event=ComplexEvent "]" "{" effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}"
+// "if" "[" event=ComplexEvent "]" "{" effects+=LimitedEffect (";" effects+=LimitedEffect)* ";"? "}"
 protected class ConditionalDependency_Group_1 extends GroupToken {
 	
 	public ConditionalDependency_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2751,16 +2751,16 @@ protected class ConditionalDependency_Group_1 extends GroupToken {
 
 }
 
-// "when"
-protected class ConditionalDependency_WhenKeyword_1_0 extends KeywordToken  {
+// "if"
+protected class ConditionalDependency_IfKeyword_1_0 extends KeywordToken  {
 	
-	public ConditionalDependency_WhenKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ConditionalDependency_IfKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getConditionalDependencyAccess().getWhenKeyword_1_0();
+		return grammarAccess.getConditionalDependencyAccess().getIfKeyword_1_0();
 	}
 
     @Override
@@ -2787,7 +2787,7 @@ protected class ConditionalDependency_LeftSquareBracketKeyword_1_1 extends Keywo
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ConditionalDependency_WhenKeyword_1_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ConditionalDependency_IfKeyword_1_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3939,15 +3939,19 @@ protected class ClockResetEffect_ClocksAssignment_2_1 extends AssignmentToken  {
 /************ begin Rule DataMerge ****************
  *
  * DataMerge:
- * 	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)? | "merge variables"
- * 	variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ ("into"
- * 	variableName=EString)?;
+ * 	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
+ * 	"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+ * 	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
+ * 	port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
+ * 	variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName];
  *
  **/
 
-// "merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)? | "merge variables"
-// variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ ("into"
-// variableName=EString)?
+// "merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
+// "merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+// ("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
+// port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
+// variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName]
 protected class DataMerge_Alternatives extends AlternativesToken {
 
 	public DataMerge_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3964,6 +3968,8 @@ protected class DataMerge_Alternatives extends AlternativesToken {
 		switch(index) {
 			case 0: return new DataMerge_Group_0(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new DataMerge_Group_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new DataMerge_Group_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new DataMerge_Group_3(lastRuleCallOrigin, this, 3, inst);
 			default: return null;
 		}	
 	}
@@ -3977,7 +3983,7 @@ protected class DataMerge_Alternatives extends AlternativesToken {
 
 }
 
-// "merge variable" variables+=[behavior::Variable|QualifiedName] ("into" variableName=EString)?
+// "merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)?
 protected class DataMerge_Group_0 extends GroupToken {
 	
 	public DataMerge_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4058,7 +4064,7 @@ protected class DataMerge_VariablesAssignment_0_1 extends AssignmentToken  {
 
 }
 
-// ("into" variableName=EString)?
+// ("into variable" variableName=EString)?
 protected class DataMerge_Group_0_2 extends GroupToken {
 	
 	public DataMerge_Group_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4080,16 +4086,16 @@ protected class DataMerge_Group_0_2 extends GroupToken {
 
 }
 
-// "into"
-protected class DataMerge_IntoKeyword_0_2_0 extends KeywordToken  {
+// "into variable"
+protected class DataMerge_IntoVariableKeyword_0_2_0 extends KeywordToken  {
 	
-	public DataMerge_IntoKeyword_0_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public DataMerge_IntoVariableKeyword_0_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getDataMergeAccess().getIntoKeyword_0_2_0();
+		return grammarAccess.getDataMergeAccess().getIntoVariableKeyword_0_2_0();
 	}
 
     @Override
@@ -4117,7 +4123,7 @@ protected class DataMerge_VariableNameAssignment_0_2_1 extends AssignmentToken  
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new DataMerge_IntoKeyword_0_2_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new DataMerge_IntoVariableKeyword_0_2_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4139,7 +4145,7 @@ protected class DataMerge_VariableNameAssignment_0_2_1 extends AssignmentToken  
 
 
 // "merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
-// ("into" variableName=EString)?
+// ("into variable" variableName=EString)?
 protected class DataMerge_Group_1 extends GroupToken {
 	
 	public DataMerge_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4303,7 +4309,7 @@ protected class DataMerge_VariablesAssignment_1_2_1 extends AssignmentToken  {
 }
 
 
-// ("into" variableName=EString)?
+// ("into variable" variableName=EString)?
 protected class DataMerge_Group_1_3 extends GroupToken {
 	
 	public DataMerge_Group_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4325,16 +4331,16 @@ protected class DataMerge_Group_1_3 extends GroupToken {
 
 }
 
-// "into"
-protected class DataMerge_IntoKeyword_1_3_0 extends KeywordToken  {
+// "into variable"
+protected class DataMerge_IntoVariableKeyword_1_3_0 extends KeywordToken  {
 	
-	public DataMerge_IntoKeyword_1_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public DataMerge_IntoVariableKeyword_1_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getDataMergeAccess().getIntoKeyword_1_3_0();
+		return grammarAccess.getDataMergeAccess().getIntoVariableKeyword_1_3_0();
 	}
 
     @Override
@@ -4362,7 +4368,7 @@ protected class DataMerge_VariableNameAssignment_1_3_1 extends AssignmentToken  
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new DataMerge_IntoKeyword_1_3_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new DataMerge_IntoVariableKeyword_1_3_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4381,6 +4387,370 @@ protected class DataMerge_VariableNameAssignment_1_3_1 extends AssignmentToken  
 
 }
 
+
+
+// "merge variable" variables+=[behavior::Variable|QualifiedName] "into port" port=[component::HybridPort|QualifiedName]
+protected class DataMerge_Group_2 extends GroupToken {
+	
+	public DataMerge_Group_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getGroup_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_PortAssignment_2_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "merge variable"
+protected class DataMerge_MergeVariableKeyword_2_0 extends KeywordToken  {
+	
+	public DataMerge_MergeVariableKeyword_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getMergeVariableKeyword_2_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// variables+=[behavior::Variable|QualifiedName]
+protected class DataMerge_VariablesAssignment_2_1 extends AssignmentToken  {
+	
+	public DataMerge_VariablesAssignment_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getVariablesAssignment_2_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_MergeVariableKeyword_2_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("variables",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("variables");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_2_1_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_2_1_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+// "into port"
+protected class DataMerge_IntoPortKeyword_2_2 extends KeywordToken  {
+	
+	public DataMerge_IntoPortKeyword_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getIntoPortKeyword_2_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_VariablesAssignment_2_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// port=[component::HybridPort|QualifiedName]
+protected class DataMerge_PortAssignment_2_3 extends AssignmentToken  {
+	
+	public DataMerge_PortAssignment_2_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getPortAssignment_2_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_IntoPortKeyword_2_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("port",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("port");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getDataMergeAccess().getPortHybridPortCrossReference_2_3_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getDataMergeAccess().getPortHybridPortCrossReference_2_3_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+
+// "merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
+// "into port" port=[component::HybridPort|QualifiedName]
+protected class DataMerge_Group_3 extends GroupToken {
+	
+	public DataMerge_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getGroup_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_PortAssignment_3_4(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "merge variables"
+protected class DataMerge_MergeVariablesKeyword_3_0 extends KeywordToken  {
+	
+	public DataMerge_MergeVariablesKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getMergeVariablesKeyword_3_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// variables+=[behavior::Variable|QualifiedName]
+protected class DataMerge_VariablesAssignment_3_1 extends AssignmentToken  {
+	
+	public DataMerge_VariablesAssignment_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getVariablesAssignment_3_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_MergeVariablesKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("variables",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("variables");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_3_1_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_3_1_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+// ("," variables+=[behavior::Variable|QualifiedName])+
+protected class DataMerge_Group_3_2 extends GroupToken {
+	
+	public DataMerge_Group_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getGroup_3_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_VariablesAssignment_3_2_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// ","
+protected class DataMerge_CommaKeyword_3_2_0 extends KeywordToken  {
+	
+	public DataMerge_CommaKeyword_3_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getCommaKeyword_3_2_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_Group_3_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new DataMerge_VariablesAssignment_3_1(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// variables+=[behavior::Variable|QualifiedName]
+protected class DataMerge_VariablesAssignment_3_2_1 extends AssignmentToken  {
+	
+	public DataMerge_VariablesAssignment_3_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getVariablesAssignment_3_2_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_CommaKeyword_3_2_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("variables",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("variables");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_3_2_1_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getDataMergeAccess().getVariablesVariableCrossReference_3_2_1_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+
+// "into port"
+protected class DataMerge_IntoPortKeyword_3_3 extends KeywordToken  {
+	
+	public DataMerge_IntoPortKeyword_3_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getIntoPortKeyword_3_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_Group_3_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// port=[component::HybridPort|QualifiedName]
+protected class DataMerge_PortAssignment_3_4 extends AssignmentToken  {
+	
+	public DataMerge_PortAssignment_3_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getDataMergeAccess().getPortAssignment_3_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new DataMerge_IntoPortKeyword_3_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("port",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("port");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getDataMergeAccess().getPortHybridPortCrossReference_3_4_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getDataMergeAccess().getPortHybridPortCrossReference_3_4_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
 
 
 
