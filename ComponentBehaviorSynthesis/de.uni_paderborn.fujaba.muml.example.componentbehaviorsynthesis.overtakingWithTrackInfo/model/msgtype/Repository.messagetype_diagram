@@ -9,7 +9,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_CqxdMQdvEeScEaYFsu5sEQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_CqxdMgdvEeScEaYFsu5sEQ"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../overtaking.fujaba#_9xK4kITBEeKO9r0VL65xcg"/>
+        <element xmi:type="msgtype:MessageType" href="../overtaking.muml#_9xK4kITBEeKO9r0VL65xcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CqvA8QdvEeScEaYFsu5sEQ"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_CqxdMwdvEeScEaYFsu5sEQ" type="3007" fontName="Segoe UI" lineColor="0">
@@ -18,7 +18,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_CqxdNwdvEeScEaYFsu5sEQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_CqxdOAdvEeScEaYFsu5sEQ"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../overtaking.fujaba#_--9hYITBEeKO9r0VL65xcg"/>
+        <element xmi:type="msgtype:MessageType" href="../overtaking.muml#_--9hYITBEeKO9r0VL65xcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CqxdNAdvEeScEaYFsu5sEQ"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_CqxdOQdvEeScEaYFsu5sEQ" type="3007" fontName="Segoe UI" lineColor="0">
@@ -27,7 +27,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_CqyEQgdvEeScEaYFsu5sEQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_CqyEQwdvEeScEaYFsu5sEQ"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../overtaking.fujaba#__4UyUITBEeKO9r0VL65xcg"/>
+        <element xmi:type="msgtype:MessageType" href="../overtaking.muml#__4UyUITBEeKO9r0VL65xcg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CqxdOgdvEeScEaYFsu5sEQ"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_CqyERAdvEeScEaYFsu5sEQ" type="3007" fontName="Segoe UI" lineColor="0">
@@ -36,13 +36,13 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_CqyESAdvEeScEaYFsu5sEQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_CqyESQdvEeScEaYFsu5sEQ"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../overtaking.fujaba#_fSrzEJ2-EeKCPPYajybjTw"/>
+        <element xmi:type="msgtype:MessageType" href="../overtaking.muml#_fSrzEJ2-EeKCPPYajybjTw"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CqyERQdvEeScEaYFsu5sEQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_DHldZFK3EeOhUqMO2Sn_wg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_DHldZVK3EeOhUqMO2Sn_wg"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../overtaking.fujaba#_9E-g8ITBEeKO9r0VL65xcg"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../overtaking.muml#_9E-g8ITBEeKO9r0VL65xcg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DHldYVK3EeOhUqMO2Sn_wg" width="253" height="121"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_DDwk8AdvEeScEaYFsu5sEQ" type="2008" fontName="Segoe UI" lineColor="0">
@@ -54,7 +54,7 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_HbUbFAdvEeScEaYFsu5sEQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_HbUbFQdvEeScEaYFsu5sEQ"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../overtaking.fujaba#_HbLRIAdvEeScEaYFsu5sEQ"/>
+        <element xmi:type="msgtype:MessageType" href="../overtaking.muml#_HbLRIAdvEeScEaYFsu5sEQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HbUbEQdvEeScEaYFsu5sEQ"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_JZSjoAdvEeScEaYFsu5sEQ" type="3007" fontName="Segoe UI" lineColor="0">
@@ -63,15 +63,15 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_JZSjpAdvEeScEaYFsu5sEQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_JZSjpQdvEeScEaYFsu5sEQ"/>
         </children>
-        <element xmi:type="msgtype:MessageType" href="../overtaking.fujaba#_JZR8kAdvEeScEaYFsu5sEQ"/>
+        <element xmi:type="msgtype:MessageType" href="../overtaking.muml#_JZR8kAdvEeScEaYFsu5sEQ"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JZSjoQdvEeScEaYFsu5sEQ"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_DDxMAgdvEeScEaYFsu5sEQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_DDxMAwdvEeScEaYFsu5sEQ"/>
     </children>
-    <element xmi:type="msgtype:MessageTypeRepository" href="../overtaking.fujaba#_DDthoAdvEeScEaYFsu5sEQ"/>
+    <element xmi:type="msgtype:MessageTypeRepository" href="../overtaking.muml#_DDthoAdvEeScEaYFsu5sEQ"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DDwk8QdvEeScEaYFsu5sEQ" x="288"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_DHk2UVK3EeOhUqMO2Sn_wg"/>
-  <element xmi:type="modelinstance:ModelElementCategory" href="../overtaking.fujaba#_8J0gQITBEeKO9r0VL65xcg"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../overtaking.muml#_8J0gQITBEeKO9r0VL65xcg"/>
 </notation:Diagram>

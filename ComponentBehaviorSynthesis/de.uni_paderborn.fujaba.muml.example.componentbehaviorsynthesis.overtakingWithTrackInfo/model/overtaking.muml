@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--muml metamodel version 0.3.2 (r2996)-->
+<!--muml metamodel version 0.3.2 (r14616)-->
 <modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BooleanLogic="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic" xmlns:Comparables="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables" xmlns:Predicates="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates" xmlns:Quantifiers="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:dependencylanguage="http://www.fujaba.de/muml/dependencylanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:mtctl="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_hjT_4IS6EeKrXO1iCP2aTw">
   <categories xmi:id="_ZOIrYIS_EeKO9r0VL65xcg" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
     <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_ZOLusIS_EeKO9r0VL65xcg" name="Overtaker_Role" behavioralElement="_GQwUAITCEeKO9r0VL65xcg">
@@ -357,45 +357,45 @@
   <categories xmi:id="_O_7KwCqeEeO22YgZcbz7_A" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sCqlEeOmGPWtq6tuHA" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_sSqlEeOmGPWtq6tuHA" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_siqlEeOmGPWtq6tuHA" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_syqlEeOmGPWtq6tuHA" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tCqlEeOmGPWtq6tuHA" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tSqlEeOmGPWtq6tuHA" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_siqlEeOmGPWtq6tuHA" name="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_syqlEeOmGPWtq6tuHA" name="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tCqlEeOmGPWtq6tuHA" name="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tSqlEeOmGPWtq6tuHA" name="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_Byc_tiqlEeOmGPWtq6tuHA" name="DOUBLE" primitiveType="DOUBLE"/>
   </categories>
   <categories xmi:id="_zp96gEfOEeO56fW-RvmTLw" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_1vFz8EfOEeO56fW-RvmTLw" name="WhiteSw" behavior="_tmUHcAjYEeShtdwabZpR0Q">
       <extension xsi:type="dependencylanguage:SynthesizableBehavior" xmi:id="_PwNk8AjZEeShtdwabZpR0Q">
-        <dependencyModel xmi:id="_EAYwQBC6EeSgttf4QYvSRQ" comment="/* dependency 1: if track is safe longer than 5 seconds and the distance to grey is below 20, &#xD;&#xA; enable the requesting for overtaking&#xD;&#xA; */">
-          <dependencies xsi:type="dependencylanguage:ConditionalDependency" xmi:id="_EAYwQRC6EeSgttf4QYvSRQ" comment="// dependency 2: the local variable mySpeed complies to the velocity of the white car&#xD;&#xA;">
-            <condition xsi:type="dependencylanguage:CompositionCondition" xmi:id="_EAYwQhC6EeSgttf4QYvSRQ">
-              <leftCondition xsi:type="dependencylanguage:HybridClockCondition" xmi:id="_EAYwQxC6EeSgttf4QYvSRQ" operator="GREATER_OR_EQUAL">
-                <condition xsi:type="dependencylanguage:StateStatusCondition" xmi:id="_EAYwRBC6EeSgttf4QYvSRQ" states="_uQBy2QjYEeShtdwabZpR0Q" kind="ACTIVE"/>
-                <bound xmi:id="_EAYwRRC6EeSgttf4QYvSRQ" unit="SECONDS">
-                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_EAYwRhC6EeSgttf4QYvSRQ" value="5"/>
+        <dependencyModel xmi:id="_aPYecPEIEeSqYobe1M1FBA" comment="/* dependency 1: if track is safe longer than 5 seconds and the distance to grey is below 20, &#xD;&#xA; enable the requesting for overtaking&#xD;&#xA; */">
+          <dependencies xsi:type="dependencylanguage:ConditionalDependency" xmi:id="_aPYecfEIEeSqYobe1M1FBA" comment="// dependency 2: the local variable mySpeed complies to the velocity of the white car&#xD;&#xA;">
+            <condition xsi:type="dependencylanguage:CompositionCondition" xmi:id="_aPYecvEIEeSqYobe1M1FBA">
+              <leftCondition xsi:type="dependencylanguage:HybridClockCondition" xmi:id="_aPYec_EIEeSqYobe1M1FBA" operator="GREATER_OR_EQUAL">
+                <condition xsi:type="dependencylanguage:StateStatusCondition" xmi:id="_aPYedPEIEeSqYobe1M1FBA" states="_uQBy2QjYEeShtdwabZpR0Q" kind="ACTIVE"/>
+                <bound xmi:id="_aPYedfEIEeSqYobe1M1FBA" unit="SECONDS">
+                  <value xsi:type="sdcec:LiteralExpression" xmi:id="_aPYedvEIEeSqYobe1M1FBA" value="5"/>
                 </bound>
               </leftCondition>
-              <rightCondition xsi:type="dependencylanguage:DataCondition" xmi:id="_EAYwRxC6EeSgttf4QYvSRQ">
-                <expression xsi:type="sdcec:ComparisonExpression" xmi:id="_EAYwSBC6EeSgttf4QYvSRQ">
-                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_EAYwSRC6EeSgttf4QYvSRQ" typedNamedElement="_GEnvIE05EeOI293nB1lGXQ"/>
-                  <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_EAYwShC6EeSgttf4QYvSRQ" value="20"/>
+              <rightCondition xsi:type="dependencylanguage:DataCondition" xmi:id="_aPYed_EIEeSqYobe1M1FBA">
+                <expression xsi:type="sdcec:ComparisonExpression" xmi:id="_aPYeePEIEeSqYobe1M1FBA">
+                  <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_aPYeefEIEeSqYobe1M1FBA" typedNamedElement="_GEnvIE05EeOI293nB1lGXQ"/>
+                  <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_aPYeevEIEeSqYobe1M1FBA" value="20"/>
                 </expression>
               </rightCondition>
             </condition>
-            <effects xsi:type="dependencylanguage:EnableDisableEffect" xmi:id="_EAYwSxC6EeSgttf4QYvSRQ" isEnable="true">
-              <event xsi:type="dependencylanguage:TransitionEvent" xmi:id="_EAYwTBC6EeSgttf4QYvSRQ" transition="_tmUulQjYEeShtdwabZpR0Q"/>
+            <effects xsi:type="dependencylanguage:EnableDisableEffect" xmi:id="_aPYee_EIEeSqYobe1M1FBA" isEnable="true">
+              <event xsi:type="dependencylanguage:TransitionEvent" xmi:id="_aPYefPEIEeSqYobe1M1FBA" transition="_tmUulQjYEeShtdwabZpR0Q"/>
             </effects>
           </dependencies>
-          <dependencies xsi:type="dependencylanguage:DataMerge" xmi:id="_EAYwTRC6EeSgttf4QYvSRQ" comment="//dependency 3: if the distance to grey is above 20, enable the end the overtaking&#xD;&#xA;" variables="_-TMrUBC2EeSgttf4QYvSRQ" variableName="Velocity"/>
-          <dependencies xsi:type="dependencylanguage:ConditionalDependency" xmi:id="_EAYwThC6EeSgttf4QYvSRQ">
-            <condition xsi:type="dependencylanguage:DataCondition" xmi:id="_EAYwTxC6EeSgttf4QYvSRQ">
-              <expression xsi:type="sdcec:ComparisonExpression" xmi:id="_EAYwUBC6EeSgttf4QYvSRQ" operator="GREATER">
-                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_EAYwURC6EeSgttf4QYvSRQ" typedNamedElement="_GEnvIE05EeOI293nB1lGXQ"/>
-                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_EAYwUhC6EeSgttf4QYvSRQ" value="20"/>
+          <dependencies xsi:type="dependencylanguage:DataMerge" xmi:id="_aPYeffEIEeSqYobe1M1FBA" comment="//dependency 3: if the distance to grey is above 20, enable the end the overtaking&#xD;&#xA;" variables="_-TMrUBC2EeSgttf4QYvSRQ" variableName="Velocity"/>
+          <dependencies xsi:type="dependencylanguage:ConditionalDependency" xmi:id="_aPYefvEIEeSqYobe1M1FBA">
+            <condition xsi:type="dependencylanguage:DataCondition" xmi:id="_aPYef_EIEeSqYobe1M1FBA">
+              <expression xsi:type="sdcec:ComparisonExpression" xmi:id="_aPYegPEIEeSqYobe1M1FBA" operator="GREATER">
+                <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_aPYegfEIEeSqYobe1M1FBA" typedNamedElement="_GEnvIE05EeOI293nB1lGXQ"/>
+                <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_aPYegvEIEeSqYobe1M1FBA" value="20"/>
               </expression>
             </condition>
-            <effects xsi:type="dependencylanguage:EnableDisableEffect" xmi:id="_EAYwUxC6EeSgttf4QYvSRQ" isEnable="true">
-              <event xsi:type="dependencylanguage:TransitionEvent" xmi:id="_EAYwVBC6EeSgttf4QYvSRQ" transition="_tmUuhAjYEeShtdwabZpR0Q"/>
+            <effects xsi:type="dependencylanguage:EnableDisableEffect" xmi:id="_aPYeg_EIEeSqYobe1M1FBA" isEnable="true">
+              <event xsi:type="dependencylanguage:TransitionEvent" xmi:id="_aPYehPEIEeSqYobe1M1FBA" transition="_tmUuhAjYEeShtdwabZpR0Q"/>
             </effects>
           </dependencies>
         </dependencyModel>

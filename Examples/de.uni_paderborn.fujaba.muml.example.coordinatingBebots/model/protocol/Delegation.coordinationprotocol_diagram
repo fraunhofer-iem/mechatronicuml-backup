@@ -14,6 +14,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_DW_bk7q8EeS_yNxpQx27dg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_DW_blLq8EeS_yNxpQx27dg" x="21" y="15"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_2CdpELztEeSXQcb8Irf0kg">
+          <diagramLink xmi:type="notation:Diagram" href="behavior%20statecharts/Delegation/master.realtimestatechart_diagram#_t61nMGl9EeOlIqc8khLIew"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../coordinatingBebots.muml#_LuCQEF6PEeOU6dzb6wKMjg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DW_bkrq8EeS_yNxpQx27dg" x="244" y="114"/>
       </children>
@@ -21,6 +24,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_DW_bl7q8EeS_yNxpQx27dg" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_DW_bmLq8EeS_yNxpQx27dg" x="-45" y="15"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_3XzEULztEeSXQcb8Irf0kg">
+          <diagramLink xmi:type="notation:Diagram" href="behavior%20statecharts/Delegation/slave.realtimestatechart_diagram#_xgiikml9EeOlIqc8khLIew"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../coordinatingBebots.muml#_LuEsUF6PEeOU6dzb6wKMjg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DW_blrq8EeS_yNxpQx27dg" x="625" y="114"/>
       </children>

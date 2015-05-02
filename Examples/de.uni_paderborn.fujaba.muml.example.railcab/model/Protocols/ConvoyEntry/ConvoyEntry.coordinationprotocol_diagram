@@ -5,7 +5,7 @@
       <children xmi:type="notation:Shape" xmi:id="_sOipgqMmEeS4w6yhHCE-3w" type="3015" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_sOiphKMmEeS4w6yhHCE-3w" type="5023"/>
         <element xmi:type="protocol:CoordinationProtocol" href="../../RailCab.muml#_jka9YHasEeOh__JNCv2_1A"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sOipg6MmEeS4w6yhHCE-3w" x="580"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sOipg6MmEeS4w6yhHCE-3w" x="565" y="137"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_sOiphaMmEeS4w6yhHCE-3w" type="3006" fontName="Segoe UI" lineColor="0">
         <children xmi:type="notation:DecorationNode" xmi:id="_sOiph6MmEeS4w6yhHCE-3w" type="5006">

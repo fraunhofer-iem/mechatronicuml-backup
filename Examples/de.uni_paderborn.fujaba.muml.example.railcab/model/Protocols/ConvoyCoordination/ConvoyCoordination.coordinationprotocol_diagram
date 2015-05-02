@@ -11,6 +11,9 @@
         <children xmi:type="notation:DecorationNode" xmi:id="_mtNH5aMmEeS4w6yhHCE-3w" type="5006">
           <layoutConstraint xmi:type="notation:Location" xmi:id="_mtNH5qMmEeS4w6yhHCE-3w" y="5"/>
         </children>
+        <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_PWvYALrxEeSmz5E0erVbmg">
+          <diagramLink xmi:type="notation:Diagram" href="ConvoyCoordination_coordinator.realtimestatechart_diagram#_lF2vEPScEeOKmIQk3FL8KA"/>
+        </styles>
         <element xmi:type="protocol:Role" href="../../RailCab.muml#_uz92IfR7EeOKmIQk3FL8KA"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mtNH5KMmEeS4w6yhHCE-3w" x="410" y="258"/>
       </children>
