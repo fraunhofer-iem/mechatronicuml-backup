@@ -50,20 +50,21 @@ mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationPr
 	result.name := self.name;
 	result.comment := self.comment;
 	result.annotation := self.annotation.map EAnnotation2EAnnotation();		
-	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);
-	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
-	result.roleConnector.coordinationProtocol := result;
-	result.adaptedFromPattern := self;
+	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+
 	self.roles->forEach(role)
 	{
 		// the role was already mapped in RoleConnector2RoleConnector
-		var newRole := role.resolveone(Role);
+		var newRole : Role := role.map Role2Role();
 		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
 		//set behavorial element?? --> should be already considered when setting behavior of the role!
 		newRole.coordinationProtocol := result;
 		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
 		result.roles+= newRole;
 	};
+	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+	result.roleConnector.coordinationProtocol := result;
+	result.adaptedFromPattern := self;
 } 
 
 
@@ -98,27 +99,25 @@ mapping  actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpressi
 	}
 }
 mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() : actionlanguage::TypedNamedElementExpression
-{
-	init{
-		result.annotation := self.annotation.map EAnnotation2EAnnotation();
-		result.comment := self.comment;
-		result.extension := self.extension.map Extension2Extension();
-		if(self.typedNamedElement.oclIsKindOf(Parameter)){
-			var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
-			var rtsc : RealtimeStatechart := getHighestParentStatechart(self);			
-			var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
-			assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
-			var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
-			var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
-			if(not mappedrtsc.variables->includes(mappedVariable)){
-				mappedrtsc.variables+=mappedVariable;
-				mappedVariable.initializeExpression := boundedExpression.map Expression2Expression();
-			};
-			result.typedNamedElement := mappedVariable;
-		}
-		else
-			result.typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement();
-	}			
+{	
+	result.annotation := self.annotation.map EAnnotation2EAnnotation();
+	result.comment := self.comment;
+	result.extension := self.extension.map Extension2Extension();
+	if(self.typedNamedElement.oclIsKindOf(Parameter)){
+		var refParameter : Parameter := self.typedNamedElement.oclAsType(Parameter);
+		var rtsc : RealtimeStatechart := getHighestParentStatechart(self);			
+		var boundedExpression : core::expressions::Expression =  getBoundExpressionToGivenParameter(refParameter);
+		assert fatal (boundedExpression != null) with log ("There is no parameter binding for the parameter"+ refParameter.name);
+		var mappedVariable : Variable :=refParameter.map Parameter2Variable(rtsc);
+		var mappedrtsc: RealtimeStatechart := rtsc.resolveone(RealtimeStatechart);
+		if(not mappedrtsc.variables->includes(mappedVariable)){
+			mappedrtsc.variables+=mappedVariable;
+			mappedVariable.initializeExpression := boundedExpression.map Expression2Expression();
+		};
+		result.typedNamedElement := mappedVariable;
+	}
+	else
+		result.typedNamedElement := self.typedNamedElement.map TypedNamedElement2TypedNamedElement();				
 }
 
 

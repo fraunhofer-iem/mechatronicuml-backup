@@ -32,7 +32,7 @@ mapping muml::protocol::RoleConnector :: RoleConnector2RoleConnector() : muml::p
     	_comment := self._comment;
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
-    	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint(); // --> maybe this has to be deleted
+    //	_connectorEndpoints := self._connectorEndpoints.map ConnectorEndpoint2ConnectorEndpoint(); // --> maybe this has to be deleted
     //	_coordinationProtocol := self._coordinationProtocol.map AbstractCoordinationSpecification2AbstractCoordinationSpecification();
     	_connectorQualityOfServiceAssumptions := self._connectorQualityOfServiceAssumptions.map ConnectorQualityOfServiceAssumptions2ConnectorQualityOfServiceAssumptions();
    		 }
