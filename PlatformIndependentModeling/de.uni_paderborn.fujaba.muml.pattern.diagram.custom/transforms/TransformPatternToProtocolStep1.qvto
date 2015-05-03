@@ -24,11 +24,11 @@ main()
 	theRootNode := input.rootObjects()[RootNode] -> any(true);
 	
 	// Debug:
-	var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
-	var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
+	//var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
 	
 	// not debug:
-	//var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
 	bindings := input.rootObjects()[ParameterBinding];
 	
 	// check whether the input is correct: 
