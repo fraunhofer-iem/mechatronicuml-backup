@@ -83,10 +83,24 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart && newEnd instanceof de.uni_paderborn.fujaba.muml.component.PortPart)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canExistPortPartCoordinationProtocolPart_4004(getNewSource(),
-						getOldTarget());
+						getOldTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints()
+					.getErrorPortPartCoordinationProtocolPart_4004(
+							getNewSource(), getOldTarget(), sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -96,10 +110,24 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart && newEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canExistPortPartCoordinationProtocolPart_4004(getOldSource(),
-						getNewTarget());
+						getNewTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints()
+					.getErrorPortPartCoordinationProtocolPart_4004(
+							getOldSource(), getNewTarget(), sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -124,8 +152,10 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
+
 		getOldSource().setCoordinationProtocolPart(null);
 		getNewSource().setCoordinationProtocolPart(getOldTarget());
+
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -133,7 +163,9 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
+
 		getOldSource().setCoordinationProtocolPart(getNewTarget());
+
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -163,5 +195,12 @@ public class PortPartCoordinationProtocolPartReorientCommand extends
 	 */
 	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected int getReorientDirection() {
+		return reorientDirection;
 	}
 }

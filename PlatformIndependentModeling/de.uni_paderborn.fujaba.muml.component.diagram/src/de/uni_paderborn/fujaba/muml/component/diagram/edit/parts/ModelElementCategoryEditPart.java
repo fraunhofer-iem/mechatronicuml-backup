@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 
 import java.util.Collection;
@@ -25,6 +37,29 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	public static final int VISUAL_ID = 1000;
 
 	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
+
+	/**
 	 * @generated
 	 */
 	public ModelElementCategoryEditPart(View view) {
@@ -39,9 +74,13 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
+
+		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
 		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy());
+				"CustomCanonical",
+				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy(
+						false));
+
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(

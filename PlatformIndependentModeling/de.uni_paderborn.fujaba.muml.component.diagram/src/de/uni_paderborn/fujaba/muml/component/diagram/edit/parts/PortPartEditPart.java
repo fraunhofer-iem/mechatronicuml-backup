@@ -13,7 +13,6 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
@@ -24,23 +23,20 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -51,6 +47,29 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 3022;
+
+	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
 
 	/**
 	 * @generated
@@ -85,6 +104,15 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortPartEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
+		installEditPolicy(
+				EditPolicy.GRAPHICAL_NODE_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+
+		installEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
+
 	}
 
 	/**
@@ -98,15 +126,7 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 				switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID:
-					return new BorderItemSelectionEditPolicy() {
-
-						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle(
-									(GraphicalEditPart) getHost());
-							mh.setBorder(null);
-							return Collections.singletonList(mh);
-						}
-					};
+					return new de.uni_paderborn.fujaba.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -147,8 +167,9 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
+			// bug-fix: allows the free positioning of external Labels
+			de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.common.figures.CustomExternalLabelBorderItemLocator(
+					getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -164,6 +185,7 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
+
 		return result;
 	}
 
@@ -246,6 +268,28 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		boolean update = false;
+
+		if (event.getFeature() == de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getPortPart_CoordinationProtocolPart()) {
+			update = true;
+		}
+
+		if (update) {
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
+		}
+		super.handleNotificationEvent(event);
 	}
 
 	protected void doCanonicalRefresh() {

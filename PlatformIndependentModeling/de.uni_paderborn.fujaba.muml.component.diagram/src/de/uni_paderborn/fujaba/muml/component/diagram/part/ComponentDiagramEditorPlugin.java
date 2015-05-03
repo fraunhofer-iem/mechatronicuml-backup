@@ -1,13 +1,23 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.part;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -126,6 +136,15 @@ public class ComponentDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
+		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+
+		// Custom Factories with positive priority
+		factories.addAll(positivePriorityFactories);
+
+		// Default Factories
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories
@@ -155,6 +174,9 @@ public class ComponentDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
+
+		// Custom Factories with negative priority
+		factories.addAll(negativePriorityFactories);
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -325,4 +347,5 @@ public class ComponentDiagramEditorPlugin extends AbstractUIPlugin {
 	public LogHelper getLogHelper() {
 		return myLogHelper;
 	}
+
 }

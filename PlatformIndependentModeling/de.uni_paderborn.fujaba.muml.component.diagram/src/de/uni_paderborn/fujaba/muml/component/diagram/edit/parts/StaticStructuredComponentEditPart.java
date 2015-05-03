@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 
 import java.util.Collection;
@@ -50,6 +62,29 @@ public class StaticStructuredComponentEditPart extends
 	public static final int VISUAL_ID = 2005;
 
 	/**
+	 * MUML FIX, see code comments.
+	 *
+	 * @generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(Request request) {
+
+		@SuppressWarnings("unchecked")
+		Collection<Object> hosts = super.disableCanonicalFor(request);
+
+		// MUML FIX: Make sure that commands disable ALL canonical editpolicies,
+		// because GMF supports adding additional commands using Edit Helpers concept,
+		// which could trigger refresh of any canonical edit policy.
+		// So it should be the cleanest solution to disable all canonical edit policies. 
+		EditPart part = this;
+		while (part != null) {
+			hosts.add(part);
+			part = part.getParent();
+		}
+		return hosts;
+	}
+
+	/**
 	 * @generated
 	 */
 	protected IFigure contentPane;
@@ -89,6 +124,15 @@ public class StaticStructuredComponentEditPart extends
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.component.ComponentColorEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
+		installEditPolicy(
+				EditPolicy.GRAPHICAL_NODE_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+
+		installEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
+
 	}
 
 	/**
@@ -243,6 +287,10 @@ public class StaticStructuredComponentEditPart extends
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47);
+
+		// Ensures that the element can be shrinked (Muml Bug #62).
+		result.setMinimumSize(new Dimension(0, 0));
+
 		return result;
 	}
 

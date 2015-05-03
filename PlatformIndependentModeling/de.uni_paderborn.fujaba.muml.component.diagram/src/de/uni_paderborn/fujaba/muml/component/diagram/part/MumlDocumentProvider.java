@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.part;
 
 import java.io.IOException;
@@ -67,7 +79,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	protected ElementInfo createElementInfo(Object element)
 			throws CoreException {
-		if (false == element instanceof FileEditorInput
+		if (false == element instanceof IFileEditorInput
 				&& false == element instanceof URIEditorInput) {
 			throw new CoreException(
 					new Status(
@@ -78,7 +90,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
 									new Object[] {
 											element,
-											"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+											"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 							null));
 		}
 		IEditorInput editorInput = (IEditorInput) element;
@@ -94,7 +106,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 * @generated
 	 */
 	protected IDocument createDocument(Object element) throws CoreException {
-		if (false == element instanceof FileEditorInput
+		if (false == element instanceof IFileEditorInput
 				&& false == element instanceof URIEditorInput) {
 			throw new CoreException(
 					new Status(
@@ -105,10 +117,19 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
 									new Object[] {
 											element,
-											"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+											"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 							null));
 		}
 		IDocument document = createEmptyDocument();
+
+		// Begin added to reuse the EditingDomain if the input element is of type FileEditorInputProxy (see muml bug #252)
+		if (element instanceof FileEditorInputProxy) {
+			FileEditorInputProxy proxy = (FileEditorInputProxy) element;
+			((DiagramDocument) document).setEditingDomain(proxy
+					.getEditingDomain());
+		}
+		// End added
+
 		setDocumentContent(document, (IEditorInput) element);
 		setupDocument(element, document);
 		return document;
@@ -206,8 +227,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			throws CoreException {
 		IDiagramDocument diagramDocument = (IDiagramDocument) document;
 		TransactionalEditingDomain domain = diagramDocument.getEditingDomain();
-		if (element instanceof FileEditorInput) {
-			IStorage storage = ((FileEditorInput) element).getStorage();
+		if (element instanceof IFileEditorInput) {
+			IStorage storage = ((IFileEditorInput) element).getStorage();
 			Diagram diagram = DiagramIOUtil.load(domain, storage, true,
 					getProgressMonitor());
 			document.setContent(diagram);
@@ -278,7 +299,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
 									new Object[] {
 											element,
-											"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+											"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 							null));
 		}
 	}
@@ -380,7 +401,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	public boolean isModifiable(Object element) {
 		if (!isStateValidated(element)) {
-			if (element instanceof FileEditorInput
+			if (element instanceof IFileEditorInput
 					|| element instanceof URIEditorInput) {
 				return true;
 			}
@@ -639,8 +660,8 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 		} else {
 			URI newResoruceURI;
 			List<IFile> affectedFiles = null;
-			if (element instanceof FileEditorInput) {
-				IFile newFile = ((FileEditorInput) element).getFile();
+			if (element instanceof IFileEditorInput) {
+				IFile newFile = ((IFileEditorInput) element).getFile();
 				affectedFiles = Collections.singletonList(newFile);
 				newResoruceURI = URI.createPlatformResourceURI(newFile
 						.getFullPath().toString(), true);
@@ -657,7 +678,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 										de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
 										new Object[] {
 												element,
-												"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+												"org.eclipse.ui.IFileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
 								null));
 			}
 			if (false == document instanceof IDiagramDocument) {
@@ -748,7 +769,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 	 * @generated
 	 */
 	protected void handleElementMoved(IEditorInput input, URI uri) {
-		if (input instanceof FileEditorInput) {
+		if (input instanceof IFileEditorInput) {
 			IFile newFile = ResourcesPlugin
 					.getWorkspace()
 					.getRoot()

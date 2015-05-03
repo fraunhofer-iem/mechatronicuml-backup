@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -39,9 +51,19 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 	public AssemblyConnectorCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
+		de.uni_paderborn.fujaba.muml.component.StructuredComponent container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+
+		if (container == null) {
+			View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getSourceView(getRequest());
+			View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getTargetView(getRequest());
+			container = deduceContainerUsingViews(sourceView, targetView);
+		}
+		this.container = container;
 	}
 
 	/**
@@ -66,9 +88,24 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateAssemblyConnector_4001(
-						getContainer(), getSource(), getTarget());
+						getContainer(), getSource(), getTarget(), sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorAssemblyConnector_4001(
+							getContainer(), getSource(), getTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -159,6 +196,23 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
 				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) element;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Traverse the notation view hierarchy.
+	 * 
+	 * @generated
+	 */
+	private static de.uni_paderborn.fujaba.muml.component.StructuredComponent deduceContainerUsingViews(
+			View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view
+				.eContainer()) {
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
+				return (de.uni_paderborn.fujaba.muml.component.StructuredComponent) view
+						.getElement();
 			}
 		}
 		return null;

@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.muml.component.diagram.part;
 
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.emf.ecore.presentation.EcoreActionBarContributor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.tooling.runtime.actions.DefaultLoadResourceAction;

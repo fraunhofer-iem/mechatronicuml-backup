@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.parsers;
 
 import java.util.Collections;
@@ -94,7 +106,7 @@ public class DiscretePortLabelExpressionLabelParser5025 extends
 	/**
 	 * @generated
 	 */
-	private boolean validateValues(EObject target, String newString) {
+	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
@@ -102,7 +114,7 @@ public class DiscretePortLabelExpressionLabelParser5025 extends
 	/**
 	 * @generated
 	 */
-	private IStatus updateValues(EObject target, String newString)
+	protected IStatus updateValues(EObject target, String newString)
 			throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
