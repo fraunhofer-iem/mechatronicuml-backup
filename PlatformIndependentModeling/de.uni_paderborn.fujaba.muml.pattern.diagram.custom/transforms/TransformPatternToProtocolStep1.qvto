@@ -17,18 +17,18 @@ modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 // @author sthiele2
 transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackage);
 property bindings : Set(ParameterBinding);
-
+property theRootNode : RootNode;
 main()
 { 
 	// get the input parameters. There is exactly one root and exactly one coordination pattern	
-	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
+	theRootNode := input.rootObjects()[RootNode] -> any(true);
 	
 	// Debug:
-	//var patternCategory : ModelElementCategory := getPatternCategory(); 
-	//var thePattern : CoordinationPattern := patternCategory.modelElements->at(0).oclAsType(CoordinationPattern);
+	var patternCategory : ModelElementCategory := getPatternCategory(theRootNode); 
+	var thePattern : CoordinationPattern := patternCategory.modelElements->at(1).oclAsType(CoordinationPattern);
 	
 	// not debug:
-	var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
+	//var thePattern : CoordinationPattern := input.rootObjects()[CoordinationPattern] -> any(true);
 	bindings := input.rootObjects()[ParameterBinding];
 	
 	// check whether the input is correct: 
@@ -37,35 +37,33 @@ main()
     assert fatal (bindings != null and bindings->size() = thePattern.patternParameters->size()) with log ("Parameter Bindings are null!");
     
     // start transformation
-	createProtocol(thePattern, theRootNode);
+	createProtocol(thePattern);
 }
-helper createProtocol(pattern : CoordinationPattern, root : RootNode)
+helper createProtocol(pattern : CoordinationPattern)
 {
-	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol(root);	
-	var protocolCategory : ModelElementCategory := getProtocolCategory(root);
+	var newProtocol : CoordinationProtocol := pattern.map CoordinationPattern2CoordinationProtocol();	
+	var protocolCategory : ModelElementCategory := getProtocolCategory(theRootNode);
 	protocolCategory.modelElements +=newProtocol;
 }
-mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol(theRootNode : RootNode) : muml::protocol::CoordinationProtocol
-{
-	init{
-		result.name := self.name;
-		result.comment := self.comment;
-		result.annotation := self.annotation.map EAnnotation2EAnnotation();		
-		var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);
-		result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
-		result.roleConnector.coordinationProtocol := result;
-		result.adaptedFromPattern := self;
-		self.roles->forEach(role)
-		{
-			// the role was already mapped in RoleConnector2RoleConnector
-			var newRole := role.resolveone(Role);
-			//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
-			//set behavorial element?? --> should be already considered when setting behavior of the role!
-			newRole.coordinationProtocol := result;
-			statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
-			result.roles+= newRole;
-		};
-	}
+mapping muml::pattern::CoordinationPattern :: CoordinationPattern2CoordinationProtocol() : muml::protocol::CoordinationProtocol
+{	
+	result.name := self.name;
+	result.comment := self.comment;
+	result.annotation := self.annotation.map EAnnotation2EAnnotation();		
+	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);
+	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+	result.roleConnector.coordinationProtocol := result;
+	result.adaptedFromPattern := self;
+	self.roles->forEach(role)
+	{
+		// the role was already mapped in RoleConnector2RoleConnector
+		var newRole := role.resolveone(Role);
+		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+		//set behavorial element?? --> should be already considered when setting behavior of the role!
+		newRole.coordinationProtocol := result;
+		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		result.roles+= newRole;
+	};
 } 
 
 
