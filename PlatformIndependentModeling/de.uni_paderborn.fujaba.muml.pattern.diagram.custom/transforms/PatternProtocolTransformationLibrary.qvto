@@ -15,14 +15,14 @@ modeltype PatternPackage uses muml::pattern('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
 
-property theRootNode : RootNode;
-query getRealtimeStatechartCategory() : ModelElementCategory {
+
+query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
 }
-query getProtocolCategory() : ModelElementCategory {
+query getProtocolCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.protocol.category') -> any(true);
 }
-query getPatternCategory() : ModelElementCategory {
+query getPatternCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.pattern.category') -> any(true);
 }
 
