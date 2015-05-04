@@ -50,8 +50,8 @@
 	[generateMiddlewareILFiles(rsri, path, cgm)/]
 	[generateNetworkInterfaces(rsri, path)/]
 	[generateGlobalIdentifierFiles(cgm, path)/]
-	[generateProtobufMessageFile(rsri, path)/]
-	[generateProtobufNewHeader(rsri, path)/]
+	[comment generateProtobufMessageFile(rsri, path)/]
+	[comment generateProtobufNewHeader(rsri, path)/]
 	
 [/template]
 
