@@ -41,13 +41,7 @@ public class ModelElementCategoryEditor
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
