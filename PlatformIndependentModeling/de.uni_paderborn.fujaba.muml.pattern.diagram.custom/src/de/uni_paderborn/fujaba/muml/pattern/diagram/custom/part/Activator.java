@@ -16,6 +16,7 @@ public class Activator extends AbstractUIPlugin {
 
 	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP1="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep1.qvto";
 	public static final String TRANSFORM_PATTERN_TO_PROTOCOTOL_STEP2="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformPatternToProtocolStep2.qvto";
+	public static final String TRANSFORM_PROTOCOL_TO_PATTERN="/de.uni_paderborn.fujaba.muml.pattern.diagram.custom/transforms/TransformProtocolToPattern.qvto";
 	
 	private static Activator instance;
 

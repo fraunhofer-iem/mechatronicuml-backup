@@ -52,7 +52,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 	@Override
 	public String wizardGetId() {
-		return "de.uni_paderborn.fujaba.export.PatternToProtocolWizard";
+		return "de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardPatternToProtocol";
 	}
 
 	public void addPages() {
@@ -162,7 +162,7 @@ public class PatternToProtocolExportWizard extends AbstractFujabaExportWizard {
 
 		// get the protocol category and get the number of protocols within this
 		// category
-		CoordinationProtocol newProtocol = PatternToProtocolTransformation.TransformPatternToProtocolStep1(thePattern,rootNode, bindings,editingDomain);
+		CoordinationProtocol newProtocol = PatternToProtocolTransformation.transformPatternToProtocolStep1(thePattern,rootNode, bindings,editingDomain);
 		if (newProtocol == null)
 			return;
 

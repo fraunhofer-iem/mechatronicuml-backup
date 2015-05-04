@@ -181,8 +181,14 @@
       <wizard
             category="de.uni_paderborn.fujaba.export"
             class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.PatternToProtocolExportWizard"
-            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizard"
+            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardPatternToProtocol"
             name="Pattern To Protocol Transformation Wizard">
+      </wizard>
+      <wizard
+            category="de.uni_paderborn.fujaba.export"
+            class="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard.ProtocolToPatternExportWizard"
+            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.ExportWizardProtocolToPattern"
+            name="Protocol To Pattern Transformation Wizard">
       </wizard>
    </extension>  
 </plugin>

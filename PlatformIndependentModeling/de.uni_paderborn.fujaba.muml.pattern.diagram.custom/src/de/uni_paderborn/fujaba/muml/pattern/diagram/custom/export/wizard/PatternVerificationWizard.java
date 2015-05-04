@@ -86,7 +86,7 @@ public class PatternVerificationWizard extends AbstractFujabaExportWizard {
 
 	public void startUppaalModelChecking() {
 		protocolFromSelectedPattern = PatternToProtocolTransformation
-				.TransformPatternToProtocolStep1(selectedPattern,
+				.transformPatternToProtocolStep1(selectedPattern,
 						(RootNode) selectedPattern.eContainer().eContainer(),
 						p2.getBindings(), editingDomain);		
 		PatternToProtocolTransformation.TransformPatternToProtocolStep2(selectedPattern, protocolFromSelectedPattern, (RootNode)protocolFromSelectedPattern.eContainer().eContainer(), editingDomain);

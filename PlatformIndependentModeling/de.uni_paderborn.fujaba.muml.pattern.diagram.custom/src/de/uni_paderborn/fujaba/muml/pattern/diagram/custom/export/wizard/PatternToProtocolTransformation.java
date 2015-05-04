@@ -33,8 +33,10 @@ import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCom
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.pattern.diagram.custom.part.Activator;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
@@ -74,9 +76,47 @@ public class PatternToProtocolTransformation {
 	}
 	
 	
-	
+	public static CoordinationPattern transformProtocolToPattern(CoordinationProtocol protocol, Variable[] variables,  EditingDomain editingDomain)
+	{
+		EObject[] input = new EObject[variables.length+2];
+		RootNode rootNode = (RootNode)protocol.eContainer().eContainer();
+		input[0]= rootNode;
+		input[1]=protocol;	
+		for(int i=0; i< variables.length;i++)
+		{
+			input[i+2] = variables[i];
+		}
+		ModelElementCategory patternCategory = null;
+		for (ModelElementCategory cat : rootNode.getCategories()) {
+			if (cat.getKey().contains("pattern")) {
+				patternCategory = cat;
+				break;
+			}
+		}
+		int nrOfPatternsBeforeTranslation = patternCategory.getModelElements().size();
+		
+		final List<ModelExtent> modelExtents = Arrays
+				.asList(new ModelExtent[] { new BasicModelExtent(Arrays
+						.asList(input)) });
+		
+		final TransformationExecutor transformationExecutor = Activator.getInstance().getTransformationExecutor(Activator.TRANSFORM_PROTOCOL_TO_PATTERN,false);
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				transformationExecutor, modelExtents);
 
-	public static CoordinationProtocol TransformPatternToProtocolStep1 (CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
+		if (command.canExecute())
+			editingDomain.getCommandStack().execute(command);
+		int nrOfPatternsAfterTranslation = patternCategory.getModelElements().size();
+		
+		if(nrOfPatternsAfterTranslation > nrOfPatternsBeforeTranslation)
+		{
+			return (CoordinationPattern)patternCategory.getModelElements().get(nrOfPatternsAfterTranslation-1);
+		}
+		else
+			return null;
+		
+	}
+
+	public static CoordinationProtocol transformPatternToProtocolStep1 (CoordinationPattern selectedPattern, RootNode rootNode, ArrayList<ParameterBinding> bindings, EditingDomain editingDomain)
 	{
 		// create the input for the transformation. It consists of the rootNode, the 
 		// selectedPattern and the ParameterBindings
@@ -155,18 +195,18 @@ public class PatternToProtocolTransformation {
 	}
 	
 	
-	public static void createDiagrams(Shell shell, CoordinationProtocol newProtocol )
+	public static void createDiagrams(Shell shell, AbstractCoordinationSpecification newCoordinationSpecification )
 	{
-		final Resource resource = newProtocol.eResource();
+		final Resource resource = newCoordinationSpecification.eResource();
 		// steps to create the diagram files start here
-				String finalReportMessage = "Created Diagram of the Coordination Protocol: "
-						+ newProtocol.getName()
+				String finalReportMessage = "Created Diagram of "+newCoordinationSpecification.eClass().getName() + " "
+						+ newCoordinationSpecification.getName()
 						+ " and the corresponding realtimestatecharts!";
 
 				// set the elements whose diagrams should be created
 				final Collection<EObject> elements = new ArrayList<EObject>();
-				elements.add(newProtocol);
-				for (Role role : newProtocol.getRoles()) {
+				elements.add(newCoordinationSpecification);
+				for (Role role : newCoordinationSpecification.getRoles()) {
 					RealtimeStatechart rtsc = (RealtimeStatechart) role.getBehavior();
 					if (rtsc != null)
 						elements.add(rtsc);
