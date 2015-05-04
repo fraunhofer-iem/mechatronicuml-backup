@@ -10,8 +10,9 @@ import de.uni_paderborn.fujaba.tests.QVTOCompileErrorTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({ PimMetamodelTest.class, PimGenmodelTest.class,
-		PimPluginXmlPackageTest.class, PimValidateMetamodelsTest.class, PimValidatePropsheetTest.class,
-		PimDiagramPluginXmlTest.class, PimGMFMapTest.class, QVTOCompileErrorTest.class })
+		PimPluginXmlPackageTest.class, PimValidateMetamodelsTest.class,
+		PimDiagramPluginXmlTest.class, PimGMFMapTest.class,
+		QVTOCompileErrorTest.class })
 public class MumlTestSuite {
 	// empty
 }
