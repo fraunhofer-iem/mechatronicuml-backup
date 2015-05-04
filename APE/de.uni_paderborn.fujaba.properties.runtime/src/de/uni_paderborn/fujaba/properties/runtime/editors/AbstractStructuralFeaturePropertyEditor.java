@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -32,7 +34,6 @@ import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.examples.eventmanager.EventFilter;
 import org.eclipse.ocl.examples.eventmanager.EventManager;
 import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
-import org.eclipse.ocl.examples.eventmanager.filters.AbstractEventFilter;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
 import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
@@ -348,11 +349,18 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	protected Collection<Object> getChoices() {
 		List<Object> choices = null;
-		if (feature.getEType() == EcorePackage.Literals.EBOOLEAN) {
-			choices = Arrays.asList(new Object[] { true, false });
-		}
-		if (choices == null && itemPropertyDescriptor != null) {
-			choices = new ArrayList<Object>(itemPropertyDescriptor.getChoiceOfValues(input));
+		try {
+			if (feature.getEType() == EcorePackage.Literals.EBOOLEAN) {
+				choices = Arrays.asList(new Object[] { true, false });
+			}
+			if (choices == null && itemPropertyDescriptor != null) {
+				choices = new ArrayList<Object>(itemPropertyDescriptor.getChoiceOfValues(input));
+			}
+		} catch (Exception e) {
+			  IStatus status = new Status(IStatus.ERROR,
+			      RuntimePlugin.PLUGIN_ID, 0,
+			      "Could not generate choices for feature.", e);
+			  RuntimePlugin.getDefault().getLog().log(status);
 		}
 		if (choices == null) {
 			choices = Collections.emptyList();
