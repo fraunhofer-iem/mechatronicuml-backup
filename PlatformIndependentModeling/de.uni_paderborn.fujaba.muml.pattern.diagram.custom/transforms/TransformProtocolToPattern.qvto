@@ -22,12 +22,20 @@ transformation TransformPatternToProtocolStep1(inout input : ModelInstancePackag
 
 property variablesToParameter : Set(Variable);
 property theProtocol : CoordinationProtocol;
+property theRootNode : RootNode;
 
 main()
 { 
+	
+
+	
 	// fetch input
 	theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	
+	// not debug:
 	variablesToParameter := input.rootObjects()[Variable];
+	
+	// debug:
 	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
 	
 	// check input
@@ -42,33 +50,32 @@ main()
 helper createPatternFromProtocol()
 {
 	var newPattern : CoordinationPattern :=theProtocol.map CoordinationProtocol2CoordinationPattern();	
-	var patternCategory : ModelElementCategory := getPatternCategory();	
+	var patternCategory : ModelElementCategory := getPatternCategory(theRootNode);	
 	patternCategory.modelElements +=newPattern;
 }
 
 mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2CoordinationPattern() : muml::pattern::CoordinationPattern
 {
-	init{
-		result._name := self.name;
-		result._comment := self.comment;
-		result._annotation := self.annotation.map EAnnotation2EAnnotation();	
-		var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory();
-		result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
-		result.roleConnector.coordinationProtocol := result;
-		self.roles->forEach(role)
-		{
-			// the role was already mapped in RoleConnector2RoleConnector
-			var newRole := role.resolveone(Role);
-			//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
-			//set behavorial element?? --> should be already considered when setting behavior of the role!
-			newRole.coordinationProtocol := result;
-			statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
-			result.roles+= newRole;
-		};
-		variablesToParameter-> forEach(variable){
+	result.name := self.name;
+	result.comment := self.comment;
+	result.annotation := self.annotation.map EAnnotation2EAnnotation();		
+	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
+
+	self.roles->forEach(role)
+	{
+		// the role was already mapped in RoleConnector2RoleConnector
+		var newRole : Role := role.map Role2Role();
+		//newRole.behavior := role.behavior.oclAsType(RealtimeStatechart).map RealtimeStatechart2RealtimeStatechart();
+		//set behavorial element?? --> should be already considered when setting behavior of the role!
+		newRole.coordinationProtocol := result;
+		statechartCategory.modelElements += newRole.behavior.oclAsType(RealtimeStatechart);
+		result.roles+= newRole;
+	};
+	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
+	result.roleConnector.coordinationProtocol := result;
+	variablesToParameter-> forEach(variable){
 			result.patternParameters+= variable.resolveone(Parameter);
-		}
-	}
+	}	
 }
 
 mapping Variable::Variable2Parameter(): Parameter
