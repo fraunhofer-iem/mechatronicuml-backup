@@ -37,8 +37,9 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.Realti
 public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
 	
-	private static String dissambleTransformation= "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/SynthesisApproach.qvto";
-	private static String dissambleTransformationjana= "/de.uni_paderborn.fujaba.muml.onetomanyprotocols.synthesis/transforms/SynthesisApproach.qvto";
+	private static String disassembleTransformation= "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/SynthesisApproach.qvto";
+	// janas transformation
+	//private static String dissambleTransformation= "/de.uni_paderborn.fujaba.muml.onetomanyprotocols.synthesis/transforms/SynthesisApproach.qvto";
 	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -82,7 +83,7 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 				.asList(new ModelExtent[] { inputExtent});
 
 		// Load QVTO script
-		final TransformationExecutor transformationExecutor = getTransformationExecutor(dissambleTransformationjana, false);
+		final TransformationExecutor transformationExecutor = getTransformationExecutor(disassembleTransformation, false);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);
