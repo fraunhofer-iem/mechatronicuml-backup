@@ -1,18 +1,32 @@
 package de.uni_paderborn.fujaba.muml.browser.views;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
+import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
-import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.viewers.AbstractTreeViewer;
+import org.eclipse.jface.viewers.DecoratingLabelProvider;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -20,7 +34,9 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
@@ -28,39 +44,30 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchActionConstants;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.DrillDownAdapter;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
+import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import de.uni_paderborn.fujaba.muml.browser.decorators.ModifiedElementDecorator;
+import de.uni_paderborn.fujaba.muml.browser.providers.IModifiedElementProvider;
 import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider;
 import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserLabelProvider;
 
-
-/**
- * This sample class demonstrates how to plug-in a new
- * workbench view. The view shows data obtained from the
- * model. The sample creates a dummy model on the fly,
- * but a real implementation would connect to the model
- * available either in this or another plug-in (e.g. the workspace).
- * The view is connected to the model using a content provider.
- * <p>
- * The view uses a label provider to define how model
- * objects should be presented in the view. Each
- * view can present the same model objects using
- * different labels and icons, if needed. Alternatively,
- * a single label provider can be shared between views
- * in order to ensure that objects of the same type are
- * presented in the same way everywhere.
- * <p>
- */
-
-public class ModelBrowserView extends ViewPart implements ISelectionProvider {
+public class ModelBrowserView extends ViewPart implements ISelectionProvider, ITabbedPropertySheetPageContributor {
 	
-	
+	private TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+
 	// Selection Provider members
 	private ISelection selection;
 	private List<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
@@ -87,8 +94,60 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider {
 			listener.selectionChanged(new SelectionChangedEvent(this, selection));
 		}
 	}
+
+	// Synchronization with workspace,
+	// And tracking of modified elements to display them in italics
+	IModifiedElementProvider modifiedElementProvider = new IModifiedElementProvider.Default();
+	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
+		public void resourceSetChanged(final ResourceSetChangeEvent event) {
+			for (Notification notification : event.getNotifications()) {
+				if (notification.getNotifier() instanceof EObject) {
+					modifiedElementProvider.addModifiedElement((EObject) notification.getNotifier());
+				}
+			}
+			scheduleRefresh();
+		}
+	};
 	
-	
+	private WorkspaceSynchronizer synchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+
+		public boolean handleResourceDeleted(Resource resource) {
+			resource.unload();
+			synchronized (modifiedElementProvider) {
+				modifiedElementProvider.removeModifiedElements(resource);
+			}
+			scheduleRefresh();
+			return true;
+		}
+
+		public boolean handleResourceMoved(Resource resource, URI newURI) {
+			resource.unload();
+			synchronized (modifiedElementProvider) {
+				modifiedElementProvider.removeModifiedElements(resource);
+			}
+			scheduleRefresh();
+			return true;
+		}
+
+		public boolean handleResourceChanged(Resource resource) {
+			resource.unload();
+			try {
+				resource.load(resource.getResourceSet().getLoadOptions());
+			} catch (IOException e) {
+				ModelBrowserPlugin.log(e);
+			}
+			synchronized (modifiedElementProvider) {
+				modifiedElementProvider.removeModifiedElements(resource);
+			}
+			scheduleRefresh();
+
+			return true;
+		}
+		
+		public void dispose() {
+		}
+
+	});
 	
 	/**
 	 * The ID of the view as specified by the extension.
@@ -97,41 +156,45 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider {
 
 	private TreeViewer viewer;
 	private DrillDownAdapter drillDownAdapter;
-	private Action action1;
-	private Action action2;
-	private Action doubleClickAction;
-
-	class NameSorter extends ViewerSorter {
-	}
-	private TransactionalEditingDomain editingDomain;
-
-	/**
-	 * The constructor.
-	 */
+	private Action actionSave;
+	private String defaultTitle;
+	
 	public ModelBrowserView() {
+		editingDomain.addResourceSetListener(resourceSetListener);
 	}
 
+	@Override
+	public void init(IViewSite site) throws PartInitException {
+		super.init(site);
+		defaultTitle = getPartName();
+	}
+	
 	/**
 	 * This is a callback that will allow us
 	 * to create the viewer and initialize it.
 	 */
 	public void createPartControl(Composite parent) {
-		TransactionalEditingDomain editingDomain = getEditingDomain();
-
 		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				setSelection(event.getSelection());
+				setSelection(adaptSelection(event.getSelection()));
 			}
 		});
 		drillDownAdapter = new DrillDownAdapter(viewer);
 
+		ILabelProvider labelProvider = new ModelBrowserLabelProvider(editingDomain, viewer);
+//		labelProvider = new DecoratingLabelProvider(labelProvider, PlatformUI.getWorkbench().getDecoratorManager().getLabelDecorator());
+		labelProvider = new DecoratingLabelProvider(labelProvider, new org.eclipse.emf.edit.ui.provider.DiagnosticDecorator.StyledError(editingDomain.getResourceSet(), viewer));
+		labelProvider = new DecoratingLabelProvider(labelProvider, new ModifiedElementDecorator(modifiedElementProvider));
+		
+		
+		viewer.setLabelProvider(labelProvider);
 		viewer.setContentProvider(new ModelBrowserContentProvider(editingDomain));
-		viewer.setLabelProvider(new ModelBrowserLabelProvider(editingDomain));
-		viewer.setSorter(new NameSorter());
+		viewer.setSorter(new ViewerSorter());
 		viewer.addFilter(new ViewerFilter() {
 
+			// hide files that start with a dot
 			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
 				StructuredViewer structuredViewer = (StructuredViewer) viewer;
@@ -145,7 +208,6 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider {
 			
 		});
 		getViewSite().setSelectionProvider(this);
-
 		viewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
 
 		// Create the help context id for the viewer's control
@@ -156,6 +218,33 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider {
 		contributeToActionBars();
 	}
 
+	protected ISelection adaptSelection(ISelection sel) {
+		List<Object> selection = new ArrayList<Object>();
+		if (sel instanceof IStructuredSelection) {
+			Iterator<?> it = ((IStructuredSelection) sel).iterator();
+			while (it.hasNext()) {
+				Object element = it.next();
+				if (element instanceof IFile) {
+					EObject resourceRoot =ModelBrowserPlugin.getResourceRoot(editingDomain.getResourceSet(), element);
+					if (resourceRoot != null) {
+						element = resourceRoot;
+					}
+				}
+				if (element instanceof IAdaptable) {
+					IAdaptable adaptable = (IAdaptable) element;
+					EObject eObject = (EObject) adaptable.getAdapter(EObject.class);
+					if (eObject != null) {
+						element = eObject;
+					}
+				}
+				if (element != null) {
+					selection.add(element);
+				}
+			}
+		}
+		
+		return new StructuredSelection(selection);
+	}
 	private void hookContextMenu() {
 		MenuManager menuMgr = new MenuManager("#PopupMenu");
 		menuMgr.setRemoveAllWhenShown(true);
@@ -176,14 +265,12 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider {
 	}
 
 	private void fillLocalPullDown(IMenuManager manager) {
-		manager.add(action1);
+		manager.add(actionSave);
 		manager.add(new Separator());
-		manager.add(action2);
 	}
 
 	private void fillContextMenu(IMenuManager manager) {
-		manager.add(action1);
-		manager.add(action2);
+		manager.add(actionSave);
 		manager.add(new Separator());
 		drillDownAdapter.addNavigationActions(manager);
 		// Other plug-ins can contribute there actions here
@@ -191,68 +278,130 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider {
 	}
 	
 	private void fillLocalToolBar(IToolBarManager manager) {
-		manager.add(action1);
-		manager.add(action2);
+		manager.add(actionSave);
 		manager.add(new Separator());
 		drillDownAdapter.addNavigationActions(manager);
 	}
 
 	private void makeActions() {
-		action1 = new Action() {
+		ISharedImages sharedImages = PlatformUI.getWorkbench().getSharedImages();
+		actionSave = new Action() {
 			public void run() {
-				showMessage("Action 1 executed");
+				for (Resource resource : new ArrayList<Resource>(modifiedElementProvider.getModifiedResources())) {
+					try {
+						resource.save(Collections.emptyMap());
+					} catch (IOException e) {
+						ModelBrowserPlugin.log(e, "Could not save from Model Browser!");
+						if (resource.getResourceSet() != null) {
+							resource.getResourceSet().getResources().remove(resource);
+						}
+					}
+					modifiedElementProvider.removeModifiedElements(resource);
+				}
+				scheduleRefresh();
 			}
 		};
-		action1.setText("Action 1");
-		action1.setToolTipText("Action 1 tooltip");
-		action1.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
-			getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
-		
-		action2 = new Action() {
-			public void run() {
-				showMessage("Action 2 executed");
-			}
-		};
-		action2.setText("Action 2");
-		action2.setToolTipText("Action 2 tooltip");
-		action2.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
-				getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
-		doubleClickAction = new Action() {
-			public void run() {
-				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection)selection).getFirstElement();
-				showMessage("Double-click detected on "+obj.toString());
-			}
-		};
+		actionSave.setText("Save");
+		actionSave.setToolTipText("Saves all changes that were performed.");
+		actionSave.setImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_ETOOL_SAVE_EDIT));
+		actionSave.setDisabledImageDescriptor(sharedImages.getImageDescriptor(ISharedImages.IMG_ETOOL_SAVE_EDIT_DISABLED));
+		updateSave();
 	}
 
 	private void hookDoubleClickAction() {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 			public void doubleClick(DoubleClickEvent event) {
-				doubleClickAction.run();
+				IStructuredSelection selection = null;
+				if (event.getSelection() instanceof IStructuredSelection) {
+					selection = (IStructuredSelection) event.getSelection();
+				}
+				if (selection == null || selection.isEmpty()) {
+					return;
+				}
+
+				Object element = selection.getFirstElement();
+				final ITreeContentProvider provider = (ITreeContentProvider) viewer
+						.getContentProvider();
+
+				if (!provider.hasChildren(element)) {
+					open(element);
+				} else if (viewer.getExpandedState(element)) {
+					viewer.collapseToLevel(element, AbstractTreeViewer.ALL_LEVELS);
+				} else {
+					viewer.expandToLevel(element, 1);
+				}
 			}
 		});
 	}
-	private void showMessage(String message) {
-		MessageDialog.openInformation(
-			viewer.getControl().getShell(),
-			"Muml Browser",
-			message);
-	}
 
-	/**
-	 * Passing the focus request to the viewer's control.
-	 */
+	protected void open(Object selectedElement) {
+		System.out.println("OPEN: " + selectedElement);
+	}
+	
 	public void setFocus() {
 		viewer.getControl().setFocus();
 	}
-
 	
-
-	public TransactionalEditingDomain getEditingDomain() {
-		if (editingDomain == null) {
-			editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+	// Scheduling refresh
+	Boolean needsRefresh = false;
+	protected void scheduleRefresh() {
+		synchronized (needsRefresh) {
+			needsRefresh = true;
 		}
-		return editingDomain;
+		Display.getDefault().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				synchronized (needsRefresh) {
+					if (needsRefresh) {
+						if (viewer instanceof StructuredViewer) {
+							((StructuredViewer) viewer).refresh();
+						}
+						updateSave();
+						needsRefresh = false;
+					}
+				}
+			}
+		});		
 	}
+	
+	protected void updateSave() {
+		boolean modified = !modifiedElementProvider.getModifiedResources().isEmpty();
+		actionSave.setEnabled(modified);
+		String title = (modified ? "*" : "") + defaultTitle;
+		setPartName(title);
+	}
+	
+	// BEGIN Tabbed Properties
+ 	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.muml.common.properties";
+
+ 	protected TabbedPropertySheetPage propertySheetPage;
+
+ 	public IPropertySheetPage getPropertySheetPage() {
+ 		if (propertySheetPage == null
+ 				|| propertySheetPage.getControl().isDisposed()) {
+ 			propertySheetPage = new TabbedPropertySheetPage(this);
+ 		}
+ 		return propertySheetPage;
+ 	}
+
+ 	public String getContributorId() {
+ 		return PROPERTIES_CONTRIBUTOR;
+ 	}
+	@SuppressWarnings("rawtypes")
+	@Override
+	public Object getAdapter(Class key) {
+		if (key.equals(IPropertySheetPage.class)) {
+			return getPropertySheetPage();
+		}
+		return super.getAdapter(key);
+	}
+	// END Tabbed Properties
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+		synchronizer.dispose();
+		editingDomain.removeResourceSetListener(resourceSetListener);
+	}
+
 }

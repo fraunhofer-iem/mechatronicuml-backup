@@ -1,19 +1,12 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.emf.transaction.ResourceSetChangeEvent;
-import org.eclipse.emf.transaction.ResourceSetListener;
-import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
-import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
@@ -21,38 +14,17 @@ import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 public class ModelBrowserContentProvider extends AdapterFactoryContentProvider {
 
 	private WorkbenchContentProvider workbenchContentProvider = new WorkbenchContentProvider();
-	
-	private TransactionalEditingDomain editingDomain;
 	private ResourceSet resourceSet;
-	private WorkspaceSynchronizer synchronizer;
-	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
-		public void resourceSetChanged(final ResourceSetChangeEvent event) {
-			
-			if (viewer instanceof StructuredViewer) {
-				Display.getDefault().asyncExec(new Runnable() {
-					@Override
-					public void run() {
-						((StructuredViewer) viewer).refresh();
-					}
-				});
-			}
-		}
-	};
-	
+
 	public ModelBrowserContentProvider(TransactionalEditingDomain editingDomain) {
 		super(((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory());
-		synchronizer = new WorkspaceSynchronizer(editingDomain);
-		this.editingDomain = editingDomain; 
 		resourceSet = editingDomain.getResourceSet();
-		editingDomain.addResourceSetListener(resourceSetListener);
 	}
 
 	@Override
 	public void dispose() {
 		super.dispose();
-		synchronizer.dispose();
 		workbenchContentProvider.dispose();
-		editingDomain.removeResourceSetListener(resourceSetListener);
 	}
 
 	@Override

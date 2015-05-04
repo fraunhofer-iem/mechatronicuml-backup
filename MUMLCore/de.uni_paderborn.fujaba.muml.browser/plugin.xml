@@ -9,7 +9,7 @@
             id="de.uni_paderborn.fujaba.muml.browser.view">
       </category>
       <view
-            name="Muml Browser"
+            name="Muml Browser (EXPERIMENTAL)"
             icon="icons/sample.gif"
             category="de.uni_paderborn.fujaba.muml.browser.view"
             class="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowserView"

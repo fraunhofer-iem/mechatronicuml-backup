@@ -8,6 +8,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
@@ -16,15 +17,15 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 
-public class ModelBrowserLabelProvider extends AdapterFactoryLabelProvider {
+public class ModelBrowserLabelProvider extends AdapterFactoryLabelProvider.StyledLabelProvider {
 
 	private WorkbenchLabelProvider workbenchLabelProvider = new WorkbenchLabelProvider();
 	
 	private ResourceSet resourceSet;
 	
-	public ModelBrowserLabelProvider(TransactionalEditingDomain editingDomain) {
-		super(((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory());
-		resourceSet = editingDomain.getResourceSet(); 
+	public ModelBrowserLabelProvider(TransactionalEditingDomain editingDomain, Viewer viewer) {
+		super(((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory(), viewer);
+		resourceSet = editingDomain.getResourceSet();
 	}
 	
 	@Override
@@ -83,10 +84,11 @@ public class ModelBrowserLabelProvider extends AdapterFactoryLabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		EObject rootElement = ModelBrowserPlugin.getResourceRoot(resourceSet, element);
-		if (rootElement != null) {
-			return super.getImage(rootElement);
-		}
+		// We use the image of the file
+//		EObject rootElement = ModelBrowserPlugin.getResourceRoot(resourceSet, element);
+//		if (rootElement != null) {
+//			return super.getImage(rootElement);
+//		}
 		
 		if (element instanceof Notifier) {
 			return super.getImage(element);

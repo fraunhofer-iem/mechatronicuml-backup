@@ -6,7 +6,9 @@ import java.util.Collections;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -14,6 +16,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+
+import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -125,4 +129,12 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 //		}
 //		return null;
 //	}
+
+	public static void log(IOException e) {
+		log(e, e.getLocalizedMessage());
+	}
+	public static void log(IOException e, String errorMessage) {
+		IStatus status = new Status(IStatus.ERROR, PLUGIN_ID, 0, errorMessage, e);
+		getDefault().getLog().log(status);
+	}
 }
