@@ -25,6 +25,7 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLEntity;
 
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.parser.OWLOntologyUtil;
+import de.uni_paderborn.fujaba.muml.ontology.edit.properties.providers.OntologyLabelProvider;
 
 public abstract class OntologyDialog extends TitleAreaDialog {
 

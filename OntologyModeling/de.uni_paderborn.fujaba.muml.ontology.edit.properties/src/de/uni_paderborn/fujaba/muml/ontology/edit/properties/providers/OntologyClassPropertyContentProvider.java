@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.ontology.edit.properties.dialog;
+package de.uni_paderborn.fujaba.muml.ontology.edit.properties.providers;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;

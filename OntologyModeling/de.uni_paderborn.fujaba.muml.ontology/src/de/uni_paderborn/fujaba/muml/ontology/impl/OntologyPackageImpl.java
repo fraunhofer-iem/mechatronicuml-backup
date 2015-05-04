@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import org.storydriven.core.CorePackage;
 
 /**
@@ -83,7 +82,6 @@ public class OntologyPackageImpl extends EPackageImpl implements OntologyPackage
 
 		// Initialize simple dependencies
 		CorePackage.eINSTANCE.eClass();
-		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theOntologyPackage.createPackageContents();
@@ -175,7 +173,6 @@ public class OntologyPackageImpl extends EPackageImpl implements OntologyPackage
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -186,7 +183,7 @@ public class OntologyPackageImpl extends EPackageImpl implements OntologyPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ontologyExtensionEClass, OntologyExtension.class, "OntologyExtension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOntologyExtension_OntologyReference(), theXMLTypePackage.getAnyURI(), "ontologyReference", null, 1, 1, OntologyExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntologyExtension_OntologyReference(), ecorePackage.getEString(), "ontologyReference", null, 1, 1, OntologyExtension.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -12,6 +12,8 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.ontology.OntologyExtension;
 import de.uni_paderborn.fujaba.muml.ontology.OntologyPackage;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.parser.OWLOntologyUtil;
+import de.uni_paderborn.fujaba.muml.ontology.edit.properties.providers.OntologyClassPropertyContentProvider;
+import de.uni_paderborn.fujaba.muml.ontology.edit.properties.providers.OntologyClassTreeContentProvider;
 
 /**
  * Factory Pattern to create different Ontology Dialogs
@@ -36,23 +38,28 @@ public class OntologyDialogFactory {
 	public OntologyDialog createOntologyDialog(Shell shell, EObject element) {
 		String projectName = element.eResource().getURI().segment(1);
 		OWLOntologyUtil ontologyUtils = new OWLOntologyUtil(projectName);
-		if(element instanceof Port)
+		if (element instanceof Component)
 			return new OntologyClassDialog(shell, ontologyUtils,
-				new OntologyClassTreeContentProvider(),
-				ontologyUtils.getloadedOntologies());
-		if(element instanceof Port){
+					new OntologyClassTreeContentProvider(),
+					ontologyUtils.getloadedOntologies());
+		if (element instanceof Port) {
 			Component component = ((Port) element).getComponent();
-			OntologyExtension extension = (OntologyExtension) component.getExtension(OntologyPackage.Literals.ONTOLOGY_EXTENSION);
+			OntologyExtension extension = (OntologyExtension) component
+					.getExtension(OntologyPackage.Literals.ONTOLOGY_EXTENSION);
 			Object input = null;
-			if(extension != null){
-				OWLDataFactory factory = ontologyUtils.getOntologyManager().getOWLDataFactory();
-				OWLClass owlClass = factory.getOWLClass(IRI.create(extension.getOntologyReference()));
+			if (extension != null) {
+				OWLDataFactory factory = ontologyUtils.getOntologyManager()
+						.getOWLDataFactory();
+				OWLClass owlClass = factory.getOWLClass(IRI.create(extension
+						.getOntologyReference()));
 				input = owlClass;
 			}
-			return new OntologyPropertiesDialog(shell, ontologyUtils, new OntologyClassPropertyContentProvider(), new Object[] { input} );
+			return new OntologyPropertiesDialog(shell, ontologyUtils,
+					new OntologyClassPropertyContentProvider(),
+					new Object[] { input });
 		}
 		return null;
-		
+
 	}
 
 }

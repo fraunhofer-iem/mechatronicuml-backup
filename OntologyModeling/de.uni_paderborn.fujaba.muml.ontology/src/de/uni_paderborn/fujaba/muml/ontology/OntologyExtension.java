@@ -42,7 +42,7 @@ public interface OntologyExtension extends Extension {
 	 * @return the value of the '<em>Ontology Reference</em>' attribute.
 	 * @see #setOntologyReference(String)
 	 * @see de.uni_paderborn.fujaba.muml.ontology.OntologyPackage#getOntologyExtension_OntologyReference()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.AnyURI" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getOntologyReference();

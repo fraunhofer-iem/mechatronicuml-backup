@@ -15,7 +15,7 @@ public class CreationConstraintContributor
 					.getExtendableElement();
 			final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
 					.createOCLExpression(
-							"self.oclIsKindOf(muml::component::Port)",
+							"self.oclIsKindOf(muml::component::Port) or self.oclIsKindOf(muml::component::Component)",
 							opposite, oppositeClass);
 			final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 					.createQuery(expression);
