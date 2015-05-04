@@ -41,7 +41,7 @@ mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformIns
 	
 	result.embeddedHPIC:=new HWPlatformInstanceConfiguration();
 	//create the embedded CommunicationMedia	
-	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardwareParts->map createNetworkingResourceInstance(number)->asOrderedSet();
+	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardware->map createNetworkingResourceInstance(number)->asOrderedSet();
 		
 	//create the delegation ports
 	
@@ -156,10 +156,10 @@ mapping HWPortPart::createPortInstance(number:String,parent:HWPlatformInstanceCo
 init{
 	switch{ 	
 			case (self.portKind = hardware::hwresource::HWPortKind::BUS){
-			result.connectorInstances:=self.connectors.resolve(BusConnectorInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
+			result.connectorInstances:=self.connectors.resolve(NetworkConnectorInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
 					}
 			case (self.portKind = hardware::hwresource::HWPortKind::LINK){
-			result.connectorInstances:=self.connectors.resolve(LinkInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
+			result.connectorInstances:=self.connectors.resolve(NetworkConnectorInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
 					}
 					
 			else{//sollte nich aufgerufen werden
@@ -202,8 +202,8 @@ helper Delegation::createDelegation(number:String, inout parent:HWPlatformInstan
 
 
 //creates a CommunicationMedia
-mapping NetworkingHardwarePart::createNetworkingResourceInstance(number:String):NetworkingHardwareInstance
-disjuncts BusConnector::createBusConnectorInstance,BusPart::createBusInstance, BridgePart::createBridgeInstance, LinkPart::createLinkInstance, Delegation::createDelegationInstance{}
+mapping NetworkingHardware::createNetworkingResourceInstance(number:String):NetworkingHardwareInstance
+disjuncts Bus::createBusInstance, NetworkBridge::createBridgeInstance{}
 //	result.comment:=self.comment+number;
 	//result.bandwidth:=self.bandwidth.deepclone().oclAsType(DataRate);
 	//result.protocol:=self.protocol;
@@ -212,42 +212,32 @@ disjuncts BusConnector::createBusConnectorInstance,BusPart::createBusInstance, B
 
 
 
-mapping BusConnector::createBusConnectorInstance(number:String):BusConnectorInstance{
+mapping NetworkConnector::createBusConnectorInstance(number:String):NetworkConnectorInstance{
   	type:=self;
 	comment:=self.comment+number;
-	connectorEndpointInstances:=self.connectorEndpoints.oclAsType(NetworkingHardwarePart)->asSet()->map createNetworkingResourceInstance(number).oclAsType(muml::connector::ConnectorEndpointInstance);
+	connectorEndpointInstances:=self.late resolve(muml::connector::ConnectorEndpointInstance);
 	}
 	
-mapping BridgePart::createBridgeInstance(number:String):BridgeInstance{
+mapping NetworkBridge::createBridgeInstance(number:String):NetworkBridgeInstance{
 	type:=self;
 	comment:=self.comment+number;	 
 	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
 	}
 	
-mapping LinkPart::createLinkInstance(number:String):LinkInstance{
-	type:=self;
-	result.comment:=self.comment+number;	
-	communicationMediaPart:=self; 
-	connectorEndpointInstances:=self.late resolve(muml::connector::ConnectorEndpointInstance);
-	}
+
 	
-mapping BusPart::createBusInstance(number:String):BusInstance{
+mapping Bus::createBusInstance(number:String):BusInstance{
 	type:=self;
 	result.comment:=self.comment+number;
-	communicationMediaPart	:=self; 	
+//	communicationMediaPart	:=self; 	
 	//connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);	 
 	}	
 	
-mapping Delegation::createDelegationInstance(number:String):DelegationInstance{
-	type:=self;
-	result.comment:=self.comment+number;
-	connectorEndpointInstances:=self.connectorEndpoints.late resolve(muml::connector::ConnectorEndpointInstance);
-	}	
 
 mapping DelegationHWPort::createDelegationHWPortInstance(number:String):DelegationHWPortInstance{
 	type:=self;
-	name:=self.name+number;
-	connectorInstances:=self.connectors.late resolve(DelegationInstance);
+	name:=self.comment+number;
+	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
 }
 
 // Convenience query to cast a natural number to an integer, using -1 as value for infinity.
