@@ -3,11 +3,11 @@ package de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BridgePartEditPart;
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusPartEditPart;
+import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HardwareEditPartFactory;
+import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry;
 /**
@@ -31,13 +31,13 @@ public class CustomPlatformEditPartFactory extends
 			case HWPlatformPartEditPart.VISUAL_ID:
 				return new CustomHWPlatformPartEditPart(view);
 				
-			case BridgePartEditPart.VISUAL_ID:
+			case NetworkBridgeEditPart.VISUAL_ID:
 				return new CustomBridgeEditPart(view);
 				
 			case HWPlatform2EditPart.VISUAL_ID:
 				return new CustomHWPlatform2EditPart(view);
 				
-			case BusPartEditPart.VISUAL_ID:
+			case BusEditPart.VISUAL_ID:
 				return new CustomBusEditPart(view);
 				
 			} 

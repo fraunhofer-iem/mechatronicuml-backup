@@ -15,10 +15,7 @@ import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart;
 

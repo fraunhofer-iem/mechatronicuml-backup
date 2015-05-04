@@ -56,6 +56,9 @@ public class CommunicationResourceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance) getElementToEdit();
 		owner.getHwports().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
+				.getInstance().init_CommunicationResource_3014(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

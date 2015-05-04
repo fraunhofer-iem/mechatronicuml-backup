@@ -56,6 +56,9 @@ public class StructuredResourceInstanceCreateCommand extends EditElementCommand 
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceRepository) getElementToEdit();
 		owner.getResourceInstances().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
+				.getInstance().init_StructuredResourceInstance_2006(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

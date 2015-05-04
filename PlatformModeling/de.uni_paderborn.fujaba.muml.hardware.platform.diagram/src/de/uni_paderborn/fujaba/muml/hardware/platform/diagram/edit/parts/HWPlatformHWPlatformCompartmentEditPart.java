@@ -126,10 +126,10 @@ public class HWPlatformHWPlatformCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.BusPart_3014) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.Bus_3023) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.BridgePart_3015) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkBridge_3024) {
 				return this;
 			}
 			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPlatformPart_3016) {
@@ -147,11 +147,7 @@ public class HWPlatformHWPlatformCompartmentEditPart extends
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.Delegation_4028)
-								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.LinkPart_4029)
-								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.BusConnector_4030))
+								.equals(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4031))
 							return super.getTargetEditPart(request);
 					}
 				}

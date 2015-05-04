@@ -298,32 +298,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Delegation4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Delegation4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Link5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Link5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ToBus6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ToBus6CreationTool_desc;
+	public static String NetworkConnectorInstance4CreationTool_title;
 
 	/**
 	 * @generated
@@ -388,42 +363,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BridgeInstance_3037_incominglinks;
+	public static String NavigatorGroupName_NetworkBridgeInstance_3038_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BridgeInstance_3037_outgoinglinks;
+	public static String NavigatorGroupName_NetworkBridgeInstance_3038_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationInstance_4008_target;
+	public static String NavigatorGroupName_NetworkConnectorInstance_4011_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationInstance_4008_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_LinkInstance_4009_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_LinkInstance_4009_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BusConnectorInstance_4010_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BusConnectorInstance_4010_source;
+	public static String NavigatorGroupName_NetworkConnectorInstance_4011_source;
 
 	/**
 	 * @generated

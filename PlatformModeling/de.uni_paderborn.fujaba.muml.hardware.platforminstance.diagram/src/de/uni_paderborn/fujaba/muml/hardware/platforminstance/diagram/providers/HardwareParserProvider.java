@@ -382,8 +382,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getBridgeInstanceLabel_5094Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.BridgeInstanceLabelExpressionLabelParser5094();
+	private IParser getNetworkBridgeInstanceLabel_5097Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.NetworkBridgeInstanceLabelExpressionLabelParser5097();
 	}
 
 	/**
@@ -391,13 +391,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getDelegationHWPortInstanceLabel_5078Parser() {
 		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.DelegationHWPortInstanceLabelExpressionLabelParser5078();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getLinkInstanceLabel_6003Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.LinkInstanceLabelExpressionLabelParser6003();
 	}
 
 	/**
@@ -482,9 +475,7 @@ public class HardwareParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel27EditPart.VISUAL_ID:
 			return getBusInstanceLabel_5093Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel28EditPart.VISUAL_ID:
-			return getBridgeInstanceLabel_5094Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel30EditPart.VISUAL_ID:
-			return getLinkInstanceLabel_6003Parser();
+			return getNetworkBridgeInstanceLabel_5097Parser();
 		}
 		return null;
 	}

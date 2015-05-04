@@ -487,7 +487,7 @@
                 href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/BridgeInstance"/>
+                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/NetworkBridgeInstance"/>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -535,44 +535,12 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/DelegationInstance"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/NetworkConnectorInstance"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.0"/>
-    <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Delegation"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsKindOf(hwplatforminstance::HWPortInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance)"/>
-      <targetEnd
-          body="self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
-    </creationConstraints>
-  </links>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/LinkInstance"/>
-    <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
-      <diagramLabel
-          href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#LinkComment"/>
-      <viewExpression
-          body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;proto + '\n' + bdwidth"/>
-      <editExpression
-          body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
-    </labelMappings>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.3"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.5"/>
     <diagramLink
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
     <sourceMetaFeature
@@ -581,35 +549,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
-      <targetEnd
-          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::LINK)  or self.oclIsKindOf(hwplatforminstance::DelegationHWPortInstance)"/>
-    </creationConstraints>
-  </links>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/BusConnectorInstance"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkingHardwareInstances"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.2"/>
-    <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#toBus"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance/connectorEndpointInstances"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or (self.oclIsKindOf(hwplatforminstance::HWPortInstance) and self.oclAsType(hwplatforminstance::HWPortInstance).portKind=hwresource::HWPortKind::BUS)"/>
-      <targetEnd
-          body="self.oclIsKindOf(hwplatforminstance::BridgeInstance) or self.oclIsKindOf(hwplatforminstance::BusInstance) "/>
-    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas

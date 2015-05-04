@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BridgePartEditPart;
+import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart;
 
 /**
  * A customized EditPart for a {@link Bridge}. This customized EditPart sets the
@@ -15,7 +15,7 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BridgeP
  * @author adann
  * 
  */
-public class CustomBridgeEditPart extends BridgePartEditPart {
+public class CustomBridgeEditPart extends NetworkBridgeEditPart {
 
 	public CustomBridgeEditPart(View view) {
 		super(view);

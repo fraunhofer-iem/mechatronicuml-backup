@@ -110,24 +110,17 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType BridgeInstance_3037 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.BridgeInstance_3037"); //$NON-NLS-1$
+	public static final IElementType NetworkBridgeInstance_3038 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.NetworkBridgeInstance_3038"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType NetworkConnectorInstance_4011 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.NetworkConnectorInstance_4011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public static final IElementType DelegationHWPortInstance_3028 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.DelegationHWPortInstance_3028"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType DelegationInstance_4008 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.DelegationInstance_4008"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType LinkInstance_4009 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.LinkInstance_4009"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType BusConnectorInstance_4010 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.BusConnectorInstance_4010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -243,24 +236,14 @@ public class HardwareElementTypes {
 							.getBusInstance());
 
 			elements.put(
-					BridgeInstance_3037,
+					NetworkBridgeInstance_3038,
 					de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getBridgeInstance());
+							.getNetworkBridgeInstance());
 
 			elements.put(
-					DelegationInstance_4008,
+					NetworkConnectorInstance_4011,
 					de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getDelegationInstance());
-
-			elements.put(
-					LinkInstance_4009,
-					de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getLinkInstance());
-
-			elements.put(
-					BusConnectorInstance_4010,
-					de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-							.getBusConnectorInstance());
+							.getNetworkConnectorInstance());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -293,10 +276,8 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_3034);
 			KNOWN_ELEMENT_TYPES.add(SensorInstance_3035);
 			KNOWN_ELEMENT_TYPES.add(BusInstance_3036);
-			KNOWN_ELEMENT_TYPES.add(BridgeInstance_3037);
-			KNOWN_ELEMENT_TYPES.add(DelegationInstance_4008);
-			KNOWN_ELEMENT_TYPES.add(LinkInstance_4009);
-			KNOWN_ELEMENT_TYPES.add(BusConnectorInstance_4010);
+			KNOWN_ELEMENT_TYPES.add(NetworkBridgeInstance_3038);
+			KNOWN_ELEMENT_TYPES.add(NetworkConnectorInstance_4011);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -336,14 +317,10 @@ public class HardwareElementTypes {
 			return SensorInstance_3035;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusInstanceEditPart.VISUAL_ID:
 			return BusInstance_3036;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BridgeInstanceEditPart.VISUAL_ID:
-			return BridgeInstance_3037;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
-			return DelegationInstance_4008;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.LinkInstanceEditPart.VISUAL_ID:
-			return LinkInstance_4009;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusConnectorInstanceEditPart.VISUAL_ID:
-			return BusConnectorInstance_4010;
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkBridgeInstanceEditPart.VISUAL_ID:
+			return NetworkBridgeInstance_3038;
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.NetworkConnectorInstanceEditPart.VISUAL_ID:
+			return NetworkConnectorInstance_4011;
 		}
 		return null;
 	}

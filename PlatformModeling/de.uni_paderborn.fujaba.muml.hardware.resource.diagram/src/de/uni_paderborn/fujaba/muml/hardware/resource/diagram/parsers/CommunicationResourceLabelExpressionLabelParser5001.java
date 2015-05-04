@@ -38,7 +38,7 @@ public class CommunicationResourceLabelExpressionLabelParser5001 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						4,
+						3,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getCommunicationResource(), null).body();
 	}

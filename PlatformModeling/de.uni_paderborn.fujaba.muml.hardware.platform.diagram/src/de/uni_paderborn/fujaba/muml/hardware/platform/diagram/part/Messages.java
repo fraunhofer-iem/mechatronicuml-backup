@@ -253,62 +253,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Delegation1CreationTool_title;
+	public static String NetworkConnector1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Delegation1CreationTool_desc;
+	public static String NetworkConnector1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Bus2CreationTool_title;
+	public static String NetworkBridge2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Bus2CreationTool_desc;
+	public static String NetworkBridge2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ToBus3CreationTool_title;
+	public static String DelegationPort3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ToBus3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Link4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Link4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Bridge5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Bridge5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String DelegationPort6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String DelegationPort6CreationTool_desc;
+	public static String DelegationPort3CreationTool_desc;
 
 	/**
 	 * @generated
@@ -348,26 +318,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BusPart_3014_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BusPart_3014_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BridgePart_3015_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BridgePart_3015_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_DelegationHWPort_3018_incominglinks;
 
 	/**
@@ -388,32 +338,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Delegation_4028_target;
+	public static String NavigatorGroupName_Bus_3023_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Delegation_4028_source;
+	public static String NavigatorGroupName_Bus_3023_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_LinkPart_4029_target;
+	public static String NavigatorGroupName_NetworkBridge_3024_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_LinkPart_4029_source;
+	public static String NavigatorGroupName_NetworkBridge_3024_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BusConnector_4030_target;
+	public static String NavigatorGroupName_NetworkConnector_4031_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BusConnector_4030_source;
+	public static String NavigatorGroupName_NetworkConnector_4031_source;
 
 	/**
 	 * @generated

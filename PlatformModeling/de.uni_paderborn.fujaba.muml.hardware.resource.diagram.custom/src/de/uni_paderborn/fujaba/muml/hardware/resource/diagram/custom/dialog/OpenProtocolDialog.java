@@ -17,9 +17,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Link;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository;
-import de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart;
-import de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart;
 
 
 
@@ -43,19 +41,21 @@ public class OpenProtocolDialog implements IObjectActionDelegate {
 			return;
 		}
 		ResourceRepository repo=null;
-		if(selectedElement instanceof BusEditPart){
-		//	BusProtocol busProtocol = de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypeFactory.eINSTANCE.createBusProtocol();
-		//	availableProtocols =ItemPropertyDescriptor.getReachableObjectsOfType( media,  busProtocol.eClass());
-			repo = (ResourceRepository) selectedElement
-					.resolveSemanticElement().eContainer();
-		}
-		else if(selectedElement instanceof LinkEditPart){
-		//	LinkProtocol linkProtocol = de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypeFactory.eINSTANCE.createLinkProtocol();
-		//	availableProtocols =ItemPropertyDescriptor.getReachableObjectsOfType( media,  linkProtocol.eClass());
-			repo = (ResourceRepository) selectedElement
-					.resolveSemanticElement().eContainer();
-		}
-		else if (selectedElement instanceof CommunicationResourceEditPart){
+//		if(selectedElement instanceof BusEditPart){
+//		//	BusProtocol busProtocol = de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypeFactory.eINSTANCE.createBusProtocol();
+//		//	availableProtocols =ItemPropertyDescriptor.getReachableObjectsOfType( media,  busProtocol.eClass());
+//			repo = (ResourceRepository) selectedElement
+//					.resolveSemanticElement().eContainer();
+//		}
+//		else if(selectedElement instanceof LinkEditPart){
+//		//	LinkProtocol linkProtocol = de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypeFactory.eINSTANCE.createLinkProtocol();
+//		//	availableProtocols =ItemPropertyDescriptor.getReachableObjectsOfType( media,  linkProtocol.eClass());
+//			repo = (ResourceRepository) selectedElement
+//					.resolveSemanticElement().eContainer();
+//		}
+//		else 
+			
+		if (selectedElement instanceof CommunicationResourceEditPart){
 			//CommunicationResource port = (CommunicationResource) selectedElement.resolveSemanticElement();
 			repo = (ResourceRepository) selectedElement
 					.resolveSemanticElement().eContainer().eContainer();
@@ -98,18 +98,18 @@ public class OpenProtocolDialog implements IObjectActionDelegate {
 		selectedElement = null;
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-			if (structuredSelection.getFirstElement() instanceof CommunicationResourceEditPart || structuredSelection.getFirstElement() instanceof BusEditPart || structuredSelection.getFirstElement() instanceof LinkEditPart) {
+			if (structuredSelection.getFirstElement() instanceof CommunicationResourceEditPart) {
 				selectedElement = (IGraphicalEditPart) structuredSelection
 						.getFirstElement();
 				if(selectedElement instanceof CommunicationResourceEditPart){
 					target=Targets.COMMUNICATION_RESOURCE;
 				}
-				if(selectedElement instanceof BusEditPart){
-					target=Targets.BUS;
-				}
-				if(selectedElement instanceof LinkEditPart){
-					target=Targets.LINK;
-				}
+//				if(selectedElement instanceof BusEditPart){
+//					target=Targets.BUS;
+//				}
+//				if(selectedElement instanceof LinkEditPart){
+//					target=Targets.LINK;
+//				}
 			}
 		}
 	}

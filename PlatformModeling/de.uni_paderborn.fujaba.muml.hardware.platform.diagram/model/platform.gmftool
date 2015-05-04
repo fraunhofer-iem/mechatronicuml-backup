@@ -12,34 +12,8 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Delegation"
-          description="Create new Delegation">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/delegation_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/delegation_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Bus"
-          description="Create new Bus">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/bus_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/bus_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="toBus"
-          description="Creates a Connection to a Bus">
+          title="NetworkConnector"
+          description="Creates a Connection">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/toBus_small.gif"
@@ -51,20 +25,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Link"
-          description="Create new Link">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/link_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/link_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Bridge"
+          title="NetworkBridge"
           description="Create new Bridge">
         <smallIcon
             xsi:type="gmftool:BundleImage"

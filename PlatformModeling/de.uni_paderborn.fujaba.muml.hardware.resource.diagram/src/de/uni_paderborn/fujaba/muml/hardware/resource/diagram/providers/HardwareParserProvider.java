@@ -93,34 +93,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getBusLabel_5026Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.BusLabelExpressionLabelParser5026();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getBusLabel_5027Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.BusLabelExpressionLabelParser5027();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getLinkLabel_5028Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.LinkLabelExpressionLabelParser5028();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getLinkLabel_5029Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.LinkLabelExpressionLabelParser5029();
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser communicationProtocolRepositoryName_5032Parser;
 
 	/**
@@ -416,14 +388,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 			return getStructuredResourceLabel_5024Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
 			return getStructuredResourceLabel_5025Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart.VISUAL_ID:
-			return getBusLabel_5026Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart.VISUAL_ID:
-			return getBusLabel_5027Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel21EditPart.VISUAL_ID:
-			return getLinkLabel_5028Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel22EditPart.VISUAL_ID:
-			return getLinkLabel_5029Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart.VISUAL_ID:
 			return getCommunicationProtocolRepositoryName_5032Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:

@@ -47,9 +47,9 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.BusInstanceCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BridgeInstance_3037 == req
+		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3038 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.BridgeInstanceCreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.NetworkBridgeInstanceCreateCommand(
 					req));
 		}
 		return super.getCreateCommand(req);

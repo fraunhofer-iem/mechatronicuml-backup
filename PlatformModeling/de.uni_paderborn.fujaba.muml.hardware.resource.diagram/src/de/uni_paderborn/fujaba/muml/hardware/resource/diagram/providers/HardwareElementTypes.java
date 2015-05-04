@@ -57,18 +57,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Bus_2003 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Bus_2003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Link_2004 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Link_2004"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	public static final IElementType CommunicationProtocolRepository_2005 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2005"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -77,7 +66,6 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	public static final IElementType CommunicationResource_3008 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3008"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -98,12 +86,10 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	public static final IElementType BusProtocol_3006 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3006"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType LinkProtocol_3007 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3007"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -161,16 +147,6 @@ public class HardwareElementTypes {
 					StructuredResource_2002,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getStructuredResource());
-
-			elements.put(
-					Bus_2003,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getBus());
-
-			elements.put(
-					Link_2004,
-					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getLink());
 
 			elements.put(
 					CommunicationProtocolRepository_2005,
@@ -241,8 +217,6 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ResourceRepository_1000);
 			KNOWN_ELEMENT_TYPES.add(Device_2001);
 			KNOWN_ELEMENT_TYPES.add(StructuredResource_2002);
-			KNOWN_ELEMENT_TYPES.add(Bus_2003);
-			KNOWN_ELEMENT_TYPES.add(Link_2004);
 			KNOWN_ELEMENT_TYPES.add(CommunicationProtocolRepository_2005);
 			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3001);
 			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3008);
@@ -268,10 +242,6 @@ public class HardwareElementTypes {
 			return Device_2001;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
 			return StructuredResource_2002;
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return Bus_2003;
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID:
-			return Link_2004;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return CommunicationProtocolRepository_2005;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:

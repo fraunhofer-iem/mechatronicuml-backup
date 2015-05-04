@@ -56,6 +56,9 @@ public class HWPortInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance) getElementToEdit();
 		owner.getHwports().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
+				.getInstance().init_HWPortInstance_3030(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

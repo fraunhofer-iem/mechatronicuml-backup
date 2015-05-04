@@ -120,37 +120,6 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="Communication Media"
-        collapsible="true">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="BusResource"
-          description="Create new Bus">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/bus_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/bus_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="LinkResource"
-          description="Create new Link">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/link_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/link_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-    </tools>
-    <tools
-        xsi:type="gmftool:ToolGroup"
         title="Communication Protocol"
         collapsible="true">
       <tools

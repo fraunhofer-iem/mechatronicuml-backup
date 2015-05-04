@@ -38,7 +38,7 @@ public class DeviceLabelExpressionLabelParser5003 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						5,
+						4,
 						de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 								.getDevice(), null).body();
 	}

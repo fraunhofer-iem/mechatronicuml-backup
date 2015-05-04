@@ -65,23 +65,6 @@ public class HardwareDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getCommunicationMedia().iterator(); it
-				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia childElement = (de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia) it
-					.next();
-			int visualID = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-			if (visualID == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
 		for (Iterator<?> it = modelElement.getProtocols().iterator(); it
 				.hasNext();) {
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository childElement = (de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository) it
@@ -232,10 +215,6 @@ public class HardwareDiagramUpdater {
 			return getDevice_2001ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
 			return getStructuredResource_2002ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return getBus_2003ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID:
-			return getLink_2004ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return getCommunicationProtocolRepository_2005ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
@@ -269,10 +248,6 @@ public class HardwareDiagramUpdater {
 			return getDevice_2001IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
 			return getStructuredResource_2002IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return getBus_2003IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID:
-			return getLink_2004IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return getCommunicationProtocolRepository_2005IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
@@ -306,10 +281,6 @@ public class HardwareDiagramUpdater {
 			return getDevice_2001OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID:
 			return getStructuredResource_2002OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return getBus_2003OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID:
-			return getLink_2004OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return getCommunicationProtocolRepository_2005OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
@@ -352,22 +323,6 @@ public class HardwareDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getStructuredResource_2002ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getBus_2003ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getLink_2004ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -467,22 +422,6 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getBus_2003IncomingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getLink_2004IncomingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
 	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getCommunicationProtocolRepository_2005IncomingLinks(
 			View view) {
 		return Collections.emptyList();
@@ -571,22 +510,6 @@ public class HardwareDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getStructuredResource_2002OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getBus_2003OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareLinkDescriptor> getLink_2004OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

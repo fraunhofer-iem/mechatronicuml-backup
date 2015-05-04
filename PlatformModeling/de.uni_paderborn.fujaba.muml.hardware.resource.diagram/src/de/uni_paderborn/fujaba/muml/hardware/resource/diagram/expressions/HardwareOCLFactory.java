@@ -35,55 +35,47 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[47];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[39];
 		this.expressionBodies = new String[] {
-				"\'device\'", //$NON-NLS-1$
 				"\'hw-port\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName.concat(\' : \').concat(protocolName)", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"\': \' + self.deviceType.toString()", //$NON-NLS-1$
-				"\'StructuredResource\'", //$NON-NLS-1$
-				"\'Com.Resource\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif", //$NON-NLS-1$
 				"let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\nlet upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n\'[\' + lowerBound + \'..\' + upperBound + \']\'", //$NON-NLS-1$
-				"\'cache\'", //$NON-NLS-1$
 				"\' : Cache\'", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"let nbSet : String = if self.nbSets.oclIsUndefined() then \'null\' else self.nbSets.toString() endif in\n\'#Sets:\' + nbSet", //$NON-NLS-1$
 				"let associa : String =  if self.associativity.oclIsUndefined() then \'null\' else self.associativity.toString() endif in\n\'Associativity:\' + associa", //$NON-NLS-1$
-				"\'processor\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"\' : Processor\'", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"\'#Cores: \' + self. nbCores.toString()", //$NON-NLS-1$
 				"let arch: String = if self.architecture.oclIsUndefined() then \'null\' else self.architecture.toString() endif in\nlet fam: String =  if self.family.oclIsUndefined() then \'null\' else self.family.toString() endif in\n\'Architecture: \' + arch + \' Family: \' + fam", //$NON-NLS-1$
-				"\'PLD\'", //$NON-NLS-1$
 				"\' : PLD\'", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
-				"\'memory\'", //$NON-NLS-1$
 				"if self.memoryType.oclIsUndefined() then \':\' else \': \'.concat(self.memoryType.toString()) endif", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"let access: String = if self.memoryAccess.oclIsUndefined() then \'null\' else self.memoryAccess.toString() endif in\n\'Access: \' + access", //$NON-NLS-1$
 				"let volatile: String = if self.isVolatile.oclIsUndefined() then \'null\' else self.isVolatile.toString() endif in\n\'Volatile: \' + volatile", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
-				"0", //$NON-NLS-1$
-				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
-				"\'Enter bandwidth in form of: Value bs/kbs/mbs\'", //$NON-NLS-1$
-				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
-				"0", //$NON-NLS-1$
-				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
-				"\'Enter: bs/kbs/mbs\'", //$NON-NLS-1$
-				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
-				"\'ProtocolRepository\'", //$NON-NLS-1$
-				"\'BusProtocol\'", //$NON-NLS-1$
-				"\'LinkProtocol\'", //$NON-NLS-1$
 				"self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()", //$NON-NLS-1$
 				"self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()\nand self.oclIsTypeOf(hwresource::Cache)\n", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
+				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 		};
 	}
 

@@ -253,12 +253,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String CommunicationMedia3Group_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CommunicationProtocol4Group_title;
+	public static String CommunicationProtocol3Group_title;
 
 	/**
 	 * @generated
@@ -339,26 +334,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String ProcessorOwnedCache6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String BusResource1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String BusResource1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String LinkResource2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String LinkResource2CreationTool_desc;
 
 	/**
 	 * @generated

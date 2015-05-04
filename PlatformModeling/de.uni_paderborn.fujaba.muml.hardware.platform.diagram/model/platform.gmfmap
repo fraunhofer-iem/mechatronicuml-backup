@@ -22,10 +22,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardware"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/BusPart"/>
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/Bus"/>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
@@ -42,9 +42,6 @@
             <viewExpression
                 body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;proto"/>
           </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="platform.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Bus"/>
         </ownedChild>
@@ -52,10 +49,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardware"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/BridgePart"/>
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/NetworkBridge"/>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
@@ -66,7 +63,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="platform.gmftool#//@palette/@tools.0/@tools.4"/>
+              href="platform.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="platform.gmfgraph#Bridge"/>
         </ownedChild>
@@ -165,49 +162,6 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/DelegationHWPort"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:ReferenceNewElementSpec">
-              <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/CommunicationResource/cardinality"/>
-              <newElementInitializers>
-                <initializers
-                    xsi:type="gmfmap:ReferenceNewElementSpec">
-                  <feature
-                      xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
-                  <newElementInitializers>
-                    <initializers
-                        xsi:type="gmfmap:FeatureValueSpec">
-                      <feature
-                          xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
-                      <value
-                          body="1"/>
-                    </initializers>
-                  </newElementInitializers>
-                </initializers>
-                <initializers
-                    xsi:type="gmfmap:ReferenceNewElementSpec">
-                  <feature
-                      xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
-                  <newElementInitializers>
-                    <initializers
-                        xsi:type="gmfmap:FeatureValueSpec">
-                      <feature
-                          xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
-                      <value
-                          body="1"/>
-                    </initializers>
-                  </newElementInitializers>
-                </initializers>
-              </newElementInitializers>
-            </initializers>
-          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
@@ -217,7 +171,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="platform.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="platform.gmftool#//@palette/@tools.0/@tools.2"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>
@@ -348,66 +302,12 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/Delegation"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/NetworkConnector"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkConnectors"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="platform.gmftool#//@palette/@tools.0/@tools.0"/>
-    <diagramLink
-        href="platform.gmfgraph#Delegation"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsKindOf(hwplatform::HWPortPart) or self.oclIsKindOf(hwplatform::BusPart)"/>
-      <targetEnd
-          body="self.oclIsKindOf(hwplatform::DelegationHWPort)"/>
-    </creationConstraints>
-  </links>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/LinkPart"/>
-    <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping"
-        readOnly="true">
-      <diagramLabel
-          href="platform.gmfgraph#LinkComment"/>
-      <viewExpression
-          body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;proto + '\n' + bdwidth"/>
-    </labelMappings>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="platform.gmftool#//@palette/@tools.0/@tools.3"/>
-    <diagramLink
-        href="platform.gmfgraph#Link"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatform::DelegationHWPort) "/>
-      <targetEnd
-          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::LINK) or self.oclIsKindOf(hwplatform::DelegationHWPort) "/>
-    </creationConstraints>
-  </links>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/BusConnector"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="platform.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
         href="platform.gmfgraph#toBus"/>
     <sourceMetaFeature
@@ -416,12 +316,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsTypeOf(hwplatform::BridgePart) or (self.oclIsTypeOf(hwplatform::HWPortPart) and self.oclAsType(hwplatform::HWPortPart).portKind=hwresource::HWPortKind::BUS) "/>
-      <targetEnd
-          body="self.oclIsTypeOf(hwplatform::BridgePart) or self.oclIsTypeOf(hwplatform::BusPart) "/>
-    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas

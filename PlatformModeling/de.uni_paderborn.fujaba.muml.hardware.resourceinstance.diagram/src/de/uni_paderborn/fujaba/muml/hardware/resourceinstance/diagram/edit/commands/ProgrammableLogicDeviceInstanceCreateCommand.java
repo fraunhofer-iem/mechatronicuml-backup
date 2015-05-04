@@ -57,6 +57,10 @@ public class ProgrammableLogicDeviceInstanceCreateCommand extends
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance) getElementToEdit();
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
+				.getInstance().init_ProgrammableLogicDeviceInstance_3010(
+						newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

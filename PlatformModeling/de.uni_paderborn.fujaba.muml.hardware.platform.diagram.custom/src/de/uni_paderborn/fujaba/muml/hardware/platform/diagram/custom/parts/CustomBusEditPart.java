@@ -7,7 +7,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus;
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusPartEditPart;
+import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart;
 
 /**
  * A customized EditPart for a {@link Bus}. This customized EditPart sets the
@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusPart
  * @author adann
  * 
  */
-public class CustomBusEditPart extends BusPartEditPart {
+public class CustomBusEditPart extends BusEditPart {
 
 	public CustomBusEditPart(View view) {
 		super(view);

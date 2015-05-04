@@ -30,22 +30,22 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getBusPartLabel_5037Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusPartLabelExpressionLabelParser5037();
+	private IParser getBusLabel_5054Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusLabelExpressionLabelParser5054();
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getBusPartLabel_5038Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusPartLabelExpressionLabelParser5038();
+	private IParser getBusLabel_5055Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BusLabelExpressionLabelParser5055();
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getBridgePartLabel_5039Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.BridgePartLabelExpressionLabelParser5039();
+	private IParser getNetworkBridgeLabel_5056Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.NetworkBridgeLabelExpressionLabelParser5056();
 	}
 
 	/**
@@ -149,23 +149,16 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getLinkPartLabel_6003Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.LinkPartLabelExpressionLabelParser6003();
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getHWPlatformLabel_5050Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getBusPartLabel_5037Parser();
+			return getBusLabel_5054Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-			return getBusPartLabel_5038Parser();
+			return getBusLabel_5055Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-			return getBridgePartLabel_5039Parser();
+			return getNetworkBridgeLabel_5056Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartNameEditPart.VISUAL_ID:
 			return getHWPlatformPartName_5041Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
@@ -186,8 +179,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 			return getResourcePartLabel_5048Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
 			return getResourcePartLabel_5049Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID:
-			return getLinkPartLabel_6003Parser();
 		}
 		return null;
 	}

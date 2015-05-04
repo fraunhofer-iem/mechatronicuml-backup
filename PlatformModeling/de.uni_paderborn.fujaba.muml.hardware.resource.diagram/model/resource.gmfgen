@@ -194,7 +194,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.40">
+              value="//@expressionProviders/@providers.0/@expressions.32">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -290,7 +290,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.41">
+              value="//@expressionProviders/@providers.0/@expressions.33">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -431,7 +431,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.42">
+              value="//@expressionProviders/@providers.0/@expressions.34">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -557,7 +557,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.43">
+              value="//@expressionProviders/@providers.0/@expressions.35">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -655,7 +655,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.44">
+              value="//@expressionProviders/@providers.0/@expressions.36">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -781,7 +781,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.45">
+              value="//@expressionProviders/@providers.0/@expressions.37">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -843,7 +843,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.46">
+              value="//@expressionProviders/@providers.0/@expressions.38">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -907,7 +907,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.37">
+              value="//@expressionProviders/@providers.0/@expressions.29">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1002,7 +1002,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.38">
+              value="//@expressionProviders/@providers.0/@expressions.30">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1076,176 +1076,6 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2003"
-        editPartClassName="BusEditPart"
-        itemSemanticEditPolicyClassName="BusItemSemanticEditPolicy"
-        notationViewFactoryClassName="BusViewFactory"
-        canonicalEditPolicyClassName="BusCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="BusGraphicalNodeEditPolicy"
-        createCommandClassName="BusCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="BusEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="BusFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class BusFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBusProtocolFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureBusBandwidthFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public BusFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(4)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure busContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;busContainer0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintBusContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintBusContainer0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalIndent = 0;&#xA;constraintBusContainer0.horizontalSpan = 1;&#xA;constraintBusContainer0.verticalSpan = 1;&#xA;constraintBusContainer0.grabExcessHorizontalSpace = true;&#xA;constraintBusContainer0.grabExcessVerticalSpace = true;&#xA;this.add(busContainer0, constraintBusContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutBusContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutBusContainer0.numColumns = 1;&#xA;&#x9;layoutBusContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;busContainer0.setLayoutManager(layoutBusContainer0);&#xA;&#xA;&#xA;&#xA;fFigureBusProtocolFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBusProtocolFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureBusProtocolFigure.setFont(FFIGUREBUSPROTOCOLFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBusProtocolFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBusProtocolFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureBusProtocolFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBusProtocolFigure.horizontalIndent = 0;&#xA;constraintFFigureBusProtocolFigure.horizontalSpan = 1;&#xA;constraintFFigureBusProtocolFigure.verticalSpan = 0;&#xA;constraintFFigureBusProtocolFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBusProtocolFigure.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureBusProtocolFigure, constraintFFigureBusProtocolFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureBusBandwidthFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureBusBandwidthFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureBusBandwidthFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureBusBandwidthFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureBusBandwidthFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureBusBandwidthFigure.horizontalIndent = 0;&#xA;constraintFFigureBusBandwidthFigure.horizontalSpan = 1;&#xA;constraintFFigureBusBandwidthFigure.verticalSpan = 1;&#xA;constraintFFigureBusBandwidthFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureBusBandwidthFigure.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureBusBandwidthFigure, constraintFFigureBusBandwidthFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBusProtocolFigure() {&#xA;&#x9;&#x9;return fFigureBusProtocolFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureBusBandwidthFigure() {&#xA;&#x9;&#x9;return fFigureBusBandwidthFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREBUSPROTOCOLFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;BOLD&quot;, 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="130"
-            height="50"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Bus"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/communicationMedia"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/communicationMedia"/>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationMedia/bandwidth"/>
-            <newElementInitializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.27">
-                <feature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
-              </initializers>
-            </newElementInitializers>
-          </initializers>
-        </modelElementInitializer>
-      </modelFacet>
-      <labels
-          visualID="5026"
-          editPartClassName="WrappingLabel19EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel19ItemSemanticEditPolicy"
-          notationViewFactoryClassName="BusLabelViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureBusBandwidthFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.22"/>
-      </labels>
-      <labels
-          visualID="5027"
-          editPartClassName="WrappingLabel20EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel20ItemSemanticEditPolicy"
-          notationViewFactoryClassName="BusLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureBusProtocolFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.23"/>
-      </labels>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2004"
-        editPartClassName="LinkEditPart"
-        itemSemanticEditPolicyClassName="LinkItemSemanticEditPolicy"
-        notationViewFactoryClassName="LinkViewFactory"
-        canonicalEditPolicyClassName="LinkCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="LinkGraphicalNodeEditPolicy"
-        createCommandClassName="LinkCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="LinkEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="LinkResourceFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class LinkResourceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureLinkResourceLabel1; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureLinkResourceLabel2; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public LinkResourceFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure busContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;busContainer0.setFill(false);&#xA;busContainer0.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintBusContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintBusContainer0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintBusContainer0.horizontalIndent = 0;&#xA;constraintBusContainer0.horizontalSpan = 1;&#xA;constraintBusContainer0.verticalSpan = 1;&#xA;constraintBusContainer0.grabExcessHorizontalSpace = true;&#xA;constraintBusContainer0.grabExcessVerticalSpace = true;&#xA;this.add(busContainer0, constraintBusContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutBusContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutBusContainer0.numColumns = 1;&#xA;&#x9;layoutBusContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;busContainer0.setLayoutManager(layoutBusContainer0);&#xA;&#xA;&#xA;&#xA;fFigureLinkResourceLabel1 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureLinkResourceLabel1.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureLinkResourceLabel1.setFont(FFIGURELINKRESOURCELABEL1_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureLinkResourceLabel1 = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureLinkResourceLabel1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureLinkResourceLabel1.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureLinkResourceLabel1.horizontalIndent = 0;&#xA;constraintFFigureLinkResourceLabel1.horizontalSpan = 1;&#xA;constraintFFigureLinkResourceLabel1.verticalSpan = 0;&#xA;constraintFFigureLinkResourceLabel1.grabExcessHorizontalSpace = true;&#xA;constraintFFigureLinkResourceLabel1.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureLinkResourceLabel1, constraintFFigureLinkResourceLabel1);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureLinkResourceLabel2 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureLinkResourceLabel2.setText(&quot;&lt;...>&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureLinkResourceLabel2 = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureLinkResourceLabel2.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureLinkResourceLabel2.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureLinkResourceLabel2.horizontalIndent = 0;&#xA;constraintFFigureLinkResourceLabel2.horizontalSpan = 1;&#xA;constraintFFigureLinkResourceLabel2.verticalSpan = 0;&#xA;constraintFFigureLinkResourceLabel2.grabExcessHorizontalSpace = true;&#xA;constraintFFigureLinkResourceLabel2.grabExcessVerticalSpace = true;&#xA;busContainer0.add(fFigureLinkResourceLabel2, constraintFFigureLinkResourceLabel2);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape line0 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;line0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;line0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(150)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;line0.setLineWidth(3);&#xA;&#xA;this.add(line0);&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse circle11 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;circle11.setOutline(false);&#xA;&#x9;circle11.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;circle11.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;circle11.setSize(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;);&#xA;&#xA;line0.add(circle11);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse circle21 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;circle21.setOutline(false);&#xA;&#x9;circle21.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;circle21.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(132)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;circle21.setSize(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;);&#xA;&#xA;line0.add(circle21);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureLinkResourceLabel1() {&#xA;&#x9;&#x9;return fFigureLinkResourceLabel1;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureLinkResourceLabel2() {&#xA;&#x9;&#x9;return fFigureLinkResourceLabel2;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURELINKRESOURCELABEL1_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), &quot;BOLD&quot;, 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="150"
-            height="100"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Link"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/communicationMedia"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/communicationMedia"/>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature
-                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationMedia/bandwidth"/>
-            <newElementInitializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.31">
-                <feature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
-              </initializers>
-            </newElementInitializers>
-          </initializers>
-        </modelElementInitializer>
-      </modelFacet>
-      <labels
-          visualID="5028"
-          editPartClassName="WrappingLabel21EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel21ItemSemanticEditPolicy"
-          notationViewFactoryClassName="LinkLabelViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureLinkResourceLabel1"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.24"/>
-      </labels>
-      <labels
-          visualID="5029"
-          editPartClassName="WrappingLabel22EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel22ItemSemanticEditPolicy"
-          notationViewFactoryClassName="LinkLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureLinkResourceLabel2"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedFont="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.25"/>
-      </labels>
-    </topLevelNodes>
-    <topLevelNodes
         visualID="2005"
         editPartClassName="CommunicationProtocolRepositoryEditPart"
         itemSemanticEditPolicyClassName="CommunicationProtocolRepositoryItemSemanticEditPolicy"
@@ -1279,7 +1109,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.39">
+              value="//@expressionProviders/@providers.0/@expressions.31">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1331,8 +1161,8 @@
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/ownedCache"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.35"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.36"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.27"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.28"/>
     </links>
     <compartments
         visualID="7001"
@@ -1362,7 +1192,7 @@
         title="ProtocolRepositoryCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.4">
+        node="//@diagram/@topLevelNodes.2">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -1435,31 +1265,13 @@
             genLinks="//@diagram/@links.0"/>
       </groups>
       <groups
-          title="Communication Media"
-          collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="BusResource"
-            description="Create new Bus"
-            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_large.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_small.gif"
-            genNodes="//@diagram/@topLevelNodes.2"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="LinkResource"
-            description="Create new Link"
-            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_large.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_small.gif"
-            genNodes="//@diagram/@topLevelNodes.3"/>
-      </groups>
-      <groups
           title="Communication Protocol"
           collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ProtocolRepository"
             smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.resource.diagram/icons/ProtocolRepo.gif"
-            genNodes="//@diagram/@topLevelNodes.4"/>
+            genNodes="//@diagram/@topLevelNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Point-Point Protocol"
@@ -1560,20 +1372,14 @@
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.2"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.3"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.4"
+        parent="//@diagram/@topLevelNodes.2"
         child="//@diagram/@childNodes.6"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.4"
+        parent="//@diagram/@topLevelNodes.2"
         child="//@diagram/@childNodes.7"/>
     <childReferences
         parent="//@diagram"
-        child="//@diagram/@topLevelNodes.4"/>
+        child="//@diagram/@topLevelNodes.2"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"
@@ -1714,22 +1520,6 @@
       <expressions
           body="' '"/>
       <expressions
-          body="0"/>
-      <expressions
-          body="let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;bdwidth"/>
-      <expressions
-          body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
-      <expressions
-          body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;proto"/>
-      <expressions
-          body="0"/>
-      <expressions
-          body="let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;bdwidth"/>
-      <expressions
-          body="'Enter: bs/kbs/mbs'"/>
-      <expressions
-          body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;proto"/>
-      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()"/>
       <expressions
@@ -1769,7 +1559,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
@@ -1930,48 +1720,15 @@
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/StructuredResource"/>
     </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@topLevelNodes.2/@labels.0/@modelFacet"
-        className="BusLabelExpressionLabelParser5026"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.28"
-        editExpression="//@expressionProviders/@providers.0/@expressions.29">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Bus"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
-        className="BusLabelExpressionLabelParser5027"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.30">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Bus"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@topLevelNodes.3/@labels.0/@modelFacet"
-        className="LinkLabelExpressionLabelParser5028"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.32"
-        editExpression="//@expressionProviders/@providers.0/@expressions.33">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Link"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@topLevelNodes.3/@labels.1/@modelFacet"
-        className="LinkLabelExpressionLabelParser5029"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.34">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Link"/>
-    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">
     <items
         xsi:type="gmfgen:LoadResourceAction"/>
   </contextMenus>
-  <extensions>
+  <extensions
+      oclType="">
     <rootInput
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.propsheet#/"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.propsheet#_RlRs0M1gEeSIgPDefa6ZBw"/>
   </extensions>
 </gmfgen:GenEditorGenerator>

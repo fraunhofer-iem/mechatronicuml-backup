@@ -27,8 +27,7 @@ public class HardwarePaletteFactory {
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createGeneral1Group());
 		paletteRoot.add(createStructuredResourceandemebeddedResources2Group());
-		paletteRoot.add(createCommunicationMedia3Group());
-		paletteRoot.add(createCommunicationProtocol4Group());
+		paletteRoot.add(createCommunicationProtocol3Group());
 	}
 
 	/**
@@ -63,26 +62,13 @@ public class HardwarePaletteFactory {
 	}
 
 	/**
-	 * Creates "CommunicationMedia" palette tool group
+	 * Creates "Communication Protocol" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createCommunicationMedia3Group() {
+	private PaletteContainer createCommunicationProtocol3Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationMedia3Group_title);
-		paletteContainer.setId("createCommunicationMedia3Group"); //$NON-NLS-1$
-		paletteContainer.add(createBusResource1CreationTool());
-		paletteContainer.add(createLinkResource2CreationTool());
-		return paletteContainer;
-	}
-
-	/**
-	 * Creates "CommunicationProtocol" palette tool group
-	 * @generated
-	 */
-	private PaletteContainer createCommunicationProtocol4Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationProtocol4Group_title);
-		paletteContainer.setId("createCommunicationProtocol4Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationProtocol3Group_title);
+		paletteContainer.setId("createCommunicationProtocol3Group"); //$NON-NLS-1$
 		paletteContainer.add(createProtocolRepository1CreationTool());
 		paletteContainer.add(createPointPointProtocol2CreationTool());
 		paletteContainer.add(createBusProtocol3CreationTool());
@@ -223,40 +209,6 @@ public class HardwarePaletteFactory {
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/processorcache.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createBusResource1CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.BusResource1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.BusResource1CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Bus_2003));
-		entry.setId("createBusResource1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_large.gif")); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createLinkResource2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.LinkResource2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.LinkResource2CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Link_2004));
-		entry.setId("createLinkResource2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_large.gif")); //$NON-NLS-1$
 		return entry;
 	}
 

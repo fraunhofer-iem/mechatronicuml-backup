@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.emf.common.notify.Notification;
@@ -148,6 +149,10 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 		return super.getTargetEditPart(request);
 	}
 
+	// Fix to hide this Compartment, if it has no children. See also GMF bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
+	// and workaround:
+	// http://www.eclipse.org/forums/index.php/m/9761/
 	/**
 	 * @generated
 	 */
@@ -157,6 +162,7 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 		setVisibility(hasChildren);
 	}
 
+	// This is also part of the fix mentioned above.
 	/**
 	 * @generated
 	 */

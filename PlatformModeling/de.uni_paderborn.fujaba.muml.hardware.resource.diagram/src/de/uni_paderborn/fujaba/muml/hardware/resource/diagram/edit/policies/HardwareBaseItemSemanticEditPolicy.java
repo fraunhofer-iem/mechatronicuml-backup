@@ -366,7 +366,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									45,
+									27,
 									de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 											.getProcessor(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -391,7 +391,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									46,
+									28,
 									de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 											.getCache(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -433,7 +433,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									45,
+									27,
 									de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 											.getProcessor(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -470,7 +470,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									46,
+									28,
 									de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 											.getCache(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$

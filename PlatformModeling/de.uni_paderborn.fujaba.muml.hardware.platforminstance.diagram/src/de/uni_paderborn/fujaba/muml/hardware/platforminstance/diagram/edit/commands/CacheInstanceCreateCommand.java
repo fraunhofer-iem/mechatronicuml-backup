@@ -56,6 +56,9 @@ public class CacheInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance) getElementToEdit();
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
+				.getInstance().init_CacheInstance_3017(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

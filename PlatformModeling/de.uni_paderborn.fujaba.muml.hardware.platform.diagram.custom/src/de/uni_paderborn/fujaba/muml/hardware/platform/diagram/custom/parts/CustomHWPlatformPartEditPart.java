@@ -10,7 +10,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.ICustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;

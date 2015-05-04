@@ -53,11 +53,13 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType BusPart_3014 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.BusPart_3014"); //$NON-NLS-1$
+	public static final IElementType Bus_3023 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.Bus_3023"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType BridgePart_3015 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.BridgePart_3015"); //$NON-NLS-1$
+	public static final IElementType NetworkBridge_3024 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.NetworkBridge_3024"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -78,15 +80,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Delegation_4028 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.Delegation_4028"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType LinkPart_4029 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.LinkPart_4029"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType BusConnector_4030 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.BusConnector_4030"); //$NON-NLS-1$
+	public static final IElementType NetworkConnector_4031 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platform.diagram.NetworkConnector_4031"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -137,14 +131,14 @@ public class HardwareElementTypes {
 							.getHWPlatform());
 
 			elements.put(
-					BusPart_3014,
+					Bus_3023,
 					de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getBusPart());
+							.getBus());
 
 			elements.put(
-					BridgePart_3015,
+					NetworkBridge_3024,
 					de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getBridgePart());
+							.getNetworkBridge());
 
 			elements.put(
 					HWPlatformPart_3016,
@@ -167,19 +161,9 @@ public class HardwareElementTypes {
 							.getResourcePart());
 
 			elements.put(
-					Delegation_4028,
+					NetworkConnector_4031,
 					de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getDelegation());
-
-			elements.put(
-					LinkPart_4029,
-					de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getLinkPart());
-
-			elements.put(
-					BusConnector_4030,
-					de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-							.getBusConnector());
+							.getNetworkConnector());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -199,15 +183,13 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(HWPlatform_1000);
 			KNOWN_ELEMENT_TYPES.add(HWPlatform_2008);
-			KNOWN_ELEMENT_TYPES.add(BusPart_3014);
-			KNOWN_ELEMENT_TYPES.add(BridgePart_3015);
+			KNOWN_ELEMENT_TYPES.add(Bus_3023);
+			KNOWN_ELEMENT_TYPES.add(NetworkBridge_3024);
 			KNOWN_ELEMENT_TYPES.add(HWPlatformPart_3016);
 			KNOWN_ELEMENT_TYPES.add(HWPortPart_3022);
 			KNOWN_ELEMENT_TYPES.add(DelegationHWPort_3018);
 			KNOWN_ELEMENT_TYPES.add(ResourcePart_3019);
-			KNOWN_ELEMENT_TYPES.add(Delegation_4028);
-			KNOWN_ELEMENT_TYPES.add(LinkPart_4029);
-			KNOWN_ELEMENT_TYPES.add(BusConnector_4030);
+			KNOWN_ELEMENT_TYPES.add(NetworkConnector_4031);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -221,10 +203,10 @@ public class HardwareElementTypes {
 			return HWPlatform_1000;
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
 			return HWPlatform_2008;
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusPartEditPart.VISUAL_ID:
-			return BusPart_3014;
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BridgePartEditPart.VISUAL_ID:
-			return BridgePart_3015;
+		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
+			return Bus_3023;
+		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
+			return NetworkBridge_3024;
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
 			return HWPlatformPart_3016;
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
@@ -233,12 +215,8 @@ public class HardwareElementTypes {
 			return DelegationHWPort_3018;
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
 			return ResourcePart_3019;
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return Delegation_4028;
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.LinkPartEditPart.VISUAL_ID:
-			return LinkPart_4029;
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusConnectorEditPart.VISUAL_ID:
-			return BusConnector_4030;
+		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
+			return NetworkConnector_4031;
 		}
 		return null;
 	}

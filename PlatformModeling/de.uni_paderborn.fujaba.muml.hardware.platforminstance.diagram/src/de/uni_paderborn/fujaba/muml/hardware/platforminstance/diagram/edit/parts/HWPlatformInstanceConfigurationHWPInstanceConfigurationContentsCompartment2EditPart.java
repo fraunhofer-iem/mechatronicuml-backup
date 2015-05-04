@@ -142,7 +142,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3036) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BridgeInstance_3037) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3038) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -154,11 +154,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.DelegationInstance_4008)
-								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.LinkInstance_4009)
-								|| elementType
-										.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusConnectorInstance_4010))
+								.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4011))
 							return super.getTargetEditPart(request);
 					}
 				}
