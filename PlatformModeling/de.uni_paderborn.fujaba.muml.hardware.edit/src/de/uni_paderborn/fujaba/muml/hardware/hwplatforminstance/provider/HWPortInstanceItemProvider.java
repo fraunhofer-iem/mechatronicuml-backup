@@ -206,7 +206,7 @@ public class HWPortInstanceItemProvider
 		switch (notification.getFeatureID(HWPortInstance.class)) {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES:
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:

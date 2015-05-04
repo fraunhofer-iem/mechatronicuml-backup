@@ -90,6 +90,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES);
 			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES);
 			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES);
+			childrenFeatures.add(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -147,6 +148,7 @@ public class HWPlatformInstanceConfigurationItemProvider
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__HWPLATFORM_INSTANCES:
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES:
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES:
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -172,27 +174,12 @@ public class HWPlatformInstanceConfigurationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createDelegationInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createBusConnectorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
 				 HwplatforminstanceFactory.eINSTANCE.createBusInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createLinkInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORKING_HARDWARE_INSTANCES,
-				 HwplatforminstanceFactory.eINSTANCE.createBridgeInstance()));
+				 HwplatforminstanceFactory.eINSTANCE.createNetworkBridgeInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -233,6 +220,11 @@ public class HWPlatformInstanceConfigurationItemProvider
 			(createChildParameter
 				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__RESOURCES,
 				 HwresourceinstanceFactory.eINSTANCE.createActuatorInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatforminstancePackage.Literals.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES,
+				 HwplatforminstanceFactory.eINSTANCE.createNetworkConnectorInstance()));
 	}
 
 	/**

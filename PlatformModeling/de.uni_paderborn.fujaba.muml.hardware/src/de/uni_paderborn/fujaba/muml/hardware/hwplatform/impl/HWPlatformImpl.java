@@ -5,22 +5,17 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardware;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.impl.NamedElementImpl;
 
 /**
@@ -31,8 +26,9 @@ import org.storydriven.core.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getEmbeddedPlatformParts <em>Embedded Platform Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getNetworkingHardwareParts <em>Networking Hardware Parts</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getNetworkingHardware <em>Networking Hardware</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getDelegationPorts <em>Delegation Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getNetworkConnectors <em>Network Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,14 +46,14 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 	protected EList<PlatformPart> embeddedPlatformParts;
 
 	/**
-	 * The cached value of the '{@link #getNetworkingHardwareParts() <em>Networking Hardware Parts</em>}' containment reference list.
+	 * The cached value of the '{@link #getNetworkingHardware() <em>Networking Hardware</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNetworkingHardwareParts()
+	 * @see #getNetworkingHardware()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<NetworkingHardwarePart> networkingHardwareParts;
+	protected EList<NetworkingHardware> networkingHardware;
 
 	/**
 	 * The cached value of the '{@link #getDelegationPorts() <em>Delegation Ports</em>}' containment reference list.
@@ -68,6 +64,16 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 	 * @ordered
 	 */
 	protected EList<DelegationHWPort> delegationPorts;
+
+	/**
+	 * The cached value of the '{@link #getNetworkConnectors() <em>Network Connectors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNetworkConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<NetworkConnector> networkConnectors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,11 +111,11 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<NetworkingHardwarePart> getNetworkingHardwareParts() {
-		if (networkingHardwareParts == null) {
-			networkingHardwareParts = new EObjectContainmentEList<NetworkingHardwarePart>(NetworkingHardwarePart.class, this, HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS);
+	public EList<NetworkingHardware> getNetworkingHardware() {
+		if (networkingHardware == null) {
+			networkingHardware = new EObjectContainmentEList<NetworkingHardware>(NetworkingHardware.class, this, HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE);
 		}
-		return networkingHardwareParts;
+		return networkingHardware;
 	}
 
 	/**
@@ -122,6 +128,18 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 			delegationPorts = new EObjectContainmentEList<DelegationHWPort>(DelegationHWPort.class, this, HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS);
 		}
 		return delegationPorts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<NetworkConnector> getNetworkConnectors() {
+		if (networkConnectors == null) {
+			networkConnectors = new EObjectContainmentEList<NetworkConnector>(NetworkConnector.class, this, HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS);
+		}
+		return networkConnectors;
 	}
 
 	/**
@@ -149,10 +167,12 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 		switch (featureID) {
 			case HwplatformPackage.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS:
 				return ((InternalEList<?>)getEmbeddedPlatformParts()).basicRemove(otherEnd, msgs);
-			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS:
-				return ((InternalEList<?>)getNetworkingHardwareParts()).basicRemove(otherEnd, msgs);
+			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE:
+				return ((InternalEList<?>)getNetworkingHardware()).basicRemove(otherEnd, msgs);
 			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
 				return ((InternalEList<?>)getDelegationPorts()).basicRemove(otherEnd, msgs);
+			case HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS:
+				return ((InternalEList<?>)getNetworkConnectors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,10 +187,12 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 		switch (featureID) {
 			case HwplatformPackage.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS:
 				return getEmbeddedPlatformParts();
-			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS:
-				return getNetworkingHardwareParts();
+			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE:
+				return getNetworkingHardware();
 			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
 				return getDelegationPorts();
+			case HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS:
+				return getNetworkConnectors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,13 +210,17 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 				getEmbeddedPlatformParts().clear();
 				getEmbeddedPlatformParts().addAll((Collection<? extends PlatformPart>)newValue);
 				return;
-			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS:
-				getNetworkingHardwareParts().clear();
-				getNetworkingHardwareParts().addAll((Collection<? extends NetworkingHardwarePart>)newValue);
+			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE:
+				getNetworkingHardware().clear();
+				getNetworkingHardware().addAll((Collection<? extends NetworkingHardware>)newValue);
 				return;
 			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
 				getDelegationPorts().clear();
 				getDelegationPorts().addAll((Collection<? extends DelegationHWPort>)newValue);
+				return;
+			case HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS:
+				getNetworkConnectors().clear();
+				getNetworkConnectors().addAll((Collection<? extends NetworkConnector>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -211,11 +237,14 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 			case HwplatformPackage.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS:
 				getEmbeddedPlatformParts().clear();
 				return;
-			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS:
-				getNetworkingHardwareParts().clear();
+			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE:
+				getNetworkingHardware().clear();
 				return;
 			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
 				getDelegationPorts().clear();
+				return;
+			case HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS:
+				getNetworkConnectors().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -231,10 +260,12 @@ public class HWPlatformImpl extends NamedElementImpl implements HWPlatform {
 		switch (featureID) {
 			case HwplatformPackage.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS:
 				return embeddedPlatformParts != null && !embeddedPlatformParts.isEmpty();
-			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS:
-				return networkingHardwareParts != null && !networkingHardwareParts.isEmpty();
+			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE:
+				return networkingHardware != null && !networkingHardware.isEmpty();
 			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
 				return delegationPorts != null && !delegationPorts.isEmpty();
+			case HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS:
+				return networkConnectors != null && !networkConnectors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

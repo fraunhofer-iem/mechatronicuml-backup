@@ -28,6 +28,8 @@ public class HWPortInstanceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorParent_GeneralTab_Editor(), false);
+
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
@@ -50,12 +52,11 @@ public class HWPortInstanceEditor
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorParent_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
@@ -73,9 +74,6 @@ public class HWPortInstanceEditor
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
@@ -87,16 +85,25 @@ public class HWPortInstanceEditor
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParent_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParent_GeneralTab_Editor() {
+		if (this.editorParent_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getHWPort_Parent();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The Resource, this HWPort belongs to.");
+
+			this.editorParent_GeneralTab = editor;
+		}
+		return this.editorParent_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
@@ -216,9 +223,8 @@ public class HWPortInstanceEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.extensions",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}

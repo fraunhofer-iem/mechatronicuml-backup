@@ -118,25 +118,7 @@ public interface HwresourceFactory extends EFactory {
 	 * @return a new object of class '<em>Communication Resource</em>'.
 	 * @generated
 	 */
-	CommunicationResource createCommunicationResource();
-
-	/**
-	 * Returns a new object of class '<em>Bus</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bus</em>'.
-	 * @generated
-	 */
-	Bus createBus();
-
-	/**
-	 * Returns a new object of class '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Link</em>'.
-	 * @generated
-	 */
-	Link createLink();
+	<T> CommunicationResource<T> createCommunicationResource();
 
 	/**
 	 * Returns the package supported by this factory.

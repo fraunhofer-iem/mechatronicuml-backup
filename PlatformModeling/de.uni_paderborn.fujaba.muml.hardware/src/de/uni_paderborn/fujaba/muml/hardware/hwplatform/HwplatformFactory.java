@@ -22,15 +22,6 @@ public interface HwplatformFactory extends EFactory {
 	HwplatformFactory eINSTANCE = de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>HW Platform Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>HW Platform Configuration</em>'.
-	 * @generated
-	 */
-	HWPlatformConfiguration createHWPlatformConfiguration();
-
-	/**
 	 * Returns a new object of class '<em>HW Platform</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,15 +49,6 @@ public interface HwplatformFactory extends EFactory {
 	ResourcePart createResourcePart();
 
 	/**
-	 * Returns a new object of class '<em>Delegation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Delegation</em>'.
-	 * @generated
-	 */
-	Delegation createDelegation();
-
-	/**
 	 * Returns a new object of class '<em>Delegation HW Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,40 +67,31 @@ public interface HwplatformFactory extends EFactory {
 	HWPortPart createHWPortPart();
 
 	/**
-	 * Returns a new object of class '<em>Bus Connector</em>'.
+	 * Returns a new object of class '<em>Bus</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bus Connector</em>'.
+	 * @return a new object of class '<em>Bus</em>'.
 	 * @generated
 	 */
-	BusConnector createBusConnector();
+	Bus createBus();
 
 	/**
-	 * Returns a new object of class '<em>Bus Part</em>'.
+	 * Returns a new object of class '<em>Network Bridge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bus Part</em>'.
+	 * @return a new object of class '<em>Network Bridge</em>'.
 	 * @generated
 	 */
-	BusPart createBusPart();
+	NetworkBridge createNetworkBridge();
 
 	/**
-	 * Returns a new object of class '<em>Link Part</em>'.
+	 * Returns a new object of class '<em>Network Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Link Part</em>'.
+	 * @return a new object of class '<em>Network Connector</em>'.
 	 * @generated
 	 */
-	LinkPart createLinkPart();
-
-	/**
-	 * Returns a new object of class '<em>Bridge Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bridge Part</em>'.
-	 * @generated
-	 */
-	BridgePart createBridgePart();
+	NetworkConnector createNetworkConnector();
 
 	/**
 	 * Returns the package supported by this factory.

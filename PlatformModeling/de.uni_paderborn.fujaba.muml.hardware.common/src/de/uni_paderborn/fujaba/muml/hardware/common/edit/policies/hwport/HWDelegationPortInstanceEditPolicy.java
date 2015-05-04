@@ -64,31 +64,38 @@ public class HWDelegationPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	protected HWPortKind getHWPortKind() {
 		EObject element = getSemanticElement();
 		HWPortKind kind = HWPortKind.BUS;
-		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
-		DelegationHWPortInstance hwPortInstance = null;
-		if (element != null) {
-			if (HwplatforminstancePackage.Literals.DELEGATION_HW_PORT_INSTANCE
-					.isSuperTypeOf(element.eClass())) {
-				hwPortInstance = (DelegationHWPortInstance) element;
-			}
-			if (hwPortInstance != null && hwPortInstance.getType() != null
-					&& HwplatformPackage.Literals.DELEGATION_HW_PORT
-							.isSuperTypeOf(hwPortInstance.getType().eClass())) {
-				modelPortKind = ((DelegationHWPort) hwPortInstance.getType())
-						.getPortKind();
-			}
-		}
-
-		switch (modelPortKind.getValue()) {
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
-			kind = HWPortKind.BUS;
-			break;
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
-			kind = HWPortKind.LINK;
-			break;
-
-		}
-		return kind;
+		
+		/**
+		 * TODO FIXME
+		 */
+		
+		return HWPortKind.LINK;
+		
+//		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
+//		DelegationHWPortInstance hwPortInstance = null;
+//		if (element != null) {
+//			if (HwplatforminstancePackage.Literals.DELEGATION_HW_PORT_INSTANCE
+//					.isSuperTypeOf(element.eClass())) {
+//				hwPortInstance = (DelegationHWPortInstance) element;
+//			}
+//			if (hwPortInstance != null && hwPortInstance.getType() != null
+//					&& HwplatformPackage.Literals.DELEGATION_HW_PORT
+//							.isSuperTypeOf(hwPortInstance.getType().eClass())) {
+//				modelPortKind = ((DelegationHWPort) hwPortInstance.getType())
+//						.getPortKind();
+//			}
+//		}
+//
+//		switch (modelPortKind.getValue()) {
+//		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
+//			kind = HWPortKind.BUS;
+//			break;
+//		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
+//			kind = HWPortKind.LINK;
+//			break;
+//
+//		}
+//		return kind;
 	}
 
 	@Override

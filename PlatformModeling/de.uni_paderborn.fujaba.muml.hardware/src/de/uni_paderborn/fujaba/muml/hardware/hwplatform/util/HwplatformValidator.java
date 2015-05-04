@@ -86,8 +86,6 @@ public class HwplatformValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case HwplatformPackage.HW_PLATFORM_CONFIGURATION:
-				return validateHWPlatformConfiguration((HWPlatformConfiguration)value, diagnostics, context);
 			case HwplatformPackage.HW_PLATFORM:
 				return validateHWPlatform((HWPlatform)value, diagnostics, context);
 			case HwplatformPackage.PLATFORM_PART:
@@ -96,36 +94,21 @@ public class HwplatformValidator extends EObjectValidator {
 				return validateHWPlatformPart((HWPlatformPart)value, diagnostics, context);
 			case HwplatformPackage.RESOURCE_PART:
 				return validateResourcePart((ResourcePart)value, diagnostics, context);
-			case HwplatformPackage.DELEGATION:
-				return validateDelegation((Delegation)value, diagnostics, context);
 			case HwplatformPackage.DELEGATION_HW_PORT:
 				return validateDelegationHWPort((DelegationHWPort)value, diagnostics, context);
 			case HwplatformPackage.HW_PORT_PART:
 				return validateHWPortPart((HWPortPart)value, diagnostics, context);
-			case HwplatformPackage.BUS_CONNECTOR:
-				return validateBusConnector((BusConnector)value, diagnostics, context);
-			case HwplatformPackage.BUS_PART:
-				return validateBusPart((BusPart)value, diagnostics, context);
-			case HwplatformPackage.LINK_PART:
-				return validateLinkPart((LinkPart)value, diagnostics, context);
-			case HwplatformPackage.COMMUNICATION_MEDIA_PART:
-				return validateCommunicationMediaPart((CommunicationMediaPart)value, diagnostics, context);
-			case HwplatformPackage.BRIDGE_PART:
-				return validateBridgePart((BridgePart)value, diagnostics, context);
-			case HwplatformPackage.NETWORKING_HARDWARE_PART:
-				return validateNetworkingHardwarePart((NetworkingHardwarePart)value, diagnostics, context);
+			case HwplatformPackage.BUS:
+				return validateBus((Bus)value, diagnostics, context);
+			case HwplatformPackage.NETWORK_BRIDGE:
+				return validateNetworkBridge((NetworkBridge)value, diagnostics, context);
+			case HwplatformPackage.NETWORKING_HARDWARE:
+				return validateNetworkingHardware((NetworkingHardware)value, diagnostics, context);
+			case HwplatformPackage.NETWORK_CONNECTOR:
+				return validateNetworkConnector((NetworkConnector)value, diagnostics, context);
 			default:
 				return true;
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHWPlatformConfiguration(HWPlatformConfiguration hwPlatformConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(hwPlatformConfiguration, diagnostics, context);
 	}
 
 	/**
@@ -301,55 +284,6 @@ public class HwplatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDelegation(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(delegation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegation_HWPortPartToDelegationHWPort(delegation, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the HWPortPartToDelegationHWPort constraint of '<em>Delegation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION__HW_PORT_PART_TO_DELEGATION_HW_PORT__EEXPRESSION = "-- One End of a Delegation must be a Delegation Port\n" +
-		"self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::HWPortPart)) and ( self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::DelegationHWPort)) or self.connectorEndpoints->exists(c|c.oclIsKindOf(hwplatform::BusPart)))";
-
-	/**
-	 * Validates the HWPortPartToDelegationHWPort constraint of '<em>Delegation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegation_HWPortPartToDelegationHWPort(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(HwplatformPackage.Literals.DELEGATION,
-				 delegation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "HWPortPartToDelegationHWPort",
-				 DELEGATION__HW_PORT_PART_TO_DELEGATION_HW_PORT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateDelegationHWPort(DelegationHWPort delegationHWPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(delegationHWPort, diagnostics, context);
 	}
@@ -360,184 +294,123 @@ public class HwplatformValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateHWPortPart(HWPortPart hwPortPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(hwPortPart, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHWPortPart_SameProtocol(hwPortPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateHWPortPart_LinkPort2Link(hwPortPart, diagnostics, context);
+		return validate_EveryDefaultConstraint(hwPortPart, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBus(Bus bus, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(bus, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(bus, diagnostics, context);
+		if (result || diagnostics != null) result &= validateBus_SameBusProtocol(bus, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the SameProtocol constraint of '<em>HW Port Part</em>'.
+	 * The cached validation expression for the SameBusProtocol constraint of '<em>Bus</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION = "-- Connected Ports must use the same Protocol\n" +
-		"if (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n" +
-		"\tself.connectedMediaPart->first().protocol=self.protocol\n" +
-		"else true\n" +
-		"endif";
+	protected static final String BUS__SAME_BUS_PROTOCOL__EEXPRESSION = "-- Connected Ports must use the same BusProtocol\r\n" +
+		"self.connectedHWPortParts->forAll(p  | p.protocol =self.protocol )";
 
 	/**
-	 * Validates the SameProtocol constraint of '<em>HW Port Part</em>'.
+	 * Validates the SameBusProtocol constraint of '<em>Bus</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHWPortPart_SameProtocol(HWPortPart hwPortPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateBus_SameBusProtocol(Bus bus, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(HwplatformPackage.Literals.HW_PORT_PART,
-				 hwPortPart,
+				(HwplatformPackage.Literals.BUS,
+				 bus,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SameBusProtocol",
+				 BUS__SAME_BUS_PROTOCOL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkBridge(NetworkBridge networkBridge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(networkBridge, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkingHardware(NetworkingHardware networkingHardware, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(networkingHardware, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkConnector(NetworkConnector networkConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(networkConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(networkConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNetworkConnector_SameProtocol(networkConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the SameProtocol constraint of '<em>Network Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String NETWORK_CONNECTOR__SAME_PROTOCOL__EEXPRESSION = "-- Connected Ports must use the same Protocol\r\n" +
+		"self.hwportParts->forAll(p1 , p2 | p1.protocol = p2.protocol)";
+
+	/**
+	 * Validates the SameProtocol constraint of '<em>Network Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNetworkConnector_SameProtocol(NetworkConnector networkConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(HwplatformPackage.Literals.NETWORK_CONNECTOR,
+				 networkConnector,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "SameProtocol",
-				 HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION,
+				 NETWORK_CONNECTOR__SAME_PROTOCOL__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * The cached validation expression for the LinkPort2Link constraint of '<em>HW Port Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "-- A Linkt Port must be connected via a Link\n" +
-		"if (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n" +
-		"\ttrue\n" +
-		"else \n" +
-		"\tif (self.portKind = hwresource::HWPortKind::BUS) then\n" +
-		"\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n" +
-		"\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n" +
-		"\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n" +
-		"\telse true\n" +
-		"endif endif endif\n" +
-		"";
-
-	/**
-	 * Validates the LinkPort2Link constraint of '<em>HW Port Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHWPortPart_LinkPort2Link(HWPortPart hwPortPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(HwplatformPackage.Literals.HW_PORT_PART,
-				 hwPortPart,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "LinkPort2Link",
-				 HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBusConnector(BusConnector busConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(busConnector, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBusPart(BusPart busPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(busPart, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLinkPart(LinkPart linkPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(linkPart, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(linkPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLinkPart_Only2Connections(linkPart, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the Only2Connections constraint of '<em>Link Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LINK_PART__ONLY2_CONNECTIONS__EEXPRESSION = "-- A link can only connect to Link Ports\n" +
-		"self.connectorEndpoints->size()<=2";
-
-	/**
-	 * Validates the Only2Connections constraint of '<em>Link Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLinkPart_Only2Connections(LinkPart linkPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(HwplatformPackage.Literals.LINK_PART,
-				 linkPart,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "Only2Connections",
-				 LINK_PART__ONLY2_CONNECTIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCommunicationMediaPart(CommunicationMediaPart communicationMediaPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(communicationMediaPart, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBridgePart(BridgePart bridgePart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(bridgePart, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNetworkingHardwarePart(NetworkingHardwarePart networkingHardwarePart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(networkingHardwarePart, diagnostics, context);
 	}
 
 	/**

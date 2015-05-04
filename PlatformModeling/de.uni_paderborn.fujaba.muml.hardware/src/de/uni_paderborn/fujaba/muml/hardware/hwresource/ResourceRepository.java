@@ -20,7 +20,6 @@ import org.storydriven.core.CommentableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getResources <em>Resources</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getProtocols <em>Protocols</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getCommunicationMedia <em>Communication Media</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,21 +59,5 @@ public interface ResourceRepository extends CommentableElement {
 	 * @generated
 	 */
 	EList<CommunicationProtocolRepository> getProtocols();
-
-	/**
-	 * Returns the value of the '<em><b>Communication Media</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Communication Media</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Communication Media</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getResourceRepository_CommunicationMedia()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<CommunicationMedia> getCommunicationMedia();
 
 } // ResourceRepository

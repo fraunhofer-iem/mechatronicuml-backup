@@ -31,9 +31,6 @@ public abstract class CommunicationProtocolEditor
 			addPropertyEditor(
 					createEditorFurtherInformation_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorIsNetworkingProtocol_GeneralTab_Editor(), false);
-
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -46,11 +43,15 @@ public abstract class CommunicationProtocolEditor
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorIsEventTriggered_GeneralTab_Editor(), false);
 
-		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory(
+			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+					createEditorIsNetworkingProtocol_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createEditorIsSerial_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
@@ -59,9 +60,6 @@ public abstract class CommunicationProtocolEditor
 			addPropertyEditor(
 					createEditorFurtherInformation_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorIsNetworkingProtocol_GeneralTab_Editor(), false);
-
 			addSubCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -74,26 +72,22 @@ public abstract class CommunicationProtocolEditor
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorIsEventTriggered_GeneralTab_Editor(), false);
 
-		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
-
-			addSubCategory(
+			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+					createEditorIsNetworkingProtocol_GeneralTab_Editor(), false);
+
+			addEditorToCategory(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					createEditorIsSerial_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
@@ -157,6 +151,21 @@ public abstract class CommunicationProtocolEditor
 			this.editorIsNetworkingProtocol_GeneralTab = editor;
 		}
 		return this.editorIsNetworkingProtocol_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorIsSerial_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorIsSerial_GeneralTab_Editor() {
+		if (this.editorIsSerial_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getCommunicationProtocol_IsSerial();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
+
+			this.editorIsSerial_GeneralTab = editor;
+		}
+		return this.editorIsSerial_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;

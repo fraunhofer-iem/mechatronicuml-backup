@@ -3,13 +3,14 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointImpl;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getCommunicationResource <em>Communication Resource</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getConnectedMediaPart <em>Connected Media Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getConnectedNetworkConnector <em>Connected Network Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#isMultiHWPort <em>Multi HW Port</em>}</li>
@@ -53,17 +54,17 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * @generated
 	 * @ordered
 	 */
-	protected CommunicationResource communicationResource;
+	protected CommunicationResource<ResourceInstance> communicationResource;
 
 	/**
-	 * The cached setting delegate for the '{@link #getConnectedMediaPart() <em>Connected Media Part</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getConnectedNetworkConnector() <em>Connected Network Connector</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConnectedMediaPart()
+	 * @see #getConnectedNetworkConnector()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_MEDIA_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatformPackage.Literals.HW_PORT_PART__CONNECTED_MEDIA_PART).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_NETWORK_CONNECTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatformPackage.Literals.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getProtocol() <em>Protocol</em>}' reference.
@@ -149,10 +150,11 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource getCommunicationResource() {
+	@SuppressWarnings("unchecked")
+	public CommunicationResource<ResourceInstance> getCommunicationResource() {
 		if (communicationResource != null && communicationResource.eIsProxy()) {
 			InternalEObject oldCommunicationResource = (InternalEObject)communicationResource;
-			communicationResource = (CommunicationResource)eResolveProxy(oldCommunicationResource);
+			communicationResource = (CommunicationResource<ResourceInstance>)eResolveProxy(oldCommunicationResource);
 			if (communicationResource != oldCommunicationResource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE, oldCommunicationResource, communicationResource));
@@ -166,7 +168,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource basicGetCommunicationResource() {
+	public CommunicationResource<ResourceInstance> basicGetCommunicationResource() {
 		return communicationResource;
 	}
 
@@ -175,8 +177,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCommunicationResource(CommunicationResource newCommunicationResource) {
-		CommunicationResource oldCommunicationResource = communicationResource;
+	public void setCommunicationResource(CommunicationResource<ResourceInstance> newCommunicationResource) {
+		CommunicationResource<ResourceInstance> oldCommunicationResource = communicationResource;
 		communicationResource = newCommunicationResource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE, oldCommunicationResource, communicationResource));
@@ -188,8 +190,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<CommunicationMediaPart> getConnectedMediaPart() {
-		return (EList<CommunicationMediaPart>)CONNECTED_MEDIA_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<NetworkConnector> getConnectedNetworkConnector() {
+		return (EList<NetworkConnector>)CONNECTED_NETWORK_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -466,8 +468,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 			case HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE:
 				if (resolve) return getCommunicationResource();
 				return basicGetCommunicationResource();
-			case HwplatformPackage.HW_PORT_PART__CONNECTED_MEDIA_PART:
-				return getConnectedMediaPart();
+			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
+				return getConnectedNetworkConnector();
 			case HwplatformPackage.HW_PORT_PART__PROTOCOL:
 				if (resolve) return getProtocol();
 				return basicGetProtocol();
@@ -497,11 +499,11 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE:
-				setCommunicationResource((CommunicationResource)newValue);
+				setCommunicationResource((CommunicationResource<ResourceInstance>)newValue);
 				return;
-			case HwplatformPackage.HW_PORT_PART__CONNECTED_MEDIA_PART:
-				getConnectedMediaPart().clear();
-				getConnectedMediaPart().addAll((Collection<? extends CommunicationMediaPart>)newValue);
+			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
+				getConnectedNetworkConnector().clear();
+				getConnectedNetworkConnector().addAll((Collection<? extends NetworkConnector>)newValue);
 				return;
 			case HwplatformPackage.HW_PORT_PART__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -534,10 +536,10 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE:
-				setCommunicationResource((CommunicationResource)null);
+				setCommunicationResource((CommunicationResource<ResourceInstance>)null);
 				return;
-			case HwplatformPackage.HW_PORT_PART__CONNECTED_MEDIA_PART:
-				getConnectedMediaPart().clear();
+			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
+				getConnectedNetworkConnector().clear();
 				return;
 			case HwplatformPackage.HW_PORT_PART__CARDINALITY:
 				setCardinality((Cardinality)null);
@@ -571,8 +573,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 		switch (featureID) {
 			case HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE:
 				return communicationResource != null;
-			case HwplatformPackage.HW_PORT_PART__CONNECTED_MEDIA_PART:
-				return CONNECTED_MEDIA_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
+				return CONNECTED_NETWORK_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatformPackage.HW_PORT_PART__PROTOCOL:
 				return PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatformPackage.HW_PORT_PART__CARDINALITY:

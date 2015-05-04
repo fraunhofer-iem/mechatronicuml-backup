@@ -49,24 +49,6 @@ public interface HwplatforminstanceFactory extends EFactory {
 	HWPortInstance createHWPortInstance();
 
 	/**
-	 * Returns a new object of class '<em>Delegation Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Delegation Instance</em>'.
-	 * @generated
-	 */
-	DelegationInstance createDelegationInstance();
-
-	/**
-	 * Returns a new object of class '<em>Bus Connector Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bus Connector Instance</em>'.
-	 * @generated
-	 */
-	BusConnectorInstance createBusConnectorInstance();
-
-	/**
 	 * Returns a new object of class '<em>Bus Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,22 +58,13 @@ public interface HwplatforminstanceFactory extends EFactory {
 	BusInstance createBusInstance();
 
 	/**
-	 * Returns a new object of class '<em>Link Instance</em>'.
+	 * Returns a new object of class '<em>Network Bridge Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Link Instance</em>'.
+	 * @return a new object of class '<em>Network Bridge Instance</em>'.
 	 * @generated
 	 */
-	LinkInstance createLinkInstance();
-
-	/**
-	 * Returns a new object of class '<em>Bridge Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bridge Instance</em>'.
-	 * @generated
-	 */
-	BridgeInstance createBridgeInstance();
+	NetworkBridgeInstance createNetworkBridgeInstance();
 
 	/**
 	 * Returns a new object of class '<em>Delegation HW Port Instance</em>'.
@@ -101,6 +74,15 @@ public interface HwplatforminstanceFactory extends EFactory {
 	 * @generated
 	 */
 	DelegationHWPortInstance createDelegationHWPortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Network Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Network Connector Instance</em>'.
+	 * @generated
+	 */
+	NetworkConnectorInstance createNetworkConnectorInstance();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -128,24 +128,12 @@ public class HwresourceAdapterFactory extends AdapterFactoryImpl {
 				return createLinkProtocolAdapter();
 			}
 			@Override
-			public Adapter caseCommunicationResource(CommunicationResource object) {
+			public <T> Adapter caseCommunicationResource(CommunicationResource<T> object) {
 				return createCommunicationResourceAdapter();
 			}
 			@Override
-			public Adapter caseHWPort(HWPort object) {
+			public <T> Adapter caseHWPort(HWPort<T> object) {
 				return createHWPortAdapter();
-			}
-			@Override
-			public Adapter caseBus(Bus object) {
-				return createBusAdapter();
-			}
-			@Override
-			public Adapter caseLink(Link object) {
-				return createLinkAdapter();
-			}
-			@Override
-			public Adapter caseCommunicationMedia(CommunicationMedia object) {
-				return createCommunicationMediaAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -400,48 +388,6 @@ public class HwresourceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHWPortAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus <em>Bus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus
-	 * @generated
-	 */
-	public Adapter createBusAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Link <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Link
-	 * @generated
-	 */
-	public Adapter createLinkAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia <em>Communication Media</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia
-	 * @generated
-	 */
-	public Adapter createCommunicationMediaAdapter() {
 		return null;
 	}
 

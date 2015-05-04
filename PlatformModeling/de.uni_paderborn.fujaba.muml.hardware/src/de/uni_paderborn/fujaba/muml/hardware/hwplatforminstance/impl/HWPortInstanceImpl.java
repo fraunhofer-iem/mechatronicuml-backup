@@ -6,33 +6,25 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.CommunicationMediaInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HWPortImpl;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 
@@ -47,7 +39,7 @@ import org.storydriven.core.CorePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getHwPortType <em>Hw Port Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectedMediaInstances <em>Connected Media Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#isIsNetworkInterface <em>Is Network Interface</em>}</li>
@@ -56,7 +48,7 @@ import org.storydriven.core.CorePackage;
  *
  * @generated
  */
-public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
+public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements HWPortInstance {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -108,14 +100,14 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	protected EStructuralFeature.Internal.SettingDelegate HW_PORT_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__HW_PORT_TYPE).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getConnectedMediaInstances() <em>Connected Media Instances</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getConnectedNetworkConnectorInstances() <em>Connected Network Connector Instances</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConnectedMediaInstances()
+	 * @see #getConnectedNetworkConnectorInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_MEDIA_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getProtocol() <em>Protocol</em>}' reference.
@@ -164,6 +156,17 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	@Override
 	protected EClass eStaticClass() {
 		return HwplatforminstancePackage.Literals.HW_PORT_INSTANCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setParent(ResourceInstance newParent) {
+		super.setParent(newParent);
 	}
 
 	/**
@@ -242,8 +245,9 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource getHwPortType() {
-		return (CommunicationResource)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	@SuppressWarnings("unchecked")
+	public CommunicationResource<Resource> getHwPortType() {
+		return (CommunicationResource<Resource>)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -251,8 +255,8 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource basicGetHwPortType() {
-		return (CommunicationResource)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public CommunicationResource<Resource> basicGetHwPortType() {
+		return (CommunicationResource<Resource>)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -260,7 +264,7 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHwPortType(CommunicationResource newHwPortType) {
+	public void setHwPortType(CommunicationResource<Resource> newHwPortType) {
 		HW_PORT_TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newHwPortType);
 	}
 
@@ -270,8 +274,8 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<CommunicationMediaInstance> getConnectedMediaInstances() {
-		return (EList<CommunicationMediaInstance>)CONNECTED_MEDIA_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<NetworkConnectorInstance> getConnectedNetworkConnectorInstances() {
+		return (EList<NetworkConnectorInstance>)CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -375,8 +379,8 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
 				if (resolve) return getHwPortType();
 				return basicGetHwPortType();
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES:
-				return getConnectedMediaInstances();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				return getConnectedNetworkConnectorInstances();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
 				if (resolve) return getProtocol();
 				return basicGetProtocol();
@@ -408,11 +412,11 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 				setType((ConnectorEndpoint)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				setHwPortType((CommunicationResource)newValue);
+				setHwPortType((CommunicationResource<Resource>)newValue);
 				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES:
-				getConnectedMediaInstances().clear();
-				getConnectedMediaInstances().addAll((Collection<? extends CommunicationMediaInstance>)newValue);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				getConnectedNetworkConnectorInstances().clear();
+				getConnectedNetworkConnectorInstances().addAll((Collection<? extends NetworkConnectorInstance>)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				setPortKind((HWPortKind)newValue);
@@ -442,10 +446,10 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 				setType((ConnectorEndpoint)null);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				setHwPortType((CommunicationResource)null);
+				setHwPortType((CommunicationResource<Resource>)null);
 				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES:
-				getConnectedMediaInstances().clear();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				getConnectedNetworkConnectorInstances().clear();
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				PORT_KIND__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
@@ -473,8 +477,8 @@ public class HWPortInstanceImpl extends HWPortImpl implements HWPortInstance {
 				return type != null;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
 				return HW_PORT_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_MEDIA_INSTANCES:
-				return CONNECTED_MEDIA_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				return CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
 				return PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:

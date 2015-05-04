@@ -67,232 +67,6 @@ public interface HwplatformPackage extends EPackage {
 	HwplatformPackage eINSTANCE = de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformConfigurationImpl <em>HW Platform Configuration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformConfigurationImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getHWPlatformConfiguration()
-	 * @generated
-	 */
-	int HW_PLATFORM_CONFIGURATION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Hwplatforms</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION__HWPLATFORMS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>HW Platform Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>HW Platform Configuration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PLATFORM_CONFIGURATION_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl <em>HW Platform</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -300,7 +74,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getHWPlatform()
 	 * @generated
 	 */
-	int HW_PLATFORM = 1;
+	int HW_PLATFORM = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -339,13 +113,13 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PLATFORM__EMBEDDED_PLATFORM_PARTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Networking Hardware Parts</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Networking Hardware</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM__NETWORKING_HARDWARE_PARTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int HW_PLATFORM__NETWORKING_HARDWARE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Delegation Ports</b></em>' containment reference list.
@@ -357,13 +131,22 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PLATFORM__DELEGATION_PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Network Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PLATFORM__NETWORK_CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>HW Platform</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PLATFORM_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int HW_PLATFORM_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -553,7 +336,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getPlatformPart()
 	 * @generated
 	 */
-	int PLATFORM_PART = 2;
+	int PLATFORM_PART = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -806,7 +589,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getHWPlatformPart()
 	 * @generated
 	 */
-	int HW_PLATFORM_PART = 3;
+	int HW_PLATFORM_PART = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1077,7 +860,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getResourcePart()
 	 * @generated
 	 */
-	int RESOURCE_PART = 4;
+	int RESOURCE_PART = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1332,467 +1115,6 @@ public interface HwplatformPackage extends EPackage {
 	int RESOURCE_PART_OPERATION_COUNT = PLATFORM_PART_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwarePartImpl <em>Networking Hardware Part</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwarePartImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkingHardwarePart()
-	 * @generated
-	 */
-	int NETWORKING_HARDWARE_PART = 13;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The number of structural features of the '<em>Networking Hardware Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Networking Hardware Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORKING_HARDWARE_PART_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationImpl <em>Delegation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getDelegation()
-	 * @generated
-	 */
-	int DELEGATION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__ANNOTATION = NETWORKING_HARDWARE_PART__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__EXTENSION = NETWORKING_HARDWARE_PART__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__COMMENT = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__CONNECTOR_ENDPOINTS = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__SELF_CONNECTOR = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Delegation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_FEATURE_COUNT = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ECLASS = NETWORKING_HARDWARE_PART___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EIS_PROXY = NETWORKING_HARDWARE_PART___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ERESOURCE = NETWORKING_HARDWARE_PART___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ECONTAINER = NETWORKING_HARDWARE_PART___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ECONTAINING_FEATURE = NETWORKING_HARDWARE_PART___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ECONTAINMENT_FEATURE = NETWORKING_HARDWARE_PART___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ECONTENTS = NETWORKING_HARDWARE_PART___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EALL_CONTENTS = NETWORKING_HARDWARE_PART___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ECROSS_REFERENCES = NETWORKING_HARDWARE_PART___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EGET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___ESET__ESTRUCTURALFEATURE_OBJECT = NETWORKING_HARDWARE_PART___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EIS_SET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EUNSET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___EINVOKE__EOPERATION_ELIST = NETWORKING_HARDWARE_PART___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___GET_EXTENSION__ECLASS = NETWORKING_HARDWARE_PART___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___PROVIDE_EXTENSION__ECLASS = NETWORKING_HARDWARE_PART___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___GET_ANNOTATION__STRING = NETWORKING_HARDWARE_PART___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION___PROVIDE_ANNOTATION__STRING = NETWORKING_HARDWARE_PART___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Delegation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_OPERATION_COUNT = NETWORKING_HARDWARE_PART_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationHWPortImpl <em>Delegation HW Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1800,7 +1122,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getDelegationHWPort()
 	 * @generated
 	 */
-	int DELEGATION_HW_PORT = 6;
+	int DELEGATION_HW_PORT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1839,76 +1161,13 @@ public interface HwplatformPackage extends EPackage {
 	int DELEGATION_HW_PORT__CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parent Resource</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__PARENT_RESOURCE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__PARENT_RESOURCE_INSTANCE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__PORT_KIND = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__PROTOCOL = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__CARDINALITY = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Multi HW Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_HW_PORT__MULTI_HW_PORT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
-
-	/**
 	 * The number of structural features of the '<em>Delegation HW Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_HW_PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
+	int DELEGATION_HW_PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2098,7 +1357,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getHWPortPart()
 	 * @generated
 	 */
-	int HW_PORT_PART = 7;
+	int HW_PORT_PART = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2146,13 +1405,13 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PORT_PART__COMMUNICATION_RESOURCE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connected Media Part</b></em>' reference list.
+	 * The feature id for the '<em><b>Connected Network Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_PART__CONNECTED_MEDIA_PART = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+	int HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' reference.
@@ -2407,14 +1666,14 @@ public interface HwplatformPackage extends EPackage {
 	int HW_PORT_PART_OPERATION_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusConnectorImpl <em>Bus Connector</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusImpl <em>Bus</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusConnectorImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBusConnector()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusImpl
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBus()
 	 * @generated
 	 */
-	int BUS_CONNECTOR = 8;
+	int BUS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2423,7 +1682,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
+	int BUS__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -2432,7 +1691,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
+	int BUS__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -2441,540 +1700,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_CONNECTOR__COMMENT = ConnectorPackage.CONNECTOR__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
-
-	/**
-	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR__SELF_CONNECTOR = ConnectorPackage.CONNECTOR__SELF_CONNECTOR;
-
-	/**
-	 * The feature id for the '<em><b>Connected Bus Part</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR__CONNECTED_BUS_PART = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Connected HW Port Parts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR__CONNECTED_HW_PORT_PARTS = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Bus Connector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ECLASS = ConnectorPackage.CONNECTOR___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EIS_PROXY = ConnectorPackage.CONNECTOR___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ERESOURCE = ConnectorPackage.CONNECTOR___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ECONTAINER = ConnectorPackage.CONNECTOR___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ECONTAINING_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ECONTAINMENT_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ECONTENTS = ConnectorPackage.CONNECTOR___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EALL_CONTENTS = ConnectorPackage.CONNECTOR___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ECROSS_REFERENCES = ConnectorPackage.CONNECTOR___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EGET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT = ConnectorPackage.CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EIS_SET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EUNSET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___EINVOKE__EOPERATION_ELIST = ConnectorPackage.CONNECTOR___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Bus Connector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_CONNECTOR_OPERATION_COUNT = ConnectorPackage.CONNECTOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.CommunicationMediaPartImpl <em>Communication Media Part</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.CommunicationMediaPartImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getCommunicationMediaPart()
-	 * @generated
-	 */
-	int COMMUNICATION_MEDIA_PART = 11;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART__ANNOTATION = NETWORKING_HARDWARE_PART__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART__EXTENSION = NETWORKING_HARDWARE_PART__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Communication Media</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART__COMMUNICATION_MEDIA = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART__PROTOCOL = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART__BANDWIDTH = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Communication Media Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART_FEATURE_COUNT = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ECLASS = NETWORKING_HARDWARE_PART___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EIS_PROXY = NETWORKING_HARDWARE_PART___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ERESOURCE = NETWORKING_HARDWARE_PART___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ECONTAINER = NETWORKING_HARDWARE_PART___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ECONTAINING_FEATURE = NETWORKING_HARDWARE_PART___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ECONTAINMENT_FEATURE = NETWORKING_HARDWARE_PART___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ECONTENTS = NETWORKING_HARDWARE_PART___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EALL_CONTENTS = NETWORKING_HARDWARE_PART___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ECROSS_REFERENCES = NETWORKING_HARDWARE_PART___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EGET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN = NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___ESET__ESTRUCTURALFEATURE_OBJECT = NETWORKING_HARDWARE_PART___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EIS_SET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EUNSET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___EINVOKE__EOPERATION_ELIST = NETWORKING_HARDWARE_PART___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___GET_EXTENSION__ECLASS = NETWORKING_HARDWARE_PART___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___PROVIDE_EXTENSION__ECLASS = NETWORKING_HARDWARE_PART___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___GET_ANNOTATION__STRING = NETWORKING_HARDWARE_PART___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART___PROVIDE_ANNOTATION__STRING = NETWORKING_HARDWARE_PART___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Communication Media Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_PART_OPERATION_COUNT = NETWORKING_HARDWARE_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusPartImpl <em>Bus Part</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusPartImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBusPart()
-	 * @generated
-	 */
-	int BUS_PART = 9;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART__ANNOTATION = COMMUNICATION_MEDIA_PART__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART__EXTENSION = COMMUNICATION_MEDIA_PART__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Communication Media</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART__COMMUNICATION_MEDIA = COMMUNICATION_MEDIA_PART__COMMUNICATION_MEDIA;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART__PROTOCOL = COMMUNICATION_MEDIA_PART__PROTOCOL;
-
-	/**
-	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART__BANDWIDTH = COMMUNICATION_MEDIA_PART__BANDWIDTH;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART__COMMENT = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 0;
+	int BUS__COMMENT = ConnectorPackage.CONNECTOR_ENDPOINT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -2983,7 +1709,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_PART__CONNECTORS = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 1;
+	int BUS__CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Connected HW Port Parts</b></em>' reference list.
@@ -2992,233 +1718,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUS_PART__CONNECTED_HW_PORT_PARTS = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Bus Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART_FEATURE_COUNT = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ECLASS = COMMUNICATION_MEDIA_PART___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EIS_PROXY = COMMUNICATION_MEDIA_PART___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ERESOURCE = COMMUNICATION_MEDIA_PART___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ECONTAINER = COMMUNICATION_MEDIA_PART___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ECONTAINING_FEATURE = COMMUNICATION_MEDIA_PART___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ECONTAINMENT_FEATURE = COMMUNICATION_MEDIA_PART___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ECONTENTS = COMMUNICATION_MEDIA_PART___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EALL_CONTENTS = COMMUNICATION_MEDIA_PART___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ECROSS_REFERENCES = COMMUNICATION_MEDIA_PART___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EGET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA_PART___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN = COMMUNICATION_MEDIA_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___ESET__ESTRUCTURALFEATURE_OBJECT = COMMUNICATION_MEDIA_PART___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EIS_SET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA_PART___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EUNSET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA_PART___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___EINVOKE__EOPERATION_ELIST = COMMUNICATION_MEDIA_PART___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___GET_EXTENSION__ECLASS = COMMUNICATION_MEDIA_PART___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___PROVIDE_EXTENSION__ECLASS = COMMUNICATION_MEDIA_PART___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___GET_ANNOTATION__STRING = COMMUNICATION_MEDIA_PART___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART___PROVIDE_ANNOTATION__STRING = COMMUNICATION_MEDIA_PART___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Bus Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_PART_OPERATION_COUNT = COMMUNICATION_MEDIA_PART_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.LinkPartImpl <em>Link Part</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.LinkPartImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getLinkPart()
-	 * @generated
-	 */
-	int LINK_PART = 10;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART__ANNOTATION = COMMUNICATION_MEDIA_PART__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART__EXTENSION = COMMUNICATION_MEDIA_PART__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Communication Media</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART__COMMUNICATION_MEDIA = COMMUNICATION_MEDIA_PART__COMMUNICATION_MEDIA;
+	int BUS__CONNECTED_HW_PORT_PARTS = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' reference.
@@ -3227,7 +1727,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART__PROTOCOL = COMMUNICATION_MEDIA_PART__PROTOCOL;
+	int BUS__PROTOCOL = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
@@ -3236,52 +1736,16 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART__BANDWIDTH = COMMUNICATION_MEDIA_PART__BANDWIDTH;
+	int BUS__BANDWIDTH = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * The number of structural features of the '<em>Bus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART__COMMENT = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART__CONNECTOR_ENDPOINTS = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART__SELF_CONNECTOR = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Connected HW Port Parts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART__CONNECTED_HW_PORT_PARTS = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Link Part</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_PART_FEATURE_COUNT = COMMUNICATION_MEDIA_PART_FEATURE_COUNT + 4;
+	int BUS_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3290,7 +1754,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ECLASS = COMMUNICATION_MEDIA_PART___ECLASS;
+	int BUS___ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -3299,7 +1763,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EIS_PROXY = COMMUNICATION_MEDIA_PART___EIS_PROXY;
+	int BUS___EIS_PROXY = ConnectorPackage.CONNECTOR_ENDPOINT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -3308,7 +1772,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ERESOURCE = COMMUNICATION_MEDIA_PART___ERESOURCE;
+	int BUS___ERESOURCE = ConnectorPackage.CONNECTOR_ENDPOINT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -3317,7 +1781,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ECONTAINER = COMMUNICATION_MEDIA_PART___ECONTAINER;
+	int BUS___ECONTAINER = ConnectorPackage.CONNECTOR_ENDPOINT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -3326,7 +1790,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ECONTAINING_FEATURE = COMMUNICATION_MEDIA_PART___ECONTAINING_FEATURE;
+	int BUS___ECONTAINING_FEATURE = ConnectorPackage.CONNECTOR_ENDPOINT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -3335,7 +1799,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ECONTAINMENT_FEATURE = COMMUNICATION_MEDIA_PART___ECONTAINMENT_FEATURE;
+	int BUS___ECONTAINMENT_FEATURE = ConnectorPackage.CONNECTOR_ENDPOINT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -3344,7 +1808,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ECONTENTS = COMMUNICATION_MEDIA_PART___ECONTENTS;
+	int BUS___ECONTENTS = ConnectorPackage.CONNECTOR_ENDPOINT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -3353,7 +1817,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EALL_CONTENTS = COMMUNICATION_MEDIA_PART___EALL_CONTENTS;
+	int BUS___EALL_CONTENTS = ConnectorPackage.CONNECTOR_ENDPOINT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -3362,7 +1826,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ECROSS_REFERENCES = COMMUNICATION_MEDIA_PART___ECROSS_REFERENCES;
+	int BUS___ECROSS_REFERENCES = ConnectorPackage.CONNECTOR_ENDPOINT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3371,7 +1835,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EGET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA_PART___EGET__ESTRUCTURALFEATURE;
+	int BUS___EGET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR_ENDPOINT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3380,7 +1844,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN = COMMUNICATION_MEDIA_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int BUS___EGET__ESTRUCTURALFEATURE_BOOLEAN = ConnectorPackage.CONNECTOR_ENDPOINT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3389,7 +1853,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___ESET__ESTRUCTURALFEATURE_OBJECT = COMMUNICATION_MEDIA_PART___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int BUS___ESET__ESTRUCTURALFEATURE_OBJECT = ConnectorPackage.CONNECTOR_ENDPOINT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3398,7 +1862,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EIS_SET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA_PART___EIS_SET__ESTRUCTURALFEATURE;
+	int BUS___EIS_SET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR_ENDPOINT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3407,7 +1871,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EUNSET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA_PART___EUNSET__ESTRUCTURALFEATURE;
+	int BUS___EUNSET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR_ENDPOINT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3416,7 +1880,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___EINVOKE__EOPERATION_ELIST = COMMUNICATION_MEDIA_PART___EINVOKE__EOPERATION_ELIST;
+	int BUS___EINVOKE__EOPERATION_ELIST = ConnectorPackage.CONNECTOR_ENDPOINT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3425,7 +1889,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___GET_EXTENSION__ECLASS = COMMUNICATION_MEDIA_PART___GET_EXTENSION__ECLASS;
+	int BUS___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3434,7 +1898,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___PROVIDE_EXTENSION__ECLASS = COMMUNICATION_MEDIA_PART___PROVIDE_EXTENSION__ECLASS;
+	int BUS___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3443,7 +1907,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___GET_ANNOTATION__STRING = COMMUNICATION_MEDIA_PART___GET_ANNOTATION__STRING;
+	int BUS___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3452,26 +1916,26 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART___PROVIDE_ANNOTATION__STRING = COMMUNICATION_MEDIA_PART___PROVIDE_ANNOTATION__STRING;
+	int BUS___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Link Part</em>' class.
+	 * The number of operations of the '<em>Bus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_PART_OPERATION_COUNT = COMMUNICATION_MEDIA_PART_OPERATION_COUNT + 0;
+	int BUS_OPERATION_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BridgePartImpl <em>Bridge Part</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwareImpl <em>Networking Hardware</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BridgePartImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBridgePart()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwareImpl
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkingHardware()
 	 * @generated
 	 */
-	int BRIDGE_PART = 12;
+	int NETWORKING_HARDWARE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3480,7 +1944,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART__ANNOTATION = NETWORKING_HARDWARE_PART__ANNOTATION;
+	int NETWORKING_HARDWARE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -3489,7 +1953,224 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART__EXTENSION = NETWORKING_HARDWARE_PART__EXTENSION;
+	int NETWORKING_HARDWARE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The number of structural features of the '<em>Networking Hardware</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Networking Hardware</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORKING_HARDWARE_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl <em>Network Bridge</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkBridge()
+	 * @generated
+	 */
+	int NETWORK_BRIDGE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_BRIDGE__ANNOTATION = NETWORKING_HARDWARE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_BRIDGE__EXTENSION = NETWORKING_HARDWARE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3498,7 +2179,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART__COMMENT = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 0;
+	int NETWORK_BRIDGE__COMMENT = NETWORKING_HARDWARE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -3507,16 +2188,16 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART__CONNECTORS = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 1;
+	int NETWORK_BRIDGE__CONNECTORS = NETWORKING_HARDWARE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connected Communication Media Part</b></em>' reference list.
+	 * The feature id for the '<em><b>Connected Network Connector</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART__CONNECTED_COMMUNICATION_MEDIA_PART = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 2;
+	int NETWORK_BRIDGE__CONNECTED_NETWORK_CONNECTOR = NETWORKING_HARDWARE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Delay</b></em>' containment reference.
@@ -3525,16 +2206,16 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART__DELAY = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 3;
+	int NETWORK_BRIDGE__DELAY = NETWORKING_HARDWARE_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Bridge Part</em>' class.
+	 * The number of structural features of the '<em>Network Bridge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART_FEATURE_COUNT = NETWORKING_HARDWARE_PART_FEATURE_COUNT + 4;
+	int NETWORK_BRIDGE_FEATURE_COUNT = NETWORKING_HARDWARE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3543,7 +2224,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ECLASS = NETWORKING_HARDWARE_PART___ECLASS;
+	int NETWORK_BRIDGE___ECLASS = NETWORKING_HARDWARE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -3552,7 +2233,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EIS_PROXY = NETWORKING_HARDWARE_PART___EIS_PROXY;
+	int NETWORK_BRIDGE___EIS_PROXY = NETWORKING_HARDWARE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -3561,7 +2242,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ERESOURCE = NETWORKING_HARDWARE_PART___ERESOURCE;
+	int NETWORK_BRIDGE___ERESOURCE = NETWORKING_HARDWARE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -3570,7 +2251,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ECONTAINER = NETWORKING_HARDWARE_PART___ECONTAINER;
+	int NETWORK_BRIDGE___ECONTAINER = NETWORKING_HARDWARE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -3579,7 +2260,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ECONTAINING_FEATURE = NETWORKING_HARDWARE_PART___ECONTAINING_FEATURE;
+	int NETWORK_BRIDGE___ECONTAINING_FEATURE = NETWORKING_HARDWARE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -3588,7 +2269,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ECONTAINMENT_FEATURE = NETWORKING_HARDWARE_PART___ECONTAINMENT_FEATURE;
+	int NETWORK_BRIDGE___ECONTAINMENT_FEATURE = NETWORKING_HARDWARE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -3597,7 +2278,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ECONTENTS = NETWORKING_HARDWARE_PART___ECONTENTS;
+	int NETWORK_BRIDGE___ECONTENTS = NETWORKING_HARDWARE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -3606,7 +2287,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EALL_CONTENTS = NETWORKING_HARDWARE_PART___EALL_CONTENTS;
+	int NETWORK_BRIDGE___EALL_CONTENTS = NETWORKING_HARDWARE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -3615,7 +2296,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ECROSS_REFERENCES = NETWORKING_HARDWARE_PART___ECROSS_REFERENCES;
+	int NETWORK_BRIDGE___ECROSS_REFERENCES = NETWORKING_HARDWARE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3624,7 +2305,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EGET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE;
+	int NETWORK_BRIDGE___EGET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3633,7 +2314,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN = NETWORKING_HARDWARE_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int NETWORK_BRIDGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = NETWORKING_HARDWARE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3642,7 +2323,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___ESET__ESTRUCTURALFEATURE_OBJECT = NETWORKING_HARDWARE_PART___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int NETWORK_BRIDGE___ESET__ESTRUCTURALFEATURE_OBJECT = NETWORKING_HARDWARE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3651,7 +2332,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EIS_SET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EIS_SET__ESTRUCTURALFEATURE;
+	int NETWORK_BRIDGE___EIS_SET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3660,7 +2341,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EUNSET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE_PART___EUNSET__ESTRUCTURALFEATURE;
+	int NETWORK_BRIDGE___EUNSET__ESTRUCTURALFEATURE = NETWORKING_HARDWARE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3669,7 +2350,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___EINVOKE__EOPERATION_ELIST = NETWORKING_HARDWARE_PART___EINVOKE__EOPERATION_ELIST;
+	int NETWORK_BRIDGE___EINVOKE__EOPERATION_ELIST = NETWORKING_HARDWARE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3678,7 +2359,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___GET_EXTENSION__ECLASS = NETWORKING_HARDWARE_PART___GET_EXTENSION__ECLASS;
+	int NETWORK_BRIDGE___GET_EXTENSION__ECLASS = NETWORKING_HARDWARE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3687,7 +2368,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___PROVIDE_EXTENSION__ECLASS = NETWORKING_HARDWARE_PART___PROVIDE_EXTENSION__ECLASS;
+	int NETWORK_BRIDGE___PROVIDE_EXTENSION__ECLASS = NETWORKING_HARDWARE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3696,7 +2377,7 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___GET_ANNOTATION__STRING = NETWORKING_HARDWARE_PART___GET_ANNOTATION__STRING;
+	int NETWORK_BRIDGE___GET_ANNOTATION__STRING = NETWORKING_HARDWARE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3705,38 +2386,305 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART___PROVIDE_ANNOTATION__STRING = NETWORKING_HARDWARE_PART___PROVIDE_ANNOTATION__STRING;
+	int NETWORK_BRIDGE___PROVIDE_ANNOTATION__STRING = NETWORKING_HARDWARE___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Bridge Part</em>' class.
+	 * The number of operations of the '<em>Network Bridge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BRIDGE_PART_OPERATION_COUNT = NETWORKING_HARDWARE_PART_OPERATION_COUNT + 0;
-
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration <em>HW Platform Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>HW Platform Configuration</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration
-	 * @generated
-	 */
-	EClass getHWPlatformConfiguration();
+	int NETWORK_BRIDGE_OPERATION_COUNT = NETWORKING_HARDWARE_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration#getHwplatforms <em>Hwplatforms</em>}'.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl <em>Network Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Hwplatforms</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration#getHwplatforms()
-	 * @see #getHWPlatformConfiguration()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkConnector()
 	 * @generated
 	 */
-	EReference getHWPlatformConfiguration_Hwplatforms();
+	int NETWORK_CONNECTOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__COMMENT = ConnectorPackage.CONNECTOR__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__SELF_CONNECTOR = ConnectorPackage.CONNECTOR__SELF_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__PROTOCOL = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__BANDWIDTH = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Hwport Parts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__HWPORT_PARTS = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Connector Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__CONNECTOR_KIND = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Delegation HW Ports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR__DELEGATION_HW_PORTS = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Network Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ECLASS = ConnectorPackage.CONNECTOR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EIS_PROXY = ConnectorPackage.CONNECTOR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ERESOURCE = ConnectorPackage.CONNECTOR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ECONTAINER = ConnectorPackage.CONNECTOR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ECONTAINING_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ECONTAINMENT_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ECONTENTS = ConnectorPackage.CONNECTOR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EALL_CONTENTS = ConnectorPackage.CONNECTOR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ECROSS_REFERENCES = ConnectorPackage.CONNECTOR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EGET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT = ConnectorPackage.CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EIS_SET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EUNSET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___EINVOKE__EOPERATION_ELIST = ConnectorPackage.CONNECTOR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Network Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_CONNECTOR_OPERATION_COUNT = ConnectorPackage.CONNECTOR_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform <em>HW Platform</em>}'.
@@ -3760,15 +2708,15 @@ public interface HwplatformPackage extends EPackage {
 	EReference getHWPlatform_EmbeddedPlatformParts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkingHardwareParts <em>Networking Hardware Parts</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkingHardware <em>Networking Hardware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Networking Hardware Parts</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkingHardwareParts()
+	 * @return the meta object for the containment reference list '<em>Networking Hardware</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkingHardware()
 	 * @see #getHWPlatform()
 	 * @generated
 	 */
-	EReference getHWPlatform_NetworkingHardwareParts();
+	EReference getHWPlatform_NetworkingHardware();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getDelegationPorts <em>Delegation Ports</em>}'.
@@ -3780,6 +2728,17 @@ public interface HwplatformPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHWPlatform_DelegationPorts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkConnectors <em>Network Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Network Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkConnectors()
+	 * @see #getHWPlatform()
+	 * @generated
+	 */
+	EReference getHWPlatform_NetworkConnectors();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart <em>Platform Part</em>}'.
@@ -3878,16 +2837,6 @@ public interface HwplatformPackage extends EPackage {
 	EReference getResourcePart_ResourceType();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Delegation <em>Delegation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Delegation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Delegation
-	 * @generated
-	 */
-	EClass getDelegation();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort <em>Delegation HW Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3919,15 +2868,15 @@ public interface HwplatformPackage extends EPackage {
 	EReference getHWPortPart_CommunicationResource();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getConnectedMediaPart <em>Connected Media Part</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getConnectedNetworkConnector <em>Connected Network Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connected Media Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getConnectedMediaPart()
+	 * @return the meta object for the reference list '<em>Connected Network Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getConnectedNetworkConnector()
 	 * @see #getHWPortPart()
 	 * @generated
 	 */
-	EReference getHWPortPart_ConnectedMediaPart();
+	EReference getHWPortPart_ConnectedNetworkConnector();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getProtocol <em>Protocol</em>}'.
@@ -4007,163 +2956,154 @@ public interface HwplatformPackage extends EPackage {
 	EReference getHWPortPart_ParentResourcePart();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector <em>Bus Connector</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus <em>Bus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bus Connector</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector
+	 * @return the meta object for class '<em>Bus</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus
 	 * @generated
 	 */
-	EClass getBusConnector();
+	EClass getBus();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector#getConnectedBusPart <em>Connected Bus Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connected Bus Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector#getConnectedBusPart()
-	 * @see #getBusConnector()
-	 * @generated
-	 */
-	EReference getBusConnector_ConnectedBusPart();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector#getConnectedHWPortParts <em>Connected HW Port Parts</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getConnectedHWPortParts <em>Connected HW Port Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Connected HW Port Parts</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector#getConnectedHWPortParts()
-	 * @see #getBusConnector()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getConnectedHWPortParts()
+	 * @see #getBus()
 	 * @generated
 	 */
-	EReference getBusConnector_ConnectedHWPortParts();
+	EReference getBus_ConnectedHWPortParts();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart <em>Bus Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bus Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart
-	 * @generated
-	 */
-	EClass getBusPart();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart#getConnectedHWPortParts <em>Connected HW Port Parts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connected HW Port Parts</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart#getConnectedHWPortParts()
-	 * @see #getBusPart()
-	 * @generated
-	 */
-	EReference getBusPart_ConnectedHWPortParts();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart <em>Link Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Link Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart
-	 * @generated
-	 */
-	EClass getLinkPart();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart#getConnectedHWPortParts <em>Connected HW Port Parts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connected HW Port Parts</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart#getConnectedHWPortParts()
-	 * @see #getLinkPart()
-	 * @generated
-	 */
-	EReference getLinkPart_ConnectedHWPortParts();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart <em>Communication Media Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Communication Media Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart
-	 * @generated
-	 */
-	EClass getCommunicationMediaPart();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart#getCommunicationMedia <em>Communication Media</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Communication Media</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart#getCommunicationMedia()
-	 * @see #getCommunicationMediaPart()
-	 * @generated
-	 */
-	EReference getCommunicationMediaPart_CommunicationMedia();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart#getProtocol <em>Protocol</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getProtocol <em>Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Protocol</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart#getProtocol()
-	 * @see #getCommunicationMediaPart()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getProtocol()
+	 * @see #getBus()
 	 * @generated
 	 */
-	EReference getCommunicationMediaPart_Protocol();
+	EReference getBus_Protocol();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart#getBandwidth <em>Bandwidth</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getBandwidth <em>Bandwidth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Bandwidth</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart#getBandwidth()
-	 * @see #getCommunicationMediaPart()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getBandwidth()
+	 * @see #getBus()
 	 * @generated
 	 */
-	EReference getCommunicationMediaPart_Bandwidth();
+	EReference getBus_Bandwidth();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart <em>Bridge Part</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge <em>Network Bridge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bridge Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart
+	 * @return the meta object for class '<em>Network Bridge</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge
 	 * @generated
 	 */
-	EClass getBridgePart();
+	EClass getNetworkBridge();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart#getConnectedCommunicationMediaPart <em>Connected Communication Media Part</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge#getConnectedNetworkConnector <em>Connected Network Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connected Communication Media Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart#getConnectedCommunicationMediaPart()
-	 * @see #getBridgePart()
+	 * @return the meta object for the reference list '<em>Connected Network Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge#getConnectedNetworkConnector()
+	 * @see #getNetworkBridge()
 	 * @generated
 	 */
-	EReference getBridgePart_ConnectedCommunicationMediaPart();
+	EReference getNetworkBridge_ConnectedNetworkConnector();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart#getDelay <em>Delay</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge#getDelay <em>Delay</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Delay</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart#getDelay()
-	 * @see #getBridgePart()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge#getDelay()
+	 * @see #getNetworkBridge()
 	 * @generated
 	 */
-	EReference getBridgePart_Delay();
+	EReference getNetworkBridge_Delay();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart <em>Networking Hardware Part</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardware <em>Networking Hardware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Networking Hardware Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart
+	 * @return the meta object for class '<em>Networking Hardware</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardware
 	 * @generated
 	 */
-	EClass getNetworkingHardwarePart();
+	EClass getNetworkingHardware();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector <em>Network Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Network Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector
+	 * @generated
+	 */
+	EClass getNetworkConnector();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getProtocol <em>Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getProtocol()
+	 * @see #getNetworkConnector()
+	 * @generated
+	 */
+	EReference getNetworkConnector_Protocol();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getBandwidth <em>Bandwidth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Bandwidth</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getBandwidth()
+	 * @see #getNetworkConnector()
+	 * @generated
+	 */
+	EReference getNetworkConnector_Bandwidth();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getHwportParts <em>Hwport Parts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Hwport Parts</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getHwportParts()
+	 * @see #getNetworkConnector()
+	 * @generated
+	 */
+	EReference getNetworkConnector_HwportParts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getConnectorKind <em>Connector Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Connector Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getConnectorKind()
+	 * @see #getNetworkConnector()
+	 * @generated
+	 */
+	EAttribute getNetworkConnector_ConnectorKind();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getDelegationHWPorts <em>Delegation HW Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Delegation HW Ports</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getDelegationHWPorts()
+	 * @see #getNetworkConnector()
+	 * @generated
+	 */
+	EReference getNetworkConnector_DelegationHWPorts();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4189,24 +3129,6 @@ public interface HwplatformPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformConfigurationImpl <em>HW Platform Configuration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformConfigurationImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getHWPlatformConfiguration()
-		 * @generated
-		 */
-		EClass HW_PLATFORM_CONFIGURATION = eINSTANCE.getHWPlatformConfiguration();
-
-		/**
-		 * The meta object literal for the '<em><b>Hwplatforms</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PLATFORM_CONFIGURATION__HWPLATFORMS = eINSTANCE.getHWPlatformConfiguration_Hwplatforms();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl <em>HW Platform</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4225,12 +3147,12 @@ public interface HwplatformPackage extends EPackage {
 		EReference HW_PLATFORM__EMBEDDED_PLATFORM_PARTS = eINSTANCE.getHWPlatform_EmbeddedPlatformParts();
 
 		/**
-		 * The meta object literal for the '<em><b>Networking Hardware Parts</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Networking Hardware</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HW_PLATFORM__NETWORKING_HARDWARE_PARTS = eINSTANCE.getHWPlatform_NetworkingHardwareParts();
+		EReference HW_PLATFORM__NETWORKING_HARDWARE = eINSTANCE.getHWPlatform_NetworkingHardware();
 
 		/**
 		 * The meta object literal for the '<em><b>Delegation Ports</b></em>' containment reference list feature.
@@ -4239,6 +3161,14 @@ public interface HwplatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HW_PLATFORM__DELEGATION_PORTS = eINSTANCE.getHWPlatform_DelegationPorts();
+
+		/**
+		 * The meta object literal for the '<em><b>Network Connectors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PLATFORM__NETWORK_CONNECTORS = eINSTANCE.getHWPlatform_NetworkConnectors();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.PlatformPartImpl <em>Platform Part</em>}' class.
@@ -4319,16 +3249,6 @@ public interface HwplatformPackage extends EPackage {
 		EReference RESOURCE_PART__RESOURCE_TYPE = eINSTANCE.getResourcePart_ResourceType();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationImpl <em>Delegation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getDelegation()
-		 * @generated
-		 */
-		EClass DELEGATION = eINSTANCE.getDelegation();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationHWPortImpl <em>Delegation HW Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4357,12 +3277,12 @@ public interface HwplatformPackage extends EPackage {
 		EReference HW_PORT_PART__COMMUNICATION_RESOURCE = eINSTANCE.getHWPortPart_CommunicationResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Connected Media Part</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Connected Network Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HW_PORT_PART__CONNECTED_MEDIA_PART = eINSTANCE.getHWPortPart_ConnectedMediaPart();
+		EReference HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR = eINSTANCE.getHWPortPart_ConnectedNetworkConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Protocol</b></em>' reference feature.
@@ -4421,22 +3341,14 @@ public interface HwplatformPackage extends EPackage {
 		EReference HW_PORT_PART__PARENT_RESOURCE_PART = eINSTANCE.getHWPortPart_ParentResourcePart();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusConnectorImpl <em>Bus Connector</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusImpl <em>Bus</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusConnectorImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBusConnector()
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusImpl
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBus()
 		 * @generated
 		 */
-		EClass BUS_CONNECTOR = eINSTANCE.getBusConnector();
-
-		/**
-		 * The meta object literal for the '<em><b>Connected Bus Part</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUS_CONNECTOR__CONNECTED_BUS_PART = eINSTANCE.getBusConnector_ConnectedBusPart();
+		EClass BUS = eINSTANCE.getBus();
 
 		/**
 		 * The meta object literal for the '<em><b>Connected HW Port Parts</b></em>' reference list feature.
@@ -4444,61 +3356,7 @@ public interface HwplatformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUS_CONNECTOR__CONNECTED_HW_PORT_PARTS = eINSTANCE.getBusConnector_ConnectedHWPortParts();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusPartImpl <em>Bus Part</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BusPartImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBusPart()
-		 * @generated
-		 */
-		EClass BUS_PART = eINSTANCE.getBusPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Connected HW Port Parts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BUS_PART__CONNECTED_HW_PORT_PARTS = eINSTANCE.getBusPart_ConnectedHWPortParts();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.LinkPartImpl <em>Link Part</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.LinkPartImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getLinkPart()
-		 * @generated
-		 */
-		EClass LINK_PART = eINSTANCE.getLinkPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Connected HW Port Parts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LINK_PART__CONNECTED_HW_PORT_PARTS = eINSTANCE.getLinkPart_ConnectedHWPortParts();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.CommunicationMediaPartImpl <em>Communication Media Part</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.CommunicationMediaPartImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getCommunicationMediaPart()
-		 * @generated
-		 */
-		EClass COMMUNICATION_MEDIA_PART = eINSTANCE.getCommunicationMediaPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Communication Media</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_MEDIA_PART__COMMUNICATION_MEDIA = eINSTANCE.getCommunicationMediaPart_CommunicationMedia();
+		EReference BUS__CONNECTED_HW_PORT_PARTS = eINSTANCE.getBus_ConnectedHWPortParts();
 
 		/**
 		 * The meta object literal for the '<em><b>Protocol</b></em>' reference feature.
@@ -4506,7 +3364,7 @@ public interface HwplatformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMMUNICATION_MEDIA_PART__PROTOCOL = eINSTANCE.getCommunicationMediaPart_Protocol();
+		EReference BUS__PROTOCOL = eINSTANCE.getBus_Protocol();
 
 		/**
 		 * The meta object literal for the '<em><b>Bandwidth</b></em>' containment reference feature.
@@ -4514,25 +3372,25 @@ public interface HwplatformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMMUNICATION_MEDIA_PART__BANDWIDTH = eINSTANCE.getCommunicationMediaPart_Bandwidth();
+		EReference BUS__BANDWIDTH = eINSTANCE.getBus_Bandwidth();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BridgePartImpl <em>Bridge Part</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl <em>Network Bridge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.BridgePartImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getBridgePart()
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkBridge()
 		 * @generated
 		 */
-		EClass BRIDGE_PART = eINSTANCE.getBridgePart();
+		EClass NETWORK_BRIDGE = eINSTANCE.getNetworkBridge();
 
 		/**
-		 * The meta object literal for the '<em><b>Connected Communication Media Part</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Connected Network Connector</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BRIDGE_PART__CONNECTED_COMMUNICATION_MEDIA_PART = eINSTANCE.getBridgePart_ConnectedCommunicationMediaPart();
+		EReference NETWORK_BRIDGE__CONNECTED_NETWORK_CONNECTOR = eINSTANCE.getNetworkBridge_ConnectedNetworkConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Delay</b></em>' containment reference feature.
@@ -4540,17 +3398,67 @@ public interface HwplatformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BRIDGE_PART__DELAY = eINSTANCE.getBridgePart_Delay();
+		EReference NETWORK_BRIDGE__DELAY = eINSTANCE.getNetworkBridge_Delay();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwarePartImpl <em>Networking Hardware Part</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwareImpl <em>Networking Hardware</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwarePartImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkingHardwarePart()
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkingHardwareImpl
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkingHardware()
 		 * @generated
 		 */
-		EClass NETWORKING_HARDWARE_PART = eINSTANCE.getNetworkingHardwarePart();
+		EClass NETWORKING_HARDWARE = eINSTANCE.getNetworkingHardware();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl <em>Network Connector</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HwplatformPackageImpl#getNetworkConnector()
+		 * @generated
+		 */
+		EClass NETWORK_CONNECTOR = eINSTANCE.getNetworkConnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Protocol</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NETWORK_CONNECTOR__PROTOCOL = eINSTANCE.getNetworkConnector_Protocol();
+
+		/**
+		 * The meta object literal for the '<em><b>Bandwidth</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NETWORK_CONNECTOR__BANDWIDTH = eINSTANCE.getNetworkConnector_Bandwidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Hwport Parts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NETWORK_CONNECTOR__HWPORT_PARTS = eINSTANCE.getNetworkConnector_HwportParts();
+
+		/**
+		 * The meta object literal for the '<em><b>Connector Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NETWORK_CONNECTOR__CONNECTOR_KIND = eINSTANCE.getNetworkConnector_ConnectorKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Delegation HW Ports</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NETWORK_CONNECTOR__DELEGATION_HW_PORTS = eINSTANCE.getNetworkConnector_DelegationHWPorts();
 
 	}
 

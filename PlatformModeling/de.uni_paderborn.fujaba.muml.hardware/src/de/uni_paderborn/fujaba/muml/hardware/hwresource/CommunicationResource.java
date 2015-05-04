@@ -27,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * @model
  * @generated
  */
-public interface CommunicationResource extends HWPort {
+public interface CommunicationResource<T> extends HWPort<T> {
 	/**
 	 * Returns the value of the '<em><b>Port Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind}.

@@ -2448,22 +2448,13 @@ public interface HwresourcePackage extends EPackage {
 	int RESOURCE_REPOSITORY__PROTOCOLS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Communication Media</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_REPOSITORY__COMMUNICATION_MEDIA = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Resource Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_REPOSITORY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int RESOURCE_REPOSITORY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2954,13 +2945,40 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Data Frame Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_PROTOCOL__DATA_FRAME_SIZE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_PROTOCOL__BANDWIDTH = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_PROTOCOL__IS_SERIAL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Communication Protocol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMMUNICATION_PROTOCOL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3214,6 +3232,33 @@ public interface HwresourcePackage extends EPackage {
 	 * @ordered
 	 */
 	int BUS_PROTOCOL__IS_NETWORKING_PROTOCOL = COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL;
+
+	/**
+	 * The feature id for the '<em><b>Data Frame Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS_PROTOCOL__DATA_FRAME_SIZE = COMMUNICATION_PROTOCOL__DATA_FRAME_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS_PROTOCOL__BANDWIDTH = COMMUNICATION_PROTOCOL__BANDWIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS_PROTOCOL__IS_SERIAL = COMMUNICATION_PROTOCOL__IS_SERIAL;
 
 	/**
 	 * The feature id for the '<em><b>Bus Protocol</b></em>' attribute.
@@ -3496,6 +3541,33 @@ public interface HwresourcePackage extends EPackage {
 	int LINK_PROTOCOL__IS_NETWORKING_PROTOCOL = COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Data Frame Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_PROTOCOL__DATA_FRAME_SIZE = COMMUNICATION_PROTOCOL__DATA_FRAME_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_PROTOCOL__BANDWIDTH = COMMUNICATION_PROTOCOL__BANDWIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_PROTOCOL__IS_SERIAL = COMMUNICATION_PROTOCOL__IS_SERIAL;
+
+	/**
 	 * The feature id for the '<em><b>Link Protocol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3740,22 +3812,13 @@ public interface HwresourcePackage extends EPackage {
 	int HW_PORT__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parent Resource</b></em>' container reference.
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT__PARENT_RESOURCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT__PARENT_RESOURCE_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int HW_PORT__PARENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>HW Port</em>' class.
@@ -3764,7 +3827,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3984,22 +4047,13 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_RESOURCE__NAME = HW_PORT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parent Resource</b></em>' container reference.
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__PARENT_RESOURCE = HW_PORT__PARENT_RESOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_RESOURCE__PARENT_RESOURCE_INSTANCE = HW_PORT__PARENT_RESOURCE_INSTANCE;
+	int COMMUNICATION_RESOURCE__PARENT = HW_PORT__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
@@ -4227,792 +4281,6 @@ public interface HwresourcePackage extends EPackage {
 	int COMMUNICATION_RESOURCE_OPERATION_COUNT = HW_PORT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationMediaImpl <em>Communication Media</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationMediaImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getCommunicationMedia()
-	 * @generated
-	 */
-	int COMMUNICATION_MEDIA = 18;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Data Frame Size</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__DATA_FRAME_SIZE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__BANDWIDTH = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__PROTOCOL = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__IS_SERIAL = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Communication Media</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Communication Media</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusImpl <em>Bus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getBus()
-	 * @generated
-	 */
-	int BUS = 16;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__ANNOTATION = COMMUNICATION_MEDIA__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__EXTENSION = COMMUNICATION_MEDIA__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__COMMENT = COMMUNICATION_MEDIA__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Data Frame Size</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__DATA_FRAME_SIZE = COMMUNICATION_MEDIA__DATA_FRAME_SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__BANDWIDTH = COMMUNICATION_MEDIA__BANDWIDTH;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__PROTOCOL = COMMUNICATION_MEDIA__PROTOCOL;
-
-	/**
-	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS__IS_SERIAL = COMMUNICATION_MEDIA__IS_SERIAL;
-
-	/**
-	 * The number of structural features of the '<em>Bus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_FEATURE_COUNT = COMMUNICATION_MEDIA_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ECLASS = COMMUNICATION_MEDIA___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EIS_PROXY = COMMUNICATION_MEDIA___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ERESOURCE = COMMUNICATION_MEDIA___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ECONTAINER = COMMUNICATION_MEDIA___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ECONTAINING_FEATURE = COMMUNICATION_MEDIA___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ECONTAINMENT_FEATURE = COMMUNICATION_MEDIA___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ECONTENTS = COMMUNICATION_MEDIA___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EALL_CONTENTS = COMMUNICATION_MEDIA___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ECROSS_REFERENCES = COMMUNICATION_MEDIA___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EGET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EGET__ESTRUCTURALFEATURE_BOOLEAN = COMMUNICATION_MEDIA___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___ESET__ESTRUCTURALFEATURE_OBJECT = COMMUNICATION_MEDIA___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EIS_SET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EUNSET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___EINVOKE__EOPERATION_ELIST = COMMUNICATION_MEDIA___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___GET_EXTENSION__ECLASS = COMMUNICATION_MEDIA___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___PROVIDE_EXTENSION__ECLASS = COMMUNICATION_MEDIA___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___GET_ANNOTATION__STRING = COMMUNICATION_MEDIA___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS___PROVIDE_ANNOTATION__STRING = COMMUNICATION_MEDIA___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Bus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUS_OPERATION_COUNT = COMMUNICATION_MEDIA_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.LinkImpl <em>Link</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.LinkImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getLink()
-	 * @generated
-	 */
-	int LINK = 17;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__ANNOTATION = COMMUNICATION_MEDIA__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__EXTENSION = COMMUNICATION_MEDIA__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__COMMENT = COMMUNICATION_MEDIA__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Data Frame Size</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__DATA_FRAME_SIZE = COMMUNICATION_MEDIA__DATA_FRAME_SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__BANDWIDTH = COMMUNICATION_MEDIA__BANDWIDTH;
-
-	/**
-	 * The feature id for the '<em><b>Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__PROTOCOL = COMMUNICATION_MEDIA__PROTOCOL;
-
-	/**
-	 * The feature id for the '<em><b>Is Serial</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK__IS_SERIAL = COMMUNICATION_MEDIA__IS_SERIAL;
-
-	/**
-	 * The number of structural features of the '<em>Link</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_FEATURE_COUNT = COMMUNICATION_MEDIA_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ECLASS = COMMUNICATION_MEDIA___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EIS_PROXY = COMMUNICATION_MEDIA___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ERESOURCE = COMMUNICATION_MEDIA___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ECONTAINER = COMMUNICATION_MEDIA___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ECONTAINING_FEATURE = COMMUNICATION_MEDIA___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ECONTAINMENT_FEATURE = COMMUNICATION_MEDIA___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ECONTENTS = COMMUNICATION_MEDIA___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EALL_CONTENTS = COMMUNICATION_MEDIA___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ECROSS_REFERENCES = COMMUNICATION_MEDIA___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EGET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EGET__ESTRUCTURALFEATURE_BOOLEAN = COMMUNICATION_MEDIA___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___ESET__ESTRUCTURALFEATURE_OBJECT = COMMUNICATION_MEDIA___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EIS_SET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EUNSET__ESTRUCTURALFEATURE = COMMUNICATION_MEDIA___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___EINVOKE__EOPERATION_ELIST = COMMUNICATION_MEDIA___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___GET_EXTENSION__ECLASS = COMMUNICATION_MEDIA___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___PROVIDE_EXTENSION__ECLASS = COMMUNICATION_MEDIA___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___GET_ANNOTATION__STRING = COMMUNICATION_MEDIA___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK___PROVIDE_ANNOTATION__STRING = COMMUNICATION_MEDIA___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Link</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LINK_OPERATION_COUNT = COMMUNICATION_MEDIA_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind <em>Device Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5020,7 +4288,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getDeviceKind()
 	 * @generated
 	 */
-	int DEVICE_KIND = 19;
+	int DEVICE_KIND = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ProcessorArchitecture <em>Processor Architecture</em>}' enum.
@@ -5030,7 +4298,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getProcessorArchitecture()
 	 * @generated
 	 */
-	int PROCESSOR_ARCHITECTURE = 20;
+	int PROCESSOR_ARCHITECTURE = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryAccessKind <em>Memory Access Kind</em>}' enum.
@@ -5040,7 +4308,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getMemoryAccessKind()
 	 * @generated
 	 */
-	int MEMORY_ACCESS_KIND = 21;
+	int MEMORY_ACCESS_KIND = 18;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryKind <em>Memory Kind</em>}' enum.
@@ -5050,7 +4318,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getMemoryKind()
 	 * @generated
 	 */
-	int MEMORY_KIND = 22;
+	int MEMORY_KIND = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ReplacementPolicy <em>Replacement Policy</em>}' enum.
@@ -5060,7 +4328,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getReplacementPolicy()
 	 * @generated
 	 */
-	int REPLACEMENT_POLICY = 23;
+	int REPLACEMENT_POLICY = 20;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.WritePolicy <em>Write Policy</em>}' enum.
@@ -5070,7 +4338,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getWritePolicy()
 	 * @generated
 	 */
-	int WRITE_POLICY = 24;
+	int WRITE_POLICY = 21;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind <em>HW Port Kind</em>}' enum.
@@ -5080,7 +4348,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getHWPortKind()
 	 * @generated
 	 */
-	int HW_PORT_KIND = 25;
+	int HW_PORT_KIND = 22;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocolKind <em>Bus Protocol Kind</em>}' enum.
@@ -5090,7 +4358,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getBusProtocolKind()
 	 * @generated
 	 */
-	int BUS_PROTOCOL_KIND = 26;
+	int BUS_PROTOCOL_KIND = 23;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.LinkProtocolKind <em>Link Protocol Kind</em>}' enum.
@@ -5100,7 +4368,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getLinkProtocolKind()
 	 * @generated
 	 */
-	int LINK_PROTOCOL_KIND = 27;
+	int LINK_PROTOCOL_KIND = 24;
 
 
 	/**
@@ -5413,17 +4681,6 @@ public interface HwresourcePackage extends EPackage {
 	EReference getResourceRepository_Protocols();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getCommunicationMedia <em>Communication Media</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Communication Media</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getCommunicationMedia()
-	 * @see #getResourceRepository()
-	 * @generated
-	 */
-	EReference getResourceRepository_CommunicationMedia();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository <em>Communication Protocol Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5497,6 +4754,39 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCommunicationProtocol_IsNetworkingProtocol();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getDataFrameSize <em>Data Frame Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Data Frame Size</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getDataFrameSize()
+	 * @see #getCommunicationProtocol()
+	 * @generated
+	 */
+	EReference getCommunicationProtocol_DataFrameSize();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getBandwidth <em>Bandwidth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Bandwidth</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getBandwidth()
+	 * @see #getCommunicationProtocol()
+	 * @generated
+	 */
+	EReference getCommunicationProtocol_Bandwidth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsSerial <em>Is Serial</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Serial</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsSerial()
+	 * @see #getCommunicationProtocol()
+	 * @generated
+	 */
+	EAttribute getCommunicationProtocol_IsSerial();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocol <em>Bus Protocol</em>}'.
@@ -5625,100 +4915,15 @@ public interface HwresourcePackage extends EPackage {
 	EClass getHWPort();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResource <em>Parent Resource</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent Resource</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResource()
+	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParent()
 	 * @see #getHWPort()
 	 * @generated
 	 */
-	EReference getHWPort_ParentResource();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResourceInstance <em>Parent Resource Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent Resource Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResourceInstance()
-	 * @see #getHWPort()
-	 * @generated
-	 */
-	EReference getHWPort_ParentResourceInstance();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus <em>Bus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bus</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus
-	 * @generated
-	 */
-	EClass getBus();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Link <em>Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Link</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Link
-	 * @generated
-	 */
-	EClass getLink();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia <em>Communication Media</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Communication Media</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia
-	 * @generated
-	 */
-	EClass getCommunicationMedia();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#getDataFrameSize <em>Data Frame Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Data Frame Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#getDataFrameSize()
-	 * @see #getCommunicationMedia()
-	 * @generated
-	 */
-	EReference getCommunicationMedia_DataFrameSize();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#getBandwidth <em>Bandwidth</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Bandwidth</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#getBandwidth()
-	 * @see #getCommunicationMedia()
-	 * @generated
-	 */
-	EReference getCommunicationMedia_Bandwidth();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#getProtocol <em>Protocol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Protocol</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#getProtocol()
-	 * @see #getCommunicationMedia()
-	 * @generated
-	 */
-	EReference getCommunicationMedia_Protocol();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#isIsSerial <em>Is Serial</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Serial</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia#isIsSerial()
-	 * @see #getCommunicationMedia()
-	 * @generated
-	 */
-	EAttribute getCommunicationMedia_IsSerial();
+	EReference getHWPort_Parent();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind <em>Device Kind</em>}'.
@@ -6086,14 +5291,6 @@ public interface HwresourcePackage extends EPackage {
 		EReference RESOURCE_REPOSITORY__PROTOCOLS = eINSTANCE.getResourceRepository_Protocols();
 
 		/**
-		 * The meta object literal for the '<em><b>Communication Media</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE_REPOSITORY__COMMUNICATION_MEDIA = eINSTANCE.getResourceRepository_CommunicationMedia();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolRepositoryImpl <em>Communication Protocol Repository</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6152,6 +5349,30 @@ public interface HwresourcePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMMUNICATION_PROTOCOL__IS_NETWORKING_PROTOCOL = eINSTANCE.getCommunicationProtocol_IsNetworkingProtocol();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Frame Size</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMUNICATION_PROTOCOL__DATA_FRAME_SIZE = eINSTANCE.getCommunicationProtocol_DataFrameSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Bandwidth</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMUNICATION_PROTOCOL__BANDWIDTH = eINSTANCE.getCommunicationProtocol_Bandwidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Serial</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMUNICATION_PROTOCOL__IS_SERIAL = eINSTANCE.getCommunicationProtocol_IsSerial();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusProtocolImpl <em>Bus Protocol</em>}' class.
@@ -6258,82 +5479,12 @@ public interface HwresourcePackage extends EPackage {
 		EClass HW_PORT = eINSTANCE.getHWPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent Resource</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HW_PORT__PARENT_RESOURCE = eINSTANCE.getHWPort_ParentResource();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent Resource Instance</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PORT__PARENT_RESOURCE_INSTANCE = eINSTANCE.getHWPort_ParentResourceInstance();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusImpl <em>Bus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.BusImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getBus()
-		 * @generated
-		 */
-		EClass BUS = eINSTANCE.getBus();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.LinkImpl <em>Link</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.LinkImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getLink()
-		 * @generated
-		 */
-		EClass LINK = eINSTANCE.getLink();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationMediaImpl <em>Communication Media</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationMediaImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getCommunicationMedia()
-		 * @generated
-		 */
-		EClass COMMUNICATION_MEDIA = eINSTANCE.getCommunicationMedia();
-
-		/**
-		 * The meta object literal for the '<em><b>Data Frame Size</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_MEDIA__DATA_FRAME_SIZE = eINSTANCE.getCommunicationMedia_DataFrameSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Bandwidth</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_MEDIA__BANDWIDTH = eINSTANCE.getCommunicationMedia_Bandwidth();
-
-		/**
-		 * The meta object literal for the '<em><b>Protocol</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_MEDIA__PROTOCOL = eINSTANCE.getCommunicationMedia_Protocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Serial</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMUNICATION_MEDIA__IS_SERIAL = eINSTANCE.getCommunicationMedia_IsSerial();
+		EReference HW_PORT__PARENT = eINSTANCE.getHWPort_Parent();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind <em>Device Kind</em>}' enum.

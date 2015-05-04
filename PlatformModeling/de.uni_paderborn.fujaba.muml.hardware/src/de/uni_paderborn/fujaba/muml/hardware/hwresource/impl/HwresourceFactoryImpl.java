@@ -68,8 +68,6 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 			case HwresourcePackage.BUS_PROTOCOL: return createBusProtocol();
 			case HwresourcePackage.LINK_PROTOCOL: return createLinkProtocol();
 			case HwresourcePackage.COMMUNICATION_RESOURCE: return createCommunicationResource();
-			case HwresourcePackage.BUS: return createBus();
-			case HwresourcePackage.LINK: return createLink();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -242,29 +240,9 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource createCommunicationResource() {
-		CommunicationResourceImpl communicationResource = new CommunicationResourceImpl();
+	public <T> CommunicationResource<T> createCommunicationResource() {
+		CommunicationResourceImpl<T> communicationResource = new CommunicationResourceImpl<T>();
 		return communicationResource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Bus createBus() {
-		BusImpl bus = new BusImpl();
-		return bus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Link createLink() {
-		LinkImpl link = new LinkImpl();
-		return link;
 	}
 
 	/**

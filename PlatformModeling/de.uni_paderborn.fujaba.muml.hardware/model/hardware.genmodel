@@ -11,13 +11,11 @@
       ecorePackage="hardware.ecore#/">
     <nestedGenPackages prefix="Hwplatform" basePackage="de.uni_paderborn.fujaba.muml.hardware"
         disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwplatform">
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPlatformConfiguration">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatformConfiguration/hwplatforms"/>
-      </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPlatform">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/embeddedPlatformParts"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/networkingHardwareParts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/networkingHardware"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/delegationPorts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPlatform/networkConnectors"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwplatform/PlatformPart">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/PlatformPart/parentHWPlatform"/>
@@ -33,13 +31,12 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/ResourcePart/resourceType"/>
       </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/Delegation"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/DelegationHWPort"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatform/HWPortPart">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/communicationResource"/>
         <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/connectedMediaPart"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/connectedNetworkConnector"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/protocol"/>
         <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/cardinality"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatform/HWPortPart/multiHWPort"/>
@@ -48,31 +45,26 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/payloadDataSize"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/HWPortPart/parentResourcePart"/>
       </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/BusConnector">
-        <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/BusConnector/connectedBusPart"/>
-        <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/BusConnector/connectedHWPortParts"/>
-      </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/BusPart">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/BusPart/connectedHWPortParts"/>
-      </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/LinkPart">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/LinkPart/connectedHWPortParts"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="hardware.ecore#//hwplatform/CommunicationMediaPart">
+      <genClasses ecoreClass="hardware.ecore#//hwplatform/Bus">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/Bus/connectedHWPortParts"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/CommunicationMediaPart/communicationMedia"/>
-        <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/CommunicationMediaPart/protocol"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/CommunicationMediaPart/bandwidth"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/Bus/protocol"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/Bus/bandwidth"/>
       </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatform/BridgePart">
+      <genClasses ecoreClass="hardware.ecore#//hwplatform/NetworkBridge">
         <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/BridgePart/connectedCommunicationMediaPart"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/BridgePart/delay"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkBridge/connectedNetworkConnector"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkBridge/delay"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="hardware.ecore#//hwplatform/NetworkingHardwarePart"/>
+      <genClasses image="false" ecoreClass="hardware.ecore#//hwplatform/NetworkingHardware"/>
+      <genClasses ecoreClass="hardware.ecore#//hwplatform/NetworkConnector">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/protocol"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/bandwidth"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/hwportParts"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatform/NetworkConnector/connectorKind"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatform/NetworkConnector/delegationHWPorts"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Hwvaluetype" basePackage="de.uni_paderborn.fujaba.muml.hardware"
         disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwvaluetype">
@@ -132,49 +124,41 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPlatformInstanceConfiguration/networkConnectorInstances"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/HWPortInstance">
         <genFeatures property="None" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/hwPortType"/>
-        <genFeatures property="None" createChild="false" propertyCategory="" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/connectedMediaInstances"/>
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/connectedNetworkConnectorInstances"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/HWPortInstance/protocol"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/portKind"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/HWPortInstance/isNetworkInterface"/>
       </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/DelegationInstance"/>
-      <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/BusConnectorInstance">
-        <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusConnectorInstance/connectedBusInstance"/>
-        <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusConnectorInstance/connectedHWPortInstances"/>
-      </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/BusInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusInstance/connectedHWPortInstances"/>
         <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusInstance/BusPart"/>
-      </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/LinkInstance">
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/LinkInstance/connectedHWPortInstances"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusInstance/busType"/>
         <genFeatures property="None" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/LinkInstance/LinkPart"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusInstance/protocol"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BusInstance/bandwidth"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="hardware.ecore#//hwplatforminstance/CommunicationMediaInstance">
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/CommunicationMediaInstance/protocol"/>
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/CommunicationMediaInstance/communicationMedia"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/CommunicationMediaInstance/communicationMediaPart"/>
-        <genFeatures property="Readonly" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/CommunicationMediaInstance/bandwidth"/>
-      </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/BridgeInstance">
-        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/BridgeInstance/connectedCommunicationMediaInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/NetworkBridgeInstance">
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkBridgeInstance/connectedNetworkConnectorInstances"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwplatforminstance/NetworkingHardwareInstance"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/DelegationHWPortInstance">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/DelegationHWPortInstance/parentHWPlatformInstance"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/NetworkConnectorInstance">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkConnectorInstance/connectedHWPortInstances"/>
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkConnectorInstance/protocol"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkConnectorInstance/bandwidth"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwplatforminstance/NetworkConnectorInstance/connectorKind"/>
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkConnectorInstance/networkConnectorType"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Hwresource" basePackage="de.uni_paderborn.fujaba.muml.hardware"
@@ -216,6 +200,7 @@
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwresource/HWPortKind">
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/HWPortKind/BUS"/>
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/HWPortKind/LINK"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/HWPortKind/DELEGATION"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwresource/BusProtocolKind">
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/BusProtocolKind/CAN"/>
@@ -274,7 +259,6 @@
       <genClasses ecoreClass="hardware.ecore#//hwresource/ResourceRepository">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/ResourceRepository/resources"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/ResourceRepository/protocols"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/ResourceRepository/communicationMedia"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/CommunicationProtocolRepository">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationProtocolRepository/communicationProtocols"/>
@@ -284,6 +268,9 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/isEventTriggered"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/furtherInformation"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/isNetworkingProtocol"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationProtocol/dataFrameSize"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationProtocol/bandwidth"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationProtocol/isSerial"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/BusProtocol">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/BusProtocol/busProtocol"/>
@@ -294,6 +281,7 @@
         <genOperations ecoreOperation="hardware.ecore#//hwresource/LinkProtocol/toString"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresource/CommunicationResource">
+        <genTypeParameters ecoreTypeParameter="hardware.ecore#//hwresource/CommunicationResource/T"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationResource/portKind"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationResource/protocol"/>
@@ -301,25 +289,17 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationResource/multiHWPort"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/HWPort">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parentResource"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parentResourceInstance"/>
-      </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwresource/Bus"/>
-      <genClasses ecoreClass="hardware.ecore#//hwresource/Link"/>
-      <genClasses image="false" ecoreClass="hardware.ecore#//hwresource/CommunicationMedia">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationMedia/dataFrameSize"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationMedia/bandwidth"/>
+        <genTypeParameters ecoreTypeParameter="hardware.ecore#//hwresource/HWPort/T"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationMedia/protocol"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationMedia/isSerial"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parent"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Hwresourceinstance" basePackage="de.uni_paderborn.fujaba.muml.hardware"
         disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwresourceinstance">
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresourceinstance/ResourceInstance">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/ResourceInstance/resourceType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresourceinstance/ComputingResourceInstance">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/ComputingResourceInstance/frequency"/>

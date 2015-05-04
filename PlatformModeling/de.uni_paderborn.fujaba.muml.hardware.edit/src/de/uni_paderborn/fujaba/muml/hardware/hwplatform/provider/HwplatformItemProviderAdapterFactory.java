@@ -72,29 +72,6 @@ public class HwplatformItemProviderAdapterFactory extends HwplatformAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected HWPlatformConfigurationItemProvider hwPlatformConfigurationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createHWPlatformConfigurationAdapter() {
-		if (hwPlatformConfigurationItemProvider == null) {
-			hwPlatformConfigurationItemProvider = new HWPlatformConfigurationItemProvider(this);
-		}
-
-		return hwPlatformConfigurationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,29 +141,6 @@ public class HwplatformItemProviderAdapterFactory extends HwplatformAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Delegation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DelegationItemProvider delegationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Delegation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDelegationAdapter() {
-		if (delegationItemProvider == null) {
-			delegationItemProvider = new DelegationItemProvider(this);
-		}
-
-		return delegationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -233,95 +187,72 @@ public class HwplatformItemProviderAdapterFactory extends HwplatformAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BusConnectorItemProvider busConnectorItemProvider;
+	protected BusItemProvider busItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBusConnectorAdapter() {
-		if (busConnectorItemProvider == null) {
-			busConnectorItemProvider = new BusConnectorItemProvider(this);
+	public Adapter createBusAdapter() {
+		if (busItemProvider == null) {
+			busItemProvider = new BusItemProvider(this);
 		}
 
-		return busConnectorItemProvider;
+		return busItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BusPartItemProvider busPartItemProvider;
+	protected NetworkBridgeItemProvider networkBridgeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBusPartAdapter() {
-		if (busPartItemProvider == null) {
-			busPartItemProvider = new BusPartItemProvider(this);
+	public Adapter createNetworkBridgeAdapter() {
+		if (networkBridgeItemProvider == null) {
+			networkBridgeItemProvider = new NetworkBridgeItemProvider(this);
 		}
 
-		return busPartItemProvider;
+		return networkBridgeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkPartItemProvider linkPartItemProvider;
+	protected NetworkConnectorItemProvider networkConnectorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkPartAdapter() {
-		if (linkPartItemProvider == null) {
-			linkPartItemProvider = new LinkPartItemProvider(this);
+	public Adapter createNetworkConnectorAdapter() {
+		if (networkConnectorItemProvider == null) {
+			networkConnectorItemProvider = new NetworkConnectorItemProvider(this);
 		}
 
-		return linkPartItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BridgePartItemProvider bridgePartItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBridgePartAdapter() {
-		if (bridgePartItemProvider == null) {
-			bridgePartItemProvider = new BridgePartItemProvider(this);
-		}
-
-		return bridgePartItemProvider;
+		return networkConnectorItemProvider;
 	}
 
 	/**
@@ -423,17 +354,14 @@ public class HwplatformItemProviderAdapterFactory extends HwplatformAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (hwPlatformConfigurationItemProvider != null) hwPlatformConfigurationItemProvider.dispose();
 		if (hwPlatformItemProvider != null) hwPlatformItemProvider.dispose();
 		if (hwPlatformPartItemProvider != null) hwPlatformPartItemProvider.dispose();
 		if (resourcePartItemProvider != null) resourcePartItemProvider.dispose();
-		if (delegationItemProvider != null) delegationItemProvider.dispose();
 		if (delegationHWPortItemProvider != null) delegationHWPortItemProvider.dispose();
 		if (hwPortPartItemProvider != null) hwPortPartItemProvider.dispose();
-		if (busConnectorItemProvider != null) busConnectorItemProvider.dispose();
-		if (busPartItemProvider != null) busPartItemProvider.dispose();
-		if (linkPartItemProvider != null) linkPartItemProvider.dispose();
-		if (bridgePartItemProvider != null) bridgePartItemProvider.dispose();
+		if (busItemProvider != null) busItemProvider.dispose();
+		if (networkBridgeItemProvider != null) networkBridgeItemProvider.dispose();
+		if (networkConnectorItemProvider != null) networkConnectorItemProvider.dispose();
 	}
 
 }

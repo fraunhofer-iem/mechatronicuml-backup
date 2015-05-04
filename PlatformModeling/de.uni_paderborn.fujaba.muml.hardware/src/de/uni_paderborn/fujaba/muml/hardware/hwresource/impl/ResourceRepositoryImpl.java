@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
@@ -25,7 +24,6 @@ import org.storydriven.core.impl.CommentableElementImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceRepositoryImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceRepositoryImpl#getProtocols <em>Protocols</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceRepositoryImpl#getCommunicationMedia <em>Communication Media</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,16 +49,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 	 * @ordered
 	 */
 	protected EList<CommunicationProtocolRepository> protocols;
-
-	/**
-	 * The cached value of the '{@link #getCommunicationMedia() <em>Communication Media</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCommunicationMedia()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<CommunicationMedia> communicationMedia;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,18 +98,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CommunicationMedia> getCommunicationMedia() {
-		if (communicationMedia == null) {
-			communicationMedia = new EObjectContainmentEList<CommunicationMedia>(CommunicationMedia.class, this, HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA);
-		}
-		return communicationMedia;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -129,8 +105,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 			case HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS:
 				return ((InternalEList<?>)getProtocols()).basicRemove(otherEnd, msgs);
-			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
-				return ((InternalEList<?>)getCommunicationMedia()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -147,8 +121,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 				return getResources();
 			case HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS:
 				return getProtocols();
-			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
-				return getCommunicationMedia();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,10 +142,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 				getProtocols().clear();
 				getProtocols().addAll((Collection<? extends CommunicationProtocolRepository>)newValue);
 				return;
-			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
-				getCommunicationMedia().clear();
-				getCommunicationMedia().addAll((Collection<? extends CommunicationMedia>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -192,9 +160,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 			case HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS:
 				getProtocols().clear();
 				return;
-			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
-				getCommunicationMedia().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -211,8 +176,6 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 				return resources != null && !resources.isEmpty();
 			case HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS:
 				return protocols != null && !protocols.isEmpty();
-			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
-				return communicationMedia != null && !communicationMedia.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.5.1" xmi:id="_RlRs0M1gEeSIgPDefa6ZBw" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler xmi:id="_RlRs0c1gEeSIgPDefa6ZBw">
-    <customTransformations xmi:id="_RlRs0s1gEeSIgPDefa6ZBw" uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_RlRs0s1gEeSIgPDefa6ZBw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations xmi:id="_VZIdo8wbEeSjx7OWZCcdLw" uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="hardware.genmodel#/"/>
   <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_I4kOHNEeS5Putgio2lkg"/>
   <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZIdoMwbEeSjx7OWZCcdLw"/>
   <plugin xmi:id="_RlRs081gEeSIgPDefa6ZBw" id="de.uni_paderborn.fujaba.muml.hardware.edit.properties" name="MechatronicUML PSM Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.5.0.qualifier">
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
@@ -27,10 +29,6 @@
   <tabs xmi:id="_RlST4M1gEeSIgPDefa6ZBw" id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
   <packages xmi:id="_RlST4c1gEeSIgPDefa6ZBw">
     <genPackage href="hardware.genmodel#//hardware/hwplatform"/>
-    <classes xmi:id="_RlST4s1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/HWPlatformConfiguration"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
-    </classes>
     <classes xmi:id="_RlST481gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
@@ -64,15 +62,9 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RlTiAs1gEeSIgPDefa6ZBw"/>
       </orderedElements>
     </classes>
-    <classes xmi:id="_RlTiA81gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/Delegation"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHMMwbEeSjx7OWZCcdLw"/>
-      <superClasses href="#_RlV-RM1gEeSIgPDefa6ZBw"/>
-    </classes>
     <classes xmi:id="_RlTiBM1gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
-      <superClasses href="#_RlfINs1gEeSIgPDefa6ZBw"/>
     </classes>
     <classes xmi:id="_RlUwIM1gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
@@ -88,36 +80,32 @@
       </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_RlVXNM1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/BusConnector"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHMMwbEeSjx7OWZCcdLw"/>
-      <superClasses href="#_RlV-RM1gEeSIgPDefa6ZBw"/>
-    </classes>
-    <classes xmi:id="_RlVXNc1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/BusPart"/>
-      <superClasses href="#_RlV-QM1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
-    </classes>
-    <classes xmi:id="_RlVXNs1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/LinkPart"/>
-      <superClasses href="#_RlV-QM1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHMMwbEeSjx7OWZCcdLw"/>
-    </classes>
-    <classes xmi:id="_RlV-QM1gEeSIgPDefa6ZBw" superClasses="_RlV-RM1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/CommunicationMediaPart"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlV-Qc1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwplatform/CommunicationMediaPart/communicationMedia"/>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkConnector"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/NetworkConnector/protocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RlV-Qs1gEeSIgPDefa6ZBw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHMMwbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_RlV-Q81gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/BridgePart"/>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/Bus"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/Bus/protocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
-      <superClasses href="#_RlV-RM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="#//@packages.0/@classes.9"/>
     </classes>
-    <classes xmi:id="_RlV-RM1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkingHardwarePart"/>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkBridge"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.0/@classes.9"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatform/NetworkingHardware"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_PmQuHNEeS5Putgio2lkg"/>
     </classes>
   </packages>
@@ -233,7 +221,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rlcr881gEeSIgPDefa6ZBw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rlcr9M1gEeSIgPDefa6ZBw">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rlcr9M1gEeSIgPDefa6ZBw" initializeOCLExpression="">
         <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isEventTriggered"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rlcr9c1gEeSIgPDefa6ZBw"/>
@@ -248,7 +236,12 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_RlehIs1gEeSIgPDefa6ZBw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_RlehI81gEeSIgPDefa6ZBw" title="Booleans" properties="_Rlcr8s1gEeSIgPDefa6ZBw _Rlcr9M1gEeSIgPDefa6ZBw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" title="Booleans" properties="_Rlcr8s1gEeSIgPDefa6ZBw _Rlcr9M1gEeSIgPDefa6ZBw _RlehIc1gEeSIgPDefa6ZBw //@packages.1/@classes.11/@orderedElements.5"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationProtocol/isSerial"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
     <classes xmi:id="_RlfIMM1gEeSIgPDefa6ZBw" superClasses="_Rlcr8c1gEeSIgPDefa6ZBw">
@@ -282,46 +275,12 @@
     </classes>
     <classes xmi:id="_RlfvQ81gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwresource/HWPort"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlfvRM1gEeSIgPDefa6ZBw" reconcile="false" initializeOCLExpression="">
-        <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parentResource"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlfvRc1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
-        <genFeature href="hardware.genmodel#//hardware/hwresource/HWPort/parentResourceInstance"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
-    </classes>
-    <classes xmi:id="_RlgWUM1gEeSIgPDefa6ZBw" superClasses="_RllO0M1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwresource/Bus"/>
-    </classes>
-    <classes xmi:id="_RlgWUc1gEeSIgPDefa6ZBw" superClasses="_RllO0M1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwresource/Link"/>
-    </classes>
-    <classes xmi:id="_RllO0M1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwresource/CommunicationMedia"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RllO0c1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationMedia/dataFrameSize"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RllO0s1gEeSIgPDefa6ZBw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RllO081gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationMedia/bandwidth"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor" xmi:id="_RllO1M1gEeSIgPDefa6ZBw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rll14M1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationMedia/protocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rll14c1gEeSIgPDefa6ZBw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rll14s1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationMedia/isSerial"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor" xmi:id="_Rll1481gEeSIgPDefa6ZBw"/>
-      </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_Rll15M1gEeSIgPDefa6ZBw" title="Booleans" properties="_Rll14s1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_O_MeHNEeS5Putgio2lkg"/>
     </classes>
   </packages>
   <packages xmi:id="_Rll15c1gEeSIgPDefa6ZBw">
@@ -496,36 +455,8 @@
       <superClasses href="#_RlfvQ81gEeSIgPDefa6ZBw"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
     </classes>
-    <classes xmi:id="_Rl0fYc1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/DelegationInstance"/>
-      <superClasses href="#_Rl6mAM1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
-    </classes>
-    <classes xmi:id="_Rl1GcM1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/BusConnectorInstance"/>
-      <superClasses href="#_Rl6mAM1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
-    </classes>
     <classes xmi:id="_Rl1Gcc1gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwplatforminstance/BusInstance"/>
-      <superClasses href="#_Rl5-8c1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
-    </classes>
-    <classes xmi:id="_Rl5-8M1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/LinkInstance"/>
-      <superClasses href="#_Rl5-8c1gEeSIgPDefa6ZBw"/>
-      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
-    </classes>
-    <classes xmi:id="_Rl5-8c1gEeSIgPDefa6ZBw" superClasses="_Rl6mAM1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/CommunicationMediaInstance"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_Rl5-8s1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwplatforminstance/CommunicationMediaInstance/communicationMediaPart"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rl5-881gEeSIgPDefa6ZBw"/>
-      </orderedElements>
-    </classes>
-    <classes xmi:id="_Rl5-9M1gEeSIgPDefa6ZBw">
-      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/BridgeInstance"/>
       <superClasses href="#_Rl6mAM1gEeSIgPDefa6ZBw"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
     </classes>
@@ -541,6 +472,15 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_Rl6mA81gEeSIgPDefa6ZBw"/>
       </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/NetworkBridgeInstance"/>
+      <superClasses href="#_Rl6mAM1gEeSIgPDefa6ZBw"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuMswbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/hwplatforminstance/NetworkConnectorInstance"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXuOMwbEeSjx7OWZCcdLw"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

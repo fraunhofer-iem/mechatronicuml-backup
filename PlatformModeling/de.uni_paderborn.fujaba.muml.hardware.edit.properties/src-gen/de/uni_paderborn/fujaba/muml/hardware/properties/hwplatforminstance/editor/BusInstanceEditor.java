@@ -26,10 +26,6 @@ public class BusInstanceEditor
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addPropertyEditor(
-					createEditorCommunicationMediaPart_GeneralTab_Editor(),
-					false);
-
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
@@ -52,14 +48,7 @@ public class BusInstanceEditor
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.general".equals(tab)) { // Tab General
-
-			addPropertyEditor(
-					createEditorCommunicationMediaPart_GeneralTab_Editor(),
-					false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
@@ -77,9 +66,6 @@ public class BusInstanceEditor
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
@@ -91,29 +77,10 @@ public class BusInstanceEditor
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
-	}
-
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCommunicationMediaPart_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCommunicationMediaPart_GeneralTab_Editor() {
-		if (this.editorCommunicationMediaPart_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
-					.getCommunicationMediaInstance_CommunicationMediaPart();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			this.editorCommunicationMediaPart_GeneralTab = editor;
-		}
-		return this.editorCommunicationMediaPart_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorExtension_ExtensionsTab;
@@ -232,9 +199,8 @@ public class BusInstanceEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general",
+					new java.lang.String[]{"property.tab.extensions",
+							"property.tab.general", "property.tab.general",
 							"property.tab.documentation",
 							"property.tab.general"}).contains(tab);
 		}

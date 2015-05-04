@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import java.util.Collection;
@@ -31,6 +32,7 @@ import org.storydriven.core.impl.CommentableElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getNetworkingHardwareInstances <em>Networking Hardware Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getNetworkConnectorInstances <em>Network Connector Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +68,16 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 	 * @ordered
 	 */
 	protected EList<ResourceInstance> resources;
+
+	/**
+	 * The cached value of the '{@link #getNetworkConnectorInstances() <em>Network Connector Instances</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNetworkConnectorInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected NetworkConnectorInstance networkConnectorInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,6 +180,49 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NetworkConnectorInstance getNetworkConnectorInstances() {
+		return networkConnectorInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNetworkConnectorInstances(NetworkConnectorInstance newNetworkConnectorInstances, NotificationChain msgs) {
+		NetworkConnectorInstance oldNetworkConnectorInstances = networkConnectorInstances;
+		networkConnectorInstances = newNetworkConnectorInstances;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES, oldNetworkConnectorInstances, newNetworkConnectorInstances);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNetworkConnectorInstances(NetworkConnectorInstance newNetworkConnectorInstances) {
+		if (newNetworkConnectorInstances != networkConnectorInstances) {
+			NotificationChain msgs = null;
+			if (networkConnectorInstances != null)
+				msgs = ((InternalEObject)networkConnectorInstances).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES, null, msgs);
+			if (newNetworkConnectorInstances != null)
+				msgs = ((InternalEObject)newNetworkConnectorInstances).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES, null, msgs);
+			msgs = basicSetNetworkConnectorInstances(newNetworkConnectorInstances, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES, newNetworkConnectorInstances, newNetworkConnectorInstances));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -198,6 +253,8 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
 				return basicSetParentHWPlatformInstance(null, msgs);
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES:
+				return basicSetNetworkConnectorInstances(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -232,6 +289,8 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 				return getResources();
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
 				return getParentHWPlatformInstance();
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES:
+				return getNetworkConnectorInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +319,9 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
 				setParentHWPlatformInstance((HWPlatformInstance)newValue);
 				return;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES:
+				setNetworkConnectorInstances((NetworkConnectorInstance)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -284,6 +346,9 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
 				setParentHWPlatformInstance((HWPlatformInstance)null);
 				return;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES:
+				setNetworkConnectorInstances((NetworkConnectorInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,6 +369,8 @@ public class HWPlatformInstanceConfigurationImpl extends CommentableElementImpl 
 				return resources != null && !resources.isEmpty();
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE:
 				return getParentHWPlatformInstance() != null;
+			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION__NETWORK_CONNECTOR_INSTANCES:
+				return networkConnectorInstances != null;
 		}
 		return super.eIsSet(featureID);
 	}

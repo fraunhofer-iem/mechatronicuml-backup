@@ -1,4 +1,5 @@
 /**
+ * Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany and Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 

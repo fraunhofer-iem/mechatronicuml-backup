@@ -56,7 +56,7 @@ public interface HWPlatformPart extends PlatformPart {
 
 	/**
 	 * Returns the value of the '<em><b>Embedded Bridges</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -66,9 +66,9 @@ public interface HWPlatformPart extends PlatformPart {
 	 * @return the value of the '<em>Embedded Bridges</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPlatformPart_EmbeddedBridges()
 	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if hwplatformType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tself.hwplatformType.networkingHardwareParts->select(c| c.oclIsTypeOf(hwplatform::BridgePart)).oclAsType(hwplatform::BridgePart)->asOrderedSet()\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if hwplatformType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tself.hwplatformType.networkingHardware->select(c| c.oclIsTypeOf(hwplatform::NetworkBridge)).oclAsType(hwplatform::NetworkBridge)->asOrderedSet()\r\nendif'"
 	 * @generated
 	 */
-	EList<BridgePart> getEmbeddedBridges();
+	EList<NetworkBridge> getEmbeddedBridges();
 
 } // HWPlatformPart

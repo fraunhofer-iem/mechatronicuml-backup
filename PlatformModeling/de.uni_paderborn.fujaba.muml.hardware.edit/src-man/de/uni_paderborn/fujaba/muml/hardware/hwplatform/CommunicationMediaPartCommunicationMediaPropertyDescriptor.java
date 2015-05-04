@@ -14,12 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 
 public class CommunicationMediaPartCommunicationMediaPropertyDescriptor extends
 		ItemPropertyDescriptor {
@@ -27,10 +22,10 @@ public class CommunicationMediaPartCommunicationMediaPropertyDescriptor extends
 	private static final Map<EClass, EClass> communicationMediaRelation;
 	static {
 		Map<EClass, EClass> aMap = new HashMap<EClass, EClass>();
-		aMap.put(HwplatformPackage.Literals.BUS_PART,
-				HwresourcePackage.Literals.BUS);
-		aMap.put(HwplatformPackage.Literals.LINK_PART,
-				HwresourcePackage.Literals.LINK);
+//		aMap.put(HwplatformPackage.Literals.BUS_PART,
+//				HwresourcePackage.Literals.BUS);
+//		aMap.put(HwplatformPackage.Literals.LINK_PART,
+//				HwresourcePackage.Literals.LINK);
 		communicationMediaRelation = Collections.unmodifiableMap(aMap);
 	}
 

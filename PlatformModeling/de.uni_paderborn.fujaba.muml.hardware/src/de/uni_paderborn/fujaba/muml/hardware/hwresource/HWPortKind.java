@@ -39,7 +39,15 @@ public enum HWPortKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINK(1, "LINK", "LINK");
+	LINK(1, "LINK", "LINK"), /**
+	 * The '<em><b>DELEGATION</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DELEGATION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DELEGATION(0, "DELEGATION", "DELEGATION");
 
 	/**
 	 * The '<em><b>BUS</b></em>' literal value.
@@ -72,6 +80,21 @@ public enum HWPortKind implements Enumerator {
 	public static final int LINK_VALUE = 1;
 
 	/**
+	 * The '<em><b>DELEGATION</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>DELEGATION</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DELEGATION
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DELEGATION_VALUE = 0;
+
+	/**
 	 * An array of all the '<em><b>HW Port Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,6 +104,7 @@ public enum HWPortKind implements Enumerator {
 		new HWPortKind[] {
 			BUS,
 			LINK,
+			DELEGATION,
 		};
 
 	/**

@@ -3,17 +3,14 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceTypePropertyDescriptor;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -152,11 +149,6 @@ public class ResourceInstanceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS,
-				 HwplatformFactory.eINSTANCE.createDelegationHWPort()));
 
 		newChildDescriptors.add
 			(createChildParameter

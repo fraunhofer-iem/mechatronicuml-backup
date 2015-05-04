@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresource;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
+import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -21,6 +23,9 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsEventTriggered <em>Is Event Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getFurtherInformation <em>Further Information</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsNetworkingProtocol <em>Is Networking Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getDataFrameSize <em>Data Frame Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getBandwidth <em>Bandwidth</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsSerial <em>Is Serial</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,5 +136,80 @@ public interface CommunicationProtocol extends NamedElement {
 	 * @generated
 	 */
 	void setIsNetworkingProtocol(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Data Frame Size</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The size of a data frame.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Data Frame Size</em>' containment reference.
+	 * @see #setDataFrameSize(DataSize)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationProtocol_DataFrameSize()
+	 * @model containment="true"
+	 * @generated
+	 */
+	DataSize getDataFrameSize();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getDataFrameSize <em>Data Frame Size</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data Frame Size</em>' containment reference.
+	 * @see #getDataFrameSize()
+	 * @generated
+	 */
+	void setDataFrameSize(DataSize value);
+
+	/**
+	 * Returns the value of the '<em><b>Bandwidth</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The bandwidth of this CommunicationMedia.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Bandwidth</em>' containment reference.
+	 * @see #setBandwidth(DataRate)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationProtocol_Bandwidth()
+	 * @model containment="true"
+	 * @generated
+	 */
+	DataRate getBandwidth();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getBandwidth <em>Bandwidth</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bandwidth</em>' containment reference.
+	 * @see #getBandwidth()
+	 * @generated
+	 */
+	void setBandwidth(DataRate value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Serial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Determines if this CommunicationMedia uses a serial communication.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Is Serial</em>' attribute.
+	 * @see #setIsSerial(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationProtocol_IsSerial()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsSerial();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsSerial <em>Is Serial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Serial</em>' attribute.
+	 * @see #isIsSerial()
+	 * @generated
+	 */
+	void setIsSerial(boolean value);
 
 } // CommunicationProtocol

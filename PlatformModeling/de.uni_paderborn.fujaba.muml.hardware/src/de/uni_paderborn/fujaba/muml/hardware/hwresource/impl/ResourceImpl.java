@@ -5,19 +5,13 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.impl.NamedElementImpl;
 
 /**
@@ -42,7 +36,7 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HWPort> hwports;
+	protected EList<HWPort<Resource>> hwports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,26 +62,11 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HWPort> getHwports() {
+	public EList<HWPort<Resource>> getHwports() {
 		if (hwports == null) {
-			hwports = new EObjectContainmentWithInverseEList<HWPort>(HWPort.class, this, HwresourcePackage.RESOURCE__HWPORTS, HwresourcePackage.HW_PORT__PARENT_RESOURCE);
+			hwports = new EObjectContainmentEList<HWPort<Resource>>(HWPort.class, this, HwresourcePackage.RESOURCE__HWPORTS);
 		}
 		return hwports;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHwports()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -129,7 +108,7 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 		switch (featureID) {
 			case HwresourcePackage.RESOURCE__HWPORTS:
 				getHwports().clear();
-				getHwports().addAll((Collection<? extends HWPort>)newValue);
+				getHwports().addAll((Collection<? extends HWPort<Resource>>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

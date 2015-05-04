@@ -89,28 +89,12 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 				return createHWPortInstanceAdapter();
 			}
 			@Override
-			public Adapter caseDelegationInstance(DelegationInstance object) {
-				return createDelegationInstanceAdapter();
-			}
-			@Override
-			public Adapter caseBusConnectorInstance(BusConnectorInstance object) {
-				return createBusConnectorInstanceAdapter();
-			}
-			@Override
 			public Adapter caseBusInstance(BusInstance object) {
 				return createBusInstanceAdapter();
 			}
 			@Override
-			public Adapter caseLinkInstance(LinkInstance object) {
-				return createLinkInstanceAdapter();
-			}
-			@Override
-			public Adapter caseCommunicationMediaInstance(CommunicationMediaInstance object) {
-				return createCommunicationMediaInstanceAdapter();
-			}
-			@Override
-			public Adapter caseBridgeInstance(BridgeInstance object) {
-				return createBridgeInstanceAdapter();
+			public Adapter caseNetworkBridgeInstance(NetworkBridgeInstance object) {
+				return createNetworkBridgeInstanceAdapter();
 			}
 			@Override
 			public Adapter caseNetworkingHardwareInstance(NetworkingHardwareInstance object) {
@@ -119,6 +103,10 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDelegationHWPortInstance(DelegationHWPortInstance object) {
 				return createDelegationHWPortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseNetworkConnectorInstance(NetworkConnectorInstance object) {
+				return createNetworkConnectorInstanceAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -133,7 +121,7 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 				return createCommentableElementAdapter();
 			}
 			@Override
-			public Adapter caseHWPort(HWPort object) {
+			public <T> Adapter caseHWPort(HWPort<T> object) {
 				return createHWPortAdapter();
 			}
 			@Override
@@ -207,34 +195,6 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance <em>Delegation Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance
-	 * @generated
-	 */
-	public Adapter createDelegationInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance <em>Bus Connector Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance
-	 * @generated
-	 */
-	public Adapter createBusConnectorInstanceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusInstance <em>Bus Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -249,44 +209,16 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance <em>Link Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance <em>Network Bridge Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance
 	 * @generated
 	 */
-	public Adapter createLinkInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.CommunicationMediaInstance <em>Communication Media Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.CommunicationMediaInstance
-	 * @generated
-	 */
-	public Adapter createCommunicationMediaInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BridgeInstance <em>Bridge Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BridgeInstance
-	 * @generated
-	 */
-	public Adapter createBridgeInstanceAdapter() {
+	public Adapter createNetworkBridgeInstanceAdapter() {
 		return null;
 	}
 
@@ -315,6 +247,20 @@ public class HwplatforminstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDelegationHWPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance <em>Network Connector Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance
+	 * @generated
+	 */
+	public Adapter createNetworkConnectorInstanceAdapter() {
 		return null;
 	}
 

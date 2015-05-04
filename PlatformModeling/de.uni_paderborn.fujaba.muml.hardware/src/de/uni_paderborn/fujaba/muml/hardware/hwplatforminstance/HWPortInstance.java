@@ -9,6 +9,8 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -20,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType <em>Hw Port Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedMediaInstances <em>Connected Media Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface <em>Is Network Interface</em>}</li>
@@ -31,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface HWPortInstance extends HWPort, ConnectorEndpointInstance {
+public interface HWPortInstance extends HWPort<ResourceInstance>, ConnectorEndpointInstance {
 	/**
 	 * Returns the value of the '<em><b>Hw Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -46,7 +48,7 @@ public interface HWPortInstance extends HWPort, ConnectorEndpointInstance {
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsUndefined()) then\n\tnull\nelse\n\tself.type.oclAsType(hwplatform::HWPortPart).communicationResource\nendif'"
 	 * @generated
 	 */
-	CommunicationResource getHwPortType();
+	CommunicationResource<Resource> getHwPortType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType <em>Hw Port Type</em>}' reference.
@@ -56,23 +58,23 @@ public interface HWPortInstance extends HWPort, ConnectorEndpointInstance {
 	 * @see #getHwPortType()
 	 * @generated
 	 */
-	void setHwPortType(CommunicationResource value);
+	void setHwPortType(CommunicationResource<Resource> value);
 
 	/**
-	 * Returns the value of the '<em><b>Connected Media Instances</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.CommunicationMediaInstance}.
+	 * Returns the value of the '<em><b>Connected Network Connector Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The communication media to which this HWPortPart is connected.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Connected Media Instances</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_ConnectedMediaInstances()
+	 * @return the value of the '<em>Connected Network Connector Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_ConnectedNetworkConnectorInstances()
 	 * @model volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\tself.connectorInstances.oclAsType(BusConnectorInstance).connectedBusInstance.oclAsType(CommunicationMediaInstance)->asOrderedSet()\nelse \n\tself.connectorInstances.oclAsType(CommunicationMediaInstance)->asOrderedSet()\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorInstances->select(c|c.oclIsKindOf(NetworkConnectorInstance)).oclAsType(NetworkConnectorInstance)->asOrderedSet()'"
 	 * @generated
 	 */
-	EList<CommunicationMediaInstance> getConnectedMediaInstances();
+	EList<NetworkConnectorInstance> getConnectedNetworkConnectorInstances();
 
 	/**
 	 * Returns the value of the '<em><b>Protocol</b></em>' reference.

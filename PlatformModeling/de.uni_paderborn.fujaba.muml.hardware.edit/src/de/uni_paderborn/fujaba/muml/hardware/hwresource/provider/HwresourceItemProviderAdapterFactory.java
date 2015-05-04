@@ -325,52 +325,6 @@ public class HwresourceItemProviderAdapterFactory extends HwresourceAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BusItemProvider busItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBusAdapter() {
-		if (busItemProvider == null) {
-			busItemProvider = new BusItemProvider(this);
-		}
-
-		return busItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Link} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LinkItemProvider linkItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLinkAdapter() {
-		if (linkItemProvider == null) {
-			linkItemProvider = new LinkItemProvider(this);
-		}
-
-		return linkItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,8 +434,6 @@ public class HwresourceItemProviderAdapterFactory extends HwresourceAdapterFacto
 		if (busProtocolItemProvider != null) busProtocolItemProvider.dispose();
 		if (linkProtocolItemProvider != null) linkProtocolItemProvider.dispose();
 		if (communicationResourceItemProvider != null) communicationResourceItemProvider.dispose();
-		if (busItemProvider != null) busItemProvider.dispose();
-		if (linkItemProvider != null) linkItemProvider.dispose();
 	}
 
 }

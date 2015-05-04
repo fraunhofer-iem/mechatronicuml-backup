@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
 
@@ -28,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getCommunicationResource <em>Communication Resource</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getConnectedMediaPart <em>Connected Media Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getConnectedNetworkConnector <em>Connected Network Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#isMultiHWPort <em>Multi HW Port</em>}</li>
@@ -40,8 +41,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameProtocol LinkPort2Link'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='-- Connected Ports must use the same Protocol\nif (self.connectedMediaPart->size()>0 and (not self.connectedMediaPart->first().oclIsKindOf(hwplatform::Delegation))) then\n\tself.connectedMediaPart->first().protocol=self.protocol\nelse true\nendif' LinkPort2Link='-- A Linkt Port must be connected via a Link\nif (self.portKind.oclIsUndefined() and  self.connectedMediaPart->size()<1) then\n\ttrue\nelse \n\tif (self.portKind = hwresource::HWPortKind::BUS) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::BusPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::BusConnector) or c.oclIsKindOf(hwplatform::Delegation))\n\telse if (self.portKind = hwresource::HWPortKind::LINK) then\n\t\tself.connectedMediaPart->forAll(c|c.oclIsKindOf(hwplatform::LinkPart)) or self.connectors->forAll(c|c.oclIsKindOf(hwplatform::Delegation))\n\telse true\nendif endif endif\n'"
+ * @model
  * @generated
  */
 public interface HWPortPart extends ConnectorEndpoint {
@@ -59,7 +59,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @model required="true"
 	 * @generated
 	 */
-	CommunicationResource getCommunicationResource();
+	CommunicationResource<ResourceInstance> getCommunicationResource();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getCommunicationResource <em>Communication Resource</em>}' reference.
@@ -69,23 +69,23 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @see #getCommunicationResource()
 	 * @generated
 	 */
-	void setCommunicationResource(CommunicationResource value);
+	void setCommunicationResource(CommunicationResource<ResourceInstance> value);
 
 	/**
-	 * Returns the value of the '<em><b>Connected Media Part</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart}.
+	 * Returns the value of the '<em><b>Connected Network Connector</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The communication media to which this HWPortPart is connected.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Connected Media Part</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_ConnectedMediaPart()
+	 * @return the value of the '<em>Connected Network Connector</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_ConnectedNetworkConnector()
 	 * @model volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\tself.connectors.oclAsType(hwplatform::BusConnector).connectedBusPart.oclAsType(hwplatform::CommunicationMediaPart)->asOrderedSet()\nelse \n\tself.connectors.oclAsType(hwplatform::CommunicationMediaPart)->asOrderedSet()\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->select(c|c.oclIsKindOf(hwplatform::NetworkConnector)).oclAsType(hwplatform::NetworkConnector)->asOrderedSet()'"
 	 * @generated
 	 */
-	EList<CommunicationMediaPart> getConnectedMediaPart();
+	EList<NetworkConnector> getConnectedNetworkConnector();
 
 	/**
 	 * Returns the value of the '<em><b>Protocol</b></em>' reference.
@@ -96,7 +96,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_Protocol()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.communicationResource.oclIsUndefined()) then\n\tnull \nelse\n self.communicationResource.protocol\n endif'"
 	 * @generated
 	 */
@@ -113,7 +113,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_Cardinality()
-	 * @model containment="true" required="true" volatile="true" derived="true"
+	 * @model containment="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.communicationResource.oclIsUndefined()) then\n\t null\n\telse\n\t \tself.communicationResource.cardinality\n\t endif'"
 	 * @generated
 	 */
@@ -139,7 +139,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @return the value of the '<em>Multi HW Port</em>' attribute.
 	 * @see #setMultiHWPort(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_MultiHWPort()
-	 * @model required="true" transient="true" volatile="true" derived="true"
+	 * @model transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.communicationResource.oclIsUndefined()) then\n\tfalse\nelse \n   self.communicationResource.multiHWPort\n  endif'"
 	 * @generated
 	 */
@@ -167,7 +167,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
 	 * @see #setPortKind(HWPortKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_PortKind()
-	 * @model volatile="true" derived="true"
+	 * @model required="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.communicationResource.oclIsUndefined()) then\n\tnull\nelse \n   self.communicationResource.portKind\n  endif'"
 	 * @generated
 	 */

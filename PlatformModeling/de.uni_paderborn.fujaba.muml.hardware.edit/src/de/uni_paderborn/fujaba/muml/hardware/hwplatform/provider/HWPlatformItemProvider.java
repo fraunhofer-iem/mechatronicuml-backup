@@ -62,8 +62,9 @@ public class HWPlatformItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(HwplatformPackage.Literals.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS);
-			childrenFeatures.add(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE_PARTS);
+			childrenFeatures.add(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE);
 			childrenFeatures.add(HwplatformPackage.Literals.HW_PLATFORM__DELEGATION_PORTS);
+			childrenFeatures.add(HwplatformPackage.Literals.HW_PLATFORM__NETWORK_CONNECTORS);
 		}
 		return childrenFeatures;
 	}
@@ -119,8 +120,9 @@ public class HWPlatformItemProvider
 
 		switch (notification.getFeatureID(HWPlatform.class)) {
 			case HwplatformPackage.HW_PLATFORM__EMBEDDED_PLATFORM_PARTS:
-			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE_PARTS:
+			case HwplatformPackage.HW_PLATFORM__NETWORKING_HARDWARE:
 			case HwplatformPackage.HW_PLATFORM__DELEGATION_PORTS:
+			case HwplatformPackage.HW_PLATFORM__NETWORK_CONNECTORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,33 +152,23 @@ public class HWPlatformItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE_PARTS,
-				 HwplatformFactory.eINSTANCE.createDelegation()));
+				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE,
+				 HwplatformFactory.eINSTANCE.createBus()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE_PARTS,
-				 HwplatformFactory.eINSTANCE.createBusConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE_PARTS,
-				 HwplatformFactory.eINSTANCE.createBusPart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE_PARTS,
-				 HwplatformFactory.eINSTANCE.createLinkPart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE_PARTS,
-				 HwplatformFactory.eINSTANCE.createBridgePart()));
+				(HwplatformPackage.Literals.HW_PLATFORM__NETWORKING_HARDWARE,
+				 HwplatformFactory.eINSTANCE.createNetworkBridge()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwplatformPackage.Literals.HW_PLATFORM__DELEGATION_PORTS,
 				 HwplatformFactory.eINSTANCE.createDelegationHWPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(HwplatformPackage.Literals.HW_PLATFORM__NETWORK_CONNECTORS,
+				 HwplatformFactory.eINSTANCE.createNetworkConnector()));
 	}
 
 	/**

@@ -33,12 +33,14 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.HwvaluetypePackageImpl;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -207,6 +209,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		HwplatformPackageImpl theHwplatformPackage = (HwplatformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) instanceof HwplatformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI) : HwplatformPackage.eINSTANCE);
@@ -261,7 +264,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	public EReference getResourceInstance_ResourceType() {
-		return (EReference)resourceInstanceEClass.getEStructuralFeatures().get(0);
+		return (EReference)resourceInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -270,7 +273,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	public EReference getResourceInstance_Hwports() {
-		return (EReference)resourceInstanceEClass.getEStructuralFeatures().get(1);
+		return (EReference)resourceInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -509,8 +512,8 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		// Create classes and their features
 		resourceInstanceEClass = createEClass(RESOURCE_INSTANCE);
-		createEReference(resourceInstanceEClass, RESOURCE_INSTANCE__RESOURCE_TYPE);
 		createEReference(resourceInstanceEClass, RESOURCE_INSTANCE__HWPORTS);
+		createEReference(resourceInstanceEClass, RESOURCE_INSTANCE__RESOURCE_TYPE);
 
 		computingResourceInstanceEClass = createEClass(COMPUTING_RESOURCE_INSTANCE);
 		createEReference(computingResourceInstanceEClass, COMPUTING_RESOURCE_INSTANCE__FREQUENCY);
@@ -599,8 +602,11 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(resourceInstanceEClass, ResourceInstance.class, "ResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		EGenericType g1 = createEGenericType(theHwresourcePackage.getHWPort());
+		EGenericType g2 = createEGenericType(this.getResourceInstance());
+		g1.getETypeArguments().add(g2);
+		initEReference(getResourceInstance_Hwports(), g1, null, "hwports", null, 0, -1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceInstance_ResourceType(), theHwresourcePackage.getResource(), null, "resourceType", null, 1, 1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResourceInstance_Hwports(), theHwresourcePackage.getHWPort(), theHwresourcePackage.getHWPort_ParentResourceInstance(), "hwports", null, 0, -1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computingResourceInstanceEClass, ComputingResourceInstance.class, "ComputingResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComputingResourceInstance_Frequency(), theHwvaluetypePackage.getFrequency(), null, "frequency", null, 1, 1, ComputingResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -44,51 +44,28 @@ public class HWPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParentResourcePropertyDescriptor(object);
-			addParentResourceInstancePropertyDescriptor(object);
+			addParentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Parent Resource feature.
+	 * This adds a property descriptor for the Parent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParentResourcePropertyDescriptor(Object object) {
+	protected void addParentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_HWPort_parentResource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parentResource_feature", "_UI_HWPort_type"),
-				 HwresourcePackage.Literals.HW_PORT__PARENT_RESOURCE,
+				 getString("_UI_HWPort_parent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parent_feature", "_UI_HWPort_type"),
+				 HwresourcePackage.Literals.HW_PORT__PARENT,
+				 true,
 				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Resource Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentResourceInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HWPort_parentResourceInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parentResourceInstance_feature", "_UI_HWPort_type"),
-				 HwresourcePackage.Literals.HW_PORT__PARENT_RESOURCE_INSTANCE,
-				 false,
-				 false,
-				 false,
+				 true,
 				 null,
 				 null,
 				 null));
@@ -113,7 +90,7 @@ public class HWPortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HWPort)object).getName();
+		String label = ((HWPort<?>)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_HWPort_type") :
 			getString("_UI_HWPort_type") + " " + label;

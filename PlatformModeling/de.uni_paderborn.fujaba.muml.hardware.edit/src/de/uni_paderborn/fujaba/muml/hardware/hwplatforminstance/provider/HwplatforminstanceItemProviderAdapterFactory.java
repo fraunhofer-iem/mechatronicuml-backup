@@ -141,52 +141,6 @@ public class HwplatforminstanceItemProviderAdapterFactory extends Hwplatforminst
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DelegationInstanceItemProvider delegationInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDelegationInstanceAdapter() {
-		if (delegationInstanceItemProvider == null) {
-			delegationInstanceItemProvider = new DelegationInstanceItemProvider(this);
-		}
-
-		return delegationInstanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BusConnectorInstanceItemProvider busConnectorInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBusConnectorInstanceAdapter() {
-		if (busConnectorInstanceItemProvider == null) {
-			busConnectorInstanceItemProvider = new BusConnectorInstanceItemProvider(this);
-		}
-
-		return busConnectorInstanceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,49 +164,26 @@ public class HwplatforminstanceItemProviderAdapterFactory extends Hwplatforminst
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LinkInstanceItemProvider linkInstanceItemProvider;
+	protected NetworkBridgeInstanceItemProvider networkBridgeInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLinkInstanceAdapter() {
-		if (linkInstanceItemProvider == null) {
-			linkInstanceItemProvider = new LinkInstanceItemProvider(this);
+	public Adapter createNetworkBridgeInstanceAdapter() {
+		if (networkBridgeInstanceItemProvider == null) {
+			networkBridgeInstanceItemProvider = new NetworkBridgeInstanceItemProvider(this);
 		}
 
-		return linkInstanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BridgeInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BridgeInstanceItemProvider bridgeInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BridgeInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBridgeInstanceAdapter() {
-		if (bridgeInstanceItemProvider == null) {
-			bridgeInstanceItemProvider = new BridgeInstanceItemProvider(this);
-		}
-
-		return bridgeInstanceItemProvider;
+		return networkBridgeInstanceItemProvider;
 	}
 
 	/**
@@ -276,6 +207,29 @@ public class HwplatforminstanceItemProviderAdapterFactory extends Hwplatforminst
 		}
 
 		return delegationHWPortInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NetworkConnectorInstanceItemProvider networkConnectorInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNetworkConnectorInstanceAdapter() {
+		if (networkConnectorInstanceItemProvider == null) {
+			networkConnectorInstanceItemProvider = new NetworkConnectorInstanceItemProvider(this);
+		}
+
+		return networkConnectorInstanceItemProvider;
 	}
 
 	/**
@@ -380,12 +334,10 @@ public class HwplatforminstanceItemProviderAdapterFactory extends Hwplatforminst
 		if (hwPlatformInstanceItemProvider != null) hwPlatformInstanceItemProvider.dispose();
 		if (hwPlatformInstanceConfigurationItemProvider != null) hwPlatformInstanceConfigurationItemProvider.dispose();
 		if (hwPortInstanceItemProvider != null) hwPortInstanceItemProvider.dispose();
-		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
-		if (busConnectorInstanceItemProvider != null) busConnectorInstanceItemProvider.dispose();
 		if (busInstanceItemProvider != null) busInstanceItemProvider.dispose();
-		if (linkInstanceItemProvider != null) linkInstanceItemProvider.dispose();
-		if (bridgeInstanceItemProvider != null) bridgeInstanceItemProvider.dispose();
+		if (networkBridgeInstanceItemProvider != null) networkBridgeInstanceItemProvider.dispose();
 		if (delegationHWPortInstanceItemProvider != null) delegationHWPortInstanceItemProvider.dispose();
+		if (networkConnectorInstanceItemProvider != null) networkConnectorInstanceItemProvider.dispose();
 	}
 
 }

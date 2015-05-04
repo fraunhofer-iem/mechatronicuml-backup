@@ -179,7 +179,7 @@ public class CommunicationResourceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CommunicationResource)object).getName();
+		String label = ((CommunicationResource<?>)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CommunicationResource_type") :
 			getString("_UI_CommunicationResource_type") + " " + label;

@@ -4,16 +4,10 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.util;
 
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.*;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
@@ -75,13 +69,6 @@ public class HwplatformSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case HwplatformPackage.HW_PLATFORM_CONFIGURATION: {
-				HWPlatformConfiguration hwPlatformConfiguration = (HWPlatformConfiguration)theEObject;
-				T result = caseHWPlatformConfiguration(hwPlatformConfiguration);
-				if (result == null) result = caseExtendableElement(hwPlatformConfiguration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HwplatformPackage.HW_PLATFORM: {
 				HWPlatform hwPlatform = (HWPlatform)theEObject;
 				T result = caseHWPlatform(hwPlatform);
@@ -116,24 +103,11 @@ public class HwplatformSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HwplatformPackage.DELEGATION: {
-				Delegation delegation = (Delegation)theEObject;
-				T result = caseDelegation(delegation);
-				if (result == null) result = caseNetworkingHardwarePart(delegation);
-				if (result == null) result = caseConnector(delegation);
-				if (result == null) result = caseCommentableElement(delegation);
-				if (result == null) result = caseExtendableElement(delegation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case HwplatformPackage.DELEGATION_HW_PORT: {
 				DelegationHWPort delegationHWPort = (DelegationHWPort)theEObject;
 				T result = caseDelegationHWPort(delegationHWPort);
 				if (result == null) result = caseConnectorEndpoint(delegationHWPort);
-				if (result == null) result = caseCommunicationResource(delegationHWPort);
 				if (result == null) result = caseCommentableElement(delegationHWPort);
-				if (result == null) result = caseHWPort(delegationHWPort);
-				if (result == null) result = caseNamedElement(delegationHWPort);
 				if (result == null) result = caseExtendableElement(delegationHWPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -147,80 +121,44 @@ public class HwplatformSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HwplatformPackage.BUS_CONNECTOR: {
-				BusConnector busConnector = (BusConnector)theEObject;
-				T result = caseBusConnector(busConnector);
-				if (result == null) result = caseConnector(busConnector);
-				if (result == null) result = caseNetworkingHardwarePart(busConnector);
-				if (result == null) result = caseCommentableElement(busConnector);
-				if (result == null) result = caseExtendableElement(busConnector);
+			case HwplatformPackage.BUS: {
+				Bus bus = (Bus)theEObject;
+				T result = caseBus(bus);
+				if (result == null) result = caseConnectorEndpoint(bus);
+				if (result == null) result = caseNetworkingHardware(bus);
+				if (result == null) result = caseCommentableElement(bus);
+				if (result == null) result = caseExtendableElement(bus);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HwplatformPackage.BUS_PART: {
-				BusPart busPart = (BusPart)theEObject;
-				T result = caseBusPart(busPart);
-				if (result == null) result = caseCommunicationMediaPart(busPart);
-				if (result == null) result = caseConnectorEndpoint(busPart);
-				if (result == null) result = caseNetworkingHardwarePart(busPart);
-				if (result == null) result = caseCommentableElement(busPart);
-				if (result == null) result = caseExtendableElement(busPart);
+			case HwplatformPackage.NETWORK_BRIDGE: {
+				NetworkBridge networkBridge = (NetworkBridge)theEObject;
+				T result = caseNetworkBridge(networkBridge);
+				if (result == null) result = caseNetworkingHardware(networkBridge);
+				if (result == null) result = caseConnectorEndpoint(networkBridge);
+				if (result == null) result = caseCommentableElement(networkBridge);
+				if (result == null) result = caseExtendableElement(networkBridge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HwplatformPackage.LINK_PART: {
-				LinkPart linkPart = (LinkPart)theEObject;
-				T result = caseLinkPart(linkPart);
-				if (result == null) result = caseCommunicationMediaPart(linkPart);
-				if (result == null) result = caseConnector(linkPart);
-				if (result == null) result = caseNetworkingHardwarePart(linkPart);
-				if (result == null) result = caseCommentableElement(linkPart);
-				if (result == null) result = caseExtendableElement(linkPart);
+			case HwplatformPackage.NETWORKING_HARDWARE: {
+				NetworkingHardware networkingHardware = (NetworkingHardware)theEObject;
+				T result = caseNetworkingHardware(networkingHardware);
+				if (result == null) result = caseExtendableElement(networkingHardware);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case HwplatformPackage.COMMUNICATION_MEDIA_PART: {
-				CommunicationMediaPart communicationMediaPart = (CommunicationMediaPart)theEObject;
-				T result = caseCommunicationMediaPart(communicationMediaPart);
-				if (result == null) result = caseNetworkingHardwarePart(communicationMediaPart);
-				if (result == null) result = caseExtendableElement(communicationMediaPart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HwplatformPackage.BRIDGE_PART: {
-				BridgePart bridgePart = (BridgePart)theEObject;
-				T result = caseBridgePart(bridgePart);
-				if (result == null) result = caseNetworkingHardwarePart(bridgePart);
-				if (result == null) result = caseConnectorEndpoint(bridgePart);
-				if (result == null) result = caseCommentableElement(bridgePart);
-				if (result == null) result = caseExtendableElement(bridgePart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HwplatformPackage.NETWORKING_HARDWARE_PART: {
-				NetworkingHardwarePart networkingHardwarePart = (NetworkingHardwarePart)theEObject;
-				T result = caseNetworkingHardwarePart(networkingHardwarePart);
-				if (result == null) result = caseExtendableElement(networkingHardwarePart);
+			case HwplatformPackage.NETWORK_CONNECTOR: {
+				NetworkConnector networkConnector = (NetworkConnector)theEObject;
+				T result = caseNetworkConnector(networkConnector);
+				if (result == null) result = caseConnector(networkConnector);
+				if (result == null) result = caseCommentableElement(networkConnector);
+				if (result == null) result = caseExtendableElement(networkConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>HW Platform Configuration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>HW Platform Configuration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHWPlatformConfiguration(HWPlatformConfiguration object) {
-		return null;
 	}
 
 	/**
@@ -284,21 +222,6 @@ public class HwplatformSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Delegation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Delegation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDelegation(Delegation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Delegation HW Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -329,92 +252,62 @@ public class HwplatformSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bus Connector</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Bus</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bus Connector</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Bus</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBusConnector(BusConnector object) {
+	public T caseBus(Bus object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bus Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Network Bridge</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bus Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Network Bridge</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBusPart(BusPart object) {
+	public T caseNetworkBridge(NetworkBridge object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Link Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Networking Hardware</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Link Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Networking Hardware</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLinkPart(LinkPart object) {
+	public T caseNetworkingHardware(NetworkingHardware object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Communication Media Part</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Network Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Communication Media Part</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Network Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCommunicationMediaPart(CommunicationMediaPart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bridge Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bridge Part</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBridgePart(BridgePart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Networking Hardware Part</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Networking Hardware Part</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNetworkingHardwarePart(NetworkingHardwarePart object) {
+	public T caseNetworkConnector(NetworkConnector object) {
 		return null;
 	}
 
@@ -490,36 +383,6 @@ public class HwplatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorEndpoint(ConnectorEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>HW Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>HW Port</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHWPort(HWPort object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Communication Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Communication Resource</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommunicationResource(CommunicationResource object) {
 		return null;
 	}
 

@@ -20,8 +20,9 @@ import org.storydriven.core.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getEmbeddedPlatformParts <em>Embedded Platform Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkingHardwareParts <em>Networking Hardware Parts</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkingHardware <em>Networking Hardware</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getDelegationPorts <em>Delegation Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform#getNetworkConnectors <em>Network Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,19 +50,19 @@ public interface HWPlatform extends NamedElement {
 	EList<PlatformPart> getEmbeddedPlatformParts();
 
 	/**
-	 * Returns the value of the '<em><b>Networking Hardware Parts</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart}.
+	 * Returns the value of the '<em><b>Networking Hardware</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardware}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The CommunicationResources this HWPlatform contains.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Networking Hardware Parts</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPlatform_NetworkingHardwareParts()
+	 * @return the value of the '<em>Networking Hardware</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPlatform_NetworkingHardware()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<NetworkingHardwarePart> getNetworkingHardwareParts();
+	EList<NetworkingHardware> getNetworkingHardware();
 
 	/**
 	 * Returns the value of the '<em><b>Delegation Ports</b></em>' containment reference list.
@@ -77,5 +78,21 @@ public interface HWPlatform extends NamedElement {
 	 * @generated
 	 */
 	EList<DelegationHWPort> getDelegationPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Network Connectors</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Network Connectors</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Network Connectors</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPlatform_NetworkConnectors()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<NetworkConnector> getNetworkConnectors();
 
 } // HWPlatform

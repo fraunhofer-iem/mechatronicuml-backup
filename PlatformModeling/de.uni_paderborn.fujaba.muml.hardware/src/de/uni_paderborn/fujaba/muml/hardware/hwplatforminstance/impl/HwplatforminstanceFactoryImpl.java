@@ -59,12 +59,10 @@ public class HwplatforminstanceFactoryImpl extends EFactoryImpl implements Hwpla
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE: return createHWPlatformInstance();
 			case HwplatforminstancePackage.HW_PLATFORM_INSTANCE_CONFIGURATION: return createHWPlatformInstanceConfiguration();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE: return createHWPortInstance();
-			case HwplatforminstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
-			case HwplatforminstancePackage.BUS_CONNECTOR_INSTANCE: return createBusConnectorInstance();
 			case HwplatforminstancePackage.BUS_INSTANCE: return createBusInstance();
-			case HwplatforminstancePackage.LINK_INSTANCE: return createLinkInstance();
-			case HwplatforminstancePackage.BRIDGE_INSTANCE: return createBridgeInstance();
+			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE: return createNetworkBridgeInstance();
 			case HwplatforminstancePackage.DELEGATION_HW_PORT_INSTANCE: return createDelegationHWPortInstance();
+			case HwplatforminstancePackage.NETWORK_CONNECTOR_INSTANCE: return createNetworkConnectorInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -105,26 +103,6 @@ public class HwplatforminstanceFactoryImpl extends EFactoryImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DelegationInstance createDelegationInstance() {
-		DelegationInstanceImpl delegationInstance = new DelegationInstanceImpl();
-		return delegationInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BusConnectorInstance createBusConnectorInstance() {
-		BusConnectorInstanceImpl busConnectorInstance = new BusConnectorInstanceImpl();
-		return busConnectorInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BusInstance createBusInstance() {
 		BusInstanceImpl busInstance = new BusInstanceImpl();
 		return busInstance;
@@ -135,19 +113,9 @@ public class HwplatforminstanceFactoryImpl extends EFactoryImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LinkInstance createLinkInstance() {
-		LinkInstanceImpl linkInstance = new LinkInstanceImpl();
-		return linkInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BridgeInstance createBridgeInstance() {
-		BridgeInstanceImpl bridgeInstance = new BridgeInstanceImpl();
-		return bridgeInstance;
+	public NetworkBridgeInstance createNetworkBridgeInstance() {
+		NetworkBridgeInstanceImpl networkBridgeInstance = new NetworkBridgeInstanceImpl();
+		return networkBridgeInstance;
 	}
 
 	/**
@@ -158,6 +126,16 @@ public class HwplatforminstanceFactoryImpl extends EFactoryImpl implements Hwpla
 	public DelegationHWPortInstance createDelegationHWPortInstance() {
 		DelegationHWPortInstanceImpl delegationHWPortInstance = new DelegationHWPortInstanceImpl();
 		return delegationHWPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NetworkConnectorInstance createNetworkConnectorInstance() {
+		NetworkConnectorInstanceImpl networkConnectorInstance = new NetworkConnectorInstanceImpl();
+		return networkConnectorInstance;
 	}
 
 	/**

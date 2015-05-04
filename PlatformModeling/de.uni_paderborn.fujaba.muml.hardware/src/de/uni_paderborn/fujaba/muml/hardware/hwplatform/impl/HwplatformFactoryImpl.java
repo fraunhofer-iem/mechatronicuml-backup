@@ -56,30 +56,17 @@ public class HwplatformFactoryImpl extends EFactoryImpl implements HwplatformFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case HwplatformPackage.HW_PLATFORM_CONFIGURATION: return createHWPlatformConfiguration();
 			case HwplatformPackage.HW_PLATFORM: return createHWPlatform();
 			case HwplatformPackage.HW_PLATFORM_PART: return createHWPlatformPart();
 			case HwplatformPackage.RESOURCE_PART: return createResourcePart();
-			case HwplatformPackage.DELEGATION: return createDelegation();
 			case HwplatformPackage.DELEGATION_HW_PORT: return createDelegationHWPort();
 			case HwplatformPackage.HW_PORT_PART: return createHWPortPart();
-			case HwplatformPackage.BUS_CONNECTOR: return createBusConnector();
-			case HwplatformPackage.BUS_PART: return createBusPart();
-			case HwplatformPackage.LINK_PART: return createLinkPart();
-			case HwplatformPackage.BRIDGE_PART: return createBridgePart();
+			case HwplatformPackage.BUS: return createBus();
+			case HwplatformPackage.NETWORK_BRIDGE: return createNetworkBridge();
+			case HwplatformPackage.NETWORK_CONNECTOR: return createNetworkConnector();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HWPlatformConfiguration createHWPlatformConfiguration() {
-		HWPlatformConfigurationImpl hwPlatformConfiguration = new HWPlatformConfigurationImpl();
-		return hwPlatformConfiguration;
 	}
 
 	/**
@@ -117,16 +104,6 @@ public class HwplatformFactoryImpl extends EFactoryImpl implements HwplatformFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Delegation createDelegation() {
-		DelegationImpl delegation = new DelegationImpl();
-		return delegation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DelegationHWPort createDelegationHWPort() {
 		DelegationHWPortImpl delegationHWPort = new DelegationHWPortImpl();
 		return delegationHWPort;
@@ -147,9 +124,9 @@ public class HwplatformFactoryImpl extends EFactoryImpl implements HwplatformFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BusConnector createBusConnector() {
-		BusConnectorImpl busConnector = new BusConnectorImpl();
-		return busConnector;
+	public Bus createBus() {
+		BusImpl bus = new BusImpl();
+		return bus;
 	}
 
 	/**
@@ -157,9 +134,9 @@ public class HwplatformFactoryImpl extends EFactoryImpl implements HwplatformFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BusPart createBusPart() {
-		BusPartImpl busPart = new BusPartImpl();
-		return busPart;
+	public NetworkBridge createNetworkBridge() {
+		NetworkBridgeImpl networkBridge = new NetworkBridgeImpl();
+		return networkBridge;
 	}
 
 	/**
@@ -167,19 +144,9 @@ public class HwplatformFactoryImpl extends EFactoryImpl implements HwplatformFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LinkPart createLinkPart() {
-		LinkPartImpl linkPart = new LinkPartImpl();
-		return linkPart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BridgePart createBridgePart() {
-		BridgePartImpl bridgePart = new BridgePartImpl();
-		return bridgePart;
+	public NetworkConnector createNetworkConnector() {
+		NetworkConnectorImpl networkConnector = new NetworkConnectorImpl();
+		return networkConnector;
 	}
 
 	/**

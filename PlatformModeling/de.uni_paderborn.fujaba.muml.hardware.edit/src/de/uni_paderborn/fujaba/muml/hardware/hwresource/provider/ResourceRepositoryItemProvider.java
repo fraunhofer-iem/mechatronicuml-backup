@@ -64,7 +64,6 @@ public class ResourceRepositoryItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(HwresourcePackage.Literals.RESOURCE_REPOSITORY__RESOURCES);
 			childrenFeatures.add(HwresourcePackage.Literals.RESOURCE_REPOSITORY__PROTOCOLS);
-			childrenFeatures.add(HwresourcePackage.Literals.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA);
 		}
 		return childrenFeatures;
 	}
@@ -121,7 +120,6 @@ public class ResourceRepositoryItemProvider
 		switch (notification.getFeatureID(ResourceRepository.class)) {
 			case HwresourcePackage.RESOURCE_REPOSITORY__RESOURCES:
 			case HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS:
-			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -173,16 +171,6 @@ public class ResourceRepositoryItemProvider
 			(createChildParameter
 				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__PROTOCOLS,
 				 HwresourceFactory.eINSTANCE.createCommunicationProtocolRepository()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA,
-				 HwresourceFactory.eINSTANCE.createBus()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA,
-				 HwresourceFactory.eINSTANCE.createLink()));
 	}
 
 	/**

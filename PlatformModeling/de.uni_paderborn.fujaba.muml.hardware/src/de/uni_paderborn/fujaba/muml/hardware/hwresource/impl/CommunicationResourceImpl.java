@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CommunicationResourceImpl extends HWPortImpl implements CommunicationResource {
+public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements CommunicationResource<T> {
 	/**
 	 * The cached setting delegate for the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,6 +91,17 @@ public class CommunicationResourceImpl extends HWPortImpl implements Communicati
 	@Override
 	protected EClass eStaticClass() {
 		return HwresourcePackage.Literals.COMMUNICATION_RESOURCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setParent(T newParent) {
+		super.setParent(newParent);
 	}
 
 	/**

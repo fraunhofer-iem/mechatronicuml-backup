@@ -70,7 +70,12 @@ public class HWDelegationPortEditPolicy extends HWPortBaseEditPolicy {
 		if(hwPort==null){
 			return false;
 		}
-		return hwPort.isMultiHWPort();
+		
+		/*
+		 * TODO: Fix me
+		 */
+	//	return hwPort.isMultiHWPort();
+		return false;
 	}
 
 
@@ -87,20 +92,25 @@ public class HWDelegationPortEditPolicy extends HWPortBaseEditPolicy {
 			} 
 			}
 			
-
-		if (hwPort != null) {
-			modelPortKind = hwPort.getPortKind();
-		}
-		switch (modelPortKind.getValue()) {
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
-			kind = HWPortKind.BUS;
-			break;
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
-			kind = HWPortKind.LINK;
-			break;
-
-		}
-		return kind;
+		
+	/**
+	 * TODO FixMe
+	 */
+//		if (hwPort != null) {
+//			modelPortKind = hwPort.getPortKind();
+//		}
+//		switch (modelPortKind.getValue()) {
+//		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
+//			kind = HWPortKind.BUS;
+//			break;
+//		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
+//			kind = HWPortKind.LINK;
+//			break;
+//
+//		}
+//		return kind;
+		
+		return HWPortKind.LINK;
 	}
 
 

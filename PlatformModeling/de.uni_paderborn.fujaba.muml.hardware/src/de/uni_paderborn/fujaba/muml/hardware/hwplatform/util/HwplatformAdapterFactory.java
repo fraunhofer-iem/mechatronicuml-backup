@@ -4,18 +4,11 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.util;
 
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.*;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
@@ -77,10 +70,6 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 	protected HwplatformSwitch<Adapter> modelSwitch =
 		new HwplatformSwitch<Adapter>() {
 			@Override
-			public Adapter caseHWPlatformConfiguration(HWPlatformConfiguration object) {
-				return createHWPlatformConfigurationAdapter();
-			}
-			@Override
 			public Adapter caseHWPlatform(HWPlatform object) {
 				return createHWPlatformAdapter();
 			}
@@ -97,10 +86,6 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 				return createResourcePartAdapter();
 			}
 			@Override
-			public Adapter caseDelegation(Delegation object) {
-				return createDelegationAdapter();
-			}
-			@Override
 			public Adapter caseDelegationHWPort(DelegationHWPort object) {
 				return createDelegationHWPortAdapter();
 			}
@@ -109,28 +94,20 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 				return createHWPortPartAdapter();
 			}
 			@Override
-			public Adapter caseBusConnector(BusConnector object) {
-				return createBusConnectorAdapter();
+			public Adapter caseBus(Bus object) {
+				return createBusAdapter();
 			}
 			@Override
-			public Adapter caseBusPart(BusPart object) {
-				return createBusPartAdapter();
+			public Adapter caseNetworkBridge(NetworkBridge object) {
+				return createNetworkBridgeAdapter();
 			}
 			@Override
-			public Adapter caseLinkPart(LinkPart object) {
-				return createLinkPartAdapter();
+			public Adapter caseNetworkingHardware(NetworkingHardware object) {
+				return createNetworkingHardwareAdapter();
 			}
 			@Override
-			public Adapter caseCommunicationMediaPart(CommunicationMediaPart object) {
-				return createCommunicationMediaPartAdapter();
-			}
-			@Override
-			public Adapter caseBridgePart(BridgePart object) {
-				return createBridgePartAdapter();
-			}
-			@Override
-			public Adapter caseNetworkingHardwarePart(NetworkingHardwarePart object) {
-				return createNetworkingHardwarePartAdapter();
+			public Adapter caseNetworkConnector(NetworkConnector object) {
+				return createNetworkConnectorAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -145,20 +122,12 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 				return createCommentableElementAdapter();
 			}
 			@Override
-			public Adapter caseConnector(Connector object) {
-				return createConnectorAdapter();
-			}
-			@Override
 			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
 				return createConnectorEndpointAdapter();
 			}
 			@Override
-			public Adapter caseHWPort(HWPort object) {
-				return createHWPortAdapter();
-			}
-			@Override
-			public Adapter caseCommunicationResource(CommunicationResource object) {
-				return createCommunicationResourceAdapter();
+			public Adapter caseConnector(Connector object) {
+				return createConnectorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -179,20 +148,6 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration <em>HW Platform Configuration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformConfiguration
-	 * @generated
-	 */
-	public Adapter createHWPlatformConfigurationAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform <em>HW Platform</em>}'.
@@ -251,20 +206,6 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Delegation <em>Delegation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Delegation
-	 * @generated
-	 */
-	public Adapter createDelegationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort <em>Delegation HW Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -293,86 +234,58 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector <em>Bus Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus <em>Bus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusConnector
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus
 	 * @generated
 	 */
-	public Adapter createBusConnectorAdapter() {
+	public Adapter createBusAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart <em>Bus Part</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge <em>Network Bridge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BusPart
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge
 	 * @generated
 	 */
-	public Adapter createBusPartAdapter() {
+	public Adapter createNetworkBridgeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart <em>Link Part</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardware <em>Networking Hardware</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.LinkPart
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardware
 	 * @generated
 	 */
-	public Adapter createLinkPartAdapter() {
+	public Adapter createNetworkingHardwareAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart <em>Communication Media Part</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector <em>Network Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.CommunicationMediaPart
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector
 	 * @generated
 	 */
-	public Adapter createCommunicationMediaPartAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart <em>Bridge Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart
-	 * @generated
-	 */
-	public Adapter createBridgePartAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart <em>Networking Hardware Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkingHardwarePart
-	 * @generated
-	 */
-	public Adapter createNetworkingHardwarePartAdapter() {
+	public Adapter createNetworkConnectorAdapter() {
 		return null;
 	}
 
@@ -443,34 +356,6 @@ public class HwplatformAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort <em>HW Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort
-	 * @generated
-	 */
-	public Adapter createHWPortAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource <em>Communication Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource
-	 * @generated
-	 */
-	public Adapter createCommunicationResourceAdapter() {
 		return null;
 	}
 

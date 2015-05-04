@@ -115,15 +115,9 @@ public class HwresourceValidator extends EObjectValidator {
 			case HwresourcePackage.LINK_PROTOCOL:
 				return validateLinkProtocol((LinkProtocol)value, diagnostics, context);
 			case HwresourcePackage.COMMUNICATION_RESOURCE:
-				return validateCommunicationResource((CommunicationResource)value, diagnostics, context);
+				return validateCommunicationResource((CommunicationResource<?>)value, diagnostics, context);
 			case HwresourcePackage.HW_PORT:
-				return validateHWPort((HWPort)value, diagnostics, context);
-			case HwresourcePackage.BUS:
-				return validateBus((Bus)value, diagnostics, context);
-			case HwresourcePackage.LINK:
-				return validateLink((Link)value, diagnostics, context);
-			case HwresourcePackage.COMMUNICATION_MEDIA:
-				return validateCommunicationMedia((CommunicationMedia)value, diagnostics, context);
+				return validateHWPort((HWPort<?>)value, diagnostics, context);
 			case HwresourcePackage.DEVICE_KIND:
 				return validateDeviceKind((DeviceKind)value, diagnostics, context);
 			case HwresourcePackage.PROCESSOR_ARCHITECTURE:
@@ -445,7 +439,7 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCommunicationResource(CommunicationResource communicationResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCommunicationResource(CommunicationResource<?> communicationResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(communicationResource, diagnostics, context);
 	}
 
@@ -454,115 +448,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHWPort(HWPort hwPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateHWPort(HWPort<?> hwPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(hwPort, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBus(Bus bus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(bus, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(bus, diagnostics, context);
-		if (result || diagnostics != null) result &= validateBus_BusProtocol(bus, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the BusProtocol constraint of '<em>Bus</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String BUS__BUS_PROTOCOL__EEXPRESSION = "-- Must use a Bus Protocol\n" +
-		"self.protocol.oclIsTypeOf(hwresource::BusProtocol)";
-
-	/**
-	 * Validates the BusProtocol constraint of '<em>Bus</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBus_BusProtocol(Bus bus, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(HwresourcePackage.Literals.BUS,
-				 bus,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "BusProtocol",
-				 BUS__BUS_PROTOCOL__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLink(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(link, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(link, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLink_LinkProtocol(link, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the LinkProtocol constraint of '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LINK__LINK_PROTOCOL__EEXPRESSION = "-- Must use a Link Protocl\n" +
-		"self.protocol.oclIsTypeOf(hwresource::LinkProtocol)";
-
-	/**
-	 * Validates the LinkProtocol constraint of '<em>Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLink_LinkProtocol(Link link, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(HwresourcePackage.Literals.LINK,
-				 link,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "LinkProtocol",
-				 LINK__LINK_PROTOCOL__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCommunicationMedia(CommunicationMedia communicationMedia, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(communicationMedia, diagnostics, context);
 	}
 
 	/**

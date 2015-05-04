@@ -188,7 +188,7 @@ public class HWPortPartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HWPortPart.class)) {
-			case HwplatformPackage.HW_PORT_PART__CONNECTED_MEDIA_PART:
+			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
 			case HwplatformPackage.HW_PORT_PART__PROTOCOL:
 			case HwplatformPackage.HW_PORT_PART__CARDINALITY:
 			case HwplatformPackage.HW_PORT_PART__MULTI_HW_PORT:

@@ -3,27 +3,18 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.impl.NamedElementImpl;
 
 /**
@@ -33,14 +24,24 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceImpl#getResourceType <em>Resource Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceImpl#getHwports <em>Hwports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceImpl#getResourceType <em>Resource Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class ResourceInstanceImpl extends NamedElementImpl implements ResourceInstance {
+	/**
+	 * The cached value of the '{@link #getHwports() <em>Hwports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHwports()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<HWPort<ResourceInstance>> hwports;
+
 	/**
 	 * The cached value of the '{@link #getResourceType() <em>Resource Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -50,16 +51,6 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * @ordered
 	 */
 	protected Resource resourceType;
-
-	/**
-	 * The cached value of the '{@link #getHwports() <em>Hwports</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHwports()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<HWPort> hwports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,9 +76,9 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HWPort> getHwports() {
+	public EList<HWPort<ResourceInstance>> getHwports() {
 		if (hwports == null) {
-			hwports = new EObjectContainmentWithInverseEList<HWPort>(HWPort.class, this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS, HwresourcePackage.HW_PORT__PARENT_RESOURCE_INSTANCE);
+			hwports = new EObjectContainmentEList<HWPort<ResourceInstance>>(HWPort.class, this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS);
 		}
 		return hwports;
 	}
@@ -135,21 +126,6 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHwports()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -167,11 +143,11 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
+				return getHwports();
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
 				if (resolve) return getResourceType();
 				return basicGetResourceType();
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
-				return getHwports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,12 +161,12 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
-				setResourceType((Resource)newValue);
-				return;
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
 				getHwports().clear();
-				getHwports().addAll((Collection<? extends HWPort>)newValue);
+				getHwports().addAll((Collection<? extends HWPort<ResourceInstance>>)newValue);
+				return;
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
+				setResourceType((Resource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,11 +180,11 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
-				setResourceType((Resource)null);
-				return;
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
 				getHwports().clear();
+				return;
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
+				setResourceType((Resource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -222,10 +198,10 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
-				return resourceType != null;
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
 				return hwports != null && !hwports.isEmpty();
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
+				return resourceType != null;
 		}
 		return super.eIsSet(featureID);
 	}

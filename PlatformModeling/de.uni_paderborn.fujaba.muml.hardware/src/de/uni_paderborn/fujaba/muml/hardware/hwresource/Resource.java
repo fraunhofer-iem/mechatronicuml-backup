@@ -29,8 +29,7 @@ import org.storydriven.core.NamedElement;
 public interface Resource extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Hwports</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResource <em>Parent Resource</em>}'.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort}&lt;de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -40,10 +39,9 @@ public interface Resource extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hwports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getResource_Hwports()
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParentResource
-	 * @model opposite="parentResource" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<HWPort> getHwports();
+	EList<HWPort<Resource>> getHwports();
 
 } // Resource

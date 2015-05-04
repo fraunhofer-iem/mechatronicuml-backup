@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwplatform.BridgePart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -113,8 +113,8 @@ public class HWPlatformPartImpl extends PlatformPartImpl implements HWPlatformPa
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<BridgePart> getEmbeddedBridges() {
-		return (EList<BridgePart>)EMBEDDED_BRIDGES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<NetworkBridge> getEmbeddedBridges() {
+		return (EList<NetworkBridge>)EMBEDDED_BRIDGES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**

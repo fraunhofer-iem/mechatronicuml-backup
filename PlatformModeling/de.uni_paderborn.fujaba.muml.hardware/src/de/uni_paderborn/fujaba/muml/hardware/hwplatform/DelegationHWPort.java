@@ -3,7 +3,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +14,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
  * @model
  * @generated
  */
-public interface DelegationHWPort extends ConnectorEndpoint, CommunicationResource {
+public interface DelegationHWPort extends ConnectorEndpoint {
 
 } // DelegationHWPort
