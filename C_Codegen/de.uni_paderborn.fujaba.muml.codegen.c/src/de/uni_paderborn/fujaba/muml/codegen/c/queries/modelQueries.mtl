@@ -282,8 +282,8 @@ ac.componentType.oclAsType(AtomicComponent).behavior.eAllContents(Operation)->as
  * @return Set of all messages used in the given codegen model
 */]
 [query public getAllUsedMessages (CIs : OrderedSet(ComponentInstance)) : Set(MessageType) = 
-let receiverMessages:Set(MessageType) = CIs.eAllContents(AtomicComponentInstance).portInstances->asSet()->filter(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
-let senderMessages:Set(MessageType) = CIs.eAllContents(AtomicComponentInstance).portInstances->asSet()->filter(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
+let receiverMessages:Set(MessageType) = CIs.portInstances->asSet()->filter(DiscretePortInstance)->collect(receiverMessageTypes)->asSet() in
+let senderMessages:Set(MessageType) = CIs.portInstances->asSet()->filter(DiscretePortInstance)->collect(senderMessageTypes)->asSet() in
 receiverMessages->union(senderMessages)->asOrderedSet()
  /]
 
