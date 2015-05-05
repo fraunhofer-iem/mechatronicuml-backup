@@ -34,6 +34,7 @@
         visualID="3023"
         editPartClassName="BusEditPart"
         itemSemanticEditPolicyClassName="BusItemSemanticEditPolicy"
+        notationViewFactoryClassName="BusViewFactory"
         canonicalEditPolicyClassName="BusCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="BusGraphicalNodeEditPolicy"
         createCommandClassName="BusCreateCommand"
@@ -64,6 +65,7 @@
           visualID="5054"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="BusLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -79,6 +81,7 @@
           visualID="5055"
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="BusLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -99,6 +102,7 @@
         visualID="3024"
         editPartClassName="NetworkBridgeEditPart"
         itemSemanticEditPolicyClassName="NetworkBridgeItemSemanticEditPolicy"
+        notationViewFactoryClassName="NetworkBridgeViewFactory"
         canonicalEditPolicyClassName="NetworkBridgeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="NetworkBridgeGraphicalNodeEditPolicy"
         createCommandClassName="NetworkBridgeCreateCommand"
@@ -128,6 +132,7 @@
           visualID="5056"
           editPartClassName="WrappingLabel4EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="NetworkBridgeLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -207,7 +212,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.19">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -355,22 +360,6 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform/delegationPorts"/>
       </modelFacet>
-      <labels
-          xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5044"
-          editPartClassName="HWPortLabel2EditPart"
-          itemSemanticEditPolicyClassName="HWPortLabel2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DelegationHWPortLabelViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:InnerClassViewmap"
-            className="HWPortLabelFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextUnderline(true);&#xA;this.setTextWrap(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.7"/>
-      </labels>
     </childNodes>
     <childNodes
         visualID="3019"
@@ -420,7 +409,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.10">
+                      value="//@expressionProviders/@providers.0/@expressions.9">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -433,7 +422,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.11">
+                      value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
                   </initializers>
@@ -443,7 +432,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.20">
+              value="//@expressionProviders/@providers.0/@expressions.19">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -483,7 +472,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.8"/>
+            parser="//@labelParsers/@implementations.7"/>
       </labels>
       <labels
           visualID="5047"
@@ -498,7 +487,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.9"/>
+            parser="//@labelParsers/@implementations.8"/>
       </labels>
       <labels
           visualID="5048"
@@ -514,7 +503,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.10"/>
+            parser="//@labelParsers/@implementations.9"/>
       </labels>
       <labels
           visualID="5049"
@@ -530,7 +519,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.11"/>
+            parser="//@labelParsers/@implementations.10"/>
       </labels>
     </childNodes>
     <topLevelNodes
@@ -564,7 +553,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.18">
+              value="//@expressionProviders/@providers.0/@expressions.17">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -585,13 +574,14 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.12"/>
+            parser="//@labelParsers/@implementations.11"/>
       </labels>
     </topLevelNodes>
     <links
         visualID="4031"
         editPartClassName="NetworkConnectorEditPart"
         itemSemanticEditPolicyClassName="NetworkConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="NetworkConnectorViewFactory"
         createCommandClassName="NetworkConnectorCreateCommand"
         reorientCommandClassName="NetworkConnectorReorientCommand">
       <diagramRunTimeClass
@@ -937,8 +927,6 @@
       <expressions
           body="'Enter cardinality in form of:  lowerBound..upperBound'"/>
       <expressions
-          body="self.name"/>
-      <expressions
           body="0"/>
       <expressions
           body="1"/>
@@ -1018,17 +1006,9 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
-        className="DelegationHWPortLabelExpressionLabelParser5044"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.1/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5046"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1036,8 +1016,8 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.2/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5047"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13"
-        editExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.12"
+        editExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1045,7 +1025,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.3/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5048"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1053,7 +1033,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.4/@modelFacet"
         className="ResourcePartLabelExpressionLabelParser5049"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/ResourcePart"/>
     </implementations>
@@ -1061,7 +1041,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
         className="HWPlatformLabelExpressionLabelParser5050"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform"/>
     </implementations>

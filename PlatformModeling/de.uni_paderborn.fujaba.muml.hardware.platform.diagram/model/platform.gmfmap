@@ -162,13 +162,6 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwplatform/DelegationHWPort"/>
-          <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping">
-            <diagramLabel
-                href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPortLabel"/>
-            <viewExpression
-                body="self.name"/>
-          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="platform.gmftool#//@palette/@tools.0/@tools.2"/>

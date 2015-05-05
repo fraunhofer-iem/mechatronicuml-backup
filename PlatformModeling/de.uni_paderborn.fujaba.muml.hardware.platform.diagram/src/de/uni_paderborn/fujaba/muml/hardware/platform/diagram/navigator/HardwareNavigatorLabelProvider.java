@@ -247,20 +247,15 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getDelegationHWPort_3018Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.DelegationHWPort_3018,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
+		de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort domainModelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getComment();
 		} else {
 			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5044); //$NON-NLS-1$
+					.getInstance()
+					.logError(
+							"No domain element for view with visualID = " + 3018); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

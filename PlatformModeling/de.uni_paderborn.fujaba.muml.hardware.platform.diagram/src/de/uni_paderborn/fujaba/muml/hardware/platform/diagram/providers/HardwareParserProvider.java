@@ -93,13 +93,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getDelegationHWPortLabel_5044Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.parsers.DelegationHWPortLabelExpressionLabelParser5044();
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser resourcePartName_5045Parser;
 
 	/**
@@ -167,8 +160,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 			return getHWPlatformPartLabel_5043Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
 			return getHWPortPartLabel_5053Parser();
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID:
-			return getDelegationHWPortLabel_5044Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartNameEditPart.VISUAL_ID:
 			return getResourcePartName_5045Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:

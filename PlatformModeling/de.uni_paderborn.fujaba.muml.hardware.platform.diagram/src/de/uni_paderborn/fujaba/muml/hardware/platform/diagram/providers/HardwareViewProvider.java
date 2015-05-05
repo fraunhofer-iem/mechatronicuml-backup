@@ -565,15 +565,6 @@ public class HardwareViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5044 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID));
-		label5044.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location5044 = (Location) label5044.getLayoutConstraint();
-		location5044.setX(0);
-		location5044.setY(5);
 		return node;
 	}
 

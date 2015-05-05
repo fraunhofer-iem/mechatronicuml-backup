@@ -35,7 +35,7 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareAbstractExpression[21];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareAbstractExpression[20];
 		this.expressionBodies = new String[] {
 				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
 				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
@@ -46,7 +46,6 @@ public class HardwareOCLFactory {
 				"\': \' + if self.hwplatformType.oclIsUndefined() then \'null\' else self.hwplatformType.name endif", //$NON-NLS-1$
 				"let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\nlet upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n\'[\' + lowerBound + \'..\' + upperBound + \']\'", //$NON-NLS-1$
 				"\'Enter cardinality in form of:  lowerBound..upperBound\'", //$NON-NLS-1$
-				"self.name", //$NON-NLS-1$
 				"0", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$

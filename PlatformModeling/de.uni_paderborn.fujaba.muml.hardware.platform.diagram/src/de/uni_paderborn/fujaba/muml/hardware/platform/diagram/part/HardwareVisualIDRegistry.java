@@ -236,11 +236,6 @@ public class HardwareVisualIDRegistry {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
