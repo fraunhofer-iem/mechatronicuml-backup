@@ -32,7 +32,7 @@
         <details key="constraints" value="AllComponentInstancesAllocated"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AllComponentInstancesAllocated" value="-- All component instances must be allocated&#xD;&#xA;-- All component instances must be allocated&#xD;&#xA;let cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC)->asOrderedSet() in&#xD;&#xA;cics.componentInstances->includesAll(self.allocations.componentInstance)"/>
+        <details key="AllComponentInstancesAllocated" value="-- All component instances must be allocated&#xD;&#xA;let cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->asOrderedSet()->union(self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC))->asOrderedSet() in&#xD;&#xA;cics.componentInstances->includesAll(self.allocations.componentInstance)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocations" lowerBound="1"
           upperBound="-1" eType="#//allocation/Allocation" containment="true">

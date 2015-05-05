@@ -121,8 +121,7 @@ public class AllocationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String SYSTEM_ALLOCATION__ALL_COMPONENT_INSTANCES_ALLOCATED__EEXPRESSION = "-- All component instances must be allocated\r\n" +
-		"-- All component instances must be allocated\r\n" +
-		"let cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC)->asOrderedSet() in\r\n" +
+		"let cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->asOrderedSet()->union(self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC))->asOrderedSet() in\r\n" +
 		"cics.componentInstances->includesAll(self.allocations.componentInstance)";
 
 	/**
