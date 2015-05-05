@@ -94,7 +94,7 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 			}
 			return resource;
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 			return null;
 		}
 	}
