@@ -28,7 +28,7 @@ import org.storydriven.core.ExtendableElement;
  *
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getSystemAllocation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllComponentInstancesAllocated'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllComponentInstancesAllocated='-- All component instances must be allocated\r\n-- All component instances must be allocated\r\nlet cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC)->asOrderedSet() in\r\ncics.componentInstances->includesAll(self.allocations.componentInstance)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllComponentInstancesAllocated='-- All component instances must be allocated\r\nlet cics : Set(muml::instance::ComponentInstanceConfiguration) = self.cic->asOrderedSet()->union(self.cic->closure(c | c.componentInstances->select(oclIsKindOf(muml::instance::StructuredComponentInstance)).oclAsType(muml::instance::StructuredComponentInstance).embeddedCIC))->asOrderedSet() in\r\ncics.componentInstances->includesAll(self.allocations.componentInstance)'"
  * @generated
  */
 public interface SystemAllocation extends ExtendableElement {
