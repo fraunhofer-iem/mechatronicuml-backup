@@ -63,7 +63,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 	input.rootObjects()[SensorInstance]->forEach(di){
 		log("Initialize the DeviceInstance for" +di.eClass().name +", Name:" +di.name);
 		di.isResourceTypeSet();
-		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceType=ResourceTypePackage::DeviceKind::SENSOR) then{
+		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceKind=ResourceTypePackage::DeviceKind::SENSOR) then{
 		//di.name:=di.resourceType.name;
 		di.hwports+=di.synchHWPortInstances();
 		}
@@ -73,7 +73,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 	input.rootObjects()[ActuatorInstance]->forEach(di){
 		log("Initialize the DeviceInstance for" +di.eClass().name +", Name:" +di.name);
 		di.isResourceTypeSet();
-		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceType=ResourceTypePackage::DeviceKind::ACTUATOR) then{
+		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceKind=ResourceTypePackage::DeviceKind::ACTUATOR) then{
 		//di.name:=di.resourceType.name;
 		di.hwports+=di.synchHWPortInstances();
 		}
@@ -97,13 +97,13 @@ helper ResourceInstance::isResourceTypeSet(){
 
 
 //keeps the port types and port instances in synch
-helper ResourceInstance::synchHWPortInstances():OrderedSet(CommunicationResource){
+helper ResourceInstance::synchHWPortInstances():OrderedSet(HWPortResource){
 var resourceType : Resource := self.resourceType;
-var hwPortInstances : Set(CommunicationResource);
+var hwPortInstances : Set(HWPortResource);
 var lowerBound : Integer;
 	self.hwports->forEach(portInstance) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (resourceType.hwports ->select(p|p.name = portInstance.name)->isEmpty()) then {
+		if (resourceType.communicationResources ->select(p|p.name = portInstance.name)->isEmpty()) then {
 		
 				input.removeElement(portInstance);
 				portInstance.dump();
@@ -112,19 +112,27 @@ var lowerBound : Integer;
 		}; 
 	
 	//create new ports
-	resourceType.hwports -> forEach(hwport){
+	resourceType.communicationResources -> forEach(hwport){
 	if((self.hwports -> select(p|p.name=hwport.name)) -> isEmpty()) then {
 	/*	lowerBound:=hwport.cardinality.lowerBound.toInteger();
 		while(lowerBound>0){
 			hwPortInstances += hwport ->map mapHWPort2HWPortInstance(lowerBound);
 			lowerBound:=lowerBound-1;
 			}; */
-			hwPortInstances+=hwport.deepclone().oclAsType(hardware::hwresource::CommunicationResource);
+			hwPortInstances+=hwport.map mapCommunicationResource2HWPortResource();
 		} endif; 
 	};
 	
 	return hwPortInstances->asOrderedSet();
 }
+
+mapping CommunicationResource::mapCommunicationResource2HWPortResource():HWPortResource{
+	name:=self.name;
+	protocol:=self.protocol;
+	cardinality:=self.cardinality.deepclone().oclAsType(muml::valuetype::Cardinality);
+	//multiHWPort:=self.multiHWPort;
+}
+
 
 
 // synchs the embedded AtomicResources of a type and an instance of a structured resource
@@ -227,10 +235,10 @@ mapping HWPort::mapHWPort2HWPortInstance(number:Integer):HW{
 mapping  Device::mapDevice2DeviceInstance():DeviceInstance{
 init{
 	switch{ 
-			case (self.deviceType=(DeviceKind::SENSOR)){
+			case (self.deviceKind=(DeviceKind::SENSOR)){
 			result:=new SensorInstance();
 					}
-			case (self.deviceType=(DeviceKind::ACTUATOR)){
+			case (self.deviceKind=(DeviceKind::ACTUATOR)){
 			result:= new ActuatorInstance();
 					}			
 			};

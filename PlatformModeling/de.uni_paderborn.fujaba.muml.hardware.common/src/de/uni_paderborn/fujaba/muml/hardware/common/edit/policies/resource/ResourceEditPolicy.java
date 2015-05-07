@@ -70,7 +70,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 			}
 			if (HwresourcePackage.Literals.DEVICE.isSuperTypeOf(element
 					.eClass())) {
-				if (((Device) element).getDeviceType() == DeviceKind.SENSOR) {
+				if (((Device) element).getDeviceKind() == DeviceKind.SENSOR) {
 					kind = ResourceType.SENSOR;
 				} else {
 					kind = ResourceType.ACTUATOR;
@@ -134,7 +134,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 			feature = (EStructuralFeature) notification.getFeature();
 		}
 
-		if (feature == HwresourcePackage.Literals.DEVICE__DEVICE_TYPE) {
+		if (feature == HwresourcePackage.Literals.DEVICE__DEVICE_KIND) {
 			refreshIcon();
 		}
 		super.handleNotificationEvent(notification);

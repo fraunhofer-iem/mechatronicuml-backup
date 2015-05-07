@@ -61,11 +61,13 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationResource_3001 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3001"); //$NON-NLS-1$
+	public static final IElementType CommunicationResource_3009 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3009"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType CommunicationResource_3008 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3008"); //$NON-NLS-1$
+	public static final IElementType CommunicationResource_3010 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3010"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -154,12 +156,12 @@ public class HardwareElementTypes {
 							.getCommunicationProtocolRepository());
 
 			elements.put(
-					CommunicationResource_3001,
+					CommunicationResource_3009,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getCommunicationResource());
 
 			elements.put(
-					CommunicationResource_3008,
+					CommunicationResource_3010,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getCommunicationResource());
 
@@ -218,8 +220,8 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Device_2001);
 			KNOWN_ELEMENT_TYPES.add(StructuredResource_2002);
 			KNOWN_ELEMENT_TYPES.add(CommunicationProtocolRepository_2005);
-			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3001);
-			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3008);
+			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3009);
+			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3010);
 			KNOWN_ELEMENT_TYPES.add(Cache_3002);
 			KNOWN_ELEMENT_TYPES.add(Processor_3003);
 			KNOWN_ELEMENT_TYPES.add(ProgrammableLogicDevice_3004);
@@ -245,9 +247,9 @@ public class HardwareElementTypes {
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
 			return CommunicationProtocolRepository_2005;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-			return CommunicationResource_3001;
+			return CommunicationResource_3009;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
-			return CommunicationResource_3008;
+			return CommunicationResource_3010;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
 			return Cache_3002;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID:

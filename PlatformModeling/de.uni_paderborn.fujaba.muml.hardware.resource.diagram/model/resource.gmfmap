@@ -35,7 +35,7 @@
         <diagramLabel
             href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResourceKindLabel"/>
         <viewExpression
-            body="': ' + self.deviceType.toString()"/>
+            body="': ' + self.deviceKind.toString()"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -45,7 +45,7 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/communicationResources"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/CommunicationResource"/>
@@ -156,7 +156,7 @@
           compartment="//@nodes.1/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/Resource/communicationResources"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/CommunicationResource"/>
@@ -485,6 +485,33 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/BusProtocol"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/CommunicationProtocol/bandwidth"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataRate/unit"/>
+                  <value
+                      body="DataRateUnit::Kbs"/>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataRate/value"/>
+                  <value
+                      body="1"/>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -506,6 +533,33 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/LinkProtocol"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresource/CommunicationProtocol/bandwidth"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataRate/unit"/>
+                  <value
+                      body="DataRateUnit::Kbs"/>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataRate/value"/>
+                  <value
+                      body="1"/>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+          </domainInitializer>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel

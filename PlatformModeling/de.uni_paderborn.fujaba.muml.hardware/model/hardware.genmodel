@@ -197,10 +197,10 @@
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/WritePolicy/WRITE_THROUGH"/>
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/WritePolicy/OTHER"/>
       </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwresource/HWPortKind">
-        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/HWPortKind/BUS"/>
-        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/HWPortKind/LINK"/>
-        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/HWPortKind/DELEGATION"/>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwresource/CommunicationKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/CommunicationKind/BUS"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/CommunicationKind/LINK"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/CommunicationKind/DELEGATION"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwresource/BusProtocolKind">
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/BusProtocolKind/CAN"/>
@@ -222,7 +222,7 @@
         <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwresource/LinkProtocolKind/WIFI"/>
       </genEnums>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresource/Resource">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/Resource/hwports"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/Resource/communicationResources"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresource/ComputingResource"/>
       <genClasses ecoreClass="hardware.ecore#//hwresource/MemoryResource">
@@ -231,7 +231,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/MemoryResource/memoryType"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/Device">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/Device/deviceType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/Device/deviceKind"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//hwresource/Cache">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/Cache/writePolicy"/>
@@ -281,17 +281,12 @@
         <genOperations ecoreOperation="hardware.ecore#//hwresource/LinkProtocol/toString"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwresource/CommunicationResource">
-        <genTypeParameters ecoreTypeParameter="hardware.ecore#//hwresource/CommunicationResource/T"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationResource/portKind"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationResource/protocol"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationResource/cardinality"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwresource/CommunicationResource/multiHWPort"/>
-      </genClasses>
-      <genClasses ecoreClass="hardware.ecore#//hwresource/HWPort">
-        <genTypeParameters ecoreTypeParameter="hardware.ecore#//hwresource/HWPort/T"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//hwresource/HWPort/parent"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresource/CommunicationResource/parentResource"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Hwresourceinstance" basePackage="de.uni_paderborn.fujaba.muml.hardware"
@@ -331,6 +326,10 @@
       <genClasses ecoreClass="hardware.ecore#//hwresourceinstance/ResourceInstanceRepository">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/ResourceInstanceRepository/resourceInstances"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//hwresourceinstance/HWPort">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//hwresourceinstance/HWPort/parentResourceInstance"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//hwresourceinstance/HWPortResource"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

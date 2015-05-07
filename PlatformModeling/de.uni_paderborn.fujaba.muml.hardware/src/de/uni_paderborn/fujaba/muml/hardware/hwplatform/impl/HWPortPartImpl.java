@@ -7,10 +7,9 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
@@ -54,7 +53,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * @generated
 	 * @ordered
 	 */
-	protected CommunicationResource<ResourceInstance> communicationResource;
+	protected CommunicationResource communicationResource;
 
 	/**
 	 * The cached setting delegate for the '{@link #getConnectedNetworkConnector() <em>Connected Network Connector</em>}' reference list.
@@ -151,10 +150,10 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public CommunicationResource<ResourceInstance> getCommunicationResource() {
+	public CommunicationResource getCommunicationResource() {
 		if (communicationResource != null && communicationResource.eIsProxy()) {
 			InternalEObject oldCommunicationResource = (InternalEObject)communicationResource;
-			communicationResource = (CommunicationResource<ResourceInstance>)eResolveProxy(oldCommunicationResource);
+			communicationResource = (CommunicationResource)eResolveProxy(oldCommunicationResource);
 			if (communicationResource != oldCommunicationResource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE, oldCommunicationResource, communicationResource));
@@ -168,7 +167,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource<ResourceInstance> basicGetCommunicationResource() {
+	public CommunicationResource basicGetCommunicationResource() {
 		return communicationResource;
 	}
 
@@ -177,8 +176,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCommunicationResource(CommunicationResource<ResourceInstance> newCommunicationResource) {
-		CommunicationResource<ResourceInstance> oldCommunicationResource = communicationResource;
+	public void setCommunicationResource(CommunicationResource newCommunicationResource) {
+		CommunicationResource oldCommunicationResource = communicationResource;
 		communicationResource = newCommunicationResource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE, oldCommunicationResource, communicationResource));
@@ -267,8 +266,8 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortKind getPortKind() {
-		return (HWPortKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CommunicationKind getPortKind() {
+		return (CommunicationKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -276,7 +275,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPortKind(HWPortKind newPortKind) {
+	public void setPortKind(CommunicationKind newPortKind) {
 		PORT_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPortKind);
 	}
 
@@ -499,7 +498,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE:
-				setCommunicationResource((CommunicationResource<ResourceInstance>)newValue);
+				setCommunicationResource((CommunicationResource)newValue);
 				return;
 			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
 				getConnectedNetworkConnector().clear();
@@ -512,7 +511,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 				setMultiHWPort((Boolean)newValue);
 				return;
 			case HwplatformPackage.HW_PORT_PART__PORT_KIND:
-				setPortKind((HWPortKind)newValue);
+				setPortKind((CommunicationKind)newValue);
 				return;
 			case HwplatformPackage.HW_PORT_PART__QUEUING_TIME:
 				setQueuingTime((TimeInterval)newValue);
@@ -536,7 +535,7 @@ public class HWPortPartImpl extends ConnectorEndpointImpl implements HWPortPart 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case HwplatformPackage.HW_PORT_PART__COMMUNICATION_RESOURCE:
-				setCommunicationResource((CommunicationResource<ResourceInstance>)null);
+				setCommunicationResource((CommunicationResource)null);
 				return;
 			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
 				getConnectedNetworkConnector().clear();

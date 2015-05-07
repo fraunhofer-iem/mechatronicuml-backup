@@ -117,7 +117,7 @@ public class Activator extends AbstractUIPlugin {
 
 		TransformationExecutor transformationExecutor = Activator.getDefault()
 				.getTransformationExecutor(
-						Activator.CREATEINSTANCE_TRANSFORMATION, false);
+						Activator.CREATEINSTANCE_TRANSFORMATION, true);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);

@@ -4,9 +4,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.VisualPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 
 /**
  * Base edit policy for all {@link HWPortPart}s that uses the
@@ -64,10 +65,9 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 	}
 
 	@Override
-	protected HWPortKind getHWPortKind() {
+	protected CommunicationKind getCommunicationKind() {
 		EObject element = getSemanticElement();
-		HWPortKind kind = HWPortKind.BUS;
-		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
+		CommunicationKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind.BUS;
 		HWPortPart hwPortPart = null;
 		if (element != null) {
 			if (HwplatformPackage.Literals.HW_PORT_PART.isSuperTypeOf(element
@@ -79,16 +79,8 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		if (hwPortPart != null) {
 			modelPortKind = hwPortPart.getPortKind();
 		}
-		switch (modelPortKind.getValue()) {
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
-			kind = HWPortKind.BUS;
-			break;
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
-			kind = HWPortKind.LINK;
-			break;
 
-		}
-		return kind;
+		return modelPortKind;
 	}
 
 	@Override

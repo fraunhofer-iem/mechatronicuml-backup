@@ -43,25 +43,25 @@ public class DeviceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDeviceTypePropertyDescriptor(object);
+			addDeviceKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Device Type feature.
+	 * This adds a property descriptor for the Device Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDeviceTypePropertyDescriptor(Object object) {
+	protected void addDeviceKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Device_deviceType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Device_deviceType_feature", "_UI_Device_type"),
-				 HwresourcePackage.Literals.DEVICE__DEVICE_TYPE,
+				 getString("_UI_Device_deviceKind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Device_deviceKind_feature", "_UI_Device_type"),
+				 HwresourcePackage.Literals.DEVICE__DEVICE_KIND,
 				 true,
 				 false,
 				 false,
@@ -107,7 +107,7 @@ public class DeviceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Device.class)) {
-			case HwresourcePackage.DEVICE__DEVICE_TYPE:
+			case HwresourcePackage.DEVICE__DEVICE_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

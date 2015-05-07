@@ -2,11 +2,12 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.VisualPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 
-public class HWPortEditPolicy extends HWPortBaseEditPolicy {
+public class HWPortResourceEditPolicy extends HWPortBaseEditPolicy {
 
 	@Override
 	protected boolean isMultiHWPort() {
@@ -28,11 +29,11 @@ public class HWPortEditPolicy extends HWPortBaseEditPolicy {
 		return isMulti;
 	}
 
-	protected HWPortKind getHWPortKind() {
+	protected CommunicationKind getCommunicationKind() {
 		EObject element = getSemanticElement();
-		HWPortKind kind = HWPortKind.BUS;
-		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
+		CommunicationKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind.BUS;
 		CommunicationResource comResource = null;
+		
 		if (element != null) {
 			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE
 					.isSuperTypeOf(element.eClass())) {
@@ -43,16 +44,7 @@ public class HWPortEditPolicy extends HWPortBaseEditPolicy {
 			}
 
 		}
-		switch (modelPortKind.getValue()) {
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
-			kind = HWPortKind.BUS;
-			break;
-		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
-			kind = HWPortKind.LINK;
-			break;
-
-		}
-		return kind;
+		return modelPortKind;
 	}
 
 	@Override

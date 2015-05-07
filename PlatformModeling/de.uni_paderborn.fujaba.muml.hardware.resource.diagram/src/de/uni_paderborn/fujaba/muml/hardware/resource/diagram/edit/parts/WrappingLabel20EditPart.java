@@ -52,13 +52,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabel23EditPart extends CompartmentEditPart implements
+public class WrappingLabel20EditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5034;
+	public static final int VISUAL_ID = 5039;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -111,7 +111,7 @@ public class WrappingLabel23EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public WrappingLabel23EditPart(View view) {
+	public WrappingLabel20EditPart(View view) {
 		super(view);
 	}
 
@@ -328,10 +328,10 @@ public class WrappingLabel23EditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008,
+							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3010,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel23EditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

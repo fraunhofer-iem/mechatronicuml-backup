@@ -16,7 +16,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceType <em>Device Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceKind <em>Device Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,31 +26,31 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  */
 public interface Device extends Resource {
 	/**
-	 * Returns the value of the '<em><b>Device Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Device Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Determines the type of the Device: Sensor or Actuator.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Device Type</em>' attribute.
+	 * @return the value of the '<em>Device Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind
-	 * @see #setDeviceType(DeviceKind)
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getDevice_DeviceType()
+	 * @see #setDeviceKind(DeviceKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getDevice_DeviceKind()
 	 * @model required="true"
 	 * @generated
 	 */
-	DeviceKind getDeviceType();
+	DeviceKind getDeviceKind();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceType <em>Device Type</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceKind <em>Device Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Device Type</em>' attribute.
+	 * @param value the new value of the '<em>Device Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind
-	 * @see #getDeviceType()
+	 * @see #getDeviceKind()
 	 * @generated
 	 */
-	void setDeviceType(DeviceKind value);
+	void setDeviceKind(DeviceKind value);
 
 } // Device

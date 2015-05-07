@@ -4,7 +4,8 @@ import org.eclipse.draw2d.PositionConstants;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.AbstractRotatingBorderItemEditPolicy;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure;
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.VisualPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 
 /**
  * Base edit policy for all border items that use the CustomHWPortFigure.
@@ -43,7 +44,7 @@ public abstract class HWPortBaseEditPolicy extends
 	 * whether it is a Bus/Link-Port and whether it is a delegation port or not.
 	 */
 	public void refreshHWPortFigure() {
-		HWPortKind kind = getHWPortKind();
+		VisualPortKind kind = getVisualPortKind();
 		boolean delegation = isDelegationPort();
 		boolean isMultiPort = isMultiHWPort();
 		boolean isOptional = isOptionalPort();
@@ -53,14 +54,30 @@ public abstract class HWPortBaseEditPolicy extends
 		getHWPortFigure().setOptional(isOptional);
 	}
 
-	
-	
+	public VisualPortKind getVisualPortKind() {
+		VisualPortKind kind = VisualPortKind.BUS;
+		CommunicationKind modelPortKind = getCommunicationKind();
+		if (modelPortKind == null) {
+			modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind.BUS;
+		}
+		switch (modelPortKind.getValue()) {
+		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind.BUS_VALUE):
+			kind = VisualPortKind.BUS;
+			break;
+		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind.LINK_VALUE):
+			kind = VisualPortKind.LINK;
+			break;
+
+		}
+		return kind;
+	}
+
 	protected abstract boolean isMultiHWPort();
 
-	protected abstract HWPortKind getHWPortKind();
+	protected abstract CommunicationKind getCommunicationKind();
 
 	protected abstract boolean isDelegationPort();
-	
+
 	protected abstract boolean isOptionalPort();
 
 }

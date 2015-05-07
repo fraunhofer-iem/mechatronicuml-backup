@@ -30,7 +30,7 @@ public class CommunicationResource2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3008;
+	public static final int VISUAL_ID = 3010;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -146,13 +146,13 @@ public class CommunicationResource2EditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureResourceNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel23EditPart) {
-			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel23EditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart) {
+			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureResourceKindFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel24EditPart) {
-			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel24EditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart) {
+			((de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureResourceCardinalityFigure());
 			return true;
@@ -167,10 +167,10 @@ public class CommunicationResource2EditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel23EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel24EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart) {
 			return true;
 		}
 		return false;

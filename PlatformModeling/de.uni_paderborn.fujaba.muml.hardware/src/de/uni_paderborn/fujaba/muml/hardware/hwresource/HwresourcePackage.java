@@ -99,13 +99,13 @@ public interface HwresourcePackage extends EPackage {
 	int RESOURCE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__HWPORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE__COMMUNICATION_RESOURCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -334,13 +334,13 @@ public interface HwresourcePackage extends EPackage {
 	int ATOMIC_RESOURCE__NAME = RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_RESOURCE__HWPORTS = RESOURCE__HWPORTS;
+	int ATOMIC_RESOURCE__COMMUNICATION_RESOURCES = RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource</b></em>' container reference.
@@ -578,13 +578,13 @@ public interface HwresourcePackage extends EPackage {
 	int COMPUTING_RESOURCE__NAME = ATOMIC_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPUTING_RESOURCE__HWPORTS = ATOMIC_RESOURCE__HWPORTS;
+	int COMPUTING_RESOURCE__COMMUNICATION_RESOURCES = ATOMIC_RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource</b></em>' container reference.
@@ -822,13 +822,13 @@ public interface HwresourcePackage extends EPackage {
 	int MEMORY_RESOURCE__NAME = ATOMIC_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEMORY_RESOURCE__HWPORTS = ATOMIC_RESOURCE__HWPORTS;
+	int MEMORY_RESOURCE__COMMUNICATION_RESOURCES = ATOMIC_RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource</b></em>' container reference.
@@ -1093,22 +1093,22 @@ public interface HwresourcePackage extends EPackage {
 	int DEVICE__NAME = RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__HWPORTS = RESOURCE__HWPORTS;
+	int DEVICE__COMMUNICATION_RESOURCES = RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
-	 * The feature id for the '<em><b>Device Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Device Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE__DEVICE_TYPE = RESOURCE_FEATURE_COUNT + 0;
+	int DEVICE__DEVICE_KIND = RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Device</em>' class.
@@ -1337,13 +1337,13 @@ public interface HwresourcePackage extends EPackage {
 	int CACHE__NAME = MEMORY_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CACHE__HWPORTS = MEMORY_RESOURCE__HWPORTS;
+	int CACHE__COMMUNICATION_RESOURCES = MEMORY_RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource</b></em>' container reference.
@@ -1653,13 +1653,13 @@ public interface HwresourcePackage extends EPackage {
 	int PROGRAMMABLE_LOGIC_DEVICE__NAME = COMPUTING_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMMABLE_LOGIC_DEVICE__HWPORTS = COMPUTING_RESOURCE__HWPORTS;
+	int PROGRAMMABLE_LOGIC_DEVICE__COMMUNICATION_RESOURCES = COMPUTING_RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource</b></em>' container reference.
@@ -1897,13 +1897,13 @@ public interface HwresourcePackage extends EPackage {
 	int PROCESSOR__NAME = COMPUTING_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSOR__HWPORTS = COMPUTING_RESOURCE__HWPORTS;
+	int PROCESSOR__COMMUNICATION_RESOURCES = COMPUTING_RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Parent Structured Resource</b></em>' container reference.
@@ -2186,13 +2186,13 @@ public interface HwresourcePackage extends EPackage {
 	int STRUCTURED_RESOURCE__NAME = RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Communication Resources</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_RESOURCE__HWPORTS = RESOURCE__HWPORTS;
+	int STRUCTURED_RESOURCE__COMMUNICATION_RESOURCES = RESOURCE__COMMUNICATION_RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Atomic Resources</b></em>' containment reference list.
@@ -3775,241 +3775,6 @@ public interface HwresourcePackage extends EPackage {
 	int LINK_PROTOCOL_OPERATION_COUNT = COMMUNICATION_PROTOCOL_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HWPortImpl <em>HW Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HWPortImpl
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getHWPort()
-	 * @generated
-	 */
-	int HW_PORT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT__PARENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>HW Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>HW Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl <em>Communication Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4026,7 +3791,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__ANNOTATION = HW_PORT__ANNOTATION;
+	int COMMUNICATION_RESOURCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -4035,7 +3800,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__EXTENSION = HW_PORT__EXTENSION;
+	int COMMUNICATION_RESOURCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4044,16 +3809,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__NAME = HW_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_RESOURCE__PARENT = HW_PORT__PARENT;
+	int COMMUNICATION_RESOURCE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
@@ -4062,7 +3818,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__PORT_KIND = HW_PORT_FEATURE_COUNT + 0;
+	int COMMUNICATION_RESOURCE__PORT_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' reference.
@@ -4071,7 +3827,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__PROTOCOL = HW_PORT_FEATURE_COUNT + 1;
+	int COMMUNICATION_RESOURCE__PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -4080,7 +3836,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__CARDINALITY = HW_PORT_FEATURE_COUNT + 2;
+	int COMMUNICATION_RESOURCE__CARDINALITY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Multi HW Port</b></em>' attribute.
@@ -4089,7 +3845,16 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE__MULTI_HW_PORT = HW_PORT_FEATURE_COUNT + 3;
+	int COMMUNICATION_RESOURCE__MULTI_HW_PORT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Parent Resource</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_RESOURCE__PARENT_RESOURCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Communication Resource</em>' class.
@@ -4098,7 +3863,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE_FEATURE_COUNT = HW_PORT_FEATURE_COUNT + 4;
+	int COMMUNICATION_RESOURCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4107,7 +3872,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ECLASS = HW_PORT___ECLASS;
+	int COMMUNICATION_RESOURCE___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -4116,7 +3881,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EIS_PROXY = HW_PORT___EIS_PROXY;
+	int COMMUNICATION_RESOURCE___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -4125,7 +3890,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ERESOURCE = HW_PORT___ERESOURCE;
+	int COMMUNICATION_RESOURCE___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -4134,7 +3899,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ECONTAINER = HW_PORT___ECONTAINER;
+	int COMMUNICATION_RESOURCE___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -4143,7 +3908,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ECONTAINING_FEATURE = HW_PORT___ECONTAINING_FEATURE;
+	int COMMUNICATION_RESOURCE___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -4152,7 +3917,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ECONTAINMENT_FEATURE = HW_PORT___ECONTAINMENT_FEATURE;
+	int COMMUNICATION_RESOURCE___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -4161,7 +3926,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ECONTENTS = HW_PORT___ECONTENTS;
+	int COMMUNICATION_RESOURCE___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -4170,7 +3935,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EALL_CONTENTS = HW_PORT___EALL_CONTENTS;
+	int COMMUNICATION_RESOURCE___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -4179,7 +3944,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ECROSS_REFERENCES = HW_PORT___ECROSS_REFERENCES;
+	int COMMUNICATION_RESOURCE___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4188,7 +3953,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EGET__ESTRUCTURALFEATURE = HW_PORT___EGET__ESTRUCTURALFEATURE;
+	int COMMUNICATION_RESOURCE___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4197,7 +3962,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = HW_PORT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int COMMUNICATION_RESOURCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -4206,7 +3971,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___ESET__ESTRUCTURALFEATURE_OBJECT = HW_PORT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int COMMUNICATION_RESOURCE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -4215,7 +3980,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EIS_SET__ESTRUCTURALFEATURE = HW_PORT___EIS_SET__ESTRUCTURALFEATURE;
+	int COMMUNICATION_RESOURCE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -4224,7 +3989,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EUNSET__ESTRUCTURALFEATURE = HW_PORT___EUNSET__ESTRUCTURALFEATURE;
+	int COMMUNICATION_RESOURCE___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -4233,7 +3998,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___EINVOKE__EOPERATION_ELIST = HW_PORT___EINVOKE__EOPERATION_ELIST;
+	int COMMUNICATION_RESOURCE___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -4242,7 +4007,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___GET_EXTENSION__ECLASS = HW_PORT___GET_EXTENSION__ECLASS;
+	int COMMUNICATION_RESOURCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4251,7 +4016,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___PROVIDE_EXTENSION__ECLASS = HW_PORT___PROVIDE_EXTENSION__ECLASS;
+	int COMMUNICATION_RESOURCE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4260,7 +4025,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___GET_ANNOTATION__STRING = HW_PORT___GET_ANNOTATION__STRING;
+	int COMMUNICATION_RESOURCE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4269,7 +4034,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE___PROVIDE_ANNOTATION__STRING = HW_PORT___PROVIDE_ANNOTATION__STRING;
+	int COMMUNICATION_RESOURCE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Communication Resource</em>' class.
@@ -4278,7 +4043,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_RESOURCE_OPERATION_COUNT = HW_PORT_OPERATION_COUNT + 0;
+	int COMMUNICATION_RESOURCE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind <em>Device Kind</em>}' enum.
@@ -4288,7 +4053,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getDeviceKind()
 	 * @generated
 	 */
-	int DEVICE_KIND = 16;
+	int DEVICE_KIND = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ProcessorArchitecture <em>Processor Architecture</em>}' enum.
@@ -4298,7 +4063,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getProcessorArchitecture()
 	 * @generated
 	 */
-	int PROCESSOR_ARCHITECTURE = 17;
+	int PROCESSOR_ARCHITECTURE = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryAccessKind <em>Memory Access Kind</em>}' enum.
@@ -4308,7 +4073,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getMemoryAccessKind()
 	 * @generated
 	 */
-	int MEMORY_ACCESS_KIND = 18;
+	int MEMORY_ACCESS_KIND = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryKind <em>Memory Kind</em>}' enum.
@@ -4318,7 +4083,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getMemoryKind()
 	 * @generated
 	 */
-	int MEMORY_KIND = 19;
+	int MEMORY_KIND = 18;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ReplacementPolicy <em>Replacement Policy</em>}' enum.
@@ -4328,7 +4093,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getReplacementPolicy()
 	 * @generated
 	 */
-	int REPLACEMENT_POLICY = 20;
+	int REPLACEMENT_POLICY = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.WritePolicy <em>Write Policy</em>}' enum.
@@ -4338,17 +4103,17 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getWritePolicy()
 	 * @generated
 	 */
-	int WRITE_POLICY = 21;
+	int WRITE_POLICY = 20;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind <em>HW Port Kind</em>}' enum.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind <em>Communication Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getHWPortKind()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getCommunicationKind()
 	 * @generated
 	 */
-	int HW_PORT_KIND = 22;
+	int COMMUNICATION_KIND = 21;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocolKind <em>Bus Protocol Kind</em>}' enum.
@@ -4358,7 +4123,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getBusProtocolKind()
 	 * @generated
 	 */
-	int BUS_PROTOCOL_KIND = 23;
+	int BUS_PROTOCOL_KIND = 22;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.LinkProtocolKind <em>Link Protocol Kind</em>}' enum.
@@ -4368,7 +4133,7 @@ public interface HwresourcePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getLinkProtocolKind()
 	 * @generated
 	 */
-	int LINK_PROTOCOL_KIND = 24;
+	int LINK_PROTOCOL_KIND = 23;
 
 
 	/**
@@ -4382,15 +4147,15 @@ public interface HwresourcePackage extends EPackage {
 	EClass getResource();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getHwports <em>Hwports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getCommunicationResources <em>Communication Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Hwports</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getHwports()
+	 * @return the meta object for the containment reference list '<em>Communication Resources</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getCommunicationResources()
 	 * @see #getResource()
 	 * @generated
 	 */
-	EReference getResource_Hwports();
+	EReference getResource_CommunicationResources();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ComputingResource <em>Computing Resource</em>}'.
@@ -4456,15 +4221,15 @@ public interface HwresourcePackage extends EPackage {
 	EClass getDevice();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceType <em>Device Type</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceKind <em>Device Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Device Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceType()
+	 * @return the meta object for the attribute '<em>Device Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Device#getDeviceKind()
 	 * @see #getDevice()
 	 * @generated
 	 */
-	EAttribute getDevice_DeviceType();
+	EAttribute getDevice_DeviceKind();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache <em>Cache</em>}'.
@@ -4905,25 +4670,15 @@ public interface HwresourcePackage extends EPackage {
 	EAttribute getCommunicationResource_MultiHWPort();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort <em>HW Port</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource <em>Parent Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>HW Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort
+	 * @return the meta object for the container reference '<em>Parent Resource</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource()
+	 * @see #getCommunicationResource()
 	 * @generated
 	 */
-	EClass getHWPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParent <em>Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort#getParent()
-	 * @see #getHWPort()
-	 * @generated
-	 */
-	EReference getHWPort_Parent();
+	EReference getCommunicationResource_ParentResource();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind <em>Device Kind</em>}'.
@@ -4986,14 +4741,14 @@ public interface HwresourcePackage extends EPackage {
 	EEnum getWritePolicy();
 
 	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind <em>HW Port Kind</em>}'.
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind <em>Communication Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>HW Port Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
+	 * @return the meta object for enum '<em>Communication Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
 	 * @generated
 	 */
-	EEnum getHWPortKind();
+	EEnum getCommunicationKind();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocolKind <em>Bus Protocol Kind</em>}'.
@@ -5049,12 +4804,12 @@ public interface HwresourcePackage extends EPackage {
 		EClass RESOURCE = eINSTANCE.getResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Hwports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Communication Resources</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RESOURCE__HWPORTS = eINSTANCE.getResource_Hwports();
+		EReference RESOURCE__COMMUNICATION_RESOURCES = eINSTANCE.getResource_CommunicationResources();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ComputingResourceImpl <em>Computing Resource</em>}' class.
@@ -5111,12 +4866,12 @@ public interface HwresourcePackage extends EPackage {
 		EClass DEVICE = eINSTANCE.getDevice();
 
 		/**
-		 * The meta object literal for the '<em><b>Device Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Device Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEVICE__DEVICE_TYPE = eINSTANCE.getDevice_DeviceType();
+		EAttribute DEVICE__DEVICE_KIND = eINSTANCE.getDevice_DeviceKind();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CacheImpl <em>Cache</em>}' class.
@@ -5469,22 +5224,12 @@ public interface HwresourcePackage extends EPackage {
 		EAttribute COMMUNICATION_RESOURCE__MULTI_HW_PORT = eINSTANCE.getCommunicationResource_MultiHWPort();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HWPortImpl <em>HW Port</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HWPortImpl
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getHWPort()
-		 * @generated
-		 */
-		EClass HW_PORT = eINSTANCE.getHWPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent Resource</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HW_PORT__PARENT = eINSTANCE.getHWPort_Parent();
+		EReference COMMUNICATION_RESOURCE__PARENT_RESOURCE = eINSTANCE.getCommunicationResource_ParentResource();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind <em>Device Kind</em>}' enum.
@@ -5547,14 +5292,14 @@ public interface HwresourcePackage extends EPackage {
 		EEnum WRITE_POLICY = eINSTANCE.getWritePolicy();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind <em>HW Port Kind</em>}' enum.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind <em>Communication Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getHWPortKind()
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+		 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HwresourcePackageImpl#getCommunicationKind()
 		 * @generated
 		 */
-		EEnum HW_PORT_KIND = eINSTANCE.getHWPortKind();
+		EEnum COMMUNICATION_KIND = eINSTANCE.getCommunicationKind();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocolKind <em>Bus Protocol Kind</em>}' enum.

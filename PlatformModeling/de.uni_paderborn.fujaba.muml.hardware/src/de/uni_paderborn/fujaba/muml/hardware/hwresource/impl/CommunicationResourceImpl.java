@@ -3,10 +3,11 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 
 import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,6 +15,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.core.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,12 +29,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#isMultiHWPort <em>Multi HW Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#getParentResource <em>Parent Resource</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements CommunicationResource<T> {
+public class CommunicationResourceImpl extends NamedElementImpl implements CommunicationResource {
 	/**
 	 * The cached setting delegate for the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -96,12 +100,10 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * This is specialized for the more specific type known in this context.
 	 * @generated
 	 */
-	@Override
-	public void setParent(T newParent) {
-		super.setParent(newParent);
+	public CommunicationKind getPortKind() {
+		return (CommunicationKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -109,16 +111,7 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortKind getPortKind() {
-		return (HWPortKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPortKind(HWPortKind newPortKind) {
+	public void setPortKind(CommunicationKind newPortKind) {
 		PORT_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPortKind);
 	}
 
@@ -226,13 +219,86 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Resource getParentResource() {
+		if (eContainerFeatureID() != HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE) return null;
+		return (Resource)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentResource(Resource newParentResource, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentResource, HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentResource(Resource newParentResource) {
+		if (newParentResource != eInternalContainer() || (eContainerFeatureID() != HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE && newParentResource != null)) {
+			if (EcoreUtil.isAncestor(this, newParentResource))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentResource != null)
+				msgs = ((InternalEObject)newParentResource).eInverseAdd(this, HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES, Resource.class, msgs);
+			msgs = basicSetParentResource(newParentResource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE, newParentResource, newParentResource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentResource((Resource)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case HwresourcePackage.COMMUNICATION_RESOURCE__CARDINALITY:
 				return basicSetCardinality(null, msgs);
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				return basicSetParentResource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				return eInternalContainer().eInverseRemove(this, HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES, Resource.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -252,6 +318,8 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 				return getCardinality();
 			case HwresourcePackage.COMMUNICATION_RESOURCE__MULTI_HW_PORT:
 				return isMultiHWPort();
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				return getParentResource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,7 +333,7 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HwresourcePackage.COMMUNICATION_RESOURCE__PORT_KIND:
-				setPortKind((HWPortKind)newValue);
+				setPortKind((CommunicationKind)newValue);
 				return;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__PROTOCOL:
 				setProtocol((CommunicationProtocol)newValue);
@@ -275,6 +343,9 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 				return;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__MULTI_HW_PORT:
 				setMultiHWPort((Boolean)newValue);
+				return;
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				setParentResource((Resource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -300,6 +371,9 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 			case HwresourcePackage.COMMUNICATION_RESOURCE__MULTI_HW_PORT:
 				MULTI_HW_PORT__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				setParentResource((Resource)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -320,6 +394,8 @@ public class CommunicationResourceImpl<T> extends HWPortImpl<T> implements Commu
 				return cardinality != null;
 			case HwresourcePackage.COMMUNICATION_RESOURCE__MULTI_HW_PORT:
 				return MULTI_HW_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE:
+				return getParentResource() != null;
 		}
 		return super.eIsSet(featureID);
 	}

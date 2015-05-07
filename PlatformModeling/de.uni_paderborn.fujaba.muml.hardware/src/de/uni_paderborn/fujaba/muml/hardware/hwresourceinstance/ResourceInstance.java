@@ -2,9 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
@@ -58,7 +56,8 @@ public interface ResourceInstance extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Hwports</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort}&lt;de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance>.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getParentResourceInstance <em>Parent Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -68,9 +67,10 @@ public interface ResourceInstance extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hwports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getResourceInstance_Hwports()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getParentResourceInstance
+	 * @model opposite="parentResourceInstance" containment="true"
 	 * @generated
 	 */
-	EList<HWPort<ResourceInstance>> getHwports();
+	EList<HWPort> getHwports();
 
 } // ResourceInstance

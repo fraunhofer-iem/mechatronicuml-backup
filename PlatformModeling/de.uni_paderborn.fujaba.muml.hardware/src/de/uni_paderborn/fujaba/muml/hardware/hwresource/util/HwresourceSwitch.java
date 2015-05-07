@@ -26,7 +26,7 @@ import org.storydriven.core.NamedElement;
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage
  * @generated
  */
-public class HwresourceSwitch<T1> extends Switch<T1> {
+public class HwresourceSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -68,11 +68,11 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	@Override
-	protected T1 doSwitch(int classifierID, EObject theEObject) {
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case HwresourcePackage.RESOURCE: {
 				Resource resource = (Resource)theEObject;
-				T1 result = caseResource(resource);
+				T result = caseResource(resource);
 				if (result == null) result = caseNamedElement(resource);
 				if (result == null) result = caseExtendableElement(resource);
 				if (result == null) result = defaultCase(theEObject);
@@ -80,7 +80,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.COMPUTING_RESOURCE: {
 				ComputingResource computingResource = (ComputingResource)theEObject;
-				T1 result = caseComputingResource(computingResource);
+				T result = caseComputingResource(computingResource);
 				if (result == null) result = caseAtomicResource(computingResource);
 				if (result == null) result = caseResource(computingResource);
 				if (result == null) result = caseNamedElement(computingResource);
@@ -90,7 +90,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.MEMORY_RESOURCE: {
 				MemoryResource memoryResource = (MemoryResource)theEObject;
-				T1 result = caseMemoryResource(memoryResource);
+				T result = caseMemoryResource(memoryResource);
 				if (result == null) result = caseAtomicResource(memoryResource);
 				if (result == null) result = caseResource(memoryResource);
 				if (result == null) result = caseNamedElement(memoryResource);
@@ -100,7 +100,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.DEVICE: {
 				Device device = (Device)theEObject;
-				T1 result = caseDevice(device);
+				T result = caseDevice(device);
 				if (result == null) result = caseResource(device);
 				if (result == null) result = caseNamedElement(device);
 				if (result == null) result = caseExtendableElement(device);
@@ -109,7 +109,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.CACHE: {
 				Cache cache = (Cache)theEObject;
-				T1 result = caseCache(cache);
+				T result = caseCache(cache);
 				if (result == null) result = caseMemoryResource(cache);
 				if (result == null) result = caseAtomicResource(cache);
 				if (result == null) result = caseResource(cache);
@@ -120,7 +120,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.PROGRAMMABLE_LOGIC_DEVICE: {
 				ProgrammableLogicDevice programmableLogicDevice = (ProgrammableLogicDevice)theEObject;
-				T1 result = caseProgrammableLogicDevice(programmableLogicDevice);
+				T result = caseProgrammableLogicDevice(programmableLogicDevice);
 				if (result == null) result = caseComputingResource(programmableLogicDevice);
 				if (result == null) result = caseAtomicResource(programmableLogicDevice);
 				if (result == null) result = caseResource(programmableLogicDevice);
@@ -131,7 +131,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.PROCESSOR: {
 				Processor processor = (Processor)theEObject;
-				T1 result = caseProcessor(processor);
+				T result = caseProcessor(processor);
 				if (result == null) result = caseComputingResource(processor);
 				if (result == null) result = caseAtomicResource(processor);
 				if (result == null) result = caseResource(processor);
@@ -142,7 +142,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.ATOMIC_RESOURCE: {
 				AtomicResource atomicResource = (AtomicResource)theEObject;
-				T1 result = caseAtomicResource(atomicResource);
+				T result = caseAtomicResource(atomicResource);
 				if (result == null) result = caseResource(atomicResource);
 				if (result == null) result = caseNamedElement(atomicResource);
 				if (result == null) result = caseExtendableElement(atomicResource);
@@ -151,7 +151,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.STRUCTURED_RESOURCE: {
 				StructuredResource structuredResource = (StructuredResource)theEObject;
-				T1 result = caseStructuredResource(structuredResource);
+				T result = caseStructuredResource(structuredResource);
 				if (result == null) result = caseResource(structuredResource);
 				if (result == null) result = caseNamedElement(structuredResource);
 				if (result == null) result = caseExtendableElement(structuredResource);
@@ -160,7 +160,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.RESOURCE_REPOSITORY: {
 				ResourceRepository resourceRepository = (ResourceRepository)theEObject;
-				T1 result = caseResourceRepository(resourceRepository);
+				T result = caseResourceRepository(resourceRepository);
 				if (result == null) result = caseCommentableElement(resourceRepository);
 				if (result == null) result = caseExtendableElement(resourceRepository);
 				if (result == null) result = defaultCase(theEObject);
@@ -168,7 +168,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.COMMUNICATION_PROTOCOL_REPOSITORY: {
 				CommunicationProtocolRepository communicationProtocolRepository = (CommunicationProtocolRepository)theEObject;
-				T1 result = caseCommunicationProtocolRepository(communicationProtocolRepository);
+				T result = caseCommunicationProtocolRepository(communicationProtocolRepository);
 				if (result == null) result = caseNamedElement(communicationProtocolRepository);
 				if (result == null) result = caseExtendableElement(communicationProtocolRepository);
 				if (result == null) result = defaultCase(theEObject);
@@ -176,7 +176,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.COMMUNICATION_PROTOCOL: {
 				CommunicationProtocol communicationProtocol = (CommunicationProtocol)theEObject;
-				T1 result = caseCommunicationProtocol(communicationProtocol);
+				T result = caseCommunicationProtocol(communicationProtocol);
 				if (result == null) result = caseNamedElement(communicationProtocol);
 				if (result == null) result = caseExtendableElement(communicationProtocol);
 				if (result == null) result = defaultCase(theEObject);
@@ -184,7 +184,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.BUS_PROTOCOL: {
 				BusProtocol busProtocol = (BusProtocol)theEObject;
-				T1 result = caseBusProtocol(busProtocol);
+				T result = caseBusProtocol(busProtocol);
 				if (result == null) result = caseCommunicationProtocol(busProtocol);
 				if (result == null) result = caseNamedElement(busProtocol);
 				if (result == null) result = caseExtendableElement(busProtocol);
@@ -193,7 +193,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 			}
 			case HwresourcePackage.LINK_PROTOCOL: {
 				LinkProtocol linkProtocol = (LinkProtocol)theEObject;
-				T1 result = caseLinkProtocol(linkProtocol);
+				T result = caseLinkProtocol(linkProtocol);
 				if (result == null) result = caseCommunicationProtocol(linkProtocol);
 				if (result == null) result = caseNamedElement(linkProtocol);
 				if (result == null) result = caseExtendableElement(linkProtocol);
@@ -201,19 +201,10 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 				return result;
 			}
 			case HwresourcePackage.COMMUNICATION_RESOURCE: {
-				CommunicationResource<?> communicationResource = (CommunicationResource<?>)theEObject;
-				T1 result = caseCommunicationResource(communicationResource);
-				if (result == null) result = caseHWPort(communicationResource);
+				CommunicationResource communicationResource = (CommunicationResource)theEObject;
+				T result = caseCommunicationResource(communicationResource);
 				if (result == null) result = caseNamedElement(communicationResource);
 				if (result == null) result = caseExtendableElement(communicationResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case HwresourcePackage.HW_PORT: {
-				HWPort<?> hwPort = (HWPort<?>)theEObject;
-				T1 result = caseHWPort(hwPort);
-				if (result == null) result = caseNamedElement(hwPort);
-				if (result == null) result = caseExtendableElement(hwPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -232,7 +223,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseResource(Resource object) {
+	public T caseResource(Resource object) {
 		return null;
 	}
 
@@ -247,7 +238,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseComputingResource(ComputingResource object) {
+	public T caseComputingResource(ComputingResource object) {
 		return null;
 	}
 
@@ -262,7 +253,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseMemoryResource(MemoryResource object) {
+	public T caseMemoryResource(MemoryResource object) {
 		return null;
 	}
 
@@ -277,7 +268,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseDevice(Device object) {
+	public T caseDevice(Device object) {
 		return null;
 	}
 
@@ -292,7 +283,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseCache(Cache object) {
+	public T caseCache(Cache object) {
 		return null;
 	}
 
@@ -307,7 +298,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseProgrammableLogicDevice(ProgrammableLogicDevice object) {
+	public T caseProgrammableLogicDevice(ProgrammableLogicDevice object) {
 		return null;
 	}
 
@@ -322,7 +313,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseProcessor(Processor object) {
+	public T caseProcessor(Processor object) {
 		return null;
 	}
 
@@ -337,7 +328,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAtomicResource(AtomicResource object) {
+	public T caseAtomicResource(AtomicResource object) {
 		return null;
 	}
 
@@ -352,7 +343,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseStructuredResource(StructuredResource object) {
+	public T caseStructuredResource(StructuredResource object) {
 		return null;
 	}
 
@@ -367,7 +358,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseResourceRepository(ResourceRepository object) {
+	public T caseResourceRepository(ResourceRepository object) {
 		return null;
 	}
 
@@ -382,7 +373,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseCommunicationProtocolRepository(CommunicationProtocolRepository object) {
+	public T caseCommunicationProtocolRepository(CommunicationProtocolRepository object) {
 		return null;
 	}
 
@@ -397,7 +388,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseCommunicationProtocol(CommunicationProtocol object) {
+	public T caseCommunicationProtocol(CommunicationProtocol object) {
 		return null;
 	}
 
@@ -412,7 +403,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseBusProtocol(BusProtocol object) {
+	public T caseBusProtocol(BusProtocol object) {
 		return null;
 	}
 
@@ -427,7 +418,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseLinkProtocol(LinkProtocol object) {
+	public T caseLinkProtocol(LinkProtocol object) {
 		return null;
 	}
 
@@ -442,22 +433,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T> T1 caseCommunicationResource(CommunicationResource<T> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>HW Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>HW Port</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <T> T1 caseHWPort(HWPort<T> object) {
+	public T caseCommunicationResource(CommunicationResource object) {
 		return null;
 	}
 
@@ -472,7 +448,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseExtendableElement(ExtendableElement object) {
+	public T caseExtendableElement(ExtendableElement object) {
 		return null;
 	}
 
@@ -487,7 +463,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseNamedElement(NamedElement object) {
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
@@ -502,7 +478,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseCommentableElement(CommentableElement object) {
+	public T caseCommentableElement(CommentableElement object) {
 		return null;
 	}
 
@@ -518,7 +494,7 @@ public class HwresourceSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	@Override
-	public T1 defaultCase(EObject object) {
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

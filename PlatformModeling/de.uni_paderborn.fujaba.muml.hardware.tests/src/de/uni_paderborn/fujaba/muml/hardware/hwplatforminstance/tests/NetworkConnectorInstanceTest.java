@@ -176,10 +176,10 @@ public class NetworkConnectorInstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance#setConnectorKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind) <em>Connector Kind</em>}' feature setter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance#setConnectorKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Connector Kind</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance#setConnectorKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance#setConnectorKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
 	 * @generated
 	 */
 	public void testSetConnectorKind() {

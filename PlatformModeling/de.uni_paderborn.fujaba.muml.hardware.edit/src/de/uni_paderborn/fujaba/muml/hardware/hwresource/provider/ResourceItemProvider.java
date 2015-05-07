@@ -4,10 +4,10 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource.provider;
 
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -63,7 +63,7 @@ public class ResourceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(HwresourcePackage.Literals.RESOURCE__HWPORTS);
+			childrenFeatures.add(HwresourcePackage.Literals.RESOURCE__COMMUNICATION_RESOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -107,7 +107,7 @@ public class ResourceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Resource.class)) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -127,13 +127,13 @@ public class ResourceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE__HWPORTS,
+				(HwresourcePackage.Literals.RESOURCE__COMMUNICATION_RESOURCES,
 				 HwresourceFactory.eINSTANCE.createCommunicationResource()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE__HWPORTS,
-				 HwplatforminstanceFactory.eINSTANCE.createHWPortInstance()));
+				(HwresourcePackage.Literals.RESOURCE__COMMUNICATION_RESOURCES,
+				 HwresourceinstanceFactory.eINSTANCE.createHWPortResource()));
 	}
 
 	/**

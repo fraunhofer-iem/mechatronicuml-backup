@@ -2,18 +2,15 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointInstanceImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.HWPortImpl;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -23,10 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,9 +29,7 @@ import org.storydriven.core.CorePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getParentResourceInstance <em>Parent Resource Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getHwPortType <em>Hw Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getProtocol <em>Protocol</em>}</li>
@@ -48,47 +40,7 @@ import org.storydriven.core.CorePackage;
  *
  * @generated
  */
-public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements HWPortInstance {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getConnectorInstances() <em>Connector Instances</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnectorInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorInstance> connectorInstances;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected ConnectorEndpoint type;
-
+public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements HWPortInstance {
 	/**
 	 * The cached setting delegate for the '{@link #getHwPortType() <em>Hw Port Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -161,12 +113,11 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * This is specialized for the more specific type known in this context.
 	 * @generated
 	 */
-	@Override
-	public void setParent(ResourceInstance newParent) {
-		super.setParent(newParent);
+	public ResourceInstance getParentResourceInstance() {
+		if (eContainerFeatureID() != HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE) return null;
+		return (ResourceInstance)eInternalContainer();
 	}
 
 	/**
@@ -174,8 +125,9 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComment() {
-		return comment;
+	public NotificationChain basicSetParentResourceInstance(ResourceInstance newParentResourceInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentResourceInstance, HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE, msgs);
+		return msgs;
 	}
 
 	/**
@@ -183,61 +135,20 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorInstance> getConnectorInstances() {
-		if (connectorInstances == null) {
-			connectorInstances = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorInstance>(ConnectorInstance.class, this, HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES, ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES);
+	public void setParentResourceInstance(ResourceInstance newParentResourceInstance) {
+		if (newParentResourceInstance != eInternalContainer() || (eContainerFeatureID() != HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE && newParentResourceInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newParentResourceInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentResourceInstance != null)
+				msgs = ((InternalEObject)newParentResourceInstance).eInverseAdd(this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS, ResourceInstance.class, msgs);
+			msgs = basicSetParentResourceInstance(newParentResourceInstance, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return connectorInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConnectorEndpoint getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (ConnectorEndpoint)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE, oldType, type));
-			}
-		}
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConnectorEndpoint basicGetType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(ConnectorEndpoint newType) {
-		ConnectorEndpoint oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE, oldType, type));
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE, newParentResourceInstance, newParentResourceInstance));
 	}
 
 	/**
@@ -246,8 +157,8 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public CommunicationResource<Resource> getHwPortType() {
-		return (CommunicationResource<Resource>)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CommunicationResource getHwPortType() {
+		return (CommunicationResource)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -255,8 +166,8 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource<Resource> basicGetHwPortType() {
-		return (CommunicationResource<Resource>)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public CommunicationResource basicGetHwPortType() {
+		return (CommunicationResource)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -264,7 +175,7 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHwPortType(CommunicationResource<Resource> newHwPortType) {
+	public void setHwPortType(CommunicationResource newHwPortType) {
 		HW_PORT_TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newHwPortType);
 	}
 
@@ -301,8 +212,8 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortKind getPortKind() {
-		return (HWPortKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CommunicationKind getPortKind() {
+		return (CommunicationKind)PORT_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -310,7 +221,7 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPortKind(HWPortKind newPortKind) {
+	public void setPortKind(CommunicationKind newPortKind) {
 		PORT_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPortKind);
 	}
 
@@ -341,8 +252,10 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorInstances()).basicAdd(otherEnd, msgs);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentResourceInstance((ResourceInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -355,8 +268,8 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES:
-				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				return basicSetParentResourceInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -367,15 +280,24 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS, ResourceInstance.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT:
-				return getComment();
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES:
-				return getConnectorInstances();
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				return getParentResourceInstance();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
 				if (resolve) return getHwPortType();
 				return basicGetHwPortType();
@@ -401,25 +323,18 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT:
-				setComment((String)newValue);
-				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
-				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
-				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE:
-				setType((ConnectorEndpoint)newValue);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				setParentResourceInstance((ResourceInstance)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				setHwPortType((CommunicationResource<Resource>)newValue);
+				setHwPortType((CommunicationResource)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 				getConnectedNetworkConnectorInstances().clear();
 				getConnectedNetworkConnectorInstances().addAll((Collection<? extends NetworkConnectorInstance>)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
-				setPortKind((HWPortKind)newValue);
+				setPortKind((CommunicationKind)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				setIsNetworkInterface((Boolean)newValue);
@@ -436,17 +351,11 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
-				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE:
-				setType((ConnectorEndpoint)null);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				setParentResourceInstance((ResourceInstance)null);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				setHwPortType((CommunicationResource<Resource>)null);
+				setHwPortType((CommunicationResource)null);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 				getConnectedNetworkConnectorInstances().clear();
@@ -469,12 +378,8 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES:
-				return connectorInstances != null && !connectorInstances.isEmpty();
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE:
-				return type != null;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
+				return getParentResourceInstance() != null;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
 				return HW_PORT_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
@@ -496,16 +401,9 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
+		if (baseClass == HWPort.class) {
 			switch (derivedFeatureID) {
-				case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == ConnectorEndpointInstance.class) {
-			switch (derivedFeatureID) {
-				case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES: return ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES;
-				case HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE: return ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__TYPE;
+				case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE: return HwresourceinstancePackage.HW_PORT__PARENT_RESOURCE_INSTANCE;
 				default: return -1;
 			}
 		}
@@ -519,36 +417,13 @@ public class HWPortInstanceImpl extends HWPortImpl<ResourceInstance> implements 
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
+		if (baseClass == HWPort.class) {
 			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == ConnectorEndpointInstance.class) {
-			switch (baseFeatureID) {
-				case ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES: return HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTOR_INSTANCES;
-				case ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__TYPE: return HwplatforminstancePackage.HW_PORT_INSTANCE__TYPE;
+				case HwresourceinstancePackage.HW_PORT__PARENT_RESOURCE_INSTANCE: return HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //HWPortInstanceImpl

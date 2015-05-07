@@ -28,7 +28,7 @@ public class DeviceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorDeviceType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDeviceKind_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -36,7 +36,7 @@ public class DeviceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorDeviceType_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorDeviceKind_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -51,19 +51,19 @@ public class DeviceEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDeviceType_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDeviceType_GeneralTab_Editor() {
-		if (this.editorDeviceType_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorDeviceKind_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorDeviceKind_GeneralTab_Editor() {
+		if (this.editorDeviceKind_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-					.getDevice_DeviceType();
+					.getDevice_DeviceKind();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 					adapterFactory, feature);
 
 			editor.setTooltipMessage("Determines the type of the Device: Sensor or Actuator.");
 
-			this.editorDeviceType_GeneralTab = editor;
+			this.editorDeviceKind_GeneralTab = editor;
 		}
-		return this.editorDeviceType_GeneralTab;
+		return this.editorDeviceKind_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;

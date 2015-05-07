@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresource;
 
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#isMultiHWPort <em>Multi HW Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource <em>Parent Resource</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,35 +29,35 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * @model
  * @generated
  */
-public interface CommunicationResource<T> extends HWPort<T> {
+public interface CommunicationResource extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Port Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Determines if this HWPort is  a bus or a link port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-	 * @see #setPortKind(HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+	 * @see #setPortKind(CommunicationKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationResource_PortKind()
 	 * @model required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.protocol.oclIsUndefined()) then\n\thwresource::HWPortKind::BUS\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.protocol.oclIsUndefined()) then\r\n\thwresource::CommunicationKind::BUS\r\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\r\n\t\thwresource::CommunicationKind::BUS\r\nelse\r\n\t\thwresource::CommunicationKind::LINK\r\nendif endif'"
 	 * @generated
 	 */
-	HWPortKind getPortKind();
+	CommunicationKind getPortKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getPortKind <em>Port Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
 	 * @see #getPortKind()
 	 * @generated
 	 */
-	void setPortKind(HWPortKind value);
+	void setPortKind(CommunicationKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Protocol</b></em>' reference.
@@ -133,5 +135,33 @@ public interface CommunicationResource<T> extends HWPort<T> {
 	 * @generated
 	 */
 	void setMultiHWPort(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent Resource</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getCommunicationResources <em>Communication Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Resource</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Resource</em>' container reference.
+	 * @see #setParentResource(Resource)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationResource_ParentResource()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getCommunicationResources
+	 * @model opposite="communicationResources" transient="false"
+	 * @generated
+	 */
+	Resource getParentResource();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource <em>Parent Resource</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Resource</em>' container reference.
+	 * @see #getParentResource()
+	 * @generated
+	 */
+	void setParentResource(Resource value);
 
 } // CommunicationResource

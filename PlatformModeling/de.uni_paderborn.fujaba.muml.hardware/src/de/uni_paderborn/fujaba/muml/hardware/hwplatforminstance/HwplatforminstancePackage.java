@@ -3,14 +3,10 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.storydriven.core.CorePackage;
 
 /**
@@ -617,7 +613,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__ANNOTATION = HwresourcePackage.HW_PORT__ANNOTATION;
+	int HW_PORT_INSTANCE__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -626,7 +622,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__EXTENSION = HwresourcePackage.HW_PORT__EXTENSION;
+	int HW_PORT_INSTANCE__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -635,16 +631,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__NAME = HwresourcePackage.HW_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT_INSTANCE__PARENT = HwresourcePackage.HW_PORT__PARENT;
+	int HW_PORT_INSTANCE__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -653,7 +640,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__COMMENT = HwresourcePackage.HW_PORT_FEATURE_COUNT + 0;
+	int HW_PORT_INSTANCE__COMMENT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
@@ -662,7 +649,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__CONNECTOR_INSTANCES = HwresourcePackage.HW_PORT_FEATURE_COUNT + 1;
+	int HW_PORT_INSTANCE__CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -671,7 +658,16 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__TYPE = HwresourcePackage.HW_PORT_FEATURE_COUNT + 2;
+	int HW_PORT_INSTANCE__TYPE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Parent Resource Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Hw Port Type</b></em>' reference.
@@ -680,7 +676,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__HW_PORT_TYPE = HwresourcePackage.HW_PORT_FEATURE_COUNT + 3;
+	int HW_PORT_INSTANCE__HW_PORT_TYPE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Connected Network Connector Instances</b></em>' reference list.
@@ -689,7 +685,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = HwresourcePackage.HW_PORT_FEATURE_COUNT + 4;
+	int HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' reference.
@@ -698,7 +694,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__PROTOCOL = HwresourcePackage.HW_PORT_FEATURE_COUNT + 5;
+	int HW_PORT_INSTANCE__PROTOCOL = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
@@ -707,7 +703,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__PORT_KIND = HwresourcePackage.HW_PORT_FEATURE_COUNT + 6;
+	int HW_PORT_INSTANCE__PORT_KIND = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Network Interface</b></em>' attribute.
@@ -716,7 +712,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__IS_NETWORK_INTERFACE = HwresourcePackage.HW_PORT_FEATURE_COUNT + 7;
+	int HW_PORT_INSTANCE__IS_NETWORK_INTERFACE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>HW Port Instance</em>' class.
@@ -725,7 +721,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE_FEATURE_COUNT = HwresourcePackage.HW_PORT_FEATURE_COUNT + 8;
+	int HW_PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -734,7 +730,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ECLASS = HwresourcePackage.HW_PORT___ECLASS;
+	int HW_PORT_INSTANCE___ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -743,7 +739,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EIS_PROXY = HwresourcePackage.HW_PORT___EIS_PROXY;
+	int HW_PORT_INSTANCE___EIS_PROXY = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -752,7 +748,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ERESOURCE = HwresourcePackage.HW_PORT___ERESOURCE;
+	int HW_PORT_INSTANCE___ERESOURCE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -761,7 +757,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ECONTAINER = HwresourcePackage.HW_PORT___ECONTAINER;
+	int HW_PORT_INSTANCE___ECONTAINER = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -770,7 +766,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ECONTAINING_FEATURE = HwresourcePackage.HW_PORT___ECONTAINING_FEATURE;
+	int HW_PORT_INSTANCE___ECONTAINING_FEATURE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -779,7 +775,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ECONTAINMENT_FEATURE = HwresourcePackage.HW_PORT___ECONTAINMENT_FEATURE;
+	int HW_PORT_INSTANCE___ECONTAINMENT_FEATURE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -788,7 +784,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ECONTENTS = HwresourcePackage.HW_PORT___ECONTENTS;
+	int HW_PORT_INSTANCE___ECONTENTS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -797,7 +793,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EALL_CONTENTS = HwresourcePackage.HW_PORT___EALL_CONTENTS;
+	int HW_PORT_INSTANCE___EALL_CONTENTS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -806,7 +802,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ECROSS_REFERENCES = HwresourcePackage.HW_PORT___ECROSS_REFERENCES;
+	int HW_PORT_INSTANCE___ECROSS_REFERENCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -815,7 +811,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE = HwresourcePackage.HW_PORT___EGET__ESTRUCTURALFEATURE;
+	int HW_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -824,7 +820,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = HwresourcePackage.HW_PORT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int HW_PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -833,7 +829,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = HwresourcePackage.HW_PORT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int HW_PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -842,7 +838,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = HwresourcePackage.HW_PORT___EIS_SET__ESTRUCTURALFEATURE;
+	int HW_PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -851,7 +847,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = HwresourcePackage.HW_PORT___EUNSET__ESTRUCTURALFEATURE;
+	int HW_PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -860,7 +856,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___EINVOKE__EOPERATION_ELIST = HwresourcePackage.HW_PORT___EINVOKE__EOPERATION_ELIST;
+	int HW_PORT_INSTANCE___EINVOKE__EOPERATION_ELIST = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -869,7 +865,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___GET_EXTENSION__ECLASS = HwresourcePackage.HW_PORT___GET_EXTENSION__ECLASS;
+	int HW_PORT_INSTANCE___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -878,7 +874,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS = HwresourcePackage.HW_PORT___PROVIDE_EXTENSION__ECLASS;
+	int HW_PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -887,7 +883,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___GET_ANNOTATION__STRING = HwresourcePackage.HW_PORT___GET_ANNOTATION__STRING;
+	int HW_PORT_INSTANCE___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -896,7 +892,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE___PROVIDE_ANNOTATION__STRING = HwresourcePackage.HW_PORT___PROVIDE_ANNOTATION__STRING;
+	int HW_PORT_INSTANCE___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>HW Port Instance</em>' class.
@@ -905,7 +901,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE_OPERATION_COUNT = HwresourcePackage.HW_PORT_OPERATION_COUNT + 0;
+	int HW_PORT_INSTANCE_OPERATION_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.NetworkingHardwareInstanceImpl <em>Networking Hardware Instance</em>}' class.

@@ -118,7 +118,7 @@ public interface HwresourceFactory extends EFactory {
 	 * @return a new object of class '<em>Communication Resource</em>'.
 	 * @generated
 	 */
-	<T> CommunicationResource<T> createCommunicationResource();
+	CommunicationResource createCommunicationResource();
 
 	/**
 	 * Returns the package supported by this factory.

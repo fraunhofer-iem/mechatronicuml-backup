@@ -3,11 +3,11 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointInstanceItemProvider;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.provider.HWPortItemProvider;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -17,7 +17,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance} object.
@@ -26,7 +25,7 @@ import org.storydriven.core.CorePackage;
  * @generated
  */
 public class HWPortInstanceItemProvider
-	extends HWPortItemProvider {
+	extends ConnectorEndpointInstanceItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,9 +47,7 @@ public class HWPortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addConnectorInstancesPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
+			addParentResourceInstancePropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 			addIsNetworkInterfacePropertyDescriptor(object);
 		}
@@ -58,66 +55,22 @@ public class HWPortInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Parent Resource Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addParentResourceInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
+				 getString("_UI_HWPort_parentResourceInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parentResourceInstance_feature", "_UI_HWPort_type"),
+				 HwresourceinstancePackage.Literals.HW_PORT__PARENT_RESOURCE_INSTANCE,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connector Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorEndpointInstance_connectorInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorEndpointInstance_connectorInstances_feature", "_UI_ConnectorEndpointInstance_type"),
-				 ConnectorPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES,
-				 true,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorEndpointInstance_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorEndpointInstance_type_feature", "_UI_ConnectorEndpointInstance_type"),
-				 ConnectorPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE__TYPE,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));
@@ -204,7 +157,6 @@ public class HWPortInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HWPortInstance.class)) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMENT:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:

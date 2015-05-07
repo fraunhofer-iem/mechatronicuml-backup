@@ -104,9 +104,9 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/?StorageMemoryInstance", de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3013); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresource/1.0/?CommunicationResource", de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CommunicationResource_3014); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/?HWPortResource", de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPortResource_3015); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/?ProcessorInstance?ownedCacheInstance", de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4002); //$NON-NLS-1$
@@ -184,8 +184,8 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 			return getProcessingMemoryInstance_3012Text(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
 			return getStorageMemoryInstance_3013Text(view);
-		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-			return getCommunicationResource_3014Text(view);
+		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID:
+			return getHWPortResource_3015Text(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
 			return getProcessorInstanceOwnedCacheInstance_4002Text(view);
 		}
@@ -388,10 +388,10 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getCommunicationResource_3014Text(View view) {
+	private String getHWPortResource_3015Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CommunicationResource_3014,
+						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPortResource_3015,
 						view.getElement() != null ? view.getElement() : view,
 						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 								.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
@@ -402,7 +402,7 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 		} else {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5068); //$NON-NLS-1$
+							"Parser was not found for label " + 5069); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

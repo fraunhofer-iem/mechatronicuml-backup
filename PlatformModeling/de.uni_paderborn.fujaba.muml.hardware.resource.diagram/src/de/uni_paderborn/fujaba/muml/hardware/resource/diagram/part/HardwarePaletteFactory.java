@@ -97,8 +97,8 @@ public class HardwarePaletteFactory {
 	 */
 	private ToolEntry createCommunicationResource2CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3001);
-		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3008);
+		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3009);
+		types.add(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3010);
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationResource2CreationTool_desc,

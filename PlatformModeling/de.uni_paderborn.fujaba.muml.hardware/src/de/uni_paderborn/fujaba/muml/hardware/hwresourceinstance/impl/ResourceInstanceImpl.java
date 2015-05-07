@@ -2,8 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import java.util.Collection;
@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
@@ -40,7 +40,7 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HWPort<ResourceInstance>> hwports;
+	protected EList<HWPort> hwports;
 
 	/**
 	 * The cached value of the '{@link #getResourceType() <em>Resource Type</em>}' reference.
@@ -76,9 +76,9 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HWPort<ResourceInstance>> getHwports() {
+	public EList<HWPort> getHwports() {
 		if (hwports == null) {
-			hwports = new EObjectContainmentEList<HWPort<ResourceInstance>>(HWPort.class, this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS);
+			hwports = new EObjectContainmentWithInverseEList<HWPort>(HWPort.class, this, HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS, HwresourceinstancePackage.HW_PORT__PARENT_RESOURCE_INSTANCE);
 		}
 		return hwports;
 	}
@@ -126,6 +126,21 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getHwports()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -163,7 +178,7 @@ public abstract class ResourceInstanceImpl extends NamedElementImpl implements R
 		switch (featureID) {
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__HWPORTS:
 				getHwports().clear();
-				getHwports().addAll((Collection<? extends HWPort<ResourceInstance>>)newValue);
+				getHwports().addAll((Collection<? extends HWPort>)newValue);
 				return;
 			case HwresourceinstancePackage.RESOURCE_INSTANCE__RESOURCE_TYPE:
 				setResourceType((Resource)newValue);

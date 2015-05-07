@@ -52,7 +52,7 @@ public class DeviceCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-				.getResource_Hwports();
+				.getResource_CommunicationResources();
 	}
 
 	/**

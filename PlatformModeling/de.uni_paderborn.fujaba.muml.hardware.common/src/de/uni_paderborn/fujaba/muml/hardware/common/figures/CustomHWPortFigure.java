@@ -21,7 +21,7 @@ import org.eclipse.swt.graphics.Color;
  */
 public class CustomHWPortFigure extends RectangleFigure {
 
-	public enum HWPortKind {
+	public enum VisualPortKind {
 		BUS, LINK
 	}
 
@@ -60,15 +60,15 @@ public class CustomHWPortFigure extends RectangleFigure {
 		// this.setBorder(new MarginBorder(0));
 		createContents();
 		setDelegationPort(false);
-		setHWPortKind(HWPortKind.BUS);
+		setHWPortKind(VisualPortKind.BUS);
 		setMulti(false);
 	}
 
-	public void setHWPortKind(HWPortKind portKind) {
-		this.getFigureBusArrow().setVisible(portKind == HWPortKind.BUS);
-		this.getFigureP2PLine().setVisible(portKind == HWPortKind.LINK);
-		this.getFigureCircle1().setVisible(portKind == HWPortKind.LINK);
-		this.getFigureCircle2().setVisible(portKind == HWPortKind.LINK);
+	public void setHWPortKind(VisualPortKind portKind) {
+		this.getFigureBusArrow().setVisible(portKind == VisualPortKind.BUS);
+		this.getFigureP2PLine().setVisible(portKind == VisualPortKind.LINK);
+		this.getFigureCircle1().setVisible(portKind == VisualPortKind.LINK);
+		this.getFigureCircle2().setVisible(portKind == VisualPortKind.LINK);
 	}
 
 	public void setDelegationPort(boolean isDelegationPort) {

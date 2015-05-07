@@ -30,7 +30,7 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3001;
+	public static final int VISUAL_ID = 3009;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -83,9 +83,6 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.CommunicationResourceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

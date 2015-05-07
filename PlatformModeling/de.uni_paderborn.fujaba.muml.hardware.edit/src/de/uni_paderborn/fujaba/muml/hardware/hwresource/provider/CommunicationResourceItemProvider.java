@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.provider;
 
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
@@ -10,11 +11,13 @@ import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource} object.
@@ -23,7 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class CommunicationResourceItemProvider
-	extends HWPortItemProvider {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -49,6 +52,7 @@ public class CommunicationResourceItemProvider
 			addProtocolPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addMultiHWPortPropertyDescriptor(object);
+			addParentResourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -142,6 +146,28 @@ public class CommunicationResourceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Parent Resource feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentResourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationResource_parentResource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationResource_parentResource_feature", "_UI_CommunicationResource_type"),
+				 HwresourcePackage.Literals.COMMUNICATION_RESOURCE__PARENT_RESOURCE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -179,7 +205,7 @@ public class CommunicationResourceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CommunicationResource<?>)object).getName();
+		String label = ((CommunicationResource)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_CommunicationResource_type") :
 			getString("_UI_CommunicationResource_type") + " " + label;
@@ -223,6 +249,17 @@ public class CommunicationResourceItemProvider
 			(createChildParameter
 				(HwresourcePackage.Literals.COMMUNICATION_RESOURCE__CARDINALITY,
 				 ValuetypeFactory.eINSTANCE.createCardinality()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return HardwareEditPlugin.INSTANCE;
 	}
 
 }

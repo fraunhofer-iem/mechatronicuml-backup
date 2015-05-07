@@ -3,17 +3,12 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval;
-
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -59,7 +54,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @model required="true"
 	 * @generated
 	 */
-	CommunicationResource<ResourceInstance> getCommunicationResource();
+	CommunicationResource getCommunicationResource();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getCommunicationResource <em>Communication Resource</em>}' reference.
@@ -69,7 +64,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * @see #getCommunicationResource()
 	 * @generated
 	 */
-	void setCommunicationResource(CommunicationResource<ResourceInstance> value);
+	void setCommunicationResource(CommunicationResource value);
 
 	/**
 	 * Returns the value of the '<em><b>Connected Network Connector</b></em>' reference list.
@@ -157,32 +152,32 @@ public interface HWPortPart extends ConnectorEndpoint {
 
 	/**
 	 * Returns the value of the '<em><b>Port Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Determines if this HWPort is  a bus or a link port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-	 * @see #setPortKind(HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+	 * @see #setPortKind(CommunicationKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_PortKind()
 	 * @model required="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.communicationResource.oclIsUndefined()) then\n\tnull\nelse \n   self.communicationResource.portKind\n  endif'"
 	 * @generated
 	 */
-	HWPortKind getPortKind();
+	CommunicationKind getPortKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#getPortKind <em>Port Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
 	 * @see #getPortKind()
 	 * @generated
 	 */
-	void setPortKind(HWPortKind value);
+	void setPortKind(CommunicationKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Queuing Time</b></em>' containment reference.

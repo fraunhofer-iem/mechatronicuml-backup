@@ -6,6 +6,8 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource.tests;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 /**
@@ -21,7 +23,15 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class CommunicationResourceTest extends HWPortTest {
+public class CommunicationResourceTest extends TestCase {
+
+	/**
+	 * The fixture for this Communication Resource test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommunicationResource fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -43,14 +53,23 @@ public class CommunicationResourceTest extends HWPortTest {
 	}
 
 	/**
+	 * Sets the fixture for this Communication Resource test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(CommunicationResource fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Communication Resource test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected CommunicationResource<?> getFixture() {
-		return (CommunicationResource<?>)fixture;
+	protected CommunicationResource getFixture() {
+		return fixture;
 	}
 
 	/**
@@ -89,10 +108,10 @@ public class CommunicationResourceTest extends HWPortTest {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind) <em>Port Kind</em>}' feature setter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Port Kind</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
 	 * @generated
 	 */
 	public void testSetPortKind() {

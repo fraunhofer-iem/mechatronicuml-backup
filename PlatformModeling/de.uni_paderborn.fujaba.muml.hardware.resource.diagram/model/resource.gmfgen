@@ -31,7 +31,7 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3001"
+        visualID="3009"
         editPartClassName="CommunicationResourceEditPart"
         itemSemanticEditPolicyClassName="CommunicationResourceItemSemanticEditPolicy"
         notationViewFactoryClassName="CommunicationResourceViewFactory"
@@ -53,17 +53,13 @@
             width="24"
             height="24"/>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -109,7 +105,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5001"
+          visualID="5036"
           editPartClassName="HWPortLabelEditPart"
           itemSemanticEditPolicyClassName="HWPortLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="CommunicationResourceLabelViewFactory">
@@ -125,7 +121,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3008"
+        visualID="3010"
         editPartClassName="CommunicationResource2EditPart"
         itemSemanticEditPolicyClassName="CommunicationResource2ItemSemanticEditPolicy"
         notationViewFactoryClassName="CommunicationResourceViewFactory"
@@ -154,9 +150,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/hwports"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Resource/communicationResources"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -194,14 +190,14 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.32">
+              value="//@expressionProviders/@providers.0/@expressions.36">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5033"
+          visualID="5037"
           editPartClassName="CommunicationResourceNameEditPart"
           itemSemanticEditPolicyClassName="CommunicationResourceNameItemSemanticEditPolicy"
           notationViewFactoryClassName="CommunicationResourceNameViewFactory">
@@ -221,9 +217,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5034"
-          editPartClassName="WrappingLabel23EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel23ItemSemanticEditPolicy"
+          visualID="5038"
+          editPartClassName="WrappingLabel19EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel19ItemSemanticEditPolicy"
           notationViewFactoryClassName="CommunicationResourceLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
@@ -237,9 +233,9 @@
             parser="//@labelParsers/@implementations.4"/>
       </labels>
       <labels
-          visualID="5035"
-          editPartClassName="WrappingLabel24EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel24ItemSemanticEditPolicy"
+          visualID="5039"
+          editPartClassName="WrappingLabel20EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel20ItemSemanticEditPolicy"
           notationViewFactoryClassName="CommunicationResourceLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
@@ -290,7 +286,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.33">
+              value="//@expressionProviders/@providers.0/@expressions.37">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -431,7 +427,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.34">
+              value="//@expressionProviders/@providers.0/@expressions.38">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -557,7 +553,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.35">
+              value="//@expressionProviders/@providers.0/@expressions.39">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -655,7 +651,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.36">
+              value="//@expressionProviders/@providers.0/@expressions.40">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -780,13 +776,30 @@
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.27">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.28">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+          <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.37">
+              value="//@expressionProviders/@providers.0/@expressions.41">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/BusProtocol"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -842,13 +855,30 @@
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocol/bandwidth"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.29">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/unit"/>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.30">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwvaluetype/DataRate/value"/>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+          <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.38">
+              value="//@expressionProviders/@providers.0/@expressions.42">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
-          <elementClass
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/LinkProtocol"/>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -907,7 +937,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.29">
+              value="//@expressionProviders/@providers.0/@expressions.33">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1002,7 +1032,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.30">
+              value="//@expressionProviders/@providers.0/@expressions.34">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1109,7 +1139,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.31">
+              value="//@expressionProviders/@providers.0/@expressions.35">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -1161,8 +1191,8 @@
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/ownedCache"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.27"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.28"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.31"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.32"/>
     </links>
     <compartments
         visualID="7001"
@@ -1476,7 +1506,7 @@
       <expressions
           body="' '"/>
       <expressions
-          body="': ' + self.deviceType.toString()"/>
+          body="': ' + self.deviceKind.toString()"/>
       <expressions
           body="1"/>
       <expressions
@@ -1520,6 +1550,14 @@
       <expressions
           body="' '"/>
       <expressions
+          body="DataRateUnit::Kbs"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="DataRateUnit::Kbs"/>
+      <expressions
+          body="1"/>
+      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()"/>
       <expressions
@@ -1552,7 +1590,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.0/@modelFacet"
-        className="CommunicationResourceLabelExpressionLabelParser5001"
+        className="CommunicationResourceLabelExpressionLabelParser5036"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
@@ -1579,7 +1617,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.1/@modelFacet"
-        className="CommunicationResourceLabelExpressionLabelParser5034"
+        className="CommunicationResourceLabelExpressionLabelParser5038"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>
@@ -1587,7 +1625,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.2/@modelFacet"
-        className="CommunicationResourceLabelExpressionLabelParser5035"
+        className="CommunicationResourceLabelExpressionLabelParser5039"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationResource"/>

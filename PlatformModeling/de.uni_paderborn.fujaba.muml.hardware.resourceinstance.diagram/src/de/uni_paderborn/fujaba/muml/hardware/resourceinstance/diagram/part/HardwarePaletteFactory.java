@@ -37,8 +37,8 @@ public class HardwarePaletteFactory {
 		paletteContainer.add(createSensorInstance2CreationTool());
 		paletteContainer.add(createActuatorInstance3CreationTool());
 		paletteContainer.add(new PaletteSeparator());
-		paletteContainer.add(createBusPortInstance5CreationTool());
-		paletteContainer.add(createLinkPortInstance6CreationTool());
+		paletteContainer.add(createPortInstance5CreationTool());
+		paletteContainer.add(createNetworkConnectorInstance6CreationTool());
 		return paletteContainer;
 	}
 
@@ -96,13 +96,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createBusPortInstance5CreationTool() {
+	private ToolEntry createPortInstance5CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.BusPortInstance5CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.BusPortInstance5CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.PortInstance5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.PortInstance5CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CommunicationResource_3014));
-		entry.setId("createBusPortInstance5CreationTool"); //$NON-NLS-1$
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPortResource_3015));
+		entry.setId("createPortInstance5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/busportInst_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
@@ -113,17 +113,12 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createLinkPortInstance6CreationTool() {
+	private ToolEntry createNetworkConnectorInstance6CreationTool() {
 		ToolEntry entry = new ToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.LinkPortInstance6CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.LinkPortInstance6CreationTool_desc,
-				null, null) {
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NetworkConnectorInstance6CreationTool_title,
+				null, null, null) {
 		};
-		entry.setId("createLinkPortInstance6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkportInst_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkportInst_large.gif")); //$NON-NLS-1$
+		entry.setId("createNetworkConnectorInstance6CreationTool"); //$NON-NLS-1$
 		return entry;
 	}
 }

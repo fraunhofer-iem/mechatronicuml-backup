@@ -4,12 +4,9 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform;
 
 import de.uni_paderborn.fujaba.muml.connector.Connector;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -104,32 +101,32 @@ public interface NetworkConnector extends Connector {
 
 	/**
 	 * Returns the value of the '<em><b>Connector Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Determines if this HWPort is  a bus or a link port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connector Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-	 * @see #setConnectorKind(HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+	 * @see #setConnectorKind(CommunicationKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getNetworkConnector_ConnectorKind()
 	 * @model required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.delegationHWPorts->notEmpty()) then\r\n\thwresource::HWPortKind::DELEGATION\r\nelse \r\n   self.hwportParts->any(true).portKind\r\n  endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.delegationHWPorts->notEmpty()) then\r\n\thwresource::CommunicationKind::DELEGATION\r\nelse \r\n   self.hwportParts->any(true).portKind\r\n  endif'"
 	 * @generated
 	 */
-	HWPortKind getConnectorKind();
+	CommunicationKind getConnectorKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector#getConnectorKind <em>Connector Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Connector Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
 	 * @see #getConnectorKind()
 	 * @generated
 	 */
-	void setConnectorKind(HWPortKind value);
+	void setConnectorKind(CommunicationKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Delegation HW Ports</b></em>' reference list.

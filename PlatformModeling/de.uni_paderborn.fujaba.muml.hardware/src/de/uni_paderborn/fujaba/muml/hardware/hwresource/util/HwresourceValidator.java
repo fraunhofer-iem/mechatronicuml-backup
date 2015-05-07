@@ -115,9 +115,7 @@ public class HwresourceValidator extends EObjectValidator {
 			case HwresourcePackage.LINK_PROTOCOL:
 				return validateLinkProtocol((LinkProtocol)value, diagnostics, context);
 			case HwresourcePackage.COMMUNICATION_RESOURCE:
-				return validateCommunicationResource((CommunicationResource<?>)value, diagnostics, context);
-			case HwresourcePackage.HW_PORT:
-				return validateHWPort((HWPort<?>)value, diagnostics, context);
+				return validateCommunicationResource((CommunicationResource)value, diagnostics, context);
 			case HwresourcePackage.DEVICE_KIND:
 				return validateDeviceKind((DeviceKind)value, diagnostics, context);
 			case HwresourcePackage.PROCESSOR_ARCHITECTURE:
@@ -130,8 +128,8 @@ public class HwresourceValidator extends EObjectValidator {
 				return validateReplacementPolicy((ReplacementPolicy)value, diagnostics, context);
 			case HwresourcePackage.WRITE_POLICY:
 				return validateWritePolicy((WritePolicy)value, diagnostics, context);
-			case HwresourcePackage.HW_PORT_KIND:
-				return validateHWPortKind((HWPortKind)value, diagnostics, context);
+			case HwresourcePackage.COMMUNICATION_KIND:
+				return validateCommunicationKind((CommunicationKind)value, diagnostics, context);
 			case HwresourcePackage.BUS_PROTOCOL_KIND:
 				return validateBusProtocolKind((BusProtocolKind)value, diagnostics, context);
 			case HwresourcePackage.LINK_PROTOCOL_KIND:
@@ -439,17 +437,8 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCommunicationResource(CommunicationResource<?> communicationResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCommunicationResource(CommunicationResource communicationResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(communicationResource, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHWPort(HWPort<?> hwPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(hwPort, diagnostics, context);
 	}
 
 	/**
@@ -511,7 +500,7 @@ public class HwresourceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateHWPortKind(HWPortKind hwPortKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCommunicationKind(CommunicationKind communicationKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

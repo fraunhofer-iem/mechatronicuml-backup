@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.DeviceImpl#getDeviceType <em>Device Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.DeviceImpl#getDeviceKind <em>Device Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,24 +27,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DeviceImpl extends ResourceImpl implements Device {
 	/**
-	 * The default value of the '{@link #getDeviceType() <em>Device Type</em>}' attribute.
+	 * The default value of the '{@link #getDeviceKind() <em>Device Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDeviceType()
+	 * @see #getDeviceKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final DeviceKind DEVICE_TYPE_EDEFAULT = DeviceKind.SENSOR;
+	protected static final DeviceKind DEVICE_KIND_EDEFAULT = DeviceKind.SENSOR;
 
 	/**
-	 * The cached value of the '{@link #getDeviceType() <em>Device Type</em>}' attribute.
+	 * The cached value of the '{@link #getDeviceKind() <em>Device Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDeviceType()
+	 * @see #getDeviceKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected DeviceKind deviceType = DEVICE_TYPE_EDEFAULT;
+	protected DeviceKind deviceKind = DEVICE_KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +70,8 @@ public class DeviceImpl extends ResourceImpl implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DeviceKind getDeviceType() {
-		return deviceType;
+	public DeviceKind getDeviceKind() {
+		return deviceKind;
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class DeviceImpl extends ResourceImpl implements Device {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDeviceType(DeviceKind newDeviceType) {
-		DeviceKind oldDeviceType = deviceType;
-		deviceType = newDeviceType == null ? DEVICE_TYPE_EDEFAULT : newDeviceType;
+	public void setDeviceKind(DeviceKind newDeviceKind) {
+		DeviceKind oldDeviceKind = deviceKind;
+		deviceKind = newDeviceKind == null ? DEVICE_KIND_EDEFAULT : newDeviceKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, HwresourcePackage.DEVICE__DEVICE_TYPE, oldDeviceType, deviceType));
+			eNotify(new ENotificationImpl(this, Notification.SET, HwresourcePackage.DEVICE__DEVICE_KIND, oldDeviceKind, deviceKind));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class DeviceImpl extends ResourceImpl implements Device {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwresourcePackage.DEVICE__DEVICE_TYPE:
-				return getDeviceType();
+			case HwresourcePackage.DEVICE__DEVICE_KIND:
+				return getDeviceKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +108,8 @@ public class DeviceImpl extends ResourceImpl implements Device {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwresourcePackage.DEVICE__DEVICE_TYPE:
-				setDeviceType((DeviceKind)newValue);
+			case HwresourcePackage.DEVICE__DEVICE_KIND:
+				setDeviceKind((DeviceKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class DeviceImpl extends ResourceImpl implements Device {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwresourcePackage.DEVICE__DEVICE_TYPE:
-				setDeviceType(DEVICE_TYPE_EDEFAULT);
+			case HwresourcePackage.DEVICE__DEVICE_KIND:
+				setDeviceKind(DEVICE_KIND_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class DeviceImpl extends ResourceImpl implements Device {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwresourcePackage.DEVICE__DEVICE_TYPE:
-				return deviceType != DEVICE_TYPE_EDEFAULT;
+			case HwresourcePackage.DEVICE__DEVICE_KIND:
+				return deviceKind != DEVICE_KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,8 +154,8 @@ public class DeviceImpl extends ResourceImpl implements Device {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (deviceType: ");
-		result.append(deviceType);
+		result.append(" (deviceKind: ");
+		result.append(deviceKind);
 		result.append(')');
 		return result.toString();
 	}

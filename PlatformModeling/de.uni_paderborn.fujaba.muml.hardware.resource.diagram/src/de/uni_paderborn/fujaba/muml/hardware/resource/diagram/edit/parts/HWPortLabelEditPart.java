@@ -60,7 +60,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5001;
+	public static final int VISUAL_ID = 5036;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -367,7 +367,7 @@ public class HWPortLabelEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3001,
+							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3009,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));

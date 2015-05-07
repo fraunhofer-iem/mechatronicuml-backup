@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstanceTypePropertyDescriptor;
@@ -153,12 +153,12 @@ public class ResourceInstanceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS,
-				 HwplatforminstanceFactory.eINSTANCE.createHWPortInstance()));
+				 HwresourceinstanceFactory.eINSTANCE.createHWPortResource()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__HWPORTS,
-				 HwresourceFactory.eINSTANCE.createCommunicationResource()));
+				 HwplatforminstanceFactory.eINSTANCE.createHWPortInstance()));
 	}
 
 	/**

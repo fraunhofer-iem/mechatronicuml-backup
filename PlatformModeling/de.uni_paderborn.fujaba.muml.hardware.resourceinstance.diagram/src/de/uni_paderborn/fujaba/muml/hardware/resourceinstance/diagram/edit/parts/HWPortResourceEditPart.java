@@ -1,8 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
@@ -10,18 +9,14 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -30,12 +25,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
+public class HWPortResourceEditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3014;
+	public static final int VISUAL_ID = 3015;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -73,7 +68,7 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public CommunicationResourceEditPart(View view) {
+	public HWPortResourceEditPart(View view) {
 		super(view);
 	}
 
@@ -86,11 +81,11 @@ public class CommunicationResourceEditPart extends BorderedBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.CommunicationResourceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HWPortResourceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.ResourceInstanceHWPortEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortResourceEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

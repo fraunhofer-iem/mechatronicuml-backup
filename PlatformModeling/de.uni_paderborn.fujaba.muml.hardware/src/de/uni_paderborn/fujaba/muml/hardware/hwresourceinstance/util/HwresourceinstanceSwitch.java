@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.util;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -202,6 +203,24 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 				T result = caseResourceInstanceRepository(resourceInstanceRepository);
 				if (result == null) result = caseCommentableElement(resourceInstanceRepository);
 				if (result == null) result = caseExtendableElement(resourceInstanceRepository);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HwresourceinstancePackage.HW_PORT: {
+				HWPort hwPort = (HWPort)theEObject;
+				T result = caseHWPort(hwPort);
+				if (result == null) result = caseNamedElement(hwPort);
+				if (result == null) result = caseExtendableElement(hwPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HwresourceinstancePackage.HW_PORT_RESOURCE: {
+				HWPortResource hwPortResource = (HWPortResource)theEObject;
+				T result = caseHWPortResource(hwPortResource);
+				if (result == null) result = caseHWPort(hwPortResource);
+				if (result == null) result = caseCommunicationResource(hwPortResource);
+				if (result == null) result = caseNamedElement(hwPortResource);
+				if (result == null) result = caseExtendableElement(hwPortResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -420,6 +439,36 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>HW Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>HW Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHWPort(HWPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>HW Port Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>HW Port Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHWPortResource(HWPortResource object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -461,6 +510,21 @@ public class HwresourceinstanceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Communication Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Communication Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommunicationResource(CommunicationResource object) {
 		return null;
 	}
 

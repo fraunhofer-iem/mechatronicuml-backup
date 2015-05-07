@@ -93,8 +93,8 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 				return createReplacementPolicyFromString(eDataType, initialValue);
 			case HwresourcePackage.WRITE_POLICY:
 				return createWritePolicyFromString(eDataType, initialValue);
-			case HwresourcePackage.HW_PORT_KIND:
-				return createHWPortKindFromString(eDataType, initialValue);
+			case HwresourcePackage.COMMUNICATION_KIND:
+				return createCommunicationKindFromString(eDataType, initialValue);
 			case HwresourcePackage.BUS_PROTOCOL_KIND:
 				return createBusProtocolKindFromString(eDataType, initialValue);
 			case HwresourcePackage.LINK_PROTOCOL_KIND:
@@ -124,8 +124,8 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 				return convertReplacementPolicyToString(eDataType, instanceValue);
 			case HwresourcePackage.WRITE_POLICY:
 				return convertWritePolicyToString(eDataType, instanceValue);
-			case HwresourcePackage.HW_PORT_KIND:
-				return convertHWPortKindToString(eDataType, instanceValue);
+			case HwresourcePackage.COMMUNICATION_KIND:
+				return convertCommunicationKindToString(eDataType, instanceValue);
 			case HwresourcePackage.BUS_PROTOCOL_KIND:
 				return convertBusProtocolKindToString(eDataType, instanceValue);
 			case HwresourcePackage.LINK_PROTOCOL_KIND:
@@ -240,8 +240,8 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T> CommunicationResource<T> createCommunicationResource() {
-		CommunicationResourceImpl<T> communicationResource = new CommunicationResourceImpl<T>();
+	public CommunicationResource createCommunicationResource() {
+		CommunicationResourceImpl communicationResource = new CommunicationResourceImpl();
 		return communicationResource;
 	}
 
@@ -370,8 +370,8 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortKind createHWPortKindFromString(EDataType eDataType, String initialValue) {
-		HWPortKind result = HWPortKind.get(initialValue);
+	public CommunicationKind createCommunicationKindFromString(EDataType eDataType, String initialValue) {
+		CommunicationKind result = CommunicationKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -381,7 +381,7 @@ public class HwresourceFactoryImpl extends EFactoryImpl implements HwresourceFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertHWPortKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertCommunicationKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

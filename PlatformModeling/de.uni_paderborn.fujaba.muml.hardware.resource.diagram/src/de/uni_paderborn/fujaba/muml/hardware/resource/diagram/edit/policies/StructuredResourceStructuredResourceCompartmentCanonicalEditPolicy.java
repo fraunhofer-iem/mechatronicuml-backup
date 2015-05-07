@@ -64,7 +64,7 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
-							.getResource_Hwports());
+							.getResource_CommunicationResources());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getStructuredResource_EmbeddedAtomicResources());

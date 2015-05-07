@@ -77,12 +77,12 @@ public class ResourceInstanceTypePropertyDescriptor extends
 		// special case for ActuatorInstanceInstance
 		if (HwresourceinstancePackage.Literals.ACTUATOR_INSTANCE
 				.isSuperTypeOf(instance.eClass())) {
-			return (((Device) type).getDeviceType() == DeviceKind.ACTUATOR);
+			return (((Device) type).getDeviceKind() == DeviceKind.ACTUATOR);
 		}
 		// special case for SensorInstanceInstance
 		if (HwresourceinstancePackage.Literals.SENSOR_INSTANCE
 				.isSuperTypeOf(instance.eClass())) {
-			return (((Device) type).getDeviceType() == DeviceKind.SENSOR);
+			return (((Device) type).getDeviceKind() == DeviceKind.SENSOR);
 		}
 		// special case for StorageMemoryInstance
 		if (HwresourceinstancePackage.Literals.PROCESSING_MEMORY_INSTANCE

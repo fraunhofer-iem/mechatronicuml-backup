@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
@@ -21,7 +21,7 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceImpl#getHwports <em>Hwports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceImpl#getCommunicationResources <em>Communication Resources</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,15 +29,14 @@ import org.storydriven.core.impl.NamedElementImpl;
  */
 public abstract class ResourceImpl extends NamedElementImpl implements Resource {
 	/**
-	 * The cached value of the '{@link #getHwports() <em>Hwports</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommunicationResources() <em>Communication Resources</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHwports()
+	 * @see #getCommunicationResources()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HWPort<Resource>> hwports;
-
+	protected EList<CommunicationResource> communicationResources;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,11 +61,26 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HWPort<Resource>> getHwports() {
-		if (hwports == null) {
-			hwports = new EObjectContainmentEList<HWPort<Resource>>(HWPort.class, this, HwresourcePackage.RESOURCE__HWPORTS);
+	public EList<CommunicationResource> getCommunicationResources() {
+		if (communicationResources == null) {
+			communicationResources = new EObjectContainmentWithInverseEList<CommunicationResource>(CommunicationResource.class, this, HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES, HwresourcePackage.COMMUNICATION_RESOURCE__PARENT_RESOURCE);
 		}
-		return hwports;
+		return communicationResources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCommunicationResources()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -77,8 +91,8 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
-				return ((InternalEList<?>)getHwports()).basicRemove(otherEnd, msgs);
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
+				return ((InternalEList<?>)getCommunicationResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,8 +105,8 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
-				return getHwports();
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
+				return getCommunicationResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,9 +120,9 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
-				getHwports().clear();
-				getHwports().addAll((Collection<? extends HWPort<Resource>>)newValue);
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
+				getCommunicationResources().clear();
+				getCommunicationResources().addAll((Collection<? extends CommunicationResource>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +136,8 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
-				getHwports().clear();
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
+				getCommunicationResources().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +151,8 @@ public abstract class ResourceImpl extends NamedElementImpl implements Resource 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HwresourcePackage.RESOURCE__HWPORTS:
-				return hwports != null && !hwports.isEmpty();
+			case HwresourcePackage.RESOURCE__COMMUNICATION_RESOURCES:
+				return communicationResources != null && !communicationResources.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

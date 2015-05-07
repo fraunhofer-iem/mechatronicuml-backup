@@ -36,7 +36,6 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -717,15 +716,12 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEClass(delegationHWPortEClass, DelegationHWPort.class, "DelegationHWPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(hwPortPartEClass, HWPortPart.class, "HWPortPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		EGenericType g1 = createEGenericType(theHwresourcePackage.getCommunicationResource());
-		EGenericType g2 = createEGenericType(theHwresourceinstancePackage.getResourceInstance());
-		g1.getETypeArguments().add(g2);
-		initEReference(getHWPortPart_CommunicationResource(), g1, null, "communicationResource", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPortPart_CommunicationResource(), theHwresourcePackage.getCommunicationResource(), null, "communicationResource", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_ConnectedNetworkConnector(), this.getNetworkConnector(), null, "connectedNetworkConnector", null, 0, -1, HWPortPart.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, HWPortPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPortPart_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 0, 1, HWPortPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHWPortPart_PortKind(), theHwresourcePackage.getHWPortKind(), "portKind", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHWPortPart_PortKind(), theHwresourcePackage.getCommunicationKind(), "portKind", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_QueuingTime(), theHwvaluetypePackage.getTimeInterval(), null, "queuingTime", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_PayloadDataSize(), theHwvaluetypePackage.getDataSize(), null, "payloadDataSize", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_ParentResourcePart(), this.getPlatformPart(), this.getPlatformPart_HwPortParts(), "parentResourcePart", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -745,7 +741,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		initEReference(getNetworkConnector_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 0, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_Bandwidth(), theHwvaluetypePackage.getDataRate(), null, "bandwidth", null, 0, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_HwportParts(), this.getHWPortPart(), null, "hwportParts", null, 0, 2, NetworkConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNetworkConnector_ConnectorKind(), theHwresourcePackage.getHWPortKind(), "connectorKind", null, 1, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNetworkConnector_ConnectorKind(), theHwresourcePackage.getCommunicationKind(), "connectorKind", null, 1, 1, NetworkConnector.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnector_DelegationHWPorts(), this.getDelegationHWPort(), null, "delegationHWPorts", null, 0, 2, NetworkConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
@@ -909,7 +905,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		  (getNetworkConnector_ConnectorKind(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.delegationHWPorts->notEmpty()) then\r\n\thwresource::HWPortKind::DELEGATION\r\nelse \r\n   self.hwportParts->any(true).portKind\r\n  endif"
+			 "derivation", "if (self.delegationHWPorts->notEmpty()) then\r\n\thwresource::CommunicationKind::DELEGATION\r\nelse \r\n   self.hwportParts->any(true).portKind\r\n  endif"
 		   });	
 		addAnnotation
 		  (getNetworkConnector_DelegationHWPorts(), 

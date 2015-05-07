@@ -4,21 +4,15 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl;
 
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorImpl;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -184,8 +178,8 @@ public class NetworkConnectorImpl extends ConnectorImpl implements NetworkConnec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortKind getConnectorKind() {
-		return (HWPortKind)CONNECTOR_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CommunicationKind getConnectorKind() {
+		return (CommunicationKind)CONNECTOR_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -193,7 +187,7 @@ public class NetworkConnectorImpl extends ConnectorImpl implements NetworkConnec
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConnectorKind(HWPortKind newConnectorKind) {
+	public void setConnectorKind(CommunicationKind newConnectorKind) {
 		CONNECTOR_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newConnectorKind);
 	}
 
@@ -259,7 +253,7 @@ public class NetworkConnectorImpl extends ConnectorImpl implements NetworkConnec
 				setBandwidth((DataRate)newValue);
 				return;
 			case HwplatformPackage.NETWORK_CONNECTOR__CONNECTOR_KIND:
-				setConnectorKind((HWPortKind)newValue);
+				setConnectorKind((CommunicationKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -241,10 +241,10 @@ public class HardwareViewProvider extends AbstractProvider implements
 			return createCommunicationProtocolRepository_2005(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
-			return createCommunicationResource_3001(domainElement,
+			return createCommunicationResource_3009(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID:
-			return createCommunicationResource_3008(domainElement,
+			return createCommunicationResource_3010(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
 			return createCache_3002(domainElement, containerView, index,
@@ -459,7 +459,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createCommunicationResource_3001(EObject domainElement,
+	public Node createCommunicationResource_3009(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -496,22 +496,22 @@ public class HardwareViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5001 = createLabel(
+		Node label5036 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
-		label5001.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5036.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5001 = (Location) label5001.getLayoutConstraint();
-		location5001.setX(0);
-		location5001.setY(5);
+		Location location5036 = (Location) label5036.getLayoutConstraint();
+		location5036.setX(0);
+		location5036.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createCommunicationResource_3008(EObject domainElement,
+	public Node createCommunicationResource_3010(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -548,18 +548,18 @@ public class HardwareViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5033 = createLabel(
+		Node label5037 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceNameEditPart.VISUAL_ID));
-		Node label5034 = createLabel(
+		Node label5038 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel23EditPart.VISUAL_ID));
-		Node label5035 = createLabel(
+						.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel19EditPart.VISUAL_ID));
+		Node label5039 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel24EditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel20EditPart.VISUAL_ID));
 		return node;
 	}
 

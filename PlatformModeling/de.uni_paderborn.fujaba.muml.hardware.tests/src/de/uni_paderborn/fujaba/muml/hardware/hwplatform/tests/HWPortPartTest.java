@@ -189,10 +189,10 @@ public class HWPortPartTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind) <em>Port Kind</em>}' feature setter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Port Kind</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
 	 * @generated
 	 */
 	public void testSetPortKind() {

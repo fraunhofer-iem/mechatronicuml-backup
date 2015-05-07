@@ -3,14 +3,10 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -33,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface HWPortInstance extends HWPort<ResourceInstance>, ConnectorEndpointInstance {
+public interface HWPortInstance extends ConnectorEndpointInstance, HWPort {
 	/**
 	 * Returns the value of the '<em><b>Hw Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -48,7 +44,7 @@ public interface HWPortInstance extends HWPort<ResourceInstance>, ConnectorEndpo
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsUndefined()) then\n\tnull\nelse\n\tself.type.oclAsType(hwplatform::HWPortPart).communicationResource\nendif'"
 	 * @generated
 	 */
-	CommunicationResource<Resource> getHwPortType();
+	CommunicationResource getHwPortType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType <em>Hw Port Type</em>}' reference.
@@ -58,7 +54,7 @@ public interface HWPortInstance extends HWPort<ResourceInstance>, ConnectorEndpo
 	 * @see #getHwPortType()
 	 * @generated
 	 */
-	void setHwPortType(CommunicationResource<Resource> value);
+	void setHwPortType(CommunicationResource value);
 
 	/**
 	 * Returns the value of the '<em><b>Connected Network Connector Instances</b></em>' reference list.
@@ -93,32 +89,32 @@ public interface HWPortInstance extends HWPort<ResourceInstance>, ConnectorEndpo
 
 	/**
 	 * Returns the value of the '<em><b>Port Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Determines if this HWPort is  a bus or a link port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-	 * @see #setPortKind(HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+	 * @see #setPortKind(CommunicationKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_PortKind()
 	 * @model required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.hwPortType.oclIsUndefined()) then\n hwresource::HWPortKind::BUS\nelse\n self.hwPortType.portKind\nendif\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.hwPortType.oclIsUndefined()) then\r\n hwresource::CommunicationKind::BUS\r\nelse\r\n self.hwPortType.portKind\r\nendif\r\n'"
 	 * @generated
 	 */
-	HWPortKind getPortKind();
+	CommunicationKind getPortKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind <em>Port Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
 	 * @see #getPortKind()
 	 * @generated
 	 */
-	void setPortKind(HWPortKind value);
+	void setPortKind(CommunicationKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Network Interface</b></em>' attribute.

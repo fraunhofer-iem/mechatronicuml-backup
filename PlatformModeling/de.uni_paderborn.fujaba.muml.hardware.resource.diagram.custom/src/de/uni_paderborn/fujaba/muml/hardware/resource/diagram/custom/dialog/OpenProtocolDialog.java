@@ -14,9 +14,9 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Bus;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Link;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart;
 
 

@@ -14,14 +14,13 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.AtomicResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocolKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ComputingResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.LinkProtocol;
@@ -52,11 +51,9 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
@@ -178,13 +175,6 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass hwPortEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum deviceKindEEnum = null;
 
 	/**
@@ -227,7 +217,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum hwPortKindEEnum = null;
+	private EEnum communicationKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -354,7 +344,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResource_Hwports() {
+	public EReference getResource_CommunicationResources() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -417,7 +407,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDevice_DeviceType() {
+	public EAttribute getDevice_DeviceKind() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -795,17 +785,8 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHWPort() {
-		return hwPortEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getHWPort_Parent() {
-		return (EReference)hwPortEClass.getEStructuralFeatures().get(0);
+	public EReference getCommunicationResource_ParentResource() {
+		return (EReference)communicationResourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -867,8 +848,8 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getHWPortKind() {
-		return hwPortKindEEnum;
+	public EEnum getCommunicationKind() {
+		return communicationKindEEnum;
 	}
 
 	/**
@@ -918,7 +899,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 
 		// Create classes and their features
 		resourceEClass = createEClass(RESOURCE);
-		createEReference(resourceEClass, RESOURCE__HWPORTS);
+		createEReference(resourceEClass, RESOURCE__COMMUNICATION_RESOURCES);
 
 		computingResourceEClass = createEClass(COMPUTING_RESOURCE);
 
@@ -928,7 +909,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		createEAttribute(memoryResourceEClass, MEMORY_RESOURCE__MEMORY_TYPE);
 
 		deviceEClass = createEClass(DEVICE);
-		createEAttribute(deviceEClass, DEVICE__DEVICE_TYPE);
+		createEAttribute(deviceEClass, DEVICE__DEVICE_KIND);
 
 		cacheEClass = createEClass(CACHE);
 		createEAttribute(cacheEClass, CACHE__WRITE_POLICY);
@@ -981,9 +962,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		createEReference(communicationResourceEClass, COMMUNICATION_RESOURCE__PROTOCOL);
 		createEReference(communicationResourceEClass, COMMUNICATION_RESOURCE__CARDINALITY);
 		createEAttribute(communicationResourceEClass, COMMUNICATION_RESOURCE__MULTI_HW_PORT);
-
-		hwPortEClass = createEClass(HW_PORT);
-		createEReference(hwPortEClass, HW_PORT__PARENT);
+		createEReference(communicationResourceEClass, COMMUNICATION_RESOURCE__PARENT_RESOURCE);
 
 		// Create enums
 		deviceKindEEnum = createEEnum(DEVICE_KIND);
@@ -992,7 +971,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		memoryKindEEnum = createEEnum(MEMORY_KIND);
 		replacementPolicyEEnum = createEEnum(REPLACEMENT_POLICY);
 		writePolicyEEnum = createEEnum(WRITE_POLICY);
-		hwPortKindEEnum = createEEnum(HW_PORT_KIND);
+		communicationKindEEnum = createEEnum(COMMUNICATION_KIND);
 		busProtocolKindEEnum = createEEnum(BUS_PROTOCOL_KIND);
 		linkProtocolKindEEnum = createEEnum(LINK_PROTOCOL_KIND);
 	}
@@ -1026,8 +1005,6 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
 
 		// Create type parameters
-		ETypeParameter communicationResourceEClass_T = addETypeParameter(communicationResourceEClass, "T");
-		ETypeParameter hwPortEClass_T = addETypeParameter(hwPortEClass, "T");
 
 		// Set bounds for type parameters
 
@@ -1046,18 +1023,11 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		communicationProtocolEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		busProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
 		linkProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
-		EGenericType g1 = createEGenericType(this.getHWPort());
-		EGenericType g2 = createEGenericType(communicationResourceEClass_T);
-		g1.getETypeArguments().add(g2);
-		communicationResourceEClass.getEGenericSuperTypes().add(g1);
-		hwPortEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		communicationResourceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(this.getHWPort());
-		g2 = createEGenericType(this.getResource());
-		g1.getETypeArguments().add(g2);
-		initEReference(getResource_Hwports(), g1, null, "hwports", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_CommunicationResources(), this.getCommunicationResource(), this.getCommunicationResource_ParentResource(), "communicationResources", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computingResourceEClass, ComputingResource.class, "ComputingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1067,7 +1037,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		initEAttribute(getMemoryResource_MemoryType(), this.getMemoryKind(), "memoryType", null, 0, 1, MemoryResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDevice_DeviceType(), this.getDeviceKind(), "deviceType", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevice_DeviceKind(), this.getDeviceKind(), "deviceKind", null, 1, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cacheEClass, Cache.class, "Cache", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCache_WritePolicy(), this.getWritePolicy(), "writePolicy", "WRITE_THROUGH", 0, 1, Cache.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1118,14 +1088,11 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		initEOperation(getLinkProtocol__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(communicationResourceEClass, CommunicationResource.class, "CommunicationResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationResource_PortKind(), this.getHWPortKind(), "portKind", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationResource_PortKind(), this.getCommunicationKind(), "portKind", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationResource_Protocol(), this.getCommunicationProtocol(), null, "protocol", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationResource_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationResource_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 1, 1, CommunicationResource.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		initEClass(hwPortEClass, HWPort.class, "HWPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(hwPortEClass_T);
-		initEReference(getHWPort_Parent(), g1, null, "parent", null, 0, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationResource_ParentResource(), this.getResource(), this.getResource_CommunicationResources(), "parentResource", null, 0, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(deviceKindEEnum, DeviceKind.class, "DeviceKind");
@@ -1162,10 +1129,10 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		addEEnumLiteral(writePolicyEEnum, WritePolicy.WRITE_THROUGH);
 		addEEnumLiteral(writePolicyEEnum, WritePolicy.OTHER);
 
-		initEEnum(hwPortKindEEnum, HWPortKind.class, "HWPortKind");
-		addEEnumLiteral(hwPortKindEEnum, HWPortKind.BUS);
-		addEEnumLiteral(hwPortKindEEnum, HWPortKind.LINK);
-		addEEnumLiteral(hwPortKindEEnum, HWPortKind.DELEGATION);
+		initEEnum(communicationKindEEnum, CommunicationKind.class, "CommunicationKind");
+		addEEnumLiteral(communicationKindEEnum, CommunicationKind.BUS);
+		addEEnumLiteral(communicationKindEEnum, CommunicationKind.LINK);
+		addEEnumLiteral(communicationKindEEnum, CommunicationKind.DELEGATION);
 
 		initEEnum(busProtocolKindEEnum, BusProtocolKind.class, "BusProtocolKind");
 		addEEnumLiteral(busProtocolKindEEnum, BusProtocolKind.CAN);
@@ -1263,7 +1230,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		  (getCommunicationResource_PortKind(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.protocol.oclIsUndefined()) then\n\thwresource::HWPortKind::BUS\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\n\t\thwresource::HWPortKind::BUS\nelse\n\t\thwresource::HWPortKind::LINK\nendif endif"
+			 "derivation", "if (self.protocol.oclIsUndefined()) then\r\n\thwresource::CommunicationKind::BUS\r\nelse if (self.protocol.oclIsKindOf(hwresource::BusProtocol)) then\r\n\t\thwresource::CommunicationKind::BUS\r\nelse\r\n\t\thwresource::CommunicationKind::LINK\r\nendif endif"
 		   });	
 		addAnnotation
 		  (getCommunicationResource_MultiHWPort(), 

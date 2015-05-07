@@ -35,14 +35,14 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[39];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareAbstractExpression[43];
 		this.expressionBodies = new String[] {
 				"\'hw-port\'", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName.concat(\' : \').concat(protocolName)", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
-				"\': \' + self.deviceType.toString()", //$NON-NLS-1$
+				"\': \' + self.deviceKind.toString()", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
 				"if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif", //$NON-NLS-1$
@@ -64,6 +64,10 @@ public class HardwareOCLFactory {
 				"let volatile: String = if self.isVolatile.oclIsUndefined() then \'null\' else self.isVolatile.toString() endif in\n\'Volatile: \' + volatile", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
+				"DataRateUnit::Kbs", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
+				"DataRateUnit::Kbs", //$NON-NLS-1$
+				"1", //$NON-NLS-1$
 				"self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()", //$NON-NLS-1$
 				"self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()\nand self.oclIsTypeOf(hwresource::Cache)\n", //$NON-NLS-1$
 				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$

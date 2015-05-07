@@ -18,7 +18,7 @@ import org.storydriven.core.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getHwports <em>Hwports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getCommunicationResources <em>Communication Resources</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,8 +28,9 @@ import org.storydriven.core.NamedElement;
  */
 public interface Resource extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Hwports</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort}&lt;de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource>.
+	 * Returns the value of the '<em><b>Communication Resources</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource <em>Parent Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -37,11 +38,12 @@ public interface Resource extends NamedElement {
 	 * 
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Hwports</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getResource_Hwports()
-	 * @model containment="true"
+	 * @return the value of the '<em>Communication Resources</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getResource_CommunicationResources()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource
+	 * @model opposite="parentResource" containment="true"
 	 * @generated
 	 */
-	EList<HWPort<Resource>> getHwports();
+	EList<CommunicationResource> getCommunicationResources();
 
 } // Resource

@@ -1,9 +1,9 @@
 /**
  * Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany and Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT, Germany
  */
-package de.uni_paderborn.fujaba.muml.hardware.hwresource.tests;
+package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.tests;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 
 import junit.framework.TestCase;
 
@@ -21,7 +21,7 @@ public abstract class HWPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HWPort<?> fixture = null;
+	protected HWPort fixture = null;
 
 	/**
 	 * Constructs a new HW Port test case with the given name.
@@ -39,7 +39,7 @@ public abstract class HWPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(HWPort<?> fixture) {
+	protected void setFixture(HWPort fixture) {
 		this.fixture = fixture;
 	}
 
@@ -49,7 +49,7 @@ public abstract class HWPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HWPort<?> getFixture() {
+	protected HWPort getFixture() {
 		return fixture;
 	}
 

@@ -4,14 +4,10 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -106,32 +102,32 @@ public interface NetworkConnectorInstance extends ConnectorInstance {
 
 	/**
 	 * Returns the value of the '<em><b>Connector Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Determines if this HWPort is  a bus or a link port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connector Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
-	 * @see #setConnectorKind(HWPortKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
+	 * @see #setConnectorKind(CommunicationKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getNetworkConnectorInstance_ConnectorKind()
 	 * @model volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.networkConnectorType.oclIsUndefined()) then\r\n\tnull\r\nelse \r\n  self.networkConnectorType.connectorKind\r\nendif'"
 	 * @generated
 	 */
-	HWPortKind getConnectorKind();
+	CommunicationKind getConnectorKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance#getConnectorKind <em>Connector Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Connector Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind
 	 * @see #getConnectorKind()
 	 * @generated
 	 */
-	void setConnectorKind(HWPortKind value);
+	void setConnectorKind(CommunicationKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Network Connector Type</b></em>' reference.

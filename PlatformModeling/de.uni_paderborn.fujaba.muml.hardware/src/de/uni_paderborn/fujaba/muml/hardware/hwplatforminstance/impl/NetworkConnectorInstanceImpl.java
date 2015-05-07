@@ -4,22 +4,15 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl;
 
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorInstanceImpl;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -185,8 +178,8 @@ public class NetworkConnectorInstanceImpl extends ConnectorInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortKind getConnectorKind() {
-		return (HWPortKind)CONNECTOR_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CommunicationKind getConnectorKind() {
+		return (CommunicationKind)CONNECTOR_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -194,7 +187,7 @@ public class NetworkConnectorInstanceImpl extends ConnectorInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setConnectorKind(HWPortKind newConnectorKind) {
+	public void setConnectorKind(CommunicationKind newConnectorKind) {
 		CONNECTOR_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newConnectorKind);
 	}
 
@@ -278,7 +271,7 @@ public class NetworkConnectorInstanceImpl extends ConnectorInstanceImpl implemen
 				setBandwidth((DataRate)newValue);
 				return;
 			case HwplatforminstancePackage.NETWORK_CONNECTOR_INSTANCE__CONNECTOR_KIND:
-				setConnectorKind((HWPortKind)newValue);
+				setConnectorKind((CommunicationKind)newValue);
 				return;
 			case HwplatforminstancePackage.NETWORK_CONNECTOR_INSTANCE__NETWORK_CONNECTOR_TYPE:
 				setNetworkConnectorType((NetworkConnector)newValue);

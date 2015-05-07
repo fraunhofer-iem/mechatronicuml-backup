@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -584,8 +583,8 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		HwplatformPackage theHwplatformPackage = (HwplatformPackage)EPackage.Registry.INSTANCE.getEPackage(HwplatformPackage.eNS_URI);
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
-		HwresourcePackage theHwresourcePackage = (HwresourcePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourcePackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		HwresourcePackage theHwresourcePackage = (HwresourcePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourcePackage.eNS_URI);
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
 
 		// Create type parameters
@@ -595,12 +594,8 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		// Add supertypes to classes
 		hwPlatformInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		hwPlatformInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
-		EGenericType g1 = createEGenericType(theHwresourcePackage.getHWPort());
-		EGenericType g2 = createEGenericType(theHwresourceinstancePackage.getResourceInstance());
-		g1.getETypeArguments().add(g2);
-		hwPortInstanceEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(theConnectorPackage.getConnectorEndpointInstance());
-		hwPortInstanceEClass.getEGenericSuperTypes().add(g1);
+		hwPortInstanceEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpointInstance());
+		hwPortInstanceEClass.getESuperTypes().add(theHwresourceinstancePackage.getHWPort());
 		busInstanceEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpointInstance());
 		busInstanceEClass.getESuperTypes().add(this.getNetworkingHardwareInstance());
 		networkBridgeInstanceEClass.getESuperTypes().add(this.getNetworkingHardwareInstance());
@@ -624,13 +619,10 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		initEReference(getHWPlatformInstanceConfiguration_NetworkConnectorInstances(), this.getNetworkConnectorInstance(), null, "networkConnectorInstances", null, 0, 1, HWPlatformInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPortInstanceEClass, HWPortInstance.class, "HWPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(theHwresourcePackage.getCommunicationResource());
-		g2 = createEGenericType(theHwresourcePackage.getResource());
-		g1.getETypeArguments().add(g2);
-		initEReference(getHWPortInstance_HwPortType(), g1, null, "hwPortType", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPortInstance_HwPortType(), theHwresourcePackage.getCommunicationResource(), null, "hwPortType", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_ConnectedNetworkConnectorInstances(), this.getNetworkConnectorInstance(), null, "connectedNetworkConnectorInstances", null, 0, -1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, HWPortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHWPortInstance_PortKind(), theHwresourcePackage.getHWPortKind(), "portKind", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHWPortInstance_PortKind(), theHwresourcePackage.getCommunicationKind(), "portKind", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPortInstance_IsNetworkInterface(), ecorePackage.getEBoolean(), "isNetworkInterface", null, 1, 1, HWPortInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(busInstanceEClass, BusInstance.class, "BusInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -651,7 +643,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		initEReference(getNetworkConnectorInstance_ConnectedHWPortInstances(), this.getHWPortInstance(), null, "connectedHWPortInstances", null, 0, -1, NetworkConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnectorInstance_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 0, 1, NetworkConnectorInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnectorInstance_Bandwidth(), theHwvaluetypePackage.getDataRate(), null, "bandwidth", null, 0, 1, NetworkConnectorInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNetworkConnectorInstance_ConnectorKind(), theHwresourcePackage.getHWPortKind(), "connectorKind", null, 0, 1, NetworkConnectorInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNetworkConnectorInstance_ConnectorKind(), theHwresourcePackage.getCommunicationKind(), "connectorKind", null, 0, 1, NetworkConnectorInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getNetworkConnectorInstance_NetworkConnectorType(), theHwplatformPackage.getNetworkConnector(), null, "networkConnectorType", null, 0, 1, NetworkConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
@@ -712,7 +704,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		  (getHWPortInstance_PortKind(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.hwPortType.oclIsUndefined()) then\n hwresource::HWPortKind::BUS\nelse\n self.hwPortType.portKind\nendif\n"
+			 "derivation", "if (self.hwPortType.oclIsUndefined()) then\r\n hwresource::CommunicationKind::BUS\r\nelse\r\n self.hwPortType.portKind\r\nendif\r\n"
 		   });	
 		addAnnotation
 		  (getHWPortInstance_IsNetworkInterface(), 

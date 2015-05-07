@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CommunicationResourceCreateCommand extends EditElementCommand {
+public class HWPortResourceCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public CommunicationResourceCreateCommand(CreateElementRequest req) {
+	public HWPortResourceCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,14 +50,14 @@ public class CommunicationResourceCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource newElement = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory.eINSTANCE
-				.createCommunicationResource();
+		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource newElement = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory.eINSTANCE
+				.createHWPortResource();
 
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance owner = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance) getElementToEdit();
 		owner.getHwports().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_CommunicationResource_3014(newElement);
+				.getInstance().init_HWPortResource_3015(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -69,7 +69,7 @@ public class CommunicationResourceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource newElement,
+			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

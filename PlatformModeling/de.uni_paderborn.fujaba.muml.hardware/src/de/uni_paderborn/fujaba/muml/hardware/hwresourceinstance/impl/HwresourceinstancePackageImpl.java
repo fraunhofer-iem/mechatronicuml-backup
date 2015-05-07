@@ -17,6 +17,8 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.AtomicResourceIn
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.DeviceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.MemoryResourceInstance;
@@ -40,7 +42,6 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -151,6 +152,20 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	private EClass resourceInstanceRepositoryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hwPortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hwPortResourceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -488,6 +503,33 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getHWPort() {
+		return hwPortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHWPort_ParentResourceInstance() {
+		return (EReference)hwPortEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHWPortResource() {
+		return hwPortResourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public HwresourceinstanceFactory getHwresourceinstanceFactory() {
 		return (HwresourceinstanceFactory)getEFactoryInstance();
 	}
@@ -550,6 +592,11 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		resourceInstanceRepositoryEClass = createEClass(RESOURCE_INSTANCE_REPOSITORY);
 		createEReference(resourceInstanceRepositoryEClass, RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES);
+
+		hwPortEClass = createEClass(HW_PORT);
+		createEReference(hwPortEClass, HW_PORT__PARENT_RESOURCE_INSTANCE);
+
+		hwPortResourceEClass = createEClass(HW_PORT_RESOURCE);
 	}
 
 	/**
@@ -599,13 +646,13 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		sensorInstanceEClass.getESuperTypes().add(this.getDeviceInstance());
 		actuatorInstanceEClass.getESuperTypes().add(this.getDeviceInstance());
 		resourceInstanceRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		hwPortEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		hwPortResourceEClass.getESuperTypes().add(this.getHWPort());
+		hwPortResourceEClass.getESuperTypes().add(theHwresourcePackage.getCommunicationResource());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(resourceInstanceEClass, ResourceInstance.class, "ResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		EGenericType g1 = createEGenericType(theHwresourcePackage.getHWPort());
-		EGenericType g2 = createEGenericType(this.getResourceInstance());
-		g1.getETypeArguments().add(g2);
-		initEReference(getResourceInstance_Hwports(), g1, null, "hwports", null, 0, -1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResourceInstance_Hwports(), this.getHWPort(), this.getHWPort_ParentResourceInstance(), "hwports", null, 0, -1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceInstance_ResourceType(), theHwresourcePackage.getResource(), null, "resourceType", null, 1, 1, ResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computingResourceInstanceEClass, ComputingResourceInstance.class, "ComputingResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -643,6 +690,11 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		initEClass(resourceInstanceRepositoryEClass, ResourceInstanceRepository.class, "ResourceInstanceRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceInstanceRepository_ResourceInstances(), this.getResourceInstance(), null, "resourceInstances", null, 1, -1, ResourceInstanceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(hwPortEClass, HWPort.class, "HWPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHWPort_ParentResourceInstance(), this.getResourceInstance(), this.getResourceInstance_Hwports(), "parentResourceInstance", null, 0, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(hwPortResourceEClass, HWPortResource.class, "HWPortResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

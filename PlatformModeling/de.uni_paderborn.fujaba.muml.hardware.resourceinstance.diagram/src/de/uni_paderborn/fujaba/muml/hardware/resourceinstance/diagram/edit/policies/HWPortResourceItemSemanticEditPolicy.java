@@ -11,16 +11,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CommunicationResourceItemSemanticEditPolicy
+public class HWPortResourceItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CommunicationResourceItemSemanticEditPolicy() {
+	public HWPortResourceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CommunicationResource_3014);
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.HWPortResource_3015);
 	}
 
 	/**
