@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.codegen.export.ui;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * Provides access to registered <code>de.uni_paderborn.fujaba.muml.allocation.algorithm.strategy</code>
@@ -49,16 +48,16 @@ public class TargetPlatformExtension {
 		private IConfigurationElement configurationElement;
 		
 		public TargetPlatformDescription(
-				@NonNull IConfigurationElement configurationElement) {
+		IConfigurationElement configurationElement) {
 			this.configurationElement = configurationElement;
 		}
 		
-		@NonNull
+		
 		public String getName() {
 			return configurationElement.getAttribute(nameAttribute);
 		}
 		
-		@NonNull
+		
 		public String getDescription() {
 			String description = configurationElement.getAttribute(
 					descriptionAttribute);
@@ -73,7 +72,7 @@ public class TargetPlatformExtension {
 		 * 
 		 * @return the allocation computation strategy
 		 */
-		@NonNull
+		
 		public ITargetPlatformGenerator getTargetPlatform()
 				throws CoreException {
 			Object object = configurationElement.createExecutableExtension(
