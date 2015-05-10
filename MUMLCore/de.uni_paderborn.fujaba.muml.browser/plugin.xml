@@ -6,16 +6,24 @@
          point="org.eclipse.ui.views">
       <category
             name="MechatronicUML"
-            id="de.uni_paderborn.fujaba.muml.browser.view">
+            id="de.uni_paderborn.fujaba.muml.views">
       </category>
       <view
             name="Muml Browser (EXPERIMENTAL)"
             icon="icons/sample.gif"
-            category="de.uni_paderborn.fujaba.muml.browser.view"
-            class="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowserView"
+            category="de.uni_paderborn.fujaba.muml.views"
+            class="de.uni_paderborn.fujaba.muml.browser.ModelBrowserView"
             id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowserView">
       </view>
+      <view
+            name="Muml Browser 2"
+            icon="icons/sample.gif"
+            category="de.uni_paderborn.fujaba.muml.views"
+            class="de.uni_paderborn.fujaba.muml.browser.ModelBrowser"
+            id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+      </view>
    </extension>
+   
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension

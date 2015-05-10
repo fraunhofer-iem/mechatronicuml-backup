@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.views;
+package de.uni_paderborn.fujaba.muml.browser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,7 +58,6 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
-import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.decorators.ModifiedElementDecorator;
 import de.uni_paderborn.fujaba.muml.browser.providers.IModifiedElementProvider;
 import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider;
@@ -95,8 +94,7 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider, IT
 		}
 	}
 
-	// Synchronization with workspace,
-	// And tracking of modified elements to display them in italics
+	// Tracking of modified elements to display them in italics
 	IModifiedElementProvider modifiedElementProvider = new IModifiedElementProvider.Default();
 	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
 		public void resourceSetChanged(final ResourceSetChangeEvent event) {
@@ -109,6 +107,7 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider, IT
 		}
 	};
 	
+	// Synchronization with workspace,
 	private WorkspaceSynchronizer synchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
 
 		public boolean handleResourceDeleted(Resource resource) {
