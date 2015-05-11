@@ -25,19 +25,18 @@ property theProtocol : CoordinationProtocol;
 property theRootNode : RootNode;
 
 main()
-{ 
-	
-
-	
+{ 	
 	// fetch input
+		// not debug:
+	//theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	//variablesToParameter := input.rootObjects()[Variable];	
+	//theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);	
+		// debug:
 	theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(4).variables;
+	theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
 	
-	// not debug:
-	variablesToParameter := input.rootObjects()[Variable];
-	
-	// debug:
-	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);
-	
+		
 	// check input
 	assert fatal (theProtocol != null) with log ("CoordinationProtocol is null!" + theProtocol.name);
 	assert fatal (theRootNode != null) with log ("RootNode is null!");  	
@@ -60,7 +59,7 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 	result.comment := self.comment;
 	result.annotation := self.annotation.map EAnnotation2EAnnotation();		
 	var statechartCategory : ModelElementCategory := getRealtimeStatechartCategory(theRootNode);	
-
+	result.patternParameters := variablesToParameter.map Variable2Parameter();
 	self.roles->forEach(role)
 	{
 		// the role was already mapped in RoleConnector2RoleConnector
@@ -72,10 +71,7 @@ mapping muml::protocol::CoordinationProtocol:: CoordinationProtocol2Coordination
 		result.roles+= newRole;
 	};
 	result._roleConnector := self.roleConnector.map RoleConnector2RoleConnector();
-	result.roleConnector.coordinationProtocol := result;
-	variablesToParameter-> forEach(variable){
-			result.patternParameters+= variable.resolveone(Parameter);
-	}	
+	result.roleConnector.coordinationProtocol := result;		
 }
 
 mapping Variable::Variable2Parameter(): Parameter
@@ -83,21 +79,34 @@ mapping Variable::Variable2Parameter(): Parameter
 		_name := self._name;
 		_comment := self._comment;
 		_dataType := self.dataType;
+		annotation := self.annotation.map EAnnotation2EAnnotation();
+		extension := self.extension.map Extension2Extension();
 }
-
-mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2Expression() :actionlanguage::TypedNamedElementExpression {    
-	init{
-	    	result.annotation := self._annotation.map EAnnotation2EAnnotation();
-	    	result.extension := self._extension.map Extension2Extension();
-	    	result.comment := self._comment;
-	    	if(self._typedNamedElement.oclIsTypeOf(Variable) and  variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
-	    	{    		
-	    		var parameter : Parameter := self._typedNamedElement.oclAsType(Variable).map Variable2Parameter();
-	    		result.typedNamedElement := parameter;	    		
-	    	}
-	   		else 
-	   		{   		 	
-	    		result.typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
-	   		}
+mapping muml::realtimestatechart::RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : muml::realtimestatechart::RealtimeStatechart{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    //	_behavioralElement := self._behavioralElement.map BehavioralElement2BehavioralElement();
+    	_operations := self._operations.map Operation2Operation();
+    	// only transform variables that are not converted into patterns
+    	_variables := (self._variables-(variablesToParameter)).map Variable2Variable();
+    	_parentRegion := self._parentRegion.map Region2Region();
+    	_transitions := self._transitions.map Transition2Transition();
+    	_states := self._states.map State2State();
+    	_clocks := self._clocks.map Clock2Clock();
    		 }
+mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpression2TypedNamedElementExpression() :actionlanguage::TypedNamedElementExpression {    
+    	result.annotation := self._annotation.map EAnnotation2EAnnotation();
+    	result.extension := self._extension.map Extension2Extension();
+    	result.comment := self._comment;
+    	if(self._typedNamedElement.oclIsTypeOf(Variable) and  variablesToParameter->includes(self._typedNamedElement.oclAsType(Variable)))  	
+    	{    		
+    		var parameter : Parameter := self._typedNamedElement.oclAsType(Variable).map Variable2Parameter();
+    		result.typedNamedElement := parameter;	    		
+    	}
+   		else 
+   		{   		 	
+    		result.typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
+   		}   		
 }
