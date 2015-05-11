@@ -2,6 +2,26 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+  <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="de.uni_paderborn.fujaba.expression.typesfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+           <or>
+              <test
+                    property="org.eclipse.core.resources.name"
+                    value="*.types">
+              </test>
+           </or>
+	       </adapt>
+	    </iterate>
+     </definition>
+  </extension>
+  
+  
 	<extension point="org.eclipse.ui.menus">
 	   <menuContribution
 	         allPopups="false"
@@ -24,8 +44,8 @@
 	      		style="push" label="Export...">
 	            	<visibleWhen checkEnabled="false">
 						<or>
-							<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
-							<reference definitionId="de.uni_paderborn.fujaba.expression.categoryfile"></reference>
+					 		 <reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+							 <reference definitionId="de.uni_paderborn.fujaba.expression.categoryfile"></reference>
 						</or>
 					</visibleWhen>	      		
 	      </command>
@@ -48,13 +68,7 @@
            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
            name="Open Type Dialog">
      </command>
-     <command
-           categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.ExportCommand"
-           description="Export..."
-           id="de.uni_paderborn.fujaba.muml.common.commands.ExportCommand"
-           name="Export...">
-     </command>
+
   </extension>
   
   

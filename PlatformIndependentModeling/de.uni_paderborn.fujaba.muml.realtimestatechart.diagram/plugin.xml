@@ -696,8 +696,29 @@
       </propertySections>
    </extension>
 <extension point="org.eclipse.ui.menus">
+
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=behavioral-diagrams">
+	  		<command
+                 commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.category.create"
+                 icon="icons/obj16/RealtimestatechartDiagramFile.gif"
+                 id="de.uni_paderborn.fujaba.muml.realtimestatechart.category.create"
+                 label="Create new Real-Time Statechart Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      
+      <?gmfgen generated="true"?>   
+	  <menuContribution
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=behavioral-diagrams">
 	      <command
@@ -707,23 +728,30 @@
 	            label="Create Real-Time Statechart Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
-						<reference definitionId="de.uni_paderborn.fujaba.expression.realtimestatechartfile"></reference>
+		            	<or>
+		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.realtimestatechart"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
+	   
 	</extension>
 
 <extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
+	<?gmfgen generated="true"?>   
+	<command
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new Real-Time Statechart Model"
+           id="de.uni_paderborn.fujaba.muml.realtimestatechart.category.create"
+           name="Create new Real-Time Statechart Model">
+    </command>
+    </extension>
 
 <extension
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
@@ -762,6 +790,22 @@
          
       </editor>
    </extension>
+<extension point="org.eclipse.core.contenttype.contentTypes">
+		<?gmfgen generated="true"?>
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="realtimestatechart"/>
+    </extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
 
 
 

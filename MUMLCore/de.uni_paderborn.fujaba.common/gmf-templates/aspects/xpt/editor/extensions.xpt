@@ -68,8 +68,29 @@ diagrams«-»
 
 «DEFINE menus FOR gmfgen::GenEditorGenerator»
 	<extension point="org.eclipse.ui.menus">
+
 	   «EXPAND xpt::Common::xmlGeneratedTag»   
 	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=«EXPAND afterSeparator»">
+	  		<command
+                 commandId="«modelElementCategoryKey(diagram)».create"
+                 icon="«editor.iconPathX»"
+                 id="«modelElementCategoryKey(diagram)».create"
+                 label="Create new «modelID» Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      
+      «EXPAND xpt::Common::xmlGeneratedTag»   
+	  <menuContribution
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=«EXPAND afterSeparator»">
 	      <command
@@ -79,12 +100,36 @@ diagrams«-»
 	            label="Create «modelID» Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
-						<reference definitionId="de.uni_paderborn.fujaba.expression.«modelElementCategoryName(diagram)»file"></reference>
+		            	<or>
+		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.«modelElementCategoryName(diagram)»"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
+	   
 	</extension>
+	
+	
+	<extension point="org.eclipse.ui.commands">
+	«EXPAND xpt::Common::xmlGeneratedTag»   
+	<command
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new «modelID» Model"
+           id="«modelElementCategoryKey(diagram)».create"
+           name="Create new «modelID» Model">
+    </command>
+    </extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		«EXPAND xpt::Common::xmlGeneratedTag»
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="«modelElementCategoryName(diagram)»"/>
+    </extension>
 «ENDDEFINE»
 
 «DEFINE commands FOR gmfgen::GenEditorGenerator»

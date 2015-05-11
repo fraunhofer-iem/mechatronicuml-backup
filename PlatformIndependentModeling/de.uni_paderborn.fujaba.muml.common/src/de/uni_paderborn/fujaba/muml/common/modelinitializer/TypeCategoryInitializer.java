@@ -16,7 +16,16 @@ public class TypeCategoryInitializer implements IModelInitializer {
 
 	@Override
 	public boolean supports(EObject object) {
-		return object instanceof RootNode || object instanceof ModelElementCategory;
+		if (object instanceof RootNode) {
+			return true;
+		}
+		if (object instanceof ModelElementCategory) {
+			ModelElementCategory category = (ModelElementCategory) object;
+			if (category.getKey() == TYPES_CATEGORY_KEY) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override

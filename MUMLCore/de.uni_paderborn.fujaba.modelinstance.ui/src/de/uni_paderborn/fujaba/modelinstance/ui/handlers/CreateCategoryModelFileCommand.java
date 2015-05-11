@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.modelinstance.ui.handlers;
 import java.io.IOException;
 import java.util.LinkedList;
 
+import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
@@ -18,12 +19,35 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 
-public class CreateComponentsFileCommand extends AbstractCreateFileCommand {
+public class CreateCategoryModelFileCommand extends AbstractCreateFileCommand {
 
+	private static final String suffix = ".create";
+	
+	protected String categoryKey = "";
+	protected String categoryName = "";
+	@Override
+	public Object execute(ExecutionEvent event) throws ExecutionException {
+		String id = event.getCommand().getId();
+		if (id.endsWith(suffix)) {
+			id = id.substring(0, id.length() - suffix.length());
+		}
+		categoryKey = id;
+		categoryName = ModelInstancePlugin.getInstance().getModelElementCategoryRegistry().getCategoryName(categoryKey);
+		
+		if (categoryKey == null || categoryName == null) {
+			throw new UnsupportedOperationException("Prevented creating ModelElementCategory with invalid key.");
+		}
+		
+		return super.execute(event);
+	}
+	
+	
 	@Override
 	protected void createContents(URI selectedURI, IFile newFile) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
@@ -47,8 +71,8 @@ public class CreateComponentsFileCommand extends AbstractCreateFileCommand {
 						.createModelElementCategory();
 
 				// Let extensions initialize the model
-				category.setKey("de.uni_paderborn.fujaba.muml.components.category");
-				category.setName("component");
+				category.setKey(categoryKey);
+				category.setName(categoryName);
 				FujabaNewwizardPlugin.getDefault().initializeModel(category);
 
 				modelResource.getContents().add(category);
@@ -72,7 +96,7 @@ public class CreateComponentsFileCommand extends AbstractCreateFileCommand {
 
 	@Override
 	protected String getExtension() {
-		return "components";
+		return categoryName;
 	}
 
 	@Override
