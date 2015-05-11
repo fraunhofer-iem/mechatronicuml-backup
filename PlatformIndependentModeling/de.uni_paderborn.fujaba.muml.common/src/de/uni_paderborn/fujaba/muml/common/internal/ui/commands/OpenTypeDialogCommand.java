@@ -108,7 +108,14 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				new TypeCategoryInitializer().initialize(rootNode);
 			}
 			typeCategory = getTypeCategory(rootNode);
+		} else if (rootContainer instanceof ModelElementCategory) {
+			ModelElementCategory category = (ModelElementCategory) rootContainer;
+			if (TYPES_CATEGORY_KEY.equals(category.getKey())) {
+				typeCategory = category;
+			}
 		}
+		
+		
 
 		// Open Type Dialog for this ModelElementCategory
 		if (typeCategory != null) {

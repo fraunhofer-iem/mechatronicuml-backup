@@ -70,9 +70,15 @@ public class CreateEmptyDiagramCommand extends AbstractTransactionalCommand {
 					.getModelElementCategoryRegistry()
 					.getModelElementCategory(rootNode, modelElementCategoryKey);
 
-		} else {
-			return CommandResult
-					.newErrorCommandResult("Model file loading fail");
+		} else if (diagramRoot instanceof ModelElementCategory) {
+			ModelElementCategory cat = (ModelElementCategory) diagramRoot;
+			if (modelElementCategoryKey != null && modelElementCategoryKey.equals(cat.getKey())) {
+				category = cat;
+			}
+		}
+		
+		if (category == null) {
+			return CommandResult.newErrorCommandResult("Model file loading fail");
 		}
 
 		if (diagramElement != null) {

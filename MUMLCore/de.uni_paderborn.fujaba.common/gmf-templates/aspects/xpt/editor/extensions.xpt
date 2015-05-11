@@ -80,6 +80,7 @@ diagrams«-»
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<reference definitionId="de.uni_paderborn.fujaba.expression.«modelElementCategoryName(diagram)»file"></reference>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>

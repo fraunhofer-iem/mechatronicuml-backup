@@ -16,15 +16,24 @@ public class TypeCategoryInitializer implements IModelInitializer {
 
 	@Override
 	public boolean supports(EObject object) {
-		return object instanceof RootNode;
+		return object instanceof RootNode || object instanceof ModelElementCategory;
 	}
 
 	@Override
-	public void initialize(EObject rootNode) {
-		ModelElementCategory typesCategory = ModelinstanceFactory.eINSTANCE
-				.createModelElementCategory();
-		typesCategory.setName(TYPES_CATEGORY_NAME);
-		typesCategory.setKey(TYPES_CATEGORY_KEY);
+	public void initialize(EObject element) {
+		ModelElementCategory typesCategory = null;
+		if (element instanceof ModelElementCategory) {
+			if (TYPES_CATEGORY_KEY.equals(((ModelElementCategory) element).getKey())) {
+				typesCategory = (ModelElementCategory) element;
+			}
+		}
+		
+		if (element instanceof RootNode && typesCategory == null) {
+			typesCategory = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
+			typesCategory.setName(TYPES_CATEGORY_NAME);
+			typesCategory.setKey(TYPES_CATEGORY_KEY);
+			((RootNode) element).getCategories().add(typesCategory);
+		}
 
 		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
 			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
@@ -33,9 +42,6 @@ public class TypeCategoryInitializer implements IModelInitializer {
 			primitiveDataType.setName(type.getName().toLowerCase());
 			typesCategory.getModelElements().add(primitiveDataType);
 		}
-
-		// This cast is okay, because supports() already checked the type.
-		((RootNode) rootNode).getCategories().add(typesCategory);
 	}
 
 }

@@ -13,14 +13,20 @@
 	            label="Open Data-Type Dialog"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<or>
+							<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+							<reference definitionId="de.uni_paderborn.fujaba.expression.typesfile"></reference>
+						</or>
 					</visibleWhen>
 	      </command>
 	      <command
 	      		commandId="org.eclipse.ui.file.export" id="export"
 	      		style="push" label="Export...">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<or>
+							<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+							<reference definitionId="de.uni_paderborn.fujaba.expression.categoryfile"></reference>
+						</or>
 					</visibleWhen>	      		
 	      </command>
 	   </menuContribution>
@@ -41,9 +47,6 @@
            description="Open Type Dialog"
            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
            name="Open Type Dialog">
-       <visibleWhen checkEnabled="false">
-			<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
-		</visibleWhen>
      </command>
      <command
            categoryId="de.uni_paderborn.fujaba"

@@ -41,6 +41,58 @@
                     </iterate>	
               </visibleWhen>
            </command>
+           <command
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.create.components"
+                 icon="icons/muml.png"
+                 id="de.uni_paderborn.fujaba.core.ui.command.create.components"
+                 label="Create new Components Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IResource" />
+                    </iterate>	
+              </visibleWhen>
+           </command>
+           <command
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.create.coordination"
+                 icon="icons/muml.png"
+                 id="de.uni_paderborn.fujaba.core.ui.command.create.coordination"
+                 label="Create new Coordination Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IResource" />
+                    </iterate>	
+              </visibleWhen>
+           </command>
+           <command
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.create.instance"
+                 icon="icons/muml.png"
+                 id="de.uni_paderborn.fujaba.core.ui.command.create.instance"
+                 label="Create new Instance Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IResource" />
+                    </iterate>	
+              </visibleWhen>
+           </command>
+           <command
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.create.types"
+                 icon="icons/muml.png"
+                 id="de.uni_paderborn.fujaba.core.ui.command.create.types"
+                 label="Create new Types Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                    	<adapt type="org.eclipse.core.resources.IResource" />
+                    </iterate>	
+              </visibleWhen>
+           </command>
            <separator
                  name="structural-diagrams"
                  visible="true">
@@ -81,6 +133,34 @@
            description="Create new MechatronicUML Model"
            id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
            name="Create new MechatronicUML Model">
+     </command>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateComponentsFileCommand"
+           description="Create new Components Model"
+           id="de.uni_paderborn.fujaba.core.ui.command.create.components"
+           name="Create new Components Model">
+     </command>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCoordinationFileCommand"
+           description="Create new Coordination Model"
+           id="de.uni_paderborn.fujaba.core.ui.command.create.coordination"
+           name="Create new Coordination Model">
+     </command>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateInstanceFileCommand"
+           description="Create new Coordination Model"
+           id="de.uni_paderborn.fujaba.core.ui.command.create.instance"
+           name="Create new Instance Model">
+     </command>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateTypesFileCommand"
+           description="Create new Types Model"
+           id="de.uni_paderborn.fujaba.core.ui.command.create.types"
+           name="Create new Types Model">
      </command>
   </extension>
 

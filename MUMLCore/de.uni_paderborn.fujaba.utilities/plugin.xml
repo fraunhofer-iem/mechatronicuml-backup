@@ -34,7 +34,10 @@
                  label="Batch Diagram Creation..."
                  style="push">
              <visibleWhen checkEnabled="false">
-				<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+				<or>
+					<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+					<reference definitionId="de.uni_paderborn.fujaba.expression.categoryfile"></reference>
+				</or>
 			 </visibleWhen>
            </command>
    </menuContribution>
