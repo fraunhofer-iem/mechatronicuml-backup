@@ -1278,10 +1278,10 @@
     <genPackage href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata"/>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" reconcile="false" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/condition"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/OneToManyCommunicationSchema/action"/>
@@ -1306,10 +1306,10 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" reconcile="false" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Iterate/terminationCondition"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/one_to_n_schemata/Iterate/delay"/>
