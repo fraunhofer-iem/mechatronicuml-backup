@@ -54,6 +54,9 @@ public class CustomActuatorInstanceEditPart extends ActuatorInstanceEditPart {
 		if (editingDomain != null) {
 			ResourceInstance resourceInstance = (ResourceInstance) getNotationView()
 					.getElement();
+			if (resourceInstance.getResourceType() == null) {
+				return;
+			}
 			Activator.createInstance(editingDomain, resourceInstance);
 		}
 	}

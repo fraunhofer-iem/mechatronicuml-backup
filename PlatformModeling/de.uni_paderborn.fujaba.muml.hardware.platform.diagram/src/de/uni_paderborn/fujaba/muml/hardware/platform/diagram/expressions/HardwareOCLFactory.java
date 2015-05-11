@@ -42,7 +42,7 @@ public class HardwareOCLFactory {
 				"\'Bridge\'", //$NON-NLS-1$
 				"0", //$NON-NLS-1$
 				"1", //$NON-NLS-1$
-				"let portType : String = if self.communicationResource.oclIsUndefined() then \'null\' else self.communicationResource.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportType + \'\\n\' + protocolName", //$NON-NLS-1$
+				"let portType : String = if self.hwport.oclIsUndefined() then \'null\' else self.hwport.name endif in\r\nlet protocolName : String = if self.hwport.protocol.oclIsUndefined() then \'null\' else self.hwport.protocol.name endif in\r\nportType + \'\\n\' + protocolName", //$NON-NLS-1$
 				"\': \' + if self.hwplatformType.oclIsUndefined() then \'null\' else self.hwplatformType.name endif", //$NON-NLS-1$
 				"let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\nlet upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n\'[\' + lowerBound + \'..\' + upperBound + \']\'", //$NON-NLS-1$
 				"\'Enter cardinality in form of:  lowerBound..upperBound\'", //$NON-NLS-1$

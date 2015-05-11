@@ -74,6 +74,9 @@ public class CustomStructuredResourceInstanceEditPart extends
 		if (editingDomain != null) {
 			ResourceInstance resourceInstance = (ResourceInstance) getNotationView()
 					.getElement();
+			if(resourceInstance.getResourceType()==null){
+				return;
+			}
 			Activator.createInstance(editingDomain, resourceInstance);
 		}
 	}

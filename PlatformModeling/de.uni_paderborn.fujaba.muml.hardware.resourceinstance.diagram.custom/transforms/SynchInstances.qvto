@@ -128,6 +128,7 @@ var lowerBound : Integer;
 
 mapping CommunicationResource::mapCommunicationResource2HWPortResource():HWPort{
 	communicationResource:=self;
+	name:=self.name;
 }
 
 

@@ -937,7 +937,7 @@
       <expressions
           body="1"/>
       <expressions
-          body="let portType : String = if self.communicationResource.oclIsUndefined() then 'null' else self.communicationResource.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portType + '\n' + protocolName"/>
+          body="let portType : String = if self.hwport.oclIsUndefined() then 'null' else self.hwport.name endif in&#xD;&#xA;let protocolName : String = if self.hwport.protocol.oclIsUndefined() then 'null' else self.hwport.protocol.name endif in&#xD;&#xA;portType + '\n' + protocolName"/>
       <expressions
           body="': ' + if self.hwplatformType.oclIsUndefined() then 'null' else self.hwplatformType.name endif"/>
       <expressions

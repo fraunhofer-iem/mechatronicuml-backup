@@ -6,8 +6,10 @@ import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.V
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 
-public class HWPortResourceEditPolicy extends HWPortBaseEditPolicy {
+public class HWPortEditPolicy extends HWPortBaseEditPolicy {
 
 	@Override
 	protected boolean isMultiHWPort() {
@@ -15,9 +17,9 @@ public class HWPortResourceEditPolicy extends HWPortBaseEditPolicy {
 		Boolean isMulti = false;
 		CommunicationResource comResource = null;
 		if (element != null) {
-			if (HwresourcePackage.Literals.COMMUNICATION_RESOURCE
+			if (HwresourceinstancePackage.Literals.HW_PORT
 					.isSuperTypeOf(element.eClass())) {
-				comResource = (CommunicationResource) element;
+				comResource =((HWPort) element).getCommunicationResource();
 			}
 			if (comResource != null && comResource.getCardinality() != null) {
 				isMulti = comResource.getCardinality().getUpperBound()

@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.edit
 /**
  * @generated
  */
-public abstract class HWPortEditor
+public class HWPortEditor
 		extends
 			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
@@ -127,6 +127,43 @@ public abstract class HWPortEditor
 			this.editorExtension_ExtensionsTab = editor;
 		}
 		return this.editorExtension_ExtensionsTab;
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public HWPortEditor(String tab) {
+		this(
+				tab,
+				de.uni_paderborn.fujaba.muml.hardware.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+						.getHWPort());
+	}
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new HWPortEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.extensions"}).contains(tab);
+		}
 	}
 
 }
