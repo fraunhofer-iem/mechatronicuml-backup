@@ -21,12 +21,14 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 
 /**
@@ -65,6 +67,8 @@ public class ModelElementCategoryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addModelElementsPropertyDescriptor(object);
+			addUsedCategoriesPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,6 +96,50 @@ public class ModelElementCategoryItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Used Categories feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsedCategoriesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelElementCategory_usedCategories_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_usedCategories_feature", "_UI_ModelElementCategory_type"),
+				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelElementCategory_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_name_feature", "_UI_ModelElementCategory_type"),
+				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -104,6 +152,7 @@ public class ModelElementCategoryItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
+			childrenFeatures.add(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES);
 		}
 		return childrenFeatures;
 	}
@@ -163,6 +212,7 @@ public class ModelElementCategoryItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS:
+			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -209,6 +259,11 @@ public class ModelElementCategoryItemProvider
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES,
+				 ModelinstanceFactory.eINSTANCE.createModelElementCategory()));
 	}
 
 	/**

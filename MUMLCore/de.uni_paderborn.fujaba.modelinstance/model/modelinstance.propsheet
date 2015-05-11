@@ -28,6 +28,11 @@
     </classes>
     <classes xmi:id="_VZEzRMwbEeSjx7OWZCcdLw">
       <genClass href="modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" initializeOCLExpression="">
+        <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/name"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZEzRcwbEeSjx7OWZCcdLw" initializeOCLExpression="">
         <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
@@ -37,6 +42,11 @@
         </creationConstraint>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZEzScwbEeSjx7OWZCcdLw" title="Lists" properties="_VZEzRcwbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/usedCategories"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

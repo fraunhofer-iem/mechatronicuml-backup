@@ -23,21 +23,31 @@ public class ModelElementCategoryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorModelElements_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorUsedCategories_GeneralTab_Editor(),
+					false);
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 			addEditorToCategory(
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorModelElements_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorUsedCategories_GeneralTab_Editor(),
+					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -45,6 +55,21 @@ public class ModelElementCategoryEditor
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
+		if (this.editorName_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+					.getModelElementCategory_Name();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			editor.setTooltipMessage("A human readable name for this category.");
+
+			this.editorName_GeneralTab = editor;
+		}
+		return this.editorName_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorModelElements_GeneralTab;
@@ -85,6 +110,21 @@ public class ModelElementCategoryEditor
 		return this.editorModelElements_GeneralTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorUsedCategories_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorUsedCategories_GeneralTab_Editor() {
+		if (this.editorUsedCategories_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+					.getModelElementCategory_UsedCategories();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("The ModelElements which are contained in this category. All model elements\nmust be of the same type.");
+
+			this.editorUsedCategories_GeneralTab = editor;
+		}
+		return this.editorUsedCategories_GeneralTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -116,8 +156,9 @@ public class ModelElementCategoryEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general"}).contains(
-					tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

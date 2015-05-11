@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.ExtendableElement;
 
@@ -37,6 +38,7 @@ import java.lang.reflect.InvocationTargetException;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl#getModelElements <em>Model Elements</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl#getUsedCategories <em>Used Categories</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl#getKey <em>Key</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.ModelElementCategoryImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -54,6 +56,16 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 	 * @ordered
 	 */
 	protected EList<ExtendableElement> modelElements;
+
+	/**
+	 * The cached value of the '{@link #getUsedCategories() <em>Used Categories</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsedCategories()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ModelElementCategory> usedCategories;
 
 	/**
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
@@ -124,6 +136,18 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 			modelElements = new EObjectContainmentEList<ExtendableElement>(ExtendableElement.class, this, ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
 		}
 		return modelElements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ModelElementCategory> getUsedCategories() {
+		if (usedCategories == null) {
+			usedCategories = new EObjectResolvingEList<ModelElementCategory>(ModelElementCategory.class, this, ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES);
+		}
+		return usedCategories;
 	}
 
 	/**
@@ -230,6 +254,8 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 		switch (featureID) {
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS:
 				return getModelElements();
+			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES:
+				return getUsedCategories();
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__KEY:
 				return getKey();
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__NAME:
@@ -250,6 +276,10 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS:
 				getModelElements().clear();
 				getModelElements().addAll((Collection<? extends ExtendableElement>)newValue);
+				return;
+			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES:
+				getUsedCategories().clear();
+				getUsedCategories().addAll((Collection<? extends ModelElementCategory>)newValue);
 				return;
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__KEY:
 				setKey((String)newValue);
@@ -272,6 +302,9 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS:
 				getModelElements().clear();
 				return;
+			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES:
+				getUsedCategories().clear();
+				return;
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
@@ -292,6 +325,8 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 		switch (featureID) {
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS:
 				return modelElements != null && !modelElements.isEmpty();
+			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__USED_CATEGORIES:
+				return usedCategories != null && !usedCategories.isEmpty();
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__KEY:
 				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY__NAME:

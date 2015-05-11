@@ -26,6 +26,7 @@ import org.storydriven.core.ExtendableElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getModelElements <em>Model Elements</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getUsedCategories <em>Used Categories</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getKey <em>Key</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory#getName <em>Name</em>}</li>
  * </ul>
@@ -56,6 +57,22 @@ public interface ModelElementCategory extends EObject {
 	 * @generated
 	 */
 	EList<ExtendableElement> getModelElements();
+
+	/**
+	 * Returns the value of the '<em><b>Used Categories</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.modelinstance.ModelElementCategory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ModelElements which are contained in this category. All model elements
+	 * must be of the same type.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Used Categories</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage#getModelElementCategory_UsedCategories()
+	 * @model
+	 * @generated
+	 */
+	EList<ModelElementCategory> getUsedCategories();
 
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
