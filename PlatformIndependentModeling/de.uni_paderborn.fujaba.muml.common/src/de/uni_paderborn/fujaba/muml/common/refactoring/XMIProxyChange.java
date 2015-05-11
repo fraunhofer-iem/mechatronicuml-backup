@@ -31,13 +31,14 @@ public class XMIProxyChange extends CompositeChange {
 			final IFile target, Resource resource) {
 		super("Update Proxies");
 		
+		final Set<String> extensions = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().keySet();
 
 		try {
 			source.getProject().accept(new IResourceVisitor() {
 
 				@Override
 				public boolean visit(IResource resource) throws CoreException {
-					if (resource instanceof IFile) {
+					if (resource instanceof IFile && extensions.contains(resource.getFileExtension())) {
 						loadResource(resourceSet, (IFile) resource);
 						return false;
 					}
