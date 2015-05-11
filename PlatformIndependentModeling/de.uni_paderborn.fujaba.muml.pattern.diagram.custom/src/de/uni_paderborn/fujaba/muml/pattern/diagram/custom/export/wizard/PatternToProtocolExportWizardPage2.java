@@ -139,8 +139,10 @@ public class PatternToProtocolExportWizardPage2 extends WizardDataTransferPage
 			Text t = (Text) children[counter * 2];
 			l.setVisible(true);
 			t.setVisible(true);
+			String parameterDatatype = (parameter.getDataType()!=null) ?
+					parameter.getDataType().getName() : "Null";
 			l.setText(parameter.getName() + " ["
-					+ parameter.getDataType().getName() + "]:");
+					+ parameterDatatype + "]:");
 			t.setText("");
 			parameterToTextMapping.put(parameter, t);
 			counter++;
