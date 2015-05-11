@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -341,27 +342,29 @@ public class ModelBrowserView extends ViewPart implements ISelectionProvider, IT
 		viewer.getControl().setFocus();
 	}
 	
+	
 	// Scheduling refresh
-	Boolean needsRefresh = false;
+	final AtomicBoolean needsRefresh = new AtomicBoolean(false);
 	protected void scheduleRefresh() {
 		synchronized (needsRefresh) {
-			needsRefresh = true;
+			needsRefresh.set(true);
 		}
 		Display.getDefault().asyncExec(new Runnable() {
 			@Override
 			public void run() {
 				synchronized (needsRefresh) {
-					if (needsRefresh) {
+					if (needsRefresh.get()) {
 						if (viewer instanceof StructuredViewer) {
 							((StructuredViewer) viewer).refresh();
 						}
 						updateSave();
-						needsRefresh = false;
+						needsRefresh.set(false);
 					}
 				}
 			}
 		});		
 	}
+	
 	
 	protected void updateSave() {
 		boolean modified = !modifiedElementProvider.getModifiedResources().isEmpty();
