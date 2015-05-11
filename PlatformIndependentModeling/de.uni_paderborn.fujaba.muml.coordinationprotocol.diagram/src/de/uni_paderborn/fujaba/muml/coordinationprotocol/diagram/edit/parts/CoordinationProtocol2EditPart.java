@@ -41,6 +41,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -375,7 +376,12 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 		}
 
 		if (update) {
-			doCanonicalRefresh();
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 		super.handleNotificationEvent(event);
 	}

@@ -71,6 +71,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<reference definitionId="de.uni_paderborn.fujaba.expression.msgtypefile"></reference>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>

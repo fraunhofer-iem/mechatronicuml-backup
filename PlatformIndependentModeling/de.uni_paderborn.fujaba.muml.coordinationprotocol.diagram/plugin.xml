@@ -565,6 +565,7 @@
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<reference definitionId="de.uni_paderborn.fujaba.expression.protocolfile"></reference>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>

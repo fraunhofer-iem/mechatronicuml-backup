@@ -77,7 +77,7 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-			return false;
+		  return false;
 		}
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
@@ -116,7 +116,7 @@ public class AssemblyConnectorReorientCommand extends EditElementCommand {
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-			return false;
+		  return false;
 		}
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()

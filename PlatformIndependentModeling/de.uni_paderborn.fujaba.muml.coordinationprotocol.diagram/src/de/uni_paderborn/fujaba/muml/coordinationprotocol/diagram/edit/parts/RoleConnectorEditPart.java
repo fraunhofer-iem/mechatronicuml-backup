@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -123,7 +124,12 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 		}
 		if (notification.getOldValue() == sourceElement
 				|| notification.getOldValue() == targetElement) {
-			doCanonicalRefresh();
+			Display.getCurrent().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doCanonicalRefresh();
+				}
+			});
 		}
 
 		super.handleNotificationEvent(notification);
