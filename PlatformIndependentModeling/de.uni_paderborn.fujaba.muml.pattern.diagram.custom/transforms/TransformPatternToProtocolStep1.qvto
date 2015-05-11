@@ -124,21 +124,20 @@ mapping actionlanguage::TypedNamedElementExpression:: TypedNamedElementExpressio
 query getHighestParentStatechart(in expr : TypedNamedElementExpression) : RealtimeStatechart
 {
 	var root : EObject := expr;
-	while(root.oclIsTypeOf(core::expressions::Expression))
+	while((not root.oclIsKindOf(ConnectorQualityOfServiceAssumptions) and not root.oclIsKindOf(RealtimeStatechart)))
 	{
 		root := root.eContainer();		
+		assert fatal (not root.oclIsInvalid()) with log ("The parameter "+ expr.typedNamedElement.name + " is not contained in a RealtimeStatechart or a ConnectorQualityOfServiceAssumptions!");
+	
 	};
-	if(root.eContainer().oclIsKindOf(ConnectorQualityOfServiceAssumptions))
+	if(root.oclIsKindOf(ConnectorQualityOfServiceAssumptions))
 	{
 		return null;
-	}endif;
-	
-	while(not root.oclIsTypeOf(RealtimeStatechart))
+	}else
 	{
-		root:=root.eContainer();		
-		assert fatal (not root.oclIsInvalid()) with log ("The parameter "+ expr.typedNamedElement.name + " is not contained in a RealtimeStatechart or a ConnectorQualityOfServiceAssumptions!");
-	};
-	return root.oclAsType(RealtimeStatechart).getHighestParentStatechart();	
+		return root.oclAsType(RealtimeStatechart).getHighestParentStatechart()
+	}
+	endif;		
 }
 	
 	
