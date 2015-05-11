@@ -18,7 +18,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.DeviceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.MemoryResourceInstance;
@@ -159,13 +158,6 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * @generated
 	 */
 	private EClass hwPortEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass hwPortResourceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -521,8 +513,44 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHWPortResource() {
-		return hwPortResourceEClass;
+	public EReference getHWPort_CommunicationResource() {
+		return (EReference)hwPortEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHWPort_Protocol() {
+		return (EReference)hwPortEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHWPort_Cardinality() {
+		return (EReference)hwPortEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHWPort_MultiHWPort() {
+		return (EAttribute)hwPortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHWPort_PortKind() {
+		return (EAttribute)hwPortEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -595,8 +623,11 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 
 		hwPortEClass = createEClass(HW_PORT);
 		createEReference(hwPortEClass, HW_PORT__PARENT_RESOURCE_INSTANCE);
-
-		hwPortResourceEClass = createEClass(HW_PORT_RESOURCE);
+		createEReference(hwPortEClass, HW_PORT__COMMUNICATION_RESOURCE);
+		createEReference(hwPortEClass, HW_PORT__PROTOCOL);
+		createEReference(hwPortEClass, HW_PORT__CARDINALITY);
+		createEAttribute(hwPortEClass, HW_PORT__MULTI_HW_PORT);
+		createEAttribute(hwPortEClass, HW_PORT__PORT_KIND);
 	}
 
 	/**
@@ -626,6 +657,7 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		HwresourcePackage theHwresourcePackage = (HwresourcePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourcePackage.eNS_URI);
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
+		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -647,8 +679,6 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		actuatorInstanceEClass.getESuperTypes().add(this.getDeviceInstance());
 		resourceInstanceRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		hwPortEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		hwPortResourceEClass.getESuperTypes().add(this.getHWPort());
-		hwPortResourceEClass.getESuperTypes().add(theHwresourcePackage.getCommunicationResource());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(resourceInstanceEClass, ResourceInstance.class, "ResourceInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -691,10 +721,13 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 		initEClass(resourceInstanceRepositoryEClass, ResourceInstanceRepository.class, "ResourceInstanceRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceInstanceRepository_ResourceInstances(), this.getResourceInstance(), null, "resourceInstances", null, 1, -1, ResourceInstanceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(hwPortEClass, HWPort.class, "HWPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(hwPortEClass, HWPort.class, "HWPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPort_ParentResourceInstance(), this.getResourceInstance(), this.getResourceInstance_Hwports(), "parentResourceInstance", null, 0, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(hwPortResourceEClass, HWPortResource.class, "HWPortResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHWPort_CommunicationResource(), theHwresourcePackage.getCommunicationResource(), null, "communicationResource", null, 0, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPort_Protocol(), theHwresourcePackage.getCommunicationProtocol(), null, "protocol", null, 0, 1, HWPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPort_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 0, 1, HWPort.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHWPort_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 0, 1, HWPort.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHWPort_PortKind(), theHwresourcePackage.getCommunicationKind(), "portKind", null, 1, 1, HWPort.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -811,6 +844,30 @@ public class HwresourceinstancePackageImpl extends EPackageImpl implements Hwres
 			 "AllAtomicResourceTypesAreInitialized", "-- All Atomic Resources must be initialized\nif(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(hwresource::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(hwresourceinstance::AtomicResourceInstance).resourceType = atomicResourceType))\nendif",
 			 "CheckResourceType", "-- ResourceType must be of Kind StructuredResource\nself.resourceType.oclIsKindOf(hwresource::StructuredResource)",
 			 "UniquePortNames", "-- The Ports must have an unique name\nself.hwports->isUnique(name)"
+		   });	
+		addAnnotation
+		  (getHWPort_Protocol(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if(self.communicationResource.oclIsUndefined()) then\n\tnull \nelse\n self.communicationResource.protocol\n endif"
+		   });	
+		addAnnotation
+		  (getHWPort_Cardinality(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if(self.communicationResource.oclIsUndefined()) then\n\t null\n\telse\n\t \tself.communicationResource.cardinality\n\t endif"
+		   });	
+		addAnnotation
+		  (getHWPort_MultiHWPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (self.communicationResource.oclIsUndefined()) then\n\tfalse\nelse \n   self.communicationResource.multiHWPort\n  endif"
+		   });	
+		addAnnotation
+		  (getHWPort_PortKind(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (self.communicationResource.oclIsUndefined()) then\n\thwresource::CommunicationKind::DELEGATION\nelse \n   self.communicationResource.portKind\n endif"
 		   });
 	}
 

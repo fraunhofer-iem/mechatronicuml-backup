@@ -18,7 +18,6 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getConnectedHWPortParts() <em>Connected HW Port Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getProtocol() <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getBandwidth() <em>Bandwidth</em>}</li>
  * </ul>
  * </p>
@@ -104,32 +103,6 @@ public class BusTest extends TestCase {
 	 */
 	public void testGetConnectedHWPortParts() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getProtocol() <em>Protocol</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#getProtocol()
-	 * @generated
-	 */
-	public void testGetProtocol() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#setProtocol(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol) <em>Protocol</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus#setProtocol(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol)
-	 * @generated
-	 */
-	public void testSetProtocol() {
-		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

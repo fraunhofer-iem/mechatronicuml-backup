@@ -259,7 +259,7 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID));
+							.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			return result.toArray();
@@ -272,7 +272,7 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID));
+							.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			return result.toArray();
@@ -335,7 +335,7 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID));
+							.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			return result.toArray();

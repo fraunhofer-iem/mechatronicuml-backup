@@ -283,6 +283,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Bus4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Bus4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String HWPlatformPart1CreationTool_title;
 
 	/**

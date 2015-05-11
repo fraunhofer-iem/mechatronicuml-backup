@@ -49,6 +49,19 @@
             path="icons/linkport_large.gif"
             bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Bus"
+          description="Create a NetworkBus">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bus_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bus_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 /**
@@ -46,6 +47,8 @@ public class HWPortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addParentResourceInstancePropertyDescriptor(object);
+			addCommunicationResourcePropertyDescriptor(object);
+			addProtocolPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +67,50 @@ public class HWPortItemProvider
 				 getString("_UI_HWPort_parentResourceInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_parentResourceInstance_feature", "_UI_HWPort_type"),
 				 HwresourceinstancePackage.Literals.HW_PORT__PARENT_RESOURCE_INSTANCE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Communication Resource feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommunicationResourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPort_communicationResource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_communicationResource_feature", "_UI_HWPort_type"),
+				 HwresourceinstancePackage.Literals.HW_PORT__COMMUNICATION_RESOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Protocol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProtocolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPort_protocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_protocol_feature", "_UI_HWPort_type"),
+				 HwresourceinstancePackage.Literals.HW_PORT__PROTOCOL,
 				 false,
 				 false,
 				 false,
@@ -97,6 +144,15 @@ public class HWPortItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(HWPort.class)) {
+			case HwresourceinstancePackage.HW_PORT__PROTOCOL:
+			case HwresourceinstancePackage.HW_PORT__CARDINALITY:
+			case HwresourceinstancePackage.HW_PORT__MULTI_HW_PORT:
+			case HwresourceinstancePackage.HW_PORT__PORT_KIND:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

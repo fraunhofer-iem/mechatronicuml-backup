@@ -65,7 +65,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortParts" upperBound="-1"
-          eType="#//hwplatform/HWPortPart" containment="true" eOpposite="#//hwplatform/HWPortPart/parentResourcePart">
+          eType="#//hwplatform/HWPortPart" containment="true" eOpposite="#//hwplatform/HWPortPart/parentPlatformPart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The delegation ports of this HWPlatformPart.&#xA;They are derived from the hwPlatformType."/>
         </eAnnotations>
@@ -109,13 +109,11 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort"/>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a hardware port of a PlatformPart."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationResource"
-          lowerBound="1" eType="#//hwresource/CommunicationResource"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnector"
           upperBound="-1" eType="#//hwplatform/NetworkConnector" volatile="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -123,43 +121,6 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectors->select(c|c.oclIsKindOf(hwplatform::NetworkConnector)).oclAsType(hwplatform::NetworkConnector)->asOrderedSet()"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
-          eType="#//hwresource/CommunicationProtocol" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9;null &#xA;else&#xA; self.communicationResource.protocol&#xA; endif"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The used protocol of this HWPortInstance."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
-          volatile="true" derived="true" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9; null&#xA;&#x9;else&#xA;&#x9; &#x9;self.communicationResource.cardinality&#xA;&#x9; endif"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiHWPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.communicationResource.oclIsUndefined()) then&#xA;&#x9;false&#xA;else &#xA;   self.communicationResource.multiHWPort&#xA;  endif"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
-          eType="#//hwresource/CommunicationKind" volatile="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.communicationResource.oclIsUndefined()) then&#xA;&#x9;null&#xA;else &#xA;   self.communicationResource.portKind&#xA;  endif"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="queuingTime" eType="#//hwvaluetype/TimeInterval"
@@ -174,8 +135,10 @@
           <details key="documentation" value="The average size of the payload data that is transmitted over this HWPortInstance."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentResourcePart" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentPlatformPart" lowerBound="1"
           eType="#//hwplatform/PlatformPart" eOpposite="#//hwplatform/PlatformPart/hwPortParts"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwport" lowerBound="1"
+          eType="#//hwresourceinstance/HWPort"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Bus" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwplatform/NetworkingHardware">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -185,7 +148,7 @@
         <details key="constraints" value="SameBusProtocol"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SameBusProtocol" value="-- Connected Ports must use the same BusProtocol&#xD;&#xA;self.connectedHWPortParts->forAll(p  | p.protocol =self.protocol )"/>
+        <details key="SameBusProtocol" value="-- Connected Ports must use the same BusProtocol&#xD;&#xA;self.connectedHWPortParts.hwport->forAll(p  | p.protocol =self.protocol )"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortParts"
           upperBound="-1" eType="#//hwplatform/HWPortPart" changeable="false" volatile="true"
@@ -198,7 +161,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
-          eType="#//hwresource/CommunicationProtocol" volatile="true">
+          eType="#//hwresource/CommunicationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol."/>
         </eAnnotations>
@@ -241,7 +204,7 @@
         <details key="constraints" value="SameProtocol"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xD;&#xA;self.hwportParts->forAll(p1 , p2 | p1.protocol = p2.protocol)"/>
+        <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xD;&#xA;self.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
           volatile="true">
@@ -277,7 +240,7 @@
           <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.delegationHWPorts->notEmpty()) then&#xD;&#xA;&#x9;hwresource::CommunicationKind::DELEGATION&#xD;&#xA;else &#xD;&#xA;   self.hwportParts->any(true).portKind&#xD;&#xA;  endif"/>
+          <details key="derivation" value="if (self.delegationHWPorts->notEmpty()) then&#xD;&#xA;&#x9;hwresource::CommunicationKind::DELEGATION&#xD;&#xA;else &#xD;&#xA;   self.hwportParts.hwport->any(true).portKind&#xD;&#xA;  endif"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationHWPorts" upperBound="2"
@@ -487,15 +450,6 @@
           eType="#//hwplatforminstance/NetworkConnectorInstance" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwresourceinstance/HWPort">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortType" lowerBound="1"
-          eType="#//hwresource/CommunicationResource" volatile="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The HWPortInstance from which this HWPortPart is derived."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.type.oclIsUndefined()) then&#xA;&#x9;null&#xA;else&#xA;&#x9;self.type.oclAsType(hwplatform::HWPortPart).communicationResource&#xA;endif"/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnectorInstances"
           upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" volatile="true"
           derived="true">
@@ -504,25 +458,6 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorInstances->select(c|c.oclIsKindOf(NetworkConnectorInstance)).oclAsType(NetworkConnectorInstance)->asOrderedSet()"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
-          eType="#//hwresource/CommunicationProtocol" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if(self.hwPortType.oclIsUndefined()) then&#xA;&#x9;null &#xA;else&#xA; self.hwPortType.protocol&#xA; endif"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The used protocol of this HWPortInstance."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
-          eType="#//hwresource/CommunicationKind" volatile="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.hwPortType.oclIsUndefined()) then&#xD;&#xA; hwresource::CommunicationKind::BUS&#xD;&#xA;else&#xD;&#xA; self.hwPortType.portKind&#xD;&#xA;endif&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNetworkInterface" lowerBound="1"
@@ -1239,10 +1174,47 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPort" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="HWPort" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentResourceInstance"
           eType="#//hwresourceinstance/ResourceInstance" eOpposite="#//hwresourceinstance/ResourceInstance/hwports"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="communicationResource"
+          eType="#//hwresource/CommunicationResource"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9;null &#xA;else&#xA; self.communicationResource.protocol&#xA; endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The used protocol of this HWPortInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
+          volatile="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if(self.communicationResource.oclIsUndefined()) then&#xA;&#x9; null&#xA;&#x9;else&#xA;&#x9; &#x9;self.communicationResource.cardinality&#xA;&#x9; endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiHWPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.communicationResource.oclIsUndefined()) then&#xA;&#x9;false&#xA;else &#xA;   self.communicationResource.multiHWPort&#xA;  endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
+          eType="#//hwresource/CommunicationKind" volatile="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this HWPort is  a bus or a link port."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.communicationResource.oclIsUndefined()) then&#xA;&#x9;hwresource::CommunicationKind::DELEGATION&#xA;else &#xA;   self.communicationResource.portKind&#xA; endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="HWPortResource" eSuperTypes="#//hwresourceinstance/HWPort #//hwresource/CommunicationResource"/>
   </eSubpackages>
 </ecore:EPackage>

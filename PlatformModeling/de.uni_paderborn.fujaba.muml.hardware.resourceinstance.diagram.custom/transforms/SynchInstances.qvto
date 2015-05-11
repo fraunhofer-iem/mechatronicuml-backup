@@ -97,9 +97,9 @@ helper ResourceInstance::isResourceTypeSet(){
 
 
 //keeps the port types and port instances in synch
-helper ResourceInstance::synchHWPortInstances():OrderedSet(HWPortResource){
+helper ResourceInstance::synchHWPortInstances():OrderedSet(HWPort){
 var resourceType : Resource := self.resourceType;
-var hwPortInstances : Set(HWPortResource);
+var hwPortInstances : Set(HWPort);
 var lowerBound : Integer;
 	self.hwports->forEach(portInstance) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
@@ -126,11 +126,8 @@ var lowerBound : Integer;
 	return hwPortInstances->asOrderedSet();
 }
 
-mapping CommunicationResource::mapCommunicationResource2HWPortResource():HWPortResource{
-	name:=self.name;
-	protocol:=self.protocol;
-	cardinality:=self.cardinality.deepclone().oclAsType(muml::valuetype::Cardinality);
-	//multiHWPort:=self.multiHWPort;
+mapping CommunicationResource::mapCommunicationResource2HWPortResource():HWPort{
+	communicationResource:=self;
 }
 
 

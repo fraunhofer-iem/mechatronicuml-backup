@@ -15,7 +15,7 @@ main() {
 		// that will be removed after the replacement are also removed from the resource.
  	part.hwPortParts->forEach(port) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (part.resourceType.hwports ->excludes(port.communicationResource)) then {
+		if ( part.resourceType.hwports->excludes(port.hwport) ) then {
 				
 			// Remove its Link the Bus is kept
 			//	var comMedia : Set(CommunicationMedia) := port.connectedMedia->select(m|m.oclIsTypeOf(Link));
@@ -44,7 +44,7 @@ main() {
 		// that will be removed after the replacement are also removed from the resource.
  	part.hwPortParts->forEach(port) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (part.hwplatformType.delegationPorts.oclAsType(CommunicationResource) ->excludes(port.communicationResource)) then {
+		if (part.hwplatformType.delegationPorts.oclAsType(HWPort) ->excludes(port.hwport)) then {
 			//	
 			// Remove its Link the Bus is kept
 			//	var comMedia : Set(CommunicationMedia) := port.connectedMedia->select(m|m.oclIsTypeOf(Link));
@@ -79,7 +79,7 @@ helper createHWPortParts(inout resourcePart : ResourcePart) {
 	var resourceInstance : ResourceInstance := resourcePart.resourceType;
 	
 	resourceInstance.hwports -> forEach(hwport){
-	if((resourcePart.hwPortParts -> select(p | p.communicationResource = hwport)) -> isEmpty()) then {
+	if((resourcePart.hwPortParts -> select(p | p.hwport = hwport)) -> isEmpty()) then {
 			resourcePart.hwPortParts += new HWPortPart(hwport);
 		} endif;
 	};
@@ -91,7 +91,7 @@ helper createHWPortParts(inout hwplatformPart : HWPlatformPart) {
 	var hwplatform : HWPlatform := hwplatformPart.hwplatformType;
 	
 	hwplatform.delegationPorts -> forEach(hwport){
-	if((hwplatformPart.hwPortParts -> select(p | p.communicationResource = hwport)) -> isEmpty()) then {
+	if((hwplatformPart.hwPortParts -> select(p | p.hwport = hwport)) -> isEmpty()) then {
 			hwplatformPart.hwPortParts += new HWPortPart(hwport);
 		} endif;
 	};
@@ -101,10 +101,10 @@ helper createHWPortParts(inout hwplatformPart : HWPlatformPart) {
 // instantiate port part that references the given port
 constructor HWPortPart::HWPortPart(port : HWPort) {
 //	name:=port.name;
-	communicationResource:=port.oclAsType(CommunicationResource);
+	result.hwport:=port;
 }
 
 
 constructor HWPortPart::HWPortPart(port : DelegationHWPort) {
-	communicationResource:=port;
+	//communicationResource:=port;
 }

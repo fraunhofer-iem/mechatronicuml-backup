@@ -359,6 +359,17 @@
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform/delegationPorts"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/HWPlatform/delegationPorts"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.19">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+          <elementClass
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
+        </modelElementInitializer>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -432,7 +443,7 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.19">
+              value="//@expressionProviders/@providers.0/@expressions.20">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -592,7 +603,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ToBusFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ToBusFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ToBusFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASHDOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ToBusFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ToBusFigure() {&#xA;&#x9;&#x9;this.setLineWidth(2);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -651,6 +662,13 @@
             largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_large.gif"
             smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkport_small.gif"
             genNodes="//@diagram/@childNodes.4"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Bus"
+            description="Create a NetworkBus"
+            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_large.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_small.gif"
+            genNodes="//@diagram/@childNodes.0"/>
       </groups>
       <groups
           title="Hardware-Platform"
@@ -942,6 +960,8 @@
           body="let isStructuredResourceInstance : Boolean = if self.resourceType.oclIsUndefined() then false else&#xA; self.resourceType.oclIsTypeOf(hwresourceinstance::StructuredResourceInstance) endif in&#xA;let processor : Set(hwresourceinstance::ComputingResourceInstance) = if (isStructuredResourceInstance) then self.resourceType.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::ComputingResourceInstance)).oclAsType(hwresourceinstance::ComputingResourceInstance)->asOrderedSet()&#xA;else Set(hwresourceinstance::ComputingResourceInstance){}  endif in&#xA;let processorString : String = if processor->isEmpty() then 'Processor:' else processor->iterate(p; result : String = 'Processor:' | result.concat(p.frequency.toString().concat(', '))) endif in&#xA;processorString"/>
       <expressions
           body="let name : String = if (self.name.oclIsUndefined()) then 'Platform' else self.name endif  in&#xA;let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name +' :'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name&#xA;else &#xA;&#x9;self.name&#xA;endif &#xA; in&#xA;nameToShow"/>
+      <expressions
+          body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
       <expressions
           body="let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in&#xA;let number : String = OrderedSet { 1 }->closure(e | &#xA;&#x9;let provisionalName : String = prefix.concat(e.toString()) in&#xA;&#x9;if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then&#xA;&#x9;&#x9;e + 1&#xA;&#x9;else&#xA;&#x9;&#x9;e&#xA;&#x9;endif&#xA;)->sortedBy(e | e)->last().toString() in prefix.concat(number)"/>
       <expressions

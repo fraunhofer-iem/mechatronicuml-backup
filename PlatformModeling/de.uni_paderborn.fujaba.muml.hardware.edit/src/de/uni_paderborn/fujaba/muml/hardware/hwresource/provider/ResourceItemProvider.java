@@ -7,7 +7,6 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlu
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourceFactory;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
-import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -129,11 +128,6 @@ public class ResourceItemProvider
 			(createChildParameter
 				(HwresourcePackage.Literals.RESOURCE__COMMUNICATION_RESOURCES,
 				 HwresourceFactory.eINSTANCE.createCommunicationResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE__COMMUNICATION_RESOURCES,
-				 HwresourceinstanceFactory.eINSTANCE.createHWPortResource()));
 	}
 
 	/**

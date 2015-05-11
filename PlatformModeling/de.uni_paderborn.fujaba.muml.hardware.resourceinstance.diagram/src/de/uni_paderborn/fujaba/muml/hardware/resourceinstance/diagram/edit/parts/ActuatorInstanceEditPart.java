@@ -121,7 +121,7 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -177,12 +177,12 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 							.getFigureResourceCardinalityFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.EAST);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
@@ -202,10 +202,10 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.WrappingLabel4EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}

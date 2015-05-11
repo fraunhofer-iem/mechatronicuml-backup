@@ -141,7 +141,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
@@ -162,7 +162,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 		return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID == visualID
+				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID == visualID
@@ -236,9 +236,9 @@ public class HardwareViewProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
 			return createStructuredResourceInstance_2006(domainElement,
 					containerView, index, persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID:
-			return createHWPortResource_3015(domainElement, containerView,
-					index, persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+			return createHWPort_3016(domainElement, containerView, index,
+					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
 			return createCacheInstance_3009(domainElement, containerView,
 					index, persisted, preferencesHint);
@@ -453,13 +453,12 @@ public class HardwareViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHWPortResource_3015(EObject domainElement,
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Node createHWPort_3016(EObject domainElement, View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -490,15 +489,15 @@ public class HardwareViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5069 = createLabel(
+		Node label5070 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID));
-		label5069.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5070.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5069 = (Location) label5069.getLayoutConstraint();
-		location5069.setX(0);
-		location5069.setY(5);
+		Location location5070 = (Location) label5070.getLayoutConstraint();
+		location5070.setX(0);
+		location5070.setY(5);
 		return node;
 	}
 

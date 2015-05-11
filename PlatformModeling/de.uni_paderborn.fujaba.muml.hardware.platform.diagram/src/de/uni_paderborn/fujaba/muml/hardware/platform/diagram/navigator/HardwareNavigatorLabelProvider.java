@@ -250,7 +250,7 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort domainModelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort) view
 				.getElement();
 		if (domainModelElement != null) {
-			return domainModelElement.getComment();
+			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
 					.getInstance()

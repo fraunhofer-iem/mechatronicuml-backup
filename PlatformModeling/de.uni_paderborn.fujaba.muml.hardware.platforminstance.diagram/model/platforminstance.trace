@@ -14,95 +14,6 @@
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces
-      visualID="3017"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'CacheInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'StructuredResourceInstance') and _containmentMF_.name = 'embeddedAtomicResourceInstances')">
-    <nodeLabelTraces
-        visualID="5042"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5043"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5044"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5045"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3018"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'ProgrammableLogicDeviceInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'StructuredResourceInstance') and _containmentMF_.name = 'embeddedAtomicResourceInstances')">
-    <nodeLabelTraces
-        visualID="5046"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5047"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5048"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5049"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3019"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'ProcessorInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'StructuredResourceInstance') and _containmentMF_.name = 'embeddedAtomicResourceInstances')">
-    <nodeLabelTraces
-        visualID="5050"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5051"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5052"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5053"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5054"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3020"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'ProcessingMemoryInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'StructuredResourceInstance') and _containmentMF_.name = 'embeddedAtomicResourceInstances')">
-    <nodeLabelTraces
-        visualID="5055"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5056"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5057"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5058"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5059"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3021"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'StorageMemoryInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/' and _eClass_.name = 'StructuredResourceInstance') and _containmentMF_.name = 'embeddedAtomicResourceInstances')">
-    <nodeLabelTraces
-        visualID="5060"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5061"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5062"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5063"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5064"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
       visualID="3028"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/' and _eClass_.name = 'DelegationHWPortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/' and _eClass_.name = 'HWPlatformInstance') and _containmentMF_.name = 'delegationPorts')">
     <nodeLabelTraces
@@ -145,8 +56,11 @@
     <nodeLabelTraces
         visualID="5085"
         queryText="true"/>
-    <compartmentTraces
-        visualID="7009"
+    <nodeLabelTraces
+        visualID="5098"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5099"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces

@@ -103,13 +103,13 @@ public interface HwresourceinstanceFactory extends EFactory {
 	ResourceInstanceRepository createResourceInstanceRepository();
 
 	/**
-	 * Returns a new object of class '<em>HW Port Resource</em>'.
+	 * Returns a new object of class '<em>HW Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>HW Port Resource</em>'.
+	 * @return a new object of class '<em>HW Port</em>'.
 	 * @generated
 	 */
-	HWPortResource createHWPortResource();
+	HWPort createHWPort();
 
 	/**
 	 * Returns the package supported by this factory.

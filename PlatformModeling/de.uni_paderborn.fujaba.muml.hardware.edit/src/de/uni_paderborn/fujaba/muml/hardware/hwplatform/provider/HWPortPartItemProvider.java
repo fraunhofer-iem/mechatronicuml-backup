@@ -7,7 +7,6 @@ import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointItemProv
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -47,49 +46,26 @@ public class HWPortPartItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommunicationResourcePropertyDescriptor(object);
-			addProtocolPropertyDescriptor(object);
-			addParentResourcePartPropertyDescriptor(object);
+			addParentPlatformPartPropertyDescriptor(object);
+			addHwportPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Communication Resource feature.
+	 * This adds a property descriptor for the Parent Platform Part feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommunicationResourcePropertyDescriptor(Object object) {
+	protected void addParentPlatformPartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_HWPortPart_communicationResource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_communicationResource_feature", "_UI_HWPortPart_type"),
-				 HwplatformPackage.Literals.HW_PORT_PART__COMMUNICATION_RESOURCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Protocol feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProtocolPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HWPortPart_protocol_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_protocol_feature", "_UI_HWPortPart_type"),
-				 HwplatformPackage.Literals.HW_PORT_PART__PROTOCOL,
+				 getString("_UI_HWPortPart_parentPlatformPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_parentPlatformPart_feature", "_UI_HWPortPart_type"),
+				 HwplatformPackage.Literals.HW_PORT_PART__PARENT_PLATFORM_PART,
 				 false,
 				 false,
 				 false,
@@ -99,22 +75,22 @@ public class HWPortPartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Parent Resource Part feature.
+	 * This adds a property descriptor for the Hwport feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParentResourcePartPropertyDescriptor(Object object) {
+	protected void addHwportPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_HWPortPart_parentResourcePart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_parentResourcePart_feature", "_UI_HWPortPart_type"),
-				 HwplatformPackage.Literals.HW_PORT_PART__PARENT_RESOURCE_PART,
+				 getString("_UI_HWPortPart_hwport_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_hwport_feature", "_UI_HWPortPart_type"),
+				 HwplatformPackage.Literals.HW_PORT_PART__HWPORT,
+				 true,
 				 false,
-				 false,
-				 false,
+				 true,
 				 null,
 				 null,
 				 null));
@@ -189,10 +165,6 @@ public class HWPortPartItemProvider
 
 		switch (notification.getFeatureID(HWPortPart.class)) {
 			case HwplatformPackage.HW_PORT_PART__CONNECTED_NETWORK_CONNECTOR:
-			case HwplatformPackage.HW_PORT_PART__PROTOCOL:
-			case HwplatformPackage.HW_PORT_PART__CARDINALITY:
-			case HwplatformPackage.HW_PORT_PART__MULTI_HW_PORT:
-			case HwplatformPackage.HW_PORT_PART__PORT_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case HwplatformPackage.HW_PORT_PART__QUEUING_TIME:
@@ -213,11 +185,6 @@ public class HWPortPartItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwplatformPackage.Literals.HW_PORT_PART__CARDINALITY,
-				 ValuetypeFactory.eINSTANCE.createCardinality()));
 
 		newChildDescriptors.add
 			(createChildParameter

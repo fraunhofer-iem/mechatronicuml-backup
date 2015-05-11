@@ -116,8 +116,6 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 				return validateResourceInstanceRepository((ResourceInstanceRepository)value, diagnostics, context);
 			case HwresourceinstancePackage.HW_PORT:
 				return validateHWPort((HWPort)value, diagnostics, context);
-			case HwresourceinstancePackage.HW_PORT_RESOURCE:
-				return validateHWPortResource((HWPortResource)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -587,15 +585,6 @@ public class HwresourceinstanceValidator extends EObjectValidator {
 	 */
 	public boolean validateHWPort(HWPort hwPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(hwPort, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHWPortResource(HWPortResource hwPortResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(hwPortResource, diagnostics, context);
 	}
 
 	/**

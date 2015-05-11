@@ -36,6 +36,19 @@ public class DelegationHWPortEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorParentResourceInstance_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorCommunicationResource_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -47,12 +60,25 @@ public class DelegationHWPortEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
+
+			addPropertyEditor(
+					createEditorParentResourceInstance_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(
+					createEditorCommunicationResource_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
+
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
+					false);
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
@@ -106,6 +132,59 @@ public class DelegationHWPortEditor
 		return this.editorExtension_ExtensionsTab;
 	}
 
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentResourceInstance_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentResourceInstance_GeneralTab_Editor() {
+		if (this.editorParentResourceInstance_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getHWPort_ParentResourceInstance();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorParentResourceInstance_GeneralTab = editor;
+		}
+		return this.editorParentResourceInstance_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCommunicationResource_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCommunicationResource_GeneralTab_Editor() {
+		if (this.editorCommunicationResource_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
+					.getHWPort_CommunicationResource();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorCommunicationResource_GeneralTab = editor;
+		}
+		return this.editorCommunicationResource_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorName_GeneralTab_Editor() {
+		if (this.editorName_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.core.CorePackage.eINSTANCE
+					.getNamedElement_Name();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+					adapterFactory, feature, false);
+
+			{
+				final org.eclipse.ocl.ecore.OCLExpression initExpression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
+						.createOCLExpression(
+								"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n	let provisionalName : String = prefix.concat(e.toString()) in\n	if self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n		e + 1\n	else\n		e\n	endif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)",
+								feature, getEClass());
+				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
+						.createQuery(initExpression);
+				if (query != null) {
+					editor.setInitializeQuery(query);
+				}
+			}
+
+			editor.setTooltipMessage("The name attribute of a meta-model element.");
+
+			this.editorName_GeneralTab = editor;
+		}
+		return this.editorName_GeneralTab;
+	}
+
 	//
 	// instantiation
 	//
@@ -139,7 +218,9 @@ public class DelegationHWPortEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -36,38 +36,15 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression[51];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression[23];
 		this.expressionBodies = new String[] {
 				"self.name", //$NON-NLS-1$
 				"let nameToShow : String = if (self.oclIsTypeOf(hwplatforminstance::HWPlatformInstance)) then \n\tself.name.toString() +\' :\'+ self.oclAsType(hwplatforminstance::HWPlatformInstance).hwplatformType.name.toString()\nelse \n\tself.name.toString()\nendif \n in\nnameToShow", //$NON-NLS-1$
-				"\' \'", //$NON-NLS-1$
-				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
-				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
-				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
-				"\' \'", //$NON-NLS-1$
-				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
-				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
-				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
-				"\' \'", //$NON-NLS-1$
-				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
-				"if self.frequency.oclIsUndefined() then \'null\' else self.frequency.toString() endif", //$NON-NLS-1$
-				"\'Enter frequency in form of:  Value Hz/MHz/GHz\'", //$NON-NLS-1$
-				"let mips : String = if self.MIPS.oclIsUndefined() then \'null\' else self.MIPS.toString() endif in\nlet cpi : String = if self.CPI.oclIsUndefined() then \'null\' else self.CPI.toString() endif in\n\'MIPS: \'+mips + \' / CPI: \'+cpi", //$NON-NLS-1$
-				"0", //$NON-NLS-1$
-				"\' \'", //$NON-NLS-1$
-				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
-				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
-				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
-				"\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif", //$NON-NLS-1$
-				"0", //$NON-NLS-1$
-				"\' \'", //$NON-NLS-1$
-				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
-				"\'Size: \' + if self.memorySize.oclIsUndefined() then \'null\' else self.memorySize.toString() endif", //$NON-NLS-1$
-				"\'Enter memorySize in form of:  Value bit/byte/kb/mb/gb\'", //$NON-NLS-1$
-				"\'Kind: \' + if self.memoryType.oclIsUndefined() then \'null\' else self.memoryType.toString() endif", //$NON-NLS-1$
 				"let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\nportName +\': \' +  \'\\n\' + protocolName", //$NON-NLS-1$
 				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
+				"let isStructuredResource : Boolean = if self.resourceType.oclIsUndefined() then false else\n self.resourceType.oclIsTypeOf(hwresource::StructuredResource) endif in\nlet memory : Set(hwresourceinstance::MemoryResourceInstance) = if (isStructuredResource) then self.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::MemoryResourceInstance) and not r.oclIsTypeOf(hwresourceinstance::CacheInstance)).oclAsType(hwresourceinstance::MemoryResourceInstance)->asOrderedSet()\nelse Set(hwresourceinstance::MemoryResourceInstance){}  endif in\nlet memoryString : String = if memory->isEmpty() then \'Memory:\' else memory->iterate(m; result : String = \'Memory:\' | result.concat(m.memorySize.toString().concat(\' \').concat(m.memoryType.toString()).concat(\', \'))) endif in\nmemoryString", //$NON-NLS-1$
+				"let isStructuredResource : Boolean = if self.resourceType.oclIsUndefined() then false else\nself.resourceType.oclIsTypeOf(hwresource::StructuredResource) endif in\nlet processor : Set(hwresourceinstance::ComputingResourceInstance) = if (isStructuredResource) then self.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::ComputingResourceInstance)).oclAsType(hwresourceinstance::ComputingResourceInstance)->asOrderedSet()\nelse Set(hwresourceinstance::ComputingResourceInstance){}  endif in\nlet processorString : String = if processor->isEmpty() then \'Processor:\' else processor->iterate(p; result : String = \'Processor:\' | result.concat(p.frequency.toString().concat(\', \'))) endif in\nprocessorString", //$NON-NLS-1$
 				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
 				"\' \'", //$NON-NLS-1$
 				"\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif", //$NON-NLS-1$
@@ -75,11 +52,6 @@ public class HardwareOCLFactory {
 				"let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\nbdwidth", //$NON-NLS-1$
 				"let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\nproto", //$NON-NLS-1$
 				"\'Bridge\'", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
-				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$
 				"let prefix : String = self.oclAsType(ecore::EObject).eClass().name.substring(1, 1) in\nlet number : String = OrderedSet { 1 }->closure(e | \n\tlet provisionalName : String = prefix.concat(e.toString()) in\n\tif self.oclAsType(ecore::EObject).eContainer().eContents()->select(oclIsKindOf(core::NamedElement)).oclAsType(core::NamedElement)->select(n | n.name = provisionalName)->notEmpty() then\n\t\te + 1\n\telse\n\t\te\n\tendif\n)->sortedBy(e | e)->last().toString() in prefix.concat(number)", //$NON-NLS-1$

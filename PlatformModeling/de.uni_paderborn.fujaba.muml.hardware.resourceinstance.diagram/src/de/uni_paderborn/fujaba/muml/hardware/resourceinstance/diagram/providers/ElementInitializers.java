@@ -71,15 +71,14 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPortResource_3015(
-			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource instance) {
+	public void init_HWPort_3016(
+			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
 							35,
 							de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-									.getHWPortResource(), null).evaluate(
-							instance);
+									.getHWPort(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin

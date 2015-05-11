@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatform.util;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.*;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -107,7 +108,9 @@ public class HwplatformSwitch<T> extends Switch<T> {
 				DelegationHWPort delegationHWPort = (DelegationHWPort)theEObject;
 				T result = caseDelegationHWPort(delegationHWPort);
 				if (result == null) result = caseConnectorEndpoint(delegationHWPort);
+				if (result == null) result = caseHWPort(delegationHWPort);
 				if (result == null) result = caseCommentableElement(delegationHWPort);
+				if (result == null) result = caseNamedElement(delegationHWPort);
 				if (result == null) result = caseExtendableElement(delegationHWPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -383,6 +386,21 @@ public class HwplatformSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorEndpoint(ConnectorEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>HW Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>HW Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHWPort(HWPort object) {
 		return null;
 	}
 

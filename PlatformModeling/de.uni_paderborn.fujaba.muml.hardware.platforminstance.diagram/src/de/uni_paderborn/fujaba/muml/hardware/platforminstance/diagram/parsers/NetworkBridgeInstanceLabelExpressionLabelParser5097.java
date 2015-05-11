@@ -38,7 +38,7 @@ public class NetworkBridgeInstanceLabelExpressionLabelParser5097 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						36,
+						13,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 								.getNetworkBridgeInstance(), null).body();
 	}

@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getBus()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameBusProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameBusProtocol='-- Connected Ports must use the same BusProtocol\r\nself.connectedHWPortParts->forAll(p  | p.protocol =self.protocol )'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameBusProtocol='-- Connected Ports must use the same BusProtocol\r\nself.connectedHWPortParts.hwport->forAll(p  | p.protocol =self.protocol )'"
  * @generated
  */
 public interface Bus extends ConnectorEndpoint, NetworkingHardware {
@@ -62,7 +62,7 @@ public interface Bus extends ConnectorEndpoint, NetworkingHardware {
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see #setProtocol(CommunicationProtocol)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getBus_Protocol()
-	 * @model required="true" volatile="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	CommunicationProtocol getProtocol();

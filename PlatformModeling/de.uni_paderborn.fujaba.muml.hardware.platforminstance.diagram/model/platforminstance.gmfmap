@@ -50,7 +50,7 @@
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
-                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceNameLabel"/>
+                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
                 <features
                     href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
@@ -58,293 +58,38 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceKindLabel"/>
+                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
                 <viewExpression
                     body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
               </labelMappings>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping">
                 <diagramLabel
-                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceCardinalityLabel"/>
+                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
                 <viewExpression
                     body="' '"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:ExpressionLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
+                <viewExpression
+                    body="let isStructuredResource : Boolean = if self.resourceType.oclIsUndefined() then false else&#xA; self.resourceType.oclIsTypeOf(hwresource::StructuredResource) endif in&#xA;let memory : Set(hwresourceinstance::MemoryResourceInstance) = if (isStructuredResource) then self.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::MemoryResourceInstance) and not r.oclIsTypeOf(hwresourceinstance::CacheInstance)).oclAsType(hwresourceinstance::MemoryResourceInstance)->asOrderedSet()&#xA;else Set(hwresourceinstance::MemoryResourceInstance){}  endif in&#xA;let memoryString : String = if memory->isEmpty() then 'Memory:' else memory->iterate(m; result : String = 'Memory:' | result.concat(m.memorySize.toString().concat(' ').concat(m.memoryType.toString()).concat(', '))) endif in&#xA;memoryString"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:ExpressionLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
+                <viewExpression
+                    body="let isStructuredResource : Boolean = if self.resourceType.oclIsUndefined() then false else&#xA;self.resourceType.oclIsTypeOf(hwresource::StructuredResource) endif in&#xA;let processor : Set(hwresourceinstance::ComputingResourceInstance) = if (isStructuredResource) then self.oclAsType(hwresourceinstance::StructuredResourceInstance).embeddedAtomicResourceInstances->select(r|r.oclIsKindOf(hwresourceinstance::ComputingResourceInstance)).oclAsType(hwresourceinstance::ComputingResourceInstance)->asOrderedSet()&#xA;else Set(hwresourceinstance::ComputingResourceInstance){}  endif in&#xA;let processorString : String = if processor->isEmpty() then 'Processor:' else processor->iterate(p; result : String = 'Processor:' | result.concat(p.frequency.toString().concat(', '))) endif in&#xA;processorString"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmftool#//@palette/@tools.0/@tools.0"/>
               <diagramNode
-                  href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResource"/>
-              <children
-                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/CacheInstance"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
-                    <viewExpression
-                        body="' '"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
-                    <viewExpression
-                        body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
-                    <viewExpression
-                        body="'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
-                    <editExpression
-                        body="'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
-                  </labelMappings>
-                  <diagramNode
-                      href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ProgrammableLogicDeviceInstance"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
-                    <viewExpression
-                        body="' '"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
-                    <viewExpression
-                        body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
-                    <viewExpression
-                        body="if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
-                    <editExpression
-                        body="'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
-                  </labelMappings>
-                  <diagramNode
-                      href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ProcessorInstance"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
-                    <viewExpression
-                        body="' '"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
-                    <viewExpression
-                        body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
-                    <viewExpression
-                        body="if self.frequency.oclIsUndefined() then 'null' else self.frequency.toString() endif"/>
-                    <editExpression
-                        body="'Enter frequency in form of:  Value Hz/MHz/GHz'"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
-                    <viewExpression
-                        body="let mips : String = if self.MIPS.oclIsUndefined() then 'null' else self.MIPS.toString() endif in&#xA;let cpi : String = if self.CPI.oclIsUndefined() then 'null' else self.CPI.toString() endif in&#xA;'MIPS: '+mips + ' / CPI: '+cpi"/>
-                  </labelMappings>
-                  <diagramNode
-                      href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ProcessingMemoryInstance"/>
-                  <domainInitializer
-                      xsi:type="gmfmap:FeatureSeqInitializer">
-                    <initializers
-                        xsi:type="gmfmap:ReferenceNewElementSpec">
-                      <feature
-                          xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/MemoryResourceInstance/memorySize"/>
-                      <newElementInitializers>
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize/value"/>
-                          <value
-                              body="0"/>
-                        </initializers>
-                      </newElementInitializers>
-                    </initializers>
-                  </domainInitializer>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
-                    <viewExpression
-                        body="' '"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
-                    <viewExpression
-                        body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
-                    <viewExpression
-                        body="'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
-                    <editExpression
-                        body="'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
-                    <viewExpression
-                        body="'Kind: ' + if self.memoryType.oclIsUndefined() then 'null' else self.memoryType.toString() endif"/>
-                  </labelMappings>
-                  <diagramNode
-                      href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StorageMemoryInstance"/>
-                  <domainInitializer
-                      xsi:type="gmfmap:FeatureSeqInitializer">
-                    <initializers
-                        xsi:type="gmfmap:ReferenceNewElementSpec">
-                      <feature
-                          xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/MemoryResourceInstance/memorySize"/>
-                      <newElementInitializers>
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize/value"/>
-                          <value
-                              body="0"/>
-                        </initializers>
-                      </newElementInitializers>
-                    </initializers>
-                  </domainInitializer>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceCardinalityLabel"/>
-                    <viewExpression
-                        body="' '"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceKindLabel"/>
-                    <viewExpression
-                        body="': ' + if self.resourceType.oclIsUndefined() then 'null' else self.resourceType.name endif"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo1"/>
-                    <viewExpression
-                        body="'Size: ' + if self.memorySize.oclIsUndefined() then 'null' else self.memorySize.toString() endif"/>
-                    <editExpression
-                        body="'Enter memorySize in form of:  Value bit/byte/kb/mb/gb'"/>
-                  </labelMappings>
-                  <labelMappings
-                      xsi:type="gmfmap:ExpressionLabelMapping"
-                      readOnly="true">
-                    <diagramLabel
-                        href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
-                    <viewExpression
-                        body="'Kind: ' + if self.memoryType.oclIsUndefined() then 'null' else self.memoryType.toString() endif"/>
-                  </labelMappings>
-                  <diagramNode
-                      href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
-                </ownedChild>
-              </children>
+                  href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
               <children>
                 <containmentFeature
                     href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
@@ -362,11 +107,6 @@
                       href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
                 </ownedChild>
               </children>
-              <compartments
-                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.3">
-                <compartment
-                    href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResourceCompartment"/>
-              </compartments>
             </ownedChild>
           </children>
           <children
@@ -405,7 +145,7 @@
               <diagramNode
                   href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
               <children
-                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.5/@ownedChild">
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
                 <containmentFeature
                     href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
               </children>
@@ -448,7 +188,7 @@
               <diagramNode
                   href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#SimpleResource"/>
               <children
-                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.5/@ownedChild">
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
                 <containmentFeature
                     href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
               </children>

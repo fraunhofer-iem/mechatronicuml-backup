@@ -33,6 +33,9 @@ public class CommunicationResourceEditor
 			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
 					false);
 
+			addPropertyEditor(createEditorParentResource_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -42,6 +45,9 @@ public class CommunicationResourceEditor
 			addPropertyEditor(createEditorProtocol_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
+					false);
+
+			addPropertyEditor(createEditorParentResource_GeneralTab_Editor(),
 					false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -85,6 +91,19 @@ public class CommunicationResourceEditor
 			this.editorCardinality_GeneralTab = editor;
 		}
 		return this.editorCardinality_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentResource_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentResource_GeneralTab_Editor() {
+		if (this.editorParentResource_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+					.getCommunicationResource_ParentResource();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			this.editorParentResource_GeneralTab = editor;
+		}
+		return this.editorParentResource_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorName_GeneralTab;
@@ -160,7 +179,8 @@ public class CommunicationResourceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

@@ -165,7 +165,7 @@ public abstract class PlatformPartImpl extends NamedElementImpl implements Platf
 	 */
 	public EList<HWPortPart> getHwPortParts() {
 		if (hwPortParts == null) {
-			hwPortParts = new EObjectContainmentWithInverseEList<HWPortPart>(HWPortPart.class, this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, HwplatformPackage.HW_PORT_PART__PARENT_RESOURCE_PART);
+			hwPortParts = new EObjectContainmentWithInverseEList<HWPortPart>(HWPortPart.class, this, HwplatformPackage.PLATFORM_PART__HW_PORT_PARTS, HwplatformPackage.HW_PORT_PART__PARENT_PLATFORM_PART);
 		}
 		return hwPortParts;
 	}

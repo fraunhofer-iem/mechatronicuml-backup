@@ -61,7 +61,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType HWPortResource_3015 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPortResource_3015"); //$NON-NLS-1$
+	public static final IElementType HWPort_3016 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3016"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -147,9 +147,9 @@ public class HardwareElementTypes {
 							.getStructuredResourceInstance());
 
 			elements.put(
-					HWPortResource_3015,
+					HWPort_3016,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getHWPortResource());
+							.getHWPort());
 
 			elements.put(
 					CacheInstance_3009,
@@ -201,7 +201,7 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(SensorInstance_2004);
 			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_2005);
 			KNOWN_ELEMENT_TYPES.add(StructuredResourceInstance_2006);
-			KNOWN_ELEMENT_TYPES.add(HWPortResource_3015);
+			KNOWN_ELEMENT_TYPES.add(HWPort_3016);
 			KNOWN_ELEMENT_TYPES.add(CacheInstance_3009);
 			KNOWN_ELEMENT_TYPES.add(ProgrammableLogicDeviceInstance_3010);
 			KNOWN_ELEMENT_TYPES.add(ProcessorInstance_3011);
@@ -225,8 +225,8 @@ public class HardwareElementTypes {
 			return ActuatorInstance_2005;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
 			return StructuredResourceInstance_2006;
-		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID:
-			return HWPortResource_3015;
+		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
+			return HWPort_3016;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
 			return CacheInstance_3009;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:

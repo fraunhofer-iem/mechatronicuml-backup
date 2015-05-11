@@ -38,7 +38,7 @@ public class ActuatorInstanceLabelExpressionLabelParser5087 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						30,
+						7,
 						de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 								.getActuatorInstance(), null).body();
 	}

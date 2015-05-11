@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getNetworkConnector()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='-- Connected Ports must use the same Protocol\r\nself.hwportParts->forAll(p1 , p2 | p1.protocol = p2.protocol)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='-- Connected Ports must use the same Protocol\r\nself.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)'"
  * @generated
  */
 public interface NetworkConnector extends Connector {
@@ -112,7 +112,7 @@ public interface NetworkConnector extends Connector {
 	 * @see #setConnectorKind(CommunicationKind)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getNetworkConnector_ConnectorKind()
 	 * @model required="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.delegationHWPorts->notEmpty()) then\r\n\thwresource::CommunicationKind::DELEGATION\r\nelse \r\n   self.hwportParts->any(true).portKind\r\n  endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.delegationHWPorts->notEmpty()) then\r\n\thwresource::CommunicationKind::DELEGATION\r\nelse \r\n   self.hwportParts.hwport->any(true).portKind\r\n  endif'"
 	 * @generated
 	 */
 	CommunicationKind getConnectorKind();

@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.VisualPortKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
@@ -29,7 +29,7 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		/**
 		 * 
 		 */
-		if (feature == HwplatformPackage.Literals.HW_PORT_PART__COMMUNICATION_RESOURCE) {
+		if (feature == HwplatformPackage.Literals.HW_PORT_PART__HWPORT) {
 			refreshHWPortFigure();
 
 		}
@@ -42,6 +42,10 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 	 */
 	@Override
 	protected boolean isDelegationPort() {
+		HWPortPart element = (HWPortPart) getSemanticElement();
+		if (element.getParentPlatformPart() instanceof HWPlatformPart) {
+			return true;
+		}
 
 		return false;
 	}
@@ -61,7 +65,7 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		if (hwPortPart == null) {
 			return false;
 		}
-		return hwPortPart.isMultiHWPort();
+		return hwPortPart.getHwport().isMultiHWPort();
 	}
 
 	@Override
@@ -77,7 +81,7 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 		}
 
 		if (hwPortPart != null) {
-			modelPortKind = hwPortPart.getPortKind();
+			modelPortKind = hwPortPart.getHwport().getPortKind();
 		}
 
 		return modelPortKind;
@@ -87,7 +91,11 @@ public class HWPortPartEditPolicy extends HWPortBaseEditPolicy {
 	protected boolean isOptionalPort() {
 		EObject element = getSemanticElement();
 		HWPortPart portPart = (HWPortPart) element;
+		if (portPart.getHwport().getCardinality() != null
+				&& portPart.getHwport().getCardinality().getLowerBound() != null) {
 
-		return portPart.getCardinality().getLowerBound().getValue() == 0;
+			return portPart.getHwport().getCardinality().getLowerBound().getValue() == 0;
+		}
+		return false;
 	}
 }

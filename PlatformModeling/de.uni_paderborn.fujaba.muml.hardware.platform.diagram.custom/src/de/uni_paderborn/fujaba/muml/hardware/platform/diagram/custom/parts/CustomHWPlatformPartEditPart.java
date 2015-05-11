@@ -72,6 +72,9 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 		if (editingDomain != null) {
 			PlatformPart platformPart = (PlatformPart) getNotationView()
 					.getElement();
+			if(platformPart instanceof HWPlatformPart && ((HWPlatformPart)platformPart).getHwplatformType()==null){
+				return;
+			}
 			Activator.updateHWPortParts(editingDomain, platformPart);
 		}
 	}

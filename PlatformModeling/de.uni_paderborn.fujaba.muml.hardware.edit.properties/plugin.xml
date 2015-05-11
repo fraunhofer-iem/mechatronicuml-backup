@@ -219,11 +219,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwresourceinstance.editor.HWPortResourceEditor$Factory"
-             type="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/#HWPortResource">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwplatforminstance.editor.HWPlatformInstanceEditor$Factory"
              type="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/#HWPlatformInstance">
        </propertyEditor>

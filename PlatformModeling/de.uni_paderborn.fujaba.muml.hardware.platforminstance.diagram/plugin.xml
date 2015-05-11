@@ -291,7 +291,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PlatformInstance"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3032,3031,3028,3033,3017,3018,3019,3020,3021,3030,3034,3035,3036,3038"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3032,3031,3028,3033,3030,3034,3035,3036,3038"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4011"/>
       </viewProvider>
    </extension>
@@ -304,16 +304,16 @@
             <method name="getType()" value="PlatformInstance"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2004,3032,3031,3028,3033,3017,3018,3019,3020,3021,3030,3034,3035,3036,3038"/>
+            <method name="getType()" value="2004,3032,3031,3028,3033,3030,3034,3035,3036,3038"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5096,5095,5078,5083,5084,5085,5042,5043,5044,5045,5046,5047,5048,5049,5050,5051,5052,5053,5054,5055,5056,5057,5058,5059,5060,5061,5062,5063,5064,5082,5086,5087,5088,5089,5090,5091,5092,5093,5097"/>
+            <method name="getType()" value="5096,5095,5078,5083,5084,5085,5098,5099,5082,5086,5087,5088,5089,5090,5091,5092,5093,5097"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7011,7008,7010,7009"/>
+            <method name="getType()" value="7011,7008,7010"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -350,31 +350,6 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart" id="StructuredResourceInstance_3033"/>
          <context elements="StructuredResourceInstance_3033"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfCacheInstanceEditPart">
-         <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CacheInstanceEditPart" id="CacheInstance_3017"/>
-         <context elements="CacheInstance_3017"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProgrammableLogicDeviceInstanceEditPart">
-         <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart" id="ProgrammableLogicDeviceInstance_3018"/>
-         <context elements="ProgrammableLogicDeviceInstance_3018"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProcessorInstanceEditPart">
-         <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ProcessorInstanceEditPart" id="ProcessorInstance_3019"/>
-         <context elements="ProcessorInstance_3019"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProcessingMemoryInstanceEditPart">
-         <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart" id="ProcessingMemoryInstance_3020"/>
-         <context elements="ProcessingMemoryInstance_3020"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfStorageMemoryInstanceEditPart">
-         <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StorageMemoryInstanceEditPart" id="StorageMemoryInstance_3021"/>
-         <context elements="StorageMemoryInstance_3021"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfHWPortInstanceEditPart">
          <Priority name="Lowest"/>
@@ -478,56 +453,6 @@
             <param name="semanticHint" value="3033"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CacheInstance_3017"
-               name="%metatype.name.CacheInstance_3017"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CacheInstance"
-               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.CacheInstanceEditHelper">
-            <param name="semanticHint" value="3017"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProgrammableLogicDeviceInstance_3018"
-               name="%metatype.name.ProgrammableLogicDeviceInstance_3018"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ProgrammableLogicDeviceInstance"
-               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.ProgrammableLogicDeviceInstanceEditHelper">
-            <param name="semanticHint" value="3018"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessorInstance_3019"
-               name="%metatype.name.ProcessorInstance_3019"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ProcessorInstance"
-               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.ProcessorInstanceEditHelper">
-            <param name="semanticHint" value="3019"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessingMemoryInstance_3020"
-               name="%metatype.name.ProcessingMemoryInstance_3020"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ProcessingMemoryInstance"
-               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.ProcessingMemoryInstanceEditHelper">
-            <param name="semanticHint" value="3020"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.StorageMemoryInstance_3021"
-               name="%metatype.name.StorageMemoryInstance_3021"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StorageMemoryInstance"
-               edithelper="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.helpers.StorageMemoryInstanceEditHelper">
-            <param name="semanticHint" value="3021"/>
-         </metamodelType>
-      </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"
@@ -606,11 +531,6 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_3031"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.DelegationHWPortInstance_3028"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.StructuredResourceInstance_3033"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CacheInstance_3017"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProgrammableLogicDeviceInstance_3018"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessorInstance_3019"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessingMemoryInstance_3020"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.StorageMemoryInstance_3021"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ActuatorInstance_3034"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.SensorInstance_3035"/>

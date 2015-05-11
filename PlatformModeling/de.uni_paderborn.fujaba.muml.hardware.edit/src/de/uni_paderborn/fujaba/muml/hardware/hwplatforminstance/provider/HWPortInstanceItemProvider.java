@@ -48,6 +48,7 @@ public class HWPortInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addParentResourceInstancePropertyDescriptor(object);
+			addCommunicationResourcePropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 			addIsNetworkInterfacePropertyDescriptor(object);
 		}
@@ -77,6 +78,28 @@ public class HWPortInstanceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Communication Resource feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommunicationResourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HWPort_communicationResource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_communicationResource_feature", "_UI_HWPort_type"),
+				 HwresourceinstancePackage.Literals.HW_PORT__COMMUNICATION_RESOURCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Protocol feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,9 +110,9 @@ public class HWPortInstanceItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_HWPortInstance_protocol_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortInstance_protocol_feature", "_UI_HWPortInstance_type"),
-				 HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__PROTOCOL,
+				 getString("_UI_HWPort_protocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPort_protocol_feature", "_UI_HWPort_type"),
+				 HwresourceinstancePackage.Literals.HW_PORT__PROTOCOL,
 				 false,
 				 false,
 				 false,
@@ -157,10 +180,11 @@ public class HWPortInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HWPortInstance.class)) {
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY:
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

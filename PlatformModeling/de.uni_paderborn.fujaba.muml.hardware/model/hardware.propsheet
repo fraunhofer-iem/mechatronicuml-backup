@@ -65,18 +65,19 @@
     <classes xmi:id="_RlTiBM1gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwplatform/DelegationHWPort"/>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
+      <superClasses href="#//@packages.3/@classes.14"/>
     </classes>
     <classes xmi:id="_RlUwIM1gEeSIgPDefa6ZBw">
       <genClass href="hardware.genmodel#//hardware/hwplatform/HWPortPart"/>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlVXMM1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/communicationResource"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/parentPlatformPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RlVXMc1gEeSIgPDefa6ZBw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RlVXMs1gEeSIgPDefa6ZBw">
-        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/parentResourcePart"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwplatform/HWPortPart/hwport"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_RlVXM81gEeSIgPDefa6ZBw"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZXHLMwbEeSjx7OWZCcdLw"/>
     </classes>
@@ -272,6 +273,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" xmi:id="_RlfvQs1gEeSIgPDefa6ZBw" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
       </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresource/CommunicationResource/parentResource"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
     </classes>
   </packages>
@@ -413,10 +419,17 @@
     </classes>
     <classes>
       <genClass href="hardware.genmodel#//hardware/hwresourceinstance/HWPort"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/HWPort/parentResourceInstance"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="hardware.genmodel#//hardware/hwresourceinstance/HWPort/communicationResource"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>
-    </classes>
-    <classes superClasses="_RlfINs1gEeSIgPDefa6ZBw //@packages.3/@classes.14">
-      <genClass href="hardware.genmodel#//hardware/hwresourceinstance/HWPortResource"/>
     </classes>
   </packages>
   <packages xmi:id="_Rlvm4M1gEeSIgPDefa6ZBw">

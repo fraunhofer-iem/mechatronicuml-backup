@@ -79,6 +79,9 @@ public class CustomResourcePartEditPart extends ResourcePartEditPart {
 		if (editingDomain != null) {
 			PlatformPart platformPart = (PlatformPart) getNotationView()
 					.getElement();
+			if(platformPart instanceof ResourcePart && ((ResourcePart) platformPart).getResourceType()==null){
+				return;
+			}
 			Activator.updateHWPortParts(editingDomain, platformPart);
 		}
 	}

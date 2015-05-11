@@ -84,6 +84,25 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_DelegationHWPort_3018(
+			de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
+					.getExpression(
+							19,
+							de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
+									.getDelegationHWPort(), null).evaluate(
+							instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.PlatformDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_ResourcePart_3019(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart instance) {
 		try {
@@ -122,7 +141,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							19,
+							20,
 							de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
 									.getResourcePart(), null)
 					.evaluate(instance);

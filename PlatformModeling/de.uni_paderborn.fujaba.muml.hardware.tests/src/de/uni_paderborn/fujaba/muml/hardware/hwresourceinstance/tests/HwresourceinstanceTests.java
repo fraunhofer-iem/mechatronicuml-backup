@@ -41,7 +41,7 @@ public class HwresourceinstanceTests extends TestSuite {
 		suite.addTestSuite(SensorInstanceTest.class);
 		suite.addTestSuite(ActuatorInstanceTest.class);
 		suite.addTestSuite(ResourceInstanceRepositoryTest.class);
-		suite.addTestSuite(HWPortResourceTest.class);
+		suite.addTestSuite(HWPortTest.class);
 		return suite;
 	}
 

@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,10 +31,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getParentResourceInstance <em>Parent Resource Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getHwPortType <em>Hw Port Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getCommunicationResource <em>Communication Resource</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#isMultiHWPort <em>Multi HW Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getPortKind <em>Port Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPortInstanceImpl#isIsNetworkInterface <em>Is Network Interface</em>}</li>
  * </ul>
  * </p>
@@ -42,14 +45,54 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements HWPortInstance {
 	/**
-	 * The cached setting delegate for the '{@link #getHwPortType() <em>Hw Port Type</em>}' reference.
+	 * The cached value of the '{@link #getCommunicationResource() <em>Communication Resource</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHwPortType()
+	 * @see #getCommunicationResource()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate HW_PORT_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__HW_PORT_TYPE).getSettingDelegate();
+	protected CommunicationResource communicationResource;
+
+	/**
+	 * The cached setting delegate for the '{@link #getProtocol() <em>Protocol</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PROTOCOL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwresourceinstancePackage.Literals.HW_PORT__PROTOCOL).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwresourceinstancePackage.Literals.HW_PORT__CARDINALITY).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isMultiHWPort() <em>Multi HW Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMultiHWPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MULTI_HW_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwresourceinstancePackage.Literals.HW_PORT__MULTI_HW_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT_KIND__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwresourceinstancePackage.Literals.HW_PORT__PORT_KIND).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getConnectedNetworkConnectorInstances() <em>Connected Network Connector Instances</em>}' reference list.
@@ -60,26 +103,6 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getProtocol() <em>Protocol</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProtocol()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate PROTOCOL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__PROTOCOL).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORT_KIND__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.HW_PORT_INSTANCE__PORT_KIND).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #isIsNetworkInterface() <em>Is Network Interface</em>}' attribute.
@@ -156,9 +179,16 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public CommunicationResource getHwPortType() {
-		return (CommunicationResource)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CommunicationResource getCommunicationResource() {
+		if (communicationResource != null && communicationResource.eIsProxy()) {
+			InternalEObject oldCommunicationResource = (InternalEObject)communicationResource;
+			communicationResource = (CommunicationResource)eResolveProxy(oldCommunicationResource);
+			if (communicationResource != oldCommunicationResource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE, oldCommunicationResource, communicationResource));
+			}
+		}
+		return communicationResource;
 	}
 
 	/**
@@ -166,8 +196,8 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationResource basicGetHwPortType() {
-		return (CommunicationResource)HW_PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public CommunicationResource basicGetCommunicationResource() {
+		return communicationResource;
 	}
 
 	/**
@@ -175,8 +205,11 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHwPortType(CommunicationResource newHwPortType) {
-		HW_PORT_TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newHwPortType);
+	public void setCommunicationResource(CommunicationResource newCommunicationResource) {
+		CommunicationResource oldCommunicationResource = communicationResource;
+		communicationResource = newCommunicationResource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE, oldCommunicationResource, communicationResource));
 	}
 
 	/**
@@ -205,6 +238,56 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 	 */
 	public CommunicationProtocol basicGetProtocol() {
 		return (CommunicationProtocol)PROTOCOL__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality getCardinality() {
+		return (Cardinality)CARDINALITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		// TODO: implement this method to set the contained 'Cardinality' containment reference
+		// -> this method is automatically invoked to keep the containment relationship in synch
+		// -> do not modify other features
+		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(Cardinality newCardinality) {
+		CARDINALITY__ESETTING_DELEGATE.dynamicSet(this, null, 0, newCardinality);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isMultiHWPort() {
+		return (Boolean)MULTI_HW_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMultiHWPort(boolean newMultiHWPort) {
+		MULTI_HW_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newMultiHWPort);
 	}
 
 	/**
@@ -270,6 +353,8 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 		switch (featureID) {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
 				return basicSetParentResourceInstance(null, msgs);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY:
+				return basicSetCardinality(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -298,16 +383,20 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 		switch (featureID) {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
 				return getParentResourceInstance();
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				if (resolve) return getHwPortType();
-				return basicGetHwPortType();
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
-				return getConnectedNetworkConnectorInstances();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE:
+				if (resolve) return getCommunicationResource();
+				return basicGetCommunicationResource();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
 				if (resolve) return getProtocol();
 				return basicGetProtocol();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY:
+				return getCardinality();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT:
+				return isMultiHWPort();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				return getPortKind();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				return getConnectedNetworkConnectorInstances();
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				return isIsNetworkInterface();
 		}
@@ -326,15 +415,21 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
 				setParentResourceInstance((ResourceInstance)newValue);
 				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				setHwPortType((CommunicationResource)newValue);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE:
+				setCommunicationResource((CommunicationResource)newValue);
+				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY:
+				setCardinality((Cardinality)newValue);
+				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT:
+				setMultiHWPort((Boolean)newValue);
+				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
+				setPortKind((CommunicationKind)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 				getConnectedNetworkConnectorInstances().clear();
 				getConnectedNetworkConnectorInstances().addAll((Collection<? extends NetworkConnectorInstance>)newValue);
-				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
-				setPortKind((CommunicationKind)newValue);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				setIsNetworkInterface((Boolean)newValue);
@@ -354,14 +449,20 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
 				setParentResourceInstance((ResourceInstance)null);
 				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				setHwPortType((CommunicationResource)null);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE:
+				setCommunicationResource((CommunicationResource)null);
 				return;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
-				getConnectedNetworkConnectorInstances().clear();
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY:
+				setCardinality((Cardinality)null);
+				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT:
+				MULTI_HW_PORT__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				PORT_KIND__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				getConnectedNetworkConnectorInstances().clear();
 				return;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				IS_NETWORK_INTERFACE__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
@@ -380,14 +481,18 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 		switch (featureID) {
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE:
 				return getParentResourceInstance() != null;
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__HW_PORT_TYPE:
-				return HW_PORT_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
-				return CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE:
+				return communicationResource != null;
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL:
 				return PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY:
+				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT:
+				return MULTI_HW_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND:
 				return PORT_KIND__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+				return CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatforminstancePackage.HW_PORT_INSTANCE__IS_NETWORK_INTERFACE:
 				return IS_NETWORK_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
@@ -404,6 +509,11 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 		if (baseClass == HWPort.class) {
 			switch (derivedFeatureID) {
 				case HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE: return HwresourceinstancePackage.HW_PORT__PARENT_RESOURCE_INSTANCE;
+				case HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE: return HwresourceinstancePackage.HW_PORT__COMMUNICATION_RESOURCE;
+				case HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL: return HwresourceinstancePackage.HW_PORT__PROTOCOL;
+				case HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY: return HwresourceinstancePackage.HW_PORT__CARDINALITY;
+				case HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT: return HwresourceinstancePackage.HW_PORT__MULTI_HW_PORT;
+				case HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND: return HwresourceinstancePackage.HW_PORT__PORT_KIND;
 				default: return -1;
 			}
 		}
@@ -420,6 +530,11 @@ public class HWPortInstanceImpl extends ConnectorEndpointInstanceImpl implements
 		if (baseClass == HWPort.class) {
 			switch (baseFeatureID) {
 				case HwresourceinstancePackage.HW_PORT__PARENT_RESOURCE_INSTANCE: return HwplatforminstancePackage.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE;
+				case HwresourceinstancePackage.HW_PORT__COMMUNICATION_RESOURCE: return HwplatforminstancePackage.HW_PORT_INSTANCE__COMMUNICATION_RESOURCE;
+				case HwresourceinstancePackage.HW_PORT__PROTOCOL: return HwplatforminstancePackage.HW_PORT_INSTANCE__PROTOCOL;
+				case HwresourceinstancePackage.HW_PORT__CARDINALITY: return HwplatforminstancePackage.HW_PORT_INSTANCE__CARDINALITY;
+				case HwresourceinstancePackage.HW_PORT__MULTI_HW_PORT: return HwplatforminstancePackage.HW_PORT_INSTANCE__MULTI_HW_PORT;
+				case HwresourceinstancePackage.HW_PORT__PORT_KIND: return HwplatforminstancePackage.HW_PORT_INSTANCE__PORT_KIND;
 				default: return -1;
 			}
 		}

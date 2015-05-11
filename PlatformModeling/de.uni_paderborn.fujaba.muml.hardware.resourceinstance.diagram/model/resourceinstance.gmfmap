@@ -398,7 +398,7 @@
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/ResourceInstance/hwports"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/HWPortResource"/>
+              href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/HWPort"/>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel

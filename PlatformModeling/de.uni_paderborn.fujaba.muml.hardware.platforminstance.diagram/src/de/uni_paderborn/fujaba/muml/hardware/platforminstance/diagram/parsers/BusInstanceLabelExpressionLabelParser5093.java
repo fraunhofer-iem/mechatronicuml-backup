@@ -38,7 +38,7 @@ public class BusInstanceLabelExpressionLabelParser5093 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						35,
+						12,
 						de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 								.getBusInstance(), null).body();
 	}

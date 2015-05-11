@@ -42,6 +42,9 @@
             <viewExpression
                 body="let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;proto"/>
           </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="platform.gmftool#//@palette/@tools.0/@tools.3"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Bus"/>
         </ownedChild>

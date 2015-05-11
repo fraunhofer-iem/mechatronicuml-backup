@@ -279,26 +279,26 @@ public class HwresourceinstanceItemProviderAdapterFactory extends Hwresourceinst
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HWPortResourceItemProvider hwPortResourceItemProvider;
+	protected HWPortItemProvider hwPortItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHWPortResourceAdapter() {
-		if (hwPortResourceItemProvider == null) {
-			hwPortResourceItemProvider = new HWPortResourceItemProvider(this);
+	public Adapter createHWPortAdapter() {
+		if (hwPortItemProvider == null) {
+			hwPortItemProvider = new HWPortItemProvider(this);
 		}
 
-		return hwPortResourceItemProvider;
+		return hwPortItemProvider;
 	}
 
 	/**
@@ -409,7 +409,7 @@ public class HwresourceinstanceItemProviderAdapterFactory extends Hwresourceinst
 		if (sensorInstanceItemProvider != null) sensorInstanceItemProvider.dispose();
 		if (actuatorInstanceItemProvider != null) actuatorInstanceItemProvider.dispose();
 		if (resourceInstanceRepositoryItemProvider != null) resourceInstanceRepositoryItemProvider.dispose();
-		if (hwPortResourceItemProvider != null) hwPortResourceItemProvider.dispose();
+		if (hwPortItemProvider != null) hwPortItemProvider.dispose();
 	}
 
 }

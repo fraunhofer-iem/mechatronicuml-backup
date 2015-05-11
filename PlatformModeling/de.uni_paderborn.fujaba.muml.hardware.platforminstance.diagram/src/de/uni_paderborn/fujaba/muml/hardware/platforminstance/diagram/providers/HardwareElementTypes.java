@@ -70,26 +70,6 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CacheInstance_3017 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CacheInstance_3017"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ProgrammableLogicDeviceInstance_3018 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProgrammableLogicDeviceInstance_3018"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ProcessorInstance_3019 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessorInstance_3019"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ProcessingMemoryInstance_3020 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ProcessingMemoryInstance_3020"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StorageMemoryInstance_3021 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.StorageMemoryInstance_3021"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
 	public static final IElementType HWPortInstance_3030 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"); //$NON-NLS-1$
 
 	/**
@@ -191,31 +171,6 @@ public class HardwareElementTypes {
 							.getStructuredResourceInstance());
 
 			elements.put(
-					CacheInstance_3017,
-					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getCacheInstance());
-
-			elements.put(
-					ProgrammableLogicDeviceInstance_3018,
-					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProgrammableLogicDeviceInstance());
-
-			elements.put(
-					ProcessorInstance_3019,
-					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProcessorInstance());
-
-			elements.put(
-					ProcessingMemoryInstance_3020,
-					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getProcessingMemoryInstance());
-
-			elements.put(
-					StorageMemoryInstance_3021,
-					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
-							.getStorageMemoryInstance());
-
-			elements.put(
 					HWPortInstance_3030,
 					de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage.eINSTANCE
 							.getHWPortInstance());
@@ -267,11 +222,6 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HWPlatformInstance_3031);
 			KNOWN_ELEMENT_TYPES.add(DelegationHWPortInstance_3028);
 			KNOWN_ELEMENT_TYPES.add(StructuredResourceInstance_3033);
-			KNOWN_ELEMENT_TYPES.add(CacheInstance_3017);
-			KNOWN_ELEMENT_TYPES.add(ProgrammableLogicDeviceInstance_3018);
-			KNOWN_ELEMENT_TYPES.add(ProcessorInstance_3019);
-			KNOWN_ELEMENT_TYPES.add(ProcessingMemoryInstance_3020);
-			KNOWN_ELEMENT_TYPES.add(StorageMemoryInstance_3021);
 			KNOWN_ELEMENT_TYPES.add(HWPortInstance_3030);
 			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_3034);
 			KNOWN_ELEMENT_TYPES.add(SensorInstance_3035);
@@ -299,16 +249,6 @@ public class HardwareElementTypes {
 			return DelegationHWPortInstance_3028;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
 			return StructuredResourceInstance_3033;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
-			return CacheInstance_3017;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
-			return ProgrammableLogicDeviceInstance_3018;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
-			return ProcessorInstance_3019;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
-			return ProcessingMemoryInstance_3020;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
-			return StorageMemoryInstance_3021;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceEditPart.VISUAL_ID:
 			return HWPortInstance_3030;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:

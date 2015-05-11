@@ -65,7 +65,7 @@ public class HwresourceinstanceFactoryImpl extends EFactoryImpl implements Hwres
 			case HwresourceinstancePackage.SENSOR_INSTANCE: return createSensorInstance();
 			case HwresourceinstancePackage.ACTUATOR_INSTANCE: return createActuatorInstance();
 			case HwresourceinstancePackage.RESOURCE_INSTANCE_REPOSITORY: return createResourceInstanceRepository();
-			case HwresourceinstancePackage.HW_PORT_RESOURCE: return createHWPortResource();
+			case HwresourceinstancePackage.HW_PORT: return createHWPort();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -166,9 +166,9 @@ public class HwresourceinstanceFactoryImpl extends EFactoryImpl implements Hwres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortResource createHWPortResource() {
-		HWPortResourceImpl hwPortResource = new HWPortResourceImpl();
-		return hwPortResource;
+	public HWPort createHWPort() {
+		HWPortImpl hwPort = new HWPortImpl();
+		return hwPort;
 	}
 
 	/**

@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.util;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -129,10 +128,6 @@ public class HwresourceinstanceAdapterFactory extends AdapterFactoryImpl {
 				return createHWPortAdapter();
 			}
 			@Override
-			public Adapter caseHWPortResource(HWPortResource object) {
-				return createHWPortResourceAdapter();
-			}
-			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -143,10 +138,6 @@ public class HwresourceinstanceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseCommunicationResource(CommunicationResource object) {
-				return createCommunicationResourceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -379,20 +370,6 @@ public class HwresourceinstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource <em>HW Port Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPortResource
-	 * @generated
-	 */
-	public Adapter createHWPortResourceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -431,20 +408,6 @@ public class HwresourceinstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource <em>Communication Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource
-	 * @generated
-	 */
-	public Adapter createCommunicationResourceAdapter() {
 		return null;
 	}
 

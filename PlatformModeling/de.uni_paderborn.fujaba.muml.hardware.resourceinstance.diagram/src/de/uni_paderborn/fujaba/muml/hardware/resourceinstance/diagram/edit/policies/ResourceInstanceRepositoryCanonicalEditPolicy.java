@@ -329,10 +329,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortResourceEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
-						.getHWPortResource_3015ContainedLinks(view));
+						.getHWPort_3016ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

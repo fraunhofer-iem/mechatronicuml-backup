@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +48,16 @@ public class BusImpl extends ConnectorEndpointImpl implements Bus {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_HW_PORT_PARTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatformPackage.Literals.BUS__CONNECTED_HW_PORT_PARTS).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommunicationProtocol protocol;
 
 	/**
 	 * The cached setting delegate for the '{@link #getBandwidth() <em>Bandwidth</em>}' containment reference.
@@ -92,8 +104,15 @@ public class BusImpl extends ConnectorEndpointImpl implements Bus {
 	 * @generated
 	 */
 	public CommunicationProtocol getProtocol() {
-		CommunicationProtocol protocol = basicGetProtocol();
-		return protocol != null && protocol.eIsProxy() ? (CommunicationProtocol)eResolveProxy((InternalEObject)protocol) : protocol;
+		if (protocol != null && protocol.eIsProxy()) {
+			InternalEObject oldProtocol = (InternalEObject)protocol;
+			protocol = (CommunicationProtocol)eResolveProxy(oldProtocol);
+			if (protocol != oldProtocol) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, HwplatformPackage.BUS__PROTOCOL, oldProtocol, protocol));
+			}
+		}
+		return protocol;
 	}
 
 	/**
@@ -102,10 +121,7 @@ public class BusImpl extends ConnectorEndpointImpl implements Bus {
 	 * @generated
 	 */
 	public CommunicationProtocol basicGetProtocol() {
-		// TODO: implement this method to return the 'Protocol' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return protocol;
 	}
 
 	/**
@@ -114,9 +130,10 @@ public class BusImpl extends ConnectorEndpointImpl implements Bus {
 	 * @generated
 	 */
 	public void setProtocol(CommunicationProtocol newProtocol) {
-		// TODO: implement this method to set the 'Protocol' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		CommunicationProtocol oldProtocol = protocol;
+		protocol = newProtocol;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HwplatformPackage.BUS__PROTOCOL, oldProtocol, protocol));
 	}
 
 	/**
@@ -231,7 +248,7 @@ public class BusImpl extends ConnectorEndpointImpl implements Bus {
 			case HwplatformPackage.BUS__CONNECTED_HW_PORT_PARTS:
 				return CONNECTED_HW_PORT_PARTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case HwplatformPackage.BUS__PROTOCOL:
-				return basicGetProtocol() != null;
+				return protocol != null;
 			case HwplatformPackage.BUS__BANDWIDTH:
 				return BANDWIDTH__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}

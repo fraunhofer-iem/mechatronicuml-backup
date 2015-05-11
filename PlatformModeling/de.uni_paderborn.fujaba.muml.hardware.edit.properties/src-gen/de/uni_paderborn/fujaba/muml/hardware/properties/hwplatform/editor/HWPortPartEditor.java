@@ -37,11 +37,9 @@ public class HWPortPartEditor
 					createEditorConnectors_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
-					createEditorCommunicationResource_GeneralTab_Editor(),
-					false);
+					createEditorParentPlatformPart_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentResourcePart_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHwport_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -55,11 +53,9 @@ public class HWPortPartEditor
 					createEditorConnectors_GeneralTab_Editor(), false);
 
 			addPropertyEditor(
-					createEditorCommunicationResource_GeneralTab_Editor(),
-					false);
+					createEditorParentPlatformPart_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentResourcePart_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHwport_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -77,30 +73,30 @@ public class HWPortPartEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCommunicationResource_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCommunicationResource_GeneralTab_Editor() {
-		if (this.editorCommunicationResource_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentPlatformPart_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentPlatformPart_GeneralTab_Editor() {
+		if (this.editorParentPlatformPart_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-					.getHWPortPart_CommunicationResource();
+					.getHWPortPart_ParentPlatformPart();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorCommunicationResource_GeneralTab = editor;
+			this.editorParentPlatformPart_GeneralTab = editor;
 		}
-		return this.editorCommunicationResource_GeneralTab;
+		return this.editorParentPlatformPart_GeneralTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorParentResourcePart_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorParentResourcePart_GeneralTab_Editor() {
-		if (this.editorParentResourcePart_GeneralTab == null) {
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHwport_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHwport_GeneralTab_Editor() {
+		if (this.editorHwport_GeneralTab == null) {
 			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.eINSTANCE
-					.getHWPortPart_ParentResourcePart();
+					.getHWPortPart_Hwport();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorParentResourcePart_GeneralTab = editor;
+			this.editorHwport_GeneralTab = editor;
 		}
-		return this.editorParentResourcePart_GeneralTab;
+		return this.editorHwport_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorConnectors_GeneralTab;

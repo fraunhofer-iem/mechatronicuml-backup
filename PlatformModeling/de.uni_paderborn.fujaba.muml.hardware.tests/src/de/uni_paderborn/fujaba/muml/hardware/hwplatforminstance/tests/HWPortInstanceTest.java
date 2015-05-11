@@ -17,10 +17,11 @@ import junit.textui.TestRunner;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType() <em>Hw Port Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getProtocol() <em>Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getCardinality() <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#isMultiHWPort() <em>Multi HW Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getPortKind() <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedNetworkConnectorInstances() <em>Connected Network Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol() <em>Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind() <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface() <em>Is Network Interface</em>}</li>
  * </ul>
  * </p>
@@ -98,32 +99,6 @@ public class HWPortInstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType() <em>Hw Port Type</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType()
-	 * @generated
-	 */
-	public void testGetHwPortType() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#setHwPortType(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource) <em>Hw Port Type</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#setHwPortType(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource)
-	 * @generated
-	 */
-	public void testSetHwPortType() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedNetworkConnectorInstances() <em>Connected Network Connector Instances</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,10 +112,10 @@ public class HWPortInstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol() <em>Protocol</em>}' feature getter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getProtocol() <em>Protocol</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getProtocol()
 	 * @generated
 	 */
 	public void testGetProtocol() {
@@ -150,10 +125,62 @@ public class HWPortInstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind() <em>Port Kind</em>}' feature getter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getCardinality() <em>Cardinality</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getCardinality()
+	 * @generated
+	 */
+	public void testGetCardinality() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#setCardinality(de.uni_paderborn.fujaba.muml.valuetype.Cardinality) <em>Cardinality</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#setCardinality(de.uni_paderborn.fujaba.muml.valuetype.Cardinality)
+	 * @generated
+	 */
+	public void testSetCardinality() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#isMultiHWPort() <em>Multi HW Port</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#isMultiHWPort()
+	 * @generated
+	 */
+	public void testIsMultiHWPort() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#setMultiHWPort(boolean) <em>Multi HW Port</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#setMultiHWPort(boolean)
+	 * @generated
+	 */
+	public void testSetMultiHWPort() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getPortKind() <em>Port Kind</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#getPortKind()
 	 * @generated
 	 */
 	public void testGetPortKind() {
@@ -163,10 +190,10 @@ public class HWPortInstanceTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Port Kind</em>}' feature setter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind) <em>Port Kind</em>}' feature setter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort#setPortKind(de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind)
 	 * @generated
 	 */
 	public void testSetPortKind() {

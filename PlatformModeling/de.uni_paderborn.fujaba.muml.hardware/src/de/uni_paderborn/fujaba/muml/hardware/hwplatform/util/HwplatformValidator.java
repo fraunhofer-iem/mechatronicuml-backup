@@ -323,7 +323,7 @@ public class HwplatformValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String BUS__SAME_BUS_PROTOCOL__EEXPRESSION = "-- Connected Ports must use the same BusProtocol\r\n" +
-		"self.connectedHWPortParts->forAll(p  | p.protocol =self.protocol )";
+		"self.connectedHWPortParts.hwport->forAll(p  | p.protocol =self.protocol )";
 
 	/**
 	 * Validates the SameBusProtocol constraint of '<em>Bus</em>'.
@@ -390,7 +390,7 @@ public class HwplatformValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String NETWORK_CONNECTOR__SAME_PROTOCOL__EEXPRESSION = "-- Connected Ports must use the same Protocol\r\n" +
-		"self.hwportParts->forAll(p1 , p2 | p1.protocol = p2.protocol)";
+		"self.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)";
 
 	/**
 	 * Validates the SameProtocol constraint of '<em>Network Connector</em>'.

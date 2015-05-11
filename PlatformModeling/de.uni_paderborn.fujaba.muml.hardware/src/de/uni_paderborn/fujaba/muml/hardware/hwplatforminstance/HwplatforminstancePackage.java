@@ -670,22 +670,13 @@ public interface HwplatforminstancePackage extends EPackage {
 	int HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Hw Port Type</b></em>' reference.
+	 * The feature id for the '<em><b>Communication Resource</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__HW_PORT_TYPE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Connected Network Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
+	int HW_PORT_INSTANCE__COMMUNICATION_RESOURCE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Protocol</b></em>' reference.
@@ -694,7 +685,25 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__PROTOCOL = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
+	int HW_PORT_INSTANCE__PROTOCOL = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT_INSTANCE__CARDINALITY = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Multi HW Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT_INSTANCE__MULTI_HW_PORT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
@@ -703,7 +712,16 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__PORT_KIND = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
+	int HW_PORT_INSTANCE__PORT_KIND = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Connected Network Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Network Interface</b></em>' attribute.
@@ -712,7 +730,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE__IS_NETWORK_INTERFACE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 5;
+	int HW_PORT_INSTANCE__IS_NETWORK_INTERFACE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>HW Port Instance</em>' class.
@@ -721,7 +739,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 6;
+	int HW_PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2354,17 +2372,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	EClass getHWPortInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType <em>Hw Port Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Hw Port Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getHwPortType()
-	 * @see #getHWPortInstance()
-	 * @generated
-	 */
-	EReference getHWPortInstance_HwPortType();
-
-	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2374,28 +2381,6 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHWPortInstance_ConnectedNetworkConnectorInstances();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol <em>Protocol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Protocol</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getProtocol()
-	 * @see #getHWPortInstance()
-	 * @generated
-	 */
-	EReference getHWPortInstance_Protocol();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind <em>Port Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#getPortKind()
-	 * @see #getHWPortInstance()
-	 * @generated
-	 */
-	EAttribute getHWPortInstance_PortKind();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance#isIsNetworkInterface <em>Is Network Interface</em>}'.
@@ -2705,36 +2690,12 @@ public interface HwplatforminstancePackage extends EPackage {
 		EClass HW_PORT_INSTANCE = eINSTANCE.getHWPortInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Hw Port Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PORT_INSTANCE__HW_PORT_TYPE = eINSTANCE.getHWPortInstance_HwPortType();
-
-		/**
 		 * The meta object literal for the '<em><b>Connected Network Connector Instances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference HW_PORT_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = eINSTANCE.getHWPortInstance_ConnectedNetworkConnectorInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Protocol</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HW_PORT_INSTANCE__PROTOCOL = eINSTANCE.getHWPortInstance_Protocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Kind</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HW_PORT_INSTANCE__PORT_KIND = eINSTANCE.getHWPortInstance_PortKind();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Network Interface</b></em>' attribute feature.
