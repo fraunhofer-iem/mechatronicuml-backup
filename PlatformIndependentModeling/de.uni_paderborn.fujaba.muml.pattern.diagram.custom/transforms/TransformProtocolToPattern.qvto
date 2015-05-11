@@ -28,13 +28,13 @@ main()
 { 	
 	// fetch input
 		// not debug:
-	//theRootNode  := input.rootObjects()[RootNode] -> any(true);
-	//variablesToParameter := input.rootObjects()[Variable];	
-	//theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);	
-		// debug:
 	theRootNode  := input.rootObjects()[RootNode] -> any(true);
-	variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(4).variables;
-	theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
+	variablesToParameter := input.rootObjects()[Variable];	
+	theProtocol  := input.rootObjects()[CoordinationProtocol] -> any(true);	
+		// debug:
+	//theRootNode  := input.rootObjects()[RootNode] -> any(true);
+	//variablesToParameter := getRealtimeStatechartCategory(theRootNode).modelElements.oclAsType(RealtimeStatechart)->at(4).variables;
+	//theProtocol := getProtocolCategory(theRootNode).modelElements.oclAsType(CoordinationProtocol)->at(1);
 	
 		
 	// check input
