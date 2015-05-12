@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_o4XGUPjlEeS61sP1Q9N5tw" type="PlatformInstance" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_6z9-APjqEeSZ8dKfmArMYQ" type="2004" fontName="Cantarell" fontHeight="11" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6z-lEPjqEeSZ8dKfmArMYQ" type="5096"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_6z-lEfjqEeSZ8dKfmArMYQ" type="7011">
+      <children xmi:type="notation:Shape" xmi:id="_60WYgPjqEeSZ8dKfmArMYQ" type="3032" fontName="Cantarell" fontHeight="11" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_60W_kPjqEeSZ8dKfmArMYQ" type="7008">
+          <children xmi:type="notation:Shape" xmi:id="_60ficPjqEeSZ8dKfmArMYQ" type="3033" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_60ficvjqEeSZ8dKfmArMYQ" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60fic_jqEeSZ8dKfmArMYQ" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60fidPjqEeSZ8dKfmArMYQ" type="5085"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60fidfjqEeSZ8dKfmArMYQ" type="5098"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gJgPjqEeSZ8dKfmArMYQ" type="5099"/>
+            <children xmi:type="notation:Shape" xmi:id="_61tqcPjqEeSZ8dKfmArMYQ" type="3030" fontName="Cantarell" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_61tqcvjqEeSZ8dKfmArMYQ" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_61uRgPjqEeSZ8dKfmArMYQ" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_6vJIZPjqEeSZ8dKfmArMYQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_61tqcfjqEeSZ8dKfmArMYQ"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_tLRo0PjsEeSrLMFBH0QA8A" type="3030" fontName="Cantarell" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_tLRo0vjsEeSrLMFBH0QA8A" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_tLRo0_jsEeSrLMFBH0QA8A" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_lUboYPjsEeSrLMFBH0QA8A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tLRo0fjsEeSrLMFBH0QA8A"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_6vJIY_jqEeSZ8dKfmArMYQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60ficfjqEeSZ8dKfmArMYQ" x="30" y="129"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_60gJgfjqEeSZ8dKfmArMYQ" type="3033" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gJg_jqEeSZ8dKfmArMYQ" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gJhPjqEeSZ8dKfmArMYQ" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gJhfjqEeSZ8dKfmArMYQ" type="5085"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gJhvjqEeSZ8dKfmArMYQ" type="5098"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gJh_jqEeSZ8dKfmArMYQ" type="5099"/>
+            <children xmi:type="notation:Shape" xmi:id="_62gUoPjqEeSZ8dKfmArMYQ" type="3030" fontName="Cantarell" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_62g7sPjqEeSZ8dKfmArMYQ" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_62g7sfjqEeSZ8dKfmArMYQ" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_6vJIbPjqEeSZ8dKfmArMYQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_62gUofjqEeSZ8dKfmArMYQ"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_tLUFEPjsEeSrLMFBH0QA8A" type="3030" fontName="Cantarell" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_tLUFEvjsEeSrLMFBH0QA8A" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_tLUFE_jsEeSrLMFBH0QA8A" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_mAI30PjsEeSrLMFBH0QA8A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tLUFEfjsEeSrLMFBH0QA8A"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_6vJIa_jqEeSZ8dKfmArMYQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60gJgvjqEeSZ8dKfmArMYQ" x="630" y="105"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_60gwkPjqEeSZ8dKfmArMYQ" type="3033" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gwkvjqEeSZ8dKfmArMYQ" type="5083"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gwk_jqEeSZ8dKfmArMYQ" type="5084"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gwlPjqEeSZ8dKfmArMYQ" type="5085"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gwlfjqEeSZ8dKfmArMYQ" type="5098"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60gwlvjqEeSZ8dKfmArMYQ" type="5099"/>
+            <children xmi:type="notation:Shape" xmi:id="_62_c0PjqEeSZ8dKfmArMYQ" type="3030" fontName="Cantarell" fontHeight="11" lineColor="0">
+              <children xmi:type="notation:DecorationNode" xmi:id="_62_c0vjqEeSZ8dKfmArMYQ" type="5082">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_63AD4PjqEeSZ8dKfmArMYQ" y="5"/>
+              </children>
+              <element xmi:type="hwplatforminstance:HWPortInstance" href="../hardware_model.muml#_6vJIdPjqEeSZ8dKfmArMYQ"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_62_c0fjqEeSZ8dKfmArMYQ"/>
+            </children>
+            <element xmi:type="hwresourceinstance:StructuredResourceInstance" href="../hardware_model.muml#_6vJIc_jqEeSZ8dKfmArMYQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60gwkfjqEeSZ8dKfmArMYQ" x="54" y="333"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_60hXoPjqEeSZ8dKfmArMYQ" type="3036" fontName="Cantarell" fontHeight="11" lineColor="0">
+            <children xmi:type="notation:DecorationNode" xmi:id="_60hXovjqEeSZ8dKfmArMYQ" type="5092"/>
+            <children xmi:type="notation:DecorationNode" xmi:id="_60hXo_jqEeSZ8dKfmArMYQ" type="5093"/>
+            <element xmi:type="hwplatforminstance:BusInstance" href="../hardware_model.muml#_6vJIYvjqEeSZ8dKfmArMYQ"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60hXofjqEeSZ8dKfmArMYQ" x="762" y="393" width="276" height="115"/>
+          </children>
+        </children>
+        <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_6vJIYfjqEeSZ8dKfmArMYQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60WYgfjqEeSZ8dKfmArMYQ"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_6z-lEvjqEeSZ8dKfmArMYQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_6z-lE_jqEeSZ8dKfmArMYQ"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_64QoIPjqEeSZ8dKfmArMYQ" type="3028" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_64RPMPjqEeSZ8dKfmArMYQ" type="5078">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_64RPMfjqEeSZ8dKfmArMYQ" y="5"/>
+      </children>
+      <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../hardware_model.muml#_6vIhUfjqEeSZ8dKfmArMYQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_64QoIfjqEeSZ8dKfmArMYQ" x="-12" y="12"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_64RPMvjqEeSZ8dKfmArMYQ" type="3028" fontName="Cantarell" fontHeight="11" lineColor="0">
+      <children xmi:type="notation:DecorationNode" xmi:id="_64RPNPjqEeSZ8dKfmArMYQ" type="5078">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_64RPNfjqEeSZ8dKfmArMYQ" y="5"/>
+      </children>
+      <element xmi:type="hwplatforminstance:DelegationHWPortInstance" href="../hardware_model.muml#_6vJIYPjqEeSZ8dKfmArMYQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_64RPM_jqEeSZ8dKfmArMYQ" x="12" y="-12"/>
+    </children>
+    <element xmi:type="hwplatforminstance:HWPlatformInstance" href="../hardware_model.muml#_6vIhUPjqEeSZ8dKfmArMYQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6z9-AfjqEeSZ8dKfmArMYQ" x="718" y="298"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_o4XGUfjlEeS61sP1Q9N5tw"/>
+  <element xmi:type="hwplatforminstance:HWPlatformInstanceConfiguration" href="../hardware_model.muml#_o3yekPjlEeS61sP1Q9N5tw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_-i6U8PjqEeSZ8dKfmArMYQ" type="4011" source="_61tqcPjqEeSZ8dKfmArMYQ" target="_60hXoPjqEeSZ8dKfmArMYQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_-i68APjqEeSZ8dKfmArMYQ" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_-iznQPjqEeSZ8dKfmArMYQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-i68AfjqEeSZ8dKfmArMYQ" points="[9, 5, -335, -170]$[241, 170, -103, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__Ag28PjqEeSZ8dKfmArMYQ" type="4011" source="_62_c0PjqEeSZ8dKfmArMYQ" target="_60hXoPjqEeSZ8dKfmArMYQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__Ag28fjqEeSZ8dKfmArMYQ" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#__Afo0PjqEeSZ8dKfmArMYQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__Ag28vjqEeSZ8dKfmArMYQ" points="[9, 0, -317, -22]$[336, -21, 10, -43]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="__rVVkPjqEeSZ8dKfmArMYQ" type="4011" source="_62gUoPjqEeSZ8dKfmArMYQ" target="_60hXoPjqEeSZ8dKfmArMYQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="__rVVkfjqEeSZ8dKfmArMYQ" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#__rUugPjqEeSZ8dKfmArMYQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__rVVkvjqEeSZ8dKfmArMYQ" points="[-5, 9, 119, -184]$[-20, 187, 104, -6]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_v4OXQPjsEeSrLMFBH0QA8A" type="4011" source="_tLRo0PjsEeSrLMFBH0QA8A" target="_64RPMvjqEeSZ8dKfmArMYQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_v4O-UPjsEeSrLMFBH0QA8A" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_v4IQoPjsEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v4O-UfjsEeSrLMFBH0QA8A" points="[-9, -5, 319, 178]$[-326, -192, 2, -9]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_wm6CMPjsEeSrLMFBH0QA8A" type="4011" source="_tLUFEPjsEeSrLMFBH0QA8A" target="_64QoIPjqEeSZ8dKfmArMYQ" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_wm6CMfjsEeSrLMFBH0QA8A" fontName="Cantarell" fontHeight="11"/>
+    <element xmi:type="hwplatforminstance:NetworkConnectorInstance" href="../hardware_model.muml#_wm5bIPjsEeSrLMFBH0QA8A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wm6pQPjsEeSrLMFBH0QA8A" points="[-9, -2, 805, 145]$[-815, -138, -1, 9]"/>
+  </edges>
+</notation:Diagram>
