@@ -146,8 +146,25 @@ mapping actionlanguage::TypedNamedElementExpression :: TypedNamedElementExpressi
     	_annotation := self._annotation.map EAnnotation2EAnnotation();
     	_extension := self._extension.map Extension2Extension();
     	_typedNamedElement := self._typedNamedElement.map TypedNamedElement2TypedNamedElement();
-    	_indices := self._indices.map Expression2Expression();
+    	_elementAccessors := self._elementAccessors.map ElementAccessorExpression2ElementAccessorExpression();
    		 }
+   		 
+mapping ElementAccessorExpression :: ElementAccessorExpression2ElementAccessorExpression() : ElementAccessorExpression
+	disjuncts ArrayIndexExpression::ArrayIndexExpression2ArrayIndexExpression, AttributeAccessorExpression::AttributeAccessorExpression2AttributeAccessorExpression;
+
+mapping ArrayIndexExpression :: ArrayIndexExpression2ArrayIndexExpression() : ArrayIndexExpression {
+		_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_index := self._index.map Expression2Expression();
+}
+
+mapping AttributeAccessorExpression :: AttributeAccessorExpression2AttributeAccessorExpression() : AttributeAccessorExpression {
+		_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_attribute := self._attribute.map Attribute2Attribute();
+}	 
    		 
 mapping actionlanguage::ArrayInitializeExpression :: ArrayInitializeExpression2ArrayInitializeExpression() : actionlanguage::ArrayInitializeExpression{
     	_comment := self._comment;
@@ -390,7 +407,7 @@ mapping muml::types::PrimitiveDataType :: PrimitiveDataType2PrimitiveDataType() 
     	_extension := self._extension.map Extension2Extension();
    		 }
    		 
-mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts muml::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, muml::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, muml::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType;
+mapping muml::types::DataType :: DataType2DataType() : muml::types::DataType disjuncts muml::component::ComponentPart::ComponentPart2ComponentPart, muml::protocol::Role::Role2Role, muml::component::Component::Component2Component, muml::types::RangedPrimitiveDataType::RangedPrimitiveDataType2RangedPrimitiveDataType, muml::types::ArrayDataType::ArrayDataType2ArrayDataType, muml::component::Port::Port2Port, muml::types::PrimitiveDataType::PrimitiveDataType2PrimitiveDataType, muml::types::StructureDataType::StructureDataType2StructureDataType;
       	
 mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPrimitiveDataType() : muml::types::RangedPrimitiveDataType{
     	_name := self._name;
@@ -400,6 +417,22 @@ mapping muml::types::RangedPrimitiveDataType :: RangedPrimitiveDataType2RangedPr
     	_rangedType := self._rangedType.map PrimitiveDataType2PrimitiveDataType();
     	_range := self._range.map Range2Range();
    		 }
+
+mapping muml::types::StructureDataType :: StructureDataType2StructureDataType() : muml::types::StructureDataType{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_attributes := self.attributes.map Attribute2Attribute();
+   		 }
+   		 
+mapping Attribute :: Attribute2Attribute() : Attribute{
+		_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.map EAnnotation2EAnnotation();
+    	_extension := self._extension.map Extension2Extension();
+    	_dataType := self._dataType.map DataType2DataType();
+}   		 
    		 
 mapping muml::instance::ComponentInstance :: ComponentInstance2ComponentInstance() : muml::instance::ComponentInstance disjuncts muml::instance::StructuredComponentInstance::StructuredComponentInstance2StructuredComponentInstance, muml::instance::AtomicComponentInstance::AtomicComponentInstance2AtomicComponentInstance;
       	
