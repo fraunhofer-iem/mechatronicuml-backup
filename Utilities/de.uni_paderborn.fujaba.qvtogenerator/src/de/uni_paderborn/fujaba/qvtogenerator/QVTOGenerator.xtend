@@ -23,13 +23,13 @@ class QVTOGenerator implements IGenerator{
 			var EObject curObject = input.contents.get(0);
 			
 			//Add your models
-			models.add("/de.uni_paderborn.fujaba.qvtogenerator/model2/modelinstance.ecore".loadModel)
-		 	models.add('/de.uni_paderborn.fujaba.qvtogenerator/model2/muml.ecore'.loadModel)
-			models.add('/de.uni_paderborn.fujaba.qvtogenerator/model2/core.ecore'.loadModel)
+			models.add("/de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore".loadModel)
+		 	models.add('/de.uni_paderborn.fujaba.muml/model/muml.ecore'.loadModel)
+			models.add('/org.storydriven.core/model/core.ecore'.loadModel)
 			models.add('/de.uni_paderborn.fujaba.qvtogenerator/model2/Ecore.ecore'.loadModel)
-			models.add('/de.uni_paderborn.fujaba.qvtogenerator/model2/actionlanguage.ecore'.loadModel)
-			models.add('/de.uni_paderborn.fujaba.qvtogenerator/model2/verificationExtension.ecore'.loadModel)
-			models.add('/de.uni_paderborn.fujaba.qvtogenerator/model2/Mtctl.ecore'.loadModel)
+			models.add('/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore'.loadModel)
+			models.add('/de.uni_paderborn.fujaba.muml.verification.extension/model/verificationExtension.ecore'.loadModel)
+			models.add('/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore'.loadModel)
 		
 			collectSubPackages(models)
 			if(curObject instanceof EPackage){
@@ -152,22 +152,11 @@ modeltype «p.nsPrefix» uses '«p.nsURI»';
     	«ENDFOR»
     	«FOR i : eClass.EAllReferences»
    		«IF !i.derived && i.changeable &&i.EType.hasNonAbstractExtendingClasses»
-««« TODO  		in the case of n:n references like port.connectors <-> connector.ports the order is not guaranteed
-«««             one option is to catch these cases explicitely like done in the commented code below
-«««			«IF eClass.name != 'StaticStructuredComponent' && i.name == 'connectors' || i.name == 'connectorInstances' || i.name == 'references'» 
-«««	   				«i.name» += self.«i.name».map «i.EType.name»2«i.EType.name»(); «««TODO uses += notation only to preserve the order of roles for the role connector ()
-«««  			«ENDIF»
-«««
-«««             another option is to use late resolve (uncomment code below)
-«««    				«IF i.containment || i.container»
-    					_«i.name» := self._«i.name».map «i.EType.name»2«i.EType.name»(); «««Use only this line for default behavior (no correct ordering)
-«««    				«ELSE»
-«««						«IF i.many»
-«««							_«i.name» := self._«i.name».late resolve(«i.EType.EPackage.packagePrefix»«i.EType.name»);
-«««						«ELSE»
-«««   							_«i.name» := self._«i.name».late resolveone(«i.EType.EPackage.packagePrefix»«i.EType.name»);
-«««   					«ENDIF»
-«««    				«ENDIF»
+            «IF eClass.name != 'StaticStructuredComponent' && i.name == 'connectors' 
+                || i.name == 'connectorInstances' || i.name == 'references'»
+            _«i.name» += self.«i.name».map «i.EType.name»2«i.EType.name»(); «ELSE»
+            _«i.name» := self._«i.name».map «i.EType.name»2«i.EType.name»();
+            «ENDIF»
     	«ENDIF»
     	«ENDFOR»
     	'''
