@@ -820,7 +820,7 @@ public class HwplatformPackageImpl extends EPackageImpl implements HwplatformPac
 		  (getNetworkConnector_Protocol(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.hwportParts->notEmpty()) then \tself.hwportParts->any(true).protocol else      null endif"
+			 "derivation", "if (self.hwportParts->notEmpty()) then \t\n\tself.hwportParts.hwport->select(p| not p.protocol.oclIsUndefined())->any(true).protocol \nelse      \n\tnull \nendif"
 		   });	
 		addAnnotation
 		  (getNetworkConnector_Bandwidth(), 

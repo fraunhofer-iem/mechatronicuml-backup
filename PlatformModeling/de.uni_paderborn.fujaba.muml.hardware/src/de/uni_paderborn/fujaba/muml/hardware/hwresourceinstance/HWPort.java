@@ -95,7 +95,7 @@ public interface HWPort extends NamedElement {
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getHWPort_Protocol()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.communicationResource.oclIsUndefined()) then\n\tnull \nelse\n self.communicationResource.protocol\n endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.communicationResource.oclIsUndefined()) then\n\tif self.oclIsKindOf(hwplatform::DelegationHWPort) then\n   \t\t let endpoints : Set(muml::connector::ConnectorEndpoint) = self.oclAsType(muml::connector::ConnectorEndpoint)->closure(c| c.oclAsType(muml::connector::ConnectorEndpoint).connectors.connectorEndpoints)->asOrderedSet() in\n   \t\t let buses : Bag (hwplatform::Bus) = endpoints->select(e|e.oclIsKindOf(hwplatform::Bus) and not e.oclAsType(hwplatform::Bus).protocol.oclIsUndefined()).oclAsType(hwplatform::Bus) in\n   \t\t let ports : Bag (hwplatform::HWPortPart) = endpoints->select(e|e.oclIsKindOf(hwplatform::HWPortPart) and not e.oclAsType(hwplatform::HWPortPart).hwport.protocol.oclIsUndefined()).oclAsType(hwplatform::HWPortPart) in\n  \t\tlet usedprotocols : Bag(hwresource::CommunicationProtocol) = buses.protocol->union(ports.hwport.protocol) in\n  \t\tusedprotocols->any(true)\n \telse null\n\tendif\nelse\n \tself.communicationResource.protocol\n endif'"
 	 * @generated
 	 */
 	CommunicationProtocol getProtocol();

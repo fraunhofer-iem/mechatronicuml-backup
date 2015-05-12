@@ -101,10 +101,5 @@ helper createHWPortParts(inout hwplatformPart : HWPlatformPart) {
 // instantiate port part that references the given port
 constructor HWPortPart::HWPortPart(port : HWPort) {
 //	name:=port.name;
-	result.hwport:=port;
-}
-
-
-constructor HWPortPart::HWPortPart(port : DelegationHWPort) {
-	//communicationResource:=port;
+	hwport:=port;
 }

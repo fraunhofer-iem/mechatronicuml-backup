@@ -42,7 +42,7 @@ public interface NetworkConnector extends Connector {
 	 * @see #setProtocol(CommunicationProtocol)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getNetworkConnector_Protocol()
 	 * @model volatile="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.hwportParts->notEmpty()) then \tself.hwportParts->any(true).protocol else      null endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.hwportParts->notEmpty()) then \t\n\tself.hwportParts.hwport->select(p| not p.protocol.oclIsUndefined())->any(true).protocol \nelse      \n\tnull \nendif'"
 	 * @generated
 	 */
 	CommunicationProtocol getProtocol();
