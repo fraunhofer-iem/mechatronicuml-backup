@@ -308,12 +308,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String HWPlatformInstanceHWPlatformCompartmentEditPart_title;
+	public static String HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart_title;
+	public static String HWPlatformInstanceHWPlatformCompartmentEditPart_title;
 
 	/**
 	 * @generated

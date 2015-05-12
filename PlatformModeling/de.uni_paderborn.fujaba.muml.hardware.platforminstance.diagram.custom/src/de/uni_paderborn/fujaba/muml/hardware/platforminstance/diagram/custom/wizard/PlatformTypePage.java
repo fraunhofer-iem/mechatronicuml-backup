@@ -5,35 +5,28 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wi
  * (C) Copyright IBM Corp. 2002 - All Rights Reserved. 
  */
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.jface.dialogs.IDialogPage;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.CellEditor;
-import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ComboBoxCellEditor;
 import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
-import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.m2m.qvt.oml.util.Dictionary;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CCombo;
-import org.eclipse.swt.custom.TableEditor;
 import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
@@ -41,10 +34,9 @@ import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.Text;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.PlatformPart;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 
@@ -58,16 +50,20 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 	// widgets on this page
 	private TableViewer viewer;
-	private Collection availableHWPlatforms = null;
-
+	private Collection<EObject> availableHWPlatforms = null;
+	protected Collection<EObject> followUpPlatforms = new ArrayList<EObject>();
+	private boolean startPage = false;
 	private HWPlatform selectedPlatform;
 	private HashMap<PlatformPart, Integer> currentCardinality;
 
 	/**
 	 * Constructor for PlatformTypeSelectPage.
 	 */
-	public PlatformTypePage() {
+	public PlatformTypePage(Collection<EObject> availableHWPlatforms,
+			boolean startPage) {
 		super("Page1");
+		this.startPage = startPage;
+		this.availableHWPlatforms = availableHWPlatforms;
 		setTitle("Platform Type");
 		setDescription("Select the Hardware Platform to initialise:");
 
@@ -77,8 +73,9 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	 * @see IDialogPage#createControl(Composite)
 	 */
 	public void createControl(Composite parent) {
-
-		initContent();
+		if (availableHWPlatforms == null) {
+			initContent();
+		}
 		// create the composite to hold the widgets
 		final Composite composite = new Composite(parent, SWT.NULL);
 
@@ -147,9 +144,13 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	protected void saveDataToModel() {
 		PlatformInstanceWizard wizard = (PlatformInstanceWizard) getWizard();
 		WizardModel model = wizard.getModel();
-		model.setSelectedHWPlatform(selectedPlatform);
+		if (startPage) {
+			model.setSelectedHWPlatform(selectedPlatform);
+
+		}
 		Dictionary<String, Integer> config = model.getConfiguration();
 		for (Entry<PlatformPart, Integer> entry : currentCardinality.entrySet()) {
+			
 			config.put(entry.getKey().getName(), entry.getValue());
 		}
 
@@ -200,6 +201,12 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				int positionInList = (Integer) value;
 				currentCardinality.put(p, (int) (p.getCardinality()
 						.getLowerBound().getValue() + positionInList));
+				if (p instanceof HWPlatformPart
+						&& (p.getCardinality()
+								.getLowerBound().getValue() + positionInList) >= 1) {
+					followUpPlatforms.add(p);
+					getNextPage();
+				}
 				viewer.update(element, null);
 			}
 
@@ -254,6 +261,18 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 	public void handleEvent(Event event) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
+	protected boolean neddFurtherPage() {
+		return !followUpPlatforms.isEmpty();
+	}
+
+	@Override
+	public IWizardPage getNextPage() {
+		// TODO Auto-generated method stub
+		return super.getNextPage();
+	}
+	
+	
 }

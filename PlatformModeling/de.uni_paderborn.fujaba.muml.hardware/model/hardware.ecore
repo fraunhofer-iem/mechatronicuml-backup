@@ -447,7 +447,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
           eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorInstances"
-          eType="#//hwplatforminstance/NetworkConnectorInstance" containment="true"/>
+          upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwresourceinstance/HWPort">
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnectorInstances"

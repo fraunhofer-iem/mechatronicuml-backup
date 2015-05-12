@@ -110,29 +110,19 @@ public interface HWPlatformInstanceConfiguration extends CommentableElement {
 	void setParentHWPlatformInstance(HWPlatformInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>Network Connector Instances</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Network Connector Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Network Connector Instances</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Network Connector Instances</em>' containment reference.
-	 * @see #setNetworkConnectorInstances(NetworkConnectorInstance)
+	 * @return the value of the '<em>Network Connector Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_NetworkConnectorInstances()
 	 * @model containment="true"
 	 * @generated
 	 */
-	NetworkConnectorInstance getNetworkConnectorInstances();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getNetworkConnectorInstances <em>Network Connector Instances</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Network Connector Instances</em>' containment reference.
-	 * @see #getNetworkConnectorInstances()
-	 * @generated
-	 */
-	void setNetworkConnectorInstances(NetworkConnectorInstance value);
+	EList<NetworkConnectorInstance> getNetworkConnectorInstances();
 
 } // HWPlatformInstanceConfiguration

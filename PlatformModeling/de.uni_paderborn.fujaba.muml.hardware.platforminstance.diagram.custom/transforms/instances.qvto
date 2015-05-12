@@ -42,7 +42,7 @@ mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformIns
 	result.embeddedHPIC:=new HWPlatformInstanceConfiguration();
 	//create the embedded CommunicationMedia	
 	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardware->map createNetworkingResourceInstance(number)->asOrderedSet();
-		
+	result.embeddedHPIC.networkConnectorInstances+=self.networkConnectors->map mapNetworkConnector2NetworkConnectorInstance();
 	//create the delegation ports
 	
 	result.delegationPorts:=self.delegationPorts->map createDelegationHWPortInstance(number);
@@ -136,13 +136,14 @@ helper Set(HWPortPart)::createPortInstances(number:String,parent:HWPlatformInsta
 	var portInstances:Set(HWPortInstance);
 	var lowerBound: Integer;
 	self->forEach(portPart){
-		if(portPart.cardinality.lowerBound.toInteger() < portPart.connectors->size()) then{
-					lowerBound:=portPart.connectors->size();	
-		}
-		else{
-			lowerBound:=portPart.cardinality.lowerBound.toInteger();
-		}
-		endif;
+		lowerBound:=portPart.connectors->size();
+	//	if(portPart.cardinality.lowerBound.toInteger() < portPart.connectors->size()) then{
+	//				lowerBound:=portPart.connectors->size();	
+	//	}
+	//	else{
+	//		lowerBound:=portPart.cardinality.lowerBound.toInteger();
+	//	}
+	//	endif;
 		while(lowerBound>0){
 				portInstances+=portPart.map createPortInstance(number, parent);
 				lowerBound:=lowerBound-1;
@@ -153,24 +154,12 @@ helper Set(HWPortPart)::createPortInstances(number:String,parent:HWPlatformInsta
 
 //create a HWPortInstance and resovle the correct connectedCommunicationMedia with the help of the argument parent
 mapping HWPortPart::createPortInstance(number:String,parent:HWPlatformInstanceConfiguration):HWPortInstance{
-init{
-	switch{ 	
-			case (self.portKind = hardware::hwresource::HWPortKind::BUS){
-			result.connectorInstances:=self.connectors.resolve(NetworkConnectorInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
-					}
-			case (self.portKind = hardware::hwresource::HWPortKind::LINK){
-			result.connectorInstances:=self.connectors.resolve(NetworkConnectorInstance)->selectOne(c|c.connectorEndpointInstances->size()=1);
-					}
-					
-			else{//sollte nich aufgerufen werden
-				//result:=new BusPortInstance();
-				}
-			};	
-	}
+
 //	result.name:=self.name+number;
 	type:= self;
-	name:=self.communicationResource.name;
+	name:=self.hwport.name;
 	comment:=self.comment;
+	communicationResource:=self.hwport.communicationResource;
 	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
 //	result.hwportType:=self.hwportType;
 //	result.queuingTime:=self.queuingTime.deepclone().oclAsType(TimeInterval);
@@ -212,11 +201,12 @@ disjuncts Bus::createBusInstance, NetworkBridge::createBridgeInstance{}
 
 
 
-mapping NetworkConnector::createBusConnectorInstance(number:String):NetworkConnectorInstance{
+mapping NetworkConnector::mapNetworkConnector2NetworkConnectorInstance():NetworkConnectorInstance{
   	type:=self;
-	comment:=self.comment+number;
+	comment:=self.comment;
 	connectorEndpointInstances:=self.late resolve(muml::connector::ConnectorEndpointInstance);
 	}
+	
 	
 mapping NetworkBridge::createBridgeInstance(number:String):NetworkBridgeInstance{
 	type:=self;

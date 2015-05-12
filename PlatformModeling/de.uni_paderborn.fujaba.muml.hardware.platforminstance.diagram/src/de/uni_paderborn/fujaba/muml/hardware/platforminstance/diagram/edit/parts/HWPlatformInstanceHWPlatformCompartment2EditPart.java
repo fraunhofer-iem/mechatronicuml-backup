@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts;
 
 import java.util.Collection;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.emf.common.notify.Notification;
@@ -8,7 +9,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
@@ -145,6 +145,10 @@ public class HWPlatformInstanceHWPlatformCompartment2EditPart extends
 		return super.getTargetEditPart(request);
 	}
 
+	// Fix to hide this Compartment, if it has no children. See also GMF bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
+	// and workaround:
+	// http://www.eclipse.org/forums/index.php/m/9761/
 	/**
 	 * @generated
 	 */
@@ -154,6 +158,7 @@ public class HWPlatformInstanceHWPlatformCompartment2EditPart extends
 		setVisibility(hasChildren);
 	}
 
+	// This is also part of the fix mentioned above.
 	/**
 	 * @generated
 	 */

@@ -108,7 +108,7 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 
 		de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance newElement = de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstanceFactory.eINSTANCE
 				.createNetworkConnectorInstance();
-		getContainer().setNetworkConnectorInstances(newElement);
+		getContainer().getNetworkConnectorInstances().add(newElement);
 		newElement.getConnectorEndpointInstances().add(getSource());
 		newElement.getConnectorEndpointInstances().add(getTarget());
 		doConfigure(newElement, monitor, info);

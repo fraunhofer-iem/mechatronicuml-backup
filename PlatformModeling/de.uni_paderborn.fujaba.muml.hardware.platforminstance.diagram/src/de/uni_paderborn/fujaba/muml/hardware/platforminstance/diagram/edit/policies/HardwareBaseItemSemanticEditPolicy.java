@@ -1,11 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -33,7 +29,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
@@ -330,11 +325,6 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
-			if (container != null) {
-				if (container.getNetworkConnectorInstances() != null) {
-					return false;
-				}
-			}
 			return canExistNetworkConnectorInstance_4011(container, null,
 					source, target, sourceView, targetView);
 		}

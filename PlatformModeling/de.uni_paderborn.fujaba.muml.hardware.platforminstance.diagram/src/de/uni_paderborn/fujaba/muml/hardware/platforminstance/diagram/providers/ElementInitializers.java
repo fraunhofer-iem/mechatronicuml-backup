@@ -1,7 +1,5 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers;
 
-import org.eclipse.emf.ecore.EcorePackage;
-
 /**
  * @generated
  */

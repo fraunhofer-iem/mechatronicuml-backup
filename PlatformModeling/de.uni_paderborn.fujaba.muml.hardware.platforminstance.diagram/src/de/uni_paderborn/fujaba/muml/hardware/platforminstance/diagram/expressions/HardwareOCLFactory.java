@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;

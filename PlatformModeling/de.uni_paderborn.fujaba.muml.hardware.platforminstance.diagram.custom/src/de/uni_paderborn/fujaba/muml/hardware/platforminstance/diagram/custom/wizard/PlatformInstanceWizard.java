@@ -7,6 +7,7 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
@@ -40,12 +41,26 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		model = new WizardModel();
 		model.setSelectedHWPlatformInstanceConfiguration(selectedElement);
 		this.editingDomain = editingDomain;
+		this.setForcePreviousAndNextButtons(true);
 	}
 
 	@Override
 	public void addPages() {
-		platformTypePage = new PlatformTypePage();
+		platformTypePage = new PlatformTypePage(null, true);
 		addPage(platformTypePage);
+	}
+	
+
+
+	@Override
+	public IWizardPage getNextPage(IWizardPage page) {
+		// TODO Auto-generated method stub
+		if(page instanceof PlatformTypePage && ((PlatformTypePage) page).neddFurtherPage()){
+			IWizardPage nextPage = new PlatformTypePage(((PlatformTypePage) page).followUpPlatforms, false);
+			addPage(nextPage);
+			//nextPage.setVisible(true);
+		}
+		return super.getNextPage(page);
 	}
 
 	public IPath getModelPath() {
@@ -83,7 +98,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	@Override
 	public boolean performFinish() {
-
+		
 		platformTypePage.saveDataToModel();
 
 		executeTransformation();

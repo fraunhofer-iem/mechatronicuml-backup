@@ -37,6 +37,13 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser getDelegationHWPortInstanceLabel_5078Parser() {
+		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.DelegationHWPortInstanceLabelExpressionLabelParser5078();
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser structuredResourceInstanceName_5083Parser;
 
 	/**
@@ -177,13 +184,6 @@ public class HardwareParserProvider extends AbstractProvider implements
 	 */
 	private IParser getNetworkBridgeInstanceLabel_5097Parser() {
 		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.NetworkBridgeInstanceLabelExpressionLabelParser5097();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getDelegationHWPortInstanceLabel_5078Parser() {
-		return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.parsers.DelegationHWPortInstanceLabelExpressionLabelParser5078();
 	}
 
 	/**

@@ -399,7 +399,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	int HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Network Connector Instances</b></em>' containment reference.
+	 * The feature id for the '<em><b>Network Connector Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2351,10 +2351,10 @@ public interface HwplatforminstancePackage extends EPackage {
 	EReference getHWPlatformInstanceConfiguration_ParentHWPlatformInstance();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getNetworkConnectorInstances <em>Network Connector Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getNetworkConnectorInstances <em>Network Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Network Connector Instances</em>'.
+	 * @return the meta object for the containment reference list '<em>Network Connector Instances</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration#getNetworkConnectorInstances()
 	 * @see #getHWPlatformInstanceConfiguration()
 	 * @generated
@@ -2672,7 +2672,7 @@ public interface HwplatforminstancePackage extends EPackage {
 		EReference HW_PLATFORM_INSTANCE_CONFIGURATION__PARENT_HW_PLATFORM_INSTANCE = eINSTANCE.getHWPlatformInstanceConfiguration_ParentHWPlatformInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Network Connector Instances</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Network Connector Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
