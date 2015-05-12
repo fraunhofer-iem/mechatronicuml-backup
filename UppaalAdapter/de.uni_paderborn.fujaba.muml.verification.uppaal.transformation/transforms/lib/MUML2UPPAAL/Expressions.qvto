@@ -764,7 +764,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 		
 		-- map indices
 				
-		index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		//index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 	
 	}
 	
@@ -775,7 +775,7 @@ modeltype uppaal_declarations uses uppaal::declarations('http://www.uni-paderbor
 						
 		-- map indices
 				
-		index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
+		//index += self.indices->map createExpression(componentInstanceID, portOrRoleInstanceID, subPortOrRoleInstanceID);
 	
 	}
 	
