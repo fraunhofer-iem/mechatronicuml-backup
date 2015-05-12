@@ -28,16 +28,13 @@ brakeByWireAllocationSpecification {
 			-- C2 = BrakePedal
 			--self.colocateSCIAndEmbeddedParts('C2')
 			-- C3 = wheel (sc7, sc8)
-			self.colocateSCIAndEmbeddedParts('C3')->union(
-				Set{
-					Tuple{
-						first = self.getSWInstance('sc11'),
-						second = self.getSWInstance('sc12')
-					}
-				}
-			)
-		;
+			self.colocateSCIAndEmbeddedParts('wheel');
 	}
+	
+		constraint sameLocation collocateSC11AndSC12 {
+descriptors (first, second);
+ocl self.allocateToSameECUs('sc11','sc12');
+}
 	
 	constraint requiredResource maxMemoryConsumption {
 		lhs requiredMemory;
@@ -52,7 +49,7 @@ brakeByWireAllocationSpecification {
 		descriptors (first, second);
 		ocl
 			-- C1 = Calliper
-			self.allocateEmbeddedToPlatformInstance('C1', 'Brake.0')
+			self.allocateEmbeddedToPlatformInstance('calliper', 'Brake.0')
 		;
 	}
 	
