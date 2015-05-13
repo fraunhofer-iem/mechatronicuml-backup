@@ -76,6 +76,9 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		if (availableHWPlatforms == null) {
 			initContent();
 		}
+		else{
+			selectedPlatform=(HWPlatform) availableHWPlatforms.toArray()[0];
+		}
 		// create the composite to hold the widgets
 		final Composite composite = new Composite(parent, SWT.NULL);
 
@@ -205,7 +208,8 @@ public class PlatformTypePage extends WizardPage implements Listener {
 						&& (p.getCardinality()
 								.getLowerBound().getValue() + positionInList) >= 1) {
 					followUpPlatforms.add(p);
-					getNextPage();
+				//	getNextPage();
+					getWizard().getContainer().updateButtons();
 				}
 				viewer.update(element, null);
 			}
@@ -267,12 +271,17 @@ public class PlatformTypePage extends WizardPage implements Listener {
 	protected boolean neddFurtherPage() {
 		return !followUpPlatforms.isEmpty();
 	}
+	
+	
+	
 
-	@Override
-	public IWizardPage getNextPage() {
-		// TODO Auto-generated method stub
-		return super.getNextPage();
+	public Collection<EObject> getFollowUpPlatforms() {
+		Collection<EObject> platforms = new ArrayList<EObject>();
+		platforms.addAll(followUpPlatforms);
+		followUpPlatforms.clear();
+		return platforms;
 	}
+
 	
 	
 }

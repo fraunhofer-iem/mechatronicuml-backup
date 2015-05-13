@@ -56,9 +56,10 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 	public IWizardPage getNextPage(IWizardPage page) {
 		// TODO Auto-generated method stub
 		if(page instanceof PlatformTypePage && ((PlatformTypePage) page).neddFurtherPage()){
-			IWizardPage nextPage = new PlatformTypePage(((PlatformTypePage) page).followUpPlatforms, false);
+			IWizardPage nextPage = new PlatformTypePage(((PlatformTypePage) page).getFollowUpPlatforms(), false);
 			addPage(nextPage);
 			//nextPage.setVisible(true);
+			
 		}
 		return super.getNextPage(page);
 	}
