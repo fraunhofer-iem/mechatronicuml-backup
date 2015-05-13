@@ -188,7 +188,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:O
 		events += self.raiseMessageEvent.map Asynchronous2Asynchronous(context);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Unicast) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
 			guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"sendUnicast", "unicastPossible", false, 3);
@@ -247,13 +247,13 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 5);
 		
 		if((not self.raiseMessageEvent.oclIsUndefined()) and (not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Unicast) 
+				and self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not self.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
 				
 			action := self.map TransferSchemata2Action(context, "unicastPossible:=false", "unicastPossible", "false", 12);
 			
 		}endif;
-					
+		result.synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "unicastDone", false, 1);		
 	}
 	
 mapping Transition :: Unicast2StateSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : State {
