@@ -14,7 +14,18 @@ modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 property unicastDLCName : String = "DLC_unicast";
+property multicastDLCName : String = "DLC_multicast";
+property multicastSubRoleSpecificVariableName : String = "sendMulticast";
 property clockIndex : Integer =0;
+
+mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String): Variable
+{
+	result.name := varName;
+	result.initializeExpression := new LiteralExpression();
+	result.initializeExpression.oclAsType(LiteralExpression).value := "false";
+	result.dataType := new PrimitiveDataType();
+	result.dataType.oclAsType(PrimitiveDataType).primitiveType:=PrimitiveTypes::BOOLEAN;
+}
 mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : String) : Clock
 {
 	clockIndex := clockIndex+1;

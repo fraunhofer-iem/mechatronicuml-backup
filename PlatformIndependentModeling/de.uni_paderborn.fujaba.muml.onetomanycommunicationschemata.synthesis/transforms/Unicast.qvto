@@ -52,7 +52,7 @@ mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
-	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "unicastCheckDone", false, 1);
+	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "unicastCheckDone", false, 1);
 }
 
 // @author: sthiele2
@@ -80,8 +80,11 @@ mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region: O
 	result.action := self.action.map Action2Action(context,region);
 	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "unicastDone", false, 1);	
 }
+
+// @author: sthiele2
 mapping Transition :: Unicast2CoordinatorIntermediateState(context:OclAny, region: OclAny, intermediateStateNumber : Integer) : State
 {
+	// creates an intermediate state in the coordinator region
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
 		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, unicastDLCName);
