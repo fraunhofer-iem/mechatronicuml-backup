@@ -13,9 +13,29 @@ modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
+property unicastDLCName : String = "DLC_unicast";
+property clockIndex : Integer =0;
+mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : String) : Clock
+{
+	clockIndex := clockIndex+1;
+	result.name := clockName +"_".concat(clockIndex.toString());
+}	
 
+mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: OclAny, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
+{
+		if(mapLowerBound)
+		{
+			result.bound := self.relativeDeadline.lowerBound.map TimeValue2TimeValue(context,region);
+		}
+		else
+		{
+			result.bound := self.relativeDeadline.upperBound.map TimeValue2TimeValue(context,region);
+		}endif;
+		result.operator := operator;
+		result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+}
 
-
+	
 mapping Transition :: PositionSelfSelector(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
 		
 		kind := PositionSelectorKind::SELF;

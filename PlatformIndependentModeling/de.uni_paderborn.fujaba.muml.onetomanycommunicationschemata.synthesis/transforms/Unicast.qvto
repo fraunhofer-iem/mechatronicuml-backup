@@ -37,12 +37,58 @@ mapping Transition :: Unicast2TransSendSyncCoordinator(context:OclAny, region:Oc
 			
 			clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
 		}endif;
-		
-		action := self.action.map Action2Action(1, region);
+		// @author: sthiele2 changed first paramter of Action2Action from 1 to context
+		action := self.action.map Action2Action(context, region);
 		
 		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "unicast", true, 1);
 			
 	}
+
+// @author: sthiele2
+mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:OclAny) : Transition {
+	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
+	source := self.source.map Vertex2VertexCoordinator(context, region);
+	target := self.map Unicast2CoordinatorIntermediateState(context,region,1);
+	priority := self.priority;
+	guard := self.guard.map Expression2Expression(result);		
+	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
+	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "unicastCheckDone", false, 1);
+}
+
+// @author: sthiele2
+mapping Transition :: Unicast2CoordinatorIntermediateTransition(context:OclAny, region: OclAny): Transition
+{
+	// creates the transition from intermediate state 1 to intermediate state 2
+	source := self.map Unicast2CoordinatorIntermediateState(context,region,1);
+	target := self.map Unicast2CoordinatorIntermediateState(context,region,2);	
+	priority := 1;
+	if(not self.relativeDeadline.oclIsUndefined())
+	{
+		result.clockConstraints += self.map RelativeDeadline2ClockConstraint(result, region, true, ComparingOperator::GREATER_OR_EQUAL, unicastDLCName );
+	};
+	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "unicast", true, 1);
+}
+
+// @author: sthiele2
+mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region: OclAny): Transition
+{
+	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
+	source := self.map Unicast2CoordinatorIntermediateState(context,region, 2);
+	target := self.target.map Vertex2VertexCoordinator(context,region);
+	priority := 1;
+	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
+	result.action := self.action.map Action2Action(context,region);
+	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "unicastDone", false, 1);	
+}
+mapping Transition :: Unicast2CoordinatorIntermediateState(context:OclAny, region: OclAny, intermediateStateNumber : Integer) : State
+{
+	if(not self.relativeDeadline.oclIsUndefined())
+	{
+		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, unicastDLCName);
+	}endif;
+	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region);	
+	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name ;
+}
 
 mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny, region:OclAny) : Region {
 		
@@ -76,7 +122,7 @@ mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny, regi
 		
 		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(2, region);
 		
-		guard := self.guard.map Expression2Expression(context);
+		guard := self.guard.map Expression2Expression(result);
 		
 		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "unicastCheck", true, 2);
 			
