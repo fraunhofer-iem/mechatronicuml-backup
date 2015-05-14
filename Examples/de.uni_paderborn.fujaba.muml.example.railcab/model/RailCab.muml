@@ -4,10 +4,10 @@
   <categories xmi:id="_hm9EUbiwEeKp46K0r5yxrg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EUriwEeKp46K0r5yxrg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EU7iwEeKp46K0r5yxrg" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EVLiwEeKp46K0r5yxrg" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EVbiwEeKp46K0r5yxrg" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EVriwEeKp46K0r5yxrg" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EV7iwEeKp46K0r5yxrg" name="LONG" primitiveType="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EVLiwEeKp46K0r5yxrg" name="INT8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EVbiwEeKp46K0r5yxrg" name="INT16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EVriwEeKp46K0r5yxrg" name="INT32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EV7iwEeKp46K0r5yxrg" name="INT64" primitiveType="INT64"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_hm9EWLiwEeKp46K0r5yxrg" name="DOUBLE" primitiveType="DOUBLE"/>
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_Xl73APSAEeOKmIQk3FL8KA" name="Profile"/>
     <modelElements xsi:type="structdatatype:StructType" xmi:id="_Xl73AfSAEeOKmIQk3FL8KA" name="ProfileStore">
