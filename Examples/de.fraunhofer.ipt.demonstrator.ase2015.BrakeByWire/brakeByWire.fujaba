@@ -189,10 +189,10 @@
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_lmoDUO5yEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_lmoDUe5yEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
                 </extension>
-                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hM-m5EeSyWM-b9FAU_g" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_TngzkOmqEeSsPdK-DtuwOA"/>
-                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNOm5EeSyWM-b9FAU_g" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_ULIeAOmqEeSsPdK-DtuwOA"/>
-                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNem5EeSyWM-b9FAU_g" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_WmBzIOmqEeSsPdK-DtuwOA"/>
-                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNum5EeSyWM-b9FAU_g" connectorInstances="_Fd9hO-m5EeSyWM-b9FAU_g" type="_S9m68OmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hM-m5EeSyWM-b9FAU_g" name="c2" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_TngzkOmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNOm5EeSyWM-b9FAU_g" name="c3" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_ULIeAOmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNem5EeSyWM-b9FAU_g" name="c4" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_WmBzIOmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNum5EeSyWM-b9FAU_g" name="c1" connectorInstances="_Fd9hO-m5EeSyWM-b9FAU_g" type="_S9m68OmqEeSsPdK-DtuwOA"/>
                 <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hN-m5EeSyWM-b9FAU_g" name="force1" connectorInstances="_Fd9hPOm5EeSyWM-b9FAU_g" type="_VAmGYOmqEeSsPdK-DtuwOA"/>
               </componentInstances>
               <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hOOm5EeSyWM-b9FAU_g" type="_1D_JYOm1EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hNOm5EeSyWM-b9FAU_g _Fd9hK-m5EeSyWM-b9FAU_g"/>
@@ -203,7 +203,7 @@
             </embeddedCIC>
           </componentInstances>
           <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Fd9hPem5EeSyWM-b9FAU_g" name="brakePedal" componentType="_cCDggOm2EeSE4Zrj1GnMCg" componentPart="_KUUBgOm4EeSE4Zrj1GnMCg">
-            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hPum5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hTem5EeSyWM-b9FAU_g _Fd9hX-m5EeSyWM-b9FAU_g" type="_cCDggem2EeSE4Zrj1GnMCg"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hPum5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hX-m5EeSyWM-b9FAU_g _dbCLQPpBEeS5tqGzVBMV0A" type="_cCDggem2EeSE4Zrj1GnMCg"/>
             <embeddedCIC xmi:id="_Fd9hP-m5EeSyWM-b9FAU_g" name="BrakePedal">
               <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hQOm5EeSyWM-b9FAU_g" name="sc12" componentType="_jzWlgOmpEeSsPdK-DtuwOA" componentPart="_cCDghem2EeSE4Zrj1GnMCg">
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_oMBi0O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
@@ -221,7 +221,7 @@
                 <extension xsi:type="properties:RequiredMemory" xmi:id="_y6sE8O5zEeSE6ppup-xcFg" resourceInstance="_-WQFwPfpEeSzWIUU-t7NAw">
                   <requiredMemory xmi:id="_y6sE8e5zEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
                 </extension>
-                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hRem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hTem5EeSyWM-b9FAU_g" type="_FGbTQOmrEeSE4Zrj1GnMCg"/>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hRem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_dbCLQPpBEeS5tqGzVBMV0A" type="_FGbTQOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hRum5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_Atm44OmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hR-m5EeSyWM-b9FAU_g" name="H3" connectorInstances="_Fd9hTOm5EeSyWM-b9FAU_g" type="_CykaQOmrEeSE4Zrj1GnMCg"/>
                 <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hSOm5EeSyWM-b9FAU_g" name="H2" connectorInstances="_Fd9hTum5EeSyWM-b9FAU_g" type="_BmWewOmrEeSE4Zrj1GnMCg"/>
@@ -234,7 +234,6 @@
               </componentInstances>
               <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hS-m5EeSyWM-b9FAU_g" type="_USORkOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hRum5EeSyWM-b9FAU_g _Fd9hQem5EeSyWM-b9FAU_g"/>
               <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hTOm5EeSyWM-b9FAU_g" type="_Tr9i0Om3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hSum5EeSyWM-b9FAU_g _Fd9hR-m5EeSyWM-b9FAU_g"/>
-              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hTem5EeSyWM-b9FAU_g" type="_Rrk_cOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hPum5EeSyWM-b9FAU_g _Fd9hRem5EeSyWM-b9FAU_g"/>
               <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hTum5EeSyWM-b9FAU_g" type="_S9hvgOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hQ-m5EeSyWM-b9FAU_g _Fd9hSOm5EeSyWM-b9FAU_g"/>
             </embeddedCIC>
           </componentInstances>
@@ -265,6 +264,7 @@
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hXem5EeSyWM-b9FAU_g" type="_ob-YoOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hKOm5EeSyWM-b9FAU_g _Fd9hJOm5EeSyWM-b9FAU_g"/>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hXum5EeSyWM-b9FAU_g" type="_npwRgOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hJum5EeSyWM-b9FAU_g _Fd9hUOm5EeSyWM-b9FAU_g"/>
           <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hX-m5EeSyWM-b9FAU_g" type="_lxd6MOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hPum5EeSyWM-b9FAU_g _Fd9hI-m5EeSyWM-b9FAU_g"/>
+          <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_dbCLQPpBEeS5tqGzVBMV0A" type="_HXBhgPpBEeSsIq-QKcT_-Q" connectorEndpointInstances="_Fd9hPum5EeSyWM-b9FAU_g _Fd9hRem5EeSyWM-b9FAU_g"/>
         </embeddedCIC>
       </componentInstances>
     </modelElements>
@@ -439,7 +439,7 @@
       <connectors xsi:type="component:DelegationConnector" xmi:id="_4uV7QOm1EeSE4Zrj1GnMCg" connectorEndpoints="_4HjBAOm1EeSE4Zrj1GnMCg _s41F0-m1EeSE4Zrj1GnMCg"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_cCDggOm2EeSE4Zrj1GnMCg" name="BrakePedal" componentKind="hybrid component">
-      <ports xsi:type="component:DiscretePort" xmi:id="_cCDggem2EeSE4Zrj1GnMCg" connectors="_Rrk_cOm3EeSE4Zrj1GnMCg" name="D1" senderMessageTypes="_eDxhoOmrEeSE4Zrj1GnMCg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_cCDggem2EeSE4Zrj1GnMCg" connectors="_HXBhgPpBEeSsIq-QKcT_-Q" name="D1" senderMessageTypes="_eDxhoOmrEeSE4Zrj1GnMCg">
         <cardinality xmi:id="_cCDggum2EeSE4Zrj1GnMCg">
           <lowerBound xmi:id="_Ru1HwOm3EeSE4Zrj1GnMCg"/>
           <upperBound xmi:id="_RvBVAOm3EeSE4Zrj1GnMCg"/>
@@ -467,7 +467,7 @@
         <portParts xmi:id="_MlsDsOm3EeSE4Zrj1GnMCg" connectors="_USORkOm3EeSE4Zrj1GnMCg" portType="_Atm44OmrEeSE4Zrj1GnMCg"/>
         <portParts xmi:id="_MlsDsem3EeSE4Zrj1GnMCg" connectors="_S9hvgOm3EeSE4Zrj1GnMCg" portType="_BmWewOmrEeSE4Zrj1GnMCg"/>
         <portParts xmi:id="_MlsDsum3EeSE4Zrj1GnMCg" connectors="_Tr9i0Om3EeSE4Zrj1GnMCg" portType="_CykaQOmrEeSE4Zrj1GnMCg"/>
-        <portParts xmi:id="_MlsDs-m3EeSE4Zrj1GnMCg" connectors="_Rrk_cOm3EeSE4Zrj1GnMCg" portType="_FGbTQOmrEeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_MlsDs-m3EeSE4Zrj1GnMCg" connectors="_HXBhgPpBEeSsIq-QKcT_-Q" portType="_FGbTQOmrEeSE4Zrj1GnMCg"/>
       </embeddedComponentParts>
       <embeddedComponentParts xmi:id="_cCDglOm2EeSE4Zrj1GnMCg" name="sc13" componentType="_mV1wYOmpEeSsPdK-DtuwOA">
         <cardinality xmi:id="_cCDglem2EeSE4Zrj1GnMCg">
@@ -476,10 +476,10 @@
         </cardinality>
         <portParts xmi:id="_Ml-XlOm3EeSE4Zrj1GnMCg" connectors="_Tr9i0Om3EeSE4Zrj1GnMCg" portType="_1caG4OmpEeSsPdK-DtuwOA"/>
       </embeddedComponentParts>
-      <connectors xsi:type="component:AssemblyConnector" xmi:id="_Rrk_cOm3EeSE4Zrj1GnMCg" connectorEndpoints="_MlsDs-m3EeSE4Zrj1GnMCg _cCDggem2EeSE4Zrj1GnMCg"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_S9hvgOm3EeSE4Zrj1GnMCg" connectorEndpoints="_MlsDsem3EeSE4Zrj1GnMCg _MlZv0Om3EeSE4Zrj1GnMCg"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_Tr9i0Om3EeSE4Zrj1GnMCg" connectorEndpoints="_MlsDsum3EeSE4Zrj1GnMCg _Ml-XlOm3EeSE4Zrj1GnMCg"/>
       <connectors xsi:type="component:AssemblyConnector" xmi:id="_USORkOm3EeSE4Zrj1GnMCg" connectorEndpoints="_MlHb8Om3EeSE4Zrj1GnMCg _MlsDsOm3EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_HXBhgPpBEeSsIq-QKcT_-Q" connectorEndpoints="_cCDggem2EeSE4Zrj1GnMCg _MlsDs-m3EeSE4Zrj1GnMCg"/>
     </modelElements>
     <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_W8bOAOm3EeSE4Zrj1GnMCg" name="Wheel" componentKind="hybrid component">
       <ports xsi:type="component:DiscretePort" xmi:id="_W8bOAem3EeSE4Zrj1GnMCg" connectors="_yZRksOm3EeSE4Zrj1GnMCg" name="D1" senderMessageTypes="_bO174OmrEeSE4Zrj1GnMCg">
