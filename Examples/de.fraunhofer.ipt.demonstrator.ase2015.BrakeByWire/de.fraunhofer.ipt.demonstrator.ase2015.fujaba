@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r14616)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.4.0" xmlns:connector="http://www.fujaba.de/muml/connector/0.4.0" xmlns:hwplatform="http://www.fujaba.de/muml/hardware/hwplatform/1.0/" xmlns:hwplatforminstance="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/" xmlns:hwresource="http://www.fujaba.de/muml/hardware/hwresource/1.0/" xmlns:hwresourceinstance="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/" xmlns:instance="http://www.fujaba.de/muml/instance/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:properties="http://www.fujaba.de/muml/psm/properties/0.4.0/" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_P_fLIMvpEeSqLp1EdST_nQ">
+  <categories xmi:id="_P_fLIcvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLIsvpEeSqLp1EdST_nQ" name="VOID"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLI8vpEeSqLp1EdST_nQ" name="BOOLEAN" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJMvpEeSqLp1EdST_nQ" name="BYTE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJcvpEeSqLp1EdST_nQ" name="SHORT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJsvpEeSqLp1EdST_nQ" name="INT"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLJ8vpEeSqLp1EdST_nQ" name="LONG"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_P_fLKMvpEeSqLp1EdST_nQ" name="DOUBLE" primitiveType="DOUBLE"/>
+  </categories>
+  <categories xmi:id="_P_fLKcvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart"/>
+  <categories xmi:id="_P_fLKsvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_jZxF0MwmEeSqLp1EdST_nQ" name="Driving">
+      <roles xmi:id="_jZziEMwmEeSqLp1EdST_nQ" connectors="_jZ0wNcwmEeSqLp1EdST_nQ" name="DrivingControllerRole">
+        <cardinality xmi:id="_jZ0JIMwmEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_uJTKoMwmEeSqLp1EdST_nQ"/>
+          <upperBound xmi:id="_uJTxsMwmEeSqLp1EdST_nQ"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_jZ0wMcwmEeSqLp1EdST_nQ" connectors="_jZ0wNcwmEeSqLp1EdST_nQ" name="DriverRole">
+        <cardinality xmi:id="_jZ0wMswmEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_Rs3JwMwnEeSqLp1EdST_nQ"/>
+          <upperBound xmi:id="_Rs5mAMwnEeSqLp1EdST_nQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_3HMSsMwmEeSqLp1EdST_nQ" name="DriverRoleBuf">
+          <bufferSize xmi:id="_6z2xsMwmEeSqLp1EdST_nQ" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_jZ0wNcwmEeSqLp1EdST_nQ" connectorEndpoints="_jZziEMwmEeSqLp1EdST_nQ _jZ0wMcwmEeSqLp1EdST_nQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_jZ1-UMwmEeSqLp1EdST_nQ" comment="">
+          <minMessageDelay xmi:id="_jZ6PwswmEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_YW-b4MwoEeSqLp1EdST_nQ" value="1"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_jZ6PwMwmEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_ZHLJwMwoEeSqLp1EdST_nQ" value="50"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_Vmz20MwnEeSqLp1EdST_nQ" name="Loading">
+      <roles xmi:id="_Vm1E8MwnEeSqLp1EdST_nQ" connectors="_Vm1sB8wnEeSqLp1EdST_nQ" name="LoadingControllerRole">
+        <cardinality xmi:id="_Vm1sAMwnEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_nSVdYMwnEeSqLp1EdST_nQ"/>
+          <upperBound xmi:id="_nSVdYcwnEeSqLp1EdST_nQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_lT1JUMwnEeSqLp1EdST_nQ" name="LoadingControllerRoleBuf">
+          <bufferSize xmi:id="_o0M4wMwnEeSqLp1EdST_nQ" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_Vm1sA8wnEeSqLp1EdST_nQ" connectors="_Vm1sB8wnEeSqLp1EdST_nQ" name="LoaderRole">
+        <cardinality xmi:id="_Vm1sBMwnEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_Vh5sMMwoEeSqLp1EdST_nQ"/>
+          <upperBound xmi:id="_Vh7hYMwoEeSqLp1EdST_nQ"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_rst-AMwnEeSqLp1EdST_nQ" name="LoaderRoleBuf">
+          <bufferSize xmi:id="_tatJ0MwnEeSqLp1EdST_nQ" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_Vm1sB8wnEeSqLp1EdST_nQ" connectorEndpoints="_Vm1E8MwnEeSqLp1EdST_nQ _Vm1sA8wnEeSqLp1EdST_nQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_Vm1sCMwnEeSqLp1EdST_nQ" comment="">
+          <minMessageDelay xmi:id="_Vm26IswnEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_SH978MwoEeSqLp1EdST_nQ" value="1"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_Vm26IMwnEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_TZ_kgMwoEeSqLp1EdST_nQ" value="50"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_b3dgEMwoEeSqLp1EdST_nQ" name="InitiateDelivery">
+      <roles xmi:id="_b3eHIMwoEeSqLp1EdST_nQ" connectors="_b3euN8woEeSqLp1EdST_nQ" name="PickingUpControllerRole">
+        <cardinality xmi:id="_b3euMMwoEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_dBy_QMy3EeSAj6pU1kED-w"/>
+          <upperBound xmi:id="_dBy_Qcy3EeSAj6pU1kED-w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_ZjUtQMy3EeSAj6pU1kED-w" name="PickingUpControllerRoleBuf">
+          <bufferSize xmi:id="_cQbzwMy3EeSAj6pU1kED-w" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_b3euM8woEeSqLp1EdST_nQ" connectors="_b3euN8woEeSqLp1EdST_nQ" name="PickUpRole">
+        <cardinality xmi:id="_b3euNMwoEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_feiugMy3EeSAj6pU1kED-w"/>
+          <upperBound xmi:id="_fekjsMy3EeSAj6pU1kED-w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_JL7_oMwpEeSqLp1EdST_nQ" name="PickUpRoleBuf">
+          <bufferSize xmi:id="_LmRUEMwpEeSqLp1EdST_nQ" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_b3euN8woEeSqLp1EdST_nQ" connectorEndpoints="_b3eHIMwoEeSqLp1EdST_nQ _b3euM8woEeSqLp1EdST_nQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_b3euOMwoEeSqLp1EdST_nQ" comment="">
+          <minMessageDelay xmi:id="_b3fVQswoEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_R7LnsMwpEeSqLp1EdST_nQ" value="1"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_b3fVQMwoEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_SmufEMwpEeSqLp1EdST_nQ" value="50"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+    <modelElements xsi:type="connector:MessageBuffer" xmi:id="_sN7YMMwoEeSqLp1EdST_nQ" name="PickUpRoleBuf">
+      <bufferSize xmi:id="_to9y0MwoEeSqLp1EdST_nQ" value="5"/>
+    </modelElements>
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_mr2aQMwpEeSqLp1EdST_nQ" name="DeliveryCoordination">
+      <roles xmi:id="_mr3oYMwpEeSqLp1EdST_nQ" connectors="_mr3oaMwpEeSqLp1EdST_nQ" name="PickUpBotRole">
+        <cardinality xmi:id="_mr3oYcwpEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_acx6QMy2EeSAj6pU1kED-w"/>
+          <upperBound xmi:id="_aczvcMy2EeSAj6pU1kED-w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_KPqRAMwqEeSqLp1EdST_nQ" name="PickUpBotRoleBuf">
+          <bufferSize xmi:id="_MbfPYMwqEeSqLp1EdST_nQ" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roles xmi:id="_mr3oZMwpEeSqLp1EdST_nQ" connectors="_mr3oaMwpEeSqLp1EdST_nQ" name="CommunicatorRole">
+        <cardinality xmi:id="_mr3oZcwpEeSqLp1EdST_nQ">
+          <lowerBound xmi:id="_Ywq9wMy2EeSAj6pU1kED-w"/>
+          <upperBound xmi:id="_Ywsy8My2EeSAj6pU1kED-w"/>
+        </cardinality>
+        <receiverMessageBuffer xmi:id="_V5YAgMy2EeSAj6pU1kED-w" name="CommunicatorRoleBuf">
+          <bufferSize xmi:id="_X-Lw4My2EeSAj6pU1kED-w" value="5"/>
+        </receiverMessageBuffer>
+      </roles>
+      <roleConnector xmi:id="_mr3oaMwpEeSqLp1EdST_nQ" connectorEndpoints="_mr3oYMwpEeSqLp1EdST_nQ _mr3oZMwpEeSqLp1EdST_nQ">
+        <connectorQualityOfServiceAssumptions xmi:id="_mr4PcMwpEeSqLp1EdST_nQ" comment="">
+          <minMessageDelay xmi:id="_mr4Pc8wpEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_GFunMMwqEeSqLp1EdST_nQ" value="1"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_mr4PccwpEeSqLp1EdST_nQ" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_GqVwIMwqEeSqLp1EdST_nQ" value="50"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_P_fLK8vpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_W-nc0OmrEeSE4Zrj1GnMCg" name="M1">
+      <messageTypes xmi:id="_XlxjcOmrEeSE4Zrj1GnMCg" name="calliperForce"/>
+      <messageTypes xmi:id="_bO174OmrEeSE4Zrj1GnMCg" name="spin"/>
+      <messageTypes xmi:id="_eDxhoOmrEeSE4Zrj1GnMCg" name="pedalForce"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_P_fLLMvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance">
+    <modelElements xsi:type="instance:ComponentInstanceConfiguration" xmi:id="_C02w4Om5EeSyWM-b9FAU_g" name="root-cic">
+      <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_ERz3EOm5EeSyWM-b9FAU_g" name="car" componentType="_G-ulwOm4EeSE4Zrj1GnMCg">
+        <embeddedCIC xmi:id="_Fd9hIOm5EeSyWM-b9FAU_g" name="CarSw">
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hIem5EeSyWM-b9FAU_g" name="sc6" componentType="_a4EskOmpEeSsPdK-DtuwOA" componentPart="_SOC94Om4EeSE4Zrj1GnMCg">
+            <extension xsi:type="properties:RequiredMemory" xmi:id="_Ua7BwO5xEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+              <requiredMemory xmi:id="_dX48wO5xEeSE6ppup-xcFg" value="1024.0" unit="KByte"/>
+            </extension>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hIum5EeSyWM-b9FAU_g" name="wheelSpin1" connectorInstances="_Fd9hXOm5EeSyWM-b9FAU_g" type="_Caj_YOmqEeSsPdK-DtuwOA"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hI-m5EeSyWM-b9FAU_g" name="brakePedalForce1" connectorInstances="_Fd9hX-m5EeSyWM-b9FAU_g" type="_CrySQOmqEeSsPdK-DtuwOA"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hJOm5EeSyWM-b9FAU_g" name="calliperForce1" connectorInstances="_Fd9hXem5EeSyWM-b9FAU_g" type="_CAercOmqEeSsPdK-DtuwOA"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hJem5EeSyWM-b9FAU_g" name="sc9" componentType="_cQep8OmpEeSsPdK-DtuwOA" componentPart="_UH2YIOm4EeSE4Zrj1GnMCg">
+            <extension xsi:type="properties:RequiredMemory" xmi:id="_oeJfgO5xEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+              <requiredMemory xmi:id="_oeJfge5xEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
+            </extension>
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hJum5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hXum5EeSyWM-b9FAU_g" type="_5MOnkOmpEeSsPdK-DtuwOA"/>
+          </componentInstances>
+          <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Fd9hJ-m5EeSyWM-b9FAU_g" name="calliper" componentType="_KyLJkOm1EeSE4Zrj1GnMCg" componentPart="_IQiL4Om4EeSE4Zrj1GnMCg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hKOm5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hPOm5EeSyWM-b9FAU_g _Fd9hXem5EeSyWM-b9FAU_g" type="_4HjBAOm1EeSE4Zrj1GnMCg"/>
+            <embeddedCIC xmi:id="_Fd9hKem5EeSyWM-b9FAU_g" name="Calliper">
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hKum5EeSyWM-b9FAU_g" name="sc3" componentType="_LO8bkOmpEeSsPdK-DtuwOA" componentPart="_lZdKMOm1EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="__Ry2cO5xEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="__Ry2ce5xEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hK-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_-G_RYOmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hLOm5EeSyWM-b9FAU_g" name="sc1" componentType="_OcCpsOmpEeSsPdK-DtuwOA" componentPart="_noploOm1EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_F0KXQO5yEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_F0KXQe5yEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hLem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hO-m5EeSyWM-b9FAU_g" type="_9Est8OmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hLum5EeSyWM-b9FAU_g" name="sc2" componentType="_QUA38OmpEeSsPdK-DtuwOA" componentPart="_pUBiUOm1EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_VI_zQO5yEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_VI_zQe5yEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hL-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_6i11MOmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hMOm5EeSyWM-b9FAU_g" name="sc5" componentType="_Sun5MOmpEeSsPdK-DtuwOA" componentPart="_q3EpcOm1EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_kXLNoO5yEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_kXLNoe5yEeSE6ppup-xcFg" value="256.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hMem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_8BMpkOmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hMum5EeSyWM-b9FAU_g" name="sc4" componentType="_ViMNAOmpEeSsPdK-DtuwOA" componentPart="_sNMu4Om1EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_lmoDUO5yEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_lmoDUe5yEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hM-m5EeSyWM-b9FAU_g" connectorInstances="_Fd9hOum5EeSyWM-b9FAU_g" type="_TngzkOmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNOm5EeSyWM-b9FAU_g" connectorInstances="_Fd9hOOm5EeSyWM-b9FAU_g" type="_ULIeAOmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNem5EeSyWM-b9FAU_g" connectorInstances="_Fd9hOem5EeSyWM-b9FAU_g" type="_WmBzIOmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hNum5EeSyWM-b9FAU_g" connectorInstances="_Fd9hO-m5EeSyWM-b9FAU_g" type="_S9m68OmqEeSsPdK-DtuwOA"/>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hN-m5EeSyWM-b9FAU_g" name="force1" connectorInstances="_Fd9hPOm5EeSyWM-b9FAU_g" type="_VAmGYOmqEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hOOm5EeSyWM-b9FAU_g" type="_1D_JYOm1EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hNOm5EeSyWM-b9FAU_g _Fd9hK-m5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hOem5EeSyWM-b9FAU_g" type="_26eJ4Om1EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hMem5EeSyWM-b9FAU_g _Fd9hNem5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hOum5EeSyWM-b9FAU_g" type="_2RgscOm1EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hM-m5EeSyWM-b9FAU_g _Fd9hL-m5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hO-m5EeSyWM-b9FAU_g" type="_0B4zMOm1EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hLem5EeSyWM-b9FAU_g _Fd9hNum5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_Fd9hPOm5EeSyWM-b9FAU_g" type="_4uV7QOm1EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hN-m5EeSyWM-b9FAU_g _Fd9hKOm5EeSyWM-b9FAU_g"/>
+            </embeddedCIC>
+          </componentInstances>
+          <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Fd9hPem5EeSyWM-b9FAU_g" name="brakePedal" componentType="_cCDggOm2EeSE4Zrj1GnMCg" componentPart="_KUUBgOm4EeSE4Zrj1GnMCg">
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hPum5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hTem5EeSyWM-b9FAU_g _Fd9hX-m5EeSyWM-b9FAU_g" type="_cCDggem2EeSE4Zrj1GnMCg"/>
+            <embeddedCIC xmi:id="_Fd9hP-m5EeSyWM-b9FAU_g" name="BrakePedal">
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hQOm5EeSyWM-b9FAU_g" name="sc12" componentType="_jzWlgOmpEeSsPdK-DtuwOA" componentPart="_cCDghem2EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_oMBi0O5zEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_oMBi0e5zEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hQem5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_8VN8UOmqEeSE4Zrj1GnMCg"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hQum5EeSyWM-b9FAU_g" name="sc11" componentType="_eEj2sOmpEeSsPdK-DtuwOA" componentPart="_cCDgium2EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_vHdD4O5zEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_vHdD4e5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hQ-m5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hTum5EeSyWM-b9FAU_g" type="_3QBZkOmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hROm5EeSyWM-b9FAU_g" name="sc10" componentType="_f1qn8OmpEeSsPdK-DtuwOA" componentPart="_cCDgj-m2EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_y6sE8O5zEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_y6sE8e5zEeSE6ppup-xcFg" value="512.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hRem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hTem5EeSyWM-b9FAU_g" type="_FGbTQOmrEeSE4Zrj1GnMCg"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hRum5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hS-m5EeSyWM-b9FAU_g" type="_Atm44OmrEeSE4Zrj1GnMCg"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hR-m5EeSyWM-b9FAU_g" name="H3" connectorInstances="_Fd9hTOm5EeSyWM-b9FAU_g" type="_CykaQOmrEeSE4Zrj1GnMCg"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hSOm5EeSyWM-b9FAU_g" name="H2" connectorInstances="_Fd9hTum5EeSyWM-b9FAU_g" type="_BmWewOmrEeSE4Zrj1GnMCg"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hSem5EeSyWM-b9FAU_g" name="sc13" componentType="_mV1wYOmpEeSsPdK-DtuwOA" componentPart="_cCDglOm2EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_2K54gO5zEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_2K54ge5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hSum5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hTOm5EeSyWM-b9FAU_g" type="_1caG4OmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hS-m5EeSyWM-b9FAU_g" type="_USORkOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hRum5EeSyWM-b9FAU_g _Fd9hQem5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hTOm5EeSyWM-b9FAU_g" type="_Tr9i0Om3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hSum5EeSyWM-b9FAU_g _Fd9hR-m5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hTem5EeSyWM-b9FAU_g" type="_Rrk_cOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hPum5EeSyWM-b9FAU_g _Fd9hRem5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hTum5EeSyWM-b9FAU_g" type="_S9hvgOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hQ-m5EeSyWM-b9FAU_g _Fd9hSOm5EeSyWM-b9FAU_g"/>
+            </embeddedCIC>
+          </componentInstances>
+          <componentInstances xsi:type="instance:StructuredComponentInstance" xmi:id="_Fd9hT-m5EeSyWM-b9FAU_g" name="wheel" componentType="_W8bOAOm3EeSE4Zrj1GnMCg" componentPart="_N5BeYOm4EeSE4Zrj1GnMCg">
+            <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hUOm5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hWem5EeSyWM-b9FAU_g _Fd9hXum5EeSyWM-b9FAU_g" type="_023BcOm3EeSE4Zrj1GnMCg"/>
+            <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hUem5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hW-m5EeSyWM-b9FAU_g _Fd9hXOm5EeSyWM-b9FAU_g" type="_W8bOAem3EeSE4Zrj1GnMCg"/>
+            <embeddedCIC xmi:id="_Fd9hUum5EeSyWM-b9FAU_g" name="Wheel">
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hU-m5EeSyWM-b9FAU_g" name="sc8" componentType="_heYSMOmpEeSsPdK-DtuwOA" componentPart="_W8bOBem3EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_62Q0YO5zEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_62Q0Ye5zEeSE6ppup-xcFg" value="128.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:DiscreteSinglePortInstance" xmi:id="_Fd9hVOm5EeSyWM-b9FAU_g" name="D11" connectorInstances="_Fd9hW-m5EeSyWM-b9FAU_g" type="_LH1cEOmrEeSE4Zrj1GnMCg"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hVem5EeSyWM-b9FAU_g" name="H1" connectorInstances="_Fd9hWem5EeSyWM-b9FAU_g" type="_Iy9PYOmrEeSE4Zrj1GnMCg"/>
+                <portInstances xsi:type="instance:HybridPortInstance" xmi:id="_Fd9hVum5EeSyWM-b9FAU_g" name="H2" connectorInstances="_Fd9hWum5EeSyWM-b9FAU_g" type="_JKgMsOmrEeSE4Zrj1GnMCg"/>
+              </componentInstances>
+              <componentInstances xsi:type="instance:AtomicComponentInstance" xmi:id="_Fd9hV-m5EeSyWM-b9FAU_g" name="sc7" componentType="_rrXDkOmpEeSsPdK-DtuwOA" componentPart="_W8bOCum3EeSE4Zrj1GnMCg">
+                <extension xsi:type="properties:RequiredMemory" xmi:id="_9iw24O5zEeSE6ppup-xcFg" resourceInstance="_oHXJcOmKEeSsPdK-DtuwOA">
+                  <requiredMemory xmi:id="_9iw24e5zEeSE6ppup-xcFg" value="64.0" unit="KByte"/>
+                </extension>
+                <portInstances xsi:type="instance:ContinuousPortInstance" xmi:id="_Fd9hWOm5EeSyWM-b9FAU_g" name="C1" connectorInstances="_Fd9hWum5EeSyWM-b9FAU_g" type="_uNawoOmpEeSsPdK-DtuwOA"/>
+              </componentInstances>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_Fd9hWem5EeSyWM-b9FAU_g" type="_21eDMOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hVem5EeSyWM-b9FAU_g _Fd9hUOm5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hWum5EeSyWM-b9FAU_g" type="_DBgiQOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hWOm5EeSyWM-b9FAU_g _Fd9hVum5EeSyWM-b9FAU_g"/>
+              <portConnectorInstances xsi:type="instance:DelegationConnectorInstance" xmi:id="_Fd9hW-m5EeSyWM-b9FAU_g" type="_yZRksOm3EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hUem5EeSyWM-b9FAU_g _Fd9hVOm5EeSyWM-b9FAU_g"/>
+            </embeddedCIC>
+          </componentInstances>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hXOm5EeSyWM-b9FAU_g" type="_mqpk8Om4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hUem5EeSyWM-b9FAU_g _Fd9hIum5EeSyWM-b9FAU_g"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hXem5EeSyWM-b9FAU_g" type="_ob-YoOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hKOm5EeSyWM-b9FAU_g _Fd9hJOm5EeSyWM-b9FAU_g"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hXum5EeSyWM-b9FAU_g" type="_npwRgOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hJum5EeSyWM-b9FAU_g _Fd9hUOm5EeSyWM-b9FAU_g"/>
+          <portConnectorInstances xsi:type="instance:AssemblyConnectorInstance" xmi:id="_Fd9hX-m5EeSyWM-b9FAU_g" type="_lxd6MOm4EeSE4Zrj1GnMCg" connectorEndpointInstances="_Fd9hPum5EeSyWM-b9FAU_g _Fd9hI-m5EeSyWM-b9FAU_g"/>
+        </embeddedCIC>
+      </componentInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_P_fLLcvpEeSqLp1EdST_nQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_LO8bkOmpEeSsPdK-DtuwOA" name="ParkingBrakeActuator" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_-G_RYOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_OcCpsOmpEeSsPdK-DtuwOA" name="TemperatureSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_9Est8OmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_QUA38OmpEeSsPdK-DtuwOA" name="CalliperPositionSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_6i11MOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Sun5MOmpEeSsPdK-DtuwOA" name="CalliperClampActuator" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_8BMpkOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_ViMNAOmpEeSsPdK-DtuwOA" name="CalliperControl">
+      <ports xsi:type="component:HybridPort" xmi:id="_S9m68OmqEeSsPdK-DtuwOA" name="c1" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+        <samplingInterval xmi:id="_F2kzcOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_HRggYOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_TngzkOmqEeSsPdK-DtuwOA" name="c2" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+        <samplingInterval xmi:id="_IqtvAOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_JNBK0OnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_ULIeAOmqEeSsPdK-DtuwOA" name="c3" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT">
+        <samplingInterval xmi:id="_KoDlcOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_LRKz4OnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_VAmGYOmqEeSsPdK-DtuwOA" name="force" receiverMessageTypes="_XlxjcOmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_xBESEOmrEeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_G8KhUOm1EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_G8WukOm1EeSE4Zrj1GnMCg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_WmBzIOmqEeSsPdK-DtuwOA" name="c4" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT">
+        <samplingInterval xmi:id="_Mb6vwOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_OH5JYOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_a4EskOmpEeSsPdK-DtuwOA" name="CentralBrakeControl">
+      <ports xsi:type="component:DiscretePort" xmi:id="_CAercOmqEeSsPdK-DtuwOA" name="calliperForce" senderMessageTypes="_XlxjcOmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_CAtU8OmqEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_CAt8AOmqEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_CAujEOmqEeSsPdK-DtuwOA"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_Caj_YOmqEeSsPdK-DtuwOA" name="wheelSpin" receiverMessageTypes="_bO174OmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_CanCsOmqEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_CanCsemqEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_CanCsumqEeSsPdK-DtuwOA"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_CrySQOmqEeSsPdK-DtuwOA" name="brakePedalForce" receiverMessageTypes="_eDxhoOmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_Cry5UOmqEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_Cry5UemqEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_CrzgYOmqEeSsPdK-DtuwOA"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_cQep8OmpEeSsPdK-DtuwOA" name="ParkingBrakeSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_5MOnkOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_eEj2sOmpEeSsPdK-DtuwOA" name="PedalPositionSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_3QBZkOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_f1qn8OmpEeSsPdK-DtuwOA" name="BrakePedalControl">
+      <ports xsi:type="component:HybridPort" xmi:id="_Atm44OmrEeSE4Zrj1GnMCg" name="H1" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+        <samplingInterval xmi:id="_pxh-4OnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_qYLIIOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_BmWewOmrEeSE4Zrj1GnMCg" name="H2" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+        <samplingInterval xmi:id="_rTjLQOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_r9A_AOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_CykaQOmrEeSE4Zrj1GnMCg" name="H3" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT">
+        <samplingInterval xmi:id="_twIicOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_u01gsOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_FGbTQOmrEeSE4Zrj1GnMCg" name="D1" senderMessageTypes="_eDxhoOmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_FGhZ4OmrEeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_FqK5gOmrEeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_FqvhQOmrEeSE4Zrj1GnMCg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_heYSMOmpEeSsPdK-DtuwOA" name="WheelSpinDetector">
+      <ports xsi:type="component:HybridPort" xmi:id="_Iy9PYOmrEeSE4Zrj1GnMCg" name="H1" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+        <samplingInterval xmi:id="_yn-bIOnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_zQB5oOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:HybridPort" xmi:id="_JKgMsOmrEeSE4Zrj1GnMCg" name="H2" dataType="_P_fLKMvpEeSqLp1EdST_nQ">
+        <samplingInterval xmi:id="_0ZKr8OnPEeSyWM-b9FAU_g">
+          <value xsi:type="sdcec:LiteralExpression" xmi:id="_1YbJgOnPEeSyWM-b9FAU_g" value="10"/>
+        </samplingInterval>
+      </ports>
+      <ports xsi:type="component:DiscretePort" xmi:id="_LH1cEOmrEeSE4Zrj1GnMCg" name="D1" senderMessageTypes="_bO174OmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_LH1cEemrEeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_LuU0UOmrEeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_LutO0OmrEeSE4Zrj1GnMCg"/>
+        </cardinality>
+      </ports>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_jzWlgOmpEeSsPdK-DtuwOA" name="BrakeForceSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_8VN8UOmqEeSE4Zrj1GnMCg" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_mV1wYOmpEeSsPdK-DtuwOA" name="BrakeFeedbackActuator" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_1caG4OmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_rrXDkOmpEeSsPdK-DtuwOA" name="WheelSpeedSensor" componentKind="continuous component">
+      <ports xsi:type="component:ContinuousPort" xmi:id="_uNawoOmpEeSsPdK-DtuwOA" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ" kind="OUT"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_KyLJkOm1EeSE4Zrj1GnMCg" name="Calliper" componentKind="hybrid component">
+      <ports xsi:type="component:DiscretePort" xmi:id="_4HjBAOm1EeSE4Zrj1GnMCg" connectors="_4uV7QOm1EeSE4Zrj1GnMCg" name="D1" receiverMessageTypes="_XlxjcOmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_4HjBAem1EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_a3HXYOm2EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_a3HXYem2EeSE4Zrj1GnMCg"/>
+        </cardinality>
+      </ports>
+      <embeddedComponentParts xmi:id="_lZdKMOm1EeSE4Zrj1GnMCg" name="sc3" componentType="_LO8bkOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_lZg0kOm1EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_lZto4Om1EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_lZto4em1EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_nEaQIOm1EeSE4Zrj1GnMCg" connectors="_1D_JYOm1EeSE4Zrj1GnMCg" portType="_-G_RYOmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_noploOm1EeSE4Zrj1GnMCg" name="sc1" componentType="_OcCpsOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_noploem1EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_noploum1EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_noplo-m1EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_od_5QOm1EeSE4Zrj1GnMCg" connectors="_0B4zMOm1EeSE4Zrj1GnMCg" portType="_9Est8OmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_pUBiUOm1EeSE4Zrj1GnMCg" name="sc2" componentType="_QUA38OmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_pUBiUem1EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_qf8i4Om1EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_qgO2wOm1EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_qKFAkOm1EeSE4Zrj1GnMCg" connectors="_2RgscOm1EeSE4Zrj1GnMCg" portType="_6i11MOmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_q3EpcOm1EeSE4Zrj1GnMCg" name="sc5" componentType="_Sun5MOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_q3KwEOm1EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_wZskgOm1EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_wZ4xwOm1EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_rf-cgOm1EeSE4Zrj1GnMCg" connectors="_26eJ4Om1EeSE4Zrj1GnMCg" portType="_8BMpkOmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_sNMu4Om1EeSE4Zrj1GnMCg" name="C5" componentType="_ViMNAOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_sNS1gOm1EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_0DtYIOm1EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_0EHAwOm1EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_s41F0Om1EeSE4Zrj1GnMCg" connectors="_0B4zMOm1EeSE4Zrj1GnMCg" portType="_S9m68OmqEeSsPdK-DtuwOA"/>
+        <portParts xmi:id="_s41F0em1EeSE4Zrj1GnMCg" connectors="_2RgscOm1EeSE4Zrj1GnMCg" portType="_TngzkOmqEeSsPdK-DtuwOA"/>
+        <portParts xmi:id="_s41F0um1EeSE4Zrj1GnMCg" connectors="_1D_JYOm1EeSE4Zrj1GnMCg" portType="_ULIeAOmqEeSsPdK-DtuwOA"/>
+        <portParts xmi:id="_s41F0-m1EeSE4Zrj1GnMCg" connectors="_4uV7QOm1EeSE4Zrj1GnMCg" portType="_VAmGYOmqEeSsPdK-DtuwOA"/>
+        <portParts xmi:id="_s41F1Om1EeSE4Zrj1GnMCg" connectors="_26eJ4Om1EeSE4Zrj1GnMCg" portType="_WmBzIOmqEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_0B4zMOm1EeSE4Zrj1GnMCg" connectorEndpoints="_od_5QOm1EeSE4Zrj1GnMCg _s41F0Om1EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_1D_JYOm1EeSE4Zrj1GnMCg" connectorEndpoints="_s41F0um1EeSE4Zrj1GnMCg _nEaQIOm1EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_2RgscOm1EeSE4Zrj1GnMCg" connectorEndpoints="_qKFAkOm1EeSE4Zrj1GnMCg _s41F0em1EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_26eJ4Om1EeSE4Zrj1GnMCg" connectorEndpoints="_s41F1Om1EeSE4Zrj1GnMCg _rf-cgOm1EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_4uV7QOm1EeSE4Zrj1GnMCg" connectorEndpoints="_4HjBAOm1EeSE4Zrj1GnMCg _s41F0-m1EeSE4Zrj1GnMCg"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_cCDggOm2EeSE4Zrj1GnMCg" name="BrakePedal" componentKind="hybrid component">
+      <ports xsi:type="component:DiscretePort" xmi:id="_cCDggem2EeSE4Zrj1GnMCg" connectors="_Rrk_cOm3EeSE4Zrj1GnMCg" name="D1" senderMessageTypes="_eDxhoOmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_cCDggum2EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_Ru1HwOm3EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_RvBVAOm3EeSE4Zrj1GnMCg"/>
+        </cardinality>
+      </ports>
+      <embeddedComponentParts xmi:id="_cCDghem2EeSE4Zrj1GnMCg" name="sc12" componentType="_jzWlgOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_cCDghum2EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_cCDgh-m2EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_cCDgiOm2EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_MlHb8Om3EeSE4Zrj1GnMCg" connectors="_USORkOm3EeSE4Zrj1GnMCg" portType="_8VN8UOmqEeSE4Zrj1GnMCg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_cCDgium2EeSE4Zrj1GnMCg" name="sc11" componentType="_eEj2sOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_cCDgi-m2EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_cCDgjOm2EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_cCDgjem2EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_MlZv0Om3EeSE4Zrj1GnMCg" connectors="_S9hvgOm3EeSE4Zrj1GnMCg" portType="_3QBZkOmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_cCDgj-m2EeSE4Zrj1GnMCg" name="sc10" componentType="_f1qn8OmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_cCDgkOm2EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_OPjkgOm3EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_OPvxwOm3EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_MlsDsOm3EeSE4Zrj1GnMCg" connectors="_USORkOm3EeSE4Zrj1GnMCg" portType="_Atm44OmrEeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_MlsDsem3EeSE4Zrj1GnMCg" connectors="_S9hvgOm3EeSE4Zrj1GnMCg" portType="_BmWewOmrEeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_MlsDsum3EeSE4Zrj1GnMCg" connectors="_Tr9i0Om3EeSE4Zrj1GnMCg" portType="_CykaQOmrEeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_MlsDs-m3EeSE4Zrj1GnMCg" connectors="_Rrk_cOm3EeSE4Zrj1GnMCg" portType="_FGbTQOmrEeSE4Zrj1GnMCg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_cCDglOm2EeSE4Zrj1GnMCg" name="sc13" componentType="_mV1wYOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_cCDglem2EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_cCDglum2EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_cCDgl-m2EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_Ml-XlOm3EeSE4Zrj1GnMCg" connectors="_Tr9i0Om3EeSE4Zrj1GnMCg" portType="_1caG4OmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_Rrk_cOm3EeSE4Zrj1GnMCg" connectorEndpoints="_MlsDs-m3EeSE4Zrj1GnMCg _cCDggem2EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_S9hvgOm3EeSE4Zrj1GnMCg" connectorEndpoints="_MlsDsem3EeSE4Zrj1GnMCg _MlZv0Om3EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_Tr9i0Om3EeSE4Zrj1GnMCg" connectorEndpoints="_MlsDsum3EeSE4Zrj1GnMCg _Ml-XlOm3EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_USORkOm3EeSE4Zrj1GnMCg" connectorEndpoints="_MlHb8Om3EeSE4Zrj1GnMCg _MlsDsOm3EeSE4Zrj1GnMCg"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_W8bOAOm3EeSE4Zrj1GnMCg" name="Wheel" componentKind="hybrid component">
+      <ports xsi:type="component:DiscretePort" xmi:id="_W8bOAem3EeSE4Zrj1GnMCg" connectors="_yZRksOm3EeSE4Zrj1GnMCg" name="D1" senderMessageTypes="_bO174OmrEeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_W8bOAum3EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_iR2OIOm3EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_iR2OIem3EeSE4Zrj1GnMCg"/>
+        </cardinality>
+      </ports>
+      <ports xsi:type="component:ContinuousPort" xmi:id="_023BcOm3EeSE4Zrj1GnMCg" connectors="_21eDMOm3EeSE4Zrj1GnMCg" name="C1" dataType="_P_fLKMvpEeSqLp1EdST_nQ"/>
+      <embeddedComponentParts xmi:id="_W8bOBem3EeSE4Zrj1GnMCg" name="sc8" componentType="_heYSMOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_W8bOBum3EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_xqyuEOm3EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_xrLIkOm3EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_rsMBoOm3EeSE4Zrj1GnMCg" connectors="_21eDMOm3EeSE4Zrj1GnMCg" portType="_Iy9PYOmrEeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_rsMBoem3EeSE4Zrj1GnMCg" connectors="_DBgiQOm4EeSE4Zrj1GnMCg" portType="_JKgMsOmrEeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_rsMBoum3EeSE4Zrj1GnMCg" connectors="_yZRksOm3EeSE4Zrj1GnMCg" portType="_LH1cEOmrEeSE4Zrj1GnMCg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_W8bOCum3EeSE4Zrj1GnMCg" name="sc7" componentType="_rrXDkOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_W8bOC-m3EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_W8bODOm3EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_W8bODem3EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_rseVgOm3EeSE4Zrj1GnMCg" connectors="_DBgiQOm4EeSE4Zrj1GnMCg" portType="_uNawoOmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_yZRksOm3EeSE4Zrj1GnMCg" connectorEndpoints="_rsMBoum3EeSE4Zrj1GnMCg _W8bOAem3EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:DelegationConnector" xmi:id="_21eDMOm3EeSE4Zrj1GnMCg" connectorEndpoints="_023BcOm3EeSE4Zrj1GnMCg _rsMBoOm3EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_DBgiQOm4EeSE4Zrj1GnMCg" connectorEndpoints="_rsMBoem3EeSE4Zrj1GnMCg _rseVgOm3EeSE4Zrj1GnMCg"/>
+    </modelElements>
+    <modelElements xsi:type="component:StaticStructuredComponent" xmi:id="_G-ulwOm4EeSE4Zrj1GnMCg" name="CarSw" componentKind="hybrid component">
+      <embeddedComponentParts xmi:id="_IQiL4Om4EeSE4Zrj1GnMCg" name="C1" componentType="_KyLJkOm1EeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_IQiL4em4EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_IQiL4um4EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_IQiL4-m4EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_JUKMEOm4EeSE4Zrj1GnMCg" connectors="_ob-YoOm4EeSE4Zrj1GnMCg" portType="_4HjBAOm1EeSE4Zrj1GnMCg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_KUUBgOm4EeSE4Zrj1GnMCg" name="C2" componentType="_cCDggOm2EeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_KUUBgem4EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_KUUBgum4EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_KUUBg-m4EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_M0cb8Om4EeSE4Zrj1GnMCg" connectors="_lxd6MOm4EeSE4Zrj1GnMCg" portType="_cCDggem2EeSE4Zrj1GnMCg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_N5BeYOm4EeSE4Zrj1GnMCg" name="C3" componentType="_W8bOAOm3EeSE4Zrj1GnMCg">
+        <cardinality xmi:id="_N5BeYem4EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_N5BeYum4EeSE4Zrj1GnMCg"/>
+          <upperBound xmi:id="_N5BeY-m4EeSE4Zrj1GnMCg"/>
+        </cardinality>
+        <portParts xmi:id="_OXb4sOm4EeSE4Zrj1GnMCg" connectors="_mqpk8Om4EeSE4Zrj1GnMCg" portType="_W8bOAem3EeSE4Zrj1GnMCg"/>
+        <portParts xmi:id="_OXb4sem4EeSE4Zrj1GnMCg" connectors="_npwRgOm4EeSE4Zrj1GnMCg" portType="_023BcOm3EeSE4Zrj1GnMCg"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_SOC94Om4EeSE4Zrj1GnMCg" name="sc6" componentType="_a4EskOmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_SOC94em4EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_8P_VsOm4EeSyWM-b9FAU_g"/>
+          <upperBound xmi:id="_8gz_8Om4EeSyWM-b9FAU_g"/>
+        </cardinality>
+        <portParts xmi:id="_S047cOm4EeSE4Zrj1GnMCg" connectors="_ob-YoOm4EeSE4Zrj1GnMCg" portType="_CAercOmqEeSsPdK-DtuwOA"/>
+        <portParts xmi:id="_S047cem4EeSE4Zrj1GnMCg" connectors="_mqpk8Om4EeSE4Zrj1GnMCg" portType="_Caj_YOmqEeSsPdK-DtuwOA"/>
+        <portParts xmi:id="_S047cum4EeSE4Zrj1GnMCg" connectors="_lxd6MOm4EeSE4Zrj1GnMCg" portType="_CrySQOmqEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <embeddedComponentParts xmi:id="_UH2YIOm4EeSE4Zrj1GnMCg" name="sc9" componentType="_cQep8OmpEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_UH8ewOm4EeSE4Zrj1GnMCg">
+          <lowerBound xmi:id="_Wc1wMOnREeSyWM-b9FAU_g"/>
+          <upperBound xmi:id="_WdB9cOnREeSyWM-b9FAU_g"/>
+        </cardinality>
+        <portParts xmi:id="_VcLt0Om4EeSE4Zrj1GnMCg" connectors="_npwRgOm4EeSE4Zrj1GnMCg" portType="_5MOnkOmpEeSsPdK-DtuwOA"/>
+      </embeddedComponentParts>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_lxd6MOm4EeSE4Zrj1GnMCg" connectorEndpoints="_M0cb8Om4EeSE4Zrj1GnMCg _S047cum4EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_mqpk8Om4EeSE4Zrj1GnMCg" connectorEndpoints="_OXb4sOm4EeSE4Zrj1GnMCg _S047cem4EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_npwRgOm4EeSE4Zrj1GnMCg" connectorEndpoints="_OXb4sem4EeSE4Zrj1GnMCg _VcLt0Om4EeSE4Zrj1GnMCg"/>
+      <connectors xsi:type="component:AssemblyConnector" xmi:id="_ob-YoOm4EeSE4Zrj1GnMCg" connectorEndpoints="_S047cOm4EeSE4Zrj1GnMCg _JUKMEOm4EeSE4Zrj1GnMCg"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_s8IWoKe4EeSK_8TqY1SjtQ" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
+    <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_s8IWoae4EeSK_8TqY1SjtQ">
+      <resources xsi:type="hwresource:StructuredResource" xmi:id="_HcLmgKe8EeSK_8TqY1SjtQ" name="ECU">
+        <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_OAr1UKe8EeSK_8TqY1SjtQ" name="Processor" family="Atmel AT91SAM7">
+          <nbCores xmi:id="_OAr1Uae8EeSK_8TqY1SjtQ"/>
+        </embeddedAtomicResources>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_Q59vkKe8EeSK_8TqY1SjtQ" name="RAMmemory" isVolatile="true"/>
+        <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_Whzh0Ke8EeSK_8TqY1SjtQ" name="FLASHmemory" memoryAccess="READ_ONLY" memoryType="FLASH"/>
+      </resources>
+      <resources xsi:type="hwresource:Device" xmi:id="_xS_S4OmHEeSsPdK-DtuwOA" name="temperature"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_00NW4OmHEeSsPdK-DtuwOA" name="caliper_position"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_2vW08OmHEeSsPdK-DtuwOA" name="wheel_speed"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_4gai4OmHEeSsPdK-DtuwOA" name="parking_brake"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_8KmVoOmHEeSsPdK-DtuwOA" name="caliper_clamp"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_-P8RgOmHEeSsPdK-DtuwOA" name="pedal_position"/>
+      <resources xsi:type="hwresource:Device" xmi:id="__dY8EOmHEeSsPdK-DtuwOA" name="brake_force"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_BX0BYOmIEeSsPdK-DtuwOA" name="parking_brake_position"/>
+      <resources xsi:type="hwresource:Device" xmi:id="_CzDQUOmIEeSsPdK-DtuwOA" name="brake_pedal"/>
+      <protocols xmi:id="_2dtakKe4EeSK_8TqY1SjtQ" name="ProtocolRepository">
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_DUdqkKe5EeSK_8TqY1SjtQ" name="CableProtocol" furtherInformation="CableProtocol"/>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_PDLUcKe5EeSK_8TqY1SjtQ" name="i2cProtocol" furtherInformation="i2cProtocol" isNetworkingProtocol="false"/>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_VKiUQKe5EeSK_8TqY1SjtQ" name="BluetoothProtocol" furtherInformation="BluetoothProtocol" linkProtocol="BLUETOOTH"/>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_bd694Ke5EeSK_8TqY1SjtQ" name="WifiProtocol" furtherInformation="WifiProtocol" linkProtocol="WIFI"/>
+        <communicationProtocols xsi:type="hwresource:BusProtocol" xmi:id="_aWP04OmIEeSsPdK-DtuwOA" name="CanProtocol" isEventTriggered="true" furtherInformation="CanProtocol"/>
+      </protocols>
+    </modelElements>
+    <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_l7BNsOmKEeSsPdK-DtuwOA">
+      <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_oHXJcOmKEeSsPdK-DtuwOA" name="ecu" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_pQ5kYOmKEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+          <memorySize xmi:id="_pQ5kYemKEeSsPdK-DtuwOA"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_pQ5kYumKEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+          <memorySize xmi:id="_pQ5kY-mKEeSsPdK-DtuwOA"/>
+        </embeddedAtomicResourceInstances>
+        <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_pQ5kZOmKEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+          <frequency xmi:id="_pQ5kZemKEeSsPdK-DtuwOA"/>
+        </embeddedAtomicResourceInstances>
+      </resourceInstances>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_i7aMgOmLEeSsPdK-DtuwOA" name="1" resourceType="_xS_S4OmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_B3GBkOmMEeSsPdK-DtuwOA" name="2" resourceType="_00NW4OmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_EbBW4OmMEeSsPdK-DtuwOA" name="3" resourceType="_4gai4OmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_H3jvMOmMEeSsPdK-DtuwOA" name="5" resourceType="_8KmVoOmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_PDi0wOmMEeSsPdK-DtuwOA" name="7" resourceType="_2vW08OmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_RV7uIOmMEeSsPdK-DtuwOA" name="9" resourceType="_BX0BYOmIEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_UtQPQOmMEeSsPdK-DtuwOA" name="11" resourceType="_-P8RgOmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_WtJqcOmMEeSsPdK-DtuwOA" name="12" resourceType="__dY8EOmHEeSsPdK-DtuwOA"/>
+      <resourceInstances xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_aFvW4OmMEeSsPdK-DtuwOA" name="13" resourceType="_CzDQUOmIEeSsPdK-DtuwOA"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_AYoZsMynEeS7cPl0TBkP9A" key="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category" name="hwplatform">
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_7j6W0OmMEeSsPdK-DtuwOA" name="Assistance">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_949ioOmMEeSsPdK-DtuwOA" name="hw3" resourceType="_oHXJcOmKEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_949ioemMEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_K8AzIOmWEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_K8U8MOmWEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="__hyhoOmMEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_MTimwOmWEeSsPdK-DtuwOA" name="hw2" resourceType="_oHXJcOmKEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_MTimwemWEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_OJHBQOmWEeSsPdK-DtuwOA" value="0"/>
+          <upperBound xmi:id="_OJOWAOmWEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_N7bKkOmWEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_SBFYYOmWEeSsPdK-DtuwOA" name="hw1" resourceType="_oHXJcOmKEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_SBFYYemWEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_T3EpoOmWEeSsPdK-DtuwOA" value="0"/>
+          <upperBound xmi:id="_T3TTIOmWEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_SyIa0OmWEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <delegationPorts xmi:id="_CAcVYOmNEeSsPdK-DtuwOA" name="assitanceD1"/>
+      <delegationPorts xmi:id="_LouvMOmWEeSsPdK-DtuwOA" name="assistanceD2"/>
+    </modelElements>
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_FTX-YOmQEeSsPdK-DtuwOA" name="Brake">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_HDq3UOmQEeSsPdK-DtuwOA" name="hw" resourceType="_oHXJcOmKEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_HDreYOmQEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_-FLqoOmVEeSsPdK-DtuwOA" value="3"/>
+          <upperBound xmi:id="_-FUNgOmVEeSsPdK-DtuwOA" value="3"/>
+        </cardinality>
+        <hwPortParts xmi:id="_Jj1G8OmQEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_w479sOmTEeSsPdK-DtuwOA" name="hw4" resourceType="_oHXJcOmKEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_w479semTEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_DMsB4OmUEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_DM6EUOmUEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_yVuEwOmTEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_SglCsOmUEeSsPdK-DtuwOA" name="R1" resourceType="_i7aMgOmLEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_SglCsemUEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_TlgqcOmUEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_TlkU0OmUEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_T_XU4OmUEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_VicRMOmUEeSsPdK-DtuwOA" name="R3" resourceType="_EbBW4OmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_VicRMemUEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_V35j0OmUEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_V39OMOmUEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_a0NFwOmUEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_cWD6EOmUEeSsPdK-DtuwOA" name="R5" resourceType="_H3jvMOmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_cWG9YOmUEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_dF1KIOmUEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_dF40gOmUEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_dTEU4OmUEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_eTEZUOmUEeSsPdK-DtuwOA" name="R7" resourceType="_PDi0wOmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_eTEZUemUEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_f6x-AOmUEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_f6550OmUEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_fhVjQOmUEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_plCc0OmUEeSsPdK-DtuwOA" name="R2" resourceType="_B3GBkOmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_plE5EOmUEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_r718IOmUEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_r8CwcOmUEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_rLBjMOmUEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <delegationPorts xmi:id="_DJRhgOmUEeSsPdK-DtuwOA" name="brakeD2"/>
+    </modelElements>
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_JAZ-4OmSEeSsPdK-DtuwOA" name="HumanInterface">
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_LrY-cOmSEeSsPdK-DtuwOA" name="hw" resourceType="_oHXJcOmKEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_LrY-cemSEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_54JQMOmaEeSsPdK-DtuwOA" value="2"/>
+          <upperBound xmi:id="_54aV8OmaEeSsPdK-DtuwOA" value="2"/>
+        </cardinality>
+        <hwPortParts xmi:id="_MdH9YOmSEeSsPdK-DtuwOA" comment="this"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_XuPsUOmSEeSsPdK-DtuwOA" name="11" resourceType="_UtQPQOmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_XuSIkOmSEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_ZK864OmSEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_ZK_-MOmSEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_Z16uAOmTEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_bOe44OmSEeSsPdK-DtuwOA" name="12" resourceType="_WtJqcOmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_bOe44emSEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_eF-N8OmTEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_eGLpUOmTEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_Z2brYOmTEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_hnlI8OmSEeSsPdK-DtuwOA" name="9" resourceType="_RV7uIOmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_hnlI8emSEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_iW1boOmSEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_iW5tEOmSEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_Z2t_QOmTEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_jgZrwOmSEeSsPdK-DtuwOA" name="13" resourceType="_aFvW4OmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_jgZrwemSEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_bzfN8OmTEeSsPdK-DtuwOA" value="0"/>
+          <upperBound xmi:id="_bztQYOmTEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_Z3FLoOmTEeSsPdK-DtuwOA"/>
+      </embeddedPlatformParts>
+      <delegationPorts xmi:id="_Tch_gOmSEeSsPdK-DtuwOA" name="D1"/>
+    </modelElements>
+    <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_adXoMOmWEeSsPdK-DtuwOA" name="Car">
+      <embeddedPlatformParts xsi:type="hwplatform:HWPlatformPart" xmi:id="_dJlW0OmWEeSsPdK-DtuwOA" name="brake" hwplatformType="_FTX-YOmQEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_dJlW0emWEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_e_Ff4OmWEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_e_M0oOmWEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_dtNBQOmWEeSsPdK-DtuwOA" comment="brakePort"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:HWPlatformPart" xmi:id="_jEfPAOmWEeSsPdK-DtuwOA" name="hmi" hwplatformType="_JAZ-4OmSEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_jEf2EOmWEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_whqXEOmcEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_wh0vIOmcEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_j0Xz0OmWEeSsPdK-DtuwOA" comment="hmiPort"/>
+      </embeddedPlatformParts>
+      <embeddedPlatformParts xsi:type="hwplatform:HWPlatformPart" xmi:id="_lKyNIOmWEeSsPdK-DtuwOA" name="ass" hwplatformType="_7j6W0OmMEeSsPdK-DtuwOA">
+        <cardinality xmi:id="_lKyNIemWEeSsPdK-DtuwOA">
+          <lowerBound xmi:id="_m7t_QOmWEeSsPdK-DtuwOA"/>
+          <upperBound xmi:id="_m74-YOmWEeSsPdK-DtuwOA"/>
+        </cardinality>
+        <hwPortParts xmi:id="_miwFoOmWEeSsPdK-DtuwOA" comment="assitance2Port"/>
+        <hwPortParts xmi:id="_miwFoemWEeSsPdK-DtuwOA" comment="assitance1Port"/>
+      </embeddedPlatformParts>
+    </modelElements>
+    <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_dtbRcOmbEeSsPdK-DtuwOA">
+      <hwplatformInstances xmi:id="_gwQJQOmbEeSsPdK-DtuwOA" name="Car.0" hwplatformType="_adXoMOmWEeSsPdK-DtuwOA">
+        <embeddedHPIC xmi:id="_gwQJQembEeSsPdK-DtuwOA">
+          <hwplatformInstances xmi:id="_Qxa1YOmYEeSsPdK-DtuwOA" name="Brake.0" hwplatformType="_FTX-YOmQEeSsPdK-DtuwOA">
+            <delegationPorts xmi:id="_Qxa1YemYEeSsPdK-DtuwOA" name="brakeD2.0" type="_DJRhgOmUEeSsPdK-DtuwOA"/>
+            <embeddedHPIC xmi:id="_Qxa1YumYEeSsPdK-DtuwOA">
+              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_Qxa1Y-mYEeSsPdK-DtuwOA" name="bus2" comment="&quot;no comment provided&quot;.0"/>
+              <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_Qxa1bOmYEeSsPdK-DtuwOA" name="R5.0.1" resourceType="_8KmVoOmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1bemYEeSsPdK-DtuwOA" name="hw-port" type="_dTEU4OmUEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_Qxa1bumYEeSsPdK-DtuwOA" name="R3.0.1" resourceType="_4gai4OmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1b-mYEeSsPdK-DtuwOA" name="hw-port" type="_a0NFwOmUEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_Qxa1cOmYEeSsPdK-DtuwOA" name="hw.0.2" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_Qxa1cemYEeSsPdK-DtuwOA" name="canPort" type="_Jj1G8OmQEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_Qxa1cumYEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_Qxa1c-mYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_Qxa1dOmYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_Qxa1demYEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_Qxa1dumYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_QxbccOmYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_QxbccemYEeSsPdK-DtuwOA" name="R2.0.1" resourceType="_00NW4OmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbccumYEeSsPdK-DtuwOA" name="hw-port" type="_rLBjMOmUEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_Qxbcc-mYEeSsPdK-DtuwOA" name="hw4.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbcdOmYEeSsPdK-DtuwOA" name="canPort" type="_yVuEwOmTEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_5EM0MO2fEeSpisK4sBe-bA" name="canPort2" type="_yVuEwOmTEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_QxbcdemYEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_QxbcdumYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_Qxbcd-mYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_QxbceOmYEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_QxbceemYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_QxbceumYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_Qxbce-mYEeSsPdK-DtuwOA" name="R7.0.1" resourceType="_2vW08OmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbcfOmYEeSsPdK-DtuwOA" name="hw-port" type="_fhVjQOmUEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_QxbcfemYEeSsPdK-DtuwOA" name="hw.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbcfumYEeSsPdK-DtuwOA" name="canPort" type="_Jj1G8OmQEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_Qxbcf-mYEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_QxbcgOmYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_QxbcgemYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_QxbcgumYEeSsPdK-DtuwOA" value="512.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_Qxbcg-mYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_QxbchOmYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_QxbchemYEeSsPdK-DtuwOA" name="hw.0.3" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbchumYEeSsPdK-DtuwOA" name="canPort" type="_Jj1G8OmQEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_Qxbch-mYEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_QxbciOmYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_QxbciemYEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_QxbciumYEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_Qxbci-mYEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_QxbcjOmYEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_QxbcjemYEeSsPdK-DtuwOA" name="R1.0.1" resourceType="_xS_S4OmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_QxbcjumYEeSsPdK-DtuwOA" name="hw-port" type="_T_XU4OmUEeSsPdK-DtuwOA"/>
+              </resources>
+            </embeddedHPIC>
+          </hwplatformInstances>
+          <hwplatformInstances xmi:id="_-pIIYOmZEeSsPdK-DtuwOA" name="HumanInterface.0" hwplatformType="_JAZ-4OmSEeSsPdK-DtuwOA">
+            <delegationPorts xmi:id="_-pIIYemZEeSsPdK-DtuwOA" name="hmiD1.0" type="_Tch_gOmSEeSsPdK-DtuwOA"/>
+            <embeddedHPIC xmi:id="_-pIIYumZEeSsPdK-DtuwOA">
+              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_-pIIY-mZEeSsPdK-DtuwOA" name="bus3" comment="&quot;no comment provided&quot;.0"/>
+              <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-pIIaumZEeSsPdK-DtuwOA" name="9.0.1" resourceType="_BX0BYOmIEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIa-mZEeSsPdK-DtuwOA" name="hw-port" type="_Z2t_QOmTEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-pIIbOmZEeSsPdK-DtuwOA" name="hw.0.8" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIbemZEeSsPdK-DtuwOA" name="canPort" type="_MdH9YOmSEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_fZp_MOmaEeSsPdK-DtuwOA" name="canPort2" type="_MdH9YOmSEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-pIIbumZEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_-pIIb-mZEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-pIIcOmZEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_-pIIcemZEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-pIIcumZEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_-pIIc-mZEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_-pIIdOmZEeSsPdK-DtuwOA" name="13.0.1" resourceType="_CzDQUOmIEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIdemZEeSsPdK-DtuwOA" name="hw-port" type="_Z3FLoOmTEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-pIIdumZEeSsPdK-DtuwOA" name="11.0.1" resourceType="_-P8RgOmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIId-mZEeSsPdK-DtuwOA" name="hw-port" type="_Z16uAOmTEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_-pIIeOmZEeSsPdK-DtuwOA" name="12.0.1" resourceType="__dY8EOmHEeSsPdK-DtuwOA">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIIeemZEeSsPdK-DtuwOA" name="hw-port" type="_Z2brYOmTEeSsPdK-DtuwOA"/>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-pIvcOmZEeSsPdK-DtuwOA" name="hw.0.9" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-pIvcemZEeSsPdK-DtuwOA" name="canPort" type="_MdH9YOmSEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_-pIvcumZEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_-pIvc-mZEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_-pIvdOmZEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_-pIvdemZEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_-pIvdumZEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_-pIvd-mZEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+            </embeddedHPIC>
+          </hwplatformInstances>
+          <hwplatformInstances xmi:id="_uBNl0OmXEeSsPdK-DtuwOA" name="Assistance.0" hwplatformType="_7j6W0OmMEeSsPdK-DtuwOA">
+            <delegationPorts xmi:id="_uBNl0emXEeSsPdK-DtuwOA" name="assistanceD1.0" type="_CAcVYOmNEeSsPdK-DtuwOA"/>
+            <delegationPorts xmi:id="_uBNl0umXEeSsPdK-DtuwOA" name="assitanceD2.0" type="_LouvMOmWEeSsPdK-DtuwOA"/>
+            <embeddedHPIC xmi:id="_uBNl0-mXEeSsPdK-DtuwOA">
+              <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_uBNl1emXEeSsPdK-DtuwOA" name="bus1" comment="&quot;no comment provided&quot;.0"/>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_uBNl2umXEeSsPdK-DtuwOA" name="hw1.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl2-mXEeSsPdK-DtuwOA" name="canPort" type="_SyIa0OmWEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_uBNl3OmXEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_uBNl3emXEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_uBNl3umXEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_uBNl3-mXEeSsPdK-DtuwOA" value="512.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_uBNl4OmXEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_uBNl4emXEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_uBNl4umXEeSsPdK-DtuwOA" name="hw3.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl4-mXEeSsPdK-DtuwOA" name="canPort" type="__hyhoOmMEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_nuzOoO2fEeSpisK4sBe-bA" name="canPort2" type="__hyhoOmMEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_uBNl5OmXEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_uBNl5emXEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_uBNl5umXEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_uBNl5-mXEeSsPdK-DtuwOA" value="1024.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_uBNl6OmXEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_uBNl6emXEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+              <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_uBNl6umXEeSsPdK-DtuwOA" name="hw2.0.1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_uBNl6-mXEeSsPdK-DtuwOA" name="canPort" type="_N7bKkOmWEeSsPdK-DtuwOA"/>
+                <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_kbPzMO2fEeSpisK4sBe-bA" name="canPort2" type="_N7bKkOmWEeSsPdK-DtuwOA"/>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:StorageMemoryInstance" xmi:id="_uBNl7OmXEeSsPdK-DtuwOA" name="FLASHmemory" resourceType="_Whzh0Ke8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_uBNl7emXEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessingMemoryInstance" xmi:id="_uBNl7umXEeSsPdK-DtuwOA" name="RAMmemory" resourceType="_Q59vkKe8EeSK_8TqY1SjtQ">
+                  <memorySize xmi:id="_uBNl7-mXEeSsPdK-DtuwOA" value="512.0" unit="KByte"/>
+                </embeddedAtomicResourceInstances>
+                <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_uBNl8OmXEeSsPdK-DtuwOA" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
+                  <frequency xmi:id="_uBNl8emXEeSsPdK-DtuwOA"/>
+                </embeddedAtomicResourceInstances>
+              </resources>
+            </embeddedHPIC>
+          </hwplatformInstances>
+          <networkingHardwareInstances xsi:type="hwplatforminstance:BusInstance" xmi:id="_gwQwf-mbEeSsPdK-DtuwOA" name="bus4" comment="&quot;no comment provided&quot;.0"/>
+        </embeddedHPIC>
+      </hwplatformInstances>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_ZpEDICPlEeSlOpyqq3LJMw" key="de.uni_paderborn.fujaba.muml.psm.allocation.category" name="allocation"/>
+</modelinstance:RootNode>
