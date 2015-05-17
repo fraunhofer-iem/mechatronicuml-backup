@@ -12,60 +12,60 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalActionLanguageLexer extends Lexer {
+    public static final int T__50=50;
     public static final int RULE_BOOLEAN=6;
-    public static final int RULE_ID=7;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__20=20;
-    public static final int EOF=-1;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__19=19;
-    public static final int T__16=16;
+    public static final int T__13=13;
+    public static final int T__14=14;
     public static final int T__51=51;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int RULE_NUMBER=5;
-    public static final int T__14=14;
-    public static final int T__13=13;
+    public static final int RULE_ID=7;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
     public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int RULE_NUMBER=5;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -993,8 +993,8 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8184:13: ( RULE_INT '.' RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8184:15: RULE_INT '.' RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8200:13: ( RULE_INT '.' RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8200:15: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -1015,10 +1015,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8186:14: ( ( 'true' | 'false' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8186:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8202:14: ( ( 'true' | 'false' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8202:16: ( 'true' | 'false' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8186:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8202:16: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1036,7 +1036,7 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8186:17: 'true'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8202:17: 'true'
                     {
                     match("true"); 
 
@@ -1044,7 +1044,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8186:24: 'false'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8202:24: 'false'
                     {
                     match("false"); 
 
@@ -1070,10 +1070,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8188:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8188:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8204:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8204:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8188:11: ( '^' )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8204:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1082,7 +1082,7 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8188:11: '^'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8204:11: '^'
                     {
                     match('^'); 
 
@@ -1100,7 +1100,7 @@ public class InternalActionLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8188:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8204:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1149,10 +1149,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8190:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8190:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8206:10: ( ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8206:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8190:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8206:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -1166,7 +1166,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8190:13: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8206:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1198,10 +1198,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1219,10 +1219,10 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1238,7 +1238,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:21: '\\\\' .
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1246,7 +1246,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1271,10 +1271,10 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1290,7 +1290,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:54: '\\\\' .
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1298,7 +1298,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8192:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8208:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1341,12 +1341,12 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8194:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8194:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8210:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8210:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8194:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8210:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1371,7 +1371,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8194:52: .
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8210:52: .
             	    {
             	    matchAny(); 
 
@@ -1401,12 +1401,12 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1419,7 +1419,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1439,7 +1439,7 @@ public class InternalActionLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1448,9 +1448,9 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:41: ( '\\r' )?
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1459,7 +1459,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8196:41: '\\r'
+                            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8212:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1491,10 +1491,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8198:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8198:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8214:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8214:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8198:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8214:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1548,8 +1548,8 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8200:16: ( . )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8200:18: .
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8216:16: ( . )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8216:18: .
             {
             matchAny(); 
 
@@ -1947,52 +1947,19 @@ public class InternalActionLanguageLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\2\47\1\55\1\60\1\64\2\47\1\71\1\73\1\uffff\1\77\1\uffff"+
-        "\4\55\4\uffff\1\114\5\55\4\uffff\1\55\1\127\1\55\1\47\1\uffff\2"+
-        "\47\4\uffff\3\55\24\uffff\6\55\6\uffff\1\55\1\147\1\150\2\55\4\uffff"+
-        "\1\55\1\uffff\1\127\1\uffff\1\55\2\uffff\1\55\1\156\3\55\1\162\4"+
-        "\55\2\uffff\4\55\1\173\1\uffff\1\174\1\175\1\55\1\uffff\1\55\1\u0080"+
-        "\1\u0081\1\55\1\u0084\2\55\1\u0087\3\uffff\1\u0088\1\u0087\2\uffff"+
-        "\1\u0089\1\55\1\uffff\1\55\1\u008c\3\uffff\1\u008d\1\u008e\3\uffff";
+        "\1\uffff\2\47\1\55\1\60\1\64\2\47\1\71\1\73\1\uffff\1\77\1\uffff\4\55\4\uffff\1\114\5\55\4\uffff\1\55\1\127\1\55\1\47\1\uffff\2\47\4\uffff\3\55\24\uffff\6\55\6\uffff\1\55\1\147\1\150\2\55\4\uffff\1\55\1\uffff\1\127\1\uffff\1\55\2\uffff\1\55\1\156\3\55\1\162\4\55\2\uffff\4\55\1\173\1\uffff\1\174\1\175\1\55\1\uffff\1\55\1\u0080\1\u0081\1\55\1\u0084\2\55\1\u0087\3\uffff\1\u0088\1\u0087\2\uffff\1\u0089\1\55\1\uffff\1\55\1\u008c\3\uffff\1\u008d\1\u008e\3\uffff";
     static final String DFA13_eofS =
         "\u008f\uffff";
     static final String DFA13_minS =
-        "\1\0\1\174\1\46\1\145\1\53\1\55\4\75\1\uffff\1\52\1\uffff\1\145"+
-        "\2\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff"+
-        "\1\157\1\56\1\162\1\101\1\uffff\2\0\4\uffff\1\154\1\164\1\170\24"+
-        "\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\60\1\163\1"+
-        "\164\4\uffff\1\156\1\uffff\1\56\1\uffff\1\165\2\uffff\1\154\1\60"+
-        "\1\164\1\146\1\163\1\60\1\163\1\164\1\166\1\154\2\uffff\1\145\1"+
-        "\165\1\163\1\145\1\60\1\uffff\2\60\1\164\1\uffff\1\145\2\60\1\145"+
-        "\1\60\1\162\1\164\1\60\3\uffff\2\60\2\uffff\1\60\1\146\1\uffff\1"+
-        "\156\1\60\3\uffff\2\60\3\uffff";
+        "\1\0\1\174\1\46\1\145\1\53\1\55\4\75\1\uffff\1\52\1\uffff\1\145\2\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff\1\157\1\56\1\162\1\101\1\uffff\2\0\4\uffff\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\60\1\163\1\164\4\uffff\1\156\1\uffff\1\56\1\uffff\1\165\2\uffff\1\154\1\60\1\164\1\146\1\163\1\60\1\163\1\164\1\166\1\154\2\uffff\1\145\1\165\1\163\1\145\1\60\1\uffff\2\60\1\164\1\uffff\1\145\2\60\1\145\1\60\1\162\1\164\1\60\3\uffff\2\60\2\uffff\1\60\1\146\1\uffff\1\156\1\60\3\uffff\2\60\3\uffff";
     static final String DFA13_maxS =
-        "\1\uffff\1\174\1\46\1\165\1\75\1\76\2\75\1\76\1\75\1\uffff\1\57"+
-        "\1\uffff\1\145\1\157\1\141\1\162\4\uffff\1\73\1\150\1\157\1\146"+
-        "\1\154\1\145\4\uffff\1\157\1\71\1\162\1\172\1\uffff\2\uffff\4\uffff"+
-        "\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff"+
-        "\1\151\2\172\1\163\1\164\4\uffff\1\156\1\uffff\1\71\1\uffff\1\165"+
-        "\2\uffff\1\154\1\172\1\164\1\146\1\163\1\172\1\163\1\164\1\166\1"+
-        "\154\2\uffff\1\145\1\165\1\163\1\145\1\172\1\uffff\2\172\1\164\1"+
-        "\uffff\1\145\2\172\1\145\1\172\1\162\1\164\1\172\3\uffff\2\172\2"+
-        "\uffff\1\172\1\146\1\uffff\1\156\1\172\3\uffff\2\172\3\uffff";
+        "\1\uffff\1\174\1\46\1\165\1\75\1\76\2\75\1\76\1\75\1\uffff\1\57\1\uffff\1\145\1\157\1\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff\1\157\1\71\1\162\1\172\1\uffff\2\uffff\4\uffff\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\172\1\163\1\164\4\uffff\1\156\1\uffff\1\71\1\uffff\1\165\2\uffff\1\154\1\172\1\164\1\146\1\163\1\172\1\163\1\164\1\166\1\154\2\uffff\1\145\1\165\1\163\1\145\1\172\1\uffff\2\172\1\164\1\uffff\1\145\2\172\1\145\1\172\1\162\1\164\1\172\3\uffff\2\172\2\uffff\1\172\1\146\1\uffff\1\156\1\172\3\uffff\2\172\3\uffff";
     static final String DFA13_acceptS =
-        "\12\uffff\1\21\1\uffff\1\23\4\uffff\1\32\1\33\1\35\1\36\6\uffff"+
-        "\1\47\1\50\1\51\1\53\4\uffff\1\57\2\uffff\1\64\1\65\1\1\1\2\3\uffff"+
-        "\1\57\1\4\1\7\1\17\1\5\1\10\1\52\1\20\1\6\1\11\1\12\1\14\1\13\1"+
-        "\15\1\16\1\21\1\62\1\63\1\22\1\23\6\uffff\1\32\1\33\1\35\1\36\1"+
-        "\42\1\37\5\uffff\1\47\1\50\1\51\1\53\1\uffff\1\60\1\uffff\1\55\1"+
-        "\uffff\1\61\1\64\12\uffff\1\41\1\43\5\uffff\1\24\3\uffff\1\34\10"+
-        "\uffff\1\3\1\31\1\25\2\uffff\1\27\1\30\2\uffff\1\45\2\uffff\1\56"+
-        "\1\26\1\40\2\uffff\1\54\1\44\1\46";
+        "\12\uffff\1\21\1\uffff\1\23\4\uffff\1\32\1\33\1\35\1\36\6\uffff\1\47\1\50\1\51\1\53\4\uffff\1\57\2\uffff\1\64\1\65\1\1\1\2\3\uffff\1\57\1\4\1\7\1\17\1\5\1\10\1\52\1\20\1\6\1\11\1\12\1\14\1\13\1\15\1\16\1\21\1\62\1\63\1\22\1\23\6\uffff\1\32\1\33\1\35\1\36\1\42\1\37\5\uffff\1\47\1\50\1\51\1\53\1\uffff\1\60\1\uffff\1\55\1\uffff\1\61\1\64\12\uffff\1\41\1\43\5\uffff\1\24\3\uffff\1\34\10\uffff\1\3\1\31\1\25\2\uffff\1\27\1\30\2\uffff\1\45\2\uffff\1\56\1\26\1\40\2\uffff\1\54\1\44\1\46";
     static final String DFA13_specialS =
         "\1\1\43\uffff\1\0\1\2\151\uffff}>";
     static final String[] DFA13_transitionS = {
-            "\11\47\2\46\2\47\1\46\22\47\1\46\1\47\1\44\2\47\1\14\1\2\1"+
-            "\45\1\23\1\25\1\12\1\4\1\35\1\5\1\36\1\13\12\40\1\6\1\24\1\10"+
-            "\1\7\1\11\2\47\32\43\1\33\1\47\1\34\1\42\1\43\1\47\2\43\1\37"+
-            "\1\27\1\31\1\16\2\43\1\30\2\43\1\17\1\43\1\3\1\43\1\20\1\43"+
-            "\1\32\1\15\1\41\2\43\1\26\3\43\1\21\1\1\1\22\uff82\47",
+            "\11\47\2\46\2\47\1\46\22\47\1\46\1\47\1\44\2\47\1\14\1\2\1\45\1\23\1\25\1\12\1\4\1\35\1\5\1\36\1\13\12\40\1\6\1\24\1\10\1\7\1\11\2\47\32\43\1\33\1\47\1\34\1\42\1\43\1\47\2\43\1\37\1\27\1\31\1\16\2\43\1\30\2\43\1\17\1\43\1\3\1\43\1\20\1\43\1\32\1\15\1\41\2\43\1\26\3\43\1\21\1\1\1\22\uff82\47",
             "\1\50",
             "\1\51",
             "\1\54\11\uffff\1\53\5\uffff\1\52",
@@ -2111,8 +2078,7 @@ public class InternalActionLanguageLexer extends Lexer {
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",
             "\1\u0082",
-            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\10\55\1\u0083\21"+
-            "\55",
+            "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\10\55\1\u0083\21\55",
             "\1\u0085",
             "\1\u0086",
             "\12\55\7\uffff\32\55\4\uffff\1\55\1\uffff\32\55",

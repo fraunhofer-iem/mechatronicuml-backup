@@ -24,60 +24,60 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "'for'", "'('", "';'", "')'", "'while'", "'do'", "');'", "'if'", "'elseif'", "'else'", "'return'", "'['", "','", "']'", "':='", "'const'", "'<'", "'>'", "'null'", "'->'", "'.'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'=='", "'<>'", "'<='", "'>='", "'+'", "'-'", "'*'", "'/'", "'%'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
     };
+    public static final int T__50=50;
     public static final int RULE_BOOLEAN=7;
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__55=55;
     public static final int T__56=56;
-    public static final int T__19=19;
-    public static final int T__16=16;
+    public static final int T__13=13;
+    public static final int T__14=14;
     public static final int T__51=51;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int RULE_NUMBER=6;
-    public static final int T__14=14;
-    public static final int T__13=13;
+    public static final int RULE_ID=4;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=5;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
     public static final int RULE_STRING=8;
-    public static final int T__32=32;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int RULE_NUMBER=6;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -2251,7 +2251,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:959:1: ruleInitializeExpression returns [EObject current=null] : (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:959:1: ruleInitializeExpression returns [EObject current=null] : (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression ) ;
     public final EObject ruleInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2261,17 +2261,15 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
         EObject this_Expression_2 = null;
 
-        EObject this_TypeCastExpression_3 = null;
-
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:962:28: ( (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:963:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:962:28: ( (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:963:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:963:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )
-            int alt8=4;
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:963:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )
+            int alt8=3;
             alt8 = dfa8.predict(input);
             switch (alt8) {
                 case 1 :
@@ -2328,24 +2326,6 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:994:5: this_TypeCastExpression_3= ruleTypeCastExpression
-                    {
-                     
-                            newCompositeNode(grammarAccess.getInitializeExpressionAccess().getTypeCastExpressionParserRuleCall_3()); 
-                        
-                    pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression2130);
-                    this_TypeCastExpression_3=ruleTypeCastExpression();
-
-                    state._fsp--;
-
-                     
-                            current = this_TypeCastExpression_3; 
-                            afterParserOrEnumRuleCall();
-                        
-
-                    }
-                    break;
 
             }
 
@@ -2367,7 +2347,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArrayInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1010:1: entryRuleArrayInitializeExpression returns [EObject current=null] : iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1000:1: entryRuleArrayInitializeExpression returns [EObject current=null] : iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF ;
     public final EObject entryRuleArrayInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2375,17 +2355,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1011:2: (iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1012:2: iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1001:2: (iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1002:2: iv_ruleArrayInitializeExpression= ruleArrayInitializeExpression EOF
             {
              newCompositeNode(grammarAccess.getArrayInitializeExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression2165);
+            pushFollow(FollowSets000.FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression2138);
             iv_ruleArrayInitializeExpression=ruleArrayInitializeExpression();
 
             state._fsp--;
 
              current =iv_ruleArrayInitializeExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayInitializeExpression2175); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayInitializeExpression2148); 
 
             }
 
@@ -2403,7 +2383,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArrayInitializeExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1019:1: ruleArrayInitializeExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1009:1: ruleArrayInitializeExpression returns [EObject current=null] : (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) ;
     public final EObject ruleArrayInitializeExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2418,26 +2398,26 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1022:28: ( (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1023:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1012:28: ( (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1013:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1023:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1023:3: otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1013:1: (otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1013:3: otherlv_0= '[' ( (lv_expressions_1_0= ruleInitializeExpression ) ) (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )* otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleArrayInitializeExpression2212); 
+            otherlv_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleArrayInitializeExpression2185); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getArrayInitializeExpressionAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1027:1: ( (lv_expressions_1_0= ruleInitializeExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1028:1: (lv_expressions_1_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1017:1: ( (lv_expressions_1_0= ruleInitializeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1018:1: (lv_expressions_1_0= ruleInitializeExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1028:1: (lv_expressions_1_0= ruleInitializeExpression )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1029:3: lv_expressions_1_0= ruleInitializeExpression
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1018:1: (lv_expressions_1_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1019:3: lv_expressions_1_0= ruleInitializeExpression
             {
              
             	        newCompositeNode(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsInitializeExpressionParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2233);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2206);
             lv_expressions_1_0=ruleInitializeExpression();
 
             state._fsp--;
@@ -2459,7 +2439,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1045:2: (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1035:2: (otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -2472,22 +2452,22 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1045:4: otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1035:4: otherlv_2= ',' ( (lv_expressions_3_0= ruleInitializeExpression ) )
             	    {
-            	    otherlv_2=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleArrayInitializeExpression2246); 
+            	    otherlv_2=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleArrayInitializeExpression2219); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getArrayInitializeExpressionAccess().getCommaKeyword_2_0());
             	        
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1049:1: ( (lv_expressions_3_0= ruleInitializeExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:1: (lv_expressions_3_0= ruleInitializeExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1039:1: ( (lv_expressions_3_0= ruleInitializeExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1040:1: (lv_expressions_3_0= ruleInitializeExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1050:1: (lv_expressions_3_0= ruleInitializeExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1051:3: lv_expressions_3_0= ruleInitializeExpression
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1040:1: (lv_expressions_3_0= ruleInitializeExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1041:3: lv_expressions_3_0= ruleInitializeExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsInitializeExpressionParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2267);
+            	    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2240);
             	    lv_expressions_3_0=ruleInitializeExpression();
 
             	    state._fsp--;
@@ -2518,7 +2498,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleArrayInitializeExpression2281); 
+            otherlv_4=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleArrayInitializeExpression2254); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getArrayInitializeExpressionAccess().getRightSquareBracketKeyword_3());
                 
@@ -2543,7 +2523,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocalVariableOrConstantDeclarationStatement"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1079:1: entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1069:1: entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF ;
     public final EObject entryRuleLocalVariableOrConstantDeclarationStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2551,17 +2531,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1080:2: (iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1081:2: iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1070:2: (iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1071:2: iv_ruleLocalVariableOrConstantDeclarationStatement= ruleLocalVariableOrConstantDeclarationStatement EOF
             {
              newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement2317);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement2290);
             iv_ruleLocalVariableOrConstantDeclarationStatement=ruleLocalVariableOrConstantDeclarationStatement();
 
             state._fsp--;
 
              current =iv_ruleLocalVariableOrConstantDeclarationStatement; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement2327); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement2300); 
 
             }
 
@@ -2579,7 +2559,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocalVariableOrConstantDeclarationStatement"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1088:1: ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1078:1: ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] : ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) ;
     public final EObject ruleLocalVariableOrConstantDeclarationStatement() throws RecognitionException {
         EObject current = null;
 
@@ -2591,16 +2571,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1091:28: ( ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1092:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1081:28: ( ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1082:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1092:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1093:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1082:1: ( ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1083:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1093:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1094:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1083:1: ( (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1084:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1094:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1084:1: (lv_variable_0_1= ruleLocalVariableDeclaration | lv_variable_0_2= ruleLocalConstantDeclaration )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2618,12 +2598,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1095:3: lv_variable_0_1= ruleLocalVariableDeclaration
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1085:3: lv_variable_0_1= ruleLocalVariableDeclaration
                     {
                      
                     	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2374);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2347);
                     lv_variable_0_1=ruleLocalVariableDeclaration();
 
                     state._fsp--;
@@ -2643,12 +2623,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1110:8: lv_variable_0_2= ruleLocalConstantDeclaration
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1100:8: lv_variable_0_2= ruleLocalConstantDeclaration
                     {
                      
                     	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalConstantDeclarationParserRuleCall_0_1()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2393);
+                    pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2366);
                     lv_variable_0_2=ruleLocalConstantDeclaration();
 
                     state._fsp--;
@@ -2694,7 +2674,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocalVariableDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1136:1: entryRuleLocalVariableDeclaration returns [EObject current=null] : iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1126:1: entryRuleLocalVariableDeclaration returns [EObject current=null] : iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF ;
     public final EObject entryRuleLocalVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -2702,17 +2682,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1137:2: (iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1138:2: iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1127:2: (iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1128:2: iv_ruleLocalVariableDeclaration= ruleLocalVariableDeclaration EOF
             {
              newCompositeNode(grammarAccess.getLocalVariableDeclarationRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration2431);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration2404);
             iv_ruleLocalVariableDeclaration=ruleLocalVariableDeclaration();
 
             state._fsp--;
 
              current =iv_ruleLocalVariableDeclaration; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableDeclaration2441); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalVariableDeclaration2414); 
 
             }
 
@@ -2730,7 +2710,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocalVariableDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1145:1: ruleLocalVariableDeclaration returns [EObject current=null] : ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1135:1: ruleLocalVariableDeclaration returns [EObject current=null] : ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) ;
     public final EObject ruleLocalVariableDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -2743,17 +2723,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1148:28: ( ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1149:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1138:28: ( ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1139:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1149:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1149:2: ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1139:1: ( ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1139:2: ( ( ruleDATATYPE ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )? otherlv_4= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1149:2: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1150:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1139:2: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1140:1: ( ruleDATATYPE )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1150:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1151:3: ruleDATATYPE
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1140:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1141:3: ruleDATATYPE
             {
 
             			if (current==null) {
@@ -2763,7 +2743,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeDataTypeCrossReference_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration2489);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration2462);
             ruleDATATYPE();
 
             state._fsp--;
@@ -2777,13 +2757,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1164:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1165:1: (lv_name_1_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1154:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1155:1: (lv_name_1_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1165:1: (lv_name_1_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1166:3: lv_name_1_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1155:1: (lv_name_1_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1156:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration2506); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration2479); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getLocalVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -2803,7 +2783,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1182:2: (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1172:2: (otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2812,22 +2792,22 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1182:4: otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1172:4: otherlv_2= ':=' ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
                     {
-                    otherlv_2=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleLocalVariableDeclaration2524); 
+                    otherlv_2=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleLocalVariableDeclaration2497); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getLocalVariableDeclarationAccess().getColonEqualsSignKeyword_2_0());
                         
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1186:1: ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1187:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1176:1: ( (lv_initializeExpression_3_0= ruleInitializeExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1177:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1187:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1188:3: lv_initializeExpression_3_0= ruleInitializeExpression
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1177:1: (lv_initializeExpression_3_0= ruleInitializeExpression )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1178:3: lv_initializeExpression_3_0= ruleInitializeExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration2545);
+                    pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration2518);
                     lv_initializeExpression_3_0=ruleInitializeExpression();
 
                     state._fsp--;
@@ -2855,7 +2835,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleLocalVariableDeclaration2559); 
+            otherlv_4=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleLocalVariableDeclaration2532); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getLocalVariableDeclarationAccess().getSemicolonKeyword_3());
                 
@@ -2880,7 +2860,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLocalConstantDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1216:1: entryRuleLocalConstantDeclaration returns [EObject current=null] : iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1206:1: entryRuleLocalConstantDeclaration returns [EObject current=null] : iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF ;
     public final EObject entryRuleLocalConstantDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -2888,17 +2868,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1217:2: (iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1218:2: iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1207:2: (iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1208:2: iv_ruleLocalConstantDeclaration= ruleLocalConstantDeclaration EOF
             {
              newCompositeNode(grammarAccess.getLocalConstantDeclarationRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration2595);
+            pushFollow(FollowSets000.FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration2568);
             iv_ruleLocalConstantDeclaration=ruleLocalConstantDeclaration();
 
             state._fsp--;
 
              current =iv_ruleLocalConstantDeclaration; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalConstantDeclaration2605); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLocalConstantDeclaration2578); 
 
             }
 
@@ -2916,7 +2896,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLocalConstantDeclaration"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1225:1: ruleLocalConstantDeclaration returns [EObject current=null] : ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1215:1: ruleLocalConstantDeclaration returns [EObject current=null] : ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) ;
     public final EObject ruleLocalConstantDeclaration() throws RecognitionException {
         EObject current = null;
 
@@ -2930,19 +2910,19 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1228:28: ( ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1229:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1218:28: ( ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1219:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1229:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1229:2: ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1219:1: ( ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1219:2: ( (lv_constant_0_0= 'const' ) ) ( ( ruleDATATYPE ) ) ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':=' ( (lv_initializeExpression_4_0= ruleInitializeExpression ) ) otherlv_5= ';'
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1229:2: ( (lv_constant_0_0= 'const' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1230:1: (lv_constant_0_0= 'const' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1219:2: ( (lv_constant_0_0= 'const' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1220:1: (lv_constant_0_0= 'const' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1230:1: (lv_constant_0_0= 'const' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1231:3: lv_constant_0_0= 'const'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1220:1: (lv_constant_0_0= 'const' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1221:3: lv_constant_0_0= 'const'
             {
-            lv_constant_0_0=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleLocalConstantDeclaration2648); 
+            lv_constant_0_0=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleLocalConstantDeclaration2621); 
 
                     newLeafNode(lv_constant_0_0, grammarAccess.getLocalConstantDeclarationAccess().getConstantConstKeyword_0_0());
                 
@@ -2958,11 +2938,11 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1244:2: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1245:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1234:2: ( ( ruleDATATYPE ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1235:1: ( ruleDATATYPE )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1245:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1246:3: ruleDATATYPE
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1235:1: ( ruleDATATYPE )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1236:3: ruleDATATYPE
             {
 
             			if (current==null) {
@@ -2972,7 +2952,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getDataTypeDataTypeCrossReference_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration2684);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration2657);
             ruleDATATYPE();
 
             state._fsp--;
@@ -2986,13 +2966,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1259:2: ( (lv_name_2_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1260:1: (lv_name_2_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1249:2: ( (lv_name_2_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1250:1: (lv_name_2_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1260:1: (lv_name_2_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1261:3: lv_name_2_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1250:1: (lv_name_2_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1251:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration2701); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration2674); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getLocalConstantDeclarationAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -3012,20 +2992,20 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleLocalConstantDeclaration2718); 
+            otherlv_3=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleLocalConstantDeclaration2691); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getLocalConstantDeclarationAccess().getColonEqualsSignKeyword_3());
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1281:1: ( (lv_initializeExpression_4_0= ruleInitializeExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1282:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1271:1: ( (lv_initializeExpression_4_0= ruleInitializeExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1272:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1282:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1283:3: lv_initializeExpression_4_0= ruleInitializeExpression
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1272:1: (lv_initializeExpression_4_0= ruleInitializeExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1273:3: lv_initializeExpression_4_0= ruleInitializeExpression
             {
              
             	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_4_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration2739);
+            pushFollow(FollowSets000.FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration2712);
             lv_initializeExpression_4_0=ruleInitializeExpression();
 
             state._fsp--;
@@ -3047,7 +3027,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleLocalConstantDeclaration2751); 
+            otherlv_5=(Token)match(input,17,FollowSets000.FOLLOW_17_in_ruleLocalConstantDeclaration2724); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getLocalConstantDeclarationAccess().getSemicolonKeyword_5());
                 
@@ -3072,7 +3052,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNondeterministicChoiceExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1311:1: entryRuleNondeterministicChoiceExpression returns [EObject current=null] : iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1301:1: entryRuleNondeterministicChoiceExpression returns [EObject current=null] : iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF ;
     public final EObject entryRuleNondeterministicChoiceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3080,17 +3060,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1312:2: (iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1313:2: iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1302:2: (iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1303:2: iv_ruleNondeterministicChoiceExpression= ruleNondeterministicChoiceExpression EOF
             {
              newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression2787);
+            pushFollow(FollowSets000.FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression2760);
             iv_ruleNondeterministicChoiceExpression=ruleNondeterministicChoiceExpression();
 
             state._fsp--;
 
              current =iv_ruleNondeterministicChoiceExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression2797); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression2770); 
 
             }
 
@@ -3108,7 +3088,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNondeterministicChoiceExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1320:1: ruleNondeterministicChoiceExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1310:1: ruleNondeterministicChoiceExpression returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) ;
     public final EObject ruleNondeterministicChoiceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3119,24 +3099,24 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1323:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1324:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1313:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1314:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1324:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1324:2: ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1314:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1314:2: ( (otherlv_0= RULE_ID ) ) ( (lv_range_1_0= ruleRange ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1324:2: ( (otherlv_0= RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1325:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1314:2: ( (otherlv_0= RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1315:1: (otherlv_0= RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1325:1: (otherlv_0= RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1326:3: otherlv_0= RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1315:1: (otherlv_0= RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1316:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getNondeterministicChoiceExpressionRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression2842); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression2815); 
 
             		newLeafNode(otherlv_0, grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypePrimitiveDataTypeCrossReference_0_0()); 
             	
@@ -3146,16 +3126,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1337:2: ( (lv_range_1_0= ruleRange ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1338:1: (lv_range_1_0= ruleRange )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1327:2: ( (lv_range_1_0= ruleRange ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1328:1: (lv_range_1_0= ruleRange )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1338:1: (lv_range_1_0= ruleRange )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1339:3: lv_range_1_0= ruleRange
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1328:1: (lv_range_1_0= ruleRange )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1329:3: lv_range_1_0= ruleRange
             {
              
             	        newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeRangeParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression2863);
+            pushFollow(FollowSets000.FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression2836);
             lv_range_1_0=ruleRange();
 
             state._fsp--;
@@ -3198,7 +3178,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRange"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1363:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1353:1: entryRuleRange returns [EObject current=null] : iv_ruleRange= ruleRange EOF ;
     public final EObject entryRuleRange() throws RecognitionException {
         EObject current = null;
 
@@ -3206,17 +3186,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1364:2: (iv_ruleRange= ruleRange EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1365:2: iv_ruleRange= ruleRange EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1354:2: (iv_ruleRange= ruleRange EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1355:2: iv_ruleRange= ruleRange EOF
             {
              newCompositeNode(grammarAccess.getRangeRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRange_in_entryRuleRange2899);
+            pushFollow(FollowSets000.FOLLOW_ruleRange_in_entryRuleRange2872);
             iv_ruleRange=ruleRange();
 
             state._fsp--;
 
              current =iv_ruleRange; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRange2909); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRange2882); 
 
             }
 
@@ -3234,7 +3214,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRange"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1372:1: ruleRange returns [EObject current=null] : (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1362:1: ruleRange returns [EObject current=null] : (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) ;
     public final EObject ruleRange() throws RecognitionException {
         EObject current = null;
 
@@ -3249,26 +3229,26 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1375:28: ( (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1376:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1365:28: ( (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1366:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1376:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1376:3: otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1366:1: (otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1366:3: otherlv_0= '<' ( (lv_lowerBound_1_0= ruleLONG ) ) otherlv_2= ',' ( (lv_upperBound_3_0= ruleLONG ) ) otherlv_4= '>'
             {
-            otherlv_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleRange2946); 
+            otherlv_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleRange2919); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRangeAccess().getLessThanSignKeyword_0());
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1380:1: ( (lv_lowerBound_1_0= ruleLONG ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1381:1: (lv_lowerBound_1_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1370:1: ( (lv_lowerBound_1_0= ruleLONG ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1371:1: (lv_lowerBound_1_0= ruleLONG )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1381:1: (lv_lowerBound_1_0= ruleLONG )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1382:3: lv_lowerBound_1_0= ruleLONG
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1371:1: (lv_lowerBound_1_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1372:3: lv_lowerBound_1_0= ruleLONG
             {
              
             	        newCompositeNode(grammarAccess.getRangeAccess().getLowerBoundLONGParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange2967);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange2940);
             lv_lowerBound_1_0=ruleLONG();
 
             state._fsp--;
@@ -3290,20 +3270,20 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleRange2979); 
+            otherlv_2=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleRange2952); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRangeAccess().getCommaKeyword_2());
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1402:1: ( (lv_upperBound_3_0= ruleLONG ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1403:1: (lv_upperBound_3_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1392:1: ( (lv_upperBound_3_0= ruleLONG ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1393:1: (lv_upperBound_3_0= ruleLONG )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1403:1: (lv_upperBound_3_0= ruleLONG )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1404:3: lv_upperBound_3_0= ruleLONG
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1393:1: (lv_upperBound_3_0= ruleLONG )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1394:3: lv_upperBound_3_0= ruleLONG
             {
              
             	        newCompositeNode(grammarAccess.getRangeAccess().getUpperBoundLONGParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange3000);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_ruleRange2973);
             lv_upperBound_3_0=ruleLONG();
 
             state._fsp--;
@@ -3325,7 +3305,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleRange3012); 
+            otherlv_4=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleRange2985); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRangeAccess().getGreaterThanSignKeyword_4());
                 
@@ -3350,7 +3330,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLONG"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1432:1: entryRuleLONG returns [String current=null] : iv_ruleLONG= ruleLONG EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1422:1: entryRuleLONG returns [String current=null] : iv_ruleLONG= ruleLONG EOF ;
     public final String entryRuleLONG() throws RecognitionException {
         String current = null;
 
@@ -3358,17 +3338,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1433:2: (iv_ruleLONG= ruleLONG EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1434:2: iv_ruleLONG= ruleLONG EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1423:2: (iv_ruleLONG= ruleLONG EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1424:2: iv_ruleLONG= ruleLONG EOF
             {
              newCompositeNode(grammarAccess.getLONGRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_entryRuleLONG3049);
+            pushFollow(FollowSets000.FOLLOW_ruleLONG_in_entryRuleLONG3022);
             iv_ruleLONG=ruleLONG();
 
             state._fsp--;
 
              current =iv_ruleLONG.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLONG3060); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLONG3033); 
 
             }
 
@@ -3386,7 +3366,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLONG"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1441:1: ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1431:1: ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleLONG() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3395,10 +3375,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1444:28: (this_INT_0= RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1445:5: this_INT_0= RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1434:28: (this_INT_0= RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1435:5: this_INT_0= RULE_INT
             {
-            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLONG3099); 
+            this_INT_0=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLONG3072); 
 
             		current.merge(this_INT_0);
                 
@@ -3423,7 +3403,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1460:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1450:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3431,17 +3411,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1461:2: (iv_ruleExpression= ruleExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1462:2: iv_ruleExpression= ruleExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1451:2: (iv_ruleExpression= ruleExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1452:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_entryRuleExpression3143);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_entryRuleExpression3116);
             iv_ruleExpression=ruleExpression();
 
             state._fsp--;
 
              current =iv_ruleExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExpression3153); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExpression3126); 
 
             }
 
@@ -3459,7 +3439,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1469:1: ruleExpression returns [EObject current=null] : this_LogicalExpression_0= ruleLogicalExpression ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1459:1: ruleExpression returns [EObject current=null] : this_LogicalExpression_0= ruleLogicalExpression ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3469,13 +3449,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1472:28: (this_LogicalExpression_0= ruleLogicalExpression )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1474:5: this_LogicalExpression_0= ruleLogicalExpression
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1462:28: (this_LogicalExpression_0= ruleLogicalExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1464:5: this_LogicalExpression_0= ruleLogicalExpression
             {
              
                     newCompositeNode(grammarAccess.getExpressionAccess().getLogicalExpressionParserRuleCall()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_ruleExpression3199);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_ruleExpression3172);
             this_LogicalExpression_0=ruleLogicalExpression();
 
             state._fsp--;
@@ -3502,7 +3482,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLogicalExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1490:1: entryRuleLogicalExpression returns [EObject current=null] : iv_ruleLogicalExpression= ruleLogicalExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1480:1: entryRuleLogicalExpression returns [EObject current=null] : iv_ruleLogicalExpression= ruleLogicalExpression EOF ;
     public final EObject entryRuleLogicalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3510,17 +3490,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1491:2: (iv_ruleLogicalExpression= ruleLogicalExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1492:2: iv_ruleLogicalExpression= ruleLogicalExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1481:2: (iv_ruleLogicalExpression= ruleLogicalExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1482:2: iv_ruleLogicalExpression= ruleLogicalExpression EOF
             {
              newCompositeNode(grammarAccess.getLogicalExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression3233);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression3206);
             iv_ruleLogicalExpression=ruleLogicalExpression();
 
             state._fsp--;
 
              current =iv_ruleLogicalExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalExpression3243); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalExpression3216); 
 
             }
 
@@ -3538,7 +3518,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1499:1: ruleLogicalExpression returns [EObject current=null] : this_LogicalOrExpression_0= ruleLogicalOrExpression ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1489:1: ruleLogicalExpression returns [EObject current=null] : this_LogicalOrExpression_0= ruleLogicalOrExpression ;
     public final EObject ruleLogicalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3548,13 +3528,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1502:28: (this_LogicalOrExpression_0= ruleLogicalOrExpression )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1504:5: this_LogicalOrExpression_0= ruleLogicalOrExpression
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1492:28: (this_LogicalOrExpression_0= ruleLogicalOrExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1494:5: this_LogicalOrExpression_0= ruleLogicalOrExpression
             {
              
                     newCompositeNode(grammarAccess.getLogicalExpressionAccess().getLogicalOrExpressionParserRuleCall()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression3289);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression3262);
             this_LogicalOrExpression_0=ruleLogicalOrExpression();
 
             state._fsp--;
@@ -3581,7 +3561,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLogicalOrExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1520:1: entryRuleLogicalOrExpression returns [EObject current=null] : iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1510:1: entryRuleLogicalOrExpression returns [EObject current=null] : iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF ;
     public final EObject entryRuleLogicalOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3589,17 +3569,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1521:2: (iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1522:2: iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1511:2: (iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1512:2: iv_ruleLogicalOrExpression= ruleLogicalOrExpression EOF
             {
              newCompositeNode(grammarAccess.getLogicalOrExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression3323);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression3296);
             iv_ruleLogicalOrExpression=ruleLogicalOrExpression();
 
             state._fsp--;
 
              current =iv_ruleLogicalOrExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalOrExpression3333); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalOrExpression3306); 
 
             }
 
@@ -3617,7 +3597,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOrExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1529:1: ruleLogicalOrExpression returns [EObject current=null] : (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1519:1: ruleLogicalOrExpression returns [EObject current=null] : (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) ;
     public final EObject ruleLogicalOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3631,16 +3611,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1532:28: ( (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1533:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1522:28: ( (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1523:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1533:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1534:5: this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1523:1: (this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1524:5: this_LogicalAndExpression_0= ruleLogicalAndExpression ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getLogicalAndExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3380);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3353);
             this_LogicalAndExpression_0=ruleLogicalAndExpression();
 
             state._fsp--;
@@ -3649,7 +3629,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     current = this_LogicalAndExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1542:1: ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1532:1: ( () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) ) )*
             loop12:
             do {
                 int alt12=2;
@@ -3662,10 +3642,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1542:2: () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1532:2: () ( (lv_operator_2_0= ruleLogicalOrOperator ) ) ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1542:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1543:5: 
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1532:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1533:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -3675,16 +3655,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1548:2: ( (lv_operator_2_0= ruleLogicalOrOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1549:1: (lv_operator_2_0= ruleLogicalOrOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1538:2: ( (lv_operator_2_0= ruleLogicalOrOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1539:1: (lv_operator_2_0= ruleLogicalOrOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1549:1: (lv_operator_2_0= ruleLogicalOrOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1550:3: lv_operator_2_0= ruleLogicalOrOperator
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1539:1: (lv_operator_2_0= ruleLogicalOrOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1540:3: lv_operator_2_0= ruleLogicalOrOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getOperatorLogicalOrOperatorEnumRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression3410);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression3383);
             	    lv_operator_2_0=ruleLogicalOrOperator();
 
             	    state._fsp--;
@@ -3706,16 +3686,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1566:2: ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1567:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1556:2: ( (lv_rightExpression_3_0= ruleLogicalAndExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1557:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1567:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1568:3: lv_rightExpression_3_0= ruleLogicalAndExpression
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1557:1: (lv_rightExpression_3_0= ruleLogicalAndExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1558:3: lv_rightExpression_3_0= ruleLogicalAndExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalOrExpressionAccess().getRightExpressionLogicalAndExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3431);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3404);
             	    lv_rightExpression_3_0=ruleLogicalAndExpression();
 
             	    state._fsp--;
@@ -3767,7 +3747,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLogicalAndExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1592:1: entryRuleLogicalAndExpression returns [EObject current=null] : iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1582:1: entryRuleLogicalAndExpression returns [EObject current=null] : iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF ;
     public final EObject entryRuleLogicalAndExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3775,17 +3755,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1593:2: (iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1594:2: iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1583:2: (iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1584:2: iv_ruleLogicalAndExpression= ruleLogicalAndExpression EOF
             {
              newCompositeNode(grammarAccess.getLogicalAndExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression3469);
+            pushFollow(FollowSets000.FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression3442);
             iv_ruleLogicalAndExpression=ruleLogicalAndExpression();
 
             state._fsp--;
 
              current =iv_ruleLogicalAndExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalAndExpression3479); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLogicalAndExpression3452); 
 
             }
 
@@ -3803,7 +3783,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalAndExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1601:1: ruleLogicalAndExpression returns [EObject current=null] : (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1591:1: ruleLogicalAndExpression returns [EObject current=null] : (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) ;
     public final EObject ruleLogicalAndExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3817,16 +3797,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1604:28: ( (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1605:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1594:28: ( (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1595:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1605:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1606:5: this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1595:1: (this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1596:5: this_ComparisonExpression_0= ruleComparisonExpression ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getComparisonExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3526);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3499);
             this_ComparisonExpression_0=ruleComparisonExpression();
 
             state._fsp--;
@@ -3835,7 +3815,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     current = this_ComparisonExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1614:1: ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1604:1: ( () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -3848,10 +3828,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1614:2: () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1604:2: () ( (lv_operator_2_0= ruleLogicalAndOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1614:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1615:5: 
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1604:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1605:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -3861,16 +3841,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1620:2: ( (lv_operator_2_0= ruleLogicalAndOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1621:1: (lv_operator_2_0= ruleLogicalAndOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1610:2: ( (lv_operator_2_0= ruleLogicalAndOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1611:1: (lv_operator_2_0= ruleLogicalAndOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1621:1: (lv_operator_2_0= ruleLogicalAndOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1622:3: lv_operator_2_0= ruleLogicalAndOperator
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1611:1: (lv_operator_2_0= ruleLogicalAndOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1612:3: lv_operator_2_0= ruleLogicalAndOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getOperatorLogicalAndOperatorEnumRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression3556);
+            	    pushFollow(FollowSets000.FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression3529);
             	    lv_operator_2_0=ruleLogicalAndOperator();
 
             	    state._fsp--;
@@ -3892,16 +3872,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1638:2: ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1639:1: (lv_rightExpression_3_0= ruleComparisonExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1628:2: ( (lv_rightExpression_3_0= ruleComparisonExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1629:1: (lv_rightExpression_3_0= ruleComparisonExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1639:1: (lv_rightExpression_3_0= ruleComparisonExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1640:3: lv_rightExpression_3_0= ruleComparisonExpression
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1629:1: (lv_rightExpression_3_0= ruleComparisonExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1630:3: lv_rightExpression_3_0= ruleComparisonExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLogicalAndExpressionAccess().getRightExpressionComparisonExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3577);
+            	    pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3550);
             	    lv_rightExpression_3_0=ruleComparisonExpression();
 
             	    state._fsp--;
@@ -3953,7 +3933,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComparisonExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1664:1: entryRuleComparisonExpression returns [EObject current=null] : iv_ruleComparisonExpression= ruleComparisonExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1654:1: entryRuleComparisonExpression returns [EObject current=null] : iv_ruleComparisonExpression= ruleComparisonExpression EOF ;
     public final EObject entryRuleComparisonExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3961,17 +3941,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1665:2: (iv_ruleComparisonExpression= ruleComparisonExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1666:2: iv_ruleComparisonExpression= ruleComparisonExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1655:2: (iv_ruleComparisonExpression= ruleComparisonExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1656:2: iv_ruleComparisonExpression= ruleComparisonExpression EOF
             {
              newCompositeNode(grammarAccess.getComparisonExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression3615);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression3588);
             iv_ruleComparisonExpression=ruleComparisonExpression();
 
             state._fsp--;
 
              current =iv_ruleComparisonExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonExpression3625); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonExpression3598); 
 
             }
 
@@ -3989,7 +3969,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparisonExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1673:1: ruleComparisonExpression returns [EObject current=null] : (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1663:1: ruleComparisonExpression returns [EObject current=null] : (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) ;
     public final EObject ruleComparisonExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4003,16 +3983,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1676:28: ( (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1677:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1666:28: ( (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1667:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1677:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1678:5: this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1667:1: (this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1668:5: this_ComparisonHigherOpExpression_0= ruleComparisonHigherOpExpression ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getComparisonExpressionAccess().getComparisonHigherOpExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3672);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3645);
             this_ComparisonHigherOpExpression_0=ruleComparisonHigherOpExpression();
 
             state._fsp--;
@@ -4021,7 +4001,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     current = this_ComparisonHigherOpExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1686:1: ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1676:1: ( () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -4030,10 +4010,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1686:2: () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1676:2: () ( (lv_operator_2_0= ruleComparingEQNEQOperator ) ) ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1686:2: ()
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1687:5: 
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1676:2: ()
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1677:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -4043,16 +4023,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1692:2: ( (lv_operator_2_0= ruleComparingEQNEQOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1693:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1682:2: ( (lv_operator_2_0= ruleComparingEQNEQOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1683:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1693:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1694:3: lv_operator_2_0= ruleComparingEQNEQOperator
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1683:1: (lv_operator_2_0= ruleComparingEQNEQOperator )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1684:3: lv_operator_2_0= ruleComparingEQNEQOperator
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getOperatorComparingEQNEQOperatorEnumRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression3702);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression3675);
                     lv_operator_2_0=ruleComparingEQNEQOperator();
 
                     state._fsp--;
@@ -4074,16 +4054,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1710:2: ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1711:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1700:2: ( (lv_rightExpression_3_0= ruleComparisonHigherOpExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1701:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1711:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1712:3: lv_rightExpression_3_0= ruleComparisonHigherOpExpression
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1701:1: (lv_rightExpression_3_0= ruleComparisonHigherOpExpression )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1702:3: lv_rightExpression_3_0= ruleComparisonHigherOpExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonExpressionAccess().getRightExpressionComparisonHigherOpExpressionParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3723);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3696);
                     lv_rightExpression_3_0=ruleComparisonHigherOpExpression();
 
                     state._fsp--;
@@ -4132,7 +4112,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComparisonHigherOpExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1736:1: entryRuleComparisonHigherOpExpression returns [EObject current=null] : iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1726:1: entryRuleComparisonHigherOpExpression returns [EObject current=null] : iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF ;
     public final EObject entryRuleComparisonHigherOpExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4140,17 +4120,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1737:2: (iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1738:2: iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1727:2: (iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1728:2: iv_ruleComparisonHigherOpExpression= ruleComparisonHigherOpExpression EOF
             {
              newCompositeNode(grammarAccess.getComparisonHigherOpExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression3761);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression3734);
             iv_ruleComparisonHigherOpExpression=ruleComparisonHigherOpExpression();
 
             state._fsp--;
 
              current =iv_ruleComparisonHigherOpExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression3771); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression3744); 
 
             }
 
@@ -4168,7 +4148,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparisonHigherOpExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1745:1: ruleComparisonHigherOpExpression returns [EObject current=null] : (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1735:1: ruleComparisonHigherOpExpression returns [EObject current=null] : (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) ;
     public final EObject ruleComparisonHigherOpExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4182,16 +4162,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1748:28: ( (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1749:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1738:28: ( (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1739:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1749:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1750:5: this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1739:1: (this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )? )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1740:5: this_ArithmeticExpression_0= ruleArithmeticExpression ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getArithmeticExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3818);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3791);
             this_ArithmeticExpression_0=ruleArithmeticExpression();
 
             state._fsp--;
@@ -4200,7 +4180,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     current = this_ArithmeticExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1758:1: ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1748:1: ( () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -4209,10 +4189,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1758:2: () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1748:2: () ( (lv_operator_2_0= ruleComparingRelOperator ) ) ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1758:2: ()
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1759:5: 
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1748:2: ()
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1749:5: 
                     {
 
                             current = forceCreateModelElementAndSet(
@@ -4222,16 +4202,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1764:2: ( (lv_operator_2_0= ruleComparingRelOperator ) )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1765:1: (lv_operator_2_0= ruleComparingRelOperator )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1754:2: ( (lv_operator_2_0= ruleComparingRelOperator ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1755:1: (lv_operator_2_0= ruleComparingRelOperator )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1765:1: (lv_operator_2_0= ruleComparingRelOperator )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1766:3: lv_operator_2_0= ruleComparingRelOperator
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1755:1: (lv_operator_2_0= ruleComparingRelOperator )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1756:3: lv_operator_2_0= ruleComparingRelOperator
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getOperatorComparingRelOperatorEnumRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression3848);
+                    pushFollow(FollowSets000.FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression3821);
                     lv_operator_2_0=ruleComparingRelOperator();
 
                     state._fsp--;
@@ -4253,16 +4233,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1782:2: ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1783:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1772:2: ( (lv_rightExpression_3_0= ruleArithmeticExpression ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1773:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1783:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1784:3: lv_rightExpression_3_0= ruleArithmeticExpression
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1773:1: (lv_rightExpression_3_0= ruleArithmeticExpression )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1774:3: lv_rightExpression_3_0= ruleArithmeticExpression
                     {
                      
                     	        newCompositeNode(grammarAccess.getComparisonHigherOpExpressionAccess().getRightExpressionArithmeticExpressionParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3869);
+                    pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3842);
                     lv_rightExpression_3_0=ruleArithmeticExpression();
 
                     state._fsp--;
@@ -4311,7 +4291,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArithmeticExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1808:1: entryRuleArithmeticExpression returns [EObject current=null] : iv_ruleArithmeticExpression= ruleArithmeticExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1798:1: entryRuleArithmeticExpression returns [EObject current=null] : iv_ruleArithmeticExpression= ruleArithmeticExpression EOF ;
     public final EObject entryRuleArithmeticExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4319,17 +4299,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1809:2: (iv_ruleArithmeticExpression= ruleArithmeticExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1810:2: iv_ruleArithmeticExpression= ruleArithmeticExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1799:2: (iv_ruleArithmeticExpression= ruleArithmeticExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1800:2: iv_ruleArithmeticExpression= ruleArithmeticExpression EOF
             {
              newCompositeNode(grammarAccess.getArithmeticExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression3907);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression3880);
             iv_ruleArithmeticExpression=ruleArithmeticExpression();
 
             state._fsp--;
 
              current =iv_ruleArithmeticExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArithmeticExpression3917); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArithmeticExpression3890); 
 
             }
 
@@ -4347,7 +4327,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArithmeticExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1817:1: ruleArithmeticExpression returns [EObject current=null] : this_AdditionExpression_0= ruleAdditionExpression ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1807:1: ruleArithmeticExpression returns [EObject current=null] : this_AdditionExpression_0= ruleAdditionExpression ;
     public final EObject ruleArithmeticExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4357,13 +4337,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1820:28: (this_AdditionExpression_0= ruleAdditionExpression )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1822:5: this_AdditionExpression_0= ruleAdditionExpression
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1810:28: (this_AdditionExpression_0= ruleAdditionExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1812:5: this_AdditionExpression_0= ruleAdditionExpression
             {
              
                     newCompositeNode(grammarAccess.getArithmeticExpressionAccess().getAdditionExpressionParserRuleCall()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression3963);
+            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression3936);
             this_AdditionExpression_0=ruleAdditionExpression();
 
             state._fsp--;
@@ -4390,7 +4370,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAdditionExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1838:1: entryRuleAdditionExpression returns [EObject current=null] : iv_ruleAdditionExpression= ruleAdditionExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1828:1: entryRuleAdditionExpression returns [EObject current=null] : iv_ruleAdditionExpression= ruleAdditionExpression EOF ;
     public final EObject entryRuleAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4398,17 +4378,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1839:2: (iv_ruleAdditionExpression= ruleAdditionExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1840:2: iv_ruleAdditionExpression= ruleAdditionExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1829:2: (iv_ruleAdditionExpression= ruleAdditionExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1830:2: iv_ruleAdditionExpression= ruleAdditionExpression EOF
             {
              newCompositeNode(grammarAccess.getAdditionExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression3997);
+            pushFollow(FollowSets000.FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression3970);
             iv_ruleAdditionExpression=ruleAdditionExpression();
 
             state._fsp--;
 
              current =iv_ruleAdditionExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAdditionExpression4007); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAdditionExpression3980); 
 
             }
 
@@ -4426,7 +4406,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdditionExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1847:1: ruleAdditionExpression returns [EObject current=null] : (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1837:1: ruleAdditionExpression returns [EObject current=null] : (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) ;
     public final EObject ruleAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4440,16 +4420,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1850:28: ( (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1851:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1840:28: ( (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1841:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1851:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1852:5: this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1841:1: (this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1842:5: this_MultiplicationExpression_0= ruleMultiplicationExpression ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
             {
              
                     newCompositeNode(grammarAccess.getAdditionExpressionAccess().getMultiplicationExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4054);
+            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4027);
             this_MultiplicationExpression_0=ruleMultiplicationExpression();
 
             state._fsp--;
@@ -4458,7 +4438,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     current = this_MultiplicationExpression_0; 
                     afterParserOrEnumRuleCall();
                 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1860:1: ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1850:1: ( () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) ) )*
             loop16:
             do {
                 int alt16=2;
@@ -4471,10 +4451,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1860:2: () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1850:2: () ( (lv_operator_2_0= ruleAdditionOperator ) ) ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1860:2: ()
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1861:5: 
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1850:2: ()
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1851:5: 
             	    {
 
             	            current = forceCreateModelElementAndSet(
@@ -4484,16 +4464,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1866:2: ( (lv_operator_2_0= ruleAdditionOperator ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1867:1: (lv_operator_2_0= ruleAdditionOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1856:2: ( (lv_operator_2_0= ruleAdditionOperator ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1857:1: (lv_operator_2_0= ruleAdditionOperator )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1867:1: (lv_operator_2_0= ruleAdditionOperator )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1868:3: lv_operator_2_0= ruleAdditionOperator
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1857:1: (lv_operator_2_0= ruleAdditionOperator )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1858:3: lv_operator_2_0= ruleAdditionOperator
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAdditionExpressionAccess().getOperatorAdditionOperatorEnumRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression4084);
+            	    pushFollow(FollowSets000.FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression4057);
             	    lv_operator_2_0=ruleAdditionOperator();
 
             	    state._fsp--;
@@ -4515,16 +4495,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1884:2: ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1885:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1874:2: ( (lv_rightExpression_3_0= ruleMultiplicationExpression ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1875:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
             	    {
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1885:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1886:3: lv_rightExpression_3_0= ruleMultiplicationExpression
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1875:1: (lv_rightExpression_3_0= ruleMultiplicationExpression )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1876:3: lv_rightExpression_3_0= ruleMultiplicationExpression
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAdditionExpressionAccess().getRightExpressionMultiplicationExpressionParserRuleCall_1_2_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4105);
+            	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4078);
             	    lv_rightExpression_3_0=ruleMultiplicationExpression();
 
             	    state._fsp--;
@@ -4576,7 +4556,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiplicationExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1910:1: entryRuleMultiplicationExpression returns [EObject current=null] : iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1900:1: entryRuleMultiplicationExpression returns [EObject current=null] : iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF ;
     public final EObject entryRuleMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4584,17 +4564,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1911:2: (iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1912:2: iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1901:2: (iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1902:2: iv_ruleMultiplicationExpression= ruleMultiplicationExpression EOF
             {
              newCompositeNode(grammarAccess.getMultiplicationExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression4143);
+            pushFollow(FollowSets000.FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression4116);
             iv_ruleMultiplicationExpression=ruleMultiplicationExpression();
 
             state._fsp--;
 
              current =iv_ruleMultiplicationExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMultiplicationExpression4153); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleMultiplicationExpression4126); 
 
             }
 
@@ -4612,13 +4592,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplicationExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1919:1: ruleMultiplicationExpression returns [EObject current=null] : (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1909:1: ruleMultiplicationExpression returns [EObject current=null] : (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )* ) ) ;
     public final EObject ruleMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
         EObject this_UnaryPreExpression_0 = null;
 
-        EObject this_Operand_1 = null;
+        EObject this_TypeCastExpression_1 = null;
 
         Enumerator lv_operator_3_0 = null;
 
@@ -4630,10 +4610,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1922:28: ( (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1923:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1912:28: ( (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )* ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1913:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )* ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1923:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1913:1: (this_UnaryPreExpression_0= ruleUnaryPreExpression | (this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )* ) )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -4651,12 +4631,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1924:5: this_UnaryPreExpression_0= ruleUnaryPreExpression
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1914:5: this_UnaryPreExpression_0= ruleUnaryPreExpression
                     {
                      
                             newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getUnaryPreExpressionParserRuleCall_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4200);
+                    pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4173);
                     this_UnaryPreExpression_0=ruleUnaryPreExpression();
 
                     state._fsp--;
@@ -4669,24 +4649,24 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1933:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1923:6: (this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )* )
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1933:6: (this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )* )
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1934:5: this_Operand_1= ruleOperand ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1923:6: (this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )* )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1924:5: this_TypeCastExpression_1= ruleTypeCastExpression ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )*
                     {
                      
-                            newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperandParserRuleCall_1_0()); 
+                            newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getTypeCastExpressionParserRuleCall_1_0()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression4228);
-                    this_Operand_1=ruleOperand();
+                    pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_ruleMultiplicationExpression4201);
+                    this_TypeCastExpression_1=ruleTypeCastExpression();
 
                     state._fsp--;
 
                      
-                            current = this_Operand_1; 
+                            current = this_TypeCastExpression_1; 
                             afterParserOrEnumRuleCall();
                         
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1942:1: ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1932:1: ( () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) ) )*
                     loop18:
                     do {
                         int alt18=2;
@@ -4699,10 +4679,10 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1942:2: () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1932:2: () ( (lv_operator_3_0= ruleMultiplicationOperator ) ) ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1942:2: ()
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1943:5: 
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1932:2: ()
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1933:5: 
                     	    {
 
                     	            current = forceCreateModelElementAndSet(
@@ -4712,16 +4692,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1948:2: ( (lv_operator_3_0= ruleMultiplicationOperator ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1949:1: (lv_operator_3_0= ruleMultiplicationOperator )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1938:2: ( (lv_operator_3_0= ruleMultiplicationOperator ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1939:1: (lv_operator_3_0= ruleMultiplicationOperator )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1949:1: (lv_operator_3_0= ruleMultiplicationOperator )
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1950:3: lv_operator_3_0= ruleMultiplicationOperator
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1939:1: (lv_operator_3_0= ruleMultiplicationOperator )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1940:3: lv_operator_3_0= ruleMultiplicationOperator
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperatorMultiplicationOperatorEnumRuleCall_1_1_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression4258);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression4231);
                     	    lv_operator_3_0=ruleMultiplicationOperator();
 
                     	    state._fsp--;
@@ -4743,13 +4723,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1966:2: ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1967:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1956:2: ( ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1957:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1967:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand ) )
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1968:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1957:1: ( (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1958:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression )
                     	    {
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1968:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleOperand )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1958:1: (lv_rightExpression_4_1= ruleUnaryPreExpression | lv_rightExpression_4_2= ruleTypeCastExpression )
                     	    int alt17=2;
                     	    int LA17_0 = input.LA(1);
 
@@ -4767,12 +4747,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     	    }
                     	    switch (alt17) {
                     	        case 1 :
-                    	            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1969:3: lv_rightExpression_4_1= ruleUnaryPreExpression
+                    	            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1959:3: lv_rightExpression_4_1= ruleUnaryPreExpression
                     	            {
                     	             
                     	            	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionUnaryPreExpressionParserRuleCall_1_1_2_0_0()); 
                     	            	    
-                    	            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4281);
+                    	            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4254);
                     	            lv_rightExpression_4_1=ruleUnaryPreExpression();
 
                     	            state._fsp--;
@@ -4792,13 +4772,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1984:8: lv_rightExpression_4_2= ruleOperand
+                    	            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:1974:8: lv_rightExpression_4_2= ruleTypeCastExpression
                     	            {
                     	             
-                    	            	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionOperandParserRuleCall_1_1_2_0_1()); 
+                    	            	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionTypeCastExpressionParserRuleCall_1_1_2_0_1()); 
                     	            	    
-                    	            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleMultiplicationExpression4300);
-                    	            lv_rightExpression_4_2=ruleOperand();
+                    	            pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_ruleMultiplicationExpression4273);
+                    	            lv_rightExpression_4_2=ruleTypeCastExpression();
 
                     	            state._fsp--;
 
@@ -4810,7 +4790,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     	                   			current, 
                     	                   			"rightExpression",
                     	                    		lv_rightExpression_4_2, 
-                    	                    		"Operand");
+                    	                    		"TypeCastExpression");
                     	            	        afterParserOrEnumRuleCall();
                     	            	    
 
@@ -4861,7 +4841,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnaryPreExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2010:1: entryRuleUnaryPreExpression returns [EObject current=null] : iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2000:1: entryRuleUnaryPreExpression returns [EObject current=null] : iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF ;
     public final EObject entryRuleUnaryPreExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4869,17 +4849,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2011:2: (iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2012:2: iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2001:2: (iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2002:2: iv_ruleUnaryPreExpression= ruleUnaryPreExpression EOF
             {
              newCompositeNode(grammarAccess.getUnaryPreExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression4342);
+            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression4315);
             iv_ruleUnaryPreExpression=ruleUnaryPreExpression();
 
             state._fsp--;
 
              current =iv_ruleUnaryPreExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUnaryPreExpression4352); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleUnaryPreExpression4325); 
 
             }
 
@@ -4897,7 +4877,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnaryPreExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2019:1: ruleUnaryPreExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2009:1: ruleUnaryPreExpression returns [EObject current=null] : ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleTypeCastExpression ) ) ) ;
     public final EObject ruleUnaryPreExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4909,14 +4889,14 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2022:28: ( ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2023:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2012:28: ( ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleTypeCastExpression ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2013:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleTypeCastExpression ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2023:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2023:2: () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleOperand ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2013:1: ( () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleTypeCastExpression ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2013:2: () ( (lv_operator_1_0= ruleUnaryPreOperator ) ) ( (lv_enclosedExpression_2_0= ruleTypeCastExpression ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2023:2: ()
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2024:5: 
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2013:2: ()
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2014:5: 
             {
 
                     current = forceCreateModelElement(
@@ -4926,16 +4906,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2029:2: ( (lv_operator_1_0= ruleUnaryPreOperator ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2030:1: (lv_operator_1_0= ruleUnaryPreOperator )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2019:2: ( (lv_operator_1_0= ruleUnaryPreOperator ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2020:1: (lv_operator_1_0= ruleUnaryPreOperator )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2030:1: (lv_operator_1_0= ruleUnaryPreOperator )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2031:3: lv_operator_1_0= ruleUnaryPreOperator
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2020:1: (lv_operator_1_0= ruleUnaryPreOperator )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2021:3: lv_operator_1_0= ruleUnaryPreOperator
             {
              
             	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getOperatorUnaryPreOperatorEnumRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression4407);
+            pushFollow(FollowSets000.FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression4380);
             lv_operator_1_0=ruleUnaryPreOperator();
 
             state._fsp--;
@@ -4957,17 +4937,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2047:2: ( (lv_enclosedExpression_2_0= ruleOperand ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2048:1: (lv_enclosedExpression_2_0= ruleOperand )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2037:2: ( (lv_enclosedExpression_2_0= ruleTypeCastExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2038:1: (lv_enclosedExpression_2_0= ruleTypeCastExpression )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2048:1: (lv_enclosedExpression_2_0= ruleOperand )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2049:3: lv_enclosedExpression_2_0= ruleOperand
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2038:1: (lv_enclosedExpression_2_0= ruleTypeCastExpression )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2039:3: lv_enclosedExpression_2_0= ruleTypeCastExpression
             {
              
-            	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionOperandParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionTypeCastExpressionParserRuleCall_2_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleUnaryPreExpression4428);
-            lv_enclosedExpression_2_0=ruleOperand();
+            pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_ruleUnaryPreExpression4401);
+            lv_enclosedExpression_2_0=ruleTypeCastExpression();
 
             state._fsp--;
 
@@ -4979,7 +4959,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"enclosedExpression",
                     		lv_enclosedExpression_2_0, 
-                    		"Operand");
+                    		"TypeCastExpression");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -5009,7 +4989,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeCastExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2073:1: entryRuleTypeCastExpression returns [EObject current=null] : iv_ruleTypeCastExpression= ruleTypeCastExpression EOF ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2063:1: entryRuleTypeCastExpression returns [EObject current=null] : iv_ruleTypeCastExpression= ruleTypeCastExpression EOF ;
     public final EObject entryRuleTypeCastExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5017,17 +4997,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2074:2: (iv_ruleTypeCastExpression= ruleTypeCastExpression EOF )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2075:2: iv_ruleTypeCastExpression= ruleTypeCastExpression EOF
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2064:2: (iv_ruleTypeCastExpression= ruleTypeCastExpression EOF )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2065:2: iv_ruleTypeCastExpression= ruleTypeCastExpression EOF
             {
              newCompositeNode(grammarAccess.getTypeCastExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression4464);
+            pushFollow(FollowSets000.FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression4437);
             iv_ruleTypeCastExpression=ruleTypeCastExpression();
 
             state._fsp--;
 
              current =iv_ruleTypeCastExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeCastExpression4474); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypeCastExpression4447); 
 
             }
 
@@ -5045,102 +5025,135 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeCastExpression"
-    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2082:1: ruleTypeCastExpression returns [EObject current=null] : ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2072:1: ruleTypeCastExpression returns [EObject current=null] : (this_Operand_0= ruleOperand | ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) ) ) ;
     public final EObject ruleTypeCastExpression() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        EObject lv_enclosedExpression_4_0 = null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        EObject this_Operand_0 = null;
+
+        EObject lv_enclosedExpression_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2085:28: ( ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:1: ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2075:28: ( (this_Operand_0= ruleOperand | ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2076:1: (this_Operand_0= ruleOperand | ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:1: ( () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:2: () otherlv_1= '(' ( ( ruleDATATYPE ) ) otherlv_3= ')' ( (lv_enclosedExpression_4_0= ruleOperand ) )
-            {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:2: ()
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2087:5: 
-            {
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2076:1: (this_Operand_0= ruleOperand | ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) ) )
+            int alt20=2;
+            alt20 = dfa20.predict(input);
+            switch (alt20) {
+                case 1 :
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2077:5: this_Operand_0= ruleOperand
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getOperandParserRuleCall_0()); 
+                        
+                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleTypeCastExpression4494);
+                    this_Operand_0=ruleOperand();
 
-                    current = forceCreateModelElement(
-                        grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_0(),
-                        current);
-                
+                    state._fsp--;
 
-            }
+                     
+                            current = this_Operand_0; 
+                            afterParserOrEnumRuleCall();
+                        
 
-            otherlv_1=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleTypeCastExpression4520); 
+                    }
+                    break;
+                case 2 :
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:6: ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:6: ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:7: () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2086:7: ()
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2087:5: 
+                    {
 
-                	newLeafNode(otherlv_1, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1());
-                
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2096:1: ( ( ruleDATATYPE ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2097:1: ( ruleDATATYPE )
-            {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2097:1: ( ruleDATATYPE )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2098:3: ruleDATATYPE
-            {
+                            current = forceCreateModelElement(
+                                grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_1_0(),
+                                current);
+                        
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getTypeCastExpressionRule());
-            	        }
-                    
-             
-            	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_2_0()); 
-            	    
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression4543);
-            ruleDATATYPE();
+                    }
 
-            state._fsp--;
+                    otherlv_2=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleTypeCastExpression4521); 
 
-             
-            	        afterParserOrEnumRuleCall();
-            	    
+                        	newLeafNode(otherlv_2, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1_1());
+                        
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2096:1: ( ( ruleDATATYPE ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2097:1: ( ruleDATATYPE )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2097:1: ( ruleDATATYPE )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2098:3: ruleDATATYPE
+                    {
 
-            }
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTypeCastExpressionRule());
+                    	        }
+                            
+                     
+                    	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_1_2_0()); 
+                    	    
+                    pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression4544);
+                    ruleDATATYPE();
 
+                    state._fsp--;
 
-            }
+                     
+                    	        afterParserOrEnumRuleCall();
+                    	    
 
-            otherlv_3=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleTypeCastExpression4555); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_3());
-                
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2115:1: ( (lv_enclosedExpression_4_0= ruleOperand ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2116:1: (lv_enclosedExpression_4_0= ruleOperand )
-            {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2116:1: (lv_enclosedExpression_4_0= ruleOperand )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2117:3: lv_enclosedExpression_4_0= ruleOperand
-            {
-             
-            	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_4_0()); 
-            	    
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleTypeCastExpression4576);
-            lv_enclosedExpression_4_0=ruleOperand();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getTypeCastExpressionRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"enclosedExpression",
-                    		lv_enclosedExpression_4_0, 
-                    		"Operand");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
+                    }
 
 
-            }
+                    }
 
+                    otherlv_4=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleTypeCastExpression4556); 
+
+                        	newLeafNode(otherlv_4, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_1_3());
+                        
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2115:1: ( (lv_enclosedExpression_5_0= ruleOperand ) )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2116:1: (lv_enclosedExpression_5_0= ruleOperand )
+                    {
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2116:1: (lv_enclosedExpression_5_0= ruleOperand )
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2117:3: lv_enclosedExpression_5_0= ruleOperand
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_1_4_0()); 
+                    	    
+                    pushFollow(FollowSets000.FOLLOW_ruleOperand_in_ruleTypeCastExpression4577);
+                    lv_enclosedExpression_5_0=ruleOperand();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getTypeCastExpressionRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"enclosedExpression",
+                            		lv_enclosedExpression_5_0, 
+                            		"Operand");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -5174,13 +5187,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2143:2: iv_ruleOperand= ruleOperand EOF
             {
              newCompositeNode(grammarAccess.getOperandRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_entryRuleOperand4612);
+            pushFollow(FollowSets000.FOLLOW_ruleOperand_in_entryRuleOperand4614);
             iv_ruleOperand=ruleOperand();
 
             state._fsp--;
 
              current =iv_ruleOperand; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperand4622); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperand4624); 
 
             }
 
@@ -5224,11 +5237,11 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2154:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2154:1: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_LiteralExpression_3= ruleLiteralExpression | this_ExtendedTypedNamedElementExpression_4= ruleExtendedTypedNamedElementExpression | this_OperationCall_5= ruleOperationCall | this_TriggerMessageExpression_6= ruleTriggerMessageExpression | this_NoAttributeSelectorExpression_7= ruleNoAttributeSelectorExpression )
-            int alt20=6;
+            int alt21=6;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt20=1;
+                alt21=1;
                 }
                 break;
             case RULE_INT:
@@ -5236,12 +5249,35 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             case RULE_BOOLEAN:
             case 33:
                 {
-                alt20=2;
+                alt21=2;
                 }
                 break;
             case RULE_ID:
                 {
                 switch ( input.LA(2) ) {
+                case 16:
+                    {
+                    alt21=4;
+                    }
+                    break;
+                case 34:
+                    {
+                    int LA21_6 = input.LA(3);
+
+                    if ( ((LA21_6>=52 && LA21_6<=56)) ) {
+                        alt21=3;
+                    }
+                    else if ( (LA21_6==RULE_ID) ) {
+                        alt21=5;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 21, 6, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
                 case EOF:
                 case 17:
                 case 18:
@@ -5266,35 +5302,12 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 case 49:
                 case 50:
                     {
-                    alt20=3;
-                    }
-                    break;
-                case 34:
-                    {
-                    int LA20_6 = input.LA(3);
-
-                    if ( (LA20_6==RULE_ID) ) {
-                        alt20=5;
-                    }
-                    else if ( ((LA20_6>=52 && LA20_6<=56)) ) {
-                        alt20=3;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 20, 6, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 16:
-                    {
-                    alt20=4;
+                    alt21=3;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 20, 3, input);
+                        new NoViableAltException("", 21, 3, input);
 
                     throw nvae;
                 }
@@ -5307,31 +5320,31 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             case 55:
             case 56:
                 {
-                alt20=6;
+                alt21=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2154:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2154:2: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2154:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleOperand4660); 
+                    otherlv_0=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleOperand4662); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getOperandAccess().getLeftParenthesisKeyword_0_0());
                         
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getExpressionParserRuleCall_0_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleOperand4682);
+                    pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleOperand4684);
                     this_Expression_1=ruleExpression();
 
                     state._fsp--;
@@ -5340,7 +5353,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                             current = this_Expression_1; 
                             afterParserOrEnumRuleCall();
                         
-                    otherlv_2=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleOperand4693); 
+                    otherlv_2=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleOperand4695); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getOperandAccess().getRightParenthesisKeyword_0_2());
                         
@@ -5356,7 +5369,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getLiteralExpressionParserRuleCall_1()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleOperand4722);
+                    pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_ruleOperand4724);
                     this_LiteralExpression_3=ruleLiteralExpression();
 
                     state._fsp--;
@@ -5374,7 +5387,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getExtendedTypedNamedElementExpressionParserRuleCall_2()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand4749);
+                    pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand4751);
                     this_ExtendedTypedNamedElementExpression_4=ruleExtendedTypedNamedElementExpression();
 
                     state._fsp--;
@@ -5392,7 +5405,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperand4776);
+                    pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_ruleOperand4778);
                     this_OperationCall_5=ruleOperationCall();
 
                     state._fsp--;
@@ -5410,7 +5423,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_ruleOperand4803);
+                    pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_ruleOperand4805);
                     this_TriggerMessageExpression_6=ruleTriggerMessageExpression();
 
                     state._fsp--;
@@ -5428,7 +5441,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand4830);
+                    pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand4832);
                     this_NoAttributeSelectorExpression_7=ruleNoAttributeSelectorExpression();
 
                     state._fsp--;
@@ -5473,13 +5486,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2231:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
             {
              newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression4865);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression4867);
             iv_ruleLiteralExpression=ruleLiteralExpression();
 
             state._fsp--;
 
              current =iv_ruleLiteralExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression4875); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteralExpression4877); 
 
             }
 
@@ -5533,7 +5546,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getLiteralExpressionAccess().getValueLiteralParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_ruleLiteralExpression4930);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_ruleLiteralExpression4932);
             lv_value_1_0=ruleLiteral();
 
             state._fsp--;
@@ -5588,13 +5601,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2276:2: iv_ruleLiteral= ruleLiteral EOF
             {
              newCompositeNode(grammarAccess.getLiteralRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_entryRuleLiteral4967);
+            pushFollow(FollowSets000.FOLLOW_ruleLiteral_in_entryRuleLiteral4969);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
 
              current =iv_ruleLiteral.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteral4978); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleLiteral4980); 
 
             }
 
@@ -5628,40 +5641,40 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2287:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2287:1: (this_NUMBER_0= RULE_NUMBER | this_BOOLEAN_1= RULE_BOOLEAN | this_INT_2= RULE_INT | kw= 'null' )
-            int alt21=4;
+            int alt22=4;
             switch ( input.LA(1) ) {
             case RULE_NUMBER:
                 {
-                alt21=1;
+                alt22=1;
                 }
                 break;
             case RULE_BOOLEAN:
                 {
-                alt21=2;
+                alt22=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt21=3;
+                alt22=3;
                 }
                 break;
             case 33:
                 {
-                alt21=4;
+                alt22=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2287:6: this_NUMBER_0= RULE_NUMBER
                     {
-                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_RULE_NUMBER_in_ruleLiteral5018); 
+                    this_NUMBER_0=(Token)match(input,RULE_NUMBER,FollowSets000.FOLLOW_RULE_NUMBER_in_ruleLiteral5020); 
 
                     		current.merge(this_NUMBER_0);
                         
@@ -5674,7 +5687,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2295:10: this_BOOLEAN_1= RULE_BOOLEAN
                     {
-                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_ruleLiteral5044); 
+                    this_BOOLEAN_1=(Token)match(input,RULE_BOOLEAN,FollowSets000.FOLLOW_RULE_BOOLEAN_in_ruleLiteral5046); 
 
                     		current.merge(this_BOOLEAN_1);
                         
@@ -5687,7 +5700,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 case 3 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2303:10: this_INT_2= RULE_INT
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteral5070); 
+                    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleLiteral5072); 
 
                     		current.merge(this_INT_2);
                         
@@ -5700,7 +5713,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 case 4 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2312:2: kw= 'null'
                     {
-                    kw=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleLiteral5094); 
+                    kw=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleLiteral5096); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLiteralAccess().getNullKeyword_3()); 
@@ -5741,13 +5754,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2327:2: iv_ruleExtendedTypedNamedElementExpression= ruleExtendedTypedNamedElementExpression EOF
             {
              newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression5134);
+            pushFollow(FollowSets000.FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression5136);
             iv_ruleExtendedTypedNamedElementExpression=ruleExtendedTypedNamedElementExpression();
 
             state._fsp--;
 
              current =iv_ruleExtendedTypedNamedElementExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression5144); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression5146); 
 
             }
 
@@ -5789,7 +5802,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getTypedNamedElementExpressionParserRuleCall_0()); 
                 
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression5191);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression5193);
             this_TypedNamedElementExpression_0=ruleTypedNamedElementExpression();
 
             state._fsp--;
@@ -5799,16 +5812,16 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     afterParserOrEnumRuleCall();
                 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2347:1: ( ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) ) | ( () ( (lv_incrementDecrementOperator_5_0= ruleIncrementDecrementOperatorExpression ) ) ) )?
-            int alt22=3;
-            int LA22_0 = input.LA(1);
+            int alt23=3;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==34) ) {
-                alt22=1;
+            if ( (LA23_0==34) ) {
+                alt23=1;
             }
-            else if ( ((LA22_0>=36 && LA22_0<=37)) ) {
-                alt22=2;
+            else if ( ((LA23_0>=36 && LA23_0<=37)) ) {
+                alt23=2;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2347:2: ( () otherlv_2= '->' ( (lv_position_3_0= rulePositionSelectorExpression ) ) )
                     {
@@ -5826,7 +5839,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleExtendedTypedNamedElementExpression5213); 
+                    otherlv_2=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleExtendedTypedNamedElementExpression5215); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getExtendedTypedNamedElementExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0_1());
                         
@@ -5839,7 +5852,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_1_0_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression5234);
+                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression5236);
                     lv_position_3_0=rulePositionSelectorExpression();
 
                     state._fsp--;
@@ -5893,7 +5906,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorIncrementDecrementOperatorExpressionEnumRuleCall_1_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression5272);
+                    pushFollow(FollowSets000.FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression5274);
                     lv_incrementDecrementOperator_5_0=ruleIncrementDecrementOperatorExpression();
 
                     state._fsp--;
@@ -5957,13 +5970,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2410:2: iv_ruleTypedNamedElementExpression= ruleTypedNamedElementExpression EOF
             {
              newCompositeNode(grammarAccess.getTypedNamedElementExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression5311);
+            pushFollow(FollowSets000.FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression5313);
             iv_ruleTypedNamedElementExpression=ruleTypedNamedElementExpression();
 
             state._fsp--;
 
              current =iv_ruleTypedNamedElementExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypedNamedElementExpression5321); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTypedNamedElementExpression5323); 
 
             }
 
@@ -6011,7 +6024,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTypedNamedElementExpressionRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression5366); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression5368); 
 
             		newLeafNode(otherlv_0, grammarAccess.getTypedNamedElementExpressionAccess().getTypedNamedElementTypedNamedElementCrossReference_0_0()); 
             	
@@ -6022,17 +6035,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2434:2: ( ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) ) )*
-            loop24:
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==26||LA24_0==35) ) {
-                    alt24=1;
+                if ( (LA25_0==26||LA25_0==35) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2435:1: ( (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression ) )
             	    {
@@ -6040,29 +6053,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2436:1: (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression )
             	    {
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2436:1: (lv_elementAccessors_1_1= ruleArrayIndexExpression | lv_elementAccessors_1_2= ruleAttributeAccessorExpression )
-            	    int alt23=2;
-            	    int LA23_0 = input.LA(1);
+            	    int alt24=2;
+            	    int LA24_0 = input.LA(1);
 
-            	    if ( (LA23_0==26) ) {
-            	        alt23=1;
+            	    if ( (LA24_0==26) ) {
+            	        alt24=1;
             	    }
-            	    else if ( (LA23_0==35) ) {
-            	        alt23=2;
+            	    else if ( (LA24_0==35) ) {
+            	        alt24=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 23, 0, input);
+            	            new NoViableAltException("", 24, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt23) {
+            	    switch (alt24) {
             	        case 1 :
             	            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2437:3: lv_elementAccessors_1_1= ruleArrayIndexExpression
             	            {
             	             
             	            	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsArrayIndexExpressionParserRuleCall_1_0_0()); 
             	            	    
-            	            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression5389);
+            	            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression5391);
             	            lv_elementAccessors_1_1=ruleArrayIndexExpression();
 
             	            state._fsp--;
@@ -6087,7 +6100,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	             
             	            	        newCompositeNode(grammarAccess.getTypedNamedElementExpressionAccess().getElementAccessorsAttributeAccessorExpressionParserRuleCall_1_0_1()); 
             	            	    
-            	            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression5408);
+            	            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression5410);
             	            lv_elementAccessors_1_2=ruleAttributeAccessorExpression();
 
             	            state._fsp--;
@@ -6117,7 +6130,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -6154,13 +6167,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2480:2: iv_ruleArrayIndexExpression= ruleArrayIndexExpression EOF
             {
              newCompositeNode(grammarAccess.getArrayIndexExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression5448);
+            pushFollow(FollowSets000.FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression5450);
             iv_ruleArrayIndexExpression=ruleArrayIndexExpression();
 
             state._fsp--;
 
              current =iv_ruleArrayIndexExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayIndexExpression5458); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleArrayIndexExpression5460); 
 
             }
 
@@ -6196,7 +6209,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2491:1: (otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']' )
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2491:3: otherlv_0= '[' ( (lv_index_1_0= ruleArithmeticExpression ) ) otherlv_2= ']'
             {
-            otherlv_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleArrayIndexExpression5495); 
+            otherlv_0=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleArrayIndexExpression5497); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getArrayIndexExpressionAccess().getLeftSquareBracketKeyword_0());
                 
@@ -6209,7 +6222,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getArrayIndexExpressionAccess().getIndexArithmeticExpressionParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression5516);
+            pushFollow(FollowSets000.FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression5518);
             lv_index_1_0=ruleArithmeticExpression();
 
             state._fsp--;
@@ -6231,7 +6244,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleArrayIndexExpression5528); 
+            otherlv_2=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleArrayIndexExpression5530); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getArrayIndexExpressionAccess().getRightSquareBracketKeyword_2());
                 
@@ -6268,13 +6281,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2527:2: iv_ruleAttributeAccessorExpression= ruleAttributeAccessorExpression EOF
             {
              newCompositeNode(grammarAccess.getAttributeAccessorExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression5564);
+            pushFollow(FollowSets000.FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression5566);
             iv_ruleAttributeAccessorExpression=ruleAttributeAccessorExpression();
 
             state._fsp--;
 
              current =iv_ruleAttributeAccessorExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributeAccessorExpression5574); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAttributeAccessorExpression5576); 
 
             }
 
@@ -6308,7 +6321,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2538:1: (otherlv_0= '.' ( (otherlv_1= RULE_ID ) ) )
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2538:3: otherlv_0= '.' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleAttributeAccessorExpression5611); 
+            otherlv_0=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleAttributeAccessorExpression5613); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAttributeAccessorExpressionAccess().getFullStopKeyword_0());
                 
@@ -6323,7 +6336,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getAttributeAccessorExpressionRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression5631); 
+            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression5633); 
 
             		newLeafNode(otherlv_1, grammarAccess.getAttributeAccessorExpressionAccess().getAttributeAttributeCrossReference_1_0()); 
             	
@@ -6366,13 +6379,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2565:2: iv_ruleNoAttributeSelectorExpression= ruleNoAttributeSelectorExpression EOF
             {
              newCompositeNode(grammarAccess.getNoAttributeSelectorExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression5667);
+            pushFollow(FollowSets000.FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression5669);
             iv_ruleNoAttributeSelectorExpression=ruleNoAttributeSelectorExpression();
 
             state._fsp--;
 
              current =iv_ruleNoAttributeSelectorExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression5677); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression5679); 
 
             }
 
@@ -6412,7 +6425,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getNoAttributeSelectorExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression5722);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression5724);
             lv_position_0_0=rulePositionSelectorExpression();
 
             state._fsp--;
@@ -6464,13 +6477,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2604:2: iv_rulePositionSelectorExpression= rulePositionSelectorExpression EOF
             {
              newCompositeNode(grammarAccess.getPositionSelectorExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression5757);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression5759);
             iv_rulePositionSelectorExpression=rulePositionSelectorExpression();
 
             state._fsp--;
 
              current =iv_rulePositionSelectorExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePositionSelectorExpression5767); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePositionSelectorExpression5769); 
 
             }
 
@@ -6516,7 +6529,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getPositionSelectorExpressionAccess().getKindPositionSelectorKindEnumRuleCall_0_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression5813);
+            pushFollow(FollowSets000.FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression5815);
             lv_kind_0_0=rulePositionSelectorKind();
 
             state._fsp--;
@@ -6539,17 +6552,17 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             }
 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2633:2: (otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==34) ) {
-                alt25=1;
+            if ( (LA26_0==34) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2633:4: otherlv_1= '->' ( (lv_successor_2_0= rulePositionSelectorExpression ) )
                     {
-                    otherlv_1=(Token)match(input,34,FollowSets000.FOLLOW_34_in_rulePositionSelectorExpression5826); 
+                    otherlv_1=(Token)match(input,34,FollowSets000.FOLLOW_34_in_rulePositionSelectorExpression5828); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getPositionSelectorExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
                         
@@ -6562,7 +6575,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getPositionSelectorExpressionAccess().getSuccessorPositionSelectorExpressionParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression5847);
+                    pushFollow(FollowSets000.FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression5849);
                     lv_successor_2_0=rulePositionSelectorExpression();
 
                     state._fsp--;
@@ -6623,13 +6636,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2665:2: iv_ruleOperationCall= ruleOperationCall EOF
             {
              newCompositeNode(grammarAccess.getOperationCallRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_entryRuleOperationCall5885);
+            pushFollow(FollowSets000.FOLLOW_ruleOperationCall_in_entryRuleOperationCall5887);
             iv_ruleOperationCall=ruleOperationCall();
 
             state._fsp--;
 
              current =iv_ruleOperationCall; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCall5895); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleOperationCall5897); 
 
             }
 
@@ -6680,7 +6693,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getOperationCallRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleOperationCall5940); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleOperationCall5942); 
 
             		newLeafNode(otherlv_0, grammarAccess.getOperationCallAccess().getOperationOperationCrossReference_0_0()); 
             	
@@ -6690,18 +6703,18 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleOperationCall5952); 
+            otherlv_1=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleOperationCall5954); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getOperationCallAccess().getLeftParenthesisKeyword_1());
                 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2693:1: ( ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )* )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA27_0==RULE_ID) ) {
-                alt27=1;
+            if ( (LA28_0==RULE_ID) ) {
+                alt28=1;
             }
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2693:2: ( (lv_parameterBinding_2_0= ruleParamaterBinding ) ) (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
                     {
@@ -6714,7 +6727,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall5974);
+                    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall5976);
                     lv_parameterBinding_2_0=ruleParamaterBinding();
 
                     state._fsp--;
@@ -6737,21 +6750,21 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2711:2: (otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) ) )*
-                    loop26:
+                    loop27:
                     do {
-                        int alt26=2;
-                        int LA26_0 = input.LA(1);
+                        int alt27=2;
+                        int LA27_0 = input.LA(1);
 
-                        if ( (LA26_0==27) ) {
-                            alt26=1;
+                        if ( (LA27_0==27) ) {
+                            alt27=1;
                         }
 
 
-                        switch (alt26) {
+                        switch (alt27) {
                     	case 1 :
                     	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2711:4: otherlv_3= ',' ( (lv_parameterBinding_4_0= ruleParamaterBinding ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleOperationCall5987); 
+                    	    otherlv_3=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleOperationCall5989); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getOperationCallAccess().getCommaKeyword_2_1_0());
                     	        
@@ -6764,7 +6777,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     	     
                     	    	        newCompositeNode(grammarAccess.getOperationCallAccess().getParameterBindingParamaterBindingParserRuleCall_2_1_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall6008);
+                    	    pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_ruleOperationCall6010);
                     	    lv_parameterBinding_4_0=ruleParamaterBinding();
 
                     	    state._fsp--;
@@ -6791,7 +6804,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop26;
+                    	    break loop27;
                         }
                     } while (true);
 
@@ -6801,7 +6814,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleOperationCall6024); 
+            otherlv_5=(Token)match(input,18,FollowSets000.FOLLOW_18_in_ruleOperationCall6026); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getOperationCallAccess().getRightParenthesisKeyword_3());
                 
@@ -6838,13 +6851,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2747:2: iv_ruleParamaterBinding= ruleParamaterBinding EOF
             {
              newCompositeNode(grammarAccess.getParamaterBindingRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding6060);
+            pushFollow(FollowSets000.FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding6062);
             iv_ruleParamaterBinding=ruleParamaterBinding();
 
             state._fsp--;
 
              current =iv_ruleParamaterBinding; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleParamaterBinding6070); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleParamaterBinding6072); 
 
             }
 
@@ -6902,7 +6915,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getParamaterBindingRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleParamaterBinding6124); 
+            otherlv_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleParamaterBinding6126); 
 
             		newLeafNode(otherlv_1, grammarAccess.getParamaterBindingAccess().getParameterParameterCrossReference_1_0()); 
             	
@@ -6912,7 +6925,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleParamaterBinding6136); 
+            otherlv_2=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleParamaterBinding6138); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getParamaterBindingAccess().getColonEqualsSignKeyword_2());
                 
@@ -6925,7 +6938,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getParamaterBindingAccess().getValueExpressionParserRuleCall_3_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleParamaterBinding6157);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_ruleParamaterBinding6159);
             lv_value_3_0=ruleExpression();
 
             state._fsp--;
@@ -6980,13 +6993,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2809:2: iv_ruleTriggerMessageExpression= ruleTriggerMessageExpression EOF
             {
              newCompositeNode(grammarAccess.getTriggerMessageExpressionRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression6193);
+            pushFollow(FollowSets000.FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression6195);
             iv_ruleTriggerMessageExpression=ruleTriggerMessageExpression();
 
             state._fsp--;
 
              current =iv_ruleTriggerMessageExpression; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTriggerMessageExpression6203); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleTriggerMessageExpression6205); 
 
             }
 
@@ -7032,7 +7045,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTriggerMessageExpressionRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6248); 
+            otherlv_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6250); 
 
             		newLeafNode(otherlv_0, grammarAccess.getTriggerMessageExpressionAccess().getMessageTypeMessageTypeCrossReference_0_0()); 
             	
@@ -7042,7 +7055,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTriggerMessageExpression6260); 
+            otherlv_1=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleTriggerMessageExpression6262); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTriggerMessageExpressionAccess().getHyphenMinusGreaterThanSignKeyword_1());
                 
@@ -7057,7 +7070,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTriggerMessageExpressionRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6280); 
+            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6282); 
 
             		newLeafNode(otherlv_2, grammarAccess.getTriggerMessageExpressionAccess().getParameterParameterCrossReference_2_0()); 
             	
@@ -7100,13 +7113,13 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2860:2: iv_ruleDATATYPE= ruleDATATYPE EOF
             {
              newCompositeNode(grammarAccess.getDATATYPERule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE6317);
+            pushFollow(FollowSets000.FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE6319);
             iv_ruleDATATYPE=ruleDATATYPE();
 
             state._fsp--;
 
              current =iv_ruleDATATYPE.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDATATYPE6328); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDATATYPE6330); 
 
             }
 
@@ -7141,7 +7154,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2871:1: (this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )* )
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2871:6: this_ID_0= RULE_ID (kw= '[' this_INT_2= RULE_INT kw= ']' )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDATATYPE6368); 
+            this_ID_0=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleDATATYPE6370); 
 
             		current.merge(this_ID_0);
                 
@@ -7149,33 +7162,33 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                 newLeafNode(this_ID_0, grammarAccess.getDATATYPEAccess().getIDTerminalRuleCall_0()); 
                 
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2878:1: (kw= '[' this_INT_2= RULE_INT kw= ']' )*
-            loop28:
+            loop29:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA28_0==26) ) {
-                    alt28=1;
+                if ( (LA29_0==26) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt29) {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2879:2: kw= '[' this_INT_2= RULE_INT kw= ']'
             	    {
-            	    kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleDATATYPE6387); 
+            	    kw=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleDATATYPE6389); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getDATATYPEAccess().getLeftSquareBracketKeyword_1_0()); 
             	        
-            	    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDATATYPE6402); 
+            	    this_INT_2=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleDATATYPE6404); 
 
             	    		current.merge(this_INT_2);
             	        
             	     
             	        newLeafNode(this_INT_2, grammarAccess.getDATATYPEAccess().getINTTerminalRuleCall_1_1()); 
             	        
-            	    kw=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleDATATYPE6420); 
+            	    kw=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleDATATYPE6422); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getDATATYPEAccess().getRightSquareBracketKeyword_1_2()); 
@@ -7185,7 +7198,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop29;
                 }
             } while (true);
 
@@ -7223,29 +7236,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2908:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2908:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==36) ) {
-                alt29=1;
+            if ( (LA30_0==36) ) {
+                alt30=1;
             }
-            else if ( (LA29_0==37) ) {
-                alt29=2;
+            else if ( (LA30_0==37) ) {
+                alt30=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2908:2: (enumLiteral_0= '++' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2908:2: (enumLiteral_0= '++' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2908:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleUnaryPostIncrementDecrementOperator6476); 
+                    enumLiteral_0=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleUnaryPostIncrementDecrementOperator6478); 
 
                             current = grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getINCREMENTEnumLiteralDeclaration_0()); 
@@ -7262,7 +7275,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2914:6: (enumLiteral_1= '--' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2914:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleUnaryPostIncrementDecrementOperator6493); 
+                    enumLiteral_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleUnaryPostIncrementDecrementOperator6495); 
 
                             current = grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getUnaryPostIncrementDecrementOperatorAccess().getDECREMENTEnumLiteralDeclaration_1()); 
@@ -7307,29 +7320,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2927:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2927:1: ( (enumLiteral_0= '++' ) | (enumLiteral_1= '--' ) )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==36) ) {
-                alt30=1;
+            if ( (LA31_0==36) ) {
+                alt31=1;
             }
-            else if ( (LA30_0==37) ) {
-                alt30=2;
+            else if ( (LA31_0==37) ) {
+                alt31=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2927:2: (enumLiteral_0= '++' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2927:2: (enumLiteral_0= '++' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2927:4: enumLiteral_0= '++'
                     {
-                    enumLiteral_0=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleIncrementDecrementOperatorExpression6538); 
+                    enumLiteral_0=(Token)match(input,36,FollowSets000.FOLLOW_36_in_ruleIncrementDecrementOperatorExpression6540); 
 
                             current = grammarAccess.getIncrementDecrementOperatorExpressionAccess().getINCREMENTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getIncrementDecrementOperatorExpressionAccess().getINCREMENTEnumLiteralDeclaration_0()); 
@@ -7346,7 +7359,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2933:6: (enumLiteral_1= '--' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2933:8: enumLiteral_1= '--'
                     {
-                    enumLiteral_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleIncrementDecrementOperatorExpression6555); 
+                    enumLiteral_1=(Token)match(input,37,FollowSets000.FOLLOW_37_in_ruleIncrementDecrementOperatorExpression6557); 
 
                             current = grammarAccess.getIncrementDecrementOperatorExpressionAccess().getDECREMENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getIncrementDecrementOperatorExpressionAccess().getDECREMENTEnumLiteralDeclaration_1()); 
@@ -7392,38 +7405,38 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2946:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2946:1: ( (enumLiteral_0= ':=' ) | (enumLiteral_1= '+=' ) | (enumLiteral_2= '-=' ) )
-            int alt31=3;
+            int alt32=3;
             switch ( input.LA(1) ) {
             case 29:
                 {
-                alt31=1;
+                alt32=1;
                 }
                 break;
             case 38:
                 {
-                alt31=2;
+                alt32=2;
                 }
                 break;
             case 39:
                 {
-                alt31=3;
+                alt32=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2946:2: (enumLiteral_0= ':=' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2946:2: (enumLiteral_0= ':=' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2946:4: enumLiteral_0= ':='
                     {
-                    enumLiteral_0=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleAssignOperator6600); 
+                    enumLiteral_0=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleAssignOperator6602); 
 
                             current = grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAssignOperatorAccess().getASSIGNEnumLiteralDeclaration_0()); 
@@ -7440,7 +7453,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2952:6: (enumLiteral_1= '+=' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2952:8: enumLiteral_1= '+='
                     {
-                    enumLiteral_1=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleAssignOperator6617); 
+                    enumLiteral_1=(Token)match(input,38,FollowSets000.FOLLOW_38_in_ruleAssignOperator6619); 
 
                             current = grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAssignOperatorAccess().getPLUS_EQUALEnumLiteralDeclaration_1()); 
@@ -7457,7 +7470,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2958:6: (enumLiteral_2= '-=' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2958:8: enumLiteral_2= '-='
                     {
-                    enumLiteral_2=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleAssignOperator6634); 
+                    enumLiteral_2=(Token)match(input,39,FollowSets000.FOLLOW_39_in_ruleAssignOperator6636); 
 
                             current = grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2()); 
@@ -7503,7 +7516,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:1: (enumLiteral_0= '||' )
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2971:3: enumLiteral_0= '||'
             {
-            enumLiteral_0=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleLogicalOrOperator6678); 
+            enumLiteral_0=(Token)match(input,40,FollowSets000.FOLLOW_40_in_ruleLogicalOrOperator6680); 
 
                     current = grammarAccess.getLogicalOrOperatorAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getLogicalOrOperatorAccess().getOREnumLiteralDeclaration()); 
@@ -7543,7 +7556,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2984:1: (enumLiteral_0= '&&' )
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2984:3: enumLiteral_0= '&&'
             {
-            enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleLogicalAndOperator6721); 
+            enumLiteral_0=(Token)match(input,41,FollowSets000.FOLLOW_41_in_ruleLogicalAndOperator6723); 
 
                     current = grammarAccess.getLogicalAndOperatorAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
                     newLeafNode(enumLiteral_0, grammarAccess.getLogicalAndOperatorAccess().getANDEnumLiteralDeclaration()); 
@@ -7582,29 +7595,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2997:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2997:1: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<>' ) )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA32_0==42) ) {
-                alt32=1;
+            if ( (LA33_0==42) ) {
+                alt33=1;
             }
-            else if ( (LA32_0==43) ) {
-                alt32=2;
+            else if ( (LA33_0==43) ) {
+                alt33=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2997:2: (enumLiteral_0= '==' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2997:2: (enumLiteral_0= '==' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:2997:4: enumLiteral_0= '=='
                     {
-                    enumLiteral_0=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleComparingEQNEQOperator6765); 
+                    enumLiteral_0=(Token)match(input,42,FollowSets000.FOLLOW_42_in_ruleComparingEQNEQOperator6767); 
 
                             current = grammarAccess.getComparingEQNEQOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getComparingEQNEQOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
@@ -7621,7 +7634,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3003:6: (enumLiteral_1= '<>' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3003:8: enumLiteral_1= '<>'
                     {
-                    enumLiteral_1=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleComparingEQNEQOperator6782); 
+                    enumLiteral_1=(Token)match(input,43,FollowSets000.FOLLOW_43_in_ruleComparingEQNEQOperator6784); 
 
                             current = grammarAccess.getComparingEQNEQOperatorAccess().getUNEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getComparingEQNEQOperatorAccess().getUNEQUALEnumLiteralDeclaration_1()); 
@@ -7668,43 +7681,43 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3016:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3016:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '<=' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
-            int alt33=4;
+            int alt34=4;
             switch ( input.LA(1) ) {
             case 31:
                 {
-                alt33=1;
+                alt34=1;
                 }
                 break;
             case 44:
                 {
-                alt33=2;
+                alt34=2;
                 }
                 break;
             case 45:
                 {
-                alt33=3;
+                alt34=3;
                 }
                 break;
             case 32:
                 {
-                alt33=4;
+                alt34=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3016:2: (enumLiteral_0= '<' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3016:2: (enumLiteral_0= '<' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3016:4: enumLiteral_0= '<'
                     {
-                    enumLiteral_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleComparingRelOperator6827); 
+                    enumLiteral_0=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleComparingRelOperator6829); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getComparingRelOperatorAccess().getLESSEnumLiteralDeclaration_0()); 
@@ -7721,7 +7734,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3022:6: (enumLiteral_1= '<=' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3022:8: enumLiteral_1= '<='
                     {
-                    enumLiteral_1=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleComparingRelOperator6844); 
+                    enumLiteral_1=(Token)match(input,44,FollowSets000.FOLLOW_44_in_ruleComparingRelOperator6846); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getComparingRelOperatorAccess().getLESS_OR_EQUALEnumLiteralDeclaration_1()); 
@@ -7738,7 +7751,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3028:6: (enumLiteral_2= '>=' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3028:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleComparingRelOperator6861); 
+                    enumLiteral_2=(Token)match(input,45,FollowSets000.FOLLOW_45_in_ruleComparingRelOperator6863); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getComparingRelOperatorAccess().getGREATER_OR_EQUALEnumLiteralDeclaration_2()); 
@@ -7755,7 +7768,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3034:6: (enumLiteral_3= '>' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3034:8: enumLiteral_3= '>'
                     {
-                    enumLiteral_3=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleComparingRelOperator6878); 
+                    enumLiteral_3=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleComparingRelOperator6880); 
 
                             current = grammarAccess.getComparingRelOperatorAccess().getGREATEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getComparingRelOperatorAccess().getGREATEREnumLiteralDeclaration_3()); 
@@ -7800,29 +7813,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3047:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3047:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA34_0==46) ) {
-                alt34=1;
+            if ( (LA35_0==46) ) {
+                alt35=1;
             }
-            else if ( (LA34_0==47) ) {
-                alt34=2;
+            else if ( (LA35_0==47) ) {
+                alt35=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt35) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3047:2: (enumLiteral_0= '+' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3047:2: (enumLiteral_0= '+' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3047:4: enumLiteral_0= '+'
                     {
-                    enumLiteral_0=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleAdditionOperator6923); 
+                    enumLiteral_0=(Token)match(input,46,FollowSets000.FOLLOW_46_in_ruleAdditionOperator6925); 
 
                             current = grammarAccess.getAdditionOperatorAccess().getPLUSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getAdditionOperatorAccess().getPLUSEnumLiteralDeclaration_0()); 
@@ -7839,7 +7852,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3053:6: (enumLiteral_1= '-' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3053:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleAdditionOperator6940); 
+                    enumLiteral_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleAdditionOperator6942); 
 
                             current = grammarAccess.getAdditionOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getAdditionOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
@@ -7885,38 +7898,38 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3066:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3066:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) | (enumLiteral_2= '%' ) )
-            int alt35=3;
+            int alt36=3;
             switch ( input.LA(1) ) {
             case 48:
                 {
-                alt35=1;
+                alt36=1;
                 }
                 break;
             case 49:
                 {
-                alt35=2;
+                alt36=2;
                 }
                 break;
             case 50:
                 {
-                alt35=3;
+                alt36=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3066:2: (enumLiteral_0= '*' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3066:2: (enumLiteral_0= '*' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3066:4: enumLiteral_0= '*'
                     {
-                    enumLiteral_0=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleMultiplicationOperator6985); 
+                    enumLiteral_0=(Token)match(input,48,FollowSets000.FOLLOW_48_in_ruleMultiplicationOperator6987); 
 
                             current = grammarAccess.getMultiplicationOperatorAccess().getTIMESEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getMultiplicationOperatorAccess().getTIMESEnumLiteralDeclaration_0()); 
@@ -7933,7 +7946,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3072:6: (enumLiteral_1= '/' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3072:8: enumLiteral_1= '/'
                     {
-                    enumLiteral_1=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleMultiplicationOperator7002); 
+                    enumLiteral_1=(Token)match(input,49,FollowSets000.FOLLOW_49_in_ruleMultiplicationOperator7004); 
 
                             current = grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getMultiplicationOperatorAccess().getDIVIDEEnumLiteralDeclaration_1()); 
@@ -7950,7 +7963,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3078:6: (enumLiteral_2= '%' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3078:8: enumLiteral_2= '%'
                     {
-                    enumLiteral_2=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleMultiplicationOperator7019); 
+                    enumLiteral_2=(Token)match(input,50,FollowSets000.FOLLOW_50_in_ruleMultiplicationOperator7021); 
 
                             current = grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getMultiplicationOperatorAccess().getMODULOEnumLiteralDeclaration_2()); 
@@ -7995,29 +8008,29 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3091:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3091:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '-' ) )
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA36_0==51) ) {
-                alt36=1;
+            if ( (LA37_0==51) ) {
+                alt37=1;
             }
-            else if ( (LA36_0==47) ) {
-                alt36=2;
+            else if ( (LA37_0==47) ) {
+                alt37=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
-            switch (alt36) {
+            switch (alt37) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3091:2: (enumLiteral_0= 'not' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3091:2: (enumLiteral_0= 'not' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3091:4: enumLiteral_0= 'not'
                     {
-                    enumLiteral_0=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleUnaryPreOperator7064); 
+                    enumLiteral_0=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleUnaryPreOperator7066); 
 
                             current = grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getUnaryPreOperatorAccess().getNOTEnumLiteralDeclaration_0()); 
@@ -8034,7 +8047,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3097:6: (enumLiteral_1= '-' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3097:8: enumLiteral_1= '-'
                     {
-                    enumLiteral_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleUnaryPreOperator7081); 
+                    enumLiteral_1=(Token)match(input,47,FollowSets000.FOLLOW_47_in_ruleUnaryPreOperator7083); 
 
                             current = grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
@@ -8082,48 +8095,48 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3110:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
             {
             // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3110:1: ( (enumLiteral_0= 'self' ) | (enumLiteral_1= 'first' ) | (enumLiteral_2= 'last' ) | (enumLiteral_3= 'prev' ) | (enumLiteral_4= 'next' ) )
-            int alt37=5;
+            int alt38=5;
             switch ( input.LA(1) ) {
             case 52:
                 {
-                alt37=1;
+                alt38=1;
                 }
                 break;
             case 53:
                 {
-                alt37=2;
+                alt38=2;
                 }
                 break;
             case 54:
                 {
-                alt37=3;
+                alt38=3;
                 }
                 break;
             case 55:
                 {
-                alt37=4;
+                alt38=4;
                 }
                 break;
             case 56:
                 {
-                alt37=5;
+                alt38=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3110:2: (enumLiteral_0= 'self' )
                     {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3110:2: (enumLiteral_0= 'self' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3110:4: enumLiteral_0= 'self'
                     {
-                    enumLiteral_0=(Token)match(input,52,FollowSets000.FOLLOW_52_in_rulePositionSelectorKind7126); 
+                    enumLiteral_0=(Token)match(input,52,FollowSets000.FOLLOW_52_in_rulePositionSelectorKind7128); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getPositionSelectorKindAccess().getSELFEnumLiteralDeclaration_0()); 
@@ -8140,7 +8153,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3116:6: (enumLiteral_1= 'first' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3116:8: enumLiteral_1= 'first'
                     {
-                    enumLiteral_1=(Token)match(input,53,FollowSets000.FOLLOW_53_in_rulePositionSelectorKind7143); 
+                    enumLiteral_1=(Token)match(input,53,FollowSets000.FOLLOW_53_in_rulePositionSelectorKind7145); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getPositionSelectorKindAccess().getFIRSTEnumLiteralDeclaration_1()); 
@@ -8157,7 +8170,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3122:6: (enumLiteral_2= 'last' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3122:8: enumLiteral_2= 'last'
                     {
-                    enumLiteral_2=(Token)match(input,54,FollowSets000.FOLLOW_54_in_rulePositionSelectorKind7160); 
+                    enumLiteral_2=(Token)match(input,54,FollowSets000.FOLLOW_54_in_rulePositionSelectorKind7162); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getPositionSelectorKindAccess().getLASTEnumLiteralDeclaration_2()); 
@@ -8174,7 +8187,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3128:6: (enumLiteral_3= 'prev' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3128:8: enumLiteral_3= 'prev'
                     {
-                    enumLiteral_3=(Token)match(input,55,FollowSets000.FOLLOW_55_in_rulePositionSelectorKind7177); 
+                    enumLiteral_3=(Token)match(input,55,FollowSets000.FOLLOW_55_in_rulePositionSelectorKind7179); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getPositionSelectorKindAccess().getPREVEnumLiteralDeclaration_3()); 
@@ -8191,7 +8204,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3134:6: (enumLiteral_4= 'next' )
                     // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalActionLanguage.g:3134:8: enumLiteral_4= 'next'
                     {
-                    enumLiteral_4=(Token)match(input,56,FollowSets000.FOLLOW_56_in_rulePositionSelectorKind7194); 
+                    enumLiteral_4=(Token)match(input,56,FollowSets000.FOLLOW_56_in_rulePositionSelectorKind7196); 
 
                             current = grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getPositionSelectorKindAccess().getNEXTEnumLiteralDeclaration_4()); 
@@ -8226,6 +8239,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
 
     protected DFA6 dfa6 = new DFA6(this);
     protected DFA8 dfa8 = new DFA8(this);
+    protected DFA20 dfa20 = new DFA20(this);
     static final String DFA6_eotS =
         "\15\uffff";
     static final String DFA6_eofS =
@@ -8235,25 +8249,23 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     static final String DFA6_maxS =
         "\1\36\1\47\6\uffff\1\70\2\uffff\1\62\1\47";
     static final String DFA6_acceptS =
-        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\1\1\10\2\uffff";
+        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\1\uffff\1\10\1\1\2\uffff";
     static final String DFA6_specialS =
         "\15\uffff}>";
     static final String[] DFA6_transitionS = {
-            "\1\1\12\uffff\1\2\3\uffff\1\3\1\4\1\uffff\1\5\2\uffff\1\6\4"+
-            "\uffff\1\7",
-            "\1\7\13\uffff\1\12\11\uffff\1\10\2\uffff\1\11\5\uffff\5\11",
+            "\1\1\12\uffff\1\2\3\uffff\1\3\1\4\1\uffff\1\5\2\uffff\1\6\4\uffff\1\7",
+            "\1\7\13\uffff\1\11\11\uffff\1\10\2\uffff\1\12\5\uffff\5\12",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\11\1\13\2\11\10\uffff\1\11\20\uffff\1\11\15\uffff\1\11"+
-            "\3\uffff\6\11",
+            "\1\12\1\13\2\12\10\uffff\1\12\20\uffff\1\12\15\uffff\1\12\3\uffff\6\12",
             "",
             "",
-            "\1\14\21\uffff\5\11",
-            "\1\7\25\uffff\1\10\2\uffff\1\11\5\uffff\5\11"
+            "\1\14\21\uffff\5\12",
+            "\1\7\25\uffff\1\10\2\uffff\1\12\5\uffff\5\12"
     };
 
     static final short[] DFA6_eot = DFA.unpackEncodedString(DFA6_eotS);
@@ -8290,44 +8302,27 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         }
     }
     static final String DFA8_eotS =
-        "\21\uffff";
+        "\12\uffff";
     static final String DFA8_eofS =
-        "\2\uffff\1\3\4\uffff\1\3\1\uffff\1\3\5\uffff\1\20\1\uffff";
+        "\2\uffff\1\3\2\uffff\1\3\2\uffff\1\11\1\uffff";
     static final String DFA8_minS =
-        "\1\4\1\uffff\1\20\1\uffff\2\4\1\20\1\21\3\4\1\34\1\uffff\1\33\1"+
-        "\22\1\4\1\uffff";
+        "\1\4\1\uffff\1\20\1\uffff\1\4\1\21\1\4\1\33\1\4\1\uffff";
     static final String DFA8_maxS =
-        "\1\70\1\uffff\1\62\1\uffff\2\70\2\62\3\70\1\62\1\uffff\2\62\1\70"+
-        "\1\uffff";
+        "\1\70\1\uffff\1\62\1\uffff\1\70\1\62\1\70\1\62\1\70\1\uffff";
     static final String DFA8_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\10\uffff\1\4\3\uffff\1\2";
+        "\1\uffff\1\1\1\uffff\1\3\5\uffff\1\2";
     static final String DFA8_specialS =
-        "\21\uffff}>";
+        "\12\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\1\2\3\3\10\uffff\1\4\11\uffff\1\1\6\uffff\1\3\15\uffff\1\3"+
-            "\3\uffff\6\3",
+            "\1\2\3\3\10\uffff\1\3\11\uffff\1\1\6\uffff\1\3\15\uffff\1\3\3\uffff\6\3",
             "",
-            "\2\3\10\uffff\3\3\2\uffff\1\5\1\3\1\uffff\4\3\2\uffff\13\3",
+            "\2\3\10\uffff\3\3\2\uffff\1\4\1\3\1\uffff\4\3\2\uffff\13\3",
             "",
-            "\1\6\3\3\10\uffff\1\3\20\uffff\1\3\15\uffff\1\3\3\uffff\6"+
-            "\3",
-            "\1\3\1\7\2\3\10\uffff\1\3\20\uffff\1\3\15\uffff\1\3\3\uffff"+
-            "\6\3",
-            "\1\3\1\uffff\1\11\7\uffff\1\10\4\uffff\2\3\1\uffff\4\3\2\uffff"+
-            "\13\3",
-            "\1\3\11\uffff\1\12\1\3\13\uffff\4\3\2\uffff\5\3",
-            "\1\3\1\13\2\3\10\uffff\1\3\20\uffff\1\3\15\uffff\1\3\3\uffff"+
-            "\6\3",
-            "\4\14\10\uffff\1\14\1\3\11\uffff\2\3\2\uffff\2\3\1\14\6\uffff"+
-            "\13\3\1\uffff\5\14",
-            "\1\3\1\15\2\3\10\uffff\1\3\11\uffff\1\3\6\uffff\1\3\15\uffff"+
-            "\1\3\3\uffff\6\3",
-            "\1\16\21\uffff\5\3",
-            "",
-            "\2\3\2\uffff\1\3\1\17\7\uffff\13\3",
-            "\1\11\7\uffff\1\10\4\uffff\2\3\1\uffff\4\3\2\uffff\13\3",
-            "\4\3\10\uffff\1\3\1\20\11\uffff\2\20\4\uffff\1\3\15\uffff"+
-            "\1\3\3\uffff\6\3",
+            "\1\3\1\5\2\3\10\uffff\1\3\20\uffff\1\3\15\uffff\1\3\3\uffff\6\3",
+            "\1\3\11\uffff\1\6\1\3\13\uffff\4\3\2\uffff\5\3",
+            "\1\3\1\7\2\3\10\uffff\1\3\11\uffff\1\3\6\uffff\1\3\15\uffff\1\3\3\uffff\6\3",
+            "\2\3\2\uffff\1\3\1\10\7\uffff\13\3",
+            "\4\3\10\uffff\1\3\1\11\11\uffff\2\11\4\uffff\1\3\15\uffff\1\3\3\uffff\6\3",
             ""
     };
 
@@ -8361,7 +8356,64 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
             this.transition = DFA8_transition;
         }
         public String getDescription() {
-            return "963:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression | this_TypeCastExpression_3= ruleTypeCastExpression )";
+            return "963:1: (this_ArrayInitializeExpression_0= ruleArrayInitializeExpression | this_NondeterministicChoiceExpression_1= ruleNondeterministicChoiceExpression | this_Expression_2= ruleExpression )";
+        }
+    }
+    static final String DFA20_eotS =
+        "\11\uffff";
+    static final String DFA20_eofS =
+        "\5\uffff\1\2\3\uffff";
+    static final String DFA20_minS =
+        "\2\4\1\uffff\1\20\2\4\1\34\1\uffff\1\22";
+    static final String DFA20_maxS =
+        "\2\70\1\uffff\1\62\2\70\1\62\1\uffff\1\62";
+    static final String DFA20_acceptS =
+        "\2\uffff\1\1\4\uffff\1\2\1\uffff";
+    static final String DFA20_specialS =
+        "\11\uffff}>";
+    static final String[] DFA20_transitionS = {
+            "\4\2\10\uffff\1\1\20\uffff\1\2\22\uffff\5\2",
+            "\1\3\3\2\10\uffff\1\2\20\uffff\1\2\15\uffff\1\2\3\uffff\6\2",
+            "",
+            "\1\2\1\uffff\1\5\7\uffff\1\4\4\uffff\2\2\1\uffff\4\2\2\uffff\13\2",
+            "\1\2\1\6\2\2\10\uffff\1\2\20\uffff\1\2\15\uffff\1\2\3\uffff\6\2",
+            "\4\7\10\uffff\1\7\2\2\2\uffff\1\2\5\uffff\2\2\2\uffff\2\2\1\7\6\uffff\13\2\1\uffff\5\7",
+            "\1\10\21\uffff\5\2",
+            "",
+            "\1\5\7\uffff\1\4\4\uffff\2\2\1\uffff\4\2\2\uffff\13\2"
+    };
+
+    static final short[] DFA20_eot = DFA.unpackEncodedString(DFA20_eotS);
+    static final short[] DFA20_eof = DFA.unpackEncodedString(DFA20_eofS);
+    static final char[] DFA20_min = DFA.unpackEncodedStringToUnsignedChars(DFA20_minS);
+    static final char[] DFA20_max = DFA.unpackEncodedStringToUnsignedChars(DFA20_maxS);
+    static final short[] DFA20_accept = DFA.unpackEncodedString(DFA20_acceptS);
+    static final short[] DFA20_special = DFA.unpackEncodedString(DFA20_specialS);
+    static final short[][] DFA20_transition;
+
+    static {
+        int numStates = DFA20_transitionS.length;
+        DFA20_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA20_transition[i] = DFA.unpackEncodedString(DFA20_transitionS[i]);
+        }
+    }
+
+    class DFA20 extends DFA {
+
+        public DFA20(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 20;
+            this.eot = DFA20_eot;
+            this.eof = DFA20_eof;
+            this.min = DFA20_min;
+            this.max = DFA20_max;
+            this.accept = DFA20_accept;
+            this.special = DFA20_special;
+            this.transition = DFA20_transition;
+        }
+        public String getDescription() {
+            return "2076:1: (this_Operand_0= ruleOperand | ( () otherlv_2= '(' ( ( ruleDATATYPE ) ) otherlv_4= ')' ( (lv_enclosedExpression_5_0= ruleOperand ) ) ) )";
         }
     }
  
@@ -8454,196 +8506,196 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_ruleInitializeExpression2049 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_ruleInitializeExpression2076 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_ruleInitializeExpression2103 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleInitializeExpression2130 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression2165 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression2175 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleArrayInitializeExpression2212 = new BitSet(new long[]{0x01F88002465980F0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2233 = new BitSet(new long[]{0x0000000018000000L});
-        public static final BitSet FOLLOW_27_in_ruleArrayInitializeExpression2246 = new BitSet(new long[]{0x01F88002465980F0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2267 = new BitSet(new long[]{0x0000000018000000L});
-        public static final BitSet FOLLOW_28_in_ruleArrayInitializeExpression2281 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement2317 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement2327 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2374 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2393 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration2431 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration2441 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration2489 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration2506 = new BitSet(new long[]{0x0000000020020000L});
-        public static final BitSet FOLLOW_29_in_ruleLocalVariableDeclaration2524 = new BitSet(new long[]{0x01F88002465980F0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration2545 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_ruleLocalVariableDeclaration2559 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration2595 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLocalConstantDeclaration2605 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_ruleLocalConstantDeclaration2648 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration2684 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration2701 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleLocalConstantDeclaration2718 = new BitSet(new long[]{0x01F88002465980F0L});
-        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration2739 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_17_in_ruleLocalConstantDeclaration2751 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression2787 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression2797 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression2842 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression2863 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRange_in_entryRuleRange2899 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRange2909 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleRange2946 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_ruleLONG_in_ruleRange2967 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_27_in_ruleRange2979 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_ruleLONG_in_ruleRange3000 = new BitSet(new long[]{0x0000000100000000L});
-        public static final BitSet FOLLOW_32_in_ruleRange3012 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLONG_in_entryRuleLONG3049 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLONG3060 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLONG3099 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression3143 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleExpression3153 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalExpression_in_ruleExpression3199 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression3233 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalExpression3243 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression3289 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression3323 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression3333 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3380 = new BitSet(new long[]{0x0000010000000002L});
-        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression3410 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3431 = new BitSet(new long[]{0x0000010000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression3469 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression3479 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3526 = new BitSet(new long[]{0x0000020000000002L});
-        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression3556 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3577 = new BitSet(new long[]{0x0000020000000002L});
-        public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression3615 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression3625 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3672 = new BitSet(new long[]{0x00000C0000000002L});
-        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression3702 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3723 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression3761 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression3771 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3818 = new BitSet(new long[]{0x0000300180000002L});
-        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression3848 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3869 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression3907 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression3917 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression3963 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression3997 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression4007 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4054 = new BitSet(new long[]{0x0000C00000000002L});
-        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression4084 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4105 = new BitSet(new long[]{0x0000C00000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression4143 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression4153 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression4228 = new BitSet(new long[]{0x0007000000000002L});
-        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression4258 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4281 = new BitSet(new long[]{0x0007000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleMultiplicationExpression4300 = new BitSet(new long[]{0x0007000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression4342 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression4352 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression4407 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleUnaryPreExpression4428 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression4464 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTypeCastExpression4474 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_ruleTypeCastExpression4520 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression4543 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleTypeCastExpression4555 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleOperand_in_ruleTypeCastExpression4576 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand4612 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperand4622 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_ruleOperand4660 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleOperand4682 = new BitSet(new long[]{0x0000000000040000L});
-        public static final BitSet FOLLOW_18_in_ruleOperand4693 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand4722 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand4749 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperand4776 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_ruleOperand4803 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand4830 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression4865 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression4875 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteral_in_ruleLiteralExpression4930 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral4967 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleLiteral4978 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_NUMBER_in_ruleLiteral5018 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleLiteral5044 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteral5070 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_ruleLiteral5094 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression5134 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression5144 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression5191 = new BitSet(new long[]{0x0000003400000002L});
-        public static final BitSet FOLLOW_34_in_ruleExtendedTypedNamedElementExpression5213 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression5234 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression5272 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression5311 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTypedNamedElementExpression5321 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression5366 = new BitSet(new long[]{0x0000000804000002L});
-        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression5389 = new BitSet(new long[]{0x0000000804000002L});
-        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression5408 = new BitSet(new long[]{0x0000000804000002L});
-        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression5448 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleArrayIndexExpression5458 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_ruleArrayIndexExpression5495 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression5516 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_28_in_ruleArrayIndexExpression5528 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression5564 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAttributeAccessorExpression5574 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_ruleAttributeAccessorExpression5611 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression5631 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression5667 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression5677 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression5722 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression5757 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression5767 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression5813 = new BitSet(new long[]{0x0000000400000002L});
-        public static final BitSet FOLLOW_34_in_rulePositionSelectorExpression5826 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression5847 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall5885 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall5895 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleOperationCall5940 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_ruleOperationCall5952 = new BitSet(new long[]{0x0000000000040010L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall5974 = new BitSet(new long[]{0x0000000008040000L});
-        public static final BitSet FOLLOW_27_in_ruleOperationCall5987 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall6008 = new BitSet(new long[]{0x0000000008040000L});
-        public static final BitSet FOLLOW_18_in_ruleOperationCall6024 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding6060 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleParamaterBinding6070 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleParamaterBinding6124 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleParamaterBinding6136 = new BitSet(new long[]{0x01F88002425980F0L});
-        public static final BitSet FOLLOW_ruleExpression_in_ruleParamaterBinding6157 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression6193 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression6203 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6248 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_34_in_ruleTriggerMessageExpression6260 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6280 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE6317 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDATATYPE6328 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleDATATYPE6368 = new BitSet(new long[]{0x0000000004000002L});
-        public static final BitSet FOLLOW_26_in_ruleDATATYPE6387 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleDATATYPE6402 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_28_in_ruleDATATYPE6420 = new BitSet(new long[]{0x0000000004000002L});
-        public static final BitSet FOLLOW_36_in_ruleUnaryPostIncrementDecrementOperator6476 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleUnaryPostIncrementDecrementOperator6493 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_ruleIncrementDecrementOperatorExpression6538 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_ruleIncrementDecrementOperatorExpression6555 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_ruleAssignOperator6600 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_38_in_ruleAssignOperator6617 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_39_in_ruleAssignOperator6634 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_ruleLogicalOrOperator6678 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_ruleLogicalAndOperator6721 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_ruleComparingEQNEQOperator6765 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_43_in_ruleComparingEQNEQOperator6782 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleComparingRelOperator6827 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_ruleComparingRelOperator6844 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_ruleComparingRelOperator6861 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleComparingRelOperator6878 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_ruleAdditionOperator6923 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleAdditionOperator6940 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_ruleMultiplicationOperator6985 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_ruleMultiplicationOperator7002 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_ruleMultiplicationOperator7019 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_ruleUnaryPreOperator7064 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_ruleUnaryPreOperator7081 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_rulePositionSelectorKind7126 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_rulePositionSelectorKind7143 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_rulePositionSelectorKind7160 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_rulePositionSelectorKind7177 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_56_in_rulePositionSelectorKind7194 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArrayInitializeExpression_in_entryRuleArrayInitializeExpression2138 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArrayInitializeExpression2148 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleArrayInitializeExpression2185 = new BitSet(new long[]{0x01F88002465980F0L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2206 = new BitSet(new long[]{0x0000000018000000L});
+        public static final BitSet FOLLOW_27_in_ruleArrayInitializeExpression2219 = new BitSet(new long[]{0x01F88002465980F0L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleArrayInitializeExpression2240 = new BitSet(new long[]{0x0000000018000000L});
+        public static final BitSet FOLLOW_28_in_ruleArrayInitializeExpression2254 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableOrConstantDeclarationStatement_in_entryRuleLocalVariableOrConstantDeclarationStatement2290 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableOrConstantDeclarationStatement2300 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2347 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_ruleLocalVariableOrConstantDeclarationStatement2366 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalVariableDeclaration_in_entryRuleLocalVariableDeclaration2404 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalVariableDeclaration2414 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalVariableDeclaration2462 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalVariableDeclaration2479 = new BitSet(new long[]{0x0000000020020000L});
+        public static final BitSet FOLLOW_29_in_ruleLocalVariableDeclaration2497 = new BitSet(new long[]{0x01F88002465980F0L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalVariableDeclaration2518 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_17_in_ruleLocalVariableDeclaration2532 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLocalConstantDeclaration_in_entryRuleLocalConstantDeclaration2568 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLocalConstantDeclaration2578 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_ruleLocalConstantDeclaration2621 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleLocalConstantDeclaration2657 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleLocalConstantDeclaration2674 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_29_in_ruleLocalConstantDeclaration2691 = new BitSet(new long[]{0x01F88002465980F0L});
+        public static final BitSet FOLLOW_ruleInitializeExpression_in_ruleLocalConstantDeclaration2712 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_17_in_ruleLocalConstantDeclaration2724 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNondeterministicChoiceExpression_in_entryRuleNondeterministicChoiceExpression2760 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNondeterministicChoiceExpression2770 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleNondeterministicChoiceExpression2815 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_ruleRange_in_ruleNondeterministicChoiceExpression2836 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRange_in_entryRuleRange2872 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRange2882 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleRange2919 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_ruleLONG_in_ruleRange2940 = new BitSet(new long[]{0x0000000008000000L});
+        public static final BitSet FOLLOW_27_in_ruleRange2952 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_ruleLONG_in_ruleRange2973 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_32_in_ruleRange2985 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLONG_in_entryRuleLONG3022 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLONG3033 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLONG3072 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpression_in_entryRuleExpression3116 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleExpression3126 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalExpression_in_ruleExpression3172 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalExpression_in_entryRuleLogicalExpression3206 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalExpression3216 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_ruleLogicalExpression3262 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrExpression_in_entryRuleLogicalOrExpression3296 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalOrExpression3306 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3353 = new BitSet(new long[]{0x0000010000000002L});
+        public static final BitSet FOLLOW_ruleLogicalOrOperator_in_ruleLogicalOrExpression3383 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_ruleLogicalOrExpression3404 = new BitSet(new long[]{0x0000010000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndExpression_in_entryRuleLogicalAndExpression3442 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLogicalAndExpression3452 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3499 = new BitSet(new long[]{0x0000020000000002L});
+        public static final BitSet FOLLOW_ruleLogicalAndOperator_in_ruleLogicalAndExpression3529 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_ruleLogicalAndExpression3550 = new BitSet(new long[]{0x0000020000000002L});
+        public static final BitSet FOLLOW_ruleComparisonExpression_in_entryRuleComparisonExpression3588 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonExpression3598 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3645 = new BitSet(new long[]{0x00000C0000000002L});
+        public static final BitSet FOLLOW_ruleComparingEQNEQOperator_in_ruleComparisonExpression3675 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_ruleComparisonExpression3696 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonHigherOpExpression_in_entryRuleComparisonHigherOpExpression3734 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleComparisonHigherOpExpression3744 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3791 = new BitSet(new long[]{0x0000300180000002L});
+        public static final BitSet FOLLOW_ruleComparingRelOperator_in_ruleComparisonHigherOpExpression3821 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleComparisonHigherOpExpression3842 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_entryRuleArithmeticExpression3880 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArithmeticExpression3890 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionExpression_in_ruleArithmeticExpression3936 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAdditionExpression_in_entryRuleAdditionExpression3970 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAdditionExpression3980 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4027 = new BitSet(new long[]{0x0000C00000000002L});
+        public static final BitSet FOLLOW_ruleAdditionOperator_in_ruleAdditionExpression4057 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_ruleAdditionExpression4078 = new BitSet(new long[]{0x0000C00000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationExpression_in_entryRuleMultiplicationExpression4116 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleMultiplicationExpression4126 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4173 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleMultiplicationExpression4201 = new BitSet(new long[]{0x0007000000000002L});
+        public static final BitSet FOLLOW_ruleMultiplicationOperator_in_ruleMultiplicationExpression4231 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_ruleMultiplicationExpression4254 = new BitSet(new long[]{0x0007000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleMultiplicationExpression4273 = new BitSet(new long[]{0x0007000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreExpression_in_entryRuleUnaryPreExpression4315 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleUnaryPreExpression4325 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleUnaryPreOperator_in_ruleUnaryPreExpression4380 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_ruleUnaryPreExpression4401 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypeCastExpression_in_entryRuleTypeCastExpression4437 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTypeCastExpression4447 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleTypeCastExpression4494 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_ruleTypeCastExpression4521 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_ruleTypeCastExpression4544 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_ruleTypeCastExpression4556 = new BitSet(new long[]{0x01F00002425980F0L});
+        public static final BitSet FOLLOW_ruleOperand_in_ruleTypeCastExpression4577 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperand_in_entryRuleOperand4614 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperand4624 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_ruleOperand4662 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleOperand4684 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_ruleOperand4695 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_ruleOperand4724 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_ruleOperand4751 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_ruleOperand4778 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_ruleOperand4805 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_ruleOperand4832 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteralExpression_in_entryRuleLiteralExpression4867 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteralExpression4877 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteral_in_ruleLiteralExpression4932 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral4969 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleLiteral4980 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_NUMBER_in_ruleLiteral5020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleLiteral5046 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleLiteral5072 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_ruleLiteral5096 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExtendedTypedNamedElementExpression_in_entryRuleExtendedTypedNamedElementExpression5136 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleExtendedTypedNamedElementExpression5146 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_ruleExtendedTypedNamedElementExpression5193 = new BitSet(new long[]{0x0000003400000002L});
+        public static final BitSet FOLLOW_34_in_ruleExtendedTypedNamedElementExpression5215 = new BitSet(new long[]{0x01F00002425980F0L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleExtendedTypedNamedElementExpression5236 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleIncrementDecrementOperatorExpression_in_ruleExtendedTypedNamedElementExpression5274 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTypedNamedElementExpression_in_entryRuleTypedNamedElementExpression5313 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTypedNamedElementExpression5323 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTypedNamedElementExpression5368 = new BitSet(new long[]{0x0000000804000002L});
+        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_ruleTypedNamedElementExpression5391 = new BitSet(new long[]{0x0000000804000002L});
+        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_ruleTypedNamedElementExpression5410 = new BitSet(new long[]{0x0000000804000002L});
+        public static final BitSet FOLLOW_ruleArrayIndexExpression_in_entryRuleArrayIndexExpression5450 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleArrayIndexExpression5460 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleArrayIndexExpression5497 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleArithmeticExpression_in_ruleArrayIndexExpression5518 = new BitSet(new long[]{0x0000000010000000L});
+        public static final BitSet FOLLOW_28_in_ruleArrayIndexExpression5530 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAttributeAccessorExpression_in_entryRuleAttributeAccessorExpression5566 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAttributeAccessorExpression5576 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_ruleAttributeAccessorExpression5613 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleAttributeAccessorExpression5633 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNoAttributeSelectorExpression_in_entryRuleNoAttributeSelectorExpression5669 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleNoAttributeSelectorExpression5679 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_ruleNoAttributeSelectorExpression5724 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_entryRulePositionSelectorExpression5759 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePositionSelectorExpression5769 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePositionSelectorKind_in_rulePositionSelectorExpression5815 = new BitSet(new long[]{0x0000000400000002L});
+        public static final BitSet FOLLOW_34_in_rulePositionSelectorExpression5828 = new BitSet(new long[]{0x01F00002425980F0L});
+        public static final BitSet FOLLOW_rulePositionSelectorExpression_in_rulePositionSelectorExpression5849 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOperationCall_in_entryRuleOperationCall5887 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleOperationCall5897 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleOperationCall5942 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_16_in_ruleOperationCall5954 = new BitSet(new long[]{0x0000000000040010L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall5976 = new BitSet(new long[]{0x0000000008040000L});
+        public static final BitSet FOLLOW_27_in_ruleOperationCall5989 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_ruleOperationCall6010 = new BitSet(new long[]{0x0000000008040000L});
+        public static final BitSet FOLLOW_18_in_ruleOperationCall6026 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleParamaterBinding_in_entryRuleParamaterBinding6062 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleParamaterBinding6072 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleParamaterBinding6126 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_29_in_ruleParamaterBinding6138 = new BitSet(new long[]{0x01F88002425980F0L});
+        public static final BitSet FOLLOW_ruleExpression_in_ruleParamaterBinding6159 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTriggerMessageExpression_in_entryRuleTriggerMessageExpression6195 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleTriggerMessageExpression6205 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6250 = new BitSet(new long[]{0x0000000400000000L});
+        public static final BitSet FOLLOW_34_in_ruleTriggerMessageExpression6262 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleTriggerMessageExpression6282 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDATATYPE_in_entryRuleDATATYPE6319 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDATATYPE6330 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleDATATYPE6370 = new BitSet(new long[]{0x0000000004000002L});
+        public static final BitSet FOLLOW_26_in_ruleDATATYPE6389 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleDATATYPE6404 = new BitSet(new long[]{0x0000000010000000L});
+        public static final BitSet FOLLOW_28_in_ruleDATATYPE6422 = new BitSet(new long[]{0x0000000004000002L});
+        public static final BitSet FOLLOW_36_in_ruleUnaryPostIncrementDecrementOperator6478 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleUnaryPostIncrementDecrementOperator6495 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_ruleIncrementDecrementOperatorExpression6540 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_ruleIncrementDecrementOperatorExpression6557 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_ruleAssignOperator6602 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_ruleAssignOperator6619 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_39_in_ruleAssignOperator6636 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_ruleLogicalOrOperator6680 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_ruleLogicalAndOperator6723 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_ruleComparingEQNEQOperator6767 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_ruleComparingEQNEQOperator6784 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleComparingRelOperator6829 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_44_in_ruleComparingRelOperator6846 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_ruleComparingRelOperator6863 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_ruleComparingRelOperator6880 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_ruleAdditionOperator6925 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleAdditionOperator6942 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_48_in_ruleMultiplicationOperator6987 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_ruleMultiplicationOperator7004 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_ruleMultiplicationOperator7021 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_51_in_ruleUnaryPreOperator7066 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_ruleUnaryPreOperator7083 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_rulePositionSelectorKind7128 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_rulePositionSelectorKind7145 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_rulePositionSelectorKind7162 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_rulePositionSelectorKind7179 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_rulePositionSelectorKind7196 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 
