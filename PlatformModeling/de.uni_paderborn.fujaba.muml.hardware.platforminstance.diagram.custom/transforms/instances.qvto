@@ -21,7 +21,7 @@ modeltype HWValueTypePackage uses hardware::hwvaluetype('http://www.fujaba.de/mu
 main() {
 	log("QVT-O Script \"PlatformInstanceTransformation.qvto\" started.");
 		hwplatformInstanceConfig.rootObjects()[HWPlatformInstanceConfiguration]->forEach(pi){
-		pi.hwplatformInstances+=platform.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0",null);
+		pi.hwplatformInstances+=platform.rootObjects()[HWPlatform]->map createHWPlatformInstance(".0",pi);
 		//pi.hwplatformType->map createHWPlatformInstance(".0",null);
 	};
 }
@@ -33,7 +33,7 @@ main() {
 //create a HWPlatformInstance derived from a HWPlatform
 //the number is used to distinguish between multiple instances of the same HWPlatform
 mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformInstanceConfiguration):HWPlatformInstance{
-	result.name:=self.name+number.toString();
+	result.name:=self.name;//+number.toString();
 	result.hwplatformType:=self;
 	//result.parentOfPlatformInstance:=parent;
 	result.parentHPIC:=parent;
@@ -41,11 +41,11 @@ mapping HWPlatform::createHWPlatformInstance(number:String, parent:HWPlatformIns
 	
 	result.embeddedHPIC:=new HWPlatformInstanceConfiguration();
 	//create the embedded CommunicationMedia	
-	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardware->map createNetworkingResourceInstance(number)->asOrderedSet();
+	result.embeddedHPIC.networkingHardwareInstances+=self.networkingHardware->map createNetworkingResourceInstance(number, result.embeddedHPIC)->asOrderedSet();
 	result.embeddedHPIC.networkConnectorInstances+=self.networkConnectors->map mapNetworkConnector2NetworkConnectorInstance();
 	//create the delegation ports
 	
-	result.delegationPorts:=self.delegationPorts->map createDelegationHWPortInstance(number);
+	result.delegationPorts:=self.delegationPorts->map createDelegationHWPortInstance(number, result);
 	
 	//create the embedded ResourceInstances
 	var instances:Set(ResourceInstance);
@@ -93,7 +93,7 @@ query HWPlatformPart::HWPlatformPart2HWPlatformInstance(number:String,parent:HWP
 	lowerBound:=InitValue(self);
 	while(lowerBound>0){
 			log("create embedded HWPlatformInstance for:"+self.eClass().name +", Name:" +self.name+", Parent is"+self.parentHWPlatform.name);
-			instances+=self.hwplatformType->map createHWPlatformInstance(number+"."+lowerBound.toString(),parent);
+			instances+=self.hwplatformType.map createHWPlatformInstance(number+"."+lowerBound.toString(),parent);
 			lowerBound:=lowerBound-1;
 			};
 	return instances;
@@ -191,40 +191,42 @@ helper Delegation::createDelegation(number:String, inout parent:HWPlatformInstan
 
 
 //creates a CommunicationMedia
-mapping NetworkingHardware::createNetworkingResourceInstance(number:String):NetworkingHardwareInstance
+mapping NetworkingHardware::createNetworkingResourceInstance(number:String, parentHPIC: HWPlatformInstanceConfiguration):NetworkingHardwareInstance
 disjuncts Bus::createBusInstance, NetworkBridge::createBridgeInstance{}
 //	result.comment:=self.comment+number;
 	//result.bandwidth:=self.bandwidth.deepclone().oclAsType(DataRate);
 	//result.protocol:=self.protocol;
 	//result.isSerial:=self.isSerial;
 	//result.dataFrameSize:=self.dataFrameSize.deepclone().oclAsType(DataSize);
+//	result.
 
 
 
 mapping NetworkConnector::mapNetworkConnector2NetworkConnectorInstance():NetworkConnectorInstance{
   	type:=self;
 	comment:=self.comment;
-	connectorEndpointInstances:=self.late resolve(muml::connector::ConnectorEndpointInstance);
+	connectorEndpointInstances:=self.connectorEndpoints.late resolve(muml::connector::ConnectorEndpointInstance);
 	}
 	
 	
-mapping NetworkBridge::createBridgeInstance(number:String):NetworkBridgeInstance{
+mapping NetworkBridge::createBridgeInstance(number:String, parent:HWPlatformInstanceConfiguration):NetworkBridgeInstance{
 	type:=self;
 	comment:=self.comment+number;	 
 	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
+	name:="Bridge";
 	}
 	
 
 	
-mapping Bus::createBusInstance(number:String):BusInstance{
+mapping Bus::createBusInstance(number:String, parent:HWPlatformInstanceConfiguration):BusInstance{
 	type:=self;
 	result.comment:=self.comment+number;
-//	communicationMediaPart	:=self; 	
-	//connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);	 
+	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);	 
+	name:="Bus";
 	}	
 	
 
-mapping DelegationHWPort::createDelegationHWPortInstance(number:String):DelegationHWPortInstance{
+mapping DelegationHWPort::createDelegationHWPortInstance(number:String, parent:HWPlatformInstance):DelegationHWPortInstance{
 	type:=self;
 	name:=self.comment+number;
 	connectorInstances:=self.connectors.late resolve(muml::connector::ConnectorInstance);
@@ -241,14 +243,17 @@ query NaturalNumber::toInteger() : Integer {
 //just for test purpose
 configuration property initVector : Dict(String,Integer);
 			
-		
+constructor HWPlatformInstanceConfiguration::HWPlatformInstanceConfiguration() {
+	
+}
 	
 query InitValue(part:PlatformPart) : Integer {
 if(initVector->hasKey(part.name)) then{
-	return initVector->get(part.name);
+		return initVector->get(part.name);
 	}
 else{
-	return part.cardinality.lowerBound.toInteger();
-}endif;
+		return part.cardinality.lowerBound.toInteger();
+	}endif;
+	return 0;
 }
  

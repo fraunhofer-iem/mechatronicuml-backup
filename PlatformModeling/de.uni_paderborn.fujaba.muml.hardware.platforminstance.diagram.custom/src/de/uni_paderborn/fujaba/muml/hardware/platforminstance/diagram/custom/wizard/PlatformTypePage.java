@@ -20,16 +20,16 @@ import org.eclipse.jface.viewers.ComboBoxCellEditor;
 import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.m2m.qvt.oml.util.Dictionary;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.layout.RowData;
-import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
@@ -83,11 +83,11 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		final Composite composite = new Composite(parent, SWT.NULL);
 
 		// create the desired layout for this wizard page
-		RowLayout gl = new RowLayout();
-		gl.wrap = true;
-		gl.pack = true;
-		gl.justify = true;
-		int ncol = 2;
+		GridLayout gl = new GridLayout();
+		gl.numColumns = 2;
+//		gl.wrap = true;
+//		gl.pack = true;
+//		gl.justify = true;
 		// gl.numColumns = ncol;
 		composite.setLayout(gl);
 
@@ -97,12 +97,30 @@ public class PlatformTypePage extends WizardPage implements Listener {
 		// space it will occupy
 		// gd.horizontalAlignment = GridData.BEGINNING;
 		// The HWPlatform to initialize
-		Label label1 = new Label(composite, SWT.NONE);
-		label1.setText("Platform Type:");
+		GridData gridData = new GridData();
+		gridData.horizontalAlignment=GridData.FILL;
+		gridData.widthHint=300;
+		gridData.heightHint=300;
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.grabExcessVerticalSpace = true;
+		
+		FillLayout filllayout=new FillLayout();
+		filllayout.type=SWT.FILL;
+		
+		Group group1 = new Group(composite, SWT.NONE);
+		group1.setText("Platform Type:");
+		group1.setLayoutData(gridData);
+		group1.setLayout(filllayout);
+		
+//		Label label1 = new Label(goup1, SWT.PUSH);
+//		label1.setText("Platform Type:");
+		
 
-		final List list = new List(composite, SWT.BORDER | SWT.SINGLE
+	//	label1.setLayoutData(gridData);
+
+		final List list = new List(group1, SWT.BORDER | SWT.SINGLE
 				| SWT.V_SCROLL);
-		list.setLayoutData(new RowData(100, 150));
+		list.setLayoutData(gridData);
 		for (Object item : availableHWPlatforms) {
 			if (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage.Literals.HW_PLATFORM
 					.isSuperTypeOf(((EObject) item).eClass())) {
@@ -120,16 +138,24 @@ public class PlatformTypePage extends WizardPage implements Listener {
 
 			}
 		});
-
-		viewer = new TableViewer(composite, SWT.MULTI | SWT.H_SCROLL
+		list.pack();
+		
+		Group group2 = new Group(composite, SWT.NONE);
+		group2.setText("Instances:");
+		group2.setLayoutData(gridData);
+		group2.setLayout(filllayout);
+		
+		viewer = new TableViewer(group2, SWT.MULTI | SWT.H_SCROLL
 				| SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
 		createColumns(composite, viewer);
 		viewer.setContentProvider(new ArrayContentProvider());
 		final Table table = viewer.getTable();
-		table.setLayoutData(new RowData(300, 200));
+	//	table.setLayoutData(gridData);
 		table.setLinesVisible(true);
 		table.setHeaderVisible(true);
 		// table.setBounds(clientArea.x + 120, clientArea.y + 120, 200, 400);
+		table.pack();
+		
 		setControl(composite);
 		// addListeners();
 	}

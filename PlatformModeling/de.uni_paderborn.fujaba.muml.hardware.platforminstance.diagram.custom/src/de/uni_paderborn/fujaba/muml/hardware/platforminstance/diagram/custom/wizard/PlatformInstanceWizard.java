@@ -49,17 +49,17 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 		platformTypePage = new PlatformTypePage(null, true);
 		addPage(platformTypePage);
 	}
-	
-
 
 	@Override
 	public IWizardPage getNextPage(IWizardPage page) {
 		// TODO Auto-generated method stub
-		if(page instanceof PlatformTypePage && ((PlatformTypePage) page).neddFurtherPage()){
-			IWizardPage nextPage = new PlatformTypePage(((PlatformTypePage) page).getFollowUpPlatforms(), false);
+		if (page instanceof PlatformTypePage
+				&& ((PlatformTypePage) page).neddFurtherPage()) {
+			IWizardPage nextPage = new PlatformTypePage(
+					((PlatformTypePage) page).getFollowUpPlatforms(), false);
 			addPage(nextPage);
-			//nextPage.setVisible(true);
-			
+			// nextPage.setVisible(true);
+
 		}
 		return super.getNextPage(page);
 	}
@@ -99,8 +99,14 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 
 	@Override
 	public boolean performFinish() {
-		
-		platformTypePage.saveDataToModel();
+
+		for (IWizardPage page : this.getPages()) {
+			if (page instanceof PlatformTypePage) {
+				((PlatformTypePage) page).saveDataToModel();
+			}
+		}
+
+		// platformTypePage.saveDataToModel();
 
 		executeTransformation();
 
