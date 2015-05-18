@@ -207,7 +207,7 @@ public class PlatformTypePage extends WizardPage implements Listener {
 				if (p instanceof HWPlatformPart
 						&& (p.getCardinality()
 								.getLowerBound().getValue() + positionInList) >= 1) {
-					followUpPlatforms.add(p);
+					followUpPlatforms.add(((HWPlatformPart)p).getHwplatformType());
 				//	getNextPage();
 					getWizard().getContainer().updateButtons();
 				}
