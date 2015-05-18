@@ -15,6 +15,7 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 property unicastDLCName : String = "DLC_unicast";
 property multicastDLCName : String = "DLC_multicast";
+property singleReceiveDLCName : String = "DLC_singleReceive";
 property multicastSubRoleSpecificVariableName : String = "sendMulticast";
 property clockIndex : Integer =0;
 
@@ -26,12 +27,33 @@ mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String):
 	result.dataType := new PrimitiveDataType();
 	result.dataType.oclAsType(PrimitiveDataType).primitiveType:=PrimitiveTypes::BOOLEAN;
 }
+
+//property dict : Dict(muml::realtimestatechart::Transition, Integer);
+//helper getDLC_ClockIndexForTransition(transition: muml::realtimestatechart::Transition) : Integer
+//{
+	//dict->hasKey(transition);
+	//dict->get(transition);
+	//dict->put(transition,1);
+	//if(dict->hasKey(transition))
+	
+//}
+
+// @author: sthiele2 -- creates an intermediate state in the subrole region
+mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:OclAny, stateID : Integer) : State {
+	
+		name := self.source.name + "_Intermediate_"+ stateID.toString()+ "_" + self.target.name  ;
+				
+		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);			
+					
+	}
+	
+//@author: sthiele2 -- creates a clock for in order to disassamble a deadline at a schema-specifying-transition
 mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : String) : Clock
-{
-	clockIndex := clockIndex+1;
+{	
 	result.name := clockName +"_".concat(clockIndex.toString());
 }	
 
+//@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
 mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: OclAny, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 {
 		if(mapLowerBound)
@@ -275,7 +297,17 @@ mapping Transition :: TransferSchemata2TypedNamedElementExpr(context:OclAny, var
 					
 	}
 	
-
+// @author: sthiele2
+mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region: OclAny, intermediateStateNumber : Integer, clockName : String) : State
+{
+	// creates an intermediate state in the coordinator region
+	if(not self.relativeDeadline.oclIsUndefined())
+	{
+		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
+	}endif;
+	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region);	
+	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name ;
+}
 	
 mapping RealtimeStatechart :: TransferSchemata2Variable(context:OclAny, varName:String) : Variable {
 		name := varName;

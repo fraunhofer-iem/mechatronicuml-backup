@@ -111,7 +111,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		
 		if(not self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->isEmpty()){
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "singleReceivePossible");
+			var newVar : Variable := self.map TransferSchemata2Variable(self, "consumeSingleReceive");
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
@@ -177,17 +177,22 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny
 		
 		
 		// @author: sthiele2 -- add clocks for the implementation of the relative deadlines
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
-		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map TransitionDeadline2CoordinatorDeadlineClock(multicastDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map TransitionDeadline2CoordinatorDeadlineClock(multicastDLCName);
+		clocks += self.transitions->select(t|(not t.relativeDeadline.oclIsUndefined()) and (not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map TransitionDeadline2CoordinatorDeadlineClock(singleReceiveDLCName);
 		
+		
+		 
 		--transition with MultiReceive
 		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive) and (t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map MultiReceive2TransSendSyncCoordinator(context, region, false);
 		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map MultiReceive2TransSendSyncCoordinator(context, region, true);
 		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2TransReceiveSyncCoordinator(context, region);
 	
 		--transition with singleReceive
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransSendSyncCoordinator(context, region);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransReceiveSyncCoordinator(context, region);
+		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromSourceToIntermediate1(context, region);
+		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromIntermediate1ToIntermediate2(context,region);
+		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromIntermediate2ToTarget(context,region);
+		
 		
 		--transition with iterate not conditional
 		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate)).map Iterate2TransSendSyncCoordinator(context, region);
@@ -213,10 +218,7 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny) : 
 			variables += self.map TransferSchemata2Variable(self, "sendUnicast");
 		}endif;
 		
-		if(not self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->isEmpty()){
-			variables += self.map TransferSchemata2Variable(self, "consumeSingleReceive");
-		}endif;
+	
 		
 		--transitions without message
 		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionSubrole(context, region);
@@ -291,22 +293,30 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:OclAny) : State
 		
 		
 		// @author: sthiele2 -- add clock resets for the source states of schema transitions 
-		self.outgoingTransitions->select(t|(not t.relativeDeadline.oclIsUndefined())and(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast))->forEach(t){
+		self.outgoingTransitions->select(t|(not t.relativeDeadline.oclIsUndefined())and ((not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+		or (not t.triggerMessageEvent.oclIsUndefined() and not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())
+		 ))->forEach(t){
 			if(entryEvent.oclIsUndefined())
 			{
 				entryEvent :=  new EntryEvent();
 				entryEvent.kind := EventKind::RAISE;
 			}; 
-			entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
-		};
-		self.outgoingTransitions->select(t|(not t.relativeDeadline.oclIsUndefined())and(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast))->forEach(t){
-			if(entryEvent.oclIsUndefined())
+			var raiseSchema : OneToManyCommunicationSchema := t.raiseMessageEvent.oneToManyCommunicationSchema;
+			if(raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast))  
 			{
-				entryEvent :=  new EntryEvent();
-				entryEvent.kind := EventKind::RAISE;
-			}; 
-			entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(multicastDLCName);
+				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+			}
+			else if (raiseSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast))
+			{
+				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(unicastDLCName);
+			};
+			var triggerSchema : OneToManyCommunicationSchema := t.triggerMessageEvent.oneToManyCommunicationSchema;
+			if(triggerSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))
+			{
+				entryEvent.clockResets += t.map TransitionDeadline2CoordinatorDeadlineClock(singleReceiveDLCName)
+			}
 		};
+		
 		
 		exitEvent := self.exitEvent.map ExitEvent2ExitEventCoordinator(context, region);
 		
