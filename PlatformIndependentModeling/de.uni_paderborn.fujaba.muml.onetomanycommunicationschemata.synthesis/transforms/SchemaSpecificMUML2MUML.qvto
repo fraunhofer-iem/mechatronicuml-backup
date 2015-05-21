@@ -286,6 +286,7 @@ mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, regio
 		operator := self.operator;
 		
 		bound := self.bound.map TimeValue2TimeValue(context, region);
+		
 	}
 	
 mapping TimeValue :: TimeValue2TimeValue(context:OclAny, region:OclAny) : TimeValue {
