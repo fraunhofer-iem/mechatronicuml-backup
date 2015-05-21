@@ -117,33 +117,20 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 	
 --------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
 	
-mapping Transition :: SingleReceive2TransSendSyncFirstSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+// @author: sthiele2 -- this mapping generates the transition from the source of the schema-transition to an intermediate state
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
 
-		priority := (self.priority-1)*2+2;
+		priority := (self.priority);
 		
 		source := self.source.map Vertex2VertexSubrole(context, region);
 		
-		target := self.map SingleReceive2StateSubrole(context, region, toplevel);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "singleReceive", true, 5);
-		
-		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();	
-		
-		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
-		
-		guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"consumeSingleReceive", "singleReceivePossible", false, 3);
-		
-		if(self.action.oclIsUndefined()){
-			action := self.map TransferSchemata2Action(context, "consumeSingleReceive:=false", "consumeSingleReceive", "false", 1)
-		}else{
-			action := self.map TransferSchemata2TwoActionsTransAct(context, "consumeSingleReceive:=false", "consumeSingleReceive", "false", 1);
-		}endif;
-					
+		target := self.map Schema2SubroleIntermediateState(context,region,1);
+	
+		guard :=self.map TransferSchemata2TypedNamedElementExpr(context, "consumeSingleReceive", 1);
 	}
 	
-mapping Transition :: SingleReceive2TransReceiveSyncNotLastSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+// @author sthiele2 -- one of the transitions from intermediate state to receive state in the subrole-region
+mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
 	
 		priority := 2;
 		
@@ -156,8 +143,9 @@ mapping Transition :: SingleReceive2TransReceiveSyncNotLastSubrole(context:OclAn
 		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 4);
 					
 	}
-			
-mapping Transition :: SingleReceive2TransReceiveSyncLastSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+	
+// @author sthiele2 -- one of the transitions from intermediate state to receive state in the subrole-region			
+mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
 	
 		priority := 1;
 		
@@ -180,18 +168,17 @@ mapping Transition :: SingleReceive2SourceRegionSubrole(context:OclAny, region:O
 		embeddedStatechart := self.map SingleReceive2SourceEmbeddedRTSCSubrole(context, region);
 					
 	}
-	
+
+// @author: sthiele2 -- creates the embedded rtsc of the schema transition's source node in the subrole region	
 mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, region:OclAny) : RealtimeStatechart {
 		
 		name:= "singleReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
 		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requested", false);
-		
-		transitions += self.map SingleReceive2RequestedIdleCheckSubrole(context, region);
-		transitions += self.map SingleReceive2RequestedIdleCheckDoneLastSubrole(context, region);
-		transitions += self.map SingleReceive2RequestedIdleCheckDonePossibleSubrole(context, region);
-		transitions += self.map SingleReceive2TransitionFromIdleToRequested(context,region);					
+		states += self.map RegionState(context, region, "Requested", false);	
+		transitions += self.map SingleReceive2Transition1FromRequestedToIdle(context,region);
+		transitions += self.map SingleReceive2TransitionFromIdleToRequested(context,region);
+		transitions += self.map SingleReceive2Transition2FromRequestedToIdle(context,region);					
 	}
 	
 mapping Transition :: SingleReceive2RequestedIdleCheckSubrole(context:OclAny, region:OclAny) : Transition {
@@ -216,9 +203,22 @@ mapping Transition :: SingleReceive2Transition1FromRequestedToIdle(context:OclAn
 		
 		target := self.map RegionState(context, region, "Idle", true);
 		
-		guard := self.map SingleReceiveLastAndPossibleExpression(context,region,"consumeSingleReceive",false, 1)
+		guard := self.map SingleReceiveLastAndPossibleExpression(context,region,"consumeSingleReceive",true, 1);
 		
 		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "singleReceiveCheckDone", false, 8);
+					
+	}
+mapping Transition :: SingleReceive2Transition2FromRequestedToIdle(context:OclAny, region:OclAny) : Transition {
+	
+		priority := 1;
+				
+		source := self.map RegionState(context, region, "Requested", false);
+		
+		target := self.map RegionState(context, region, "Idle", true);
+		
+		guard := self.map SingleReceiveNotLastAndPossibleExpression(context,region,"consumeSingleReceive",true, 1);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "singleReceive", true, 8);
 					
 	}
 	
@@ -250,21 +250,7 @@ mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny
 					
 	}
 	
-mapping Transition :: SingleReceive2TransSendSyncNotConditionSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
-		
-		source := self.source.map Vertex2VertexSubrole(context, region);
-		
-		target := self.map SingleReceive2StateSubrole(context, region, toplevel);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "singleReceive", true, 12);--error
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-				
-		guard := self.map TransferSchemaSingleSendAndPossibleGuard(context, 4, region,"consumeSingleReceive", "singleReceivePossible", true, 11);
-		
-		priority := (self.priority-1)*2+1;
-		
-	}
+
 	
 mapping Transition :: SingleReceiveNotLastAndPossibleExpression(context:OclAny, region:OclAny, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
