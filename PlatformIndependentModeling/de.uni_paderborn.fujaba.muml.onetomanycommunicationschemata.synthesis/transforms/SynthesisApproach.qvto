@@ -26,12 +26,12 @@ property currentRealtimeStatechart : RealtimeStatechart;
 main() {	
 
 // debug:
-	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
-	currentRealtimeStatechart.map RTSC2RTSC();
+//	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
+//	currentRealtimeStatechart.map RTSC2RTSC();
 	 	
 // not debug:
-	//currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
-	//currentRealtimeStatechart.map RTSC2RTSC();
+	currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
+	currentRealtimeStatechart.map RTSC2RTSC();
 	
 }
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
