@@ -74,11 +74,11 @@ query TemplateDeclaration :: getInstanceID() : Integer{
 	var templateTuple : Tuple(template : Template, arguments : Sequence(Integer), parameters : Sequence(uppaal::declarations::Parameter)) := getConcreteTemplateAndArguments(self.declaredTemplate);
 	
 	//Get the Parameter expressing the instance id
-	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.container.elements->selectByKind(uppaal::core::NamedElement)->first().name = discreteSubPortInstanceID)->first();
+	var idParameter : uppaal::declarations::Parameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = discreteSubPortInstanceID)->first();
 	if(idParameter.oclIsUndefined())
-		idParameter := templateTuple.parameters->select(p | p.container.elements->selectByKind(uppaal::core::NamedElement)->first().name = discretePortInstanceID)->first();
+		idParameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = discretePortInstanceID)->first();
 	if(idParameter.oclIsUndefined())
-		idParameter := templateTuple.parameters->select(p | p.container.elements->selectByKind(uppaal::core::NamedElement)->first().name = componentInstanceID)->first();
+		idParameter := templateTuple.parameters->select(p | p.container.elements[uppaal::core::NamedElement]->first().name = componentInstanceID)->first();
 	assert (not idParameter.oclIsUndefined()) with log ("Could not find discretePortInstanceID or componentInstanceID Parameter in Template "+self.declaredTemplate.toString());
 	
 	//Get the index of the paramter in the parameter list
