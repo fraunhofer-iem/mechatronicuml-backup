@@ -72,58 +72,17 @@ mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: 
 		result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
 }
 
+mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	
-mapping Transition :: PositionSelfSelector(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
+		kind := _kind;
 		
-		kind := PositionSelectorKind::SELF;
-			
-	}
+		successor := self.map Schema2PositionKindSelector(context,region,identifier,_successor);
+}
+
+mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind) : PositionSelector{
 	
-mapping Transition :: PositionSelfCondition(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::SELF;
-			
-	}
-	
-mapping  Transition :: PositionFirst(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::FIRST;
-			
-	}
-	
-mapping Transition :: PositionLast(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::LAST;
-			
-	}
-	
-mapping Transition :: PositionNext(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::NEXT;
-			
-	}
-	
-mapping Transition :: PositionPrev(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::PREV;
-			
-	}
-	
-mapping Transition :: PositionSelfNext(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::SELF;
-		
-		successor := self.map PositionNext(context, region, transMapping);
-			
-	}
-	
-mapping Transition :: PositionSelfPrev(context:OclAny, region:OclAny, transMapping: Integer) : PositionSelector {
-		
-		kind := PositionSelectorKind::SELF;
-		
-		successor := self.map PositionPrev(context, region, transMapping);
-			
-	}
+		kind := _kind;
+}
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
 	
@@ -152,12 +111,12 @@ mapping Transition :: TransferSchemataLogicalExpression(context:OclAny, region:O
 mapping Transition :: TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer) : DiscreteInteractionEndpointReference {
 		
 		if(pos.equalsIgnoreCase('self')){
-			position := self.map PositionSelfCondition(context, region, transMapping);
+			position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF);
 		}else{
 			if(pos.equalsIgnoreCase('last')){
-				position := self.map PositionLast(context, region, transMapping);
+				position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::LAST);
 			}else{
-				position := self.map PositionFirst(context, region, transMapping);
+				position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::FIRST);
 			}endif;		
 		}endif;
 
@@ -397,16 +356,16 @@ mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:Oc
 		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector);
 		
 		if(selectorExp.equalsIgnoreCase('self')){
-			selectorExpression := self.map PositionSelfSelector(context, region, transMapping);
+			selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF);
 		}else{
 			if(selectorExp.equalsIgnoreCase('first')){
-				selectorExpression := self.map PositionFirst(context, region, transMapping);
+				selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::FIRST);
 			}else{
 				if(selectorExp.equalsIgnoreCase('self.next')){
-					selectorExpression := self.map PositionSelfNext(context, region, transMapping);
+					selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 				}else{
 					if(selectorExp.equalsIgnoreCase('self.prev')){
-						selectorExpression := self.map PositionSelfPrev(context, region, transMapping);
+						selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
 					}else{
 						if(selectorExp.equalsIgnoreCase('curRole')){
 						

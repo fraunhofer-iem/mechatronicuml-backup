@@ -576,16 +576,16 @@ mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:Oc
 		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector);
 		
 		if(selectorExp.equalsIgnoreCase('self')){
-			selectorExpression := self.map PositionSelfSelector(context, region, transMapping);
+			selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF);
 		}else{
 			if(selectorExp.equalsIgnoreCase('first')){
-				selectorExpression := self.map PositionFirst(context, region, transMapping);
+				selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::FIRST);
 			}else{
 				if(selectorExp.equalsIgnoreCase('self.next')){
-					selectorExpression := self.map PositionSelfNext(context, region, transMapping);
+					selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 				}else{
 					if(selectorExp.equalsIgnoreCase('self.prev')){
-						selectorExpression := self.map PositionSelfPrev(context, region, transMapping);
+						selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
 					}else{
 						if(selectorExp.equalsIgnoreCase('curRole')){
 						selectorExpression := self.map Iterate2TypedNamedElementExpr(context, selectorExp, transMapping);
@@ -602,9 +602,9 @@ mapping Transition :: PositionCurRoleNextPres(context:OclAny, region:OclAny, tra
 		typedNamedElementExpression := self.map Iterate2TypedNamedElementExpr(context, "curRole", 20);
 		
 		if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).startFromFirst){
-			position := self.map PositionNext(context, region, transMapping);
+			position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::NEXT);
 		}else{
-			position := self.map PositionPrev(context, region, transMapping);
+			position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::PREV);
 		}endif;
 		
 	}

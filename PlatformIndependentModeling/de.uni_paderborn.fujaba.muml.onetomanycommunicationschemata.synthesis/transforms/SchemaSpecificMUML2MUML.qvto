@@ -416,12 +416,6 @@ mapping Message :: Message2Message(context:OclAny) : Message {
 		parameterBinding += self.parameterBinding.map Binding2Binding(context);
 		
 	}
-mapping AsynchronousMessageEvent :: TriggerMessage2TriggerWithoutConsume(context:OclAny) : AsynchronousMessageEvent {
-	
-	//kind := EventKind::TRIGGER_WITHOUT_CONSUME;
-	
-	message := self.message.map Message2Message(context);
-	
-}
+
 
 
