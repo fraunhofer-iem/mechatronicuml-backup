@@ -13,9 +13,13 @@ modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
+
 property unicastDLCName : String = "DLC_unicast";
 property multicastDLCName : String = "DLC_multicast";
 property singleReceiveDLCName : String = "DLC_singleReceive";
+property multiReceiveDLCName : String = "DLC_multiReceive";
+
+
 property multicastSubRoleSpecificVariableName : String = "sendMulticast";
 property clockIndex : Integer =0;
 
@@ -585,4 +589,9 @@ mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAn
 		
 	}
 	
-	
+mapping Expression :: Expression2UnaryExpression(context : OclAny, _operator : UnaryOperator) : UnaryExpression{
+		
+		result.operator := _operator;
+		
+		result.enclosedExpression := self.map Expression2Expression(context);
+}	

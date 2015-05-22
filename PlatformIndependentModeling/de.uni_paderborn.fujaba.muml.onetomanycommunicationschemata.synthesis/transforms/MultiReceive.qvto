@@ -15,316 +15,139 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 ----------------------------------------------------------XXXXXXXXXXXXXXXX--MultiReceive--XXXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
 
 -------------------------------------------------------------Transfer Schema MultiReceive of Coordinator------------------------------------------------------------------
-	
-mapping Transition :: MultiReceive2TransSendSyncCoordinator(context:OclAny, region:OclAny, conditional:Boolean) : Transition {
-
-		priority := self.priority;
-			
-		source := self.map MultiReceive2StateCoordinator(context, region);
-		
-		target := self.target.map Vertex2VertexCoordinator(context, region);
-		
-		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
-				
-		action := self.action.map Action2Action(context, region);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "MultiReceive", true, 1);
-			
-	}
-
-mapping Transition :: MultiReceive2SourceRegionCoordinator(context:OclAny, region:OclAny) : Region {
-		
-		priority := self.priority;
-		
-		parentState := self.source.map Vertex2VertexCoordinator(context, region).oclAsType(State);
-		
-		embeddedStatechart := self.map MultiReceive2SourceEmbeddedRTSCCoordinator(context, region);
-					
-	}
-	
-mapping Transition :: MultiReceive2SourceEmbeddedRTSCCoordinator(context:OclAny, region:OclAny) : RealtimeStatechart {
-		
-		name:= "MultiReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
-		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requesting", false);
-		
-		transitions += self.map MultiReceive2TransCheckEmbeddedCoordinator(context, region);
-		transitions += self.map MultiReceive2TransCheckDoneEmbeddedCoordinator(context, region);
-					
-	}
-	
-mapping Transition :: MultiReceive2TransCheckEmbeddedCoordinator(context:OclAny, region:OclAny) : Transition {
-
-		priority := 1;
-		
-		source := self.map RegionState(context, region, "Idle", true);
-		
-		target := self.map RegionState(context, region, "Requesting", false);
-		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
-		
-		guard := self.guard.map Expression2Expression(context);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "MultiReceiveCheck", true, 2);
-			
-	}
-	
-mapping Transition :: MultiReceive2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:OclAny) : Transition {
-
-		priority := 1;
-		
-		target := self.map RegionState(context, region, "Idle", true);
-		
-		source := self.map RegionState(context, region, "Requesting", false);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "MultiReceiveCheckDone", false, 3);
-		
-		if(self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
-			guard := self.map TransferSchemata2TypedNamedElementExpr(context, "error", 22);
-		}else{
-			guard := self.map TransferSchemaErrorOrNotPossibleGuard(context, region, "error", "MultiReceivePossible", true, 3);
-		}endif;
-		
-		action := self.map TransferSchemata2Action(context, "error:=false", "error", "false", 20);
-			
-	}
-	
-	
-mapping Transition :: MultiReceive2StateCoordinator(context:OclAny, region:OclAny) : State {
-	
-		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Receiving";
-		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region);	
-						
-	}
-	
-mapping Transition :: MultiReceive2TransReceiveSyncCoordinator(context:OclAny, region:OclAny) : Transition {
+property multiReceiceChannelName : String = "multiReceive";
+property multiReceiveDoneChannelName : String = "multiReceiveDone";
+// @author: sthiele2 -- creates a transition in the coordinator region from the schema-transition's soruce to the intermediate state
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region : OclAny) : Transition{
 	
 		priority := self.priority;
-		
-		target := self.map MultiReceive2StateCoordinator(context, region);
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);
 		
-		clockConstraints += self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);		
+		target := self.map Schema2CoordinatorIntermediateState(context, region, 1,multiReceiveDLCName);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "MultiReceiveCheckDone", false, 4);
+		guard := self.guard.map Expression2Expression(context);
 		
-		if(self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
-			if(self.guard.oclIsUndefined()){
-				guard := self.map TransferSchemaGuard(context, region, "error", false, 1);
-			}else{
-				guard := self.map TransferSchemaGuardAndNotPossibleGuard(context, 5, region, "error", 2);
-			}endif;
-		}else{
-			if(self.guard.oclIsUndefined()){
-				guard := self.map TransferSchemaNotVarAndVarGuard(context, region, "error", "MultiReceivePossible", true, 2)
-			}else{
-				guard := self.map TransferSchemaThreeVariablesGuard(context, 5, region, "error", "MultiReceivePossible", true, 2);
-			}endif;
-		}endif;	
-					
-	}
+		clockConstraints := self.clockConstraints->select(c | not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context,region);
+		
+		synchronization := self.map TransferSchemata2Synchronization(context,region, SynchronizationKind::SEND, "first",multiReceiceChannelName,true,1);
+}
+
+// @author: sthiele2 -- create a transition in the coordinator region from the intermediate state to the schema-transition's target 
+mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region : OclAny) : Transition{
+		
+		priority := 1;
+		
+		source := self.map Schema2CoordinatorIntermediateState(context, region,1,multiReceiveDLCName);
+		
+		target := self.target.map Vertex2VertexCoordinator(context, region);
+				
+		clockResets := self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
+		
+		action := self.action.map Action2Action(context, region);
+		
+		if(not self.relativeDeadline.oclIsUndefined()){
+			clockConstraints += self.map RelativeDeadline2ClockConstraint(context,region, true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName);
+		}endif;
+		
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "",multiReceiveDoneChannelName, false,1);
+}
+
 	
 ------------------------------------------------------------------ Transfer Schema MultiReceive of Subrole---------------------------------------------------------------
-	
-mapping Transition :: MultiReceive2TransSendSyncSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
-		
-		source := self.source.map Vertex2VertexSubrole(context, region);
-		
-		target := self.map MultiReceive2StateSubrole(context, region, toplevel);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "MultiReceive", true, 5);
-		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-		
-		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.map Action2Action(context, region);
-		
-		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);		
-		
-		if((not self.triggerMessageEvent.oclIsUndefined()) and (not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive) 
-				and (not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
-				
-			priority := (self.priority-1)*2+2;
-			
-			guard := self.map TransferSchemaConditionAndPossibleGuard(context, 93, region, "MultiReceivePossible", false, 77);
-			
-		}else{
-			priority := self.priority;
-		}endif;
-		
-	}
-	
-mapping Transition :: MultiReceive2TransReceiveSyncNotLastSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
-	
-		priority := 2;
-		
-		target := self.target.map Vertex2VertexSubrole(context, region);
-		
-		source := self.map MultiReceive2StateSubrole(context, region, toplevel);		
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "MultiReceive", true, 6);
-		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 4);
-					
-	}
-			
-mapping Transition :: MultiReceive2TransReceiveSyncLastSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
-	
-		priority := 1;
-		
-		target := self.target.map Vertex2VertexSubrole(context, region);
-		
-		source := self.map MultiReceive2StateSubrole(context, region, toplevel);		
-		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 5);
-		
-		if((not self.triggerMessageEvent.oclIsUndefined()) and (not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive) 
-				and (not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())){
-				
-			action := self.map TransferSchemata2Action(context, "MultiReceivePossible:=false", "MultiReceivePossible", "false", 12);
-			
-		}endif;
-					
-	}
-	
-mapping Transition :: MultiReceive2StateSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : State {
-	
-		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Receiving";
-		
-		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);			
-					
-	}
-	
 
-mapping Transition :: MultiReceive2SourceRegionSubrole(context:OclAny, region:OclAny) : Region {
-		
-		priority := self.priority;
-		
-		parentState := self.source.map Vertex2VertexSubrole(context, region).oclAsType(State);
-		
-		embeddedStatechart := self.map MultiReceive2SourceEmbeddedRTSCSubrole(context, region);
-					
-	}
-	
-mapping Transition :: MultiReceive2SourceEmbeddedRTSCSubrole(context:OclAny, region:OclAny) : RealtimeStatechart {
-		
-		name:= "MultiReceiveCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
-		
-		states += self.map RegionState(context, region, "Idle", true);
-		states += self.map RegionState(context, region, "Requested", false);
-		
-		transitions += self.map MultiReceive2RequestedIdleCheckSubrole(context, region);
-		transitions += self.map MultiReceive2RequestedIdleCheckDoneSubrole(context, region);
-		transitions += self.map MultiReceive2IdleRequestedFulfilledSubrole(context, region);
-		transitions += self.map MultiReceive2IdleRequestedNotFulfilledSubrole(context, region);
-		
-		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
-			transitions += self.map MultiReceive2IdleRequestedFulfilledNoMsgSubrole(context, region);
-		}endif;	
-					
-	}
-	
-mapping Transition :: MultiReceive2RequestedIdleCheckSubrole(context:OclAny, region:OclAny) : Transition {
+// @author: sthiele2 -- creates a transition in the subrole region from the schema-transition's source to the intermediate state 1
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subrole(context : OclAny, region : OclAny) : Transition{
 	
 		priority := 2;
-				
-		source := self.map RegionState(context, region, "Requested", false);
 		
-		target := self.map RegionState(context, region, "Idle", true);
+		source := self.source.map Vertex2VertexSubrole(context,region);
 		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 6);
+		target := self.map Schema2SubroleIntermediateState(context,region, 1);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "MultiReceiveCheck", true, 7);
-					
-	}
-	
-mapping Transition :: MultiReceive2RequestedIdleCheckDoneSubrole(context:OclAny, region:OclAny) : Transition {
-	
-		priority := 1;
-				
-		source := self.map RegionState(context, region, "Requested", false);
+		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
+		{
+			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
+		}endif;
 		
-		target := self.map RegionState(context, region, "Idle", true);
-		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 7);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "MultiReceiveCheckDone", false, 8);
-					
-	}
-	
-mapping Transition :: MultiReceive2IdleRequestedFulfilledSubrole(context:OclAny, region:OclAny) : Transition {
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self",multiReceiceChannelName,true,result.priority);
+}
 
-		if(self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
-			priority := 2;
-		}else{
-			priority := 3;
+// @author: sthiele2 -- creates a transition in the subrole region from the schema-transition's source to the intermediate state 2
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(context : OclAny, region : OclAny) : Transition{
+		
+		priority := 1;
+		
+		source := self.source.map Vertex2VertexSubrole(context,region);
+		
+		target := self.map Schema2SubroleIntermediateState(context,region, 2);
+		
+		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())
+		{
+			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT);
 		}endif;
-			
-		target := self.map RegionState(context, region, "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self",multiReceiceChannelName,true,result.priority);
+}
+
+
+// @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 1 source to the intermediate state 2 
+// 					 -- implements the success case
+mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Subrole(context : OclAny, region : OclAny) : Transition{
 		
-		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
-			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
-			action := self.map TransferSchemata2Action(context, "MultiReceivePossible:=true", "MultiReceivePossible", "true", 13);
-		}endif;
+		priority := 1;
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "MultiReceiveCheck", true, 9);
+		source := self.map Schema2SubroleIntermediateState(context,region,1);
 		
-		events += self.triggerMessageEvent.map TriggerMessage2TriggerWithoutConsume(1);
-					
-	}
-	
-mapping Transition :: MultiReceive2IdleRequestedFulfilledNoMsgSubrole(context:OclAny, region:OclAny) : Transition {
-	
+		target := self.map Schema2SubroleIntermediateState(context,region,2);
+		
+		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
+		
+		action := self.triggerMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::MultiReceive).failureAction.map Action2Action(context,region);
+}
+
+// @author: sthiele2 -- creates a second transition in the subrole region from the intermediate state 1 source to the intermediate state 2
+//					 -- implements the failuer case
+mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Subrole(context : OclAny, region : OclAny) : Transition{
+		
 		priority := 2;
-				
-		target := self.map RegionState(context, region, "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map Schema2SubroleIntermediateState(context,region,1);
 		
-		guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(5);
+		target := self.map Schema2SubroleIntermediateState(context,region,2);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "MultiReceiveCheck", true, 12);
+		events += self.triggerMessageEvent.map Asynchronous2Asynchronous(context);
 		
-		action := self.map TransferSchemata2Action(context, "error:=true", "error", "true", 10);
-					
-	}
-	
-mapping Transition :: MultiReceive2IdleRequestedNotFulfilledSubrole(context:OclAny, region:OclAny) : Transition {
+		action := self.triggerMessageEvent.oneToManyCommunicationSchema.action.map Action2Action(context,region);
+}	
+
+// @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
+// 					 -- implements the case that self == last
+mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context : OclAny, region : OclAny) : Transition{
 	
 		priority := 1;
-				
-		target := self.map RegionState(context, region, "Requested", false);
 		
-		source := self.map RegionState(context, region, "Idle", true);
+		source := self.map Schema2SubroleIntermediateState(context,region,2);
 		
-		if(not self.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()){
-			guard := self.map TransferSchemaNotCondition(3, region, 3);
-		}else{
-			action := self.map TransferSchemata2Action(context, "error:=true", "error", "true", 10);
-		}endif;
+		target := self.target.map Vertex2VertexSubrole(context,region);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "MultiReceiveCheck", true, 10);
-					
-	}
+		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", result.priority);
+
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", multiReceiveDoneChannelName, false,priority);
+}
+
+// @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
+// 					 -- implements the case that self <> last
+mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context : OclAny, region : OclAny) : Transition{
 	
-mapping Transition :: MultiReceive2TransSendSyncNotConditionSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
+		priority := 2;
 		
-		source := self.source.map Vertex2VertexSubrole(context, region);
+		source := self.map Schema2SubroleIntermediateState(context,region,2);
 		
-		target := self.map MultiReceive2StateSubrole(context, region, toplevel);
+		target := self.target.map Vertex2VertexSubrole(context,region);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "MultiReceive", true, 11);
+		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", result.priority);
 		
-		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
-				
-		guard := self.map TransferSchemaConditionAndPossibleGuard(context, 4, region, "MultiReceivePossible", true, 11);
-		
-		priority := (self.priority-1)*2+1;
-		
-	}
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", multiReceiceChannelName, true,priority);
+}
+
