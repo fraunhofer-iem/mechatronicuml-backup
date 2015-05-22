@@ -27,6 +27,9 @@ public class MultiReceiveEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorFailureAction_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
@@ -35,12 +38,28 @@ public class MultiReceiveEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
+			addPropertyEditor(createEditorFailureAction_GeneralTab_Editor(),
+					false);
+
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorFailureAction_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorFailureAction_GeneralTab_Editor() {
+		if (this.editorFailureAction_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
+					.getMultiReceive_FailureAction();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+					adapterFactory, feature);
+
+			this.editorFailureAction_GeneralTab = editor;
+		}
+		return this.editorFailureAction_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCondition_GeneralTab;
@@ -105,8 +124,8 @@ public class MultiReceiveEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general", "property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

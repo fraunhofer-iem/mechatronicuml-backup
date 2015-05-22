@@ -400,6 +400,15 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMultiReceive_FailureAction() {
+		return (EReference)multiReceiveEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReceivingOneToManyCommunicationSchema() {
 		return receivingOneToManyCommunicationSchemaEClass;
 	}
@@ -462,6 +471,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		singleReceiveEClass = createEClass(SINGLE_RECEIVE);
 
 		multiReceiveEClass = createEClass(MULTI_RECEIVE);
+		createEReference(multiReceiveEClass, MULTI_RECEIVE__FAILURE_ACTION);
 
 		receivingOneToManyCommunicationSchemaEClass = createEClass(RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA);
 
@@ -532,6 +542,7 @@ public class One_to_n_schemataPackageImpl extends EPackageImpl implements One_to
 		initEClass(singleReceiveEClass, SingleReceive.class, "SingleReceive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(multiReceiveEClass, MultiReceive.class, "MultiReceive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMultiReceive_FailureAction(), theRealtimestatechartPackage.getAction(), null, "failureAction", null, 0, 1, MultiReceive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(receivingOneToManyCommunicationSchemaEClass, ReceivingOneToManyCommunicationSchema.class, "ReceivingOneToManyCommunicationSchema", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

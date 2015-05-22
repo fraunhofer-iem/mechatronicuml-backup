@@ -12,21 +12,40 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Multi Receive</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.MultiReceiveImpl#getFailureAction <em>Failure Action</em>}</li>
+ * </ul>
  * </p>
  *
  * @generated
  */
 public class MultiReceiveImpl extends ReceivingOneToManyCommunicationSchemaImpl implements MultiReceive {
+	/**
+	 * The cached value of the '{@link #getFailureAction() <em>Failure Action</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFailureAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected Action failureAction;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -44,6 +63,121 @@ public class MultiReceiveImpl extends ReceivingOneToManyCommunicationSchemaImpl 
 	@Override
 	protected EClass eStaticClass() {
 		return One_to_n_schemataPackage.Literals.MULTI_RECEIVE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action getFailureAction() {
+		return failureAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFailureAction(Action newFailureAction, NotificationChain msgs) {
+		Action oldFailureAction = failureAction;
+		failureAction = newFailureAction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION, oldFailureAction, newFailureAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFailureAction(Action newFailureAction) {
+		if (newFailureAction != failureAction) {
+			NotificationChain msgs = null;
+			if (failureAction != null)
+				msgs = ((InternalEObject)failureAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION, null, msgs);
+			if (newFailureAction != null)
+				msgs = ((InternalEObject)newFailureAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION, null, msgs);
+			msgs = basicSetFailureAction(newFailureAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION, newFailureAction, newFailureAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION:
+				return basicSetFailureAction(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION:
+				return getFailureAction();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION:
+				setFailureAction((Action)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION:
+				setFailureAction((Action)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case One_to_n_schemataPackage.MULTI_RECEIVE__FAILURE_ACTION:
+				return failureAction != null;
+		}
+		return super.eIsSet(featureID);
 	}
 
 } //MultiReceiveImpl

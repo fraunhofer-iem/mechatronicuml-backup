@@ -65,10 +65,79 @@ public class CoordinationPatternItemProvider extends AbstractCoordinationSpecifi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDescriptionAspectsPropertyDescriptor(object);
+			addLegalConfigurationsPropertyDescriptor(object);
+			addPatternParametersPropertyDescriptor(object);
 			addCombineablePatternsPropertyDescriptor(object);
 			addAlternativePatternsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Description Aspects feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionAspectsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoordinationPattern_descriptionAspects_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_descriptionAspects_feature", "_UI_CoordinationPattern_type"),
+				 PatternPackage.Literals.COORDINATION_PATTERN__DESCRIPTION_ASPECTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Legal Configurations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLegalConfigurationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoordinationPattern_legalConfigurations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_legalConfigurations_feature", "_UI_CoordinationPattern_type"),
+				 PatternPackage.Literals.COORDINATION_PATTERN__LEGAL_CONFIGURATIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pattern Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPatternParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoordinationPattern_patternParameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_patternParameters_feature", "_UI_CoordinationPattern_type"),
+				 PatternPackage.Literals.COORDINATION_PATTERN__PATTERN_PARAMETERS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

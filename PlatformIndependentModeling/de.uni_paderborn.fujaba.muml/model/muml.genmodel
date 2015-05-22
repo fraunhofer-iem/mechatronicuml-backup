@@ -392,7 +392,9 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/LoadBalancing/maxWorkingTime"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/SingleReceive"/>
-        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive"/>
+        <genClasses ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive">
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/one_to_n_schemata/MultiReceive/failureAction"/>
+        </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/ReceivingOneToManyCommunicationSchema"/>
         <genClasses image="false" ecoreClass="muml.ecore#//realtimestatechart/one_to_n_schemata/SendingOneToManyCommunicationSchema"/>
       </nestedGenPackages>

@@ -593,13 +593,22 @@ public interface One_to_n_schemataPackage extends EPackage {
 	int MULTI_RECEIVE__ACTION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA__ACTION;
 
 	/**
+	 * The feature id for the '<em><b>Failure Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_RECEIVE__FAILURE_ACTION = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Multi Receive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_RECEIVE_FEATURE_COUNT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 0;
+	int MULTI_RECEIVE_FEATURE_COUNT = RECEIVING_ONE_TO_MANY_COMMUNICATION_SCHEMA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Multi Receive</em>' class.
@@ -767,6 +776,17 @@ public interface One_to_n_schemataPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getMultiReceive();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive#getFailureAction <em>Failure Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Failure Action</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive#getFailureAction()
+	 * @see #getMultiReceive()
+	 * @generated
+	 */
+	EReference getMultiReceive_FailureAction();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.ReceivingOneToManyCommunicationSchema <em>Receiving One To Many Communication Schema</em>}'.
@@ -944,6 +964,14 @@ public interface One_to_n_schemataPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MULTI_RECEIVE = eINSTANCE.getMultiReceive();
+
+		/**
+		 * The meta object literal for the '<em><b>Failure Action</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_RECEIVE__FAILURE_ACTION = eINSTANCE.getMultiReceive_FailureAction();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.ReceivingOneToManyCommunicationSchemaImpl <em>Receiving One To Many Communication Schema</em>}' class.

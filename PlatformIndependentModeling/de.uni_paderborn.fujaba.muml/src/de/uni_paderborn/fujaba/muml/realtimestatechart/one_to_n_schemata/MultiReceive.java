@@ -12,6 +12,8 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -22,10 +24,42 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata;
  * The communication schema convergecast allows for receiving a message by each subrole.
  * <!-- end-model-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive#getFailureAction <em>Failure Action</em>}</li>
+ * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getMultiReceive()
  * @model
  * @generated
  */
 public interface MultiReceive extends ReceivingOneToManyCommunicationSchema {
+
+	/**
+	 * Returns the value of the '<em><b>Failure Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Failure Action</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Failure Action</em>' containment reference.
+	 * @see #setFailureAction(Action)
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getMultiReceive_FailureAction()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Action getFailureAction();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive#getFailureAction <em>Failure Action</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Failure Action</em>' containment reference.
+	 * @see #getFailureAction()
+	 * @generated
+	 */
+	void setFailureAction(Action value);
 } // MultiReceive
