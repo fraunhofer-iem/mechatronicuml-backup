@@ -113,8 +113,8 @@ query Expression::evaluateToBoolean() : Boolean {
 							endif
 						)
 		endif;
-	if (self.oclIsKindOf(StateInStatechartExpr)) return self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticValue().oclAsType(RealtimeStatechart).
-						allSubobjectsOfKind(State)->includes(self.oclAsType(StateInStatechartExpr).state.oclAsType(MapExpr).getStaticValue().oclAsType(Vertex))
+	if (self.oclIsKindOf(StateInStatechartExpr)) return self.oclAsType(StateInStatechartExpr).statechart.getStaticValue().oclAsType(RealtimeStatechart).
+						allSubobjectsOfKind(State).oclAsType(Vertex)->includes(self.oclAsType(StateInStatechartExpr).state.getStaticValue().oclAsType(Vertex))
 						and (self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticInstance() = self.oclAsType(StateInStatechartExpr).state.oclAsType(MapExpr).getStaticInstance()
 						or if self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticInstance().oclIsKindOf(ComponentInstance) then
 								self.oclAsType(StateInStatechartExpr).statechart.oclAsType(MapExpr).getStaticInstance().oclAsType(ComponentInstance).portInstances.oclAsType(EObject)->includes(self.oclAsType(StateInStatechartExpr).state.oclAsType(MapExpr).getStaticInstance())
