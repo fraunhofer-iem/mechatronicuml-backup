@@ -248,7 +248,8 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny,top
 		
 		// @author: sthiele2 -- add subrole specific boolean variables for every conditional multicst schema:		
 		variables +=self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(multicastSubRoleSpecificVariableName);
-		
+		variables +=self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(unicastSubRoleSpecificVariableName);
+			
 		clocks += self.subRoleSpecificClocks.map Clock2Clock();
 				
 	}

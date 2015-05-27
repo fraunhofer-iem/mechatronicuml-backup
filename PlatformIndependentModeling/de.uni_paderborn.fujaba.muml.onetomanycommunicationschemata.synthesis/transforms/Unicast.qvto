@@ -14,6 +14,8 @@ modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 
+property unicastSubRoleSpecificVariableName : String = "sendUnicast";
+
 
 ----------------------------------------------------------XXXXXXXXXXXXXXXXX--UNICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
 

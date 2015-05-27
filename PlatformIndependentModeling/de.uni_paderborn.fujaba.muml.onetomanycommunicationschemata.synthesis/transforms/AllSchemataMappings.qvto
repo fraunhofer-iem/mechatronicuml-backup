@@ -28,9 +28,16 @@ mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String):
 	result.name := varName;
 	result.initializeExpression := new LiteralExpression();
 	result.initializeExpression.oclAsType(LiteralExpression).value := "false";
-	result.dataType := new PrimitiveDataType();
-	result.dataType.oclAsType(PrimitiveDataType).primitiveType:=PrimitiveTypes::BOOLEAN;
+	result.dataType := getBooleanPrimitiveDataType(self.statechart.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode));
 }
+
+query getBooleanPrimitiveDataType(theRootNode : RootNode) : muml::types::PrimitiveDataType {
+	var types2 : ModelElementCategory := theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	var data : PrimitiveDataType := types2.oclAsType(ModelElementCategory).modelElements
+	->select(element | element.oclIsTypeOf(muml::types::PrimitiveDataType) and (element.oclAsType(muml::types::PrimitiveDataType).primitiveType = PrimitiveTypes::BOOLEAN))
+	->any(true).oclAsType(muml::types::PrimitiveDataType);
+	return data;
+	}
 
 //property dict : Dict(muml::realtimestatechart::Transition, Integer);
 //helper getDLC_ClockIndexForTransition(transition: muml::realtimestatechart::Transition) : Integer
