@@ -19,10 +19,10 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 
 // @author: sthiele2
-mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, region:OclAny,toplevel : Boolean) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
 	source := self.source.map Vertex2VertexCoordinator(context, region);
-	target := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName);
+	target := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName,toplevel);
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
@@ -30,11 +30,11 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 }
 
 // @author: sthiele2
-mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny, region: OclAny): Transition
+mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny, region: OclAny,toplevel : Boolean): Transition
 {
 	// creates the transition from intermediate state 1 to intermediate state 2
-	source := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName);
-	target := self.map Schema2CoordinatorIntermediateState(context,region,2,multicastDLCName);	
+	source := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName,toplevel);
+	target := self.map Schema2CoordinatorIntermediateState(context,region,2,multicastDLCName,toplevel);	
 	priority := 1;
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
@@ -44,10 +44,10 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 }
 
 // @author: sthiele2
-mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region: OclAny): Transition
+mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region: OclAny, toplevel : Boolean): Transition
 {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
-	source := self.map Schema2CoordinatorIntermediateState(context,region, 2, multicastDLCName);
+	source := self.map Schema2CoordinatorIntermediateState(context,region, 2, multicastDLCName,toplevel);
 	target := self.target.map Vertex2VertexCoordinator(context,region);
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
@@ -57,12 +57,12 @@ mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:
 
 	
 	
-mapping Transition :: Multicast2TransSendSyncCoordinator(context:OclAny, region:OclAny, conditional:Boolean) : Transition {
+mapping Transition :: Multicast2TransSendSyncCoordinator(context:OclAny, region:OclAny, conditional:Boolean, toplevel:Boolean) : Transition {
 
 		priority := self.priority;
 		
 		if(conditional){			
-			source := self.map Multicast2StateCoordinator(context, region);
+			source := self.map Multicast2StateCoordinator(context, region,toplevel);
 		}else{
 			source := self.source.map Vertex2VertexCoordinator(context, region);
 		}endif;
@@ -135,19 +135,19 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 	}
 	
 	
-mapping Transition :: Multicast2StateCoordinator(context:OclAny, region:OclAny) : State {
+mapping Transition :: Multicast2StateCoordinator(context:OclAny, region:OclAny, toplevel:Boolean) : State {
 	
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
 		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region);	
+		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region,toplevel);	
 						
 	}
 	
-mapping Transition :: Multicast2TransReceiveSyncCoordinator(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: Multicast2TransReceiveSyncCoordinator(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
 	
 		priority := self.priority;
 		
-		target := self.map Multicast2StateCoordinator(context, region);
+		target := self.map Multicast2StateCoordinator(context, region,toplevel);
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);
 		
@@ -232,7 +232,7 @@ mapping Transition :: Multicast2StateSubrole(context:OclAny, region:OclAny, topl
 	
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
 		
-		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);			
+		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region,toplevel);			
 					
 	}
 	

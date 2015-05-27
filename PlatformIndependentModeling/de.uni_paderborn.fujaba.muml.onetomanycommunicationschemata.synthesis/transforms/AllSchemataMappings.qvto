@@ -43,11 +43,11 @@ mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String):
 //}
 
 // @author: sthiele2 -- creates an intermediate state in the subrole region
-mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:OclAny, stateID : Integer) : State {
+mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:OclAny, stateID : Integer,toplevel : Boolean) : State {
 	
 		name := self.source.name + "_Intermediate_"+ stateID.toString()+ "_" + self.target.name  ;
 				
-		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);			
+		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region, toplevel);			
 					
 	}
 	
@@ -261,14 +261,14 @@ mapping Transition :: TransferSchemata2TypedNamedElementExpr(context:OclAny, var
 	}
 	
 // @author: sthiele2
-mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region: OclAny, intermediateStateNumber : Integer, clockName : String) : State
+mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region: OclAny, intermediateStateNumber : Integer, clockName : String,toplevel : Boolean) : State
 {
 	// creates an intermediate state in the coordinator region
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
 		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
 	}endif;
-	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region);	
+	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region,toplevel);	
 	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name ;
 }
 	
@@ -276,6 +276,7 @@ mapping RealtimeStatechart :: TransferSchemata2Variable(context:OclAny, varName:
 		name := varName;
 		constant := false;
 		dataType := context.oclAsType(RealtimeStatechart).eContainer().oclAsType(ModelElementCategory).container().oclAsType(RootNode).categories->select(c|c.key.equalsIgnoreCase("de.uni_paderborn.fujaba.muml.types.category")).modelElements->at(2).oclAsType(DataType);
+		
 	};
 	
 
@@ -394,7 +395,7 @@ mapping RealtimeStatechart :: TransferSchemataClock(context:OclAny, region:OclAn
 		
 		name := clockName;
 		
-		statechart := self.map RTSC2CoordinatorRTSC(context, region);
+		statechart := self.map RTSC2CoordinatorRTSC(context, region,toplevel);
 		
 	}
 	
@@ -428,13 +429,14 @@ mapping RealtimeStatechart :: Rtsc2InitialState() : State {
 					
 	}
 
+
 mapping RealtimeStatechart :: State2CoordinatorRegion(context:OclAny, region:OclAny) : Region {
 		
 		priority := 2;
 		
-		parentState := context.oclAsType(State);
+		//parentState := context.oclAsType(State);
 		
-		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, region);
+		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, region,true);
 		
 					
 	}
@@ -443,21 +445,21 @@ mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny, region:OclAny)
 		
 		priority := 1;
 		
-		parentState := context.oclAsType(State);
+	//	parentState := context.oclAsType(State);
 		
-		embeddedStatechart := self.map RTSC2SubroleRTSC(context, region);
+		embeddedStatechart := self.map RTSC2SubroleRTSC(context, region,true);
 					
 	}
 	
 	
-mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny) : RealtimeStatechart {
+mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny, highlevel: Boolean) : RealtimeStatechart {
 	assert fatal (false) with log ("Do not go here!");	}	
 mapping State :: States2StatesCoordinator(context:OclAny, region:OclAny) : State 
 {
 	assert fatal (false) with log ("Do not go here!");
 	
 	}
-mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny) : RealtimeStatechart 
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny, highlevel: Boolean) : RealtimeStatechart 
 {
 		assert fatal (false) with log ("Do not go here!");
 }
@@ -499,10 +501,10 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Oc
 						
 	}
 	
-	mapping Transition :: Transition2TransitionSubrole(context:OclAny, region:OclAny) : Transition {
+	mapping Transition :: Transition2TransitionSubrole(context:OclAny, region:OclAny, toplevel : Boolean) : Transition {
 		
 		source := self.source.map Vertex2VertexSubrole(context, region);
-		target := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region);
+		target := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
 		
 		priority := self.priority;
 		
@@ -516,9 +518,9 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Oc
 		
 	}
 	
-mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:OclAny,toplevel : Boolean) : Transition {
 		
-		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region);
+		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
 		target := self.target.map Vertex2VertexSubrole(context, region);
 		
 		priority := 2;
@@ -529,9 +531,9 @@ mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region
 		
 	}
 	
-mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:OclAny,toplevel : Boolean) : Transition {
 		
-		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region);
+		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
 		target := self.target.map Vertex2VertexSubrole(context, region);
 		
 		priority := 1;
@@ -540,11 +542,11 @@ mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:Oc
 		
 	}
 	
-mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:OclAny) : State {
+mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:OclAny,toplevel : Boolean) : State {
 		
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_SwitchState";
 		
-		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region);
+		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region,toplevel);
 		
 	}
 	

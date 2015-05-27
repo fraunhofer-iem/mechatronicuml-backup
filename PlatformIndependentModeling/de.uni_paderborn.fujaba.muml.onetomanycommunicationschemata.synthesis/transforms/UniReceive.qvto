@@ -17,11 +17,11 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 --------------------------------------------------------------Transfer Schema SingleReceive of Coordinator------------------------------------------------------------------
 	
-mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: SingleReceive2TransitionFromIntermediate2ToTarget(context:OclAny, region:OclAny, toplevel : Boolean) : Transition {
 		// creates in the coordinator region the transition from the intermediate state 2 to the (mapped) target state of the schema transition
 		priority := 1;
 		
-		source := self.map Schema2CoordinatorIntermediateState(context,region,2,singleReceiveDLCName );
+		source := self.map Schema2CoordinatorIntermediateState(context,region,2,singleReceiveDLCName,toplevel );
 		
 		target := self.target.map Vertex2VertexCoordinator(context, region);
 		
@@ -85,21 +85,21 @@ mapping Transition :: SingleReceive2TransCheckDoneEmbeddedCoordinator(context:Oc
 //mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: OclAny, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 	
 	
-mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region: OclAny): Transition{
+mapping Transition :: SingleReceive2TransitionFromIntermediate1ToIntermediate2(context : OclAny, region: OclAny, toplevel : Boolean): Transition{
 	priority := 1;
 	
-	target := self.map Schema2CoordinatorIntermediateState(context,region, 2, singleReceiveDLCName);
+	target := self.map Schema2CoordinatorIntermediateState(context,region, 2, singleReceiveDLCName, toplevel);
 	
-	source := self.map Schema2CoordinatorIntermediateState(context, region, 1, singleReceiveDLCName);
+	source := self.map Schema2CoordinatorIntermediateState(context, region, 1, singleReceiveDLCName,toplevel);
 	//invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
 	clockConstraints += self.map RelativeDeadline2ClockConstraint(result, region, false, ComparingOperator::GREATER_OR_EQUAL, singleReceiveDLCName);
 }
 	
-mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:OclAny, region:OclAny, toplevel : Boolean) : Transition {
 	
 		priority := self.priority;
 		
-		target := self.map Schema2CoordinatorIntermediateState(context,region,1,singleReceiveDLCName);
+		target := self.map Schema2CoordinatorIntermediateState(context,region,1,singleReceiveDLCName,toplevel);
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);		
 		
@@ -113,13 +113,13 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate1(context:
 --------------------------------------------------------------- Transfer Schema SingleReceive of Subrole------------------------------------------------------------------
 	
 // @author: sthiele2 -- this mapping generates the transition from the source of the schema-transition to an intermediate state
-mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:OclAny, region:OclAny, toplevel : Boolean) : Transition {
 
 		priority := (self.priority);
 		
 		source := self.source.map Vertex2VertexSubrole(context, region);
 		
-		target := self.map Schema2SubroleIntermediateState(context,region,1);
+		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
 	
 		guard :=self.map TransferSchemata2TypedNamedElementExpr(context, "consumeSingleReceive", 1);
 	}
@@ -127,13 +127,13 @@ mapping Transition :: SingleReceive2TransitionFromSourceToIntermediate(context:O
 
  
 // @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region
-mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole(context:OclAny, region:OclAny, toplevel : Boolean) : Transition {
 	
 		priority := 2;
 		
 		target := self.target.map Vertex2VertexSubrole(context, region);
 		
-		source := self.map Schema2SubroleIntermediateState(context,region,1);	
+		source := self.map Schema2SubroleIntermediateState(context,region,1,toplevel);	
 		
 		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "singleReceive", true, 6);
 		
@@ -142,13 +142,13 @@ mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole
 	}
 	
 // @author sthiele2 -- one of the transitions from intermediate state to target state in the subrole-region			
-mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole(context:OclAny, region:OclAny) : Transition {
+mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole(context:OclAny, region:OclAny, toplevel : Boolean) : Transition {
 	
 		priority := 1;
 		
 		target := self.target.map Vertex2VertexSubrole(context, region);
 		
-		source := self.map Schema2SubroleIntermediateState(context,region,1);	
+		source := self.map Schema2SubroleIntermediateState(context,region,1,toplevel);	
 		
 		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 5);
 				
@@ -186,12 +186,12 @@ mapping Transition :: SingleReceive2SourceEmbeddedRTSCSubrole(context:OclAny, re
 	}
 
 // @author: sthiele2 -- creates a transition from the exit point of the schema-transition's source to the intermediate state in the subrole region
-mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region : OclAny) : Transition{
+mapping Transition :: SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
 		priority := 1;
 		
 		source := self.map SingleReceive2StateExitPoint(context,region);
 		
-		target := self.map Schema2SubroleIntermediateState(context,region,1);
+		target := self.map Schema2SubroleIntermediateState(context,region,1, toplevel);
 		
 		action := self.map TransferSchemata2Action(context,"consumeSingleReceive := true","consumeSingleReceive", "true", 12);
 		
