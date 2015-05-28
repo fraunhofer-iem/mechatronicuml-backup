@@ -13,44 +13,184 @@ modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 	
-----------------------------------------------------------XXXXXXXXXXXXXXXXX--ITERATE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
+// @author: sthiele2 -- Implementation of the Iterate-Schema that can be reduced to unicast schemas.
+
+---------------------------------------------------------XXXXXXXXXXXXXXXXX--ITERATE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
 
 --------------------------------------------------------------Transfer Schema Iterate of Coordinator----------------------------------------------------------------------
 
 property IterateDelayTimeClockName : String = "Clock_IterateDelay";
+property IterateDLC_ClockName : String = "Iterate_DLC";
+property iterateRoleVariableName : String = "curRole";
+
+helper Transition :: disassembleIterateSchema(){
+	var rtsc : RealtimeStatechart = self.statechart;
+	
+	rtsc.oclAsType(RealtimeStatechart).variables+= self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());
+	rtsc.oclAsType(RealtimeStatechart).clocks += self.map TransitionDeadline2CoordinatorDeadlineClock(IterateDLC_ClockName);
+	if(self.iterateDefinesDelay()){
+		rtsc.oclAsType(RealtimeStatechart).clocks += self.map TransitionDeadline2CoordinatorDeadlineClock(IterateDelayTimeClockName);		
+	};
+	rtsc.oclAsType(RealtimeStatechart).transitions+= self.map Iterate2TransitionFromSourceToIntermediate();
+	rtsc.oclAsType(RealtimeStatechart).transitions+= self.map Iterate2Transition1FromIntermediateToTarget();
+	rtsc.oclAsType(RealtimeStatechart).transitions+= self.map Iterate2Transition2FromIntermediateToTarget();
+	rtsc.oclAsType(RealtimeStatechart).transitions+= self.map Iterate2SelfTransitionOfIntermediate();
+	rtsc.oclAsType(RealtimeStatechart).states += self.map Schema2IntermediateState(1);
+	
+}
 
 mapping Transition :: Iterate2TransitionFromSourceToIntermediate() : Transition
 {
+	priority := 1;
 	
 	source := self.source;
 	
 	target := self.map Schema2IntermediateState(1);
 	
+	
+	// set the conditions
 	clockConstraints := self.clockConstraints;
 	
 	guard := self.guard;
 	
 	
+	// set the entry events of the iterate source state
+	var sourceState : State := source.oclAsType(State); 
+	if(sourceState.entryEvent.oclIsUndefined()){
+		sourceState.entryEvent := new EntryEvent();
+	};
+	sourceState.entryEvent.kind := EventKind::RAISE;
+	sourceState.entryEvent.clockResets+= self.map TransitionDeadline2CoordinatorDeadlineClock(IterateDLC_ClockName);
+	
+	if(sourceState.entryEvent.action.oclIsUndefined()){
+		sourceState.entryEvent.action := new Action();	
+		sourceState.entryEvent.action.name := "";	
+	};
+	sourceState.entryEvent.action.name := sourceState.entryEvent.action.name + "curRole := last";
+	var variable : Variable := self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());
+	sourceState.entryEvent.action.expressions += self.map Schema2AssignmentExpression(sourceState,variable,self.map TransferSchemataEndpointReference(result, result,"last",1));
+	
+	// create the condition for the unicast call!
+	var inputTuple  : Tuple(lhs:Expression, rhs:Expression);
+	inputTuple.lhs := self.map TransferSchemataEndpointReference(result,result,"self",2);
+	inputTuple.rhs := self.map Schema2TypedNamedElementExpression(result,variable);
+	
+	var firstunicastCondition : Expression  :=inputTuple.map Expressions2ComparisonExpression(result, ComparingOperator::EQUAL);
+	var secondunicastCondition := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
+	
+	var unicastCondition : Expression;
+	if(not secondunicastCondition.oclIsUndefined()){
+		var andTuple : Tuple(lhs:Expression,rhs:Expression);
+		andTuple.lhs :=firstunicastCondition;
+		andTuple.rhs := secondunicastCondition;
+		unicastCondition := andTuple.map Expressions2LogicalExpression(result,LogicOperator::AND);
+	}else{
+		unicastCondition := firstunicastCondition;
+	}endif;
+	
+	events += self.raiseMessageEvent.oneToManyCommunicationSchema.map Schema2UnicastCall(result,unicastCondition,self.action.map Action2Action(result,1));
+	
 }
 
-mapping Transition :: Iterate2TransitionFromIntermediateToTarget() : Transition{
+
+mapping Tuple(lhs:Expression, rhs:Expression):: Expressions2ComparisonExpression(context : OclAny, _operator : ComparingOperator): core::expressions::common::ComparisonExpression{
+	result.leftExpression := self.lhs;
+	result.rightExpression := self.rhs;
+	result.operator := _operator;
+	
+}
+
+mapping Tuple(lhs:Expression, rhs:Expression):: Expressions2LogicalExpression(context : OclAny, _operator : LogicOperator): core::expressions::common::LogicalExpression{
+	result.leftExpression := self.lhs;
+	result.rightExpression := self.rhs;
+	result.operator := _operator;
+}
+mapping OneToManyCommunicationSchema :: Schema2UnicastCall(context : OclAny, condition : Expression, action : Action): AsynchronousMessageEvent{	
+	kind := EventKind::RAISE;
+	message := self.asynchronousMessageEvent.message;	
+	oneToManyCommunicationSchema := self.map Schema2Unicast(context,condition,action);
+}
+
+mapping OneToManyCommunicationSchema ::Schema2Unicast(context : OclAny, _condition : Expression, _action : Action) : muml::realtimestatechart::one_to_n_schemata::Unicast{
+	result.condition :=  _condition;
+	result.action := _action;
+}
+
+
+query Transition :: getPortOrRoleAsDataType() : DataType{
+	return self.statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(muml::types::DataType);
+}
+
+
+
+mapping Transition :: Schema2AssignmentExpression(context : OclAny,referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
+
+	result.lhs_typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(context,referencedElement);
+	result.rhs_assignExpression := assignedExpression;
+}
+
+
+
+mapping Transition :: Schema2LiteralExpression(context : OclAny, _value : String) : core::expressions::common::LiteralExpression{
+	value := _value;
+	
+}
+
+mapping Transition :: Schema2TypedNamedElementExpression(context : OclAny,referencedElement : TypedNamedElement) : TypedNamedElementExpression{
+	
+	typedNamedElement := referencedElement;
+}
+
+mapping Transition :: Schema2Variable(_name : String, _type : DataType) : Variable{
+	result.name := _name;
+	result.dataType := _type;
+}
+
+mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition{
+	
+	priority := 1;
 	
 	source := self.map Schema2IntermediateState(1);
 	
-	clockResets := self.clockResets;
+	target := self.target;
 	
-	action := self.action;
+	if(self.transitionDefinesRelativeDeadline()){
+			clockConstraints+= self.map RelativeDeadline2ClockConstraint(result, result, false, ComparingOperator::LESS_OR_EQUAL, IterateDLC_ClockName);
+		}endif;
 	
+}
+
+mapping Transition :: Iterate2Transition2FromIntermediateToTarget(): Transition{
 	
+	priority := 3;
+	
+	source := self.map Schema2IntermediateState(1);
+	
+	target := self.target;
+	
+	if(self.transitionDefinesRelativeDeadline()){
+			clockConstraints+= self.map RelativeDeadline2ClockConstraint(result, result, false, ComparingOperator::LESS_OR_EQUAL, IterateDLC_ClockName);
+		}endif;
 }
 mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	
-		
+	priority := 2;
+	
+	if(self.iterateDefinesDelay()){
+		self.map Transition2ClockConstraint(result,IterateDelayTimeClockName,self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.map TimeValue2TimeValue(result,result));
+	}
 }
 
 
+query Transition :: iterateDefinesDelay(): Boolean{
+		return not self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).delay.oclIsUndefined();
+}
 
-// @author: sthiele2 -- creates an intermediate state in the input Realtimestatechart. This is necessary in case of schemata that can be
+query Transition :: transitionDefinesRelativeDeadline(): Boolean{
+		return not self.relativeDeadline.oclIsUndefined();
+}
+
+//creates an intermediate state in the input Realtimestatechart. This is necessary in case of schemata that can be
 // transformed expressed by other schematas. 
 
 mapping  Transition :: Schema2IntermediateState(stateID : Integer) : State {
@@ -60,11 +200,12 @@ mapping  Transition :: Schema2IntermediateState(stateID : Integer) : State {
 		parentStatechart := self.statechart;		
 		
 		entryEvent := new EntryEvent();
-	
-		result.entryEvent.kind := EventKind::RAISE;
-	
-		result.entryEvent.clockResets+= self.map TransitionDeadline2CoordinatorDeadlineClock(IterateDelayTimeClockName);
-	
+			
+		if(self.iterateDefinesDelay()){
+			result.entryEvent.kind := EventKind::RAISE;
+			result.entryEvent.clockResets+= self.map TransitionDeadline2CoordinatorDeadlineClock(IterateDelayTimeClockName);
+		}endif;
+		
 		// map the effects of the transition to the states exit effects	
 		exitEvent := new ExitEvent();
 	
@@ -74,7 +215,10 @@ mapping  Transition :: Schema2IntermediateState(stateID : Integer) : State {
 	
 		result.exitEvent.action := self.action;		
 		
-		
+		if(self.transitionDefinesRelativeDeadline())
+		{
+			invariants+=self.map RelativeDeadline2ClockConstraint(result, result, false, ComparingOperator::LESS_OR_EQUAL, IterateDLC_ClockName);
+		}endif;
 	}
 	
 

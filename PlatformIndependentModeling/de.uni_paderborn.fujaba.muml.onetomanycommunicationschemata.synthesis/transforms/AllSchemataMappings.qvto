@@ -68,6 +68,7 @@ mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : St
 //@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
 mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: OclAny, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 {
+		var timeValue : TimeValue;
 		if(mapLowerBound)
 		{
 			result.bound := self.relativeDeadline.lowerBound.map TimeValue2TimeValue(context,region);
@@ -80,6 +81,10 @@ mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: 
 		result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
 }
 
+mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : String, _timeValue : TimeValue): ClockConstraint{
+	result.bound := _timeValue.map TimeValue2TimeValue(context,context);
+	result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+}
 mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	
 		kind := _kind;
