@@ -155,7 +155,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
     	} else if (uri != null && uri.isPlatformResource()) {
     		String platformString = uri.toPlatformString(true);
     		IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
-    		if (iResource.exists()) {
+    		if (iResource!=null && iResource.exists()) {
     			validDestination = true;
     		}
     	}
