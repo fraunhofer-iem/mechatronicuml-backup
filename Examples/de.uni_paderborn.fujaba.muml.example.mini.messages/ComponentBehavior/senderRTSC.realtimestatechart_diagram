@@ -36,7 +36,7 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_q8JJZz5QEeS-F5ExIYVeIg"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_q8JJaD5QEeS-F5ExIYVeIg"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="../messages.fujaba#_oLXpRxyCEeSKP_lLzmbIVg"/>
+                    <element xmi:type="realtimestatechart:State" href="../messages.muml#_oLXpRxyCEeSKP_lLzmbIVg"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q8IiUT5QEeS-F5ExIYVeIg"/>
                   </children>
                   <children xmi:type="notation:Shape" xmi:id="_q8JJaT5QEeS-F5ExIYVeIg" type="3032" fontName="Lucida Grande" fontHeight="11" lineColor="0">
@@ -57,17 +57,17 @@
                       <styles xmi:type="notation:SortingStyle" xmi:id="_q8Jwej5QEeS-F5ExIYVeIg"/>
                       <styles xmi:type="notation:FilteringStyle" xmi:id="_q8Jwez5QEeS-F5ExIYVeIg"/>
                     </children>
-                    <element xmi:type="realtimestatechart:State" href="../messages.fujaba#_oLXpSByCEeSKP_lLzmbIVg"/>
+                    <element xmi:type="realtimestatechart:State" href="../messages.muml#_oLXpSByCEeSKP_lLzmbIVg"/>
                     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q8JJaj5QEeS-F5ExIYVeIg" x="149" y="7"/>
                   </children>
                 </children>
-                <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.fujaba#_oLXpQRyCEeSKP_lLzmbIVg"/>
+                <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.muml#_oLXpQRyCEeSKP_lLzmbIVg"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q8HUMT5QEeS-F5ExIYVeIg"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_q77G8z5QEeS-F5ExIYVeIg"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_q77G9D5QEeS-F5ExIYVeIg"/>
             </children>
-            <element xmi:type="realtimestatechart:Region" href="../messages.fujaba#_oLXpQByCEeSKP_lLzmbIVg"/>
+            <element xmi:type="realtimestatechart:Region" href="../messages.muml#_oLXpQByCEeSKP_lLzmbIVg"/>
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q76f4T5QEeS-F5ExIYVeIg"/>
           </children>
           <styles xmi:type="notation:SortingStyle" xmi:id="_q74qsT5QEeS-F5ExIYVeIg"/>
@@ -81,13 +81,13 @@
           <styles xmi:type="notation:SortingStyle" xmi:id="_q74qtz5QEeS-F5ExIYVeIg"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_q74quD5QEeS-F5ExIYVeIg"/>
         </children>
-        <element xmi:type="realtimestatechart:State" href="../messages.fujaba#_xv360RyBEeSKP_lLzmbIVg"/>
+        <element xmi:type="realtimestatechart:State" href="../messages.muml#_xv360RyBEeSKP_lLzmbIVg"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q74DoT5QEeS-F5ExIYVeIg"/>
       </children>
     </children>
-    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.fujaba#_xv360ByBEeSKP_lLzmbIVg"/>
+    <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.muml#_xv360ByBEeSKP_lLzmbIVg"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q7x9AT5QEeS-F5ExIYVeIg"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_xv360xyBEeSKP_lLzmbIVg"/>
-  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.fujaba#_xv360ByBEeSKP_lLzmbIVg"/>
+  <element xmi:type="realtimestatechart:RealtimeStatechart" href="../messages.muml#_xv360ByBEeSKP_lLzmbIVg"/>
 </notation:Diagram>
