@@ -10,6 +10,10 @@ import org.storydriven.core.ExtendableElement;
  * A representation of the model object '<em><b>Networking Hardware</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getNetworkingHardware()
  * @model abstract="true"

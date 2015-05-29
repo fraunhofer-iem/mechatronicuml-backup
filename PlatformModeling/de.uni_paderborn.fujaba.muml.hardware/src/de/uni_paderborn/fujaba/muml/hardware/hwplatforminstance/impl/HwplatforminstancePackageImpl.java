@@ -383,6 +383,15 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getNetworkBridgeInstance_NetworkBridgeType() {
+		return (EReference)networkBridgeInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNetworkingHardwareInstance() {
 		return networkingHardwareInstanceEClass;
 	}
@@ -512,6 +521,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 
 		networkBridgeInstanceEClass = createEClass(NETWORK_BRIDGE_INSTANCE);
 		createEReference(networkBridgeInstanceEClass, NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES);
+		createEReference(networkBridgeInstanceEClass, NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE);
 
 		networkingHardwareInstanceEClass = createEClass(NETWORKING_HARDWARE_INSTANCE);
 
@@ -600,6 +610,7 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 
 		initEClass(networkBridgeInstanceEClass, NetworkBridgeInstance.class, "NetworkBridgeInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNetworkBridgeInstance_ConnectedNetworkConnectorInstances(), this.getNetworkConnectorInstance(), null, "connectedNetworkConnectorInstances", null, 2, -1, NetworkBridgeInstance.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getNetworkBridgeInstance_NetworkBridgeType(), theHwplatformPackage.getNetworkBridge(), null, "networkBridgeType", null, 1, 1, NetworkBridgeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkingHardwareInstanceEClass, NetworkingHardwareInstance.class, "NetworkingHardwareInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -690,6 +701,12 @@ public class HwplatforminstancePackageImpl extends EPackageImpl implements Hwpla
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorInstances->select(c|c.oclIsKindOf(hwplatforminstance::NetworkConnectorInstance)).oclAsType(hwplatforminstance::NetworkConnectorInstance)->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (getNetworkBridgeInstance_NetworkBridgeType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if  self.type.oclIsKindOf(hwplatform::NetworkBridge) then\r\n\tself.type.oclAsType(hwplatform::NetworkBridge)\r\nelse\r\n\tnull\r\nendif"
 		   });	
 		addAnnotation
 		  (getNetworkConnectorInstance_ConnectedHWPortInstances(), 

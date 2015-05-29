@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType <em>Network Bridge Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,5 +45,31 @@ public interface NetworkBridgeInstance extends NetworkingHardwareInstance, Conne
 	 * @generated
 	 */
 	EList<NetworkConnectorInstance> getConnectedNetworkConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Network Bridge Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The NetworkBridge type of this NetworkBridgeInstance.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Network Bridge Type</em>' reference.
+	 * @see #setNetworkBridgeType(NetworkBridge)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getNetworkBridgeInstance_NetworkBridgeType()
+	 * @model required="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if  self.type.oclIsKindOf(hwplatform::NetworkBridge) then\r\n\tself.type.oclAsType(hwplatform::NetworkBridge)\r\nelse\r\n\tnull\r\nendif'"
+	 * @generated
+	 */
+	NetworkBridge getNetworkBridgeType();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType <em>Network Bridge Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Network Bridge Type</em>' reference.
+	 * @see #getNetworkBridgeType()
+	 * @generated
+	 */
+	void setNetworkBridgeType(NetworkBridge value);
 
 } // NetworkBridgeInstance

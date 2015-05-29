@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a bridge or a gateway. Bridges are used to connect two or more CommunicationMedia.
+ * This class represents a bridge or a gateway. Bridges are used to connect two or more Networks.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -52,7 +52,7 @@ public interface NetworkBridge extends NetworkingHardware, ConnectorEndpoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The time variation this Bridge needs to transmit data between different CommunicationMedia.
+	 * The time variation this Bridge needs to transmit data between different Networks.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Delay</em>' containment reference.
 	 * @see #setDelay(TimeInterval)

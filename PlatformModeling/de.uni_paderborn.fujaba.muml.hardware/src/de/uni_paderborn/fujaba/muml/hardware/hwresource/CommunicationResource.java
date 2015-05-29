@@ -145,11 +145,14 @@ public interface CommunicationResource extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The hardware resource this CommunicationResource belongs to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent Resource</em>' container reference.
 	 * @see #setParentResource(Resource)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationResource_ParentResource()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource#getCommunicationResources
-	 * @model opposite="communicationResources" transient="false"
+	 * @model opposite="communicationResources" required="true" transient="false"
 	 * @generated
 	 */
 	Resource getParentResource();

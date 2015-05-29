@@ -9,6 +9,11 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
  * A representation of the model object '<em><b>Delegation HW Port Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents a DelegationPort of a HWPlatform on instance-level.
+ * In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpointInstance.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,6 +35,9 @@ public interface DelegationHWPortInstance extends ConnectorEndpointInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The HWPlatformInstance this DelegationHWPortInstance belongs to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent HW Platform Instance</em>' container reference.
 	 * @see #setParentHWPlatformInstance(HWPlatformInstance)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getDelegationHWPortInstance_ParentHWPlatformInstance()

@@ -8,6 +8,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
@@ -44,6 +45,7 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.NetworkBridgeInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.NetworkBridgeInstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.NetworkBridgeInstanceImpl#getConnectedNetworkConnectorInstances <em>Connected Network Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.NetworkBridgeInstanceImpl#getNetworkBridgeType <em>Network Bridge Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,6 +121,16 @@ public class NetworkBridgeInstanceImpl extends NetworkingHardwareInstanceImpl im
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getNetworkBridgeType() <em>Network Bridge Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNetworkBridgeType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NETWORK_BRIDGE_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)HwplatforminstancePackage.Literals.NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,6 +258,33 @@ public class NetworkBridgeInstanceImpl extends NetworkingHardwareInstanceImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NetworkBridge getNetworkBridgeType() {
+		return (NetworkBridge)NETWORK_BRIDGE_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NetworkBridge basicGetNetworkBridgeType() {
+		return (NetworkBridge)NETWORK_BRIDGE_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNetworkBridgeType(NetworkBridge newNetworkBridgeType) {
+		NETWORK_BRIDGE_TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newNetworkBridgeType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -289,6 +328,9 @@ public class NetworkBridgeInstanceImpl extends NetworkingHardwareInstanceImpl im
 				return basicGetType();
 			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 				return getConnectedNetworkConnectorInstances();
+			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE:
+				if (resolve) return getNetworkBridgeType();
+				return basicGetNetworkBridgeType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,6 +361,9 @@ public class NetworkBridgeInstanceImpl extends NetworkingHardwareInstanceImpl im
 				getConnectedNetworkConnectorInstances().clear();
 				getConnectedNetworkConnectorInstances().addAll((Collection<? extends NetworkConnectorInstance>)newValue);
 				return;
+			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE:
+				setNetworkBridgeType((NetworkBridge)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -346,6 +391,9 @@ public class NetworkBridgeInstanceImpl extends NetworkingHardwareInstanceImpl im
 			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 				getConnectedNetworkConnectorInstances().clear();
 				return;
+			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE:
+				setNetworkBridgeType((NetworkBridge)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -368,6 +416,8 @@ public class NetworkBridgeInstanceImpl extends NetworkingHardwareInstanceImpl im
 				return type != null;
 			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
 				return CONNECTED_NETWORK_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE:
+				return NETWORK_BRIDGE_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

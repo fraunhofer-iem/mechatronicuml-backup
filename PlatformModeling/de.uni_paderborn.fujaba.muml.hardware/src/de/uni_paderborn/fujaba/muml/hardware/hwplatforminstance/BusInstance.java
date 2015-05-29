@@ -57,6 +57,9 @@ public interface BusInstance extends ConnectorEndpointInstance, NetworkingHardwa
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The Bus type of this BusInstance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Bus Type</em>' reference.
 	 * @see #setBusType(Bus)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getBusInstance_BusType()

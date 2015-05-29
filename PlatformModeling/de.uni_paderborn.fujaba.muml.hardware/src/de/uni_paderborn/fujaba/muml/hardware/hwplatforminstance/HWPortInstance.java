@@ -48,6 +48,11 @@ public interface HWPortInstance extends ConnectorEndpointInstance, HWPort {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Specfies wheter this HWPortInstance is used for network communication or for reading/writing sensors/actuators.
+	 * This attribute is derived from the used CommunicationProtocol.
+	 * Moreover, this attribute is used in the CodeGeneration to identify possible routings for messages.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Is Network Interface</em>' attribute.
 	 * @see #setIsNetworkInterface(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPortInstance_IsNetworkInterface()

@@ -81,6 +81,10 @@ public interface HWPlatformInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The embedded Hardware Platform Instance Configuration.
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded HPIC</em>' containment reference.
 	 * @see #setEmbeddedHPIC(HWPlatformInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_EmbeddedHPIC()
@@ -109,6 +113,10 @@ public interface HWPlatformInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The Hardware Platform Instance Configuration in which this HWPlatformInstance is embedded.
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent HPIC</em>' container reference.
 	 * @see #setParentHPIC(HWPlatformInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstance_ParentHPIC()

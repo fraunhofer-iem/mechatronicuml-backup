@@ -187,6 +187,7 @@ public class NetworkBridgeInstanceItemProvider extends NetworkingHardwareInstanc
 			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__NAME:
 			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__COMMENT:
 			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES:
+			case HwplatforminstancePackage.NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

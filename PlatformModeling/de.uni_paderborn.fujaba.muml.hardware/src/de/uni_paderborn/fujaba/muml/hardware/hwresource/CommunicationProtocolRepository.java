@@ -10,6 +10,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Communication Protocol Repository</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents a repository containing several CommunicationProtocol which are used in the hardware models.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -31,6 +35,9 @@ public interface CommunicationProtocolRepository extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The contained CommunicationProtocols.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Communication Protocols</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationProtocolRepository_CommunicationProtocols()
 	 * @model containment="true"

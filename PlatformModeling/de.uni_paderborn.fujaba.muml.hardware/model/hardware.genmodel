@@ -138,6 +138,8 @@
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/NetworkBridgeInstance">
         <genFeatures property="None" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkBridgeInstance/connectedNetworkConnectorInstances"/>
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//hwplatforminstance/NetworkBridgeInstance/networkBridgeType"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//hwplatforminstance/NetworkingHardwareInstance"/>
       <genClasses ecoreClass="hardware.ecore#//hwplatforminstance/DelegationHWPortInstance">

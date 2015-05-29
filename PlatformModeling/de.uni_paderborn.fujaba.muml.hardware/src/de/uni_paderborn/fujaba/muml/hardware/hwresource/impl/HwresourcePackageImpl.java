@@ -1092,7 +1092,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		initEReference(getCommunicationResource_Protocol(), this.getCommunicationProtocol(), null, "protocol", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationResource_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationResource_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 1, 1, CommunicationResource.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getCommunicationResource_ParentResource(), this.getResource(), this.getResource_CommunicationResources(), "parentResource", null, 0, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationResource_ParentResource(), this.getResource(), this.getResource_CommunicationResources(), "parentResource", null, 1, 1, CommunicationResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(deviceKindEEnum, DeviceKind.class, "DeviceKind");

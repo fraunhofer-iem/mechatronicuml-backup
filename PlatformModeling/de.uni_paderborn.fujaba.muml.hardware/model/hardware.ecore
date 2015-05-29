@@ -109,15 +109,19 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwresourceinstance/HWPort">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform.&#xA;DelegationPorts are used  to delegate HWPorts of embedded HWResourses to the outside.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpoint.&#xA;Furthermore, this class inherits from HWPort, because a DelegationPort provides to the outside the same features as a standard HWPort."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a hardware port of a PlatformPart."/>
+        <details key="documentation" value="This class represents a hardware port of a PlatformPart and is derived from a HWPort.&#xA;The purpose of a HWPortPart is to enable the reuse of defined HWPorts in different HWPlatforms and in different Confiugrations.&#xA;For Instance, HWPortParts are derived from one HWPort but can be attached to different NetworkConnectors."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnector"
           upperBound="-1" eType="#//hwplatform/NetworkConnector" volatile="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The communication media to which this HWPortPart is connected."/>
+          <details key="documentation" value="The NetworkConnector which are connected to this HWPortPart."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectors->select(c|c.oclIsKindOf(hwplatform::NetworkConnector)).oclAsType(hwplatform::NetworkConnector)->asOrderedSet()"/>
@@ -136,9 +140,17 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentPlatformPart" lowerBound="1"
-          eType="#//hwplatform/PlatformPart" eOpposite="#//hwplatform/PlatformPart/hwPortParts"/>
+          eType="#//hwplatform/PlatformPart" eOpposite="#//hwplatform/PlatformPart/hwPortParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The PlatformPort to which is HWPortPart belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwport" lowerBound="1"
-          eType="#//hwresourceinstance/HWPort"/>
+          eType="#//hwresourceinstance/HWPort">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The original HWPort which is represented by this HWPortPart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Bus" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint #//hwplatform/NetworkingHardware">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -178,7 +190,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkBridge" eSuperTypes="#//hwplatform/NetworkingHardware ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a bridge or a gateway. Bridges are used to connect two or more CommunicationMedia."/>
+        <details key="documentation" value="This class represents a bridge or a gateway. Bridges are used to connect two or more Networks."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnector"
           lowerBound="2" upperBound="-1" eType="#//hwplatform/NetworkConnector" volatile="true"
@@ -193,18 +205,25 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="delay" eType="#//hwvaluetype/TimeInterval"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The time variation this Bridge needs to transmit data between different CommunicationMedia."/>
+          <details key="documentation" value="The time variation this Bridge needs to transmit data between different Networks."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkingHardware" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkConnector" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SameProtocol"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SameProtocol" value="-- Connected Ports must use the same Protocol&#xD;&#xA;self.hwportParts.hwport->forAll(p1 , p2 | p1.protocol = p2.protocol)"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a network connection between hardware resources.&#xA;This class inherits from muml::Connector to be conistent with the muml metamodel."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"
           volatile="true">
@@ -416,13 +435,21 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedHPIC" lowerBound="1"
           eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" containment="true"
-          eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance"/>
+          eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/parentHWPlatformInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The embedded Hardware Platform Instance Configuration.&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentHPIC" lowerBound="1"
-          eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+          eType="#//hwplatforminstance/HWPlatformInstanceConfiguration" eOpposite="#//hwplatforminstance/HWPlatformInstanceConfiguration/hwplatformInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Hardware Platform Instance Configuration in which this HWPlatformInstance is embedded.&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPlatformInstanceConfiguration" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a HWPlatformInstanceConfiguration.&#xA;A HWPlatformInstanceConfiguration consists of several HWPlatformInstances.&#xA;The HWPlatformInstances might be connected via different CommunicationMedia."/>
+        <details key="documentation" value="This class represents a HWPlatformInstanceConfiguration.&#xA;A HWPlatformInstanceConfiguration consists of several HWPlatformInstances.&#xA;The HWPlatformInstances might be connected via different NetworkConnectorInstances."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwplatformInstances"
           upperBound="-1" eType="#//hwplatforminstance/HWPlatformInstance" containment="true"
@@ -435,7 +462,7 @@
           upperBound="-1" eType="#//hwplatforminstance/NetworkingHardwareInstance"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The CommunicationMedia of this HWPlatformInstanceConfiguration. &#xA;The CommunicationMedia are used to connect different HWPlatformInstances via their Bridges or HWPortInstances."/>
+          <details key="documentation" value="The NetworkingHardwareInstances of this HWPlatformInstanceConfiguration. &#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
@@ -445,9 +472,17 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
-          eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/embeddedHPIC"/>
+          eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/embeddedHPIC">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The parent HWPlatformInstance is which this HWPlatformInstanceConfiguration is embedded.&#xA;The bound is 0..1, because the root HWPlatformInstanceConfiguration is not embedded in any HWPlatformInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="networkConnectorInstances"
-          upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" containment="true"/>
+          upperBound="-1" eType="#//hwplatforminstance/NetworkConnectorInstance" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The NetworkingConnectorInstances of this HWPlatformInstanceConfiguration. &#xA;NetworkConnectorInstances are used to connect different HWPlatformInstances via bridges or HWPortInstances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance #//hwresourceinstance/HWPort">
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedNetworkConnectorInstances"
@@ -465,6 +500,9 @@
           volatile="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if (self.protocol.oclIsUndefined()) then&#xA;&#x9;false&#xA;else self.protocol.isNetworkingProtocol&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Specfies wheter this HWPortInstance is used for network communication or for reading/writing sensors/actuators.&#xA;This attribute is derived from the used CommunicationProtocol.&#xA;Moreover, this attribute is used in the CodeGeneration to identify possible routings for messages."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -486,6 +524,9 @@
           eType="#//hwplatform/Bus" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if  self.type.oclIsKindOf(hwplatform::Bus) then&#xD;&#xA;&#x9;self.type.oclAsType(hwplatform::Bus)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The Bus type of this BusInstance."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
@@ -521,14 +562,37 @@
           <details key="derivation" value="self.connectorInstances->select(c|c.oclIsKindOf(hwplatforminstance::NetworkConnectorInstance)).oclAsType(hwplatforminstance::NetworkConnectorInstance)->asOrderedSet()"/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="networkBridgeType" lowerBound="1"
+          eType="#//hwplatform/NetworkBridge" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if  self.type.oclIsKindOf(hwplatform::NetworkBridge) then&#xD;&#xA;&#x9;self.type.oclAsType(hwplatform::NetworkBridge)&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The NetworkBridge type of this NetworkBridgeInstance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkingHardwareInstance" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This abstract class represents hardware devices which are used to connect ECUs, e.g., bridge, router, bus, on instance-level."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationHWPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpointInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a DelegationPort of a HWPlatform on instance-level.&#xA;In order to be conistent with the muml metamodel, this class inherits from muml::ConnectorEndpointInstance."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentHWPlatformInstance"
-          lowerBound="1" eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/delegationPorts"/>
+          lowerBound="1" eType="#//hwplatforminstance/HWPlatformInstance" eOpposite="#//hwplatforminstance/HWPlatformInstance/delegationPorts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPlatformInstance this DelegationHWPortInstance belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NetworkConnectorInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a network connection between hardware resources on instance-level.&#xA;This class inherits from muml::ConnectorInstance to be conistent with the muml metamodel."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortInstances"
           upperBound="-1" eType="#//hwplatforminstance/HWPortInstance" changeable="false"
           volatile="true" transient="true" derived="true">
@@ -822,8 +886,15 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocolRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a repository containing several CommunicationProtocol which are used in the hardware models."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="communicationProtocols"
-          upperBound="-1" eType="#//hwresource/CommunicationProtocol" containment="true"/>
+          upperBound="-1" eType="#//hwresource/CommunicationProtocol" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The contained CommunicationProtocols."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocol" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
@@ -973,8 +1044,12 @@
           <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parentResource" eType="#//hwresource/Resource"
-          eOpposite="#//hwresource/Resource/communicationResources"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentResource" lowerBound="1"
+          eType="#//hwresource/Resource" eOpposite="#//hwresource/Resource/communicationResources">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The hardware resource this CommunicationResource belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="hwresourceinstance" nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/"
@@ -1175,8 +1250,15 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPort" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hardware port of a resource instance."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentResourceInstance"
-          eType="#//hwresourceinstance/ResourceInstance" eOpposite="#//hwresourceinstance/ResourceInstance/hwports"/>
+          eType="#//hwresourceinstance/ResourceInstance" eOpposite="#//hwresourceinstance/ResourceInstance/hwports">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ResourceInstance this hardware port belongs to.&#xA;Theoretically the bound shall be 1..1. However this would prevent the reuse of this class in the platform and platforminstance model."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="communicationResource"
           eType="#//hwresource/CommunicationResource"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="#//hwresource/CommunicationProtocol"

@@ -14,7 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a hardware port of a PlatformPart.
+ * This class represents a hardware port of a PlatformPart and is derived from a HWPort.
+ * The purpose of a HWPortPart is to enable the reuse of defined HWPorts in different HWPlatforms and in different Confiugrations.
+ * For Instance, HWPortParts are derived from one HWPort but can be attached to different NetworkConnectors.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -39,7 +41,7 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The communication media to which this HWPortPart is connected.
+	 * The NetworkConnector which are connected to this HWPortPart.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connected Network Connector</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_ConnectedNetworkConnector()
@@ -108,6 +110,9 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The PlatformPort to which is HWPortPart belongs to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent Platform Part</em>' container reference.
 	 * @see #setParentPlatformPart(PlatformPart)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_ParentPlatformPart()
@@ -135,6 +140,9 @@ public interface HWPortPart extends ConnectorEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The original HWPort which is represented by this HWPortPart.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hwport</em>' reference.
 	 * @see #setHwport(HWPort)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getHWPortPart_Hwport()

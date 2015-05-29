@@ -1501,13 +1501,22 @@ public interface HwplatforminstancePackage extends EPackage {
 	int NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = NETWORKING_HARDWARE_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Network Bridge Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE = NETWORKING_HARDWARE_INSTANCE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Network Bridge Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_BRIDGE_INSTANCE_FEATURE_COUNT = NETWORKING_HARDWARE_INSTANCE_FEATURE_COUNT + 5;
+	int NETWORK_BRIDGE_INSTANCE_FEATURE_COUNT = NETWORKING_HARDWARE_INSTANCE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2469,6 +2478,17 @@ public interface HwplatforminstancePackage extends EPackage {
 	EReference getNetworkBridgeInstance_ConnectedNetworkConnectorInstances();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType <em>Network Bridge Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Network Bridge Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType()
+	 * @see #getNetworkBridgeInstance()
+	 * @generated
+	 */
+	EReference getNetworkBridgeInstance_NetworkBridgeType();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkingHardwareInstance <em>Networking Hardware Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2764,6 +2784,14 @@ public interface HwplatforminstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference NETWORK_BRIDGE_INSTANCE__CONNECTED_NETWORK_CONNECTOR_INSTANCES = eINSTANCE.getNetworkBridgeInstance_ConnectedNetworkConnectorInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Network Bridge Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NETWORK_BRIDGE_INSTANCE__NETWORK_BRIDGE_TYPE = eINSTANCE.getNetworkBridgeInstance_NetworkBridgeType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.NetworkingHardwareInstanceImpl <em>Networking Hardware Instance</em>}' class.

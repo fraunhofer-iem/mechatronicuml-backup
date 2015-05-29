@@ -14,6 +14,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>HW Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents a hardware port of a resource instance.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -40,6 +44,10 @@ public interface HWPort extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ResourceInstance this hardware port belongs to.
+	 * Theoretically the bound shall be 1..1. However this would prevent the reuse of this class in the platform and platforminstance model.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent Resource Instance</em>' container reference.
 	 * @see #setParentResourceInstance(ResourceInstance)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getHWPort_ParentResourceInstance()

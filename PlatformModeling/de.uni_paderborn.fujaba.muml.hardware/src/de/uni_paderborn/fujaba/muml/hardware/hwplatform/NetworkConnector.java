@@ -14,6 +14,11 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Network Connector</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents a network connection between hardware resources.
+ * This class inherits from muml::Connector to be conistent with the muml metamodel.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

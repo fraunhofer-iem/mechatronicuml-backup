@@ -14,7 +14,7 @@ import org.storydriven.core.CommentableElement;
  * <!-- begin-model-doc -->
  * This class represents a HWPlatformInstanceConfiguration.
  * A HWPlatformInstanceConfiguration consists of several HWPlatformInstances.
- * The HWPlatformInstances might be connected via different CommunicationMedia.
+ * The HWPlatformInstances might be connected via different NetworkConnectorInstances.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -56,8 +56,8 @@ public interface HWPlatformInstanceConfiguration extends CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The CommunicationMedia of this HWPlatformInstanceConfiguration. 
-	 * The CommunicationMedia are used to connect different HWPlatformInstances via their Bridges or HWPortInstances.
+	 * The NetworkingHardwareInstances of this HWPlatformInstanceConfiguration. 
+	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Networking Hardware Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_NetworkingHardwareInstances()
@@ -90,6 +90,10 @@ public interface HWPlatformInstanceConfiguration extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The parent HWPlatformInstance is which this HWPlatformInstanceConfiguration is embedded.
+	 * The bound is 0..1, because the root HWPlatformInstanceConfiguration is not embedded in any HWPlatformInstance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent HW Platform Instance</em>' container reference.
 	 * @see #setParentHWPlatformInstance(HWPlatformInstance)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_ParentHWPlatformInstance()
@@ -118,6 +122,10 @@ public interface HWPlatformInstanceConfiguration extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The NetworkingConnectorInstances of this HWPlatformInstanceConfiguration. 
+	 * NetworkConnectorInstances are used to connect different HWPlatformInstances via bridges or HWPortInstances.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Network Connector Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage#getHWPlatformInstanceConfiguration_NetworkConnectorInstances()
 	 * @model containment="true"
