@@ -13,7 +13,7 @@ modeltype PSMInstance uses psm::instance('http://www.fujaba.de/muml/psm/0.4.0/')
 modeltype PSMRealtimeStateChart uses psm::realtimestatechart::realtimestatechartparameterbinding('http://www.fujaba.de/muml/psm/0.4.0/');
 
 modeltype Allocation uses psm::allocation('http://www.fujaba.de/muml/psm/0.4.0/');
-modeltype Codegen uses codegen('http://www.fujaba.de/muml/psm/codegen/0.4.0/');
+modeltype Codegen uses psm::codegen('http://www.fujaba.de/muml/psm/0.4.0/');
 modeltype Hardware uses hardware('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype Platform uses hardware::hwplatform('http://www.fujaba.de/muml/hardware/1.0/');
 modeltype PlatformInstance uses hardware::hwplatforminstance('http://www.fujaba.de/muml/hardware/1.0/');
@@ -225,6 +225,7 @@ mapping HWPlatformInstanceConfiguration::mapHWPlatformInstanceConfiguration():HW
 //	name:=self.name;
 	hwplatformInstances:=self.hwplatformInstances->map mapHWPlatformInstance();
 	networkingHardwareInstances:=self.networkingHardwareInstances->map mapNetworkHardwareInstance();
+	networkConnectorInstances:=self.networkConnectorInstances->map mapNetworkConnectorInstance();
 	resources:=self.resources->map mapResourceInstance();
 	
 }
@@ -239,10 +240,10 @@ mapping HWPlatformInstance::mapHWPlatformInstance():HWPlatformInstance{
 }
 
 mapping NetworkingHardwareInstance::mapNetworkHardwareInstance():NetworkingHardwareInstance
-disjuncts BridgeInstance::mapBridgeInstance, BusInstance::mapBusInstance, BusConnectorInstance::mapBusConnectorInstance,LinkInstance::mapLinkInstance,DelegationInstance::mapDelegationInstance;
+disjuncts NetworkBridgeInstance::mapBridgeInstance, BusInstance::mapBusInstance;
 
 
-mapping BridgeInstance::mapBridgeInstance():BridgeInstance{
+mapping NetworkBridgeInstance::mapBridgeInstance():NetworkBridgeInstance{
 	name:=self.name;
 	type:=self.type;
 	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
@@ -251,29 +252,16 @@ mapping BridgeInstance::mapBridgeInstance():BridgeInstance{
 
 mapping BusInstance::mapBusInstance():BusInstance{
 	type:=self.type;
-	communicationMediaPart:=self.communicationMediaPart;
 	name:=self.name;
 	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
 	
 }
 
-mapping BusConnectorInstance::mapBusConnectorInstance():BusConnectorInstance{
+mapping NetworkConnectorInstance::mapNetworkConnectorInstance():NetworkConnectorInstance{
 	type:=self.type;
 	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);
 }
 
-mapping LinkInstance::mapLinkInstance():LinkInstance{
-	type:=self.type;
-	communicationMediaPart:=self.communicationMediaPart;
-	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);
-	
-}
-
-mapping DelegationInstance::mapDelegationInstance():DelegationInstance{
-	type:=self.type;
-	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);
-	
-}
 
 mapping ConnectorEndpointInstance::mapHWPort():ConnectorEndpointInstance
 disjuncts HWPortInstance::mapHWPortInstance, DelegationHWPortInstance::mapDelegationHWPortInstance;
