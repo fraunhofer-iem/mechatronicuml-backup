@@ -3892,99 +3892,99 @@
   </categories>
   <categories xmi:id="_s8IWoKe4EeSK_8TqY1SjtQ" key="de.uni_paderborn.fujaba.muml.hardware.resource.category" name="resource">
     <modelElements xsi:type="hwresource:ResourceRepository" xmi:id="_s8IWoae4EeSK_8TqY1SjtQ">
-      <resources xsi:type="hwresource:Device" xmi:id="_7Y-6YKe7EeSK_8TqY1SjtQ" name="Motor" deviceType="ACTUATOR">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="__UAMMKfAEeSK_8TqY1SjtQ" name="motohw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+      <resources xsi:type="hwresource:Device" xmi:id="_7Y-6YKe7EeSK_8TqY1SjtQ" name="Motor" deviceKind="ACTUATOR">
+        <communicationResources  xmi:id="__UAMMKfAEeSK_8TqY1SjtQ" name="motohw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="__UAMMafAEeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_EOQfsKfBEeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_EOQfsafBEeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
+        </communicationResources>
       </resources>
       <resources xsi:type="hwresource:Device" xmi:id="_-b7G8Ke7EeSK_8TqY1SjtQ" name="Line">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_Ew-yQKfBEeSK_8TqY1SjtQ" name="linehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        <communicationResources xmi:id="_Ew-yQKfBEeSK_8TqY1SjtQ" name="linehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_Ew-yQafBEeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_GGudMKfBEeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_GGudMafBEeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
+        </communicationResources>
       </resources>
       <resources xsi:type="hwresource:Device" xmi:id="_A7FRAKe8EeSK_8TqY1SjtQ" name="Distance">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_GrYpcKfBEeSK_8TqY1SjtQ" name="distancehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        <communicationResources xmi:id="_GrYpcKfBEeSK_8TqY1SjtQ" name="distancehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_GrYpcafBEeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_GrYpcqfBEeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_GrYpc6fBEeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
+        </communicationResources>
       </resources>
       <resources xsi:type="hwresource:Device" xmi:id="_DG8roKe8EeSK_8TqY1SjtQ" name="Color">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_Ibf8MKfBEeSK_8TqY1SjtQ" name="colorhw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        <communicationResources xmi:id="_Ibf8MKfBEeSK_8TqY1SjtQ" name="colorhw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_Ibf8MafBEeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_KXThkKfBEeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_KXThkafBEeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
+        </communicationResources>
       </resources>
       <resources xsi:type="hwresource:StructuredResource" xmi:id="_HcLmgKe8EeSK_8TqY1SjtQ" name="BrickResource">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_rE-D4Ke8EeSK_8TqY1SjtQ" name="virtualBluetoothPort" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
+        <communicationResources  xmi:id="_rE-D4Ke8EeSK_8TqY1SjtQ" name="virtualBluetoothPort" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_rFHN0Ke8EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_s0I7cKe8EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_s0I7cae8EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_0L8PcKe8EeSK_8TqY1SjtQ" name="usbPort" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources xmi:id="_0L8PcKe8EeSK_8TqY1SjtQ" name="usbPort" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_0L8Pcae8EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_2KiqIKe8EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_2KiqIae8EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_5Z_osKe8EeSK_8TqY1SjtQ" name="outputPortA" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources xmi:id="_5Z_osKe8EeSK_8TqY1SjtQ" name="outputPortA" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_5Z_osae8EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_6tLH0Ke8EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_6tLH0ae8EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_7KrjMKe8EeSK_8TqY1SjtQ" name="outputPortB" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources  xmi:id="_7KrjMKe8EeSK_8TqY1SjtQ" name="outputPortB" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_7KrjMae8EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_7KrjMqe8EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_7KrjM6e8EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_8mjrUKe8EeSK_8TqY1SjtQ" name="outputPortC" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources  xmi:id="_8mjrUKe8EeSK_8TqY1SjtQ" name="outputPortC" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_8mjrUae8EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_96cVEKe8EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_96cVEae8EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_BRGu4Ke9EeSK_8TqY1SjtQ" name="inputPort1" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources  xmi:id="_BRGu4Ke9EeSK_8TqY1SjtQ" name="inputPort1" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_BRGu4ae9EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_B5XBsKe9EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_B5XBsae9EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_DVN7sKe9EeSK_8TqY1SjtQ" name="inputPort2" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources xmi:id="_DVN7sKe9EeSK_8TqY1SjtQ" name="inputPort2" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_DVN7sae9EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_DVN7sqe9EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_DVN7s6e9EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_EZ32oKe9EeSK_8TqY1SjtQ" name="inputPort3" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources  xmi:id="_EZ32oKe9EeSK_8TqY1SjtQ" name="inputPort3" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_EZ32oae9EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_FI9xQKe9EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_FI9xQae9EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_FatBgKe9EeSK_8TqY1SjtQ" name="inputPort4" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources  xmi:id="_FatBgKe9EeSK_8TqY1SjtQ" name="inputPort4" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_FatBgae9EeSK_8TqY1SjtQ">
             <lowerBound xmi:id="_GR_O0Ke9EeSK_8TqY1SjtQ"/>
             <upperBound xmi:id="_GR_O0ae9EeSK_8TqY1SjtQ"/>
           </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_iy6psKhiEeSJj6cnB4p9sw" name="VirtualWifiPort" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
+        </communicationResources>
+        <communicationResources  xmi:id="_iy6psKhiEeSJj6cnB4p9sw" name="VirtualWifiPort" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
           <cardinality xmi:id="_izEasKhiEeSJj6cnB4p9sw">
             <lowerBound xmi:id="_ojBnIKhiEeSJj6cnB4p9sw"/>
             <upperBound xmi:id="_ojBnIahiEeSJj6cnB4p9sw"/>
           </cardinality>
-        </hwports>
+        </communicationResources>
         <embeddedAtomicResources xsi:type="hwresource:Processor" xmi:id="_OAr1UKe8EeSK_8TqY1SjtQ" name="Processor" family="Atmel AT91SAM7">
           <nbCores xmi:id="_OAr1Uae8EeSK_8TqY1SjtQ"/>
         </embeddedAtomicResources>
@@ -3992,85 +3992,37 @@
         <embeddedAtomicResources xsi:type="hwresource:MemoryResource" xmi:id="_Whzh0Ke8EeSK_8TqY1SjtQ" name="FLAHmemory" memoryAccess="READ_ONLY" memoryType="FLASH"/>
       </resources>
       <protocols xmi:id="_2dtakKe4EeSK_8TqY1SjtQ" name="ProtocolRepository">
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_DUdqkKe5EeSK_8TqY1SjtQ" name="CableProtocol" furtherInformation="CableProtocol"/>
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_PDLUcKe5EeSK_8TqY1SjtQ" name="i2cProtocol" furtherInformation="i2cProtocol" isNetworkingProtocol="false"/>
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_VKiUQKe5EeSK_8TqY1SjtQ" name="BluetoothProtocol" furtherInformation="BluetoothProtocol" linkProtocol="BLUETOOTH"/>
-        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_bd694Ke5EeSK_8TqY1SjtQ" name="WifiProtocol" furtherInformation="WifiProtocol" linkProtocol="WIFI"/>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_DUdqkKe5EeSK_8TqY1SjtQ" name="CableProtocol">
+                  <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
+                </communicationProtocols>
+        
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_PDLUcKe5EeSK_8TqY1SjtQ" name="i2cProtocol" >
+       <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
+                </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_VKiUQKe5EeSK_8TqY1SjtQ" name="BluetoothProtocol">
+         <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
+                </communicationProtocols>
+        <communicationProtocols xsi:type="hwresource:LinkProtocol" xmi:id="_bd694Ke5EeSK_8TqY1SjtQ" name="WifiProtocol">
+         <bandwidth xmi:id="_sdv9gPfFEeSpLt6xXKFDsw" value="1.0" unit="Kb\s"/>
+                </communicationProtocols>
       </protocols>
-      <communicationMedia xsi:type="hwresource:Link" xmi:id="_m78gYKe5EeSK_8TqY1SjtQ" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
-        <bandwidth xmi:id="_m78gYae5EeSK_8TqY1SjtQ" value="480.0" unit="Kb\s"/>
-      </communicationMedia>
-      <communicationMedia xsi:type="hwresource:Link" xmi:id="_q82KAKe5EeSK_8TqY1SjtQ" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
-        <bandwidth xmi:id="_q82KAae5EeSK_8TqY1SjtQ" value="600.0" unit="Kb\s"/>
-      </communicationMedia>
-      <communicationMedia xsi:type="hwresource:Link" xmi:id="_u5rL8Ke5EeSK_8TqY1SjtQ" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-        <bandwidth xmi:id="_u5rL8ae5EeSK_8TqY1SjtQ" value="400.0" unit="Kb\s"/>
-      </communicationMedia>
-      <communicationMedia xsi:type="hwresource:Link" xmi:id="_zOrdUKe5EeSK_8TqY1SjtQ" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
-        <bandwidth xmi:id="_zOrdUae5EeSK_8TqY1SjtQ" value="500.0" unit="Kb\s"/>
-      </communicationMedia>
     </modelElements>
     <modelElements xsi:type="hwresourceinstance:ResourceInstanceRepository" xmi:id="_X9Nd8Ke-EeSK_8TqY1SjtQ">
       <resourceInstances xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_cDsyMKe-EeSK_8TqY1SjtQ" name="BrickInstance" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRkKe-EeSK_8TqY1SjtQ" name="outputPortB" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRkae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRkqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRk6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports xmi:id="_dSpRkKe-EeSK_8TqY1SjtQ" name="outputPortB"/>
+        <hwports xmi:id="_dSpRlKe-EeSK_8TqY1SjtQ" name="inputPort4" />
+        <hwports xmi:id="_dSpRmKe-EeSK_8TqY1SjtQ" name="inputPort1" />
+        <hwports  xmi:id="_dSpRnKe-EeSK_8TqY1SjtQ" name="inputPort3" />
+        <hwports  xmi:id="_dSpRoKe-EeSK_8TqY1SjtQ" name="usbPort" />
+        <hwports xmi:id="_dSpRpKe-EeSK_8TqY1SjtQ" name="inputPort2">        
         </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRlKe-EeSK_8TqY1SjtQ" name="inputPort4" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRlae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_hJBtQKe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_hJBtQae-EeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports  xmi:id="_dSpRqKe-EeSK_8TqY1SjtQ" name="outputPortC" >
         </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRmKe-EeSK_8TqY1SjtQ" name="inputPort1" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRmae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRmqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRm6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports xmi:id="_dSpRrKe-EeSK_8TqY1SjtQ" name="outputPortA" >
         </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRnKe-EeSK_8TqY1SjtQ" name="inputPort3" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRnae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRnqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRn6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports  xmi:id="_dSpRsKe-EeSK_8TqY1SjtQ" name="virtualBluetoothPort" >
         </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRoKe-EeSK_8TqY1SjtQ" name="usbPort" protocol="_DUdqkKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRoae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRoqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRo6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRpKe-EeSK_8TqY1SjtQ" name="inputPort2" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRpae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRpqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRp6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRqKe-EeSK_8TqY1SjtQ" name="outputPortC" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRqae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRqqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRq6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRrKe-EeSK_8TqY1SjtQ" name="outputPortA" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRrae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRrqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRr6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_dSpRsKe-EeSK_8TqY1SjtQ" name="virtualBluetoothPort" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_dSpRsae-EeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_dSpRsqe-EeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_dSpRs6e-EeSK_8TqY1SjtQ"/>
-          </cardinality>
-        </hwports>
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_t84AsKhiEeSJj6cnB4p9sw" name="VirtualWifiPort" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_t84AsahiEeSJj6cnB4p9sw">
-            <lowerBound xmi:id="_t84AsqhiEeSJj6cnB4p9sw"/>
-            <upperBound xmi:id="_t84As6hiEeSJj6cnB4p9sw"/>
-          </cardinality>
+        <hwports xmi:id="_t84AsKhiEeSJj6cnB4p9sw" name="VirtualWifiPort">
         </hwports>
         <embeddedAtomicResourceInstances xsi:type="hwresourceinstance:ProcessorInstance" xmi:id="_dSfgkKe-EeSK_8TqY1SjtQ" name="Processor" resourceType="_OAr1UKe8EeSK_8TqY1SjtQ">
           <frequency xmi:id="_dSfgkae-EeSK_8TqY1SjtQ" value="60.0" unit="MHz"/>
@@ -4083,35 +4035,19 @@
         </embeddedAtomicResourceInstances>
       </resourceInstances>
       <resourceInstances xsi:type="hwresourceinstance:ActuatorInstance" xmi:id="_IluhIKe_EeSK_8TqY1SjtQ" name="MotorInstance" resourceType="_7Y-6YKe7EeSK_8TqY1SjtQ">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_Kn_B4KfBEeSK_8TqY1SjtQ" name="motohw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_Kn_B4afBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_Kn_B4qfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_Kn_B46fBEeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports xmi:id="_Kn_B4KfBEeSK_8TqY1SjtQ" name="motohw-port" >
         </hwports>
       </resourceInstances>
       <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_u2QnYKfAEeSK_8TqY1SjtQ" name="ColorInstance" resourceType="_DG8roKe8EeSK_8TqY1SjtQ">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_Kn_B6KfBEeSK_8TqY1SjtQ" name="colorhw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_Kn_B6afBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_Kn_B6qfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_Kn_B66fBEeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports  xmi:id="_Kn_B6KfBEeSK_8TqY1SjtQ" name="colorhw-port" >
         </hwports>
       </resourceInstances>
       <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_x6raoKfAEeSK_8TqY1SjtQ" name="DistanceInstance" resourceType="_A7FRAKe8EeSK_8TqY1SjtQ">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_KoIy5KfBEeSK_8TqY1SjtQ" name="distancehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_KoIy5afBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_KoIy5qfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_KoIy56fBEeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports  xmi:id="_KoIy5KfBEeSK_8TqY1SjtQ" name="distancehw-port">
         </hwports>
       </resourceInstances>
       <resourceInstances xsi:type="hwresourceinstance:SensorInstance" xmi:id="_06QxMKfAEeSK_8TqY1SjtQ" name="LineInstance" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
-        <hwports xsi:type="hwresource:CommunicationResource" xmi:id="_KoIy7KfBEeSK_8TqY1SjtQ" name="linehw-port" protocol="_PDLUcKe5EeSK_8TqY1SjtQ">
-          <cardinality xmi:id="_KoIy7afBEeSK_8TqY1SjtQ">
-            <lowerBound xmi:id="_QBonIKfBEeSK_8TqY1SjtQ"/>
-            <upperBound xmi:id="_QBonIafBEeSK_8TqY1SjtQ"/>
-          </cardinality>
+        <hwports  xmi:id="_KoIy7KfBEeSK_8TqY1SjtQ" name="linehw-port">
         </hwports>
       </resourceInstances>
     </modelElements>
@@ -4123,79 +4059,71 @@
           <lowerBound xmi:id="_yugaMMJtEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_yuhoUMJtEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_a4whsKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRkKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whsafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRlKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whsqfBEeSK_8TqY1SjtQ" connectors="_yKlpcKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRmKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whs6fBEeSK_8TqY1SjtQ" connectors="_Z5IbQKfCEeSK_8TqY1SjtQ" communicationResource="_dSpRnKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whtKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRoKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whtafBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" communicationResource="_dSpRpKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whtqfBEeSK_8TqY1SjtQ" communicationResource="_dSpRqKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4wht6fBEeSK_8TqY1SjtQ" communicationResource="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_a4whuKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_w-OR0KhiEeSJj6cnB4p9sw" communicationResource="_t84AsKhiEeSJj6cnB4p9sw"/>
+        <hwPortParts xmi:id="_a4whsKfBEeSK_8TqY1SjtQ" hwport="_dSpRkKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whsafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" hwport="_dSpRlKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whsqfBEeSK_8TqY1SjtQ" connectors="_yKlpcKfBEeSK_8TqY1SjtQ" hwport="_dSpRmKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whs6fBEeSK_8TqY1SjtQ" connectors="_Z5IbQKfCEeSK_8TqY1SjtQ" hwport="_dSpRnKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whtKfBEeSK_8TqY1SjtQ" hwport="_dSpRoKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whtafBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" hwport="_dSpRpKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whtqfBEeSK_8TqY1SjtQ" hwport="_dSpRqKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4wht6fBEeSK_8TqY1SjtQ" hwport="_dSpRrKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_a4whuKfBEeSK_8TqY1SjtQ" hwport="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_w-OR0KhiEeSJj6cnB4p9sw" hwport="_t84AsKhiEeSJj6cnB4p9sw"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_dqZi4KfBEeSK_8TqY1SjtQ" name="R2" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_dqZi4afBEeSK_8TqY1SjtQ">
           <lowerBound xmi:id="_qVPCIMJtEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_qVPCIcJtEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_eFHwAKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRkKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwAafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRlKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwAqfBEeSK_8TqY1SjtQ" connectors="_Y5SH0KfCEeSK_8TqY1SjtQ" communicationResource="_dSpRmKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwA6fBEeSK_8TqY1SjtQ" communicationResource="_dSpRnKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwBKfBEeSK_8TqY1SjtQ" communicationResource="_dSpRoKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwBafBEeSK_8TqY1SjtQ" communicationResource="_dSpRpKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwBqfBEeSK_8TqY1SjtQ" communicationResource="_dSpRqKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwB6fBEeSK_8TqY1SjtQ" communicationResource="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_eFHwCKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_w-0uwKhiEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" communicationResource="_t84AsKhiEeSJj6cnB4p9sw"/>
+        <hwPortParts xmi:id="_eFHwAKfBEeSK_8TqY1SjtQ" hwport="_dSpRkKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwAafBEeSK_8TqY1SjtQ" connectors="_mTanIKfBEeSK_8TqY1SjtQ" hwport="_dSpRlKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwAqfBEeSK_8TqY1SjtQ" connectors="_Y5SH0KfCEeSK_8TqY1SjtQ" hwport="_dSpRmKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwA6fBEeSK_8TqY1SjtQ" hwport="_dSpRnKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwBKfBEeSK_8TqY1SjtQ" hwport="_dSpRoKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwBafBEeSK_8TqY1SjtQ" hwport="_dSpRpKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwBqfBEeSK_8TqY1SjtQ" hwport="_dSpRqKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwB6fBEeSK_8TqY1SjtQ" hwport="_dSpRrKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_eFHwCKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" hwport="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_w-0uwKhiEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" hwport="_t84AsKhiEeSJj6cnB4p9sw"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_rvOIgKfBEeSK_8TqY1SjtQ" name="Motor" resourceType="_IluhIKe_EeSK_8TqY1SjtQ">
         <cardinality xmi:id="_rvOIgafBEeSK_8TqY1SjtQ">
           <lowerBound xmi:id="_agJYwMJtEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_agJ_0MJtEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_ueX2YKfBEeSK_8TqY1SjtQ" connectors="_yKlpcKfBEeSK_8TqY1SjtQ" communicationResource="_Kn_B4KfBEeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_ueX2YKfBEeSK_8TqY1SjtQ" connectors="_yKlpcKfBEeSK_8TqY1SjtQ" hwport="_Kn_B4KfBEeSK_8TqY1SjtQ"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_2jFTsKfBEeSK_8TqY1SjtQ" name="Line" resourceType="_06QxMKfAEeSK_8TqY1SjtQ">
         <cardinality xmi:id="_2jFTsafBEeSK_8TqY1SjtQ">
           <lowerBound xmi:id="_UK9YUMJtEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_UK9_YMJtEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_3mt68KfBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" communicationResource="_KoIy7KfBEeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_3mt68KfBEeSK_8TqY1SjtQ" connectors="_8wdb8KfBEeSK_8TqY1SjtQ" hwport="_KoIy7KfBEeSK_8TqY1SjtQ"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_OcAQoKfCEeSK_8TqY1SjtQ" name="Color" resourceType="_u2QnYKfAEeSK_8TqY1SjtQ">
         <cardinality xmi:id="_OcAQoafCEeSK_8TqY1SjtQ">
           <lowerBound xmi:id="_Xdh8UMJtEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_XdijYMJtEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_RXr-oKfCEeSK_8TqY1SjtQ" connectors="_Z5IbQKfCEeSK_8TqY1SjtQ" communicationResource="_Kn_B6KfBEeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_RXr-oKfCEeSK_8TqY1SjtQ" connectors="_Z5IbQKfCEeSK_8TqY1SjtQ" hwport="_Kn_B6KfBEeSK_8TqY1SjtQ"/>
       </embeddedPlatformParts>
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_R1mCoKfCEeSK_8TqY1SjtQ" name="Distance" resourceType="_x6raoKfAEeSK_8TqY1SjtQ">
         <cardinality xmi:id="_R1mCoafCEeSK_8TqY1SjtQ">
           <lowerBound xmi:id="_tMfjIMJtEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_tMfjIcJtEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_SUng8KfCEeSK_8TqY1SjtQ" connectors="_Y5SH0KfCEeSK_8TqY1SjtQ" communicationResource="_KoIy5KfBEeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_SUng8KfCEeSK_8TqY1SjtQ" connectors="_Y5SH0KfCEeSK_8TqY1SjtQ" hwport="_KoIy5KfBEeSK_8TqY1SjtQ"/>
       </embeddedPlatformParts>
-      <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_mTanIKfBEeSK_8TqY1SjtQ" communicationMedia="_q82KAKe5EeSK_8TqY1SjtQ" connectorEndpoints="_eFHwAafBEeSK_8TqY1SjtQ _a4whsafBEeSK_8TqY1SjtQ"/>
-      <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_yKlpcKfBEeSK_8TqY1SjtQ" communicationMedia="_u5rL8Ke5EeSK_8TqY1SjtQ" connectorEndpoints="_a4whsqfBEeSK_8TqY1SjtQ _ueX2YKfBEeSK_8TqY1SjtQ"/>
-      <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_8wdb8KfBEeSK_8TqY1SjtQ" communicationMedia="_u5rL8Ke5EeSK_8TqY1SjtQ" connectorEndpoints="_a4whtafBEeSK_8TqY1SjtQ _3mt68KfBEeSK_8TqY1SjtQ"/>
-      <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_Y5SH0KfCEeSK_8TqY1SjtQ" communicationMedia="_u5rL8Ke5EeSK_8TqY1SjtQ" connectorEndpoints="_eFHwAqfBEeSK_8TqY1SjtQ _SUng8KfCEeSK_8TqY1SjtQ"/>
-      <networkingHardwareParts xsi:type="hwplatform:LinkPart" xmi:id="_Z5IbQKfCEeSK_8TqY1SjtQ" communicationMedia="_u5rL8Ke5EeSK_8TqY1SjtQ" connectorEndpoints="_a4whs6fBEeSK_8TqY1SjtQ _RXr-oKfCEeSK_8TqY1SjtQ"/>
-      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpoints="_eFHwCKfBEeSK_8TqY1SjtQ __1O0gKfBEeSK_8TqY1SjtQ"/>
-      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpoints="_w-0uwKhiEeSJj6cnB4p9sw _UUrCAKhjEeSJj6cnB4p9sw"/>
-      <delegationPorts xmi:id="__1O0gKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" name="D1-virtualBluetooth" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="__1O0gafBEeSK_8TqY1SjtQ">
-          <lowerBound xmi:id="_uctN0MJtEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_uct04MJtEeSFFPWsf1QKow"/>
-        </cardinality>
+      <networkConnectors xmi:id="_mTanIKfBEeSK_8TqY1SjtQ"  connectorEndpoints="_eFHwAafBEeSK_8TqY1SjtQ _a4whsafBEeSK_8TqY1SjtQ"/>
+      <networkConnectors xmi:id="_yKlpcKfBEeSK_8TqY1SjtQ"  connectorEndpoints="_a4whsqfBEeSK_8TqY1SjtQ _ueX2YKfBEeSK_8TqY1SjtQ"/>
+      <networkConnectors xmi:id="_8wdb8KfBEeSK_8TqY1SjtQ"  connectorEndpoints="_a4whtafBEeSK_8TqY1SjtQ _3mt68KfBEeSK_8TqY1SjtQ"/>
+      <networkConnectors xmi:id="_Y5SH0KfCEeSK_8TqY1SjtQ"  connectorEndpoints="_eFHwAqfBEeSK_8TqY1SjtQ _SUng8KfCEeSK_8TqY1SjtQ"/>
+      <networkConnectors xmi:id="_Z5IbQKfCEeSK_8TqY1SjtQ"  connectorEndpoints="_a4whs6fBEeSK_8TqY1SjtQ _RXr-oKfCEeSK_8TqY1SjtQ"/>
+      <networkConnectors xmi:id="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpoints="_eFHwCKfBEeSK_8TqY1SjtQ __1O0gKfBEeSK_8TqY1SjtQ"/>
+      <networkConnectors xmi:id="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpoints="_w-0uwKhiEeSJj6cnB4p9sw _UUrCAKhjEeSJj6cnB4p9sw"/>
+      <delegationPorts xmi:id="__1O0gKfBEeSK_8TqY1SjtQ" connectors="_0TjEkKfCEeSK_8TqY1SjtQ" name="D1-virtualBluetooth" >
       </delegationPorts>
-      <delegationPorts xmi:id="_UUrCAKhjEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_UUrCAahjEeSJj6cnB4p9sw">
-          <lowerBound xmi:id="_714D0MJsEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_714q4MJsEeSFFPWsf1QKow"/>
-        </cardinality>
+      <delegationPorts xmi:id="_UUrCAKhjEeSJj6cnB4p9sw" connectors="_al6WkKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" >
       </delegationPorts>
     </modelElements>
     <modelElements xsi:type="hwplatforminstance:HWPlatformInstanceConfiguration" xmi:id="_-b5NkKfCEeSK_8TqY1SjtQ">
@@ -4204,14 +4132,14 @@
         <delegationPorts xmi:id="_4sMNoqhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_4sMNqqhjEeSJj6cnB4p9sw _sOdocLaXEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <delegationPorts xmi:id="_neFF0LabEeSvg7rqv6dToQ" name="D1-virtualWifi.02" connectorInstances="_3Ar4ELabEeSvg7rqv6dToQ _9CcmMLabEeSvg7rqv6dToQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_4sMNo6hjEeSJj6cnB4p9sw">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpKhjEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNy6hjEeSJj6cnB4p9sw _4sMNtKhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpahjEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzKhjEeSJj6cnB4p9sw _4sMNw6hjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNpqhjEeSJj6cnB4p9sw" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNyKhjEeSJj6cnB4p9sw _4sMNrKhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNp6hjEeSJj6cnB4p9sw" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNtahjEeSJj6cnB4p9sw _4sMNv6hjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_4sMNqKhjEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzahjEeSJj6cnB4p9sw _4sMNwahjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_4sMNqahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _4sMNrqhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_4sMNqqhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _4sMNtqhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_3Ar4ELabEeSvg7rqv6dToQ" connectorEndpointInstances="_i8ns0LabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
+          <networkConnectorInstances  xmi:id="_4sMNpKhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNy6hjEeSJj6cnB4p9sw _4sMNtKhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_4sMNpahjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzKhjEeSJj6cnB4p9sw _4sMNw6hjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances  xmi:id="_4sMNpqhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNyKhjEeSJj6cnB4p9sw _4sMNrKhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_4sMNp6hjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNtahjEeSJj6cnB4p9sw _4sMNv6hjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances  xmi:id="_4sMNqKhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNzahjEeSJj6cnB4p9sw _4sMNwahjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances  xmi:id="_4sMNqahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _4sMNrqhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances  xmi:id="_4sMNqqhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _4sMNtqhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances  xmi:id="_3Ar4ELabEeSvg7rqv6dToQ" connectorEndpointInstances="_i8ns0LabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
           <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_4sMNq6hjEeSJj6cnB4p9sw" name="overtakeeLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_4sMNrKhjEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_4sMNpqhjEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
           </resources>
@@ -4273,13 +4201,13 @@
         <delegationPorts xmi:id="_-PAV8ahjEeSJj6cnB4p9sw" name="D1-virtualBluetooth.0" connectorInstances="_-PAV-ahjEeSJj6cnB4p9sw _WXCsYLabEeSvg7rqv6dToQ" type="__1O0gKfBEeSK_8TqY1SjtQ"/>
         <delegationPorts xmi:id="_-PAV8qhjEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_-PAV-qhjEeSJj6cnB4p9sw _EdRV0LaYEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_-PAV86hjEeSJj6cnB4p9sw">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9KhjEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWAahjEeSJj6cnB4p9sw _-PAWF6hjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9ahjEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_6hjEeSJj6cnB4p9sw _-PAWDahjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV9qhjEeSJj6cnB4p9sw" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_ahjEeSJj6cnB4p9sw _-PAWE6hjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV96hjEeSJj6cnB4p9sw" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWGKhjEeSJj6cnB4p9sw _-PAWEahjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_-PAV-KhjEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWBKhjEeSJj6cnB4p9sw _-PAWD6hjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_-PAV-ahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8ahjEeSJj6cnB4p9sw _-PAWFahjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_-PAV-qhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw _-PAWFqhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_-PAV9KhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWAahjEeSJj6cnB4p9sw _-PAWF6hjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_-PAV9ahjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_6hjEeSJj6cnB4p9sw _-PAWDahjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_-PAV9qhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV_ahjEeSJj6cnB4p9sw _-PAWE6hjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances  xmi:id="_-PAV96hjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWGKhjEeSJj6cnB4p9sw _-PAWEahjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_-PAV-KhjEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAWBKhjEeSJj6cnB4p9sw _-PAWD6hjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_-PAV-ahjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8ahjEeSJj6cnB4p9sw _-PAWFahjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_-PAV-qhjEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw _-PAWFqhjEeSJj6cnB4p9sw"/>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_-PAV-6hjEeSJj6cnB4p9sw" name="overtakerR1" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_KhjEeSJj6cnB4p9sw" name="virtualBluetoothPort" type="_a4whuKfBEeSK_8TqY1SjtQ"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_-PAV_ahjEeSJj6cnB4p9sw" name="inputPort2" connectorInstances="_-PAV9qhjEeSJj6cnB4p9sw" type="_a4whtafBEeSK_8TqY1SjtQ"/>
@@ -4341,14 +4269,14 @@
         <delegationPorts xmi:id="_EDe2AqhkEeSJj6cnB4p9sw" name="D1-virtualWifi.0" connectorInstances="_EDe2CqhkEeSJj6cnB4p9sw _HvUVYLaYEeSavI5T7sJhVQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <delegationPorts xmi:id="_pr6PULabEeSvg7rqv6dToQ" name="D1-virtualWifi.02" connectorInstances="_6BgkwLabEeSvg7rqv6dToQ _9CcmMLabEeSvg7rqv6dToQ" type="_UUrCAKhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_EDe2A6hkEeSJj6cnB4p9sw">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BKhkEeSJj6cnB4p9sw" communicationMediaPart="_mTanIKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FKhkEeSJj6cnB4p9sw _EDe2LahkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BahkEeSJj6cnB4p9sw" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2F6hkEeSJj6cnB4p9sw _EDe2EKhkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2BqhkEeSJj6cnB4p9sw" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FqhkEeSJj6cnB4p9sw _EDe2DKhkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2B6hkEeSJj6cnB4p9sw" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2LqhkEeSJj6cnB4p9sw _EDe2EqhkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EDe2CKhkEeSJj6cnB4p9sw" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2GKhkEeSJj6cnB4p9sw _EDe2DqhkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EDe2CahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2AahkEeSJj6cnB4p9sw _EDe2JahkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_EDe2CqhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_EDe2AqhkEeSJj6cnB4p9sw _EDe2J6hkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_6BgkwLabEeSvg7rqv6dToQ" connectorEndpointInstances="_sT1T0LabEeSvg7rqv6dToQ _pr6PULabEeSvg7rqv6dToQ"/>
+          <networkConnectorInstances xmi:id="_EDe2BKhkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FKhkEeSJj6cnB4p9sw _EDe2LahkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_EDe2BahkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2F6hkEeSJj6cnB4p9sw _EDe2EKhkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_EDe2BqhkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_8wdb8KfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2FqhkEeSJj6cnB4p9sw _EDe2DKhkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_EDe2B6hkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_Y5SH0KfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2LqhkEeSJj6cnB4p9sw _EDe2EqhkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_EDe2CKhkEeSJj6cnB4p9sw"  comment="&quot;no comment provided&quot;.0" type="_Z5IbQKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2GKhkEeSJj6cnB4p9sw _EDe2DqhkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_EDe2CahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_EDe2AahkEeSJj6cnB4p9sw _EDe2JahkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_EDe2CqhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_EDe2AqhkEeSJj6cnB4p9sw _EDe2J6hkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_6BgkwLabEeSvg7rqv6dToQ" connectorEndpointInstances="_sT1T0LabEeSvg7rqv6dToQ _pr6PULabEeSvg7rqv6dToQ"/>
           <resources xsi:type="hwresourceinstance:SensorInstance" xmi:id="_EDe2C6hkEeSJj6cnB4p9sw" name="approacherLine" resourceType="_-b7G8Ke7EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_EDe2DKhkEeSJj6cnB4p9sw" name="linehw-port" connectorInstances="_EDe2BqhkEeSJj6cnB4p9sw" type="_3mt68KfBEeSK_8TqY1SjtQ"/>
           </resources>
@@ -4412,13 +4340,13 @@
         <delegationPorts xmi:id="__NF1oLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.02" connectorInstances="_EdRV0LaYEeSavI5T7sJhVQ _jZ2iwLaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
         <delegationPorts xmi:id="__dlIsLaXEeSavI5T7sJhVQ" name="D1-virtualWifi.03" connectorInstances="_HvUVYLaYEeSavI5T7sJhVQ _hvTFcLaYEeSavI5T7sJhVQ" type="_eYQm0KhjEeSJj6cnB4p9sw"/>
         <embeddedHPIC xmi:id="_HiiW06hkEeSJj6cnB4p9sw">
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_HiiW1KhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0ahkEeSJj6cnB4p9sw _HiiW16hkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_HiiW1ahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0qhkEeSJj6cnB4p9sw _HiiW2ahkEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_1dGiQLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_1wFvsLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_18InoLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_hvTFcLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_b8L3ULaYEeSavI5T7sJhVQ __dlIsLaXEeSavI5T7sJhVQ"/>
-          <networkingHardwareInstances xsi:type="hwplatforminstance:DelegationInstance" xmi:id="_jZ2iwLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_cM_TcLaYEeSavI5T7sJhVQ __NF1oLaXEeSavI5T7sJhVQ"/>
+          <networkConnectorInstances xmi:id="_HiiW1KhkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0ahkEeSJj6cnB4p9sw _HiiW16hkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_HiiW1ahkEeSJj6cnB4p9sw" comment="&quot;no comment provided&quot;.0" type="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_HiiW0qhkEeSJj6cnB4p9sw _HiiW2ahkEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_1dGiQLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_1wFvsLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_18InoLaXEeSavI5T7sJhVQ" comment="&quot;no comment provided&quot;.0" type="_gSW8AKhjEeSJj6cnB4p9sw"/>
+          <networkConnectorInstances xmi:id="_hvTFcLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_b8L3ULaYEeSavI5T7sJhVQ __dlIsLaXEeSavI5T7sJhVQ"/>
+          <networkConnectorInstances xmi:id="_jZ2iwLaYEeSavI5T7sJhVQ" connectorEndpointInstances="_cM_TcLaYEeSavI5T7sJhVQ __NF1oLaXEeSavI5T7sJhVQ"/>
           <resources xsi:type="hwresourceinstance:StructuredResourceInstance" xmi:id="_HiiW1qhkEeSJj6cnB4p9sw" name="sectionControlBrick" resourceType="_HcLmgKe8EeSK_8TqY1SjtQ">
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW16hkEeSJj6cnB4p9sw" name="VirtualWifiPort1" connectorInstances="_HiiW1KhkEeSJj6cnB4p9sw" type="_ztc4MKhiEeSJj6cnB4p9sw"/>
             <hwports xsi:type="hwplatforminstance:HWPortInstance" xmi:id="_HiiW2ahkEeSJj6cnB4p9sw" name="virtualBluetoothPort" connectorInstances="_HiiW1ahkEeSJj6cnB4p9sw" type="_0unaiKfDEeSK_8TqY1SjtQ"/>
@@ -4436,11 +4364,11 @@
           </resources>
         </embeddedHPIC>
       </hwplatformInstances>
-      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_sOdocLaXEeSavI5T7sJhVQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _HiiW0ahkEeSJj6cnB4p9sw"/>
-      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_EdRV0LaYEeSavI5T7sJhVQ" communicationMediaPart="_Z5IbQKfCEeSK_8TqY1SjtQ" type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw __NF1oLaXEeSavI5T7sJhVQ"/>
-      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_HvUVYLaYEeSavI5T7sJhVQ" communicationMediaPart="_8wdb8KfBEeSK_8TqY1SjtQ" type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="__dlIsLaXEeSavI5T7sJhVQ _EDe2AqhkEeSJj6cnB4p9sw"/>
-      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_WXCsYLabEeSvg7rqv6dToQ" communicationMediaPart="_Y5SH0KfCEeSK_8TqY1SjtQ" type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _-PAV8ahjEeSJj6cnB4p9sw"/>
-      <networkingHardwareInstances xsi:type="hwplatforminstance:LinkInstance" xmi:id="_9CcmMLabEeSvg7rqv6dToQ" communicationMediaPart="_yKlpcKfBEeSK_8TqY1SjtQ" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_pr6PULabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
+      <networkConnectorInstances xmi:id="_sOdocLaXEeSavI5T7sJhVQ"  type="_yKlpcKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_4sMNoqhjEeSJj6cnB4p9sw _HiiW0ahkEeSJj6cnB4p9sw"/>
+      <networkConnectorInstances xmi:id="_EdRV0LaYEeSavI5T7sJhVQ"  type="_mTanIKfBEeSK_8TqY1SjtQ" connectorEndpointInstances="_-PAV8qhjEeSJj6cnB4p9sw __NF1oLaXEeSavI5T7sJhVQ"/>
+      <networkConnectorInstances xmi:id="_HvUVYLaYEeSavI5T7sJhVQ"  type="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpointInstances="__dlIsLaXEeSavI5T7sJhVQ _EDe2AqhkEeSJj6cnB4p9sw"/>
+      <networkConnectorInstances xmi:id="_WXCsYLabEeSvg7rqv6dToQ"  type="_al6WkKhjEeSJj6cnB4p9sw" connectorEndpointInstances="_4sMNoahjEeSJj6cnB4p9sw _-PAV8ahjEeSJj6cnB4p9sw"/>
+      <networkConnectorInstances xmi:id="_9CcmMLabEeSvg7rqv6dToQ" type="_0TjEkKfCEeSK_8TqY1SjtQ" connectorEndpointInstances="_pr6PULabEeSvg7rqv6dToQ _neFF0LabEeSvg7rqv6dToQ"/>
     </modelElements>
     <modelElements xsi:type="hwplatform:HWPlatform" xmi:id="_rPkGIKfDEeSK_8TqY1SjtQ" name="SectionControl">
       <embeddedPlatformParts xsi:type="hwplatform:ResourcePart" xmi:id="_wMFqgKfDEeSK_8TqY1SjtQ" name="Brick" resourceType="_cDsyMKe-EeSK_8TqY1SjtQ">
@@ -4448,30 +4376,22 @@
           <lowerBound xmi:id="_whkzIMJuEeSFFPWsf1QKow"/>
           <upperBound xmi:id="_whkzIcJuEeSFFPWsf1QKow"/>
         </cardinality>
-        <hwPortParts xmi:id="_0unagKfDEeSK_8TqY1SjtQ" communicationResource="_dSpRkKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unagafDEeSK_8TqY1SjtQ" communicationResource="_dSpRlKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unagqfDEeSK_8TqY1SjtQ" communicationResource="_dSpRmKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unag6fDEeSK_8TqY1SjtQ" communicationResource="_dSpRnKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unahKfDEeSK_8TqY1SjtQ" communicationResource="_dSpRoKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unahafDEeSK_8TqY1SjtQ" communicationResource="_dSpRpKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unahqfDEeSK_8TqY1SjtQ" communicationResource="_dSpRqKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unah6fDEeSK_8TqY1SjtQ" communicationResource="_dSpRrKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_0unaiKfDEeSK_8TqY1SjtQ" connectors="_pKpLUKhjEeSJj6cnB4p9sw" communicationResource="_dSpRsKe-EeSK_8TqY1SjtQ"/>
-        <hwPortParts xmi:id="_ztc4MKhiEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" communicationResource="_t84AsKhiEeSJj6cnB4p9sw"/>
+        <hwPortParts xmi:id="_0unagKfDEeSK_8TqY1SjtQ" hwport="_dSpRkKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unagafDEeSK_8TqY1SjtQ" hwport="_dSpRlKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unagqfDEeSK_8TqY1SjtQ" hwport="_dSpRmKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unag6fDEeSK_8TqY1SjtQ" hwport="_dSpRnKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unahKfDEeSK_8TqY1SjtQ" hwport="_dSpRoKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unahafDEeSK_8TqY1SjtQ" hwport="_dSpRpKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unahqfDEeSK_8TqY1SjtQ" hwport="_dSpRqKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unah6fDEeSK_8TqY1SjtQ" hwport="_dSpRrKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_0unaiKfDEeSK_8TqY1SjtQ" connectors="_pKpLUKhjEeSJj6cnB4p9sw" hwport="_dSpRsKe-EeSK_8TqY1SjtQ"/>
+        <hwPortParts xmi:id="_ztc4MKhiEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" hwport="_t84AsKhiEeSJj6cnB4p9sw"/>
       </embeddedPlatformParts>
-      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpoints="_ztc4MKhiEeSJj6cnB4p9sw _eYQm0KhjEeSJj6cnB4p9sw"/>
-      <networkingHardwareParts xsi:type="hwplatform:Delegation" xmi:id="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpoints="_0unaiKfDEeSK_8TqY1SjtQ _kUf7wKhjEeSJj6cnB4p9sw"/>
-      <delegationPorts xmi:id="_eYQm0KhjEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" protocol="_bd694Ke5EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_eYQm0ahjEeSJj6cnB4p9sw">
-          <lowerBound xmi:id="_0EbO0MJuEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_0Eb14MJuEeSFFPWsf1QKow"/>
-        </cardinality>
+      <networkConnectors xmi:id="_gSW8AKhjEeSJj6cnB4p9sw" connectorEndpoints="_ztc4MKhiEeSJj6cnB4p9sw _eYQm0KhjEeSJj6cnB4p9sw"/>
+      <networkConnectors xmi:id="_pKpLUKhjEeSJj6cnB4p9sw" connectorEndpoints="_0unaiKfDEeSK_8TqY1SjtQ _kUf7wKhjEeSJj6cnB4p9sw"/>
+      <delegationPorts xmi:id="_eYQm0KhjEeSJj6cnB4p9sw" connectors="_gSW8AKhjEeSJj6cnB4p9sw" name="D1-virtualWifi" >
       </delegationPorts>
-      <delegationPorts xmi:id="_kUf7wKhjEeSJj6cnB4p9sw" connectors="_pKpLUKhjEeSJj6cnB4p9sw" name="D1-virtualBluetooth" protocol="_VKiUQKe5EeSK_8TqY1SjtQ">
-        <cardinality xmi:id="_kUf7wahjEeSJj6cnB4p9sw">
-          <lowerBound xmi:id="_UN3-4MJsEeSFFPWsf1QKow"/>
-          <upperBound xmi:id="_UN3-4cJsEeSFFPWsf1QKow"/>
-        </cardinality>
+      <delegationPorts xmi:id="_kUf7wKhjEeSJj6cnB4p9sw" connectors="_pKpLUKhjEeSJj6cnB4p9sw" name="D1-virtualBluetooth" >
       </delegationPorts>
     </modelElements>
   </categories>
