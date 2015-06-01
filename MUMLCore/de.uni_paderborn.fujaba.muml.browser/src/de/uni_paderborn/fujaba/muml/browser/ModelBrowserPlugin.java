@@ -8,6 +8,7 @@ import java.util.Collections;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
@@ -162,10 +163,10 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
   */
 
 
-	public static void log(IOException e) {
+	public static void log(Exception e) {
 		log(e, e.getLocalizedMessage());
 	}
-	public static void log(IOException e, String errorMessage) {
+	public static void log(Exception e, String errorMessage) {
 		IStatus status = new Status(IStatus.ERROR, PLUGIN_ID, 0, errorMessage, e);
 		getDefault().getLog().log(status);
 	}
