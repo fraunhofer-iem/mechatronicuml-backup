@@ -18,7 +18,7 @@ public class PropertiesWizardDialog extends WizardDialog implements CommandStack
 	private static final int MIN_DIALOG_WIDTH = 350;
 
 	// Minimum dialog height (in dialog units)
-	private static final int MIN_DIALOG_HEIGHT = 360;
+	private static final int MIN_DIALOG_HEIGHT = 330;
 	
 	private EditingDomain editingDomain;
 	private List<org.eclipse.emf.common.command.Command> commands = new ArrayList<org.eclipse.emf.common.command.Command>();
