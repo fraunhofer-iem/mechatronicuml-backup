@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 public class MumlValidator extends EObjectValidator {
 	
-	public static final String META_TAG = "@meta";
+	public static final String META_TAG = "@";
 	
 	protected void reportConstraintDelegateViolation(EClass eClass,
 			EObject eObject, DiagnosticChain diagnostics,
@@ -26,7 +26,7 @@ public class MumlValidator extends EObjectValidator {
 		String ocl = getOCL(eClass, constraint);
 
 		// To test the warning behavior:
-		// ocl = "-- @meta warning\n" + ocl;
+		//ocl = "-- @warning\n" + ocl;
 
 		String[] metainfos = getMetainfos(ocl);
 		String message = getErrorMessage(ocl);
