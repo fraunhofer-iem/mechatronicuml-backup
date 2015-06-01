@@ -363,11 +363,13 @@ mapping Transition :: TransferSchemata2Literal(context:OclAny, assignValue:Strin
 
 --Transfer Schemata Synchronization
 
+
+
 mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:OclAny, syncKind:SynchronizationKind, selectorExp: String, channel:String, selector: Boolean, transMapping: Integer) : Synchronization {
 		
 		kind := syncKind;
 		
-		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector);
+		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector,self);
 		
 		if(selectorExp.equalsIgnoreCase('self')){
 			selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF);
@@ -391,10 +393,26 @@ mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:Oc
 	
 	};	
 
-mapping RealtimeStatechart :: TransferSchemataChannel(context:OclAny, channelName: String, selector: Boolean) : SynchronizationChannel {
+	//dict->hasKey(transition);
+	//dict->get(transition);
+	//dict->put(transition,1);
+	//if(dict->hasKey(transition))
+	// dict-> 
+property usedChannelNames : Dict(String,Integer); // stores how often a channel with a certain name exists. Used for enumerating the channel names in case of multiple occurences of the same schema
+mapping RealtimeStatechart :: TransferSchemataChannel(context:OclAny, channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
 		
-		name := channelName;
-		
+		if(usedChannelNames->hasKey(channelName))
+		{
+			var nr : Integer := usedChannelNames->get(channelName);
+			usedChannelNames->put(channelName,nr +1);
+			name := channelName + (nr+1).toString();
+			
+		}
+		else
+		{
+			name := channelName + 1.toString();
+			usedChannelNames->put(channelName,1);	
+		};		
 		state := context.oclAsType(RealtimeStatechart).map Rtsc2InitialState();
 		
 		if(selector){
@@ -581,3 +599,25 @@ mapping Expression :: Expression2UnaryExpression(context : OclAny, _operator : U
 		
 		result.enclosedExpression := self.map Expression2Expression(context);
 }	
+
+
+mapping Transition :: Transition2Block(blockExpressions : Set(Expression)) : Block {
+	result.expressions+=blockExpressions;
+}
+
+mapping Transition :: Transition2Block(blockExpression : Expression) : Block{
+	init{
+		result := self.map Transition2Block(Set{blockExpression});
+	}
+}
+mapping Transition:: Transition2ComparisonExpression(context : OclAny, comparingoperator : ComparingOperator,lhs:Expression, rhs:Expression): core::expressions::common::ComparisonExpression{
+	result.leftExpression := lhs;
+	result.rightExpression :=rhs;
+	result.operator := comparingoperator;	
+}
+
+mapping Transition:: Transition2LogicalExpression(context : OclAny, logicoperator : LogicOperator, lhs:Expression, rhs:Expression): core::expressions::common::LogicalExpression{
+	result.leftExpression := lhs;
+	result.rightExpression :=rhs;
+	result.operator := logicoperator;
+}

@@ -136,7 +136,14 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 	
 mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny, toplevel: Boolean) : RealtimeStatechart {
 		
-		name := "coordinator";
+		if(toplevel)
+		{
+			name := "coordinator";
+		}
+		else
+		{
+			name := self.name;
+		};
 		
 		states += self.states.map States2StatesCoordinator(context, region);
 		
