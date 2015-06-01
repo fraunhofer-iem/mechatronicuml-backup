@@ -717,15 +717,15 @@
       </propertySections>
    </extension>
 <extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
+	<?gmfgen generated="true"?>   
+	<command
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new ResourceInstance Model"
+           id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
+           name="Create new ResourceInstance Model">
+    </command>
+    </extension>
 
 <extension
          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
@@ -774,6 +774,22 @@
          
       </editor>
    </extension>
+<extension point="org.eclipse.core.contenttype.contentTypes">
+		<?gmfgen generated="true"?>
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="resource"/>
+    </extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
 
 
 

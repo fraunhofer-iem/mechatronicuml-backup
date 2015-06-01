@@ -16,6 +16,7 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getConnectedNetworkConnectorInstances() <em>Connected Network Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType() <em>Network Bridge Type</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -83,6 +84,32 @@ public class NetworkBridgeInstanceTest extends NetworkingHardwareInstanceTest {
 	 */
 	public void testGetConnectedNetworkConnectorInstances() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType() <em>Network Bridge Type</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#getNetworkBridgeType()
+	 * @generated
+	 */
+	public void testGetNetworkBridgeType() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#setNetworkBridgeType(de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge) <em>Network Bridge Type</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance#setNetworkBridgeType(de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge)
+	 * @generated
+	 */
+	public void testSetNetworkBridgeType() {
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
