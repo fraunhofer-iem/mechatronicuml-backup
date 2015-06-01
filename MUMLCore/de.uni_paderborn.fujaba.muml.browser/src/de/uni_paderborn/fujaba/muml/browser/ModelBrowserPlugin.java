@@ -1,20 +1,28 @@
 package de.uni_paderborn.fujaba.muml.browser;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collections;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.internal.util.BundleUtility;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
@@ -78,8 +86,30 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
 	}
 	
+	public URL getBundleUrl(String path) {
+        if (path == null) {
+            throw new IllegalArgumentException();
+        }
 
+		Bundle bundle = getBundle();
+		
+        // look for the image (this will check both the plugin and fragment folders
+        URL fullPathString =  bundle.getResource(path);
+        if (fullPathString == null) {
+            try {
+                fullPathString = new URL(path);
+            } catch (MalformedURLException e) {
+                return null;
+            }
+			URL platformURL = FileLocator.find(fullPathString);
+			if (platformURL != null) {
+				fullPathString = platformURL;
+			}
+        }
+        return fullPathString;
+	}
 
+/*
 	public static Resource getResource(ResourceSet resourceSet, IFile iFile) {
 		try {
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
@@ -129,6 +159,8 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 //		}
 //		return null;
 //	}
+  */
+
 
 	public static void log(IOException e) {
 		log(e, e.getLocalizedMessage());

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser;
+package de.uni_paderborn.fujaba.muml.browser.old;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,10 +59,11 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
-import de.uni_paderborn.fujaba.muml.browser.decorators.ModifiedElementDecorator;
-import de.uni_paderborn.fujaba.muml.browser.providers.IModifiedElementProvider;
-import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider;
-import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserLabelProvider;
+import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import de.uni_paderborn.fujaba.muml.browser.old.decorators.ModifiedElementDecorator;
+import de.uni_paderborn.fujaba.muml.browser.old.providers.IModifiedElementProvider;
+import de.uni_paderborn.fujaba.muml.browser.old.providers.ModelBrowserContentProvider;
+import de.uni_paderborn.fujaba.muml.browser.old.providers.ModelBrowserLabelProvider;
 
 public class ModelBrowserView extends ViewPart implements ISelectionProvider, ITabbedPropertySheetPageContributor {
 	

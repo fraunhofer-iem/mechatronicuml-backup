@@ -13,12 +13,7 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IAggregateWorkingSet;
-import org.eclipse.ui.IPageLayout;
-import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchCommandConstants;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.ui.internal.navigator.resources.ResourceToItemsMapper;
 import org.eclipse.ui.model.IWorkbenchAdapter;
@@ -34,27 +29,7 @@ import org.eclipse.ui.navigator.INavigatorContentService;
  */
 public final class ModelBrowser extends CommonNavigator {
 
-	/**
-	 * Provides a constant for the standard instance of the Common Navigator.
-	 * 
-	 * @see PlatformUI#getWorkbench()
-	 * @see IWorkbench#getActiveWorkbenchWindow()
-	 * @see IWorkbenchWindow#getActivePage()
-	 * 
-	 * @see IWorkbenchPage#findView(String)
-	 * @see IWorkbenchPage#findViewReference(String)
-	 */
-	public static final String VIEW_ID = IPageLayout.ID_PROJECT_EXPLORER;
-
-	/**
-	 * @since 3.4
-	 */
-	public static final int WORKING_SETS = 0;
-
-	/**
-	 * @since 3.4
-	 */
-	public static final int PROJECTS = 1;
+	public static final String VIEW_ID = "de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser";
 
 	private int rootMode;
 
@@ -68,16 +43,10 @@ public final class ModelBrowser extends CommonNavigator {
 	public void createPartControl(Composite aParent) {
 		super.createPartControl(aParent);
 		
-		if (!false)
-			getCommonViewer().setMapper(new ResourceToItemsMapper(getCommonViewer()));
+		//if (!false)
+		//	getCommonViewer().setMapper(new ResourceToItemsMapper(getCommonViewer()));
 	}	
 	
-	/**
-	 * The superclass does not deal with the content description, handle it
-	 * here.
-	 * 
-	 * @noreference This method is not intended to be referenced by clients.
-	 */
 	@Override
 	public void updateTitle() {
 		super.updateTitle();
@@ -110,52 +79,26 @@ public final class ModelBrowser extends CommonNavigator {
 		setContentDescription(res.getName());
 	}
 
-	
-
-	/**
-	 * @param mode
-	 * @noreference This method is not intended to be referenced by clients.
-	 * @since 3.4
-	 */
 	@Override
 	public void setRootMode(int mode) {
 		rootMode = mode;
 	}
 
-	/**
-	 * @return the root mode
-	 * @noreference This method is not intended to be referenced by clients.
-	 * @since 3.4
-	 */
 	@Override
 	public int getRootMode() {
 		return rootMode;
 	}
 
-	/**
-	 * @param label
-	 * @noreference This method is not intended to be referenced by clients.
-	 * @since 3.4
-	 */
 	@Override
 	public void setWorkingSetLabel(String label) {
 		workingSetLabel = label;
 	}
 
-	/**
-	 * @return the working set label
-	 * @noreference This method is not intended to be referenced by clients.
-	 * @since 3.4
-	 */
 	@Override
 	public String getWorkingSetLabel() {
 		return workingSetLabel;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.ui.navigator.CommonNavigator#handleDoubleClick(org.eclipse.jface.viewers.DoubleClickEvent)
-	 * @since 4.3
-	 */
 	@Override
 	protected void handleDoubleClick(DoubleClickEvent anEvent) {
 		ICommandService commandService = (ICommandService) getViewSite().getService(ICommandService.class);

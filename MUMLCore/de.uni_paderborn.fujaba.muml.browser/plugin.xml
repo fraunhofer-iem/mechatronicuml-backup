@@ -9,14 +9,7 @@
             id="de.uni_paderborn.fujaba.muml.views">
       </category>
       <view
-            name="Muml Browser (EXPERIMENTAL)"
-            icon="icons/sample.gif"
-            category="de.uni_paderborn.fujaba.muml.views"
-            class="de.uni_paderborn.fujaba.muml.browser.ModelBrowserView"
-            id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowserView">
-      </view>
-      <view
-            name="Muml Browser 2"
+            name="Muml Browser"
             icon="icons/sample.gif"
             category="de.uni_paderborn.fujaba.muml.views"
             class="de.uni_paderborn.fujaba.muml.browser.ModelBrowser"
@@ -24,23 +17,174 @@
       </view>
    </extension>
    
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.jdt.ui.JavaPerspective">
-         <view
-               ratio="0.5"
-               relative="org.eclipse.ui.views.ProblemView"
-               relationship="right"
-               id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowserView">
-         </view>
-      </perspectiveExtension>
-   </extension>
+   
+   
    <extension
          point="org.eclipse.help.contexts">
       <contexts
             file="contexts.xml">
       </contexts>
+   </extension>
+   
+   
+   
+ <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+     <!--
+      <navigatorContent
+            id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="highest" 
+            contentProvider="browser.extensions.TestContentProvider" 
+            labelProvider="browser.extensions.TestLabelProvider"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <instanceof value="org.eclipse.core.resources.IFile"/>
+	           <instanceof value="org.eclipse.core.resources.IContainer"/>
+               <instanceof value="org.eclipse.emf.ecore.EObject"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="org.eclipse.emf.ecore.EObject"/>
+            </or>
+         </possibleChildren>
+      </navigatorContent>
+     -->
+     
+     
+     
+     <navigatorContent
+            name="MechatronicUML Browser Contents"
+            priority="lower"
+            activeByDefault="true"
+            contentProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider"
+			labelProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserLabelProvider"			
+            id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser.content">         
+        <enablement>
+            <or>
+                <instanceof value="org.eclipse.core.resources.IResource" /> 
+            </or>
+        </enablement>
+     </navigatorContent>
+ </extension>
+   
+
+<!--
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="browser-navigator-content">
+      <navigatorContent
+            activeByDefault="true"
+            appearsBefore="org.eclipse.ui.navigator.resourceContent"
+            contentProvider="browser.extensions.TestContentProvider"
+            id="TestContentProvider"
+            labelProvider="browser.extensions.TestLabelProvider"
+            name="MechatronicUML contents"
+            priority="highest">
+        <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="category"/>
+               </and>
+            </or>
+         </triggerPoints>
+        <possibleChildren>
+           <or>         
+              <instanceof 
+                    value="org.eclipse.core.resources.IWorkspaceRoot" /> 
+              <instanceof
+                    value="org.eclipse.core.resources.IProject" /> 
+              <instanceof 
+                     value="org.eclipse.core.resources.IResource" /> 
+              <instanceof  
+                     value="org.eclipse.core.resources.IFolder" />
+              <instanceof 
+                     value="org.eclipse.core.resources.IFile" /> 
+         </or>
+     </possibleChildren>
+     
+      </navigatorContent>
+   </extension>
+   
+-->
+
+<!-- viewer content binding -->
+ <extension
+         point="org.eclipse.ui.navigator.viewer">
+       <viewer
+             helpContext="org.eclipse.ui.project_explorer_context"
+             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+          <popupMenu
+                allowsPlatformContributions="true"
+                id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser#PopupMenu">  
+             <insertionPoint name="group.new"/>
+             <insertionPoint
+                   name="group.open"
+                   separator="true"/>
+             <insertionPoint name="group.openWith"/>   
+             <insertionPoint name="group.edit"
+                   separator="true"/>   
+             <insertionPoint name="group.reorganize" />         
+             <insertionPoint
+                   name="group.port"
+                   separator="true"/>     
+             <insertionPoint
+                   name="group.build"
+                   separator="true"/> 
+             <insertionPoint
+                   name="group.generate"
+                   separator="true"/> 
+             <insertionPoint
+                   name="group.search"
+                   separator="true"/>              
+             <insertionPoint
+                   name="additions"
+                   separator="true"/>              
+             <insertionPoint
+                   name="group.properties"
+                   separator="true"/>
+             
+          </popupMenu>
+          <options>
+             <property
+                   name="org.eclipse.ui.navigator.customizeViewDialogHelpContext"
+                   value="org.eclipse.ui.project_explorer_customization_dialog">
+             </property>
+          </options>
+       </viewer>
+       
+       <viewerContentBinding 
+             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+          <includes>
+       	      <contentExtension pattern="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser.content" />		       	      
+	          <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+           <contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
+           <contentExtension pattern="org.eclipse.ui.navigator.resources.workingSets"/>
+          </includes>
+       </viewerContentBinding>
+       <viewerActionBinding
+            viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
+         <includes>
+             <actionExtension pattern="org.eclipse.ui.navigator.resources.*" />
+         </includes>
+       </viewerActionBinding>
+       <dragAssistant
+             class="org.eclipse.ui.navigator.resources.ResourceDragAdapterAssistant"
+             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser"/>
+   </extension>
+
+   <!-- show view as default in resource perspective -->
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+   <perspectiveExtension
+      targetID="org.eclipse.ui.resourcePerspective">
+      <view
+         id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser"
+         relationship="stack"
+         relative="org.eclipse.ui.navigator.ProjectExplorer"
+         visible="true">
+      </view>
+   </perspectiveExtension>
    </extension>
 
 </plugin>
