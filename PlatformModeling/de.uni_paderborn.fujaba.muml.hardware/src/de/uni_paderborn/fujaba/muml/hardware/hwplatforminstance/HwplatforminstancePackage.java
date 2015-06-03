@@ -45,7 +45,7 @@ public interface HwplatforminstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/";
+	String eNS_URI = "http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/";
 
 	/**
 	 * The package namespace name.

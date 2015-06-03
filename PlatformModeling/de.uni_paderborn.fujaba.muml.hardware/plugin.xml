@@ -11,14 +11,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated hardware -->
       <package
-            uri="http://www.fujaba.de/muml/hardware/hwplatform/1.0/"
+            uri="http://www.fujaba.de/muml/hardware/hwplatform/1.1/"
             class="de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage"
             genModel="model/hardware.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/hardware/hwvaluetype/1.0/"
+            uri="http://www.fujaba.de/muml/hardware/hwvaluetype/1.1/"
             class="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage"
             genModel="model/hardware.genmodel"/>
    </extension>
@@ -26,7 +26,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated hardware -->
       <package
-            uri="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/"
+            uri="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/"
             class="de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage"
             genModel="model/hardware.genmodel"/>
    </extension>
@@ -34,7 +34,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated hardware -->
       <package
-            uri="http://www.fujaba.de/muml/hardware/hwresource/1.0/"
+            uri="http://www.fujaba.de/muml/hardware/hwresource/1.1/"
             class="de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage"
             genModel="model/hardware.genmodel"/>
    </extension>
@@ -42,7 +42,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated hardware -->
       <package
-            uri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/"
+            uri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
             class="de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage"
             genModel="model/hardware.genmodel"/>
    </extension>
@@ -52,7 +52,7 @@
       <package
             class="de.uni_paderborn.fujaba.muml.hardware.HardwarePackage"
             genModel="model/hardware.genmodel"
-            uri="http://www.fujaba.de/muml/hardware/1.0/">
+            uri="http://www.fujaba.de/muml/hardware/1.1/">
       </package>
    </extension>
 

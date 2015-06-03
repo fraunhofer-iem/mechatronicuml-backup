@@ -715,7 +715,7 @@
          
          <child
                class="HWPlatformInstanceConfiguration"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+               packageNsUri="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          </child>
          
       </category>
@@ -732,7 +732,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.hwplatform.category"
             modelId="PlatformInstance">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/"
+               packageNsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/"
                className="HWPlatformInstanceConfiguration">
          </diagramElement>
          

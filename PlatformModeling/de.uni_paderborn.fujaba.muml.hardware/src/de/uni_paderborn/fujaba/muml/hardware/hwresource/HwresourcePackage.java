@@ -43,7 +43,7 @@ public interface HwresourcePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/hardware/hwresource/1.0/";
+	String eNS_URI = "http://www.fujaba.de/muml/hardware/hwresource/1.1/";
 
 	/**
 	 * The package namespace name.
