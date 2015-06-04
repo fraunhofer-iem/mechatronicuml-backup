@@ -15,11 +15,6 @@
       </parser>
    </extension>
 
-	
-	
-	
-	
-	
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="false"?>
       <editor
@@ -395,7 +390,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstanceConfiguration_1000"
                name="%metatype.name.HWPlatformInstanceConfiguration_1000"
@@ -405,7 +400,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_2004"
                name="%metatype.name.HWPlatformInstance_2004"
@@ -415,7 +410,7 @@
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstanceConfiguration_3032"
                name="%metatype.name.HWPlatformInstanceConfiguration_3032"
@@ -424,7 +419,7 @@
             <param name="semanticHint" value="3032"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPlatformInstance_3031"
                name="%metatype.name.HWPlatformInstance_3031"
@@ -433,7 +428,7 @@
             <param name="semanticHint" value="3031"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.DelegationHWPortInstance_3028"
                name="%metatype.name.DelegationHWPortInstance_3028"
@@ -443,7 +438,7 @@
             <param name="semanticHint" value="3028"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.StructuredResourceInstance_3033"
                name="%metatype.name.StructuredResourceInstance_3033"
@@ -453,7 +448,7 @@
             <param name="semanticHint" value="3033"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstance_3030"
                name="%metatype.name.HWPortInstance_3030"
@@ -463,7 +458,7 @@
             <param name="semanticHint" value="3030"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.ActuatorInstance_3034"
                name="%metatype.name.ActuatorInstance_3034"
@@ -473,7 +468,7 @@
             <param name="semanticHint" value="3034"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.SensorInstance_3035"
                name="%metatype.name.SensorInstance_3035"
@@ -483,7 +478,7 @@
             <param name="semanticHint" value="3035"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.BusInstance_3036"
                name="%metatype.name.BusInstance_3036"
@@ -493,7 +488,7 @@
             <param name="semanticHint" value="3036"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.NetworkBridgeInstance_3038"
                name="%metatype.name.NetworkBridgeInstance_3038"
@@ -503,7 +498,7 @@
             <param name="semanticHint" value="3038"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.0/">
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwplatforminstance/1.1/">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.NetworkConnectorInstance_4011"
                name="%metatype.name.NetworkConnectorInstance_4011"

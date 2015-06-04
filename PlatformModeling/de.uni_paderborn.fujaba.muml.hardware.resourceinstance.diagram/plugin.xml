@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <plugin>
-
-
-
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-
-	
-
-	
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-
-
-
-
    <!-- optionally, specify keybindings -->
 <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
@@ -736,7 +688,7 @@
          
          <child
                class="ResourceInstanceRepository"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/">
+               packageNsUri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          </child>
          
       </category>
@@ -753,7 +705,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
             modelId="ResourceInstance">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.0/"
+               packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
                className="ResourceInstanceRepository">
          </diagramElement>
          
