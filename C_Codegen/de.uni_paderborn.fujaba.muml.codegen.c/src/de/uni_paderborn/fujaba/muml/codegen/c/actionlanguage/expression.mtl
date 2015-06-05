@@ -218,6 +218,15 @@
 [generateExpression(expression,  fqname) /]
 [/template]
 
+
+[template public generateExpression(expression : AttributeAccessorExpression , fqname : String)]
+->[expression.attribute.name/]
+[/template]
+
+[template public generateExpression(expression : ArrayIndexExpression , fqname : String)]
+['['/][expression.index.generateExpression('')/][']'/]
+[/template]
+
 [**
  * Generates a TypedNamedElementExpression (prefix attribute with fqname.)
  * @param expression the expression
@@ -225,10 +234,21 @@
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : TypedNamedElementExpression , fqname : String)]
-[expression.typedNamedElement.getFullyQualifiedName(fqname)/]
+[expression.typedNamedElement.getFullyQualifiedName(fqname)/][if not ((expression.elementAccessors->oclIsUndefined()) and (expression.elementAccessors->isEmpty()))]
+[for (accessor : Expression | expression.elementAccessors)][generateExpression(accessor, fqname)/][/for][/if]
 [/template]
 
-
+[**
+ * Generates indices for a TypedNamedElementExpression with indices
+ * @param expression the typed named element expression
+ * @param usePre use pre construct for rhs variables (and for guards)
+ * @param fqname a fully qualified name or the empty string 
+*/]
+[comment]
+[template private generateIndices(expression : TypedNamedElementExpression, usePre : Boolean, fqname : String) ? (expression.indices->notEmpty())]
+['['/][for (index : Expression | expression.elementAccessors) separator(', ')][generateExpression(index, usePre, fqname)/] + 1[/for][']'/]
+[/template]
+[/comment]
 
 [**
  * Generates an array initialize expression.
@@ -236,9 +256,13 @@
  * @param usePre use pre construct for rhs variables and for guards
  * @param fqname a fully qualified name or the empty string
 */]
-[template private generateExpression(expression : ArrayInitializeExpression, usePre : Boolean, fqname : String)]
+[template private generateExpression(expression : ArrayInitializeExpression, fqname : String)]
 {[for (expr : Expression | expression.expressions) separator(', ')][generateExpression(expr, fqname)/][/for]}
 [/template]
+
+
+
+
 
 [**
  * Generates a LiteralExpression
@@ -376,6 +400,8 @@
 [generateExpression(expression, fqname) /]
 [/for]
 [/template]
+
+
 
 [**
  * Generates an If statement
@@ -552,5 +578,6 @@ unexpected expression class with unary op: [expression.eClass().name/]
 		getDefaultValue(var.dataType)
 	else
 		generateExpression(var.initializeExpression,'')
+
 	endif
 /]

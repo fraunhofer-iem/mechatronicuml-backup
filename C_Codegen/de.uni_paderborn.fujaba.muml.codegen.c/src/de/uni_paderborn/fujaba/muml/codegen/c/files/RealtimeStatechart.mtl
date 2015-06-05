@@ -112,15 +112,19 @@
 				[for (state : State | region.embeddedStatechart.states) ? (not state.doEvent.oclIsUndefined())]					
 					Clock_reset(stateChart->[getClockVariableName(state)/]);
 				[/for]
-
 				[comment Member variables for the variables of each region. /]	
-				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]
-					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]				
+					[if (variable.dataType.oclIsKindOf(StructureDataType))]
+						[variable.initializeExpression.generateExpression('statechart->')/]
+					[else]
+						[variable.dataType/]
+						stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+					[/if]	
 				[/for]
 			[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
-				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable)) ]
-					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
-				[/for]
+				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable))]	
+	stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];			
+	[/for]
 			[/if]
 			
 			[else]
@@ -159,7 +163,13 @@
 
 				[comment Member variables for the variables of each region. /]	
 				[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
-					stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+					[if (variable.dataType.oclIsKindOf(StructureDataType))]
+						[getDefaultValue(variable)/];
+
+					[else]
+						stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+					[/if]
+
 				[/for]
 			
 
@@ -184,7 +194,21 @@
 		[getClassName(rtsc)/]* stateChart = ([getClassName(rtsc)/]*)malloc(sizeof([getClassName(rtsc)/]));
 		if (stateChart != NULL) {
 			stateChart->parentComponent = parentComponent;		
-	
+			[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
+					[if (variable.dataType.oclIsKindOf(StructureDataType))]
+					//allocate memory for structured datatypes of the statechart
+					[let sType : StructureDataType = dataType.oclAsType(StructureDataType)]			
+					statechart->[variable.getVariableName()/] = ([getTypeName(sType)/]*)malloc(sizeof([getTypeName(sType)/]));
+					if (statechart->[variable.getVariableName()/] == NULL)
+					{	
+						fprintf(stderr, "Initialization of [getClassName(rtsc)/] failed\n");
+
+						[getDestroyMethodName(rtsc)/](stateChart);
+						stateChart = NULL;
+					}
+					[/let]
+					[/if]	
+				[/for]
 			if (stateChart->parentComponent != NULL) {
 				[getInitializeMethodName(rtsc)/](stateChart);
 			} else {

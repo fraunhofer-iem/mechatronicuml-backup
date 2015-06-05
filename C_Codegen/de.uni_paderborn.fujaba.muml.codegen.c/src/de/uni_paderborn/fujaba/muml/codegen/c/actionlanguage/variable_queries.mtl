@@ -19,10 +19,42 @@
 */]
 [query public getFullyQualifiedName(typedNamedElement : TypedNamedElement, fqname : String) : String =
 	if fqname = '' then
-		typedNamedElement.getTypedNamedElementName()
+			typedNamedElement.getTypedNamedElementName()
 	else
-		fqname + '.' + typedNamedElement.getTypedNamedElementName()
+		--fqname + '->' + typedNamedElement.getTypedNamedElementName()
+		if typedNamedElement.oclIsKindOf(Variable) then
+			let myFqname : String = 'statechart'
+			in
+			if myFqname = '' then
+				''
+			else
+				myFqname + '->'
+			endif + typedNamedElement.getTypedNamedElementName()
+		else
+			if typedNamedElement.oclIsKindOf(HybridPort) then
+				typedNamedElement.getTypedNamedElementName()
+			else
+				-- can this happen?
+				fqname + '->' + typedNamedElement.getTypedNamedElementName()
+			endif
+		endif
 	endif
+/]
+
+[**
+ * Returns the statechart which directly or indirectly the
+ * passed typed named element.
+ * @param typedNamedElement the typed named element
+*/]
+[query private getContainingRTSC(typedNamedElement : TypedNamedElement) : RealtimeStatechart =
+	typedNamedElement.oclAsType(EObject)->asSet()->closure(e |
+		if e.oclIsKindOf(RealtimeStatechart) then
+			e
+		else
+			e.eContainer()
+		endif
+	)->select(oclIsKindOf(RealtimeStatechart))
+	 ->collect(oclAsType(RealtimeStatechart))->any(true)
 /]
 
 [**

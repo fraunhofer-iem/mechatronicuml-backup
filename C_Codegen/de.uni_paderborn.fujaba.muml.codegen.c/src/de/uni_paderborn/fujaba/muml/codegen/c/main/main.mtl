@@ -29,6 +29,7 @@
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::make]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::CMake]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::main_C]
+[import de::uni_paderborn::fujaba::muml::codegen::c::files::customTypes]
 [import de::uni_paderborn::fujaba::muml::codegen::c::files::LocalMiddleware]
 
 [template public generate(cic: ComponentInstanceConfiguration)]
@@ -41,7 +42,7 @@
 	[comment generate mini version for middleware/]
 	[generateLocalMiddleware(cic.eAllContents(ComponentInstance)->asOrderedSet(), cic.name+'/Middleware/')/]
 
-		 [generateCMakeFiles(cic, cic.name+'/')/]
+	[generateCMakeFiles(cic, cic.name+'/')/]
 [/if]
 [/template]
 
@@ -79,6 +80,8 @@
 
 [comment create main file/]
 [generateANSICMainFile(CIs, path)/]
+
+[generateCustomTypes(CIs, path)/]
 
 
 [/template]

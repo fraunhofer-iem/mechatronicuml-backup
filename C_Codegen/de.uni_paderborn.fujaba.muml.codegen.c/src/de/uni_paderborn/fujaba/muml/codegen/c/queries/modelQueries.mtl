@@ -287,6 +287,13 @@ let senderMessages:Set(MessageType) = CIs.portInstances->asSet()->filter(Discret
 receiverMessages->union(senderMessages)->asOrderedSet()
  /]
 
+[query public getAllStructTypes (CIs : OrderedSet(ComponentInstance)) : Set(StructureDataType) = 
+let atomicComp : Set(AtomicComponent) = CIs.componentType->asSet()->filter(AtomicComponent) in 
+let RTSCs : Set(RealtimeStatechart) =	atomicComp.behavior.oclAsType(RealtimeStatechart)->asSet() in
+RTSCs.allAvailableVariables.dataType->asSet()->select(oclIsKindOf(StructureDataType))
+/]
+
+
 
 [**
  * computes an (ordered) set of all DiscretePortInstances of a given codegen-model (the complete system)

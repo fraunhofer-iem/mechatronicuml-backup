@@ -42,7 +42,8 @@ MessageID * messageIDsOfbufferOf[aci.getVariableName()/];
 					[for (msgType: MessageType| port.receiverMessageTypes)]
 						messageIDsOfbufferOf[aci.getVariableName()/]['['/][i-1/][']'/] = [msgType.getIdentifierVariableName()/];
 					[/for]
-					MessageBuffer* [getBufferName(msgBuffer, portInst)/] = MessageBuffer_create([msgBuffer.getSizeOfMessageBuffer()/],false,[msgBuffer.messageType->size()/],messageIDsOfbufferOf[aci.getVariableName()/]);
+					MessageBuffer* [getBufferName(msgBuffer, portInst)/] = MessageBuffer_create([msgBuffer.getSizeOfMessageBuffer()/],[if (msgBuffer.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)]false[else]true[/if],[msgBuffer.messageType->size()/],messageIDsOfbufferOf[aci.getVariableName()/]);
+
 				[/for]
 				MessageBuffer** allBuffersOf[portInst.componentInstance.getName()/][port.getName()/] = (MessageBuffer**) malloc([port.receiverMessageBuffer->size()/]*sizeof(MessageBuffer*));
 				[for (buf : MessageBuffer | port.receiverMessageBuffer)]

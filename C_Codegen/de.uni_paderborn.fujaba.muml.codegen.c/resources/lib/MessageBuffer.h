@@ -30,7 +30,7 @@ typedef struct MessageBuffer{
 	queue_size_t currentSize; /**< The number of currently enqueued MiddlewareMessages; The current Size of the Queue */
 	queue_size_t index;  /**< The current Index of the MessageBuffer::queue */
 	queue_size_t tail;  /**< The current Tail of the MessageBuffer::queue */
-    bool bufferMode;  /**< The mode of a MessageBuffer */
+    bool bufferMode;  /**< The mode of a MessageBuffer - false: discard new incoming message; true: replace oldest message*/
 }MessageBuffer;
 
 
