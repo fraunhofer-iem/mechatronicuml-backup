@@ -57,12 +57,26 @@ mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:Oc
 		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region, toplevel);			
 					
 	}
-	
+
+
+property usedClockNames : Dict(String,Integer);
 //@author: sthiele2 -- creates a clock for in order to disassamble a deadline at a schema-specifying-transition
 mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : String) : Clock
 {	
+	var nameSuffix : String := "";
+	if(usedClockNames->hasKey(clockName))
+	{
+		var nr : Integer := usedClockNames->get(clockName);
+		usedClockNames->put(clockName,nr+1);
+		nameSuffix := (nr+1).toString();
+	}
+	else
+	{
+		nameSuffix :=  1.toString();
+		usedChannelNames->put(clockName,1);	
+	};
 	clockIndex := clockIndex+1;
-	result.name := clockName +"_".concat(clockIndex.toString());
+	result.name := clockName +"_".concat(nameSuffix);
 }	
 
 //@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
@@ -81,9 +95,10 @@ mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region: 
 		result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
 }
 
-mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : String, _timeValue : TimeValue): ClockConstraint{
-	result.bound := _timeValue.map TimeValue2TimeValue(context,context);
+mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : String, _timeValue : TimeValue, compareOperator : ComparingOperator): ClockConstraint{
+	result.bound := _timeValue;
 	result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
+	result.operator:= compareOperator;
 }
 mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	

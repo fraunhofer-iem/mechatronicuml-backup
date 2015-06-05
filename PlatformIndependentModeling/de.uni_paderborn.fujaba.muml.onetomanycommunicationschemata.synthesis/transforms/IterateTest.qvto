@@ -23,9 +23,11 @@ main() {
 
  //debug:
 	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
-	currentRealtimeStatechart.transitions.disassembleIterateSchema();
-	 	
-// not debug:
+	var iterateTransitions : Set(Transition) :=currentRealtimeStatechart.transitions->select(t : Transition | t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) ;
+	iterateTransitions.disassembleIterateSchema();
+	currentRealtimeStatechart.transitions := currentRealtimeStatechart.transitions-(iterateTransitions);
+	
+	// not debug:
 	// currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
 	// currentRealtimeStatechart.map RTSC2RTSC();
 	
@@ -50,3 +52,7 @@ helper isOperationSubRoleSpecific(o : Operation): Boolean
 {
 	return currentRealtimeStatechart.subRoleSpecificOperations->includes(o);
 }	
+
+
+
+
