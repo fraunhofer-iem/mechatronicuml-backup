@@ -137,7 +137,7 @@ mapping Transition :: SingleReceive2Transition1FromIntermediateToReceivedSubrole
 		
 		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "singleReceive", true, 6);
 		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 4);
+		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
 	}
 	
@@ -150,7 +150,7 @@ mapping Transition :: SingleReceive2Transition2FromIntermediateToReceivedSubrole
 		
 		source := self.map Schema2SubroleIntermediateState(context,region,1,toplevel);	
 		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 5);
+		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 				
 		action := self.map TransferSchemata2Action(context, "consumeSingleReceive:=false", "consumeSingleReceive", "false", 12);
 			
@@ -304,7 +304,7 @@ mapping Transition :: SingleReceive2TransitionFromIdleToRequested(context:OclAny
 	
 mapping Transition :: SingleReceiveNotLastAndPossibleExpression(context:OclAny, region:OclAny, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
-		leftExpression := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 10+transMapping);
+		leftExpression := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		if(notOp){
 			rightExpression := self.map UnaryOperatorTransferSchemata2TypedNamedElementExpr(context, varName, transMapping, UnaryOperator::NOT);
@@ -324,7 +324,7 @@ mapping Transition :: UnaryOperatorTransferSchemata2TypedNamedElementExpr(contex
 }
 mapping Transition :: SingleReceiveLastAndPossibleExpression(context:OclAny, region:OclAny, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
-		leftExpression := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 10+transMapping);
+		leftExpression := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 		if(notOp){
 			rightExpression := self.map UnaryOperatorTransferSchemata2TypedNamedElementExpr(context, varName, transMapping, UnaryOperator::NOT);

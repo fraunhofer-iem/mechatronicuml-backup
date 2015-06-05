@@ -71,11 +71,11 @@ mapping Transition :: Iterate2TransitionFromSourceToIntermediate() : Transition
 	};
 	sourceState.entryEvent.action.name := sourceState.entryEvent.action.name + "curRole := last";
 	var variable : Variable := self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());
-	sourceState.entryEvent.action.expressions += self.map Transition2Block(self.map Schema2TypedNamedElementAssignmentExpression(sourceState,AssignOperator::ASSIGN,variable,self.map TransferSchemataEndpointReference(result, result,"last",1)));
+	sourceState.entryEvent.action.expressions += self.map Transition2Block(self.map Schema2TypedNamedElementAssignmentExpression(sourceState,AssignOperator::ASSIGN,variable,self.map TransferSchemataEndpointReference(result,PositionSelectorKind::LAST)));
 	
 	// create the condition for the multicast call!
 			
-	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.map Schema2TypedNamedElementExpression(result,variable),self.map TransferSchemataEndpointReference(result,result,"self",2));
+	var firstmulticastCondition : Expression  :=self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,self.map Schema2TypedNamedElementExpression(result,variable),self.map TransferSchemataEndpointReference(result,PositionSelectorKind::SELF));
 	var secondmulticastCondition := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.deepclone().oclAsType(Expression);
 	
 	var multicastCondition : Expression;
@@ -108,29 +108,6 @@ query Transition :: getPortOrRoleAsDataType() : DataType{
 
 
 
-mapping Transition :: Schema2TypedNamedElementAssignmentExpression(context : OclAny,operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
-
-	result.lhs_typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedElement);
-	result.rhs_assignExpression := assignedExpression;
-	result.assignOperator := operator;
-}
-
-
-
-mapping Transition :: Schema2LiteralExpression(context : OclAny, _value : String) : core::expressions::common::LiteralExpression{
-	value := _value;
-	
-}
-
-mapping Transition :: Schema2TypedNamedElementExpression(context : OclAny,referencedElement : TypedNamedElement) : TypedNamedElementExpression{
-	
-	typedNamedElement := referencedElement;
-}
-
-mapping Transition :: Schema2Variable(_name : String, _type : DataType) : Variable{
-	result.name := _name;
-	result.dataType := _type;
-}
 
 mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition{
 	
@@ -232,14 +209,7 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 
 
 
-mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
-	position := self.map Schema2PositionKindSelector(result,result,identifier, positionSelectorKind);
-	typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedTypedNamedElement);
-}
 
-mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
-	position := self.map Schema2PositionKindSelector(result,result,identifier, positionSelectorKind);	
-}
 	
 
 query Transition :: iterateDefinesDelay(): Boolean{

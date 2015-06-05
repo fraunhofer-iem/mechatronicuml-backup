@@ -114,41 +114,18 @@ mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : Ocl
 	
 	--Transfer Schemata Guards, Clock Constraints, CLock Resets
 	
-mapping Transition :: TransferSchemataLogicalExpression(context:OclAny, region:OclAny, op: String, position:String, transMapping: Integer) : ComparisonExpression {
+mapping Transition :: TransferSchemataLogicalExpression( context:EObject, position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
+				
+		rightExpression := self.map TransferSchemataEndpointReference(context, position);
 		
-		if(position.equalsIgnoreCase("last")){
-			rightExpression := self.map TransferSchemataEndpointReference(context, region, "last", transMapping);
-		}else{
-			rightExpression := self.map TransferSchemataEndpointReference(context, region, "first", transMapping);
-		}endif;
-		
-		leftExpression := self.map TransferSchemataEndpointReference(context, region, "self", transMapping);		
-		
-		if(op.equalsIgnoreCase('==')){
-			operator := core::expressions::common::ComparingOperator::EQUAL;
-		}else{
-			if(op.equalsIgnoreCase('<>')){
-				operator := core::expressions::common::ComparingOperator::UNEQUAL;
-			}endif;		
-		}endif;
-		
+		leftExpression := self.map TransferSchemataEndpointReference(result, PositionSelectorKind::SELF);
+				
+		operator := compOperator;
+				
 	}
 	
 
-	
-mapping Transition :: TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer) : DiscreteInteractionEndpointReference {
-		
-		if(pos.equalsIgnoreCase('self')){
-			position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF);
-		}else{
-			if(pos.equalsIgnoreCase('last')){
-				position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::LAST);
-			}else{
-				position := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::FIRST);
-			}endif;		
-		}endif;
 
-	}
 	
 
 	
@@ -583,7 +560,7 @@ mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region
 		
 		priority := 2;
 		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "<>", "last", 1);
+		guard := self.map TransferSchemataLogicalExpression(result, PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "switchState", true, 3);
 		
@@ -596,7 +573,7 @@ mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:Oc
 		
 		priority := 1;
 		
-		guard := self.map TransferSchemataLogicalExpression(context, region, "==", "last", 2);
+		guard := self.map TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
 	}
 	
@@ -635,4 +612,41 @@ mapping Transition:: Transition2LogicalExpression(context : OclAny, logicoperato
 	result.leftExpression := lhs;
 	result.rightExpression :=rhs;
 	result.operator := logicoperator;
+}
+
+
+
+----------------------------------------------** new transformations that should replace the old ones ** 
+mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind, referencedTypedNamedElement : TypedNamedElement) : DiscreteInteractionEndpointReference {
+	position := self.map Schema2PositionKindSelector(result,result,identifier, positionSelectorKind);
+	typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedTypedNamedElement);
+}
+
+mapping Transition :: TransferSchemataEndpointReference(identifier : EObject, positionSelectorKind: PositionSelectorKind) : DiscreteInteractionEndpointReference {
+	position := self.map Schema2PositionKindSelector(result,result,identifier, positionSelectorKind);	
+}
+
+
+mapping Transition :: Schema2TypedNamedElementAssignmentExpression(context : OclAny,operator : AssignOperator, referencedElement : TypedNamedElement, assignedExpression : Expression) : actionlanguage::Assignment{
+
+	result.lhs_typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,referencedElement);
+	result.rhs_assignExpression := assignedExpression;
+	result.assignOperator := operator;
+}
+
+
+
+mapping Transition :: Schema2LiteralExpression(context : OclAny, _value : String) : core::expressions::common::LiteralExpression{
+	value := _value;
+	
+}
+
+mapping Transition :: Schema2TypedNamedElementExpression(context : OclAny,referencedElement : TypedNamedElement) : TypedNamedElementExpression{
+	
+	typedNamedElement := referencedElement;
+}
+
+mapping Transition :: Schema2Variable(_name : String, _type : DataType) : Variable{
+	result.name := _name;
+	result.dataType := _type;
 }
