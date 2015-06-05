@@ -152,7 +152,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 	var rhs : Expression := self.map TransferSchemataEndpointReference(result,PositionSelectorKind::LAST);
 	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,lhs, rhs);
 	
-	action := self.action.map Action2Action(result,result);
+	action := self.action.deepclone().oclAsType(Action);
 	if(action.oclIsUndefined()){
 		action := new Action();
 		action.name :="";
@@ -177,9 +177,9 @@ mapping Transition :: Iterate2Transition2FromIntermediateToTarget(): Transition{
 		clockConstraints+= self.map RelativeDeadline2ClockConstraint(result, result, true, ComparingOperator::GREATER_OR_EQUAL, IterateDLC_ClockName);
 	}endif;
 	
-	action := self.action.map Action2Action(result,result);
+	action := self.action.deepclone().oclAsType(Action);
 	
-	guard := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.map Expression2Expression(result);
+	guard := self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).terminationCondition.deepclone().oclAsType(Expression);
 	
 	clockResets := self.clockResets;
 	
