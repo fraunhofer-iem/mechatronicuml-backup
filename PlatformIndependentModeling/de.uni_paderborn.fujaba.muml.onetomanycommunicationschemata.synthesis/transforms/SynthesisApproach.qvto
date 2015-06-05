@@ -3,6 +3,8 @@ import Multicast;
 import Unicast;
 import MultiReceive;
 import UniReceive;
+import IterateSchema;
+
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
@@ -27,11 +29,16 @@ main() {
 
  //debug:
 	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
-	currentRealtimeStatechart.map RTSC2RTSC();
-	 	
 // not debug:
-	// currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);
-	// currentRealtimeStatechart.map RTSC2RTSC();
+	// currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
+	
+	var iterateTransitions : Set(Transition) :=currentRealtimeStatechart.transitions->select(t : Transition | t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) ;
+	iterateTransitions.disassembleIterateSchema();
+	currentRealtimeStatechart.transitions := currentRealtimeStatechart.transitions-(iterateTransitions);
+	
+	currentRealtimeStatechart.map RTSC2RTSC();
+	
+	
 	
 }
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
@@ -118,15 +125,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 			variables +=newVar ;
 		}endif;
 		
-		if(not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate) 
-				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()){
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "iteratePossible");
-			var initExpression := new LiteralExpression();
-			initExpression.value := "false";
-			newVar.initializeExpression := initExpression;
-			variables +=newVar ;
-		}endif;
+		
 		// normally override the behavorialElement
 		behavioralElement := self.behavioralElement;
 		getRealtimeStatechartCategory().modelElements +=result;
@@ -146,13 +145,6 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny
 		};
 		
 		states += self.states.map States2StatesCoordinator(context, region);
-		
-
-		if(not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(Iterate) 
-				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(Iterate).delay.oclIsUndefined()))->isEmpty()){
-			clocks += self.map TransferSchemataClock(context, region, "c_delay", true);
-		}endif;
 		
 		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionCoordinator(context, region);
 		
