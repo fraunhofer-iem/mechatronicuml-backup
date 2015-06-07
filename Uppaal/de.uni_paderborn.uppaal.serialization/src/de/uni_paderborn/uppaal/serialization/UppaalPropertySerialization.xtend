@@ -11,13 +11,13 @@ import de.uni_paderborn.uppaal.expressions.Expression
 
 class UppaalPropertySerialization extends UppaalSerialization {
 	def serializePropertyRepository(PropertyRepository it) '''«FOR i : properties ?:emptyList»
-		«IF i.comment != "\"no comment provided\"" »«comment(i.comment)»«ENDIF»
+		«IF i.comment != null && i.comment != "\"no comment provided\"" »«comment(i.comment)»«ENDIF»
 		«property(i)»
 		
 		«ENDFOR»'''
 	
 	def comment(String s) '''/*
-«s.replace("*/","* /")»
+ s.replace("*/","* /")»
 */'''
 	
 	def dispatch property(LeadsToProperty it) '''«expression(leftExpression)» --> «expression(rightExpression)»'''
