@@ -9,6 +9,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IProgressMonitorWithBlocking;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
@@ -43,7 +44,7 @@ public class UppaalXMLSynthesisJob extends SynchronousJob {
 		this(nta, properties, resource.getLocation(), layout);
 		this.resource = resource;
 	}
-
+	
 	@Override
 	protected IStatus run(IProgressMonitor monitor) {
 
