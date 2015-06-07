@@ -217,7 +217,6 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
         composite.setFont(parent.getFont());
 
         Tree tree = toolkit.createTree(composite, SWT.BORDER);
-        
         GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
         tree.setLayoutData(gridData);
         
@@ -283,7 +282,7 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 
 		
 		TreeViewerColumn column = new TreeViewerColumn(treeViewer, SWT.MULTI);
-		column.getColumn().setWidth(100);
+		column.getColumn().setWidth(600);
 		column.getColumn().setMoveable(true);
 //		column.getColumn().setText("Name");
 		column.setLabelProvider(new CellLabelProvider() {
@@ -322,7 +321,6 @@ public abstract class AbstractFujabaExportTargetPage extends WizardDataTransferP
 						e.printStackTrace();
 					}
 				}
-				
 				treeViewer.update(element, null);
 			}
 		});
