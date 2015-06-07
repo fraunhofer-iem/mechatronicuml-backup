@@ -1240,6 +1240,34 @@ finally {
 
 
 
+// Entry rule entryRuleTimeValueExpression
+entryRuleTimeValueExpression 
+:
+{ before(grammarAccess.getTimeValueExpressionRule()); }
+	 ruleTimeValueExpression
+{ after(grammarAccess.getTimeValueExpressionRule()); } 
+	 EOF 
+;
+
+// Rule TimeValueExpression
+ruleTimeValueExpression
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getTimeValueExpressionAccess().getTimeValueAssignment()); }
+(rule__TimeValueExpression__TimeValueAssignment)
+{ after(grammarAccess.getTimeValueExpressionAccess().getTimeValueAssignment()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleExtendedTypedNamedElementExpression
 entryRuleExtendedTypedNamedElementExpression 
 :
@@ -2052,21 +2080,27 @@ rule__Operand__Alternatives
 )
 
     |(
-{ before(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); }
+{ before(grammarAccess.getOperandAccess().getTimeValueExpressionParserRuleCall_3()); }
+	ruleTimeValueExpression
+{ after(grammarAccess.getOperandAccess().getTimeValueExpressionParserRuleCall_3()); }
+)
+
+    |(
+{ before(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_4()); }
 	ruleOperationCall
-{ after(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); }
+{ after(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_4()); }
 )
 
     |(
-{ before(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); }
+{ before(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_5()); }
 	ruleTriggerMessageExpression
-{ after(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); }
+{ after(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_5()); }
 )
 
     |(
-{ before(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); }
+{ before(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_6()); }
 	ruleNoAttributeSelectorExpression
-{ after(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); }
+{ after(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_6()); }
 )
 
 ;
@@ -9794,6 +9828,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__TimeValueExpression__TimeValueAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueCrossReference_0()); }
+(
+{ before(grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueMINORMAXKEYWORDTerminalRuleCall_0_1()); }
+	RULE_MINORMAXKEYWORD{ after(grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueMINORMAXKEYWORDTerminalRuleCall_0_1()); }
+)
+{ after(grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueCrossReference_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__ExtendedTypedNamedElementExpression__PositionAssignment_1_0_2
     @init {
 		int stackSize = keepStackSize();
@@ -10025,6 +10078,8 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
+RULE_MINORMAXKEYWORD : ('maxMsgDelay'|'minMsgDelay');
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 

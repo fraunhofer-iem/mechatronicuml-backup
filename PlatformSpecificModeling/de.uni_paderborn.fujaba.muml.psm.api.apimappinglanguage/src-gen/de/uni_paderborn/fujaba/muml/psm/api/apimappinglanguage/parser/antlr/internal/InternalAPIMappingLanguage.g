@@ -2815,31 +2815,41 @@ ruleOperand returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getTimeValueExpressionParserRuleCall_3()); 
     }
-    this_OperationCall_5=ruleOperationCall
+    this_TimeValueExpression_5=ruleTimeValueExpression
     { 
-        $current = $this_OperationCall_5.current; 
+        $current = $this_TimeValueExpression_5.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_4()); 
     }
-    this_TriggerMessageExpression_6=ruleTriggerMessageExpression
+    this_OperationCall_6=ruleOperationCall
     { 
-        $current = $this_TriggerMessageExpression_6.current; 
+        $current = $this_OperationCall_6.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_5()); 
     }
-    this_NoAttributeSelectorExpression_7=ruleNoAttributeSelectorExpression
+    this_TriggerMessageExpression_7=ruleTriggerMessageExpression
     { 
-        $current = $this_NoAttributeSelectorExpression_7.current; 
+        $current = $this_TriggerMessageExpression_7.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_6()); 
+    }
+    this_NoAttributeSelectorExpression_8=ruleNoAttributeSelectorExpression
+    { 
+        $current = $this_NoAttributeSelectorExpression_8.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -2940,6 +2950,40 @@ ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     }
 )
     ;
+
+
+
+
+
+// Entry rule entryRuleTimeValueExpression
+entryRuleTimeValueExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeValueExpressionRule()); }
+	 iv_ruleTimeValueExpression=ruleTimeValueExpression 
+	 { $current=$iv_ruleTimeValueExpression.current; } 
+	 EOF 
+;
+
+// Rule TimeValueExpression
+ruleTimeValueExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimeValueExpressionRule());
+	        }
+        }
+	otherlv_0=RULE_MINORMAXKEYWORD
+	{
+		newLeafNode(otherlv_0, grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueCrossReference_0()); 
+	}
+
+)
+)
+;
 
 
 
@@ -3701,6 +3745,8 @@ rulePositionSelectorKind returns [Enumerator current=null]
 ));
 
 
+
+RULE_MINORMAXKEYWORD : ('maxMsgDelay'|'minMsgDelay');
 
 RULE_NUMBER : RULE_INT '.' RULE_INT;
 
