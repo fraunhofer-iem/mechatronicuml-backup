@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportJobChangeAdapter;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.OptionsWizardPage;
 
-public class ExportUppaalWizardDialogAction extends AbstractHandler {
+public class MUML2ExportUppaalWizardDialogAction extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -46,7 +46,7 @@ public class ExportUppaalWizardDialogAction extends AbstractHandler {
 		}
 		
 		// Create and initialize wizard
-		IWorkbenchWizard wizard = new UppaalExportWizard();
+		IWorkbenchWizard wizard = new MUML2UppaalExportWizard();
 		wizard.init(workbenchWindow.getWorkbench(), structuredSelection);
 		
 		// Open dialog

@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.OptionsFactory;
 import de.uni_paderborn.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 
-public class UppaalExportTargetPage extends AbstractFujabaExportTargetPage {
+public class MUML2UppaalExportTargetPage extends AbstractFujabaExportTargetPage {
 
 	private Options uppaalOptions;
 	private Button buttonExportAsXml;
@@ -26,7 +26,7 @@ public class UppaalExportTargetPage extends AbstractFujabaExportTargetPage {
 	private Resource uppaalOptionsResource;
 	private ResourceSet resourceSet = new ResourceSetImpl();
 	
-	public UppaalExportTargetPage(String name, FormToolkit toolkit) {
+	public MUML2UppaalExportTargetPage(String name, FormToolkit toolkit) {
 		super(name, toolkit);
 		uppaalOptionsEditor = new ObjectPropertyEditor("options", null, "options", true);
 	}
@@ -57,7 +57,7 @@ public class UppaalExportTargetPage extends AbstractFujabaExportTargetPage {
 		super.setVisible(visible);
 		if (visible) {
 			uppaalOptionsResource = resourceSet.createResource(URI.createURI("fakepath://VerificationOptions.options"));
-			setVerifiableElement(((UppaalExportWizard)getWizard()).getVerifiableElement());
+			setVerifiableElement(((MUML2UppaalExportWizard)getWizard()).getVerifiableElement());
 		} else if (uppaalOptionsResource != null) {
 			uppaalOptionsResource.getContents().clear();
 			resourceSet.getResources().remove(uppaalOptionsResource);

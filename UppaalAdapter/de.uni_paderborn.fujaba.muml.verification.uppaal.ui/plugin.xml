@@ -33,7 +33,7 @@
       <command id="de.uni_paderborn.fujaba.muml.verification.uppaal.ExportUppaalWizardModelAction"
          name="Export UPPAAL Model (Wizard)..."
          categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.ExportUppaalWizardDialogAction"/>
+         defaultHandler="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.MUML2ExportUppaalWizardDialogAction"/>
    </extension>
 
 
@@ -254,9 +254,9 @@
          point="org.eclipse.ui.exportWizards">
       <wizard
             category="de.uni_paderborn.fujaba.export"
-            class="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.UppaalExportWizard"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.ui.wizard.MUML2UppaalExportWizard"
             id="de.uni_paderborn.fujaba.verification.upaal.export"
-            name="Uppaal Model">
+            name="MechatronicUML to Uppaal">
       </wizard>
    </extension>
 

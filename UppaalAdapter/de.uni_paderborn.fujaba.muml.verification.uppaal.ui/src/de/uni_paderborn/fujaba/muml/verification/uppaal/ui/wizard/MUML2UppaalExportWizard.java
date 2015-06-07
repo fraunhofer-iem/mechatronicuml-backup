@@ -24,15 +24,15 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.job.interfaces.Verificat
 import de.uni_paderborn.fujaba.muml.verification.uppaal.options.Options;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.ExportJobChangeAdapter;
 
-public class UppaalExportWizard extends AbstractFujabaExportWizard {
+public class MUML2UppaalExportWizard extends AbstractFujabaExportWizard {
 
 	private AbstractFujabaExportSourcePage sourcePage;
-	private UppaalExportTargetPage targetPage;
+	private MUML2UppaalExportTargetPage targetPage;
 
 	@Override
 	public void init(IWorkbench workbench, IStructuredSelection currentSelection) {
 		super.init(workbench, currentSelection);
-		setWindowTitle("Test Transformation Export");
+		setWindowTitle("MUML 2 Uppaal Export (Not Working Yet)");
 		setDefaultPageImageDescriptor(IDEWorkbenchPlugin
 				.getIDEImageDescriptor("wizban/exportzip_wiz.png"));//$NON-NLS-1$
 	}
@@ -55,7 +55,7 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 			
 			@Override
 			public String wizardPageGetSourceFileExtension() {
-				return "fujaba";
+				return "muml";
 			}
 
 			@Override
@@ -72,7 +72,7 @@ public class UppaalExportWizard extends AbstractFujabaExportWizard {
 		addPage(sourcePage);
 
 		// Target page
-		targetPage = new UppaalExportTargetPage("target", toolkit);
+		targetPage = new MUML2UppaalExportTargetPage("target", toolkit);
 		addPage(targetPage);
 	}
 
