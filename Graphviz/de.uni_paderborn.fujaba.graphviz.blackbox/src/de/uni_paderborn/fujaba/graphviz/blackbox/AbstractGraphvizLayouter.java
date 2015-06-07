@@ -44,7 +44,8 @@ public abstract class AbstractGraphvizLayouter<I, O> {
 			process.waitFor();
 			return layouter.getGraph();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("No Layouting. Maybe, Graphviz is not installed, i.e., dot is not available via the command line");
+			// e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
