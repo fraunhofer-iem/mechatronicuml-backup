@@ -1082,7 +1082,7 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 
 	//// Operand
 	//Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
+	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
 	//	TriggerMessageExpression | NoAttributeSelectorExpression;
 	public ActionLanguageGrammarAccess.OperandElements getOperandAccess() {
 		return gaActionLanguage.getOperandAccess();
@@ -1112,6 +1112,22 @@ public class APIMappingLanguageGrammarAccess extends AbstractGrammarElementFinde
 	public ParserRule getLiteralRule() {
 		return getLiteralAccess().getRule();
 	}
+
+	//TimeValueExpression returns actionlanguage::TimeValueExpression:
+	//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+	public ActionLanguageGrammarAccess.TimeValueExpressionElements getTimeValueExpressionAccess() {
+		return gaActionLanguage.getTimeValueExpressionAccess();
+	}
+	
+	public ParserRule getTimeValueExpressionRule() {
+		return getTimeValueExpressionAccess().getRule();
+	}
+
+	//terminal MINORMAXKEYWORD:
+	//	"maxMsgDelay" | "minMsgDelay";
+	public TerminalRule getMINORMAXKEYWORDRule() {
+		return gaActionLanguage.getMINORMAXKEYWORDRule();
+	} 
 
 	//ExtendedTypedNamedElementExpression returns expressions::Expression:
 	//	TypedNamedElementExpression

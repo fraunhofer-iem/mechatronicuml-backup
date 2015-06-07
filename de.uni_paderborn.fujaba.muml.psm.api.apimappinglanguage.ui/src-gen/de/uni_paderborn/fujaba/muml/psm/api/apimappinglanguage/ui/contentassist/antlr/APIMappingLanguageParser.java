@@ -197,6 +197,7 @@ public class APIMappingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeCastExpressionAccess().getDataTypeAssignment_1_2(), "rule__TypeCastExpression__DataTypeAssignment_1_2");
 					put(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionAssignment_1_4(), "rule__TypeCastExpression__EnclosedExpressionAssignment_1_4");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
+					put(grammarAccess.getTimeValueExpressionAccess().getTimeValueAssignment(), "rule__TimeValueExpression__TimeValueAssignment");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionAssignment_1_0_2(), "rule__ExtendedTypedNamedElementExpression__PositionAssignment_1_0_2");
 					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getIncrementDecrementOperatorAssignment_1_1_1(), "rule__ExtendedTypedNamedElementExpression__IncrementDecrementOperatorAssignment_1_1_1");
 					put(grammarAccess.getTypedNamedElementExpressionAccess().getTypedNamedElementAssignment_0(), "rule__TypedNamedElementExpression__TypedNamedElementAssignment_0");
