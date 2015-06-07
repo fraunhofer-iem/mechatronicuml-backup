@@ -1232,18 +1232,19 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final RuleCall cLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cExtendedTypedNamedElementExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cOperationCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cTriggerMessageExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cNoAttributeSelectorExpressionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cTimeValueExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cOperationCallParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cTriggerMessageExpressionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cNoAttributeSelectorExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//// Operand
 		//Operand returns expressions::Expression:
-		//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
+		//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
 		//	TriggerMessageExpression | NoAttributeSelectorExpression;
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall | TriggerMessageExpression
-		//| NoAttributeSelectorExpression
+		//"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
+		//TriggerMessageExpression | NoAttributeSelectorExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -1264,14 +1265,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ExtendedTypedNamedElementExpression
 		public RuleCall getExtendedTypedNamedElementExpressionParserRuleCall_2() { return cExtendedTypedNamedElementExpressionParserRuleCall_2; }
 
+		//TimeValueExpression
+		public RuleCall getTimeValueExpressionParserRuleCall_3() { return cTimeValueExpressionParserRuleCall_3; }
+
 		//OperationCall
-		public RuleCall getOperationCallParserRuleCall_3() { return cOperationCallParserRuleCall_3; }
+		public RuleCall getOperationCallParserRuleCall_4() { return cOperationCallParserRuleCall_4; }
 
 		//TriggerMessageExpression
-		public RuleCall getTriggerMessageExpressionParserRuleCall_4() { return cTriggerMessageExpressionParserRuleCall_4; }
+		public RuleCall getTriggerMessageExpressionParserRuleCall_5() { return cTriggerMessageExpressionParserRuleCall_5; }
 
 		//NoAttributeSelectorExpression
-		public RuleCall getNoAttributeSelectorExpressionParserRuleCall_5() { return cNoAttributeSelectorExpressionParserRuleCall_5; }
+		public RuleCall getNoAttributeSelectorExpressionParserRuleCall_6() { return cNoAttributeSelectorExpressionParserRuleCall_6; }
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -1325,6 +1329,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"null"
 		public Keyword getNullKeyword_3() { return cNullKeyword_3; }
+	}
+
+	public class TimeValueExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeValueExpression");
+		private final Assignment cTimeValueAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cTimeValueTimeValueCrossReference_0 = (CrossReference)cTimeValueAssignment.eContents().get(0);
+		private final RuleCall cTimeValueTimeValueMINORMAXKEYWORDTerminalRuleCall_0_1 = (RuleCall)cTimeValueTimeValueCrossReference_0.eContents().get(1);
+		
+		//TimeValueExpression returns actionlanguage::TimeValueExpression:
+		//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+		public ParserRule getRule() { return rule; }
+
+		//timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
+		public Assignment getTimeValueAssignment() { return cTimeValueAssignment; }
+
+		//[valuetype::TimeValue|MINORMAXKEYWORD]
+		public CrossReference getTimeValueTimeValueCrossReference_0() { return cTimeValueTimeValueCrossReference_0; }
+
+		//MINORMAXKEYWORD
+		public RuleCall getTimeValueTimeValueMINORMAXKEYWORDTerminalRuleCall_0_1() { return cTimeValueTimeValueMINORMAXKEYWORDTerminalRuleCall_0_1; }
 	}
 
 	public class ExtendedTypedNamedElementExpressionElements extends AbstractParserRuleElementFinder {
@@ -2104,6 +2128,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private final OperandElements pOperand;
 	private final LiteralExpressionElements pLiteralExpression;
 	private final LiteralElements pLiteral;
+	private final TimeValueExpressionElements pTimeValueExpression;
+	private final TerminalRule tMINORMAXKEYWORD;
 	private final ExtendedTypedNamedElementExpressionElements pExtendedTypedNamedElementExpression;
 	private final TypedNamedElementExpressionElements pTypedNamedElementExpression;
 	private final ArrayIndexExpressionElements pArrayIndexExpression;
@@ -2171,6 +2197,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOperand = new OperandElements();
 		this.pLiteralExpression = new LiteralExpressionElements();
 		this.pLiteral = new LiteralElements();
+		this.pTimeValueExpression = new TimeValueExpressionElements();
+		this.tMINORMAXKEYWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MINORMAXKEYWORD");
 		this.pExtendedTypedNamedElementExpression = new ExtendedTypedNamedElementExpressionElements();
 		this.pTypedNamedElementExpression = new TypedNamedElementExpressionElements();
 		this.pArrayIndexExpression = new ArrayIndexExpressionElements();
@@ -2648,7 +2676,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Operand
 	//Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
+	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
 	//	TriggerMessageExpression | NoAttributeSelectorExpression;
 	public OperandElements getOperandAccess() {
 		return pOperand;
@@ -2678,6 +2706,22 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getLiteralRule() {
 		return getLiteralAccess().getRule();
 	}
+
+	//TimeValueExpression returns actionlanguage::TimeValueExpression:
+	//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+	public TimeValueExpressionElements getTimeValueExpressionAccess() {
+		return pTimeValueExpression;
+	}
+	
+	public ParserRule getTimeValueExpressionRule() {
+		return getTimeValueExpressionAccess().getRule();
+	}
+
+	//terminal MINORMAXKEYWORD:
+	//	"maxMsgDelay" | "minMsgDelay";
+	public TerminalRule getMINORMAXKEYWORDRule() {
+		return tMINORMAXKEYWORD;
+	} 
 
 	//ExtendedTypedNamedElementExpression returns expressions::Expression:
 	//	TypedNamedElementExpression

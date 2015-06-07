@@ -9,10 +9,14 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.storydriven.core.expressions.Expression;
+
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
@@ -32,7 +36,10 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
@@ -42,6 +49,7 @@ import de.uni_paderborn.fujaba.muml.types.Attribute;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.StructureDataType;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * This class contains custom scoping description.
@@ -50,17 +58,22 @@ import de.uni_paderborn.fujaba.muml.types.StructureDataType;
  * on how and when to use it 
  *
  */
+@Singleton
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider implements IActionLanguageScopeProvider {
 	protected List<TypedNamedElement> typedNamedElementList;
 	private List<DataType> typeList;
 	private List<Operation> operationList;
 	private List<MessageType> messageTypeList;
 	private List<Attribute>  attributeList;
-	
+	private List<TimeValue> timeValueList;
+		
 	// TODO: make this string public in class TypeCategoryInitializer
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
 	
 	private static final String INT_ID = "INT";
+	
+	@Inject
+	private IQualifiedNameProvider nameProvider;
 	
 	public ActionLanguageScopeProvider() {
 		super();
@@ -78,6 +91,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		}
 		// do not filter hybrid out ports (see #375)
 		return createScope(getAvailableTypedNamedElementList(context));
+	}
+	
+	IScope scope_TimeValue(EObject context, EReference ref) {
+		return createScope(timeValueList);
 	}
 	
 	IScope scope_DataType(Variable variable, EReference ref) {
@@ -152,6 +169,8 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			setScopeForEObject((Operation) object);
 		} else if (object instanceof Variable) {
 			setScopeForEObject((Variable) object);
+		} else if (object instanceof CoordinationPattern) {
+			setScopeForEObject((CoordinationPattern) object);
 		} else if (object instanceof RealtimeStatechart) {
 			setScopeForRTSC((RealtimeStatechart) object);
 		} else if (object != null) {
@@ -214,6 +233,11 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		setScopeForRTSC(variable.eContainer());
 	}
 	
+	public void setScopeForEObject(CoordinationPattern pattern) {
+		typedNamedElementList = new ArrayList<TypedNamedElement>();
+		typedNamedElementList.addAll(pattern.getPatternParameters());
+	}
+	
 	private void setScopeForRTSC(EObject object) {
 		if (!(object instanceof RealtimeStatechart)) {
 			throw new IllegalArgumentException("object is no rtsc: " + object);
@@ -221,10 +245,27 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		RealtimeStatechart rtsc = (RealtimeStatechart) object;
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		typedNamedElementList.addAll(rtsc.getAllAvailableVariables());
+		if (rtsc.getPortOrRoleStatechart().getBehavioralElement() instanceof Role
+				&& ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol() instanceof CoordinationPattern) {
+			CoordinationPattern pattern = (CoordinationPattern) ((Role) rtsc.getPortOrRoleStatechart().getBehavioralElement()).getCoordinationProtocol();
+			typedNamedElementList.addAll(pattern.getPatternParameters());
+		}
+		if (rtsc.getPortOrRoleStatechart().getBehavioralElement()instanceof DiscreteInteractionEndpoint) {
+			timeValueList = new ArrayList<TimeValue>();
+			if (rtsc.getPortOrRoleStatechart().getBehavioralElement() instanceof Role) {
+				Role role = (Role) rtsc.getPortOrRoleStatechart().getBehavioralElement();
+				if (role.getRoleConnector() != null && role.getRoleConnector().getConnectorQualityOfServiceAssumptions() != null) {
+					timeValueList.add(role.getRoleConnector().getConnectorQualityOfServiceAssumptions().getMaxMessageDelay());					
+					timeValueList.add(role.getRoleConnector().getConnectorQualityOfServiceAssumptions().getMinMessageDelay());
+				}			
+			}
+		}
 		addHybridPorts(rtsc);
 		operationList = rtsc.getAllAvailableOperations();
 		initDataTypes(rtsc);
 	}
+	
+	
 	
 	private void addHybridPorts(RealtimeStatechart rtsc) {
 		AtomicComponent atomicComponent = null;
@@ -286,7 +327,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		if (list.isEmpty()) {
 			return IScope.NULLSCOPE;
 		}
-		return Scopes.scopeFor(list);
+		return Scopes.scopeFor(list, nameProvider, IScope.NULLSCOPE);
 	}
 	
 	private void initLists() {
@@ -294,6 +335,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		operationList = Collections.<Operation>emptyList();
 		messageTypeList = Collections.<MessageType>emptyList();
 		attributeList = Collections.<Attribute>emptyList();
+		timeValueList = Collections.<TimeValue>emptyList();
 	}
 	
 	private List<TypedNamedElement> getAvailableTypedNamedElementList(EObject context) {

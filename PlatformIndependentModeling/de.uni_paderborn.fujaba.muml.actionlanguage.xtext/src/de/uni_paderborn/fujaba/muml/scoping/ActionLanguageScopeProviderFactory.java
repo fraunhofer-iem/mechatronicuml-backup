@@ -6,6 +6,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.scoping.IScopeProvider;
 
+import com.google.inject.Inject;
 import com.google.inject.Provider;
 
 
@@ -13,6 +14,8 @@ import com.google.inject.Provider;
 public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvider> {
 	// FIXME: try to get rid of this static stuff...
 	private static IActionLanguageScopeProvider scopeProvider;
+	@Inject
+	private static IActionLanguageScopeProvider defaultScopeProvider; 
 	
 	private static final String languageResourceEP =
 			"de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ScopeProvider";
@@ -33,7 +36,7 @@ public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvid
 				e.printStackTrace();
 			}
 		}
-		scopeProvider = scopeProvider == null ? new ActionLanguageScopeProvider() : scopeProvider;
+		scopeProvider = scopeProvider == null ? defaultScopeProvider : scopeProvider;
 		return scopeProvider;
 	}
 	

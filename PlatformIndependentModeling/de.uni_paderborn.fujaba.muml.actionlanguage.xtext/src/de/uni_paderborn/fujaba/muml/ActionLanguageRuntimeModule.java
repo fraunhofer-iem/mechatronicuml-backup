@@ -5,9 +5,13 @@ package de.uni_paderborn.fujaba.muml;
 
 import org.eclipse.xtext.scoping.IScopeProvider;
 
+import com.google.inject.Binder;
 import com.google.inject.Provider;
 
+import de.uni_paderborn.fujaba.muml.naming.CustomNameProvider;
+import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProvider;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
+import de.uni_paderborn.fujaba.muml.scoping.IActionLanguageScopeProvider;
 
 
 
@@ -22,6 +26,21 @@ public class ActionLanguageRuntimeModule extends de.uni_paderborn.fujaba.muml.Ab
 	
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return null;
+	}
+	
+	@Override
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return CustomNameProvider.class;
+	}
+	
+	public Class<? extends IActionLanguageScopeProvider> bindIActionLanguageScopeProvider() {
+		return ActionLanguageScopeProvider.class;
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		binder.requestStaticInjection(ActionLanguageScopeProviderFactory.class);
 	}
 
 }

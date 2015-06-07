@@ -283,7 +283,7 @@ TypeCastExpression returns expressions::Expression:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression
+	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression
 	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 ;
 
@@ -295,6 +295,14 @@ LiteralExpression returns commonExpressions::LiteralExpression:
 
 Literal returns ecore::EString:
 	NUMBER | BOOLEAN | INT | 'null'
+;
+
+TimeValueExpression returns actionlanguage::TimeValueExpression:
+	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD]
+;
+
+terminal MINORMAXKEYWORD:
+	'maxMsgDelay' | 'minMsgDelay'
 ;
 
 ExtendedTypedNamedElementExpression returns expressions::Expression:
