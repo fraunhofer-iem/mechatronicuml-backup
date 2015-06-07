@@ -2,6 +2,11 @@
  * @author Sebastian Goschin
  * 
  * Partially reusing code of ActionLanguageScopeProvider
+ * 
+ * Hendrik Kassner: to make auto-complete and saving working, you need to add methods following this naming convention:
+ * scope_{ClassName}_{AttributeName}(...)
+ * and return the appropriate list (or define your own one).
+ * See below for examples of these methods.
  */
 package de.uni_paderborn.fujaba.muml.scoping;
 
@@ -285,6 +290,10 @@ public class DependencyModelLanguageScopeProvider extends AbstractDeclarativeSco
   
   IScope scope_DataMerge_variables(final EObject context, final EReference reference) {
     return this.createQNScope(this.listOfAllVariables);
+  }
+  
+  IScope scope_DataMerge_port(final EObject context, final EReference reference) {
+    return this.createQNScope(this.listOfAllHybridPorts);
   }
   
   IScope scope_ClockMerge_clocks(final EObject context, final EReference reference) {

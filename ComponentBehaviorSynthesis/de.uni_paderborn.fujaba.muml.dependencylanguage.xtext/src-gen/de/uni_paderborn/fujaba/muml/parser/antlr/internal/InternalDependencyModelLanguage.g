@@ -4540,19 +4540,6 @@ ruleInitializeExpression returns [EObject current=null]
         $current = $this_Expression_2.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
-	{ 
-	  /* */ 
-	}
-    { 
-        newCompositeNode(grammarAccess.getInitializeExpressionAccess().getTypeCastExpressionParserRuleCall_3()); 
-    }
-    this_TypeCastExpression_3=ruleTypeCastExpression
-    { 
-        $current = $this_TypeCastExpression_3.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
 ;
 
@@ -5512,11 +5499,11 @@ ruleMultiplicationExpression returns [EObject current=null]
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getOperandParserRuleCall_1_0()); 
+        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getTypeCastExpressionParserRuleCall_1_0()); 
     }
-    this_Operand_1=ruleOperand
+    this_TypeCastExpression_1=ruleTypeCastExpression
     { 
-        $current = $this_Operand_1.current; 
+        $current = $this_TypeCastExpression_1.current; 
         afterParserOrEnumRuleCall();
     }
 ((
@@ -5565,9 +5552,9 @@ ruleMultiplicationExpression returns [EObject current=null]
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionOperandParserRuleCall_1_1_2_0_1()); 
+	        newCompositeNode(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionTypeCastExpressionParserRuleCall_1_1_2_0_1()); 
 	    }
-		lv_rightExpression_4_2=ruleOperand		{
+		lv_rightExpression_4_2=ruleTypeCastExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMultiplicationExpressionRule());
 	        }
@@ -5575,7 +5562,7 @@ ruleMultiplicationExpression returns [EObject current=null]
        			$current, 
        			"rightExpression",
         		lv_rightExpression_4_2, 
-        		"Operand");
+        		"TypeCastExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5633,9 +5620,9 @@ ruleUnaryPreExpression returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionOperandParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionTypeCastExpressionParserRuleCall_2_0()); 
 	    }
-		lv_enclosedExpression_2_0=ruleOperand		{
+		lv_enclosedExpression_2_0=ruleTypeCastExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUnaryPreExpressionRule());
 	        }
@@ -5643,7 +5630,7 @@ ruleUnaryPreExpression returns [EObject current=null]
        			$current, 
        			"enclosedExpression",
         		lv_enclosedExpression_2_0, 
-        		"Operand");
+        		"TypeCastExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5669,18 +5656,31 @@ ruleTypeCastExpression returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getOperandParserRuleCall_0()); 
+    }
+    this_Operand_0=ruleOperand
+    { 
+        $current = $this_Operand_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |((
 	{ 
 	  /* */ 
 	}
     {
         $current = forceCreateModelElement(
-            grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_0(),
+            grammarAccess.getTypeCastExpressionAccess().getTypeCastExpressionAction_1_0(),
             $current);
     }
-)	otherlv_1='(' 
+)	otherlv_2='(' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getTypeCastExpressionAccess().getLeftParenthesisKeyword_1_1());
     }
 (
 (
@@ -5693,36 +5693,36 @@ ruleTypeCastExpression returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_2_0()); 
+	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getDataTypeDataTypeCrossReference_1_2_0()); 
 	    }
 		ruleDATATYPE		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_3=')' 
+)	otherlv_4=')' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getTypeCastExpressionAccess().getRightParenthesisKeyword_1_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getTypeCastExpressionAccess().getEnclosedExpressionOperandParserRuleCall_1_4_0()); 
 	    }
-		lv_enclosedExpression_4_0=ruleOperand		{
+		lv_enclosedExpression_5_0=ruleOperand		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTypeCastExpressionRule());
 	        }
        		set(
        			$current, 
        			"enclosedExpression",
-        		lv_enclosedExpression_4_0, 
+        		lv_enclosedExpression_5_0, 
         		"Operand");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)))
 ;
 
 
@@ -5795,11 +5795,11 @@ ruleOperand returns [EObject current=null]
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getTimeValueExpressionParserRuleCall_3()); 
     }
-    this_OperationCall_5=ruleOperationCall
+    this_TimeValueExpression_5=ruleTimeValueExpression
     { 
-        $current = $this_OperationCall_5.current; 
+        $current = $this_TimeValueExpression_5.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -5808,11 +5808,11 @@ ruleOperand returns [EObject current=null]
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getOperationCallParserRuleCall_4()); 
     }
-    this_TriggerMessageExpression_6=ruleTriggerMessageExpression
+    this_OperationCall_6=ruleOperationCall
     { 
-        $current = $this_TriggerMessageExpression_6.current; 
+        $current = $this_OperationCall_6.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -5821,11 +5821,24 @@ ruleOperand returns [EObject current=null]
 	  /* */ 
 	}
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_5()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getTriggerMessageExpressionParserRuleCall_5()); 
     }
-    this_NoAttributeSelectorExpression_7=ruleNoAttributeSelectorExpression
+    this_TriggerMessageExpression_7=ruleTriggerMessageExpression
     { 
-        $current = $this_NoAttributeSelectorExpression_7.current; 
+        $current = $this_TriggerMessageExpression_7.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getOperandAccess().getNoAttributeSelectorExpressionParserRuleCall_6()); 
+    }
+    this_NoAttributeSelectorExpression_8=ruleNoAttributeSelectorExpression
+    { 
+        $current = $this_NoAttributeSelectorExpression_8.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -5877,6 +5890,43 @@ ruleLiteralExpression returns [EObject current=null]
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleTimeValueExpression
+entryRuleTimeValueExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeValueExpressionRule()); }
+	 iv_ruleTimeValueExpression=ruleTimeValueExpression 
+	 { $current=$iv_ruleTimeValueExpression.current; } 
+	 EOF 
+;
+
+// Rule TimeValueExpression
+ruleTimeValueExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTimeValueExpressionRule());
+	        }
+        }
+	otherlv_0=RULE_MINORMAXKEYWORD
+	{
+		newLeafNode(otherlv_0, grammarAccess.getTimeValueExpressionAccess().getTimeValueTimeValueCrossReference_0()); 
+	}
+
+)
+)
 ;
 
 
@@ -6761,6 +6811,8 @@ RULE_NUMBER : RULE_INT '.' RULE_INT;
 RULE_BOOLEAN : ('true'|'false');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') (('a'..'z'|'A'..'Z'|'_'|'0'..'9')+ ('(' ('0'..'9')+ ')-->' ('a'..'z'|'A'..'Z'|'_'|'0'..'9')+)?)?;
+
+RULE_MINORMAXKEYWORD : ('maxMsgDelay'|'minMsgDelay');
 
 RULE_INT : ('0'..'9')+;
 

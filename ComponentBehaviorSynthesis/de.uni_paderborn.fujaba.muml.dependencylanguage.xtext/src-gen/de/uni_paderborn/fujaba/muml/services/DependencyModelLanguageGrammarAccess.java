@@ -3394,7 +3394,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//// end of assignment
 	//// initialize expression
 	//InitializeExpression returns expressions::Expression:
-	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression | TypeCastExpression;
+	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
 	public ActionLanguageGrammarAccess.InitializeExpressionElements getInitializeExpressionAccess() {
 		return gaActionLanguage.getInitializeExpressionAccess();
 	}
@@ -3611,8 +3611,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//MultiplicationExpression returns expressions::Expression:
-	//	UnaryPreExpression | Operand ({commonExpressions::ArithmeticExpression.leftExpression=current}
-	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | Operand))*;
+	//	UnaryPreExpression | TypeCastExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
+	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*;
 	public ActionLanguageGrammarAccess.MultiplicationExpressionElements getMultiplicationExpressionAccess() {
 		return gaActionLanguage.getMultiplicationExpressionAccess();
 	}
@@ -3634,7 +3634,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//// end of ArithmeticExpression
 	//// UnaryPreExpression
 	//UnaryPreExpression returns expressions::Expression:
-	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
+	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression;
 	public ActionLanguageGrammarAccess.UnaryPreExpressionElements getUnaryPreExpressionAccess() {
 		return gaActionLanguage.getUnaryPreExpressionAccess();
 	}
@@ -3655,7 +3655,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 
 	//// end of UnaryPreExpression
 	//TypeCastExpression returns expressions::Expression:
-	//	{actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand;
+	//	Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand;
 	public ActionLanguageGrammarAccess.TypeCastExpressionElements getTypeCastExpressionAccess() {
 		return gaActionLanguage.getTypeCastExpressionAccess();
 	}
@@ -3666,7 +3666,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 
 	//// Operand
 	//Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
+	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
 	//	TriggerMessageExpression | NoAttributeSelectorExpression;
 	public ActionLanguageGrammarAccess.OperandElements getOperandAccess() {
 		return gaActionLanguage.getOperandAccess();
@@ -3686,6 +3686,22 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	public ParserRule getLiteralExpressionRule() {
 		return getLiteralExpressionAccess().getRule();
 	}
+
+	//TimeValueExpression returns actionlanguage::TimeValueExpression:
+	//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
+	public ActionLanguageGrammarAccess.TimeValueExpressionElements getTimeValueExpressionAccess() {
+		return gaActionLanguage.getTimeValueExpressionAccess();
+	}
+	
+	public ParserRule getTimeValueExpressionRule() {
+		return getTimeValueExpressionAccess().getRule();
+	}
+
+	//terminal MINORMAXKEYWORD:
+	//	"maxMsgDelay" | "minMsgDelay";
+	public TerminalRule getMINORMAXKEYWORDRule() {
+		return gaActionLanguage.getMINORMAXKEYWORDRule();
+	} 
 
 	//ExtendedTypedNamedElementExpression returns expressions::Expression:
 	//	TypedNamedElementExpression
