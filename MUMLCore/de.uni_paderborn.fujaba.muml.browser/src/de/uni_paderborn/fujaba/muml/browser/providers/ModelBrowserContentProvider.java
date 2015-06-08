@@ -2,8 +2,12 @@ package de.uni_paderborn.fujaba.muml.browser.providers;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,10 +17,12 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -27,6 +33,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
@@ -39,7 +46,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	private Viewer viewer;
 	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;	
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
-
+	
+	private Map<Object, Object> relocatedParents = new HashMap<Object, Object>();
+	private Map<Object, Set<Object>> relocatedChildren = new HashMap<Object, Set<Object>>();
+	
 	public ModelBrowserContentProvider() throws CoreException {
 		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
 		adapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
@@ -94,6 +104,17 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				try {
 					resource.unload();
 					resource.load(Collections.emptyMap());
+					for (EObject element : resource.getContents()) {
+						if (element instanceof Diagram) {
+							Diagram diagram = (Diagram) element;
+							if (diagram.getElement() != null && diagram.getElement().eResource() != null) {
+								URI targetUri = diagram.getElement().eResource().getURI();
+								IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+								IFile targetFile = root.getFile(new Path(targetUri.toPlatformString(true)));
+								addRelocation(iFile, targetFile);
+							}
+						}
+					}
 				} catch (IOException e) {
 					ModelBrowserPlugin.log(e);
 				}
@@ -105,6 +126,19 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				((StructuredViewer) viewer).refresh(); //((StructuredViewer) viewer).update(iFile, null);
 			}
 		});
+	}
+
+	private void addRelocation(Object child, Object parent) {
+		// Put into relocatedChildren
+		Set<Object> children = relocatedChildren.get(parent);
+		if (children == null) {
+			children = new HashSet<Object>();
+			relocatedChildren.put(parent, children);
+		}
+		children.add(child);
+		
+		// Put into relocatedParents
+		relocatedParents.put(child, parent);
 	}
 
 	protected boolean canLoad(IFile file) {
@@ -135,6 +169,9 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	@Override
 	public Object getParent(Object element) {
+		if (relocatedParents.containsKey(element)) {
+			return relocatedParents.get(element);
+		}
 		if (element instanceof Notifier) {
 			if (element instanceof EObject) {
 				EObject eObject = (EObject) element;
@@ -155,8 +192,22 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	@Override
 	public Object[] getChildren(Object element) {
+		List<Object> children = new ArrayList<Object>();
+		for (Object child : getDirectChildren(element)) {
+			if (!relocatedParents.containsKey(child)) {
+				children.add(child);
+			}
+		}
+		Set<Object> relocated = this.relocatedChildren.get(element);
+		if (relocated != null) {
+			children.addAll(relocated);
+		}
+		return children.toArray();
+	}
+
+	private Collection<Object> getDirectChildren(Object element) {
 		if (element instanceof Notifier) {
-			return adapterFactoryContentProvider.getChildren(element);
+			return Arrays.asList(adapterFactoryContentProvider.getChildren(element));
 		}
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
@@ -165,18 +216,19 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
 					if (resource.getContents().size() == 1) {
-						return resource.getContents().get(0).eContents().toArray();
+						return new ArrayList<Object>(resource.getContents().get(0).eContents());
 					} else {
-						return resource.getContents().toArray();
+						return new ArrayList<Object>(resource.getContents());
 					}
 				}
 			}
-			return new Object[] { getProgressItem((IFile) element)};
+			return Collections.singletonList(getProgressItem((IFile) element));
 			
 		} else {
-			return super.getChildren(element);
+			return Arrays.asList(super.getChildren(element));
 		}
 	}
+
 //	
 //	private Resource getResource(IFile iFile) {
 //		URI uri = getURI(iFile);
