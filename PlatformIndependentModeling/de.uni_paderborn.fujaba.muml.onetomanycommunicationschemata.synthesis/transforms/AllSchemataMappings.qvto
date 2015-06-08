@@ -39,15 +39,6 @@ query getBooleanPrimitiveDataType(theRootNode : RootNode) : muml::types::Primiti
 	return data;
 	}
 
-//property dict : Dict(muml::realtimestatechart::Transition, Integer);
-//helper getDLC_ClockIndexForTransition(transition: muml::realtimestatechart::Transition) : Integer
-//{
-	//dict->hasKey(transition);
-	//dict->get(transition);
-	//dict->put(transition,1);
-	//if(dict->hasKey(transition))
-	
-//}
 
 // @author: sthiele2 -- creates an intermediate state in the subrole region
 mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:OclAny, stateID : Integer,toplevel : Boolean) : State {
@@ -454,12 +445,8 @@ mapping RealtimeStatechart :: State2CoordinatorRegion(context:OclAny, region:Ocl
 		
 		//parentState := context.oclAsType(State);
 		
-
 		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, region,true);
-		
-
-					
-	}
+}
 	
 mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny, region:OclAny) : Region {
 		
@@ -467,23 +454,20 @@ mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny, region:OclAny)
 		
 	//	parentState := context.oclAsType(State);
 		
-		embeddedStatechart := self.map RTSC2SubroleRTSC(context, region,true);
-					
+		embeddedStatechart := self.map RTSC2SubroleRTSC(context, region,true);					
 	}	
 	
 mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny, highlevel: Boolean) : RealtimeStatechart {
-	
 
 		assert fatal (false) with log ("Do not go here!");	
-
 }	
 
 mapping State :: States2StatesCoordinator(context:OclAny, region:OclAny) : State{
 	
 	assert fatal (false) with log ("Do not go here!");
-	}
-mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny, highlevel: Boolean) : RealtimeStatechart 
-{
+}
+	
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny, highlevel: Boolean) : RealtimeStatechart {
 
 		assert fatal (false) with log ("Do not go here!");
 }
@@ -497,12 +481,6 @@ mapping State :: States2StatesSubrole(context:OclAny, region:OclAny) : State {
 
 	assert fatal (false) with log ("Do not go here!");
 }
-	
-	
-	
-	
-	
-	
 	
 -- to coordinator
 mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:OclAny) : Transition {
