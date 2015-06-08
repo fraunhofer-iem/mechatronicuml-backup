@@ -1,5 +1,6 @@
 -----> Diagramme unterhalb der Semantischen Elemente anzeigen! -> Sync Editor automatically reveals diagram & semantical element?
 
+APE -> ComboBox -> [...] Button -> erlaubt Load Resource, so wie im Export Wizard Source Page
 
 
 Model Browser lädt NICHT alles in eine EditingDomain, sondern pro Datei eine EditingDomain.

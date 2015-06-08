@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,7 +13,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IResourceVisitor;
-import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -27,7 +27,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
@@ -37,10 +39,9 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	private Viewer viewer;
 	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;	
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
-	private volatile List<IFile> filesToLoad = new ArrayList<IFile>();
 
 	public ModelBrowserContentProvider() throws CoreException {
-		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
+		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
 		adapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
 		runUpdate(Collections.singletonList((IResource) ResourcesPlugin.getWorkspace().getRoot()));
 	}
@@ -50,7 +51,6 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				// set total number of work units
-				final Set<String> extensions = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().keySet();
 				final List<IFile> files = new ArrayList<IFile>();
 				for (IResource resource : resources) {
 					try {
@@ -59,9 +59,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 							public boolean visit(IResource resource) throws CoreException {
 								if (resource instanceof IFile) {
 									IFile iFile = (IFile) resource;
-									if (extensions.contains(iFile.getFileExtension())) {
-										files.add(iFile);
-									}
+									files.add(iFile);
 								}
 								return true;
 							}
@@ -86,15 +84,32 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	}
 
-	protected void reload(IFile iFile) {
-		// Check if 
-		System.out.println("Reloading " + iFile);
-		URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-		editingDomain.getResourceSet().getResource(uri, true);
+	protected void reload(final IFile iFile) {
+		
+		synchronized (editingDomain) {
+			System.out.println("Reloading " + iFile);
+			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			Resource resource = editingDomain.getResourceSet().getResource(uri, true);
+			if (resource != null) {
+				try {
+					resource.unload();
+					resource.load(Collections.emptyMap());
+				} catch (IOException e) {
+					ModelBrowserPlugin.log(e);
+				}
+			}
+		}
+		Display.getDefault().asyncExec(new Runnable() {
+			@Override
+			public void run() {				
+				((StructuredViewer) viewer).refresh(); //((StructuredViewer) viewer).update(iFile, null);
+			}
+		});
 	}
 
 	protected boolean canLoad(IFile file) {
-		return true; // Check if suffix is registered as EMF file
+		final Set<String> extensions = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().keySet();
+		return extensions.contains(file.getFileExtension()); // Check if suffix is registered as EMF file
 	}
 
 	protected void processDelta(IResourceDelta delta) {		
@@ -102,17 +117,13 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		try {
 			final List<IResource> changedFiles = new ArrayList<IResource>();
 			delta.accept(new IResourceDeltaVisitor() {
-
 				@Override
 				public boolean visit(IResourceDelta delta) throws CoreException {
-					// NOTE: Content change happens always in the same Editing Domain;
-					// So we do not update here; we should rather listen to opened projects etc
 					if ((delta.getFlags() & IResourceDelta.CONTENT) != 0) {
 						changedFiles.add(delta.getResource());
 					}
 					return true;
 				}
-				
 			});
 			if (!changedFiles.isEmpty()) {
 				runUpdate(changedFiles);
@@ -150,16 +161,18 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			Resource resource = editingDomain.getResourceSet().getResource(uri, false);
-			if (resource != null) {
-				if (resource.getContents().size() == 1) {
-					return resource.getContents().get(0).eContents().toArray();
-				} else {
-					return resource.getContents().toArray();
+			synchronized (editingDomain) {
+				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+				if (resource != null) {
+					if (resource.getContents().size() == 1) {
+						return resource.getContents().get(0).eContents().toArray();
+					} else {
+						return resource.getContents().toArray();
+					}
 				}
-			} else {
-				return new Object[] { getProgressItem((IFile) element)};
 			}
+			return new Object[] { getProgressItem((IFile) element)};
+			
 		} else {
 			return super.getChildren(element);
 		}
