@@ -1,5 +1,13 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider.IStyledLabelProvider;
 import org.eclipse.jface.viewers.IColorProvider;
@@ -17,14 +25,18 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 public class ModelBrowserLabelProvider extends LabelProvider implements IColorProvider,
 		IFontProvider, IStyledLabelProvider, ICommonLabelProvider {
 	private WorkbenchLabelProvider labelProvider = new WorkbenchLabelProvider();
+	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;
+	private AdapterFactoryLabelProvider adapterFactoryLabelProvider;
 	
 	public ModelBrowserLabelProvider() {
-		
+		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
+		adapterFactoryLabelProvider = new AdapterFactoryLabelProvider(adapterFactory);
 	}
 
 	@Override
@@ -53,12 +65,28 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 
 	@Override
 	public String getText(Object element) {
+		if (element instanceof Notifier) {
+			return adapterFactoryLabelProvider.getText(element);
+		}
+		if (element instanceof IFile) {
+			IFile iFile = (IFile) element;
+			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+			if (resource != null) {
+				if (resource.getContents().size() == 1) {
+					return getText(resource.getContents().get(0));
+				}
+			}
+		}
 		return labelProvider.getText(element);
 	}
 
 
 	@Override
 	public StyledString getStyledText(final Object element) {
+		if (element instanceof Notifier) {
+			return adapterFactoryLabelProvider.getStyledText(element);
+		}
 		if (element instanceof ProgressNavigatorItem) {
 			StyledString styledString = new StyledString();
 			styledString.append("Loading...", new Styler() {
@@ -69,11 +97,24 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 			});
 			return styledString;
 		}
+		if (element instanceof IFile) {
+			IFile iFile = (IFile) element;
+			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+			if (resource != null) {
+				if (resource.getContents().size() == 1) {
+					return getStyledText(resource.getContents().get(0));
+				}
+			}
+		}
 		return labelProvider.getStyledText(element);
 	}
 
 	@Override
 	public Image getImage(Object element) {
+		if (element instanceof Notifier) {
+			return adapterFactoryLabelProvider.getImage(element);
+		}
 		if (element instanceof ProgressNavigatorItem) {
 			return ((ProgressNavigatorItem) element).getCurrentImage();
 		}

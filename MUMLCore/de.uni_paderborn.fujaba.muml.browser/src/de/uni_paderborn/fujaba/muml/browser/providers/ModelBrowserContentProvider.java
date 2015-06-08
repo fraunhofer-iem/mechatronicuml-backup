@@ -5,31 +5,43 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.Viewer;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider {
+	private AdapterFactoryContentProvider adapterFactoryContentProvider;
 	private Viewer viewer;
+	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;	
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
-	private Map<IFile, Resource> resources = new HashMap<IFile, Resource>();
-	
-	public ModelBrowserContentProvider() {
+	private volatile List<IFile> filesToLoad = new ArrayList<IFile>();
+
+	public ModelBrowserContentProvider() throws CoreException {
+		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
+		adapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
 		runUpdate(Collections.singletonList((IResource) ResourcesPlugin.getWorkspace().getRoot()));
 	}
 	
@@ -38,6 +50,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				// set total number of work units
+				final Set<String> extensions = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().keySet();
 				final List<IFile> files = new ArrayList<IFile>();
 				for (IResource resource : resources) {
 					try {
@@ -45,7 +58,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 							@Override
 							public boolean visit(IResource resource) throws CoreException {
 								if (resource instanceof IFile) {
-									files.add((IFile) resource);
+									IFile iFile = (IFile) resource;
+									if (extensions.contains(iFile.getFileExtension())) {
+										files.add(iFile);
+									}
 								}
 								return true;
 							}
@@ -70,9 +86,11 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	}
 
-	protected void reload(IFile file) {
+	protected void reload(IFile iFile) {
 		// Check if 
-		System.out.println("Reloading " + file);
+		System.out.println("Reloading " + iFile);
+		URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+		editingDomain.getResourceSet().getResource(uri, true);
 	}
 
 	protected boolean canLoad(IFile file) {
@@ -104,31 +122,55 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		}
 	}
 
-	
 	@Override
 	public Object getParent(Object element) {
+		if (element instanceof Notifier) {
+			if (element instanceof EObject) {
+				EObject eObject = (EObject) element;
+				Resource resource = eObject.eResource();
+				EObject eContainer = eObject.eContainer();
+				if (resource != null && eContainer != null && resource.getContents().contains(eContainer)) {
+					// null means we cannot compute the parent currently, which makes it easier for us here.
+					return null;
+				}
+			}
+			return adapterFactoryContentProvider.getParent(element);
+		}
 		if (element instanceof ProgressNavigatorItem) {
 			return ((ProgressNavigatorItem) element).getParent();
 		}
 		return super.getParent(element);
 	}
-	
+
 	@Override
 	public Object[] getChildren(Object element) {
+		if (element instanceof Notifier) {
+			return adapterFactoryContentProvider.getChildren(element);
+		}
 		if (element instanceof IFile) {
-			Resource resource = resources.get(element);
-			if (resource == null) {
+			IFile iFile = (IFile) element;
+			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+			if (resource != null) {
+				if (resource.getContents().size() == 1) {
+					return resource.getContents().get(0).eContents().toArray();
+				} else {
+					return resource.getContents().toArray();
+				}
+			} else {
 				return new Object[] { getProgressItem((IFile) element)};
 			}
-			if (resource.getContents().size() == 1) {
-				return resource.getContents().get(0).eContents().toArray();
-			}
-			return resource.getContents().toArray();
 		} else {
 			return super.getChildren(element);
 		}
 	}
-	
+//	
+//	private Resource getResource(IFile iFile) {
+//		URI uri = getURI(iFile);
+//		return editingDomain.getResourceSet().getResource(uri, false);
+//	}
+
+
 	private Object getProgressItem(IFile element) {
 		if (!loadingFiles.containsKey(element)) {
 			ProgressNavigatorItem progressItem = new ProgressNavigatorItem(element);

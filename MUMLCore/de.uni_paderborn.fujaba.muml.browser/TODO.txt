@@ -2,6 +2,12 @@
 * If no editor is open, create a new EditingDomain for APE.
   -> Here we must listen for changes and safe directly. (see old code for workspace synchronizer)
 * In case an Editor is opened, throw away own EditingDomain, and reuse Editor's.
+  -> how to find that out? maybe the editor reuses the model browsers EditingDomain?
+  -> but then they have too many resources loaded.
+
+* Maybe just have multiple editing domains again.
+* -> Only one model file
+ 
 * In the background thread scan and open the whole workspace,
   If the user tries to expand an element that is not yet preloaded,
   show the "Loading..." item.

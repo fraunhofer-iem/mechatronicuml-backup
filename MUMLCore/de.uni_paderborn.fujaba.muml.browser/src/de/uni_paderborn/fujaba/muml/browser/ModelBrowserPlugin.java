@@ -18,6 +18,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
@@ -39,6 +41,7 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 	// The shared instance
 	private static ModelBrowserPlugin plugin;
 	
+	public static TransactionalEditingDomain EDITING_DOMAIN;
 
 	
 	
@@ -55,6 +58,7 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		EDITING_DOMAIN = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
 	}
 
 	/*
