@@ -1,13 +1,21 @@
-* Every change that regards another file which is open in an editor finds the other EditingDomain and puts it on the command stack there.
-* If no editor is open, create a new EditingDomain for APE.
-  -> Here we must listen for changes and safe directly. (see old code for workspace synchronizer)
-* In case an Editor is opened, throw away own EditingDomain, and reuse Editor's.
-  -> how to find that out? maybe the editor reuses the model browsers EditingDomain?
-  -> but then they have too many resources loaded.
+-----> Diagramme unterhalb der Semantischen Elemente anzeigen! -> Sync Editor automatically reveals diagram & semantical element?
 
-* Maybe just have multiple editing domains again.
-* -> Only one model file
- 
-* In the background thread scan and open the whole workspace,
-  If the user tries to expand an element that is not yet preloaded,
-  show the "Loading..." item.
+
+
+Model Browser lädt NICHT alles in eine EditingDomain, sondern pro Datei eine EditingDomain.
+
+Modell-Datei pro Element.
+Editoren besitzen modell-Datei
+Editoren sharen EditingDomain mit dem ModelBrowser für das bearbeitete Element.
+
+"ComponentConfigurationEditor", neues Element ComponentConfiguration REFERENZIERT (non-containment) auf Componenten
+-> Componenten an sich sind readonly, drag and drop ermöglicht neue Referenzen auf existierende Componenten
+-> APE erlaubt nicht bearbeiten von referenzierten Elementen (Doppelklick auf APE-Liste  öffnet Editor)
+
+Doppelklicken auf Component öffnet Component Editor -> dort editieren möglich.
+
+Mehrere Diagramme für ein Element sharen editing domain.
+
+Behavior nicht contained sondern RTSC in eigener datei, sub-statecharts sind an der Region contained.
+
+Port/Component referenzieren RTSC-Dateien
