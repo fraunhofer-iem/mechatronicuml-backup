@@ -100,6 +100,8 @@ mapping Transition :: Transition2ClockConstraint(context : OclAny, clockName : S
 	result.clock := self.map TransitionDeadline2CoordinatorDeadlineClock(clockName);
 	result.operator:= compareOperator;
 }
+
+
 mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : OclAny, identifier : EObject, _kind : PositionSelectorKind, _successor : PositionSelectorKind) : PositionSelector{
 	
 		kind := _kind;
@@ -116,7 +118,7 @@ mapping Transition :: Schema2PositionKindSelector(context : OclAny, region : Ocl
 	
 mapping Transition :: TransferSchemataLogicalExpression( context:EObject, position:PositionSelectorKind, compOperator : ComparingOperator) : ComparisonExpression {
 				
-		rightExpression := self.map TransferSchemataEndpointReference(context, position);
+		rightExpression := self.map TransferSchemataEndpointReference(result, position);
 		
 		leftExpression := self.map TransferSchemataEndpointReference(result, PositionSelectorKind::SELF);
 				
@@ -262,6 +264,7 @@ mapping Transition :: TransferSchemaGuard(context:OclAny, region:OclAny, varName
 mapping Transition :: TransferSchemata2TypedNamedElementExpr(context:OclAny, varName:String, transMapping: Integer) : TypedNamedElementExpression {
 			
 		typedNamedElement := context.oclAsType(RealtimeStatechart).map TransferSchemata2Variable(context, varName);
+		
 					
 	}
 	
@@ -412,24 +415,7 @@ mapping RealtimeStatechart :: TransferSchemataChannel(context:OclAny, channelNam
 		}endif;		
 						
 	}
-	
-mapping RealtimeStatechart :: TransferSchemataClock(context:OclAny, region:OclAny, clockName:String, toplevel:Boolean) : Clock {
-		
-		name := clockName;
-		
-		statechart := self.map RTSC2CoordinatorRTSC(context, region,toplevel);
-		
-	}
-	
-mapping Transition :: TransferSchemataClockConstraint(context:OclAny, region:OclAny, clockName:String, op:ComparingOperator, val:Expression, timeUnit:TimeUnit, toplevel:Boolean) : ClockConstraint {
-		
-		clock := self.statechart.map TransferSchemataClock(context, region, clockName, toplevel);
-		
-		operator := op;
-		
-		bound := self.map TransferSchemataTimeValue(context, region, val, timeUnit);
-		
-	}
+
 
 mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:OclAny) : Vertex
 		disjuncts State::States2StatesCoordinator, StateConnectionPoint::StateConnectionPoint2StateConnectionPointCoordinator;
