@@ -216,10 +216,14 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
 					if (resource.getContents().size() == 1) {
-						return new ArrayList<Object>(resource.getContents().get(0).eContents());
-					} else {
-						return new ArrayList<Object>(resource.getContents());
+						EObject root = resource.getContents().get(0);
+						if (root instanceof Diagram) {
+							return Collections.emptyList();
+						} else {
+							return new ArrayList<Object>(root.eContents());
+						}
 					}
+					return new ArrayList<Object>(resource.getContents());
 				}
 			}
 			return Collections.singletonList(getProgressItem((IFile) element));
