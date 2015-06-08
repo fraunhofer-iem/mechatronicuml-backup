@@ -56,31 +56,38 @@ mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:
 }
 
 	
-	
-mapping Transition :: Multicast2TransSendSyncCoordinator(context:OclAny, region:OclAny, conditional:Boolean, toplevel:Boolean) : Transition {
+------------- non Conditional Coordinator Mappings	
+mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediate(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
 
 		priority := self.priority;
+						
+		source := self.source.map Vertex2VertexCoordinator(context, region);
 		
-		if(conditional){			
-			source := self.map Multicast2StateCoordinator(context, region,toplevel);
-		}else{
-			source := self.source.map Vertex2VertexCoordinator(context, region);
-		}endif;
+		target := self.map Schema2CoordinatorIntermediateState(context, region,1, multicastDLCName, toplevel);
 		
-		target := self.target.map Vertex2VertexCoordinator(context, region);
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "multicast", true, 1);
 		
-		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
+		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(context,region);
 		
-		if(not conditional){
-			guard := self.guard.map Expression2Expression(context);
-			clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
-		}endif;
+		guard := self.guard.map Expression2Expression(result);
+}
+
+mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget(context:OclAny, region:OclAny,  toplevel:Boolean) : Transition{
+	
+		priority := 1;
+		
+		source := self.map Schema2CoordinatorIntermediateState(context,region, 1,multicastDLCName, toplevel);
+	
+		target := self.target.map Vertex2VertexCoordinator(context,region);
 		
 		action := self.action.map Action2Action(context, region);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "multicast", true, 1);
-			
-	}
+		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
+	
+		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "multicastDone",false, 2);	
+}
+
+---------------- Coordinator Mappings for Embedded State
 
 mapping Transition :: Multicast2SourceRegionCoordinator(context:OclAny, region:OclAny) : Region {
 		
@@ -135,33 +142,9 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 	}
 	
 	
-mapping Transition :: Multicast2StateCoordinator(context:OclAny, region:OclAny, toplevel:Boolean) : State {
+
 	
-		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
-		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region,toplevel);	
-						
-	}
-	
-mapping Transition :: Multicast2TransReceiveSyncCoordinator(context:OclAny, region:OclAny, toplevel:Boolean) : Transition {
-	
-		priority := self.priority;
-		
-		target := self.map Multicast2StateCoordinator(context, region,toplevel);
-		
-		source := self.source.map Vertex2VertexCoordinator(context, region);
-		
-		clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);		
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "multicastCheckDone", false, 4);
-		
-		if(self.guard.oclIsUndefined()){
-			guard := self.map TransferSchemata2TypedNamedElementExpr(context, "multicastPossible",2);
-		}else{
-			guard := self.map TransferSchemaGuardAndPossibleGuard(context, 5, region, "multicastPossible", 2);
-		}endif;
-					
-	}
+
 	
 ----------------------------------------------------------------- Transfer Schema Multicast of Subrole-------------------------------------------------------------------
 	

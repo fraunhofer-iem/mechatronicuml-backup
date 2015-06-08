@@ -157,9 +157,9 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 			leftExpression := self.map TransferSchemaNotCondition(context2, region, transMapping);
 		}else{
 			if(not self.raiseMessageEvent.oclIsUndefined()){
-				leftExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context2);
+				leftExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
 			}else{
-				leftExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context2);
+				leftExpression := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
 			}endif;
 			
 		}endif;
@@ -279,13 +279,24 @@ mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region
 	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region,toplevel);	
 	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name ;
 }
-	
+
+
+property variableNamesDict : Dict(String, Integer);	
 mapping RealtimeStatechart :: TransferSchemata2Variable(context:OclAny, varName:String) : Variable {
-		name := varName;
+		var namePrefix : String = "";
+		if(variableNamesDict->hasKey(varName)) {
+			var nr : Integer := variableNamesDict->get(varName);			
+			namePrefix := (nr + 1).toString();
+			variableNamesDict->put(varName, nr+1);
+		}
+		else {
+			variableNamesDict ->put(varName, 1);
+			namePrefix := 1.toString();
+		};
+		name := varName + "_"+ namePrefix;
 		constant := false;
 		dataType := context.oclAsType(RealtimeStatechart).eContainer().oclAsType(ModelElementCategory).container().oclAsType(RootNode).categories->select(c|c.key.equalsIgnoreCase("de.uni_paderborn.fujaba.muml.types.category")).modelElements->at(2).oclAsType(DataType);
-		
-	};
+		}
 	
 
 	
