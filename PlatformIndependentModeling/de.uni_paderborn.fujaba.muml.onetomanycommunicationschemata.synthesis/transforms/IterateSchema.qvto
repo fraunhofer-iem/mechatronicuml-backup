@@ -22,9 +22,28 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 property IterateDelayTimeClockName : String = "Clock_IterateDelay";
 property IterateDLC_ClockName : String = "Iterate_DLC";
 property iterateRoleVariableName : String = "curRole";
+property lastPosition : PositionSelectorKind;
+property firstPosition : PositionSelectorKind;
+property nextPosition : PositionSelectorKind;
+
+helper Transition :: determinePositionKindSelectors()
+{	
+	if(self.raiseMessageEvent.oneToManyCommunicationSchema.oclAsType(muml::realtimestatechart::one_to_n_schemata::Iterate).startFromFirst) {
+		lastPosition := PositionSelectorKind::LAST;
+		firstPosition := PositionSelectorKind::FIRST;
+		nextPosition := PositionSelectorKind::NEXT;
+	}
+	else {
+		lastPosition := PositionSelectorKind::FIRST;
+		firstPosition := PositionSelectorKind::LAST;	
+		nextPosition := PositionSelectorKind::PREV;
+	};
+}
 
 helper Transition :: disassembleIterateSchema(){
-		
+	
+	self.determinePositionKindSelectors();
+
 	self.statechart.variables+= self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());
 	self.statechart.clocks += self.map TransitionDeadline2CoordinatorDeadlineClock(IterateDLC_ClockName);
 	if(self.iterateDefinesDelay()){
@@ -69,9 +88,11 @@ mapping Transition :: Iterate2TransitionFromSourceToIntermediate() : Transition
 		sourceState.entryEvent.action := new Action();	
 		sourceState.entryEvent.action.name := "";	
 	};
-	sourceState.entryEvent.action.name := sourceState.entryEvent.action.name + "curRole := last";
+	sourceState.entryEvent.action.name := sourceState.entryEvent.action.name + " "+ iterateRoleVariableName+ " := " + firstPosition.toString();
 	var variable : Variable := self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType());
-	sourceState.entryEvent.action.expressions += self.map Transition2Block(self.map Schema2TypedNamedElementAssignmentExpression(sourceState,AssignOperator::ASSIGN,variable,self.map TransferSchemataEndpointReference(result,PositionSelectorKind::LAST)));
+	
+	//  set the entry action of the source state depending on the startFromFirst flag	
+	sourceState.entryEvent.action.expressions += self.map Transition2Block(self.map Schema2TypedNamedElementAssignmentExpression(sourceState,AssignOperator::ASSIGN,variable,self.map TransferSchemataEndpointReference(result,firstPosition)));	
 	
 	// create the condition for the multicast call!
 			
@@ -126,7 +147,7 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 		
 	//TransferSchemataEndpointReference(context:OclAny, region:OclAny, pos: String, transMapping: Integer)
 	
-	var rhs : Expression := self.map TransferSchemataEndpointReference(result,PositionSelectorKind::LAST);
+	var rhs : Expression := self.map TransferSchemataEndpointReference(result,lastPosition);
 	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::EQUAL,lhs, rhs);
 	
 	action := self.action.deepclone().oclAsType(Action);
@@ -135,8 +156,8 @@ mapping Transition :: Iterate2Transition1FromIntermediateToTarget() : Transition
 		action.name :="";
 	};
 	
-	var rhsAss : Expression := self.map TransferSchemataEndpointReference(result,PositionSelectorKind::FIRST);
-	action.name := action.name + iterateRoleVariableName + ":=" + PositionSelectorKind::FIRST.toString();
+	var rhsAss : Expression := self.map TransferSchemataEndpointReference(result,firstPosition);
+	action.name := action.name + iterateRoleVariableName + ":=" + firstPosition.toString();
 	action.expressions+= self.map Transition2Block(self.map Schema2TypedNamedElementAssignmentExpression(result,AssignOperator::ASSIGN, self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()),rhsAss));
 	
 	clockResets := self.clockResets;
@@ -176,8 +197,8 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	};
 	
 	var lhs : Expression :=  self.map Schema2TypedNamedElementExpression(result,self.map Schema2Variable(iterateRoleVariableName, self.getPortOrRoleAsDataType()));
-	
-	var rhs : Expression := self.map TransferSchemataEndpointReference(result,PositionSelectorKind::LAST);
+			
+	var rhs : Expression  := self.map TransferSchemataEndpointReference(result,lastPosition);	
 	guard := self.map Transition2ComparisonExpression(result, ComparingOperator::UNEQUAL,lhs, rhs);
 	
 	// create the condition for the multicast call!
@@ -198,7 +219,8 @@ mapping Transition :: Iterate2SelfTransitionOfIntermediate() : Transition {
 	events += self.raiseMessageEvent.oneToManyCommunicationSchema.map Schema2multicastCall(result,multicastCondition,self.raiseMessageEvent.oneToManyCommunicationSchema.action.deepclone().oclAsType(Action));
 	
 	// create actions:
-	var assRHS : Expression := self.map TransferSchemataEndpointReference(result, PositionSelectorKind::NEXT, variable);
+	var assRHS : Expression	:= self.map TransferSchemataEndpointReference(result, nextPosition, variable);	
+	
 	var assignment : Expression := self.map Schema2TypedNamedElementAssignmentExpression(2, AssignOperator::ASSIGN, variable, assRHS);
 	
 	
