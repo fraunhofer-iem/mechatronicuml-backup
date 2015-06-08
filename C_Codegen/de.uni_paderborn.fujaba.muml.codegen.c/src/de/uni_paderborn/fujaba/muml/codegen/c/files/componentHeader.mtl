@@ -64,7 +64,8 @@
 */]
 [template public includes(component : Component)]
 	// Library
-	#include "../lib/types.h"
+	#include "../types/standardTypes.h"
+	#include "../types/customTypes.h"
 	[if (component.eAllContents(DiscretePort)->size()>0)]
 		#include "../lib/port.h"
 		#include "../messages/Messages.h"

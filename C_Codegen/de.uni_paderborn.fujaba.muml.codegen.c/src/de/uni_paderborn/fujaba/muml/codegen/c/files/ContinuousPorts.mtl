@@ -27,7 +27,8 @@
 
 [template private includesCont(CIs : OrderedSet(ComponentInstance))]
 
-#include "../lib/types.h"
+	#include "../types/standardTypes.h"
+	#include "../types/customTypes.h"
 #include "../operations/operations.h"
 [/template]
 

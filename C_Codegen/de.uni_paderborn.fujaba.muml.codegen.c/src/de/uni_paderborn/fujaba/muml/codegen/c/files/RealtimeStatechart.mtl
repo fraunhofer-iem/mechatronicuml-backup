@@ -115,15 +115,17 @@
 				[comment Member variables for the variables of each region. /]	
 				[for (variable : Variable | region.embeddedStatechart.variables->collect(oclAsType(Variable)))]				
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
-						[variable.initializeExpression.generateExpression('statechart->')/]
+						[variable.initializeExpression.generateExpression('')/]
 					[else]
 						[variable.dataType/]
-						stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+				[if (not variable.dataType.oclIsKindOf(ArrayDataType))]
+						[getDefaultValue(variable, 'stateChart->')/];
+				[/if]
 					[/if]	
 				[/for]
 			[if rtsc.oclIsKindOf(ParameterizedRealtimeStatechart)]
 				[for (variable : Variable | region.embeddedStatechart.oclAsType(ParameterizedRealtimeStatechart).parameters->select(p|p.oclIsKindOf(Variable)).oclAsType(Variable))]	
-	stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];			
+			[getDefaultValue(variable,'stateChart->')/];			
 	[/for]
 			[/if]
 			
@@ -164,10 +166,12 @@
 				[comment Member variables for the variables of each region. /]	
 				[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
-						[getDefaultValue(variable)/];
+						[getDefaultValue(variable,'')/];
 
-					[else]
-						stateChart->[getVariableName(variable)/] = [getDefaultValue(variable)/];
+					[elseif (variable.dataType.oclIsKindOf(ArrayDataType))]
+					[generateArrayInitializer(variable)/]
+						[else]
+						stateChart->[getVariableName(variable)/] = [getDefaultValue(variable, 'stateChart->')/];
 					[/if]
 
 				[/for]
@@ -198,8 +202,8 @@
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
 					//allocate memory for structured datatypes of the statechart
 					[let sType : StructureDataType = dataType.oclAsType(StructureDataType)]			
-					statechart->[variable.getVariableName()/] = ([getTypeName(sType)/]*)malloc(sizeof([getTypeName(sType)/]));
-					if (statechart->[variable.getVariableName()/] == NULL)
+					stateChart->[variable.getVariableName()/] = ([getTypeName(sType)/]*)malloc(sizeof([getTypeName(sType)/]));
+					if (stateChart->[variable.getVariableName()/] == NULL)
 					{	
 						fprintf(stderr, "Initialization of [getClassName(rtsc)/] failed\n");
 

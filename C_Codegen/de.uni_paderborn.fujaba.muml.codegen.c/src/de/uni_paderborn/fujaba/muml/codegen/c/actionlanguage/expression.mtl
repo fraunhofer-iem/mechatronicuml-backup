@@ -219,12 +219,14 @@
 [/template]
 
 
-[template public generateExpression(expression : AttributeAccessorExpression , fqname : String)]
-->[expression.attribute.name/]
-[/template]
+
 
 [template public generateExpression(expression : ArrayIndexExpression , fqname : String)]
-['['/][expression.index.generateExpression('')/][']'/]
+[expression.index.generateExpression('')/]
+[/template]
+
+[template public generateExpression(expression : AttributeAccessorExpression , fqname : String)]
+[expression.attribute.name/]
 [/template]
 
 [**
@@ -234,8 +236,7 @@
  * @param fqname a fully qualified name or the empty string
 */]
 [template public generateExpression(expression : TypedNamedElementExpression , fqname : String)]
-[expression.typedNamedElement.getFullyQualifiedName(fqname)/][if not ((expression.elementAccessors->oclIsUndefined()) and (expression.elementAccessors->isEmpty()))]
-[for (accessor : Expression | expression.elementAccessors)][generateExpression(accessor, fqname)/][/for][/if]
+[expression.typedNamedElement.getFullyQualifiedName(fqname)/][generateIndices(expression, fqname)/]
 [/template]
 
 [**
@@ -244,11 +245,11 @@
  * @param usePre use pre construct for rhs variables (and for guards)
  * @param fqname a fully qualified name or the empty string 
 */]
-[comment]
-[template private generateIndices(expression : TypedNamedElementExpression, usePre : Boolean, fqname : String) ? (expression.indices->notEmpty())]
-['['/][for (index : Expression | expression.elementAccessors) separator(', ')][generateExpression(index, usePre, fqname)/] + 1[/for][']'/]
+[template private generateIndices(expression : TypedNamedElementExpression, fqname : String) ? (expression.elementAccessors->notEmpty())]
+[for (index : Expression | expression.elementAccessors)]
+[if (not index.oclIsKindOf(ArrayIndexExpression))]->[generateExpression(index, fqname)/][else]
+['['/][generateExpression(index, fqname)/] - 1[']'/][/if][/for]
 [/template]
-[/comment]
 
 [**
  * Generates an array initialize expression.
@@ -257,11 +258,19 @@
  * @param fqname a fully qualified name or the empty string
 */]
 [template private generateExpression(expression : ArrayInitializeExpression, fqname : String)]
+[comment]
 {[for (expr : Expression | expression.expressions) separator(', ')][generateExpression(expr, fqname)/][/for]}
+[/comment]
 [/template]
 
-
-
+[template public generateArrayInitializer(var : Variable)]
+[if (var.dataType.oclIsKindOf(ArrayDataType) and not var.initializeExpression.oclIsUndefined() )]
+[let initExp : ArrayInitializeExpression  = var.initializeExpression.oclAsType(ArrayInitializeExpression)]
+	[for (expression : Expression | initExp.expressions)]
+		stateChart->[getVariableName(var)/][ '[' /][i-1/][ ']' /]  =  [generateExpression(expression, '')/];
+	[/for]
+[/let][/if]
+[/template]
 
 
 [**
@@ -396,7 +405,6 @@
 */]
 [template public generateExpression(block : Block , fqname : String)]
 [for (expression : Expression | block.expressions)]
-[comment for blocks pre is always false /]
 [generateExpression(expression, fqname) /]
 [/for]
 [/template]
@@ -573,11 +581,19 @@ unexpected expression class with unary op: [expression.eClass().name/]
 	binding.value.generateExpression('')
 /]
 
-[query public getDefaultValue(var : Variable) : String = 
+[query public getDefaultValue(var : Variable, fqname : String) : String = 
 	if (var.initializeExpression.oclIsUndefined()) then
-		getDefaultValue(var.dataType)
-	else
-		generateExpression(var.initializeExpression,'')
+		fqname+var.getVariableName() +'='+getDefaultValue(var.dataType)+';'
+	else 
+	if (var.dataType.oclIsKindOf(StructureDataType)) then 
+		generateExpression(var.initializeExpression, fqname+var.getVariableName()) 
+	else 
 
+		generateExpression(var.initializeExpression, fqname+var.getVariableName())
+	endif
 	endif
 /]
+
+[template public generateStrutInit(var : Variable, fqName : String)]
+	template_expression
+[/template]

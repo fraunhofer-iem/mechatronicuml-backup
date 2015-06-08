@@ -40,7 +40,8 @@
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 
-#include "../lib/types.h"
+	#include "../types/standardTypes.h"
+	#include "../types/customTypes.h"
 [for (operation : Operation | allOperations)]
 /**
  * @brief Implementation stub of operation [operation.name/]

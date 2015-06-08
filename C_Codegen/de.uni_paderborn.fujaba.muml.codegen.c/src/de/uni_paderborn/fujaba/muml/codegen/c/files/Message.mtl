@@ -25,11 +25,6 @@
  * @param path the path for generated files
  */]
 [template public generateProtobufMessageFile(CIs : OrderedSet(ComponentInstance), path : String)]
-[file (path+'messages/TEST.txt', false, 'UTF-8')]
-[CIs.name/]
-[getAllUsedMessages(CIs)->size()/]
-[/file]
-
 [file (path+'messages/Messages.proto', false, 'UTF-8')]
 //File: messages.proto
 [comment @TODO determine values for these constants/]

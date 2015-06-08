@@ -13,7 +13,8 @@
 
 #ifndef MIDDLEWARETYPES_H_
 #define MIDDLEWARETYPES_H_
-#include "types.h"
+#include "../types/standardTypes.h"
+#include "../types/customTypes.h"
 
 // If we change defs like "typedef signed long PortID", we have to make sure, what protobuf generates is fitting to this
 /**

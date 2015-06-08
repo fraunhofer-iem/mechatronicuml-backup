@@ -687,7 +687,7 @@ endif
 /]
 
 [query public getTypeName(type : ArrayDataType) : String = 
-	type.type.name.getName()
+		type.type.getTypeName()
 /]
 
 
@@ -695,16 +695,16 @@ endif
  * @param element
 */]
 [query public getTypeName(type : PrimitiveDataType) : String = 
-	if (type = PrimitiveTypes::BOOLEAN or type.name = 'boolean') then 'bool_t' else
-	if (type = PrimitiveTypes::DOUBLE or type.name = 'double') then 'double_t' else
-	if (type = PrimitiveTypes::INT8 or type.name = 'int8') then 'int8_t' else
-	if (type = PrimitiveTypes::INT16 or type.name = 'int16') then 'int16_t' else
-	if (type = PrimitiveTypes::INT32 or type.name = 'int32') then 'int32_t' else
-	if (type = PrimitiveTypes::INT64 or type.name = 'int64') then 'int64_t' else
-	if (type = PrimitiveTypes::UINT8 or type.name = 'uint8') then 'uint8_t' else
-	if (type = PrimitiveTypes::UINT16 or type.name = 'uint16') then 'uint16_t' else
-	if (type = PrimitiveTypes::UINT32 or type.name = 'uint32') then 'uint32_t' else
-	if (type = PrimitiveTypes::UINT64 or type.name = 'uint64') then 'uint64_t' else
+	if (type = PrimitiveTypes::BOOLEAN or type.name = 'boolean') then 'bool_T' else
+	if (type = PrimitiveTypes::DOUBLE or type.name = 'double') then 'double_T' else
+	if (type = PrimitiveTypes::INT8 or type.name = 'int8') then 'int8_T' else
+	if (type = PrimitiveTypes::INT16 or type.name = 'int16') then 'int16_T' else
+	if (type = PrimitiveTypes::INT32 or type.name = 'int32') then 'int32_T' else
+	if (type = PrimitiveTypes::INT64 or type.name = 'int64') then 'int64_T' else
+	if (type = PrimitiveTypes::UINT8 or type.name = 'uint8') then 'uint8_T' else
+	if (type = PrimitiveTypes::UINT16 or type.name = 'uint16') then 'uint16_T' else
+	if (type = PrimitiveTypes::UINT32 or type.name = 'uint32') then 'uint32_T' else
+	if (type = PrimitiveTypes::UINT64 or type.name = 'uint64') then 'uint64_T' else
 	if (type = PrimitiveTypes::VOID or type.name = 'void') then 'void' else
 	'PRIMITIVE TYPE UNDEFINED: '+type
 	endif
@@ -773,14 +773,20 @@ endif
 /]
 
 [query public getDefaultValue(type : PrimitiveDataType) : String = 
-if (type.name = 'BOOLEAN' or type.name = 'boolean') then 'false' else 
-	if (type.name = 'BYTE' or type.name = 'byte') then '0' else
-	if (type.name = 'DOUBLE' or type.name = 'double') then '0.0' else
-	if (type.name = 'INT' or type.name = 'int' or type.name = 'int8' or type.name = 'int16' or type.name = 'int32' or type.name = 'int64') then '0' else
-	if (type.name = 'LONG' or type.name = 'long') then '0' else
-	if (type.name = 'SHORT' or type.name = 'short') then '0' else
-	if (type.name = 'VOID' or type.name = 'void') then 'void' else
-	'PRIMITIVE TYPE UNDEFINED: '+type.name
+	if (type = PrimitiveTypes::BOOLEAN or type.name = 'boolean') then 'false' else
+	if (type = PrimitiveTypes::DOUBLE or type.name = 'double') then '0' else
+	if (type = PrimitiveTypes::INT8 or type.name = 'int8') then '0' else
+	if (type = PrimitiveTypes::INT16 or type.name = 'int16') then '0' else
+	if (type = PrimitiveTypes::INT32 or type.name = 'int32') then '0' else
+	if (type = PrimitiveTypes::INT64 or type.name = 'int64') then '0' else
+	if (type = PrimitiveTypes::UINT8 or type.name = 'uint8') then '0' else
+	if (type = PrimitiveTypes::UINT16 or type.name = 'uint16') then '0' else
+	if (type = PrimitiveTypes::UINT32 or type.name = 'uint32') then '0' else
+	if (type = PrimitiveTypes::UINT64 or type.name = 'uint64') then '0' else
+	'PRIMITIVE TYPE UNDEFINED: '+type
+	endif
+	endif
+	endif
 	endif
 	endif
 	endif

@@ -11,7 +11,8 @@
 
 #include "stdlib.h"
 #include "MessageBuffer.h"
-#include "types.h"
+#include "../types/standardTypes.h"
+#include "../types/customTypes.h"
 #include "MiddlewareTypes.h"
 
 /**

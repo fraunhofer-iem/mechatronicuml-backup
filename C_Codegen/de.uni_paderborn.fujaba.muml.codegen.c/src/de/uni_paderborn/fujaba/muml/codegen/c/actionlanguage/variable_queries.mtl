@@ -23,7 +23,7 @@
 	else
 		--fqname + '->' + typedNamedElement.getTypedNamedElementName()
 		if typedNamedElement.oclIsKindOf(Variable) then
-			let myFqname : String = 'statechart'
+			let myFqname : String = ''
 			in
 			if myFqname = '' then
 				''
