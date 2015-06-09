@@ -205,7 +205,6 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 			}
 		}
 		URI parentUri = getUri(element);
-		System.out.println(parentUri + " / " +relocatedChildren);
 		Set<URI> relocated = this.relocatedChildren.get(parentUri);
 		if (relocated != null) {
 			for (URI targetUri : relocated) {
