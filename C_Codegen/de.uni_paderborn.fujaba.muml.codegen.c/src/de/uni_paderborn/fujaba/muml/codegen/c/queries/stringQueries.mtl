@@ -849,7 +849,7 @@ endif
  * @param name
 */]
 [query public getName(name : String) : String =
-	Sequence{' ', '-', '.'}->iterate(iterator : String; returnValue : String = name | tokenize(returnValue, iterator)) 
+	Sequence{' ', '-', '.', ';', '*','+', '/', '#', '='}->iterate(iterator : String; returnValue : String = name | tokenize(returnValue, iterator)) 
 /]
 
 
