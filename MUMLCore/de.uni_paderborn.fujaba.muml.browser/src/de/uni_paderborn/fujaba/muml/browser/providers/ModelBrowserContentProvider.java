@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -17,7 +16,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IResourceVisitor;
-import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -47,8 +45,8 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;	
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
 	
-	private Map<Object, Object> relocatedParents = new HashMap<Object, Object>();
-	private Map<Object, Set<Object>> relocatedChildren = new HashMap<Object, Set<Object>>();
+	private Map<URI, URI> relocatedParents = new HashMap<URI, URI>();
+	private Map<URI, Set<URI>> relocatedChildren = new HashMap<URI, Set<URI>>();
 	
 	public ModelBrowserContentProvider() throws CoreException {
 		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
@@ -107,11 +105,18 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					for (EObject element : resource.getContents()) {
 						if (element instanceof Diagram) {
 							Diagram diagram = (Diagram) element;
-							if (diagram.getElement() != null && diagram.getElement().eResource() != null) {
-								URI targetUri = diagram.getElement().eResource().getURI();
-								IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-								IFile targetFile = root.getFile(new Path(targetUri.toPlatformString(true)));
-								addRelocation(iFile, targetFile);
+							if (diagram.getElement() != null) {
+								Resource targetResource = diagram.getElement().eResource();
+								if (targetResource != null) {
+									URI targetUri = targetResource.getURI();
+									if (!targetResource.getContents().contains(diagram.getElement())) {
+										String fragment = targetResource.getURIFragment(diagram.getElement());
+										if (fragment != null) {
+											targetUri = targetUri.appendFragment(fragment);
+										}
+									}
+									addRelocation(uri, targetUri);	
+								}
 							}
 						}
 					}
@@ -128,11 +133,11 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		});
 	}
 
-	private void addRelocation(Object child, Object parent) {
+	private void addRelocation(URI child, URI parent) {
 		// Put into relocatedChildren
-		Set<Object> children = relocatedChildren.get(parent);
+		Set<URI> children = relocatedChildren.get(parent);
 		if (children == null) {
-			children = new HashSet<Object>();
+			children = new HashSet<URI>();
 			relocatedChildren.put(parent, children);
 		}
 		children.add(child);
@@ -194,15 +199,49 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	public Object[] getChildren(Object element) {
 		List<Object> children = new ArrayList<Object>();
 		for (Object child : getDirectChildren(element)) {
-			if (!relocatedParents.containsKey(child)) {
+			URI uri = getUri(child);
+			if (!relocatedParents.containsKey(uri)) {
 				children.add(child);
 			}
 		}
-		Set<Object> relocated = this.relocatedChildren.get(element);
+		URI parentUri = getUri(element);
+		System.out.println(parentUri + " / " +relocatedChildren);
+		Set<URI> relocated = this.relocatedChildren.get(parentUri);
 		if (relocated != null) {
-			children.addAll(relocated);
+			for (URI targetUri : relocated) {
+				Resource resource = editingDomain.getResourceSet().getResource(targetUri, false);
+				if (targetUri.fragment() != null) {
+					EObject child = resource.getEObject(targetUri.fragment());
+					if (child != null) {
+						children.add(child);
+					}
+				} else {
+					children.add(ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(targetUri.toPlatformString(true)))); 
+				}
+			}
 		}
 		return children.toArray();
+	}
+
+	private URI getUri(Object object) {
+		if (object instanceof EObject) {
+			EObject element = (EObject) object;
+			Resource resource = element.eResource();
+			URI uri = resource.getURI();
+			String fragment = resource.getURIFragment(element);
+			if (fragment != null) {
+				uri = uri.appendFragment(fragment);
+			}
+			return uri;
+		}
+		if (object instanceof Resource) {
+			return ((Resource) object).getURI();
+		}
+		if (object instanceof IResource) {
+			IResource iResource = (IResource) object;
+			return URI.createPlatformResourceURI(iResource.getFullPath().toString(), true);
+		}
+		return null;
 	}
 
 	private Collection<Object> getDirectChildren(Object element) {

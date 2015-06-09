@@ -1,16 +1,22 @@
 package de.uni_paderborn.fujaba.muml.browser;
 
-import org.eclipse.core.resources.IFile;
+import org.eclipse.core.commands.Command;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.common.CommandException;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IAggregateWorkingSet;
+import org.eclipse.ui.IWorkbenchCommandConstants;
+import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.eclipse.ui.navigator.CommonNavigator;
 import org.eclipse.ui.navigator.CommonViewer;
@@ -97,23 +103,23 @@ public final class ModelBrowser extends CommonNavigator {
 
 	@Override
 	protected void handleDoubleClick(DoubleClickEvent anEvent) {
-//		ICommandService commandService = (ICommandService) getViewSite().getService(ICommandService.class);
-//		Command openProjectCommand = commandService.getCommand(IWorkbenchCommandConstants.PROJECT_OPEN_PROJECT);
-//		if (openProjectCommand != null && openProjectCommand.isHandled()) {
-//			IStructuredSelection selection = (IStructuredSelection) anEvent
-//					.getSelection();
-//			Object element = selection.getFirstElement();
-//			if (element instanceof IProject && !((IProject) element).isOpen()) {
-//				try {
-//					openProjectCommand.executeWithChecks(new ExecutionEvent());
-//				} catch (CommandException ex) {
-//					IStatus status = new Status(IStatus.ERROR, ModelBrowserPlugin.PLUGIN_ID, 0, "'Open Project' failed", ex); //$NON-NLS-1$
-//					ModelBrowserPlugin.getDefault().getLog().log(status);
-//				}
-//				return;
-//			}
-//		}
-//		super.handleDoubleClick(anEvent);
+		ICommandService commandService = (ICommandService) getViewSite().getService(ICommandService.class);
+		Command openProjectCommand = commandService.getCommand(IWorkbenchCommandConstants.PROJECT_OPEN_PROJECT);
+		if (openProjectCommand != null && openProjectCommand.isHandled()) {
+			IStructuredSelection selection = (IStructuredSelection) anEvent
+					.getSelection();
+			Object element = selection.getFirstElement();
+			if (element instanceof IProject && !((IProject) element).isOpen()) {
+				try {
+					openProjectCommand.executeWithChecks(new ExecutionEvent());
+				} catch (CommandException ex) {
+					IStatus status = new Status(IStatus.ERROR, ModelBrowserPlugin.PLUGIN_ID, 0, "'Open Project' failed", ex); //$NON-NLS-1$
+					ModelBrowserPlugin.getDefault().getLog().log(status);
+				}
+				return;
+			}
+		}
+		super.handleDoubleClick(anEvent);
 	}
 	
 	protected CommonViewer createCommonViewerObject(Composite aParent) {
