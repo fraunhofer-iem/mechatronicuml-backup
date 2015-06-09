@@ -355,6 +355,9 @@ public class Main extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.storydriven.core.expressions.common.CommonExpressionsPackage.class)) {
             resourceSet.getPackageRegistry().put(org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE.getNsURI(), org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE);
         }
+        if (!isInWorkspace(de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.class)) {
+            resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage.eINSTANCE);
+        }
         if (!isInWorkspace(de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.class)) {
             resourceSet.getPackageRegistry().put(de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getNsURI(), de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE);
         }

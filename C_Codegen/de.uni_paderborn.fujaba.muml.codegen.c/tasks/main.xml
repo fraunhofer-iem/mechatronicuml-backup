@@ -32,6 +32,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.5.1.201409021433.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.10.2.v20150123-0452.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.10.0.v20150123-0452.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage_0.5.0.201505211750.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml_0.5.0.201505211750.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.common_0.5.0.201505170919.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.modelinstance_0.5.0.201505170919.jar"/>

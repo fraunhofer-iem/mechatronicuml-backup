@@ -35,8 +35,6 @@
 		[includes(rtsc, component)/]
 
 
-
-		[variables(component, rtsc)/]
 		////////////////////////////////////////////////////////////////////////////////
 		// Initialization
 		////////////////////////////////////////////////////////////////////////////////
@@ -66,16 +64,6 @@
 	[/file]
 [/template]
 
-
-
-[**
- * Generates the enum for the statechart.
- * 
- * @param statechart
-*/]
-[template private variables (comp: Component, rtsc: RealtimeStatechart) post(trim())]	
- 
-[/template]
 
 
 
@@ -599,10 +587,12 @@ if (0){
  * @param state
 */]
 [template private exitActionRecursive(component : Component, rtsc : RealtimeStatechart, state : State) post(cdtbeautifier())]
-	[exitAction(component, rtsc, state)/]	
-[for (innerReg : Region | state.getInnerRegions())]
+	[exitAction(component, rtsc, state)/]
+	[for (innerReg : Region | state.getInnerRegions())]
 		[getExitMethodName(innerReg)/](stateChart);
+		stateChart->[getVariableName(innerReg)/] = STATE_INACTIVE;
 	[/for]
+
 [/template]
 
 [**
