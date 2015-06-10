@@ -1,0 +1,69 @@
+library normalisations;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc2 uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
+
+helper normalizeRTSC(inout rtsc : RealtimeStatechart){	
+	// normalize transitions that use synchronizations and define schemata
+	rtsc.transitions->select(t|t.usesTwoSchemata() and not t.synchronization.oclIsUndefined())->forEach(t){
+		rtsc.states += t.map Transition2NormalizationIntermediateState();
+		rtsc.transitions += t.map Transition2NormalizationTransition1();
+		rtsc.transitions += t.map Transition2NormalizationTransition2();
+		rtsc.transitions := rtsc.transitions->excluding(t);
+	};	
+}
+
+mapping Transition::Transition2NormalizationIntermediateState():State{
+	name:= "SynchronizationNormalizationIntermediate_"+ self.source.name + "_"+self.target.name;
+	result.parentStatechart := self.statechart;	
+}
+
+mapping Transition::Transition2NormalizationTransition1(): Transition{
+	priority := self.priority;
+	source:= self.source;
+	target := self.map Transition2NormalizationIntermediateState();
+	// take the <conditions> of the input Transition
+	guard := self.guard;
+	clockConstraints := self.clockConstraints;
+	synchronization := self.synchronization;
+	if(self.relativeDeadline.oclIsUndefined()){
+		result.relativeDeadline:= self.relativeDeadline.deepclone().oclAsType(RelativeDeadline); 
+	};	
+	urgent := self.urgent;
+	events += self.triggerMessageEvent;
+}
+
+mapping Transition::Transition2NormalizationTransition2(): Transition{
+	priority := 1;
+	source := self.map Transition2NormalizationIntermediateState();
+	// take the <effects> of the input transition
+	target := self.target;
+	clockResets := self.clockResets;
+	action := self.action;	
+	if(self.relativeDeadline.oclIsUndefined()){
+		result.relativeDeadline:= self.relativeDeadline.deepclone().oclAsType(RelativeDeadline); 
+		var lit : LiteralExpression := new LiteralExpression();
+		lit.value := "0";
+		result.relativeDeadline.lowerBound.value := lit;
+		
+	};
+	urgent := self.urgent;
+	events += self.raiseMessageEvent;
+}
+
+
+
+query Transition::usesTwoSchemata():Boolean{
+	return not self.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined() and not self.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined();	
+}

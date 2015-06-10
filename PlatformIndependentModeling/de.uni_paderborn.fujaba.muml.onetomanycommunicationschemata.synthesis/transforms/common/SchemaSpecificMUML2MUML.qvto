@@ -417,5 +417,3 @@ mapping Message :: Message2Message(context:OclAny) : Message {
 		
 	}
 
-
-
