@@ -24,13 +24,15 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 		
 		source := self.source.map Vertex2VertexCoordinator(context, region);
 		
+		
 		target := self.map Schema2CoordinatorIntermediateState(context, region, 1,multiReceiveDLCName, toplevel);
 		
 		guard := self.guard.map Expression2Expression(context);
 		
 		clockConstraints := self.clockConstraints->select(c | not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context,region);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context,region, SynchronizationKind::SEND, "first",multiReceiceChannelName,true,1);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multiReceiceChannelName,SynchronizationKind::SEND  ,PositionSelectorKind::FIRST);
+		
 }
 
 // @author: sthiele2 -- create a transition in the coordinator region from the intermediate state to the schema-transition's target 
@@ -48,9 +50,9 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 		
 		if(not self.relativeDeadline.oclIsUndefined()){
 			clockConstraints += self.map RelativeDeadline2ClockConstraint(context,region, true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName);
-		}endif;
+		}endif;		
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "",multiReceiveDoneChannelName, false,1);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multiReceiveDoneChannelName,SynchronizationKind::RECEIVE);
 }
 
 	
@@ -69,8 +71,8 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subro
 		{
 			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(result);
 		}endif;
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self",multiReceiceChannelName,true,result.priority);
+			
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 }
 
 // @author: sthiele2 -- creates a transition in the subrole region from the schema-transition's source to the intermediate state 2
@@ -87,7 +89,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(co
 			guard := self.triggerMessageEvent.oneToManyCommunicationSchema.condition.map Expression2UnaryExpression(result,UnaryOperator::NOT);
 		}endif;
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self",multiReceiceChannelName,true,result.priority);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multiReceiceChannelName,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 }
 
 
@@ -132,8 +134,8 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context 
 		target := self.target.map Vertex2VertexSubrole(context,region);
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
-
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", multiReceiveDoneChannelName, false,priority);
+	
+		synchronization := 	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multiReceiveDoneChannelName,SynchronizationKind::SEND);
 }
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
@@ -147,7 +149,7 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context 
 		target := self.target.map Vertex2VertexSubrole(context,region);
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", multiReceiceChannelName, true,priority);
+			
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multiReceiceChannelName,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 }
 

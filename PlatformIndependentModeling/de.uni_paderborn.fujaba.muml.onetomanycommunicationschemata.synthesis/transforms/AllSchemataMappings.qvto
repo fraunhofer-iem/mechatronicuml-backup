@@ -1,7 +1,7 @@
 import SchemaSpecificMUML2MUML;
 library AllSchemataMappings;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
-modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
 modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
@@ -21,7 +21,6 @@ property multiReceiveDLCName : String = "DLC_multiReceive";
 
 
 property multicastSubRoleSpecificVariableName : String = "sendMulticast";
-property clockIndex : Integer =0;
 
 mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String): Variable
 {
@@ -66,7 +65,6 @@ mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : St
 		nameSuffix :=  1.toString();
 		usedChannelNames->put(clockName,1);	
 	};
-	clockIndex := clockIndex+1;
 	result.name := clockName +"_".concat(nameSuffix);
 }	
 
@@ -362,41 +360,31 @@ mapping Transition :: TransferSchemata2Literal(context:OclAny, assignValue:Strin
 
 
 
-mapping Transition :: TransferSchemata2Synchronization(context:OclAny, region:OclAny, syncKind:SynchronizationKind, selectorExp: String, channel:String, selector: Boolean, transMapping: Integer) : Synchronization {
-		
-		kind := syncKind;
-		
-		syncChannel := context.oclAsType(RealtimeStatechart).map TransferSchemataChannel(context, channel, selector,self);
-		
-		if(selectorExp.equalsIgnoreCase('self')){
-			selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF);
-		}else{
-			if(selectorExp.equalsIgnoreCase('first')){
-				selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::FIRST);
-			}else{
-				if(selectorExp.equalsIgnoreCase('self.next')){
-					selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
-				}else{
-					if(selectorExp.equalsIgnoreCase('self.prev')){
-						selectorExpression := self.map Schema2PositionKindSelector(context,region, result, PositionSelectorKind::SELF, PositionSelectorKind::PREV);
-					}else{
-						if(selectorExp.equalsIgnoreCase('curRole')){
-						
-					}endif
-					}endif;
-				}endif;
-			}endif;
-		}endif;
-	
-	};	
+mapping Transition :: TransferSchemata2Synchronization(rtsc : RealtimeStatechart,identifier : EObject,  channelName : String, syncKind : SynchronizationKind) : Synchronization{
 
+	kind := syncKind;
+	syncChannel := _rtsc.map TransferSchemataChannel( channelName, false,self);
+}
+
+mapping Transition :: TransferSchemata2Synchronization(context : RealtimeStatechart,identifier : EObject, channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind) : Synchronization{
+	
+	kind := syncKind;
+	syncChannel := context.map TransferSchemataChannel(channelName,true, self);
+	selectorExpression := self.map Schema2PositionKindSelector(result,result,result, selectorKind);
+}
+mapping Transition :: TransferSchemata2Synchronization(context : RealtimeStatechart,identifier : EObject, channelName : String,   syncKind : SynchronizationKind, selectorKind : PositionSelectorKind, successorKind : PositionSelectorKind) : Synchronization{
+	
+	kind := syncKind;
+	syncChannel := context.map TransferSchemataChannel(channelName,true, self);
+	selectorExpression := self.map Schema2PositionKindSelector(result,result,result, selectorKind, successorKind);
+}
 	//dict->hasKey(transition);
 	//dict->get(transition);
 	//dict->put(transition,1);
 	//if(dict->hasKey(transition))
 	// dict-> 
 property usedChannelNames : Dict(String,Integer); // stores how often a channel with a certain name exists. Used for enumerating the channel names in case of multiple occurences of the same schema
-mapping RealtimeStatechart :: TransferSchemataChannel(context:OclAny, channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
+mapping RealtimeStatechart :: TransferSchemataChannel(channelName: String, selector: Boolean, schemaTransition : Transition ) : SynchronizationChannel {
 		
 		if(usedChannelNames->hasKey(channelName))
 		{
@@ -410,10 +398,10 @@ mapping RealtimeStatechart :: TransferSchemataChannel(context:OclAny, channelNam
 			name := channelName + 1.toString();
 			usedChannelNames->put(channelName,1);	
 		};		
-		state := context.oclAsType(RealtimeStatechart).map Rtsc2InitialState();
+		state := self.map Rtsc2InitialState();
 		
 		if(selector){
-			selectorType := context.oclAsType(RealtimeStatechart).behavioralElement.oclAsType(Role);
+			selectorType := self.behavioralElement.oclAsType(Role);
 		}endif;		
 						
 	}
@@ -432,29 +420,29 @@ mapping RealtimeStatechart :: Rtsc2InitialState() : State {
 		
 		initial := true;
 		
-		embeddedRegions += self->map State2CoordinatorRegion(self,0);
+		embeddedRegions += self->map State2CoordinatorRegion(self);
 		
-		embeddedRegions += self.map State2SubroleRegion(self,1);
+		embeddedRegions += self.map State2SubroleRegion(self);
 					
 	}
 
 
-mapping RealtimeStatechart :: State2CoordinatorRegion(context:OclAny, region:OclAny) : Region {
+mapping RealtimeStatechart :: State2CoordinatorRegion(context:RealtimeStatechart) : Region {
 		
 		priority := 2;
 		
 		//parentState := context.oclAsType(State);
 		
-		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, region,true);
+		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, result,true);
 }
 	
-mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny, region:OclAny) : Region {
+mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny) : Region {
 		
 		priority := 1;
 		
 	//	parentState := context.oclAsType(State);
 		
-		embeddedStatechart := self.map RTSC2SubroleRTSC(context, region,true);					
+		embeddedStatechart := self.map RTSC2SubroleRTSC(context, result,true);					
 	}	
 	
 mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny, highlevel: Boolean) : RealtimeStatechart {
@@ -498,7 +486,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Oc
 		
 		action := self.action.map Action2Action(context, region);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "switchState", true, 1);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  "switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF);
 		
 		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context, region);
 		
@@ -523,8 +511,8 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Oc
 		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint(1, region);
 		
 		guard := self.guard.map Expression2Expression(1);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  "switchState",SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "switchState", true, 2);
 		
 	}
 	
@@ -537,7 +525,8 @@ mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region
 		
 		guard := self.map TransferSchemataLogicalExpression(result, PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "switchState", true, 3);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  "switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF,PositionSelectorKind::NEXT);
+		
 		
 	}
 	

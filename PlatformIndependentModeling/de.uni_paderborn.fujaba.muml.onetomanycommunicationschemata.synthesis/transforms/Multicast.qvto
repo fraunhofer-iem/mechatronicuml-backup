@@ -15,7 +15,11 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 ----------------------------------------------------------XXXXXXXXXXXXXXXXX--MULTICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------	
 ----------------------------------------------------------------Transfer Schema Multicast of Coordinator------------------------------------------------------------------
-	
+property multicastCheckDone : String = "multicastCheckDone";
+property multicast : String = "multicast";
+property multicastDone : String = "multicastDone";
+property multicastCheck : String = "multicastCheck";
+
 
 
 // @author: sthiele2
@@ -26,7 +30,8 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 	priority := self.priority;
 	guard := self.guard.map Expression2Expression(result);		
 	clockConstraints := self.clockConstraints->select(c|not isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(1, region);
-	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "multicastCheckDone", false, 1);
+	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheckDone,SynchronizationKind::RECEIVE);
+	synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheckDone,SynchronizationKind::RECEIVE);
 }
 
 // @author: sthiele2
@@ -40,7 +45,8 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 	{
 		result.clockConstraints += self.map RelativeDeadline2ClockConstraint(result, region, true, ComparingOperator::GREATER_OR_EQUAL, multicastDLCName );
 	};
-	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "multicast", true, 1);
+	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
+	synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 }
 
 // @author: sthiele2
@@ -52,7 +58,8 @@ mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:
 	priority := 1;
 	result.clockResets :=  self.clockResets->select(c| not isClockSubRoleSpecific(c)).map Clock2Clock();
 	result.action := self.action.map Action2Action(context,region);
-	synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "multicastDone", false, 1);	
+	
+	synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastDone,SynchronizationKind::RECEIVE);
 }
 
 	
@@ -65,7 +72,7 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		
 		target := self.map Schema2CoordinatorIntermediateState(context, region,1, multicastDLCName, toplevel);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "multicast", true, 1);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicast,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 		
 		clockConstraints := self.clockConstraints.map ClockConstraint2ClockConstraint(context,region);
 		
@@ -84,7 +91,7 @@ mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget
 		
 		clockResets += self.clockResets->select(c|not isClockSubRoleSpecific(c)).map Clock2Clock();
 	
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "multicastDone",false, 2);	
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastDone,SynchronizationKind::RECEIVE);	
 }
 
 ---------------- Coordinator Mappings for Embedded State
@@ -123,7 +130,7 @@ mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny, re
 		
 		guard := self.guard.map Expression2Expression(context);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "first", "multicastCheck", true, 2);
+		synchronization := 	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheck,SynchronizationKind::SEND, PositionSelectorKind::FIRST);
 			
 	}
 	
@@ -135,7 +142,9 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 		
 		source := self.map RegionState(context, region, "Requesting", false);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "", "multicastCheckDone", false, 3);
+	
+		
+		synchronization :=  self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheckDone,SynchronizationKind::RECEIVE);
 		
 		guard := self.map TransferSchemaGuard(context, region, "multicastPossible", true, 1);
 			
@@ -154,7 +163,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:OclA
 		
 		target := self.map Multicast2StateSubrole(context, region, toplevel);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "multicast", true, 5);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicast,SynchronizationKind::RECEIVE  ,PositionSelectorKind::SELF);
 		
 		clockConstraints += self.clockConstraints->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
 		
@@ -173,7 +182,8 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:OclA
 			
 		}else{
 			priority := self.priority;
-		}endif;
+		};
+		
 		
 	}
 	
@@ -185,7 +195,7 @@ mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, r
 		
 		source := self.map Multicast2StateSubrole(context, region, toplevel);		
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "multicast", true, 6);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 					
@@ -208,7 +218,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 			action := self.map TransferSchemata2Action(context, "multicastPossible:=false", "multicastPossible", "false", 12);
 			
 		}endif;
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "multicastDone", false, 1);			
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastDone,SynchronizationKind::SEND);			
 	}
 	
 mapping Transition :: Multicast2StateSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : State {
@@ -253,7 +263,7 @@ mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "self.next", "multicastCheck", true, 7);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart), result, "multicastCheck", SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 					
 	}
 	
@@ -267,7 +277,7 @@ mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, re
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::SEND, "", "multicastCheckDone", false, 8);
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheckDone,SynchronizationKind::SEND);
 					
 	}
 	
@@ -281,7 +291,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 		
 		guard := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(2);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "multicastCheck", true, 9);
+		synchronization := 	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		action := self.map TransferSchemata2Action(context, "multicastPossible:=true", "multicastPossible", "true", 10);
 					
@@ -296,8 +306,8 @@ mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny,
 		source := self.map RegionState(context, region, "Idle", true);
 		
 		guard := self.map TransferSchemaNotCondition(3, region, 3);
-		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "multicastCheck", true, 10);
+
+		synchronization := 		self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicastCheck,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 					
 	}
 	
@@ -307,7 +317,7 @@ mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny,
 		
 		target := self.map Multicast2StateSubrole(context, region, toplevel);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context, region, SynchronizationKind::RECEIVE, "self", "multicast", true, 11);--error
+		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  multicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 				

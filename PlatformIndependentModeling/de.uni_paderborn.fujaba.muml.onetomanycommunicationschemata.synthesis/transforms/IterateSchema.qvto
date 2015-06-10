@@ -19,8 +19,8 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 --------------------------------------------------------------Transfer Schema Iterate of Coordinator----------------------------------------------------------------------
 
-property IterateDelayTimeClockName : String = "Clock_IterateDelay";
-property IterateDLC_ClockName : String = "Iterate_DLC";
+property IterateDelayTimeClockName : String = "DelayClock_Iterate";
+property IterateDLC_ClockName : String = "DLC_Iterate";
 property iterateRoleVariableName : String = "curRole";
 property lastPosition : PositionSelectorKind;
 property firstPosition : PositionSelectorKind;
