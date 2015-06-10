@@ -590,7 +590,7 @@ if (0){
 	[exitAction(component, rtsc, state)/]
 	[for (innerReg : Region | state.getInnerRegions())]
 		[getExitMethodName(innerReg)/](stateChart);
-		stateChart->[getVariableName(innerReg)/] = STATE_INACTIVE;
+		stateChart->[getVariableName(innerReg)/] = INACTIVE;
 	[/for]
 
 [/template]
