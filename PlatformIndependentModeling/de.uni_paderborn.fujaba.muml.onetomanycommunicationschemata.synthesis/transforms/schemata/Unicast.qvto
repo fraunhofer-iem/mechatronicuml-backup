@@ -1,5 +1,5 @@
 library Unicast;
-import AllSchemataMappings;
+import common.AllSchemataMappings;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -13,17 +13,12 @@ modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
-
+----------------------------------------------------------XXXXXXXXXXXXXXXXX--UNICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
 property unicastSubRoleSpecificVariableName : String = "sendUnicast";
-
-
 property unicast : String = "unicast";
 property unicastCheckDone : String = "unicastCheckDone";
 property unicastCheck : String = "unicastCheck";
 property unicastDone : String = "unicastDone";
-----------------------------------------------------------XXXXXXXXXXXXXXXXX--UNICAST--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
-
-
 
 ------------------------------------------------------------Transfer Schema Unicast of Coordinator------------------------------------------------------------------
 	

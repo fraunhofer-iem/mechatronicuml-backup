@@ -1,4 +1,4 @@
-import IterateSchema;
+import schemata.IterateSchema;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');

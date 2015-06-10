@@ -1,5 +1,5 @@
 library IterateSchema;
-import AllSchemataMappings;
+import common.AllSchemataMappings;
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
@@ -14,17 +14,15 @@ modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 	
 // @author: sthiele2 -- Implementation of the Iterate-Schema that can be reduced to multicast schemas.
-
 ---------------------------------------------------------XXXXXXXXXXXXXXXXX--ITERATE--XXXXXXXXXXXXXXXXX-------------------------------------------------------------------------
-
---------------------------------------------------------------Transfer Schema Iterate of Coordinator----------------------------------------------------------------------
-
 property IterateDelayTimeClockName : String = "DelayClock_Iterate";
 property IterateDLC_ClockName : String = "DLC_Iterate";
 property iterateRoleVariableName : String = "curRole";
 property lastPosition : PositionSelectorKind;
 property firstPosition : PositionSelectorKind;
 property nextPosition : PositionSelectorKind;
+
+--------------------------------------------------------------Transfer Schema Iterate of Coordinator----------------------------------------------------------------------
 
 helper Transition :: determinePositionKindSelectors()
 {	
