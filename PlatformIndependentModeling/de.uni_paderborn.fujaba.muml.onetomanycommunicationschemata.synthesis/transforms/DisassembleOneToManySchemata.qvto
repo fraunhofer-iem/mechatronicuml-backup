@@ -31,6 +31,8 @@ main() {
 // not debug:
 	currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
 	
+	assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
+	
 	// step 1: normalize transitions that define two schemata:
 	normalizeRTSC(currentRealtimeStatechart);
 	// step 2: normalize schemata that can be expressed by other schemata:
