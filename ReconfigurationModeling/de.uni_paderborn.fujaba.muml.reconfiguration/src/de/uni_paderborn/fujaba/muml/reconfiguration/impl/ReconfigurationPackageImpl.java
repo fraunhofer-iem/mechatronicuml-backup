@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
@@ -34,16 +35,20 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
+import de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum;
@@ -200,6 +205,34 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass fadingFunctionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hybridPortMappingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationExecutionSpecificationEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationManagementSpecificationEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -428,6 +461,33 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReconfigurableAtomicComponent_ExecutionEntries() {
+		return (EReference)reconfigurableAtomicComponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurableAtomicComponent_ManagementEntries() {
+		return (EReference)reconfigurableAtomicComponentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurableAtomicComponent_HybridPortMappings() {
+		return (EReference)reconfigurableAtomicComponentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReconfigurationPort() {
 		return reconfigurationPortEClass;
 	}
@@ -608,6 +668,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReconfigurationExecutionPortInterfaceEntry_MinimumRetryTime() {
+		return (EReference)reconfigurationExecutionPortInterfaceEntryEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExecutionTimingSpecification() {
 		return executionTimingSpecificationEClass;
 	}
@@ -772,6 +841,105 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 */
 	public EReference getFadingFunction_ToPort() {
 		return (EReference)fadingFunctionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurationConstraint() {
+		return reconfigurationConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHybridPortMapping() {
+		return hybridPortMappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHybridPortMapping_HybridPort() {
+		return (EReference)hybridPortMappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHybridPortMapping_Function() {
+		return (EReference)hybridPortMappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurationExecutionSpecificationEntry() {
+		return reconfigurationExecutionSpecificationEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationExecutionSpecificationEntry_Guards() {
+		return (EReference)reconfigurationExecutionSpecificationEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationExecutionSpecificationEntry_Message() {
+		return (EReference)reconfigurationExecutionSpecificationEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationExecutionSpecificationEntry_ReconfigurationRule() {
+		return (EReference)reconfigurationExecutionSpecificationEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurationManagementSpecificationEntry() {
+		return reconfigurationManagementSpecificationEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationManagementSpecificationEntry_Conditions() {
+		return (EReference)reconfigurationManagementSpecificationEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconfigurationManagementSpecificationEntry_Message() {
+		return (EReference)reconfigurationManagementSpecificationEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1147,6 +1315,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurableComponentEClass = createEClass(RECONFIGURABLE_COMPONENT);
 
 		reconfigurableAtomicComponentEClass = createEClass(RECONFIGURABLE_ATOMIC_COMPONENT);
+		createEReference(reconfigurableAtomicComponentEClass, RECONFIGURABLE_ATOMIC_COMPONENT__EXECUTION_ENTRIES);
+		createEReference(reconfigurableAtomicComponentEClass, RECONFIGURABLE_ATOMIC_COMPONENT__MANAGEMENT_ENTRIES);
+		createEReference(reconfigurableAtomicComponentEClass, RECONFIGURABLE_ATOMIC_COMPONENT__HYBRID_PORT_MAPPINGS);
 
 		reconfigurableStructuredComponentEClass = createEClass(RECONFIGURABLE_STRUCTURED_COMPONENT);
 		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER);
@@ -1177,6 +1348,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES);
+		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_RETRY_TIME);
 
 		executionTimingSpecificationEClass = createEClass(EXECUTION_TIMING_SPECIFICATION);
 
@@ -1253,6 +1425,21 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(fadingFunctionEClass, FADING_FUNCTION__FROM_PORT);
 		createEReference(fadingFunctionEClass, FADING_FUNCTION__TO_PORT);
 
+		reconfigurationConstraintEClass = createEClass(RECONFIGURATION_CONSTRAINT);
+
+		hybridPortMappingEClass = createEClass(HYBRID_PORT_MAPPING);
+		createEReference(hybridPortMappingEClass, HYBRID_PORT_MAPPING__HYBRID_PORT);
+		createEReference(hybridPortMappingEClass, HYBRID_PORT_MAPPING__FUNCTION);
+
+		reconfigurationExecutionSpecificationEntryEClass = createEClass(RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY);
+		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__GUARDS);
+		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE);
+		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE);
+
+		reconfigurationManagementSpecificationEntryEClass = createEClass(RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY);
+		createEReference(reconfigurationManagementSpecificationEntryEClass, RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__CONDITIONS);
+		createEReference(reconfigurationManagementSpecificationEntryEClass, RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__MESSAGE);
+
 		// Create enums
 		reconfigurationMessageTypeEnumEEnum = createEEnum(RECONFIGURATION_MESSAGE_TYPE_ENUM);
 	}
@@ -1293,6 +1480,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theExpressionPackage);
@@ -1341,11 +1531,16 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		fadingComponentEClass.getESuperTypes().add(theComponentPackage.getAtomicComponent());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		reconfigurationExecutionSpecificationEntryEClass.getESuperTypes().add(theTypesPackage.getDataType());
+		reconfigurationManagementSpecificationEntryEClass.getESuperTypes().add(theTypesPackage.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(reconfigurableComponentEClass, ReconfigurableComponent.class, "ReconfigurableComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reconfigurableAtomicComponentEClass, ReconfigurableAtomicComponent.class, "ReconfigurableAtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReconfigurableAtomicComponent_ExecutionEntries(), this.getReconfigurationExecutionSpecificationEntry(), null, "executionEntries", null, 0, -1, ReconfigurableAtomicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurableAtomicComponent_ManagementEntries(), this.getReconfigurationManagementSpecificationEntry(), null, "managementEntries", null, 0, -1, ReconfigurableAtomicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurableAtomicComponent_HybridPortMappings(), this.getHybridPortMapping(), null, "hybridPortMappings", null, 0, -1, ReconfigurableAtomicComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurableStructuredComponent_Controller(), this.getController(), this.getController_StructuredComponent(), "controller", null, 0, 1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1376,6 +1571,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort(), this.getReconfigurationExecutionPort(), this.getReconfigurationExecutionPort_InterfaceEntries(), "reconfigurationExecutionPort", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime(), theValuetypePackage.getTimeValue(), null, "minimumCommitTime", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_ReturnValues(), theBehaviorPackage.getParameter(), null, "returnValues", null, 0, -1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionPortInterfaceEntry_MinimumRetryTime(), theValuetypePackage.getTimeValue(), null, "minimumRetryTime", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executionTimingSpecificationEClass, ExecutionTimingSpecification.class, "ExecutionTimingSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1451,6 +1647,21 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(fadingFunctionEClass, FadingFunction.class, "FadingFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFadingFunction_FromPort(), theComponentPackage.getPort(), null, "fromPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFadingFunction_ToPort(), theComponentPackage.getPort(), null, "toPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reconfigurationConstraintEClass, ReconfigurationConstraint.class, "ReconfigurationConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(hybridPortMappingEClass, HybridPortMapping.class, "HybridPortMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHybridPortMapping_HybridPort(), theComponentPackage.getHybridPort(), null, "hybridPort", null, 1, 1, HybridPortMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHybridPortMapping_Function(), theExpressionsPackage.getExpression(), null, "function", null, 1, 1, HybridPortMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reconfigurationExecutionSpecificationEntryEClass, ReconfigurationExecutionSpecificationEntry.class, "ReconfigurationExecutionSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReconfigurationExecutionSpecificationEntry_Guards(), this.getReconfigurationConstraint(), null, "guards", null, 0, -1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionSpecificationEntry_Message(), theRealtimestatechartPackage.getMessage(), null, "message", null, 1, 1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionSpecificationEntry_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reconfigurationManagementSpecificationEntryEClass, ReconfigurationManagementSpecificationEntry.class, "ReconfigurationManagementSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReconfigurationManagementSpecificationEntry_Conditions(), this.getReconfigurationConstraint(), null, "conditions", null, 0, -1, ReconfigurationManagementSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationManagementSpecificationEntry_Message(), theRealtimestatechartPackage.getMessage(), null, "message", null, 1, 1, ReconfigurationManagementSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(reconfigurationMessageTypeEnumEEnum, ReconfigurationMessageTypeEnum.class, "ReconfigurationMessageTypeEnum");

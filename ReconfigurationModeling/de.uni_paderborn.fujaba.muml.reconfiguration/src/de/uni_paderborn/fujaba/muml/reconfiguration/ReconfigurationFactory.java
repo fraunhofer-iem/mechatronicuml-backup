@@ -206,6 +206,33 @@ public interface ReconfigurationFactory extends EFactory {
 	FadingFunction createFadingFunction();
 
 	/**
+	 * Returns a new object of class '<em>Hybrid Port Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hybrid Port Mapping</em>'.
+	 * @generated
+	 */
+	HybridPortMapping createHybridPortMapping();
+
+	/**
+	 * Returns a new object of class '<em>Execution Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Execution Specification Entry</em>'.
+	 * @generated
+	 */
+	ReconfigurationExecutionSpecificationEntry createReconfigurationExecutionSpecificationEntry();
+
+	/**
+	 * Returns a new object of class '<em>Management Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Management Specification Entry</em>'.
+	 * @generated
+	 */
+	ReconfigurationManagementSpecificationEntry createReconfigurationManagementSpecificationEntry();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

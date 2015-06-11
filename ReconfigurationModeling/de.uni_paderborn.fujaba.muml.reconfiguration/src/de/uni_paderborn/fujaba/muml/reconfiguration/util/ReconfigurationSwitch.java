@@ -385,6 +385,38 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.RECONFIGURATION_CONSTRAINT: {
+				ReconfigurationConstraint reconfigurationConstraint = (ReconfigurationConstraint)theEObject;
+				T result = caseReconfigurationConstraint(reconfigurationConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.HYBRID_PORT_MAPPING: {
+				HybridPortMapping hybridPortMapping = (HybridPortMapping)theEObject;
+				T result = caseHybridPortMapping(hybridPortMapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY: {
+				ReconfigurationExecutionSpecificationEntry reconfigurationExecutionSpecificationEntry = (ReconfigurationExecutionSpecificationEntry)theEObject;
+				T result = caseReconfigurationExecutionSpecificationEntry(reconfigurationExecutionSpecificationEntry);
+				if (result == null) result = caseDataType(reconfigurationExecutionSpecificationEntry);
+				if (result == null) result = caseNamedElement(reconfigurationExecutionSpecificationEntry);
+				if (result == null) result = caseCommentableElement(reconfigurationExecutionSpecificationEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationExecutionSpecificationEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY: {
+				ReconfigurationManagementSpecificationEntry reconfigurationManagementSpecificationEntry = (ReconfigurationManagementSpecificationEntry)theEObject;
+				T result = caseReconfigurationManagementSpecificationEntry(reconfigurationManagementSpecificationEntry);
+				if (result == null) result = caseDataType(reconfigurationManagementSpecificationEntry);
+				if (result == null) result = caseNamedElement(reconfigurationManagementSpecificationEntry);
+				if (result == null) result = caseCommentableElement(reconfigurationManagementSpecificationEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationManagementSpecificationEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -791,6 +823,66 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFadingFunction(FadingFunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationConstraint(ReconfigurationConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hybrid Port Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hybrid Port Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHybridPortMapping(HybridPortMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Execution Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Execution Specification Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationExecutionSpecificationEntry(ReconfigurationExecutionSpecificationEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Management Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Management Specification Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationManagementSpecificationEntry(ReconfigurationManagementSpecificationEntry object) {
 		return null;
 	}
 

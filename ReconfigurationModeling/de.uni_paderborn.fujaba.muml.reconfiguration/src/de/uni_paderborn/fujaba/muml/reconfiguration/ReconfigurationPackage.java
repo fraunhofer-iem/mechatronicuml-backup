@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -493,13 +494,40 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES = ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORIES;
 
 	/**
+	 * The feature id for the '<em><b>Execution Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURABLE_ATOMIC_COMPONENT__EXECUTION_ENTRIES = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Management Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURABLE_ATOMIC_COMPONENT__MANAGEMENT_ENTRIES = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Hybrid Port Mappings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURABLE_ATOMIC_COMPONENT__HYBRID_PORT_MAPPINGS = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Reconfigurable Atomic Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_ATOMIC_COMPONENT_FEATURE_COUNT = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 0;
+	int RECONFIGURABLE_ATOMIC_COMPONENT_FEATURE_COUNT = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2642,13 +2670,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Minimum Retry Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_RETRY_TIME = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Execution Port Interface Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 5;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -7448,6 +7485,595 @@ public interface ReconfigurationPackage extends EPackage {
 	int FADING_FUNCTION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConstraintImpl <em>Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConstraintImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationConstraint()
+	 * @generated
+	 */
+	int RECONFIGURATION_CONSTRAINT = 27;
+
+	/**
+	 * The number of structural features of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONSTRAINT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONSTRAINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.HybridPortMappingImpl <em>Hybrid Port Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.HybridPortMappingImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getHybridPortMapping()
+	 * @generated
+	 */
+	int HYBRID_PORT_MAPPING = 28;
+
+	/**
+	 * The feature id for the '<em><b>Hybrid Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_MAPPING__HYBRID_PORT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Function</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_MAPPING__FUNCTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Hybrid Port Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_MAPPING_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Hybrid Port Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_MAPPING_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl <em>Execution Specification Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationExecutionSpecificationEntry()
+	 * @generated
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY = 29;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__ANNOTATION = TypesPackage.DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__EXTENSION = TypesPackage.DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__NAME = TypesPackage.DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__COMMENT = TypesPackage.DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Guards</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__GUARDS = TypesPackage.DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE = TypesPackage.DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = TypesPackage.DATA_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Execution Specification Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY_FEATURE_COUNT = TypesPackage.DATA_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ECLASS = TypesPackage.DATA_TYPE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EIS_PROXY = TypesPackage.DATA_TYPE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ERESOURCE = TypesPackage.DATA_TYPE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ECONTAINER = TypesPackage.DATA_TYPE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ECONTAINING_FEATURE = TypesPackage.DATA_TYPE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ECONTAINMENT_FEATURE = TypesPackage.DATA_TYPE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ECONTENTS = TypesPackage.DATA_TYPE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EALL_CONTENTS = TypesPackage.DATA_TYPE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ECROSS_REFERENCES = TypesPackage.DATA_TYPE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EGET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EGET__ESTRUCTURALFEATURE_BOOLEAN = TypesPackage.DATA_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___ESET__ESTRUCTURALFEATURE_OBJECT = TypesPackage.DATA_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EIS_SET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EUNSET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___EINVOKE__EOPERATION_ELIST = TypesPackage.DATA_TYPE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___GET_EXTENSION__ECLASS = TypesPackage.DATA_TYPE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___PROVIDE_EXTENSION__ECLASS = TypesPackage.DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___GET_ANNOTATION__STRING = TypesPackage.DATA_TYPE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY___PROVIDE_ANNOTATION__STRING = TypesPackage.DATA_TYPE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Execution Specification Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY_OPERATION_COUNT = TypesPackage.DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationManagementSpecificationEntryImpl <em>Management Specification Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationManagementSpecificationEntryImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationManagementSpecificationEntry()
+	 * @generated
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY = 30;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__ANNOTATION = TypesPackage.DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__EXTENSION = TypesPackage.DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__NAME = TypesPackage.DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__COMMENT = TypesPackage.DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__CONDITIONS = TypesPackage.DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__MESSAGE = TypesPackage.DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Management Specification Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY_FEATURE_COUNT = TypesPackage.DATA_TYPE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ECLASS = TypesPackage.DATA_TYPE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EIS_PROXY = TypesPackage.DATA_TYPE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ERESOURCE = TypesPackage.DATA_TYPE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ECONTAINER = TypesPackage.DATA_TYPE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ECONTAINING_FEATURE = TypesPackage.DATA_TYPE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ECONTAINMENT_FEATURE = TypesPackage.DATA_TYPE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ECONTENTS = TypesPackage.DATA_TYPE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EALL_CONTENTS = TypesPackage.DATA_TYPE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ECROSS_REFERENCES = TypesPackage.DATA_TYPE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EGET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EGET__ESTRUCTURALFEATURE_BOOLEAN = TypesPackage.DATA_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___ESET__ESTRUCTURALFEATURE_OBJECT = TypesPackage.DATA_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EIS_SET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EUNSET__ESTRUCTURALFEATURE = TypesPackage.DATA_TYPE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___EINVOKE__EOPERATION_ELIST = TypesPackage.DATA_TYPE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___GET_EXTENSION__ECLASS = TypesPackage.DATA_TYPE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___PROVIDE_EXTENSION__ECLASS = TypesPackage.DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___GET_ANNOTATION__STRING = TypesPackage.DATA_TYPE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY___PROVIDE_ANNOTATION__STRING = TypesPackage.DATA_TYPE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Management Specification Entry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY_OPERATION_COUNT = TypesPackage.DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum <em>Message Type Enum</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7455,7 +8081,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageTypeEnum()
 	 * @generated
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE_ENUM = 27;
+	int RECONFIGURATION_MESSAGE_TYPE_ENUM = 31;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
@@ -7520,6 +8146,39 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReconfigurableAtomicComponent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent#getExecutionEntries <em>Execution Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Execution Entries</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent#getExecutionEntries()
+	 * @see #getReconfigurableAtomicComponent()
+	 * @generated
+	 */
+	EReference getReconfigurableAtomicComponent_ExecutionEntries();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent#getManagementEntries <em>Management Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Management Entries</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent#getManagementEntries()
+	 * @see #getReconfigurableAtomicComponent()
+	 * @generated
+	 */
+	EReference getReconfigurableAtomicComponent_ManagementEntries();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent#getHybridPortMappings <em>Hybrid Port Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Hybrid Port Mappings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent#getHybridPortMappings()
+	 * @see #getReconfigurableAtomicComponent()
+	 * @generated
+	 */
+	EReference getReconfigurableAtomicComponent_HybridPortMappings();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort <em>Port</em>}'.
@@ -7735,6 +8394,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationExecutionPortInterfaceEntry_ReturnValues();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumRetryTime <em>Minimum Retry Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Minimum Retry Time</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumRetryTime()
+	 * @see #getReconfigurationExecutionPortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionPortInterfaceEntry_MinimumRetryTime();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification <em>Execution Timing Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7933,6 +8603,123 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFadingFunction_ToPort();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint
+	 * @generated
+	 */
+	EClass getReconfigurationConstraint();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping <em>Hybrid Port Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hybrid Port Mapping</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping
+	 * @generated
+	 */
+	EClass getHybridPortMapping();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping#getHybridPort <em>Hybrid Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Hybrid Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping#getHybridPort()
+	 * @see #getHybridPortMapping()
+	 * @generated
+	 */
+	EReference getHybridPortMapping_HybridPort();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping#getFunction <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Function</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping#getFunction()
+	 * @see #getHybridPortMapping()
+	 * @generated
+	 */
+	EReference getHybridPortMapping_Function();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry <em>Execution Specification Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Execution Specification Entry</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry
+	 * @generated
+	 */
+	EClass getReconfigurationExecutionSpecificationEntry();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getGuards <em>Guards</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Guards</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getGuards()
+	 * @see #getReconfigurationExecutionSpecificationEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionSpecificationEntry_Guards();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getMessage()
+	 * @see #getReconfigurationExecutionSpecificationEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionSpecificationEntry_Message();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reconfiguration Rule</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getReconfigurationRule()
+	 * @see #getReconfigurationExecutionSpecificationEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionSpecificationEntry_ReconfigurationRule();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry <em>Management Specification Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Management Specification Entry</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry
+	 * @generated
+	 */
+	EClass getReconfigurationManagementSpecificationEntry();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry#getConditions()
+	 * @see #getReconfigurationManagementSpecificationEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationManagementSpecificationEntry_Conditions();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry#getMessage()
+	 * @see #getReconfigurationManagementSpecificationEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationManagementSpecificationEntry_Message();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum <em>Message Type Enum</em>}'.
@@ -8417,6 +9204,30 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURABLE_ATOMIC_COMPONENT = eINSTANCE.getReconfigurableAtomicComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Execution Entries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURABLE_ATOMIC_COMPONENT__EXECUTION_ENTRIES = eINSTANCE.getReconfigurableAtomicComponent_ExecutionEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Management Entries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURABLE_ATOMIC_COMPONENT__MANAGEMENT_ENTRIES = eINSTANCE.getReconfigurableAtomicComponent_ManagementEntries();
+
+		/**
+		 * The meta object literal for the '<em><b>Hybrid Port Mappings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURABLE_ATOMIC_COMPONENT__HYBRID_PORT_MAPPINGS = eINSTANCE.getReconfigurableAtomicComponent_HybridPortMappings();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl <em>Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8591,6 +9402,14 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RETURN_VALUES = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_ReturnValues();
 
 		/**
+		 * The meta object literal for the '<em><b>Minimum Retry Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_RETRY_TIME = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_MinimumRetryTime();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationImpl <em>Execution Timing Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8759,6 +9578,102 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FADING_FUNCTION__TO_PORT = eINSTANCE.getFadingFunction_ToPort();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConstraintImpl <em>Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConstraintImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationConstraint()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_CONSTRAINT = eINSTANCE.getReconfigurationConstraint();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.HybridPortMappingImpl <em>Hybrid Port Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.HybridPortMappingImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getHybridPortMapping()
+		 * @generated
+		 */
+		EClass HYBRID_PORT_MAPPING = eINSTANCE.getHybridPortMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Hybrid Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYBRID_PORT_MAPPING__HYBRID_PORT = eINSTANCE.getHybridPortMapping_HybridPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYBRID_PORT_MAPPING__FUNCTION = eINSTANCE.getHybridPortMapping_Function();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl <em>Execution Specification Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationExecutionSpecificationEntry()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY = eINSTANCE.getReconfigurationExecutionSpecificationEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Guards</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__GUARDS = eINSTANCE.getReconfigurationExecutionSpecificationEntry_Guards();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE = eINSTANCE.getReconfigurationExecutionSpecificationEntry_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = eINSTANCE.getReconfigurationExecutionSpecificationEntry_ReconfigurationRule();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationManagementSpecificationEntryImpl <em>Management Specification Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationManagementSpecificationEntryImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationManagementSpecificationEntry()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY = eINSTANCE.getReconfigurationManagementSpecificationEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__CONDITIONS = eINSTANCE.getReconfigurationManagementSpecificationEntry_Conditions();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__MESSAGE = eINSTANCE.getReconfigurationManagementSpecificationEntry_Message();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum <em>Message Type Enum</em>}' enum.

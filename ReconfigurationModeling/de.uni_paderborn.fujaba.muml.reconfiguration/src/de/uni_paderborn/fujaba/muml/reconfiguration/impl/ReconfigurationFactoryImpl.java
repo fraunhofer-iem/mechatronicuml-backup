@@ -102,6 +102,9 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR: return createReconfigurationPortDelegationConnector();
 			case ReconfigurationPackage.FADING_COMPONENT: return createFadingComponent();
 			case ReconfigurationPackage.FADING_FUNCTION: return createFadingFunction();
+			case ReconfigurationPackage.HYBRID_PORT_MAPPING: return createHybridPortMapping();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY: return createReconfigurationExecutionSpecificationEntry();
+			case ReconfigurationPackage.RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY: return createReconfigurationManagementSpecificationEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -335,6 +338,36 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public FadingFunction createFadingFunction() {
 		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
 		return fadingFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HybridPortMapping createHybridPortMapping() {
+		HybridPortMappingImpl hybridPortMapping = new HybridPortMappingImpl();
+		return hybridPortMapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationExecutionSpecificationEntry createReconfigurationExecutionSpecificationEntry() {
+		ReconfigurationExecutionSpecificationEntryImpl reconfigurationExecutionSpecificationEntry = new ReconfigurationExecutionSpecificationEntryImpl();
+		return reconfigurationExecutionSpecificationEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationManagementSpecificationEntry createReconfigurationManagementSpecificationEntry() {
+		ReconfigurationManagementSpecificationEntryImpl reconfigurationManagementSpecificationEntry = new ReconfigurationManagementSpecificationEntryImpl();
+		return reconfigurationManagementSpecificationEntry;
 	}
 
 	/**

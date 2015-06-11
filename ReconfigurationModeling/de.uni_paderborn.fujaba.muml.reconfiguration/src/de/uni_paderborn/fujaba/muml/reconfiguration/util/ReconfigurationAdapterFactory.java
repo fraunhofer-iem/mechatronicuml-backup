@@ -216,6 +216,22 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createFadingFunctionAdapter();
 			}
 			@Override
+			public Adapter caseReconfigurationConstraint(ReconfigurationConstraint object) {
+				return createReconfigurationConstraintAdapter();
+			}
+			@Override
+			public Adapter caseHybridPortMapping(HybridPortMapping object) {
+				return createHybridPortMappingAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurationExecutionSpecificationEntry(ReconfigurationExecutionSpecificationEntry object) {
+				return createReconfigurationExecutionSpecificationEntryAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurationManagementSpecificationEntry(ReconfigurationManagementSpecificationEntry object) {
+				return createReconfigurationManagementSpecificationEntryAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -666,6 +682,62 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFadingFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint
+	 * @generated
+	 */
+	public Adapter createReconfigurationConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping <em>Hybrid Port Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping
+	 * @generated
+	 */
+	public Adapter createHybridPortMappingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry <em>Execution Specification Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry
+	 * @generated
+	 */
+	public Adapter createReconfigurationExecutionSpecificationEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry <em>Management Specification Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry
+	 * @generated
+	 */
+	public Adapter createReconfigurationManagementSpecificationEntryAdapter() {
 		return null;
 	}
 

@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime <em>Minimum Commit Time</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReturnValues <em>Return Values</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumRetryTime <em>Minimum Retry Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -180,5 +181,31 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * @generated
 	 */
 	EList<Parameter> getReturnValues();
+
+	/**
+	 * Returns the value of the '<em><b>Minimum Retry Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Minimum Retry Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Minimum Retry Time</em>' containment reference.
+	 * @see #setMinimumRetryTime(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_MinimumRetryTime()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	TimeValue getMinimumRetryTime();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumRetryTime <em>Minimum Retry Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Minimum Retry Time</em>' containment reference.
+	 * @see #getMinimumRetryTime()
+	 * @generated
+	 */
+	void setMinimumRetryTime(TimeValue value);
 
 } // ReconfigurationExecutionPortInterfaceEntry

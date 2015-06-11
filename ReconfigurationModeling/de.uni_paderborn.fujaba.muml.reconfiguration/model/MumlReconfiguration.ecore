@@ -20,6 +20,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfigurable atomic component may change its internal structure at run-time. &#xD;&#xA;Therefore, it may instantiate or remove port instances."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executionEntries" upperBound="-1"
+        eType="#//ReconfigurationExecutionSpecificationEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managementEntries" upperBound="-1"
+        eType="#//ReconfigurationManagementSpecificationEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPortMappings" upperBound="-1"
+        eType="#//HybridPortMapping" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent #//ReconfigurableComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -176,6 +182,9 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnValues" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimumRetryTime" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionTimingSpecification" abstract="true"
@@ -540,6 +549,41 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationConstraint" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HybridPortMapping">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A HybridPortMapping maps a hybrid port to a function expressing the approximated development of the signal it receives"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hybridPort" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/HybridPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
+        eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionSpecificationEntry"
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ReconfigurationExecutionSpecificationEntry defines which reconfiguration should be executed upon the reception of a reconfiguration message and which guards to respect when deciding whether the reconfiguration is executable or not."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guards" upperBound="-1"
+        eType="#//ReconfigurationConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Message"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
+        eType="#//ReconfigurationRule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationManagementSpecificationEntry"
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each ReconfigurationManagementSpecificationEntry defines under which&#xD;&#xA;conditions a ReconfigurableDiscreteAtomicComponentInstance sends a&#xD;&#xA;reconfiguration message."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//ReconfigurationConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Message"
+        containment="true"/>
   </eClassifiers>
   <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
       nsPrefix="expression">

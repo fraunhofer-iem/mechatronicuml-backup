@@ -187,6 +187,14 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateFadingComponent((FadingComponent)value, diagnostics, context);
 			case ReconfigurationPackage.FADING_FUNCTION:
 				return validateFadingFunction((FadingFunction)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_CONSTRAINT:
+				return validateReconfigurationConstraint((ReconfigurationConstraint)value, diagnostics, context);
+			case ReconfigurationPackage.HYBRID_PORT_MAPPING:
+				return validateHybridPortMapping((HybridPortMapping)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY:
+				return validateReconfigurationExecutionSpecificationEntry((ReconfigurationExecutionSpecificationEntry)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY:
+				return validateReconfigurationManagementSpecificationEntry((ReconfigurationManagementSpecificationEntry)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE_ENUM:
 				return validateReconfigurationMessageTypeEnum((ReconfigurationMessageTypeEnum)value, diagnostics, context);
 			default:
@@ -1039,6 +1047,42 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 */
 	public boolean validateFadingFunction(FadingFunction fadingFunction, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(fadingFunction, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationConstraint(ReconfigurationConstraint reconfigurationConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationConstraint, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHybridPortMapping(HybridPortMapping hybridPortMapping, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(hybridPortMapping, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationExecutionSpecificationEntry(ReconfigurationExecutionSpecificationEntry reconfigurationExecutionSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationExecutionSpecificationEntry, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationManagementSpecificationEntry(ReconfigurationManagementSpecificationEntry reconfigurationManagementSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationManagementSpecificationEntry, diagnostics, context);
 	}
 
 	/**
