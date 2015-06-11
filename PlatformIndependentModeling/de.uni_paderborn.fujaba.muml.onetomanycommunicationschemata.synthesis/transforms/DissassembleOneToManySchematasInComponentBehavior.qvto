@@ -1,0 +1,33 @@
+import DisassembleOneToManySchemataInDiscreteInteractionEndpoint;
+
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+
+
+transformation DissassembleOneToManySchematasInComponentBehavior(inout input : modelinstance);
+
+
+main() {
+
+	// not debug
+	var componentRTSC : muml::realtimestatechart::RealtimeStatechart := input.rootObjects()[muml::realtimestatechart::RealtimeStatechart]->any(true).oclAsType(muml::realtimestatechart::RealtimeStatechart);
+	assert fatal (componentRTSC.behavioralElement.oclIsKindOf(muml::component::Component)) with log ("The specified RealtimeStatechart must be the behavior of a Component!");
+
+	var childrenRTSCs : Set(RealtimeStatechart) := componentRTSC->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart);
+	
+	childrenRTSCs->select(statechart:RealtimeStatechart|statechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint) and not statechart.behavioralElement.oclIsUndefined())->forEach(chart){
+		disassembleDiscreteInteractionPointRTSC(chart);
+	};
+	
+}
