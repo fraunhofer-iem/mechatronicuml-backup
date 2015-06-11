@@ -40,7 +40,7 @@ public class HWPlatform2EditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2008;
+	public static final int VISUAL_ID = 2009;
 
 	/**
 	 * MUML FIX, see code comments.

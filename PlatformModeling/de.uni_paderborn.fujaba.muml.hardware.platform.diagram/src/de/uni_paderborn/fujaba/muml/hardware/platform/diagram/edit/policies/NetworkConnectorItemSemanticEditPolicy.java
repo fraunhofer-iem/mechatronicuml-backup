@@ -16,7 +16,7 @@ public class NetworkConnectorItemSemanticEditPolicy
 	 */
 	public NetworkConnectorItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4031);
+				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032);
 	}
 
 	/**

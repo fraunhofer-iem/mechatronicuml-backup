@@ -35,7 +35,7 @@ public class HWPlatformPartEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3016;
+	public static final int VISUAL_ID = 3027;
 
 	/**
 	 * MUML FIX, see code comments.

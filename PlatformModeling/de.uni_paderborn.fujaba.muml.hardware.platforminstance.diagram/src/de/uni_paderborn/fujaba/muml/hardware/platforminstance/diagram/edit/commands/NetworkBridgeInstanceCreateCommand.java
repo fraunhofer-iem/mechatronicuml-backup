@@ -57,7 +57,7 @@ public class NetworkBridgeInstanceCreateCommand extends EditElementCommand {
 		owner.getNetworkingHardwareInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
-				.getInstance().init_NetworkBridgeInstance_3038(newElement);
+				.getInstance().init_NetworkBridgeInstance_3047(newElement);
 
 		doConfigure(newElement, monitor, info);
 

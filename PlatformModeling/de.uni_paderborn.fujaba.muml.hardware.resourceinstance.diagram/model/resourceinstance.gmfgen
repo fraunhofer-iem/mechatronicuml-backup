@@ -11,7 +11,7 @@
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure">
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="24" height="24"/>
       </viewmap>
-      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.ResourceInstanceHWPortEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/HWPort"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance/hwports"/>
@@ -379,7 +379,7 @@
         <metaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
       </modelFacet>
     </links>
-    <compartments visualID="7003" editPartClassName="StructuredResourceInstanceStructuredResourceCompartmentEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5" title="StructuredResourceCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2">
+    <compartments visualID="7003" editPartClassName="StructuredResourceInstanceStructuredResourceCompartmentEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5" title="StructuredResourceCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2" listLayout="false">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEmbeddedAtomicResources" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>

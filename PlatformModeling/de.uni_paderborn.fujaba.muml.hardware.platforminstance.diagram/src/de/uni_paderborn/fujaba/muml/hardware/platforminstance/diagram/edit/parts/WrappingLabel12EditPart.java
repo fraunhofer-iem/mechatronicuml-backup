@@ -52,13 +52,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabel22EditPart extends CompartmentEditPart implements
+public class WrappingLabel12EditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5087;
+	public static final int VISUAL_ID = 5115;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -111,7 +111,7 @@ public class WrappingLabel22EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public WrappingLabel22EditPart(View view) {
+	public WrappingLabel12EditPart(View view) {
 		super(view);
 	}
 
@@ -264,7 +264,7 @@ public class WrappingLabel22EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -328,10 +328,10 @@ public class WrappingLabel22EditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3034,
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel22EditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -541,7 +541,7 @@ public class WrappingLabel22EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

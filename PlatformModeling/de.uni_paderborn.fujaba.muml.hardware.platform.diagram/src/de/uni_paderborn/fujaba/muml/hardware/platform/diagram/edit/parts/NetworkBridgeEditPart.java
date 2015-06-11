@@ -35,7 +35,7 @@ public class NetworkBridgeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3024;
+	public static final int VISUAL_ID = 3026;
 
 	/**
 	 * MUML FIX, see code comments.

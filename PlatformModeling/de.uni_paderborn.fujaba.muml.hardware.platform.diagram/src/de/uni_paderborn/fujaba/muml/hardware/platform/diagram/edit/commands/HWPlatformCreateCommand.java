@@ -64,7 +64,7 @@ public class HWPlatformCreateCommand extends EditElementCommand {
 		resource.getContents().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.ElementInitializers
-				.getInstance().init_HWPlatform_2008(newElement);
+				.getInstance().init_HWPlatform_2009(newElement);
 
 		doConfigure(newElement, monitor, info);
 

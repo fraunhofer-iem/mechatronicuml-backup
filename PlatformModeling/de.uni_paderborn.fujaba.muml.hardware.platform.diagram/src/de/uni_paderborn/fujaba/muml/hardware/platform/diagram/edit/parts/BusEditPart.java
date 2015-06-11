@@ -39,7 +39,7 @@ public class BusEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3023;
+	public static final int VISUAL_ID = 3025;
 
 	/**
 	 * MUML FIX, see code comments.

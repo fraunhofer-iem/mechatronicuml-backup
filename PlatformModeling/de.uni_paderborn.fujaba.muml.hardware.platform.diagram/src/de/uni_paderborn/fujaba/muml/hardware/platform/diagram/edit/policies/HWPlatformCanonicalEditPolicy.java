@@ -292,7 +292,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getHWPlatform_2008ContainedLinks(view));
+						.getHWPlatform_2009ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -300,7 +300,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getBus_3023ContainedLinks(view));
+						.getBus_3025ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -308,7 +308,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getNetworkBridge_3024ContainedLinks(view));
+						.getNetworkBridge_3026ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -316,7 +316,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getHWPlatformPart_3016ContainedLinks(view));
+						.getHWPlatformPart_3027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -324,7 +324,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getHWPortPart_3022ContainedLinks(view));
+						.getHWPortPart_3028ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -332,7 +332,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getDelegationHWPort_3018ContainedLinks(view));
+						.getDelegationHWPort_3029ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -340,7 +340,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getResourcePart_3019ContainedLinks(view));
+						.getResourcePart_3030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -348,7 +348,7 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-						.getNetworkConnector_4031ContainedLinks(view));
+						.getNetworkConnector_4032ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

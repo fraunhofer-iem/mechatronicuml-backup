@@ -446,7 +446,7 @@ public class HardwareViewProvider extends AbstractProvider implements
 				node,
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID),
-				true, false, true, true);
+				true, false, false, false);
 		return node;
 	}
 

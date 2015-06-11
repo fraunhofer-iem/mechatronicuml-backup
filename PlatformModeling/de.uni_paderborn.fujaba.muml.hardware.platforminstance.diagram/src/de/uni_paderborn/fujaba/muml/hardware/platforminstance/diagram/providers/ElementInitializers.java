@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPlatformInstance_2004(
+	public void init_HWPlatformInstance_2005(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -31,7 +31,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPlatformInstance_3031(
+	public void init_HWPlatformInstance_3040(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -50,7 +50,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DelegationHWPortInstance_3028(
+	public void init_DelegationHWPortInstance_3041(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -69,7 +69,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StructuredResourceInstance_3033(
+	public void init_StructuredResourceInstance_3042(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -88,7 +88,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPortInstance_3030(
+	public void init_HWPortInstance_3043(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -107,7 +107,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ActuatorInstance_3034(
+	public void init_ActuatorInstance_3044(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -126,7 +126,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_SensorInstance_3035(
+	public void init_SensorInstance_3045(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.SensorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -145,7 +145,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_BusInstance_3036(
+	public void init_BusInstance_3046(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
@@ -163,7 +163,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_NetworkBridgeInstance_3038(
+	public void init_NetworkBridgeInstance_3047(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkBridgeInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory

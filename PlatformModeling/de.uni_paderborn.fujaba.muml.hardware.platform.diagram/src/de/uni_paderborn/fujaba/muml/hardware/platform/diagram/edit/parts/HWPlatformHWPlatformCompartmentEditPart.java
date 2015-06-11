@@ -27,7 +27,7 @@ public class HWPlatformHWPlatformCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7002;
+	public static final int VISUAL_ID = 7003;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -126,16 +126,16 @@ public class HWPlatformHWPlatformCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.Bus_3023) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.Bus_3025) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkBridge_3024) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkBridge_3026) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPlatformPart_3016) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPlatformPart_3027) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.ResourcePart_3019) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.ResourcePart_3030) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -147,7 +147,7 @@ public class HWPlatformHWPlatformCompartmentEditPart extends
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4031))
+								.equals(de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032))
 							return super.getTargetEditPart(request);
 					}
 				}

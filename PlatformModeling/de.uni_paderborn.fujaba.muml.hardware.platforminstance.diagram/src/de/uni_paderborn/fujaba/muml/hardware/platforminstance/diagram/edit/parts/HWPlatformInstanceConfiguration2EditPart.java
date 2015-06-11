@@ -26,12 +26,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart {
+public class HWPlatformInstanceConfiguration2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3032;
+	public static final int VISUAL_ID = 3039;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -69,7 +69,7 @@ public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart 
 	/**
 	 * @generated
 	 */
-	public HWPlatformInstanceConfiguration3EditPart(View view) {
+	public HWPlatformInstanceConfiguration2EditPart(View view) {
 		super(view);
 	}
 
@@ -80,7 +80,7 @@ public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart 
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfiguration3ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfiguration2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -139,11 +139,11 @@ public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart 
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureHWPInstanceConfigurationContentsCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart) childEditPart)
+			pane.add(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -154,10 +154,10 @@ public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart 
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureHWPInstanceConfigurationContentsCompartmentFigure();
-			pane.remove(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart) childEditPart)
+			pane.remove(((de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -188,7 +188,7 @@ public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart 
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart) {
 			return getPrimaryShape()
 					.getFigureHWPInstanceConfigurationContentsCompartmentFigure();
 		}
@@ -199,7 +199,7 @@ public class HWPlatformInstanceConfiguration3EditPart extends ShapeNodeEditPart 
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(600, 600);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));

@@ -35,7 +35,7 @@ public class HWPortPartEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3022;
+	public static final int VISUAL_ID = 3028;
 
 	/**
 	 * MUML FIX, see code comments.

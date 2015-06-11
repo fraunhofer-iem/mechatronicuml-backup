@@ -123,7 +123,7 @@ public class HWPlatformHWPlatformCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformHWPlatformCompartment_7002SemanticChildren(viewObject);
+				.getHWPlatformHWPlatformCompartment_7003SemanticChildren(viewObject);
 
 	}
 

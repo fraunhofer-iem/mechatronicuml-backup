@@ -320,19 +320,19 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateNetworkConnectorInstance_4011(
+		public boolean canCreateNetworkConnectorInstance_4012(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,
 				View sourceView, View targetView) {
-			return canExistNetworkConnectorInstance_4011(container, null,
+			return canExistNetworkConnectorInstance_4012(container, null,
 					source, target, sourceView, targetView);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistNetworkConnectorInstance_4011(
+		public boolean canExistNetworkConnectorInstance_4012(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
@@ -344,7 +344,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorNetworkConnectorInstance_4011(
+		public java.lang.String getErrorNetworkConnectorInstance_4012(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target,

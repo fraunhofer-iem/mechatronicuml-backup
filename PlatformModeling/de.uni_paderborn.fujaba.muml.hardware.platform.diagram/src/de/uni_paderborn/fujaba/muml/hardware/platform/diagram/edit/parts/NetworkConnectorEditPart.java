@@ -27,7 +27,7 @@ public class NetworkConnectorEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4031;
+	public static final int VISUAL_ID = 4032;
 
 	/**
 	 * MUML FIX, see code comments.

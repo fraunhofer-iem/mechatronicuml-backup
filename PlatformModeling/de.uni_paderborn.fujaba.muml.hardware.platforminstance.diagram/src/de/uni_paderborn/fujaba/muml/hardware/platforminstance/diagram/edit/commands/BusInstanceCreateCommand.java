@@ -57,7 +57,7 @@ public class BusInstanceCreateCommand extends EditElementCommand {
 		owner.getNetworkingHardwareInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
-				.getInstance().init_BusInstance_3036(newElement);
+				.getInstance().init_BusInstance_3046(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -29,13 +29,13 @@ public class HardwareDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.VISUAL_ID:
 			return getHWPlatform_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
-			return getHWPlatform_2008SemanticChildren(view);
+			return getHWPlatform_2009SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
-			return getHWPlatformPart_3016SemanticChildren(view);
+			return getHWPlatformPart_3027SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
-			return getResourcePart_3019SemanticChildren(view);
+			return getResourcePart_3030SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformHWPlatformCompartmentEditPart.VISUAL_ID:
-			return getHWPlatformHWPlatformCompartment_7002SemanticChildren(view);
+			return getHWPlatformHWPlatformCompartment_7003SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -65,7 +65,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getHWPlatform_2008SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getHWPlatform_2009SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -92,7 +92,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getHWPlatformPart_3016SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getHWPlatformPart_3027SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -119,7 +119,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getResourcePart_3019SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getResourcePart_3030SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -146,7 +146,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getHWPlatformHWPlatformCompartment_7002SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor> getHWPlatformHWPlatformCompartment_7003SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -213,21 +213,21 @@ public class HardwareDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformEditPart.VISUAL_ID:
 			return getHWPlatform_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
-			return getHWPlatform_2008ContainedLinks(view);
+			return getHWPlatform_2009ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return getBus_3023ContainedLinks(view);
+			return getBus_3025ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
-			return getNetworkBridge_3024ContainedLinks(view);
+			return getNetworkBridge_3026ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
-			return getHWPlatformPart_3016ContainedLinks(view);
+			return getHWPlatformPart_3027ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
-			return getHWPortPart_3022ContainedLinks(view);
+			return getHWPortPart_3028ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
-			return getDelegationHWPort_3018ContainedLinks(view);
+			return getDelegationHWPort_3029ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
-			return getResourcePart_3019ContainedLinks(view);
+			return getResourcePart_3030ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
-			return getNetworkConnector_4031ContainedLinks(view);
+			return getNetworkConnector_4032ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -240,21 +240,21 @@ public class HardwareDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
-			return getHWPlatform_2008IncomingLinks(view);
+			return getHWPlatform_2009IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return getBus_3023IncomingLinks(view);
+			return getBus_3025IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
-			return getNetworkBridge_3024IncomingLinks(view);
+			return getNetworkBridge_3026IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
-			return getHWPlatformPart_3016IncomingLinks(view);
+			return getHWPlatformPart_3027IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
-			return getHWPortPart_3022IncomingLinks(view);
+			return getHWPortPart_3028IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
-			return getDelegationHWPort_3018IncomingLinks(view);
+			return getDelegationHWPort_3029IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
-			return getResourcePart_3019IncomingLinks(view);
+			return getResourcePart_3030IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
-			return getNetworkConnector_4031IncomingLinks(view);
+			return getNetworkConnector_4032IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -267,21 +267,21 @@ public class HardwareDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID:
-			return getHWPlatform_2008OutgoingLinks(view);
+			return getHWPlatform_2009OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.BusEditPart.VISUAL_ID:
-			return getBus_3023OutgoingLinks(view);
+			return getBus_3025OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkBridgeEditPart.VISUAL_ID:
-			return getNetworkBridge_3024OutgoingLinks(view);
+			return getNetworkBridge_3026OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatformPartEditPart.VISUAL_ID:
-			return getHWPlatformPart_3016OutgoingLinks(view);
+			return getHWPlatformPart_3027OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
-			return getHWPortPart_3022OutgoingLinks(view);
+			return getHWPortPart_3028OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.DelegationHWPortEditPart.VISUAL_ID:
-			return getDelegationHWPort_3018OutgoingLinks(view);
+			return getDelegationHWPort_3029OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.ResourcePartEditPart.VISUAL_ID:
-			return getResourcePart_3019OutgoingLinks(view);
+			return getResourcePart_3030OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID:
-			return getNetworkConnector_4031OutgoingLinks(view);
+			return getNetworkConnector_4032OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -294,26 +294,26 @@ public class HardwareDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getContainedTypeModelFacetLinks_NetworkConnector_4031(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_NetworkConnector_4032(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatform_2008ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatform_2009ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getContainedTypeModelFacetLinks_NetworkConnector_4031(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_NetworkConnector_4032(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getBus_3023ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getBus_3025ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -321,7 +321,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkBridge_3024ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkBridge_3026ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -329,7 +329,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatformPart_3016ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatformPart_3027ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -337,7 +337,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPortPart_3022ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPortPart_3028ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -345,7 +345,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getDelegationHWPort_3018ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getDelegationHWPort_3029ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -353,7 +353,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getResourcePart_3019ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getResourcePart_3030ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -361,7 +361,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkConnector_4031ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkConnector_4032ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -369,7 +369,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatform_2008IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatform_2009IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -377,14 +377,14 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getBus_3023IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getBus_3025IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4031(
+		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4032(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -392,14 +392,14 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkBridge_3024IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkBridge_3026IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4031(
+		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4032(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -407,7 +407,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatformPart_3016IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatformPart_3027IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -415,14 +415,14 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPortPart_3022IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPortPart_3028IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4031(
+		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4032(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -430,14 +430,14 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getDelegationHWPort_3018IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getDelegationHWPort_3029IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4031(
+		result.addAll(getIncomingTypeModelFacetLinks_NetworkConnector_4032(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -445,7 +445,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getResourcePart_3019IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getResourcePart_3030IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -453,7 +453,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkConnector_4031IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkConnector_4032IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -461,7 +461,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatform_2008OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatform_2009OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -469,31 +469,31 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getBus_3023OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getBus_3025OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.Bus) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4031(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4032(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkBridge_3024OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkBridge_3026OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkBridge) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4031(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4032(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatformPart_3016OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPlatformPart_3027OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -501,31 +501,31 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPortPart_3022OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getHWPortPart_3028OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPortPart) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4031(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4032(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getDelegationHWPort_3018OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getDelegationHWPort_3029OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4031(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_NetworkConnector_4032(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getResourcePart_3019OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getResourcePart_3030OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -533,7 +533,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkConnector_4031OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getNetworkConnector_4032OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -541,7 +541,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getContainedTypeModelFacetLinks_NetworkConnector_4031(
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getContainedTypeModelFacetLinks_NetworkConnector_4032(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
 		for (Iterator<?> links = container.getNetworkConnectors().iterator(); links
@@ -572,7 +572,7 @@ public class HardwareDiagramUpdater {
 					src,
 					dst,
 					link,
-					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4031,
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032,
 					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID));
 		}
 		return result;
@@ -581,7 +581,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getIncomingTypeModelFacetLinks_NetworkConnector_4031(
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getIncomingTypeModelFacetLinks_NetworkConnector_4032(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
@@ -609,7 +609,7 @@ public class HardwareDiagramUpdater {
 					src,
 					target,
 					link,
-					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4031,
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032,
 					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID));
 		}
 		return result;
@@ -618,7 +618,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getOutgoingTypeModelFacetLinks_NetworkConnector_4031(
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getOutgoingTypeModelFacetLinks_NetworkConnector_4032(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container = null;
 		// Find container element for the link.
@@ -665,7 +665,7 @@ public class HardwareDiagramUpdater {
 					src,
 					dst,
 					link,
-					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4031,
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.NetworkConnector_4032,
 					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.NetworkConnectorEditPart.VISUAL_ID));
 		}
 		return result;

@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPlatform_2008(
+	public void init_HWPlatform_2009(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
@@ -32,7 +32,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPlatformPart_3016(
+	public void init_HWPlatformPart_3027(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatformPart instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
@@ -84,7 +84,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DelegationHWPort_3018(
+	public void init_DelegationHWPort_3029(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatform.DelegationHWPort instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.expressions.HardwareOCLFactory
@@ -103,7 +103,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ResourcePart_3019(
+	public void init_ResourcePart_3030(
 			de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE

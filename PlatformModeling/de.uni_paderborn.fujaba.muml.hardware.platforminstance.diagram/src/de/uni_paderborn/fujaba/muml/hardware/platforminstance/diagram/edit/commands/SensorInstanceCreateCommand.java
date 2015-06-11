@@ -57,7 +57,7 @@ public class SensorInstanceCreateCommand extends EditElementCommand {
 		owner.getResources().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
-				.getInstance().init_SensorInstance_3035(newElement);
+				.getInstance().init_SensorInstance_3045(newElement);
 
 		doConfigure(newElement, monitor, info);
 

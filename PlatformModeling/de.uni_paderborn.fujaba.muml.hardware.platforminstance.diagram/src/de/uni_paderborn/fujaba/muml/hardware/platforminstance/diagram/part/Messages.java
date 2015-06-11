@@ -308,12 +308,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart_title;
+	public static String HWPlatformInstanceHWPlatformCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HWPlatformInstanceHWPlatformCompartmentEditPart_title;
+	public static String HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -328,52 +328,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationHWPortInstance_3028_incominglinks;
+	public static String NavigatorGroupName_DelegationHWPortInstance_3041_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationHWPortInstance_3028_outgoinglinks;
+	public static String NavigatorGroupName_DelegationHWPortInstance_3041_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HWPortInstance_3030_incominglinks;
+	public static String NavigatorGroupName_HWPortInstance_3043_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HWPortInstance_3030_outgoinglinks;
+	public static String NavigatorGroupName_HWPortInstance_3043_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BusInstance_3036_incominglinks;
+	public static String NavigatorGroupName_BusInstance_3046_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BusInstance_3036_outgoinglinks;
+	public static String NavigatorGroupName_BusInstance_3046_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkBridgeInstance_3038_incominglinks;
+	public static String NavigatorGroupName_NetworkBridgeInstance_3047_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkBridgeInstance_3038_outgoinglinks;
+	public static String NavigatorGroupName_NetworkBridgeInstance_3047_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkConnectorInstance_4011_target;
+	public static String NavigatorGroupName_NetworkConnectorInstance_4012_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkConnectorInstance_4011_source;
+	public static String NavigatorGroupName_NetworkConnectorInstance_4012_source;
 
 	/**
 	 * @generated

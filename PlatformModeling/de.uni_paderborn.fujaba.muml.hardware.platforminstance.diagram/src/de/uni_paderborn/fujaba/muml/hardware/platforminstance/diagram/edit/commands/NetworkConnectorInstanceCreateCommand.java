@@ -81,12 +81,12 @@ public class NetworkConnectorInstanceCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateNetworkConnectorInstance_4011(
+				.getLinkConstraints().canCreateNetworkConnectorInstance_4012(
 						getContainer(), getSource(), getTarget(), sourceView,
 						targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorNetworkConnectorInstance_4011(getContainer(),
+					.getErrorNetworkConnectorInstance_4012(getContainer(),
 							getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,

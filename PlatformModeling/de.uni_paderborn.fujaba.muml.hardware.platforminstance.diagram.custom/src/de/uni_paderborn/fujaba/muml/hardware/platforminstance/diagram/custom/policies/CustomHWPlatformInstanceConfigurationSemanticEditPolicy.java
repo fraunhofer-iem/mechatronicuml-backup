@@ -7,14 +7,14 @@ import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.polic
 
 public class CustomHWPlatformInstanceConfigurationSemanticEditPolicy extends HWPlatformInstanceConfigurationItemSemanticEditPolicy{
 	
-	@Override
-	protected Command getCreateCommand(CreateElementRequest req) {
-	if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2004 == req
-				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.commands.HWPlatformInstanceCreateCommand(
-					req));
-		} 
-		return super.getCreateCommand(req);
-	}
+//	@Override
+//	protected Command getCreateCommand(CreateElementRequest req) {
+////	if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_2004 == req
+////				.getElementType()) {
+////			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.commands.HWPlatformInstanceCreateCommand(
+////					req));
+////		} 
+////		return super.getCreateCommand(req);
+//	}
 
 }

@@ -102,7 +102,7 @@ public class HWPlatformPartCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformPart_3016SemanticChildren(viewObject);
+				.getHWPlatformPart_3027SemanticChildren(viewObject);
 
 	}
 

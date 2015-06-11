@@ -27,7 +27,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2CanonicalEditPolicy
+public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
@@ -36,10 +36,10 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
-	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2CanonicalEditPolicy() {
+	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy() {
 	}
 
-	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2CanonicalEditPolicy(
+	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
@@ -106,7 +106,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] {
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID,
@@ -128,7 +128,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7008SemanticChildren(viewObject);
+				.getHWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment_7013SemanticChildren(viewObject);
 
 	}
 
@@ -148,7 +148,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 		int visualID = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view);
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:

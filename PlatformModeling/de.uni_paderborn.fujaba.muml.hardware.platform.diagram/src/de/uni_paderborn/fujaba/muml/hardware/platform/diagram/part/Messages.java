@@ -328,52 +328,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationHWPort_3018_incominglinks;
+	public static String NavigatorGroupName_Bus_3025_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationHWPort_3018_outgoinglinks;
+	public static String NavigatorGroupName_Bus_3025_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HWPortPart_3022_incominglinks;
+	public static String NavigatorGroupName_NetworkBridge_3026_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HWPortPart_3022_outgoinglinks;
+	public static String NavigatorGroupName_NetworkBridge_3026_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Bus_3023_incominglinks;
+	public static String NavigatorGroupName_HWPortPart_3028_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Bus_3023_outgoinglinks;
+	public static String NavigatorGroupName_HWPortPart_3028_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkBridge_3024_incominglinks;
+	public static String NavigatorGroupName_DelegationHWPort_3029_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkBridge_3024_outgoinglinks;
+	public static String NavigatorGroupName_DelegationHWPort_3029_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkConnector_4031_target;
+	public static String NavigatorGroupName_NetworkConnector_4032_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_NetworkConnector_4031_source;
+	public static String NavigatorGroupName_NetworkConnector_4032_source;
 
 	/**
 	 * @generated

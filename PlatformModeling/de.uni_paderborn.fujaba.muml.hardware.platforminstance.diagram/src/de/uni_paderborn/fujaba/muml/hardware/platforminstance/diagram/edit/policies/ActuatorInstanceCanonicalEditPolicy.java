@@ -102,7 +102,7 @@ public class ActuatorInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getActuatorInstance_3034SemanticChildren(viewObject);
+				.getActuatorInstance_3044SemanticChildren(viewObject);
 
 	}
 

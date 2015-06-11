@@ -35,7 +35,7 @@ public class ResourcePartEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3019;
+	public static final int VISUAL_ID = 3030;
 
 	/**
 	 * MUML FIX, see code comments.

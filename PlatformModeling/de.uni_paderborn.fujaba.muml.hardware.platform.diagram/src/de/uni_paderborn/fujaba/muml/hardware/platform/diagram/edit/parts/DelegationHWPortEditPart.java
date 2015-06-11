@@ -36,7 +36,7 @@ public class DelegationHWPortEditPart extends AbstractBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3018;
+	public static final int VISUAL_ID = 3029;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -91,7 +91,7 @@ public class DelegationHWPortEditPart extends AbstractBorderItemEditPart {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWDelegationPortEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

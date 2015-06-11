@@ -57,7 +57,7 @@ public class ResourcePartCreateCommand extends EditElementCommand {
 		owner.getEmbeddedPlatformParts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.ElementInitializers
-				.getInstance().init_ResourcePart_3019(newElement);
+				.getInstance().init_ResourcePart_3030(newElement);
 
 		doConfigure(newElement, monitor, info);
 

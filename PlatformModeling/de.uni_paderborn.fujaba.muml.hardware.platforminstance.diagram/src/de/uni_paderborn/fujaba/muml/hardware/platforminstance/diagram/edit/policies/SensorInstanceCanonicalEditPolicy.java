@@ -102,7 +102,7 @@ public class SensorInstanceCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramUpdater
-				.getSensorInstance_3035SemanticChildren(viewObject);
+				.getSensorInstance_3045SemanticChildren(viewObject);
 
 	}
 

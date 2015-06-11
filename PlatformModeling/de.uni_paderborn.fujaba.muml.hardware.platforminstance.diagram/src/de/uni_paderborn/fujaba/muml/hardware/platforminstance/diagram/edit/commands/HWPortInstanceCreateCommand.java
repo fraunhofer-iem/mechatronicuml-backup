@@ -57,7 +57,7 @@ public class HWPortInstanceCreateCommand extends EditElementCommand {
 		owner.getHwports().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
-				.getInstance().init_HWPortInstance_3030(newElement);
+				.getInstance().init_HWPortInstance_3043(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -8,9 +8,7 @@ import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.refactor.AbstractExtractSubdiagramRefactoring;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
-import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart;
-import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin;
 

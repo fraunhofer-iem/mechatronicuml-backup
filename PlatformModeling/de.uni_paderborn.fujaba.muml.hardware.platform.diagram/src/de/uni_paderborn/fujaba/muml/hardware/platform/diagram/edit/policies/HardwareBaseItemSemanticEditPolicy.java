@@ -325,19 +325,19 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateNetworkConnector_4031(
+		public boolean canCreateNetworkConnector_4032(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
-			return canExistNetworkConnector_4031(container, null, source,
+			return canExistNetworkConnector_4032(container, null, source,
 					target, sourceView, targetView);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistNetworkConnector_4031(
+		public boolean canExistNetworkConnector_4032(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.NetworkConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
@@ -349,7 +349,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorNetworkConnector_4031(
+		public java.lang.String getErrorNetworkConnector_4032(
 				de.uni_paderborn.fujaba.muml.hardware.hwplatform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,

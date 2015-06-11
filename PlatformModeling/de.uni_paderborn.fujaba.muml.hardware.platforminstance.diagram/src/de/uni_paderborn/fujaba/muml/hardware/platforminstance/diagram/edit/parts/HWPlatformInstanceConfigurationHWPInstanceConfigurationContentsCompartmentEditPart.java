@@ -22,13 +22,13 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 /**
  * @generated
  */
-public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart
+public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart
 		extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7008;
+	public static final int VISUAL_ID = 7013;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -56,7 +56,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	/**
 	 * @generated
 	 */
-	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart(
+	public HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart(
 			View view) {
 		super(view);
 	}
@@ -65,7 +65,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2EditPart_title;
+		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentEditPart_title;
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentItemSemanticEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
@@ -106,7 +106,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartment2CanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -128,22 +128,22 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3031) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPlatformInstance_3040) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3033) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.StructuredResourceInstance_3042) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3034) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3044) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3035) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3045) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3036) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusInstance_3046) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3038) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkBridgeInstance_3047) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -155,7 +155,7 @@ public class HWPlatformInstanceConfigurationHWPInstanceConfigurationContentsComp
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4011))
+								.equals(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.NetworkConnectorInstance_4012))
 							return super.getTargetEditPart(request);
 					}
 				}

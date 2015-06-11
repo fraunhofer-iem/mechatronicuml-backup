@@ -81,12 +81,12 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistNetworkConnectorInstance_4011(
+				.getLinkConstraints().canExistNetworkConnectorInstance_4012(
 						container, getLink(), getNewSource(), target,
 						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorNetworkConnectorInstance_4011(container,
+					.getErrorNetworkConnectorInstance_4012(container,
 							getNewSource(), target, sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
@@ -120,12 +120,12 @@ public class NetworkConnectorInstanceReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistNetworkConnectorInstance_4011(
+				.getLinkConstraints().canExistNetworkConnectorInstance_4012(
 						container, getLink(), source, getNewTarget(),
 						sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorNetworkConnectorInstance_4011(container, source,
+					.getErrorNetworkConnectorInstance_4012(container, source,
 							getNewTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);

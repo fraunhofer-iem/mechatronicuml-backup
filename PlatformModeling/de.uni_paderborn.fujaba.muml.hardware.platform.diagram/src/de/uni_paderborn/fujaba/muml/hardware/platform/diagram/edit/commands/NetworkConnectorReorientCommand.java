@@ -80,11 +80,11 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistNetworkConnector_4031(container,
+				.getLinkConstraints().canExistNetworkConnector_4032(container,
 						getLink(), getNewSource(), target, sourceView,
 						targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorNetworkConnector_4031(
+					.getLinkConstraints().getErrorNetworkConnector_4032(
 							container, getNewSource(), target, sourceView,
 							targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
@@ -119,11 +119,11 @@ public class NetworkConnectorReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistNetworkConnector_4031(container,
+				.getLinkConstraints().canExistNetworkConnector_4032(container,
 						getLink(), source, getNewTarget(), sourceView,
 						targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorNetworkConnector_4031(
+					.getLinkConstraints().getErrorNetworkConnector_4032(
 							container, source, getNewTarget(), sourceView,
 							targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
