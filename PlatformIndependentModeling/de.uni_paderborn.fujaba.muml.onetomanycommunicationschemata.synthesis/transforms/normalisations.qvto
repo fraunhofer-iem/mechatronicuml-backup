@@ -15,8 +15,9 @@ modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
 
 helper normalizeRTSC(inout rtsc : RealtimeStatechart){	
-	// normalize transitions that use synchronizations and define schemata
-	rtsc.transitions->select(t|t.usesTwoSchemata() and not t.synchronization.oclIsUndefined())->forEach(t){
+	// normalize transitions that use two synchronization schemata
+	var b : Sequence(Boolean) := rtsc.transitions.usesTwoSchemata();
+	rtsc.transitions->select(t|t.usesTwoSchemata())->forEach(t){
 		rtsc.states += t.map Transition2NormalizationIntermediateState();
 		rtsc.transitions += t.map Transition2NormalizationTransition1();
 		rtsc.transitions += t.map Transition2NormalizationTransition2();
@@ -37,7 +38,7 @@ mapping Transition::Transition2NormalizationTransition1(): Transition{
 	guard := self.guard;
 	clockConstraints := self.clockConstraints;
 	synchronization := self.synchronization;
-	if(self.relativeDeadline.oclIsUndefined()){
+	if(not self.relativeDeadline.oclIsUndefined()){
 		result.relativeDeadline:= self.relativeDeadline.deepclone().oclAsType(RelativeDeadline); 
 	};	
 	urgent := self.urgent;
@@ -51,7 +52,7 @@ mapping Transition::Transition2NormalizationTransition2(): Transition{
 	target := self.target;
 	clockResets := self.clockResets;
 	action := self.action;	
-	if(self.relativeDeadline.oclIsUndefined()){
+	if(not self.relativeDeadline.oclIsUndefined()){
 		result.relativeDeadline:= self.relativeDeadline.deepclone().oclAsType(RelativeDeadline); 
 		var lit : LiteralExpression := new LiteralExpression();
 		lit.value := "0";

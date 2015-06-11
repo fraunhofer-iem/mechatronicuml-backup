@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r14616)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionlanguage="http://www.fujaba.de/muml/actionlanguage/0.4.0" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0" xmlns:one_to_n_schemata="http://www.fujaba.de/muml/one_to_n_schemata/0.4.0" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0" xmlns:sdcec="http://www.storydriven.org/core/expressions/common/0.3.1" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_wNe9oBA6EeW1iK9uryto1Q">
+  <categories xmi:id="_wNe9oRA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfksBA6EeW1iK9uryto1Q" name="void"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfksRA6EeW1iK9uryto1Q" name="boolean" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfkshA6EeW1iK9uryto1Q" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfksxA6EeW1iK9uryto1Q" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfktBA6EeW1iK9uryto1Q" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfktRA6EeW1iK9uryto1Q" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfkthA6EeW1iK9uryto1Q" name="double" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfktxA6EeW1iK9uryto1Q" name="uint8" primitiveType="UINT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfkuBA6EeW1iK9uryto1Q" name="uint16" primitiveType="UINT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfkuRA6EeW1iK9uryto1Q" name="uint32" primitiveType="UINT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_wNfkuhA6EeW1iK9uryto1Q" name="uint64" primitiveType="UINT64"/>
+  </categories>
+  <categories xmi:id="_wNfkuxA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_wNfkvBA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
+  <categories xmi:id="_wNfkvRA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol">
+    <modelElements xsi:type="protocol:CoordinationProtocol" xmi:id="_yTx7wBA6EeW1iK9uryto1Q" name="C1">
+      <roles xmi:id="_yT4CYBA6EeW1iK9uryto1Q" connectors="_yUXKkBA6EeW1iK9uryto1Q" name="role1">
+        <cardinality xmi:id="_yUUHQBA6EeW1iK9uryto1Q">
+          <lowerBound xmi:id="_yUVVYBA6EeW1iK9uryto1Q"/>
+          <upperBound xmi:id="_yUV8cBA6EeW1iK9uryto1Q"/>
+        </cardinality>
+      </roles>
+      <roles xmi:id="_yUWjgBA6EeW1iK9uryto1Q" connectors="_yUXKkBA6EeW1iK9uryto1Q">
+        <cardinality xmi:id="_yUWjgRA6EeW1iK9uryto1Q">
+          <lowerBound xmi:id="_yUWjghA6EeW1iK9uryto1Q"/>
+          <upperBound xmi:id="_yUWjgxA6EeW1iK9uryto1Q"/>
+        </cardinality>
+      </roles>
+      <roleConnector xmi:id="_yUXKkBA6EeW1iK9uryto1Q" connectorEndpoints="_yT4CYBA6EeW1iK9uryto1Q _yUWjgBA6EeW1iK9uryto1Q">
+        <connectorQualityOfServiceAssumptions xmi:id="_yUaN4BA6EeW1iK9uryto1Q" comment="">
+          <minMessageDelay xmi:id="_yUlNAhA6EeW1iK9uryto1Q" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_yUlNAxA6EeW1iK9uryto1Q" value="0"/>
+          </minMessageDelay>
+          <maxMessageDelay xmi:id="_yUlNABA6EeW1iK9uryto1Q" unit="MILLISECONDS">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_yUlNARA6EeW1iK9uryto1Q" value="0"/>
+          </maxMessageDelay>
+        </connectorQualityOfServiceAssumptions>
+      </roleConnector>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_wNfkvhA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
+    <modelElements xsi:type="msgtype:MessageTypeRepository" xmi:id="_Io3HYBA7EeW1iK9uryto1Q" name="M1">
+      <messageTypes xmi:id="_JKgb4BA7EeW1iK9uryto1Q" name="M1"/>
+    </modelElements>
+  </categories>
+  <categories xmi:id="_wNfkvxA6EeW1iK9uryto1Q" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_0cG6MBA6EeW1iK9uryto1Q" name="statechartRole1">
+      <variables xmi:id="_bxC8YBA_EeW1iK9uryto1Q" name="v1" dataType="_wNfktRA6EeW1iK9uryto1Q"/>
+      <transitions xmi:id="_6KfZUBA6EeW1iK9uryto1Q" priority="1" target="_2i5nkBA6EeW1iK9uryto1Q" source="_0cG6MRA6EeW1iK9uryto1Q">
+        <relativeDeadline xmi:id="_8Oe4EBA_EeW1iK9uryto1Q">
+          <upperBound xmi:id="_8eXHIBA_EeW1iK9uryto1Q">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_9LsHMBA_EeW1iK9uryto1Q" value="100"/>
+          </upperBound>
+          <lowerBound xmi:id="_9NbzoBA_EeW1iK9uryto1Q">
+            <value xsi:type="sdcec:LiteralExpression" xmi:id="_97OGsBA_EeW1iK9uryto1Q" value="20"/>
+          </lowerBound>
+        </relativeDeadline>
+        <guard xsi:type="sdcec:LogicalExpression" xmi:id="_i8ZIwBA_EeW1iK9uryto1Q">
+          <leftExpression xsi:type="sdcec:ComparisonExpression" xmi:id="_i8ZIwRA_EeW1iK9uryto1Q" operator="GREATER">
+            <leftExpression xsi:type="actionlanguage:TypedNamedElementExpression" xmi:id="_i8ZIwhA_EeW1iK9uryto1Q" typedNamedElement="_bxC8YBA_EeW1iK9uryto1Q"/>
+            <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_i8ZIwxA_EeW1iK9uryto1Q" value="0"/>
+          </leftExpression>
+          <rightExpression xsi:type="sdcec:LiteralExpression" xmi:id="_i8ZIxBA_EeW1iK9uryto1Q" value="false"/>
+        </guard>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_LpeYsBA7EeW1iK9uryto1Q">
+          <message xmi:id="_L3MEkBA7EeW1iK9uryto1Q" instanceOf="_JKgb4BA7EeW1iK9uryto1Q"/>
+          <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:Multicast" xmi:id="_OfzsoBA7EeW1iK9uryto1Q"/>
+        </events>
+        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" xmi:id="_Pfyi8BA7EeW1iK9uryto1Q" kind="TRIGGER">
+          <message xmi:id="_Qr-CMBA7EeW1iK9uryto1Q" instanceOf="_JKgb4BA7EeW1iK9uryto1Q"/>
+          <oneToManyCommunicationSchema xsi:type="one_to_n_schemata:SingleReceive" xmi:id="_Xm07gBA7EeW1iK9uryto1Q"/>
+        </events>
+        <action xmi:id="_1fyygBA_EeW1iK9uryto1Q" name="v1 := 100;">
+          <expressions xsi:type="actionlanguage:Block" xmi:id="_2ulg4BA_EeW1iK9uryto1Q">
+            <expressions xsi:type="actionlanguage:Assignment" xmi:id="_2ulg4RA_EeW1iK9uryto1Q" assignOperator=":=">
+              <rhs_assignExpression xsi:type="sdcec:LiteralExpression" xmi:id="_2ulg4hA_EeW1iK9uryto1Q" value="100"/>
+              <lhs_typedNamedElementExpression xmi:id="_2ulg4xA_EeW1iK9uryto1Q" typedNamedElement="_bxC8YBA_EeW1iK9uryto1Q"/>
+            </expressions>
+          </expressions>
+        </action>
+      </transitions>
+      <states xmi:id="_0cG6MRA6EeW1iK9uryto1Q" name="init" outgoingTransitions="_6KfZUBA6EeW1iK9uryto1Q" initial="true"/>
+      <states xmi:id="_2i5nkBA6EeW1iK9uryto1Q" name="S1" incomingTransitions="_6KfZUBA6EeW1iK9uryto1Q"/>
+    </modelElements>
+  </categories>
+</modelinstance:RootNode>
