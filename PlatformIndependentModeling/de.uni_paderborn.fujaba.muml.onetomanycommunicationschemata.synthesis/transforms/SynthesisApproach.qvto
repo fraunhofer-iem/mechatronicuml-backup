@@ -4,6 +4,7 @@ import schemata.Unicast;
 import schemata.MultiReceive;
 import schemata.UniReceive;
 import schemata.IterateSchema;
+import normalisations;
 
 modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
@@ -18,8 +19,7 @@ modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
-// Todo: the TriggerMessage2TriggerWithoutConsume should be replaced.
-		
+--------------------------------------------- 		
 transformation SynthesisApproach(inout input:rtsc);
 
 property currentRealtimeStatechart : RealtimeStatechart;
@@ -27,15 +27,21 @@ property currentRealtimeStatechart : RealtimeStatechart;
 main() {	
 
  //debug:
-	currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
+	//currentRealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
 // not debug:
-	// currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
+	currentRealtimeStatechart := input.rootObjects()[RealtimeStatechart]->any(true);	
 	
+	// step 1: normalize transitions that define two schemata:
+	normalizeRTSC(currentRealtimeStatechart);
+	// step 2: normalize schemata that can be expressed by other schemata:
 	var iterateTransitions : Set(Transition) :=currentRealtimeStatechart.transitions->select(t : Transition | t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Iterate)) ;
 	iterateTransitions.disassembleIterateSchema();
+	
+	// step 3: disassemble schematas
 	currentRealtimeStatechart.transitions := currentRealtimeStatechart.transitions-(iterateTransitions);
 	currentRealtimeStatechart.map RTSC2RTSC();
 }
+
 
 query getRealtimeStatechartCategory(theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
@@ -65,8 +71,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		assert fatal (not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and
 		 t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()
 		) with log ("Unicast must define a condition!");
-		
-		
+			
 		
 		
 		name := self.name + "Impl";
