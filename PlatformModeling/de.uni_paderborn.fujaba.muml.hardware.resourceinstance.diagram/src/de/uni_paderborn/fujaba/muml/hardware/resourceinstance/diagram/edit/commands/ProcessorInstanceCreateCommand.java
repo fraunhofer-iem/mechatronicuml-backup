@@ -57,7 +57,7 @@ public class ProcessorInstanceCreateCommand extends EditElementCommand {
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_ProcessorInstance_3011(newElement);
+				.getInstance().init_ProcessorInstance_3020(newElement);
 
 		doConfigure(newElement, monitor, info);
 

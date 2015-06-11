@@ -5,13 +5,13 @@
     <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ResourceInstanceRepositoryEditHelper"/>
     <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ResourceInstanceRepository"/>
-    <childNodes xsi:type="gmfgen:GenChildSideAffixedNode" visualID="3016" editPartClassName="HWPortEditPart" itemSemanticEditPolicyClassName="HWPortItemSemanticEditPolicy" canonicalEditPolicyClassName="HWPortCanonicalEditPolicy" graphicalNodeEditPolicyClassName="HWPortGraphicalNodeEditPolicy" createCommandClassName="HWPortCreateCommand" containers="//@diagram/@topLevelNodes.0 //@diagram/@topLevelNodes.1 //@diagram/@topLevelNodes.2" preferredSideName="EAST">
+    <childNodes xsi:type="gmfgen:GenChildSideAffixedNode" visualID="3017" editPartClassName="HWPortEditPart" itemSemanticEditPolicyClassName="HWPortItemSemanticEditPolicy" canonicalEditPolicyClassName="HWPortCanonicalEditPolicy" graphicalNodeEditPolicyClassName="HWPortGraphicalNodeEditPolicy" createCommandClassName="HWPortCreateCommand" containers="//@diagram/@topLevelNodes.0 //@diagram/@topLevelNodes.1 //@diagram/@topLevelNodes.2" preferredSideName="EAST">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="HWPortEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure">
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="24" height="24"/>
       </viewmap>
-      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.ResourceInstanceHWPortEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/HWPort"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ResourceInstance/hwports"/>
@@ -22,13 +22,13 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5070" editPartClassName="HWPortLabelEditPart" itemSemanticEditPolicyClassName="HWPortLabelItemSemanticEditPolicy">
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5071" editPartClassName="HWPortLabelEditPart" itemSemanticEditPolicyClassName="HWPortLabelItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:InnerClassViewmap" className="HWPortLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HWPortLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HWPortLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&lt;...>&quot;);this.setTextWrap(true);&#xA;this.setTextUnderline(true);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.0"/>
       </labels>
     </childNodes>
-    <childNodes visualID="3009" editPartClassName="CacheInstanceEditPart" itemSemanticEditPolicyClassName="CacheInstanceItemSemanticEditPolicy" notationViewFactoryClassName="CacheInstanceViewFactory" canonicalEditPolicyClassName="CacheInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="CacheInstanceGraphicalNodeEditPolicy" createCommandClassName="CacheInstanceCreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3018" editPartClassName="CacheInstanceEditPart" itemSemanticEditPolicyClassName="CacheInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="CacheInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="CacheInstanceGraphicalNodeEditPolicy" createCommandClassName="CacheInstanceCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CacheInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
@@ -45,30 +45,30 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5042" editPartClassName="CacheInstanceNameEditPart" itemSemanticEditPolicyClassName="CacheInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="CacheInstanceNameViewFactory">
+      <labels visualID="5078" editPartClassName="CacheInstanceNameEditPart" itemSemanticEditPolicyClassName="CacheInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
           <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5043" editPartClassName="WrappingLabel7EditPart" itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy" notationViewFactoryClassName="CacheInstanceLabelViewFactory">
+      <labels visualID="5079" editPartClassName="WrappingLabel7EditPart" itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.6"/>
       </labels>
-      <labels visualID="5044" editPartClassName="WrappingLabel8EditPart" itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy" notationViewFactoryClassName="CacheInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5080" editPartClassName="WrappingLabel8EditPart" itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.7"/>
       </labels>
-      <labels visualID="5045" editPartClassName="WrappingLabel9EditPart" itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy" notationViewFactoryClassName="CacheInstanceLabelViewFactory">
+      <labels visualID="5081" editPartClassName="WrappingLabel9EditPart" itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo1" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.8"/>
       </labels>
     </childNodes>
-    <childNodes visualID="3010" editPartClassName="ProgrammableLogicDeviceInstanceEditPart" itemSemanticEditPolicyClassName="ProgrammableLogicDeviceInstanceItemSemanticEditPolicy" notationViewFactoryClassName="ProgrammableLogicDeviceInstanceViewFactory" canonicalEditPolicyClassName="ProgrammableLogicDeviceInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ProgrammableLogicDeviceInstanceGraphicalNodeEditPolicy" createCommandClassName="ProgrammableLogicDeviceInstanceCreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3019" editPartClassName="ProgrammableLogicDeviceInstanceEditPart" itemSemanticEditPolicyClassName="ProgrammableLogicDeviceInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="ProgrammableLogicDeviceInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ProgrammableLogicDeviceInstanceGraphicalNodeEditPolicy" createCommandClassName="ProgrammableLogicDeviceInstanceCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ProgrammableLogicDeviceInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
@@ -85,30 +85,30 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5046" editPartClassName="ProgrammableLogicDeviceInstanceNameEditPart" itemSemanticEditPolicyClassName="ProgrammableLogicDeviceInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="ProgrammableLogicDeviceInstanceNameViewFactory">
+      <labels visualID="5082" editPartClassName="ProgrammableLogicDeviceInstanceNameEditPart" itemSemanticEditPolicyClassName="ProgrammableLogicDeviceInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
           <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5047" editPartClassName="WrappingLabel10EditPart" itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy" notationViewFactoryClassName="ProgrammableLogicDeviceInstanceLabelViewFactory">
+      <labels visualID="5083" editPartClassName="WrappingLabel10EditPart" itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.9"/>
       </labels>
-      <labels visualID="5048" editPartClassName="WrappingLabel11EditPart" itemSemanticEditPolicyClassName="WrappingLabel11ItemSemanticEditPolicy" notationViewFactoryClassName="ProgrammableLogicDeviceInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5084" editPartClassName="WrappingLabel11EditPart" itemSemanticEditPolicyClassName="WrappingLabel11ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.10"/>
       </labels>
-      <labels visualID="5049" editPartClassName="WrappingLabel12EditPart" itemSemanticEditPolicyClassName="WrappingLabel12ItemSemanticEditPolicy" notationViewFactoryClassName="ProgrammableLogicDeviceInstanceLabelViewFactory">
+      <labels visualID="5085" editPartClassName="WrappingLabel12EditPart" itemSemanticEditPolicyClassName="WrappingLabel12ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo1" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.11"/>
       </labels>
     </childNodes>
-    <childNodes visualID="3011" editPartClassName="ProcessorInstanceEditPart" itemSemanticEditPolicyClassName="ProcessorInstanceItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceViewFactory" canonicalEditPolicyClassName="ProcessorInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ProcessorInstanceGraphicalNodeEditPolicy" createCommandClassName="ProcessorInstanceCreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3020" editPartClassName="ProcessorInstanceEditPart" itemSemanticEditPolicyClassName="ProcessorInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="ProcessorInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ProcessorInstanceGraphicalNodeEditPolicy" createCommandClassName="ProcessorInstanceCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ProcessorInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
@@ -125,35 +125,35 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5050" editPartClassName="ProcessorInstanceNameEditPart" itemSemanticEditPolicyClassName="ProcessorInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceNameViewFactory">
+      <labels visualID="5086" editPartClassName="ProcessorInstanceNameEditPart" itemSemanticEditPolicyClassName="ProcessorInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
           <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5051" editPartClassName="WrappingLabel13EditPart" itemSemanticEditPolicyClassName="WrappingLabel13ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceLabelViewFactory">
+      <labels visualID="5087" editPartClassName="WrappingLabel13EditPart" itemSemanticEditPolicyClassName="WrappingLabel13ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.12"/>
       </labels>
-      <labels visualID="5052" editPartClassName="WrappingLabel14EditPart" itemSemanticEditPolicyClassName="WrappingLabel14ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5088" editPartClassName="WrappingLabel14EditPart" itemSemanticEditPolicyClassName="WrappingLabel14ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.13"/>
       </labels>
-      <labels visualID="5053" editPartClassName="WrappingLabel15EditPart" itemSemanticEditPolicyClassName="WrappingLabel15ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceLabelViewFactory">
+      <labels visualID="5089" editPartClassName="WrappingLabel15EditPart" itemSemanticEditPolicyClassName="WrappingLabel15ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo1" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.14"/>
       </labels>
-      <labels visualID="5054" editPartClassName="WrappingLabel16EditPart" itemSemanticEditPolicyClassName="WrappingLabel16ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceLabelViewFactory">
+      <labels visualID="5090" editPartClassName="WrappingLabel16EditPart" itemSemanticEditPolicyClassName="WrappingLabel16ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo2" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.15"/>
       </labels>
     </childNodes>
-    <childNodes visualID="3012" editPartClassName="ProcessingMemoryInstanceEditPart" itemSemanticEditPolicyClassName="ProcessingMemoryInstanceItemSemanticEditPolicy" notationViewFactoryClassName="ProcessingMemoryInstanceViewFactory" canonicalEditPolicyClassName="ProcessingMemoryInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ProcessingMemoryInstanceGraphicalNodeEditPolicy" createCommandClassName="ProcessingMemoryInstanceCreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3021" editPartClassName="ProcessingMemoryInstanceEditPart" itemSemanticEditPolicyClassName="ProcessingMemoryInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="ProcessingMemoryInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ProcessingMemoryInstanceGraphicalNodeEditPolicy" createCommandClassName="ProcessingMemoryInstanceCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ProcessingMemoryInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
@@ -178,35 +178,35 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5055" editPartClassName="ProcessingMemoryInstanceNameEditPart" itemSemanticEditPolicyClassName="ProcessingMemoryInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="ProcessingMemoryInstanceNameViewFactory">
+      <labels visualID="5091" editPartClassName="ProcessingMemoryInstanceNameEditPart" itemSemanticEditPolicyClassName="ProcessingMemoryInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
           <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5056" editPartClassName="WrappingLabel17EditPart" itemSemanticEditPolicyClassName="WrappingLabel17ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessingMemoryInstanceLabelViewFactory">
+      <labels visualID="5092" editPartClassName="WrappingLabel17EditPart" itemSemanticEditPolicyClassName="WrappingLabel17ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.16"/>
       </labels>
-      <labels visualID="5057" editPartClassName="WrappingLabel18EditPart" itemSemanticEditPolicyClassName="WrappingLabel18ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessingMemoryInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5093" editPartClassName="WrappingLabel18EditPart" itemSemanticEditPolicyClassName="WrappingLabel18ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.17"/>
       </labels>
-      <labels visualID="5058" editPartClassName="WrappingLabel19EditPart" itemSemanticEditPolicyClassName="WrappingLabel19ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessingMemoryInstanceLabelViewFactory">
+      <labels visualID="5094" editPartClassName="WrappingLabel19EditPart" itemSemanticEditPolicyClassName="WrappingLabel19ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo1" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.18"/>
       </labels>
-      <labels visualID="5059" editPartClassName="WrappingLabel20EditPart" itemSemanticEditPolicyClassName="WrappingLabel20ItemSemanticEditPolicy" notationViewFactoryClassName="ProcessingMemoryInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5095" editPartClassName="WrappingLabel20EditPart" itemSemanticEditPolicyClassName="WrappingLabel20ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo2" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.19"/>
       </labels>
     </childNodes>
-    <childNodes visualID="3013" editPartClassName="StorageMemoryInstanceEditPart" itemSemanticEditPolicyClassName="StorageMemoryInstanceItemSemanticEditPolicy" notationViewFactoryClassName="StorageMemoryInstanceViewFactory" canonicalEditPolicyClassName="StorageMemoryInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="StorageMemoryInstanceGraphicalNodeEditPolicy" createCommandClassName="StorageMemoryInstanceCreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3022" editPartClassName="StorageMemoryInstanceEditPart" itemSemanticEditPolicyClassName="StorageMemoryInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="StorageMemoryInstanceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="StorageMemoryInstanceGraphicalNodeEditPolicy" createCommandClassName="StorageMemoryInstanceCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="StorageMemoryInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
@@ -231,35 +231,35 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5060" editPartClassName="StorageMemoryInstanceNameEditPart" itemSemanticEditPolicyClassName="StorageMemoryInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="StorageMemoryInstanceNameViewFactory">
+      <labels visualID="5096" editPartClassName="StorageMemoryInstanceNameEditPart" itemSemanticEditPolicyClassName="StorageMemoryInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
           <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5061" editPartClassName="WrappingLabel21EditPart" itemSemanticEditPolicyClassName="WrappingLabel21ItemSemanticEditPolicy" notationViewFactoryClassName="StorageMemoryInstanceLabelViewFactory">
+      <labels visualID="5097" editPartClassName="WrappingLabel21EditPart" itemSemanticEditPolicyClassName="WrappingLabel21ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.20"/>
       </labels>
-      <labels visualID="5062" editPartClassName="WrappingLabel22EditPart" itemSemanticEditPolicyClassName="WrappingLabel22ItemSemanticEditPolicy" notationViewFactoryClassName="StorageMemoryInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5098" editPartClassName="WrappingLabel22EditPart" itemSemanticEditPolicyClassName="WrappingLabel22ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.21"/>
       </labels>
-      <labels visualID="5063" editPartClassName="WrappingLabel23EditPart" itemSemanticEditPolicyClassName="WrappingLabel23ItemSemanticEditPolicy" notationViewFactoryClassName="StorageMemoryInstanceLabelViewFactory">
+      <labels visualID="5099" editPartClassName="WrappingLabel23EditPart" itemSemanticEditPolicyClassName="WrappingLabel23ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo1" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.22"/>
       </labels>
-      <labels visualID="5064" editPartClassName="WrappingLabel24EditPart" itemSemanticEditPolicyClassName="WrappingLabel24ItemSemanticEditPolicy" notationViewFactoryClassName="StorageMemoryInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5100" editPartClassName="WrappingLabel24EditPart" itemSemanticEditPolicyClassName="WrappingLabel24ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceInfo2" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.23"/>
       </labels>
     </childNodes>
-    <topLevelNodes visualID="2004" editPartClassName="SensorInstanceEditPart" itemSemanticEditPolicyClassName="SensorInstanceItemSemanticEditPolicy" notationViewFactoryClassName="SensorInstanceViewFactory" canonicalEditPolicyClassName="SensorInstanceCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" graphicalNodeEditPolicyClassName="SensorInstanceGraphicalNodeEditPolicy" createCommandClassName="SensorInstanceCreateCommand">
+    <topLevelNodes visualID="2007" editPartClassName="SensorInstanceEditPart" itemSemanticEditPolicyClassName="SensorInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="SensorInstanceCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" graphicalNodeEditPolicyClassName="SensorInstanceGraphicalNodeEditPolicy" createCommandClassName="SensorInstanceCreateCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="SensorInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure">
@@ -276,7 +276,7 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5036" editPartClassName="SensorInstanceNameEditPart" itemSemanticEditPolicyClassName="SensorInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="SensorInstanceNameViewFactory">
+      <labels visualID="5072" editPartClassName="SensorInstanceNameEditPart" itemSemanticEditPolicyClassName="SensorInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
@@ -284,18 +284,18 @@
           <editableMetaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5037" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy" notationViewFactoryClassName="SensorInstanceLabelViewFactory">
+      <labels visualID="5073" editPartClassName="WrappingLabelEditPart" itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.2"/>
       </labels>
-      <labels visualID="5038" editPartClassName="WrappingLabel2EditPart" itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy" notationViewFactoryClassName="SensorInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5074" editPartClassName="WrappingLabel2EditPart" itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.3"/>
       </labels>
     </topLevelNodes>
-    <topLevelNodes visualID="2005" editPartClassName="ActuatorInstanceEditPart" itemSemanticEditPolicyClassName="ActuatorInstanceItemSemanticEditPolicy" notationViewFactoryClassName="ActuatorInstanceViewFactory" canonicalEditPolicyClassName="ActuatorInstanceCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" graphicalNodeEditPolicyClassName="ActuatorInstanceGraphicalNodeEditPolicy" createCommandClassName="ActuatorInstanceCreateCommand">
+    <topLevelNodes visualID="2008" editPartClassName="ActuatorInstanceEditPart" itemSemanticEditPolicyClassName="ActuatorInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="ActuatorInstanceCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" graphicalNodeEditPolicyClassName="ActuatorInstanceGraphicalNodeEditPolicy" createCommandClassName="ActuatorInstanceCreateCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ActuatorInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure">
@@ -312,7 +312,7 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5039" editPartClassName="ActuatorInstanceNameEditPart" itemSemanticEditPolicyClassName="ActuatorInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="ActuatorInstanceNameViewFactory">
+      <labels visualID="5075" editPartClassName="ActuatorInstanceNameEditPart" itemSemanticEditPolicyClassName="ActuatorInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.1">
@@ -320,18 +320,18 @@
           <editableMetaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5040" editPartClassName="WrappingLabel3EditPart" itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy" notationViewFactoryClassName="ActuatorInstanceLabelViewFactory">
+      <labels visualID="5076" editPartClassName="WrappingLabel3EditPart" itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.4"/>
       </labels>
-      <labels visualID="5041" editPartClassName="WrappingLabel4EditPart" itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy" notationViewFactoryClassName="ActuatorInstanceLabelViewFactory">
+      <labels visualID="5077" editPartClassName="WrappingLabel4EditPart" itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.5"/>
       </labels>
     </topLevelNodes>
-    <topLevelNodes visualID="2006" editPartClassName="StructuredResourceInstanceEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceViewFactory" canonicalEditPolicyClassName="StructuredResourceInstanceCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="StructuredResourceInstanceGraphicalNodeEditPolicy" createCommandClassName="StructuredResourceInstanceCreateCommand">
+    <topLevelNodes visualID="2009" editPartClassName="StructuredResourceInstanceEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceItemSemanticEditPolicy" canonicalEditPolicyClassName="StructuredResourceInstanceCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="StructuredResourceInstanceGraphicalNodeEditPolicy" createCommandClassName="StructuredResourceInstanceCreateCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="StructuredResourceInstanceEditHelper"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="StructuredResourceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StructuredResourceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureEmbeddedAtomicResources; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceCardinalityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStructuredResourceKindFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure fFigureCustomStructuredIconFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure myCustomStructuredIconFigure;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StructuredResourceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure structuredContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;structuredContainer0.setFill(false);&#xA;structuredContainer0.setOutline(false);&#xA;structuredContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStructuredContainer0 = new org.eclipse.draw2d.GridData();&#xA;constraintStructuredContainer0.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintStructuredContainer0.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredContainer0.horizontalIndent = 0;&#xA;constraintStructuredContainer0.horizontalSpan = 1;&#xA;constraintStructuredContainer0.verticalSpan = 1;&#xA;constraintStructuredContainer0.grabExcessHorizontalSpace = true;&#xA;constraintStructuredContainer0.grabExcessVerticalSpace = false;&#xA;this.add(structuredContainer0, constraintStructuredContainer0);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStructuredContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStructuredContainer0.numColumns = 2;&#xA;&#x9;layoutStructuredContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;structuredContainer0.setLayoutManager(layoutStructuredContainer0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure structuredName1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;structuredName1.setFill(false);&#xA;structuredName1.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintStructuredName1 = new org.eclipse.draw2d.GridData();&#xA;constraintStructuredName1.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredName1.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintStructuredName1.horizontalIndent = 0;&#xA;constraintStructuredName1.horizontalSpan = 1;&#xA;constraintStructuredName1.verticalSpan = 1;&#xA;constraintStructuredName1.grabExcessHorizontalSpace = true;&#xA;constraintStructuredName1.grabExcessVerticalSpace = true;&#xA;structuredContainer0.add(structuredName1, constraintStructuredName1);&#xA;&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStructuredName1 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStructuredName1.numColumns = 3;&#xA;&#x9;layoutStructuredName1.makeColumnsEqualWidth = false;&#xA;&#x9;structuredName1.setLayoutManager(layoutStructuredName1);&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceNameFigure.setFont(FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceNameFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceNameFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceNameFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceNameFigure, constraintFFigureStructuredResourceNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceKindFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceKindFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceKindFigure.setFont(FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceKindFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceKindFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceKindFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceKindFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceKindFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceKindFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceKindFigure, constraintFFigureStructuredResourceKindFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStructuredResourceCardinalityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureStructuredResourceCardinalityFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;fFigureStructuredResourceCardinalityFigure.setFont(FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStructuredResourceCardinalityFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStructuredResourceCardinalityFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalIndent = 0;&#xA;constraintFFigureStructuredResourceCardinalityFigure.horizontalSpan = 1;&#xA;constraintFFigureStructuredResourceCardinalityFigure.verticalSpan = 1;&#xA;constraintFFigureStructuredResourceCardinalityFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStructuredResourceCardinalityFigure.grabExcessVerticalSpace = true;&#xA;structuredName1.add(fFigureStructuredResourceCardinalityFigure, constraintFFigureStructuredResourceCardinalityFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;myCustomStructuredIconFigure = new de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintMyCustomStructuredIconFigure = new org.eclipse.draw2d.GridData();&#xA;constraintMyCustomStructuredIconFigure.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintMyCustomStructuredIconFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintMyCustomStructuredIconFigure.horizontalIndent = 0;&#xA;constraintMyCustomStructuredIconFigure.horizontalSpan = 1;&#xA;constraintMyCustomStructuredIconFigure.verticalSpan = 1;&#xA;constraintMyCustomStructuredIconFigure.grabExcessHorizontalSpace = true;&#xA;constraintMyCustomStructuredIconFigure.grabExcessVerticalSpace = true;&#xA;structuredContainer0.add(myCustomStructuredIconFigure, constraintMyCustomStructuredIconFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;fFigureEmbeddedAtomicResources = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEmbeddedAtomicResources = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEmbeddedAtomicResources.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalIndent = 0;&#xA;constraintFFigureEmbeddedAtomicResources.horizontalSpan = 1;&#xA;constraintFFigureEmbeddedAtomicResources.verticalSpan = 1;&#xA;constraintFFigureEmbeddedAtomicResources.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEmbeddedAtomicResources.grabExcessVerticalSpace = true;&#xA;this.add(fFigureEmbeddedAtomicResources, constraintFFigureEmbeddedAtomicResources);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureEmbeddedAtomicResources() {&#xA;&#x9;&#x9;return fFigureEmbeddedAtomicResources;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceCardinalityFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceCardinalityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceNameFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredResourceKindFigure() {&#xA;&#x9;&#x9;return fFigureStructuredResourceKindFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure getFigureCustomStructuredIconFigure() {&#xA;&#x9;&#x9;return myCustomStructuredIconFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCEKINDFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTRUCTUREDRESOURCECARDINALITYFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
@@ -347,7 +347,7 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels visualID="5065" editPartClassName="StructuredResourceInstanceNameEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceNameItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceNameViewFactory">
+      <labels visualID="5101" editPartClassName="StructuredResourceInstanceNameEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceNameItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStructuredResourceNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
@@ -356,14 +356,14 @@
           <metaFeatures href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <labels visualID="5066" editPartClassName="WrappingLabel5EditPart" itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceLabelViewFactory" readOnly="true">
+      <labels visualID="5102" editPartClassName="WrappingLabel5EditPart" itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStructuredResourceKindFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.24"/>
       </labels>
-      <labels visualID="5067" editPartClassName="WrappingLabel6EditPart" itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceLabelViewFactory">
+      <labels visualID="5103" editPartClassName="WrappingLabel6EditPart" itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureStructuredResourceCardinalityFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes xsi:type="gmfgen:StyleAttributes" fixedFont="true"/>
@@ -371,7 +371,7 @@
         <modelFacet xsi:type="gmfgen:ExpressionLabelModelFacet" parser="//@labelParsers/@implementations.25"/>
       </labels>
     </topLevelNodes>
-    <links visualID="4002" editPartClassName="ProcessorInstanceOwnedCacheInstanceEditPart" itemSemanticEditPolicyClassName="ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy" notationViewFactoryClassName="ProcessorInstanceOwnedCacheInstanceViewFactory" createCommandClassName="ProcessorInstanceOwnedCacheInstanceCreateCommand" reorientCommandClassName="ProcessorInstanceOwnedCacheInstanceReorientCommand">
+    <links visualID="4003" editPartClassName="ProcessorInstanceOwnedCacheInstanceEditPart" itemSemanticEditPolicyClassName="ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy" createCommandClassName="ProcessorInstanceOwnedCacheInstanceCreateCommand" reorientCommandClassName="ProcessorInstanceOwnedCacheInstanceReorientCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
@@ -379,7 +379,7 @@
         <metaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance/ownedCacheInstance"/>
       </modelFacet>
     </links>
-    <compartments visualID="7002" editPartClassName="StructuredResourceInstanceStructuredResourceCompartmentEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="StructuredResourceInstanceStructuredResourceCompartmentViewFactory" canonicalEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5" title="StructuredResourceCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2" listLayout="false">
+    <compartments visualID="7003" editPartClassName="StructuredResourceInstanceStructuredResourceCompartmentEditPart" itemSemanticEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="StructuredResourceInstanceStructuredResourceCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5" title="StructuredResourceCompartment" needsTitle="false" node="//@diagram/@topLevelNodes.2">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureEmbeddedAtomicResources" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
@@ -502,80 +502,80 @@
     </providers>
   </expressionProviders>
   <labelParsers extensibleViaService="true">
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet" className="HWPortLabelExpressionLabelParser5070" viewExpression="//@expressionProviders/@providers.0/@expressions.0">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.0/@labels.0/@modelFacet" className="HWPortLabelExpressionLabelParser5071" viewExpression="//@expressionProviders/@providers.0/@expressions.0">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/HWPort"/>
     </implementations>
     <implementations xsi:type="gmfgen:PredefinedParser" uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet"/>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet" className="SensorInstanceLabelExpressionLabelParser5037" viewExpression="//@expressionProviders/@providers.0/@expressions.1">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet" className="SensorInstanceLabelExpressionLabelParser5073" viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.0/@labels.2/@modelFacet" className="SensorInstanceLabelExpressionLabelParser5038" viewExpression="//@expressionProviders/@providers.0/@expressions.2">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.0/@labels.2/@modelFacet" className="SensorInstanceLabelExpressionLabelParser5074" viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/SensorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet" className="ActuatorInstanceLabelExpressionLabelParser5040" viewExpression="//@expressionProviders/@providers.0/@expressions.3">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet" className="ActuatorInstanceLabelExpressionLabelParser5076" viewExpression="//@expressionProviders/@providers.0/@expressions.3">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.1/@labels.2/@modelFacet" className="ActuatorInstanceLabelExpressionLabelParser5041" viewExpression="//@expressionProviders/@providers.0/@expressions.4">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.1/@labels.2/@modelFacet" className="ActuatorInstanceLabelExpressionLabelParser5077" viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ActuatorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.1/@labels.1/@modelFacet" className="CacheInstanceLabelExpressionLabelParser5043" viewExpression="//@expressionProviders/@providers.0/@expressions.5">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.1/@labels.1/@modelFacet" className="CacheInstanceLabelExpressionLabelParser5079" viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.1/@labels.2/@modelFacet" className="CacheInstanceLabelExpressionLabelParser5044" viewExpression="//@expressionProviders/@providers.0/@expressions.6">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.1/@labels.2/@modelFacet" className="CacheInstanceLabelExpressionLabelParser5080" viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.1/@labels.3/@modelFacet" className="CacheInstanceLabelExpressionLabelParser5045" viewExpression="//@expressionProviders/@providers.0/@expressions.7" editExpression="//@expressionProviders/@providers.0/@expressions.8">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.1/@labels.3/@modelFacet" className="CacheInstanceLabelExpressionLabelParser5081" viewExpression="//@expressionProviders/@providers.0/@expressions.7" editExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.2/@labels.1/@modelFacet" className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5047" viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.2/@labels.1/@modelFacet" className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5083" viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.2/@labels.2/@modelFacet" className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5048" viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.2/@labels.2/@modelFacet" className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5084" viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.2/@labels.3/@modelFacet" className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5049" viewExpression="//@expressionProviders/@providers.0/@expressions.11" editExpression="//@expressionProviders/@providers.0/@expressions.12">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.2/@labels.3/@modelFacet" className="ProgrammableLogicDeviceInstanceLabelExpressionLabelParser5085" viewExpression="//@expressionProviders/@providers.0/@expressions.11" editExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.1/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5051" viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.1/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5087" viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.2/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5052" viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.2/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5088" viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.3/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5053" viewExpression="//@expressionProviders/@providers.0/@expressions.15" editExpression="//@expressionProviders/@providers.0/@expressions.16">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.3/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5089" viewExpression="//@expressionProviders/@providers.0/@expressions.15" editExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.4/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5054" viewExpression="//@expressionProviders/@providers.0/@expressions.17">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.3/@labels.4/@modelFacet" className="ProcessorInstanceLabelExpressionLabelParser5090" viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.1/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5056" viewExpression="//@expressionProviders/@providers.0/@expressions.19">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.1/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5092" viewExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.2/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5057" viewExpression="//@expressionProviders/@providers.0/@expressions.20">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.2/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5093" viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.3/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5058" viewExpression="//@expressionProviders/@providers.0/@expressions.21" editExpression="//@expressionProviders/@providers.0/@expressions.22">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.3/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5094" viewExpression="//@expressionProviders/@providers.0/@expressions.21" editExpression="//@expressionProviders/@providers.0/@expressions.22">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.4/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5059" viewExpression="//@expressionProviders/@providers.0/@expressions.23">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.4/@labels.4/@modelFacet" className="ProcessingMemoryInstanceLabelExpressionLabelParser5095" viewExpression="//@expressionProviders/@providers.0/@expressions.23">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.1/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5061" viewExpression="//@expressionProviders/@providers.0/@expressions.25">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.1/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5097" viewExpression="//@expressionProviders/@providers.0/@expressions.25">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.2/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5062" viewExpression="//@expressionProviders/@providers.0/@expressions.26">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.2/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5098" viewExpression="//@expressionProviders/@providers.0/@expressions.26">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.3/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5063" viewExpression="//@expressionProviders/@providers.0/@expressions.27" editExpression="//@expressionProviders/@providers.0/@expressions.28">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.3/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5099" viewExpression="//@expressionProviders/@providers.0/@expressions.27" editExpression="//@expressionProviders/@providers.0/@expressions.28">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.4/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5064" viewExpression="//@expressionProviders/@providers.0/@expressions.29">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@childNodes.5/@labels.4/@modelFacet" className="StorageMemoryInstanceLabelExpressionLabelParser5100" viewExpression="//@expressionProviders/@providers.0/@expressions.29">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet" className="StructuredResourceInstanceLabelExpressionLabelParser5066" viewExpression="//@expressionProviders/@providers.0/@expressions.30">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet" className="StructuredResourceInstanceLabelExpressionLabelParser5102" viewExpression="//@expressionProviders/@providers.0/@expressions.30">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
     </implementations>
-    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.2/@labels.2/@modelFacet" className="StructuredResourceInstanceLabelExpressionLabelParser5067" viewExpression="//@expressionProviders/@providers.0/@expressions.31">
+    <implementations xsi:type="gmfgen:ExpressionLabelParser" uses="//@diagram/@topLevelNodes.2/@labels.2/@modelFacet" className="StructuredResourceInstanceLabelExpressionLabelParser5103" viewExpression="//@expressionProviders/@providers.0/@expressions.31">
       <expressionContext href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
     </implementations>
   </labelParsers>

@@ -57,7 +57,7 @@ public class MemoryResourceCreateCommand extends EditElementCommand {
 		owner.getEmbeddedAtomicResources().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_MemoryResource_3005(newElement);
+				.getInstance().init_MemoryResource_3016(newElement);
 
 		doConfigure(newElement, monitor, info);
 

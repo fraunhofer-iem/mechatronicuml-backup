@@ -25,7 +25,7 @@ public class CommunicationProtocolRepositoryItemSemanticEditPolicy
 	 */
 	public CommunicationProtocolRepositoryItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008);
 	}
 
 	/**

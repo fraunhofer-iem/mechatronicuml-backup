@@ -28,13 +28,13 @@ public class HardwareDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return getResourceInstanceRepository_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			return getSensorInstance_2004SemanticChildren(view);
+			return getSensorInstance_2007SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return getActuatorInstance_2005SemanticChildren(view);
+			return getActuatorInstance_2008SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			return getStructuredResourceInstance_2006SemanticChildren(view);
+			return getStructuredResourceInstance_2009SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceStructuredResourceCompartmentEditPart.VISUAL_ID:
-			return getStructuredResourceInstanceStructuredResourceCompartment_7002SemanticChildren(view);
+			return getStructuredResourceInstanceStructuredResourceCompartment_7003SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -79,7 +79,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getSensorInstance_2004SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getSensorInstance_2007SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -106,7 +106,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getActuatorInstance_2005SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getActuatorInstance_2008SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -133,7 +133,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstance_2006SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstance_2009SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -160,7 +160,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstanceStructuredResourceCompartment_7002SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareNodeDescriptor> getStructuredResourceInstanceStructuredResourceCompartment_7003SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -218,23 +218,23 @@ public class HardwareDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return getResourceInstanceRepository_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			return getSensorInstance_2004ContainedLinks(view);
+			return getSensorInstance_2007ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return getActuatorInstance_2005ContainedLinks(view);
+			return getActuatorInstance_2008ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			return getStructuredResourceInstance_2006ContainedLinks(view);
+			return getStructuredResourceInstance_2009ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
-			return getHWPort_3016ContainedLinks(view);
+			return getHWPort_3017ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
-			return getCacheInstance_3009ContainedLinks(view);
+			return getCacheInstance_3018ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
-			return getProgrammableLogicDeviceInstance_3010ContainedLinks(view);
+			return getProgrammableLogicDeviceInstance_3019ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
-			return getProcessorInstance_3011ContainedLinks(view);
+			return getProcessorInstance_3020ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
-			return getProcessingMemoryInstance_3012ContainedLinks(view);
+			return getProcessingMemoryInstance_3021ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
-			return getStorageMemoryInstance_3013ContainedLinks(view);
+			return getStorageMemoryInstance_3022ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -247,23 +247,23 @@ public class HardwareDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			return getSensorInstance_2004IncomingLinks(view);
+			return getSensorInstance_2007IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return getActuatorInstance_2005IncomingLinks(view);
+			return getActuatorInstance_2008IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			return getStructuredResourceInstance_2006IncomingLinks(view);
+			return getStructuredResourceInstance_2009IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
-			return getHWPort_3016IncomingLinks(view);
+			return getHWPort_3017IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
-			return getCacheInstance_3009IncomingLinks(view);
+			return getCacheInstance_3018IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
-			return getProgrammableLogicDeviceInstance_3010IncomingLinks(view);
+			return getProgrammableLogicDeviceInstance_3019IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
-			return getProcessorInstance_3011IncomingLinks(view);
+			return getProcessorInstance_3020IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
-			return getProcessingMemoryInstance_3012IncomingLinks(view);
+			return getProcessingMemoryInstance_3021IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
-			return getStorageMemoryInstance_3013IncomingLinks(view);
+			return getStorageMemoryInstance_3022IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -276,23 +276,23 @@ public class HardwareDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			return getSensorInstance_2004OutgoingLinks(view);
+			return getSensorInstance_2007OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return getActuatorInstance_2005OutgoingLinks(view);
+			return getActuatorInstance_2008OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			return getStructuredResourceInstance_2006OutgoingLinks(view);
+			return getStructuredResourceInstance_2009OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
-			return getHWPort_3016OutgoingLinks(view);
+			return getHWPort_3017OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
-			return getCacheInstance_3009OutgoingLinks(view);
+			return getCacheInstance_3018OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
-			return getProgrammableLogicDeviceInstance_3010OutgoingLinks(view);
+			return getProgrammableLogicDeviceInstance_3019OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
-			return getProcessorInstance_3011OutgoingLinks(view);
+			return getProcessorInstance_3020OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
-			return getProcessingMemoryInstance_3012OutgoingLinks(view);
+			return getProcessingMemoryInstance_3021OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
-			return getStorageMemoryInstance_3013OutgoingLinks(view);
+			return getStorageMemoryInstance_3022OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -308,7 +308,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2004ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2007ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -316,7 +316,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2005ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2008ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -324,7 +324,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2006ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2009ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -332,7 +332,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3016ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3017ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -340,7 +340,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3009ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3018ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -348,7 +348,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3010ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -356,19 +356,19 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3011ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3020ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3012ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3021ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -376,7 +376,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3013ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3022ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -384,7 +384,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2004IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2007IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -392,7 +392,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2005IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2008IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -400,7 +400,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2006IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2009IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -408,7 +408,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3016IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3017IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -416,14 +416,14 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3009IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3018IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4002(
+		result.addAll(getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -431,7 +431,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3010IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -439,7 +439,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3011IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3020IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -447,7 +447,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3012IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3021IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -455,7 +455,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3013IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3022IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -463,7 +463,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2004OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getSensorInstance_2007OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -471,7 +471,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2005OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getActuatorInstance_2008OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -479,7 +479,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2006OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStructuredResourceInstance_2009OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -487,7 +487,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3016OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getHWPort_3017OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -495,7 +495,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3009OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getCacheInstance_3018OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -503,7 +503,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3010OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProgrammableLogicDeviceInstance_3019OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -511,19 +511,19 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3011OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessorInstance_3020OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance modelElement = (de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3012OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getProcessingMemoryInstance_3021OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -531,7 +531,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3013OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getStorageMemoryInstance_3022OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -539,7 +539,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4002(
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getIncomingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
@@ -551,7 +551,7 @@ public class HardwareDiagramUpdater {
 				result.add(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor(
 						setting.getEObject(),
 						target,
-						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4002,
+						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003,
 						de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID));
 			}
 		}
@@ -561,7 +561,7 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4002(
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> getOutgoingFeatureModelFacetLinks_ProcessorInstance_OwnedCacheInstance_4003(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor>();
 		de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance destination = source
@@ -572,7 +572,7 @@ public class HardwareDiagramUpdater {
 		result.add(new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareLinkDescriptor(
 				source,
 				destination,
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4002,
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003,
 				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID));
 		return result;
 	}

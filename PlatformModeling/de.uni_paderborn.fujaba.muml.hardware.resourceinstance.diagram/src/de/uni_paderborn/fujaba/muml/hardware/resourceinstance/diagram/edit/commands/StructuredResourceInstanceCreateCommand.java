@@ -57,7 +57,7 @@ public class StructuredResourceInstanceCreateCommand extends EditElementCommand 
 		owner.getResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_StructuredResourceInstance_2006(newElement);
+				.getInstance().init_StructuredResourceInstance_2009(newElement);
 
 		doConfigure(newElement, monitor, info);
 

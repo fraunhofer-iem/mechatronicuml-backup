@@ -58,7 +58,7 @@ public class ProgrammableLogicDeviceInstanceCreateCommand extends
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_ProgrammableLogicDeviceInstance_3010(
+				.getInstance().init_ProgrammableLogicDeviceInstance_3019(
 						newElement);
 
 		doConfigure(newElement, monitor, info);

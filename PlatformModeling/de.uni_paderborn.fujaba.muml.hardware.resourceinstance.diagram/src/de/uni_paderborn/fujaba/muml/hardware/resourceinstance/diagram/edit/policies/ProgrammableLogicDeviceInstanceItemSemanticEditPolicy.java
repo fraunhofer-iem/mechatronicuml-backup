@@ -20,7 +20,7 @@ public class ProgrammableLogicDeviceInstanceItemSemanticEditPolicy
 	 */
 	public ProgrammableLogicDeviceInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3010);
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3019);
 	}
 
 	/**

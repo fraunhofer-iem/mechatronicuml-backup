@@ -57,7 +57,7 @@ public class CacheInstanceCreateCommand extends EditElementCommand {
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_CacheInstance_3009(newElement);
+				.getInstance().init_CacheInstance_3018(newElement);
 
 		doConfigure(newElement, monitor, info);
 

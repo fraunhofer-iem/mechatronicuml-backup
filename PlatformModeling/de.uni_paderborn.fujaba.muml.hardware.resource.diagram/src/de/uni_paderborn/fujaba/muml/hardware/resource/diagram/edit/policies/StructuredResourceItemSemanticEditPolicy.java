@@ -28,7 +28,7 @@ public class StructuredResourceItemSemanticEditPolicy
 	 */
 	public StructuredResourceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.StructuredResource_2002);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.StructuredResource_2007);
 	}
 
 	/**

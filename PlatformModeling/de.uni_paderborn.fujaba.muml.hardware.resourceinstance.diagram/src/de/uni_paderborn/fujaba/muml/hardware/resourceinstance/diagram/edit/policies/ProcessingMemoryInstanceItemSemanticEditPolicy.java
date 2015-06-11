@@ -20,7 +20,7 @@ public class ProcessingMemoryInstanceItemSemanticEditPolicy
 	 */
 	public ProcessingMemoryInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessingMemoryInstance_3012);
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessingMemoryInstance_3021);
 	}
 
 	/**

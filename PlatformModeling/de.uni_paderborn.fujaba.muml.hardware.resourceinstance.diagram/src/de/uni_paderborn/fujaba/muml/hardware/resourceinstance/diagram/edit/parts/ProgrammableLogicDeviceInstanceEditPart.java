@@ -29,7 +29,7 @@ public class ProgrammableLogicDeviceInstanceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3010;
+	public static final int VISUAL_ID = 3019;
 
 	/**
 	 * MUML FIX, see code comments.

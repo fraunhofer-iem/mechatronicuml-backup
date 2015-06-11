@@ -57,7 +57,7 @@ public class ProgrammableLogicDeviceCreateCommand extends EditElementCommand {
 		owner.getEmbeddedAtomicResources().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_ProgrammableLogicDevice_3004(newElement);
+				.getInstance().init_ProgrammableLogicDevice_3015(newElement);
 
 		doConfigure(newElement, monitor, info);
 

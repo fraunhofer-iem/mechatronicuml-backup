@@ -20,7 +20,7 @@ public class LinkProtocolItemSemanticEditPolicy
 	 */
 	public LinkProtocolItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3007);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3018);
 	}
 
 	/**

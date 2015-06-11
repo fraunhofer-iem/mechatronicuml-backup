@@ -26,12 +26,12 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
  * @generated
  */
 public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
-		extends ShapeCompartmentEditPart {
+		extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7002;
+	public static final int VISUAL_ID = 7003;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -62,6 +62,13 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 	public StructuredResourceInstanceStructuredResourceCompartmentEditPart(
 			View view) {
 		super(view);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
 	}
 
 	/**
@@ -133,19 +140,19 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CacheInstance_3009) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.CacheInstance_3018) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3010) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3019) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3011) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstance_3020) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessingMemoryInstance_3012) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessingMemoryInstance_3021) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3013) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3022) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
@@ -157,7 +164,7 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 					if (type instanceof IElementType) {
 						IElementType elementType = (IElementType) type;
 						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4002))
+								.equals(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003))
 							return super.getTargetEditPart(request);
 					}
 				}
@@ -165,6 +172,24 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 			return getParent().getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
 	}
 
 }

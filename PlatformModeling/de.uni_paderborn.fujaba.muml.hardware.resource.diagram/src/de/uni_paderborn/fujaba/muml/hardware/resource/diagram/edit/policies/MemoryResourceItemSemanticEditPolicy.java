@@ -20,7 +20,7 @@ public class MemoryResourceItemSemanticEditPolicy
 	 */
 	public MemoryResourceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3005);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3016);
 	}
 
 	/**

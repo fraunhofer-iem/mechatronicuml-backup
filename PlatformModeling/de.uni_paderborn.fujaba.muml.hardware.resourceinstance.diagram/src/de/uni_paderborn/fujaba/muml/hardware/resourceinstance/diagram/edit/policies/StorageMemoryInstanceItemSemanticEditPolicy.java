@@ -20,7 +20,7 @@ public class StorageMemoryInstanceItemSemanticEditPolicy
 	 */
 	public StorageMemoryInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3013);
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.StorageMemoryInstance_3022);
 	}
 
 	/**

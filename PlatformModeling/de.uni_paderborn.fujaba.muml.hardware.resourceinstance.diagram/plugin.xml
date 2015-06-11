@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <plugin>
-   <!-- optionally, specify keybindings -->
-<extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
       <fileTypes type="text" extension="resourceinstance_diagram"/>
    </extension>
 
-<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
          type="resourceinstance_diagram"
@@ -15,8 +15,13 @@
       </parser>
    </extension>
 
-<extension point="org.eclipse.ui.editors" id="gmf-editor">
-      <?gmfgen generated="false"?>
+	
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
       <editor
          id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
          name="%editorName"
@@ -28,8 +33,7 @@
          contributorClass="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramActionBarContributor">
       </editor>
    	</extension>
-
-<extension point="org.eclipse.ui.contexts" id="ui-context">
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
@@ -39,7 +43,7 @@
       </context>
    	</extension>
 
-<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
@@ -50,12 +54,36 @@
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    	</extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.menus">
 
-<extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="false"?>   
+	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=psmdiagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	  		<command
+                 commandId="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
+                 icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
+                 id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
+                 label="Create new ResourceInstance Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      
+      <?gmfgen generated="true"?>   
+	  <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
 	            icon="icons/obj16/HwresourceinstanceDiagramFile.gif"
@@ -63,25 +91,101 @@
 	            label="Create ResourceInstance Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<or>
+		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.resource"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
+	   
+	</extension>
+	
+	
+	<extension point="org.eclipse.ui.commands">
+	<?gmfgen generated="true"?>   
+	<command
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new ResourceInstance Model"
+           id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
+           name="Create new ResourceInstance Model">
+    </command>
+    </extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<?gmfgen generated="true"?>
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="resource"/>
+    </extension>
+
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
 	</extension>
 
-<extension point="org.eclipse.ui.commands" id="update-cmd">
+	
+	<extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
+            name="resource">
+         
+         <child
+               class="ResourceInstanceRepository"
+               packageNsUri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
+         </child>
+         
+      </category>
+   </extension>
+
+	
+	<extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
-      <command
-         categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdateCommand"
-         description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.updateDiagram"
-         name="%update.diagram.name"/>
+      <editor
+            preferencesHint="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
+            editorName="ResourceInstance Editor"
+            fileExtension="resourceinstance_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
+            modelId="ResourceInstance">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
+               className="ResourceInstanceRepository">
+         </diagramElement>
+         
+         <topLevelNode
+               domainElement="SensorInstance"
+               semanticHint="2007">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="ActuatorInstance"
+               semanticHint="2008">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="StructuredResourceInstance"
+               semanticHint="2009">
+         </topLevelNode>
+         
+      </editor>
    </extension>
 
 
-
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
@@ -124,7 +228,8 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
       <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.diagnostic"/>
@@ -132,12 +237,14 @@
       </MarkerNavigationProvider>
    </extension>
 
-<extension id="diagnostic" name="Resource Instance Diagram Editor problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="Resource Instance Diagram Editor problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
       <persistent value="true"/>
-   </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
       <decoratorProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareValidationDecoratorProvider">
          <Priority name="Lowest"/>
@@ -146,12 +253,12 @@
       </decoratorProvider>
    </extension>
 
-<extension point="org.eclipse.core.runtime.preferences" id="prefs">
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
       <initializer class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
-<extension point="org.eclipse.ui.preferencePages" id="prefpages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
             id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.general"
@@ -185,21 +292,101 @@
       </page>
    </extension>
 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"
+            labelProvider="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.sheet.HardwareSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+                       category="extra"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+          <propertyTab
+                       category="domain"
+             id="property.tab.general"
+             label="%tab.general"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.documentation"
+             label="%tab.documentation"/>
+      </propertyTabs>
+   </extension>
 
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.sheet.HardwarePropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.general" 
+            tab="property.tab.general"
+            filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.documentation" 
+            tab="property.tab.documentation"
+            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+      </propertySections>
+   </extension>
 
-
-<extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="ResourceInstance"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,2005,2006,3016,3009,3010,3011,3012,3013"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007,2008,2009,3017,3018,3019,3020,3021,3022"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003"/>
       </viewProvider>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
       <editpartProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareEditPartProvider">
          <Priority name="Lowest"/>
@@ -207,22 +394,23 @@
             <method name="getType()" value="ResourceInstance"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2004,2005,2006,3016,3009,3010,3011,3012,3013"/>
+            <method name="getType()" value="2007,2008,2009,3017,3018,3019,3020,3021,3022"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4002"/>
+            <method name="getType()" value="4003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5036,5037,5038,5039,5040,5041,5065,5066,5067,5070,5042,5043,5044,5045,5046,5047,5048,5049,5050,5051,5052,5053,5054,5055,5056,5057,5058,5059,5060,5061,5062,5063,5064"/>
+            <method name="getType()" value="5072,5073,5074,5075,5076,5077,5101,5102,5103,5071,5078,5079,5080,5081,5082,5083,5084,5085,5086,5087,5088,5089,5090,5091,5092,5093,5094,5095,5096,5097,5098,5099,5100"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7002"/>
+            <method name="getType()" value="7003"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfResourceInstanceRepositoryEditPart">
          <Priority name="Lowest"/>
@@ -231,67 +419,68 @@
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfSensorInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart" id="SensorInstance_2004"/>
-         <context elements="SensorInstance_2004"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart" id="SensorInstance_2007"/>
+         <context elements="SensorInstance_2007"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfActuatorInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart" id="ActuatorInstance_2005"/>
-         <context elements="ActuatorInstance_2005"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart" id="ActuatorInstance_2008"/>
+         <context elements="ActuatorInstance_2008"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfStructuredResourceInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart" id="StructuredResourceInstance_2006"/>
-         <context elements="StructuredResourceInstance_2006"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart" id="StructuredResourceInstance_2009"/>
+         <context elements="StructuredResourceInstance_2009"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfHWPortEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart" id="HWPort_3016"/>
-         <context elements="HWPort_3016"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart" id="HWPort_3017"/>
+         <context elements="HWPort_3017"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfCacheInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart" id="CacheInstance_3009"/>
-         <context elements="CacheInstance_3009"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart" id="CacheInstance_3018"/>
+         <context elements="CacheInstance_3018"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProgrammableLogicDeviceInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart" id="ProgrammableLogicDeviceInstance_3010"/>
-         <context elements="ProgrammableLogicDeviceInstance_3010"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart" id="ProgrammableLogicDeviceInstance_3019"/>
+         <context elements="ProgrammableLogicDeviceInstance_3019"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProcessorInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart" id="ProcessorInstance_3011"/>
-         <context elements="ProcessorInstance_3011"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart" id="ProcessorInstance_3020"/>
+         <context elements="ProcessorInstance_3020"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfProcessingMemoryInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart" id="ProcessingMemoryInstance_3012"/>
-         <context elements="ProcessingMemoryInstance_3012"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart" id="ProcessingMemoryInstance_3021"/>
+         <context elements="ProcessingMemoryInstance_3021"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.assistants.HardwareModelingAssistantProviderOfStorageMemoryInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart" id="StorageMemoryInstance_3013"/>
-         <context elements="StorageMemoryInstance_3013"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart" id="StorageMemoryInstance_3022"/>
+         <context elements="StorageMemoryInstance_3022"/>
       </modelingAssistantProvider>
       
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
       <IconProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
       <ParserProvider class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
@@ -305,106 +494,106 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2004"
-               name="%metatype.name.SensorInstance_2004"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2007"
+               name="%metatype.name.SensorInstance_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="SensorInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.SensorInstanceEditHelper">
-            <param name="semanticHint" value="2004"/>
+            <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2005"
-               name="%metatype.name.ActuatorInstance_2005"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2008"
+               name="%metatype.name.ActuatorInstance_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ActuatorInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.ActuatorInstanceEditHelper">
-            <param name="semanticHint" value="2005"/>
+            <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2006"
-               name="%metatype.name.StructuredResourceInstance_2006"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"
+               name="%metatype.name.StructuredResourceInstance_2009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StructuredResourceInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.StructuredResourceInstanceEditHelper">
-            <param name="semanticHint" value="2006"/>
+            <param name="semanticHint" value="2009"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3016"
-               name="%metatype.name.HWPort_3016"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3017"
+               name="%metatype.name.HWPort_3017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HWPort"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.HWPortEditHelper">
-            <param name="semanticHint" value="3016"/>
+            <param name="semanticHint" value="3017"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3009"
-               name="%metatype.name.CacheInstance_3009"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3018"
+               name="%metatype.name.CacheInstance_3018"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CacheInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.CacheInstanceEditHelper">
-            <param name="semanticHint" value="3009"/>
+            <param name="semanticHint" value="3018"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3010"
-               name="%metatype.name.ProgrammableLogicDeviceInstance_3010"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"
+               name="%metatype.name.ProgrammableLogicDeviceInstance_3019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ProgrammableLogicDeviceInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.ProgrammableLogicDeviceInstanceEditHelper">
-            <param name="semanticHint" value="3010"/>
+            <param name="semanticHint" value="3019"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3011"
-               name="%metatype.name.ProcessorInstance_3011"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3020"
+               name="%metatype.name.ProcessorInstance_3020"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ProcessorInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.ProcessorInstanceEditHelper">
-            <param name="semanticHint" value="3011"/>
+            <param name="semanticHint" value="3020"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3012"
-               name="%metatype.name.ProcessingMemoryInstance_3012"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"
+               name="%metatype.name.ProcessingMemoryInstance_3021"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ProcessingMemoryInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.ProcessingMemoryInstanceEditHelper">
-            <param name="semanticHint" value="3012"/>
+            <param name="semanticHint" value="3021"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3013"
-               name="%metatype.name.StorageMemoryInstance_3013"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"
+               name="%metatype.name.StorageMemoryInstance_3022"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StorageMemoryInstance"
                edithelper="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.helpers.StorageMemoryInstanceEditHelper">
-            <param name="semanticHint" value="3013"/>
+            <param name="semanticHint" value="3022"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4002"
-               name="%metatype.name.ProcessorInstanceOwnedCacheInstance_4002"
+               id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"
+               name="%metatype.name.ProcessorInstanceOwnedCacheInstance_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4002"/>
+            <param name="semanticHint" value="4003"/>
          </specializationType>
       </metamodel>
    </extension>
 
-<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
       <clientContext id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.TypeContext">
          <enablement>
@@ -415,21 +604,20 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ResourceInstanceRepository_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2004"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3016"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3009"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3010"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3011"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3012"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3013"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4002"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2007"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2008"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3017"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3018"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3020"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
-
-<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
        <propertyTester
            id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.URIEditorInputPropertyTester"
@@ -440,7 +628,7 @@
        </propertyTester>
    </extension>
 
-<extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
       <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
@@ -456,7 +644,7 @@
       </viewerActionBinding>
    </extension>
 
-<extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
       <?gmfgen generated="true"?>
       <navigatorContent
             id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.resourceContent" 
@@ -525,8 +713,8 @@
          </enablement>
       </actionProvider>
    </extension>
-
-<extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigatorLinkHelper"
@@ -542,17 +730,17 @@
          </selectionEnablement>
       </linkHelper>
    </extension>
-
-<extension point="org.eclipse.ui.commands" id="menu-commands">
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.LoadResourceAction"
-         name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.LoadResourceAction"/>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.updateDiagram"
+         name="%update.diagram.name"/>
    </extension>
-
-<extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
          commandId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.updateDiagram"
@@ -561,7 +749,7 @@
          sequence="F5"/>
    </extension>
 
-<extension point="org.eclipse.ui.menus" id="context-menus">
+   <extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
       <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
       </menuContribution>
@@ -581,170 +769,18 @@
       </menuContribution>
    </extension>
 
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.LoadResourceAction"/>
+   </extension>
 
-<extension point="org.eclipse.ui.handlers" id="menu-handlers">
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
-      <?gmfgen generated="true"?>
-      <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.sheet.HardwareSheetLabelProvider">
-         <propertyCategory category="domain"/>
-         <propertyCategory category="visual"/>
-         <propertyCategory category="extra"/>
-      </propertyContributor>
-   </extension>
 
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
-      <?gmfgen generated="true"?>   
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram">
-         <propertyTab
-             category="visual"
-             id="property.tab.AppearancePropertySection"
-             label="%tab.appearance"/>
-          <propertyTab
-             category="visual"
-             id="property.tab.DiagramPropertySection"
-             label="%tab.diagram"/>
-          <propertyTab
-                       category="extra"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-          <propertyTab
-                       category="domain"
-             id="property.tab.general"
-             label="%tab.general"/>
-          <propertyTab
-          			 category="domain"
-             afterTab="property.tab.general"
-             id="property.tab.documentation"
-             label="%tab.documentation"/>
-      </propertyTabs>
-   </extension>
-
-<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
-      <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram">
-         <propertySection id="property.section.ConnectorAppearancePropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>
-         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection> 
-         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>     
-         <propertySection id="property.section.RulerGridPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-            tab="property.tab.DiagramPropertySection">
-         </propertySection>     
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.sheet.HardwarePropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem"/>
-         </propertySection>
-         <propertySection
-            id="property.section.general" 
-            tab="property.tab.general"
-            filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
-         </propertySection>
-         <propertySection
-            id="property.section.documentation" 
-            tab="property.tab.documentation"
-            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
-            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
-         </propertySection>
-      </propertySections>
-   </extension>
-<extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
-	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
-           categoryId="de.uni_paderborn.fujaba"
-           description="Create new ResourceInstance Model"
-           id="de.uni_paderborn.fujaba.muml.hardware.resource.category.create"
-           name="Create new ResourceInstance Model">
-    </command>
-    </extension>
-
-<extension
-         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
-      <?gmfgen generated="true"?>  
-      <category
-            key="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            name="resource">
-         
-         <child
-               class="ResourceInstanceRepository"
-               packageNsUri="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/">
-         </child>
-         
-      </category>
-   </extension>
-
-<extension
-         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
-      <?gmfgen generated="true"?>
-      <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramEditorID"
-            editorName="ResourceInstance Editor"
-            fileExtension="resourceinstance_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.hardware.resource.category"
-            modelId="ResourceInstance">
-         <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/hardware/hwresourceinstance/1.1/"
-               className="ResourceInstanceRepository">
-         </diagramElement>
-         
-         <topLevelNode
-               domainElement="SensorInstance"
-               semanticHint="2004">
-         </topLevelNode>
-         
-         <topLevelNode
-               domainElement="ActuatorInstance"
-               semanticHint="2005">
-         </topLevelNode>
-         
-         <topLevelNode
-               domainElement="StructuredResourceInstance"
-               semanticHint="2006">
-         </topLevelNode>
-         
-      </editor>
-   </extension>
-<extension point="org.eclipse.core.contenttype.contentTypes">
-		<?gmfgen generated="true"?>
-   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="resource"/>
-    </extension>
-
-<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
-
-
-
-
-
-
+   <!-- optionally, specify keybindings -->
 </plugin>

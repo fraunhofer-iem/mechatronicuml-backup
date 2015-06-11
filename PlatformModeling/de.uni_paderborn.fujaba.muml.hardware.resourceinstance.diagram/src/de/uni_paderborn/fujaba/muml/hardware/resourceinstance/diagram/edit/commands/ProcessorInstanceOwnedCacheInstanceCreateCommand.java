@@ -60,11 +60,11 @@ public class ProcessorInstanceOwnedCacheInstanceCreateCommand extends
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canCreateProcessorInstanceOwnedCacheInstance_4002(getSource(),
+				.canCreateProcessorInstanceOwnedCacheInstance_4003(getSource(),
 						getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorProcessorInstanceOwnedCacheInstance_4002(
+					.getErrorProcessorInstanceOwnedCacheInstance_4003(
 							getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,

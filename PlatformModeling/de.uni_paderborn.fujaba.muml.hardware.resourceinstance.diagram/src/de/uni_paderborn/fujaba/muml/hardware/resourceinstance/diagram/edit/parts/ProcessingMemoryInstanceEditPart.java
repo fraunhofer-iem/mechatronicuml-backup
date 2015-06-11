@@ -29,7 +29,7 @@ public class ProcessingMemoryInstanceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3012;
+	public static final int VISUAL_ID = 3021;
 
 	/**
 	 * MUML FIX, see code comments.

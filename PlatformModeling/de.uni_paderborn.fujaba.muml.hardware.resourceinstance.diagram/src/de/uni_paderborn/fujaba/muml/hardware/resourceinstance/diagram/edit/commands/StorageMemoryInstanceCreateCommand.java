@@ -57,7 +57,7 @@ public class StorageMemoryInstanceCreateCommand extends EditElementCommand {
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_StorageMemoryInstance_3013(newElement);
+				.getInstance().init_StorageMemoryInstance_3022(newElement);
 
 		doConfigure(newElement, monitor, info);
 

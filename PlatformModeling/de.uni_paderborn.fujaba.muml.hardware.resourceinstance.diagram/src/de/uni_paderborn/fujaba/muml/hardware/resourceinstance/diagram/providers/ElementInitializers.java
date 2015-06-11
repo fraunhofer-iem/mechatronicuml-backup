@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_SensorInstance_2004(
+	public void init_SensorInstance_2007(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.SensorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -33,7 +33,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ActuatorInstance_2005(
+	public void init_ActuatorInstance_2008(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ActuatorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -52,7 +52,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StructuredResourceInstance_2006(
+	public void init_StructuredResourceInstance_2009(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -71,7 +71,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HWPort_3016(
+	public void init_HWPort_3017(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -89,7 +89,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CacheInstance_3009(
+	public void init_CacheInstance_3018(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.CacheInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -108,7 +108,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ProgrammableLogicDeviceInstance_3010(
+	public void init_ProgrammableLogicDeviceInstance_3019(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProgrammableLogicDeviceInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -127,7 +127,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ProcessorInstance_3011(
+	public void init_ProcessorInstance_3020(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.expressions.HardwareOCLFactory
@@ -146,7 +146,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ProcessingMemoryInstance_3012(
+	public void init_ProcessingMemoryInstance_3021(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessingMemoryInstance instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize newInstance_0_0 = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory.eINSTANCE
@@ -180,7 +180,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StorageMemoryInstance_3013(
+	public void init_StorageMemoryInstance_3022(
 			de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StorageMemoryInstance instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize newInstance_0_0 = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory.eINSTANCE

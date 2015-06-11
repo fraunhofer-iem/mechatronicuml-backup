@@ -124,7 +124,7 @@ public class StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
-				.getStructuredResourceStructuredResourceCompartment_7001SemanticChildren(viewObject);
+				.getStructuredResourceStructuredResourceCompartment_7003SemanticChildren(viewObject);
 
 	}
 

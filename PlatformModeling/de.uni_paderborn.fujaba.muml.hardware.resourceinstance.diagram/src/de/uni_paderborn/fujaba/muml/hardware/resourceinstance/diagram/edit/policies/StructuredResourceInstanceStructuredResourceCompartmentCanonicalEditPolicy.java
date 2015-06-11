@@ -109,7 +109,7 @@ public class StructuredResourceInstanceStructuredResourceCompartmentCanonicalEdi
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
-				.getStructuredResourceInstanceStructuredResourceCompartment_7002SemanticChildren(viewObject);
+				.getStructuredResourceInstanceStructuredResourceCompartment_7003SemanticChildren(viewObject);
 
 	}
 

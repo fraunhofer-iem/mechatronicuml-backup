@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Device_2001(
+	public void init_Device_2006(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.Device instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -32,7 +32,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_StructuredResource_2002(
+	public void init_StructuredResource_2007(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.StructuredResource instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -51,7 +51,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CommunicationProtocolRepository_2005(
+	public void init_CommunicationProtocolRepository_2008(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -70,7 +70,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CommunicationResource_3009(
+	public void init_CommunicationResource_3011(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -122,7 +122,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CommunicationResource_3010(
+	public void init_CommunicationResource_3012(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
@@ -174,7 +174,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Cache_3002(
+	public void init_Cache_3013(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -192,7 +192,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Processor_3003(
+	public void init_Processor_3014(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
@@ -224,7 +224,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ProgrammableLogicDevice_3004(
+	public void init_ProgrammableLogicDevice_3015(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.ProgrammableLogicDevice instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -243,7 +243,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MemoryResource_3005(
+	public void init_MemoryResource_3016(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryResource instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
@@ -262,7 +262,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_BusProtocol_3006(
+	public void init_BusProtocol_3017(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocol instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate newInstance_0_0 = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory.eINSTANCE
@@ -309,7 +309,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_LinkProtocol_3007(
+	public void init_LinkProtocol_3018(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.LinkProtocol instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate newInstance_0_0 = de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory.eINSTANCE

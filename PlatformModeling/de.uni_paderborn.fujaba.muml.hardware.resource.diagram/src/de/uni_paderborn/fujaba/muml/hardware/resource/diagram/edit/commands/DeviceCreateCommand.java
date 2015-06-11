@@ -57,7 +57,7 @@ public class DeviceCreateCommand extends EditElementCommand {
 		owner.getResources().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_Device_2001(newElement);
+				.getInstance().init_Device_2006(newElement);
 
 		doConfigure(newElement, monitor, info);
 

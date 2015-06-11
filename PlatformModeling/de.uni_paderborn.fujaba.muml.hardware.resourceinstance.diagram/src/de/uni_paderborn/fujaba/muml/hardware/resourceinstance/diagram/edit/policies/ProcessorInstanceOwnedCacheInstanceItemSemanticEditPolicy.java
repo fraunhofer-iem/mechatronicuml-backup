@@ -16,7 +16,7 @@ public class ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy
 	 */
 	public ProcessorInstanceOwnedCacheInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4002);
+				de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProcessorInstanceOwnedCacheInstance_4003);
 	}
 
 	/**

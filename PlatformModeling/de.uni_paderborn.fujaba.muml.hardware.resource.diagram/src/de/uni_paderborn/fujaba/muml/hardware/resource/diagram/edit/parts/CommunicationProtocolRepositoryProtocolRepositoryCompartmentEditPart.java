@@ -28,7 +28,7 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7002;
+	public static final int VISUAL_ID = 7004;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -135,10 +135,10 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPar
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3006) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3007) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3018) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

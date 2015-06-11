@@ -34,7 +34,7 @@ public class ProcessorInstanceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3011;
+	public static final int VISUAL_ID = 3020;
 
 	/**
 	 * MUML FIX, see code comments.

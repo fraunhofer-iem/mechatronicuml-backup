@@ -75,10 +75,10 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistProcessorOwnedCache_4001(
+				.getLinkConstraints().canExistProcessorOwnedCache_4002(
 						getNewSource(), getOldTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorOwnedCache_4001(
+					.getLinkConstraints().getErrorProcessorOwnedCache_4002(
 							getNewSource(), getOldTarget(), sourceView,
 							targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
@@ -100,10 +100,10 @@ public class ProcessorOwnedCacheReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistProcessorOwnedCache_4001(
+				.getLinkConstraints().canExistProcessorOwnedCache_4002(
 						getOldSource(), getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorProcessorOwnedCache_4001(
+					.getLinkConstraints().getErrorProcessorOwnedCache_4002(
 							getOldSource(), getNewTarget(), sourceView,
 							targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy

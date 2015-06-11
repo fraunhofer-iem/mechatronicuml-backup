@@ -373,22 +373,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Cache_3002_incominglinks;
+	public static String NavigatorGroupName_Cache_3013_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Processor_3003_outgoinglinks;
+	public static String NavigatorGroupName_Processor_3014_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ProcessorOwnedCache_4001_target;
+	public static String NavigatorGroupName_ProcessorOwnedCache_4002_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ProcessorOwnedCache_4001_source;
+	public static String NavigatorGroupName_ProcessorOwnedCache_4002_source;
 
 	/**
 	 * @generated

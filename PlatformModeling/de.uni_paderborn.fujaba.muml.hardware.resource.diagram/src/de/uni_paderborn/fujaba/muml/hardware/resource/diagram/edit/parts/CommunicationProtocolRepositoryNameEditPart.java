@@ -55,7 +55,7 @@ public class CommunicationProtocolRepositoryNameEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5032;
+	public static final int VISUAL_ID = 5070;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -325,7 +325,7 @@ public class CommunicationProtocolRepositoryNameEditPart extends
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005,
+							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2008,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart.VISUAL_ID));

@@ -58,7 +58,7 @@ public class CommunicationProtocolRepositoryCreateCommand extends
 		owner.getProtocols().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_CommunicationProtocolRepository_2005(
+				.getInstance().init_CommunicationProtocolRepository_2008(
 						newElement);
 
 		doConfigure(newElement, monitor, info);

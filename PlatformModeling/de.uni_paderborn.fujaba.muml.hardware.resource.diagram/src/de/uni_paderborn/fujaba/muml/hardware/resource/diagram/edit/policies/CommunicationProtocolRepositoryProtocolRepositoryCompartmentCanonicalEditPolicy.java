@@ -106,7 +106,7 @@ public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonic
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
-				.getCommunicationProtocolRepositoryProtocolRepositoryCompartment_7002SemanticChildren(viewObject);
+				.getCommunicationProtocolRepositoryProtocolRepositoryCompartment_7004SemanticChildren(viewObject);
 
 	}
 

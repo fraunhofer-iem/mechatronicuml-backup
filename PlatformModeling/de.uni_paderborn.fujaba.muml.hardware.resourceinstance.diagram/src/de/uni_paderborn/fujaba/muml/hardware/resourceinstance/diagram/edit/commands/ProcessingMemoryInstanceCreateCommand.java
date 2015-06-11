@@ -57,7 +57,7 @@ public class ProcessingMemoryInstanceCreateCommand extends EditElementCommand {
 		owner.getEmbeddedAtomicResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_ProcessingMemoryInstance_3012(newElement);
+				.getInstance().init_ProcessingMemoryInstance_3021(newElement);
 
 		doConfigure(newElement, monitor, info);
 

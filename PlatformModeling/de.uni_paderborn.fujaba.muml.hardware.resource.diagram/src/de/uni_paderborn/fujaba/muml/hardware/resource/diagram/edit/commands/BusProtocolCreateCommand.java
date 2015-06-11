@@ -57,7 +57,7 @@ public class BusProtocolCreateCommand extends EditElementCommand {
 		owner.getCommunicationProtocols().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_BusProtocol_3006(newElement);
+				.getInstance().init_BusProtocol_3017(newElement);
 
 		doConfigure(newElement, monitor, info);
 

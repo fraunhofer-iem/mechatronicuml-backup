@@ -20,7 +20,7 @@ public class BusProtocolItemSemanticEditPolicy
 	 */
 	public BusProtocolItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3006);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3017);
 	}
 
 	/**

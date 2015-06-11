@@ -35,7 +35,7 @@ public class SensorInstanceEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2004;
+	public static final int VISUAL_ID = 2007;
 
 	/**
 	 * MUML FIX, see code comments.

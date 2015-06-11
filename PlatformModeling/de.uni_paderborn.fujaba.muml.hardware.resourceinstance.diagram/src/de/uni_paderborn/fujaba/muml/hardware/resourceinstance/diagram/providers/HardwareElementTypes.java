@@ -49,44 +49,52 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType SensorInstance_2004 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2004"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ActuatorInstance_2005 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2005"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType StructuredResourceInstance_2006 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2006"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType HWPort_3016 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3016"); //$NON-NLS-1$
+	public static final IElementType SensorInstance_2007 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.SensorInstance_2007"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType CacheInstance_3009 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3009"); //$NON-NLS-1$
+	public static final IElementType ActuatorInstance_2008 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ActuatorInstance_2008"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProgrammableLogicDeviceInstance_3010 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3010"); //$NON-NLS-1$
+	public static final IElementType StructuredResourceInstance_2009 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StructuredResourceInstance_2009"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessorInstance_3011 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3011"); //$NON-NLS-1$
+	public static final IElementType HWPort_3017 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.HWPort_3017"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessingMemoryInstance_3012 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3012"); //$NON-NLS-1$
+	public static final IElementType CacheInstance_3018 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.CacheInstance_3018"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType StorageMemoryInstance_3013 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3013"); //$NON-NLS-1$
+	public static final IElementType ProgrammableLogicDeviceInstance_3019 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProgrammableLogicDeviceInstance_3019"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProcessorInstanceOwnedCacheInstance_4002 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4002"); //$NON-NLS-1$
+	public static final IElementType ProcessorInstance_3020 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstance_3020"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ProcessingMemoryInstance_3021 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessingMemoryInstance_3021"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType StorageMemoryInstance_3022 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.StorageMemoryInstance_3022"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ProcessorInstanceOwnedCacheInstance_4003 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.ProcessorInstanceOwnedCacheInstance_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -132,52 +140,52 @@ public class HardwareElementTypes {
 							.getResourceInstanceRepository());
 
 			elements.put(
-					SensorInstance_2004,
+					SensorInstance_2007,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getSensorInstance());
 
 			elements.put(
-					ActuatorInstance_2005,
+					ActuatorInstance_2008,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getActuatorInstance());
 
 			elements.put(
-					StructuredResourceInstance_2006,
+					StructuredResourceInstance_2009,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getStructuredResourceInstance());
 
 			elements.put(
-					HWPort_3016,
+					HWPort_3017,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getHWPort());
 
 			elements.put(
-					CacheInstance_3009,
+					CacheInstance_3018,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getCacheInstance());
 
 			elements.put(
-					ProgrammableLogicDeviceInstance_3010,
+					ProgrammableLogicDeviceInstance_3019,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProgrammableLogicDeviceInstance());
 
 			elements.put(
-					ProcessorInstance_3011,
+					ProcessorInstance_3020,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProcessorInstance());
 
 			elements.put(
-					ProcessingMemoryInstance_3012,
+					ProcessingMemoryInstance_3021,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProcessingMemoryInstance());
 
 			elements.put(
-					StorageMemoryInstance_3013,
+					StorageMemoryInstance_3022,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getStorageMemoryInstance());
 
 			elements.put(
-					ProcessorInstanceOwnedCacheInstance_4002,
+					ProcessorInstanceOwnedCacheInstance_4003,
 					de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage.eINSTANCE
 							.getProcessorInstance_OwnedCacheInstance());
 		}
@@ -198,16 +206,16 @@ public class HardwareElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ResourceInstanceRepository_1000);
-			KNOWN_ELEMENT_TYPES.add(SensorInstance_2004);
-			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_2005);
-			KNOWN_ELEMENT_TYPES.add(StructuredResourceInstance_2006);
-			KNOWN_ELEMENT_TYPES.add(HWPort_3016);
-			KNOWN_ELEMENT_TYPES.add(CacheInstance_3009);
-			KNOWN_ELEMENT_TYPES.add(ProgrammableLogicDeviceInstance_3010);
-			KNOWN_ELEMENT_TYPES.add(ProcessorInstance_3011);
-			KNOWN_ELEMENT_TYPES.add(ProcessingMemoryInstance_3012);
-			KNOWN_ELEMENT_TYPES.add(StorageMemoryInstance_3013);
-			KNOWN_ELEMENT_TYPES.add(ProcessorInstanceOwnedCacheInstance_4002);
+			KNOWN_ELEMENT_TYPES.add(SensorInstance_2007);
+			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_2008);
+			KNOWN_ELEMENT_TYPES.add(StructuredResourceInstance_2009);
+			KNOWN_ELEMENT_TYPES.add(HWPort_3017);
+			KNOWN_ELEMENT_TYPES.add(CacheInstance_3018);
+			KNOWN_ELEMENT_TYPES.add(ProgrammableLogicDeviceInstance_3019);
+			KNOWN_ELEMENT_TYPES.add(ProcessorInstance_3020);
+			KNOWN_ELEMENT_TYPES.add(ProcessingMemoryInstance_3021);
+			KNOWN_ELEMENT_TYPES.add(StorageMemoryInstance_3022);
+			KNOWN_ELEMENT_TYPES.add(ProcessorInstanceOwnedCacheInstance_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -220,25 +228,25 @@ public class HardwareElementTypes {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID:
 			return ResourceInstanceRepository_1000;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:
-			return SensorInstance_2004;
+			return SensorInstance_2007;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
-			return ActuatorInstance_2005;
+			return ActuatorInstance_2008;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
-			return StructuredResourceInstance_2006;
+			return StructuredResourceInstance_2009;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID:
-			return HWPort_3016;
+			return HWPort_3017;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID:
-			return CacheInstance_3009;
+			return CacheInstance_3018;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID:
-			return ProgrammableLogicDeviceInstance_3010;
+			return ProgrammableLogicDeviceInstance_3019;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID:
-			return ProcessorInstance_3011;
+			return ProcessorInstance_3020;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID:
-			return ProcessingMemoryInstance_3012;
+			return ProcessingMemoryInstance_3021;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID:
-			return StorageMemoryInstance_3013;
+			return StorageMemoryInstance_3022;
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceOwnedCacheInstanceEditPart.VISUAL_ID:
-			return ProcessorInstanceOwnedCacheInstance_4002;
+			return ProcessorInstanceOwnedCacheInstance_4003;
 		}
 		return null;
 	}

@@ -308,22 +308,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CacheInstance_3009_incominglinks;
+	public static String NavigatorGroupName_CacheInstance_3018_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ProcessorInstance_3011_outgoinglinks;
+	public static String NavigatorGroupName_ProcessorInstance_3020_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4002_target;
+	public static String NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4002_source;
+	public static String NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4003_source;
 
 	/**
 	 * @generated

@@ -345,7 +345,7 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_CacheInstance_3009_incominglinks,
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_CacheInstance_3018_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(
@@ -364,7 +364,7 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_ProcessorInstance_3011_outgoinglinks,
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_ProcessorInstance_3020_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getOutgoingLinksByType(
@@ -383,10 +383,10 @@ public class HardwareNavigatorContentProvider implements ICommonContentProvider 
 			LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup target = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4002_target,
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4003_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup source = new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.navigator.HardwareNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4002_source,
+					de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Messages.NavigatorGroupName_ProcessorInstanceOwnedCacheInstance_4003_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(

@@ -57,7 +57,7 @@ public class CommunicationResource2CreateCommand extends EditElementCommand {
 		owner.getCommunicationResources().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_CommunicationResource_3010(newElement);
+				.getInstance().init_CommunicationResource_3012(newElement);
 
 		doConfigure(newElement, monitor, info);
 

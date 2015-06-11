@@ -20,7 +20,7 @@ public class CommunicationResourceItemSemanticEditPolicy
 	 */
 	public CommunicationResourceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3009);
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationResource_3011);
 	}
 
 	/**

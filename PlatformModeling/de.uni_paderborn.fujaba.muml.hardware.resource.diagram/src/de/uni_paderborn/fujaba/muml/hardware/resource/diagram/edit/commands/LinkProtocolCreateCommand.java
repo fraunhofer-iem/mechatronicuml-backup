@@ -57,7 +57,7 @@ public class LinkProtocolCreateCommand extends EditElementCommand {
 		owner.getCommunicationProtocols().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.ElementInitializers
-				.getInstance().init_LinkProtocol_3007(newElement);
+				.getInstance().init_LinkProtocol_3018(newElement);
 
 		doConfigure(newElement, monitor, info);
 

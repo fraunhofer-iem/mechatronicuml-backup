@@ -57,7 +57,7 @@ public class ActuatorInstanceCreateCommand extends EditElementCommand {
 		owner.getResourceInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.ElementInitializers
-				.getInstance().init_ActuatorInstance_2005(newElement);
+				.getInstance().init_ActuatorInstance_2008(newElement);
 
 		doConfigure(newElement, monitor, info);
 

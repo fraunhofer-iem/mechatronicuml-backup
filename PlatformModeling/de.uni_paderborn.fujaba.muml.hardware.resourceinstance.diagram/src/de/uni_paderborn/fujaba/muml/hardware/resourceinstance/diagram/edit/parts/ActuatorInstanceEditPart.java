@@ -35,7 +35,7 @@ public class ActuatorInstanceEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2005;
+	public static final int VISUAL_ID = 2008;
 
 	/**
 	 * MUML FIX, see code comments.

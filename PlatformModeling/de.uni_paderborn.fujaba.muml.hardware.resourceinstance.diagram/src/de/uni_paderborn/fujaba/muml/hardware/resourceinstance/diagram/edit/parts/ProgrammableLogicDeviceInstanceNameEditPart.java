@@ -56,7 +56,7 @@ public class ProgrammableLogicDeviceInstanceNameEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5046;
+	public static final int VISUAL_ID = 5082;
 
 	/**
 	 * MUML FIX, see code comments.
@@ -326,7 +326,7 @@ public class ProgrammableLogicDeviceInstanceNameEditPart extends
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3010,
+							de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.providers.HardwareElementTypes.ProgrammableLogicDeviceInstance_3019,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceNameEditPart.VISUAL_ID));
