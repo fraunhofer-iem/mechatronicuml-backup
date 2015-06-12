@@ -363,6 +363,10 @@ endif
 	getQualifiedName(clock) + getQualifiedName(clock.statechart)
 /]
 
+[query public getName(doEvent : DoEvent) : String = 
+	getQualifiedName(doEvent)
+/]
+
 [query public getTaskName(ci : ComponentInstance) : String = 
 	'Task_'+getVariableName(ci)
 /]
@@ -406,6 +410,12 @@ if (clock.oclIsUndefined()) then
 else
 	getName(clock).toLowerFirst() + 'Clock'
 endif
+/]
+
+[query public getClockVariableName(doEvent : DoEvent) : String = 
+
+	getName(doEvent).toLowerFirst() + 'DoEventClock'
+
 /]
 
 

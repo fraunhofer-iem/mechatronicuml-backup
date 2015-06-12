@@ -261,13 +261,19 @@
 							[/for] 
 							else {
 						[/if]
-						[comment @TODO doActions/]
-						// execute do action
+						
+
 						[if (not state.doEvent.oclIsUndefined())]
-							//do event...clocks....
-						[else]
-							// nothing to do
+						//execute doEvent
+							if (Clock_getTime(stateChart->[state.getClockVariableName()/]) >= [doEvent.period.value.generateExpression('')/] * [doEvent.period.getTimeUnitFactor()/]){
+								//execute action [state.doEvent.action.name/]
+								[for (expression : Expression | state.doEvent.action.expressions)]
+									[state.doEvent.action.expressions.generateExpression('')/]
+								[/for]
+								Clock_reset(stateChart->[state.getClockVariableName()/]);
+							}
 						[/if]
+
 					
 						[comment Execute the inner regions /]	
 						[for (reg : Region | state.embeddedRegions->sortedBy(priority)->reverse())]
@@ -391,9 +397,15 @@
 	// change the state
 	[if (transition.target.oclIsKindOf(State))]		
 		stateChart->[getVariableName(targetRTSC)/] = [getName(transition.target.oclAsType(State))/];
+		[comment reset doEvent-Clock for state/]
+		[if (not target.oclAsType(State).doEvent.oclIsUndefined())]
+			Clock_reset(stateChart->[target.oclAsType(State).getClockVariableName()/]);
+		[/if]
 	[elseif (transition.target.oclIsTypeOf(EntryPoint))]
 		stateChart->[getVariableName(target.oclAsType(EntryPoint).state.parentStatechart)/] = [getName(transition.target.oclAsType(EntryPoint).state)/];
 	[/if]
+
+
 
 	[if (target.oclIsTypeOf(State))]		
 		[entryActionsRecursive(rtsc, target.oclAsType(State))/]

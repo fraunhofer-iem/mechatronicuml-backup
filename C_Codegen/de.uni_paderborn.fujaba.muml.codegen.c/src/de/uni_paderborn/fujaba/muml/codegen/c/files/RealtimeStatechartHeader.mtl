@@ -114,6 +114,13 @@ struct [getClassName(rtsc)/] {
 		[for (clock : Clock | rtsc.eAllContents(Clock))]
 			Clock [getVariableName(clock)/];/**< The Clock: [clock.getName()/] */
 		[/for]
+
+		[comment member variables for do-event clocks. /]
+
+		[for (state : State | rtsc.eAllContents(State)) ? (not state.doEvent.oclIsUndefined())]					
+
+			Clock [getClockVariableName(state)/];/**< Clock for doEvent for state [state.getName()/] */
+		[/for]
 	
 		[comment Member variables for the variables of each region. /]	
 		[for (var : Variable | rtsc.eAllContents(Variable))] 
