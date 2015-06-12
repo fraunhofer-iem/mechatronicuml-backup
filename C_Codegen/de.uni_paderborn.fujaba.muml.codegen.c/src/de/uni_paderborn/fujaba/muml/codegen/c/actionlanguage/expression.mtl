@@ -537,15 +537,7 @@ while ([generateExpression(expression.loopTest,  fqname) /]){
 [/template]
 
 
-[**
- * Generates an APICall
- * @param expression the OperationCall
- * @param usePre use pre construct for rhs variables (and for guards)
- * @param fqname a fully qualified name or the empty string
-*/]
-[template public generateExpression(expression : APICall , fqname : String)]
-stateChart->[expression.operation.getMethodName()/]([for (pBinding:ParameterBinding | expression.parameterBinding) separator (',')][pBinding.getValue()/][/for])
-[/template]
+
 
 
 [**
