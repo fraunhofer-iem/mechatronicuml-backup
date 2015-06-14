@@ -4,6 +4,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationConstraint;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -36,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl#getGuards <em>Guards</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionSpecificationEntryImpl#getHybridPortMappings <em>Hybrid Port Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,7 +66,7 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 	protected Message message;
 
 	/**
-	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' containment reference.
+	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReconfigurationRule()
@@ -71,6 +74,16 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 	 * @ordered
 	 */
 	protected ReconfigurationRule reconfigurationRule;
+
+	/**
+	 * The cached value of the '{@link #getHybridPortMappings() <em>Hybrid Port Mappings</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHybridPortMappings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<HybridPortMapping> hybridPortMappings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,6 +165,14 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 	 * @generated
 	 */
 	public ReconfigurationRule getReconfigurationRule() {
+		if (reconfigurationRule != null && reconfigurationRule.eIsProxy()) {
+			InternalEObject oldReconfigurationRule = (InternalEObject)reconfigurationRule;
+			reconfigurationRule = (ReconfigurationRule)eResolveProxy(oldReconfigurationRule);
+			if (reconfigurationRule != oldReconfigurationRule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+			}
+		}
 		return reconfigurationRule;
 	}
 
@@ -160,14 +181,8 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetReconfigurationRule(ReconfigurationRule newReconfigurationRule, NotificationChain msgs) {
-		ReconfigurationRule oldReconfigurationRule = reconfigurationRule;
-		reconfigurationRule = newReconfigurationRule;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, newReconfigurationRule);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public ReconfigurationRule basicGetReconfigurationRule() {
+		return reconfigurationRule;
 	}
 
 	/**
@@ -176,17 +191,22 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 	 * @generated
 	 */
 	public void setReconfigurationRule(ReconfigurationRule newReconfigurationRule) {
-		if (newReconfigurationRule != reconfigurationRule) {
-			NotificationChain msgs = null;
-			if (reconfigurationRule != null)
-				msgs = ((InternalEObject)reconfigurationRule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, null, msgs);
-			if (newReconfigurationRule != null)
-				msgs = ((InternalEObject)newReconfigurationRule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, null, msgs);
-			msgs = basicSetReconfigurationRule(newReconfigurationRule, msgs);
-			if (msgs != null) msgs.dispatch();
+		ReconfigurationRule oldReconfigurationRule = reconfigurationRule;
+		reconfigurationRule = newReconfigurationRule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<HybridPortMapping> getHybridPortMappings() {
+		if (hybridPortMappings == null) {
+			hybridPortMappings = new EObjectResolvingEList<HybridPortMapping>(HybridPortMapping.class, this, ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS);
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, newReconfigurationRule, newReconfigurationRule));
+		return hybridPortMappings;
 	}
 
 	/**
@@ -201,8 +221,6 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 				return ((InternalEList<?>)getGuards()).basicRemove(otherEnd, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE:
 				return basicSetMessage(null, msgs);
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
-				return basicSetReconfigurationRule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -220,7 +238,10 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE:
 				return getMessage();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
-				return getReconfigurationRule();
+				if (resolve) return getReconfigurationRule();
+				return basicGetReconfigurationRule();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS:
+				return getHybridPortMappings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,6 +265,10 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)newValue);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS:
+				getHybridPortMappings().clear();
+				getHybridPortMappings().addAll((Collection<? extends HybridPortMapping>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -265,6 +290,9 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)null);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS:
+				getHybridPortMappings().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,6 +311,8 @@ public class ReconfigurationExecutionSpecificationEntryImpl extends DataTypeImpl
 				return message != null;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				return reconfigurationRule != null;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS:
+				return hybridPortMappings != null && !hybridPortMappings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

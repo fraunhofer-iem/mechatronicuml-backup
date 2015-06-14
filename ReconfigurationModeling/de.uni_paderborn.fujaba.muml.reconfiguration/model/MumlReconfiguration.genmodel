@@ -127,6 +127,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/guards"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/message"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/reconfigurationRule"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationExecutionSpecificationEntry/hybridPortMappings"/>
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationManagementSpecificationEntry/conditions"/>

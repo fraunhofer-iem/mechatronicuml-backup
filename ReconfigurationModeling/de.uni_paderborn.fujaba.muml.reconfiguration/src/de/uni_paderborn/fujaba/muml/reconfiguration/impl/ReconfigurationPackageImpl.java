@@ -920,6 +920,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getReconfigurationExecutionSpecificationEntry_HybridPortMappings() {
+		return (EReference)reconfigurationExecutionSpecificationEntryEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReconfigurationManagementSpecificationEntry() {
 		return reconfigurationManagementSpecificationEntryEClass;
 	}
@@ -1435,6 +1444,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__GUARDS);
 		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE);
 		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE);
+		createEReference(reconfigurationExecutionSpecificationEntryEClass, RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS);
 
 		reconfigurationManagementSpecificationEntryEClass = createEClass(RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY);
 		createEReference(reconfigurationManagementSpecificationEntryEClass, RECONFIGURATION_MANAGEMENT_SPECIFICATION_ENTRY__CONDITIONS);
@@ -1657,7 +1667,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(reconfigurationExecutionSpecificationEntryEClass, ReconfigurationExecutionSpecificationEntry.class, "ReconfigurationExecutionSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationExecutionSpecificationEntry_Guards(), this.getReconfigurationConstraint(), null, "guards", null, 0, -1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionSpecificationEntry_Message(), theRealtimestatechartPackage.getMessage(), null, "message", null, 1, 1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationExecutionSpecificationEntry_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionSpecificationEntry_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionSpecificationEntry_HybridPortMappings(), this.getHybridPortMapping(), null, "hybridPortMappings", null, 0, -1, ReconfigurationExecutionSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationManagementSpecificationEntryEClass, ReconfigurationManagementSpecificationEntry.class, "ReconfigurationManagementSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationManagementSpecificationEntry_Conditions(), this.getReconfigurationConstraint(), null, "conditions", null, 0, -1, ReconfigurationManagementSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

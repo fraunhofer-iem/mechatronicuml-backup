@@ -3,41 +3,47 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+
+import de.uni_paderborn.fujaba.muml.types.provider.DataTypeItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.provider.AtomicComponentItemProvider;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurableAtomicComponentItemProvider
-	extends AtomicComponentItemProvider {
+public class ReconfigurationExecutionSpecificationEntryItemProvider extends DataTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurableAtomicComponentItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationExecutionSpecificationEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,8 +58,31 @@ public class ReconfigurableAtomicComponentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addHybridPortMappingsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Hybrid Port Mappings feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHybridPortMappingsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReconfigurationExecutionSpecificationEntry_hybridPortMappings_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationExecutionSpecificationEntry_hybridPortMappings_feature", "_UI_ReconfigurationExecutionSpecificationEntry_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -68,9 +97,9 @@ public class ReconfigurableAtomicComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_ATOMIC_COMPONENT__EXECUTION_ENTRIES);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_ATOMIC_COMPONENT__MANAGEMENT_ENTRIES);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_ATOMIC_COMPONENT__HYBRID_PORT_MAPPINGS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__GUARDS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE);
 		}
 		return childrenFeatures;
 	}
@@ -89,14 +118,14 @@ public class ReconfigurableAtomicComponentItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurableAtomicComponent.gif.
+	 * This returns ReconfigurationExecutionSpecificationEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurableAtomicComponent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationExecutionSpecificationEntry"));
 	}
 
 	/**
@@ -107,10 +136,10 @@ public class ReconfigurableAtomicComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurableAtomicComponent)object).getName();
+		String label = ((ReconfigurationExecutionSpecificationEntry)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurableAtomicComponent_type") :
-			getString("_UI_ReconfigurableAtomicComponent_type") + " " + label;
+			getString("_UI_ReconfigurationExecutionSpecificationEntry_type") :
+			getString("_UI_ReconfigurationExecutionSpecificationEntry_type") + " " + label;
 	}
 	
 
@@ -125,10 +154,10 @@ public class ReconfigurableAtomicComponentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurableAtomicComponent.class)) {
-			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT__EXECUTION_ENTRIES:
-			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT__MANAGEMENT_ENTRIES:
-			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT__HYBRID_PORT_MAPPINGS:
+		switch (notification.getFeatureID(ReconfigurationExecutionSpecificationEntry.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__GUARDS:
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE:
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -158,38 +187,8 @@ public class ReconfigurableAtomicComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ProtocolinstantiationFactory.eINSTANCE.createBroadcastPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURABLE_ATOMIC_COMPONENT__EXECUTION_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionSpecificationEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURABLE_ATOMIC_COMPONENT__MANAGEMENT_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationManagementSpecificationEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURABLE_ATOMIC_COMPONENT__HYBRID_PORT_MAPPINGS,
-				 ReconfigurationFactory.eINSTANCE.createHybridPortMapping()));
+				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE,
+				 RealtimestatechartFactory.eINSTANCE.createMessage()));
 	}
 
 	/**

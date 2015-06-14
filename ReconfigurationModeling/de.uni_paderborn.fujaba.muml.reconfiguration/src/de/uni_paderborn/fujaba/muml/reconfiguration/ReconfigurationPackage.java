@@ -7623,7 +7623,7 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE = TypesPackage.DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' containment reference.
+	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7632,13 +7632,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = TypesPackage.DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Hybrid Port Mappings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS = TypesPackage.DATA_TYPE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Execution Specification Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY_FEATURE_COUNT = TypesPackage.DATA_TYPE_FEATURE_COUNT + 3;
+	int RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY_FEATURE_COUNT = TypesPackage.DATA_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -8679,15 +8688,26 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationExecutionSpecificationEntry_Message();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Reconfiguration Rule</em>'.
+	 * @return the meta object for the reference '<em>Reconfiguration Rule</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getReconfigurationRule()
 	 * @see #getReconfigurationExecutionSpecificationEntry()
 	 * @generated
 	 */
 	EReference getReconfigurationExecutionSpecificationEntry_ReconfigurationRule();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getHybridPortMappings <em>Hybrid Port Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Hybrid Port Mappings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry#getHybridPortMappings()
+	 * @see #getReconfigurationExecutionSpecificationEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionSpecificationEntry_HybridPortMappings();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry <em>Management Specification Entry</em>}'.
@@ -9642,12 +9662,20 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__MESSAGE = eINSTANCE.getReconfigurationExecutionSpecificationEntry_Message();
 
 		/**
-		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = eINSTANCE.getReconfigurationExecutionSpecificationEntry_ReconfigurationRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Hybrid Port Mappings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_SPECIFICATION_ENTRY__HYBRID_PORT_MAPPINGS = eINSTANCE.getReconfigurationExecutionSpecificationEntry_HybridPortMappings();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationManagementSpecificationEntryImpl <em>Management Specification Entry</em>}' class.

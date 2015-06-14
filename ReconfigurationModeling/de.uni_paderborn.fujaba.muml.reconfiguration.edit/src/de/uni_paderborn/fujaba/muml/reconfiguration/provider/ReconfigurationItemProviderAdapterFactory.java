@@ -535,6 +535,75 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HybridPortMappingItemProvider hybridPortMappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.HybridPortMapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHybridPortMappingAdapter() {
+		if (hybridPortMappingItemProvider == null) {
+			hybridPortMappingItemProvider = new HybridPortMappingItemProvider(this);
+		}
+
+		return hybridPortMappingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationExecutionSpecificationEntryItemProvider reconfigurationExecutionSpecificationEntryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionSpecificationEntry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurationExecutionSpecificationEntryAdapter() {
+		if (reconfigurationExecutionSpecificationEntryItemProvider == null) {
+			reconfigurationExecutionSpecificationEntryItemProvider = new ReconfigurationExecutionSpecificationEntryItemProvider(this);
+		}
+
+		return reconfigurationExecutionSpecificationEntryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationManagementSpecificationEntryItemProvider reconfigurationManagementSpecificationEntryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationManagementSpecificationEntry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurationManagementSpecificationEntryAdapter() {
+		if (reconfigurationManagementSpecificationEntryItemProvider == null) {
+			reconfigurationManagementSpecificationEntryItemProvider = new ReconfigurationManagementSpecificationEntryItemProvider(this);
+		}
+
+		return reconfigurationManagementSpecificationEntryItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -653,6 +722,9 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (reconfigurationPortDelegationConnectorItemProvider != null) reconfigurationPortDelegationConnectorItemProvider.dispose();
 		if (fadingComponentItemProvider != null) fadingComponentItemProvider.dispose();
 		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
+		if (hybridPortMappingItemProvider != null) hybridPortMappingItemProvider.dispose();
+		if (reconfigurationExecutionSpecificationEntryItemProvider != null) reconfigurationExecutionSpecificationEntryItemProvider.dispose();
+		if (reconfigurationManagementSpecificationEntryItemProvider != null) reconfigurationManagementSpecificationEntryItemProvider.dispose();
 	}
 
 }
