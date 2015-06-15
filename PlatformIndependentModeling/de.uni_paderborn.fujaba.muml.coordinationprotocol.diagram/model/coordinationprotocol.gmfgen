@@ -12,6 +12,8 @@
         <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
       </viewmap>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="&quot;CustomUpdateRole&quot;" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomCoordinationProtocolUpdateEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.muml.custom.nonDeletable" editPolicyQualifiedClassName=""/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/gmfAbstractCoordinationSpecification"/>
@@ -293,6 +295,7 @@
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RoleConnectorEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy"/>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/RoleConnector"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>

@@ -78,6 +78,11 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.RoleConnectorItemSemanticEditPolicy());
+
+		installEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy());
+
 	}
 
 	/**
