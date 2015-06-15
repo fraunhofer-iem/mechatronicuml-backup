@@ -12,7 +12,6 @@ public class Activator extends AbstractUIPlugin {
 
 	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom"; //$NON-NLS-1$
 
-	public static final String CREATE_ROLE_RTSC = "/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom/transforms/CreateRoleRTSC.qvto";
 
 	private static Activator instance;
 
@@ -27,7 +26,7 @@ public class Activator extends AbstractUIPlugin {
 
 		// Create transformation executor
 
-		getTransformationExecutor(CREATE_ROLE_RTSC);
+		
 	}
 
 	public TransformationExecutor getTransformationExecutor(

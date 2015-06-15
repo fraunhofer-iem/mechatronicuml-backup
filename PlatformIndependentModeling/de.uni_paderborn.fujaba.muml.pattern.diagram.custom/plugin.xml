@@ -78,29 +78,7 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:de.uni_paderborn.fujaba">
-         <separator
-               name="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.separator1"
-               visible="true">
-         </separator>
          
-         <command
-               commandId="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.createRoleRTSCCommand"
-               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPortde.uni_paderborn.fujaba.muml.pattern.diagram.custom.createRoleRTSC"
-               label="Create Role RTSC (incl. Diagram)"
-               style="push">
-            <visibleWhen>
-               <and>
-                  <with
-                        variable="selection">
-                     <iterate
-                           ifEmpty="false">
-                        <instanceof
-                              value="de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleEditPart">
-                        </instanceof>
-                     </iterate>
-                  </with></and>
-            </visibleWhen>
-         </command>
           <separator
                name="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.separator1"
                visible="true">
@@ -146,13 +124,6 @@
    
    <extension
          point="org.eclipse.ui.commands">
-      <command
-            categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.handlers.CreateRoleRTSCHandler"
-            description="Create the Role&apos;s RTSC and it&apos;s Diagram"
-            id="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.createRoleRTSCCommand"
-            name="Create Role RTSC">
-      </command>
        <command
             categoryId="de.uni_paderborn.fujaba"
             defaultHandler="de.uni_paderborn.fujaba.muml.pattern.diagram.custom.edit.handlers.PatternVerificationHandler"

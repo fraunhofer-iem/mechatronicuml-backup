@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -31,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * 
  */
 public class CustomComponentPartEditPart extends ComponentPartEditPart {
-	
+
 	protected List<String> portListenerNames = new ArrayList<String>();
 
 	public CustomComponentPartEditPart(View view) {
@@ -77,16 +78,21 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	@Override
 	public void activate() {
 		super.activate();
-		
-		executeTransformation();
-		updateCardinality();
+
+		Display.getCurrent().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				executeTransformation();
+				updateCardinality();
+			}
+		});
 	}
 
 	@Override
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		
-		ComponentPart componentPart =  (ComponentPart) resolveSemanticElement();
+
+		ComponentPart componentPart = (ComponentPart) resolveSemanticElement();
 		Component componentType = componentPart.getComponentType();
 		if (componentType != null) {
 			addListenerFilter("ComponentType", this, componentType);//$NON-NLS-1$
@@ -99,10 +105,10 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			}
 		}
 		Cardinality cardinality = componentPart.getCardinality();
-		
+
 		if (cardinality != null) {
 			addListenerFilter("Cardinality", this, cardinality);//$NON-NLS-1
-			
+
 			NaturalNumber upperBound = cardinality.getUpperBound();
 			if (upperBound != null) {
 				addListenerFilter("Cardinality.upperBound", this, upperBound);
@@ -116,7 +122,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		removeListenerFilter("ComponentType"); //$NON-NLS-1$
 		removeListenerFilter("Cardinality"); //$NON-NLS-1$
 		removeListenerFilter("Cardinality.upperBound"); //$NON-NLS-1$
-		
+
 		// remove port listeners
 		for (String listenerName : portListenerNames) {
 			removeListenerFilter(listenerName);
@@ -129,25 +135,29 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
-		EStructuralFeature feature = (EStructuralFeature) notification.getFeature();
+		EStructuralFeature feature = (EStructuralFeature) notification
+				.getFeature();
 
-		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY.equals(feature) || 
-				ValuetypePackage.Literals.CARDINALITY.equals(feature.getEContainingClass()) ||
-				ValuetypePackage.Literals.NATURAL_NUMBER.equals(feature.getEContainingClass())) {
+		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY
+				.equals(feature)
+				|| ValuetypePackage.Literals.CARDINALITY.equals(feature
+						.getEContainingClass())
+				|| ValuetypePackage.Literals.NATURAL_NUMBER.equals(feature
+						.getEContainingClass())) {
 			updateCardinality();
-			
+
 			// Remove and recreate listeners
 			reactivateSemanticModel();
-			
+
 		} else if (ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE
 				.equals(feature)) {
 
 			// Remove and recreate listeners
 			reactivateSemanticModel();
 
-
 			executeTransformation();
-		} else if (ComponentPackage.Literals.COMPONENT__PORTS == feature || ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE == feature) {
+		} else if (ComponentPackage.Literals.COMPONENT__PORTS == feature
+				|| ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE == feature) {
 			executeTransformation();
 		}
 		super.handleNotificationEvent(notification);
@@ -156,10 +166,9 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	private void executeTransformation() {
 		executePortPartTransformation();
 		executeCoordinationProtocolPartTransformation();
-		
+
 	}
-	
-	
+
 	private void executePortPartTransformation() {
 		EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain != null) {
@@ -168,7 +177,6 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			Activator.updateComponentPart(editingDomain, componentPart);
 		}
 	}
-	
 
 	private void executeCoordinationProtocolPartTransformation() {
 		EditingDomain editingDomain = getEditingDomain();
@@ -176,9 +184,10 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
 			StructuredComponent component = componentPart.getParentComponent();
-			Activator.updateCoordinationProtocolParts(editingDomain, component);	
+			Activator.updateCoordinationProtocolParts(editingDomain, component);
 		}
 	}
+
 	/**
 	 * Updates the PartFigure to visualize a multi-part, if necessary.
 	 */
@@ -217,7 +226,8 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			preferredSize.expand(-marginRight, -marginTop);
 
 			// Set the new margin and the new preferred size.
-			RectangleFigure innerRectContainer = figure.getFigureInnerRectContainer();
+			RectangleFigure innerRectContainer = figure
+					.getFigureInnerRectContainer();
 			innerRectContainer.setBorder(new MarginBorder(marginTop, 0, 0,
 					marginRight));
 			innerRectContainer.setPreferredSize(preferredSize);
