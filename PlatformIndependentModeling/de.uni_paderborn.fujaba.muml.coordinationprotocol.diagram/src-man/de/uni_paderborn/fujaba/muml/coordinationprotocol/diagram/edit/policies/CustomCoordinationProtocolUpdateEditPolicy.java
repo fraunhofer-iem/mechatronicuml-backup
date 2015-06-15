@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 
@@ -37,7 +38,15 @@ public class CustomCoordinationProtocolUpdateEditPolicy extends
 
 	@Override
 	protected void addListeners() {
-		CoordinationProtocol protocol = (CoordinationProtocol) getSemanticElement();
+		EObject semanticElement = getSemanticElement();
+		if (!(semanticElement instanceof CoordinationProtocol)) {
+			// when the coordination protocol is getting deleted, updateListeners() calls this, 
+			// getSemanticElement() fails to resolve the coordination protocol. 
+			// In this case it is not necessary to add any listeners, so just return.
+			return;
+		}
+		
+		CoordinationProtocol protocol = (CoordinationProtocol) semanticElement;
 		RoleConnector connector = protocol.getRoleConnector();
 		if (connector != null) {
 			this.addNotificationListener(connector);
