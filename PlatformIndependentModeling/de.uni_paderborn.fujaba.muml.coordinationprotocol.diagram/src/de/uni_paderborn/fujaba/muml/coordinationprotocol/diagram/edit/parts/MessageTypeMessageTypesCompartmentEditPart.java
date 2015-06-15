@@ -130,6 +130,10 @@ public class MessageTypeMessageTypesCompartmentEditPart extends
 				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 
+		installEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.compartment.HorizontalCompartmentEditPolicy());
+
 	}
 
 	/**

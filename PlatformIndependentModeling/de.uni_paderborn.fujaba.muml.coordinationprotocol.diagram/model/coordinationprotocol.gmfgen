@@ -344,6 +344,7 @@
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureParametersCompartmentFigure" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.COMPARTMENT_HORIZONTAL_LAYOUT_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.HorizontalCompartmentEditPolicy"/>
     </compartments>
     <palette>
       <groups title="de">
