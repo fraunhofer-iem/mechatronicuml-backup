@@ -17,8 +17,10 @@ public interface EditPolicyRoles {
 
 	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy"; //$NON-NLS-1$
 
-	public static final String NODE_PLATE_CREATION_ROLE = "NodePlateCreationRole"; //$NON-NLS-1$
+	public static final String CONNECTION_ANCHOR_CREATION_ROLE = "ConnectionAnchorCreationRole"; //$NON-NLS-1$
 	
-	public static final String CANONICAL_REFRESH_ROLE = "CanonicalRefreshEditPolicy";
+	public static final String CANONICAL_REFRESH_ROLE = "CanonicalRefreshEditPolicy"; //$NON-NLS-1$
+
+	public static final String COMPARTMENT_HORIZONTAL_LAYOUT_ROLE = "CompartmentHorizontalLayoutRole"; //$NON-NLS-1$
 	
 }

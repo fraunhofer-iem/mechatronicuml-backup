@@ -15,6 +15,7 @@ package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
@@ -145,6 +146,10 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy());
 
+		installEditPolicy(
+				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE,
+				new de.uni_paderborn.fujaba.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy());
+
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -252,16 +257,17 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
-
-		de.uni_paderborn.fujaba.common.edit.policies.node.INodePlateCreationEditPolicy nodePlateCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.node.INodePlateCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NODE_PLATE_CREATION_ROLE);
-		if (nodePlateCreationEditPolicy != null) {
-			NodeFigure nodePlate = nodePlateCreationEditPolicy
-					.createNodePlate();
-			if (nodePlate != null) {
-				return nodePlate;
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy
+							.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
 			}
-		}
+		};
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
