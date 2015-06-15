@@ -35,12 +35,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022
+public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser
 		extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022() {
+	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser() {
 	}
 
 	/**

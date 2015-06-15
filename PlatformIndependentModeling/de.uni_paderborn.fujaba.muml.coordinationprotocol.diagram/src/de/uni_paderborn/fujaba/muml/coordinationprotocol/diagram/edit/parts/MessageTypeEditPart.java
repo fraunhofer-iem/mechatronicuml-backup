@@ -364,8 +364,6 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 
 			this.setFill(false);
 			this.setOutline(false);
-			this.setLineWidth(0);
-			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -390,8 +388,6 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 
 			fFigureParametersCompartmentFigure.setFill(false);
 			fFigureParametersCompartmentFigure.setOutline(false);
-			fFigureParametersCompartmentFigure.setLineWidth(0);
-			fFigureParametersCompartmentFigure.setLineStyle(Graphics.LINE_DASH);
 
 			this.add(fFigureParametersCompartmentFigure);
 

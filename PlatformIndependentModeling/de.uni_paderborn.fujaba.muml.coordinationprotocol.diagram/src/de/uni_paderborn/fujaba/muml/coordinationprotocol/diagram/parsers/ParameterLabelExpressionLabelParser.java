@@ -35,12 +35,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022
-		extends ExpressionLabelParserBase {
+public class ParameterLabelExpressionLabelParser extends
+		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022() {
+	public ParameterLabelExpressionLabelParser() {
 	}
 
 	/**
@@ -50,17 +50,22 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						16,
-						de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-								.getConnectorQualityOfServiceAssumptions(),
-						null).body();
+						9,
+						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+								.getParameter(), null).body();
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		return getPrintString(element, flags);
+		EObject target = (EObject) element.getAdapter(EObject.class);
+		Object result = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+				.getExpression(
+						10,
+						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+								.getParameter(), null).evaluate(target);
+		return String.valueOf(result);
 	}
 
 	/**

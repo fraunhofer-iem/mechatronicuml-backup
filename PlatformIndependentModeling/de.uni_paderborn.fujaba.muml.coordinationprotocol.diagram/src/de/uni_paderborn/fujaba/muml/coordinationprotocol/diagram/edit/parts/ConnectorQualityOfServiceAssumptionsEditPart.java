@@ -25,14 +25,20 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ComponentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.GroupRequestViaKeyboard;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -101,6 +107,36 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+
+		removeEditPolicy(EditPolicy.COMPONENT_ROLE);
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ComponentEditPolicy() {
+			@Override
+			public Command getCommand(Request request) {
+				// If the user presses the delete key, don't delete
+				boolean keyboardDelete = request instanceof GroupRequestViaKeyboard
+						&& RequestConstants.REQ_DELETE.equals(request.getType());
+				if (request.getType() == RequestConstants.REQ_DELETE
+						|| keyboardDelete) {
+					return UnexecutableCommand.INSTANCE;
+				}
+
+				return super.getCommand(request);
+			}
+		});
+		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
+					@Override
+					protected Command getSemanticCommand(
+							IEditCommandRequest request) {
+						if (request instanceof DestroyRequest) {
+							return null;
+						}
+						return super.getSemanticCommand(request);
+					}
+				});
+
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

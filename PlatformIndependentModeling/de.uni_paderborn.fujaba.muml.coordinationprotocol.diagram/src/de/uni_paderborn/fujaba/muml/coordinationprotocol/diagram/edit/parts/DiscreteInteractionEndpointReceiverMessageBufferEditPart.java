@@ -15,6 +15,7 @@ package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts;
 import java.util.Collection;
 
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
@@ -83,14 +84,30 @@ public class DiscreteInteractionEndpointReceiverMessageBufferEditPart extends
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-		return new PolylineConnectionEx();
+		return new RoleMessageBufferConnectionFigureDescriptor();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+	public RoleMessageBufferConnectionFigureDescriptor getPrimaryShape() {
+		return (RoleMessageBufferConnectionFigureDescriptor) getFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class RoleMessageBufferConnectionFigureDescriptor extends
+			PolylineConnectionEx {
+
+		/**
+		 * @generated
+		 */
+		public RoleMessageBufferConnectionFigureDescriptor() {
+			this.setLineStyle(Graphics.LINE_DOT);
+
+		}
+
 	}
 
 }

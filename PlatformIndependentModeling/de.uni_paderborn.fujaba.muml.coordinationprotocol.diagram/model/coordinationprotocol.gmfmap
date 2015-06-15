@@ -257,7 +257,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferSizeLabel"/>
             <viewExpression
-                body="'Size: '.concat(self.bufferSize.toString())"/>
+                body="'Size: '.concat(if(self.bufferSize.oclIsUndefined()) &#xD;&#xA;then 'null' else self.bufferSize.toString() endif)"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping">
@@ -271,7 +271,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBufferDiagramLabel"/>
             <viewExpression
-                body="'Incoming Buffer: '.concat(self.name)"/>
+                body="'Incoming Buffer: '.concat(&#xD;&#xA;&#x9;if (self.name.oclIsUndefined()) then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
           </labelMappings>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#MessageBuffferNode"/>
