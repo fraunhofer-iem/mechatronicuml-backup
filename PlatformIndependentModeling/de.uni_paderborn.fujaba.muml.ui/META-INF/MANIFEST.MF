@@ -15,6 +15,6 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.utilities,
  org.eclipse.gmf.runtime.diagram.ui,
  de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis;bundle-version="0.4.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component
