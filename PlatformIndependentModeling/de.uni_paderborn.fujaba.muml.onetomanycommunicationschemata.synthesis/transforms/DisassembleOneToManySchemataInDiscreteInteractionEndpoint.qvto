@@ -74,6 +74,11 @@ helper isOperationSubRoleSpecific(o : Operation): Boolean
 
 mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		
+		
+		var allRTSCs : Set(RealtimeStatechart) := self->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart)->append(self);
+		internalClocks := allRTSCs.clocks;
+		internalVariables := allRTSCs.variables;
+		internalSynchronizations := allRTSCs.states.channels;
 		-- check whether every unicast defines a condition!
 		assert fatal (not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and
 		 t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()

@@ -12,6 +12,7 @@ modeltype modelinstance uses modelinstance('http://www.fujaba.de/modelinstance/0
 modeltype schemata uses muml::realtimestatechart::one_to_n_schemata('http://www.fujaba.de/muml/0.4.0');
 modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
 
+
 helper  isClockSubRoleSpecific(c : Clock): Boolean
 {
 	
@@ -24,7 +25,13 @@ helper isOperationSubRoleSpecific(o : Operation): Boolean
 {
 	
 }
-	
+
+
+property internalVariables			: Set(Variable);
+property internalOperations			: Set(Operation);
+property internalClocks				: Set(Clock);
+property internalSynchronizations	: Set(SynchronizationChannel);
+
 	-- expressions
 		
 	mapping Expression :: Expression2Expression(context:OclAny) : Expression disjuncts
@@ -229,9 +236,17 @@ mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedE
 	}
 	
 	mapping Variable :: Variable2Variable() : Variable inherits TypedNamedElement::BasicTypedNamedElement2TypedNamedElement {
-		initializeExpression := self.initializeExpression.map Expression2Expression("INPUT");
-		constant := self.constant;
-		
+		init{
+			if(internalVariables->includes(self))
+			{
+				result.initializeExpression := self.initializeExpression.map Expression2Expression("INPUT");
+				result.constant := self.constant;
+			}
+			else
+			{
+				result := self;
+			}			
+		}
 	};
 		
 	mapping Parameter :: Parameter2Parameter() : Parameter inherits TypedNamedElement::BasicTypedNamedElement2TypedNamedElement{
@@ -245,38 +260,56 @@ mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedE
 	}
 	
 mapping Operation :: Operation2Operation(context:OclAny) : Operation {
-	
-		name := self.name;
-		returnType := self.returnType;
-		implementations := self.implementations->map Expression2Expression(context);
-		parameters := self.parameters->map Parameter2Parameter();
+		init{
+			if(internalOperations->includes(self))
+			{
+				result.name := self.name;
+				result.returnType := self.returnType;
+				result.implementations := self.implementations->map Expression2Expression(context);
+				result.parameters := self.parameters->map Parameter2Parameter();
+			}
+			else
+			{
+				result := self;
+			}
+		}			
 	}			
 	
 		-- synchronizations
 	
-mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region:OclAny) : SynchronizationChannel {
-		
-		name := self.name;
-						
-		selectorType := self.selectorType;		
-						
+mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region:OclAny) : SynchronizationChannel {		
+		init{
+			if(internalSynchronizations->includes(self))
+			{
+				result.name := self.name;
+							
+				result.selectorType := self.selectorType;		
+			}
+			else
+			{
+				result := self;
+			}
+		}		
 	}
 	
-mapping Synchronization :: Synchronization2Synchronization(context:OclAny, region:OclAny) : Synchronization {
-		
-			kind := self.kind;
-			
-			syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context, region);
-			
-			selectorExpression := self.selectorExpression.map Expression2Expression(context);
-		
+mapping Synchronization :: Synchronization2Synchronization(context:OclAny, region:OclAny) : Synchronization {			
+		result.kind := self.kind;
+		result.syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context, region);
+		result.selectorExpression := self.selectorExpression.map Expression2Expression(context);				
 	}
 	
 	-- Clocks	
 mapping Clock :: Clock2Clock() : Clock {
-		
-		name := self.name;
-				
+		init{
+			if(internalClocks->includes(self))
+			{
+				result.name := self.name;	
+			}
+			else
+			{
+				result := self;
+			}		
+		}		
 	}
 	
 mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, region:OclAny) : ClockConstraint {

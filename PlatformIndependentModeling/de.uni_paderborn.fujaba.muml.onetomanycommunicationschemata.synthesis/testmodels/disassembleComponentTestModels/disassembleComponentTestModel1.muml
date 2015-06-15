@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--muml metamodel version 0.3.2 (r14616)-->
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:types="http://www.fujaba.de/muml/types/0.4.0" xmi:id="_bDx2MBM-EeWzBY0x5to86g">
+  <categories xmi:id="_bDx2MRM-EeWzBY0x5to86g" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2MhM-EeWzBY0x5to86g" name="void"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2MxM-EeWzBY0x5to86g" name="boolean" primitiveType="BOOLEAN"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2NBM-EeWzBY0x5to86g" name="int8" primitiveType="INT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2NRM-EeWzBY0x5to86g" name="int16" primitiveType="INT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2NhM-EeWzBY0x5to86g" name="int32" primitiveType="INT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2NxM-EeWzBY0x5to86g" name="int64" primitiveType="INT64"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2OBM-EeWzBY0x5to86g" name="double" primitiveType="DOUBLE"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2ORM-EeWzBY0x5to86g" name="uint8" primitiveType="UINT8"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2OhM-EeWzBY0x5to86g" name="uint16" primitiveType="UINT16"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2OxM-EeWzBY0x5to86g" name="uint32" primitiveType="UINT32"/>
+    <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_bDx2PBM-EeWzBY0x5to86g" name="uint64" primitiveType="UINT64"/>
+  </categories>
+  <categories xmi:id="_bDx2PRM-EeWzBY0x5to86g" key="de.uni_paderborn.fujaba.muml.instance.category" name="instance"/>
+  <categories xmi:id="_bDx2PhM-EeWzBY0x5to86g" key="de.uni_paderborn.fujaba.muml.components.category" name="component"/>
+  <categories xmi:id="_bDx2PxM-EeWzBY0x5to86g" key="de.uni_paderborn.fujaba.muml.protocol.category" name="protocol"/>
+  <categories xmi:id="_bDx2QBM-EeWzBY0x5to86g" key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype"/>
+  <categories xmi:id="_bDx2QRM-EeWzBY0x5to86g" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart"/>
+</modelinstance:RootNode>
