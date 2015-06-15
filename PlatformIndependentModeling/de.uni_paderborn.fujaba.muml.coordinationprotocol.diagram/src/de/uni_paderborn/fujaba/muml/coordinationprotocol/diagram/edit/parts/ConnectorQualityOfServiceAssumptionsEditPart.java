@@ -261,6 +261,15 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 
+		de.uni_paderborn.fujaba.common.edit.policies.node.INodePlateCreationEditPolicy nodePlateCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.node.INodePlateCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NODE_PLATE_CREATION_ROLE);
+		if (nodePlateCreationEditPolicy != null) {
+			NodeFigure nodePlate = nodePlateCreationEditPolicy
+					.createNodePlate();
+			if (nodePlate != null) {
+				return nodePlate;
+			}
+		}
+
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
 

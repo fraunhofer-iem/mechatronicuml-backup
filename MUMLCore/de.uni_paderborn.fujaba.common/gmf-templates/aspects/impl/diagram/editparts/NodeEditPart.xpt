@@ -6,6 +6,16 @@
 
 «REM»The AROUND-Statement cannot used with overloading, as it seems.«ENDREM» 
 «AROUND setupNodePlate FOR gmfgen::GenNode»
+	de.uni_paderborn.fujaba.common.edit.policies.node.INodePlateCreationEditPolicy nodePlateCreationEditPolicy = 
+		(de.uni_paderborn.fujaba.common.edit.policies.node.INodePlateCreationEditPolicy)
+		getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NODE_PLATE_CREATION_ROLE);
+	if (nodePlateCreationEditPolicy != null) {
+		org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure nodePlate = nodePlateCreationEditPolicy.createNodePlate();
+		if (nodePlate != null) {
+			return nodePlate;
+		}
+	}
+
 	«REM»Call mySetupNodePlate, which is overloaded for different types.«ENDREM»
 	«EXPAND mySetupNodePlate»
 «ENDAROUND»

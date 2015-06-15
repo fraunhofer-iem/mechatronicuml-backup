@@ -13,7 +13,9 @@ public interface EditPolicyRoles {
 		
 	public static final String ERROR_FEEDBACK_ROLE = "ErrorFeedbackPolicy"; //$NON-NLS-1$
 
-	public static final String ENLARGE_COMPARTMENT_ROLE = "EnlargeCompartmentRole";
+	public static final String ENLARGE_COMPARTMENT_ROLE = "EnlargeCompartmentRole"; //$NON-NLS-1$
 
-	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy";
+	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy"; //$NON-NLS-1$
+
+	public static final String NODE_PLATE_CREATION_ROLE = "NodePlateCreationRole"; //$NON-NLS-1$
 }
