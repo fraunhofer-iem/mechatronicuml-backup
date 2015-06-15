@@ -46,3 +46,37 @@
 		return hosts;
 	}
 «ENDAROUND»
+
+
+
+«AROUND behaviour FOR gmfgen::CustomBehaviour-»
+«IF key = 'org.muml.custom.nonDeletable'»
+	removeEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE);
+		installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.ComponentEditPolicy() {
+			@Override
+			public org.eclipse.gef.commands.Command getCommand(org.eclipse.gef.Request request) {
+				// If the user presses the delete key, don't delete
+				boolean keyboardDelete = request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.GroupRequestViaKeyboard
+						&& org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_DELETE.equals(request.getType());
+				if (request.getType() == org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_DELETE
+						|| keyboardDelete) {					
+					return org.eclipse.gef.commands.UnexecutableCommand.INSTANCE;
+				}
+
+				return super.getCommand(request);
+			}
+		});
+		removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.SEMANTIC_ROLE);
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.SEMANTIC_ROLE, new «subject.getItemSemanticEditPolicyQualifiedClassName()»() {
+			@Override
+			protected org.eclipse.gef.commands.Command getSemanticCommand(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest request) {
+			if (request instanceof org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest) {
+					return null;
+				}
+				return super.getSemanticCommand(request);
+			}
+		});
+«ELSE»
+	«targetDef.proceed()»
+«ENDIF»
+«ENDAROUND»
