@@ -18,4 +18,7 @@ public interface EditPolicyRoles {
 	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy"; //$NON-NLS-1$
 
 	public static final String NODE_PLATE_CREATION_ROLE = "NodePlateCreationRole"; //$NON-NLS-1$
+	
+	public static final String CANONICAL_REFRESH_ROLE = "CanonicalRefreshEditPolicy";
+	
 }
