@@ -32,17 +32,19 @@
 #ifndef CUSTOM_TYPES_H_
 #define CUSTOM_TYPES_H_
 	#include "standardTypes.h"
-	
+			[for (structType : StructureDataType | sTypes)]
+			typedef struct [structType.getName()/] [structType.getName()/];
+		[/for]
 		[for (structType : StructureDataType | sTypes)]
-			typedef struct [structType.getName()/] {
+			struct [structType.getName()/] {
 				[for (attribute : Attribute | structType.attributes)]
 					[if (attribute.dataType.oclIsKindOf(ArrayDataType))]
 						[attribute.dataType.getTypeName()/] [attribute.getName()/]['['/][attribute.dataType.oclAsType(ArrayDataType).cardinality/][']'/]  ;
 					[else]
-						[attribute.getTypeName()/] [attribute.getName()/];
+						[attribute.getTypeName()/][if (var.dataType.oclIsKindOf(StructureDataType))]*[/if] [attribute.getName()/];
 					[/if]				
-[/for]
-			} [structType.getName()/];
+				[/for]
+			};
 		[/for]
 #endif
 	[/file]

@@ -154,8 +154,10 @@
 				[comment Member variables for the variables of each region. /]	
 				[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
+						[comment currently not supported/]
+						[comment]
 						[getDefaultValue(variable,'')/];
-
+						[/comment]
 					[elseif (variable.dataType.oclIsKindOf(ArrayDataType))]
 					[generateArrayInitializer(variable)/]
 						[else]
