@@ -41,7 +41,7 @@
 					[if (attribute.dataType.oclIsKindOf(ArrayDataType))]
 						[attribute.dataType.getTypeName()/] [attribute.getName()/]['['/][attribute.dataType.oclAsType(ArrayDataType).cardinality/][']'/]  ;
 					[else]
-						[attribute.getTypeName()/][if (var.dataType.oclIsKindOf(StructureDataType))]*[/if] [attribute.getName()/];
+						[attribute.getTypeName()/][if (attribute.dataType.oclIsKindOf(StructureDataType))]*[/if] [attribute.getName()/];
 					[/if]				
 				[/for]
 			};
