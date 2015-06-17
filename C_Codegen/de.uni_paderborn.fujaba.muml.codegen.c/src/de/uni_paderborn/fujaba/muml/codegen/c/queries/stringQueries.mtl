@@ -807,16 +807,16 @@ endif
 
 /]
 [query public getDefaultValue(type : StructureDataType) : String = 
-	''
+	'#warning structs have to be initialized explicitly'
 /]
 
 [query public getInitializeExpressionImplementation(variable : Variable) : String = 
-	'b'
+	'UNKNOWN'
 /]
 
 
 [query public getDefaultValue(type : ArrayDataType) : String = 
-	''
+	type.type.getDefaultValue()
 /]
 
 
