@@ -38,6 +38,9 @@
 	}
 
 	protected void doCanonicalRefresh() {
+	    if (getRoot() == null) {
+	    	return;
+	    }
 		java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
 			.getRegisteredEditPolicies(getDiagramView().getElement());
 		for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
