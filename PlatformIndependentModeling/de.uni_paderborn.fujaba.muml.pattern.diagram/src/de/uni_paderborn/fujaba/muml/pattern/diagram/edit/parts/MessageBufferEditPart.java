@@ -150,23 +150,17 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferNameLabel());
+							.getFigureMessageBufferSizeLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferSizeLabel());
+							.getFigureMessageBufferOverFlowAvoidanceStrategyLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart) {
 			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureMessageBufferOverFlowAvoidanceStrategyLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel7EditPart) {
-			((de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureMessageBufferNameLabel());
 			return true;
@@ -185,9 +179,6 @@ public class MessageBufferEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel7EditPart) {
 			return true;
 		}
 		return false;

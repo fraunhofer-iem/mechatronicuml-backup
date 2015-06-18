@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class MessageBufferLabelExpressionLabelParser5011 extends
+public class MessageBufferLabelExpressionLabelParser5006 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public MessageBufferLabelExpressionLabelParser5011() {
+	public MessageBufferLabelExpressionLabelParser5006() {
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class MessageBufferLabelExpressionLabelParser5011 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						16,
+						14,
 						de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 								.getMessageBuffer(), null).body();
 	}

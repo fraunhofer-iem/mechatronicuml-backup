@@ -215,7 +215,7 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureMessageBufferNameLabel"
+            getterName="getFigureMessageBufferSizeLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
               xsi:type="gmfgen:StyleAttributes"
@@ -224,31 +224,13 @@
               fixedBackground="true"/>
         </viewmap>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.2"/>
       </labels>
       <labels
           visualID="5007"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageBufferLabelViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureMessageBufferSizeLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.2"/>
-      </labels>
-      <labels
-          visualID="5011"
-          editPartClassName="WrappingLabel6EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
           notationViewFactoryClassName="MessageBufferLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -261,9 +243,9 @@
             parser="//@labelParsers/@implementations.3"/>
       </labels>
       <labels
-          visualID="5012"
-          editPartClassName="WrappingLabel7EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
+          visualID="5011"
+          editPartClassName="WrappingLabel6EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
           notationViewFactoryClassName="MessageBufferLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -736,6 +718,62 @@
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
               </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/TimeValue/value"/>
+                    <newElementInitializers>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.21">
+                        <feature
+                            href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression/value"/>
+                      </initializers>
+                      <elementClass
+                          href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression"/>
+                    </newElementInitializers>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.1/@expressions.2">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/TimeValue/unit"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/TimeValue/value"/>
+                    <newElementInitializers>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.22">
+                        <feature
+                            href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression/value"/>
+                      </initializers>
+                      <elementClass
+                          href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression"/>
+                    </newElementInitializers>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.1/@expressions.3">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/TimeValue/unit"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
@@ -745,7 +783,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.21"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.23"/>
     </links>
     <links
         visualID="4003"
@@ -857,14 +895,18 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Role"
-            description="creates a role "
-            genNodes="//@diagram/@childNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Connector"
             description="creates a connector"
             genLinks="//@diagram/@links.1"/>
+      </groups>
+      <groups
+          title="-- Mis-referenced tools --"
+          description="Mapping element referenced tools from palette other than one specified in Mapping instance">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Role"
+            description="Create new Role"
+            genNodes="//@diagram/@childNodes.1"/>
       </groups>
     </palette>
     <preferences>
@@ -1149,11 +1191,11 @@
       <expressions
           body="if self.name.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;self.name&#xD;&#xA;endif"/>
       <expressions
-          body="'Size: '.concat(self.bufferSize.toString())&#xD;&#xA;"/>
+          body="'Size: '.concat(if(self.bufferSize.oclIsUndefined()) &#xD;&#xA;then 'null' else self.bufferSize.toString() endif)"/>
       <expressions
           body="if (self.bufferOverflowAvoidanceStrategy = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)&#xD;&#xA;then 'Discard Incoming Messages' else 'Displace Oldest Messages' endif"/>
       <expressions
-          body="'Incoming Buffer: '.concat(self.name)"/>
+          body="'Incoming Buffer: '.concat(&#xD;&#xA;&#x9;if (self.name.oclIsUndefined()) then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
       <expressions
           body="if (self.messageLossPossible)&#xD;&#xA;then 'Message Loss Possible' else 'Message Loss NOT Possible' endif"/>
       <expressions
@@ -1163,11 +1205,19 @@
       <expressions
           body="''"/>
       <expressions
+          body="'0'"/>
+      <expressions
+          body="'0'"/>
+      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
     </providers>
     <providers
         xsi:type="gmfgen:GenLiteralExpressionProvider">
+      <expressions
+          body="java.util.concurrent.TimeUnit.MILLISECONDS"/>
+      <expressions
+          body="java.util.concurrent.TimeUnit.MILLISECONDS"/>
       <expressions
           body="java.util.concurrent.TimeUnit.MILLISECONDS"/>
       <expressions
@@ -1179,7 +1229,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
@@ -1191,9 +1241,17 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.2/@labels.0/@modelFacet"
+        className="MessageBufferLabelExpressionLabelParser5006"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.1/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5007"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
     </implementations>
@@ -1201,14 +1259,6 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.2/@labels.2/@modelFacet"
         className="MessageBufferLabelExpressionLabelParser5011"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.2/@labels.3/@modelFacet"
-        className="MessageBufferLabelExpressionLabelParser5012"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/MessageBuffer"/>

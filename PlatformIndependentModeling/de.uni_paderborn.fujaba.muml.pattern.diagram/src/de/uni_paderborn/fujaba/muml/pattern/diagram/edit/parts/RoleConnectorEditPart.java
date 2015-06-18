@@ -123,7 +123,13 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 		super.handleNotificationEvent(notification);
 	}
 
+	/**
+	 * @generated
+	 */
 	protected void doCanonicalRefresh() {
+		if (getRoot() == null) {
+			return;
+		}
 		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 				.getRegisteredEditPolicies(getDiagramView().getElement());
 		for (CanonicalEditPolicy editPolicy : editPolicies) {

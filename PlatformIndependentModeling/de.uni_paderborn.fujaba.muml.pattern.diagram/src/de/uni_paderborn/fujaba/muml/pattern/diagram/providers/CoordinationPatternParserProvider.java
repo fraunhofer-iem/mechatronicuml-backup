@@ -61,20 +61,8 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser messageBufferName_5006Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getMessageBufferName_5006Parser() {
-		if (messageBufferName_5006Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageFormatParser(
-					features);
-			messageBufferName_5006Parser = parser;
-		}
-		return messageBufferName_5006Parser;
+	private IParser getMessageBufferLabel_5006Parser() {
+		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5006();
 	}
 
 	/**
@@ -89,13 +77,6 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 	 */
 	private IParser getMessageBufferLabel_5011Parser() {
 		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5011();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getMessageBufferLabel_5012Parser() {
-		return new de.uni_paderborn.fujaba.muml.pattern.diagram.parsers.MessageBufferLabelExpressionLabelParser5012();
 	}
 
 	/**
@@ -155,13 +136,11 @@ public class CoordinationPatternParserProvider extends AbstractProvider
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
 			return getRoleName_5002Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageBufferNameEditPart.VISUAL_ID:
-			return getMessageBufferName_5006Parser();
+			return getMessageBufferLabel_5006Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getMessageBufferLabel_5007Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return getMessageBufferLabel_5011Parser();
-		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-			return getMessageBufferLabel_5012Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5005Parser();
 		case de.uni_paderborn.fujaba.muml.pattern.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

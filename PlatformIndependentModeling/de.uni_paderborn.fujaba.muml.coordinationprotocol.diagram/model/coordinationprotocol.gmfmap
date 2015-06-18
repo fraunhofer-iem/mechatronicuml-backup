@@ -318,7 +318,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmftool#//@palette/@tools.0"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#Role"/>
         </ownedChild>
@@ -547,7 +547,7 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.2"/>
+        href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
         href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleConnector"/>
     <sourceMetaFeature

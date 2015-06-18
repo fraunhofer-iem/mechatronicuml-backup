@@ -241,6 +241,37 @@ public class ElementInitializers {
 									.getConnectorQualityOfServiceAssumptions(),
 							null).evaluate(newInstance_0_0);
 			newInstance_0_0.setComment((String) value_0_0_0);
+			de.uni_paderborn.fujaba.muml.valuetype.TimeValue newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createTimeValue();
+			newInstance_0_0.setMaxMessageDelay(newInstance_0_0_1_0);
+			LiteralExpression newInstance_0_0_1_0_0_0 = CommonExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+			newInstance_0_0_1_0.setValue(newInstance_0_0_1_0_0_0);
+			Object value_0_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							21,
+							CommonExpressionsPackage.eINSTANCE
+									.getLiteralExpression(), null).evaluate(
+							newInstance_0_0_1_0_0_0);
+			newInstance_0_0_1_0_0_0.setValue((String) value_0_0_1_0_0_0_0);
+
+			newInstance_0_0_1_0.setUnit(TimeUnit.MILLISECONDS);
+
+			de.uni_paderborn.fujaba.muml.valuetype.TimeValue newInstance_0_0_2_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createTimeValue();
+			newInstance_0_0.setMinMessageDelay(newInstance_0_0_2_0);
+			LiteralExpression newInstance_0_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+			newInstance_0_0_2_0.setValue(newInstance_0_0_2_0_0_0);
+			Object value_0_0_2_0_0_0_0 = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							22,
+							CommonExpressionsPackage.eINSTANCE
+									.getLiteralExpression(), null).evaluate(
+							newInstance_0_0_2_0_0_0);
+			newInstance_0_0_2_0_0_0.setValue((String) value_0_0_2_0_0_0_0);
+
+			newInstance_0_0_2_0.setUnit(TimeUnit.MILLISECONDS);
 
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.pattern.diagram.part.MumlDiagramEditorPlugin

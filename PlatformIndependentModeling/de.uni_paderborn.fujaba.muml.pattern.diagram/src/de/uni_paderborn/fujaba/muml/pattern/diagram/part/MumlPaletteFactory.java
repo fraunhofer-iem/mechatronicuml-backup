@@ -19,6 +19,7 @@ public class MumlPaletteFactory {
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createPatternToolGroup1Group());
+		paletteRoot.add(createMisreferencedtools2Group());
 	}
 
 	/**
@@ -30,8 +31,21 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.PatternToolGroup1Group_title);
 		paletteContainer.setId("createPatternToolGroup1Group"); //$NON-NLS-1$
 		paletteContainer.add(createCoordinationPattern1CreationTool());
-		paletteContainer.add(createRole2CreationTool());
-		paletteContainer.add(createConnector3CreationTool());
+		paletteContainer.add(createConnector2CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "-- Mis-referenced tools --" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createMisreferencedtools2Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Misreferencedtools2Group_title);
+		paletteContainer.setId("createMisreferencedtools2Group"); //$NON-NLS-1$
+		paletteContainer
+				.setDescription(de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Misreferencedtools2Group_desc);
+		paletteContainer.add(createRole1CreationTool());
 		return paletteContainer;
 	}
 
@@ -54,15 +68,15 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createRole2CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Role2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Role2CreationTool_desc,
+	private ToolEntry createConnector2CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Connector2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Connector2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002));
-		entry.setId("createRole2CreationTool"); //$NON-NLS-1$
+						.singletonList(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001));
+		entry.setId("createConnector2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -70,15 +84,15 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createConnector3CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
-				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Connector3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Connector3CreationTool_desc,
+	private ToolEntry createRole1CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Role1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.pattern.diagram.part.Messages.Role1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001));
-		entry.setId("createConnector3CreationTool"); //$NON-NLS-1$
+						.singletonList(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002));
+		entry.setId("createRole1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.RoleConnector_4001));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.pattern.diagram.providers.MumlElementTypes.Role_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

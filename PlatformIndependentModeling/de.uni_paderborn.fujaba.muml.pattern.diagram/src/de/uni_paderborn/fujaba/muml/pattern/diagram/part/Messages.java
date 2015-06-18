@@ -248,6 +248,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Misreferencedtools2Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Misreferencedtools2Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CoordinationPattern1CreationTool_title;
 
 	/**
@@ -258,22 +268,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Role2CreationTool_title;
+	public static String Connector2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Role2CreationTool_desc;
+	public static String Connector2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Connector3CreationTool_title;
+	public static String Role1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Connector3CreationTool_desc;
+	public static String Role1CreationTool_desc;
 
 	/**
 	 * @generated

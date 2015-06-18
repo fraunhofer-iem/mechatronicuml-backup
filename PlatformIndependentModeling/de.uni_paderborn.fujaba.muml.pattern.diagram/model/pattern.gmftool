@@ -16,10 +16,6 @@
           description="creates a coordination pattern"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Role"
-          description="creates a role "/>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Connector"
           description="creates a connector"/>
     </tools>

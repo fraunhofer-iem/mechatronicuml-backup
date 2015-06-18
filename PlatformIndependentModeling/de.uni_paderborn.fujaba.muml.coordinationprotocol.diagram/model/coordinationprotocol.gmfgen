@@ -990,14 +990,18 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Role"
-            description="Create new Role"
-            genNodes="//@diagram/@childNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Role Connector"
             description="Create new Role Connector"
             genLinks="//@diagram/@links.1"/>
+      </groups>
+      <groups
+          title="-- Mis-referenced tools --"
+          description="Mapping element referenced tools from palette other than one specified in Mapping instance">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Role"
+            description="Create new Role"
+            genNodes="//@diagram/@childNodes.1"/>
       </groups>
     </palette>
     <preferences>
