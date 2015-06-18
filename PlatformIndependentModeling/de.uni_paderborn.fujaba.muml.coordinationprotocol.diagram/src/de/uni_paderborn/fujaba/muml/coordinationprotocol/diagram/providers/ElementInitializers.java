@@ -14,7 +14,11 @@ package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers;
 
 import java.util.Collection;
 
+import java.util.concurrent.TimeUnit;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsPackage;
+import org.storydriven.core.expressions.common.LiteralExpression;
 
 /**
  * @generated
@@ -78,39 +82,45 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.protocol.Role newInstance_0_1 = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 					.createRole();
 			instance.getRoles().add(newInstance_0_1);
-			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_1_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createCardinality();
-			newInstance_0_1.setCardinality(newInstance_0_1_0_0);
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_1_0_0.setLowerBound(newInstance_0_1_0_0_0_0);
-			Object value_0_1_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+			Object value_0_1_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							3,
-							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_1_0_0_0_0);
-
-			value_0_1_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_1_0_0_0_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_1_0_0_0_0.setValue(((Long) value_0_1_0_0_0_0_0)
-					.longValue());
-
-			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_1_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+									.getRole(), null).evaluate(newInstance_0_1);
+			newInstance_0_1.setName((String) value_0_1_0);
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_1_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
+			newInstance_0_1.setCardinality(newInstance_0_1_1_0);
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_1_1_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
-			newInstance_0_1_0_0.setUpperBound(newInstance_0_1_0_0_1_0);
-			Object value_0_1_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+			newInstance_0_1_1_0.setLowerBound(newInstance_0_1_1_0_0_0);
+			Object value_0_1_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							4,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
-							newInstance_0_1_0_0_1_0);
+							newInstance_0_1_1_0_0_0);
 
-			value_0_1_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_1_0_0_1_0_0,
+			value_0_1_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression
+					.performCast(value_0_1_1_0_0_0_0,
 							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_1_0_0_1_0.setValue(((Long) value_0_1_0_0_1_0_0)
+			newInstance_0_1_1_0_0_0.setValue(((Long) value_0_1_1_0_0_0_0)
+					.longValue());
+
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_1_1_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_1_1_0.setUpperBound(newInstance_0_1_1_0_1_0);
+			Object value_0_1_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_0_1_1_0_1_0);
+
+			value_0_1_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression
+					.performCast(value_0_1_1_0_1_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_0_1_1_0_1_0.setValue(((Long) value_0_1_1_0_1_0_0)
 					.longValue());
 
 			de.uni_paderborn.fujaba.muml.protocol.RoleConnector newInstance_1_0 = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
@@ -118,7 +128,7 @@ public class ElementInitializers {
 			instance.setRoleConnector(newInstance_1_0);
 			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							5,
+							6,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRoleConnector(), null).evaluate(
 							newInstance_1_0);
@@ -137,15 +147,48 @@ public class ElementInitializers {
 					.setConnectorQualityOfServiceAssumptions(newInstance_1_0_1_0);
 			Object value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							6,
+							7,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getConnectorQualityOfServiceAssumptions(),
 							null).evaluate(newInstance_1_0_1_0);
 			newInstance_1_0_1_0.setComment((String) value_1_0_1_0_0);
+			de.uni_paderborn.fujaba.muml.valuetype.TimeValue newInstance_1_0_1_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createTimeValue();
+			newInstance_1_0_1_0.setMaxMessageDelay(newInstance_1_0_1_0_1_0);
+			LiteralExpression newInstance_1_0_1_0_1_0_0_0 = CommonExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+			newInstance_1_0_1_0_1_0.setValue(newInstance_1_0_1_0_1_0_0_0);
+			Object value_1_0_1_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							8,
+							CommonExpressionsPackage.eINSTANCE
+									.getLiteralExpression(), null).evaluate(
+							newInstance_1_0_1_0_1_0_0_0);
+			newInstance_1_0_1_0_1_0_0_0
+					.setValue((String) value_1_0_1_0_1_0_0_0_0);
+
+			newInstance_1_0_1_0_1_0.setUnit(TimeUnit.MILLISECONDS);
+
+			de.uni_paderborn.fujaba.muml.valuetype.TimeValue newInstance_1_0_1_0_2_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createTimeValue();
+			newInstance_1_0_1_0.setMinMessageDelay(newInstance_1_0_1_0_2_0);
+			LiteralExpression newInstance_1_0_1_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+			newInstance_1_0_1_0_2_0.setValue(newInstance_1_0_1_0_2_0_0_0);
+			Object value_1_0_1_0_2_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							9,
+							CommonExpressionsPackage.eINSTANCE
+									.getLiteralExpression(), null).evaluate(
+							newInstance_1_0_1_0_2_0_0_0);
+			newInstance_1_0_1_0_2_0_0_0
+					.setValue((String) value_1_0_1_0_2_0_0_0_0);
+
+			newInstance_1_0_1_0_2_0.setUnit(TimeUnit.MILLISECONDS);
 
 			Object value_2 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							19,
+							24,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getCoordinationProtocol(), null).evaluate(
 							instance);
@@ -164,7 +207,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							20,
+							25,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getCoordinationProtocol(), null).evaluate(
 							instance);
@@ -189,7 +232,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							7,
+							10,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -204,7 +247,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							8,
+							11,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -216,7 +259,7 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							21,
+							26,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRole(), null).evaluate(instance);
 			instance.setName((String) value_1);
@@ -234,7 +277,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							22,
+							27,
 							de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 									.getMessageBuffer(), null).evaluate(
 							instance);
@@ -253,7 +296,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							23,
+							28,
 							de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageType(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -271,7 +314,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							24,
+							29,
 							de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 									.getParameter(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -292,11 +335,42 @@ public class ElementInitializers {
 			instance.setConnectorQualityOfServiceAssumptions(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							17,
+							20,
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getConnectorQualityOfServiceAssumptions(),
 							null).evaluate(newInstance_0_0);
 			newInstance_0_0.setComment((String) value_0_0_0);
+			de.uni_paderborn.fujaba.muml.valuetype.TimeValue newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createTimeValue();
+			newInstance_0_0.setMaxMessageDelay(newInstance_0_0_1_0);
+			LiteralExpression newInstance_0_0_1_0_0_0 = CommonExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+			newInstance_0_0_1_0.setValue(newInstance_0_0_1_0_0_0);
+			Object value_0_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							21,
+							CommonExpressionsPackage.eINSTANCE
+									.getLiteralExpression(), null).evaluate(
+							newInstance_0_0_1_0_0_0);
+			newInstance_0_0_1_0_0_0.setValue((String) value_0_0_1_0_0_0_0);
+
+			newInstance_0_0_1_0.setUnit(TimeUnit.MILLISECONDS);
+
+			de.uni_paderborn.fujaba.muml.valuetype.TimeValue newInstance_0_0_2_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createTimeValue();
+			newInstance_0_0.setMinMessageDelay(newInstance_0_0_2_0);
+			LiteralExpression newInstance_0_0_2_0_0_0 = CommonExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+			newInstance_0_0_2_0.setValue(newInstance_0_0_2_0_0_0);
+			Object value_0_0_2_0_0_0_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							22,
+							CommonExpressionsPackage.eINSTANCE
+									.getLiteralExpression(), null).evaluate(
+							newInstance_0_0_2_0_0_0);
+			newInstance_0_0_2_0_0_0.setValue((String) value_0_0_2_0_0_0_0);
+
+			newInstance_0_0_2_0.setUnit(TimeUnit.MILLISECONDS);
 
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin

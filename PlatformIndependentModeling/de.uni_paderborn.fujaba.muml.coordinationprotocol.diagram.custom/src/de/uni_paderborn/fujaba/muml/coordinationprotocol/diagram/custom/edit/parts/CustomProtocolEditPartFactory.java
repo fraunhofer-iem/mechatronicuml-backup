@@ -24,16 +24,9 @@ public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case CoordinationProtocol2EditPart.VISUAL_ID:
-				return new CustomCoordinationProtocol2EditPart(view);
+			switch (MumlVisualIDRegistry.getVisualID(view)) {	
 			case ModelElementCategoryEditPart.VISUAL_ID:
-				return new CustomModelElementCategoryEditPart(view);
-			case RoleConnectorEditPart.VISUAL_ID:
-				return new CustomRoleConnectorEditPart(view);
-			case MessageTypeMessageTypesCompartmentEditPart.VISUAL_ID:
-				return new CustomMessageTypeMessageTypesCompartmentEditPart(view);
-			
+				return new CustomModelElementCategoryEditPart(view);			
 			}
 		}
 		return super.createEditPart(context, model);

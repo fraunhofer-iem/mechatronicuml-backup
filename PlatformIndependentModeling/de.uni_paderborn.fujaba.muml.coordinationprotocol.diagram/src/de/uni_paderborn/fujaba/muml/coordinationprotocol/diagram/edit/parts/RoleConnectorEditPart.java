@@ -141,6 +141,8 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 	}
 
 	protected void doCanonicalRefresh() {
+		if (getRoot() == null)
+			return;
 		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 				.getRegisteredEditPolicies(getDiagramView().getElement());
 		for (CanonicalEditPolicy editPolicy : editPolicies) {

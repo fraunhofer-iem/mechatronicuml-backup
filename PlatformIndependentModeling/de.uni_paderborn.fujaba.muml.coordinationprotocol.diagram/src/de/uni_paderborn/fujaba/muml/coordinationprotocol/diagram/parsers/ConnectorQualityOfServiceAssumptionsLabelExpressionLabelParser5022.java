@@ -50,7 +50,7 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5022
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						16,
+						19,
 						de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 								.getConnectorQualityOfServiceAssumptions(),
 						null).body();
