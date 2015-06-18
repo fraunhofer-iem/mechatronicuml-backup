@@ -17,10 +17,21 @@ public interface EditPolicyRoles {
 
 	public static final String WRAPPING_LABEL_MULTI_LINE_ROLE = "WrappingLabelMultiLineEditPolicy"; //$NON-NLS-1$
 
+	/** creates an anchor for connections. Corresponding classes are:
+	 *  de.uni_paderborn.fujaba.common.edit.policies.anchor.EllipseConnectionAnchorCreationEditPolicy -> creates an ellipse anchor
+	 */
 	public static final String CONNECTION_ANCHOR_CREATION_ROLE = "ConnectionAnchorCreationRole"; //$NON-NLS-1$
 	
+	/**
+	 * This policy provides an asynchronous refreshment after activation of the editpart it belongs to. Corresponding class:
+	 *  de.uni_paderborn.fujaba.common.edit.policies.CanonicalRefreshEditPolicy
+	 */
 	public static final String CANONICAL_REFRESH_ROLE = "CanonicalRefreshEditPolicy"; //$NON-NLS-1$
 
 	public static final String COMPARTMENT_HORIZONTAL_LAYOUT_ROLE = "CompartmentHorizontalLayoutRole"; //$NON-NLS-1$
 	
+	/**
+	 * This edit policy blocks deletion requests. No class has to be specified.
+	 */
+	public static final String NON_DELETABLE_ROLE = "org.muml.custom.nonDeletable";
 }
