@@ -9,17 +9,6 @@
       </ParserProvider>
    </extension>
     
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.4.0">
-      
-        <adviceBinding  id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.RoleAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"
-		  class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.edit.helpers.RoleEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>        
-
-      </metamodel>
-   </extension>
    
    <extension
          point="org.eclipse.ui.menus">
@@ -35,13 +24,7 @@
      
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.RoleAdvice"/>       
-      </binding>
-   </extension>
-   
+    
    
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
