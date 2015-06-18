@@ -1,9 +1,13 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -31,14 +35,21 @@ import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 public class ModelBrowserLabelProvider extends LabelProvider implements IColorProvider,
 		IFontProvider, IStyledLabelProvider, ICommonLabelProvider {
 	private WorkbenchLabelProvider labelProvider = new WorkbenchLabelProvider();
-	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;
-	private AdapterFactoryLabelProvider adapterFactoryLabelProvider;
-	
-	public ModelBrowserLabelProvider() {
-		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
-		adapterFactoryLabelProvider = new AdapterFactoryLabelProvider(adapterFactory);
-	}
 
+	private Map<TransactionalEditingDomain, AdapterFactoryLabelProvider> adapterFactoryLabelProviders = new HashMap<TransactionalEditingDomain, AdapterFactoryLabelProvider>();
+	
+	public AdapterFactoryLabelProvider getAdapterFactoryLabelProvder(TransactionalEditingDomain editingDomain) {
+		if (editingDomain != null) {
+			if (!adapterFactoryLabelProviders.containsKey(editingDomain)) {
+				AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
+				adapterFactoryLabelProviders.put(editingDomain, new AdapterFactoryLabelProvider(adapterFactory));
+			}
+			return adapterFactoryLabelProviders.get(editingDomain);
+		}
+		return null;
+	}
+	
+	
 	@Override
 	public void addListener(ILabelProviderListener listener) {
 		super.addListener(listener);
@@ -66,11 +77,15 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public String getText(Object element) {
 		if (element instanceof Notifier) {
-			return adapterFactoryLabelProvider.getText(element);
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.getEditingDomain(element));
+			if (labelProvider != null) {
+				return labelProvider.getText(element);
+			}
 		}
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
 			Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 			if (resource != null) {
 				if (resource.getContents().size() == 1) {
@@ -85,7 +100,10 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public StyledString getStyledText(final Object element) {
 		if (element instanceof Notifier) {
-			return adapterFactoryLabelProvider.getStyledText(element);
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.getEditingDomain(element));
+			if (labelProvider != null) {
+				return labelProvider.getStyledText(element);
+			}
 		}
 		if (element instanceof ProgressNavigatorItem) {
 			StyledString styledString = new StyledString();
@@ -100,6 +118,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
 			Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 			if (resource != null) {
 				if (resource.getContents().size() == 1) {
@@ -113,7 +132,10 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public Image getImage(Object element) {
 		if (element instanceof Notifier) {
-			return adapterFactoryLabelProvider.getImage(element);
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.getEditingDomain(element));
+			if (labelProvider != null) {
+				return labelProvider.getImage(element);
+			}
 		}
 		if (element instanceof ProgressNavigatorItem) {
 			return ((ProgressNavigatorItem) element).getCurrentImage();

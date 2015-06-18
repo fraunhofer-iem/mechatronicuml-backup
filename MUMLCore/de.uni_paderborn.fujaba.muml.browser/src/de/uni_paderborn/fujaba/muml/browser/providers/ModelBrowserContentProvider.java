@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -40,17 +41,25 @@ import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider {
-	private AdapterFactoryContentProvider adapterFactoryContentProvider;
 	private Viewer viewer;
-	private TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN;	
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
 	
 	private Map<URI, URI> relocatedParents = new HashMap<URI, URI>();
 	private Map<URI, Set<URI>> relocatedChildren = new HashMap<URI, Set<URI>>();
+
+	private Map<TransactionalEditingDomain, AdapterFactoryContentProvider> adapterFactoryContentProviders = new HashMap<TransactionalEditingDomain, AdapterFactoryContentProvider>();
 	
+	public AdapterFactoryContentProvider getAdapterFactoryContentProvder(TransactionalEditingDomain editingDomain) {
+		if (editingDomain != null) {
+			if (!adapterFactoryContentProviders.containsKey(editingDomain)) {
+				AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
+				adapterFactoryContentProviders.put(editingDomain, new AdapterFactoryContentProvider(adapterFactory));
+			}
+			return adapterFactoryContentProviders.get(editingDomain);
+		}
+		return null;
+	}
 	public ModelBrowserContentProvider() throws CoreException {
-		AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain) editingDomain).getAdapterFactory();
-		adapterFactoryContentProvider = new AdapterFactoryContentProvider(adapterFactory);
 		runUpdate(Collections.singletonList((IResource) ResourcesPlugin.getWorkspace().getRoot()));
 	}
 	
@@ -93,10 +102,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	}
 
 	protected void reload(final IFile iFile) {
-		
+		URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+		TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
 		synchronized (editingDomain) {
 			System.out.println("Reloading " + iFile);
-			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
 			Resource resource = editingDomain.getResourceSet().getResource(uri, true);
 			if (resource != null) {
 				try {
@@ -187,7 +196,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					return null;
 				}
 			}
-			return adapterFactoryContentProvider.getParent(element);
+			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.getEditingDomain(element));
+			if (contentProvider != null) {
+				return contentProvider.getParent(element);
+			}
 		}
 		if (element instanceof ProgressNavigatorItem) {
 			return ((ProgressNavigatorItem) element).getParent();
@@ -208,6 +220,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		Set<URI> relocated = this.relocatedChildren.get(parentUri);
 		if (relocated != null) {
 			for (URI targetUri : relocated) {
+				EditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(element);
 				Resource resource = editingDomain.getResourceSet().getResource(targetUri, false);
 				if (targetUri.fragment() != null) {
 					EObject child = resource.getEObject(targetUri.fragment());
@@ -245,11 +258,15 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	private Collection<Object> getDirectChildren(Object element) {
 		if (element instanceof Notifier) {
-			return Arrays.asList(adapterFactoryContentProvider.getChildren(element));
+			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.getEditingDomain(element));
+			if (contentProvider != null) {
+				return Arrays.asList(contentProvider.getChildren(element));
+			}
 		}
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
 			synchronized (editingDomain) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -269,14 +286,8 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		} else {
 			return Arrays.asList(super.getChildren(element));
 		}
+		
 	}
-
-//	
-//	private Resource getResource(IFile iFile) {
-//		URI uri = getURI(iFile);
-//		return editingDomain.getResourceSet().getResource(uri, false);
-//	}
-
 
 	private Object getProgressItem(IFile element) {
 		if (!loadingFiles.containsKey(element)) {
