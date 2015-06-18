@@ -46,16 +46,49 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
  * @generated
  */
 public class ModelElementCategoryCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+		CanonicalEditPolicy
+		implements
+		de.uni_paderborn.fujaba.common.edit.policies.IDiagramCanonicalEditPolicy {
 
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
 
+	/**
+	 * @generated
+	 */
 	public ModelElementCategoryCanonicalEditPolicy() {
 	}
 
+	/**
+	 * @generated
+	 */
 	public ModelElementCategoryCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+
+	// END MUML TICKET #1247
 
 	/**
 	 * @generated
@@ -304,6 +337,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		switch (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getModelElementCategory_1000ContainedLinks(view));
@@ -312,6 +349,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getCoordinationProtocol_2005ContainedLinks(view));
@@ -320,6 +361,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getCoordinationProtocol_3015ContainedLinks(view));
@@ -328,6 +373,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getRole_3006ContainedLinks(view));
@@ -336,6 +385,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getMessageBuffer_3013ContainedLinks(view));
@@ -344,6 +397,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getMessageType_3009ContainedLinks(view));
@@ -352,6 +409,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ParameterEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getParameter_3016ContainedLinks(view));
@@ -360,6 +421,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getConnectorQualityOfServiceAssumptions_3014ContainedLinks(view));
@@ -368,6 +433,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
 						.getRoleConnector_4006ContainedLinks(view));

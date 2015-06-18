@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies;
 
 import java.util.ArrayList;
@@ -27,15 +39,46 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
 
+	/**
+	 * @generated
+	 */
 	public DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy() {
 	}
 
+	/**
+	 * @generated
+	 */
 	public DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+
+	// END MUML TICKET #1247
 
 	/**
 	 * @generated

@@ -41,6 +41,9 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
 
 	/**
@@ -48,13 +51,41 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
+	/**
+	 * @generated
+	 */
 	public CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy() {
 	}
 
+	/**
+	 * @generated
+	 */
 	public CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+
+	// END MUML TICKET #1247
 
 	/**
 	 * @generated

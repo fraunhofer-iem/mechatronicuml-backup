@@ -31,7 +31,15 @@ public interface EditPolicyRoles {
 	public static final String COMPARTMENT_HORIZONTAL_LAYOUT_ROLE = "CompartmentHorizontalLayoutRole"; //$NON-NLS-1$
 	
 	/**
-	 * This edit policy blocks deletion requests. No class has to be specified.
+	 * This policy prevents links from being connected to this edit policy.
+	 *  de.uni_paderborn.fujaba.common.edit.policies.NoLinksEditPolicy
+	 */
+	public static final String NO_LINKS_ROLE = "NoLinksRole"; //$NON-NLS-1$
+
+	/**
+	 * This edit policy role blocks deletion requests when used as Custom Behavior Key.
+	 * Implementation is done in GMF Templates, no actual editpolicy class has to be specified.
 	 */
 	public static final String NON_DELETABLE_ROLE = "org.muml.custom.nonDeletable";
 }
+

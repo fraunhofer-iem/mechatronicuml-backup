@@ -113,34 +113,7 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 		installEditPolicy(
 				"CustomUpdateRole", new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CustomCoordinationProtocolUpdateEditPolicy()); //$NON-NLS-1$
 
-		removeEditPolicy(EditPolicy.COMPONENT_ROLE);
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ComponentEditPolicy() {
-			@Override
-			public Command getCommand(Request request) {
-				// If the user presses the delete key, don't delete
-				boolean keyboardDelete = request instanceof GroupRequestViaKeyboard
-						&& RequestConstants.REQ_DELETE.equals(request.getType());
-				if (request.getType() == RequestConstants.REQ_DELETE
-						|| keyboardDelete) {
-					return UnexecutableCommand.INSTANCE;
-				}
-
-				return super.getCommand(request);
-			}
-		});
-		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CoordinationProtocol2ItemSemanticEditPolicy() {
-					@Override
-					protected Command getSemanticCommand(
-							IEditCommandRequest request) {
-						if (request instanceof DestroyRequest) {
-							return null;
-						}
-						return super.getSemanticCommand(request);
-					}
-				});
+		removeEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.NON_DELETABLE_ROLE);
 
 		installEditPolicy(
 				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CANONICAL_REFRESH_ROLE,

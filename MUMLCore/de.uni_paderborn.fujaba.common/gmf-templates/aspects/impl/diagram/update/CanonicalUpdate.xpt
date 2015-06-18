@@ -7,14 +7,47 @@
 «EXTENSION impl::diagram::updater::CanonicalUpdate»
 
 «AROUND attributes FOR gmfgen::GenContainerBase-»
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
+	
 	«targetDef.proceed()»
 	
+	/**
+	 * @generated
+	 */
 	public «canonicalEditPolicyClassName»() {
 	}
+	
+	/**
+	 * @generated
+	 */
 	public «canonicalEditPolicyClassName»(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private java.util.List<String> noConnectionViews = new java.util.ArrayList<String>();
+	
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+	
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+	// END MUML TICKET #1247
+	
 «ENDAROUND»
 
 
@@ -49,6 +82,25 @@
 «ENDAROUND»
 
 
+«AROUND _caseSemanticElement FOR gmfgen::GenChildLabelNode»«ENDAROUND»
+«AROUND _caseSemanticElement FOR gmfgen::GenCommonBase-»
+«EXPAND xpt::Common::caseVisualID» {
+	if (noConnectionViews.contains(view.getType())) {
+		// MUML TICKET #1247
+		break;
+	}
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+«REM»
+	Processing each domain element only once. Prevents us from 
+	having duplicated links if a shortcut to one of the "main"
+	diagram elements present on diagram.
+«ENDREM»«-»
+		result.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCall»(view));
+	}
+	domain2NotationMap.putView(view.getElement(), view);
+	break;	
+}
+«ENDAROUND»
 
 
 

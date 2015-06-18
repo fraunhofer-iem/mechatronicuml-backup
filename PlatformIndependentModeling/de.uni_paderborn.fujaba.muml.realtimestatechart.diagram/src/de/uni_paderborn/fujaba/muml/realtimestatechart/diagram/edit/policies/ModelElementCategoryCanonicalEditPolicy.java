@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies;
 
 import java.util.ArrayList;
@@ -33,16 +45,49 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
  * @generated
  */
 public class ModelElementCategoryCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+		CanonicalEditPolicy
+		implements
+		de.uni_paderborn.fujaba.common.edit.policies.IDiagramCanonicalEditPolicy {
 
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
 
+	/**
+	 * @generated
+	 */
 	public ModelElementCategoryCanonicalEditPolicy() {
 	}
 
+	/**
+	 * @generated
+	 */
 	public ModelElementCategoryCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+
+	// END MUML TICKET #1247
 
 	/**
 	 * @generated
@@ -283,6 +328,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRealtimeStatechart_1000ContainedLinks(view));
@@ -291,6 +340,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRealtimeStatechart_2007ContainedLinks(view));
@@ -299,6 +352,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getState_3032ContainedLinks(view));
@@ -307,6 +364,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getEntryEvent_3033ContainedLinks(view));
@@ -315,6 +376,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getDoEvent_3034ContainedLinks(view));
@@ -323,6 +388,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getExitEvent_3035ContainedLinks(view));
@@ -331,6 +400,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getClockConstraint_3036ContainedLinks(view));
@@ -339,6 +412,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getSynchronizationChannel_3037ContainedLinks(view));
@@ -347,6 +424,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRegion_3042ContainedLinks(view));
@@ -355,6 +436,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRealtimeStatechart_3043ContainedLinks(view));
@@ -363,6 +448,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getEntryPoint_3040ContainedLinks(view));
@@ -371,6 +460,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getExitPoint_3041ContainedLinks(view));
@@ -379,6 +472,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getTransition_4003ContainedLinks(view));

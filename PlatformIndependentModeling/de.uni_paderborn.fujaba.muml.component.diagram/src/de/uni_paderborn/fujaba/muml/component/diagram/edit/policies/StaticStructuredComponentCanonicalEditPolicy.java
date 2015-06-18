@@ -39,14 +39,45 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class StaticStructuredComponentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
 
+	/**
+	 * @generated
+	 */
 	public StaticStructuredComponentCanonicalEditPolicy() {
 	}
 
+	/**
+	 * @generated
+	 */
 	public StaticStructuredComponentCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+
+	// END MUML TICKET #1247
 
 	/**
 	 * @generated

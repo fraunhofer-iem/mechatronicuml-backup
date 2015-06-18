@@ -20,9 +20,9 @@ public class CanonicalRefreshEditPolicy extends org.eclipse.gmf.runtime.diagram.
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {
-					EObject diagramElement = getDiagramElement();
+					Diagram diagram = getDiagram();
 					List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-							.getRegisteredEditPolicies(diagramElement);
+							.getRegisteredEditPolicies(diagram.getElement());
 					for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
 							.hasNext();) {
 						CanonicalEditPolicy nextEditPolicy = it.next();
@@ -32,19 +32,12 @@ public class CanonicalRefreshEditPolicy extends org.eclipse.gmf.runtime.diagram.
 			});
 		}
 
-		protected EObject getDiagramElement() {
-			if (getHost().getRoot() == null || getHost().getRoot().getContents() == null) {
-				return null;
-			} 
-			View view = (View) getHost().getRoot().getContents().getModel();
-			if (view == null) {
-				return null;
+		protected Diagram getDiagram() {
+			if (getHost().getModel() != null) {
+				View element = (View) getHost().getModel();
+				return element.getDiagram();
 			}
-			EObject diagramElement = null;
-			if (view.getDiagram() != null) {
-				diagramElement = view.getDiagram().getElement();
-			}
-			return diagramElement;
+			return null;
 		}
 
 		@Override

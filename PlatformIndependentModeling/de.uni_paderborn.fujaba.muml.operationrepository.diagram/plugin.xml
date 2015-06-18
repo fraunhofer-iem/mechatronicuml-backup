@@ -59,8 +59,29 @@
 	
 	
 	<extension point="org.eclipse.ui.menus">
+
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	  		<command
+                 commandId="de.uni_paderborn.fujaba.muml.behavior.category.create"
+                 icon="icons/obj16/ModelinstanceDiagramFile.gif"
+                 id="de.uni_paderborn.fujaba.muml.behavior.category.create"
+                 label="Create new Operation Repository Model"
+                 style="push">
+              <visibleWhen
+                    checkEnabled="false">
+                    <iterate ifEmpty="false" operator="and">
+                       <adapt type="org.eclipse.core.resources.IResource">
+				       </adapt>
+                    </iterate>	
+              </visibleWhen>
+           </command>
+      </menuContribution>
+      
+      <?gmfgen generated="true"?>   
+	  <menuContribution
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
@@ -70,23 +91,31 @@
 	            label="Create Operation Repository Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+		            	<or>
+		            	<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+						<iterate ifEmpty="false" operator="or">
+		            		<adapt type="org.eclipse.core.resources.IResource">
+		            			<test property="org.eclipse.core.resources.name" value="*.behavior"></test>
+	              			</adapt>
+		    			</iterate>
+		    			</or>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
+	   
 	</extension>
 
 	
 	<extension point="org.eclipse.ui.commands">
-		<?gmfgen generated="true"?>
-		<command
-			categoryId="de.uni_paderborn.fujaba"
-			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.createDiagram"
-			name="%initDiagramActionLabel">
-		</command>
-	</extension>
+	<?gmfgen generated="true"?>   
+	<command
+           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           categoryId="de.uni_paderborn.fujaba"
+           description="Create new Operation Repository Model"
+           id="de.uni_paderborn.fujaba.muml.behavior.category.create"
+           name="Create new Operation Repository Model">
+    </command>
+    </extension>
 
 	
 	<extension
@@ -619,6 +648,22 @@
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
+<extension point="org.eclipse.core.contenttype.contentTypes">
+		<?gmfgen generated="true"?>
+   		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="behavior"/>
+    </extension>
+
+<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.operationrepository.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.operationrepository.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
 
 
    <!-- optionally, specify keybindings -->

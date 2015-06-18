@@ -29,6 +29,9 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends
 		CanonicalEditPolicy {
+	/**
+	 * @generated
+	 */
 	private boolean canonicalNodes = true;
 
 	/**
@@ -36,13 +39,41 @@ public class CoordinationPatternPatternCompartmentCanonicalEditPolicy extends
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
+	/**
+	 * @generated
+	 */
 	public CoordinationPatternPatternCompartmentCanonicalEditPolicy() {
 	}
 
+	/**
+	 * @generated
+	 */
 	public CoordinationPatternPatternCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
+
+	// BEGIN MUML TICKET #1247
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
+	}
+
+	// END MUML TICKET #1247
 
 	/**
 	 * @generated
