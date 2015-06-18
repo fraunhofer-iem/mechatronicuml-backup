@@ -127,8 +127,10 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
 				new DefaultNodeLabelDragPolicy());
+
 		installEditPolicy(
 				"CustomLabelUpdateEditPolicy", new de.uni_paderborn.fujaba.muml.pattern.diagram.edit.policies.CustomWrappedLabelUpdateEditPolicy()); //$NON-NLS-1$
+
 	}
 
 	/**

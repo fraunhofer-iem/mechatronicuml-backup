@@ -38,7 +38,7 @@ public class ParameterLabelExpressionLabelParser5004 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						9,
+						12,
 						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 								.getParameter(), null).body();
 	}
@@ -50,7 +50,7 @@ public class ParameterLabelExpressionLabelParser5004 extends
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						10,
+						13,
 						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 								.getParameter(), null).evaluate(target);
 		return String.valueOf(result);

@@ -38,7 +38,7 @@ public class ConnectorQualityOfServiceAssumptionsLabelExpressionLabelParser5008
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						14,
+						17,
 						de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 								.getConnectorQualityOfServiceAssumptions(),
 						null).body();

@@ -93,7 +93,7 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsEditPart extends
 		 * @generated
 		 */
 		public RoleConnectorQoSAConnectorConnectionFigure() {
-			this.setLineStyle(Graphics.LINE_DASH);
+			this.setLineStyle(Graphics.LINE_DOT);
 
 		}
 

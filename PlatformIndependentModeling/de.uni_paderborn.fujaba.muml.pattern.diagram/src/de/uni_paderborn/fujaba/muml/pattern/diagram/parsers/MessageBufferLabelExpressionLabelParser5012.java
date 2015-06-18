@@ -38,7 +38,7 @@ public class MessageBufferLabelExpressionLabelParser5012 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.pattern.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						13,
+						16,
 						de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 								.getMessageBuffer(), null).body();
 	}
