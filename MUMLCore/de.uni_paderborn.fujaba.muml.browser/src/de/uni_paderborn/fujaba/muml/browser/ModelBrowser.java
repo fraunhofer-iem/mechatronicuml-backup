@@ -10,9 +10,9 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IAggregateWorkingSet;
 import org.eclipse.ui.IWorkbenchCommandConstants;
@@ -21,6 +21,11 @@ import org.eclipse.ui.model.IWorkbenchAdapter;
 import org.eclipse.ui.navigator.CommonNavigator;
 import org.eclipse.ui.navigator.CommonViewer;
 import org.eclipse.ui.navigator.INavigatorContentService;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+
+import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider;
 
 /**
  * 
@@ -29,8 +34,8 @@ import org.eclipse.ui.navigator.INavigatorContentService;
  * @since 3.2
  * 
  */
-public final class ModelBrowser extends CommonNavigator {
-
+public final class ModelBrowser extends CommonNavigator implements ITabbedPropertySheetPageContributor {
+	
 	public static final String VIEW_ID = "de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser";
 
 	private int rootMode;
@@ -125,19 +130,40 @@ public final class ModelBrowser extends CommonNavigator {
 	protected CommonViewer createCommonViewerObject(Composite aParent) {
 		return new CommonViewer(getViewSite().getId(), aParent,
 				SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL) {
-			protected void handleOpen(SelectionEvent event) {
-				// XXX Open the diagram instead
-//				IStructuredSelection sel = (IStructuredSelection) getSelection();
-//				if (!sel.isEmpty() && getContentProvider() instanceof ITreeContentProvider) {
-//					ITreeContentProvider treeContentProvider = (ITreeContentProvider) getContentProvider();
-//					for (Object child : treeContentProvider.getChildren(sel.getFirstElement())) {
-//						if (child instanceof IFile) {
-//							
-//						}
-//					}
-//				}
-				super.handleOpen(event);
+
+			@Override
+			public ISelection getSelection() {
+				ISelection selection = super.getSelection();
+				selection = ModelBrowserContentProvider.getAdaptedSelection(selection);
+				return selection;
 			}
 		};
 	}
+
+	// BEGIN Tabbed Properties
+ 	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.muml.common.properties";
+
+ 	protected TabbedPropertySheetPage propertySheetPage;
+
+ 	public IPropertySheetPage getPropertySheetPage() {
+ 		if (propertySheetPage == null
+ 				|| propertySheetPage.getControl().isDisposed()) {
+ 			propertySheetPage = new TabbedPropertySheetPage(this);
+ 		}
+ 		return propertySheetPage;
+ 	}
+
+ 	public String getContributorId() {
+ 		return PROPERTIES_CONTRIBUTOR;
+ 	}
+	@SuppressWarnings("rawtypes")
+	@Override
+	public Object getAdapter(Class key) {
+		if (key.equals(IPropertySheetPage.class)) {
+			return getPropertySheetPage();
+		}
+		return super.getAdapter(key);
+	}
+	// END Tabbed Properties
+
 }

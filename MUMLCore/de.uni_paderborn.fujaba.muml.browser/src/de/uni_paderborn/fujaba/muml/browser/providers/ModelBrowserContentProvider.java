@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,6 +25,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -31,8 +33,14 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
@@ -49,16 +57,45 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	private Map<TransactionalEditingDomain, AdapterFactoryContentProvider> adapterFactoryContentProviders = new HashMap<TransactionalEditingDomain, AdapterFactoryContentProvider>();
 	
+	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
+		public void resourceSetChanged(final ResourceSetChangeEvent event) {
+			for (Notification notification : event.getNotifications()) {
+				Object notifier = notification.getNotifier();
+				Resource resource = null;
+				if (notifier instanceof EObject) {
+					resource = ((EObject) notifier).eResource();
+				}
+				if (notifier instanceof Resource) {
+					resource = (Resource) notifier;
+				}
+				if (resource != null) {
+					URI uri = resource.getURI();
+					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
+					Display.getCurrent().syncExec(new Runnable() {
+						@Override
+						public void run() {
+							((StructuredViewer)viewer).refresh(iFile, true);
+						}
+					});
+				}
+			}
+		}
+	};
+	
 	public AdapterFactoryContentProvider getAdapterFactoryContentProvder(TransactionalEditingDomain editingDomain) {
 		if (editingDomain != null) {
 			if (!adapterFactoryContentProviders.containsKey(editingDomain)) {
 				AdapterFactory adapterFactory = ((AdapterFactoryEditingDomain)editingDomain).getAdapterFactory();
 				adapterFactoryContentProviders.put(editingDomain, new AdapterFactoryContentProvider(adapterFactory));
+				editingDomain.addResourceSetListener(resourceSetListener);
 			}
 			return adapterFactoryContentProviders.get(editingDomain);
 		}
 		return null;
 	}
+	
+	
+	
 	public ModelBrowserContentProvider() throws CoreException {
 		runUpdate(Collections.singletonList((IResource) ResourcesPlugin.getWorkspace().getRoot()));
 	}
@@ -325,5 +362,35 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				item.setViewer(viewer);
 			}
 		}
+	}
+
+
+
+	public static ISelection getAdaptedSelection(ISelection selection) {
+		if (selection instanceof IStructuredSelection) {
+			List<Object> newElements = new ArrayList<Object>();
+			IStructuredSelection ssel = (IStructuredSelection) selection;
+			Iterator<?> it = ssel.iterator();
+			while (it.hasNext()) {
+				Object element = it.next();
+				if (element instanceof IFile) {
+					IFile iFile = (IFile) element;
+					URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+					TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
+					synchronized (editingDomain) {
+						Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+						if (resource != null) {
+							if (resource.getContents().size() == 1) {
+								newElements.add(resource.getContents().get(0));
+								continue;
+							}
+						}
+					}
+				}
+				newElements.add(element);
+			}
+			return new StructuredSelection(newElements);
+		}
+		return selection;
 	}
 }
