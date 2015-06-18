@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -19,9 +20,9 @@ public class CanonicalRefreshEditPolicy extends org.eclipse.gmf.runtime.diagram.
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {
-					Diagram diagramView = ((View) getHost().getRoot().getContents().getModel()).getDiagram();
+					EObject diagramElement = getDiagramElement();
 					List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-							.getRegisteredEditPolicies(diagramView.getElement());
+							.getRegisteredEditPolicies(diagramElement);
 					for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
 							.hasNext();) {
 						CanonicalEditPolicy nextEditPolicy = it.next();
@@ -29,6 +30,21 @@ public class CanonicalRefreshEditPolicy extends org.eclipse.gmf.runtime.diagram.
 					}
 				}
 			});
+		}
+
+		protected EObject getDiagramElement() {
+			if (getHost().getRoot() == null || getHost().getRoot().getContents() == null) {
+				return null;
+			} 
+			View view = (View) getHost().getRoot().getContents().getModel();
+			if (view == null) {
+				return null;
+			}
+			EObject diagramElement = null;
+			if (view.getDiagram() != null) {
+				diagramElement = view.getDiagram().getElement();
+			}
+			return diagramElement;
 		}
 
 		@Override
