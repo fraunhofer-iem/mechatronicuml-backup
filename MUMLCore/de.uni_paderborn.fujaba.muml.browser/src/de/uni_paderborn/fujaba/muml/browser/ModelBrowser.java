@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.browser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.common.CommandException;
@@ -11,7 +14,10 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IAggregateWorkingSet;
@@ -34,8 +40,38 @@ import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvide
  * @since 3.2
  * 
  */
-public final class ModelBrowser extends CommonNavigator implements ITabbedPropertySheetPageContributor {
-	
+public final class ModelBrowser extends CommonNavigator implements 
+	ISelectionProvider, // Adapt selection of CommonViewer Selection Provider; context menu still uses CommonViewer.
+	ITabbedPropertySheetPageContributor // APE Integration
+{
+
+	// Selection Provider members
+	private ISelection selection;
+	private List<ISelectionChangedListener> selectionChangedListeners = new ArrayList<ISelectionChangedListener>();
+
+	// Selection Provider interface
+	@Override
+	public void addSelectionChangedListener(ISelectionChangedListener listener) {
+		selectionChangedListeners.add(listener);
+	}
+	@Override
+	public void removeSelectionChangedListener(
+			ISelectionChangedListener listener) {
+		selectionChangedListeners.remove(listener);
+	}
+	@Override
+	public ISelection getSelection() {
+		return selection;
+	}
+	@Override
+	public void setSelection(ISelection selection) {
+		this.selection = selection;
+
+		for (ISelectionChangedListener listener : selectionChangedListeners) {
+			listener.selectionChanged(new SelectionChangedEvent(this, selection));
+		}
+	}
+
 	public static final String VIEW_ID = "de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser";
 
 	private int rootMode;
@@ -49,7 +85,20 @@ public final class ModelBrowser extends CommonNavigator implements ITabbedProper
 	@Override
 	public void createPartControl(Composite aParent) {
 		super.createPartControl(aParent);
+		this.getCommonViewer().addSelectionChangedListener(new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				setSelection(ModelBrowserContentProvider.getAdaptedSelection(event.getSelection()));
+			}
+		});
 		
+		// Note:
+		// Super implementation uses Common Viewer object as Content Provider.
+		// This has the problem that resources are not adapted as semantic elements, as the label provider suggests to the user.
+		// We could do that for the Common Viewer, but then the context menus do not work anymore, as they should on files.
+		// So we implement ISelectionProvider ourselves and listen to changes in CommonViewer.
+		getViewSite().setSelectionProvider(this);
+
 		//if (!false)
 		//	getCommonViewer().setMapper(new ResourceToItemsMapper(getCommonViewer()));
 	}	
@@ -130,13 +179,6 @@ public final class ModelBrowser extends CommonNavigator implements ITabbedProper
 	protected CommonViewer createCommonViewerObject(Composite aParent) {
 		return new CommonViewer(getViewSite().getId(), aParent,
 				SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL) {
-
-			@Override
-			public ISelection getSelection() {
-				ISelection selection = super.getSelection();
-				selection = ModelBrowserContentProvider.getAdaptedSelection(selection);
-				return selection;
-			}
 		};
 	}
 
