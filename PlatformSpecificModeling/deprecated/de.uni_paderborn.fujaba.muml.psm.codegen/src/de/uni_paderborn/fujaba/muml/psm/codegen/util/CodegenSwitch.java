@@ -95,9 +95,9 @@ public class CodegenSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CodegenPackage.COD_GEN_ALLOCATION: {
-				CodGenAllocation codGenAllocation = (CodGenAllocation)theEObject;
-				T result = caseCodGenAllocation(codGenAllocation);
+			case CodegenPackage.CODE_GEN_ALLOCATION: {
+				CodeGenAllocation codeGenAllocation = (CodeGenAllocation)theEObject;
+				T result = caseCodeGenAllocation(codeGenAllocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -136,17 +136,17 @@ public class CodegenSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cod Gen Allocation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Code Gen Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cod Gen Allocation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Code Gen Allocation</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCodGenAllocation(CodGenAllocation object) {
+	public T caseCodeGenAllocation(CodeGenAllocation object) {
 		return null;
 	}
 

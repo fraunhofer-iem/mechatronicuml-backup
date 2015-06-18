@@ -85,8 +85,8 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 				return createRefinedStructuredResourceInstanceAdapter();
 			}
 			@Override
-			public Adapter caseCodGenAllocation(CodGenAllocation object) {
-				return createCodGenAllocationAdapter();
+			public Adapter caseCodeGenAllocation(CodeGenAllocation object) {
+				return createCodeGenAllocationAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -161,16 +161,16 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation <em>Cod Gen Allocation</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation <em>Code Gen Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation
 	 * @generated
 	 */
-	public Adapter createCodGenAllocationAdapter() {
+	public Adapter createCodeGenAllocationAdapter() {
 		return null;
 	}
 

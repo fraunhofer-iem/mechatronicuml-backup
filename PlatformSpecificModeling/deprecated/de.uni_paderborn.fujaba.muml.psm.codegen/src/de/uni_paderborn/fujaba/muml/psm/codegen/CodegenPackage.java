@@ -134,6 +134,15 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_ATOMIC_COMPONENT_INSTANCE__PARENT_CIC = InstancePackage.ATOMIC_COMPONENT_INSTANCE__PARENT_CIC;
 
 	/**
+	 * The feature id for the '<em><b>Top Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINED_ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL = InstancePackage.ATOMIC_COMPONENT_INSTANCE__TOP_LEVEL;
+
+	/**
 	 * The feature id for the '<em><b>Allocated Resource Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,15 +378,6 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_STRUCTURED_RESOURCE_INSTANCE__NAME = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINED_STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE;
-
-	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,6 +385,15 @@ public interface CodegenPackage extends EPackage {
 	 * @ordered
 	 */
 	int REFINED_STRUCTURED_RESOURCE_INSTANCE__HWPORTS = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__HWPORTS;
+
+	/**
+	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINED_STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Atomic Resource Instances</b></em>' containment reference list.
@@ -603,14 +612,14 @@ public interface CodegenPackage extends EPackage {
 	int REFINED_STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT = HwresourceinstancePackage.STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenAllocationImpl <em>Cod Gen Allocation</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl <em>Code Gen Allocation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenAllocationImpl
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getCodGenAllocation()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getCodeGenAllocation()
 	 * @generated
 	 */
-	int COD_GEN_ALLOCATION = 2;
+	int CODE_GEN_ALLOCATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Hpic</b></em>' containment reference.
@@ -619,7 +628,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN_ALLOCATION__HPIC = 0;
+	int CODE_GEN_ALLOCATION__HPIC = 0;
 
 	/**
 	 * The feature id for the '<em><b>Cic</b></em>' containment reference.
@@ -628,26 +637,25 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN_ALLOCATION__CIC = 1;
+	int CODE_GEN_ALLOCATION__CIC = 1;
 
 	/**
-	 * The number of structural features of the '<em>Cod Gen Allocation</em>' class.
+	 * The number of structural features of the '<em>Code Gen Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN_ALLOCATION_FEATURE_COUNT = 2;
+	int CODE_GEN_ALLOCATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Cod Gen Allocation</em>' class.
+	 * The number of operations of the '<em>Code Gen Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COD_GEN_ALLOCATION_OPERATION_COUNT = 0;
-
+	int CODE_GEN_ALLOCATION_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance <em>Refined Atomic Component Instance</em>}'.
@@ -703,36 +711,36 @@ public interface CodegenPackage extends EPackage {
 	EReference getRefinedStructuredResourceInstance_AllUsedMessageTypes();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation <em>Cod Gen Allocation</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation <em>Code Gen Allocation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cod Gen Allocation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation
+	 * @return the meta object for class '<em>Code Gen Allocation</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation
 	 * @generated
 	 */
-	EClass getCodGenAllocation();
+	EClass getCodeGenAllocation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getHpic <em>Hpic</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation#getHpic <em>Hpic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Hpic</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getHpic()
-	 * @see #getCodGenAllocation()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation#getHpic()
+	 * @see #getCodeGenAllocation()
 	 * @generated
 	 */
-	EReference getCodGenAllocation_Hpic();
+	EReference getCodeGenAllocation_Hpic();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getCic <em>Cic</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation#getCic <em>Cic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Cic</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation#getCic()
-	 * @see #getCodGenAllocation()
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation#getCic()
+	 * @see #getCodeGenAllocation()
 	 * @generated
 	 */
-	EReference getCodGenAllocation_Cic();
+	EReference getCodeGenAllocation_Cic();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -802,14 +810,14 @@ public interface CodegenPackage extends EPackage {
 		EReference REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES = eINSTANCE.getRefinedStructuredResourceInstance_AllUsedMessageTypes();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenAllocationImpl <em>Cod Gen Allocation</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl <em>Code Gen Allocation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenAllocationImpl
-		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getCodGenAllocation()
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl
+		 * @see de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodegenPackageImpl#getCodeGenAllocation()
 		 * @generated
 		 */
-		EClass COD_GEN_ALLOCATION = eINSTANCE.getCodGenAllocation();
+		EClass CODE_GEN_ALLOCATION = eINSTANCE.getCodeGenAllocation();
 
 		/**
 		 * The meta object literal for the '<em><b>Hpic</b></em>' containment reference feature.
@@ -817,7 +825,7 @@ public interface CodegenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COD_GEN_ALLOCATION__HPIC = eINSTANCE.getCodGenAllocation_Hpic();
+		EReference CODE_GEN_ALLOCATION__HPIC = eINSTANCE.getCodeGenAllocation_Hpic();
 
 		/**
 		 * The meta object literal for the '<em><b>Cic</b></em>' containment reference feature.
@@ -825,7 +833,7 @@ public interface CodegenPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COD_GEN_ALLOCATION__CIC = eINSTANCE.getCodGenAllocation_Cic();
+		EReference CODE_GEN_ALLOCATION__CIC = eINSTANCE.getCodeGenAllocation_Cic();
 
 	}
 

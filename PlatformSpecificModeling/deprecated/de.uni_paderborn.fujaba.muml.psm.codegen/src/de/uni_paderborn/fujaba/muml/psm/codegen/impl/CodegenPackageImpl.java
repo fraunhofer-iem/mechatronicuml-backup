@@ -3,29 +3,20 @@
 package de.uni_paderborn.fujaba.muml.psm.codegen.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
-
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
-
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -54,7 +45,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass codGenAllocationEClass = null;
+	private EClass codeGenAllocationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -174,8 +165,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCodGenAllocation() {
-		return codGenAllocationEClass;
+	public EClass getCodeGenAllocation() {
+		return codeGenAllocationEClass;
 	}
 
 	/**
@@ -183,8 +174,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCodGenAllocation_Hpic() {
-		return (EReference)codGenAllocationEClass.getEStructuralFeatures().get(0);
+	public EReference getCodeGenAllocation_Hpic() {
+		return (EReference)codeGenAllocationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -192,8 +183,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCodGenAllocation_Cic() {
-		return (EReference)codGenAllocationEClass.getEStructuralFeatures().get(1);
+	public EReference getCodeGenAllocation_Cic() {
+		return (EReference)codeGenAllocationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -231,9 +222,9 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		createEReference(refinedStructuredResourceInstanceEClass, REFINED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES);
 		createEReference(refinedStructuredResourceInstanceEClass, REFINED_STRUCTURED_RESOURCE_INSTANCE__ALL_USED_MESSAGE_TYPES);
 
-		codGenAllocationEClass = createEClass(COD_GEN_ALLOCATION);
-		createEReference(codGenAllocationEClass, COD_GEN_ALLOCATION__HPIC);
-		createEReference(codGenAllocationEClass, COD_GEN_ALLOCATION__CIC);
+		codeGenAllocationEClass = createEClass(CODE_GEN_ALLOCATION);
+		createEReference(codeGenAllocationEClass, CODE_GEN_ALLOCATION__HPIC);
+		createEReference(codeGenAllocationEClass, CODE_GEN_ALLOCATION__CIC);
 	}
 
 	/**
@@ -281,9 +272,9 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		initEReference(getRefinedStructuredResourceInstance_AllocatedAtomicComponentInstances(), this.getRefinedAtomicComponentInstance(), this.getRefinedAtomicComponentInstance_AllocatedResourceInstance(), "allocatedAtomicComponentInstances", null, 0, -1, RefinedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRefinedStructuredResourceInstance_AllUsedMessageTypes(), theMsgtypePackage.getMessageType(), null, "allUsedMessageTypes", null, 0, -1, RefinedStructuredResourceInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(codGenAllocationEClass, CodGenAllocation.class, "CodGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCodGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, CodGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCodGenAllocation_Cic(), theInstancePackage.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, CodGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(codeGenAllocationEClass, CodeGenAllocation.class, "CodeGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCodeGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCodeGenAllocation_Cic(), theInstancePackage.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -302,7 +293,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -310,7 +301,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
+		   });
 	}
 
 	/**
@@ -320,7 +311,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getRefinedStructuredResourceInstance_AllUsedMessageTypes(), 
 		   source, 

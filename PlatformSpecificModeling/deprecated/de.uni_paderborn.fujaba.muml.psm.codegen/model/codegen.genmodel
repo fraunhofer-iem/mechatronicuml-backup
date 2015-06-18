@@ -15,9 +15,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codegen.ecore#//RefinedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference codegen.ecore#//RefinedStructuredResourceInstance/allUsedMessageTypes"/>
     </genClasses>
-    <genClasses ecoreClass="codegen.ecore#//CodGenAllocation">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodGenAllocation/hpic"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodGenAllocation/cic"/>
+    <genClasses ecoreClass="codegen.ecore#//CodeGenAllocation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodeGenAllocation/hpic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodeGenAllocation/cic"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
