@@ -66,6 +66,7 @@
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure">
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="47"/>
       </viewmap>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwplatforminstance/HWPlatformInstanceConfiguration/resources"/>
