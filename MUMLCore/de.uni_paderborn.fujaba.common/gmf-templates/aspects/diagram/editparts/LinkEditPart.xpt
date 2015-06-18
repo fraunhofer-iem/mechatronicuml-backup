@@ -36,7 +36,10 @@
 
 		super.handleNotificationEvent(notification);
 	}
-
+	
+	/**
+	 * @generated
+	 */
 	protected void doCanonicalRefresh() {
 	    if (getRoot() == null) {
 	    	return;
