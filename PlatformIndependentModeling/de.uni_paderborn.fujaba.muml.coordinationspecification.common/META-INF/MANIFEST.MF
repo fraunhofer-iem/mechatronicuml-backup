@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Coordination Specification Common Plugin
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.coordinationspecification.common
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.coordinationspecification.common;singleton:=true
 Bundle-Version: 0.5.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.coordinationspecification.common.Activator
 Require-Bundle: org.eclipse.ui,
@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui.providers;bundle-version="1.5.0",
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.4.0",
  org.eclipse.m2m.qvt.oml;bundle-version="3.3.0",
- org.eclipse.ui.workbench
+ org.eclipse.ui.workbench,
+ org.eclipse.gmf.runtime.diagram.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
