@@ -40,13 +40,13 @@ public interface CodegenFactory extends EFactory {
 	RefinedStructuredResourceInstance createRefinedStructuredResourceInstance();
 
 	/**
-	 * Returns a new object of class '<em>Cod Gen Allocation</em>'.
+	 * Returns a new object of class '<em>Code Gen Allocation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cod Gen Allocation</em>'.
+	 * @return a new object of class '<em>Code Gen Allocation</em>'.
 	 * @generated
 	 */
-	CodGenAllocation createCodGenAllocation();
+	CodeGenAllocation createCodeGenAllocation();
 
 	/**
 	 * Returns the package supported by this factory.

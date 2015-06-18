@@ -118,26 +118,26 @@ public class CodegenItemProviderAdapterFactory extends CodegenAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CodGenAllocationItemProvider codGenAllocationItemProvider;
+	protected CodeGenAllocationItemProvider codeGenAllocationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCodGenAllocationAdapter() {
-		if (codGenAllocationItemProvider == null) {
-			codGenAllocationItemProvider = new CodGenAllocationItemProvider(this);
+	public Adapter createCodeGenAllocationAdapter() {
+		if (codeGenAllocationItemProvider == null) {
+			codeGenAllocationItemProvider = new CodeGenAllocationItemProvider(this);
 		}
 
-		return codGenAllocationItemProvider;
+		return codeGenAllocationItemProvider;
 	}
 
 	/**
@@ -241,7 +241,7 @@ public class CodegenItemProviderAdapterFactory extends CodegenAdapterFactory imp
 	public void dispose() {
 		if (refinedAtomicComponentInstanceItemProvider != null) refinedAtomicComponentInstanceItemProvider.dispose();
 		if (refinedStructuredResourceInstanceItemProvider != null) refinedStructuredResourceInstanceItemProvider.dispose();
-		if (codGenAllocationItemProvider != null) codGenAllocationItemProvider.dispose();
+		if (codeGenAllocationItemProvider != null) codeGenAllocationItemProvider.dispose();
 	}
 
 }

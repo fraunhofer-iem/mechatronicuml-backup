@@ -7,7 +7,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.Hwplatforminstan
 
 import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
 
-import de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation;
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
 
 import java.util.Collection;
@@ -30,12 +30,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGenAllocation} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CodGenAllocationItemProvider
+public class CodeGenAllocationItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +49,7 @@ public class CodGenAllocationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodGenAllocationItemProvider(AdapterFactory adapterFactory) {
+	public CodeGenAllocationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -80,8 +80,8 @@ public class CodGenAllocationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CodegenPackage.Literals.COD_GEN_ALLOCATION__HPIC);
-			childrenFeatures.add(CodegenPackage.Literals.COD_GEN_ALLOCATION__CIC);
+			childrenFeatures.add(CodegenPackage.Literals.CODE_GEN_ALLOCATION__HPIC);
+			childrenFeatures.add(CodegenPackage.Literals.CODE_GEN_ALLOCATION__CIC);
 		}
 		return childrenFeatures;
 	}
@@ -100,14 +100,14 @@ public class CodGenAllocationItemProvider
 	}
 
 	/**
-	 * This returns CodGenAllocation.gif.
+	 * This returns CodeGenAllocation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CodGenAllocation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CodeGenAllocation"));
 	}
 
 	/**
@@ -118,8 +118,9 @@ public class CodGenAllocationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CodGenAllocation_type");
+		return getString("_UI_CodeGenAllocation_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -132,9 +133,9 @@ public class CodGenAllocationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CodGenAllocation.class)) {
-			case CodegenPackage.COD_GEN_ALLOCATION__HPIC:
-			case CodegenPackage.COD_GEN_ALLOCATION__CIC:
+		switch (notification.getFeatureID(CodeGenAllocation.class)) {
+			case CodegenPackage.CODE_GEN_ALLOCATION__HPIC:
+			case CodegenPackage.CODE_GEN_ALLOCATION__CIC:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -154,12 +155,12 @@ public class CodGenAllocationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CodegenPackage.Literals.COD_GEN_ALLOCATION__HPIC,
+				(CodegenPackage.Literals.CODE_GEN_ALLOCATION__HPIC,
 				 HwplatforminstanceFactory.eINSTANCE.createHWPlatformInstanceConfiguration()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CodegenPackage.Literals.COD_GEN_ALLOCATION__CIC,
+				(CodegenPackage.Literals.CODE_GEN_ALLOCATION__CIC,
 				 InstanceFactory.eINSTANCE.createComponentInstanceConfiguration()));
 	}
 

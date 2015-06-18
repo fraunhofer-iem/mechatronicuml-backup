@@ -58,7 +58,7 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 		switch (eClass.getClassifierID()) {
 			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: return createRefinedAtomicComponentInstance();
 			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE: return createRefinedStructuredResourceInstance();
-			case CodegenPackage.COD_GEN_ALLOCATION: return createCodGenAllocation();
+			case CodegenPackage.CODE_GEN_ALLOCATION: return createCodeGenAllocation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,9 +89,9 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CodGenAllocation createCodGenAllocation() {
-		CodGenAllocationImpl codGenAllocation = new CodGenAllocationImpl();
-		return codGenAllocation;
+	public CodeGenAllocation createCodeGenAllocation() {
+		CodeGenAllocationImpl codeGenAllocation = new CodeGenAllocationImpl();
+		return codeGenAllocation;
 	}
 
 	/**
