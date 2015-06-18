@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.draw2d.PositionConstants;
@@ -47,7 +48,10 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	private void determineSide(int newX) {
 
 		Role myRole = this.getRole();
-		EList<Role> roles = myRole.getRoleConnector().getRoles();
+		if (myRole.getRoleConnector() == null) {
+			return;
+		}
+		List<Role> roles = myRole.getRoleConnector().getRoles();
 		EditPart myEditPart = this.getHost();
 		List<EditPart> children = myEditPart.getParent().getChildren();
 		for (EditPart child : children) {
