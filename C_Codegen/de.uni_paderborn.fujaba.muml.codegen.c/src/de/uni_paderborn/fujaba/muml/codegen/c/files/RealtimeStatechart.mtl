@@ -324,7 +324,7 @@
 			[comment do something with the message/]
 		[/if]
 #ifdef DEBUG
-printDebugInformation("[component.getQualifiedName()/] received message of type %d",mwMsg->_msgID );
+printDebugInformation("[component.getQualifiedName()/] received message of type[msg.instanceOf.getTypeName()/]");
 #endif
 //printf("received message of type %d",mwMsg->_msgID );
 				fflush(stdout);		
@@ -373,7 +373,7 @@ printDebugInformation("[component.getQualifiedName()/] received message of type 
 				//send Message
 				MW_sendMessage(MW_getTargetPortIDforIdentifier(stateChart->parentComponent->[getVariableName(getPortForRegion(transition.statechart.parentRegion))/]->ID),[msg.instanceOf.getIdentifierVariableName()/],[if msg.instanceOf.parameters->size() > 0] msg[else]NULL[/if]);
 				#ifdef DEBUG
-printDebugInformation("[component.getQualifiedName()/] sent message of type %d",[msg.instanceOf.getIdentifierVariableName()/] );
+printDebugInformation("[component.getQualifiedName()/] sent message of type [msg.instanceOf.getIdentifierVariableName()/]");
 #endif		
 [/for]
 

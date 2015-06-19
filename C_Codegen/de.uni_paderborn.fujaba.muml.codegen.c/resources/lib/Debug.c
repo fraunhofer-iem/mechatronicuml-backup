@@ -10,6 +10,6 @@
 
 void printDebugInformation(char * debugInformation){
 
-	printf("%d : %s\n",clock(),debugInformation);
+	printf("%lu : %s\n",clock(),debugInformation);
 	fflush(stdout);
 }

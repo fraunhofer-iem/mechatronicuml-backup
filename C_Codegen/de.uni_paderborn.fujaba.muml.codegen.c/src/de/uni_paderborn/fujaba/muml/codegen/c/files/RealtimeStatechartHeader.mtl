@@ -82,7 +82,7 @@
  * @brief This enum represents the States of the Realtime-StateChart: [rtsc.getName()/]
  */
 	typedef enum {
-		INACTIVE,
+		[rtsc.getQualifiedName().toUpperCase()/]_INACTIVE,
 	[for (state : State | rtsc.states) separator (',')]
 		[getStateNames(state)/]	
 	[/for]
