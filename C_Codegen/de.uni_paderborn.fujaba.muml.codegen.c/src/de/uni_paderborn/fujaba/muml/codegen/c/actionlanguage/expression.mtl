@@ -247,7 +247,7 @@
 */]
 [template private generateIndices(expression : TypedNamedElementExpression, fqname : String) ? (expression.elementAccessors->notEmpty())]
 [for (index : Expression | expression.elementAccessors)]
-[if (not index.oclIsKindOf(ArrayIndexExpression))]->[generateExpression(index, fqname)/][else]
+[if (not index.oclIsKindOf(ArrayIndexExpression))].[generateExpression(index, fqname)/][else]
 ['['/][generateExpression(index, fqname)/] - 1[']'/][/if][/for]
 [/template]
 

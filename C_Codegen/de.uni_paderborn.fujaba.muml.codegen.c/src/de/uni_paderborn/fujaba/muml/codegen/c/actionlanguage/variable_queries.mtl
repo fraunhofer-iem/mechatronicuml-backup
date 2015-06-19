@@ -28,14 +28,14 @@
 			if myFqname = '' then
 				''
 			else
-				myFqname + '->'
+				myFqname + '.'
 			endif + typedNamedElement.getTypedNamedElementName()
 		else
 			if typedNamedElement.oclIsKindOf(HybridPort) then
 				typedNamedElement.getTypedNamedElementName()
 			else
 				-- can this happen?
-				fqname + '->' + typedNamedElement.getTypedNamedElementName()
+				fqname + '.' + typedNamedElement.getTypedNamedElementName()
 			endif
 		endif
 	endif

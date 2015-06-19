@@ -190,6 +190,7 @@
 			stateChart->parentComponent = parentComponent;		
 			[for (variable : Variable | rtsc.variables->collect(oclAsType(Variable)))]
 					[if (variable.dataType.oclIsKindOf(StructureDataType))]
+					[comment]
 					//allocate memory for structured datatypes of the statechart
 					[let sType : StructureDataType = dataType.oclAsType(StructureDataType)]			
 					stateChart->[variable.getVariableName()/] = ([getTypeName(sType)/]*)malloc(sizeof([getTypeName(sType)/]));
@@ -201,6 +202,7 @@
 						stateChart = NULL;
 					}
 					[/let]
+					[/comment]
 					[/if]	
 				[/for]
 			if (stateChart->parentComponent != NULL) {
