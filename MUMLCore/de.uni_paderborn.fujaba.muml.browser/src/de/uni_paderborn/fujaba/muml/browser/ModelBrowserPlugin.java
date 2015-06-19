@@ -32,21 +32,30 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 	public static Map<URI, TransactionalEditingDomain> EDITING_DOMAIN_REGISTRY = new HashMap<URI, TransactionalEditingDomain>();
 
 	public static TransactionalEditingDomain getEditingDomain(URI uri) {
-		synchronized (EDITING_DOMAIN_REGISTRY) {
-			uri = uri.trimFragment();
-			if (!EDITING_DOMAIN_REGISTRY.containsKey(uri)) {
-				EDITING_DOMAIN_REGISTRY.put(uri, WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain());
+		if (uri != null) {
+			synchronized (EDITING_DOMAIN_REGISTRY) {
+				uri = uri.trimFragment();
+				if (!EDITING_DOMAIN_REGISTRY.containsKey(uri)) {
+					EDITING_DOMAIN_REGISTRY.put(uri, WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain());
+				}
+				return EDITING_DOMAIN_REGISTRY.get(uri);
 			}
-			return EDITING_DOMAIN_REGISTRY.get(uri);
 		}
+		return null;
 	}
 	
 	public static TransactionalEditingDomain getEditingDomain(Resource resource) {
-		return getEditingDomain(resource.getURI());
+		if (resource != null) {
+			return getEditingDomain(resource.getURI());
+		}
+		return null;
 	}
 	
 	public static TransactionalEditingDomain getEditingDomain(EObject element) {
-		return getEditingDomain(element.eResource());
+		if (element != null) {
+			return getEditingDomain(element.eResource());
+		}
+		return null;
 	}
 	
 	public static TransactionalEditingDomain getEditingDomain(Object object) {

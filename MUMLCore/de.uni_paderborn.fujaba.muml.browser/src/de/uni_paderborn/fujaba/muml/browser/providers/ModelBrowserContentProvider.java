@@ -71,7 +71,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				if (resource != null) {
 					URI uri = resource.getURI();
 					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
-					Display.getCurrent().syncExec(new Runnable() {
+					Display.getDefault().asyncExec(new Runnable() {
 						@Override
 						public void run() {
 							((StructuredViewer)viewer).refresh(iFile, true);
