@@ -18,7 +18,7 @@
 
 RTSC = [for (comp : Component | CIs.componentType->asSet())][if ((comp.oclIsKindOf(AtomicComponent)) and (comp.componentKind = ComponentKind::SOFTWARE_COMPONENT))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 COMP = [for (comp : Component | CIs.componentType->asSet())][if ((componentKind=ComponentKind::SOFTWARE_COMPONENT and oclIsKindOf(AtomicComponent)))][comp.getClassName().toLowerFirst()/].o [/if][/for] 
-LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o
+LIB = [if CIs.componentType->select( c | c.componentKind=ComponentKind::CONTINUOUS_COMPONENT)->size()>0]ContImplementations.o[/if] port.o MessageBuffer.o NetworkMessageBuffer.o NetworkInterface.o Messages.o Debug.o
 MW = MiddlewareCore.o MiddlewareInternalLogic.o NetworkInterfaceImplementation.o
 CC = gcc
 CFLAGS = -c
@@ -42,6 +42,8 @@ ContImplementations.o: continuousComponents/ContImplementations.c
 [/if]
 port.o: lib/port.c
 	$(CC) $(CFLAGS) lib/port.c
+Debug.o: lib/Debug.c
+	$(CC) $(CFLAGS) lib/Debug.c
 MessageBuffer.o: lib/MessageBuffer.c
 	$(CC) $(CFLAGS) lib/MessageBuffer.c
 NetworkMessageBuffer.o: lib/NetworkMessageBuffer.c

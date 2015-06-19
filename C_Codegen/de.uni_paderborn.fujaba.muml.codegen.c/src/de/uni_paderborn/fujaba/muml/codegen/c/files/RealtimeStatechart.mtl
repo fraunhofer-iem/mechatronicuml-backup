@@ -196,7 +196,7 @@
 					stateChart->[variable.getVariableName()/] = ([getTypeName(sType)/]*)malloc(sizeof([getTypeName(sType)/]));
 					if (stateChart->[variable.getVariableName()/] == NULL)
 					{	
-						fprintf(stderr, "Initialization of [getClassName(rtsc)/] failed\n");
+						
 
 						[getDestroyMethodName(rtsc)/](stateChart);
 						stateChart = NULL;
@@ -208,13 +208,13 @@
 			if (stateChart->parentComponent != NULL) {
 				[getInitializeMethodName(rtsc)/](stateChart);
 			} else {
-				fprintf(stderr, "Initialization of [getClassName(rtsc)/] failed\n");
+				
 
 				[getDestroyMethodName(rtsc)/](stateChart);
 				stateChart = NULL;
 			}
 		} else {
-			fprintf(stderr, "Creation of [getClassName(rtsc)/] failed\n");
+			
 		}
 		return stateChart;
 	}
@@ -323,6 +323,9 @@
 			[msg.instanceOf.getUnmarshallingMethodName()/](mwMsg->_mumlMsg, msg, 0);
 			[comment do something with the message/]
 		[/if]
+#ifdef DEBUG
+printDebugInformation("[component.getQualifiedName()/] received message of type %d",mwMsg->_msgID );
+#endif
 //printf("received message of type %d",mwMsg->_msgID );
 				fflush(stdout);		
 	[/let]
@@ -369,8 +372,9 @@
 
 				//send Message
 				MW_sendMessage(MW_getTargetPortIDforIdentifier(stateChart->parentComponent->[getVariableName(getPortForRegion(transition.statechart.parentRegion))/]->ID),[msg.instanceOf.getIdentifierVariableName()/],[if msg.instanceOf.parameters->size() > 0] msg[else]NULL[/if]);
-				//printf("sent message of type %d",[msg.instanceOf.getIdentifierVariableName()/] );
-				fflush(stdout);			
+				#ifdef DEBUG
+printDebugInformation("[component.getQualifiedName()/] sent message of type %d",[msg.instanceOf.getIdentifierVariableName()/] );
+#endif		
 [/for]
 
 		[else]
@@ -401,6 +405,9 @@
 	// change the state
 	[if (transition.target.oclIsKindOf(State))]		
 		stateChart->[getVariableName(targetRTSC)/] = [getName(transition.target.oclAsType(State))/];
+		#ifdef DEBUG
+printDebugInformation("[getVariableName(targetRTSC)/] switched state to [getName(transition.target.oclAsType(State))/]" );
+#endif		
 		[comment reset doEvent-Clock for state/]
 		[if (not target.oclAsType(State).doEvent.oclIsUndefined())]
 			Clock_reset(stateChart->[target.oclAsType(State).getClockVariableName()/]);

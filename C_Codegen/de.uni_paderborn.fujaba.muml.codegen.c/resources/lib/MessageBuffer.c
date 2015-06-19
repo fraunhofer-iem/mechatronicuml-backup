@@ -20,7 +20,7 @@ MessageBuffer* MessageBuffer_create(queue_size_t size, bool_t mode,
 	//initialize the new created MessageBuffer
 	MessageBuffer_initialize(buf);
 	} else {
-		fprintf(stderr, "Creation of Port failed.\n");
+		fprintf(stderr, "Creation of buffer failed.\n");
 	}
 
 	return buf;
