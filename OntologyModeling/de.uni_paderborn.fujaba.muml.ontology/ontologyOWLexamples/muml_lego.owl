@@ -28,7 +28,16 @@
         <Class IRI="#Celsius"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Centimeter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ColorObject"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ColorSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ColorUnit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Component"/>
@@ -58,7 +67,13 @@
         <Class IRI="#DiscreteSenderReceiverPort"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DistanceUnit"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Fahrenheit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ForceUnit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HiTechnicAccelerationSensor"/>
@@ -76,6 +91,9 @@
         <Class IRI="#HiTechnicIRSeeker"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Hour"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HybridPort"/>
     </Declaration>
     <Declaration>
@@ -85,19 +103,58 @@
         <Class IRI="#HybridSenderPort"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Kilometer"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#LegoDevice"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LightSensor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#LiteralColor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Microsecond"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Milimeter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Milisecond"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Minute"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MumlElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nanosecond"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Newton"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoneUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Percentage"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Port"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#RGBArray"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ReceiverPort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Second"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SenderPort"/>
@@ -110,6 +167,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SoundSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeUnit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TouchSensor"/>
@@ -142,6 +205,9 @@
         <ObjectProperty IRI="#hasUnit"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#providesData"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#representedBy"/>
     </Declaration>
     <Declaration>
@@ -159,7 +225,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Celsius"/>
-        <Class IRI="#Unit"/>
+        <Class IRI="#TemperatureUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Centimeter"/>
+        <Class IRI="#DistanceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ColorObject"/>
+        <Class IRI="#ColorUnit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ColorSensor"/>
@@ -171,6 +245,10 @@
             <DataProperty IRI="#hasValue"/>
             <Datatype abbreviatedIRI="xsd:string"/>
         </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ColorUnit"/>
+        <Class IRI="#Unit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Component"/>
@@ -229,7 +307,15 @@
         <Class IRI="#SenderReceiverPort"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DistanceUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Fahrenheit"/>
+        <Class IRI="#TemperatureUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ForceUnit"/>
         <Class IRI="#Unit"/>
     </SubClassOf>
     <SubClassOf>
@@ -274,6 +360,10 @@
         <Class IRI="#LegoDevice"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Hour"/>
+        <Class IRI="#TimeUnit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#HybridPort"/>
         <Class IRI="#Port"/>
     </SubClassOf>
@@ -292,6 +382,10 @@
     <SubClassOf>
         <Class IRI="#HybridSenderPort"/>
         <Class IRI="#SenderPort"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Kilometer"/>
+        <Class IRI="#DistanceUnit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#LightSensor"/>
@@ -319,12 +413,60 @@
         </DataHasValue>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LiteralColor"/>
+        <Class IRI="#ColorUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meter"/>
+        <Class IRI="#DistanceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Microsecond"/>
+        <Class IRI="#TimeUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Milimeter"/>
+        <Class IRI="#DistanceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Milisecond"/>
+        <Class IRI="#TimeUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Minute"/>
+        <Class IRI="#TimeUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nanosecond"/>
+        <Class IRI="#TimeUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Newton"/>
+        <Class IRI="#ForceUnit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoneUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Percentage"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Port"/>
         <Class IRI="#MumlElement"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#RGBArray"/>
+        <Class IRI="#ColorUnit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ReceiverPort"/>
         <Class IRI="#Port"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Second"/>
+        <Class IRI="#TimeUnit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SenderPort"/>
@@ -383,6 +525,14 @@
             <DataProperty IRI="#hasMinBound"/>
             <Literal datatypeIRI="&xsd;integer">0</Literal>
         </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureUnit"/>
+        <Class IRI="#Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeUnit"/>
+        <Class IRI="#Unit"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TouchSensor"/>
@@ -471,6 +621,10 @@
         <Class IRI="#Port"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesData"/>
+        <Class IRI="#LegoDevice"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#representedBy"/>
         <Class IRI="#LegoDevice"/>
     </ObjectPropertyDomain>
@@ -495,8 +649,12 @@
         <Class IRI="#Unit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#representedBy"/>
+        <ObjectProperty IRI="#providesData"/>
         <Class IRI="#Port"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#representedBy"/>
+        <Class IRI="#Component"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasValue"/>
