@@ -22,6 +22,9 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#AtomicComponent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#BiConnector"/>
     </Declaration>
     <Declaration>
@@ -46,6 +49,12 @@
         <Class IRI="#Connector"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ContinuousAtomicComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContinuousComponent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ContinuousPort"/>
     </Declaration>
     <Declaration>
@@ -53,6 +62,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ContinuousSenderPort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContinuousStructuredComponent"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DiscretePort"/>
@@ -94,6 +106,12 @@
         <Class IRI="#Hour"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#HybridAtomicComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HybridComponent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HybridPort"/>
     </Declaration>
     <Declaration>
@@ -101,6 +119,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#HybridSenderPort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HybridStructuredComponent"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Kilometer"/>
@@ -166,7 +187,19 @@
         <Class IRI="#ServoMotor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SoftwareAtomicComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoftwareComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoftwareStructuredComponent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SoundSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StructuredComponent"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TemperatureUnit"/>
@@ -220,6 +253,10 @@
         <DataProperty IRI="#hasValue"/>
     </Declaration>
     <SubClassOf>
+        <Class IRI="#AtomicComponent"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#BiConnector"/>
         <Class IRI="#Connector"/>
     </SubClassOf>
@@ -259,6 +296,18 @@
         <Class IRI="#MumlElement"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ContinuousAtomicComponent"/>
+        <Class IRI="#AtomicComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContinuousAtomicComponent"/>
+        <Class IRI="#ContinuousComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContinuousComponent"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ContinuousPort"/>
         <Class IRI="#Port"/>
     </SubClassOf>
@@ -277,6 +326,14 @@
     <SubClassOf>
         <Class IRI="#ContinuousSenderPort"/>
         <Class IRI="#SenderPort"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContinuousStructuredComponent"/>
+        <Class IRI="#ContinuousComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContinuousStructuredComponent"/>
+        <Class IRI="#StructuredComponent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DiscretePort"/>
@@ -364,6 +421,14 @@
         <Class IRI="#TimeUnit"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#HybridAtomicComponent"/>
+        <Class IRI="#HybridComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HybridComponent"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#HybridPort"/>
         <Class IRI="#Port"/>
     </SubClassOf>
@@ -382,6 +447,14 @@
     <SubClassOf>
         <Class IRI="#HybridSenderPort"/>
         <Class IRI="#SenderPort"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HybridStructuredComponent"/>
+        <Class IRI="#HybridComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HybridStructuredComponent"/>
+        <Class IRI="#StructuredComponent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Kilometer"/>
@@ -502,6 +575,26 @@
         </DataHasValue>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#SoftwareAtomicComponent"/>
+        <Class IRI="#AtomicComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareAtomicComponent"/>
+        <Class IRI="#SoftwareComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareComponent"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareStructuredComponent"/>
+        <Class IRI="#SoftwareComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoftwareStructuredComponent"/>
+        <Class IRI="#StructuredComponent"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SoundSensor"/>
         <Class IRI="#LegoDevice"/>
     </SubClassOf>
@@ -525,6 +618,10 @@
             <DataProperty IRI="#hasMinBound"/>
             <Literal datatypeIRI="&xsd;integer">0</Literal>
         </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StructuredComponent"/>
+        <Class IRI="#Component"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TemperatureUnit"/>
@@ -578,6 +675,11 @@
         <Class IRI="#WiFiBlock"/>
         <Class IRI="#LegoDevice"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ContinuousComponent"/>
+        <Class IRI="#HybridComponent"/>
+        <Class IRI="#SoftwareComponent"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#ContinuousPort"/>
         <Class IRI="#DiscretePort"/>
