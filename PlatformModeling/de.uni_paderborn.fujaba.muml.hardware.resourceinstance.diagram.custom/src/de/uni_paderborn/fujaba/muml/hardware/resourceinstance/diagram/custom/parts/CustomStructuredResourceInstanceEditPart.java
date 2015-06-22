@@ -82,13 +82,21 @@ public class CustomStructuredResourceInstanceEditPart extends
 	}
 	
 	public class CustomStructuredResourceFigure extends StructuredResourceFigure{
+		
 		@Override
 		protected void fillShape(Graphics graphics) {
 			Color bgColor = graphics.getBackgroundColor();
 			Color fgColor = graphics.getForegroundColor();
 			// Set the graphics color
-			graphics.setForegroundColor(ColorConstants.white);
-			graphics.setBackgroundColor(ColorConstants.lightGray);
+			float hsbVals[] = java.awt.Color.RGBtoHSB( bgColor.getRed(),
+                    bgColor.getGreen(),
+                    bgColor.getBlue(), null );
+		    java.awt.Color highlight = java.awt.Color.getHSBColor( hsbVals[0], hsbVals[1], 0.5f * (1f+ hsbVals[2] ));
+		    java.awt.Color shadow = java.awt.Color.getHSBColor( hsbVals[0], hsbVals[1], 0.5f * hsbVals[2] );
+			Color lightColor = new Color(bgColor.getDevice(), highlight.getRed(), highlight.getGreen(), highlight.getBlue());
+			Color darkColor = new Color(bgColor.getDevice(), shadow.getRed(),shadow.getGreen(),shadow.getBlue());
+			graphics.setForegroundColor(lightColor);
+			graphics.setBackgroundColor(darkColor);
 			// Restore the original colors
 			graphics.fillGradient(getBounds(), true);
 			graphics.setBackgroundColor(bgColor);
