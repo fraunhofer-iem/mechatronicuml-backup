@@ -79,7 +79,6 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 		private ICommonViewerWorkbenchSite viewerSite;
 
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super("Open Diagram(s)");
 			this.viewerSite = viewerSite;
 		}
 
@@ -102,8 +101,12 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 					ModelBrowserPlugin.log(e);
 				}
 			}
+			if (diagrams.size() > 1) {
+				setText("Open multiple Diagrams");
+			} else {
+				setText("Open Diagram");
+			}
 			setEnabled(!diagrams.isEmpty());
-			
 		}
 		private void findDiagramsForView(List<Diagram> diagrams, View view) {
 			Diagram diagram = null;
