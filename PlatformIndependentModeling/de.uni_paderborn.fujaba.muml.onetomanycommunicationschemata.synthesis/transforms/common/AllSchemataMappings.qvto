@@ -19,14 +19,26 @@ property multicastDLCName : String = "DLC_multicast";
 property singleReceiveDLCName : String = "DLC_singleReceive";
 property multiReceiveDLCName : String = "DLC_multiReceive";
 
+property variableNamesDict : Dict(String, Integer);	
+property usedClockNames : Dict(String,Integer);
 
 property multicastSubRoleSpecificVariableName : String = "sendMulticast";
 
 mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String): Variable
 {
-	result.name := varName;
-	result.initializeExpression := new LiteralExpression();
-	result.initializeExpression.oclAsType(LiteralExpression).value := "false";
+	var namePrefix : String = "";
+		if(variableNamesDict->hasKey(varName)) {
+			var nr : Integer := variableNamesDict->get(varName);			
+			namePrefix := (nr + 1).toString();
+			variableNamesDict->put(varName, nr+1);
+		}
+		else {
+			variableNamesDict ->put(varName, 1);
+			namePrefix := 1.toString();
+		};
+	result.name := varName + "_"+ namePrefix;
+//	result.initializeExpression := new LiteralExpression();
+//	result.initializeExpression.oclAsType(LiteralExpression).value := "false";
 	result.dataType := getBooleanPrimitiveDataType(self.statechart.getHighestParentStatechart().eContainer().eContainer().oclAsType(RootNode));
 }
 
@@ -49,7 +61,7 @@ mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:Oc
 	}
 
 
-property usedClockNames : Dict(String,Integer);
+
 //@author: sthiele2 -- creates a clock for in order to disassamble a deadline at a schema-specifying-transition
 mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : String) : Clock
 {	
@@ -153,7 +165,7 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 			
 		}endif;
 		
-		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName, transMapping);
+		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		operator := LogicOperator::AND;
 	
@@ -162,12 +174,12 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 mapping Transition :: TransferSchemaNotVarAndVarGuard(context:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
-			leftExpression := self.map TransferSchemaGuard(context, region, varName1, notOp, transMapping);
+			leftExpression := self.map TransferSchemaGuard(result, varName1, notOp);
 		}else{
-			leftExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName1, transMapping);
+			leftExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName1));
 		}endif;
 		
-		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName2, transMapping);
+		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName2));
 		
 		operator := LogicOperator::AND;
 	
@@ -177,7 +189,7 @@ mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, conte
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
 		
-		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName, transMapping);
+		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		operator := LogicOperator::AND;
 	
@@ -187,7 +199,7 @@ mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, co
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
 		
-		rightExpression := self.map TransferSchemaGuard(context1, region, varName, true, transMapping);
+		rightExpression := self.map TransferSchemaGuard(result, varName, true);
 		
 		operator := LogicOperator::AND;
 	
@@ -196,12 +208,12 @@ mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, co
 mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
-			leftExpression := self.map TransferSchemaGuard(context1, region, varName1, true, transMapping);
+			leftExpression := self.map TransferSchemaGuard(result, varName1, true);
 		}else{
-			leftExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName1, transMapping);
+			leftExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName1));
 		}endif;
 		
-		rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName2, transMapping);
+		rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName2));
 		
 		operator := LogicOperator::AND;
 }
@@ -209,12 +221,12 @@ mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, 
 mapping Transition :: TransferSchemaErrorOrNotPossibleGuard(context1:OclAny, region:OclAny, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
-			rightExpression := self.map TransferSchemaGuard(context1, region, varName2, true, transMapping);
+			rightExpression := self.map TransferSchemaGuard(result, varName2, true);
 		}else{
-			rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName2, transMapping);
+			rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName2));
 		}endif;
 		
-		leftExpression := self.map TransferSchemata2TypedNamedElementExpr(context1, varName1, transMapping);
+		leftExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName1));
 		
 		operator := LogicOperator::OR;
 }
@@ -240,9 +252,9 @@ mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:OclAny, 
 	
 	}
 	
-mapping Transition :: TransferSchemaGuard(context:OclAny, region:OclAny, varName:String, op:Boolean, transMapping: Integer) : UnaryExpression {
+mapping Transition :: TransferSchemaGuard(context:OclAny, varName:String, op:Boolean) : UnaryExpression {
 
-		enclosedExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName, transMapping);
+		enclosedExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		if(op){
 			operator := UnaryOperator::NOT;
@@ -250,12 +262,7 @@ mapping Transition :: TransferSchemaGuard(context:OclAny, region:OclAny, varName
 	
 	}
 	
-mapping Transition :: TransferSchemata2TypedNamedElementExpr(context:OclAny, varName:String, transMapping: Integer) : TypedNamedElementExpression {
-			
-		typedNamedElement := context.oclAsType(RealtimeStatechart).map TransferSchemata2Variable(context, varName);
-		
-					
-	}
+
 	
 // @author: sthiele2
 mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region: OclAny, intermediateStateNumber : Integer, clockName : String,toplevel : Boolean) : State
@@ -270,25 +277,8 @@ mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region
 }
 
 
-property variableNamesDict : Dict(String, Integer);	
-mapping RealtimeStatechart :: TransferSchemata2Variable(context:OclAny, varName:String) : Variable {
-		var namePrefix : String = "";
-		if(variableNamesDict->hasKey(varName)) {
-			var nr : Integer := variableNamesDict->get(varName);			
-			namePrefix := (nr + 1).toString();
-			variableNamesDict->put(varName, nr+1);
-		}
-		else {
-			variableNamesDict ->put(varName, 1);
-			namePrefix := 1.toString();
-		};
-		name := varName + "_"+ namePrefix;
-		constant := false;
-		dataType := context.oclAsType(RealtimeStatechart).eContainer().oclAsType(ModelElementCategory).container().oclAsType(RootNode).categories->select(c|c.key.equalsIgnoreCase("de.uni_paderborn.fujaba.muml.types.category")).modelElements->at(2).oclAsType(DataType);
-		}
-	
 
-	
+
 --Transfer Schemata Action
 
 mapping Transition :: TransferSchemata2Action(context:OclAny, actionName:String, varName:String, assignValue:String, transMapping:Integer) : Action {
@@ -342,7 +332,7 @@ mapping Transition :: TransferSchemata2TwoActionsTransActBlock(context:OclAny, v
 	
 mapping Transition :: TransferSchemata2Assignment(context:OclAny, varName:String, assignValue:String, transMapping:Integer) : Assignment {
 		
-		lhs_typedNamedElementExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName, transMapping);
+		lhs_typedNamedElementExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		
 		assignOperator := AssignOperator::ASSIGN;
 		
@@ -401,7 +391,8 @@ mapping RealtimeStatechart :: TransferSchemataChannel(channelName: String, selec
 		state := self.map Rtsc2InitialState();
 		
 		if(selector){
-			selectorType := self.behavioralElement.oclAsType(Role);
+			assert fatal (self.behavioralElement.oclIsKindOf(Role) or self.behavioralElement.oclIsKindOf(muml::component::DiscretePort)) with log ("behavorial Element must be DiscretePort or Role!");
+			selectorType := self.behavioralElement.oclAsType(DataType);			
 		}endif;		
 						
 	}

@@ -32,7 +32,7 @@ main() {
 	disassembleDiscreteInteractionPointRTSC(currentRealtimeStatechart);
 }
 
-helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart)
+helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart) : RealtimeStatechart
 {	
 	currentRealtimeStatechart := inputRTSC;
 	assert fatal (currentRealtimeStatechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) with log ("The specified RealtimeStatechart must be the behavior of a discrete port or a role!");
@@ -44,7 +44,7 @@ helper disassembleDiscreteInteractionPointRTSC(inputRTSC : RealtimeStatechart)
 	iterateTransitions.disassembleIterateSchema();	
 	// step 3: disassemble schematas
 	currentRealtimeStatechart.transitions := currentRealtimeStatechart.transitions-(iterateTransitions);
-	currentRealtimeStatechart.map RTSC2RTSC();
+	return currentRealtimeStatechart.map RTSC2RTSC();
 	
 	
 }
@@ -80,7 +80,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		internalVariables := allRTSCs.variables;
 		internalSynchronizations := allRTSCs.states.channels;
 		-- check whether every unicast defines a condition!
-		assert fatal (not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and
+		assert fatal (self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and
 		 t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()
 		) with log ("Unicast must define a condition!");
 			
@@ -99,53 +99,53 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 		
 		// if the one-to-many-coordination-schema defined a condition, we need a boolean variable that checks whether the schema eexecution works or not.
 		
-		if(not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) 
-				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()){
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "multicastPossible");
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
+			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("multicastPossible");
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
-		}endif;
+		};
 		
-		if(not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
-				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()){		
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "unicastPossible");
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){		
+			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("unicastPossible");
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
-		}endif;
+		};
 		
-		if(not self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)
-				and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()){
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "MultiReceivePossible");
+				and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){			
+			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("MultiReceivePossible");
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
-		}endif;
+		};
 		
-		if(not self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive))->isEmpty()){
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "error");
+		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive))->forEach(transition){
+			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("error");
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
-		}endif;
+		};
 		
-		if(not self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
-				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->isEmpty()){
-			var newVar : Variable := self.map TransferSchemata2Variable(self, "consumeSingleReceive");
+		self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+				and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive))->forEach(transition){
+			var newVar : Variable := transition.map Transition2SubroleSpecificBooleanVaribale("consumeSingleReceive");
 			var initExpression := new LiteralExpression();
 			initExpression.value := "false";
 			newVar.initializeExpression := initExpression;
 			variables +=newVar ;
-		}endif;
+		};
 		
 		
 		// normally override the behavorialElement
@@ -209,11 +209,11 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny,top
 		
 		states += self.states.map States2StatesSubrole(context, region);
 		
-		if(not self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		 self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
-				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->isEmpty()){
-			variables += self.map TransferSchemata2Variable(self, "sendUnicast");
-		}endif;
+				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
+			variables += transition.map Transition2SubroleSpecificBooleanVaribale("sendUnicast");
+		};
 		
 	
 		--transitions without message

@@ -135,7 +135,7 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 		
 		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicastCheckDone,SynchronizationKind::RECEIVE);
 		
-		guard := self.map TransferSchemaGuard(context, region, "unicastPossible", true, 1);
+		guard := self.map TransferSchemaGuard(result, "unicastPossible", true);
 			
 	}
 	
@@ -161,7 +161,7 @@ mapping Transition :: Unicast2TransReceiveSyncCoordinator(context:OclAny, region
 		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicastCheckDone,SynchronizationKind::RECEIVE);
 		
 		if(self.guard.oclIsUndefined()){
-			guard := self.map TransferSchemata2TypedNamedElementExpr(context, "unicastPossible",2);
+			guard := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale("unicastPossible"));
 		}else{
 			guard := self.map TransferSchemaGuardAndPossibleGuard(context, 5, region, "unicastPossible", 2);
 		};
@@ -380,9 +380,9 @@ mapping Transition :: UnicastNotLastAndPossibleExpression(context:OclAny, region
 		leftExpression := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		
 		if(notOp){
-			rightExpression := self.map TransferSchemaGuard(context, region, varName, true, transMapping);
+			rightExpression := self.map TransferSchemaGuard(result, varName, true);
 		}else{
-			rightExpression := self.map TransferSchemata2TypedNamedElementExpr(context, varName, transMapping);
+			rightExpression := self.map Schema2TypedNamedElementExpression(result,self.map Transition2SubroleSpecificBooleanVaribale(varName));
 		}endif;
 		
 		operator := LogicOperator::AND;

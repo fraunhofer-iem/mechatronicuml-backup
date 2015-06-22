@@ -241,6 +241,7 @@ mapping TypedNamedElement :: TypedNamedElement2TypedNamedElement() : TypedNamedE
 			{
 				result.initializeExpression := self.initializeExpression.map Expression2Expression("INPUT");
 				result.constant := self.constant;
+
 			}
 			else
 			{

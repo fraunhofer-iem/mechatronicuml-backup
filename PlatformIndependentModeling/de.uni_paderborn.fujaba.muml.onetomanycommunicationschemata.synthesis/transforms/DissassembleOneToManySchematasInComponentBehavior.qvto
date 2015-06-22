@@ -21,13 +21,18 @@ transformation DissassembleOneToManySchematasInComponentBehavior(inout input : m
 main() {
 
 	// not debug
-	var componentRTSC : muml::realtimestatechart::RealtimeStatechart := input.rootObjects()[muml::realtimestatechart::RealtimeStatechart]->any(true).oclAsType(muml::realtimestatechart::RealtimeStatechart);
+	//var componentRTSC : muml::realtimestatechart::RealtimeStatechart := input.rootObjects()[muml::realtimestatechart::RealtimeStatechart]->any(true).oclAsType(muml::realtimestatechart::RealtimeStatechart);
+	//debug 
+	var componentRTSC : muml::realtimestatechart::RealtimeStatechart := getRealtimeStatechartCategory(input.rootObjects()[RootNode]->any(true)).modelElements->asOrderedSet()->at(1).oclAsType(RealtimeStatechart);
 	assert fatal (componentRTSC.behavioralElement.oclIsKindOf(muml::component::Component)) with log ("The specified RealtimeStatechart must be the behavior of a Component!");
 
 	var childrenRTSCs : Set(RealtimeStatechart) := componentRTSC->closure(states.oclAsType(State).embeddedRegions.oclAsType(Region).embeddedStatechart);
 	
 	childrenRTSCs->select(statechart:RealtimeStatechart|statechart.behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint) and not statechart.behavioralElement.oclIsUndefined())->forEach(chart){
-		disassembleDiscreteInteractionPointRTSC(chart);
+		
+		var region : Region := chart.oclAsType(RealtimeStatechart).parentRegion;
+		var statechart :=disassembleDiscreteInteractionPointRTSC(chart);
+		region.embeddedStatechart := statechart;
 	};
 	
 }
