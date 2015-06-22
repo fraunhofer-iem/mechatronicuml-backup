@@ -35,6 +35,7 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="47"/>
       </viewmap>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/CacheInstance"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
@@ -75,6 +76,7 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="47"/>
       </viewmap>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProgrammableLogicDeviceInstance"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
@@ -115,6 +117,7 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="47"/>
       </viewmap>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessorInstance"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
@@ -160,6 +163,7 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="47"/>
       </viewmap>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/ProcessingMemoryInstance"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
@@ -213,6 +217,7 @@
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="130" height="47"/>
       </viewmap>
       <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstanceEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ENLARGE_COMPARTMENT_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.common.edit.policies.compartment.EnlargeCompartmentEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StorageMemoryInstance"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresourceinstance/StructuredResourceInstance/embeddedAtomicResourceInstances"/>

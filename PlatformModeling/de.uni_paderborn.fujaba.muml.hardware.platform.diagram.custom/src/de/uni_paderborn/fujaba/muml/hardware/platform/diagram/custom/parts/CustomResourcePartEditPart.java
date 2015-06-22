@@ -10,6 +10,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
@@ -49,7 +50,12 @@ public class CustomResourcePartEditPart extends ResourcePartEditPart {
 		Request refreshRequest = new Request(RequestConstants.REQ_REFRESH);
 		this.performRequest(refreshRequest);
 		refreshFigure();
-		executeTransformation();
+		Display.getCurrent().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				executeTransformation();
+			}
+		});
 	}
 
 	@Override
@@ -79,7 +85,8 @@ public class CustomResourcePartEditPart extends ResourcePartEditPart {
 		if (editingDomain != null) {
 			PlatformPart platformPart = (PlatformPart) getNotationView()
 					.getElement();
-			if(platformPart instanceof ResourcePart && ((ResourcePart) platformPart).getResourceType()==null){
+			if (platformPart instanceof ResourcePart
+					&& ((ResourcePart) platformPart).getResourceType() == null) {
 				return;
 			}
 			Activator.updateHWPortParts(editingDomain, platformPart);

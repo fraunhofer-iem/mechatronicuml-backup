@@ -34,7 +34,9 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
  * @generated
  */
 public class ResourceInstanceRepositoryCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+		CanonicalEditPolicy
+		implements
+		de.uni_paderborn.fujaba.common.edit.policies.IDiagramCanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 
@@ -43,6 +45,25 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 
 	public ResourceInstanceRepositoryCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -298,6 +319,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 		switch (de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ResourceInstanceRepositoryEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getResourceInstanceRepository_1000ContainedLinks(view));
@@ -306,6 +331,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getSensorInstance_2007ContainedLinks(view));
@@ -314,6 +343,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getActuatorInstance_2008ContainedLinks(view));
@@ -322,6 +355,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getStructuredResourceInstance_2009ContainedLinks(view));
@@ -330,6 +367,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.HWPortEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getHWPort_3017ContainedLinks(view));
@@ -338,6 +379,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.CacheInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getCacheInstance_3018ContainedLinks(view));
@@ -346,6 +391,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProgrammableLogicDeviceInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getProgrammableLogicDeviceInstance_3019ContainedLinks(view));
@@ -354,6 +403,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessorInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getProcessorInstance_3020ContainedLinks(view));
@@ -362,6 +415,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ProcessingMemoryInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getProcessingMemoryInstance_3021ContainedLinks(view));
@@ -370,6 +427,10 @@ public class ResourceInstanceRepositoryCanonicalEditPolicy extends
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StorageMemoryInstanceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.HardwareDiagramUpdater
 						.getStorageMemoryInstance_3022ContainedLinks(view));

@@ -35,7 +35,9 @@ import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 /**
  * @generated
  */
-public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
+public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy
+		implements
+		de.uni_paderborn.fujaba.common.edit.policies.IDiagramCanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 
@@ -49,6 +51,25 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	public ResourceRepositoryCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
+	}
+
+	/**
+	 * @generated
+	 */
+	private List<String> noConnectionViews = new ArrayList<String>();
+
+	/**
+	 * @generated
+	 */
+	public void addNoConnectionView(String type) {
+		noConnectionViews.add(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeNoConnectionView(String type) {
+		noConnectionViews.remove(type);
 	}
 
 	/**
@@ -312,6 +333,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 		switch (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ResourceRepositoryEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getResourceRepository_1000ContainedLinks(view));
@@ -320,6 +345,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getDevice_2006ContainedLinks(view));
@@ -328,6 +357,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getStructuredResource_2007ContainedLinks(view));
@@ -336,6 +369,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getCommunicationProtocolRepository_2008ContainedLinks(view));
@@ -344,6 +381,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getCommunicationResource_3011ContainedLinks(view));
@@ -352,6 +393,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResource2EditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getCommunicationResource_3012ContainedLinks(view));
@@ -360,6 +405,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getCache_3013ContainedLinks(view));
@@ -368,6 +417,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getProcessor_3014ContainedLinks(view));
@@ -376,6 +429,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProgrammableLogicDeviceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getProgrammableLogicDevice_3015ContainedLinks(view));
@@ -384,6 +441,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getMemoryResource_3016ContainedLinks(view));
@@ -392,6 +453,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getBusProtocol_3017ContainedLinks(view));
@@ -400,6 +465,10 @@ public class ResourceRepositoryCanonicalEditPolicy extends CanonicalEditPolicy {
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID: {
+			if (noConnectionViews.contains(view.getType())) {
+				// MUML TICKET #1247
+				break;
+			}
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramUpdater
 						.getLinkProtocol_3018ContainedLinks(view));

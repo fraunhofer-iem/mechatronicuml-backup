@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.part
 
 import java.util.Collection;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
@@ -83,9 +84,11 @@ public class HWPortEditPart extends BorderedBorderItemEditPart {
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.policies.HWPortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.HWPORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport.HWPortEditPolicy());
+
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -165,11 +168,20 @@ public class HWPortEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				if (connectionAnchorCreationEditPolicy != null) {
+					return connectionAnchorCreationEditPolicy
+							.createDefaultAnchor();
+				}
+				return super.createDefaultAnchor();
+			}
+		};
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
-
 		return result;
 	}
 

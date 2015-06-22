@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomSimpleResourceFigure;
@@ -40,7 +41,12 @@ public class CustomHWPlatformPartEditPart extends HWPlatformPartEditPart {
 	@Override
 	public void activate() {
 		super.activate();
-		executeTransformation();
+		Display.getCurrent().asyncExec(new Runnable() {
+			@Override
+			public void run() {
+				executeTransformation();
+			}
+		});
 	}
 
 
