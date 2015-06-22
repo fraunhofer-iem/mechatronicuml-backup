@@ -29,32 +29,6 @@
    
    
  <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
-      <?gmfgen generated="true"?>
-     <!--
-      <navigatorContent
-            id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.resourceContent" 
-            name="%navigatorContentName" 
-            priority="highest" 
-            contentProvider="browser.extensions.TestContentProvider" 
-            labelProvider="browser.extensions.TestLabelProvider"
-            activeByDefault="true">
-         <triggerPoints>
-            <or>
-	           <instanceof value="org.eclipse.core.resources.IFile"/>
-	           <instanceof value="org.eclipse.core.resources.IContainer"/>
-               <instanceof value="org.eclipse.emf.ecore.EObject"/>
-            </or>
-         </triggerPoints>
-         <possibleChildren>
-            <or>
-         	   <instanceof value="org.eclipse.emf.ecore.EObject"/>
-            </or>
-         </possibleChildren>
-      </navigatorContent>
-     -->
-     
-     
-     
      <navigatorContent
             name="MechatronicUML Browser Contents"
             priority="lower"
@@ -68,6 +42,20 @@
             </or>
         </enablement>
      </navigatorContent>
+     <actionProvider
+           appearsBefore="org.eclipse.ui.navigator.resources.OpenActions"
+           class="de.uni_paderborn.fujaba.muml.browser.providers.OpenDiagramNavigatorActionProvider"
+           id="de.uni_paderborn.fujaba.muml.browser.providers.OpenDiagramNavigatorActionProvider">
+        <enablement>
+           <or>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EObject">
+              </instanceof>
+              <instanceof
+                    value="org.eclipse.core.resources.IResource">
+              </instanceof>
+           </or></enablement>
+      </actionProvider>
  </extension>
    
 
@@ -157,7 +145,7 @@
        <viewerContentBinding 
              viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
           <includes>
-       	      <contentExtension pattern="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser.content" />		       	      
+       	      <contentExtension pattern="de.uni_paderborn.fujaba.muml.browser.*" />		       	      
 	          <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
            <contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
            <contentExtension pattern="org.eclipse.ui.navigator.resources.workingSets"/>
@@ -167,6 +155,9 @@
             viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
          <includes>
              <actionExtension pattern="org.eclipse.ui.navigator.resources.*" />
+             <actionExtension
+                   pattern="de.uni_paderborn.fujaba.muml.browser.*">
+             </actionExtension>
          </includes>
        </viewerActionBinding>
        <dragAssistant

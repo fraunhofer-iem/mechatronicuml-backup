@@ -19,6 +19,7 @@ import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IAggregateWorkingSet;
 import org.eclipse.ui.IWorkbenchCommandConstants;
@@ -157,6 +158,7 @@ public final class ModelBrowser extends CommonNavigator implements
 
 	@Override
 	protected void handleDoubleClick(DoubleClickEvent anEvent) {
+		
 		ICommandService commandService = (ICommandService) getViewSite().getService(ICommandService.class);
 		Command openProjectCommand = commandService.getCommand(IWorkbenchCommandConstants.PROJECT_OPEN_PROJECT);
 		if (openProjectCommand != null && openProjectCommand.isHandled()) {
@@ -179,6 +181,9 @@ public final class ModelBrowser extends CommonNavigator implements
 	protected CommonViewer createCommonViewerObject(Composite aParent) {
 		return new CommonViewer(getViewSite().getId(), aParent,
 				SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL) {
+			protected void handleOpen(SelectionEvent event) {
+				super.handleOpen(event);
+			}
 		};
 	}
 

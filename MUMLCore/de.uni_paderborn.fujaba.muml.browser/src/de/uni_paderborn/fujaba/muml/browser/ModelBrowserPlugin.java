@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
@@ -31,7 +32,30 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 	
 	public static Map<URI, TransactionalEditingDomain> EDITING_DOMAIN_REGISTRY = new HashMap<URI, TransactionalEditingDomain>();
 
-	public static TransactionalEditingDomain getEditingDomain(URI uri) {
+	public static TransactionalEditingDomain getEditingDomain(URI uri, boolean create) {
+		TransactionalEditingDomain editingDomain = internalGetEditingDomain(uri, create);
+		if (editingDomain != null) {
+			Resource resource;
+			try {
+				resource = editingDomain.getResourceSet().getResource(uri, true);
+			} catch (Exception e) {
+				return null;
+			}
+			if (resource.getContents().size() == 1) {
+				EObject root = resource.getContents().get(0);
+				if (root instanceof Diagram) {
+					Diagram diagram = (Diagram) root;
+					if (diagram.getElement().eResource() != resource) {
+						URI semanticURI = diagram.getElement().eResource().getURI();
+						return internalGetEditingDomain(semanticURI, create);
+					}
+				}
+			}
+		}
+		return editingDomain;
+	}
+	
+	private static TransactionalEditingDomain internalGetEditingDomain(URI uri, boolean create) {
 		if (uri != null) {
 			synchronized (EDITING_DOMAIN_REGISTRY) {
 				uri = uri.trimFragment();
@@ -44,26 +68,26 @@ public class ModelBrowserPlugin extends AbstractUIPlugin {
 		return null;
 	}
 	
-	public static TransactionalEditingDomain getEditingDomain(Resource resource) {
+	public static TransactionalEditingDomain getEditingDomain(Resource resource, boolean create) {
 		if (resource != null) {
-			return getEditingDomain(resource.getURI());
+			return getEditingDomain(resource.getURI(), create);
 		}
 		return null;
 	}
 	
-	public static TransactionalEditingDomain getEditingDomain(EObject element) {
+	public static TransactionalEditingDomain getEditingDomain(EObject element, boolean create) {
 		if (element != null) {
-			return getEditingDomain(element.eResource());
+			return getEditingDomain(element.eResource(), create);
 		}
 		return null;
 	}
 	
-	public static TransactionalEditingDomain getEditingDomain(Object object) {
+	public static TransactionalEditingDomain getEditingDomainDispatch(Object object, boolean create) {
 		if (object instanceof Resource) {
-			return getEditingDomain((Resource) object);
+			return getEditingDomain((Resource) object, create);
 		}
 		if (object instanceof EObject) {
-			return getEditingDomain((EObject) object);
+			return getEditingDomain((EObject) object, create);
 		}
 		return null;
 	}

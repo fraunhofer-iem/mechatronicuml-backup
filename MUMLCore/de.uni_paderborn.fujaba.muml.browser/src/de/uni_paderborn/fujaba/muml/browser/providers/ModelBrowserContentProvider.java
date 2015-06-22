@@ -48,6 +48,11 @@ import org.eclipse.swt.widgets.Display;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
+// XXX Open Diagram Resources in Editing Domain of Semantic Element.
+// -> The "Open Diagram" Action that is registered on any EObject
+//    can check if there is a Diagram file open in the ResourceSet!
+// -> Use generated XXXNavigatorActionProvider
+
 public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider {
 	private Viewer viewer;
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
@@ -74,7 +79,9 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					Display.getDefault().asyncExec(new Runnable() {
 						@Override
 						public void run() {
-							((StructuredViewer)viewer).refresh(iFile, true);
+							if (viewer instanceof StructuredViewer) { // is also null check
+								((StructuredViewer)viewer).refresh(iFile, true);
+							}
 						}
 					});
 				}
@@ -140,7 +147,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	protected void reload(final IFile iFile) {
 		URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-		TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
+		TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, true);
+		if (editingDomain == null) {
+			return;
+		}
 		synchronized (editingDomain) {
 			System.out.println("Reloading " + iFile);
 			Resource resource = editingDomain.getResourceSet().getResource(uri, true);
@@ -233,7 +243,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					return null;
 				}
 			}
-			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.getEditingDomain(element));
+			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.getEditingDomainDispatch(element, true));
 			if (contentProvider != null) {
 				return contentProvider.getParent(element);
 			}
@@ -257,15 +267,17 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		Set<URI> relocated = this.relocatedChildren.get(parentUri);
 		if (relocated != null) {
 			for (URI targetUri : relocated) {
-				EditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(element);
-				Resource resource = editingDomain.getResourceSet().getResource(targetUri, false);
-				if (targetUri.fragment() != null) {
-					EObject child = resource.getEObject(targetUri.fragment());
-					if (child != null) {
-						children.add(child);
+				EditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(targetUri, true);
+				if (editingDomain != null) {
+					Resource resource = editingDomain.getResourceSet().getResource(targetUri, false);
+					if (targetUri.fragment() != null) {
+						EObject child = resource.getEObject(targetUri.fragment());
+						if (child != null) {
+							children.add(child);
+						}
+					} else {
+						children.add(ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(targetUri.toPlatformString(true)))); 
 					}
-				} else {
-					children.add(ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(targetUri.toPlatformString(true)))); 
 				}
 			}
 		}
@@ -295,7 +307,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 	private Collection<Object> getDirectChildren(Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.getEditingDomain(element));
+			AdapterFactoryContentProvider contentProvider = getAdapterFactoryContentProvder(ModelBrowserPlugin.getEditingDomainDispatch(element, true));
 			if (contentProvider != null) {
 				return Arrays.asList(contentProvider.getChildren(element));
 			}
@@ -303,19 +315,21 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
-			synchronized (editingDomain) {
-				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
-				if (resource != null) {
-					if (resource.getContents().size() == 1) {
-						EObject root = resource.getContents().get(0);
-						if (root instanceof Diagram) {
-							return Collections.emptyList();
-						} else {
-							return new ArrayList<Object>(root.eContents());
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, true);
+			if (editingDomain != null) {
+				synchronized (editingDomain) {
+					Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+					if (resource != null) {
+						if (resource.getContents().size() == 1) {
+							EObject root = resource.getContents().get(0);
+							if (root instanceof Diagram) {
+								return Collections.emptyList();
+							} else {
+								return new ArrayList<Object>(root.eContents());
+							}
 						}
+						return new ArrayList<Object>(resource.getContents());
 					}
-					return new ArrayList<Object>(resource.getContents());
 				}
 			}
 			return Collections.singletonList(getProgressItem((IFile) element));
@@ -376,13 +390,15 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				if (element instanceof IFile) {
 					IFile iFile = (IFile) element;
 					URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-					TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri);
-					synchronized (editingDomain) {
-						Resource resource = editingDomain.getResourceSet().getResource(uri, false);
-						if (resource != null) {
-							if (resource.getContents().size() == 1) {
-								newElements.add(resource.getContents().get(0));
-								continue;
+					TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, true);
+					if (editingDomain != null) {
+						synchronized (editingDomain) {
+							Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+							if (resource != null) {
+								if (resource.getContents().size() == 1) {
+									newElements.add(resource.getContents().get(0));
+									continue;
+								}
 							}
 						}
 					}
