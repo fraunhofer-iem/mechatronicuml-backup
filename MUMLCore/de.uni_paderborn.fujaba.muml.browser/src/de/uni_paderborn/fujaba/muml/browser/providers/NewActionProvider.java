@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -10,21 +9,16 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.ui.action.CreateChildAction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.action.IMenuCreator;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
-import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.swt.events.HelpListener;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
@@ -163,7 +157,13 @@ public class NewActionProvider extends CommonActionProvider {
 		menu.insertAfter(ICommonMenuConstants.GROUP_NEW, submenu);
 	}
 
+	/**
+	 * Copied from generated emf-editor XXXActionBarContributor
+	 */
 	private void fillCreateChildren(IMenuManager menu, EObject element) {
+		if (element instanceof Diagram) {
+			return;
+		}
 		ISelection selection = new StructuredSelection(element);
 
 		// Query the editing domain for appropriate new child descriptors
