@@ -1,7 +1,17 @@
+/**
+ * Copyright (c) 2013 committers of YAKINDU and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * Contributors:
+ * 	committers of YAKINDU - initial API and implementation
+ * 
+ */
 package de.uni_paderborn.fujaba.common.edit.policies.compartment;
 
 /** 
- * modified by adann
+
  * 
  */
 
@@ -41,10 +51,11 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 
 /**
  * 
- * @author andreas muelder - Initial contribution and API
- * 
+ * @author andreas muelder - Initial contribution and API modified by adann
  */
 public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
+
+	public static final Object ROLE = "ResizeContainer";
 
 	// Space between the border of the container and the moved figure
 	public static final int SPACEING = 25;
@@ -53,6 +64,7 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 
 	private List<IGraphicalEditPart> containerHierachy;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Command getCommand(Request request) {
 
@@ -66,48 +78,45 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 				// re-organize the compartment
 				return null;
 			} else {
-				return resizeContainerCommand(request);
+				return getEnlargeCompartmentCommand(request);
 			}
-		} else {
-			return null;
-		}
-	}
-
-	public Command resizeContainerCommand(Request request) {
-		ChangeBoundsRequest cbr = (ChangeBoundsRequest) request;
-		CompoundCommand result = new CompoundCommand();
-		if (containerHierachy != null) {
-			// Update Bounds of the container hierachy
-			for (IGraphicalEditPart currentContainer : containerHierachy) {
-				IFigure figure = currentContainer.getFigure();
-				SetBoundsCommand boundsCommand = new SetBoundsCommand(getHost()
-						.getEditingDomain(),
-						DiagramUIMessages.SetLocationCommand_Label_Resize,
-						new EObjectAdapter(currentContainer.getNotationView()),
-						figure.getBounds());
-				result.add(new ICommandProxy(boundsCommand));
-
-				// Update child bounds of elements that stand in the way...
-				@SuppressWarnings("unchecked")
-				List<IGraphicalEditPart> children = currentContainer
-						.getParent().getChildren();
-				for (IGraphicalEditPart childPart : children) {
-					if (cbr.getEditParts().contains(childPart))
-						continue;
-					IFigure childFigure = childPart.getFigure();
-					if (childPart == currentContainer)
-						continue;
-					SetBoundsCommand childBoundsCommand = new SetBoundsCommand(
-							getHost().getEditingDomain(),
-							DiagramUIMessages.SetLocationCommand_Label_Resize,
-							new EObjectAdapter(childPart.getNotationView()),
-							childFigure.getBounds());
-					result.add(new ICommandProxy(childBoundsCommand));
-				}
-			}
-			return result;
 		}
 		return null;
+
+	}
+
+	public Command getEnlargeCompartmentCommand(Request request) {
+		ChangeBoundsRequest cbr = (ChangeBoundsRequest) request;
+		CompoundCommand result = new CompoundCommand();
+
+		// Update Bounds of the container hierachy
+		for (IGraphicalEditPart currentContainer : containerHierachy) {
+			IFigure figure = currentContainer.getFigure();
+			SetBoundsCommand boundsCommand = new SetBoundsCommand(getHost()
+					.getEditingDomain(),
+					DiagramUIMessages.SetLocationCommand_Label_Resize,
+					new EObjectAdapter(currentContainer.getNotationView()),
+					figure.getBounds());
+			result.add(new ICommandProxy(boundsCommand));
+
+			// Update child bounds of elements that stand in the way...
+			List<IGraphicalEditPart> children = currentContainer.getParent()
+					.getChildren();
+			for (IGraphicalEditPart childPart : children) {
+				if (cbr.getEditParts().contains(childPart))
+					continue;
+				IFigure childFigure = childPart.getFigure();
+				if (childPart == currentContainer)
+					continue;
+				SetBoundsCommand childBoundsCommand = new SetBoundsCommand(
+						getHost().getEditingDomain(),
+						DiagramUIMessages.SetLocationCommand_Label_Resize,
+						new EObjectAdapter(childPart.getNotationView()),
+						childFigure.getBounds());
+				result.add(new ICommandProxy(childBoundsCommand));
+			}
+		}
+		return result;
 	}
 
 	@Override
@@ -121,12 +130,9 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 			containerHierachy = collectContainerHierachy();
 		}
 		if (!RequestConstants.REQ_RESIZE.equals(request.getType())
-				&& !RequestConstants.REQ_MOVE.equals(request.getType())) {
+				&& !RequestConstants.REQ_MOVE.equals(request.getType()))
 			return;
-
-		} else {
-			showContainerFeedback((ChangeBoundsRequest) request);
-		}
+		showContainerFeedback((ChangeBoundsRequest) request);
 	}
 
 	@Override
@@ -163,6 +169,7 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
 	/**
 	 * containerFeedbackBounds as absolute
 	 * 
@@ -180,7 +187,6 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 				- originalBounds.width, containerFeedbackBounds.height
 				- originalBounds.height);
 
-		@SuppressWarnings("unchecked")
 		List<IGraphicalEditPart> children = containerEditPart.getParent()
 				.getChildren();
 
@@ -188,9 +194,8 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 			if (request.getEditParts().contains(childPart)) {
 				continue;
 			}
-			if (childPart == containerEditPart) {
+			if (childPart == containerEditPart)
 				continue;
-			}
 			showChildFeedback(childPart, moveDelta, containerFeedbackBounds);
 		}
 	}
@@ -277,43 +282,15 @@ public class EnlargeCompartmentEditPolicy extends AbstractEditPolicy {
 			transformedRect.translate(request.getMoveDelta());
 			transformedRect.resize(request.getSizeDelta());
 			transformedRect.expand(SPACEING * level, SPACEING * level);
+			result.union(transformedRect);
 			Dimension preferredSize = containerFigure.getPreferredSize()
 					.getCopy();
 			editPart.getFigure().translateToAbsolute(preferredSize);
-			/*
-			 * deactivated automatical minimizing of container if
-			 * (request.getSizeDelta().height() < 0 ||
-			 * request.getSizeDelta().width < 0 || request.getMoveDelta().x < 0
-			 * || request.getMoveDelta().y < 0) { // FIXME:Remove Debug Output
-			 * // TODO :TEST System.out.println("If pfad");
-			 * result.resize(request.getSizeDelta());
-			 * result.resize(request.getMoveDelta().x,
-			 * request.getMoveDelta().y);
-			 * 
-			 * ShapeCompartmentEditPart compartmentEditPart = null; if
-			 * (editPart.getParent() instanceof ShapeCompartmentEditPart) {
-			 * PrecisionRectangle transformedChildRect = null;
-			 * compartmentEditPart = (ShapeCompartmentEditPart) editPart
-			 * .getParent(); List<IGraphicalEditPart> childEditParts =
-			 * compartmentEditPart .getChildren(); for (IGraphicalEditPart
-			 * chidEditPart : childEditParts) { if (chidEditPart != editPart) {
-			 * transformedChildRect = new PrecisionRectangle(
-			 * chidEditPart.getFigure().getBounds());
-			 * transformedChildRect.expand(SPACEING * level, SPACEING * level);
-			 * chidEditPart.getFigure().translateToAbsolute(
-			 * transformedChildRect); result.union(transformedChildRect); } } }
-			 * 
-			 * Dimension max = Dimension.max(result.getSize(), containerFigure
-			 * .getMinimumSize().getCopy());
-			 * 
-			 * result.setSize(max);
-			 * 
-			 * } else {
-			 */
-			result.union(transformedRect);
 			Dimension max = Dimension.max(result.getSize(), preferredSize);
-
 			result.setSize(max);
+			if (result.x < feedbackBounds.x || result.y < feedbackBounds.y) {
+				return feedbackBounds;
+			}
 		}
 		return result;
 	}
