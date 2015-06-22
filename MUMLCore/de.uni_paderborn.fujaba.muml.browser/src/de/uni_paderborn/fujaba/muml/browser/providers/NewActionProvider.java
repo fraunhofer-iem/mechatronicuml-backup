@@ -1,5 +1,7 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 
 import org.eclipse.core.resources.IContainer;
@@ -7,6 +9,9 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+import org.eclipse.emf.edit.ui.action.CreateChildAction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuCreator;
@@ -15,7 +20,9 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.IActionBars;
@@ -35,7 +42,6 @@ import org.eclipse.ui.wizards.IWizardRegistry;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 public class NewActionProvider extends CommonActionProvider {
-
 	private static final String FULL_EXAMPLES_WIZARD_CATEGORY = "org.eclipse.ui.Examples"; //$NON-NLS-1$
 
 	private static final String NEW_MENU_NAME = "common.new.menu";//$NON-NLS-1$
@@ -157,200 +163,26 @@ public class NewActionProvider extends CommonActionProvider {
 		menu.insertAfter(ICommonMenuConstants.GROUP_NEW, submenu);
 	}
 
-	private void fillCreateChildren(IMenuManager menu, EObject element2) {
-		menu.add(new IAction() {
+	private void fillCreateChildren(IMenuManager menu, EObject element) {
+		ISelection selection = new StructuredSelection(element);
 
-			@Override
-			public void addPropertyChangeListener(
-					IPropertyChangeListener listener) {
-				// TODO Auto-generated method stub
-				
+		// Query the editing domain for appropriate new child descriptors
+		//
+		Collection<?> newChildDescriptors = null;
+
+		EditingDomain domain = ModelBrowserPlugin.getEditingDomain(element, false);
+		if (domain != null) {
+			newChildDescriptors = domain.getNewChildDescriptors(element, null);
+		}
+
+		// Generate actions for selection; populate and redraw the menus.
+		//
+		if (newChildDescriptors != null) {
+			for (Object descriptor : newChildDescriptors) {
+				IAction action = new CreateChildAction(domain, selection, descriptor);
+				menu.add(action);
 			}
-
-			@Override
-			public int getAccelerator() {
-				// TODO Auto-generated method stub
-				return 0;
-			}
-
-			@Override
-			public String getActionDefinitionId() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public String getDescription() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public ImageDescriptor getDisabledImageDescriptor() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public HelpListener getHelpListener() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public ImageDescriptor getHoverImageDescriptor() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public String getId() {
-				// TODO Auto-generated method stub
-				return "ABC";
-			}
-
-			@Override
-			public ImageDescriptor getImageDescriptor() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public IMenuCreator getMenuCreator() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public int getStyle() {
-				// TODO Auto-generated method stub
-				return 0;
-			}
-
-			@Override
-			public String getText() {
-				return "TEST";
-			}
-
-			@Override
-			public String getToolTipText() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
-			@Override
-			public boolean isChecked() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-
-			@Override
-			public boolean isEnabled() {
-return true;
-			}
-
-			@Override
-			public boolean isHandled() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-
-			@Override
-			public void removePropertyChangeListener(
-					IPropertyChangeListener listener) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void runWithEvent(Event event) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setActionDefinitionId(String id) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setChecked(boolean checked) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setDescription(String text) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setDisabledImageDescriptor(ImageDescriptor newImage) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setEnabled(boolean enabled) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setHelpListener(HelpListener listener) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setHoverImageDescriptor(ImageDescriptor newImage) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setId(String id) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setImageDescriptor(ImageDescriptor newImage) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setMenuCreator(IMenuCreator creator) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setText(String text) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setToolTipText(String text) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void setAccelerator(int keycode) {
-				// TODO Auto-generated method stub
-				
-			} });
+		}
 	}
 
 	/**
