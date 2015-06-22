@@ -79,7 +79,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 		private ICommonViewerWorkbenchSite viewerSite;
 
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super("Open Diagram");
+			super("Open Diagram(s)");
 			this.viewerSite = viewerSite;
 		}
 
