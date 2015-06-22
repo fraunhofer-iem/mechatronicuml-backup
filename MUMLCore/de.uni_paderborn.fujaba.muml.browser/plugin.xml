@@ -44,7 +44,7 @@
      </navigatorContent>
      <actionProvider
            appearsBefore="org.eclipse.ui.navigator.resources.OpenActions"
-           class="de.uni_paderborn.fujaba.muml.browser.providers.OpenDiagramNavigatorActionProvider"
+           class="de.uni_paderborn.fujaba.muml.browser.providers.OpenDiagramActionProvider"
            id="de.uni_paderborn.fujaba.muml.browser.providers.OpenDiagramNavigatorActionProvider">
         <enablement>
            <or>
@@ -56,6 +56,22 @@
               </instanceof>
            </or></enablement>
       </actionProvider>
+     <actionProvider
+           class="de.uni_paderborn.fujaba.muml.browser.providers.NewActionProvider"
+           id="de.uni_paderborn.fujaba.muml.browser.providers.NewActions"
+           overrides="org.eclipse.ui.navigator.resources.NewActions"
+           priority="high">
+        <enablement>
+           <or>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EObject">
+              </instanceof>
+              <instanceof
+                    value="org.eclipse.core.resources.IResource">
+              </instanceof>
+           </or>
+        </enablement>
+     </actionProvider>
  </extension>
    
 
@@ -102,6 +118,7 @@
          point="org.eclipse.ui.navigator.viewer">
        <viewer
              helpContext="org.eclipse.ui.project_explorer_context"
+             inheritBindingsFromViewer="org.eclipse.ui.navigator.ProjectExplorer"
              viewerId="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser">
           <popupMenu
                 allowsPlatformContributions="true"

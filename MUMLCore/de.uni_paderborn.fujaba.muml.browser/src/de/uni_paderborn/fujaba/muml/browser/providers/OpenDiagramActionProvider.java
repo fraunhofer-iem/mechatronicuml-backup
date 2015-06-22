@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
@@ -31,11 +32,11 @@ import org.eclipse.ui.navigator.ICommonViewerWorkbenchSite;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
-public class OpenDiagramNavigatorActionProvider extends CommonActionProvider {
+public class OpenDiagramActionProvider extends CommonActionProvider {
 	private boolean contribute;
 	private OpenDiagramAction openDiagramAction;
 
-	public OpenDiagramNavigatorActionProvider() {
+	public OpenDiagramActionProvider() {
 		
 	}
 	
@@ -60,7 +61,7 @@ public class OpenDiagramNavigatorActionProvider extends CommonActionProvider {
 		IStructuredSelection selection = (IStructuredSelection) getContext()
 				.getSelection();
 		openDiagramAction.selectionChanged(selection);
-		if (openDiagramAction.isEnabled()) {
+		if (openDiagramAction.isDefaultOpenHandler()) {
 			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
 					openDiagramAction);
 		}
@@ -72,6 +73,7 @@ public class OpenDiagramNavigatorActionProvider extends CommonActionProvider {
 
 	private static class OpenDiagramAction extends Action {
 
+		private boolean containerSelected;
 		private List<Diagram> diagrams;
 
 		private ICommonViewerWorkbenchSite viewerSite;
@@ -81,11 +83,19 @@ public class OpenDiagramNavigatorActionProvider extends CommonActionProvider {
 			this.viewerSite = viewerSite;
 		}
 
+		public boolean isDefaultOpenHandler() {
+			return !containerSelected && isEnabled();
+		}
+
 		public void selectionChanged(IStructuredSelection selection) {
 			diagrams = new ArrayList<Diagram>();
+			containerSelected = false;
 			Iterator<?> it = selection.iterator();
 			while (it.hasNext()) {
 				Object object = it.next();
+				if (object instanceof IContainer) {
+					containerSelected = true;
+				}
 				try {
 					findDiagramsForObject(diagrams, object);
 				} catch (CoreException e) {
