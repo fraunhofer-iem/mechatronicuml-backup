@@ -123,7 +123,15 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	
 	public ModelBrowserContentProvider() throws CoreException {
 		ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.addListener(this);
+		for (TransactionalEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
+			domain.addResourceSetListener(resourceSetListener);
+		}
 		runUpdate(Collections.singletonList((IResource) ResourcesPlugin.getWorkspace().getRoot()));
+	}
+
+	@Override
+	public void editingDomainCreated(TransactionalEditingDomain editingDomain) {
+		editingDomain.addResourceSetListener(resourceSetListener);
 	}
 	
 	private void runUpdate(final List<IResource> resources) {
@@ -434,8 +442,4 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		return selection;
 	}
 
-	@Override
-	public void editingDomainCreated(TransactionalEditingDomain editingDomain) {
-		editingDomain.addResourceSetListener(resourceSetListener);
-	}
 }
