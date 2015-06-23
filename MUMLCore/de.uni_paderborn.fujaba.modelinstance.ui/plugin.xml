@@ -37,24 +37,11 @@
               <visibleWhen
                     checkEnabled="false">
                     <iterate ifEmpty="false" operator="and">
-                    	<adapt type="org.eclipse.core.resources.IResource" />
+                    	<adapt type="org.eclipse.core.resources.IContainer" />
                     </iterate>	
               </visibleWhen>
            </command>
 
-           <command
-                 commandId="de.uni_paderborn.fujaba.core.ui.command.create.types"
-                 icon="icons/muml.png"
-                 id="de.uni_paderborn.fujaba.core.ui.command.create.types"
-                 label="Create new Types Model"
-                 style="push">
-              <visibleWhen
-                    checkEnabled="false">
-                    <iterate ifEmpty="false" operator="and">
-                    	<adapt type="org.eclipse.core.resources.IResource" />
-                    </iterate>	
-              </visibleWhen>
-           </command>
            <separator
                  name="structural-diagrams"
                  visible="true">
@@ -95,14 +82,6 @@
            description="Create new MechatronicUML Model"
            id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
            name="Create new MechatronicUML Model">
-     </command>
- 	
-     <command
-           categoryId="de.uni_paderborn.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateTypesFileCommand"
-           description="Create new Types Model"
-           id="de.uni_paderborn.fujaba.core.ui.command.create.types"
-           name="Create new Types Model">
      </command>
   </extension>
 
