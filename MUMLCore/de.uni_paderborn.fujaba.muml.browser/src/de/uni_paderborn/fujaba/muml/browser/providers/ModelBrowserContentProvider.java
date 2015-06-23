@@ -38,6 +38,7 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -66,6 +67,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
 		public void resourceSetChanged(final ResourceSetChangeEvent event) {
 			final Set<IFile> refreshes = new HashSet<IFile>();
+			final Set<Object> notifiers = new HashSet<Object>(); 
 			for (Notification notification : event.getNotifications()) {
 				Object notifier = notification.getNotifier();
 				Resource resource = null;
@@ -79,16 +81,26 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					URI uri = resource.getURI();
 					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
 					refreshes.add(iFile);
+					if (notifier instanceof EObject && !resource.getContents().contains(notifier)) {
+						notifiers.add(notifier);
+					} else {
+						notifiers.add(iFile);
+					}
 				}
 			}
 			if (refreshActive) {
 				Display.getDefault().asyncExec(new Runnable() {
 					@Override
 					public void run() {
+						
 						if (viewer instanceof StructuredViewer) { // is also null check
-							for (IFile iFile : refreshes) {
-								((StructuredViewer)viewer).refresh(iFile, true);
+							((StructuredViewer)viewer).refresh();
+							for (Object notifier : notifiers) {
+								((AbstractTreeViewer)viewer).expandToLevel(notifier, 1);
 							}
+//							for (IFile iFile : refreshes) {
+//								((StructuredViewer)viewer).refresh(iFile, true);
+//							}
 						}
 					}
 				});
