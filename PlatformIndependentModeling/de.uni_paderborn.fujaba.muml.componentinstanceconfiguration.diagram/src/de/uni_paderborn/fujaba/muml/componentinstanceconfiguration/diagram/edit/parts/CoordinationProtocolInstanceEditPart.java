@@ -335,6 +335,7 @@ public class CoordinationProtocolInstanceEditPart extends ShapeNodeEditPart {
 			this.setLayoutManager(layoutThis);
 
 			this.setLineStyle(Graphics.LINE_DASH);
+			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
 
@@ -368,6 +369,11 @@ public class CoordinationProtocolInstanceEditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 173, 216, 230);
 
 	/**
 	 * @generated

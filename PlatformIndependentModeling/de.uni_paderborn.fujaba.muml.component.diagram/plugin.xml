@@ -71,16 +71,15 @@ Contributors:
 	
 	
 	<extension point="org.eclipse.ui.menus">
-
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=structural-diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.components.category.create"
+                 commandId="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
                  icon="icons/obj16/ModelinstanceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.components.category.create"
-                 label="Create new Component Model"
+                 id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+                 label="ModelElementCategory"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -91,7 +90,6 @@ Contributors:
               </visibleWhen>
            </command>
       </menuContribution>
-      
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
@@ -119,13 +117,13 @@ Contributors:
 
 	
 	<extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
+	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new Component Model"
-           id="de.uni_paderborn.fujaba.muml.components.category.create"
-           name="Create new Component Model">
+           description="Create new Component"
+           id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+           name="Create new Component">
     </command>
     </extension>
 
@@ -683,7 +681,9 @@ Contributors:
    </extension>
 <extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
+   		<!--
    		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="component"/>
+   		-->
     </extension>
 
 <extension point="org.eclipse.ui.commands">
@@ -696,6 +696,14 @@ Contributors:
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="modelelementcategory"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
 
 
    <!-- optionally, specify keybindings -->

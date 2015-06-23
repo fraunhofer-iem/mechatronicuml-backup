@@ -123,9 +123,6 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 		super.handleNotificationEvent(notification);
 	}
 
-	/**
-	 * @generated
-	 */
 	protected void doCanonicalRefresh() {
 		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 				.getRegisteredEditPolicies(getDiagramView().getElement());

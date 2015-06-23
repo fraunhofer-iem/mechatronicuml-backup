@@ -71,6 +71,7 @@ public class DiscreteInteractionEndpointReceiverMessageBufferEditPart extends
 	 * 
 	 * @generated
 	 */
+
 	protected Connection createConnectionFigure() {
 		return new RoleMessageBufferConnectionFigureDescriptor();
 	}

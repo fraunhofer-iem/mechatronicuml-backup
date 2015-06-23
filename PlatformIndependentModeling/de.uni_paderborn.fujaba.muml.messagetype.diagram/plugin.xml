@@ -59,16 +59,15 @@
 	
 	
 	<extension point="org.eclipse.ui.menus">
-
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=types">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.messagetype.category.create"
+                 commandId="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
                  icon="icons/obj16/MessageinterfaceDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.messagetype.category.create"
-                 label="Create new Message Type Model"
+                 id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+                 label="ModelElementCategory"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -79,7 +78,6 @@
               </visibleWhen>
            </command>
       </menuContribution>
-      
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
@@ -107,13 +105,13 @@
 
 	
 	<extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
+	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new Message Type Model"
-           id="de.uni_paderborn.fujaba.muml.messagetype.category.create"
-           name="Create new Message Type Model">
+           description="Create new Message Type"
+           id="de.uni_paderborn.fujaba.modelinstance.ModelElementCategory.browser.create"
+           name="Create new Message Type">
     </command>
     </extension>
 
@@ -653,7 +651,9 @@
    </extension>
 <extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
+   		<!--
    		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="msgtype"/>
+   		-->
     </extension>
 
 <extension point="org.eclipse.ui.commands">
@@ -666,6 +666,14 @@
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="modelelementcategory"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
 
 
 

@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers;
 
 import java.util.Collections;
@@ -109,5 +121,16 @@ public class ContinuousPortInstanceLabelExpressionLabelParser5042 extends
 		throw new ExecutionException(
 				"Please implement parsing and value modification");
 	}
+
+	/**
+	 * @generated
+	 */
+	//
+	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
+	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
+	//	// CAUTION: This is never called, because of newest GMF template changes according OCL-Tracking make it impossible to access the OCL object!
+	//  // TODO: See MUML #516
+	//}
+	//
 
 }

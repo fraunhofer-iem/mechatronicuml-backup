@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -22,98 +34,98 @@ public class MumlParserProvider extends AbstractProvider implements
 	 * @generated
 	 */
 	private IParser getHybridPortInstanceLabel_5039Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5039();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteSinglePortInstanceLabel_5040Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5040();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteMultiPortInstanceLabel_5041Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5041();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getContinuousPortInstanceLabel_5042Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5042();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getAtomicComponentInstanceLabel_5027Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5027();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredComponentInstanceLabel_5026Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5026();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolInstanceLabel_5048Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5048();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getHybridPortInstanceLabel_5043Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5043();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteSinglePortInstanceLabel_5044Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteSinglePortInstanceLabelExpressionLabelParser5044();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getDiscreteMultiPortInstanceLabel_5045Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5045();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getContinuousPortInstanceLabel_5046Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5046();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getAtomicComponentInstanceLabel_5028Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.AtomicComponentInstanceLabelExpressionLabelParser5028();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStructuredComponentInstanceLabel_5029Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getCoordinationProtocolInstanceLabel_5047Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser();
+		return new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.CoordinationProtocolInstanceLabelExpressionLabelParser5047();
 	}
 
 	/**

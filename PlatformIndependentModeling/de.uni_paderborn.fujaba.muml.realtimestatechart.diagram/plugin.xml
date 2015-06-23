@@ -696,16 +696,15 @@
       </propertySections>
    </extension>
 <extension point="org.eclipse.ui.menus">
-
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="true"?>
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=behavioral-diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.category.create"
+                 commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
                  icon="icons/obj16/RealtimestatechartDiagramFile.gif"
-                 id="de.uni_paderborn.fujaba.muml.realtimestatechart.category.create"
-                 label="Create new Real-Time Statechart Model"
+                 id="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
+                 label="RealtimeStatechart"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -716,7 +715,6 @@
               </visibleWhen>
            </command>
       </menuContribution>
-      
       <?gmfgen generated="true"?>   
 	  <menuContribution
 	         allPopups="false"
@@ -743,13 +741,13 @@
 	</extension>
 
 <extension point="org.eclipse.ui.commands">
-	<?gmfgen generated="true"?>   
+	<?gmfgen generated="true"?>
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlInitDiagramFileAction$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new Real-Time Statechart Model"
-           id="de.uni_paderborn.fujaba.muml.realtimestatechart.category.create"
-           name="Create new Real-Time Statechart Model">
+           description="Create new Real-Time Statechart"
+           id="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart.browser.create"
+           name="Create new Real-Time Statechart">
     </command>
     </extension>
 
@@ -792,7 +790,9 @@
    </extension>
 <extension point="org.eclipse.core.contenttype.contentTypes">
 		<?gmfgen generated="true"?>
+   		<!--
    		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="realtimestatechart"/>
+   		-->
     </extension>
 
 <extension point="org.eclipse.ui.commands">
@@ -805,6 +805,14 @@
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
+<extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="realtimestatechart"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
 
 
 
