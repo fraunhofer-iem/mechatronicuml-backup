@@ -144,6 +144,19 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof ProgressNavigatorItem) {
 			return ((ProgressNavigatorItem) element).getCurrentImage();
 		}
+		if (element instanceof IFile) {
+			IFile iFile = (IFile) element;
+			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+			if (editingDomain != null) {
+				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
+				if (resource != null) {
+					if (resource.getContents().size() == 1) {
+						return getImage(resource.getContents().get(0));
+					}
+				}
+			}
+		}
 		return labelProvider.getImage(element);
 	}
 
