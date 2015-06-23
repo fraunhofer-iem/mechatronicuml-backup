@@ -68,16 +68,15 @@ diagrams«-»
 
 «DEFINE menus FOR gmfgen::GenEditorGenerator»
 	<extension point="org.eclipse.ui.menus">
-
-	   «EXPAND xpt::Common::xmlGeneratedTag»   
+	   «EXPAND xpt::Common::xmlGeneratedTag»
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=«EXPAND afterSeparator»">
+	         locationURI="popup:de.uni_paderborn.fujaba.muml.browser.new.menu?after=additions">
 	  		<command
-                 commandId="«modelElementCategoryKey(diagram)».create"
+                 commandId="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
                  icon="«editor.iconPathX»"
-                 id="«modelElementCategoryKey(diagram)».create"
-                 label="Create new «modelID» Model"
+                 id="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
+                 label="«diagram.domainDiagramElement.ecoreClass.name»"
                  style="push">
               <visibleWhen
                     checkEnabled="false">
@@ -88,7 +87,6 @@ diagrams«-»
               </visibleWhen>
            </command>
       </menuContribution>
-      
       «EXPAND xpt::Common::xmlGeneratedTag»   
 	  <menuContribution
 	         allPopups="false"
@@ -116,19 +114,21 @@ diagrams«-»
 	
 	
 	<extension point="org.eclipse.ui.commands">
-	«EXPAND xpt::Common::xmlGeneratedTag»   
+	«EXPAND xpt::Common::xmlGeneratedTag»
 	<command
-           defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.handlers.CreateCategoryModelFileCommand"
+           defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»$CreateDiagramElement"
            categoryId="de.uni_paderborn.fujaba"
-           description="Create new «modelID» Model"
-           id="«modelElementCategoryKey(diagram)».create"
-           name="Create new «modelID» Model">
+           description="Create new «modelID»"
+           id="«EXPAND MetaModel::QualifiedClassName FOR diagram.domainDiagramElement».browser.create"
+           name="Create new «modelID»">
     </command>
     </extension>
 	
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		«EXPAND xpt::Common::xmlGeneratedTag»
+   		<!--
    		<file-association content-type="de.uni_paderborn.fujaba.modelinstance.editor.model" file-extensions="«modelElementCategoryName(diagram)»"/>
+   		-->
     </extension>
 «ENDDEFINE»
 
