@@ -121,7 +121,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			}
 		}
 		
-		private void findDiagramsForResource(final Set<Diagram> diagrams, IResource resource) throws CoreException { 
+		private void findDiagramsForIResource(final Set<Diagram> diagrams, IResource resource) throws CoreException { 
 			resource.accept(new IResourceVisitor() {
 				@Override
 				public boolean visit(IResource iResource) throws CoreException {
@@ -129,26 +129,36 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 						URI uri = URI.createPlatformResourceURI(iResource.getFullPath().toString(), true);
 						TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, false);
 						if (editingDomain != null) {
-							for (Resource resource : editingDomain.getResourceSet().getResources()) {
-								for (Object contents : resource.getContents()) {
-									if (contents instanceof Diagram) {
-										diagrams.add((Diagram) contents);
-									}
+							Resource directResource = editingDomain.getResourceSet().getResource(uri, false);
+							if (!findDiagramsForResource(diagrams, directResource)) {
+								for (Resource resource : editingDomain.getResourceSet().getResources()) {
+									findDiagramsForResource(diagrams, resource);
 								}
 							}
 						}
 					}
 					return true;
 				}
+
+			
 			});
 		}
-
+		private boolean findDiagramsForResource(Set<Diagram> diagrams, Resource resource) {
+			boolean found = false;
+			for (Object contents : resource.getContents()) {
+				if (contents instanceof Diagram) {
+					diagrams.add((Diagram) contents);
+					found = true;
+				}
+			}
+			return found;
+		}
 		private void findDiagramsForObject(Set<Diagram> diagrams, Object object) throws CoreException {
 			if (object instanceof IAdaptable) {
 				findDiagramsForView(diagrams, (View) ((IAdaptable) object).getAdapter(View.class));
-				findDiagramsForResource(diagrams, (IResource) ((IAdaptable) object).getAdapter(IResource.class));
+				findDiagramsForIResource(diagrams, (IResource) ((IAdaptable) object).getAdapter(IResource.class));
 			} else if (object instanceof IResource) {
-				findDiagramsForResource(diagrams, (IResource) object);
+				findDiagramsForIResource(diagrams, (IResource) object);
 			} else if (object instanceof View) {
 				findDiagramsForView(diagrams, (View) object);
 			} else if (object instanceof Diagram) {
