@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.dependencylanguage.impl;
 
+import de.uni_paderborn.fujaba.muml.dependencylanguage.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -113,6 +114,7 @@ public class DependencylanguageFactoryImpl extends EFactoryImpl implements Depen
 			case DependencylanguagePackage.STATE_EVENT: return createStateEvent();
 			case DependencylanguagePackage.STATE_COMBINATION_EVENT: return createStateCombinationEvent();
 			case DependencylanguagePackage.MESSAGE_EVENT: return createMessageEvent();
+			case DependencylanguagePackage.TRIGGER_MESSAGE: return createTriggerMessage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -428,6 +430,16 @@ public class DependencylanguageFactoryImpl extends EFactoryImpl implements Depen
 	public MessageEvent createMessageEvent() {
 		MessageEventImpl messageEvent = new MessageEventImpl();
 		return messageEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TriggerMessage createTriggerMessage() {
+		TriggerMessageImpl triggerMessage = new TriggerMessageImpl();
+		return triggerMessage;
 	}
 
 	/**

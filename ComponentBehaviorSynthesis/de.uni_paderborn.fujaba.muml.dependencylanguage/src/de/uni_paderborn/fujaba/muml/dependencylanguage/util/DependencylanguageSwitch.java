@@ -11,6 +11,7 @@ import org.storydriven.core.Extension;
 import org.storydriven.core.expressions.Expression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.dependencylanguage.*;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.AuxiliaryClockCondition;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.BasicClockCondition;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.BoundedActiveState;
@@ -350,6 +351,15 @@ public class DependencylanguageSwitch<T> extends Switch<T> {
 				T result = caseMessageEvent(messageEvent);
 				if (result == null) result = caseSimpleEvent(messageEvent);
 				if (result == null) result = caseEvent(messageEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DependencylanguagePackage.TRIGGER_MESSAGE: {
+				TriggerMessage triggerMessage = (TriggerMessage)theEObject;
+				T result = caseTriggerMessage(triggerMessage);
+				if (result == null) result = caseDependency(triggerMessage);
+				if (result == null) result = caseCommentableElement(triggerMessage);
+				if (result == null) result = caseExtendableElement(triggerMessage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -834,6 +844,21 @@ public class DependencylanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMessageEvent(MessageEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trigger Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trigger Message</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTriggerMessage(TriggerMessage object) {
 		return null;
 	}
 

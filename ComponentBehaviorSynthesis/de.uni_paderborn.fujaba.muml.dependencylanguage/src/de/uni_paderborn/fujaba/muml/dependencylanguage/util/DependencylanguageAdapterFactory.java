@@ -12,6 +12,7 @@ import org.storydriven.core.Extension;
 import org.storydriven.core.expressions.Expression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.dependencylanguage.*;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.AuxiliaryClockCondition;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.BasicClockCondition;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.BoundedActiveState;
@@ -230,6 +231,10 @@ public class DependencylanguageAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMessageEvent(MessageEvent object) {
 				return createMessageEventAdapter();
+			}
+			@Override
+			public Adapter caseTriggerMessage(TriggerMessage object) {
+				return createTriggerMessageAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -724,6 +729,20 @@ public class DependencylanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMessageEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage <em>Trigger Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage
+	 * @generated
+	 */
+	public Adapter createTriggerMessageAdapter() {
 		return null;
 	}
 

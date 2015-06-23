@@ -6573,6 +6573,250 @@ public interface DependencylanguagePackage extends EPackage {
 	int MESSAGE_EVENT_OPERATION_COUNT = SIMPLE_EVENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.impl.TriggerMessageImpl <em>Trigger Message</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.TriggerMessageImpl
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DependencylanguagePackageImpl#getTriggerMessage()
+	 * @generated
+	 */
+	int TRIGGER_MESSAGE = 32;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE__ANNOTATION = DEPENDENCY__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE__EXTENSION = DEPENDENCY__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE__COMMENT = DEPENDENCY__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Effects</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE__EFFECTS = DEPENDENCY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Event</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE__MESSAGE_EVENT = DEPENDENCY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Trigger Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ECLASS = DEPENDENCY___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EIS_PROXY = DEPENDENCY___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ERESOURCE = DEPENDENCY___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ECONTAINER = DEPENDENCY___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ECONTAINING_FEATURE = DEPENDENCY___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ECONTAINMENT_FEATURE = DEPENDENCY___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ECONTENTS = DEPENDENCY___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EALL_CONTENTS = DEPENDENCY___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ECROSS_REFERENCES = DEPENDENCY___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EGET__ESTRUCTURALFEATURE = DEPENDENCY___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EGET__ESTRUCTURALFEATURE_BOOLEAN = DEPENDENCY___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___ESET__ESTRUCTURALFEATURE_OBJECT = DEPENDENCY___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EIS_SET__ESTRUCTURALFEATURE = DEPENDENCY___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EUNSET__ESTRUCTURALFEATURE = DEPENDENCY___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___EINVOKE__EOPERATION_ELIST = DEPENDENCY___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___GET_EXTENSION__ECLASS = DEPENDENCY___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___PROVIDE_EXTENSION__ECLASS = DEPENDENCY___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___GET_ANNOTATION__STRING = DEPENDENCY___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE___PROVIDE_ANNOTATION__STRING = DEPENDENCY___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Trigger Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_MESSAGE_OPERATION_COUNT = DEPENDENCY_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.AssignmentDirection <em>Assignment Direction</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6580,7 +6824,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DependencylanguagePackageImpl#getAssignmentDirection()
 	 * @generated
 	 */
-	int ASSIGNMENT_DIRECTION = 32;
+	int ASSIGNMENT_DIRECTION = 33;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.StateStatusKind <em>State Status Kind</em>}' enum.
@@ -6590,7 +6834,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DependencylanguagePackageImpl#getStateStatusKind()
 	 * @generated
 	 */
-	int STATE_STATUS_KIND = 33;
+	int STATE_STATUS_KIND = 34;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.StateEventKind <em>State Event Kind</em>}' enum.
@@ -6600,7 +6844,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DependencylanguagePackageImpl#getStateEventKind()
 	 * @generated
 	 */
-	int STATE_EVENT_KIND = 34;
+	int STATE_EVENT_KIND = 35;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.MessageEventKind <em>Message Event Kind</em>}' enum.
@@ -6610,7 +6854,7 @@ public interface DependencylanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DependencylanguagePackageImpl#getMessageEventKind()
 	 * @generated
 	 */
-	int MESSAGE_EVENT_KIND = 35;
+	int MESSAGE_EVENT_KIND = 36;
 
 
 	/**
@@ -7550,6 +7794,38 @@ public interface DependencylanguagePackage extends EPackage {
 	EReference getMessageEvent_Port();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage <em>Trigger Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Trigger Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage
+	 * @generated
+	 */
+	EClass getTriggerMessage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage#getEffects <em>Effects</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Effects</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage#getEffects()
+	 * @see #getTriggerMessage()
+	 * @generated
+	 */
+	EReference getTriggerMessage_Effects();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage#getMessageEvent <em>Message Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage#getMessageEvent()
+	 * @see #getTriggerMessage()
+	 * @generated
+	 */
+	EReference getTriggerMessage_MessageEvent();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.AssignmentDirection <em>Assignment Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8379,6 +8655,32 @@ public interface DependencylanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_EVENT__PORT = eINSTANCE.getMessageEvent_Port();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.impl.TriggerMessageImpl <em>Trigger Message</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.TriggerMessageImpl
+		 * @see de.uni_paderborn.fujaba.muml.dependencylanguage.impl.DependencylanguagePackageImpl#getTriggerMessage()
+		 * @generated
+		 */
+		EClass TRIGGER_MESSAGE = eINSTANCE.getTriggerMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Effects</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIGGER_MESSAGE__EFFECTS = eINSTANCE.getTriggerMessage_Effects();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Event</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRIGGER_MESSAGE__MESSAGE_EVENT = eINSTANCE.getTriggerMessage_MessageEvent();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.dependencylanguage.AssignmentDirection <em>Assignment Direction</em>}' enum.

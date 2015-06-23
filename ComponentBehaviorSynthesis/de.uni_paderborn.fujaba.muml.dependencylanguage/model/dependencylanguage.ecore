@@ -536,4 +536,10 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerMessage" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effects" upperBound="-1"
+        eType="#//Effect" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageEvent" lowerBound="1"
+        eType="#//MessageEvent" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

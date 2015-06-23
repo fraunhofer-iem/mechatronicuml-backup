@@ -54,6 +54,7 @@ import de.uni_paderborn.fujaba.muml.dependencylanguage.Synchronization;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.SynchronizationEvent;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.SynthesizableBehavior;
 import de.uni_paderborn.fujaba.muml.dependencylanguage.TransitionEvent;
+import de.uni_paderborn.fujaba.muml.dependencylanguage.TriggerMessage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
@@ -289,6 +290,13 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 	 * @generated
 	 */
 	private EClass messageEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass triggerMessageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1179,6 +1187,33 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTriggerMessage() {
+		return triggerMessageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTriggerMessage_Effects() {
+		return (EReference)triggerMessageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTriggerMessage_MessageEvent() {
+		return (EReference)triggerMessageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignmentDirection() {
 		return assignmentDirectionEEnum;
 	}
@@ -1358,6 +1393,10 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		createEReference(messageEventEClass, MESSAGE_EVENT__TYPE);
 		createEReference(messageEventEClass, MESSAGE_EVENT__PORT);
 
+		triggerMessageEClass = createEClass(TRIGGER_MESSAGE);
+		createEReference(triggerMessageEClass, TRIGGER_MESSAGE__EFFECTS);
+		createEReference(triggerMessageEClass, TRIGGER_MESSAGE__MESSAGE_EVENT);
+
 		// Create enums
 		assignmentDirectionEEnum = createEEnum(ASSIGNMENT_DIRECTION);
 		stateStatusKindEEnum = createEEnum(STATE_STATUS_KIND);
@@ -1441,6 +1480,7 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		stateEventEClass.getESuperTypes().add(this.getSimpleEvent());
 		stateCombinationEventEClass.getESuperTypes().add(this.getSimpleEvent());
 		messageEventEClass.getESuperTypes().add(this.getSimpleEvent());
+		triggerMessageEClass.getESuperTypes().add(this.getDependency());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(synthesizableBehaviorEClass, SynthesizableBehavior.class, "SynthesizableBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1562,6 +1602,10 @@ public class DependencylanguagePackageImpl extends EPackageImpl implements Depen
 		initEAttribute(getMessageEvent_Kind(), this.getMessageEventKind(), "kind", null, 1, 1, MessageEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageEvent_Type(), theMsgtypePackage.getMessageType(), null, "type", null, 1, 1, MessageEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageEvent_Port(), theConnectorPackage.getDiscreteInteractionEndpoint(), null, "port", null, 0, 1, MessageEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(triggerMessageEClass, TriggerMessage.class, "TriggerMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTriggerMessage_Effects(), this.getEffect(), null, "effects", null, 0, -1, TriggerMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTriggerMessage_MessageEvent(), this.getMessageEvent(), null, "messageEvent", null, 1, 1, TriggerMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignmentDirectionEEnum, AssignmentDirection.class, "AssignmentDirection");

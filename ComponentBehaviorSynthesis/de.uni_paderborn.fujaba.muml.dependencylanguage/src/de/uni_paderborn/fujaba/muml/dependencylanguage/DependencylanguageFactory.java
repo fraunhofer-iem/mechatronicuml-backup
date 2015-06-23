@@ -265,6 +265,15 @@ public interface DependencylanguageFactory extends EFactory {
 	MessageEvent createMessageEvent();
 
 	/**
+	 * Returns a new object of class '<em>Trigger Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Trigger Message</em>'.
+	 * @generated
+	 */
+	TriggerMessage createTriggerMessage();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

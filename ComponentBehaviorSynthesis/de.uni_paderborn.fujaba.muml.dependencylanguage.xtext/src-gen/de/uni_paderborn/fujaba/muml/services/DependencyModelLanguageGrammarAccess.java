@@ -81,15 +81,16 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final RuleCall cForbiddenStateCombinationParserRuleCall_0_1_0 = (RuleCall)cGroup_0_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
 		private final RuleCall cConditionalDependencyParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
-		private final Group cGroup_0_3 = (Group)cAlternatives_0.eContents().get(3);
-		private final RuleCall cBoundedActiveStateParserRuleCall_0_3_0 = (RuleCall)cGroup_0_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_0_3_1 = (Keyword)cGroup_0_3.eContents().get(1);
+		private final RuleCall cTriggerMessageParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
 		private final Group cGroup_0_4 = (Group)cAlternatives_0.eContents().get(4);
-		private final RuleCall cDataMergeParserRuleCall_0_4_0 = (RuleCall)cGroup_0_4.eContents().get(0);
+		private final RuleCall cBoundedActiveStateParserRuleCall_0_4_0 = (RuleCall)cGroup_0_4.eContents().get(0);
 		private final Keyword cSemicolonKeyword_0_4_1 = (Keyword)cGroup_0_4.eContents().get(1);
 		private final Group cGroup_0_5 = (Group)cAlternatives_0.eContents().get(5);
-		private final RuleCall cClockMergeParserRuleCall_0_5_0 = (RuleCall)cGroup_0_5.eContents().get(0);
+		private final RuleCall cDataMergeParserRuleCall_0_5_0 = (RuleCall)cGroup_0_5.eContents().get(0);
 		private final Keyword cSemicolonKeyword_0_5_1 = (Keyword)cGroup_0_5.eContents().get(1);
+		private final Group cGroup_0_6 = (Group)cAlternatives_0.eContents().get(6);
+		private final RuleCall cClockMergeParserRuleCall_0_6_0 = (RuleCall)cGroup_0_6.eContents().get(0);
+		private final Keyword cSemicolonKeyword_0_6_1 = (Keyword)cGroup_0_6.eContents().get(1);
 		private final Assignment cCommentAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final Alternatives cCommentAlternatives_1_0 = (Alternatives)cCommentAssignment_1.eContents().get(0);
 		private final RuleCall cCommentML_COMMENTTerminalRuleCall_1_0_0 = (RuleCall)cCommentAlternatives_1_0.eContents().get(0);
@@ -99,16 +100,16 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//// Dependencies
 		/////////////////////////////////////////
 		//Dependency:
-		//	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";"
-		//	| ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
+		//	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | TriggerMessage | BoundedActiveState ";"
+		//	| DataMerge ";" | ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
 		public ParserRule getRule() { return rule; }
 
-		//(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";" |
-		//ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?
+		//(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | TriggerMessage | BoundedActiveState ";" |
+		//DataMerge ";" | ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?
 		public Group getGroup() { return cGroup; }
 
-		//Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";" |
-		//ClockMerge ";"
+		//Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | TriggerMessage | BoundedActiveState ";" |
+		//DataMerge ";" | ClockMerge ";"
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//Synchronization ";"
@@ -132,32 +133,35 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//ConditionalDependency
 		public RuleCall getConditionalDependencyParserRuleCall_0_2() { return cConditionalDependencyParserRuleCall_0_2; }
 
+		//TriggerMessage
+		public RuleCall getTriggerMessageParserRuleCall_0_3() { return cTriggerMessageParserRuleCall_0_3; }
+
 		//BoundedActiveState ";"
-		public Group getGroup_0_3() { return cGroup_0_3; }
-
-		//BoundedActiveState
-		public RuleCall getBoundedActiveStateParserRuleCall_0_3_0() { return cBoundedActiveStateParserRuleCall_0_3_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_0_3_1() { return cSemicolonKeyword_0_3_1; }
-
-		//DataMerge ";"
 		public Group getGroup_0_4() { return cGroup_0_4; }
 
-		//DataMerge
-		public RuleCall getDataMergeParserRuleCall_0_4_0() { return cDataMergeParserRuleCall_0_4_0; }
+		//BoundedActiveState
+		public RuleCall getBoundedActiveStateParserRuleCall_0_4_0() { return cBoundedActiveStateParserRuleCall_0_4_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_0_4_1() { return cSemicolonKeyword_0_4_1; }
 
-		//ClockMerge ";"
+		//DataMerge ";"
 		public Group getGroup_0_5() { return cGroup_0_5; }
 
-		//ClockMerge
-		public RuleCall getClockMergeParserRuleCall_0_5_0() { return cClockMergeParserRuleCall_0_5_0; }
+		//DataMerge
+		public RuleCall getDataMergeParserRuleCall_0_5_0() { return cDataMergeParserRuleCall_0_5_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_0_5_1() { return cSemicolonKeyword_0_5_1; }
+
+		//ClockMerge ";"
+		public Group getGroup_0_6() { return cGroup_0_6; }
+
+		//ClockMerge
+		public RuleCall getClockMergeParserRuleCall_0_6_0() { return cClockMergeParserRuleCall_0_6_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_0_6_1() { return cSemicolonKeyword_0_6_1; }
 
 		//comment=(ML_COMMENT | SL_COMMENT)?
 		public Assignment getCommentAssignment_1() { return cCommentAssignment_1; }
@@ -489,6 +493,62 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_6() { return cRightSquareBracketKeyword_6; }
+	}
+
+	public class TriggerMessageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TriggerMessage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOnKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMessageEventAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMessageEventMessageEventParserRuleCall_1_0 = (RuleCall)cMessageEventAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cEffectsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cEffectsDataAssignmentEffectParserRuleCall_3_0 = (RuleCall)cEffectsAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cEffectsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cEffectsDataAssignmentEffectParserRuleCall_4_1_0 = (RuleCall)cEffectsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//TriggerMessage:
+		//	"on" messageEvent=MessageEvent "{" effects+=DataAssignmentEffect (";" effects+=DataAssignmentEffect)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"on" messageEvent=MessageEvent "{" effects+=DataAssignmentEffect (";" effects+=DataAssignmentEffect)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"on"
+		public Keyword getOnKeyword_0() { return cOnKeyword_0; }
+
+		//messageEvent=MessageEvent
+		public Assignment getMessageEventAssignment_1() { return cMessageEventAssignment_1; }
+
+		//MessageEvent
+		public RuleCall getMessageEventMessageEventParserRuleCall_1_0() { return cMessageEventMessageEventParserRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//effects+=DataAssignmentEffect
+		public Assignment getEffectsAssignment_3() { return cEffectsAssignment_3; }
+
+		//DataAssignmentEffect
+		public RuleCall getEffectsDataAssignmentEffectParserRuleCall_3_0() { return cEffectsDataAssignmentEffectParserRuleCall_3_0; }
+
+		//(";" effects+=DataAssignmentEffect)*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4_0() { return cSemicolonKeyword_4_0; }
+
+		//effects+=DataAssignmentEffect
+		public Assignment getEffectsAssignment_4_1() { return cEffectsAssignment_4_1; }
+
+		//DataAssignmentEffect
+		public RuleCall getEffectsDataAssignmentEffectParserRuleCall_4_1_0() { return cEffectsDataAssignmentEffectParserRuleCall_4_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class ConditionalDependencyElements extends AbstractParserRuleElementFinder {
@@ -838,7 +898,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final Assignment cVariablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final CrossReference cVariablesVariableCrossReference_2_1_0 = (CrossReference)cVariablesAssignment_2_1.eContents().get(0);
 		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cVariablesVariableCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cIntoPortKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cIntoHybridportKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Assignment cPortAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
 		private final CrossReference cPortHybridPortCrossReference_2_3_0 = (CrossReference)cPortAssignment_2_3.eContents().get(0);
 		private final RuleCall cPortHybridPortQualifiedNameParserRuleCall_2_3_0_1 = (RuleCall)cPortHybridPortCrossReference_2_3_0.eContents().get(1);
@@ -852,7 +912,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		private final Assignment cVariablesAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
 		private final CrossReference cVariablesVariableCrossReference_3_2_1_0 = (CrossReference)cVariablesAssignment_3_2_1.eContents().get(0);
 		private final RuleCall cVariablesVariableQualifiedNameParserRuleCall_3_2_1_0_1 = (RuleCall)cVariablesVariableCrossReference_3_2_1_0.eContents().get(1);
-		private final Keyword cIntoPortKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Keyword cIntoHybridportKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Assignment cPortAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
 		private final CrossReference cPortHybridPortCrossReference_3_4_0 = (CrossReference)cPortAssignment_3_4.eContents().get(0);
 		private final RuleCall cPortHybridPortQualifiedNameParserRuleCall_3_4_0_1 = (RuleCall)cPortHybridPortCrossReference_3_4_0.eContents().get(1);
@@ -860,16 +920,18 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//DataMerge:
 		//	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
 		//	"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
-		//	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
-		//	port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
-		//	variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName];
+		//	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName]
+		//	"into hybridport" port=[component::HybridPort|QualifiedName] | "merge variables"
+		//	variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ "into hybridport"
+		//	port=[component::HybridPort|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
 		//"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
 		//"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
-		//("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
-		//port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
-		//variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName]
+		//("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName]
+		//"into hybridport" port=[component::HybridPort|QualifiedName] | "merge variables"
+		//variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ "into hybridport"
+		//port=[component::HybridPort|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)?
@@ -942,7 +1004,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//EString
 		public RuleCall getVariableNameEStringParserRuleCall_1_3_1_0() { return cVariableNameEStringParserRuleCall_1_3_1_0; }
 
-		//"merge variable" variables+=[behavior::Variable|QualifiedName] "into port" port=[component::HybridPort|QualifiedName]
+		//"merge variable" variables+=[behavior::Variable|QualifiedName] "into hybridport"
+		//port=[component::HybridPort|QualifiedName]
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"merge variable"
@@ -957,8 +1020,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//QualifiedName
 		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_2_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_2_1_0_1; }
 
-		//"into port"
-		public Keyword getIntoPortKeyword_2_2() { return cIntoPortKeyword_2_2; }
+		//"into hybridport"
+		public Keyword getIntoHybridportKeyword_2_2() { return cIntoHybridportKeyword_2_2; }
 
 		//port=[component::HybridPort|QualifiedName]
 		public Assignment getPortAssignment_2_3() { return cPortAssignment_2_3; }
@@ -970,7 +1033,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		public RuleCall getPortHybridPortQualifiedNameParserRuleCall_2_3_0_1() { return cPortHybridPortQualifiedNameParserRuleCall_2_3_0_1; }
 
 		//"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
-		//"into port" port=[component::HybridPort|QualifiedName]
+		//"into hybridport" port=[component::HybridPort|QualifiedName]
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"merge variables"
@@ -1000,8 +1063,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		//QualifiedName
 		public RuleCall getVariablesVariableQualifiedNameParserRuleCall_3_2_1_0_1() { return cVariablesVariableQualifiedNameParserRuleCall_3_2_1_0_1; }
 
-		//"into port"
-		public Keyword getIntoPortKeyword_3_3() { return cIntoPortKeyword_3_3; }
+		//"into hybridport"
+		public Keyword getIntoHybridportKeyword_3_3() { return cIntoHybridportKeyword_3_3; }
 
 		//port=[component::HybridPort|QualifiedName]
 		public Assignment getPortAssignment_3_4() { return cPortAssignment_3_4; }
@@ -2518,6 +2581,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	private final SynchronizationElements pSynchronization;
 	private final ForbiddenStateCombinationElements pForbiddenStateCombination;
 	private final BoundedActiveStateElements pBoundedActiveState;
+	private final TriggerMessageElements pTriggerMessage;
 	private final ConditionalDependencyElements pConditionalDependency;
 	private final EffectElements pEffect;
 	private final LimitedEffectElements pLimitedEffect;
@@ -2582,6 +2646,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 		this.pSynchronization = new SynchronizationElements();
 		this.pForbiddenStateCombination = new ForbiddenStateCombinationElements();
 		this.pBoundedActiveState = new BoundedActiveStateElements();
+		this.pTriggerMessage = new TriggerMessageElements();
 		this.pConditionalDependency = new ConditionalDependencyElements();
 		this.pEffect = new EffectElements();
 		this.pLimitedEffect = new LimitedEffectElements();
@@ -2674,8 +2739,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//// Dependencies
 	/////////////////////////////////////////
 	//Dependency:
-	//	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | BoundedActiveState ";" | DataMerge ";"
-	//	| ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
+	//	(Synchronization ";" | ForbiddenStateCombination ";" | ConditionalDependency | TriggerMessage | BoundedActiveState ";"
+	//	| DataMerge ";" | ClockMerge ";") comment=(ML_COMMENT | SL_COMMENT)?;
 	public DependencyElements getDependencyAccess() {
 		return pDependency;
 	}
@@ -2718,6 +2783,16 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	
 	public ParserRule getBoundedActiveStateRule() {
 		return getBoundedActiveStateAccess().getRule();
+	}
+
+	//TriggerMessage:
+	//	"on" messageEvent=MessageEvent "{" effects+=DataAssignmentEffect (";" effects+=DataAssignmentEffect)* "}";
+	public TriggerMessageElements getTriggerMessageAccess() {
+		return pTriggerMessage;
+	}
+	
+	public ParserRule getTriggerMessageRule() {
+		return getTriggerMessageAccess().getRule();
 	}
 
 	//ConditionalDependency:
@@ -2787,9 +2862,10 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//DataMerge:
 	//	"merge variable" variables+=[behavior::Variable|QualifiedName] ("into variable" variableName=EString)? |
 	//	"merge variables" variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+
-	//	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName] "into port"
-	//	port=[component::HybridPort|QualifiedName] | "merge variables" variables+=[behavior::Variable|QualifiedName] (","
-	//	variables+=[behavior::Variable|QualifiedName])+ "into port" port=[component::HybridPort|QualifiedName];
+	//	("into variable" variableName=EString)? | "merge variable" variables+=[behavior::Variable|QualifiedName]
+	//	"into hybridport" port=[component::HybridPort|QualifiedName] | "merge variables"
+	//	variables+=[behavior::Variable|QualifiedName] ("," variables+=[behavior::Variable|QualifiedName])+ "into hybridport"
+	//	port=[component::HybridPort|QualifiedName];
 	public DataMergeElements getDataMergeAccess() {
 		return pDataMerge;
 	}
@@ -3394,7 +3470,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//// end of assignment
 	//// initialize expression
 	//InitializeExpression returns expressions::Expression:
-	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
+	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression | TypeCastExpression;
 	public ActionLanguageGrammarAccess.InitializeExpressionElements getInitializeExpressionAccess() {
 		return gaActionLanguage.getInitializeExpressionAccess();
 	}
@@ -3611,8 +3687,8 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	}
 
 	//MultiplicationExpression returns expressions::Expression:
-	//	UnaryPreExpression | TypeCastExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
-	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | TypeCastExpression))*;
+	//	UnaryPreExpression | Operand ({commonExpressions::ArithmeticExpression.leftExpression=current}
+	//	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | Operand))*;
 	public ActionLanguageGrammarAccess.MultiplicationExpressionElements getMultiplicationExpressionAccess() {
 		return gaActionLanguage.getMultiplicationExpressionAccess();
 	}
@@ -3634,7 +3710,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	//// end of ArithmeticExpression
 	//// UnaryPreExpression
 	//UnaryPreExpression returns expressions::Expression:
-	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=TypeCastExpression;
+	//	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
 	public ActionLanguageGrammarAccess.UnaryPreExpressionElements getUnaryPreExpressionAccess() {
 		return gaActionLanguage.getUnaryPreExpressionAccess();
 	}
@@ -3655,7 +3731,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 
 	//// end of UnaryPreExpression
 	//TypeCastExpression returns expressions::Expression:
-	//	Operand | {actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand;
+	//	{actionlanguage::TypeCastExpression} "(" dataType=[types::DataType|DATATYPE] ")" enclosedExpression=Operand;
 	public ActionLanguageGrammarAccess.TypeCastExpressionElements getTypeCastExpressionAccess() {
 		return gaActionLanguage.getTypeCastExpressionAccess();
 	}
@@ -3666,7 +3742,7 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 
 	//// Operand
 	//Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | TimeValueExpression | OperationCall |
+	//	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
 	//	TriggerMessageExpression | NoAttributeSelectorExpression;
 	public ActionLanguageGrammarAccess.OperandElements getOperandAccess() {
 		return gaActionLanguage.getOperandAccess();
@@ -3686,22 +3762,6 @@ public class DependencyModelLanguageGrammarAccess extends AbstractGrammarElement
 	public ParserRule getLiteralExpressionRule() {
 		return getLiteralExpressionAccess().getRule();
 	}
-
-	//TimeValueExpression returns actionlanguage::TimeValueExpression:
-	//	timeValue=[valuetype::TimeValue|MINORMAXKEYWORD];
-	public ActionLanguageGrammarAccess.TimeValueExpressionElements getTimeValueExpressionAccess() {
-		return gaActionLanguage.getTimeValueExpressionAccess();
-	}
-	
-	public ParserRule getTimeValueExpressionRule() {
-		return getTimeValueExpressionAccess().getRule();
-	}
-
-	//terminal MINORMAXKEYWORD:
-	//	"maxMsgDelay" | "minMsgDelay";
-	public TerminalRule getMINORMAXKEYWORDRule() {
-		return gaActionLanguage.getMINORMAXKEYWORDRule();
-	} 
 
 	//ExtendedTypedNamedElementExpression returns expressions::Expression:
 	//	TypedNamedElementExpression

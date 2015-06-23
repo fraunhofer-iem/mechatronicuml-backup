@@ -43,7 +43,28 @@ main() {
 	
 	if(not synBehavior.dependencyModel.oclIsUndefined()) then {
 		if(not synBehavior.dependencyModel.dependencies->isEmpty()) then {
-			synBehavior.dependencyModel.dependencies->map Dependency2EObjects();
+			// split up conlict free dependencies and conflicting ones
+			
+			var conflictFreeDependencies : OrderedSet(Dependency);// = object OrderedSet(Dependency){};
+			var dataMergeDependencies : OrderedSet(Dependency);
+			var clockMergeDependencies : OrderedSet(Dependency); 
+		
+		    synBehavior.dependencyModel.dependencies->forEach(d) {
+		    	if (d.oclIsTypeOf(depLang::DataMerge)) {
+		    		dataMergeDependencies += d;
+		    	} elif (d.oclIsTypeOf(depLang::ClockMerge)) {
+		    		clockMergeDependencies += d;
+		    	} else {
+		    		conflictFreeDependencies += d;
+		    	}
+		    };
+		
+		    conflictFreeDependencies->map Dependency2EObjects();
+		    
+		    dataMergeDependencies->map Dependency2EObjects();
+		    
+		    clockMergeDependencies->map Dependency2EObjects();
+			//synBehavior.dependencyModel.dependencies->map Dependency2EObjects();
 		}endif;
 		
 	}endif;
@@ -60,6 +81,7 @@ mapping Dependency:: Dependency2EObjects():Set(EObject) disjuncts
 	depLang::ClockMerge::ClockMerge2Clock,
 	depLang::BoundedActiveState::BAS2Behavior,
 	depLang::DataMerge::DataMerge2Behavior,
+	depLang::TriggerMessage::TriggerMessage2Behavior,
 	ConditionalDependency::ConditionalDependency2Effects,
 	Dependency::failOnUnsupportedDependency;
 	
@@ -68,6 +90,16 @@ mapping Dependency:: failOnUnsupportedDependency():Set(Dependency){
 	init{
 		//assert warning (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported dependency type.'));
 		result:=Set{self};
+	}
+}
+
+mapping depLang::TriggerMessage:: TriggerMessage2Behavior() : Set(EObject) {
+	init {
+		getTopState().parentStatechart.allSubobjectsOfKind(Transition)->forEach(t) {
+			addTriggerActionToTransition(t.oclAsType(Transition), self);
+		};
+		
+		//getTopState().name := getTopState().parentStatechart.allSubobjectsOfKind(Transition)->size().toString();
 	}
 }
 
@@ -907,6 +939,12 @@ constructor Assignment::Assignment(inout v:Variable,value:String){
 			rhs_assignExpression:= new LiteralExpression(value);
 }
 
+constructor Assignment::Assignment(inout lhs:TypedNamedElementExpression, op : AssignOperator, inout rhs : Expression){  
+            lhs_typedNamedElementExpression:= lhs;
+            assignOperator:=op;
+            rhs_assignExpression:= rhs;
+}
+
 constructor TypedNamedElementExpression::TypedNamedElementExpression(element:TypedNamedElement){
 	typedNamedElement:= element;
 }
@@ -925,6 +963,73 @@ helper getOrCreateVariable(name:String):Variable{
 	}endif;
 	return variable;
 }
+
+helper addTriggerActionToTransition(inout t : Transition, inout triggerMessage : TriggerMessage) {
+	        
+    t.events->forEach(event) { 
+    	
+    
+        if (event.oclIsKindOf(AsynchronousMessageEvent)) {
+            
+            /*var eventKind : EventKind;
+            
+            if () {
+            	
+            } else {
+            	
+            }*/
+                        
+            // find all transitions which consume a message
+            if (triggerMessage.messageEvent.kind = MessageEventKind::CONSUMING) {
+            
+                if (not t.triggerMessageEvent.oclIsUndefined()) {
+                
+                    if (t.triggerMessageEvent.kind = EventKind::TRIGGER) {
+                    
+                        if (t.triggerMessageEvent.message.instanceOf = triggerMessage.messageEvent.type) {
+                            var action := t.action;
+                        
+                            if (action.oclIsUndefined()) {
+                                action := object Action{};
+                                action.name := "trigger on " + triggerMessage.messageEvent.type.name;
+                            }endif;
+                            
+                            var block : Block := object Block{};
+                            action.expressions += block;
+                                
+                            triggerMessage.effects->forEach(e) {
+                                var effect = e.oclAsType(DataAssignmentEffect);
+                                block.expressions += effect.map Assignment2Assignment(block);
+                            };
+                            
+                            t.action := action;
+                        }
+                    }
+                }
+                
+                
+            }
+            // find all transitions which send this message
+            elif (triggerMessage.messageEvent.kind = MessageEventKind::SENDING) {
+                
+            } endif;
+        
+	    }endif;
+    };
+}
+
+//var effect := self.effects.oclAsType(DataAssignmentEffect);
+                            
+                            //new Assignment(effect.lhs_typedNamedElementExpression, "w");
+                            //var assignment : Assignment := new Assignment(effect.lhs_typedNamedElementExpression, effect.assignOperator, effect.rhs_assignExpression);
+
+/*log("a consuming dependency");
+                if (t.receiverMessageTypes->includes(self.messageEvent.type)) {
+                    //t.action.
+                    log("happy is happy as always being happy");
+                }endif;
+                
+                var r : TransitionEvent;*/
 
 /**
     Returns the variable with the given name defined in getTopState().parentStatechart.

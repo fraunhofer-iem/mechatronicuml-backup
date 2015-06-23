@@ -27,7 +27,7 @@ DependencyModel returns DependencyModel:
 // Dependencies
 ///////////////////////////////////////
 Dependency returns Dependency:
-	(Synchronization ';' | ForbiddenStateCombination ';' | ConditionalDependency | BoundedActiveState ';' | DataMerge ';' | ClockMerge ';') (comment=(ML_COMMENT|SL_COMMENT))?
+	(Synchronization ';' | ForbiddenStateCombination ';' | ConditionalDependency | TriggerMessage | BoundedActiveState ';' | DataMerge ';' | ClockMerge ';') (comment=(ML_COMMENT|SL_COMMENT))?
 ;
 
 Synchronization returns Synchronization:
@@ -45,6 +45,10 @@ ForbiddenStateCombination returns ForbiddenStateCombination:
 
 BoundedActiveState returns BoundedActiveState:
 	'bound states' states+=[realtimestatechart::State|QualifiedName] ( ',' states+=[realtimestatechart::State|QualifiedName])* 'by' '[' constraint=ClockCondition ']'
+;
+
+TriggerMessage returns TriggerMessage:
+    'on' messageEvent=MessageEvent '{' effects+=DataAssignmentEffect (';' effects+=DataAssignmentEffect)* '}'
 ;
 
 ConditionalDependency returns ConditionalDependency:
@@ -96,9 +100,9 @@ DataMerge returns DataMerge:
 	|
 	'merge variables' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ ('into variable' variableName=EString)?
 	|
-	'merge variable' variables+=[behavior::Variable|QualifiedName] 'into port' port=[component::HybridPort|QualifiedName]
+	'merge variable' variables+=[behavior::Variable|QualifiedName] 'into hybridport' port=[component::HybridPort|QualifiedName]
 	|
-	'merge variables' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ 'into port' port=[component::HybridPort|QualifiedName]
+	'merge variables' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ 'into hybridport' port=[component::HybridPort|QualifiedName]
 ;
 
 ClockMerge returns ClockMerge:
