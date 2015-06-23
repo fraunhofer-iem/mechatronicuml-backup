@@ -122,6 +122,9 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 		}
 		
 		private void findDiagramsForIResource(final Set<Diagram> diagrams, IResource resource) throws CoreException { 
+			if (!resource.isAccessible()) {
+				return;
+			}
 			resource.accept(new IResourceVisitor() {
 				@Override
 				public boolean visit(IResource iResource) throws CoreException {
