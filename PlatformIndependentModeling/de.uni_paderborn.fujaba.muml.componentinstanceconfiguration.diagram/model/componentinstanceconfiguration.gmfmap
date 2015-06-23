@@ -76,8 +76,8 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
-           <domainInitializer
-               xsi:type="gmfmap:FeatureSeqInitializer">
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
@@ -270,12 +270,12 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#CoordinationProtocolName"/>
+            href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocolName"/>
         <viewExpression
             body="self.name + ':' + if (self.coordinationProtocol.oclIsUndefined()) then&#xA;&#x9;' '&#xA;else&#xA;&#x9;self.coordinationProtocol.name&#xA;endif"/>
       </labelMappings>
       <diagramNode
-          href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#CoordinationProtocol"/>
+          href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#CoordinationProtocol"/>
     </ownedChild>
   </nodes>
   <links>
@@ -318,7 +318,7 @@
   </links>
   <links>
     <diagramLink
-        href="../../de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.gmfgraph#RolePattern"/>
+        href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
