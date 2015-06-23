@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -74,7 +74,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 	private static class OpenDiagramAction extends Action {
 
 		private boolean containerSelected;
-		private List<Diagram> diagrams;
+		private Set<Diagram> diagrams;
 
 		private ICommonViewerWorkbenchSite viewerSite;
 
@@ -87,7 +87,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 		}
 
 		public void selectionChanged(IStructuredSelection selection) {
-			diagrams = new ArrayList<Diagram>();
+			diagrams = new HashSet<Diagram>();
 			containerSelected = false;
 			Iterator<?> it = selection.iterator();
 			while (it.hasNext()) {
@@ -108,7 +108,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			}
 			setEnabled(!diagrams.isEmpty());
 		}
-		private void findDiagramsForView(List<Diagram> diagrams, View view) {
+		private void findDiagramsForView(Set<Diagram> diagrams, View view) {
 			Diagram diagram = null;
 			if (view instanceof Diagram) {
 				diagram = (Diagram) diagram;
@@ -121,7 +121,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			}
 		}
 		
-		private void findDiagramsForResource(final List<Diagram> diagrams, IResource resource) throws CoreException { 
+		private void findDiagramsForResource(final Set<Diagram> diagrams, IResource resource) throws CoreException { 
 			resource.accept(new IResourceVisitor() {
 				@Override
 				public boolean visit(IResource iResource) throws CoreException {
@@ -143,7 +143,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			});
 		}
 
-		private void findDiagramsForObject(List<Diagram> diagrams, Object object) throws CoreException {
+		private void findDiagramsForObject(Set<Diagram> diagrams, Object object) throws CoreException {
 			if (object instanceof IAdaptable) {
 				findDiagramsForView(diagrams, (View) ((IAdaptable) object).getAdapter(View.class));
 				findDiagramsForResource(diagrams, (IResource) ((IAdaptable) object).getAdapter(IResource.class));
