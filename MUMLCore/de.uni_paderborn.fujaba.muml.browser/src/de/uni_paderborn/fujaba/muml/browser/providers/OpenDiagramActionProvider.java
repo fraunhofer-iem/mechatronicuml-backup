@@ -127,7 +127,7 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 				public boolean visit(IResource iResource) throws CoreException {
 					if (iResource.getType() == IResource.FILE) {
 						URI uri = URI.createPlatformResourceURI(iResource.getFullPath().toString(), true);
-						TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, false);
+						TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
 						if (editingDomain != null) {
 							Resource directResource = editingDomain.getResourceSet().getResource(uri, false);
 							if (!findDiagramsForResource(diagrams, directResource)) {
@@ -144,6 +144,9 @@ public class OpenDiagramActionProvider extends CommonActionProvider {
 			});
 		}
 		private boolean findDiagramsForResource(Set<Diagram> diagrams, Resource resource) {
+			if (resource == null) {
+				return false;
+			}
 			boolean found = false;
 			for (Object contents : resource.getContents()) {
 				if (contents instanceof Diagram) {

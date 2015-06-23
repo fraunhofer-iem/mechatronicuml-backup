@@ -77,7 +77,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public String getText(Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.getEditingDomainDispatch(element, true));
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
 			if (labelProvider != null) {
 				return labelProvider.getText(element);
 			}
@@ -85,7 +85,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -102,7 +102,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public StyledString getStyledText(final Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.getEditingDomainDispatch(element, true));
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
 			if (labelProvider != null) {
 				return labelProvider.getStyledText(element);
 			}
@@ -120,7 +120,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 		if (element instanceof IFile) {
 			IFile iFile = (IFile) element;
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, true);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -136,7 +136,7 @@ public class ModelBrowserLabelProvider extends LabelProvider implements IColorPr
 	@Override
 	public Image getImage(Object element) {
 		if (element instanceof Notifier) {
-			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.getEditingDomainDispatch(element, true));
+			AdapterFactoryLabelProvider labelProvider = getAdapterFactoryLabelProvder(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomainDispatch(element, true));
 			if (labelProvider != null) {
 				return labelProvider.getImage(element);
 			}

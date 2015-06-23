@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -38,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 public class NewActionProvider extends CommonActionProvider {
 	private static final String FULL_EXAMPLES_WIZARD_CATEGORY = "org.eclipse.ui.Examples"; //$NON-NLS-1$
 
-	private static final String NEW_MENU_NAME = "common.new.menu";//$NON-NLS-1$
+	private static final String NEW_MENU_NAME = "de.uni_paderborn.fujaba.muml.browser.new.menu";//$NON-NLS-1$
 
 	private ActionFactory.IWorkbenchAction showDlgAction;
 
@@ -46,7 +47,7 @@ public class NewActionProvider extends CommonActionProvider {
 
 	private IAction newExampleAction;
 
-	private WizardActionGroup newWizardActionGroup;
+//	private WizardActionGroup newWizardActionGroup;
 
 	private boolean contribute = false;
 	
@@ -63,7 +64,7 @@ public class NewActionProvider extends CommonActionProvider {
 			newProjectAction = new NewProjectAction(window);
 			newExampleAction = new NewExampleAction(window);
 
-			newWizardActionGroup = new WizardActionGroup(window, PlatformUI.getWorkbench().getNewWizardRegistry(), WizardActionGroup.TYPE_NEW, anExtensionSite.getContentService());
+//			newWizardActionGroup = new WizardActionGroup(window, PlatformUI.getWorkbench().getNewWizardRegistry(), WizardActionGroup.TYPE_NEW, anExtensionSite.getContentService());
 
 			contribute = true;
 		}
@@ -111,36 +112,16 @@ public class NewActionProvider extends CommonActionProvider {
 			return;
 		}
 
-		if (iContainer != null) {
-			
-			
+
+		if (iContainer instanceof IWorkspaceRoot) {
 			// Add new project wizard shortcut
 			submenu.add(newProjectAction);
 			submenu.add(new Separator());
-			
-			// Add create-children
-			if (element != null || iFile != null) {
-				fillCreateChildren(menu, element);
-			}
-	
-			// fill the menu from the commonWizard contributions
-			newWizardActionGroup.setContext(getContext());
-			newWizardActionGroup.fillContextMenu(submenu);
-	
-			submenu.add(new Separator(ICommonMenuConstants.GROUP_ADDITIONS));
-	
-			// if there are examples, then add them to the end of the menu
-			if (hasExamples()) {
-				submenu.add(new Separator());
-				submenu.add(newExampleAction);
-			}
-	
-			// Add other ..
-			submenu.add(new Separator());
-			submenu.add(showDlgAction);
-		} else if (iFile != null) {
+		}
+		
+		if (iFile != null) {
 			URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.getEditingDomain(uri, false);
+			TransactionalEditingDomain editingDomain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, false);
 			if (editingDomain != null) {
 				Resource resource = editingDomain.getResourceSet().getResource(uri, false);
 				if (resource != null) {
@@ -153,6 +134,28 @@ public class NewActionProvider extends CommonActionProvider {
 		} else if (element != null) {
 			fillCreateChildren(submenu, element);
 		}
+		
+//		if (iContainer != null) {
+//			// fill the menu from the commonWizard contributions
+//			newWizardActionGroup.setContext(getContext());
+//			newWizardActionGroup.fillContextMenu(submenu);
+//		}
+		submenu.add(new Separator(ICommonMenuConstants.GROUP_ADDITIONS));
+
+		// if there are examples, then add them to the end of the menu
+		if (iContainer instanceof IWorkspaceRoot) {
+			if (hasExamples()) {
+				submenu.add(new Separator());
+				submenu.add(newExampleAction);
+			}
+		}
+	
+		if (iContainer != null) {
+			// Add other ..
+			submenu.add(new Separator());
+			submenu.add(showDlgAction);
+		}
+		
 		// append the submenu after the GROUP_NEW group.
 		menu.insertAfter(ICommonMenuConstants.GROUP_NEW, submenu);
 	}
@@ -170,7 +173,7 @@ public class NewActionProvider extends CommonActionProvider {
 		//
 		Collection<?> newChildDescriptors = null;
 
-		EditingDomain domain = ModelBrowserPlugin.getEditingDomain(element, false);
+		EditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(element, false);
 		if (domain != null) {
 			newChildDescriptors = domain.getNewChildDescriptors(element, null);
 		}
