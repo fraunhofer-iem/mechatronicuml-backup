@@ -32,6 +32,7 @@ import org.eclipse.swt.widgets.Shell;
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
@@ -40,7 +41,6 @@ import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.utilities.batch.BatchDiagramCreationWizard;
 
 public class PatternToProtocolTransformation {
 	

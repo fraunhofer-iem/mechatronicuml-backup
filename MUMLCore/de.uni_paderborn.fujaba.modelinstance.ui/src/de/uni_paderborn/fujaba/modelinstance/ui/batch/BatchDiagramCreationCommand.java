@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.utilities.ui;
+package de.uni_paderborn.fujaba.modelinstance.ui.batch;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -10,8 +10,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
-
-import de.uni_paderborn.fujaba.muml.utilities.batch.BatchDiagramCreationWizard;
 
 public class BatchDiagramCreationCommand extends AbstractHandler {
 

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.utilities.ui.pages;
+package de.uni_paderborn.fujaba.modelinstance.ui.batch;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
@@ -10,7 +10,6 @@ import org.eclipse.swt.widgets.Composite;
 
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramElementValidator;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.pages.DiagramContentsSelectionPage;
-import de.uni_paderborn.fujaba.muml.utilities.ui.HierarchyCheckedTreeViewer;
 
 public class DiagramHierarchyContentsSelectionPage extends
 		DiagramContentsSelectionPage {

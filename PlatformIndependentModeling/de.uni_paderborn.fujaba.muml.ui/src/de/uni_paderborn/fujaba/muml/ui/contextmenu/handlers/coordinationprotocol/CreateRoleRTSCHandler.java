@@ -33,10 +33,10 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.ui.Activator;
-import de.uni_paderborn.fujaba.muml.utilities.batch.BatchDiagramCreationWizard;
 
 public class CreateRoleRTSCHandler extends AbstractHandler {
 

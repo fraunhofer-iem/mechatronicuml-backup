@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.utilities.ui;
+package de.uni_paderborn.fujaba.modelinstance.ui.batch;
 
 import java.util.ArrayList;
 

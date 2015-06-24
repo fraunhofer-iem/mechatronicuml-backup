@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.utilities.batch;
+package de.uni_paderborn.fujaba.modelinstance.ui.batch;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -52,7 +52,6 @@ import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ui.commands.CreateDiagramCommand;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
-import de.uni_paderborn.fujaba.muml.utilities.ui.pages.DiagramHierarchyContentsSelectionPage;
 
 public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 	private TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE

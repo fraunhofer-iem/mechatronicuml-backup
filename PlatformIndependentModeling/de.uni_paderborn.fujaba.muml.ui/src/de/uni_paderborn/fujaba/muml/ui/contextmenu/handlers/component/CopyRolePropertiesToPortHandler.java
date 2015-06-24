@@ -37,13 +37,13 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.ui.Activator;
-import de.uni_paderborn.fujaba.muml.utilities.batch.BatchDiagramCreationWizard;
 
 public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 

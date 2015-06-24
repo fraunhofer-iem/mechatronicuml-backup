@@ -13,6 +13,7 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.modelinstance.ui,
+ de.uni_paderborn.fujaba.modelinstance.ui.batch,
  de.uni_paderborn.fujaba.modelinstance.ui.commands,
  de.uni_paderborn.fujaba.modelinstance.ui.diagrams,
  de.uni_paderborn.fujaba.modelinstance.ui.diagrams.pages,
