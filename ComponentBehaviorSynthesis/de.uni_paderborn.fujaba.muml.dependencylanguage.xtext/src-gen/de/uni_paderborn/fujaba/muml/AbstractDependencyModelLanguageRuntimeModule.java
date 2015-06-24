@@ -6,7 +6,6 @@ package de.uni_paderborn.fujaba.muml;
 import java.util.Properties;
 
 import org.eclipse.xtext.Constants;
-import org.eclipse.xtext.service.DefaultRuntimeModule;
 
 import com.google.inject.Binder;
 import com.google.inject.name.Names;
@@ -14,8 +13,8 @@ import com.google.inject.name.Names;
 /**
  * Manual modifications go to {de.uni_paderborn.fujaba.muml.DependencyModelLanguageRuntimeModule}
  */
- @SuppressWarnings("all")
-public abstract class AbstractDependencyModelLanguageRuntimeModule extends DefaultRuntimeModule {
+@SuppressWarnings("all")
+public abstract class AbstractDependencyModelLanguageRuntimeModule extends org.eclipse.xtext.common.types.DefaultCommonTypesRuntimeModule {
 
 	protected Properties properties = null;
 
@@ -34,6 +33,11 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends Defau
 			binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("dependencymodel");
 	}
 	
+	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
+	public java.lang.ClassLoader bindClassLoaderToInstance() {
+		return getClass().getClassLoader();
+	}
+
 	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
 	public Class<? extends org.eclipse.xtext.IGrammarAccess> bindIGrammarAccess() {
 		return de.uni_paderborn.fujaba.muml.services.DependencyModelLanguageGrammarAccess.class;
@@ -137,26 +141,6 @@ public abstract class AbstractDependencyModelLanguageRuntimeModule extends Defau
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
 		return de.uni_paderborn.fujaba.muml.formatting.DependencyModelLanguageFormatter.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public java.lang.ClassLoader bindClassLoaderToInstance() {
-		return getClass().getClassLoader();
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public org.eclipse.xtext.common.types.TypesFactory bindTypesFactoryToInstance() {
-		return org.eclipse.xtext.common.types.TypesFactory.eINSTANCE;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.access.IJvmTypeProvider.Factory> bindIJvmTypeProvider$Factory() {
-		return org.eclipse.xtext.common.types.access.ClasspathTypeProviderFactory.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.xtext.AbstractTypeScopeProvider> bindAbstractTypeScopeProvider() {
-		return org.eclipse.xtext.common.types.xtext.ClasspathBasedTypeScopeProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
