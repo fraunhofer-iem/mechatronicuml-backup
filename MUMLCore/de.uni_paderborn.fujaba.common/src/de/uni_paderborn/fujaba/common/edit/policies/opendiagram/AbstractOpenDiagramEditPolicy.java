@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -360,13 +361,9 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 							throws CoreException, InvocationTargetException,
 							InterruptedException {
 						try {
-							for (Iterator it = diagramFacet.eResource()
-									.getResourceSet().getResources().iterator(); it
-									.hasNext();) {
-								Resource nextResource = (Resource) it.next();
-								if (nextResource.isLoaded()
-										&& !getEditingDomain().isReadOnly(
-												nextResource)) {
+							for (Resource nextResource : diagramFacet.eResource()
+									.getResourceSet().getResources()) {
+								if (nextResource.isLoaded() && !getEditingDomain().isReadOnly(nextResource)) {
 									nextResource.save(getSaveOptions());
 								}
 							}
@@ -465,16 +462,18 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 				if (resource != null && !resource.getContents().isEmpty()) {
 					EObject root = resource.getContents().get(0);
 					if (root instanceof Diagram) {
-
 						Diagram diagram = (Diagram) root;
 						if (diagram.getElement() == diagramDomainElement) {
 							selected = true;
 						} else if (diagram.getElement() instanceof ModelElementCategory) {
-							ModelElementCategory category = (ModelElementCategory) diagram
-									.getElement();
-							if (category.getModelElements().contains(
-									diagramDomainElement)) {
-								selected = true;
+							TreeIterator<EObject> it = diagram.eAllContents();
+							while (it.hasNext()) {
+								EObject view = it.next();
+								if (view instanceof View) {
+									if (((View) element).getElement() == diagramDomainElement) {
+										selected = true;
+									}
+								}
 							}
 						}
 
