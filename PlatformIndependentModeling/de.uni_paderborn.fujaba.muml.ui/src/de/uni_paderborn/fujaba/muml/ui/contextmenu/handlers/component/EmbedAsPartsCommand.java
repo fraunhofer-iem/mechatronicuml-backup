@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notifier;
@@ -12,8 +11,7 @@ import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
-import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.ui.Activator;
@@ -42,39 +40,20 @@ public class EmbedAsPartsCommand extends ChangeCommand {
 
 	@Override
 	protected void doExecute() {
-		newCreatedStructuredComponent = createStructuredComponentWithEmbeddedParts(editingDomain,components);
+		newCreatedStructuredComponent = null;
 
-		if (newCreatedStructuredComponent == null) {
-			return;
-		}
-
-		// Add new StructuredComponent to ModelElementCategory
-		if (!components.isEmpty()) {
-			EObject container = components.get(0).eContainer();
-			if (container instanceof ModelElementCategory) {
-				((ModelElementCategory) container).getModelElements().add(
-						newCreatedStructuredComponent);
-			}
-		}
-
-	}
-	
-	public  StructuredComponent createStructuredComponentWithEmbeddedParts(EditingDomain editingDomain, List<Component> components) {
 		ModelExtent inputExtent = new BasicModelExtent(components);
 
 		ModelExtent outputExtent = new BasicModelExtent();
 
-		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] {
-				inputExtent, outputExtent });
-
 		final TransformationExecutor transformationExecutor = Activator
-				.getInstance()
-				.getTransformationExecutor(EMBED_TRANSFORMATION, false);		
+				.getInstance().getTransformationExecutor(EMBED_TRANSFORMATION,
+						false);
 
-		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
+				transformationExecutor, inputExtent, outputExtent);
 
-		if(command.canExecute()){
+		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
 		}
 
@@ -86,9 +65,9 @@ public class EmbedAsPartsCommand extends ChangeCommand {
 
 		// Return StructuredComponent
 		if (createdObject instanceof StructuredComponent) {
-			return (StructuredComponent) createdObject;
+			newCreatedStructuredComponent = (StructuredComponent) createdObject;
 		}
-		return null;
+
 	}
 
 }

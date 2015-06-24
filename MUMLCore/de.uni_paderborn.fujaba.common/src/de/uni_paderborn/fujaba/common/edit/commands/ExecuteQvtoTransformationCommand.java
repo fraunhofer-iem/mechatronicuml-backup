@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.m2m.qvt.oml.ExecutionContext;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
@@ -18,13 +19,19 @@ public class ExecuteQvtoTransformationCommand extends ChangeCommand {
 	private List<ModelExtent> modelExtents;
 	private TransformationExecutor transformationExecutor;
 	private BasicDiagnostic diagnostic;
+	private ExecutionContext executionContext;
 	
+	
+	public ExecuteQvtoTransformationCommand(TransformationExecutor transformationExecutor, List<ModelExtent> modelExtents) {
+		this(transformationExecutor, modelExtents, new ExecutionContextImpl());
+	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ExecuteQvtoTransformationCommand(TransformationExecutor transformationExecutor, List<ModelExtent> modelExtents) {
+	public ExecuteQvtoTransformationCommand(TransformationExecutor transformationExecutor, List<ModelExtent> modelExtents, ExecutionContext executionContext){
 		super((Collection) getAllNotifiers(modelExtents));
 		this.transformationExecutor = transformationExecutor;
 		this.modelExtents = modelExtents;
+		this.executionContext = executionContext;
 
 		diagnostic = new BasicDiagnostic
 	          (EObjectValidator.DIAGNOSTIC_SOURCE,
@@ -46,13 +53,12 @@ public class ExecuteQvtoTransformationCommand extends ChangeCommand {
 	@Override
 	protected void doExecute() {
 
-		// Create execution context
-		ExecutionContextImpl context = new ExecutionContextImpl();
+		
 
 		// Execute transformation
 		ExecutionDiagnostic result = null;
 		try {
-			result = transformationExecutor.execute(context,  modelExtents.toArray(new ModelExtent[] {} ));
+			result = transformationExecutor.execute(executionContext,  modelExtents.toArray(new ModelExtent[] {} ));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

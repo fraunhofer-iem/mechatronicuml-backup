@@ -8,9 +8,8 @@ modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0
 modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
 modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 
-modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
-transformation CopyRolePropertiesToPort(inout input : ModelInstancePackage);
+transformation CopyRolePropertiesToPort(inout input : ComponentPackage, out output : RTSCPackage);
 configuration property replacePortRTSC : Boolean;
 configuration property createComponentRTSC : Boolean;
 	
@@ -19,7 +18,6 @@ main() {
 
 	-- parse input parameters
 	var thePort : DiscretePort := input.rootObjects()[DiscretePort] -> any(true);
-	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
 	if(replacePortRTSC)then {
 		var	statechart :RealtimeStatechart := thePort.oclAsType(DiscretePort).behavior.oclAsType(RealtimeStatechart);
 		var region : Region := statechart.parentRegion;
@@ -29,11 +27,11 @@ main() {
 	}endif;
 
 	-- copy the role properties
-	copyRolePropertiesToPort(thePort, theRootNode);
+	copyRolePropertiesToPort(thePort);
 }
 
 -- copies all relevant role properties to the port
-helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode : RootNode){
+helper copyRolePropertiesToPort(inout thePort : DiscretePort){
 	
 	-- get role
 	var theRole := thePort.refinedRole;
@@ -80,12 +78,12 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	thePort.receiverMessageBuffer := theRole.receiverMessageBuffer->deepclone()[MessageBuffer];
 	
 	-- copy behavior specification
-	copyBehavior(theRole, thePort, theRootNode);
+	copyBehavior(theRole, thePort);
 }
 
 
 -- copies the behavior of the role into the port if the port belongs to an atomic component
-helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout theRootNode : RootNode){
+helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort){
 
 	if(thePort.component.oclIsKindOf(AtomicComponent)) then {
 		-- copy real-time statechart
@@ -94,7 +92,7 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 		thePort.behavior := (theRole.behavior.deepclone()).oclAsType(RealtimeStatechart);
 		
 		-- contain in resource
-		storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
+		storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), thePort.component.oclAsType(AtomicComponent));
 		
 		-- adjust name
 		thePort.behavior.oclAsType(RealtimeStatechart).name := thePort.behavior.oclAsType(RealtimeStatechart).name + '_' + thePort.name;
@@ -110,13 +108,11 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 }
 
 -- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
-helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode, inout component : AtomicComponent){
+helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout component : AtomicComponent){
 	
 	-- create component RTSC if it does not exists yet
 	if (component.behavior.oclIsUndefined()) then{
 		var behavior := new RealtimeStatechart(component.name);
-		var category : ModelElementCategory := getRTSCCategory(theRootNode);
-		category.modelElements += behavior;
 		component.behavior := behavior;
 		component.behavior.oclAsType(RealtimeStatechart).states -> first().name :=  component.name + '_main';
 	} endif;
@@ -185,10 +181,6 @@ query getMultiPortAdaptationRTSC(in theRole : Role, in thePort : DiscretePort) :
 	return null;
 } 
 
--- return the RTSC category of the root node
-query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
-}
 
 -- constructor for creating new regions
 constructor Region::Region() {

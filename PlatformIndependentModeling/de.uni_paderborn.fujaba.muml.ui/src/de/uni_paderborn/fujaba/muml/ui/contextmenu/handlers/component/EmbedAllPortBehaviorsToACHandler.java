@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.ui.contextmenu.handlers.component;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -19,7 +18,7 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -82,8 +81,7 @@ public class EmbedAllPortBehaviorsToACHandler extends AbstractHandler {
 		ModelExtent inputExtent = new BasicModelExtent(
 				Arrays.asList(new EObject[] { atomicComponent }));
 
-		final List<ModelExtent> modelExtents = Arrays
-				.asList(new ModelExtent[] { inputExtent });
+		ModelExtent outputExtent = new BasicModelExtent();
 
 		// Load QVTO script
 		final TransformationExecutor transformationExecutor = Activator
@@ -91,9 +89,8 @@ public class EmbedAllPortBehaviorsToACHandler extends AbstractHandler {
 				.getTransformationExecutor(
 						Messages.EmbedAllPortBehaviorsToACHandler_PathEmbedAllPortBehaviorInACTransformation,
 						false);
-
-		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
+				transformationExecutor, inputExtent, outputExtent);
 
 		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);

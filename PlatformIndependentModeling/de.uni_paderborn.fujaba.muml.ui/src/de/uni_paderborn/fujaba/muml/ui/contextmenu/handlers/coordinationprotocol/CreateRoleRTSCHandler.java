@@ -31,8 +31,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -147,18 +146,18 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 	private static void createRoleRTSCTransformation(
 			EditingDomain editingDomain, Role role) {
 		ModelExtent inputExtent = new BasicModelExtent(
-				Arrays.asList(new EObject[] { role, getRootNode(role) }));
-
-		final List<ModelExtent> modelExtents = Arrays
-				.asList(new ModelExtent[] { inputExtent });
+				Arrays.asList(new EObject[] { role }));
+		ModelExtent outputExtent = new BasicModelExtent();
 
 		// Load QVTO script
 		final TransformationExecutor transformationExecutor = Activator
-				.getInstance().getTransformationExecutor(
-						Messages.CreateRoleRTSCHandler_PathCreateRoleRTSCTransformation, false);
+				.getInstance()
+				.getTransformationExecutor(
+						Messages.CreateRoleRTSCHandler_PathCreateRoleRTSCTransformation,
+						false);
 
-		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents);
+		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
+				transformationExecutor, inputExtent, outputExtent);
 
 		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
@@ -167,11 +166,7 @@ public class CreateRoleRTSCHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
-	}
 
-	private static RootNode getRootNode(Role role) {
-		return (RootNode) role.getCoordinationProtocol().eContainer()
-				.eContainer();
 	}
 
 	private static IFile getFile(Resource resource) {

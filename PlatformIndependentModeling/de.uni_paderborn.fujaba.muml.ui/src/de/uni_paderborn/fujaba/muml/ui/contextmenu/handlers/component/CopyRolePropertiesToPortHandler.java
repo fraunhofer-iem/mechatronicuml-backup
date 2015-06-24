@@ -27,7 +27,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
-import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.swt.widgets.Shell;
@@ -35,8 +34,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
-import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.common.edit.commands.StoringExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.ui.batch.BatchDiagramCreationWizard;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -226,10 +224,8 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 			DiscretePort port, final boolean replacePortRTSC,
 			final boolean createComponentRTSC) {
 		ModelExtent inputExtent = new BasicModelExtent(
-				Arrays.asList(new EObject[] { port, getRootNode(port) }));
-
-		final List<ModelExtent> modelExtents = Arrays
-				.asList(new ModelExtent[] { inputExtent });
+				Arrays.asList(new EObject[] { port }));
+		ModelExtent outputExtent = new BasicModelExtent();
 
 		// Load QVTO script
 		final TransformationExecutor transformationExecutor = Activator
@@ -238,33 +234,12 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 						Messages.CopyRolePropertiesToPortHandler_PathCopyRolePropertiesToPortTransformation,
 						false);
 
-		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				transformationExecutor, modelExtents) {
-			@Override
-			protected void doExecute() {
-				// Create execution context
-				ExecutionContextImpl context = new ExecutionContextImpl();
-				context.setConfigProperty("replacePortRTSC", replacePortRTSC); //$NON-NLS-1$
-				context.setConfigProperty("createComponentRTSC", //$NON-NLS-1$
-						createComponentRTSC);
-
-				// Execute transformation
-				ExecutionDiagnostic result = null;
-				try {
-					result = transformationExecutor.execute(context,
-							modelExtents.toArray(new ModelExtent[] {}));
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-				if (result != null
-						&& result.getSeverity() != ExecutionDiagnostic.OK) {
-					System.out
-							.println("QVT-O ERROR on rule transformation. Message was:"); //$NON-NLS-1$
-					System.out.println(result.getMessage());
-				}
-			}
-		};
+		ExecutionContextImpl context = new ExecutionContextImpl();
+		context.setConfigProperty("replacePortRTSC", replacePortRTSC); //$NON-NLS-1$
+		context.setConfigProperty("createComponentRTSC", //$NON-NLS-1$
+				createComponentRTSC);
+		StoringExecuteQvtoTransformationCommand command = new StoringExecuteQvtoTransformationCommand(
+				transformationExecutor, inputExtent, outputExtent, context);
 
 		if (command.canExecute()) {
 			editingDomain.getCommandStack().execute(command);
@@ -273,10 +248,6 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
-	}
-
-	private static RootNode getRootNode(DiscretePort thePort) {
-		return (RootNode) thePort.getComponent().eContainer().eContainer();
 	}
 
 	private static IFile getFile(Resource resource) {

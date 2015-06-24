@@ -8,9 +8,8 @@ modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0
 modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
 modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 
-modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
-transformation EmbeddedPortsBehaviorInAC(inout input : ModelInstancePackage);
+transformation EmbeddedPortsBehaviorInAC(inout input : ComponentPackage);
 
 main() {
 

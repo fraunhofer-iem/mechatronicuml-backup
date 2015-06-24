@@ -8,9 +8,8 @@ modeltype ValuetypePackage uses muml::valuetype("http://www.fujaba.de/muml/0.4.0
 modeltype MessageTypePackage uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
 modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 
-modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
-transformation CreateRoleRTSC(inout input : ModelInstancePackage);
+transformation CreateRoleRTSC(in input : ProtocolPackage, out output :RTSCPackage);
 
 	
 
@@ -18,15 +17,14 @@ main() {
 
 	-- parse input parameters
 	var theRole : Role := input.rootObjects()[Role] -> any(true);
-	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
 
 	-- create the Role Behavior
-	createRoleBehavior(theRole, theRootNode);
+	createRoleBehavior(theRole);
 }
 
 
 
-helper createRoleBehavior(inout theRole : Role, inout theRootNode : RootNode){
+helper createRoleBehavior(inout theRole : Role){
 		//assert fatal (theRole.behavior = null) with log ("A Behavior is already specified");
 		var rootStateChart : RealtimeStatechart := new RealtimeStatechart(theRole.name);
 		var mainState : State := new State(true, false,theRole.name+"_Main");
@@ -58,29 +56,11 @@ helper createRoleBehavior(inout theRole : Role, inout theRootNode : RootNode){
 		
 		
 		}endif;
-	
 		
-		storeRealtimeStatechart(rootStateChart,theRootNode);
-	
 }
 
 
 
--- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
-helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode){
-	
-		var category : ModelElementCategory := getRTSCCategory(theRootNode);
-		category.modelElements += rtsc;
-		return null;
-
-}
-
-
-
--- return the RTSC category of the root node
-query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
-	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
-}
 
 -- constructor for creating new regions
 constructor Region::Region() {
