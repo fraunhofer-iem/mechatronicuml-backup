@@ -23,71 +23,10 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalDependencyModelLanguageParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_MINORMAXKEYWORD", "RULE_WS", "RULE_ANY_OTHER", "';'", "'synchronize'", "','", "'with'", "'using'", "'['", "']'", "'of type'", "'forbid state combination'", "'bound states'", "'by'", "'on'", "'{'", "'}'", "'if'", "'enable'", "'disable'", "'assign'", "'reset clocks'", "'and'", "'merge variable'", "'into variable'", "'merge variables'", "'into hybridport'", "'merge clocks'", "'into'", "'.'", "'transition'", "'combination'", "'('", "')'", "'when counted'", "'times'", "'delayed by'", "'state combination'", "'between'", "'INIT'", "'INFINITE'", "'clock'", "'-'", "'null'", "'ns'", "'\\u00C2\\u00B5s'", "'ms'", "'s'", "'min'", "'h'", "'D'", "'for'", "'while'", "'do'", "');'", "'elseif'", "'else'", "'return'", "':='", "'const'", "'<'", "'>'", "'->'", "'or'", "'=='", "'<>'", "'<='", "'>='", "'since exactly'", "'strictly short than'", "'shorter than'", "'strictly longer than'", "'longer than'", "'entering state'", "'leaving state'", "'is active'", "'is inactive'", "'consuming'", "'sending'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'+'", "'*'", "'/'", "'%'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_NUMBER", "RULE_BOOLEAN", "RULE_MINORMAXKEYWORD", "RULE_WS", "RULE_ANY_OTHER", "';'", "'synchronize'", "','", "'with'", "'using'", "'['", "']'", "'of type'", "'forbid state combination'", "'bound states'", "'by'", "'on'", "'{'", "'}'", "'if'", "'enable'", "'disable'", "'assign'", "'reset clocks'", "'and'", "'merge variable'", "'into variable'", "'merge variables'", "'into hybridport'", "'merge clocks'", "'into'", "'.'", "'transition'", "'combination'", "'('", "')'", "'when counted'", "'times'", "'delayed by'", "'state combination'", "'between'", "'INIT'", "'INFINITE'", "'clock'", "'-'", "'null'", "'ns'", "'\\u00B5s'", "'ms'", "'s'", "'min'", "'h'", "'D'", "'for'", "'while'", "'do'", "');'", "'elseif'", "'else'", "'return'", "':='", "'const'", "'<'", "'>'", "'->'", "'or'", "'=='", "'<>'", "'<='", "'>='", "'since exactly'", "'strictly short than'", "'shorter than'", "'strictly longer than'", "'longer than'", "'entering state'", "'leaving state'", "'is active'", "'is inactive'", "'consuming'", "'sending'", "'++'", "'--'", "'+='", "'-='", "'||'", "'&&'", "'+'", "'*'", "'/'", "'%'", "'not'", "'self'", "'first'", "'last'", "'prev'", "'next'"
     };
-    public static final int RULE_ID=6;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=13;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int T__93=93;
-    public static final int T__19=19;
-    public static final int T__94=94;
-    public static final int T__91=91;
-    public static final int T__92=92;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__90=90;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int T__14=14;
-    public static final int T__99=99;
-    public static final int T__98=98;
-    public static final int T__97=97;
-    public static final int T__96=96;
-    public static final int T__95=95;
-    public static final int T__80=80;
-    public static final int T__81=81;
-    public static final int T__82=82;
-    public static final int T__83=83;
-    public static final int RULE_MINORMAXKEYWORD=11;
-    public static final int T__85=85;
-    public static final int T__84=84;
-    public static final int T__87=87;
-    public static final int T__86=86;
-    public static final int T__89=89;
-    public static final int T__88=88;
-    public static final int RULE_ML_COMMENT=4;
-    public static final int RULE_STRING=8;
-    public static final int T__71=71;
-    public static final int T__72=72;
-    public static final int T__70=70;
-    public static final int T__76=76;
-    public static final int T__75=75;
-    public static final int T__74=74;
-    public static final int T__73=73;
-    public static final int T__79=79;
-    public static final int T__78=78;
-    public static final int T__77=77;
-    public static final int T__68=68;
-    public static final int RULE_BOOLEAN=10;
-    public static final int T__69=69;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__65=65;
-    public static final int T__62=62;
-    public static final int T__63=63;
-    public static final int T__61=61;
-    public static final int T__60=60;
+    public static final int T__50=50;
+    public static final int T__59=59;
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__57=57;
@@ -96,38 +35,99 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int RULE_NUMBER=9;
-    public static final int T__103=103;
-    public static final int T__59=59;
-    public static final int T__104=104;
-    public static final int T__105=105;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=6;
     public static final int RULE_INT=7;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int T__102=102;
-    public static final int T__101=101;
-    public static final int T__100=100;
-    public static final int RULE_SL_COMMENT=5;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__66=66;
+    public static final int RULE_ML_COMMENT=4;
+    public static final int T__67=67;
+    public static final int T__68=68;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__64=64;
+    public static final int T__65=65;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__91=91;
+    public static final int T__100=100;
+    public static final int T__92=92;
+    public static final int T__93=93;
+    public static final int T__102=102;
+    public static final int T__94=94;
+    public static final int T__101=101;
+    public static final int T__90=90;
+    public static final int RULE_BOOLEAN=10;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__99=99;
+    public static final int T__14=14;
+    public static final int T__95=95;
+    public static final int T__96=96;
+    public static final int T__97=97;
+    public static final int T__98=98;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int T__70=70;
+    public static final int T__71=71;
+    public static final int T__72=72;
+    public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=5;
+    public static final int T__77=77;
+    public static final int T__78=78;
+    public static final int T__79=79;
+    public static final int T__73=73;
+    public static final int EOF=-1;
+    public static final int T__74=74;
+    public static final int T__75=75;
+    public static final int T__76=76;
+    public static final int T__80=80;
+    public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
     public static final int RULE_WS=12;
+    public static final int RULE_MINORMAXKEYWORD=11;
+    public static final int RULE_ANY_OTHER=13;
+    public static final int RULE_NUMBER=9;
+    public static final int T__88=88;
+    public static final int T__89=89;
+    public static final int T__84=84;
+    public static final int T__104=104;
+    public static final int T__85=85;
+    public static final int T__103=103;
+    public static final int T__86=86;
+    public static final int T__87=87;
+    public static final int T__105=105;
 
     // delegates
     // delegators
@@ -10414,7 +10414,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
 
     // $ANTLR start "ruleTimeUnit"
-    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3669:1: ruleTimeUnit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) ;
+    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3669:1: ruleTimeUnit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ns' | kw= '\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnit() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10423,10 +10423,10 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3672:28: ( (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) )
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3673:1: (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3672:28: ( (kw= 'ns' | kw= '\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' ) )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3673:1: (kw= 'ns' | kw= '\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
             {
-            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3673:1: (kw= 'ns' | kw= '\\u00C2\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
+            // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3673:1: (kw= 'ns' | kw= '\\u00B5s' | kw= 'ms' | kw= 's' | kw= 'min' | kw= 'h' | kw= 'D' )
             int alt56=7;
             switch ( input.LA(1) ) {
             case 55:
@@ -10487,7 +10487,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3681:2: kw= '\\u00C2\\u00B5s'
+                    // ../de.uni_paderborn.fujaba.muml.dependencylanguage.xtext/src-gen/de/uni_paderborn/fujaba/muml/parser/antlr/internal/InternalDependencyModelLanguage.g:3681:2: kw= '\\u00B5s'
                     {
                     kw=(Token)match(input,56,FollowSets000.FOLLOW_56_in_ruleTimeUnit7949); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -20203,25 +20203,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
 
     // Delegated rules
 
-    public final boolean synpred54_InternalDependencyModelLanguage() {
+    public final boolean synpred25_InternalDependencyModelLanguage() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred54_InternalDependencyModelLanguage_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred53_InternalDependencyModelLanguage() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred53_InternalDependencyModelLanguage_fragment(); // can never throw exception
+            synpred25_InternalDependencyModelLanguage_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20245,39 +20231,11 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         state.failed=false;
         return success;
     }
-    public final boolean synpred68_InternalDependencyModelLanguage() {
+    public final boolean synpred53_InternalDependencyModelLanguage() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred68_InternalDependencyModelLanguage_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred49_InternalDependencyModelLanguage() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred49_InternalDependencyModelLanguage_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred25_InternalDependencyModelLanguage() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred25_InternalDependencyModelLanguage_fragment(); // can never throw exception
+            synpred53_InternalDependencyModelLanguage_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -20315,6 +20273,48 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
         state.failed=false;
         return success;
     }
+    public final boolean synpred68_InternalDependencyModelLanguage() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred68_InternalDependencyModelLanguage_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred54_InternalDependencyModelLanguage() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred54_InternalDependencyModelLanguage_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred49_InternalDependencyModelLanguage() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred49_InternalDependencyModelLanguage_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
 
 
     protected DFA12 dfa12 = new DFA12(this);
@@ -20331,11 +20331,9 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA12_eofS =
         "\33\uffff";
     static final String DFA12_minS =
-        "\1\17\1\51\5\6\2\20\1\6\1\20\1\6\2\uffff\1\6\1\20\1\6\2\20\2\6"+
-        "\3\20\2\6\1\20";
+        "\1\17\1\51\5\6\1\20\1\6\2\20\1\6\2\uffff\1\20\2\6\1\20\2\6\4\20\2\6\1\20";
     static final String DFA12_maxS =
-        "\1\17\1\131\1\6\2\52\2\6\2\50\1\6\1\50\1\6\2\uffff\1\6\1\50\1\6"+
-        "\2\50\2\6\1\23\2\50\1\6\1\131\1\50";
+        "\1\17\1\131\1\6\2\52\2\6\1\50\1\6\2\50\1\6\2\uffff\1\50\2\6\1\50\2\6\1\50\1\23\2\50\1\6\1\131\1\50";
     static final String DFA12_acceptS =
         "\14\uffff\1\1\1\2\15\uffff";
     static final String DFA12_specialS =
@@ -20344,26 +20342,26 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             "\1\1",
             "\1\2\52\uffff\1\3\1\4\2\uffff\1\5\1\6",
             "\1\7",
-            "\1\10\43\uffff\1\11",
-            "\1\10\43\uffff\1\11",
+            "\1\11\43\uffff\1\10",
+            "\1\11\43\uffff\1\10",
             "\1\12",
             "\1\12",
             "\2\14\1\uffff\1\15\24\uffff\1\13",
-            "\2\14\1\uffff\1\15\24\uffff\1\16",
-            "\1\17",
+            "\1\16",
+            "\2\14\1\uffff\1\15\24\uffff\1\17",
             "\2\14\1\uffff\1\15\24\uffff\1\20",
             "\1\21",
             "",
             "",
-            "\1\22",
-            "\1\24\27\uffff\1\23",
+            "\1\23\27\uffff\1\22",
+            "\1\24",
             "\1\25",
             "\2\14\1\uffff\1\15\24\uffff\1\13",
-            "\2\14\1\uffff\1\15\24\uffff\1\16",
             "\1\26",
             "\1\27",
+            "\2\14\1\uffff\1\15\24\uffff\1\17",
             "\2\14\1\uffff\1\15",
-            "\1\24\27\uffff\1\23",
+            "\1\23\27\uffff\1\22",
             "\1\31\1\14\1\uffff\1\15\24\uffff\1\30",
             "\1\32",
             "\1\27\42\uffff\1\14\52\uffff\2\14\2\uffff\2\14",
@@ -20408,8 +20406,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA32_eofS =
         "\3\uffff\1\6\6\uffff\1\6\1\uffff\1\16\3\uffff\1\16";
     static final String DFA32_minS =
-        "\1\42\2\6\1\16\1\20\1\6\2\uffff\2\6\1\16\1\20\1\16\1\6\2\uffff"+
-        "\1\16";
+        "\1\42\2\6\1\16\1\20\1\6\2\uffff\2\6\1\16\1\20\1\16\1\6\2\uffff\1\16";
     static final String DFA32_maxS =
         "\1\44\2\6\2\50\1\6\2\uffff\2\6\3\50\1\6\2\uffff\1\50";
     static final String DFA32_acceptS =
@@ -20653,9 +20650,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA42_specialS =
         "\2\uffff\1\0\5\uffff\1\1\1\2\20\uffff}>";
     static final String[] DFA42_transitionS = {
-            "\1\10\5\13\7\uffff\1\30\25\uffff\1\1\1\uffff\1\2\4\uffff\1"+
-            "\11\1\12\2\uffff\1\1\2\13\35\uffff\2\1\2\uffff\2\1\12\uffff"+
-            "\6\13",
+            "\1\10\5\13\7\uffff\1\30\25\uffff\1\1\1\uffff\1\2\4\uffff\1\11\1\12\2\uffff\1\1\2\13\35\uffff\2\1\2\uffff\2\1\12\uffff\6\13",
             "",
             "\1\uffff",
             "",
@@ -20787,8 +20782,7 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA46_specialS =
         "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\3\uffff}>";
     static final String[] DFA46_transitionS = {
-            "\1\2\1\uffff\1\1\6\uffff\1\7\41\uffff\1\3\1\4\2\uffff\1\5\1"+
-            "\6",
+            "\1\2\1\uffff\1\1\6\uffff\1\7\41\uffff\1\3\1\4\2\uffff\1\5\1\6",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -20939,33 +20933,29 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA61_eofS =
         "\17\uffff";
     static final String DFA61_minS =
-        "\2\6\6\uffff\2\6\2\uffff\1\24\1\23\1\6";
+        "\2\6\6\uffff\2\6\2\uffff\1\23\1\24\1\6";
     static final String DFA61_maxS =
-        "\1\106\1\135\6\uffff\1\151\1\6\2\uffff\1\143\2\135";
+        "\1\106\1\135\6\uffff\1\6\1\151\2\uffff\1\135\1\143\1\135";
     static final String DFA61_acceptS =
-        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\2\uffff\1\10\1\1\3\uffff";
+        "\2\uffff\1\2\1\3\1\4\1\5\1\6\1\7\2\uffff\1\1\1\10\3\uffff";
     static final String DFA61_specialS =
         "\17\uffff}>";
     static final String[] DFA61_transitionS = {
-            "\1\1\25\uffff\1\5\41\uffff\1\2\1\3\1\4\3\uffff\1\6\1\uffff"+
-            "\1\7",
-            "\1\7\14\uffff\1\10\24\uffff\1\11\2\uffff\1\12\31\uffff\1\13"+
-            "\24\uffff\4\13",
+            "\1\1\25\uffff\1\5\41\uffff\1\2\1\3\1\4\3\uffff\1\6\1\uffff\1\7",
+            "\1\7\14\uffff\1\11\24\uffff\1\10\2\uffff\1\13\31\uffff\1\12\24\uffff\4\12",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\13\1\14\4\13\37\uffff\1\13\11\uffff\2\13\55\uffff\6\13",
-            "\1\15",
+            "\1\14",
+            "\1\12\1\15\4\12\37\uffff\1\12\11\uffff\2\12\55\uffff\6\12",
             "",
             "",
-            "\1\16\40\uffff\1\13\52\uffff\4\13",
-            "\1\13\24\uffff\1\11\2\uffff\1\12\31\uffff\1\13\24\uffff\4"+
-            "\13",
-            "\1\7\14\uffff\1\10\24\uffff\1\13\34\uffff\1\13\24\uffff\4"+
-            "\13"
+            "\1\12\24\uffff\1\10\2\uffff\1\13\31\uffff\1\12\24\uffff\4\12",
+            "\1\16\40\uffff\1\12\52\uffff\4\12",
+            "\1\7\14\uffff\1\11\24\uffff\1\12\34\uffff\1\12\24\uffff\4\12"
     };
 
     static final short[] DFA61_eot = DFA.unpackEncodedString(DFA61_eotS);
@@ -21016,19 +21006,13 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String[] DFA63_transitionS = {
             "\1\2\5\3\7\uffff\1\1\27\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
             "",
-            "\1\3\1\uffff\1\3\2\uffff\2\3\6\uffff\1\3\14\uffff\1\3\2\uffff"+
-            "\1\3\11\uffff\1\3\21\uffff\1\4\2\3\1\uffff\4\3\13\uffff\2\3"+
-            "\2\uffff\6\3",
+            "\1\3\1\uffff\1\3\2\uffff\2\3\6\uffff\1\3\14\uffff\1\3\2\uffff\1\3\11\uffff\1\3\21\uffff\1\4\2\3\1\uffff\4\3\13\uffff\2\3\2\uffff\6\3",
             "",
             "\1\3\1\5\4\3\37\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
-            "\1\3\1\uffff\1\6\3\uffff\1\3\6\uffff\1\3\31\uffff\1\3\25\uffff"+
-            "\2\3\21\uffff\6\3",
-            "\1\3\1\7\4\3\7\uffff\1\3\27\uffff\1\3\11\uffff\2\3\55\uffff"+
-            "\6\3",
-            "\1\3\3\uffff\1\3\40\uffff\1\3\21\uffff\1\3\1\10\2\uffff\4"+
-            "\3\17\uffff\6\3",
-            "\6\3\2\uffff\1\11\1\uffff\1\11\3\uffff\1\11\6\uffff\1\11\17"+
-            "\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
+            "\1\3\1\uffff\1\6\3\uffff\1\3\6\uffff\1\3\31\uffff\1\3\25\uffff\2\3\21\uffff\6\3",
+            "\1\3\1\7\4\3\7\uffff\1\3\27\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
+            "\1\3\3\uffff\1\3\40\uffff\1\3\21\uffff\1\3\1\10\2\uffff\4\3\17\uffff\6\3",
+            "\6\3\2\uffff\1\11\1\uffff\1\11\3\uffff\1\11\6\uffff\1\11\17\uffff\1\3\11\uffff\2\3\55\uffff\6\3",
             ""
     };
 
@@ -21081,16 +21065,12 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
             "\6\2\37\uffff\1\1\12\uffff\1\2\56\uffff\5\2",
             "\1\3\5\2\37\uffff\1\2\11\uffff\2\2\55\uffff\6\2",
             "",
-            "\1\4\24\uffff\1\2\2\uffff\1\2\1\5\10\uffff\1\2\21\uffff\3"+
-            "\2\1\uffff\4\2\13\uffff\2\2\2\uffff\6\2",
+            "\1\4\24\uffff\1\2\2\uffff\1\2\1\5\10\uffff\1\2\21\uffff\3\2\1\uffff\4\2\13\uffff\2\2\2\uffff\6\2",
             "\1\2\1\6\4\2\37\uffff\1\2\11\uffff\2\2\55\uffff\6\2",
-            "\6\7\2\uffff\1\2\1\uffff\1\2\3\uffff\1\2\6\uffff\1\2\17\uffff"+
-            "\1\7\1\2\10\uffff\1\2\1\7\7\2\3\uffff\1\2\5\uffff\2\2\2\uffff"+
-            "\4\2\17\uffff\6\2\1\uffff\5\7",
+            "\6\7\2\uffff\1\2\1\uffff\1\2\3\uffff\1\2\6\uffff\1\2\17\uffff\1\7\1\2\10\uffff\1\2\1\7\7\2\3\uffff\1\2\5\uffff\2\2\2\uffff\4\2\17\uffff\6\2\1\uffff\5\7",
             "\1\10\40\uffff\1\2\52\uffff\4\2",
             "",
-            "\1\4\24\uffff\1\2\3\uffff\1\5\10\uffff\1\2\21\uffff\3\2\1"+
-            "\uffff\4\2\13\uffff\2\2\2\uffff\6\2"
+            "\1\4\24\uffff\1\2\3\uffff\1\5\10\uffff\1\2\21\uffff\3\2\1\uffff\4\2\13\uffff\2\2\2\uffff\6\2"
     };
 
     static final short[] DFA75_eot = DFA.unpackEncodedString(DFA75_eotS);
@@ -21129,31 +21109,27 @@ public class InternalDependencyModelLanguageParser extends AbstractInternalAntlr
     static final String DFA76_eotS =
         "\14\uffff";
     static final String DFA76_eofS =
-        "\3\uffff\1\10\6\uffff\1\10\1\uffff";
+        "\3\uffff\1\7\6\uffff\1\7\1\uffff";
     static final String DFA76_minS =
-        "\1\6\2\uffff\1\16\2\uffff\1\6\2\uffff\1\6\1\16\1\uffff";
+        "\1\6\2\uffff\1\16\2\uffff\1\6\1\uffff\1\6\1\uffff\1\16\1\uffff";
     static final String DFA76_maxS =
-        "\1\151\2\uffff\1\143\2\uffff\1\6\2\uffff\1\151\1\143\1\uffff";
+        "\1\151\2\uffff\1\143\2\uffff\1\6\1\uffff\1\151\1\uffff\1\143\1\uffff";
     static final String DFA76_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\1\7\1\uffff\1\5\1\3\2\uffff\1\6";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\7\1\uffff\1\3\1\uffff\1\5\1\uffff\1\6";
     static final String DFA76_specialS =
         "\14\uffff}>";
     static final String[] DFA76_transitionS = {
             "\1\3\4\2\1\4\37\uffff\1\1\12\uffff\1\2\56\uffff\5\5",
             "",
             "",
-            "\1\10\1\uffff\1\10\2\uffff\2\10\6\uffff\1\10\14\uffff\1\6"+
-            "\2\uffff\1\7\1\10\10\uffff\1\10\1\uffff\7\10\3\uffff\1\10\5"+
-            "\uffff\2\10\1\11\1\uffff\4\10\13\uffff\2\10\2\uffff\6\10",
+            "\1\7\1\uffff\1\7\2\uffff\2\7\6\uffff\1\7\14\uffff\1\6\2\uffff\1\11\1\7\10\uffff\1\7\1\uffff\7\7\3\uffff\1\7\5\uffff\2\7\1\10\1\uffff\4\7\13\uffff\2\7\2\uffff\6\7",
             "",
             "",
             "\1\12",
             "",
+            "\1\13\136\uffff\5\7",
             "",
-            "\1\13\136\uffff\5\10",
-            "\1\10\1\uffff\1\10\2\uffff\2\10\6\uffff\1\10\14\uffff\1\6"+
-            "\2\uffff\1\7\1\10\10\uffff\1\10\1\uffff\7\10\3\uffff\1\10\5"+
-            "\uffff\3\10\1\uffff\4\10\13\uffff\2\10\2\uffff\6\10",
+            "\1\7\1\uffff\1\7\2\uffff\2\7\6\uffff\1\7\14\uffff\1\6\2\uffff\1\11\1\7\10\uffff\1\7\1\uffff\7\7\3\uffff\1\7\5\uffff\3\7\1\uffff\4\7\13\uffff\2\7\2\uffff\6\7",
             ""
     };
 
