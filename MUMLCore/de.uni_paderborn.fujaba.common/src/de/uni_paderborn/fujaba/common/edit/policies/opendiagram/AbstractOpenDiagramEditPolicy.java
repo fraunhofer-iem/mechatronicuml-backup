@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -59,7 +58,6 @@ import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 
 public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 
@@ -465,7 +463,7 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 						Diagram diagram = (Diagram) root;
 						if (diagram.getElement() == diagramDomainElement) {
 							selected = true;
-						} else if (diagram.getElement() instanceof ModelElementCategory) {
+						} else {
 							TreeIterator<EObject> it = diagram.eAllContents();
 							while (it.hasNext()) {
 								EObject view = it.next();
