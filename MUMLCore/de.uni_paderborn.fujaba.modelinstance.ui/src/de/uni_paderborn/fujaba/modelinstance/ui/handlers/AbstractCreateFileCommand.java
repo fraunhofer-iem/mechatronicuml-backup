@@ -28,7 +28,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.ide.undo.CreateFileOperation;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 
-import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
+import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
 
 public abstract class AbstractCreateFileCommand extends AbstractHandler {
 	private Shell shell;

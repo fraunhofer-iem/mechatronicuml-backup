@@ -20,10 +20,10 @@ import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.ui.PartInitException;
 
+import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.common.Messages;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.modelinstance.ui.commands.CreateEmptyDiagramCommand;
-import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
 
 public abstract class AbstractCreateDiagramFileCommand extends

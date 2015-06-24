@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.modelinstance.ui.diagrams;
+package de.uni_paderborn.fujaba.common;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -25,17 +25,11 @@ import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramWorkbenchPart;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.jface.wizard.WizardDialog;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
-
-import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
 
 /**
  * @generated
@@ -87,8 +81,7 @@ public class DiagramEditorUtil {
 		try {
 			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		} catch (CoreException e) {
-			FujabaNewwizardPlugin.getDefault().logError(
-					"Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
+			System.err.println("Unable to set charset for file " + file.getFullPath() + ":" + e.getLocalizedMessage()); //$NON-NLS-1$
 		}
 	}
 
@@ -119,38 +112,6 @@ public class DiagramEditorUtil {
 		}
 		return filePath.lastSegment();
 	}
-
-	/**
-	 * Runs the wizard in a dialog.
-	 * 
-	 * @generated
-	 */
-	public static void runWizard(Shell shell, Wizard wizard, String settingsKey) {
-		IDialogSettings pluginDialogSettings = FujabaNewwizardPlugin
-				.getDefault().getDialogSettings();
-		IDialogSettings wizardDialogSettings = pluginDialogSettings
-				.getSection(settingsKey);
-		if (wizardDialogSettings == null) {
-			wizardDialogSettings = pluginDialogSettings
-					.addNewSection(settingsKey);
-		}
-		wizard.setDialogSettings(wizardDialogSettings);
-		WizardDialog dialog = new WizardDialog(shell, wizard);
-		dialog.create();
-		dialog.getShell().setSize(Math.max(500, dialog.getShell().getSize().x),
-				500);
-		dialog.open();
-	}
-
-//	/**
-//	 * Store model element in the resource. <!-- begin-user-doc --> <!--
-//	 * end-user-doc -->
-//	 * 
-//	 * @generated
-//	 */
-//	private static void attachModelToResource(EObject model, Resource resource) {
-//		resource.getContents().add(model);
-//	}
 
 	/**
 	 * @generated

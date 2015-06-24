@@ -31,9 +31,9 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramInformation;
 import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.IDiagramInformation;
 import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
