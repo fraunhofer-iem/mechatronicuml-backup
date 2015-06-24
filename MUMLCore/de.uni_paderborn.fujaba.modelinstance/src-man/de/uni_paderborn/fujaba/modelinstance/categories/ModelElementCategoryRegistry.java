@@ -3,7 +3,9 @@ package de.uni_paderborn.fujaba.modelinstance.categories;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
@@ -93,6 +95,13 @@ public class ModelElementCategoryRegistry {
 			}
 		}
 		return allowedClasses;
+	}
+	
+	/**
+	 * Gets the set of valid category keys as copy.
+	 */
+	public Set<String> getAllowedKeys() {
+		return new HashSet<String>(getAllowedClasses().keySet());
 	}
 
 	/**
