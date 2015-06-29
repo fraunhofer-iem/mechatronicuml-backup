@@ -299,6 +299,12 @@
             extensions="action">
     </provider>
   </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="action"
+            type="text">
+    </fileTypes>
+  </extension>
     <!-- quickfix marker resolution generator for de.uni_paderborn.fujaba.muml.ActionLanguage -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">

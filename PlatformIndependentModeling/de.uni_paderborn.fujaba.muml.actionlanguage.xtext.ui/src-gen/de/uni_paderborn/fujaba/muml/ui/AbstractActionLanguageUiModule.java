@@ -4,14 +4,13 @@
  */
 package de.uni_paderborn.fujaba.muml.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Manual modifications go to {de.uni_paderborn.fujaba.muml.ui.ActionLanguageUiModule}
  */
 @SuppressWarnings("all")
-public abstract class AbstractActionLanguageUiModule extends DefaultUiModule {
+public abstract class AbstractActionLanguageUiModule extends org.eclipse.xtext.ui.DefaultUiModule {
 	
 	public AbstractActionLanguageUiModule(AbstractUIPlugin plugin) {
 		super(plugin);

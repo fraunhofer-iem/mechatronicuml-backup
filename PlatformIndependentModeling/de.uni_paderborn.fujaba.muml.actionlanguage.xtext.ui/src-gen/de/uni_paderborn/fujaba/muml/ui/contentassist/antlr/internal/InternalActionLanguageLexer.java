@@ -994,10 +994,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_MINORMAXKEYWORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:22: ( ( 'maxMsgDelay' | 'minMsgDelay' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:24: ( 'maxMsgDelay' | 'minMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:22: ( ( 'maxMessageDelay' | 'minMessageDelay' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:24: ( 'maxMessageDelay' | 'minMessageDelay' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:24: ( 'maxMsgDelay' | 'minMsgDelay' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:24: ( 'maxMessageDelay' | 'minMessageDelay' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1025,17 +1025,17 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:25: 'maxMsgDelay'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:25: 'maxMessageDelay'
                     {
-                    match("maxMsgDelay"); 
+                    match("maxMessageDelay"); 
 
 
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:39: 'minMsgDelay'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:8253:43: 'minMessageDelay'
                     {
-                    match("minMsgDelay"); 
+                    match("minMessageDelay"); 
 
 
                     }
@@ -2020,17 +2020,17 @@ public class InternalActionLanguageLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\2\50\1\56\1\61\1\65\2\50\1\72\1\74\1\uffff\1\100\1\uffff\4\56\4\uffff\1\115\5\56\4\uffff\2\56\1\132\1\56\1\50\1\uffff\2\50\4\uffff\3\56\24\uffff\6\56\6\uffff\1\56\1\152\1\153\2\56\4\uffff\3\56\2\uffff\1\132\1\56\2\uffff\1\56\1\163\3\56\1\167\4\56\2\uffff\6\56\1\u0082\1\uffff\1\u0083\1\u0084\1\56\1\uffff\1\56\1\u0087\1\u0088\1\56\1\u008b\4\56\1\u0090\3\uffff\1\u0091\1\u0090\2\uffff\1\u0092\1\56\1\uffff\1\56\1\u0095\2\56\3\uffff\1\u0098\1\u0099\1\uffff\2\56\2\uffff\10\56\2\u00a4\1\uffff";
+        "\1\uffff\2\50\1\56\1\61\1\65\2\50\1\72\1\74\1\uffff\1\100\1\uffff\4\56\4\uffff\1\115\5\56\4\uffff\2\56\1\132\1\56\1\50\1\uffff\2\50\4\uffff\3\56\24\uffff\6\56\6\uffff\1\56\1\152\1\153\2\56\4\uffff\3\56\2\uffff\1\132\1\56\2\uffff\1\56\1\163\3\56\1\167\4\56\2\uffff\6\56\1\u0082\1\uffff\1\u0083\1\u0084\1\56\1\uffff\1\56\1\u0087\1\u0088\1\56\1\u008b\4\56\1\u0090\3\uffff\1\u0091\1\u0090\2\uffff\1\u0092\1\56\1\uffff\1\56\1\u0095\2\56\3\uffff\1\u0098\1\u0099\1\uffff\2\56\2\uffff\20\56\2\u00ac\1\uffff";
     static final String DFA14_eofS =
-        "\u00a5\uffff";
+        "\u00ad\uffff";
     static final String DFA14_minS =
-        "\1\0\1\174\1\46\1\145\1\53\1\55\4\75\1\uffff\1\52\1\uffff\1\145\2\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff\1\157\1\141\1\56\1\162\1\101\1\uffff\2\0\4\uffff\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\60\1\163\1\164\4\uffff\1\156\1\170\1\156\2\uffff\1\56\1\165\2\uffff\1\154\1\60\1\164\1\146\1\163\1\60\1\163\1\164\1\166\1\154\2\uffff\1\145\1\165\1\163\2\115\1\145\1\60\1\uffff\2\60\1\164\1\uffff\1\145\2\60\1\145\1\60\1\162\1\164\2\163\1\60\3\uffff\2\60\2\uffff\1\60\1\146\1\uffff\1\156\1\60\2\147\3\uffff\2\60\1\uffff\2\104\2\uffff\2\145\2\154\2\141\2\171\2\60\1\uffff";
+        "\1\0\1\174\1\46\1\145\1\53\1\55\4\75\1\uffff\1\52\1\uffff\1\145\2\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff\1\157\1\141\1\56\1\162\1\101\1\uffff\2\0\4\uffff\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\60\1\163\1\164\4\uffff\1\156\1\170\1\156\2\uffff\1\56\1\165\2\uffff\1\154\1\60\1\164\1\146\1\163\1\60\1\163\1\164\1\166\1\154\2\uffff\1\145\1\165\1\163\2\115\1\145\1\60\1\uffff\2\60\1\164\1\uffff\1\145\2\60\1\145\1\60\1\162\1\164\2\145\1\60\3\uffff\2\60\2\uffff\1\60\1\146\1\uffff\1\156\1\60\2\163\3\uffff\2\60\1\uffff\2\163\2\uffff\2\141\2\147\2\145\2\104\2\145\2\154\2\141\2\171\2\60\1\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\174\1\46\1\165\1\75\1\76\2\75\1\76\1\75\1\uffff\1\57\1\uffff\1\145\1\157\1\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff\1\157\1\151\1\71\1\162\1\172\1\uffff\2\uffff\4\uffff\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\172\1\163\1\164\4\uffff\1\156\1\170\1\156\2\uffff\1\71\1\165\2\uffff\1\154\1\172\1\164\1\146\1\163\1\172\1\163\1\164\1\166\1\154\2\uffff\1\145\1\165\1\163\2\115\1\145\1\172\1\uffff\2\172\1\164\1\uffff\1\145\2\172\1\145\1\172\1\162\1\164\2\163\1\172\3\uffff\2\172\2\uffff\1\172\1\146\1\uffff\1\156\1\172\2\147\3\uffff\2\172\1\uffff\2\104\2\uffff\2\145\2\154\2\141\2\171\2\172\1\uffff";
+        "\1\uffff\1\174\1\46\1\165\1\75\1\76\2\75\1\76\1\75\1\uffff\1\57\1\uffff\1\145\1\157\1\141\1\162\4\uffff\1\73\1\150\1\157\1\146\1\154\1\145\4\uffff\1\157\1\151\1\71\1\162\1\172\1\uffff\2\uffff\4\uffff\1\154\1\164\1\170\24\uffff\1\154\2\162\1\154\1\163\1\145\6\uffff\1\151\2\172\1\163\1\164\4\uffff\1\156\1\170\1\156\2\uffff\1\71\1\165\2\uffff\1\154\1\172\1\164\1\146\1\163\1\172\1\163\1\164\1\166\1\154\2\uffff\1\145\1\165\1\163\2\115\1\145\1\172\1\uffff\2\172\1\164\1\uffff\1\145\2\172\1\145\1\172\1\162\1\164\2\145\1\172\3\uffff\2\172\2\uffff\1\172\1\146\1\uffff\1\156\1\172\2\163\3\uffff\2\172\1\uffff\2\163\2\uffff\2\141\2\147\2\145\2\104\2\145\2\154\2\141\2\171\2\172\1\uffff";
     static final String DFA14_acceptS =
-        "\12\uffff\1\21\1\uffff\1\23\4\uffff\1\32\1\33\1\35\1\36\6\uffff\1\47\1\50\1\51\1\53\5\uffff\1\60\2\uffff\1\65\1\66\1\1\1\2\3\uffff\1\60\1\4\1\7\1\17\1\5\1\10\1\52\1\20\1\6\1\11\1\12\1\14\1\13\1\15\1\16\1\21\1\63\1\64\1\22\1\23\6\uffff\1\32\1\33\1\35\1\36\1\42\1\37\5\uffff\1\47\1\50\1\51\1\53\3\uffff\1\61\1\56\2\uffff\1\62\1\65\12\uffff\1\41\1\43\7\uffff\1\24\3\uffff\1\34\12\uffff\1\3\1\31\1\25\2\uffff\1\27\1\30\2\uffff\1\45\4\uffff\1\57\1\26\1\40\2\uffff\1\54\2\uffff\1\44\1\46\12\uffff\1\55";
+        "\12\uffff\1\21\1\uffff\1\23\4\uffff\1\32\1\33\1\35\1\36\6\uffff\1\47\1\50\1\51\1\53\5\uffff\1\60\2\uffff\1\65\1\66\1\1\1\2\3\uffff\1\60\1\4\1\7\1\17\1\5\1\10\1\52\1\20\1\6\1\11\1\12\1\14\1\13\1\15\1\16\1\21\1\63\1\64\1\22\1\23\6\uffff\1\32\1\33\1\35\1\36\1\42\1\37\5\uffff\1\47\1\50\1\51\1\53\3\uffff\1\61\1\56\2\uffff\1\62\1\65\12\uffff\1\41\1\43\7\uffff\1\24\3\uffff\1\34\12\uffff\1\3\1\31\1\25\2\uffff\1\27\1\30\2\uffff\1\45\4\uffff\1\57\1\26\1\40\2\uffff\1\54\2\uffff\1\44\1\46\22\uffff\1\55";
     static final String DFA14_specialS =
-        "\1\1\44\uffff\1\2\1\0\176\uffff}>";
+        "\1\0\44\uffff\1\2\1\1\u0086\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\50\2\47\2\50\1\47\22\50\1\47\1\50\1\45\2\50\1\14\1\2\1\46\1\23\1\25\1\12\1\4\1\35\1\5\1\36\1\13\12\41\1\6\1\24\1\10\1\7\1\11\2\50\32\44\1\33\1\50\1\34\1\43\1\44\1\50\2\44\1\37\1\27\1\31\1\16\2\44\1\30\2\44\1\17\1\40\1\3\1\44\1\20\1\44\1\32\1\15\1\42\2\44\1\26\3\44\1\21\1\1\1\22\uff82\50",
             "\1\51",
@@ -2194,6 +2194,14 @@ public class InternalActionLanguageLexer extends Lexer {
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
+            "\1\u00a4",
+            "\1\u00a5",
+            "\1\u00a6",
+            "\1\u00a7",
+            "\1\u00a8",
+            "\1\u00a9",
+            "\1\u00aa",
+            "\1\u00ab",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             ""
@@ -2236,16 +2244,6 @@ public class InternalActionLanguageLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_38 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_38>='\u0000' && LA14_38<='\uFFFF')) ) {s = 94;}
-
-                        else s = 40;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -2328,6 +2326,16 @@ public class InternalActionLanguageLexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 39;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||LA14_0=='!'||(LA14_0>='#' && LA14_0<='$')||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 40;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA14_38 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_38>='\u0000' && LA14_38<='\uFFFF')) ) {s = 94;}
+
+                        else s = 40;
 
                         if ( s>=0 ) return s;
                         break;

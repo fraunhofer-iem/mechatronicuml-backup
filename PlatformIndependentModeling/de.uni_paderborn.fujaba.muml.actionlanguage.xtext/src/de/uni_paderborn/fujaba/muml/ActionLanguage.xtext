@@ -302,7 +302,7 @@ TimeValueExpression returns actionlanguage::TimeValueExpression:
 ;
 
 terminal MINORMAXKEYWORD:
-	'maxMsgDelay' | 'minMsgDelay'
+	'maxMessageDelay' | 'minMessageDelay'
 ;
 
 ExtendedTypedNamedElementExpression returns expressions::Expression:

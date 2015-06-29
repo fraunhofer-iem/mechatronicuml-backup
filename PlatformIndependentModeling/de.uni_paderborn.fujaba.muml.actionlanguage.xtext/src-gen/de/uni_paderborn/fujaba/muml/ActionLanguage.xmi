@@ -777,8 +777,8 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Keyword" value="maxMsgDelay"/>
-        <elements xsi:type="xtext:Keyword" value="minMsgDelay"/>
+        <elements xsi:type="xtext:Keyword" value="maxMessageDelay"/>
+        <elements xsi:type="xtext:Keyword" value="minMessageDelay"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ExtendedTypedNamedElementExpression">
