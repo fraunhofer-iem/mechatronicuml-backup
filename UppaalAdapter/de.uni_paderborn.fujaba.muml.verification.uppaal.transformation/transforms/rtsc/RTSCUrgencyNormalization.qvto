@@ -120,7 +120,7 @@ mapping Transition :: Transition2Transition() : Transition when {self.synchroniz
 		urgent := self.urgent;
 }
 
-mapping Transition :: Transition2UrgentTransition() : Transition when {self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and not self.urgent}{
+mapping Transition :: Transition2UrgentTransition() : Transition when {self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and self.urgent}{
 		source := self.source.map Vertex2Vertex();
 		target := self.target.map Vertex2Vertex();
 			
