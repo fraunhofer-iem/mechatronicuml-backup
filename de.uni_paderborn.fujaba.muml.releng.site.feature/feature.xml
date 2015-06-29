@@ -144,4 +144,8 @@ This feature is distributed in the hope that it will be useful, but WITHOUT ANY 
          id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.ontology.feature"
+         version="0.0.0"/>
+
 </feature>
