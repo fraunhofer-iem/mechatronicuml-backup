@@ -142,7 +142,7 @@ mapping Transition :: Transition2UrgentTransition() : Transition when {self.sync
 		
 		events := self.events.mapTransitionEvent();
 		
-		action := self.action.map Action2Action();
+		action := self.action.mapAction();
 		
 		urgent := true;
 }
@@ -169,7 +169,7 @@ mapping Transition :: Transition2NonUrgentTransition() : Transition when {self.s
 		
 		events := self.events.mapTransitionEvent();
 		
-		action := self.action.map Action2Action();
+		action := self.action.mapAction();
 		
 		urgent := false;
 }
