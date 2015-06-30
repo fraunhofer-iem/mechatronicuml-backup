@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="main" name="de.uni_paderborn.fujaba.muml.codegen.c.psm">
-    <property name="ECLIPSE_HOME" value="../../../../../../Applications/eclipse"/>
+    <property name="ECLIPSE_HOME" value="../../../../../opt/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
@@ -18,13 +18,9 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.5.200.v20140224-1527.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.200.v20140207-1251.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.200.v20130910-1609.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml_0.5.0.201505040120.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.common_0.5.0.201505030921.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.modelinstance_0.5.0.201505030921.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.storydriven.core_1.0.1.201505030921.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.0.1.v20150202-0947.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.4.2.v20140725-2242.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
@@ -37,10 +33,6 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.10.2.v20150123-0452.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.10.0.v20150123-0452.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.psm_1.0.0.201505030933.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.actionlanguage_0.5.0.201505040120.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.hardware_1.0.0.201505030932.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/de.uni_paderborn.fujaba.muml.swplatform_0.5.0.201505030932.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.common.ui_3.5.1.201409021433.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.compatibility_3.5.1.201409021433.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.compatibility.ui_3.5.1.201409021433.jar"/>
@@ -61,7 +53,7 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common.ui_2.9.0.v20150123-0452.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui_3.106.1.v20141002-1150.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt_3.103.2.v20150203-1313.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.103.2.v20150203-1351.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.swt.gtk.linux.x86_64_3.103.2.v20150203-1351.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.jface_3.10.2.v20141021-1035.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.commands_3.6.100.v20140528-1422.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ui.ide_3.10.2.v20141118-1227.jar"/>

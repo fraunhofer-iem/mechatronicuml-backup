@@ -7,23 +7,22 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.jgrapht.Graph;
 import org.jgrapht.GraphPath;
-import org.jgrapht.WeightedGraph;
 import org.jgrapht.alg.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.Pseudograph;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.BusConnectorInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstance;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPlatformInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.LinkInstance;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.NetworkConnectorInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
-import de.uni_paderborn.fujaba.muml.psm.codegen.*;
 
 public class Routing {
 
@@ -153,16 +152,16 @@ public class Routing {
 	}
 
 	private static Double getEdgeWeight(ConnectorInstance connector) {
-		if (connector instanceof DelegationInstance)
-			return (double) 1;
-		if (connector instanceof LinkInstance)
+		if (connector instanceof NetworkConnectorInstance) {
+			NetworkConnectorInstance networkConnector = (NetworkConnectorInstance) connector;
+			if (networkConnector.getConnectorKind() == CommunicationKind.DELEGATION) {
+				return (double) 0;
+			}
 			return (double) 1
-					+ (1 / ((LinkInstance) connector).getBandwidth().getInBpS());
-		if (connector instanceof BusConnectorInstance)
-			return (double) 1
-					+ (1 / ((BusConnectorInstance) connector)
-							.getConnectedBusInstance().get(0).getBandwidth()
-							.getInBpS());
+					+ (1 / ((NetworkConnectorInstance) connector)
+							.getBandwidth().getInBpS());
+
+		}
 		return (double) 1;
 	}
 
