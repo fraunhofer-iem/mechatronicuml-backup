@@ -1012,8 +1012,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	
 	mapping NondeterministicChoiceExpression :: Choice2Range() : RangeTypeSpecification {
 		
-		assert fatal (self.dataType.primitiveType = PrimitiveTypes::INT32);
-		
+		// assert fatal (self.dataType.primitiveType = PrimitiveTypes::INT32);
 		bounds := self.range.map Range2Bounds();
 		
 	}
