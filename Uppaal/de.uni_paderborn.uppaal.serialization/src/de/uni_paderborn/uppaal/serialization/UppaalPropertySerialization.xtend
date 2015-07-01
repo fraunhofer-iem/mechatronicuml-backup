@@ -17,7 +17,7 @@ class UppaalPropertySerialization extends UppaalSerialization {
 		«ENDFOR»'''
 	
 	def comment(String s) '''/*
- s.replace("*/","* /")»
+ «s.replace("*/","* /")»
 */'''
 	
 	def dispatch property(LeadsToProperty it) '''«expression(leftExpression)» --> «expression(rightExpression)»'''
