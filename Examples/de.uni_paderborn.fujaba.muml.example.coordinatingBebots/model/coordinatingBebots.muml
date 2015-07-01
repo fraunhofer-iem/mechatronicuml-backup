@@ -467,7 +467,7 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_bjqsAV6PEeOU6dzb6wKMjg" connectors="_bjshMF6PEeOU6dzb6wKMjg" behavior="_st7YcHYQEeOftqkRKcg6BA" name="sender" senderMessageTypes="_zGbf0LjxEeOZIIv29ABAIA" adaptationBehavior="_0RkJAHYQEeOftqkRKcg6BA" subroleBehavior="_1KNBMHYQEeOftqkRKcg6BA">
+      <roles xmi:id="_bjqsAV6PEeOU6dzb6wKMjg" connectors="_bjshMF6PEeOU6dzb6wKMjg" behavior="_st7YcHYQEeOftqkRKcg6BA" name="sender" senderMessageTypes="_zGbf0LjxEeOZIIv29ABAIA" coordinatorBehavior="_0RkJAHYQEeOftqkRKcg6BA" subroleBehavior="_1KNBMHYQEeOftqkRKcg6BA">
         <cardinality xmi:id="_bjrTEF6PEeOU6dzb6wKMjg">
           <lowerBound xmi:id="_gLL9sLrSEeSmz5E0erVbmg"/>
           <upperBound xmi:id="_gLL9sbrSEeSmz5E0erVbmg" value="2"/>
@@ -567,7 +567,7 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_mO9KAF6PEeOU6dzb6wKMjg" connectors="_mO-YI16PEeOU6dzb6wKMjg" behavior="_U9V4wGmGEeOlIqc8khLIew" name="distributor" senderMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" receiverMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" adaptationBehavior="_mYdr0GmGEeOlIqc8khLIew" subroleBehavior="_3jAgsGmQEeOlIqc8khLIew">
+      <roles xmi:id="_mO9KAF6PEeOU6dzb6wKMjg" connectors="_mO-YI16PEeOU6dzb6wKMjg" behavior="_U9V4wGmGEeOlIqc8khLIew" name="distributor" senderMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" receiverMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" coordinatorBehavior="_mYdr0GmGEeOlIqc8khLIew" subroleBehavior="_3jAgsGmQEeOlIqc8khLIew">
         <cardinality xmi:id="_mO9xEF6PEeOU6dzb6wKMjg">
           <lowerBound xmi:id="_1qUSYLrKEeSUTO04IKA8nA"/>
           <upperBound xmi:id="_1qUSYbrKEeSUTO04IKA8nA" value="8"/>
@@ -3517,7 +3517,7 @@
           <bufferSize xmi:id="_wrC2wLjWEeOo4qSfvczxjQ"/>
         </receiverMessageBuffer>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_GMZkUHnqEeOZ_7LaW_t4Xg" name="sender" behavior="_mOWroXnvEeOZ_7LaW_t4Xg" senderMessageTypes="_zGbf0LjxEeOZIIv29ABAIA" adaptationBehavior="_mOWrpXnvEeOZ_7LaW_t4Xg" subroleBehavior="_mOXSynnvEeOZ_7LaW_t4Xg" refinedRole="_bjqsAV6PEeOU6dzb6wKMjg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_GMZkUHnqEeOZ_7LaW_t4Xg" name="sender" behavior="_mOWroXnvEeOZ_7LaW_t4Xg" senderMessageTypes="_zGbf0LjxEeOZIIv29ABAIA" coordinatorBehavior="_mOWrpXnvEeOZ_7LaW_t4Xg" subroleBehavior="_mOXSynnvEeOZ_7LaW_t4Xg" refinedRole="_bjqsAV6PEeOU6dzb6wKMjg">
         <cardinality xmi:id="_mNnr0HnvEeOZ_7LaW_t4Xg">
           <lowerBound xmi:id="_ow1V8J1nEeSGUPaRXN92yA"/>
           <upperBound xmi:id="_ow1V8Z1nEeSGUPaRXN92yA" value="2"/>
@@ -3575,7 +3575,7 @@
           <upperBound xmi:id="_FZ3yMeNIEeOeEuqrct640A"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:DiscretePort" xmi:id="_9LF3sHnwEeOXC9Mz8u7bDw" name="distributor" behavior="_H-z48HnxEeOXC9Mz8u7bDw" senderMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" receiverMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" adaptationBehavior="_H-z493nxEeOXC9Mz8u7bDw" subroleBehavior="_H-z5J3nxEeOXC9Mz8u7bDw" refinedRole="_mO9KAF6PEeOU6dzb6wKMjg">
+      <ports xsi:type="component:DiscretePort" xmi:id="_9LF3sHnwEeOXC9Mz8u7bDw" name="distributor" behavior="_H-z48HnxEeOXC9Mz8u7bDw" senderMessageTypes="_VZdioLjbEeOo4qSfvczxjQ" receiverMessageTypes="_l7TgILjiEeOo4qSfvczxjQ" coordinatorBehavior="_H-z493nxEeOXC9Mz8u7bDw" subroleBehavior="_H-z5J3nxEeOXC9Mz8u7bDw" refinedRole="_mO9KAF6PEeOU6dzb6wKMjg">
         <cardinality xmi:id="_H93dwHnxEeOXC9Mz8u7bDw">
           <lowerBound xmi:id="_ASUqUJ1oEeSGUPaRXN92yA"/>
           <upperBound xmi:id="_ASUqUZ1oEeSGUPaRXN92yA" value="2"/>
