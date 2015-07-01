@@ -7,12 +7,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.ocl.examples.domain.values.Value;
 import org.eclipse.ocl.examples.xtext.console.XtextConsolePlugin;
 import org.eclipse.ocl.examples.xtext.console.xtfo.EmbeddedXtextEditor;
-import org.eclipse.ocl.examples.xtext.essentialocl.ui.model.BaseDocument;
-import org.eclipse.ocl.examples.xtext.essentialocl.utilities.EssentialOCLCSResource;
-import org.eclipse.ocl.examples.xtext.essentialocl.utilities.EssentialOCLPlugin;
+import org.eclipse.ocl.pivot.values.Value;
+import org.eclipse.ocl.xtext.base.ui.model.BaseDocument;
+import org.eclipse.ocl.xtext.essentialocl.utilities.EssentialOCLCSResource;
+import org.eclipse.ocl.xtext.essentialocl.utilities.EssentialOCLPlugin;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.FocusAdapter;
@@ -179,8 +179,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 					.getDocument();
 			editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
 				public Value exec(XtextResource resource) throws Exception {
-					editorDocument.setContext((EssentialOCLCSResource) resource,
-							contextClassifier, null);
+					editorDocument.setContext(contextClassifier, null);
 					return null;
 				}
 			});
