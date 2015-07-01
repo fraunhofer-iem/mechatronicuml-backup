@@ -2,98 +2,98 @@ runningExample {
 	
 		include 'platform:/plugin/de.uni_paderborn.fujaba.muml.allocation.language.xtext/operations/OCLContext.ocl'
 		
-		constraint differentLocation OvertakerDistributeCommAndDrv {
+		constraint separateLocation OvertakerDistributeCommAndDrv {
 			descriptors (first, second);
 			ocl self.allocateToDifferentECUs('overtakerCommunicator', 'overtakerDriver');
 		}
-		constraint differentLocation OvertakeeDistributeCommAndDrv {
+		constraint separateLocation OvertakeeDistributeCommAndDrv {
 		descriptors (first, second);
 		ocl self.allocateToDifferentECUs('overtakeeCommunicator', 'overtakeeDriver');
 		}
-		constraint differentLocation ApproacherDistributeCommAndDrv {
+		constraint separateLocation ApproacherDistributeCommAndDrv {
 		descriptors (first, second);
 		ocl self.allocateToDifferentECUs('approacherCommunicator', 'approacherDriver');
 		}
 		
-	constraint requiredHardwareResourceInstance OvertakerMotorLSensor {
+	constraint requiredLocation OvertakerMotorLSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakerMotorL', 'overtakerMotor');
 	}
-	constraint requiredHardwareResourceInstance OvertakeeMotorLSensor {
+	constraint requiredLocation OvertakeeMotorLSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakeeMotorL', 'overtakeeMotor');
 	}
-	constraint requiredHardwareResourceInstance ApproacherMotorLSensor {
+	constraint requiredLocation ApproacherMotorLSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('approacherMotorL', 'approacherMotor');
 	}
-	constraint requiredHardwareResourceInstance OvertakerMotorRSensor {
+	constraint requiredLocation OvertakerMotorRSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakerMotorR', 'overtakerMotor');
 	}
-	constraint requiredHardwareResourceInstance OvertakeeMotorRSensor {
+	constraint requiredLocation OvertakeeMotorRSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakeeMotorR', 'overtakeeMotor');
 	}
-	constraint requiredHardwareResourceInstance ApproacherMotorRSensor {
+	constraint requiredLocation ApproacherMotorRSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('approacherMotorR', 'approacherMotor');
 	}
 		
-	constraint requiredHardwareResourceInstance OvertakerLineSensor {
+	constraint requiredLocation OvertakerLineSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakerLine', 'overtakerLine');
 	}
-	constraint requiredHardwareResourceInstance OvertakeeLineSensor {
+	constraint requiredLocation OvertakeeLineSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakeeLine', 'overtakeeLine');
 	}
-	constraint requiredHardwareResourceInstance ApproacherLineSensor {
+	constraint requiredLocation ApproacherLineSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('approacherLine', 'approacherLine');
 	}
 		
-	constraint requiredHardwareResourceInstance OvertakerDistanceSensor {
+	constraint requiredLocation OvertakerDistanceSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakerDistance', 'overtakerDistance');
 	}
-	constraint requiredHardwareResourceInstance OvertakeeDistanceSensor {
+	constraint requiredLocation OvertakeeDistanceSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakeeDistance', 'overtakeeDistance');
 	}
-	constraint requiredHardwareResourceInstance ApproacherDistanceSensor {
+	constraint requiredLocation ApproacherDistanceSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('approacherDistance', 'approacherDistance');
 	}
 	
-	constraint requiredHardwareResourceInstance OvertakerColorSensor {
+	constraint requiredLocation OvertakerColorSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakerColor', 'overtakerColor');
 	}
-	constraint requiredHardwareResourceInstance OvertakeeColorSensor {
+	constraint requiredLocation OvertakeeColorSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('overtakeeColor', 'overtakeeColor');
 	}
-	constraint requiredHardwareResourceInstance ApproacherColorSensor {
+	constraint requiredLocation ApproacherColorSensor {
 		descriptors (first, second);
 		ocl self.allocateToECU('approacherColor', 'approacherColor');
 	}
 		
 		
-	constraint requiredHardwareResourceInstance OvertakerComponentsToOvertakerPlatform {
+	constraint requiredLocation OvertakerComponentsToOvertakerPlatform {
 		descriptors (first, second);
 		ocl self.allocateEmbeddedToPlatformInstance('overtaker', 'Overtaker');
 	}
-	constraint requiredHardwareResourceInstance OvertakeeComponentsToOvertakeePlatform {
+	constraint requiredLocation OvertakeeComponentsToOvertakeePlatform {
 		descriptors (first, second);
 		ocl self.allocateEmbeddedToPlatformInstance('overtakee', 'Overtakee');
 	}
-	constraint requiredHardwareResourceInstance ApproacherComponentsToOvertakeePlatform {
+	constraint requiredLocation ApproacherComponentsToOvertakeePlatform {
 		descriptors (first, second);
 		ocl self.allocateEmbeddedToPlatformInstance('approacher', 'Approacher');
 	}
 	
-	constraint requiredHardwareResourceInstance SectionToServerInstance {
+	constraint requiredLocation SectionToServerInstance {
         descriptors (first, second);
         ocl self.allocateEmbeddedToPlatformInstance('section', 'SectionControlInstance');
 }
