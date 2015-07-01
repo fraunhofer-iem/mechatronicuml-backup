@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.connector.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class ConnectorEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorEndpointInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ConnectorEndpointInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,24 +23,20 @@ public abstract class ConnectorEndpointInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -51,25 +47,21 @@ public abstract class ConnectorEndpointInstanceEditor
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -113,7 +105,8 @@ public abstract class ConnectorEndpointInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}

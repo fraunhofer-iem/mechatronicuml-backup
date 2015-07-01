@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
 
 /**
@@ -11,8 +12,7 @@ public abstract class AbstractCoordinationSpecificationEditor
 	 * @generated
 	 */
 	public AbstractCoordinationSpecificationEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -23,55 +23,41 @@ public abstract class AbstractCoordinationSpecificationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorVerificationConstraintRepositories_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(
-					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorVerificationConstraintRepositories_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorAdaptedFromPattern_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -100,7 +86,8 @@ public abstract class AbstractCoordinationSpecificationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -128,7 +115,8 @@ public abstract class AbstractCoordinationSpecificationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
+			editor.setTooltipMessage(
+					"The referenced repository that contains verifiable constraints for this element.");
 
 			this.editorVerificationConstraintRepositories_GeneralTab = editor;
 		}

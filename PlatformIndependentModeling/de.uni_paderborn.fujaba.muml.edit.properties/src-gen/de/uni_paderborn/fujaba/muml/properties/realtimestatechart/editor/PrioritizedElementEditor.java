@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class PrioritizedElementEditor
 	/**
 	 * @generated
 	 */
-	public PrioritizedElementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public PrioritizedElementEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}

@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
  * @generated
  */
-public class MessageEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class MessageEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public MessageEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public MessageEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,16 +21,14 @@ public class MessageEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorInstanceOf_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorParameterBinding_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -41,19 +37,17 @@ public class MessageEditor
 
 			addPropertyEditor(createEditorInstanceOf_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorParameterBinding_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -82,7 +76,8 @@ public class MessageEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The collection of parameter bindings for this message. All parameters of the message type must be bound exactly once.");
+			editor.setTooltipMessage(
+					"The collection of parameter bindings for this message. All parameters of the message type must be bound exactly once.");
 
 			this.editorParameterBinding_GeneralTab = editor;
 		}
@@ -110,31 +105,23 @@ public class MessageEditor
 	 * @generated
 	 */
 	public MessageEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getMessage());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getMessage());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new MessageEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

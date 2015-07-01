@@ -21,12 +21,12 @@ import org.storydriven.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getIncomingTransitions <em>Incoming Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices <em>All Super Vertices</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getVertex()
  * @model abstract="true"

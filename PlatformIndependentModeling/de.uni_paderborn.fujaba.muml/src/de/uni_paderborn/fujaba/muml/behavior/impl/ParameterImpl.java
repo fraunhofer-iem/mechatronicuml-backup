@@ -21,10 +21,10 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.ParameterImpl#getComment <em>Comment</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

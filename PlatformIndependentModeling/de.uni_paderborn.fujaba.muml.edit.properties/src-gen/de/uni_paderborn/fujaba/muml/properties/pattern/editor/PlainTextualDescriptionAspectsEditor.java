@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.pattern.editor;
 
 /**
@@ -10,8 +11,7 @@ public class PlainTextualDescriptionAspectsEditor
 	/**
 	 * @generated
 	 */
-	public PlainTextualDescriptionAspectsEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public PlainTextualDescriptionAspectsEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -37,16 +37,13 @@ public class PlainTextualDescriptionAspectsEditor
 
 			addPropertyEditor(createEditorExamples_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorConsequences_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorConsequences_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCombineability_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCombineability_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariants_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorAlternatives_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorAlternatives_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -66,16 +63,13 @@ public class PlainTextualDescriptionAspectsEditor
 
 			addPropertyEditor(createEditorExamples_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorConsequences_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorConsequences_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCombineability_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCombineability_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariants_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorAlternatives_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorAlternatives_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -258,36 +252,25 @@ public class PlainTextualDescriptionAspectsEditor
 	 * @generated
 	 */
 	public PlainTextualDescriptionAspectsEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-						.getPlainTextualDescriptionAspects());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getPlainTextualDescriptionAspects());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new PlainTextualDescriptionAspectsEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
@@ -10,8 +11,7 @@ public class SynchronizationChannelEditor
 	/**
 	 * @generated
 	 */
-	public SynchronizationChannelEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public SynchronizationChannelEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,21 +23,17 @@ public class SynchronizationChannelEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorState_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorSelectorType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSelectorType_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -47,21 +43,17 @@ public class SynchronizationChannelEditor
 
 			addPropertyEditor(createEditorState_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorSelectorType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSelectorType_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -90,7 +82,8 @@ public class SynchronizationChannelEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel.");
+			editor.setTooltipMessage(
+					"A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel.");
 
 			this.editorSelectorType_GeneralTab = editor;
 		}
@@ -105,7 +98,8 @@ public class SynchronizationChannelEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -160,10 +154,7 @@ public class SynchronizationChannelEditor
 	 * @generated
 	 */
 	public SynchronizationChannelEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronizationChannel());
 	}
@@ -171,22 +162,17 @@ public class SynchronizationChannelEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new SynchronizationChannelEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
 	}

@@ -27,13 +27,13 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole <em>Refined Role</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance()
  * @model abstract="true"

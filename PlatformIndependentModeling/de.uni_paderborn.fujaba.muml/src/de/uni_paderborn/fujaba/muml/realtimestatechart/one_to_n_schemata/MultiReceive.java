@@ -26,10 +26,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.MultiReceive#getFailureAction <em>Failure Action</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getMultiReceive()
  * @model

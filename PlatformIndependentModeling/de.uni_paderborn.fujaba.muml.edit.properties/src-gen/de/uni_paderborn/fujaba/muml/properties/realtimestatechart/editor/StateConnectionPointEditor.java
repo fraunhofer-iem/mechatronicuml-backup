@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class StateConnectionPointEditor
 	/**
 	 * @generated
 	 */
-	public StateConnectionPointEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public StateConnectionPointEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,22 +23,17 @@ public abstract class StateConnectionPointEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorOutgoingTransitions_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOutgoingTransitions_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorIncomingTransitions_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIncomingTransitions_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorState_GeneralTab_Editor(), false);
 
@@ -48,26 +43,21 @@ public abstract class StateConnectionPointEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorOutgoingTransitions_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorOutgoingTransitions_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorIncomingTransitions_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorIncomingTransitions_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorState_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -126,7 +116,8 @@ public abstract class StateConnectionPointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}

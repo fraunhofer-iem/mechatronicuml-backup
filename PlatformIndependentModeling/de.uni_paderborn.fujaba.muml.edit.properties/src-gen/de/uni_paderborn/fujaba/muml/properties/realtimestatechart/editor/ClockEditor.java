@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
  * @generated
  */
-public class ClockEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ClockEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ClockEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ClockEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +21,7 @@ public class ClockEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
@@ -42,8 +39,7 @@ public class ClockEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -57,7 +53,8 @@ public class ClockEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The realtime statechart this clock belongs to.\n\\todoib{Should be 1..1, but GMF needs 0..1 here!}\n\\todosd{is this info necessary?}");
+			editor.setTooltipMessage(
+					"The realtime statechart this clock belongs to.\n\\todoib{Should be 1..1, but GMF needs 0..1 here!}\n\\todosd{is this info necessary?}");
 
 			this.editorStatechart_GeneralTab = editor;
 		}
@@ -112,31 +109,23 @@ public class ClockEditor
 	 * @generated
 	 */
 	public ClockEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getClock());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getClock());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ClockEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

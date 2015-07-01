@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.pattern.editor;
 
 /**
  * @generated
  */
-public class LegalConfigurationEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class LegalConfigurationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public LegalConfigurationEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public LegalConfigurationEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,22 +21,17 @@ public class LegalConfigurationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationPattern_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinationPattern_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParameterBindings_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParameterBindings_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -46,24 +39,19 @@ public class LegalConfigurationEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationPattern_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinationPattern_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParameterBindings_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorParameterBindings_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -77,7 +65,8 @@ public class LegalConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The reverse reference to coordination pattern is required because it is easier for developing the dialogs and wizards. However, deriving it by finding out the parent is also a valid solution.");
+			editor.setTooltipMessage(
+					"The reverse reference to coordination pattern is required because it is easier for developing the dialogs and wizards. However, deriving it by finding out the parent is also a valid solution.");
 
 			this.editorCoordinationPattern_GeneralTab = editor;
 		}
@@ -107,7 +96,8 @@ public class LegalConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -162,33 +152,24 @@ public class LegalConfigurationEditor
 	 * @generated
 	 */
 	public LegalConfigurationEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE
-						.getLegalConfiguration());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.pattern.PatternPackage.eINSTANCE.getLegalConfiguration());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new LegalConfigurationEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
 	}

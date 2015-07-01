@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Behavior#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Behavior#getOperations <em>Operations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Behavior#getVariables <em>Variables</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getBehavior()
  * @model abstract="true"

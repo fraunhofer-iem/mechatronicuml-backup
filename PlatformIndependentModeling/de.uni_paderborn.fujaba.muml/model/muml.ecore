@@ -2346,7 +2346,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="ReceivingInteractionEndpointRequiresMessageBuffer" value="-- Receiver message types need receiver message buffer&#xD;&#xA;self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
         <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
-        <details key="SetEitherSubRoleAndCoordinatorBehaviorOrNone" value="-- Set either the subroleBehavior and the coordinatorBehavior or none of them!&#xD;&#xA;(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"/>
+        <details key="SetEitherSubRoleAndCoordinatorBehaviorOrNone" value="-- Set either the subroleBehavior and the coordinatorBehavior or none of them!&#xD;&#xA;(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes" upperBound="-1"
           eType="#//msgtype/MessageType">

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.connector.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
-	public DiscreteInteractionEndpointEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public DiscreteInteractionEndpointEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -25,43 +25,33 @@ public abstract class DiscreteInteractionEndpointEditor
 
 			addPropertyEditor(createEditorBehavior_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorConnectors_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorSubroleBehavior_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubroleBehavior_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorSenderMessageTypes_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorReceiverMessageTypes_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorReceiverMessageBuffer_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorReceiverMessageBuffer_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinatorBehavior_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinatorBehavior_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -73,43 +63,33 @@ public abstract class DiscreteInteractionEndpointEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorSubroleBehavior_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubroleBehavior_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorSenderMessageTypes_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorReceiverMessageTypes_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorReceiverMessageBuffer_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorReceiverMessageBuffer_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinatorBehavior_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinatorBehavior_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -123,7 +103,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The sender message interface defines which messages this discrete port specification sends.");
+			editor.setTooltipMessage(
+					"The sender message interface defines which messages this discrete port specification sends.");
 
 			this.editorSenderMessageTypes_GeneralTab = editor;
 		}
@@ -138,7 +119,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The receiver message interface defines which messages this discrete port specification receives.");
+			editor.setTooltipMessage(
+					"The receiver message interface defines which messages this discrete port specification receives.");
 
 			this.editorReceiverMessageTypes_GeneralTab = editor;
 		}
@@ -153,7 +135,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The cardinality of a port specifies how many instances of a port are allowed to exist at runtime.");
+			editor.setTooltipMessage(
+					"The cardinality of a port specifies how many instances of a port are allowed to exist at runtime.");
 
 			this.editorCardinality_GeneralTab = editor;
 		}
@@ -168,7 +151,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
+			editor.setTooltipMessage(
+					"A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
 
 			this.editorReceiverMessageBuffer_GeneralTab = editor;
 		}
@@ -183,7 +167,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the subrole behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
+			editor.setTooltipMessage(
+					"If this port is a multi-port, this reference points to the real-time statechart that\ncontains the subrole behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
 
 			this.editorSubroleBehavior_GeneralTab = editor;
 		}
@@ -198,7 +183,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
+			editor.setTooltipMessage(
+					"If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
 
 			this.editorCoordinatorBehavior_GeneralTab = editor;
 		}
@@ -243,7 +229,8 @@ public abstract class DiscreteInteractionEndpointEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}

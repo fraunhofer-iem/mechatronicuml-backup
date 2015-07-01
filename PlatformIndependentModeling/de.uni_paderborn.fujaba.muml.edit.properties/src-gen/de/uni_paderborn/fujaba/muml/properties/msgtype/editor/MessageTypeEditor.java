@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.msgtype.editor;
 
 /**
  * @generated
  */
-public class MessageTypeEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class MessageTypeEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public MessageTypeEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public MessageTypeEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,24 +21,20 @@ public class MessageTypeEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorRepository_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorParameters_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -51,25 +45,21 @@ public class MessageTypeEditor
 
 			addPropertyEditor(createEditorRepository_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorParameters_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -83,7 +73,8 @@ public class MessageTypeEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.");
+			editor.setTooltipMessage(
+					"This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.");
 
 			this.editorParameters_GeneralTab = editor;
 		}
@@ -98,7 +89,8 @@ public class MessageTypeEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes.");
+			editor.setTooltipMessage(
+					"The message type repository that contains this message type. The lower bound is set to 0, but it has to be 1. This is due to the containment reference MessageBuffer.gmfMessageTypes.");
 
 			this.editorRepository_GeneralTab = editor;
 		}
@@ -113,7 +105,8 @@ public class MessageTypeEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -168,33 +161,24 @@ public class MessageTypeEditor
 	 * @generated
 	 */
 	public MessageTypeEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
-						.getMessageType());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE.getMessageType());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new MessageTypeEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
 	}

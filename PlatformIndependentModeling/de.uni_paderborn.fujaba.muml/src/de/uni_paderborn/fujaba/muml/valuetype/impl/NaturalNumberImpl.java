@@ -27,11 +27,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.impl.NaturalNumberImpl#getValue <em>Value</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.impl.NaturalNumberImpl#isInfinity <em>Infinity</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -30,11 +30,11 @@ import org.storydriven.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration#getParameterBindings <em>Parameter Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.LegalConfiguration#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getLegalConfiguration()
  * @model

@@ -19,12 +19,12 @@ import org.storydriven.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion()
  * @model

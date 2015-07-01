@@ -19,11 +19,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.types.ArrayDataType#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.types.ArrayDataType#getCardinality <em>Cardinality</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getArrayDataType()
  * @model

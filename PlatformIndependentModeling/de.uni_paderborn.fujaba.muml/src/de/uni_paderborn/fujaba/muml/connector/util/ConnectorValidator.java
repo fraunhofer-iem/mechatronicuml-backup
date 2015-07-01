@@ -251,7 +251,7 @@ public class ConnectorValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DISCRETE_INTERACTION_ENDPOINT__SET_EITHER_SUB_ROLE_AND_COORDINATOR_BEHAVIOR_OR_NONE__EEXPRESSION = "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n" +
-		"(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())";
+		"(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())";
 
 	/**
 	 * Validates the SetEitherSubRoleAndCoordinatorBehaviorOrNone constraint of '<em>Discrete Interaction Endpoint</em>'.

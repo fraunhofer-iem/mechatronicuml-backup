@@ -15,8 +15,6 @@ import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Continuous Port</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

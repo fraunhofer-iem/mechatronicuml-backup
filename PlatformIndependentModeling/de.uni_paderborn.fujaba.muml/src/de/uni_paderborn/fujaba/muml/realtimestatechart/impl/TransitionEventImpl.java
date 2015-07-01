@@ -15,8 +15,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Transition Event</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

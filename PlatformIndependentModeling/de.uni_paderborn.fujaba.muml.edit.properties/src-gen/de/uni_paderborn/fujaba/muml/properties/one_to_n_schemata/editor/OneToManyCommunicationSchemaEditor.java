@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class OneToManyCommunicationSchemaEditor
 	/**
 	 * @generated
 	 */
-	public OneToManyCommunicationSchemaEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public OneToManyCommunicationSchemaEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -66,7 +66,8 @@ public abstract class OneToManyCommunicationSchemaEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The action a subrole performs when sending or receiving a message with communication schema.");
+			editor.setTooltipMessage(
+					"The action a subrole performs when sending or receiving a message with communication schema.");
 
 			this.editorAction_GeneralTab = editor;
 		}

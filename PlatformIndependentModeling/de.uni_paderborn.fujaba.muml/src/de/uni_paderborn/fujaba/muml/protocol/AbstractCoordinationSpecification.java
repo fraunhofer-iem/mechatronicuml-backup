@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoleConnector <em>Role Connector</em>}</li>
@@ -29,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getAdaptedFromPattern <em>Adapted From Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification()
  * @model abstract="true"

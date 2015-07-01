@@ -19,11 +19,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#getValue <em>Value</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#isInfinity <em>Infinity</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getNaturalNumber()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValueGreaterOrEqualZero'"

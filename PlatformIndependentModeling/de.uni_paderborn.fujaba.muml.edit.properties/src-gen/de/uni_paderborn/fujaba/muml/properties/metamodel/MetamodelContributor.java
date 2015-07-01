@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,44 +17,33 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
+		factories.add(new de.uni_paderborn.fujaba.muml.pattern.provider.PatternItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.provider.One_to_n_schemataItemProviderAdapterFactory());
 
 	}
 

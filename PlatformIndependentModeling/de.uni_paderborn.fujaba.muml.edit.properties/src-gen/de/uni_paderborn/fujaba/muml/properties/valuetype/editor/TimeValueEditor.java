@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.valuetype.editor;
 
 /**
  * @generated
  */
-public class TimeValueEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class TimeValueEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public TimeValueEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public TimeValueEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +21,7 @@ public class TimeValueEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
 
@@ -42,8 +39,7 @@ public class TimeValueEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -57,7 +53,8 @@ public class TimeValueEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The value concerning time must be an expression. Defining the value is mandatory.");
+			editor.setTooltipMessage(
+					"The value concerning time must be an expression. Defining the value is mandatory.");
 
 			this.editorValue_GeneralTab = editor;
 		}
@@ -100,31 +97,23 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	public TimeValueEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getTimeValue());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getTimeValue());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new TimeValueEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

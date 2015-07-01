@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
 /**
  * @generated
  */
-public class ParameterBindingEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ParameterBindingEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ParameterBindingEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ParameterBindingEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +21,7 @@ public class ParameterBindingEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorParameter_GeneralTab_Editor(), false);
 
@@ -42,8 +39,7 @@ public class ParameterBindingEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -72,7 +68,8 @@ public class ParameterBindingEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The mandatory value which is associated with the parameter. The value is defined by an expression.");
+			editor.setTooltipMessage(
+					"The mandatory value which is associated with the parameter. The value is defined by an expression.");
 
 			this.editorValue_GeneralTab = editor;
 		}
@@ -100,31 +97,23 @@ public class ParameterBindingEditor
 	 * @generated
 	 */
 	public ParameterBindingEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getParameterBinding());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getParameterBinding());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ParameterBindingEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.extensions"})
 					.contains(tab);
 		}
 	}

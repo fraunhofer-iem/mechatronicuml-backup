@@ -818,7 +818,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   new String[] {
 			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
-			 "SetEitherSubRoleAndCoordinatorBehaviorOrNone", "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"
+			 "SetEitherSubRoleAndCoordinatorBehaviorOrNone", "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"
 		   });	
 		addAnnotation
 		  (getDiscreteInteractionEndpoint_Multi(), 

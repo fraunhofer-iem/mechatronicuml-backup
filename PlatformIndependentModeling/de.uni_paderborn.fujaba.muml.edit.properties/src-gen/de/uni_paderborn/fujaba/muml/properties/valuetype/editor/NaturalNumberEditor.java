@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.valuetype.editor;
 
 /**
  * @generated
  */
-public class NaturalNumberEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class NaturalNumberEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public NaturalNumberEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public NaturalNumberEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -25,12 +23,10 @@ public class NaturalNumberEditor
 
 			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorInfinity_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -39,12 +35,10 @@ public class NaturalNumberEditor
 
 			addPropertyEditor(createEditorValue_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorInfinity_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
@@ -93,31 +87,23 @@ public class NaturalNumberEditor
 	 * @generated
 	 */
 	public NaturalNumberEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getNaturalNumber());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE.getNaturalNumber());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new NaturalNumberEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

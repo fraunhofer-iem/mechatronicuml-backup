@@ -22,12 +22,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint#getBound <em>Bound</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint#getClock <em>Clock</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint#getOperator <em>Operator</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getClockConstraint()
  * @model

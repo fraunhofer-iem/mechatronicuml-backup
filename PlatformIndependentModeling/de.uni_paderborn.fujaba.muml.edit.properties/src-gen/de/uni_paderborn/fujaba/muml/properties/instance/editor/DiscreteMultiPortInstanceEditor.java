@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.instance.editor;
 
 /**
@@ -10,8 +11,7 @@ public class DiscreteMultiPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	public DiscreteMultiPortInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public DiscreteMultiPortInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,19 +23,15 @@ public class DiscreteMultiPortInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
@@ -43,46 +39,35 @@ public class DiscreteMultiPortInstanceEditor
 
 			addPropertyEditor(createEditorLast_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSubInteractionEndpointInstances_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorSubInteractionEndpointInstances_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorComponentInstance_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorComponentInstance_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
@@ -92,8 +77,7 @@ public class DiscreteMultiPortInstanceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
@@ -101,61 +85,47 @@ public class DiscreteMultiPortInstanceEditor
 
 			addPropertyEditor(createEditorLast_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorSubInteractionEndpointInstances_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorSubInteractionEndpointInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorComponentInstance_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorComponentInstance_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorInstances_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorConnectorInstances_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorType_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -169,7 +139,8 @@ public class DiscreteMultiPortInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are\nrepresented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding \nDiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality.");
+			editor.setTooltipMessage(
+					"These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are\nrepresented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding \nDiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality.");
 
 			this.editorSubInteractionEndpointInstances_GeneralTab = editor;
 		}
@@ -184,7 +155,8 @@ public class DiscreteMultiPortInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Refers to the first single instance of the corresponding multi discrete interaction endpoint.");
+			editor.setTooltipMessage(
+					"Refers to the first single instance of the corresponding multi discrete interaction endpoint.");
 
 			this.editorFirst_GeneralTab = editor;
 		}
@@ -199,7 +171,8 @@ public class DiscreteMultiPortInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Refers to the last single instance of the corresponding multi discrete interaction endpoint.");
+			editor.setTooltipMessage(
+					"Refers to the last single instance of the corresponding multi discrete interaction endpoint.");
 
 			this.editorLast_GeneralTab = editor;
 		}
@@ -244,7 +217,8 @@ public class DiscreteMultiPortInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -314,35 +288,26 @@ public class DiscreteMultiPortInstanceEditor
 	 * @generated
 	 */
 	public DiscreteMultiPortInstanceEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getDiscreteMultiPortInstance());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE.getDiscreteMultiPortInstance());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new DiscreteMultiPortInstanceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general", "property.tab.documentation",
+							"property.tab.extensions", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
 /**
  * @generated
  */
-public class VariableEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class VariableEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public VariableEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public VariableEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,28 +21,22 @@ public class VariableEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorInitializeExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorInitializeExpression_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorConstant_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -55,29 +47,23 @@ public class VariableEditor
 
 			addPropertyEditor(createEditorDataType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorInitializeExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorInitializeExpression_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorConstant_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -91,7 +77,8 @@ public class VariableEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A variable may have a value when it is initialized. The value is defined by an expression.");
+			editor.setTooltipMessage(
+					"A variable may have a value when it is initialized. The value is defined by an expression.");
 
 			this.editorInitializeExpression_GeneralTab = editor;
 		}
@@ -121,7 +108,8 @@ public class VariableEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -191,34 +179,25 @@ public class VariableEditor
 	 * @generated
 	 */
 	public VariableEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getVariable());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE.getVariable());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new VariableEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.documentation",
+							"property.tab.extensions", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

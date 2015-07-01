@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.component.editor;
 
 /**
  * @generated
  */
-public class ComponentPartEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ComponentPartEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ComponentPartEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ComponentPartEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,36 +21,27 @@ public class ComponentPartEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorComponentType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComponentType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentComponent_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentComponent_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -62,36 +51,27 @@ public class ComponentPartEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorComponentType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComponentType_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentComponent_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentComponent_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -135,7 +115,8 @@ public class ComponentPartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime.");
+			editor.setTooltipMessage(
+					"The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime.");
 
 			this.editorCardinality_GeneralTab = editor;
 		}
@@ -150,7 +131,8 @@ public class ComponentPartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -205,33 +187,24 @@ public class ComponentPartEditor
 	 * @generated
 	 */
 	public ComponentPartEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponentPart());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE.getComponentPart());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ComponentPartEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general",
+							"property.tab.documentation", "property.tab.extensions", "property.tab.general"})
 					.contains(tab);
 		}
 	}

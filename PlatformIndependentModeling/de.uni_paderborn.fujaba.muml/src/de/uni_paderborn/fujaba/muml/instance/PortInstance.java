@@ -23,13 +23,13 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart <em>Port Part</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance()
  * @model abstract="true"

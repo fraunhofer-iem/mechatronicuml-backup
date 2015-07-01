@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class BehavioralElementEditor
 	/**
 	 * @generated
 	 */
-	public BehavioralElementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public BehavioralElementEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}

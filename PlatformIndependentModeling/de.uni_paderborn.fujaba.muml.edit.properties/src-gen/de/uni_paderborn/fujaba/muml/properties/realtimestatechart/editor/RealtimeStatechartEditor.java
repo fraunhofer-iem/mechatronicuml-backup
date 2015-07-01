@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
  * @generated
  */
-public class RealtimeStatechartEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class RealtimeStatechartEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public RealtimeStatechartEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public RealtimeStatechartEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,65 +21,48 @@ public class RealtimeStatechartEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorBehavioralElement_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBehavioralElement_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorOperations_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorVariables_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentRegion_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentRegion_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorTransitions_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorStates_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorClocks_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorUsedOperationRepositories_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorUsedOperationRepositories_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSubRoleSpecificVariables_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubRoleSpecificVariables_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSubRoleSpecificClocks_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubRoleSpecificClocks_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSubRoleSpecificOperations_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubRoleSpecificOperations_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(
-					createEditorBehavioralElement_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorBehavioralElement_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorOperations_GeneralTab_Editor(), false);
 
@@ -89,53 +70,38 @@ public class RealtimeStatechartEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorParentRegion_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentRegion_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorTransitions_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorStates_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorClocks_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorUsedOperationRepositories_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorUsedOperationRepositories_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSubRoleSpecificVariables_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubRoleSpecificVariables_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSubRoleSpecificClocks_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubRoleSpecificClocks_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSubRoleSpecificOperations_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSubRoleSpecificOperations_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -149,7 +115,8 @@ public class RealtimeStatechartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("If the real-time statechart is embedded into a region of a composite state,\nthan this reference returns the region of this state. If the real-time statechart\nis not embedded, this reference will be undefined.");
+			editor.setTooltipMessage(
+					"If the real-time statechart is embedded into a region of a composite state,\nthan this reference returns the region of this state. If the real-time statechart\nis not embedded, this reference will be undefined.");
 
 			this.editorParentRegion_GeneralTab = editor;
 		}
@@ -209,7 +176,8 @@ public class RealtimeStatechartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked.");
+			editor.setTooltipMessage(
+					"A Real-time Statechart may use an arbitrary number of OperationRepositories. Then, the Real-Time Statechart may access all of the operations that are contained in the OperationRepository, i.e., it may invoke them whereever an Operation may be invoked.");
 
 			this.editorUsedOperationRepositories_GeneralTab = editor;
 		}
@@ -263,7 +231,8 @@ public class RealtimeStatechartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -306,7 +275,8 @@ public class RealtimeStatechartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A behavior may define a set of operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the variables of\nthe behavior specification. The operations are contained in the behavior.");
+			editor.setTooltipMessage(
+					"A behavior may define a set of operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the variables of\nthe behavior specification. The operations are contained in the behavior.");
 
 			this.editorOperations_GeneralTab = editor;
 		}
@@ -321,7 +291,8 @@ public class RealtimeStatechartEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
+			editor.setTooltipMessage(
+					"A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
 
 			this.editorVariables_GeneralTab = editor;
 		}
@@ -363,10 +334,7 @@ public class RealtimeStatechartEditor
 	 * @generated
 	 */
 	public RealtimeStatechartEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart());
 	}
@@ -374,27 +342,19 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new RealtimeStatechartEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.documentation",
+					"property.tab.extensions", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general"}).contains(tab);
 		}
 	}
 

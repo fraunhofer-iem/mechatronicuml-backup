@@ -29,11 +29,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl#getValue <em>Value</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl#getUnit <em>Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

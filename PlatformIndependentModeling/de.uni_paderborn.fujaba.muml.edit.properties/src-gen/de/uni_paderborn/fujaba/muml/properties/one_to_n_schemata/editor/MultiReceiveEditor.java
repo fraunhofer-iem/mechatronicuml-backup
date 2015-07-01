@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 
 /**
  * @generated
  */
-public class MultiReceiveEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class MultiReceiveEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public MultiReceiveEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public MultiReceiveEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -27,8 +25,7 @@ public class MultiReceiveEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorFailureAction_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorFailureAction_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -38,8 +35,7 @@ public class MultiReceiveEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorFailureAction_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorFailureAction_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -85,7 +81,8 @@ public class MultiReceiveEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The action a subrole performs when sending or receiving a message with communication schema.");
+			editor.setTooltipMessage(
+					"The action a subrole performs when sending or receiving a message with communication schema.");
 
 			this.editorAction_GeneralTab = editor;
 		}
@@ -100,10 +97,7 @@ public class MultiReceiveEditor
 	 * @generated
 	 */
 	public MultiReceiveEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 						.getMultiReceive());
 	}
@@ -111,21 +105,16 @@ public class MultiReceiveEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new MultiReceiveEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

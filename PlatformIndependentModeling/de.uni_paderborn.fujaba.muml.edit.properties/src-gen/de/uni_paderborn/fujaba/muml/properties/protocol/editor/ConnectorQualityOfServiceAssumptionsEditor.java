@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
 
 /**
@@ -11,8 +12,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 * @generated
 	 */
 	public ConnectorQualityOfServiceAssumptionsEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -23,65 +23,51 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorMessageLossPossible_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Message Delay",
-					"Message Delay", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Delay", "Message Delay",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
 					createEditorMinMessageDelay_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
 					createEditorMaxMessageDelay_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorMessageLossPossible_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Message Delay",
-					"Message Delay", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Message Delay", "Message Delay",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
 					createEditorMinMessageDelay_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Message Delay",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Message Delay",
 					createEditorMaxMessageDelay_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -95,7 +81,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The minimal time a message needs from the sender to the receiver using this connector.");
+			editor.setTooltipMessage(
+					"The minimal time a message needs from the sender to the receiver using this connector.");
 
 			this.editorMinMessageDelay_GeneralTab = editor;
 		}
@@ -110,7 +97,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The maximal time a message needs from the sender to the receiver using this connector.");
+			editor.setTooltipMessage(
+					"The maximal time a message needs from the sender to the receiver using this connector.");
 
 			this.editorMaxMessageDelay_GeneralTab = editor;
 		}
@@ -125,7 +113,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Defines if messages that are send using this connector may be lost during transport.");
+			editor.setTooltipMessage(
+					"Defines if messages that are send using this connector may be lost during transport.");
 
 			this.editorMessageLossPossible_GeneralTab = editor;
 		}
@@ -140,7 +129,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -168,10 +158,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 * @generated
 	 */
 	public ConnectorQualityOfServiceAssumptionsEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions());
 	}
@@ -179,22 +166,18 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ConnectorQualityOfServiceAssumptionsEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.documentation", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.constraint;
 
 public class CreationConstraintContributor

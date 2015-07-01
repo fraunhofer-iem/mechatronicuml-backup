@@ -19,10 +19,10 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortConnector#getParentComponent <em>Parent Component</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortConnector()
  * @model abstract="true"

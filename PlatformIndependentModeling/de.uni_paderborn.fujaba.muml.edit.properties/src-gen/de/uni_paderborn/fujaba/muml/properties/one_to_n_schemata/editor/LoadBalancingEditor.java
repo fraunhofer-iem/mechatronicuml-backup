@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 
 /**
  * @generated
  */
-public class LoadBalancingEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class LoadBalancingEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public LoadBalancingEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public LoadBalancingEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -27,11 +25,9 @@ public class LoadBalancingEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -41,11 +37,9 @@ public class LoadBalancingEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorResponseMessage_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMaxWorkingTime_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -63,7 +57,8 @@ public class LoadBalancingEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The response message must be a trigger message. By receiving the message, a subrole is allowed to assign a new task to the corresponding coordination partner.");
+			editor.setTooltipMessage(
+					"The response message must be a trigger message. By receiving the message, a subrole is allowed to assign a new task to the corresponding coordination partner.");
 
 			this.editorResponseMessage_GeneralTab = editor;
 		}
@@ -78,7 +73,8 @@ public class LoadBalancingEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task.");
+			editor.setTooltipMessage(
+					"After the time period the wcet defines, a coordination partner that got a task assigned is ready to accept a new task.");
 
 			this.editorMaxWorkingTime_GeneralTab = editor;
 		}
@@ -108,7 +104,8 @@ public class LoadBalancingEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The action a subrole performs when sending or receiving a message with communication schema.");
+			editor.setTooltipMessage(
+					"The action a subrole performs when sending or receiving a message with communication schema.");
 
 			this.editorAction_GeneralTab = editor;
 		}
@@ -123,10 +120,7 @@ public class LoadBalancingEditor
 	 * @generated
 	 */
 	public LoadBalancingEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 						.getLoadBalancing());
 	}
@@ -134,22 +128,16 @@ public class LoadBalancingEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new LoadBalancingEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

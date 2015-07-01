@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getComponentPart <em>Component Part</em>}</li>
@@ -37,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

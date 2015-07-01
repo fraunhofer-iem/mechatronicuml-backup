@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class TypedNamedElementEditor
 	/**
 	 * @generated
 	 */
-	public TypedNamedElementEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public TypedNamedElementEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,8 +23,7 @@ public abstract class TypedNamedElementEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
@@ -42,8 +41,7 @@ public abstract class TypedNamedElementEditor
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}

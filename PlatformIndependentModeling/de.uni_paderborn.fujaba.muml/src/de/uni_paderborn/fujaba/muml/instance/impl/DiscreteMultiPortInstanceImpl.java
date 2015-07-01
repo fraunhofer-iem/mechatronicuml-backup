@@ -31,13 +31,13 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteMultiPortInstanceImpl#getSubInteractionEndpointInstances <em>Sub Interaction Endpoint Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteMultiPortInstanceImpl#getFirst <em>First</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteMultiPortInstanceImpl#getLast <em>Last</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteMultiPortInstanceImpl#getGmfSubPortInstances <em>Gmf Sub Port Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

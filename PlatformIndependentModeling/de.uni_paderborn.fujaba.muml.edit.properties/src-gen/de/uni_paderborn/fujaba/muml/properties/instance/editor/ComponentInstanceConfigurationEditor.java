@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.instance.editor;
 
 /**
@@ -10,8 +11,7 @@ public class ComponentInstanceConfigurationEditor
 	/**
 	 * @generated
 	 */
-	public ComponentInstanceConfigurationEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ComponentInstanceConfigurationEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,81 +23,59 @@ public class ComponentInstanceConfigurationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorVerificationConstraintRepositories_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentStructuredComponentInstance_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentStructuredComponentInstance_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorComponentInstances_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorPortConnectorInstances_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorPortConnectorInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(
-					createEditorVerificationConstraintRepositories_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorVerificationConstraintRepositories_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorParentStructuredComponentInstance_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorParentStructuredComponentInstance_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorComponentInstances_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
-					createEditorPortConnectorInstances_GeneralTab_Editor(),
-					false);
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+					createEditorPortConnectorInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -141,7 +119,8 @@ public class ComponentInstanceConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A structured component instance embeds a component instance configuration\nthat defines its inner structure. For such component instance configuration,\nthis reference points to the containing structured component instance. If this\ncomponent instance configuration is not contained in a structured component\ninstance, this reference is null.");
+			editor.setTooltipMessage(
+					"A structured component instance embeds a component instance configuration\nthat defines its inner structure. For such component instance configuration,\nthis reference points to the containing structured component instance. If this\ncomponent instance configuration is not contained in a structured component\ninstance, this reference is null.");
 
 			this.editorParentStructuredComponentInstance_GeneralTab = editor;
 		}
@@ -156,7 +135,8 @@ public class ComponentInstanceConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -184,7 +164,8 @@ public class ComponentInstanceConfigurationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
+			editor.setTooltipMessage(
+					"The referenced repository that contains verifiable constraints for this element.");
 
 			this.editorVerificationConstraintRepositories_GeneralTab = editor;
 		}
@@ -226,34 +207,24 @@ public class ComponentInstanceConfigurationEditor
 	 * @generated
 	 */
 	public ComponentInstanceConfigurationEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getComponentInstanceConfiguration());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE.getComponentInstanceConfiguration());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ComponentInstanceConfigurationEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.documentation", "property.tab.extensions",
+					"property.tab.general", "property.tab.general"}).contains(tab);
 		}
 	}
 

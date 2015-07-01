@@ -21,12 +21,12 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles <em>Roles</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRoleConnector()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationProtocol'"

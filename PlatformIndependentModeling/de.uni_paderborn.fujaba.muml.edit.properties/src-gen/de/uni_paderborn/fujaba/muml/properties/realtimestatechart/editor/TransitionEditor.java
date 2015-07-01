@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
  * @generated
  */
-public class TransitionEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class TransitionEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public TransitionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public TransitionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,16 +21,13 @@ public class TransitionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 			addPropertyEditor(createEditorPriority_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorSynchronization_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSynchronization_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorTarget_GeneralTab_Editor(), false);
 
@@ -40,42 +35,34 @@ public class TransitionEditor
 
 			addPropertyEditor(createEditorStatechart_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorRelativeDeadline_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorRelativeDeadline_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorGuard_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorBlockable_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUrgent_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorClockResets_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorClockConstraints_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorAbsoluteDeadlines_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorEvents_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -84,8 +71,7 @@ public class TransitionEditor
 
 			addPropertyEditor(createEditorPriority_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorSynchronization_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSynchronization_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorTarget_GeneralTab_Editor(), false);
 
@@ -93,53 +79,43 @@ public class TransitionEditor
 
 			addPropertyEditor(createEditorStatechart_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorRelativeDeadline_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorRelativeDeadline_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorGuard_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorBlockable_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorUrgent_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorClockResets_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorClockConstraints_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorAbsoluteDeadlines_GeneralTab_Editor(), false);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorEvents_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -228,7 +204,8 @@ public class TransitionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A clock constraint restricts when the transition can be activeted in dependency of the values of the clock.");
+			editor.setTooltipMessage(
+					"A clock constraint restricts when the transition can be activeted in dependency of the values of the clock.");
 
 			this.editorClockConstraints_GeneralTab = editor;
 		}
@@ -288,7 +265,8 @@ public class TransitionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).");
+			editor.setTooltipMessage(
+					"The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).");
 
 			this.editorGuard_GeneralTab = editor;
 		}
@@ -318,7 +296,8 @@ public class TransitionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The side effect of this transition. A side effect might be a variable assignment as well as a method invocation.");
+			editor.setTooltipMessage(
+					"The side effect of this transition. A side effect might be a variable assignment as well as a method invocation.");
 
 			this.editorAction_GeneralTab = editor;
 		}
@@ -348,7 +327,8 @@ public class TransitionEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -391,39 +371,26 @@ public class TransitionEditor
 	 * @generated
 	 */
 	public TransitionEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getTransition());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getTransition());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new TransitionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general",
+					"property.tab.documentation", "property.tab.extensions", "property.tab.general"}).contains(tab);
 		}
 	}
 

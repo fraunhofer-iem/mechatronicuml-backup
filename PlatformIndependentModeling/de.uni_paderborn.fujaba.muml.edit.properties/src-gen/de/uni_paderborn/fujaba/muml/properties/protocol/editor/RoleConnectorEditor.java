@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
 
 /**
  * @generated
  */
-public class RoleConnectorEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class RoleConnectorEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public RoleConnectorEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public RoleConnectorEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,53 +21,41 @@ public class RoleConnectorEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectorEndpoints_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinationProtocol_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectorEndpoints_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinationProtocol_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -98,7 +84,8 @@ public class RoleConnectorEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss.");
+			editor.setTooltipMessage(
+					"A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss.");
 
 			this.editorConnectorQualityOfServiceAssumptions_GeneralTab = editor;
 		}
@@ -128,7 +115,8 @@ public class RoleConnectorEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}
@@ -156,33 +144,25 @@ public class RoleConnectorEditor
 	 * @generated
 	 */
 	public RoleConnectorEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getRoleConnector());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE.getRoleConnector());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new RoleConnectorEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays
+					.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.documentation", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

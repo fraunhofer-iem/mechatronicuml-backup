@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.instance.editor;
 
 /**
@@ -10,8 +11,7 @@ public class CoordinationProtocolInstanceEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public CoordinationProtocolInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,23 +23,18 @@ public class CoordinationProtocolInstanceEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationProtocolPart_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCoordinationProtocolPart_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinationProtocol_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorPortInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
@@ -48,26 +43,21 @@ public class CoordinationProtocolInstanceEditor
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationProtocolPart_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorCoordinationProtocolPart_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorCoordinationProtocol_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorCoordinationProtocol_GeneralTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorPortInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -81,7 +71,8 @@ public class CoordinationProtocolInstanceEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The port instances that use this coordination protocol instance.\n\n\\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}");
+			editor.setTooltipMessage(
+					"The port instances that use this coordination protocol instance.\n\n\\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}");
 
 			this.editorPortInstances_GeneralTab = editor;
 		}
@@ -166,33 +157,23 @@ public class CoordinationProtocolInstanceEditor
 	 * @generated
 	 */
 	public CoordinationProtocolInstanceEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getCoordinationProtocolInstance());
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE.getCoordinationProtocolInstance());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new CoordinationProtocolInstanceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions"})
-					.contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

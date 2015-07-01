@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 
 /**
  * @generated
  */
-public class UnicastEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class UnicastEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public UnicastEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public UnicastEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -66,7 +64,8 @@ public class UnicastEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The action a subrole performs when sending or receiving a message with communication schema.");
+			editor.setTooltipMessage(
+					"The action a subrole performs when sending or receiving a message with communication schema.");
 
 			this.editorAction_GeneralTab = editor;
 		}
@@ -81,10 +80,7 @@ public class UnicastEditor
 	 * @generated
 	 */
 	public UnicastEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 						.getUnicast());
 	}
@@ -92,20 +88,16 @@ public class UnicastEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new UnicastEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general"})
+					new java.lang.String[]{"property.tab.general", "property.tab.general", "property.tab.general"})
 					.contains(tab);
 		}
 	}

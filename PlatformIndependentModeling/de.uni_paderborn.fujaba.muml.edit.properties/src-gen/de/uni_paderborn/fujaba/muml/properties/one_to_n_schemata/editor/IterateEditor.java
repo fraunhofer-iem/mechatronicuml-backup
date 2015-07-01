@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.one_to_n_schemata.editor;
 
 /**
  * @generated
  */
-public class IterateEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class IterateEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public IterateEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public IterateEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -27,11 +25,9 @@ public class IterateEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorStartFromFirst_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorStartFromFirst_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorTerminationCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTerminationCondition_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorDelay_GeneralTab_Editor(), false);
 
@@ -43,11 +39,9 @@ public class IterateEditor
 
 			addPropertyEditor(createEditorAction_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorStartFromFirst_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorStartFromFirst_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorTerminationCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorTerminationCondition_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorDelay_GeneralTab_Editor(), false);
 
@@ -67,7 +61,8 @@ public class IterateEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("If true, the iteration starts from the first subrole, otherwise it starts from the last subrole.");
+			editor.setTooltipMessage(
+					"If true, the iteration starts from the first subrole, otherwise it starts from the last subrole.");
 
 			this.editorStartFromFirst_GeneralTab = editor;
 		}
@@ -127,7 +122,8 @@ public class IterateEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The action a subrole performs when sending or receiving a message with communication schema.");
+			editor.setTooltipMessage(
+					"The action a subrole performs when sending or receiving a message with communication schema.");
 
 			this.editorAction_GeneralTab = editor;
 		}
@@ -142,10 +138,7 @@ public class IterateEditor
 	 * @generated
 	 */
 	public IterateEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage.eINSTANCE
 						.getIterate());
 	}
@@ -153,22 +146,17 @@ public class IterateEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new IterateEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.general", "property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

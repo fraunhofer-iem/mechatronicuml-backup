@@ -51,6 +51,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
@@ -71,7 +72,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getSubRoleSpecificClocks <em>Sub Role Specific Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getSubRoleSpecificOperations <em>Sub Role Specific Operations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

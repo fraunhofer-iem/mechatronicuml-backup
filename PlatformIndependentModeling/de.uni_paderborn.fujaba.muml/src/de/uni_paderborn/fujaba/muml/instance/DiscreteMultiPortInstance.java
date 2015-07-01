@@ -27,10 +27,10 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointI
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance#getGmfSubPortInstances <em>Gmf Sub Port Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscreteMultiPortInstance()
  * @model

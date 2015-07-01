@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.properties.component.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	public DirectedTypedPortEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public DirectedTypedPortEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,34 +23,27 @@ public abstract class DirectedTypedPortEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorComponent_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
 
@@ -58,26 +51,22 @@ public abstract class DirectedTypedPortEditor
 
 			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorInitializeExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorInitializeExpression_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorOptional_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists", org.eclipse.swt.SWT.HORIZONTAL,
+					true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Lists",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Lists",
 					createEditorConnectors_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
@@ -90,38 +79,29 @@ public abstract class DirectedTypedPortEditor
 
 			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorInitializeExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorInitializeExpression_GeneralTab_Editor(), false);
 
-			addSubCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
-					"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+			addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+					org.eclipse.swt.SWT.HORIZONTAL, true);
 
-			addEditorToCategory(
-					"de.uni_paderborn.fujaba.properties.category.Booleans",
+			addEditorToCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
 					createEditorOptional_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
-			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
-					false);
+			addPropertyEditor(createEditorComment_DocumentationTab_Editor(), false);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -150,7 +130,8 @@ public abstract class DirectedTypedPortEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("Decides if this port is optional. An optional port does not need to be instantiated\nin all instances of the containing component.");
+			editor.setTooltipMessage(
+					"Decides if this port is optional. An optional port does not need to be instantiated\nin all instances of the containing component.");
 
 			this.editorOptional_GeneralTab = editor;
 		}
@@ -165,7 +146,8 @@ public abstract class DirectedTypedPortEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("A initialize expression specifies the initial value that is emitted by the port after\nit has been instantiated. Thus, we only provide initialize expressions for out-port.");
+			editor.setTooltipMessage(
+					"A initialize expression specifies the initial value that is emitted by the port after\nit has been instantiated. Thus, we only provide initialize expressions for out-port.");
 
 			this.editorInitializeExpression_GeneralTab = editor;
 		}
@@ -184,28 +166,25 @@ public abstract class DirectedTypedPortEditor
 				final org.eclipse.ocl.ecore.OCLExpression expression = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
 						.createOCLExpression("false", feature, getEClass());
 				editor.setInput(input);
-				editor.registerOCLAdapter(expression,
-						new org.eclipse.emf.common.notify.impl.AdapterImpl() {
-							@Override
-							public void notifyChanged(
-									org.eclipse.emf.common.notify.Notification notification) {
-								boolean visibleBefore = editor.isVisible();
-								editor.updateVisibility(true);
+				editor.registerOCLAdapter(expression, new org.eclipse.emf.common.notify.impl.AdapterImpl() {
+					@Override
+					public void notifyChanged(org.eclipse.emf.common.notify.Notification notification) {
+						boolean visibleBefore = editor.isVisible();
+						editor.updateVisibility(true);
 
-								// Set default value, if we are hiding the editor and it was not hidden before.
-								if (!editor.isVisible() && visibleBefore) {
-									editor.setDefaultValue();
-								}
-							}
-						});
+						// Set default value, if we are hiding the editor and it was not hidden before.
+						if (!editor.isVisible() && visibleBefore) {
+							editor.setDefaultValue();
+						}
+					}
+				});
 				final org.eclipse.ocl.Query<org.eclipse.emf.ecore.EClassifier, ?, ?> query = de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin.OCL_ECORE
 						.createQuery(expression);
 				org.eclipse.jface.viewers.IFilter filter = new org.eclipse.jface.viewers.IFilter() {
 
 					@Override
 					public boolean select(Object object) {
-						return object != null
-								&& Boolean.TRUE.equals(query.evaluate(object));
+						return object != null && Boolean.TRUE.equals(query.evaluate(object));
 					}
 
 				};
@@ -214,7 +193,8 @@ public abstract class DirectedTypedPortEditor
 				}
 			}
 
-			editor.setTooltipMessage("The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
+			editor.setTooltipMessage(
+					"The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
 
 			this.editorComponent_GeneralTab = editor;
 		}
@@ -244,7 +224,8 @@ public abstract class DirectedTypedPortEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, true);
 
-			editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+			editor.setTooltipMessage(
+					"The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 			this.editorComment_DocumentationTab = editor;
 		}

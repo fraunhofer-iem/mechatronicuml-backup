@@ -20,10 +20,10 @@ import org.storydriven.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint#getConnectors <em>Connectors</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorEndpoint()
  * @model abstract="true"

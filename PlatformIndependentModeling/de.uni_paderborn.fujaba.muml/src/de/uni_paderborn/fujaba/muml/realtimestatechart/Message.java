@@ -25,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Message#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Message#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getMessage()
  * @model

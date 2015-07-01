@@ -27,12 +27,12 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointI
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteMultiInteractionEndpointInstanceImpl#getSubInteractionEndpointInstances <em>Sub Interaction Endpoint Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteMultiInteractionEndpointInstanceImpl#getFirst <em>First</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteMultiInteractionEndpointInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
 /**
  * @generated
  */
-public class SynchronizationEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class SynchronizationEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public SynchronizationEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public SynchronizationEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,35 +21,29 @@ public class SynchronizationEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
-			addPropertyEditor(createEditorSyncChannel_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSyncChannel_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSelectorExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSelectorExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorSyncChannel_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorSyncChannel_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorKind_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorSelectorExpression_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorSelectorExpression_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
-			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
-					false);
+			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(), false);
 
 		} else {
 		}
@@ -95,7 +87,8 @@ public class SynchronizationEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("An expression that evaluates to a value which is used to select a particular counterpart for the synchronization.");
+			editor.setTooltipMessage(
+					"An expression that evaluates to a value which is used to select a particular counterpart for the synchronization.");
 
 			this.editorSelectorExpression_GeneralTab = editor;
 		}
@@ -123,10 +116,7 @@ public class SynchronizationEditor
 	 * @generated
 	 */
 	public SynchronizationEditor(String tab) {
-		this(
-				tab,
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory(),
+		this(tab, de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization());
 	}
@@ -134,21 +124,16 @@ public class SynchronizationEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new SynchronizationEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general",
+					"property.tab.general", "property.tab.extensions"}).contains(tab);
 		}
 	}
 

@@ -28,12 +28,12 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

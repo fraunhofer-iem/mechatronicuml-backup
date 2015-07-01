@@ -29,11 +29,11 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl#getPortParts <em>Port Parts</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
@@ -34,12 +35,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti <em>Multi</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer SetEitherSubRoleAndCoordinatorBehaviorOrNone'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))' SetEitherSubRoleAndCoordinatorBehaviorOrNone='-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))' SetEitherSubRoleAndCoordinatorBehaviorOrNone='-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.coordinatorBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.coordinatorBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())'"
  * @generated
  */
 public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, NamedElement {

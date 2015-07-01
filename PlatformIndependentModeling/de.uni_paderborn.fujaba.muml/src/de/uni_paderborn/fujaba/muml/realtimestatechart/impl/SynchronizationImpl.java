@@ -25,12 +25,12 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationKind;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.SynchronizationImpl#getSyncChannel <em>Sync Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.SynchronizationImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.SynchronizationImpl#getSelectorExpression <em>Selector Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
@@ -29,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isMultiPort <em>Multi Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior'"

@@ -18,10 +18,10 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getStateConnectionPoint()
  * @model abstract="true"
