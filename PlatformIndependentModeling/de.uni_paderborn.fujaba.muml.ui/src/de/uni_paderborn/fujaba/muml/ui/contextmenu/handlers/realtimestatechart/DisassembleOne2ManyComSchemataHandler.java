@@ -28,12 +28,14 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 
 public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 
-	private static String disassembleTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DissassembleOneToManySchematasInComponentBehavior.qvto";
+	private static String disassembleComponentTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DissassembleOneToManySchematasInComponentBehavior.qvto";
+	private static String disassemblePortOrRoleTransformation = "/de.uni_paderborn.fujaba.muml.onetomanycommunicationschemata.synthesis/transforms/DisassembleOneToManySchemataInDiscreteInteractionEndpoint.qvto";
 	
 	// janas transformation
 	// private static String dissambleTransformation=
@@ -86,15 +88,13 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 		return null;
 	}
 
+	public void showDisassembleWizard() {
+		
+	}
+	
 	public static void disassembleOne2ManyComSchemata(
 			final RealtimeStatechart rtsc, final Shell shell,
-			final EditingDomain editingDomain) {
-		if (!rtsc.isUsesOneToManyCommunicationSchemata()) {
-			MessageDialog
-					.openInformation(shell, "No Schemata used!",
-							"There are no One-To-Many Communication Schemata to transform!");
-			return;
-		}
+			final EditingDomain editingDomain) {	
 		ModelExtent inputExtent = new BasicModelExtent(
 				Arrays.asList(new EObject[] { rtsc }));
 
@@ -102,8 +102,14 @@ public class DisassembleOne2ManyComSchemataHandler extends AbstractHandler {
 				.asList(new ModelExtent[] { inputExtent });
 
 		// Load QVTO script
+		String transformationKind = "";
+		if(rtsc.getBehavioralElement() instanceof Component) {
+			transformationKind = disassembleComponentTransformation;
+		}else
+			transformationKind = disassemblePortOrRoleTransformation;
+		
 		final TransformationExecutor transformationExecutor = getTransformationExecutor(
-				disassembleTransformation, false);
+				transformationKind, true);
 
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				transformationExecutor, modelExtents);

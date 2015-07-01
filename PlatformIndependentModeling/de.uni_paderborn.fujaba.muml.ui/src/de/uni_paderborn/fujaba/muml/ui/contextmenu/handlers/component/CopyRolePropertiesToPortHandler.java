@@ -121,7 +121,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 			return;
 		} else if (role.getCardinality() != null
 				&& role.getCardinality().getUpperBound().getValue() > 1
-				&& role.getAdaptationBehavior() == null
+				&& role.getCoordinatorBehavior() == null
 				&& role.getSubroleBehavior() == null) {
 			MessageDialog
 					.openInformation(
