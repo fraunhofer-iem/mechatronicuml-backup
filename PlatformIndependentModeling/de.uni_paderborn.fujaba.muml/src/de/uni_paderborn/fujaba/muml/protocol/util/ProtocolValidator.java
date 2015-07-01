@@ -356,9 +356,10 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(role, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior(role, diagnostics, context);
 		return result;
 	}
 
@@ -423,22 +424,22 @@ public class ProtocolValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Role</em>'.
+	 * The cached validation expression for the MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior constraint of '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- adaptationBehavior and subroleBehavior should be set if and only if this is a multirole\r\n" +
-		"(self.multiRole = not self.adaptationBehavior.oclIsUndefined())\r\n" +
-		"and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
+	protected static final String ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION = "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole\r\n" +
+		"(self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\n" +
+		"and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
 
 	/**
-	 * Validates the MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Role</em>'.
+	 * Validates the MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior constraint of '<em>Role</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRole_MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRole_MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ProtocolPackage.Literals.ROLE,
@@ -446,8 +447,8 @@ public class ProtocolValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior",
-				 ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
+				 "MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior",
+				 ROLE__MULTI_ROLE_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

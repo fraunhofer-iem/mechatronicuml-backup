@@ -1126,13 +1126,13 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+	int DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
@@ -2635,15 +2635,15 @@ public interface ConnectorPackage extends EPackage {
 	EReference getDiscreteInteractionEndpoint_ReceiverMessageTypes();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCoordinatorBehavior <em>Coordinator Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getAdaptationBehavior()
+	 * @return the meta object for the reference '<em>Coordinator Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCoordinatorBehavior()
 	 * @see #getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionEndpoint_AdaptationBehavior();
+	EReference getDiscreteInteractionEndpoint_CoordinatorBehavior();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSubroleBehavior <em>Subrole Behavior</em>}'.
@@ -3027,12 +3027,12 @@ public interface ConnectorPackage extends EPackage {
 		EReference DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionEndpoint_ReceiverMessageTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordinator Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_AdaptationBehavior();
+		EReference DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_CoordinatorBehavior();
 
 		/**
 		 * The meta object literal for the '<em><b>Subrole Behavior</b></em>' reference feature.

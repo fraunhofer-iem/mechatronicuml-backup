@@ -1337,6 +1337,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_UniqueNameOfStates(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_OneInitialState(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_OnlyDefineSchemataBeforeDisassembling(realtimeStatechart, diagnostics, context);
 		return result;
 	}
 
@@ -1462,6 +1463,39 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OneInitialState",
 				 REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the OnlyDefineSchemataBeforeDisassembling constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- it is only possible to define schemata before the subrole behavior was set!\r\n" +
+		"if(not self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) then \r\n" +
+		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined()\r\n" +
+		"else true\r\n" +
+		"endif";
+
+	/**
+	 * Validates the OnlyDefineSchemataBeforeDisassembling constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_OnlyDefineSchemataBeforeDisassembling(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyDefineSchemataBeforeDisassembling",
+				 REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

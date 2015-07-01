@@ -75,9 +75,6 @@ public class DiscretePortEditor
 			addPropertyEditor(
 					createEditorReceiverMessageTypes_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorAdaptationBehavior_GeneralTab_Editor(), false);
-
 			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
 					false);
 
@@ -87,6 +84,9 @@ public class DiscretePortEditor
 
 			addPropertyEditor(createEditorSubroleBehavior_GeneralTab_Editor(),
 					false);
+
+			addPropertyEditor(
+					createEditorCoordinatorBehavior_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorRefinedRole_GeneralTab_Editor(),
 					false);
@@ -123,9 +123,6 @@ public class DiscretePortEditor
 			addPropertyEditor(
 					createEditorReceiverMessageTypes_GeneralTab_Editor(), false);
 
-			addPropertyEditor(
-					createEditorAdaptationBehavior_GeneralTab_Editor(), false);
-
 			addPropertyEditor(createEditorCardinality_GeneralTab_Editor(),
 					false);
 
@@ -135,6 +132,9 @@ public class DiscretePortEditor
 
 			addPropertyEditor(createEditorSubroleBehavior_GeneralTab_Editor(),
 					false);
+
+			addPropertyEditor(
+					createEditorCoordinatorBehavior_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorRefinedRole_GeneralTab_Editor(),
 					false);
@@ -335,21 +335,6 @@ public class DiscretePortEditor
 		return this.editorReceiverMessageTypes_GeneralTab;
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorAdaptationBehavior_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorAdaptationBehavior_GeneralTab_Editor() {
-		if (this.editorAdaptationBehavior_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-					.getDiscreteInteractionEndpoint_AdaptationBehavior();
-			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-					adapterFactory, feature);
-
-			editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
-
-			this.editorAdaptationBehavior_GeneralTab = editor;
-		}
-		return this.editorAdaptationBehavior_GeneralTab;
-	}
-
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCardinality_GeneralTab;
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCardinality_GeneralTab_Editor() {
 		if (this.editorCardinality_GeneralTab == null) {
@@ -393,6 +378,21 @@ public class DiscretePortEditor
 			this.editorSubroleBehavior_GeneralTab = editor;
 		}
 		return this.editorSubroleBehavior_GeneralTab;
+	}
+
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCoordinatorBehavior_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCoordinatorBehavior_GeneralTab_Editor() {
+		if (this.editorCoordinatorBehavior_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+					.getDiscreteInteractionEndpoint_CoordinatorBehavior();
+			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+					adapterFactory, feature);
+
+			editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart obtained by the\nbehavior reference.\nIf this port is a single-port, this reference will be undefined.");
+
+			this.editorCoordinatorBehavior_GeneralTab = editor;
+		}
+		return this.editorCoordinatorBehavior_GeneralTab;
 	}
 
 	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorBehavior_GeneralTab;

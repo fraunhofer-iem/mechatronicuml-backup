@@ -28,8 +28,8 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='-- Role requires behavior\nnot self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' MultiRoleRequiresSubroleBehaviorAndAdaptationBehavior='-- adaptationBehavior and subroleBehavior should be set if and only if this is a multirole\r\n(self.multiRole = not self.adaptationBehavior.oclIsUndefined())\r\nand self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='-- Role requires behavior\nnot self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior='-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multirole\r\n(self.multiRole = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()'"
  * @generated
  */
 public interface Role extends DiscreteInteractionEndpoint, DataType {

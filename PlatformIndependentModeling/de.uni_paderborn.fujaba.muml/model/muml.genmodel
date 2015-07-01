@@ -476,7 +476,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
+            ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/subroleBehavior"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>

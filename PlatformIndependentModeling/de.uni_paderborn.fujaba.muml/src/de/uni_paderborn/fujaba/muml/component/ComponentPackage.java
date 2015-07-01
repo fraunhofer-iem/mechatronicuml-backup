@@ -1317,13 +1317,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__RECEIVER_MESSAGE_TYPES = PORT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 3;
+	int DISCRETE_PORT__COORDINATOR_BEHAVIOR = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.

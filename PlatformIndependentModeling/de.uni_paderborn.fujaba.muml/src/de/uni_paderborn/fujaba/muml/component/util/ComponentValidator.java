@@ -288,13 +288,14 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -487,22 +488,22 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
+	 * The cached validation expression for the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- adaptationBehavior and subroleBehavior should be set if and only if this is a multiport\r\n" +
-		"((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.adaptationBehavior.oclIsUndefined())\r\n" +
-		"and self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
+	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION = "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multiport\r\n" +
+		"((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())\r\n" +
+		"and self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()";
 
 	/**
-	 * Validates the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
+	 * Validates the MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDiscretePort_MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.DISCRETE_PORT,
@@ -510,8 +511,8 @@ public class ComponentValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior",
-				 DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
+				 "MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior",
+				 DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_SUBROLE_BEHAVIOR_AND_COORDINATOR_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

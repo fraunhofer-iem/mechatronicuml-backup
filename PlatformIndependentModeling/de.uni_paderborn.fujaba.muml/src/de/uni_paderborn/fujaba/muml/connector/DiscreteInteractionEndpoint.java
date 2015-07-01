@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCoordinatorBehavior <em>Coordinator Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getSubroleBehavior <em>Subrole Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -38,8 +38,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer SetEitherSubRoleAndCoordinatorBehaviorOrNone'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))' SetEitherSubRoleAndCoordinatorBehaviorOrNone='-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())'"
  * @generated
  */
 public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, NamedElement {
@@ -74,7 +74,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	EList<MessageType> getReceiverMessageTypes();
 
 	/**
-	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -84,23 +84,23 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * behavior reference.
 	 * If this port is a single-port, this reference will be undefined.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Behavior</em>' reference.
-	 * @see #setAdaptationBehavior(Behavior)
-	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_AdaptationBehavior()
+	 * @return the value of the '<em>Coordinator Behavior</em>' reference.
+	 * @see #setCoordinatorBehavior(Behavior)
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_CoordinatorBehavior()
 	 * @model
 	 * @generated
 	 */
-	Behavior getAdaptationBehavior();
+	Behavior getCoordinatorBehavior();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCoordinatorBehavior <em>Coordinator Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Behavior</em>' reference.
-	 * @see #getAdaptationBehavior()
+	 * @param value the new value of the '<em>Coordinator Behavior</em>' reference.
+	 * @see #getCoordinatorBehavior()
 	 * @generated
 	 */
-	void setAdaptationBehavior(Behavior value);
+	void setCoordinatorBehavior(Behavior value);
 
 	/**
 	 * Returns the value of the '<em><b>Subrole Behavior</b></em>' reference.

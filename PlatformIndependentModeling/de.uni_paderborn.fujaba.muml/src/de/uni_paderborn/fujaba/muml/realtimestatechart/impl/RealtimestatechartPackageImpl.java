@@ -1847,7 +1847,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (realtimeStatechartEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort UniqueNameOfStates NoCycles OneInitialState"
+			 "constraints", "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort UniqueNameOfStates NoCycles OneInitialState OnlyDefineSchemataBeforeDisassembling"
 		   });	
 		addAnnotation
 		  (stateConnectionPointEClass, 
@@ -2007,7 +2007,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "-- State names must be unique\nself.states->isUnique(name)",
 			 "NoCycles", "-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))",
 			 "OneInitialState", "-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1",
-			 "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort", "-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort\r\nself.usesOneToManyCommunicationSchemata implies (\r\nnot (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\nand self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)"
+			 "CommunicationSchemaOnlyUsedInMultiRoleOrMultiPort", "-- When using a One-To-Many Communication Schema, the RTSC must be embedded in a RTSC that describes the behavior of a MultiRole or MultiPort\r\nself.usesOneToManyCommunicationSchemata implies (\r\nnot (self.getPortOrRoleStatechart().behavioralElement = null) and not (self.getPortOrRoleStatechart().behavioralElement.oclIsInvalid()) and  self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)\r\nand self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi)",
+			 "OnlyDefineSchemataBeforeDisassembling", "-- it is only possible to define schemata before the subrole behavior was set!\r\nif(not self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) then \r\nself.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined()\r\nelse true\r\nendif"
 		   });	
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 

@@ -42,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getCoordinatorBehavior <em>Coordinator Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getSubroleBehavior <em>Subrole Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -90,14 +90,14 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	protected EList<MessageType> receiverMessageTypes;
 
 	/**
-	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
+	 * The cached value of the '{@link #getCoordinatorBehavior() <em>Coordinator Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAdaptationBehavior()
+	 * @see #getCoordinatorBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected Behavior adaptationBehavior;
+	protected Behavior coordinatorBehavior;
 
 	/**
 	 * The cached value of the '{@link #getSubroleBehavior() <em>Subrole Behavior</em>}' reference.
@@ -307,16 +307,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior getAdaptationBehavior() {
-		if (adaptationBehavior != null && adaptationBehavior.eIsProxy()) {
-			InternalEObject oldAdaptationBehavior = (InternalEObject)adaptationBehavior;
-			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
-			if (adaptationBehavior != oldAdaptationBehavior) {
+	public Behavior getCoordinatorBehavior() {
+		if (coordinatorBehavior != null && coordinatorBehavior.eIsProxy()) {
+			InternalEObject oldCoordinatorBehavior = (InternalEObject)coordinatorBehavior;
+			coordinatorBehavior = (Behavior)eResolveProxy(oldCoordinatorBehavior);
+			if (coordinatorBehavior != oldCoordinatorBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR, oldCoordinatorBehavior, coordinatorBehavior));
 			}
 		}
-		return adaptationBehavior;
+		return coordinatorBehavior;
 	}
 
 	/**
@@ -324,8 +324,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior basicGetAdaptationBehavior() {
-		return adaptationBehavior;
+	public Behavior basicGetCoordinatorBehavior() {
+		return coordinatorBehavior;
 	}
 
 	/**
@@ -333,11 +333,11 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAdaptationBehavior(Behavior newAdaptationBehavior) {
-		Behavior oldAdaptationBehavior = adaptationBehavior;
-		adaptationBehavior = newAdaptationBehavior;
+	public void setCoordinatorBehavior(Behavior newCoordinatorBehavior) {
+		Behavior oldCoordinatorBehavior = coordinatorBehavior;
+		coordinatorBehavior = newCoordinatorBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR, oldCoordinatorBehavior, coordinatorBehavior));
 	}
 
 	/**
@@ -587,9 +587,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return getSenderMessageTypes();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
 				return getReceiverMessageTypes();
-			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
-				if (resolve) return getAdaptationBehavior();
-				return basicGetAdaptationBehavior();
+			case ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR:
+				if (resolve) return getCoordinatorBehavior();
+				return basicGetCoordinatorBehavior();
 			case ComponentPackage.DISCRETE_PORT__SUBROLE_BEHAVIOR:
 				if (resolve) return getSubroleBehavior();
 				return basicGetSubroleBehavior();
@@ -637,8 +637,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				getReceiverMessageTypes().clear();
 				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((Behavior)newValue);
+			case ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR:
+				setCoordinatorBehavior((Behavior)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT__SUBROLE_BEHAVIOR:
 				setSubroleBehavior((Behavior)newValue);
@@ -674,8 +674,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
 				getReceiverMessageTypes().clear();
 				return;
-			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((Behavior)null);
+			case ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR:
+				setCoordinatorBehavior((Behavior)null);
 				return;
 			case ComponentPackage.DISCRETE_PORT__SUBROLE_BEHAVIOR:
 				setSubroleBehavior((Behavior)null);
@@ -707,8 +707,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES:
 				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
-			case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR:
-				return adaptationBehavior != null;
+			case ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR:
+				return coordinatorBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__SUBROLE_BEHAVIOR:
 				return subroleBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
@@ -750,7 +750,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			switch (derivedFeatureID) {
 				case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
 				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
-				case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR;
 				case ComponentPackage.DISCRETE_PORT__SUBROLE_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR;
 				case ComponentPackage.DISCRETE_PORT__CARDINALITY: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
 				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
@@ -778,7 +778,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			switch (baseFeatureID) {
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__COORDINATOR_BEHAVIOR;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__SUBROLE_BEHAVIOR;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY: return ComponentPackage.DISCRETE_PORT__CARDINALITY;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;

@@ -1077,11 +1077,6 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor" xmi:id="_VZYVRMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
-      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZYVRcwbEeSjx7OWZCcdLw">
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZYVRswbEeSjx7OWZCcdLw"/>
-      </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_VZYVR8wbEeSjx7OWZCcdLw" reconcile="false">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
@@ -1098,6 +1093,11 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor" xmi:id="_VZYVTMwbEeSjx7OWZCcdLw"/>
       </orderedElements>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:PropertyCategory" xmi:id="_VZYVTcwbEeSjx7OWZCcdLw" title="Lists" properties="_VZYVQcwbEeSjx7OWZCcdLw _VZYVQ8wbEeSjx7OWZCcdLw _VZYVScwbEeSjx7OWZCcdLw"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/coordinatorBehavior"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
       <superClasses href="#_VZTcxMwbEeSjx7OWZCcdLw"/>
       <superClasses href="#_VZXHLMwbEeSjx7OWZCcdLw"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNU-HNEeS5Putgio2lkg"/>

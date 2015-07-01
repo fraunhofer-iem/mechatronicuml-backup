@@ -755,13 +755,13 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__RECEIVER_MESSAGE_TYPES = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ADAPTATION_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
+	int ROLE__COORDINATOR_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.

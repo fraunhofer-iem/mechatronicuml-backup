@@ -178,6 +178,7 @@ public class ConnectorValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteInteractionEndpoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(discreteInteractionEndpoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(discreteInteractionEndpoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(discreteInteractionEndpoint, diagnostics, context);
 		return result;
 	}
 
@@ -238,6 +239,36 @@ public class ConnectorValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
 				 DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the SetEitherSubRoleAndCoordinatorBehaviorOrNone constraint of '<em>Discrete Interaction Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__SET_EITHER_SUB_ROLE_AND_COORDINATOR_BEHAVIOR_OR_NONE__EEXPRESSION = "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n" +
+		"(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())";
+
+	/**
+	 * Validates the SetEitherSubRoleAndCoordinatorBehaviorOrNone constraint of '<em>Discrete Interaction Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT,
+				 discreteInteractionEndpoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SetEitherSubRoleAndCoordinatorBehaviorOrNone",
+				 DISCRETE_INTERACTION_ENDPOINT__SET_EITHER_SUB_ROLE_AND_COORDINATOR_BEHAVIOR_OR_NONE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

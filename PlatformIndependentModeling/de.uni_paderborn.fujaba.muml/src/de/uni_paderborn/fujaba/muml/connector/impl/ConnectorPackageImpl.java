@@ -368,7 +368,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionEndpoint_AdaptationBehavior() {
+	public EReference getDiscreteInteractionEndpoint_CoordinatorBehavior() {
 		return (EReference)discreteInteractionEndpointEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -616,7 +616,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		discreteInteractionEndpointEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES);
-		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR);
+		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER);
@@ -714,7 +714,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEClass(discreteInteractionEndpointEClass, DiscreteInteractionEndpoint.class, "DiscreteInteractionEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteInteractionEndpoint_SenderMessageTypes(), theMsgtypePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_ReceiverMessageTypes(), theMsgtypePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionEndpoint_AdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_CoordinatorBehavior(), theBehaviorPackage.getBehavior(), null, "coordinatorBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_SubroleBehavior(), theBehaviorPackage.getBehavior(), null, "subroleBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_ReceiverMessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_DiscreteInteractionEndpoint(), "receiverMessageBuffer", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -776,7 +776,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
+			 "constraints", "ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer SetEitherSubRoleAndCoordinatorBehaviorOrNone"
 		   });	
 		addAnnotation
 		  (discreteSingleInteractionEndpointInstanceEClass, 
@@ -817,7 +817,8 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   source, 
 		   new String[] {
 			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
-			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
+			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
+			 "SetEitherSubRoleAndCoordinatorBehaviorOrNone", "-- Set either the subroleBehavior and the coordinatorBehavior or none of them!\r\n(not self.adaptationBehavior.oclIsUndefined() and not  self.subroleBehavior.oclIsUndefined()) xor (self.adaptationBehavior.oclIsUndefined() and self.subroleBehavior.oclIsUndefined())"
 		   });	
 		addAnnotation
 		  (getDiscreteInteractionEndpoint_Multi(), 

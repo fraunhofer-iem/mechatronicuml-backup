@@ -1139,7 +1139,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior"
+			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior"
 		   });	
 		addAnnotation
 		  (componentPartEClass, 
@@ -1228,7 +1228,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "DiscretePortRequiresRole", "-- Discrete Port must refine a role\nself.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()",
 			 "DiscretePortAndRoleSameMessageTypes", "-- Discrete Port must have the same message types as its refined role\r\nnot self.refinedRole.oclIsUndefined() implies\r\n\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n\t and\r\n\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n\t)",
 			 "DiscretePortCardinalityMustComplyWithRefinedRoleCardinality", "-- Cardinality of discrete port and its refined role must match\r\n((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) \r\nimplies \r\n((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))",
-			 "MultiPortOfAtomicComponentRequiresSubroleBehaviorAndAdaptationBehavior", "-- adaptationBehavior and subroleBehavior should be set if and only if this is a multiport\r\n((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.adaptationBehavior.oclIsUndefined())\r\nand self.adaptationBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"
+			 "MultiPortOfAtomicComponentRequiresSubroleBehaviorAndCoordinatorBehavior", "-- coordinatorBehavior and subroleBehavior should be set if and only if this is a multiport\r\n((self.multiPort and self.component.oclIsKindOf(AtomicComponent)) = not self.coordinatorBehavior.oclIsUndefined())\r\nand self.coordinatorBehavior.oclIsUndefined() = self.subroleBehavior.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (getDiscretePort_IsDiscreteInPort(), 
