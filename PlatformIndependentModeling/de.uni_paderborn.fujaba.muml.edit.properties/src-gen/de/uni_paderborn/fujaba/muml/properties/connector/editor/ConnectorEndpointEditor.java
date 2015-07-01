@@ -38,9 +38,6 @@ public abstract class ConnectorEndpointEditor
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
@@ -55,16 +52,10 @@ public abstract class ConnectorEndpointEditor
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}

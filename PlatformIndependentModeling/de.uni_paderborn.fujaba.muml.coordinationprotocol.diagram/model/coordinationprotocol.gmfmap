@@ -310,7 +310,8 @@
             </initializers>
           </domainInitializer>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping"
+              editPattern="">
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.coordinationspecification.common/model/coordinationspecification.gmfgraph#RoleName"/>
             <features

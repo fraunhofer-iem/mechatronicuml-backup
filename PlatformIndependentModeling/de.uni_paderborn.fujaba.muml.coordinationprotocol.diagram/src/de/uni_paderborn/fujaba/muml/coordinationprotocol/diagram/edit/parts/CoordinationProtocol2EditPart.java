@@ -21,6 +21,8 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.KeyEvent;
+import org.eclipse.draw2d.KeyListener;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -378,7 +380,7 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 			constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;
 			this.add(fFigureCoordinationProtocolNameFigure,
 					constraintFFigureCoordinationProtocolNameFigure);
-
+			
 		}
 
 		/**

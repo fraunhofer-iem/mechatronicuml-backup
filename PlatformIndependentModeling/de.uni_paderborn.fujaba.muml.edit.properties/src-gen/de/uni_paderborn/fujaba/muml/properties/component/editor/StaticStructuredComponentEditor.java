@@ -91,12 +91,6 @@ public class StaticStructuredComponentEditor
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
 			addPropertyEditor(createEditorName_GeneralTab_Editor(), false);
@@ -137,17 +131,11 @@ public class StaticStructuredComponentEditor
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
 
 			addPropertyEditor(createEditorComment_DocumentationTab_Editor(),
 					false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
@@ -163,9 +151,6 @@ public class StaticStructuredComponentEditor
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
-
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
 
@@ -177,9 +162,6 @@ public class StaticStructuredComponentEditor
 
 			addPropertyEditor(createEditorExtension_ExtensionsTab_Editor(),
 					false);
-
-			addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
-					"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		} else {
 		}
