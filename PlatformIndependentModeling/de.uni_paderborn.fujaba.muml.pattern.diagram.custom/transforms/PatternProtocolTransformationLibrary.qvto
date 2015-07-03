@@ -68,7 +68,7 @@ mapping muml::protocol::Role :: Role2Role() : muml::protocol::Role{
     	self._receiverMessageTypes->forEach(messagetype){
     		_receiverMessageTypes+=messagetype;
     	};
-    	_adaptationBehavior := self._adaptationBehavior.map Behavior2Behavior();
+    	_coordinatorBehavior := self._coordinatorBehavior.map Behavior2Behavior();
     	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
     	_cardinality := self._cardinality.map Cardinality2Cardinality();
     	_receiverMessageBuffer := self._receiverMessageBuffer.map MessageBuffer2MessageBuffer();
