@@ -144,7 +144,7 @@ self.invresolve()->oclAsSet()->flatten()->intersection(input.objects()->oclAsSet
 	senderMessageTypes := self.senderMessageTypes.map MessageType2MessageType();
 	
 	behavior := self.behavior.map Behavior2Behavior();
-	adaptationBehavior := self.adaptationBehavior.map Behavior2Behavior();
+	coordinatorBehavior := self.coordinatorBehavior.map Behavior2Behavior();
 	subroleBehavior := self.subroleBehavior.map Behavior2Behavior();
 	
 }

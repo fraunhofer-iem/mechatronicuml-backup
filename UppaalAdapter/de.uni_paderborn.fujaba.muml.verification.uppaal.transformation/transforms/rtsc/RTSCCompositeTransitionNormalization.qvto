@@ -34,8 +34,7 @@ main() {
 	--input.objects()[BehavioralElement].behavior->sortedByName().oclAsType(RealtimeStatechart)->map RTSC2RTSC();
 	input.objects()[RootNode]->map RootNode2RootNode();
 	
-    -- fix stateActiveExpr(MumlElemExpr) for states that contain EntryPoints and/or ExitPoints.   
-    
+    -- fix stateActiveExpr(MumlElemExpr) for states that contain EntryPoints and/or ExitPoints. 
     mumlElemsToFix->forEach(mumlElemExpr) {
         // var debugProp := mumlElemExpr.oclAsType(EObject)->closure(x : EObject | if not x.oclIsUndefined() and x.oclIsKindOf(Property) then x else x.oclAsType(EObject).eContainer() endif)->any(oclIsKindOf(Property));
         var resultingExpr : mtctl::Expression = null;
@@ -53,7 +52,7 @@ main() {
             //add to resultingExpr: "... or activeState(cp)"
             resultingExpr := object OrExpr {rightOpd := resultingExpr; leftOpd := object StateActiveExpr {state := nextMumlElemExpr}}
         };
-        assert fatal (not resultingExpr.oclIsUndefined()) with log ("Failed to repair mtctl query after Hierarchy normalization");
+        assert fatal (not resultingExpr.oclIsUndefined()) with log ("Failed to repair mtctl query after composite transition normalization");
         
         //Replace the original expression with resultingExpr in the query
         stateActiveExpr.replaceWith(resultingExpr);
@@ -79,9 +78,7 @@ mapping MumlElemExpr :: MumlElemExpr2MumlElemExpr() : MumlElemExpr {
 		elem := self.elem.late resolveone(EObject);
 	instance := self.instance.map EObject2EObject();
 }
-
-
-    
+ 
 mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : RealtimeStatechart {
 			
 	name := self.name;
@@ -129,10 +126,9 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 				-- map transition properties only for the highest priority region of the parent state
 				var mapProperties : Boolean = subState.isContainedInHighestPriorityRegion(sourceComposite);
 				
+				-- create the transition and add it to the set of transitions
 				transitions += highLevelTransition.map Transition2TransitionParam(source,target,priority,mapProperties);
-														
 			}
-			
 		}
 		endif;
 		
@@ -156,22 +152,15 @@ mapping RealtimeStatechart :: RealtimeStatechart2RealtimeStatechart() : Realtime
 				var mapProperties : Boolean = subState.isContainedInHighestPriorityRegion(targetComposite);
 				
 				transitions += highLevelTransition.map Transition2TransitionParam(source,target,priority,mapProperties);
-								
 			}
-			
 		}
-		endif;
-		
-		
+		endif;		
 	}
-	
 	end {
 		assert fatal (
 			result.getTransitions()->forAll(t | not t.isHighLevel())
 		) with log('No highlevel transitions after normalization.');
-		
 	}
-		
 }
 
 mapping State :: State2State() : State {
@@ -238,7 +227,6 @@ query State :: isContainedInHighestPriorityRegion(composite : State) : Boolean {
 	var allStatesInHighestPriorityRegion : OrderedSet(State) = composite.allStatesInHighestPriorityRegions();
 	
 	return allStatesInHighestPriorityRegion->includes(self)
-	 
 }
 
 query State :: allStatesInHighestPriorityRegions() : OrderedSet(State) {
@@ -274,6 +262,7 @@ mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVe
 		 
 	if sourceVertex != targetVertex and sourceVertex.oclIsKindOf(State) and targetVertex.oclIsKindOf(State) and sourceVertex.isSuperVertexOf(targetVertex)
 	then {
+	    // transition that connects two different states and source contains vertices 
 		source := sourceVertex.oclAsType(State).map CompositeState2DefaultEntry(self);
 	}
 	else {
@@ -291,6 +280,7 @@ mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVe
 		
 	if sourceVertex != targetVertex and sourceVertex.oclIsKindOf(State) and targetVertex.oclIsKindOf(State) and targetVertex.isSuperVertexOf(sourceVertex)
 	then {
+	// transition that connects two different states and target contains vertices
 		target := targetVertex.oclAsType(State).map CompositeState2AuxExit(self);
 	}
 	else {
@@ -321,8 +311,7 @@ mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVe
 		
 		synchronization := self.synchronization.mapSynchronization();
 		
-		events += self.triggerMessageEvent.mapAsynchronousMessageEvent();
-					
+		events += self.triggerMessageEvent.mapAsynchronousMessageEvent();				
 	}
 	endif;
 	
@@ -344,16 +333,13 @@ mapping Transition :: Transition2TransitionParam(sourceVertex : Vertex, targetVe
 	}
 	endif;
 	
-	
 	end {
 		assert fatal (not result.source.oclIsUndefined()) with log('Source state must be specified.');
 		assert fatal (not result.target.oclIsUndefined()) with log('Target state must be specified.');
 		
 		assert fatal (not result.source.isCompositeState() and not result.target.isCompositeState()) with log('No high-level transition expected.');
-	}			
-			
+	}						
 }
-
 
 property auxEntryNamePrefix : String = 'ENTRY';
 
@@ -362,19 +348,9 @@ mapping State :: CompositeState2DefaultEntry(highLevelTransition : Transition) :
 	state := self.map State2State();
 }
 
-
 property auxExitNamePrefix : String = 'EXIT';
 
 mapping State :: CompositeState2AuxExit(highLevelTransition : Transition) : ExitPoint when {self.isCompositeState()} {	
 	name := self.name + '_' + auxExitNamePrefix.addSuffixNumber();
 	state := self.map State2State();
 }
-
-
-
-
-
-
-
-
-
