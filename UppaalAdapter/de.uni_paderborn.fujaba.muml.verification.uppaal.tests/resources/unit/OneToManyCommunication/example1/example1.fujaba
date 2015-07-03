@@ -85,8 +85,8 @@
           behavior="_9nuq8d0NEeOS4JSLeRVluQ"
           name="role1"
           receiverMessageTypes="_lxZtANUMEeOzB5sVHdJ6ng"
-          adaptationBehavior="_9nuq5t0NEeOS4JSLeRVluQ"
-          roleAndAdaptationBehavior="_9nuq4N0NEeOS4JSLeRVluQ">
+          coordinatorBehavior="_9nuq5t0NEeOS4JSLeRVluQ"
+          roleAndcoordinatorBehavior="_9nuq4N0NEeOS4JSLeRVluQ">
         <cardinality
             xmi:id="_nuOmENUMEeOzB5sVHdJ6ng">
           <lowerBound
@@ -757,8 +757,8 @@
           name="receiver_multiport"
           behavior="_WN-4sd9jEeOUls-dIapQWw"
           receiverMessageTypes="_lxZtANUMEeOzB5sVHdJ6ng"
-          adaptationBehavior="_WN-4pt9jEeOUls-dIapQWw"
-          roleAndAdaptationBehavior="_WN-4oN9jEeOUls-dIapQWw"
+          coordinatorBehavior="_WN-4pt9jEeOUls-dIapQWw"
+          roleAndcoordinatorBehavior="_WN-4oN9jEeOUls-dIapQWw"
           refinedRole="_nuN_ANUMEeOzB5sVHdJ6ng">
         <cardinality
             xmi:id="_WNskwN9jEeOUls-dIapQWw">

@@ -22,7 +22,7 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_Jo3JMQdNEeS1buZSll3L6Q" connectors="_Jo3JPQdNEeS1buZSll3L6Q" behavior="_Jo3JRAdNEeS1buZSll3L6Q" name="role1" senderMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" receiverMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" adaptationBehavior="_Jo3JSQdNEeS1buZSll3L6Q" subroleBehavior="_Jo3JcQdNEeS1buZSll3L6Q">
+      <roles xmi:id="_Jo3JMQdNEeS1buZSll3L6Q" connectors="_Jo3JPQdNEeS1buZSll3L6Q" behavior="_Jo3JRAdNEeS1buZSll3L6Q" name="role1" senderMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" receiverMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" coordinatorBehavior="_Jo3JSQdNEeS1buZSll3L6Q" subroleBehavior="_Jo3JcQdNEeS1buZSll3L6Q">
         <cardinality xmi:id="_Jo3JMgdNEeS1buZSll3L6Q">
           <lowerBound xmi:id="_Jo3JMwdNEeS1buZSll3L6Q"/>
           <upperBound xmi:id="_Jo3JNAdNEeS1buZSll3L6Q" value="3"/>
@@ -512,7 +512,7 @@
   </categories>
   <categories xmi:id="_Jo3KYQdNEeS1buZSll3L6Q" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
     <modelElements xsi:type="component:StaticAtomicComponent" xmi:id="_Jo3KYgdNEeS1buZSll3L6Q" name="role1Component" behavior="_Jo3JzQdNEeS1buZSll3L6Q">
-      <ports xsi:type="component:DiscretePort" xmi:id="_Jo3KYwdNEeS1buZSll3L6Q" name="role1Port" behavior="_Jo3J0AdNEeS1buZSll3L6Q" senderMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" receiverMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" adaptationBehavior="_Jo3J1QdNEeS1buZSll3L6Q" subroleBehavior="_Jo3J_QdNEeS1buZSll3L6Q" refinedRole="_Jo3JMQdNEeS1buZSll3L6Q">
+      <ports xsi:type="component:DiscretePort" xmi:id="_Jo3KYwdNEeS1buZSll3L6Q" name="role1Port" behavior="_Jo3J0AdNEeS1buZSll3L6Q" senderMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" receiverMessageTypes="_Jo3KYAdNEeS1buZSll3L6Q _Jo3KXgdNEeS1buZSll3L6Q" coordinatorBehavior="_Jo3J1QdNEeS1buZSll3L6Q" subroleBehavior="_Jo3J_QdNEeS1buZSll3L6Q" refinedRole="_Jo3JMQdNEeS1buZSll3L6Q">
         <cardinality xmi:id="_Jo3KZAdNEeS1buZSll3L6Q">
           <lowerBound xmi:id="_Jo3KZQdNEeS1buZSll3L6Q"/>
           <upperBound xmi:id="_Jo3KZgdNEeS1buZSll3L6Q" value="3"/>

@@ -22,7 +22,7 @@
           </expression>
         </properties>
       </verificationConstraintRepositories>
-      <roles xmi:id="_mZU7wJM5EeOYZ8555fyhuw" connectors="_mZU7yJM5EeOYZ8555fyhuw" behavior="_FOyCcZM5EeOYZ8555fyhuw" name="role1" senderMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA _crYVkJ8HEeO4HIdkLKX7ag" receiverMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA _crYVkJ8HEeO4HIdkLKX7ag" adaptationBehavior="_NrdiIK6IEeOoXpicih3a5A" subroleBehavior="_Paeosa6IEeOoXpicih3a5A">
+      <roles xmi:id="_mZU7wJM5EeOYZ8555fyhuw" connectors="_mZU7yJM5EeOYZ8555fyhuw" behavior="_FOyCcZM5EeOYZ8555fyhuw" name="role1" senderMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA _crYVkJ8HEeO4HIdkLKX7ag" receiverMessageTypes="_ZEqZsJvqEeOgzpyCht1RLA _crYVkJ8HEeO4HIdkLKX7ag" coordinatorBehavior="_NrdiIK6IEeOoXpicih3a5A" subroleBehavior="_Paeosa6IEeOoXpicih3a5A">
         <cardinality xmi:id="_mZU7wZM5EeOYZ8555fyhuw">
           <lowerBound xmi:id="_xXVasN6WEeOWIq1AL8q4hQ"/>
           <upperBound xmi:id="_xXVasd6WEeOWIq1AL8q4hQ" value="3"/>
