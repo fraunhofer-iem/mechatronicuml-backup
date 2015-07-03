@@ -22,13 +22,13 @@ TraceRepository:
 ;
 
 Trace:
-	'Verifying property' property=INT 'at line' line=INT
+	'Verifying' ('property' | 'formula') property=INT 'at line' line=INT
 	result=Result
 	(('Showing counter example.' | 'Showing example trace.') traceItems+=TraceItem+)?
 ;
 
 enum Result:
-	SUCCESS='-- Property is satisfied.' | FAILURE='-- Property is NOT satisfied.'
+	SUCCESS='-- Property is satisfied.' | FAILURE='-- Property is NOT satisfied.' | SUCCESS='-- Formula is satisfied.' | FAILURE='-- Formula is NOT satisfied.'
 ;
 
 ProcessIdentifier:
