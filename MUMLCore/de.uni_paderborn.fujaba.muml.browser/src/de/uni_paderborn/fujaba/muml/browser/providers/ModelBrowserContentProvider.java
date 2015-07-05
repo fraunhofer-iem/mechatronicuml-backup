@@ -19,6 +19,7 @@ import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
@@ -38,6 +39,7 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -45,6 +47,8 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.Saveable;
+import org.eclipse.ui.navigator.SaveablesProvider;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
@@ -54,16 +58,54 @@ import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 //    can check if there is a Diagram file open in the ResourceSet!
 // -> Use generated XXXNavigatorActionProvider
 
-public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider implements de.uni_paderborn.fujaba.muml.browser.editingdomain.EditingDomainRegistry.Listener {
+public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchContentProvider implements de.uni_paderborn.fujaba.muml.browser.editingdomain.EditingDomainRegistry.Listener, IAdaptable {
+	
 	private Viewer viewer;
 	private Map<IFile, ProgressNavigatorItem> loadingFiles = new HashMap<IFile, ProgressNavigatorItem>();
 	
 	private Map<URI, URI> relocatedParents = new HashMap<URI, URI>();
 	private Map<URI, Set<URI>> relocatedChildren = new HashMap<URI, Set<URI>>();
 	private Map<TransactionalEditingDomain, AdapterFactoryContentProvider> adapterFactoryContentProviders = new HashMap<TransactionalEditingDomain, AdapterFactoryContentProvider>();
+	private Map<URI, Saveable> saveables = new HashMap<URI, Saveable>();
 	
 	private boolean refreshActive = true;
-	
+
+	private SaveablesProvider saveablesProvider = new SaveablesProvider() { 
+		@Override
+		public Saveable[] getSaveables() {
+			List<Saveable> saveables = new ArrayList<Saveable>();
+
+			for (URI uri : new HashSet<URI>(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getURIs())) {
+				IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
+				Saveable saveable = getSaveable(iFile);
+				if (saveable != null) {
+					saveables.add(saveable);
+				}
+			}
+			return saveables.toArray(new Saveable[] { });
+		}
+
+		@Override
+		public Object[] getElements(Saveable saveable) {
+			List<Object> elements = new ArrayList<Object>();
+			for (Object element : saveables.keySet()) {
+				if (saveable == saveables.get(element)) {
+					elements.add(element);
+				}
+			}
+			return elements.toArray();
+		}
+
+		@Override
+		public Saveable getSaveable(Object element) {
+			if (element instanceof IFile) {
+				IFile iFile = (IFile) element;
+				URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+				return ModelBrowserContentProvider.this.getSaveable(uri);				
+			}
+			return null;
+		}
+	};
 	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
 		public void resourceSetChanged(final ResourceSetChangeEvent event) {
 			final Set<IFile> refreshes = new HashSet<IFile>();
@@ -118,9 +160,25 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		}
 		return null;
 	}
-	
-	
-	
+
+	private Saveable getSaveable(URI uri) {
+		if (!saveables.containsKey(uri)) {
+			Saveable saveable = createSaveable(uri);
+			if (saveable != null) {
+				saveables.put(uri, saveable);
+			}
+		}
+		return saveables.get(uri);
+	}
+
+	private Saveable createSaveable(URI uri) {
+		TransactionalEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+		if (domain != null) {
+			return new ModelBrowserSaveable(domain);
+		}
+		return null;
+	}
+
 	public ModelBrowserContentProvider() throws CoreException {
 		ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.addListener(this);
 		for (TransactionalEditingDomain domain : ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomains()) {
@@ -440,6 +498,59 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 			return new StructuredSelection(newElements);
 		}
 		return selection;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T> T getAdapter(Class<T> adapter) {
+		if (adapter == SaveablesProvider.class) {
+			return (T) saveablesProvider;
+		}
+		return null;
+	}
+	
+	public class ModelBrowserSaveable extends Saveable {
+		
+		private TransactionalEditingDomain domain;
+
+		public ModelBrowserSaveable(TransactionalEditingDomain domain) {
+			this.domain = domain;
+		}
+		
+		@Override
+		public String getName() {
+			return "name";
+		}
+
+		@Override
+		public String getToolTipText() {
+			return "tooltip text";
+		}
+
+		@Override
+		public ImageDescriptor getImageDescriptor() {
+			return null;
+		}
+
+		@Override
+		public void doSave(IProgressMonitor monitor) throws CoreException {
+		}
+
+		@Override
+		public boolean isDirty() {
+			return true;
+		}
+
+		@Override
+		public boolean equals(Object object) {
+			return object == this;
+		}
+
+		@Override
+		public int hashCode() {
+			return domain.hashCode();
+		}
+		
 	}
 
 }

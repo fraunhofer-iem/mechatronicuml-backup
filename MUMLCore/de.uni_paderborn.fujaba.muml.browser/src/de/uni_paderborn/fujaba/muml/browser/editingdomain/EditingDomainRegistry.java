@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -34,6 +35,10 @@ public class EditingDomainRegistry {
 	
 	public Collection<TransactionalEditingDomain> getEditingDomains() {
 		return map.values();
+	}
+	
+	public Set<URI> getURIs() {
+		return map.keySet();
 	}
 
 	public TransactionalEditingDomain getEditingDomain(URI uri, boolean create) {

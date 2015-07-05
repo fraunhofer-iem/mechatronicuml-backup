@@ -30,12 +30,13 @@
    
  <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
      <navigatorContent
-            name="MechatronicUML Browser Contents"
-            priority="lower"
-            activeByDefault="true"
-            contentProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider"
-			labelProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserLabelProvider"			
-            id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser.content">         
+           activeByDefault="true"
+           contentProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider"
+           id="de.uni_paderborn.fujaba.muml.browser.views.ModelBrowser.content"
+           labelProvider="de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserLabelProvider"
+           name="MechatronicUML Browser Contents"
+           priority="lower"
+           providesSaveables="true">         
         <enablement>
             <or>
                 <instanceof value="org.eclipse.core.resources.IResource" /> 
