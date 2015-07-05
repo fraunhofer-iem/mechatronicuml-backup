@@ -1475,8 +1475,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- it is only possible to define schemata before the subrole behavior was set!\r\n" +
-		"if(not self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(muml::connector::DiscreteInteractionEndpoint)) then \r\n" +
-		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(muml::connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined()\r\n" +
+		"if(not self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)) then \r\n" +
+		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined()\r\n" +
 		"else true\r\n" +
 		"endif";
 
