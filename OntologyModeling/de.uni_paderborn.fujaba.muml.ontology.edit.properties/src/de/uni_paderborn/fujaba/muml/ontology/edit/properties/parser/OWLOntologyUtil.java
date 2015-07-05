@@ -121,7 +121,7 @@ public class OWLOntologyUtil {
 
 		Preferences projectNode = projectScope
 				.getNode(PREFERENCE_NODE_ONTOLOGY);
-
+		
 		if (projectNode != null) {
 
 			// read array of Strings

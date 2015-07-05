@@ -41,7 +41,7 @@
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_OYIeHNEeS5Putgio2lkg"/>
         <creationOppositeConstraint xmi:id="_Rl9CQ81gEeSIgPDefa6ZBw">
-          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(muml::component::Port) or self.oclIsKindOf(muml::component::Component)"/>
+          <filters xsi:type="de.uni_paderborn.fujaba:OCLFilter" xmi:id="_Rl9CRM1gEeSIgPDefa6ZBw" expression="self.oclIsKindOf(muml::component::Port) or self.oclIsKindOf(muml::component::Component) or self.oclIsKindOf(muml::component::ComponentPart) or self.oclIsKindOf(muml::component::PortPart)"/>
         </creationOppositeConstraint>
       </orderedElements>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_QNUeHNEeS5Putgio2lkg"/>

@@ -8,7 +8,9 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 
 import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.ontology.OntologyExtension;
 import de.uni_paderborn.fujaba.muml.ontology.OntologyPackage;
 import de.uni_paderborn.fujaba.muml.ontology.edit.properties.parser.OWLOntologyUtil;
@@ -34,7 +36,8 @@ public class OntologyDialogFactory {
 		}
 		return instance;
 	}
-
+ 
+	// TODO: Handle each element in its own way
 	public OntologyDialog createOntologyDialog(Shell shell, EObject element) {
 		String projectName = element.eResource().getURI().segment(1);
 		OWLOntologyUtil ontologyUtils = new OWLOntologyUtil(projectName);
@@ -42,7 +45,19 @@ public class OntologyDialogFactory {
 			return new OntologyClassDialog(shell, ontologyUtils,
 					new OntologyClassTreeContentProvider(),
 					ontologyUtils.getloadedOntologies());
-		if (element instanceof Port) {
+		if (element instanceof Port)
+			return new OntologyClassDialog(shell, ontologyUtils,
+					new OntologyClassTreeContentProvider(),
+					ontologyUtils.getloadedOntologies());
+		if (element instanceof ComponentPart)
+			return new OntologyClassDialog(shell, ontologyUtils,
+					new OntologyClassTreeContentProvider(),
+					ontologyUtils.getloadedOntologies());
+		if (element instanceof PortPart)
+			return new OntologyClassDialog(shell, ontologyUtils,
+					new OntologyClassTreeContentProvider(),
+					ontologyUtils.getloadedOntologies());
+		/*if (element instanceof Port) {
 			Component component = ((Port) element).getComponent();
 			OntologyExtension extension = (OntologyExtension) component
 					.getExtension(OntologyPackage.Literals.ONTOLOGY_EXTENSION);
@@ -57,7 +72,7 @@ public class OntologyDialogFactory {
 			return new OntologyPropertiesDialog(shell, ontologyUtils,
 					new OntologyClassPropertyContentProvider(),
 					new Object[] { input });
-		}
+		} */
 		return null;
 
 	}
