@@ -12,7 +12,7 @@ import de.uni_paderborn.fujaba.tests.QVTOCompileErrorTest;
 @SuiteClasses({ PimMetamodelTest.class, PimGenmodelTest.class,
 		PimPluginXmlPackageTest.class, PimValidateMetamodelsTest.class,
 		PimDiagramPluginXmlTest.class, PimGMFMapTest.class,
-		QVTOCompileErrorTest.class })
+		PIMQVTOCompileTest.class })
 public class MumlTestSuite {
 	// empty
 }

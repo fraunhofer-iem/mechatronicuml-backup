@@ -21,7 +21,7 @@ import org.osgi.framework.Bundle;
  * @author ingo
  *
  */
-public class QVTOCompileErrorTest {
+public abstract class QVTOCompileErrorTest {
 
 	/**
 	 * Tests all .qvto files in the current working directory (which should be
@@ -42,10 +42,12 @@ public class QVTOCompileErrorTest {
 
 	/**
 	 * Finds the path that contains all bundles.
+	 * 
 	 * @return The workspace location.
 	 */
 	private File findWorkspaceLocation() {
-		return new File("."); // This requires that the launch configuration sets ${workspace_loc} as working directory!
+		return new File("."); // This requires that the launch configuration
+								// sets ${workspace_loc} as working directory!
 	}
 
 	/**
@@ -82,39 +84,27 @@ public class QVTOCompileErrorTest {
 	private void check(URI uri) {
 		// Compile the transformation (if it was a library, we will
 		// get an error)
-		TransformationExecutor transformationExecutor = new TransformationExecutor(
-				uri);
-		Diagnostic diagnostic = transformationExecutor
-				.loadTransformation();
+		TransformationExecutor transformationExecutor = new TransformationExecutor(uri);
+		Diagnostic diagnostic = transformationExecutor.loadTransformation();
 		if (diagnostic.getSeverity() != Diagnostic.OK) {
 
 			// If this is a library, we get an error; do not fail
 			// then.
-			if (!diagnostic.getMessage().contains(
-					"No transformation found in unit")) {
+			if (!diagnostic.getMessage().contains("No transformation found in unit")) {
 				org.junit.Assert.fail(diagnostic.toString());
 			}
-		}		
+		}
 	}
 
 	/**
 	 * Finds out if this qvto script should be checked.
 	 * 
-	 * @param bundleName The name of the bundle that contains this script. 
-	 * @param url The url of the script within the bundle.
+	 * @param bundleName
+	 *            The name of the bundle that contains this script.
+	 * @param url
+	 *            The url of the script within the bundle.
 	 * @return <code>true</code>, if this script should be checked.
 	 */
-	private boolean shouldCheck(String bundleName, URL url) {
-		// Disable checking of GMF reconcile qvto scripts
-		if (bundleName.endsWith(".diagram")	&& url.getPath().startsWith("/model/")) {
-			return false;
-		}
-		// Disable checking of GMF-templates helper qvto scripts
-		if (bundleName.equals("de.uni_paderborn.fujaba.common")
-				&& url.getPath().startsWith("/gmf-templates/")) {
-			return false;
-		}
-		return true;
-	}
+	public abstract boolean shouldCheck(String bundleName, URL url);
 
 }
