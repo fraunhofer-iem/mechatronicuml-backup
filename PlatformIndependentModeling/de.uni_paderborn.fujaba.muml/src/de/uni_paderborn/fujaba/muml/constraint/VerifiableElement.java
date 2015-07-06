@@ -26,10 +26,10 @@ import org.storydriven.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage#getVerifiableElement()
  * @model abstract="true"

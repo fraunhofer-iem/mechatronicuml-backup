@@ -44,7 +44,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getDescriptionAspects <em>Description Aspects</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getLegalConfigurations <em>Legal Configurations</em>}</li>
@@ -52,6 +51,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getCombineablePatterns <em>Combineable Patterns</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.CoordinationPatternImpl#getAlternativePatterns <em>Alternative Patterns</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

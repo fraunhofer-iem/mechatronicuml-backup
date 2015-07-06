@@ -18,7 +18,6 @@ package de.uni_paderborn.fujaba.muml.connector;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getNext <em>Next</em>}</li>
@@ -26,6 +25,7 @@ package de.uni_paderborn.fujaba.muml.connector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getFirst <em>First</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getLast <em>Last</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance()
  * @model abstract="true"

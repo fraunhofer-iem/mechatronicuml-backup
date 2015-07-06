@@ -32,12 +32,12 @@ import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.msgtype.impl.MessageTypeImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.msgtype.impl.MessageTypeImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.msgtype.impl.MessageTypeImpl#getRepository <em>Repository</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

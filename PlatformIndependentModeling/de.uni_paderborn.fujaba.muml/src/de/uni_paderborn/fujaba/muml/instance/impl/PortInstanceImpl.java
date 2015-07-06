@@ -29,13 +29,13 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getPortPart <em>Port Part</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

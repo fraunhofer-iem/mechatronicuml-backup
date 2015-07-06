@@ -39,7 +39,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getEmbeddedRegions <em>Embedded Regions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getDoEvent <em>Do Event</em>}</li>
@@ -56,6 +55,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getParentStatechart <em>Parent Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getAllAvailableChannels <em>All Available Channels</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -26,10 +26,10 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointImpl#getConnectors <em>Connectors</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

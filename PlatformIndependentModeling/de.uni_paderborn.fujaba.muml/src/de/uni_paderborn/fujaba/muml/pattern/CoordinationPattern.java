@@ -29,7 +29,6 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getDescriptionAspects <em>Description Aspects</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getLegalConfigurations <em>Legal Configurations</em>}</li>
@@ -37,6 +36,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getCombineablePatterns <em>Combineable Patterns</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.CoordinationPattern#getAlternativePatterns <em>Alternative Patterns</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getCoordinationPattern()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePatternNames'"

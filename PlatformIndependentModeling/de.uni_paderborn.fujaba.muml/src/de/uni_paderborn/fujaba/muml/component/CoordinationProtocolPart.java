@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getPortParts <em>Port Parts</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyDiscretePortParts'"

@@ -19,10 +19,10 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance#getAssemblyConnectorType <em>Assembly Connector Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getAssemblyConnectorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AssemblyConnectorInstanceNeedsTypeIfNotTopLevel'"

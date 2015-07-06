@@ -36,7 +36,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getName <em>Name</em>}</li>
@@ -48,6 +47,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#isMulti <em>Multi</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

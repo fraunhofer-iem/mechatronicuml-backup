@@ -31,10 +31,10 @@ import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.msgtype.impl.MessageTypeRepositoryImpl#getMessageTypes <em>Message Types</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

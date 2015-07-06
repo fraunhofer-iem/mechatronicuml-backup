@@ -20,11 +20,11 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#isConstant <em>Constant</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConstantMustBeInitialized'"

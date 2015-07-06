@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.types.impl.ArrayDataTypeImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.types.impl.ArrayDataTypeImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

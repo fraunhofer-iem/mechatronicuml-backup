@@ -25,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.msgtype.MessageType#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.msgtype.MessageType#getRepository <em>Repository</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageType()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueParameterNames='-- Parameter names must be unique\r\nself.parameters->isUnique(name)' repositoryMustBeSet='-- A MessageType must be contained in a MessageTypeRepository.\r\nnot self.repository.oclIsUndefined()'"

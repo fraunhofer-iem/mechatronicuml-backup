@@ -36,10 +36,10 @@ import org.storydriven.core.impl.RepositoryImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationRepositoryImpl#getOperations <em>Operations</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

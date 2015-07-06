@@ -21,12 +21,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions()
  * @model

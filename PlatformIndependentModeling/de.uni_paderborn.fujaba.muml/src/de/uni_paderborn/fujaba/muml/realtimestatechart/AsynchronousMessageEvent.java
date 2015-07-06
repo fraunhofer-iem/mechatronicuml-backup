@@ -25,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.OneToMa
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent#getMessage <em>Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent#getOneToManyCommunicationSchema <em>One To Many Communication Schema</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getAsynchronousMessageEvent()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RaiseMessageEventImpliesParameterBinding='-- A raise message event must bind a value to every parameter\r\nlet messageType : msgtype::MessageType = self.message.instanceOf in\r\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\r\n-- author: adann' RaiseMessageEventImpliesSendingCommunicationSchema='-- When using One-To-Many Communication Schemata, a RaiseMessageEvent may only use sending One-To-Many Communication Schemata.\r\nif (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::RAISE implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::SendingOneToManyCommunicationSchema))\r\nendif' TriggerMessageEventImpliesReceivingCommunicationSchema='-- When using One-To-Many Communication Schemata, a TiggerMessageEvent may only use receiving One-To-Many Communication Schemata.\r\nif (self.oneToManyCommunicationSchema->isEmpty()) then \r\n\ttrue \r\nelse\r\n\tself.kind =EventKind::TRIGGER implies (self.oneToManyCommunicationSchema.oclIsKindOf(one_to_n_schemata::ReceivingOneToManyCommunicationSchema))\r\nendif'"

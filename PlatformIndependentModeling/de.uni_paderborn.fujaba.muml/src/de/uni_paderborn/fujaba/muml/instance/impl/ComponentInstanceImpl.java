@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
@@ -41,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getParentCIC <em>Parent CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#isTopLevel <em>Top Level</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

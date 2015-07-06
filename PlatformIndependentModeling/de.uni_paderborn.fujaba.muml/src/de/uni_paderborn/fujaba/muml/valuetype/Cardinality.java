@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality#getLowerBound <em>Lower Bound</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getCardinality()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LowerBoundMustBeLessOrEqualThanUpperBound'"

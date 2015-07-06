@@ -744,7 +744,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		// Initialize enums and add enum literals
 		initEEnum(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.class, "BufferOverflowAvoidanceStrategy");
 		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISCARD_INCOMING_MESSAGE);
-		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISPLACE_OLDEST_MESSAGE_IN_BUFFER);
+		addEEnumLiteral(bufferOverflowAvoidanceStrategyEEnum, BufferOverflowAvoidanceStrategy.DISCARD_OLDEST_MESSAGE_IN_BUFFER);
 
 		// Create resource
 		createResource(eNS_URI);

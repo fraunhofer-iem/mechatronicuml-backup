@@ -21,11 +21,11 @@ import org.storydriven.core.NamedElement;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance#getType <em>Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorEndpointInstance()
  * @model abstract="true"

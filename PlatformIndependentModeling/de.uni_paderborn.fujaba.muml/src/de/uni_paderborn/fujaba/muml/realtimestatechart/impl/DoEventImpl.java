@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl#getAction <em>Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl#getPeriod <em>Period</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

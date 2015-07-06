@@ -25,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getNext <em>Next</em>}</li>
@@ -33,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getFirst <em>First</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

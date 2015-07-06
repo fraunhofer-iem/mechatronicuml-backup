@@ -45,12 +45,12 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.LegalConfigurationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.LegalConfigurationImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.LegalConfigurationImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

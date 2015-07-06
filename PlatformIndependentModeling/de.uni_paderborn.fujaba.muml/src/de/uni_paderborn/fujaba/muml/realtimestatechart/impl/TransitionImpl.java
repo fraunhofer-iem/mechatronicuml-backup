@@ -55,7 +55,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extension</em>}</li>
@@ -78,6 +77,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

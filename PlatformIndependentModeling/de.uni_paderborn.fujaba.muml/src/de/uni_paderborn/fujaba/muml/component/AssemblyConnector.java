@@ -19,11 +19,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getPortParts <em>Port Parts</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getAssemblyConnector()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes'"

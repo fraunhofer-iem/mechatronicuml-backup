@@ -22,10 +22,10 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.StructuredComponentInstanceImpl#getEmbeddedCIC <em>Embedded CIC</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getMessageType <em>Message Type</em>}</li>
@@ -28,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getBufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getGmfMessageTypes <em>Gmf Message Types</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getMessageBuffer()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscreteInteractionEndpointMustBeSet'"

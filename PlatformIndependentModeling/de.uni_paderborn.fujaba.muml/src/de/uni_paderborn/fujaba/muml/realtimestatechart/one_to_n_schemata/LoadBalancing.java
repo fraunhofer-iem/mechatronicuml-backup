@@ -27,11 +27,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getResponseMessage <em>Response Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.LoadBalancing#getMaxWorkingTime <em>Max Working Time</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getLoadBalancing()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ResponseMessageOrWcetOfCommunicationSchemaLoadbalancingMustBeSet='-- LoadBalancing must define the responseMessage or the maxWorkingTime\r\nnot self.responseMessage.oclIsUndefined() or not self.maxWorkingTime.oclIsUndefined()' ResponseMessageOfCommunicationSchemaLoadbalancingMustBeTriggerMessage='-- responseMessage must be a TRIGGER-MessageEvent\r\nif(self.responseMessage.oclIsUndefined()) then\r\n\ttrue\r\nelse\r\n\tif self.responseMessage.kind=realtimestatechart::EventKind::TRIGGER then\r\n\t\ttrue\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif\r\n' LoadbalancingEitherHasResponseMessageOrWcet='-- responseMessage and maxWorkingTime exclude each other\r\nif not self.responseMessage.oclIsUndefined() and not self.maxWorkingTime.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\ttrue\r\nendif'"

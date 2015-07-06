@@ -23,10 +23,10 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.BehavioralElementImpl#getBehavior <em>Behavior</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

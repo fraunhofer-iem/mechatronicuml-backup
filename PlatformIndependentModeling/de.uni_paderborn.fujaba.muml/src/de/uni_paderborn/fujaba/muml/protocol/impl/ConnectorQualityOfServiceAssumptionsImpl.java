@@ -23,12 +23,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#getMinMessageDelay <em>Min Message Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#getMaxMessageDelay <em>Max Message Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.ConnectorQualityOfServiceAssumptionsImpl#isMessageLossPossible <em>Message Loss Possible</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

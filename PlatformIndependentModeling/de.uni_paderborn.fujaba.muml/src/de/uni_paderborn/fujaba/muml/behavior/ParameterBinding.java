@@ -20,11 +20,11 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getParameterBinding()
  * @model

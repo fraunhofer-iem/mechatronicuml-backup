@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortConnectorInstanceImpl#getPortConnectorType <em>Port Connector Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortConnectorInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

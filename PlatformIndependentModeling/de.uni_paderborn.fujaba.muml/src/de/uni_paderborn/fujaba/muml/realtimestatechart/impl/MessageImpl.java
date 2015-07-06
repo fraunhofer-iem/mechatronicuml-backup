@@ -29,11 +29,11 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.MessageImpl#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.MessageImpl#getParameterBinding <em>Parameter Binding</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

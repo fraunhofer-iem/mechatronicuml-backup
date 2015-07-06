@@ -38,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
@@ -47,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getPortParts <em>Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

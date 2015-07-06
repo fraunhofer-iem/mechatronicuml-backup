@@ -15,6 +15,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Exit Event</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * </p>
  *
  * @generated
  */

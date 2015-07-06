@@ -33,11 +33,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.LoadBalancingImpl#getResponseMessage <em>Response Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.LoadBalancingImpl#getMaxWorkingTime <em>Max Working Time</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

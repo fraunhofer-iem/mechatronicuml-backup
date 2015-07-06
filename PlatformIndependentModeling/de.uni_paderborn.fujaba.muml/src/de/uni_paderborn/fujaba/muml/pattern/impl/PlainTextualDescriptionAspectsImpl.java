@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl#getOverview <em>Overview</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl#getContext <em>Context</em>}</li>
@@ -42,6 +41,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl#getVariants <em>Variants</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.impl.PlainTextualDescriptionAspectsImpl#getAlternatives <em>Alternatives</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

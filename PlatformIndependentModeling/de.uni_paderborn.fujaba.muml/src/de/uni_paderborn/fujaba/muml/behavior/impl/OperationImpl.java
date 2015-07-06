@@ -32,13 +32,13 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getImplementations <em>Implementations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getReturnType <em>Return Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

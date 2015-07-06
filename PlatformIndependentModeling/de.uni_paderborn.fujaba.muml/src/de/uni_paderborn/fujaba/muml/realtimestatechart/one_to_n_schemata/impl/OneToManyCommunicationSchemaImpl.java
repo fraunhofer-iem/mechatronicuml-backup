@@ -38,12 +38,12 @@ import org.storydriven.core.expressions.Expression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getAsynchronousMessageEvent <em>Asynchronous Message Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.OneToManyCommunicationSchemaImpl#getAction <em>Action</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

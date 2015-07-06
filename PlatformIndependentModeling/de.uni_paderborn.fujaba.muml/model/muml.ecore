@@ -2524,7 +2524,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="BufferOverflowAvoidanceStrategy">
       <eLiterals name="DISCARD_INCOMING_MESSAGE" literal="discard incoming message"/>
-      <eLiterals name="DISPLACE_OLDEST_MESSAGE_IN_BUFFER" value="1" literal="displace oldest message in buffer"/>
+      <eLiterals name="DISCARD_OLDEST_MESSAGE_IN_BUFFER" value="1" literal="discard oldest message in buffer"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.4.0"

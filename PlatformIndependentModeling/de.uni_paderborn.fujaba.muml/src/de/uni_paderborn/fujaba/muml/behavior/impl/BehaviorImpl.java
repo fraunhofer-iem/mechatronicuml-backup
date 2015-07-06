@@ -30,12 +30,12 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorImpl#getVariables <em>Variables</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

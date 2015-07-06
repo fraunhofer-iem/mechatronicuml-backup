@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.impl.CardinalityImpl#getLowerBound <em>Lower Bound</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.impl.CardinalityImpl#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

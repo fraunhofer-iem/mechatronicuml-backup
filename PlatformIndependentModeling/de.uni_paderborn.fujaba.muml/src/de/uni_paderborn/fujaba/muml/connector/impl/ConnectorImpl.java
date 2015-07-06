@@ -27,11 +27,11 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.ConnectorImpl#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.ConnectorImpl#isSelfConnector <em>Self Connector</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

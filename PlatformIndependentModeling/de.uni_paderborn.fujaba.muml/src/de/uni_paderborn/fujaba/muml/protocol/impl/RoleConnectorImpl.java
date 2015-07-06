@@ -28,12 +28,12 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl#getRoles <em>Roles</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

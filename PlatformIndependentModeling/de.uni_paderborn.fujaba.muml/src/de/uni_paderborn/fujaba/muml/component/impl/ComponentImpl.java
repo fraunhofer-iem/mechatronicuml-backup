@@ -32,12 +32,12 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComponentKind <em>Component Kind</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

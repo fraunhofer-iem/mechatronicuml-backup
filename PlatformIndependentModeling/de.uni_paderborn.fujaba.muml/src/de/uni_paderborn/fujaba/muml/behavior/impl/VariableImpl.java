@@ -24,12 +24,12 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#isConstant <em>Constant</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

@@ -27,12 +27,12 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Iterate#getTerminationCondition <em>Termination Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Iterate#getDelay <em>Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.Iterate#isStartFromFirst <em>Start From First</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_n_schemataPackage#getIterate()
  * @model

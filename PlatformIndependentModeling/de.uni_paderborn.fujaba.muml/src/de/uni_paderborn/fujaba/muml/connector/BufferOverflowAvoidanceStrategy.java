@@ -39,14 +39,14 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	DISCARD_INCOMING_MESSAGE(0, "DISCARD_INCOMING_MESSAGE", "discard incoming message"),
 
 	/**
-	 * The '<em><b>DISPLACE OLDEST MESSAGE IN BUFFER</b></em>' literal object.
+	 * The '<em><b>DISCARD OLDEST MESSAGE IN BUFFER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DISPLACE_OLDEST_MESSAGE_IN_BUFFER_VALUE
+	 * @see #DISCARD_OLDEST_MESSAGE_IN_BUFFER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DISPLACE_OLDEST_MESSAGE_IN_BUFFER(1, "DISPLACE_OLDEST_MESSAGE_IN_BUFFER", "displace oldest message in buffer");
+	DISCARD_OLDEST_MESSAGE_IN_BUFFER(1, "DISCARD_OLDEST_MESSAGE_IN_BUFFER", "discard oldest message in buffer");
 
 	/**
 	 * The '<em><b>DISCARD INCOMING MESSAGE</b></em>' literal value.
@@ -64,19 +64,19 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	public static final int DISCARD_INCOMING_MESSAGE_VALUE = 0;
 
 	/**
-	 * The '<em><b>DISPLACE OLDEST MESSAGE IN BUFFER</b></em>' literal value.
+	 * The '<em><b>DISCARD OLDEST MESSAGE IN BUFFER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>DISPLACE OLDEST MESSAGE IN BUFFER</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>DISCARD OLDEST MESSAGE IN BUFFER</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DISPLACE_OLDEST_MESSAGE_IN_BUFFER
-	 * @model literal="displace oldest message in buffer"
+	 * @see #DISCARD_OLDEST_MESSAGE_IN_BUFFER
+	 * @model literal="discard oldest message in buffer"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DISPLACE_OLDEST_MESSAGE_IN_BUFFER_VALUE = 1;
+	public static final int DISCARD_OLDEST_MESSAGE_IN_BUFFER_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' enumerators.
@@ -87,7 +87,7 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	private static final BufferOverflowAvoidanceStrategy[] VALUES_ARRAY =
 		new BufferOverflowAvoidanceStrategy[] {
 			DISCARD_INCOMING_MESSAGE,
-			DISPLACE_OLDEST_MESSAGE_IN_BUFFER,
+			DISCARD_OLDEST_MESSAGE_IN_BUFFER,
 		};
 
 	/**
@@ -102,8 +102,6 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	 * Returns the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BufferOverflowAvoidanceStrategy get(String literal) {
@@ -120,8 +118,6 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	 * Returns the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BufferOverflowAvoidanceStrategy getByName(String name) {
@@ -138,14 +134,12 @@ public enum BufferOverflowAvoidanceStrategy implements Enumerator {
 	 * Returns the '<em><b>Buffer Overflow Avoidance Strategy</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static BufferOverflowAvoidanceStrategy get(int value) {
 		switch (value) {
 			case DISCARD_INCOMING_MESSAGE_VALUE: return DISCARD_INCOMING_MESSAGE;
-			case DISPLACE_OLDEST_MESSAGE_IN_BUFFER_VALUE: return DISPLACE_OLDEST_MESSAGE_IN_BUFFER;
+			case DISCARD_OLDEST_MESSAGE_IN_BUFFER_VALUE: return DISCARD_OLDEST_MESSAGE_IN_BUFFER;
 		}
 		return null;
 	}

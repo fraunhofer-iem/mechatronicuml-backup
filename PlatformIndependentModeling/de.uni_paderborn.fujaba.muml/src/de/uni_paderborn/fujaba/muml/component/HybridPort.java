@@ -25,10 +25,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getHybridPort()
  * @model

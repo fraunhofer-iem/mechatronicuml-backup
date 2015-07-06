@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
@@ -31,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#isTopLevel <em>Top Level</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance()
  * @model abstract="true"

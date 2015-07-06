@@ -15,6 +15,8 @@ import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Static Structured Component</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * </p>
  *
  * @generated
  */

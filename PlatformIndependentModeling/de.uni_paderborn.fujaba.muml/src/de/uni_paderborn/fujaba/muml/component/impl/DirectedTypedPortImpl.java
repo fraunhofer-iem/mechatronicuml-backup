@@ -27,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#getKind <em>Kind</em>}</li>
@@ -36,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#isInPort <em>In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

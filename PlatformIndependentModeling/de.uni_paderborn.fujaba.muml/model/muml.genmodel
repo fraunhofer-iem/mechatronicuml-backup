@@ -447,7 +447,7 @@
         disposableProviderFactory="true" ecorePackage="muml.ecore#//connector">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//connector/BufferOverflowAvoidanceStrategy">
         <genEnumLiterals ecoreEnumLiteral="muml.ecore#//connector/BufferOverflowAvoidanceStrategy/DISCARD_INCOMING_MESSAGE"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//connector/BufferOverflowAvoidanceStrategy/DISPLACE_OLDEST_MESSAGE_IN_BUFFER"/>
+        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//connector/BufferOverflowAvoidanceStrategy/DISCARD_OLDEST_MESSAGE_IN_BUFFER"/>
       </genEnums>
       <genClasses image="false" ecoreClass="muml.ecore#//connector/ConnectorEndpoint">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

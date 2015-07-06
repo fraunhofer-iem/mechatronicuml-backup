@@ -32,10 +32,10 @@ import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerifiableElementImpl#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

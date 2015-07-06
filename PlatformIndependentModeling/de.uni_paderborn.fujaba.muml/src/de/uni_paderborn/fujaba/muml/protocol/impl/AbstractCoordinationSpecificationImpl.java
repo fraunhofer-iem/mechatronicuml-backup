@@ -36,7 +36,6 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
@@ -47,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getGmfConnectorQualityOfServiceAssumptions <em>Gmf Connector Quality Of Service Assumptions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getAdaptedFromPattern <em>Adapted From Pattern</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

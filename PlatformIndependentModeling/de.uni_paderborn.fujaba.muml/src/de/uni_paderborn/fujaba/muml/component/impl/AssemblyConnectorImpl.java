@@ -21,11 +21,11 @@ import de.uni_paderborn.fujaba.muml.component.PortPart;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getPortParts <em>Port Parts</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

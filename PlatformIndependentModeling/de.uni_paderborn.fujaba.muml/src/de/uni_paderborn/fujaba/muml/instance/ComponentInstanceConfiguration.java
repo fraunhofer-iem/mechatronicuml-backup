@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
@@ -31,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getCoordinationProtocolInstances <em>Coordination Protocol Instances</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentInstanceNames='--  Component instances of a component instance configuration must have unique names on top level.\r\nself.componentInstances->isUnique(name)'"

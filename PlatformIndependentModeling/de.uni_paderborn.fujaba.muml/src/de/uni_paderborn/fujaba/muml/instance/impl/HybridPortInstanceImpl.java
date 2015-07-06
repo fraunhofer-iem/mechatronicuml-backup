@@ -15,6 +15,8 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Hybrid Port Instance</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * </p>
  *
  * @generated
  */

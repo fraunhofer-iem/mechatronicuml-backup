@@ -24,11 +24,11 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.ParameterBindingImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.ParameterBindingImpl#getValue <em>Value</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

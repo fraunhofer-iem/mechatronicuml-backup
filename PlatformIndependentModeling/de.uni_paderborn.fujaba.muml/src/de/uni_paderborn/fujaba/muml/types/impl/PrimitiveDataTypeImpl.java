@@ -20,10 +20,10 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.types.impl.PrimitiveDataTypeImpl#getPrimitiveType <em>Primitive Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

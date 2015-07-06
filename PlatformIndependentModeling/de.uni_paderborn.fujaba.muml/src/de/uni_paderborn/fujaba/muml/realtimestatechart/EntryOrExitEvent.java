@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent#getClockResets <em>Clock Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent#getAction <em>Action</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent()
  * @model abstract="true"

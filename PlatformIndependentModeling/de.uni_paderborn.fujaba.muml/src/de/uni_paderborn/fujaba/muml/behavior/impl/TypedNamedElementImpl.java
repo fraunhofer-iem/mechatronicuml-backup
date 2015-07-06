@@ -22,10 +22,10 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.TypedNamedElementImpl#getDataType <em>Data Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

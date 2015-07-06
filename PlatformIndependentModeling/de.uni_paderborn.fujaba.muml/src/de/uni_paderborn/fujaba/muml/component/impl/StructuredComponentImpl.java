@@ -31,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getEmbeddedComponentParts <em>Embedded Component Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getConnectors <em>Connectors</em>}</li>
@@ -39,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getAllAtomicComponents <em>All Atomic Components</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getCoordinationProtocolParts <em>Coordination Protocol Parts</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

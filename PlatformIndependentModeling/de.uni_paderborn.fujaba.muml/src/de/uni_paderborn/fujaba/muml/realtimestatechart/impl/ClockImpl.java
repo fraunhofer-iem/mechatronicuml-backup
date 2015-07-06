@@ -24,10 +24,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.ClockImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

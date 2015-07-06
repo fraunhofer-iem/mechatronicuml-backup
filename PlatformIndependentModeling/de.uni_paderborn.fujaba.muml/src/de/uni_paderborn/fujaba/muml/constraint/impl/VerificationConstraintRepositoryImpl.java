@@ -22,6 +22,8 @@ import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Verification Constraint Repository</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * </p>
  *
  * @generated
  */

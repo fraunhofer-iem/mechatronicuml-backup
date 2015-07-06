@@ -38,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
@@ -55,6 +54,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#isMultiPort <em>Multi Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

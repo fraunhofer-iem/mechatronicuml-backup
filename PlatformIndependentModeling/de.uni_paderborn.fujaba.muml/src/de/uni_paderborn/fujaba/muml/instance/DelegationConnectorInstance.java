@@ -19,10 +19,10 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance#getDelegationConnectorType <em>Delegation Connector Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDelegationConnectorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DelegateToEmbeddedCIC'"

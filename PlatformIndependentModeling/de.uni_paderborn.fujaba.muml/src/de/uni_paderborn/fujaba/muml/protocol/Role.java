@@ -20,12 +20,12 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#isMultiRole <em>Multi Role</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes MultiRoleRequiresSubroleBehaviorAndCoordinatorBehavior'"

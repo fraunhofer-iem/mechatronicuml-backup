@@ -24,11 +24,11 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.One_to_
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.AsynchronousMessageEventImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.AsynchronousMessageEventImpl#getOneToManyCommunicationSchema <em>One To Many Communication Schema</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

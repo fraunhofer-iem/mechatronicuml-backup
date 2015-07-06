@@ -26,10 +26,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.ActionImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

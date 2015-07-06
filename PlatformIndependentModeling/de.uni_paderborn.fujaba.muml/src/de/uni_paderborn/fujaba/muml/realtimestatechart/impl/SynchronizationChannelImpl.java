@@ -27,12 +27,12 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.SynchronizationChannelImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.SynchronizationChannelImpl#getSelectorType <em>Selector Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */

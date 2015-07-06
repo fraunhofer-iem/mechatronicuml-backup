@@ -18,10 +18,10 @@ package de.uni_paderborn.fujaba.muml.types;
  *
  * <p>
  * The following features are supported:
- * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.types.PrimitiveDataType#getPrimitiveType <em>Primitive Type</em>}</li>
  * </ul>
+ * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getPrimitiveDataType()
  * @model
