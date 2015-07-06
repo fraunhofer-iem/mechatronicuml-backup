@@ -53,7 +53,7 @@
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.ontology.ext.dependency.unitontology.feature"
+         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.unitontology.feature"
          version="0.0.0"/>
 
 </feature>
