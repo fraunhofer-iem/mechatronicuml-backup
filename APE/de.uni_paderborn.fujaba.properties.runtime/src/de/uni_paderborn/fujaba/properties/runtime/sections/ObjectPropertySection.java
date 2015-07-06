@@ -50,12 +50,14 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	}
 
 	public void setInput(IWorkbenchPart part, ISelection selection) {
+		boolean changed = getSelection() != selection;
 		super.setInput(part, selection);
-		final Object input = RuntimePlugin.resolveSemanticObject(selection);
-		if (editor != null && !editor.isDisposed()) {
-			editor.setInput(input);
+		if (changed) {
+			final Object input = RuntimePlugin.resolveSemanticObject(selection);
+			if (editor != null && !editor.isDisposed()) {
+				editor.setInput(input);
+			}
 		}
-
 	}
 
 	public void refresh() {
