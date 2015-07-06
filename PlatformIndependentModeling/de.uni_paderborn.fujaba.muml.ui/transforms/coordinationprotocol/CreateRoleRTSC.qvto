@@ -51,7 +51,7 @@ helper createRoleBehavior(inout theRole : Role){
 		subroleRegion.priority:=1;
 		mainState.embeddedRegions+=subroleRegion;
 		
-		theRole.adaptationBehavior:=adaptionStateStatchart;
+		theRole.coordinatorBehavior:=adaptionStateStatchart;
 		theRole.subroleBehavior:=subroleStateStatchart;
 		
 		

@@ -52,7 +52,7 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort){
 	assert fatal (
 		(theRole.cardinality.upperBound.value > 1)
 		implies
-		(not theRole.adaptationBehavior.oclIsUndefined())
+		(not theRole.coordinatorBehavior.oclIsUndefined())
 	)
 	with log("Multi role must have 'adaptationBehavior' property set!");
 	
@@ -101,7 +101,7 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort){
 			
 			-- set behavior and adaptationBehavior references
 			thePort.subroleBehavior := getMultiPortSubroleBehaviorRTSC(theRole, thePort);
-			thePort.adaptationBehavior := getMultiPortAdaptationRTSC(theRole, thePort);
+			thePort.coordinatorBehavior := getMultiPortAdaptationRTSC(theRole, thePort);
 			
 		} endif;
 	} endif;
@@ -167,7 +167,7 @@ query getMultiPortSubroleBehaviorRTSC(in theRole : Role, in thePort : DiscretePo
 -- returns the RTSC of a multi-port corresponding to the adaptation RTSC of a multirole 
 query getMultiPortAdaptationRTSC(in theRole : Role, in thePort : DiscretePort) : RealtimeStatechart{
 	-- obtain RTSC name
-	var rtscName := theRole.adaptationBehavior.oclAsType(RealtimeStatechart).name;
+	var rtscName := theRole.coordinatorBehavior.oclAsType(RealtimeStatechart).name;
 	
 	-- search in port RTSC
 	thePort.behavior.oclAsType(RealtimeStatechart).states -> forEach(state){
