@@ -48,13 +48,13 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort){
 	with log("Multi role must have 'subroleBehavior' property set!");
 
 	-- check constraint
-	-- multi port => adaptationBehavior must be set
+	-- multi port => coordinatorBehavior must be set
 	assert fatal (
 		(theRole.cardinality.upperBound.value > 1)
 		implies
 		(not theRole.coordinatorBehavior.oclIsUndefined())
 	)
-	with log("Multi role must have 'adaptationBehavior' property set!");
+	with log("Multi role must have 'coordinatorBehavior' property set!");
 	
 	-- copy cardinality (creating a new one, to force notification in the diagram)
 	thePort.cardinality := theRole.cardinality.map copyCardinality();
@@ -99,7 +99,7 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort){
 
 		if(thePort.cardinality.upperBound.value > 1) then{			
 			
-			-- set behavior and adaptationBehavior references
+			-- set behavior and coordinatorBehavior references
 			thePort.subroleBehavior := getMultiPortSubroleBehaviorRTSC(theRole, thePort);
 			thePort.coordinatorBehavior := getMultiPortAdaptationRTSC(theRole, thePort);
 			
