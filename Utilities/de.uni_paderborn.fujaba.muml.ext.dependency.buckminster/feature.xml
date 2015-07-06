@@ -48,4 +48,12 @@
          id="de.uni_paderborn.fujaba.muml.allocation.ext.dependency.sat4j.pb.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.ontology.ext.dependency.unitontology.feature"
+         version="0.0.0"/>
+
 </feature>

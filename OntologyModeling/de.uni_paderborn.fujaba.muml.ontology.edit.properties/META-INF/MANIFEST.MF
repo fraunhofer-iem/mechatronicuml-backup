@@ -21,7 +21,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.modelinstance.edit.properties,
  de.uni_paderborn.fujaba.muml.common,
  org.eclipse.core.resources,
- org.eclipse.jface
+ org.eclipse.jface,
+ de.uni_paderborn.fujaba.muml.ontology.ext.dependency.owlapi;bundle-version="4.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.ontology.properties.metamodel, de.uni_paderborn.fujaba.muml.ontology.properties.constraint,
