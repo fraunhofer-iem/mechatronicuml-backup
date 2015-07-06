@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.ontology.ext.dependency.unitontology.feature"
+      id="de.uni_paderborn.fujaba.muml.ontology.ext.dependency.unitontology.feature"
       label="unit ontology external dependency"
       version="4.0.0.qualifier"
       provider-name="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany (NOT the author)">
