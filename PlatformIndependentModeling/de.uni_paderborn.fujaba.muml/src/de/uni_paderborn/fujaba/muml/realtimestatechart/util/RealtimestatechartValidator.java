@@ -536,6 +536,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_NoCombinationOfReceivedSynchronizationAndTriggerMessage(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TransitionMustBeContainedByCorrectStatechart(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_OutgoingTransitionOfUrgentStateMustBeUrgent(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_NotMoreThanOneTriggerAndOneRaiseMessageEvent(transition, diagnostics, context);
 		return result;
 	}
 
@@ -950,6 +951,37 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OutgoingTransitionOfUrgentStateMustBeUrgent",
 				 TRANSITION__OUTGOING_TRANSITION_OF_URGENT_STATE_MUST_BE_URGENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NotMoreThanOneTriggerAndOneRaiseMessageEvent constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__NOT_MORE_THAN_ONE_TRIGGER_AND_ONE_RAISE_MESSAGE_EVENT__EEXPRESSION = "-- There may only be at most one Raise MessageEvent and at most one Trigger MessageEvent\r\n" +
+		"self.events->select(event|event.oclIsKindOf(realtimestatechart::AsynchronousMessageEvent) and event.oclAsType(realtimestatechart::AsynchronousMessageEvent).kind = realtimestatechart::EventKind::RAISE) -> size() <2\r\n" +
+		"and self.events->select(event|event.oclIsKindOf(realtimestatechart::AsynchronousMessageEvent) and event.oclAsType(realtimestatechart::AsynchronousMessageEvent).kind = realtimestatechart::EventKind::TRIGGER) -> size() <2";
+
+	/**
+	 * Validates the NotMoreThanOneTriggerAndOneRaiseMessageEvent constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_NotMoreThanOneTriggerAndOneRaiseMessageEvent(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NotMoreThanOneTriggerAndOneRaiseMessageEvent",
+				 TRANSITION__NOT_MORE_THAN_ONE_TRIGGER_AND_ONE_RAISE_MESSAGE_EVENT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
