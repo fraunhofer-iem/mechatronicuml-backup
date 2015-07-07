@@ -33,12 +33,12 @@ import org.storydriven.core.expressions.Expression;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.IterateImpl#getTerminationCondition <em>Termination Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.IterateImpl#getDelay <em>Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.one_to_n_schemata.impl.IterateImpl#isStartFromFirst <em>Start From First</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

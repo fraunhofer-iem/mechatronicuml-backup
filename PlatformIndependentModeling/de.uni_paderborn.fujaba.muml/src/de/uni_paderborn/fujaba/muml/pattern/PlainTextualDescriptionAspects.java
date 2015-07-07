@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getOverview <em>Overview</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getContext <em>Context</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getVariants <em>Variants</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.pattern.PlainTextualDescriptionAspects#getAlternatives <em>Alternatives</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.pattern.PatternPackage#getPlainTextualDescriptionAspects()
  * @model

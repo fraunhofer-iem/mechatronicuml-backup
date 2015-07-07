@@ -21,8 +21,6 @@ import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Static Atomic Component</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isOptional <em>Optional</em>}</li>
@@ -31,7 +32,6 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isInPort <em>In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort()
  * @model abstract="true"

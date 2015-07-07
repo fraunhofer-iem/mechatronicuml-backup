@@ -27,10 +27,10 @@ import org.storydriven.core.Repository;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.OperationRepository#getOperations <em>Operations</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getOperationRepository()
  * @model

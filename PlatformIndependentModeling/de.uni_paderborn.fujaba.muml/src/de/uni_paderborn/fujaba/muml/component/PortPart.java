@@ -22,6 +22,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getComponentPart <em>Component Part</em>}</li>
@@ -29,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart()
  * @model

@@ -20,11 +20,11 @@ import de.uni_paderborn.fujaba.muml.component.PortPart;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DelegationConnectorImpl#getPortPart <em>Port Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DelegationConnectorImpl#getPort <em>Port</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

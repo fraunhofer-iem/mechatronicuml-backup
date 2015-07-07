@@ -22,13 +22,13 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getRefinedRole <em>Refined Role</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

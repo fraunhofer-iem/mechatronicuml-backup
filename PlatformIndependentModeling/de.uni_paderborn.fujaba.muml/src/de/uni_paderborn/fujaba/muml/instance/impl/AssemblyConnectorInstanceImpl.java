@@ -19,10 +19,10 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.AssemblyConnectorInstanceImpl#getAssemblyConnectorType <em>Assembly Connector Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

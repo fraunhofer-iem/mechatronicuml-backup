@@ -40,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
@@ -49,7 +50,6 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getCoordinationProtocolInstances <em>Coordination Protocol Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

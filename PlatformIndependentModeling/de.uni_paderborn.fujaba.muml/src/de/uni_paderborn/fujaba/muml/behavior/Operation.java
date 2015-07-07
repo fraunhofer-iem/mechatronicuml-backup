@@ -24,12 +24,12 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Operation#getImplementations <em>Implementations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Operation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Operation#getReturnType <em>Return Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getOperation()
  * @model

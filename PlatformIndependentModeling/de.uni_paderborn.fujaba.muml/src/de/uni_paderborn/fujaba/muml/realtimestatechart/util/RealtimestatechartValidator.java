@@ -1338,6 +1338,10 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_OneInitialState(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_OnlyDefineSchemataBeforeDisassembling(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_ComponentBehaviorStatechartMustBeWellFormed(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoMessageSendInCoordinatorRegion(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed(realtimeStatechart, diagnostics, context);
 		return result;
 	}
 
@@ -1474,11 +1478,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- it is only possible to define schemata before the subrole behavior was set!\r\n" +
-		"if(not self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint)) then \r\n" +
-		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined()\r\n" +
-		"else true\r\n" +
-		"endif";
+	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION = "-- it is only possible to define schemata before the subrole or the coordinator behavior was set!\r\n" +
+		"self.usesOneToManyCommunicationSchemata implies self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior.oclIsUndefined() and  self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsUndefined() ";
 
 	/**
 	 * Validates the OnlyDefineSchemataBeforeDisassembling constraint of '<em>Realtime Statechart</em>'.
@@ -1496,6 +1497,151 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OnlyDefineSchemataBeforeDisassembling",
 				 REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_BEFORE_DISASSEMBLING__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_WHEN_STATECHART_IS_ROLE_OR_PORT_STATECHART__EEXPRESSION = "-- it is only possible to define schemata if the realtime-statechart is the behavior of a Port or Role\r\n" +
+		"self.usesOneToManyCommunicationSchemata implies (\r\n" +
+		"not self.getPortOrRoleStatechart().behavioralElement.oclIsUndefined() and self.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint))\r\n" +
+		"\r\n" +
+		"";
+
+	/**
+	 * Validates the OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyDefineSchemataWhenStatechartIsRoleOrPortStatechart",
+				 REALTIME_STATECHART__ONLY_DEFINE_SCHEMATA_WHEN_STATECHART_IS_ROLE_OR_PORT_STATECHART__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ComponentBehaviorStatechartMustBeWellFormed constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__COMPONENT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- The component behavior realtime-statechart must contain exaxtly one State and no Transitions.\r\n" +
+		"\r\n" +
+		"let behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n" +
+		"(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(component::Component)) implies ( self.states->size() = 1 and self.transitions->size() = 0)";
+
+	/**
+	 * Validates the ComponentBehaviorStatechartMustBeWellFormed constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_ComponentBehaviorStatechartMustBeWellFormed(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ComponentBehaviorStatechartMustBeWellFormed",
+				 REALTIME_STATECHART__COMPONENT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NoMessageSendInCoordinatorRegion constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__NO_MESSAGE_SEND_IN_COORDINATOR_REGION__EEXPRESSION = "-- It is not allowed to specify AsynchronousMessageEvents at coordinator region\r\n" +
+		"if(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior.oclIsInvalid())\r\n" +
+		"then true else \r\n" +
+		"(self.getPortOrRoleStatechart().behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior = self )implies (\r\n" +
+		"let allChildrenStatecharts: Set(realtimestatechart::RealtimeStatechart) = self->closure(t|t.oclAsType(realtimestatechart::RealtimeStatechart).states.embeddedRegions.embeddedStatechart) in \r\n" +
+		"let allTransitions : Bag(realtimestatechart::Transition) = allChildrenStatecharts.transitions->union(self.transitions) in\r\n" +
+		"allTransitions->select(t| not t.triggerMessageEvent.oclIsUndefined() or not t.raiseMessageEvent.oclIsUndefined())->isEmpty()\r\n" +
+		")\r\n" +
+		"endif";
+
+	/**
+	 * Validates the NoMessageSendInCoordinatorRegion constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_NoMessageSendInCoordinatorRegion(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NoMessageSendInCoordinatorRegion",
+				 REALTIME_STATECHART__NO_MESSAGE_SEND_IN_COORDINATOR_REGION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__MULTI_DISCRETE_INTERACTION_ENDPOINT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION = "-- if the multi-discreteInteractionEndpoint behavior realtime-statechart does not use 1-N schemata, it must contain exaxtly one State and no Transitions on toplevel. Furthermore, the only toplevel state defines exactly two regions: one region defines the DiscreteInteractionEndpoint.coordinatorBehavior and the other region defines the DiscreteInteractionEndpoint.subRoleBehavior\r\n" +
+		"\r\n" +
+		"\r\n" +
+		"let behavioralElement : behavior::BehavioralElement = self.behavioralElement in \r\n" +
+		"(not behavioralElement.oclIsUndefined() and behavioralElement.oclIsKindOf(connector::DiscreteInteractionEndpoint) and behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).multi and not self.usesOneToManyCommunicationSchemata) implies ( self.states->size() = 1 \r\n" +
+		"and self.transitions->size() = 0 and self.states->at(1).embeddedRegions->size() = 2 and \r\n" +
+		"self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).subroleBehavior) and self.states->at(1).embeddedRegions.embeddedStatechart->includes(behavioralElement.oclAsType(connector::DiscreteInteractionEndpoint).coordinatorBehavior) \r\n" +
+		")\r\n" +
+		"\r\n" +
+		"\r\n" +
+		"\r\n" +
+		"\r\n" +
+		"\r\n" +
+		"\r\n" +
+		"";
+
+	/**
+	 * Validates the MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "MultiDiscreteInteractionEndpointBehaviorStatechartMustBeWellFormed",
+				 REALTIME_STATECHART__MULTI_DISCRETE_INTERACTION_ENDPOINT_BEHAVIOR_STATECHART_MUST_BE_WELL_FORMED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

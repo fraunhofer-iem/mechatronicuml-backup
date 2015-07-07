@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getParentComponent <em>Parent Component</em>}</li>
@@ -35,7 +36,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPortParts <em>Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet'"

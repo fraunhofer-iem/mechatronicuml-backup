@@ -23,10 +23,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateConnectionPointImpl#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

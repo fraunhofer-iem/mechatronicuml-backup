@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
@@ -40,7 +41,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferOverflowAvoidanceStrategy <em>Buffer Overflow Avoidance Strategy</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getGmfMessageTypes <em>Gmf Message Types</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

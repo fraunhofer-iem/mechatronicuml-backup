@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getEmbeddedComponentParts <em>Embedded Component Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getConnectors <em>Connectors</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getAllAtomicComponents <em>All Atomic Components</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolParts <em>Coordination Protocol Parts</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStructuredComponent()
  * @model abstract="true"

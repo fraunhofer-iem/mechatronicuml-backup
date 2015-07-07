@@ -21,10 +21,10 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement#getDataType <em>Data Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getTypedNamedElement()
  * @model abstract="true"
