@@ -75,6 +75,8 @@
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/plugins/{1}">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
     
@@ -82,6 +84,8 @@
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/features/{1}">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
  </rm:searchPath>
