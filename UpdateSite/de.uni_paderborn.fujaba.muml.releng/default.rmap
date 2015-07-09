@@ -71,21 +71,10 @@
 </rm:searchPath>
   
 <rm:searchPath name="PlatformIndependentModeling">
-    <rm:provider componentTypes="osgi.bundle" readerType="local" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
 	<rm:property key="buckminster.source" value="false"/>
     	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/plugins/{1}">
-        <bc:propertyRef key="workspace.root"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-    
-    <rm:provider componentTypes="eclipse.feature" readerType="local" mutable="false" source="false">
-	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/features/{1}">
-        <bc:propertyRef key="workspace.root"/>
-        <bc:propertyRef key="buckminster.component"/>
+      <rm:uri format="file:///data/jenkins/jobs/PlatformIndependentModeling/lastSuccessful/archive/targetPlatform/">
       </rm:uri>
     </rm:provider>
  </rm:searchPath>
