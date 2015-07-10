@@ -1170,6 +1170,13 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		
 		declaration += discretePortInstances->map createBufferSizeArrayDeclaration();
 
+		declaration += map createBufferOverflowDiscardIncomingConstantDeclaration();
+		
+		declaration += map createBufferOverflowDiscardOldestConstantDeclaration();
+		
+		declaration += discretePortInstances->map createBufferOverflowStrategyArrayDeclaration();
+		//TODO add buffer overflow strategy array
+
 		declaration += map createOverflowVariableDeclaration();
 		
 		declaration += map createIntermediateLocationSemaphoreVariableDeclaration();
@@ -1223,6 +1230,9 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 		declaration += messageTypes()->map createSendFunctionDeclaration();
 		
 		declaration += discretePortInstances->map createConsumeFunctionDeclaration();
+		
+		//TODO
+		//add displace function
 		
 	}
 	

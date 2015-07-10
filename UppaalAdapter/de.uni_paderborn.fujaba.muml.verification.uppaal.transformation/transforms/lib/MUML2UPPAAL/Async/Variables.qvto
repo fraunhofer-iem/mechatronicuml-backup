@@ -13,7 +13,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
 modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
-
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 
 	abstract query getMaximalNumberOfMessagesInTransit() : Integer {
@@ -315,6 +315,46 @@ modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 
 	}
 	
+	mapping createBufferOverflowDiscardIncomingConstant() : Variable {
+
+		name := 'DISCARD_NEW';
+
+		initializer := object ExpressionInitializer {
+		
+			expression := object LiteralExpression {
+				text := BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE.getValue().toString();
+			}
+			
+		}
+
+	}
+	
+	mapping createBufferOverflowDiscardOldestConstant() : Variable {
+
+		name := 'DISCARD_OLDEST';
+
+		initializer := object ExpressionInitializer {
+		
+			expression := object LiteralExpression {
+				text := BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER.getValue().toString();
+			}
+			
+		}
+
+	}
+	
+	helper BufferOverflowAvoidanceStrategy::getValue(): Integer{
+		if(self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)
+		then return 0
+		else
+			if (self = BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER)
+			then return 1
+			endif
+		endif;
+		return null;
+	}
+
+	
 	
 	mapping OrderedSet(DiscretePortInstance) :: createBufferAssignmentArrayVariable() : Variable {
 
@@ -413,6 +453,7 @@ modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		}
 
 	}
+	
 
 	mapping DiscretePortInstance :: DiscretePortInstance2BufferSizeArrayInitializer() : ArrayInitializer {
 
@@ -432,6 +473,7 @@ modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		}
 
 	}
+	
 
 	query getBufferSize(portInstance : DiscretePortInstance, mType : MessageType) : Integer {
 		var buffersForType := portInstance.receiverMessageBuffer
@@ -442,6 +484,67 @@ modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		} endif;
 		var buffer := buffersForType->any(true);
 		return buffer.bufferSize.value;
+	}
+	
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayVariable() : Variable {
+		name := 'bufferOverflowStrategy';
+
+		index += object TypeIndex {
+			typeDefinition := object TypeReference {
+				referredType := map DiscretePortInstanceType();
+			}
+		};
+		
+		index += object ValueIndex {
+			sizeExpression := object ArithmeticExpression {
+
+				operator := ArithmeticOperator::ADD;
+
+				firstExpr := object IdentifierExpression {
+					identifier := map createNumberOfMessageKindsConstant();
+				};
+
+				secondExpr := object LiteralExpression {
+					text := 1.repr();
+				};
+
+			}
+		};
+
+		initializer := object ArrayInitializer {
+			initializer += self->map DiscretePortInstance2BufferOverflowArrayInitializer();
+		}
+
+	}
+	
+	mapping DiscretePortInstance :: DiscretePortInstance2BufferOverflowArrayInitializer() : ArrayInitializer {
+		-- add null-id for nullMessageKind
+		initializer += object ExpressionInitializer {
+			expression := object LiteralExpression {
+				text := (-1).repr();
+			}
+		};
+
+		messageTypes()->forEach(mType) {
+			initializer += object ExpressionInitializer {
+				expression := object LiteralExpression {
+					text := getBufferOverflowStrategy(self, mType).toString()
+				}
+			}
+		}
+
+	}
+	
+	query getBufferOverflowStrategy(portInstance : DiscretePortInstance, mType : MessageType) : Integer {
+		var buffersForType := portInstance.receiverMessageBuffer
+			->select(b : MessageBuffer | b.messageType->includes(mType));
+		if (buffersForType->isEmpty()) then {
+			-- there is no buffer assigned for mType. Hence, we return the null-id
+			return -1
+		} endif;
+		var buffer := buffersForType->any(true);
+		return buffer.bufferOverflowAvoidanceStrategy.getValue();
 	}
 
 	mapping createMessageIdNullConstant() : Variable {

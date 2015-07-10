@@ -1062,6 +1062,9 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 			secondExpr := object LiteralExpression {
 				text := true.repr()
 			}
+			
+			//TODO
+			//create displace call
 				
 		}		
 		
@@ -1273,6 +1276,53 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 
 		variable := self->map createBufferSizeArrayVariable();
 
+	}
+	
+	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayDeclaration() : DataVariableDeclaration {
+
+		prefix := DataVariablePrefix::CONST;
+
+		typeDefinition := object RangeTypeSpecification {
+			
+			bounds := object IntegerBounds {
+				
+				lowerBound := object LiteralExpression {
+					text := (-1).repr();
+				};
+	
+				upperBound := object LiteralExpression {
+					text := 1.repr();
+				};
+				
+			}
+
+		};
+
+		variable := self->map createBufferOverflowStrategyArrayVariable();
+
+	}
+	
+	mapping createBufferOverflowDiscardIncomingConstantDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := INT;
+		};
+		
+		variable := map createBufferOverflowDiscardIncomingConstant();		
+	}
+	
+		
+	mapping createBufferOverflowDiscardOldestConstantDeclaration() : DataVariableDeclaration {
+		
+		prefix := DataVariablePrefix::CONST;
+		
+		typeDefinition := object TypeReference {
+			referredType := INT;
+		};
+		
+		variable += map createBufferOverflowDiscardOldestConstant();
 	}
 	
 	mapping OrderedSet(DiscretePortInstance) :: createNextArrayDeclaration() : DataVariableDeclaration {

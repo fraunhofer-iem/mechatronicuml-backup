@@ -31,7 +31,7 @@ transformation Protocol2CIC(in input:modelinstance, in options: verification_opt
 
 main() {
 	
-	//precondition ensuring that no port is referenced from within a protocol (could lead to dublication of that port)
+	//precondition ensuring that no port is referenced from within a protocol (could lead to duplication of that port)
 	assert fatal(not portReferencedByProtocol(input.objects()[CoordinationProtocol]->select(protocol | protocol.extension->exists(oclIsKindOf(ElementToVerifyExtension)))->any(true))) with log("There is a reference to a Port in the Protocol to verify. This is not supported by the Protocol2CIC transformation.");
 	assert fatal(roleMultiplicity() > 0) with log ("muliplicityOfMultiRole has to be > 0");
 	input.objects()[RootNode]->map RootNode2RootNode();
@@ -133,7 +133,7 @@ self.invresolve()->oclAsSet()->flatten()->intersection(input.objects()->oclAsSet
 {
 	name := self.name+role2PortSuffix;
 	
-	//Roles are not dublicated. To avoid overriding of Role2Role just set the refinedRole to the one that is already mapped.
+	//Roles are not duplicated. To avoid overriding of Role2Role just set the refinedRole to the one that is already mapped.
 	//(This mapping is called with result of Role2Role as context)
 	refinedRole := self;
 	component := self.map createComponent();
