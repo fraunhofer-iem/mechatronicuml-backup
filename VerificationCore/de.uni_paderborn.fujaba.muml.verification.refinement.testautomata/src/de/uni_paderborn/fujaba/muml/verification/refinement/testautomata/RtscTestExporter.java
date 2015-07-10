@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.ui.FujabaNewwizardPlugin;
-import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.DiagramEditorUtil;
+import de.uni_paderborn.fujaba.common.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 
 public class RtscTestExporter {
