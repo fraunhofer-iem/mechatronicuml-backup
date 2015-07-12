@@ -58,6 +58,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 	query RealtimeStatechart :: getRtscDependencies() : OrderedSet(RealtimeStatechart) {
 		
 		var depends := object OrderedSet(RealtimeStatechart) {};
+		depends += self;
 		var rtscBeforeHierarchyNormalization := self;
 
 		while(rtscBeforeHierarchyNormalization.flat) {
@@ -527,6 +528,7 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 				subInstances->append(currentInstance);
 				currentInstance := currentInstance.next
 			};
+			
 			subInstances->collect(oclAsType(DiscretePortInstance))->forEach(inst) {
 				
 				subRoleBehaviorDependencies->forEach(subroleDepend) {
@@ -551,7 +553,6 @@ transformation MUML2UPPAAL(in original: muml_rtsc, in input: muml_instance, in o
 
 	
 	mapping ComponentInstanceConfiguration :: CIC2SystemDeclarations() : SystemDeclarations when {self = cicToVerify()}{
-		
 		var portInstances := self.discretePortInstances();
 				
 		// declare a parameter-less template for each port instance except for instances that have an underlying multiport instance (in UPPAAL, this is also known as process instantiation)
