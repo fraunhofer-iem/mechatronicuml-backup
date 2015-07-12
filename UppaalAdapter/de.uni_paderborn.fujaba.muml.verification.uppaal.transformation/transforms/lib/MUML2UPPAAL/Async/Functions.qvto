@@ -6,6 +6,8 @@ import transforms.lib.MUML2UPPAAL.Async.Variables;
 
 import transforms.lib.MUML2MUML;
 
+import transforms.lib.ExternalizedStrings;
+
 library Functions;
 
 modeltype uppaal_types uses uppaal::types('http://www.uni-paderborn.de/uppaal/0.4.0');
@@ -16,6 +18,7 @@ modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
 modeltype msgtype uses muml::msgtype('http://www.fujaba.de/muml/0.4.0');
 modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
 modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
+modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 
 
 
@@ -1446,13 +1449,13 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		
 		var b : Variable = object Variable { 
 				
-				name := 'b';
+				name := bufferParameterID;
 												
 		};
 		
 		var e : Variable = object Variable { 
 				
-				name := 'e';
+				name := messageParameterID;
 								
 		};
 		
@@ -1570,6 +1573,7 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		}
 			
 	}
+
 	
 	
 	mapping MessageType :: createSendFunction() : Function {
@@ -2314,3 +2318,269 @@ modeltype muml_instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 		}
 		
 	}	
+	
+	mapping createDiscardFunction() : Function {
+		
+		name := discardFunctionID;
+		
+		returnType := object TypeReference {
+			
+			referredType := VOID
+			
+		}; 
+		
+		var b : Variable = object Variable { 
+				
+				name := bufferParameterID;
+												
+		};
+		
+		var bufferOverflowStrategy : Variable = object Variable { 
+				
+				name := bufferOverflowStrategyParameterID;
+								
+		};
+		
+		var e : Variable = object Variable { 
+				
+				name := messageParameterID;
+												
+		};
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				typeDefinition := object TypeReference {
+				
+					referredType := map createBufferType();
+								
+				};
+							
+				variable += b
+			
+			};	
+			
+			callType := CallType::CALL_BY_REFERENCE
+						
+		};
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				typeDefinition := object TypeReference {
+				
+					referredType := INT;
+				
+				};
+							
+				variable += bufferOverflowStrategy;
+				
+			}	
+			
+		};
+		
+		parameter += object Parameter {
+		
+			variableDeclaration := object DataVariableDeclaration {
+			
+				typeDefinition := object TypeReference {
+				
+					referredType := map createMessageType();
+				
+				};
+							
+				variable += e;
+				
+			}	
+			
+		};
+				
+		block := object Block {
+		
+		var messageToDiscard := object Variable{
+			name := 'messageToDiscard';
+			initializer := object ExpressionInitializer{
+				expression := object ScopedIdentifierExpression{
+					scope := object IdentifierExpression{
+						identifier := e;
+					};
+					identifier := object IdentifierExpression{
+						identifier := map createMessageTypeMessageIdVariable();
+					};
+				};
+			};
+		};
+							
+		var messageTypeToDiscard := object Variable{
+			name := 'messageTypeToDiscard';
+			initializer := object ExpressionInitializer{
+				expression := object ScopedIdentifierExpression{
+					scope := object IdentifierExpression{
+						identifier := e;
+					};
+					identifier := object IdentifierExpression{
+						identifier := map createMessageKindVariable();
+					};
+				};
+			};
+		};
+		
+		declarations := object LocalDeclarations {
+		
+			--MessageId messageToDiscard = message.mId;
+			declaration += object DataVariableDeclaration {
+			
+				typeDefinition := object TypeReference {
+					referredType := map createMessageIdType();
+				};
+				
+				variable := messageToDiscard;
+			
+			};
+			
+			
+			--MessageKind messageTypeToDiscard = message.mType;						
+			declaration += object DataVariableDeclaration {
+			
+				typeDefinition := object TypeReference {
+					referredType := map createMessageKindType();
+				};
+				
+				variable := messageTypeToDiscard;
+			
+			};
+			
+		};
+		
+		
+		
+			
+			//if(bufferOverflowStrategy == DISCARD_OLDEST)
+			statement += object IfStatement{
+				ifExpression := object CompareExpression{
+					
+					firstExpr := object IdentifierExpression{
+						identifier := bufferOverflowStrategy;
+						};
+					
+					secondExpr := object IdentifierExpression{
+							identifier := BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER.map createBufferOverflowVariable();
+						};
+				};
+				
+				
+				thenStatement := object Block{
+					//messageToDiscard = buffer.messages[0].mId;
+					statement += object ExpressionStatement{
+						expression := object AssignmentExpression{
+							firstExpr := object IdentifierExpression{
+								identifier := messageToDiscard;
+							};
+							secondExpr := object ScopedIdentifierExpression{
+								scope := object ScopedIdentifierExpression{
+									scope := object IdentifierExpression{
+										identifier := b;
+									};
+									identifier := object IdentifierExpression{
+										identifier := map createMessagesFieldVariable();
+										index += object LiteralExpression{
+											text := 0.repr();
+										};
+									};
+								};
+								identifier := object IdentifierExpression{
+									identifier := map createMessageTypeMessageIdVariable();
+								};
+							};
+						};
+					};
+					
+					//messageTypeToDiscard = buffer.messages[0].mType;
+					statement += object ExpressionStatement{
+						expression := object AssignmentExpression{
+							firstExpr := object IdentifierExpression{
+								identifier := messageTypeToDiscard;
+							};
+							secondExpr := object ScopedIdentifierExpression{
+								scope := object ScopedIdentifierExpression{
+									scope := object IdentifierExpression{
+										identifier := b;
+									};
+									identifier := object IdentifierExpression{
+										identifier := map createMessagesFieldVariable();
+										index += object LiteralExpression{
+											text := 0.repr();
+										};
+									};
+								};
+								identifier := object IdentifierExpression{
+									identifier := map createMessageKindVariable();
+								};
+							};
+						};
+					};
+				
+					//buffer.messages[0] = message
+					statement += object ExpressionStatement{
+						expression := object AssignmentExpression{
+							firstExpr := object ScopedIdentifierExpression{
+								scope := object IdentifierExpression{
+								 	identifier:=b;
+									};
+								identifier := object IdentifierExpression{
+									identifier := map createMessagesFieldVariable();
+									index += object LiteralExpression{
+										text := 0.repr();
+									};
+								};
+							};
+							secondExpr := object IdentifierExpression{
+								identifier := e;
+							};	
+						};
+					};
+				};
+			};
+			
+			//releaseId(messageToDiscard);
+			statement += object ExpressionStatement{
+				expression := object FunctionCallExpression{
+					function := map createReleaseIdFunction();
+					argument += object IdentifierExpression{
+						identifier := messageToDiscard;
+					};
+				};
+			};
+			
+			--if(message.mType == muml_m){
+			--	removemuml_mArguments(messageToDiscard); 
+	 		--	}
+	 		-- ..
+			messageTypes()->forEach(mType) {
+						
+						statement += object IfStatement {
+							ifExpression := object CompareExpression {
+								firstExpr := object IdentifierExpression {
+									identifier := messageTypeToDiscard
+								};
+								
+								secondExpr := object IdentifierExpression {
+									identifier := mType.resolveoneIn(MessageType::createMessageKindConstant, Variable);
+								};
+								operator := CompareOperator::EQUAL;
+							};
+							
+							thenStatement := object ExpressionStatement {
+								expression := object FunctionCallExpression {
+									function := mType.map createRemoveForMessageTypeFunction();
+									argument += object IdentifierExpression {
+											identifier := messageToDiscard;
+									};									
+								};	
+							};
+						};
+					};
+		};
+	};

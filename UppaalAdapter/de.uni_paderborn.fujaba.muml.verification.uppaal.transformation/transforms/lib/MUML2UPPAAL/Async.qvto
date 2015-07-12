@@ -25,6 +25,7 @@ modeltype protocol uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
 modeltype instance uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype storydriven_expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
 modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 
 	
 	mapping createNumberOfMessagesInTransitDeclaration() : DataVariableDeclaration {
@@ -463,6 +464,10 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 	
 	mapping createAddFunctionDeclaration() : FunctionDeclaration {
 		function := map createAddFunction()
+	}
+	
+	mapping createDiscardFunctionDeclaration() : FunctionDeclaration {
+		function := map createDiscardFunction()
 	}
 	
 	
@@ -1048,6 +1053,68 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 			};
 				
 		};
+			
+		// discard(buffers[receiver][buffer_assignment[receiver][tmp.mType]], bufferOverflowStrategies[receiver][tmp.mType], tmp)	
+		update += object FunctionCallExpression{
+			function := map createDiscardFunction();
+			
+			//buffers[receiver][buffer_assignment[receiver][tmp.mType]]	
+			argument += object IdentifierExpression {
+				
+				identifier := map createBuffersVariable();
+				
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter()
+				};
+
+				index += object IdentifierExpression {
+					identifier := portInstances->map createBufferAssignmentArrayVariable();
+
+					index += object IdentifierExpression {
+						identifier := map createReceiverParameter()
+					};
+
+					index += object ScopedIdentifierExpression {
+						identifier := object IdentifierExpression {
+							identifier := map createMessageKindVariable();
+						};
+
+						scope := object IdentifierExpression {
+							identifier := map createTmpVariable();
+						}
+					};
+
+				}
+				
+			};
+			
+			//bufferOverflowStrategies[receiver][tmp.mType]
+			argument += object IdentifierExpression {
+				
+				identifier := portInstances->map createBufferOverflowStrategyArrayVariable();
+				
+				index += object IdentifierExpression {
+					identifier := map createReceiverParameter()
+				};
+
+				index += object ScopedIdentifierExpression {
+					identifier := object IdentifierExpression {
+						identifier := map createMessageKindVariable();
+					};
+
+					scope := object IdentifierExpression {
+						identifier := map createTmpVariable();
+					}
+				};
+
+			};
+			
+			
+			//tmp
+			argument += object IdentifierExpression{
+				identifier := map createTmpVariable();
+			};
+		};	
 							
 		update += object AssignmentExpression {
 			
@@ -1061,11 +1128,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 			
 			secondExpr := object LiteralExpression {
 				text := true.repr()
-			}
-			
-			//TODO
-			//create displace call
-				
+			}	
 		}		
 		
 	}
@@ -1302,7 +1365,7 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 
 	}
 	
-	mapping createBufferOverflowDiscardIncomingConstantDeclaration() : DataVariableDeclaration {
+	mapping BufferOverflowAvoidanceStrategy::createBufferOverflowConstantDeclaration() : DataVariableDeclaration {
 		
 		prefix := DataVariablePrefix::CONST;
 		
@@ -1310,20 +1373,9 @@ modeltype muml_actionLanguage uses 'http://www.fujaba.de/muml/actionlanguage/0.4
 			referredType := INT;
 		};
 		
-		variable := map createBufferOverflowDiscardIncomingConstant();		
+		variable := self.xmap createBufferOverflowVariable();		
 	}
 	
-		
-	mapping createBufferOverflowDiscardOldestConstantDeclaration() : DataVariableDeclaration {
-		
-		prefix := DataVariablePrefix::CONST;
-		
-		typeDefinition := object TypeReference {
-			referredType := INT;
-		};
-		
-		variable += map createBufferOverflowDiscardOldestConstant();
-	}
 	
 	mapping OrderedSet(DiscretePortInstance) :: createNextArrayDeclaration() : DataVariableDeclaration {
 		

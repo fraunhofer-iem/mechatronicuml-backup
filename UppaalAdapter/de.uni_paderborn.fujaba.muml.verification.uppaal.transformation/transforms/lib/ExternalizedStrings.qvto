@@ -29,3 +29,13 @@ property doneState = "Done";
 property discreteSubPortInstanceID = "discreteSubPortInstanceID";
 property discretePortInstanceID = "discretePortInstanceID";
 property componentInstanceID = "componentInstanceID";
+
+//Migration
+	//Async
+property bufferOverflowDiscardOldestVariableID = 'DISCARD_OLDEST';
+property bufferOverflowDiscardIncomingVariableID = 'DISCARD_INCOMING';
+property discardFunctionID = 'discard';
+property bufferOverflowStrategyArrayID = 'bufferOverflowStrategies';
+property bufferOverflowStrategyParameterID = 'bufferOverflowStrategy';
+property bufferParameterID = 'buffer';
+property messageParameterID = 'message';

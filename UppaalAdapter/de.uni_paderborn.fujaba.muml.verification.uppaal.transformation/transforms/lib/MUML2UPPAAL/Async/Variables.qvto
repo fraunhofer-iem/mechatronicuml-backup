@@ -1,6 +1,7 @@
 import transforms.lib.MUML2UPPAAL.IDs;
 import transforms.lib.MUML2UPPAAL.Types;
 import transforms.lib.MUML2UPPAAL.Util;
+import transforms.lib.ExternalizedStrings;
 
 library Variables;
 
@@ -315,33 +316,26 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 	}
 	
-	mapping createBufferOverflowDiscardIncomingConstant() : Variable {
 
-		name := 'DISCARD_NEW';
+	mapping BufferOverflowAvoidanceStrategy::createBufferOverflowVariable() : Variable 
+	when {self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE or self = BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER}
+	{
+		if(self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE) then
+			name := bufferOverflowDiscardIncomingVariableID 
+		else
+			name := bufferOverflowDiscardOldestVariableID
+		endif;	
 
 		initializer := object ExpressionInitializer {
 		
 			expression := object LiteralExpression {
-				text := BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE.getValue().toString();
+				text := self.getValue().toString();
 			}
 			
 		}
 
 	}
 	
-	mapping createBufferOverflowDiscardOldestConstant() : Variable {
-
-		name := 'DISCARD_OLDEST';
-
-		initializer := object ExpressionInitializer {
-		
-			expression := object LiteralExpression {
-				text := BufferOverflowAvoidanceStrategy::DISCARD_OLDEST_MESSAGE_IN_BUFFER.getValue().toString();
-			}
-			
-		}
-
-	}
 	
 	helper BufferOverflowAvoidanceStrategy::getValue(): Integer{
 		if(self = BufferOverflowAvoidanceStrategy::DISCARD_INCOMING_MESSAGE)
@@ -488,7 +482,7 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 	
 	
 	mapping OrderedSet(DiscretePortInstance) :: createBufferOverflowStrategyArrayVariable() : Variable {
-		name := 'bufferOverflowStrategy';
+		name := bufferOverflowStrategyArrayID;
 
 		index += object TypeIndex {
 			typeDefinition := object TypeReference {
@@ -525,26 +519,37 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 				text := (-1).repr();
 			}
 		};
-
+		
 		messageTypes()->forEach(mType) {
-			initializer += object ExpressionInitializer {
+		var overflowStrategy := getBufferOverflowStrategy(self, mType);
+			
+			if (overflowStrategy = null)
+				initializer += object ExpressionInitializer {
 				expression := object LiteralExpression {
-					text := getBufferOverflowStrategy(self, mType).toString()
+					text := (-1).repr();
 				}
 			}
+			
+			else
+				initializer += object ExpressionInitializer {
+					expression := object IdentifierExpression {
+						identifier := overflowStrategy;
+					}
+				}
 		}
 
 	}
-	
-	query getBufferOverflowStrategy(portInstance : DiscretePortInstance, mType : MessageType) : Integer {
+
+
+	query getBufferOverflowStrategy(portInstance : DiscretePortInstance, mType : MessageType) : Variable {
 		var buffersForType := portInstance.receiverMessageBuffer
 			->select(b : MessageBuffer | b.messageType->includes(mType));
 		if (buffersForType->isEmpty()) then {
 			-- there is no buffer assigned for mType. Hence, we return the null-id
-			return -1
+			return null
 		} endif;
 		var buffer := buffersForType->any(true);
-		return buffer.bufferOverflowAvoidanceStrategy.getValue();
+		return buffer.bufferOverflowAvoidanceStrategy.map createBufferOverflowVariable();
 	}
 
 	mapping createMessageIdNullConstant() : Variable {
