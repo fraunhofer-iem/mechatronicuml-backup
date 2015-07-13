@@ -88,9 +88,12 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 		@Override
 		public Object[] getElements(Saveable saveable) {
 			List<Object> elements = new ArrayList<Object>();
-			for (Object element : saveables.keySet()) {
-				if (saveable == saveables.get(element)) {
-					elements.add(element);
+			for (URI uri : saveables.keySet()) {
+				if (saveable == saveables.get(uri)) {
+					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
+					if (iFile != null) {
+						elements.add(iFile);
+					}
 				}
 			}
 			return elements.toArray();
@@ -98,10 +101,19 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 
 		@Override
 		public Saveable getSaveable(Object element) {
+			URI uri = null;
+			if (element instanceof EObject) {
+				uri = ((EObject) element).eResource().getURI();
+			}
+			if (element instanceof Resource) {
+				uri = ((Resource) element).getURI();
+			}
 			if (element instanceof IFile) {
 				IFile iFile = (IFile) element;
-				URI uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-				return ModelBrowserContentProvider.this.getSaveable(uri);				
+				uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
+			}
+			if (uri != null) {
+				return ModelBrowserContentProvider.this.getSaveable(uri);
 			}
 			return null;
 		}
