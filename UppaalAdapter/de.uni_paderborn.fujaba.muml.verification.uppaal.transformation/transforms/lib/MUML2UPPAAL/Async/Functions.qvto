@@ -2471,7 +2471,7 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 				};
 				
 				
-				thenStatement := object Block{
+				thenStatement := object Block{				
 					//messageToDiscard = buffer.messages[0].mId;
 					statement += object ExpressionStatement{
 						expression := object AssignmentExpression{
@@ -2521,8 +2521,20 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 							};
 						};
 					};
-				
-					//buffer.messages[0] = message
+					
+					//remove(buffer, messageTypeToDiscard);
+					statement += object ExpressionStatement{
+						expression:= object FunctionCallExpression{
+							function := map createRemoveFunction();
+							argument += object IdentifierExpression{
+								identifier := b;
+							};
+							argument += object IdentifierExpression{
+								identifier := messageTypeToDiscard;
+							};
+						};
+					};
+					//buffer.messages[buffer.tail] = message;
 					statement += object ExpressionStatement{
 						expression := object AssignmentExpression{
 							firstExpr := object ScopedIdentifierExpression{
@@ -2531,14 +2543,35 @@ modeltype connector uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 									};
 								identifier := object IdentifierExpression{
 									identifier := map createMessagesFieldVariable();
-									index += object LiteralExpression{
-										text := 0.repr();
+									index += object ScopedIdentifierExpression{
+										scope := object IdentifierExpression{
+											identifier := b;
+										};
+										identifier := object IdentifierExpression{
+											identifier := map createTailFieldVariable();
+										};
 									};
 								};
 							};
 							secondExpr := object IdentifierExpression{
 								identifier := e;
 							};	
+						};
+					};
+					
+					//buffer.tail++;
+					statement += object ExpressionStatement{
+						expression := object IncrementDecrementExpression{
+							expression := object ScopedIdentifierExpression{
+								scope := object IdentifierExpression{
+									identifier := b;
+								};
+								identifier := object IdentifierExpression{
+									identifier := map createTailFieldVariable();
+								};
+							};
+							position := IncrementDecrementPosition::POST;
+							operator := IncrementDecrementOperator::INCREMENT;
 						};
 					};
 				};
