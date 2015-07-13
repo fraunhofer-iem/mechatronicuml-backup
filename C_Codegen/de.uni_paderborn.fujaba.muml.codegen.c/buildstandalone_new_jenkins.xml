@@ -20,6 +20,7 @@
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.psm/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.modelinstance/bin"/>
     	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.actionlanguage/bin"/>
+    	<pathelement location="${ECLIPSE_WORKSPACE}/de.uni_paderborn.fujaba.muml.swplatform/bin"/>
     	<fileset dir="${ECLIPSE_HOME}/plugins">
                 <include name="*.jar"/>
             </fileset>
@@ -35,7 +36,7 @@
                          outputFolder="${OUTPUT_FOLDER}"
                          dependencies=""
                          binaryResource="false"
-    					 packagesToRegister="de.uni_paderborn.fujaba.muml.psm.PsmPackage;de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;de.uni_paderborn.fujaba.muml.MumlPackage;de.uni_paderborn.fujaba.muml.instance.InstancePackage;de.uni_paderborn.fujaba.muml.component.ComponentPackage;de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;org.storydriven.core.CorePackage;de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;de.uni_paderborn.fujaba.muml.types.TypesPackage;de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;org.storydriven.core.expressions.ExpressionsPackage;org.storydriven.core.expressions.common.CommonExpressionsPackage">		
+    					 packagesToRegister="de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;de.uni_paderborn.fujaba.muml.psm.PsmPackage;de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;de.uni_paderborn.fujaba.muml.MumlPackage;de.uni_paderborn.fujaba.muml.instance.InstancePackage;de.uni_paderborn.fujaba.muml.component.ComponentPackage;de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;org.storydriven.core.CorePackage;de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;de.uni_paderborn.fujaba.muml.types.TypesPackage;de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;org.storydriven.core.expressions.ExpressionsPackage;org.storydriven.core.expressions.common.CommonExpressionsPackage">		
         </acceleoCompiler>
     </target>
 </project>
