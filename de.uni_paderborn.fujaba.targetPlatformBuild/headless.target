@@ -2,5 +2,6 @@
 <?pde version="3.5"?><target name="headless" sequenceNumber="3">
 <locations>
 <location path="./targetPlatform" type="Directory"/>
+<location path="/data/jenkins/jobs/Build Eclipse Target Platform/lastSuccessful/archive/targetPlatform" type="Profile"/>
 </locations>
 </target>
