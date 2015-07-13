@@ -19,5 +19,6 @@
 	<cq:advisorNode namePattern="^org\.sat4j.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^org\.w3c.*" useMaterialization="false" useTargetPlatform="true"/>
 	<cq:advisorNode namePattern="^javax.*" useMaterialization="false" useTargetPlatform="true"/>
-	<cq:advisorNode namePatter=".*" useMaterialization="false" useTargetPlatform="false"/>
+	<cq:advisorNode namePattern="^org\.tukaani.*" useMaterialization="false" useTargetPlatform="true"/>
+	<cq:advisorNode namePattern=".*" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
