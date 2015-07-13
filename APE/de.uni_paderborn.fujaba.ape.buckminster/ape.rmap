@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator searchPathRef="default" failOnError="false"/>
   <rm:redirect href="https://svn-serv.cs.upb.de/mechatronicuml/trunk/UpdateSite/de.uni_paderborn.fujaba.muml.releng/default.rmap" />
-  
-  <rm:locator searchPathRef="muml" failOnError="false"/>
-  <rm:locator searchPathRef="eclipse_luna" failOnError="false"/>
-  <rm:searchPath name="eclipse_luna">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
-  	<rm:property key="buckminster.source" value="false"/>
-    	 <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="http://download.eclipse.org/releases/luna?importType=binary" />
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="muml">
+
+  <rm:searchPath name="default">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
       <rm:uri format="file:///{0}/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
+  </rm:searchPath>
+</rm:rmap>
   </rm:searchPath>
 </rm:rmap>
