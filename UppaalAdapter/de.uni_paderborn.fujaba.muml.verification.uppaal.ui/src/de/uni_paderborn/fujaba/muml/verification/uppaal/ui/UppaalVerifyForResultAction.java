@@ -1,8 +1,5 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.ui;
 
-import java.io.IOException;
-import java.util.Collections;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;

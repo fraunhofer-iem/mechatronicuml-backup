@@ -20,10 +20,9 @@ Require-Bundle: org.eclipse.ui.ide;bundle-version="3.6.2",
  org.eclipse.m2m.qvt.oml,
  de.uni_paderborn.fujaba.muml,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.english;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.export;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.export;bundle-version="0.4.0",
+ de.uni_paderborn.fujaba.muml.pattern.diagram.custom;bundle-version="0.5.0"
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Import-Package: de.uni_paderborn.fujaba.muml.pattern.diagram.custom.export.wizard,
- de.uni_paderborn.fujaba.muml.verification.uppaal
