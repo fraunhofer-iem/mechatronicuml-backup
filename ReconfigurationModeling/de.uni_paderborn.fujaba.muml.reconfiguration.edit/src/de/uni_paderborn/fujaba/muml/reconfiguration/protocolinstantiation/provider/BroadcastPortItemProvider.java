@@ -60,7 +60,7 @@ public class BroadcastPortItemProvider
 			addBehaviorPropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
-			addAdaptationBehaviorPropertyDescriptor(object);
+			addCoordinatorBehaviorPropertyDescriptor(object);
 			addSubroleBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
@@ -137,19 +137,19 @@ public class BroadcastPortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Adaptation Behavior feature.
+	 * This adds a property descriptor for the Coordinator Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAdaptationBehaviorPropertyDescriptor(Object object) {
+	protected void addCoordinatorBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionEndpoint_adaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_adaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionEndpoint_coordinatorBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_coordinatorBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR,
 				 true,
 				 false,
 				 true,

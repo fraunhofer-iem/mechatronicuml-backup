@@ -18,12 +18,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl#getTimeForSetup <em>Time For Setup</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl#getTimeForFading <em>Time For Fading</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl#getTimeForTeardown <em>Time For Teardown</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

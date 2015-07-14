@@ -24,11 +24,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getReconfigurationRuleCallExpression()
  * @model

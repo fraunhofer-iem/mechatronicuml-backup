@@ -31,12 +31,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getReconfigurableComponent <em>Reconfigurable Component</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

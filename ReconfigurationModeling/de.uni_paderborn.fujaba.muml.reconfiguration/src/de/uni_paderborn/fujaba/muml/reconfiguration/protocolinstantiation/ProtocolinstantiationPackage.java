@@ -166,13 +166,13 @@ public interface ProtocolinstantiationPackage extends EPackage {
 	int BROADCAST_PORT__RECEIVER_MESSAGE_TYPES = ComponentPackage.PORT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BROADCAST_PORT__ADAPTATION_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 3;
+	int BROADCAST_PORT__COORDINATOR_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.

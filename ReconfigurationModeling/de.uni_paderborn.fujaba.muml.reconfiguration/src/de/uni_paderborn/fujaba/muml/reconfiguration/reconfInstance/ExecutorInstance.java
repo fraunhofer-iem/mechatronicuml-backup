@@ -14,12 +14,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ExecutorInstance#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ExecutorInstance#getReconfigurationControllerInstance <em>Reconfiguration Controller Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ExecutorInstance#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage#getExecutorInstance()
  * @model

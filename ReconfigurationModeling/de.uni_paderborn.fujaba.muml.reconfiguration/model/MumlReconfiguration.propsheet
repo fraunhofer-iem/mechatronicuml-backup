@@ -231,6 +231,30 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </orderedElements>
     </classes>
+    <classes>
+      <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationConstraint"/>
+    </classes>
+    <classes>
+      <genClass href="MumlReconfiguration.genmodel#//reconfiguration/HybridPortMapping"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/HybridPortMapping/hybridPort"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </orderedElements>
+    </classes>
+    <classes>
+      <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionSpecificationEntry"/>
+      <orderedElements xsi:type="de.uni_paderborn.fujaba:Property">
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationExecutionSpecificationEntry/hybridPortMappings"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#_i_NxEOHNEeS5Putgio2lkg"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </orderedElements>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZRnm8wbEeSjx7OWZCcdLw"/>
+    </classes>
+    <classes>
+      <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationManagementSpecificationEntry"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#_VZRnm8wbEeSjx7OWZCcdLw"/>
+    </classes>
   </packages>
   <packages xmi:id="_RmYgEc1gEeSIgPDefa6ZBw">
     <genPackage href="MumlReconfiguration.genmodel#//reconfiguration/expression"/>

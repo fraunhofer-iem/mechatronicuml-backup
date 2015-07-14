@@ -18,10 +18,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationSinglePhaseImpl#getTimeForExecution <em>Time For Execution</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -18,10 +18,10 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.Reconfigurabl
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl.ReconfigurableStructuredComponentInstanceImpl#getControllerInstance <em>Controller Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

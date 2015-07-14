@@ -10,11 +10,11 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.RuleBasedReconfigurationControllerInstance#getManagerInstance <em>Manager Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.RuleBasedReconfigurationControllerInstance#getExecutorInstance <em>Executor Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage#getRuleBasedReconfigurationControllerInstance()
  * @model

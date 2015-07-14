@@ -1,17 +1,15 @@
 
-package de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor;
+package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor;
 
 /**
  * @generated
  */
-public class ActivityCallExpressionEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class HybridPortMappingEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ActivityCallExpressionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public HybridPortMappingEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,7 +21,7 @@ public class ActivityCallExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorCallee_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHybridPort_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
@@ -31,7 +29,7 @@ public class ActivityCallExpressionEditor
 
 		} else if ("property.tab.general".equals(tab)) { // Tab General
 
-			addPropertyEditor(createEditorCallee_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorHybridPort_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
 
@@ -41,17 +39,17 @@ public class ActivityCallExpressionEditor
 		}
 	}
 
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorCallee_GeneralTab;
-	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorCallee_GeneralTab_Editor() {
-		if (this.editorCallee_GeneralTab == null) {
-			final org.eclipse.emf.ecore.EStructuralFeature feature = org.storydriven.storydiagrams.calls.CallsPackage.eINSTANCE
-					.getInvocation_Callee();
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editorHybridPort_GeneralTab;
+	private de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor createEditorHybridPort_GeneralTab_Editor() {
+		if (this.editorHybridPort_GeneralTab == null) {
+			final org.eclipse.emf.ecore.EStructuralFeature feature = de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getHybridPortMapping_HybridPort();
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			this.editorCallee_GeneralTab = editor;
+			this.editorHybridPort_GeneralTab = editor;
 		}
-		return this.editorCallee_GeneralTab;
+		return this.editorHybridPort_GeneralTab;
 	}
 
 	//
@@ -61,12 +59,11 @@ public class ActivityCallExpressionEditor
 	/**
 	 * @generated
 	 */
-	public ActivityCallExpressionEditor(String tab) {
+	public HybridPortMappingEditor(String tab) {
 		this(tab,
 				de.uni_paderborn.fujaba.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
-						.getActivityCallExpression());
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getHybridPortMapping());
 	}
 
 	/**
@@ -75,7 +72,7 @@ public class ActivityCallExpressionEditor
 	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
-			return new ActivityCallExpressionEditor(tab);
+			return new HybridPortMappingEditor(tab);
 		}
 
 		@Override

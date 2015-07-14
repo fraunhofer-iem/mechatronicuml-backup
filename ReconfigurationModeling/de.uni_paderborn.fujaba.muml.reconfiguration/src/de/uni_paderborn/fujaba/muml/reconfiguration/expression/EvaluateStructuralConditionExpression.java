@@ -20,11 +20,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression#getParameterBindings <em>Parameter Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.EvaluateStructuralConditionExpression#getStructuralCondition <em>Structural Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getEvaluateStructuralConditionExpression()
  * @model

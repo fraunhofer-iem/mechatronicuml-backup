@@ -37,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationCont
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getSpecificationEntries <em>Specification Entries</em>}</li>
@@ -44,7 +45,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationCont
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getReconfigurationMessagePorts <em>Reconfiguration Message Ports</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -26,12 +26,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.RuleBasedReco
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl.ManagerInstanceImpl#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl.ManagerInstanceImpl#getReconfigurationControllerInstance <em>Reconfiguration Controller Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.impl.ManagerInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

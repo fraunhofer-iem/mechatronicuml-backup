@@ -29,11 +29,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRu
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ReconfigurationRuleCallExpressionImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ReconfigurationRuleCallExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

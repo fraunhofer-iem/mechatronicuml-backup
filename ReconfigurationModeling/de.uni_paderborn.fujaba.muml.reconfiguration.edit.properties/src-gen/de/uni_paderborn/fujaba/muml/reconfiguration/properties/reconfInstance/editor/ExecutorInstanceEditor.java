@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfInstance.editor;
 
 /**
  * @generated
  */
-public class ExecutorInstanceEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ExecutorInstanceEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ExecutorInstanceEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ExecutorInstanceEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -25,12 +23,21 @@ public class ExecutorInstanceEditor
 
 			addPropertyEditor(createEditorExecutor_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorPortInstances_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorPortInstances_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorExecutor_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorPortInstances_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
@@ -70,8 +77,7 @@ public class ExecutorInstanceEditor
 	 * @generated
 	 */
 	public ExecutorInstanceEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage.eINSTANCE
@@ -81,20 +87,16 @@ public class ExecutorInstanceEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ExecutorInstanceEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

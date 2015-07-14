@@ -174,6 +174,21 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.HybridPortMappingEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#HybridPortMapping">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationExecutionSpecificationEntryEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationExecutionSpecificationEntry">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor.ReconfigurationManagementSpecificationEntryEditor$Factory"
+             type="http://www.fujaba.de/muml/reconfiguration/0.3.18#ReconfigurationManagementSpecificationEntry">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor.ActivityCallExpressionEditor$Factory"
              type="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7#ActivityCallExpression">
        </propertyEditor>

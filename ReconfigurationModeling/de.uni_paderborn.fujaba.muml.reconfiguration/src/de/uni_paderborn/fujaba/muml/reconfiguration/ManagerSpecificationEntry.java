@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isTreat <em>Treat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isPropagate <em>Propagate</em>}</li>
@@ -38,7 +39,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning <em>Time For Planning</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isBlockable <em>Blockable</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage'"

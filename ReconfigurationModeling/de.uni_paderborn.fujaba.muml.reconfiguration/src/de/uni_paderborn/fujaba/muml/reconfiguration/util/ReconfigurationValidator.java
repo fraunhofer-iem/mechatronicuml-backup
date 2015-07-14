@@ -270,6 +270,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortRequiresMessageTypes(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortAtStructuredComponentHasNoBehavior(reconfigurationPort, diagnostics, context);
 		return result;
@@ -558,6 +559,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortRequiresMessageTypes(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortAtStructuredComponentHasNoBehavior(reconfigurationMessagePort, diagnostics, context);
 		return result;
@@ -580,6 +582,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortRequiresMessageTypes(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortAtStructuredComponentHasNoBehavior(reconfigurationExecutionPort, diagnostics, context);
 		return result;
@@ -909,6 +912,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_SetEitherSubRoleAndCoordinatorBehaviorOrNone(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortRequiresMessageTypes(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateReconfigurationPort_ReconfigurationPortAtStructuredComponentHasNoBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
 		return result;

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor;
 
 /**
@@ -11,8 +12,7 @@ public class EvaluateStructuralConditionExpressionEditor
 	 * @generated
 	 */
 	public EvaluateStructuralConditionExpressionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -23,12 +23,19 @@ public class EvaluateStructuralConditionExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorStructuralCondition_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorStructuralCondition_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorStructuralCondition_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
@@ -55,8 +62,7 @@ public class EvaluateStructuralConditionExpressionEditor
 	 * @generated
 	 */
 	public EvaluateStructuralConditionExpressionEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
@@ -66,20 +72,15 @@ public class EvaluateStructuralConditionExpressionEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EvaluateStructuralConditionExpressionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general"}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -12,8 +12,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.Protoc
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Broadcast Port Specification</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -23,12 +23,12 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableAtomicComponentImpl#getExecutionEntries <em>Execution Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableAtomicComponentImpl#getManagementEntries <em>Management Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableAtomicComponentImpl#getHybridPortMappings <em>Hybrid Port Mappings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

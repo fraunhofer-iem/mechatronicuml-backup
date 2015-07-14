@@ -35,11 +35,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getCoordinatorBehavior <em>Coordinator Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getSubroleBehavior <em>Subrole Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -47,7 +48,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.BroadcastPortImpl#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -83,14 +83,14 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 	protected EList<MessageType> receiverMessageTypes;
 
 	/**
-	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
+	 * The cached value of the '{@link #getCoordinatorBehavior() <em>Coordinator Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAdaptationBehavior()
+	 * @see #getCoordinatorBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected Behavior adaptationBehavior;
+	protected Behavior coordinatorBehavior;
 
 	/**
 	 * The cached value of the '{@link #getSubroleBehavior() <em>Subrole Behavior</em>}' reference.
@@ -279,16 +279,16 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior getAdaptationBehavior() {
-		if (adaptationBehavior != null && adaptationBehavior.eIsProxy()) {
-			InternalEObject oldAdaptationBehavior = (InternalEObject)adaptationBehavior;
-			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
-			if (adaptationBehavior != oldAdaptationBehavior) {
+	public Behavior getCoordinatorBehavior() {
+		if (coordinatorBehavior != null && coordinatorBehavior.eIsProxy()) {
+			InternalEObject oldCoordinatorBehavior = (InternalEObject)coordinatorBehavior;
+			coordinatorBehavior = (Behavior)eResolveProxy(oldCoordinatorBehavior);
+			if (coordinatorBehavior != oldCoordinatorBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR, oldCoordinatorBehavior, coordinatorBehavior));
 			}
 		}
-		return adaptationBehavior;
+		return coordinatorBehavior;
 	}
 
 	/**
@@ -296,8 +296,8 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Behavior basicGetAdaptationBehavior() {
-		return adaptationBehavior;
+	public Behavior basicGetCoordinatorBehavior() {
+		return coordinatorBehavior;
 	}
 
 	/**
@@ -305,11 +305,11 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAdaptationBehavior(Behavior newAdaptationBehavior) {
-		Behavior oldAdaptationBehavior = adaptationBehavior;
-		adaptationBehavior = newAdaptationBehavior;
+	public void setCoordinatorBehavior(Behavior newCoordinatorBehavior) {
+		Behavior oldCoordinatorBehavior = coordinatorBehavior;
+		coordinatorBehavior = newCoordinatorBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR, oldCoordinatorBehavior, coordinatorBehavior));
 	}
 
 	/**
@@ -584,9 +584,9 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 				return getSenderMessageTypes();
 			case ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_TYPES:
 				return getReceiverMessageTypes();
-			case ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR:
-				if (resolve) return getAdaptationBehavior();
-				return basicGetAdaptationBehavior();
+			case ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR:
+				if (resolve) return getCoordinatorBehavior();
+				return basicGetCoordinatorBehavior();
 			case ProtocolinstantiationPackage.BROADCAST_PORT__SUBROLE_BEHAVIOR:
 				if (resolve) return getSubroleBehavior();
 				return basicGetSubroleBehavior();
@@ -624,8 +624,8 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 				getReceiverMessageTypes().clear();
 				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((Behavior)newValue);
+			case ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR:
+				setCoordinatorBehavior((Behavior)newValue);
 				return;
 			case ProtocolinstantiationPackage.BROADCAST_PORT__SUBROLE_BEHAVIOR:
 				setSubroleBehavior((Behavior)newValue);
@@ -664,8 +664,8 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 			case ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_TYPES:
 				getReceiverMessageTypes().clear();
 				return;
-			case ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((Behavior)null);
+			case ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR:
+				setCoordinatorBehavior((Behavior)null);
 				return;
 			case ProtocolinstantiationPackage.BROADCAST_PORT__SUBROLE_BEHAVIOR:
 				setSubroleBehavior((Behavior)null);
@@ -700,8 +700,8 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
 			case ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_TYPES:
 				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
-			case ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR:
-				return adaptationBehavior != null;
+			case ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR:
+				return coordinatorBehavior != null;
 			case ProtocolinstantiationPackage.BROADCAST_PORT__SUBROLE_BEHAVIOR:
 				return subroleBehavior != null;
 			case ProtocolinstantiationPackage.BROADCAST_PORT__CARDINALITY:
@@ -735,7 +735,7 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 			switch (derivedFeatureID) {
 				case ProtocolinstantiationPackage.BROADCAST_PORT__SENDER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
 				case ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
-				case ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
+				case ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR;
 				case ProtocolinstantiationPackage.BROADCAST_PORT__SUBROLE_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR;
 				case ProtocolinstantiationPackage.BROADCAST_PORT__CARDINALITY: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
 				case ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_BUFFER: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
@@ -763,7 +763,7 @@ public class BroadcastPortImpl extends PortImpl implements BroadcastPort {
 			switch (baseFeatureID) {
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES: return ProtocolinstantiationPackage.BROADCAST_PORT__SENDER_MESSAGE_TYPES;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES: return ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_TYPES;
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR: return ProtocolinstantiationPackage.BROADCAST_PORT__ADAPTATION_BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COORDINATOR_BEHAVIOR: return ProtocolinstantiationPackage.BROADCAST_PORT__COORDINATOR_BEHAVIOR;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SUBROLE_BEHAVIOR: return ProtocolinstantiationPackage.BROADCAST_PORT__SUBROLE_BEHAVIOR;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY: return ProtocolinstantiationPackage.BROADCAST_PORT__CARDINALITY;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER: return ProtocolinstantiationPackage.BROADCAST_PORT__RECEIVER_MESSAGE_BUFFER;

@@ -16,12 +16,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForSetup <em>Time For Setup</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForFading <em>Time For Fading</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForTeardown <em>Time For Teardown</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutionTimingSpecificationThreePhase()
  * @model

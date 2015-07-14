@@ -11,10 +11,10 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfigurableStructuredComponentInstance#getControllerInstance <em>Controller Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstancePackage#getReconfigurableStructuredComponentInstance()
  * @model

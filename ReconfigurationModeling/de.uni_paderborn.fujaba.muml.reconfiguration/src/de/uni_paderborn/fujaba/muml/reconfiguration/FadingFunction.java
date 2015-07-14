@@ -14,11 +14,11 @@ import de.uni_paderborn.fujaba.muml.component.Port;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction#getFromPort <em>From Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction#getToPort <em>To Port</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getFadingFunction()
  * @model

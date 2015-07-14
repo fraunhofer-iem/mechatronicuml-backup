@@ -30,12 +30,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl#getReturnParameters <em>Return Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

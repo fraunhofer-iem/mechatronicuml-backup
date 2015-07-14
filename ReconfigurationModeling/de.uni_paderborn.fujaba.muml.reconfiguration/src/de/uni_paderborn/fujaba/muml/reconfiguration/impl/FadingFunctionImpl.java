@@ -20,12 +20,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl#getFromPort <em>From Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl#getToPort <em>To Port</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -29,12 +29,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getStructuredComponent <em>Structured Component</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

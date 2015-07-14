@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.expression.editor;
 
 /**
@@ -11,8 +12,7 @@ public class ReconfigurationRuleCallExpressionEditor
 	 * @generated
 	 */
 	public ReconfigurationRuleCallExpressionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -23,12 +23,19 @@ public class ReconfigurationRuleCallExpressionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorReconfigurationRule_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
@@ -57,8 +64,7 @@ public class ReconfigurationRuleCallExpressionEditor
 	 * @generated
 	 */
 	public ReconfigurationRuleCallExpressionEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage.eINSTANCE
@@ -68,20 +74,15 @@ public class ReconfigurationRuleCallExpressionEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ReconfigurationRuleCallExpressionEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general"}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor;
 
 /**
@@ -10,8 +11,7 @@ public abstract class StructuralConditionEditor
 	/**
 	 * @generated
 	 */
-	public StructuralConditionEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public StructuralConditionEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,13 +23,19 @@ public abstract class StructuralConditionEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorReconfigurableComponent_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorReconfigurableComponent_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorReconfigurableComponent_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}

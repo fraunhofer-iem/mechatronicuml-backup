@@ -25,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.EvaluateStructuralConditionExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.EvaluateStructuralConditionExpressionImpl#getStructuralCondition <em>Structural Condition</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -22,10 +22,10 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingComponentImpl#getFadingFunction <em>Fading Function</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

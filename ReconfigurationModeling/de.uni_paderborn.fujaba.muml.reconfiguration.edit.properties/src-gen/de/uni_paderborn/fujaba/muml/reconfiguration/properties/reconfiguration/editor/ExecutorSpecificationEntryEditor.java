@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor;
 
 /**
@@ -10,8 +11,7 @@ public class ExecutorSpecificationEntryEditor
 	/**
 	 * @generated
 	 */
-	public ExecutorSpecificationEntryEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ExecutorSpecificationEntryEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -23,14 +23,23 @@ public class ExecutorSpecificationEntryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(
-					createEditorReconfigurationRule_GeneralTab_Editor(), false);
+			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
 
 			addPropertyEditor(createEditorId_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorReconfigurationRule_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorId_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
@@ -59,7 +68,8 @@ public class ExecutorSpecificationEntryEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 					adapterFactory, feature, 0);
 
-			editor.setTooltipMessage("The ID of this entry. In one executor specification, the IDs of the entries must\nbe uniquely identifying. Specification entries of different executors, however, \nmay use the same IDs.");
+			editor.setTooltipMessage(
+					"The ID of this entry. In one executor specification, the IDs of the entries must\nbe uniquely identifying. Specification entries of different executors, however, \nmay use the same IDs.");
 
 			this.editorId_GeneralTab = editor;
 		}
@@ -74,8 +84,7 @@ public class ExecutorSpecificationEntryEditor
 	 * @generated
 	 */
 	public ExecutorSpecificationEntryEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -85,20 +94,16 @@ public class ExecutorSpecificationEntryEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ExecutorSpecificationEntryEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

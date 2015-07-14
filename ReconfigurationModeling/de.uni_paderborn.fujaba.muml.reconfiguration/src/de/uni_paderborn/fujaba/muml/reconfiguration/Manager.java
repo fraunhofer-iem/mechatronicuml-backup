@@ -29,13 +29,13 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getSpecificationEntries <em>Specification Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getReconfigurationController <em>Reconfiguration Controller</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getReconfigurationMessagePorts <em>Reconfiguration Message Ports</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManager()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ImplementMessagesOfChildren ImplementMessagesOfferedToParent TreatAndNotPropagateMessagesOfferedToParent PropagatedMessageMustAppearInRMPort'"

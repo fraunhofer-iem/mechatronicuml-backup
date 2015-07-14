@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterface
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl#getMessageType <em>Message Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -22,10 +22,10 @@ import org.storydriven.storydiagrams.calls.Invocation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression#getActivity <em>Activity</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getActivityCallExpression()
  * @model

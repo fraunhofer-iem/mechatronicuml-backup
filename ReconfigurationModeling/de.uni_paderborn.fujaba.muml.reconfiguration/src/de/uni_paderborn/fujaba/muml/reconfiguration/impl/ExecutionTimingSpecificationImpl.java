@@ -12,8 +12,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Execution Timing Specification</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPort#getKind <em>Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage#getBroadcastPort()
  * @model

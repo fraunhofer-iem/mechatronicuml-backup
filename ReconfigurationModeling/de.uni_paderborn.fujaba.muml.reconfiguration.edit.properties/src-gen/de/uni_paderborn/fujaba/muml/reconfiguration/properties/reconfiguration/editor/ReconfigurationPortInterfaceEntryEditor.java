@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.reconfiguration.editor;
 
 /**
@@ -11,8 +12,7 @@ public class ReconfigurationPortInterfaceEntryEditor
 	 * @generated
 	 */
 	public ReconfigurationPortInterfaceEntryEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
-			org.eclipse.emf.ecore.EClass eClass) {
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
 
@@ -23,15 +23,23 @@ public class ReconfigurationPortInterfaceEntryEditor
 	protected void createProperties() {
 		if (tab == null) {
 
-			addPropertyEditor(createEditorDescription_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorDescription_GeneralTab_Editor(), false);
 
-			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(),
-					false);
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(), false);
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
 
 		} else if ("property.tab.constraint".equals(tab)) { // Tab Constraint
+
+		} else if ("property.tab.general".equals(tab)) { // Tab General
+
+			addPropertyEditor(createEditorDescription_GeneralTab_Editor(), false);
+
+			addPropertyEditor(createEditorMessageType_GeneralTab_Editor(), false);
+
+		} else if ("property.tab.documentation".equals(tab)) { // Tab Documentation
+
+		} else if ("property.tab.extensions".equals(tab)) { // Tab Extensions
 
 		} else {
 		}
@@ -45,7 +53,8 @@ public class ReconfigurationPortInterfaceEntryEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 					adapterFactory, feature, false);
 
-			editor.setTooltipMessage("A human readable description of this reconfiguration port interface entry. \nThis description is to be used by a developer.");
+			editor.setTooltipMessage(
+					"A human readable description of this reconfiguration port interface entry. \nThis description is to be used by a developer.");
 
 			this.editorDescription_GeneralTab = editor;
 		}
@@ -60,7 +69,8 @@ public class ReconfigurationPortInterfaceEntryEditor
 			final de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 					adapterFactory, feature);
 
-			editor.setTooltipMessage("The reconfiguration message type that is specified by the reconfiguration \nport interface entry.");
+			editor.setTooltipMessage(
+					"The reconfiguration message type that is specified by the reconfiguration \nport interface entry.");
 
 			this.editorMessageType_GeneralTab = editor;
 		}
@@ -75,8 +85,7 @@ public class ReconfigurationPortInterfaceEntryEditor
 	 * @generated
 	 */
 	public ReconfigurationPortInterfaceEntryEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.reconfiguration.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -86,20 +95,16 @@ public class ReconfigurationPortInterfaceEntryEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ReconfigurationPortInterfaceEntryEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

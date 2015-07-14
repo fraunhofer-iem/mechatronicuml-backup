@@ -13,10 +13,10 @@ import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent#getFadingFunction <em>Fading Function</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getFadingComponent()
  * @model

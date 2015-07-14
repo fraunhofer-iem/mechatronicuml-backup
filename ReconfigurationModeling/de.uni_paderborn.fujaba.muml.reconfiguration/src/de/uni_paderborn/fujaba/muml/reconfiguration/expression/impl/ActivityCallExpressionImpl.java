@@ -33,12 +33,12 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ActivityCallExpressionImpl#getOwnedParameterBindings <em>Owned Parameter Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ActivityCallExpressionImpl#getCallee <em>Callee</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ActivityCallExpressionImpl#getActivity <em>Activity</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -23,11 +23,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationCont
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.RuleBasedReconfigurationControllerImpl#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.RuleBasedReconfigurationControllerImpl#getManager <em>Manager</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

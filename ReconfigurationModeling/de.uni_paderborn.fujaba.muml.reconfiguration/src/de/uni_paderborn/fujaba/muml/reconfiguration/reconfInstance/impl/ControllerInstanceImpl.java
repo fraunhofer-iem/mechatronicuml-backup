@@ -12,8 +12,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.ReconfInstanc
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Controller Instance</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

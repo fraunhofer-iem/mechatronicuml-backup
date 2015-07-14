@@ -25,10 +25,10 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortImpl#getInterfaceEntries <em>Interface Entries</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

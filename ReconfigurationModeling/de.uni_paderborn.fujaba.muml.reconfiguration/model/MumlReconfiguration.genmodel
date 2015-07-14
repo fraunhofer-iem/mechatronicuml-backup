@@ -4,7 +4,7 @@
     modelPluginID="de.uni_paderborn.fujaba.muml.reconfiguration" modelName="MumlReconfiguration"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams"
-    operationReflection="true">
+    operationReflection="true" importOrganizing="true">
   <foreignModel>MumlReconfiguration.ecore</foreignModel>
   <genPackages prefix="Reconfiguration" basePackage="de.uni_paderborn.fujaba.muml"
       disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#/">

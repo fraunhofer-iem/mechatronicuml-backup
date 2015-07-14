@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.reconfiguration.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,23 +17,22 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider.ProtocolinstantiationItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider.ReconfInstanceItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.reconfiguration.reconfInstance.provider.ReconfInstanceItemProviderAdapterFactory());
 
 	}
 

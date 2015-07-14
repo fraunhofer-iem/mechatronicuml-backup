@@ -23,12 +23,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference#getStructType <em>Struct Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getReference()
  * @model

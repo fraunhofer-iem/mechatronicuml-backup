@@ -25,12 +25,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl#getExpectedResponseTime <em>Expected Response Time</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl#getReconfigurationMessagePort <em>Reconfiguration Message Port</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

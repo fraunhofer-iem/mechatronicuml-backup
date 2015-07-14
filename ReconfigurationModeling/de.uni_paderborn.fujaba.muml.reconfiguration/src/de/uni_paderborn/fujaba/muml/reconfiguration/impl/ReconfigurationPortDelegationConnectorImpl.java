@@ -12,8 +12,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegatio
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Port Delegation Connector</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

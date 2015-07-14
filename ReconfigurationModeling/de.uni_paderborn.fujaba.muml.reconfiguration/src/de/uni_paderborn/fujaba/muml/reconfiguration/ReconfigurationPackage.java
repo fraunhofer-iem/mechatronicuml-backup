@@ -1142,13 +1142,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES = ComponentPackage.PORT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 3;
+	int RECONFIGURATION_PORT__COORDINATOR_BEHAVIOR = ComponentPackage.PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
@@ -1741,13 +1741,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
+	int RECONFIGURATION_MESSAGE_PORT__COORDINATOR_BEHAVIOR = RECONFIGURATION_PORT__COORDINATOR_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
@@ -2336,13 +2336,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
+	int RECONFIGURATION_EXECUTION_PORT__COORDINATOR_BEHAVIOR = RECONFIGURATION_PORT__COORDINATOR_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
@@ -3665,13 +3665,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Coordinator Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__COORDINATOR_BEHAVIOR = RECONFIGURATION_PORT__COORDINATOR_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Subrole Behavior</b></em>' reference.
