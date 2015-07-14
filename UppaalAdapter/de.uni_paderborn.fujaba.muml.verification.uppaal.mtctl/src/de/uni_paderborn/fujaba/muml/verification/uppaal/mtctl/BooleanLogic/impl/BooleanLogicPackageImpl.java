@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -147,6 +148,7 @@ public class BooleanLogicPackageImpl extends EPackageImpl implements BooleanLogi
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		MtctlPackageImpl theMtctlPackage = (MtctlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MtctlPackage.eNS_URI) instanceof MtctlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MtctlPackage.eNS_URI) : MtctlPackage.eINSTANCE);

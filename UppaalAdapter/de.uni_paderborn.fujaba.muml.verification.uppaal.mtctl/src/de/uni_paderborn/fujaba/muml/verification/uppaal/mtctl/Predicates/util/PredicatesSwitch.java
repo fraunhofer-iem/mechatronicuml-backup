@@ -46,7 +46,7 @@ public class PredicatesSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -74,12 +74,12 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PredicatesPackage.BUFFER_OVERFLOW_EXPR: {
-				BufferOverflowExpr bufferOverflowExpr = (BufferOverflowExpr)theEObject;
-				T result = caseBufferOverflowExpr(bufferOverflowExpr);
-				if (result == null) result = caseDynamicPredicateExpr(bufferOverflowExpr);
-				if (result == null) result = casePredicateExpr(bufferOverflowExpr);
-				if (result == null) result = caseExpression(bufferOverflowExpr);
+			case PredicatesPackage.CONNECTOR_OVERFLOW_EXPR: {
+				ConnectorOverflowExpr connectorOverflowExpr = (ConnectorOverflowExpr)theEObject;
+				T result = caseConnectorOverflowExpr(connectorOverflowExpr);
+				if (result == null) result = caseDynamicPredicateExpr(connectorOverflowExpr);
+				if (result == null) result = casePredicateExpr(connectorOverflowExpr);
+				if (result == null) result = caseExpression(connectorOverflowExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,17 +206,17 @@ public class PredicatesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Buffer Overflow Expr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Connector Overflow Expr</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Buffer Overflow Expr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Connector Overflow Expr</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBufferOverflowExpr(BufferOverflowExpr object) {
+	public T caseConnectorOverflowExpr(ConnectorOverflowExpr object) {
 		return null;
 	}
 

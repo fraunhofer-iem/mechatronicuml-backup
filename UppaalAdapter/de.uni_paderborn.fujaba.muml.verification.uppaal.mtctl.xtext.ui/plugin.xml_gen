@@ -361,5 +361,11 @@
             extensions="mtctl">
     </provider>
   </extension>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="mtctl"
+            type="text">
+    </fileTypes>
+  </extension>
 
 </plugin>

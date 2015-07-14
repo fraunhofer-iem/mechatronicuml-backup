@@ -555,7 +555,7 @@ mapping muml::instance::AtomicComponentInstance :: AtomicComponentInstance2Atomi
 mapping mtctl::Predicates::DeadlockExpr :: DeadlockExpr2DeadlockExpr() : mtctl::Predicates::DeadlockExpr{
    		 }
    		 
-mapping mtctl::Predicates::BufferOverflowExpr :: BufferOverflowExpr2BufferOverflowExpr() : mtctl::Predicates::BufferOverflowExpr{
+mapping mtctl::Predicates::ConnectorOverflowExpr :: ConnectorOverflowExpr2ConnectorOverflowExpr() : mtctl::Predicates::ConnectorOverflowExpr{
    		 }
    		 
 mapping mtctl::Predicates::ComparisonExpr :: ComparisonExpr2ComparisonExpr() : mtctl::Predicates::ComparisonExpr{
@@ -591,7 +591,7 @@ mapping mtctl::Predicates::PredicateExpr :: PredicateExpr2PredicateExpr() : mtct
  mapping mtctl::Predicates::PredicateExpr :: normalPredicateExpr2PredicateExpr() : mtctl::Predicates::PredicateExpr{
  }
  	 			
-mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::Predicates::DynamicPredicateExpr disjuncts mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr, mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::Predicates::BufferOverflowExpr::BufferOverflowExpr2BufferOverflowExpr;
+mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::Predicates::DynamicPredicateExpr disjuncts mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr, mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr;
       	
 mapping mtctl::Predicates::StaticPredicateExpr :: StaticPredicateExpr2StaticPredicateExpr() : mtctl::Predicates::StaticPredicateExpr disjuncts mtctl::Predicates::FalseExpr::FalseExpr2FalseExpr, mtctl::Predicates::TrueExpr::TrueExpr2TrueExpr, mtctl::Predicates::StateInStatechartExpr::StateInStatechartExpr2StateInStatechartExpr, mtctl::Predicates::SubstateOfExpr::SubstateOfExpr2SubstateOfExpr;
       	

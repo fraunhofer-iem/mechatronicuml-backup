@@ -100,7 +100,7 @@ mapping Expression::Expression2Expression() : uppaalExpr::Expression disjuncts
 	TrueExpr::TrueExpr2LiteralExpression,
 	MumlElemExpr::MumlElemExpr2Expression,
 	StateActiveExpr::StateActiveExpr2IdentifierExpression,
-	BufferOverflowExpr::BufferOverflowExpr2Expression,
+	ConnectorOverflowExpr::ConnectorOverflowExpr2Expression,
 	BufferMsgCountExpr::BufferMsgCount2Expression,
 	MessageInBufferExpr::MessageInBufferExpr2Expression,
 	MessageInTransitExpr::MessageInTransitExpr2Expression,
@@ -167,8 +167,8 @@ mapping DeadlockExpr::DeadlockExpr2DeadlockExpression() : uppaalReq::DeadlockExp
 	
 }
 
-mapping BufferOverflowExpr::BufferOverflowExpr2Expression() : uppaalExpr::IdentifierExpression {
-	identifier := resolveoneIn(Variables::createOverflowVariable).oclAsType(uppaal_core::NamedElement);
+mapping ConnectorOverflowExpr::ConnectorOverflowExpr2Expression() : uppaalExpr::IdentifierExpression {
+	identifier := resolveoneIn(Variables::createConnectorOverflowVariable).oclAsType(uppaal_core::NamedElement);
 }
 
 mapping ComparisonExpr::ComparisonExpr2CompareExpression() : uppaalExpr::CompareExpression {

@@ -14,10 +14,10 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr#getBuffer <em>Buffer</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getBufferMsgCountExpr()
  * @model

@@ -33,9 +33,6 @@
     <classes xmi:id="_RnHf581gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/DeadlockExpr"/>
     </classes>
-    <classes xmi:id="_RnIG8M1gEeSIgPDefa6ZBw" superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
-      <genClass href="Mtctl.genmodel#//mtctl/Predicates/BufferOverflowExpr"/>
-    </classes>
     <classes xmi:id="_RnIG8c1gEeSIgPDefa6ZBw" superClasses="_RnIuAM1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr"/>
       <orderedElements xsi:type="de.uni_paderborn.fujaba:Property" xmi:id="_RnIG8s1gEeSIgPDefa6ZBw" tab="_RnHf4M1gEeSIgPDefa6ZBw" tooltip="" reconcile="false" initializeOCLExpression="">
@@ -74,6 +71,9 @@
     </classes>
     <classes xmi:id="_RnIuBc1gEeSIgPDefa6ZBw" superClasses="_RnIuAs1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/StateInStatechartExpr"/>
+    </classes>
+    <classes superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/ConnectorOverflowExpr"/>
     </classes>
   </packages>
   <packages xmi:id="_RnIuBs1gEeSIgPDefa6ZBw">

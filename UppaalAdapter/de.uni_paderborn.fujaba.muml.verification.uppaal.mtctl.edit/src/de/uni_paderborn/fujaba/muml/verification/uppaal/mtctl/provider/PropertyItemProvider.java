@@ -201,7 +201,7 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

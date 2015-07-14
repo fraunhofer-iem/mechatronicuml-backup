@@ -4,7 +4,7 @@
     creationIcons="false" modelPluginID="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
     modelName="Mtctl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
+    usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Mtctl.ecore</foreignModel>
   <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
@@ -58,7 +58,7 @@
         <genEnumLiterals ecoreEnumLiteral="Mtctl.ecore#//Predicates/ComparisonOp/NOT_EQUAL"/>
       </genEnums>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/DeadlockExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/BufferOverflowExpr"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/ConnectorOverflowExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/ComparisonExpr">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/ComparisonExpr/lhs"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Predicates/ComparisonExpr/op"/>

@@ -11,11 +11,11 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.AndExpr#getLeftOpd <em>Left Opd</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.AndExpr#getRightOpd <em>Right Opd</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicPackage#getAndExpr()
  * @model

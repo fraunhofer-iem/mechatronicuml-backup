@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor;
 
 /**
@@ -5,13 +6,12 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predic
  */
 public abstract class DynamicPredicateExprEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.PredicateExprEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public DynamicPredicateExprEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public DynamicPredicateExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -21,8 +21,12 @@ public abstract class DynamicPredicateExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.mtctl".equals(tab)) { // Tab Mtctl
+
+		} else {
+		}
 	}
 
 }

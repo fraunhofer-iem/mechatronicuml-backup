@@ -19,6 +19,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.storydriven.core;visibility:=reexport,
  org.storydriven.core.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

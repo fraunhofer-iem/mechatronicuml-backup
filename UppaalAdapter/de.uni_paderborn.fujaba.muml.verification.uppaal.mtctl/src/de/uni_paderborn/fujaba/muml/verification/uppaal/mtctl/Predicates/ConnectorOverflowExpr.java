@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Buffer Overflow Expr</b></em>'.
+ * A representation of the model object '<em><b>Connector Overflow Expr</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -13,9 +13,9 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
  * <!-- end-model-doc -->
  *
  *
- * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getBufferOverflowExpr()
+ * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getConnectorOverflowExpr()
  * @model
  * @generated
  */
-public interface BufferOverflowExpr extends DynamicPredicateExpr {
-} // BufferOverflowExpr
+public interface ConnectorOverflowExpr extends DynamicPredicateExpr {
+} // ConnectorOverflowExpr

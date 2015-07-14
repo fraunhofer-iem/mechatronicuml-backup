@@ -219,7 +219,7 @@ public class NotExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -4,12 +4,14 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predic
 /**
  * @generated
  */
-public class DeadlockExprEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class ConnectorOverflowExprEditor
+		extends
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public DeadlockExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ConnectorOverflowExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -34,12 +36,12 @@ public class DeadlockExprEditor extends de.uni_paderborn.fujaba.properties.runti
 	/**
 	 * @generated
 	 */
-	public DeadlockExprEditor(String tab) {
+	public ConnectorOverflowExprEditor(String tab) {
 		this(tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage.eINSTANCE
-						.getDeadlockExpr());
+						.getConnectorOverflowExpr());
 	}
 
 	/**
@@ -48,7 +50,7 @@ public class DeadlockExprEditor extends de.uni_paderborn.fujaba.properties.runti
 	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
-			return new DeadlockExprEditor(tab);
+			return new ConnectorOverflowExprEditor(tab);
 		}
 
 		@Override

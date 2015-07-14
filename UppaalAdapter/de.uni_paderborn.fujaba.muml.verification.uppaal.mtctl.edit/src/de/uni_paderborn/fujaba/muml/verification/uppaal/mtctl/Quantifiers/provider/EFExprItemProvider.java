@@ -196,7 +196,7 @@ public class EFExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

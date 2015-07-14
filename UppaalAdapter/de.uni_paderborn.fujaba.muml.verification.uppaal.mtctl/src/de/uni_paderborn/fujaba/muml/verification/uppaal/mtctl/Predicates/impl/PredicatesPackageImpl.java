@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
+import de.uni_paderborn.fujaba.muml.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -31,10 +32,9 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.Compar
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.ComparablesPackageImpl;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DynamicPredicateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.FalseExpr;
@@ -87,7 +87,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bufferOverflowExprEClass = null;
+	private EClass connectorOverflowExprEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -237,6 +237,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();
 		BehaviorPackage.eINSTANCE.eClass();
+		PatternPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		MtctlPackageImpl theMtctlPackage = (MtctlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MtctlPackage.eNS_URI) instanceof MtctlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MtctlPackage.eNS_URI) : MtctlPackage.eINSTANCE);
@@ -284,8 +285,8 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBufferOverflowExpr() {
-		return bufferOverflowExprEClass;
+	public EClass getConnectorOverflowExpr() {
+		return connectorOverflowExprEClass;
 	}
 
 	/**
@@ -543,7 +544,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		// Create classes and their features
 		deadlockExprEClass = createEClass(DEADLOCK_EXPR);
 
-		bufferOverflowExprEClass = createEClass(BUFFER_OVERFLOW_EXPR);
+		connectorOverflowExprEClass = createEClass(CONNECTOR_OVERFLOW_EXPR);
 
 		comparisonExprEClass = createEClass(COMPARISON_EXPR);
 		createEReference(comparisonExprEClass, COMPARISON_EXPR__LHS);
@@ -618,7 +619,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 
 		// Add supertypes to classes
 		deadlockExprEClass.getESuperTypes().add(this.getDynamicPredicateExpr());
-		bufferOverflowExprEClass.getESuperTypes().add(this.getDynamicPredicateExpr());
+		connectorOverflowExprEClass.getESuperTypes().add(this.getDynamicPredicateExpr());
 		comparisonExprEClass.getESuperTypes().add(this.getPredicateExpr());
 		messageInBufferExprEClass.getESuperTypes().add(this.getDynamicPredicateExpr());
 		messageInTransitExprEClass.getESuperTypes().add(this.getDynamicPredicateExpr());
@@ -635,7 +636,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deadlockExprEClass, DeadlockExpr.class, "DeadlockExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(bufferOverflowExprEClass, BufferOverflowExpr.class, "BufferOverflowExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(connectorOverflowExprEClass, ConnectorOverflowExpr.class, "ConnectorOverflowExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(comparisonExprEClass, ComparisonExpr.class, "ComparisonExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComparisonExpr_Lhs(), theComparablesPackage.getMapExpr(), null, "lhs", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

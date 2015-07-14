@@ -16,11 +16,11 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getVal <em>Val</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getConstExpr()
  * @model

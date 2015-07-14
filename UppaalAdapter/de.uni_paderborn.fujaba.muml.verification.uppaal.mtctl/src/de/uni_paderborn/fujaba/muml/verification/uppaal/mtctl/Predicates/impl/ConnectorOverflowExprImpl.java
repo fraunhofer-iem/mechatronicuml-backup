@@ -2,27 +2,25 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl;
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Buffer Overflow Expr</b></em>'.
+ * An implementation of the model object '<em><b>Connector Overflow Expr</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class BufferOverflowExprImpl extends DynamicPredicateExprImpl implements BufferOverflowExpr {
+public class ConnectorOverflowExprImpl extends DynamicPredicateExprImpl implements ConnectorOverflowExpr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BufferOverflowExprImpl() {
+	protected ConnectorOverflowExprImpl() {
 		super();
 	}
 
@@ -33,7 +31,7 @@ public class BufferOverflowExprImpl extends DynamicPredicateExprImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PredicatesPackage.Literals.BUFFER_OVERFLOW_EXPR;
+		return PredicatesPackage.Literals.CONNECTOR_OVERFLOW_EXPR;
 	}
 
-} //BufferOverflowExprImpl
+} //ConnectorOverflowExprImpl

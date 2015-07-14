@@ -11,11 +11,11 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr#getFormula <em>Formula</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr#getVar <em>Var</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage#getQuantifierExpr()
  * @model abstract="true"

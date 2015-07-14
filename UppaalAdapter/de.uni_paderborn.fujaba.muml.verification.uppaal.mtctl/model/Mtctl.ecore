@@ -74,7 +74,7 @@
       <eLiterals name="LESS_OR_EQUAL" value="4" literal="&lt;="/>
       <eLiterals name="NOT_EQUAL" value="5" literal="!="/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BufferOverflowExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectorOverflowExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="true iff at any point before the snapshot's time, a buffer overflow has occured"/>
       </eAnnotations>

@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.MessageInTransitExprImpl#getMessage <em>Message</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.SubstateOfExprImpl#getSuperstate <em>Superstate</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.SubstateOfExprImpl#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

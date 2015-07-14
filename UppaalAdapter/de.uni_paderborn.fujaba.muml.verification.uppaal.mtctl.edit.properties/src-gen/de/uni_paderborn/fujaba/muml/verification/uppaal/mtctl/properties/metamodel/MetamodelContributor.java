@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.metamodel;
 
 public class MetamodelContributor
@@ -16,26 +17,25 @@ public class MetamodelContributor
 	/**
 	 * @generated
 	 */
-	protected void fillItemProviderFactories(
-			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.provider.BooleanLogicItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.provider.BooleanLogicItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provider.PredicatesItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provider.PredicatesItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provider.QuantifiersItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provider.QuantifiersItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider.ComparablesItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider.ComparablesItemProviderAdapterFactory());
 
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider.SetsItemProviderAdapterFactory());
+		factories.add(
+				new de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider.SetsItemProviderAdapterFactory());
 
 	}
 

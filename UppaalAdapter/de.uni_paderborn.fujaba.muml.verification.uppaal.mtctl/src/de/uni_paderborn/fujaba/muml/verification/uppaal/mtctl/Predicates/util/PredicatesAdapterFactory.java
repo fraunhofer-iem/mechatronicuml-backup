@@ -70,8 +70,8 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 				return createDeadlockExprAdapter();
 			}
 			@Override
-			public Adapter caseBufferOverflowExpr(BufferOverflowExpr object) {
-				return createBufferOverflowExprAdapter();
+			public Adapter caseConnectorOverflowExpr(ConnectorOverflowExpr object) {
+				return createConnectorOverflowExprAdapter();
 			}
 			@Override
 			public Adapter caseComparisonExpr(ComparisonExpr object) {
@@ -160,16 +160,16 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr <em>Buffer Overflow Expr</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr <em>Connector Overflow Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr
 	 * @generated
 	 */
-	public Adapter createBufferOverflowExprAdapter() {
+	public Adapter createConnectorOverflowExprAdapter() {
 		return null;
 	}
 

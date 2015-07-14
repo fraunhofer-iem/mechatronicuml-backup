@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.StateInStatechartExprImpl#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.StateInStatechartExprImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -10,9 +10,9 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlEl
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.SourceStateExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TargetStateExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.FalseExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr
@@ -39,10 +39,10 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetEx
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlQualifiedNameProvider
 import java.util.concurrent.TimeUnit
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SubinstanceSetExpr
 
 class Mtctl2English {
 	def serializeProperty(Property it) '''«expr(it.expression, true).toString().toFirstUpper».'''
@@ -102,11 +102,11 @@ class Mtctl2English {
 			'''no deadlock occurs'''
 	}
 	
-	def dispatch expr(BufferOverflowExpr expr, boolean positive) {
+	def dispatch expr(ConnectorOverflowExpr expr, boolean positive) {
 		if (positive)
-			'''a buffer overflow occurs'''
+			'''a connector overflow occurs'''
 		else
-			'''no buffer overflow occurs'''
+			'''no connector overflow occurs'''
 	}
 
 	def dispatch expr(ComparisonExpr expr, boolean positive) {

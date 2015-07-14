@@ -1,3 +1,4 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor;
 
 /**
@@ -5,13 +6,12 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predic
  */
 public class StateInStatechartExprEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.StaticPredicateExprEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public StateInStatechartExprEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public StateInStatechartExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -21,8 +21,12 @@ public class StateInStatechartExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.mtctl".equals(tab)) { // Tab Mtctl
+
+		} else {
+		}
 	}
 
 	//
@@ -33,8 +37,7 @@ public class StateInStatechartExprEditor
 	 * @generated
 	 */
 	public StateInStatechartExprEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage.eINSTANCE
@@ -44,19 +47,15 @@ public class StateInStatechartExprEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new StateInStatechartExprEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(tab);
 		}
 	}
 

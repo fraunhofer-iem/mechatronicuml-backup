@@ -14,11 +14,11 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr#getLowerVal <em>Lower Val</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr#getUpperVal <em>Upper Val</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage#getIntervalSetExpr()
  * @model

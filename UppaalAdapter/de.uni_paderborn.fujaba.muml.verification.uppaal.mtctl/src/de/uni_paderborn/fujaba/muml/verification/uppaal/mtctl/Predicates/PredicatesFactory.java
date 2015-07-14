@@ -31,13 +31,13 @@ public interface PredicatesFactory extends EFactory {
 	DeadlockExpr createDeadlockExpr();
 
 	/**
-	 * Returns a new object of class '<em>Buffer Overflow Expr</em>'.
+	 * Returns a new object of class '<em>Connector Overflow Expr</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Buffer Overflow Expr</em>'.
+	 * @return a new object of class '<em>Connector Overflow Expr</em>'.
 	 * @generated
 	 */
-	BufferOverflowExpr createBufferOverflowExpr();
+	ConnectorOverflowExpr createConnectorOverflowExpr();
 
 	/**
 	 * Returns a new object of class '<em>Comparison Expr</em>'.

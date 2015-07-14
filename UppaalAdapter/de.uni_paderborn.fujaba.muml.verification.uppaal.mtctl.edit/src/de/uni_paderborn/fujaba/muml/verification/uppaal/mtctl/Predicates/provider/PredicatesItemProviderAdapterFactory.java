@@ -95,26 +95,26 @@ public class PredicatesItemProviderAdapterFactory extends PredicatesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BufferOverflowExprItemProvider bufferOverflowExprItemProvider;
+	protected ConnectorOverflowExprItemProvider connectorOverflowExprItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBufferOverflowExprAdapter() {
-		if (bufferOverflowExprItemProvider == null) {
-			bufferOverflowExprItemProvider = new BufferOverflowExprItemProvider(this);
+	public Adapter createConnectorOverflowExprAdapter() {
+		if (connectorOverflowExprItemProvider == null) {
+			connectorOverflowExprItemProvider = new ConnectorOverflowExprItemProvider(this);
 		}
 
-		return bufferOverflowExprItemProvider;
+		return connectorOverflowExprItemProvider;
 	}
 
 	/**
@@ -447,7 +447,7 @@ public class PredicatesItemProviderAdapterFactory extends PredicatesAdapterFacto
 	 */
 	public void dispose() {
 		if (deadlockExprItemProvider != null) deadlockExprItemProvider.dispose();
-		if (bufferOverflowExprItemProvider != null) bufferOverflowExprItemProvider.dispose();
+		if (connectorOverflowExprItemProvider != null) connectorOverflowExprItemProvider.dispose();
 		if (comparisonExprItemProvider != null) comparisonExprItemProvider.dispose();
 		if (messageInBufferExprItemProvider != null) messageInBufferExprItemProvider.dispose();
 		if (messageInTransitExprItemProvider != null) messageInTransitExprItemProvider.dispose();

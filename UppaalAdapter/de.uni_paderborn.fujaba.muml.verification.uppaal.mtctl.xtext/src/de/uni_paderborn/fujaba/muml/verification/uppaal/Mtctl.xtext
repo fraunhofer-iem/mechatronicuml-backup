@@ -87,15 +87,15 @@ AtomExpr returns mtctl::Expression:
 
 //Predicates
 PredicateExpr returns mtctl::Expression:
-	TrueExpr | FalseExpr | DeadlockExpr | BufferOverflowExpr | StateExpr | MessageExpr | TransitionExpr
+	TrueExpr | FalseExpr | DeadlockExpr | ConnectorOverflowExpr | StateExpr | MessageExpr | TransitionExpr
 ;
 
 DeadlockExpr returns mtctl::DeadlockExpr:
 	{mtctl::DeadlockExpr} 'deadlock'
 ;
 
-BufferOverflowExpr returns mtctl::BufferOverflowExpr:
-	{mtctl::BufferOverflowExpr} 'bufferOverflow'
+ConnectorOverflowExpr returns mtctl::ConnectorOverflowExpr:
+	{mtctl::ConnectorOverflowExpr} 'connectorOverflow'
 ;
 
 TrueExpr returns mtctl::TrueExpr:

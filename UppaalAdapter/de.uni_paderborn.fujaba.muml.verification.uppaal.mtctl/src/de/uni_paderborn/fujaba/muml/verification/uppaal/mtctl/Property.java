@@ -11,10 +11,10 @@ import org.storydriven.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage#getProperty()
  * @model

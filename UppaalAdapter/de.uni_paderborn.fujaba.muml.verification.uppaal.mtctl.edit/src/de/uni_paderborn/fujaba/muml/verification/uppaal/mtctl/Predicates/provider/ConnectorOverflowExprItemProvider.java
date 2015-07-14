@@ -5,25 +5,26 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provid
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BufferOverflowExprItemProvider
-	extends DynamicPredicateExprItemProvider {
+public class ConnectorOverflowExprItemProvider extends DynamicPredicateExprItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BufferOverflowExprItemProvider(AdapterFactory adapterFactory) {
+	public ConnectorOverflowExprItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,14 +44,14 @@ public class BufferOverflowExprItemProvider
 	}
 
 	/**
-	 * This returns BufferOverflowExpr.gif.
+	 * This returns ConnectorOverflowExpr.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BufferOverflowExpr"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectorOverflowExpr"));
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class BufferOverflowExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_BufferOverflowExpr_type");
+		return getString("_UI_ConnectorOverflowExpr_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

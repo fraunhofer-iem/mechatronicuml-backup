@@ -755,9 +755,9 @@ modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 	}
 	
 	
-	mapping createOverflowVariable() : Variable {
+	mapping createConnectorOverflowVariable() : Variable {
 		
-		name := 'overflow'
+		name := 'connectorOverflow'
 		
 	}
 	

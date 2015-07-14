@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor;
 
 /**
  * @generated
  */
-public class TrueExprEditor
-		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.StaticPredicateExprEditor {
+public class TrueExprEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public TrueExprEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public TrueExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -21,8 +19,12 @@ public class TrueExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.mtctl".equals(tab)) { // Tab Mtctl
+
+		} else {
+		}
 	}
 
 	//
@@ -33,8 +35,7 @@ public class TrueExprEditor
 	 * @generated
 	 */
 	public TrueExprEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage.eINSTANCE
@@ -44,19 +45,15 @@ public class TrueExprEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new TrueExprEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(tab);
 		}
 	}
 

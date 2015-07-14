@@ -11,10 +11,10 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlEl
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.InstanceSetExpr#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage#getInstanceSetExpr()
  * @model

@@ -39,3 +39,4 @@ property bufferOverflowStrategyArrayID = 'bufferOverflowStrategies';
 property bufferOverflowStrategyParameterID = 'bufferOverflowStrategy';
 property bufferParameterID = 'buffer';
 property messageParameterID = 'message';
+property connectorOverflowVariableID = 'connectorOverflow';

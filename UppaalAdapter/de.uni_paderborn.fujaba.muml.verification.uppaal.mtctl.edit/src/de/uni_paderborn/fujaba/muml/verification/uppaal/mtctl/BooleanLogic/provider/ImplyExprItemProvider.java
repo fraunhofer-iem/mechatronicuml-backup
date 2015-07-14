@@ -221,7 +221,7 @@ public class ImplyExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.IMPLY_EXPR__LEFT_OPD,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -406,7 +406,7 @@ public class ImplyExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.IMPLY_EXPR__RIGHT_OPD,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

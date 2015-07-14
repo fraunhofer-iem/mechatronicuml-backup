@@ -1,5 +1,5 @@
 AG not deadlock; //a deadlock never occurs
-AG not bufferOverflow; //a buffer overflow never occurs
+AG not connectorOverflow; //a connector overflow never occurs
 forall(t : Transitions) EF transitionFiring(t); //there is no transition that can never be fired
 forall(s : States) EF stateActive(s); //there is no state that can never be active
 forall(m : MessageTypes) exists(b : Buffers) EF messageInBuffer(m, b); //there is no message type that cannot possibly arrive in a buffer

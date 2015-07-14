@@ -13,9 +13,9 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlEl
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.SourceStateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TargetStateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.FalseExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
@@ -236,15 +236,15 @@ public class Mtctl2English {
     return _xifexpression;
   }
   
-  protected CharSequence _expr(final BufferOverflowExpr expr, final boolean positive) {
+  protected CharSequence _expr(final ConnectorOverflowExpr expr, final boolean positive) {
     CharSequence _xifexpression = null;
     if (positive) {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("a buffer overflow occurs");
+      _builder.append("a connector overflow occurs");
       _xifexpression = _builder;
     } else {
       StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("no buffer overflow occurs");
+      _builder_1.append("no connector overflow occurs");
       _xifexpression = _builder_1;
     }
     return _xifexpression;
@@ -1138,8 +1138,8 @@ public class Mtctl2English {
       return _expr((SourceStateExpr)expr, positive);
     } else if (expr instanceof TargetStateExpr) {
       return _expr((TargetStateExpr)expr, positive);
-    } else if (expr instanceof BufferOverflowExpr) {
-      return _expr((BufferOverflowExpr)expr, positive);
+    } else if (expr instanceof ConnectorOverflowExpr) {
+      return _expr((ConnectorOverflowExpr)expr, positive);
     } else if (expr instanceof DeadlockExpr) {
       return _expr((DeadlockExpr)expr, positive);
     } else if (expr instanceof FalseExpr) {

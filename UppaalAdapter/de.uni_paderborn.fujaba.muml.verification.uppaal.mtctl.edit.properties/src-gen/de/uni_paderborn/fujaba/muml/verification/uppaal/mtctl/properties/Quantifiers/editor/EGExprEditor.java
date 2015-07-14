@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor;
 
 /**
  * @generated
  */
-public class EGExprEditor
-		extends
-			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+public class EGExprEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public EGExprEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public EGExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -37,8 +35,7 @@ public class EGExprEditor
 	 * @generated
 	 */
 	public EGExprEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage.eINSTANCE
@@ -48,19 +45,15 @@ public class EGExprEditor
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new EGExprEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(tab);
 		}
 	}
 

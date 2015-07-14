@@ -549,23 +549,23 @@ public interface PredicatesPackage extends EPackage {
 	int DEADLOCK_EXPR_OPERATION_COUNT = DYNAMIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.BufferOverflowExprImpl <em>Buffer Overflow Expr</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.ConnectorOverflowExprImpl <em>Connector Overflow Expr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.BufferOverflowExprImpl
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getBufferOverflowExpr()
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.ConnectorOverflowExprImpl
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getConnectorOverflowExpr()
 	 * @generated
 	 */
-	int BUFFER_OVERFLOW_EXPR = 1;
+	int CONNECTOR_OVERFLOW_EXPR = 1;
 
 	/**
-	 * The number of structural features of the '<em>Buffer Overflow Expr</em>' class.
+	 * The number of structural features of the '<em>Connector Overflow Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR_FEATURE_COUNT = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
+	int CONNECTOR_OVERFLOW_EXPR_FEATURE_COUNT = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -574,7 +574,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ECLASS = DYNAMIC_PREDICATE_EXPR___ECLASS;
+	int CONNECTOR_OVERFLOW_EXPR___ECLASS = DYNAMIC_PREDICATE_EXPR___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -583,7 +583,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EIS_PROXY = DYNAMIC_PREDICATE_EXPR___EIS_PROXY;
+	int CONNECTOR_OVERFLOW_EXPR___EIS_PROXY = DYNAMIC_PREDICATE_EXPR___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -592,7 +592,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ERESOURCE = DYNAMIC_PREDICATE_EXPR___ERESOURCE;
+	int CONNECTOR_OVERFLOW_EXPR___ERESOURCE = DYNAMIC_PREDICATE_EXPR___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -601,7 +601,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ECONTAINER = DYNAMIC_PREDICATE_EXPR___ECONTAINER;
+	int CONNECTOR_OVERFLOW_EXPR___ECONTAINER = DYNAMIC_PREDICATE_EXPR___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -610,7 +610,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ECONTAINING_FEATURE = DYNAMIC_PREDICATE_EXPR___ECONTAINING_FEATURE;
+	int CONNECTOR_OVERFLOW_EXPR___ECONTAINING_FEATURE = DYNAMIC_PREDICATE_EXPR___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -619,7 +619,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ECONTAINMENT_FEATURE = DYNAMIC_PREDICATE_EXPR___ECONTAINMENT_FEATURE;
+	int CONNECTOR_OVERFLOW_EXPR___ECONTAINMENT_FEATURE = DYNAMIC_PREDICATE_EXPR___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -628,7 +628,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ECONTENTS = DYNAMIC_PREDICATE_EXPR___ECONTENTS;
+	int CONNECTOR_OVERFLOW_EXPR___ECONTENTS = DYNAMIC_PREDICATE_EXPR___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -637,7 +637,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EALL_CONTENTS = DYNAMIC_PREDICATE_EXPR___EALL_CONTENTS;
+	int CONNECTOR_OVERFLOW_EXPR___EALL_CONTENTS = DYNAMIC_PREDICATE_EXPR___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -646,7 +646,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ECROSS_REFERENCES = DYNAMIC_PREDICATE_EXPR___ECROSS_REFERENCES;
+	int CONNECTOR_OVERFLOW_EXPR___ECROSS_REFERENCES = DYNAMIC_PREDICATE_EXPR___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -655,7 +655,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EGET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE;
+	int CONNECTOR_OVERFLOW_EXPR___EGET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -664,7 +664,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = DYNAMIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int CONNECTOR_OVERFLOW_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = DYNAMIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -673,7 +673,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = DYNAMIC_PREDICATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int CONNECTOR_OVERFLOW_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = DYNAMIC_PREDICATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -682,7 +682,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EIS_SET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+	int CONNECTOR_OVERFLOW_EXPR___EIS_SET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -691,7 +691,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EUNSET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EUNSET__ESTRUCTURALFEATURE;
+	int CONNECTOR_OVERFLOW_EXPR___EUNSET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -700,16 +700,16 @@ public interface PredicatesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR___EINVOKE__EOPERATION_ELIST = DYNAMIC_PREDICATE_EXPR___EINVOKE__EOPERATION_ELIST;
+	int CONNECTOR_OVERFLOW_EXPR___EINVOKE__EOPERATION_ELIST = DYNAMIC_PREDICATE_EXPR___EINVOKE__EOPERATION_ELIST;
 
 	/**
-	 * The number of operations of the '<em>Buffer Overflow Expr</em>' class.
+	 * The number of operations of the '<em>Connector Overflow Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_OVERFLOW_EXPR_OPERATION_COUNT = DYNAMIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
+	int CONNECTOR_OVERFLOW_EXPR_OPERATION_COUNT = DYNAMIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.ComparisonExprImpl <em>Comparison Expr</em>}' class.
@@ -2471,14 +2471,14 @@ public interface PredicatesPackage extends EPackage {
 	EClass getDeadlockExpr();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr <em>Buffer Overflow Expr</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr <em>Connector Overflow Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Buffer Overflow Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.BufferOverflowExpr
+	 * @return the meta object for class '<em>Connector Overflow Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr
 	 * @generated
 	 */
-	EClass getBufferOverflowExpr();
+	EClass getConnectorOverflowExpr();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr <em>Comparison Expr</em>}'.
@@ -2776,14 +2776,14 @@ public interface PredicatesPackage extends EPackage {
 		EClass DEADLOCK_EXPR = eINSTANCE.getDeadlockExpr();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.BufferOverflowExprImpl <em>Buffer Overflow Expr</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.ConnectorOverflowExprImpl <em>Connector Overflow Expr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.BufferOverflowExprImpl
-		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getBufferOverflowExpr()
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.ConnectorOverflowExprImpl
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getConnectorOverflowExpr()
 		 * @generated
 		 */
-		EClass BUFFER_OVERFLOW_EXPR = eINSTANCE.getBufferOverflowExpr();
+		EClass CONNECTOR_OVERFLOW_EXPR = eINSTANCE.getConnectorOverflowExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.ComparisonExprImpl <em>Comparison Expr</em>}' class.

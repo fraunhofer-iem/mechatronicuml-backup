@@ -190,7 +190,7 @@ public class QuantifierExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -15,11 +15,11 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExp
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr#getMessage <em>Message</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getMessageInBufferExpr()
  * @model

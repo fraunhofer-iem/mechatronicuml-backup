@@ -22,73 +22,73 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMtctlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'leadsTo'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'deadlock'", "'bufferOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "','", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'['", "']'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00B5secs'", "'nsecs'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'Instances'", "'<'", "'>'", "'Subinstances'", "'.'", "'-'", "'=='", "'>='", "'<='", "'!='"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_COMMENT", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "';'", "'leadsTo'", "'implies'", "'and'", "'or'", "'not'", "'forall'", "'('", "')'", "'exists'", "':'", "'EF'", "'E<>'", "'AF'", "'A<>'", "'EG'", "'E[]'", "'AG'", "'A[]'", "'deadlock'", "'connectorOverflow'", "'true'", "'false'", "'stateActive'", "'substateOf'", "','", "'stateInStatechart'", "'messageInTransit'", "'messageInBuffer'", "'transitionFiring'", "'bufferMessageCount'", "'sourceState'", "'targetState'", "'['", "']'", "'days'", "'hrs'", "'mins'", "'secs'", "'msecs'", "'\\u00C2\\u00B5secs'", "'nsecs'", "'States'", "'Transitions'", "'MessageTypes'", "'Clocks'", "'Buffers'", "'Instances'", "'<'", "'>'", "'Subinstances'", "'.'", "'-'", "'=='", "'>='", "'<='", "'!='"
     };
-    public static final int RULE_ID=5;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__64=64;
-    public static final int T__29=29;
-    public static final int T__65=65;
-    public static final int T__28=28;
-    public static final int T__62=62;
-    public static final int T__27=27;
-    public static final int T__63=63;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int T__61=61;
-    public static final int T__60=60;
-    public static final int EOF=-1;
-    public static final int T__55=55;
-    public static final int T__56=56;
+    public static final int T__50=50;
     public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__55=55;
+    public static final int T__12=12;
+    public static final int T__56=56;
+    public static final int T__13=13;
     public static final int T__57=57;
+    public static final int T__14=14;
     public static final int T__58=58;
     public static final int T__51=51;
-    public static final int T__16=16;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int T__12=12;
-    public static final int T__11=11;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int T__59=59;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=5;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=6;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=4;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=8;
-    public static final int T__30=30;
-    public static final int T__31=31;
+    public static final int T__23=23;
+    public static final int T__67=67;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int T__21=21;
+    public static final int T__65=65;
     public static final int RULE_STRING=7;
-    public static final int T__32=32;
+    public static final int RULE_SL_COMMENT=4;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -2974,7 +2974,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredicateExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1113:1: rulePredicateExpr returns [EObject current=null] : (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_BufferOverflowExpr_3= ruleBufferOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1113:1: rulePredicateExpr returns [EObject current=null] : (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_ConnectorOverflowExpr_3= ruleConnectorOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr ) ;
     public final EObject rulePredicateExpr() throws RecognitionException {
         EObject current = null;
 
@@ -2984,7 +2984,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
         EObject this_DeadlockExpr_2 = null;
 
-        EObject this_BufferOverflowExpr_3 = null;
+        EObject this_ConnectorOverflowExpr_3 = null;
 
         EObject this_StateExpr_4 = null;
 
@@ -2996,10 +2996,10 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1116:28: ( (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_BufferOverflowExpr_3= ruleBufferOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1117:1: (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_BufferOverflowExpr_3= ruleBufferOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1116:28: ( (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_ConnectorOverflowExpr_3= ruleConnectorOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1117:1: (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_ConnectorOverflowExpr_3= ruleConnectorOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1117:1: (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_BufferOverflowExpr_3= ruleBufferOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1117:1: (this_TrueExpr_0= ruleTrueExpr | this_FalseExpr_1= ruleFalseExpr | this_DeadlockExpr_2= ruleDeadlockExpr | this_ConnectorOverflowExpr_3= ruleConnectorOverflowExpr | this_StateExpr_4= ruleStateExpr | this_MessageExpr_5= ruleMessageExpr | this_TransitionExpr_6= ruleTransitionExpr )
             int alt15=7;
             switch ( input.LA(1) ) {
             case 32:
@@ -3103,18 +3103,18 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1148:5: this_BufferOverflowExpr_3= ruleBufferOverflowExpr
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1148:5: this_ConnectorOverflowExpr_3= ruleConnectorOverflowExpr
                     {
                      
-                            newCompositeNode(grammarAccess.getPredicateExprAccess().getBufferOverflowExprParserRuleCall_3()); 
+                            newCompositeNode(grammarAccess.getPredicateExprAccess().getConnectorOverflowExprParserRuleCall_3()); 
                         
-                    pushFollow(FollowSets000.FOLLOW_ruleBufferOverflowExpr_in_rulePredicateExpr2717);
-                    this_BufferOverflowExpr_3=ruleBufferOverflowExpr();
+                    pushFollow(FollowSets000.FOLLOW_ruleConnectorOverflowExpr_in_rulePredicateExpr2717);
+                    this_ConnectorOverflowExpr_3=ruleConnectorOverflowExpr();
 
                     state._fsp--;
 
                      
-                            current = this_BufferOverflowExpr_3; 
+                            current = this_ConnectorOverflowExpr_3; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -3281,26 +3281,26 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDeadlockExpr"
 
 
-    // $ANTLR start "entryRuleBufferOverflowExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1225:1: entryRuleBufferOverflowExpr returns [EObject current=null] : iv_ruleBufferOverflowExpr= ruleBufferOverflowExpr EOF ;
-    public final EObject entryRuleBufferOverflowExpr() throws RecognitionException {
+    // $ANTLR start "entryRuleConnectorOverflowExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1225:1: entryRuleConnectorOverflowExpr returns [EObject current=null] : iv_ruleConnectorOverflowExpr= ruleConnectorOverflowExpr EOF ;
+    public final EObject entryRuleConnectorOverflowExpr() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleBufferOverflowExpr = null;
+        EObject iv_ruleConnectorOverflowExpr = null;
 
 
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1226:2: (iv_ruleBufferOverflowExpr= ruleBufferOverflowExpr EOF )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1227:2: iv_ruleBufferOverflowExpr= ruleBufferOverflowExpr EOF
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1226:2: (iv_ruleConnectorOverflowExpr= ruleConnectorOverflowExpr EOF )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1227:2: iv_ruleConnectorOverflowExpr= ruleConnectorOverflowExpr EOF
             {
-             newCompositeNode(grammarAccess.getBufferOverflowExprRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBufferOverflowExpr_in_entryRuleBufferOverflowExpr2925);
-            iv_ruleBufferOverflowExpr=ruleBufferOverflowExpr();
+             newCompositeNode(grammarAccess.getConnectorOverflowExprRule()); 
+            pushFollow(FollowSets000.FOLLOW_ruleConnectorOverflowExpr_in_entryRuleConnectorOverflowExpr2925);
+            iv_ruleConnectorOverflowExpr=ruleConnectorOverflowExpr();
 
             state._fsp--;
 
-             current =iv_ruleBufferOverflowExpr; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleBufferOverflowExpr2935); 
+             current =iv_ruleConnectorOverflowExpr; 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleConnectorOverflowExpr2935); 
 
             }
 
@@ -3314,12 +3314,12 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleBufferOverflowExpr"
+    // $ANTLR end "entryRuleConnectorOverflowExpr"
 
 
-    // $ANTLR start "ruleBufferOverflowExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1234:1: ruleBufferOverflowExpr returns [EObject current=null] : ( () otherlv_1= 'bufferOverflow' ) ;
-    public final EObject ruleBufferOverflowExpr() throws RecognitionException {
+    // $ANTLR start "ruleConnectorOverflowExpr"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1234:1: ruleConnectorOverflowExpr returns [EObject current=null] : ( () otherlv_1= 'connectorOverflow' ) ;
+    public final EObject ruleConnectorOverflowExpr() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -3327,26 +3327,26 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1237:28: ( ( () otherlv_1= 'bufferOverflow' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:1: ( () otherlv_1= 'bufferOverflow' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1237:28: ( ( () otherlv_1= 'connectorOverflow' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:1: ( () otherlv_1= 'connectorOverflow' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:1: ( () otherlv_1= 'bufferOverflow' )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:2: () otherlv_1= 'bufferOverflow'
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:1: ( () otherlv_1= 'connectorOverflow' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:2: () otherlv_1= 'connectorOverflow'
             {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1238:2: ()
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:1239:5: 
             {
 
                     current = forceCreateModelElement(
-                        grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0(),
+                        grammarAccess.getConnectorOverflowExprAccess().getConnectorOverflowExprAction_0(),
                         current);
                 
 
             }
 
-            otherlv_1=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleBufferOverflowExpr2981); 
+            otherlv_1=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleConnectorOverflowExpr2981); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getBufferOverflowExprAccess().getBufferOverflowKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getConnectorOverflowExprAccess().getConnectorOverflowKeyword_1());
                 
 
             }
@@ -3365,7 +3365,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleBufferOverflowExpr"
+    // $ANTLR end "ruleConnectorOverflowExpr"
 
 
     // $ANTLR start "entryRuleTrueExpr"
@@ -6280,7 +6280,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeUnitExpr"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2411:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2411:1: ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' ) ;
     public final AntlrDatatypeRuleToken ruleTimeUnitExpr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6289,10 +6289,10 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2414:28: ( (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2415:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2414:28: ( (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2415:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2415:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00B5secs' | kw= 'nsecs' )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2415:1: (kw= 'days' | kw= 'hrs' | kw= 'mins' | kw= 'secs' | kw= 'msecs' | kw= '\\u00C2\\u00B5secs' | kw= 'nsecs' )
             int alt22=7;
             switch ( input.LA(1) ) {
             case 46:
@@ -6394,7 +6394,7 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2451:2: kw= '\\u00B5secs'
+                    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/parser/antlr/internal/InternalMtctl.g:2451:2: kw= '\\u00C2\\u00B5secs'
                     {
                     kw=(Token)match(input,51,FollowSets000.FOLLOW_51_in_ruleTimeUnitExpr6061); 
 
@@ -7669,16 +7669,16 @@ public class InternalMtctlParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleTrueExpr_in_rulePredicateExpr2636 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleFalseExpr_in_rulePredicateExpr2663 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDeadlockExpr_in_rulePredicateExpr2690 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBufferOverflowExpr_in_rulePredicateExpr2717 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConnectorOverflowExpr_in_rulePredicateExpr2717 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleStateExpr_in_rulePredicateExpr2744 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleMessageExpr_in_rulePredicateExpr2771 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTransitionExpr_in_rulePredicateExpr2798 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleDeadlockExpr_in_entryRuleDeadlockExpr2833 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleDeadlockExpr2843 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_30_in_ruleDeadlockExpr2889 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBufferOverflowExpr_in_entryRuleBufferOverflowExpr2925 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleBufferOverflowExpr2935 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleBufferOverflowExpr2981 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleConnectorOverflowExpr_in_entryRuleConnectorOverflowExpr2925 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleConnectorOverflowExpr2935 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleConnectorOverflowExpr2981 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleTrueExpr_in_entryRuleTrueExpr3017 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleTrueExpr3027 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_32_in_ruleTrueExpr3073 = new BitSet(new long[]{0x0000000000000002L});

@@ -221,7 +221,7 @@ public class AndExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.AND_EXPR__LEFT_OPD,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -406,7 +406,7 @@ public class AndExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.AND_EXPR__RIGHT_OPD,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

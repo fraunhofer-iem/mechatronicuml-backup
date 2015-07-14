@@ -196,7 +196,7 @@ public class EGExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.EG_EXPR__EXPR,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+				 PredicatesFactory.eINSTANCE.createConnectorOverflowExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

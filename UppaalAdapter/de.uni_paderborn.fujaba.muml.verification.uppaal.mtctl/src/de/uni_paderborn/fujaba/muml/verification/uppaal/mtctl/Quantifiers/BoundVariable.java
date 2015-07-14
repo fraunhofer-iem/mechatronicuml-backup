@@ -13,11 +13,11 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable#getSet <em>Set</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage#getBoundVariable()
  * @model

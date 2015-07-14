@@ -15,10 +15,10 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExp
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getStateActiveExpr()
  * @model

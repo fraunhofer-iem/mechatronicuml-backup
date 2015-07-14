@@ -83,11 +83,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.BufferOverflowExprEditor$Factory"
-             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#BufferOverflowExpr">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.ComparisonExprEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#ComparisonExpr">
        </propertyEditor>
@@ -135,6 +130,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.StateInStatechartExprEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#StateInStatechartExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.ConnectorOverflowExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#ConnectorOverflowExpr">
        </propertyEditor>
     
        <propertyEditor

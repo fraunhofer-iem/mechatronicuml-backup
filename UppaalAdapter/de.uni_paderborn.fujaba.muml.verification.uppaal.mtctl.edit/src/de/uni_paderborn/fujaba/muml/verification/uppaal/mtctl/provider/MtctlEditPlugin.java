@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider;
 
+import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
@@ -43,6 +44,7 @@ public final class MtctlEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
+		     ModelinstanceEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		   });
 	}

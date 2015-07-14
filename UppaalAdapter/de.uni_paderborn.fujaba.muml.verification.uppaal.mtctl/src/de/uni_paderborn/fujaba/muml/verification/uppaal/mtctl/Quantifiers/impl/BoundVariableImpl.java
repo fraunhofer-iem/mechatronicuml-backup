@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.impl.BoundVariableImpl#getSet <em>Set</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.impl.BoundVariableImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

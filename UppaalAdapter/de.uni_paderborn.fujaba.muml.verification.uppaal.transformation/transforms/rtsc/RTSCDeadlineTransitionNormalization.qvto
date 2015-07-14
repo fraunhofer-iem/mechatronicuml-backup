@@ -255,7 +255,12 @@ query Transition :: hasDeadline() : Boolean {
 // override DynamicPredicate to introduce TransitionFiringExpr2StateActiveExpr
 mapping mtctl::Predicates::DynamicPredicateExpr :: DynamicPredicateExpr2DynamicPredicateExpr() : mtctl::Predicates::DynamicPredicateExpr
 disjuncts mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2StateActiveExpr,
-mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr, mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr, mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr, mtctl::Predicates::BufferOverflowExpr::BufferOverflowExpr2BufferOverflowExpr, mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr, mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
+mtctl::Predicates::MessageInTransitExpr::MessageInTransitExpr2MessageInTransitExpr,
+ mtctl::Predicates::MessageInBufferExpr::MessageInBufferExpr2MessageInBufferExpr,
+  mtctl::Predicates::DeadlockExpr::DeadlockExpr2DeadlockExpr,
+   mtctl::Predicates::ConnectorOverflowExpr::ConnectorOverflowExpr2ConnectorOverflowExpr,
+    mtctl::Predicates::TransitionFiringExpr::TransitionFiringExpr2TransitionFiringExpr,
+     mtctl::Predicates::StateActiveExpr::StateActiveExpr2StateActiveExpr;
 
 // a transition with a deadline is firing iff the intermediate state is active
 mapping TransitionFiringExpr :: TransitionFiringExpr2StateActiveExpr() : StateActiveExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).hasDeadline()}{

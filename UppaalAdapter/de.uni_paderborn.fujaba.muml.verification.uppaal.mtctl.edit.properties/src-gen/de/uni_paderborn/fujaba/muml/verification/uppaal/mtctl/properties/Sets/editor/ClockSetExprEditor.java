@@ -1,17 +1,15 @@
+
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor;
 
 /**
  * @generated
  */
-public class ClockSetExprEditor
-		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.SetExprEditor {
+public class ClockSetExprEditor extends de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ClockSetExprEditor(String tab,
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+	public ClockSetExprEditor(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
 	}
@@ -21,8 +19,12 @@ public class ClockSetExprEditor
 	 */
 	@Override
 	protected void createProperties() {
-		super.createProperties();
+		if (tab == null) {
 
+		} else if ("property.tab.mtctl".equals(tab)) { // Tab Mtctl
+
+		} else {
+		}
 	}
 
 	//
@@ -33,30 +35,24 @@ public class ClockSetExprEditor
 	 * @generated
 	 */
 	public ClockSetExprEditor(String tab) {
-		this(
-				tab,
+		this(tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage.eINSTANCE
-						.getClockSetExpr());
+				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage.eINSTANCE.getClockSetExpr());
 	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
-				String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new ClockSetExprEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(tab);
 		}
 	}
 

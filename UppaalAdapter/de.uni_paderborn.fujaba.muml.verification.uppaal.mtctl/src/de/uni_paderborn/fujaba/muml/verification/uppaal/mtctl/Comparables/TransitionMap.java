@@ -14,10 +14,10 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap#getTransition <em>Transition</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getTransitionMap()
  * @model abstract="true"

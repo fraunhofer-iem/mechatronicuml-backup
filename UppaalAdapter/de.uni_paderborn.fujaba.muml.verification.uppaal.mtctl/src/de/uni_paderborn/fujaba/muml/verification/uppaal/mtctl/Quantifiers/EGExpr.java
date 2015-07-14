@@ -12,10 +12,10 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.EGExpr#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage#getEGExpr()
  * @model

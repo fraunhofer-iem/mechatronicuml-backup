@@ -58,7 +58,7 @@ public class PredicatesFactoryImpl extends EFactoryImpl implements PredicatesFac
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PredicatesPackage.DEADLOCK_EXPR: return createDeadlockExpr();
-			case PredicatesPackage.BUFFER_OVERFLOW_EXPR: return createBufferOverflowExpr();
+			case PredicatesPackage.CONNECTOR_OVERFLOW_EXPR: return createConnectorOverflowExpr();
 			case PredicatesPackage.COMPARISON_EXPR: return createComparisonExpr();
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR: return createMessageInBufferExpr();
 			case PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR: return createMessageInTransitExpr();
@@ -119,9 +119,9 @@ public class PredicatesFactoryImpl extends EFactoryImpl implements PredicatesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BufferOverflowExpr createBufferOverflowExpr() {
-		BufferOverflowExprImpl bufferOverflowExpr = new BufferOverflowExprImpl();
-		return bufferOverflowExpr;
+	public ConnectorOverflowExpr createConnectorOverflowExpr() {
+		ConnectorOverflowExprImpl connectorOverflowExpr = new ConnectorOverflowExprImpl();
+		return connectorOverflowExpr;
 	}
 
 	/**

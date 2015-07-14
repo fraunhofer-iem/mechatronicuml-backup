@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.ConstExprImpl#getVal <em>Val</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.ConstExprImpl#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
