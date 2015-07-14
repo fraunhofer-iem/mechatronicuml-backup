@@ -13,11 +13,11 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TransitionTuple#getSending <em>Sending</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TransitionTuple#getReceiving <em>Receiving</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage#getTransitionTuple()
  * @model

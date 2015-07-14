@@ -96,7 +96,7 @@ public abstract class TSCTransformationTestCase {
 		role.setCardinality(cardinality);
 
 		role.setBehavior(createParentStatechart(name));
-		role.setAdaptationBehavior(adaptationBehavior);
+		role.setCoordinatorBehavior(adaptationBehavior);
 		role.setSubroleBehavior(behavior);
 		role.setCoordinationProtocol(coordinationProtocol);
 		

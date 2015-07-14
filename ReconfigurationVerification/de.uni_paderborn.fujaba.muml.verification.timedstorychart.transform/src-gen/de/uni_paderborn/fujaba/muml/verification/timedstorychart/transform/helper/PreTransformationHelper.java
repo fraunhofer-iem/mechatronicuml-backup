@@ -14,10 +14,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.PreTransformationHelper#getRtscs <em>Rtscs</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage#getPreTransformationHelper()
  * @model

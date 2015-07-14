@@ -34,7 +34,7 @@ public class TransitionAnalysis {
 		RealtimeStatechart rtsc;
 		if (isMultiEndpoint(endpoint)) {
 			rtsc = (RealtimeStatechart) endpoint.getBehavior();
-			adaptationBehavior = (RealtimeStatechart) endpoint.getAdaptationBehavior();
+			adaptationBehavior = (RealtimeStatechart) endpoint.getCoordinatorBehavior();
 		}
 		else
 			// there is no adaptation behavior

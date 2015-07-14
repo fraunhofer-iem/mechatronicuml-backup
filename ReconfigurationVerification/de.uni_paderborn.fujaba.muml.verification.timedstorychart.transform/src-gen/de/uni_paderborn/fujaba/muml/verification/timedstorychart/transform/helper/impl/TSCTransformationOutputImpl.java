@@ -19,10 +19,10 @@ import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helpe
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.impl.TSCTransformationOutputImpl#getTgts <em>Tgts</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

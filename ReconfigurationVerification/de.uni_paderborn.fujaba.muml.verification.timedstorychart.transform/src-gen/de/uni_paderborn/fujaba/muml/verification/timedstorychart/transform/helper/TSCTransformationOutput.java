@@ -13,10 +13,10 @@ import de.uni_paderborn.fujaba.muml.timedstorydiagram.TimedGraphTransformationSy
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TSCTransformationOutput#getTgts <em>Tgts</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage#getTSCTransformationOutput()
  * @model

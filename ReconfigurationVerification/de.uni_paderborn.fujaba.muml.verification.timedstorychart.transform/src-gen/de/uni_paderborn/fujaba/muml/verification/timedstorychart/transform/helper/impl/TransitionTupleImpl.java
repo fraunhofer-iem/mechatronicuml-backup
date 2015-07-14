@@ -18,11 +18,11 @@ import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helpe
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.impl.TransitionTupleImpl#getSending <em>Sending</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.impl.TransitionTupleImpl#getReceiving <em>Receiving</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

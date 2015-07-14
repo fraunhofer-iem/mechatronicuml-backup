@@ -52,10 +52,10 @@ public class GraphObjectsInitializer {
 		roleInstance = RuntimeFactory.eINSTANCE.createMultiRoleInstance();
 
 		RealtimeStatechartInstance realtimeStatechartInstanceAdaptation = RuntimeFactory.eINSTANCE.createRealtimeStatechartInstance();
-		realtimeStatechartInstanceAdaptation.setInstanceOf((RealtimeStatechart) role.getAdaptationBehavior());
-		realtimeStatechartInstanceAdaptation.setActiveVertex(getInitialState((RealtimeStatechart) role.getAdaptationBehavior()));
+		realtimeStatechartInstanceAdaptation.setInstanceOf((RealtimeStatechart) role.getCoordinatorBehavior());
+		realtimeStatechartInstanceAdaptation.setActiveVertex(getInitialState((RealtimeStatechart) role.getCoordinatorBehavior()));
 		storeInitialGraphObject(realtimeStatechartInstanceAdaptation, tgts);
-		for(Variable var : role.getAdaptationBehavior().getVariables()){
+		for(Variable var : role.getCoordinatorBehavior().getVariables()){
 			VariableBinding varBinding = RuntimeFactory.eINSTANCE.createVariableBinding();
 			
 			Expression initializeExpression = var.getInitializeExpression();

@@ -83,7 +83,7 @@ when{self.oclIsTypeOf(DiscretePort)}
  
 	if (self.multiPort) then {
 		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
-		adaptationBehavior := self.adaptationBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+		coordinatorBehavior := self.coordinatorBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
 		subroleBehavior := self.subroleBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
 	}
 	else{
@@ -106,7 +106,7 @@ when{self.oclIsTypeOf(Role)}
  
 	if (self.multiRole) then {
 		behavior := self.behavior.oclAsType(RealtimeStatechart) . map copyStatechart();
-		adaptationBehavior := self.adaptationBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
+		coordinatorBehavior := self.coordinatorBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
 		subroleBehavior := self.subroleBehavior. late resolveoneIn(RealtimeStatechart::copyStatechart,RealtimeStatechart);
 	}
 	else {

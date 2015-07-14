@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.impl;
 
+import de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

@@ -15,12 +15,12 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TSCTransformationInput#getConnector <em>Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TSCTransformationInput#getSyncTransitionTuples <em>Sync Transition Tuples</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.TSCTransformationInput#getNoSyncTransitions <em>No Sync Transitions</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.verification.timedstorychart.transform.helper.HelperPackage#getTSCTransformationInput()
  * @model
