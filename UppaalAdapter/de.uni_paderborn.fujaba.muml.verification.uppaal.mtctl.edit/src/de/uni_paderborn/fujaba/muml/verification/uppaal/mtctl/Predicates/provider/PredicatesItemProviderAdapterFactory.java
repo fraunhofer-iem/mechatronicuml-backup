@@ -348,6 +348,29 @@ public class PredicatesItemProviderAdapterFactory extends PredicatesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageDiscardedExprItemProvider messageDiscardedExprItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageDiscardedExprAdapter() {
+		if (messageDiscardedExprItemProvider == null) {
+			messageDiscardedExprItemProvider = new MessageDiscardedExprItemProvider(this);
+		}
+
+		return messageDiscardedExprItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -458,6 +481,7 @@ public class PredicatesItemProviderAdapterFactory extends PredicatesAdapterFacto
 		if (trueExprItemProvider != null) trueExprItemProvider.dispose();
 		if (falseExprItemProvider != null) falseExprItemProvider.dispose();
 		if (stateInStatechartExprItemProvider != null) stateInStatechartExprItemProvider.dispose();
+		if (messageDiscardedExprItemProvider != null) messageDiscardedExprItemProvider.dispose();
 	}
 
 }

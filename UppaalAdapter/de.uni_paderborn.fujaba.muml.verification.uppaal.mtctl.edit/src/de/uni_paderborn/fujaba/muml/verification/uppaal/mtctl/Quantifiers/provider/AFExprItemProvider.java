@@ -246,6 +246,11 @@ public class AFExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.AF_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createMessageDiscardedExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.AF_EXPR__EXPR,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add

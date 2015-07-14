@@ -60,25 +60,26 @@ protected class ThisRootNode extends RootToken {
 			case 27: return new MessageExpr_Alternatives(this, this, 27, inst);
 			case 28: return new MessageInTransitExpr_Group(this, this, 28, inst);
 			case 29: return new MessageInBufferExpr_Group(this, this, 29, inst);
-			case 30: return new TransitionExpr_TransitionFiringExprParserRuleCall(this, this, 30, inst);
-			case 31: return new TransitionFiringExpr_Group(this, this, 31, inst);
-			case 32: return new ComparisonExpr_Group(this, this, 32, inst);
-			case 33: return new MapExpr_Alternatives(this, this, 33, inst);
-			case 34: return new IntegerMapExpr_Alternatives(this, this, 34, inst);
-			case 35: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 35, inst);
-			case 36: return new StateMapExpr_Alternatives(this, this, 36, inst);
-			case 37: return new StatechartMapExpr_MumlElemExprParserRuleCall(this, this, 37, inst);
-			case 38: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 38, inst);
-			case 39: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 39, inst);
-			case 40: return new BufferMessageCountExpr_Group(this, this, 40, inst);
-			case 41: return new SourceStateExpr_Group(this, this, 41, inst);
-			case 42: return new TargetStateExpr_Group(this, this, 42, inst);
-			case 43: return new MumlElemExpr_Group(this, this, 43, inst);
-			case 44: return new ConstExpr_Group(this, this, 44, inst);
-			case 45: return new SetExpr_Alternatives(this, this, 45, inst);
-			case 46: return new IntervalSetExpr_Group(this, this, 46, inst);
-			case 47: return new InstanceSetExpr_Group(this, this, 47, inst);
-			case 48: return new SubinstanceSetExpr_Group(this, this, 48, inst);
+			case 30: return new MessageDiscardedExpr_Group(this, this, 30, inst);
+			case 31: return new TransitionExpr_TransitionFiringExprParserRuleCall(this, this, 31, inst);
+			case 32: return new TransitionFiringExpr_Group(this, this, 32, inst);
+			case 33: return new ComparisonExpr_Group(this, this, 33, inst);
+			case 34: return new MapExpr_Alternatives(this, this, 34, inst);
+			case 35: return new IntegerMapExpr_Alternatives(this, this, 35, inst);
+			case 36: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 36, inst);
+			case 37: return new StateMapExpr_Alternatives(this, this, 37, inst);
+			case 38: return new StatechartMapExpr_MumlElemExprParserRuleCall(this, this, 38, inst);
+			case 39: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 39, inst);
+			case 40: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 40, inst);
+			case 41: return new BufferMessageCountExpr_Group(this, this, 41, inst);
+			case 42: return new SourceStateExpr_Group(this, this, 42, inst);
+			case 43: return new TargetStateExpr_Group(this, this, 43, inst);
+			case 44: return new MumlElemExpr_Group(this, this, 44, inst);
+			case 45: return new ConstExpr_Group(this, this, 45, inst);
+			case 46: return new SetExpr_Alternatives(this, this, 46, inst);
+			case 47: return new IntervalSetExpr_Group(this, this, 47, inst);
+			case 48: return new InstanceSetExpr_Group(this, this, 48, inst);
+			case 49: return new SubinstanceSetExpr_Group(this, this, 49, inst);
 			default: return null;
 		}	
 	}	
@@ -324,6 +325,7 @@ protected class Expression_LeadsToExprParserRuleCall extends RuleCallToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -393,6 +395,7 @@ protected class LeadsToExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -617,6 +620,7 @@ protected class ImplyExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -841,6 +845,7 @@ protected class AndExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -1065,6 +1070,7 @@ protected class OrExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -1290,6 +1296,7 @@ protected class NotExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -1512,6 +1519,7 @@ protected class QuantifierExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -3128,6 +3136,7 @@ protected class AtomExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
@@ -3270,6 +3279,7 @@ protected class AtomExpr_PredicateExprParserRuleCall_1 extends RuleCallToken {
 		if(getEObject().eClass() != grammarAccess.getConnectorOverflowExprAccess().getConnectorOverflowExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getDeadlockExprAccess().getDeadlockExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
@@ -3369,6 +3379,7 @@ protected class PredicateExpr_Alternatives extends AlternativesToken {
 		if(getEObject().eClass() != grammarAccess.getConnectorOverflowExprAccess().getConnectorOverflowExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getDeadlockExprAccess().getDeadlockExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprRule().getType().getClassifier() && 
@@ -3586,7 +3597,8 @@ protected class PredicateExpr_MessageExprParserRuleCall_5 extends RuleCallToken 
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		if(getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(MessageExpr_Alternatives.class, eObjectConsumer)) return null;
@@ -4737,11 +4749,11 @@ protected class StateInStatechartExpr_RightParenthesisKeyword_5 extends KeywordT
 /************ begin Rule MessageExpr ****************
  *
  * MessageExpr returns mtctl::PredicateExpr:
- * 	MessageInBufferExpr | MessageInTransitExpr;
+ * 	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr;
  *
  **/
 
-// MessageInBufferExpr | MessageInTransitExpr
+// MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr
 protected class MessageExpr_Alternatives extends AlternativesToken {
 
 	public MessageExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4758,13 +4770,15 @@ protected class MessageExpr_Alternatives extends AlternativesToken {
 		switch(index) {
 			case 0: return new MessageExpr_MessageInBufferExprParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new MessageExpr_MessageInTransitExprParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new MessageExpr_MessageDiscardedExprParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		if(getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -4833,6 +4847,42 @@ protected class MessageExpr_MessageInTransitExprParserRuleCall_1 extends RuleCal
 		if(getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(MessageInTransitExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// MessageDiscardedExpr
+protected class MessageExpr_MessageDiscardedExprParserRuleCall_2 extends RuleCallToken {
+	
+	public MessageExpr_MessageDiscardedExprParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getMessageExprAccess().getMessageDiscardedExprParserRuleCall_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MessageDiscardedExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(MessageDiscardedExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -5216,6 +5266,157 @@ protected class MessageInBufferExpr_RightParenthesisKeyword_5 extends KeywordTok
 
 
 /************ end Rule MessageInBufferExpr ****************/
+
+
+/************ begin Rule MessageDiscardedExpr ****************
+ *
+ * MessageDiscardedExpr returns mtctl::MessageDiscardedExpr:
+ * 	"messageDiscarded" "(" buffer=BufferMapExpr ")";
+ *
+ **/
+
+// "messageDiscarded" "(" buffer=BufferMapExpr ")"
+protected class MessageDiscardedExpr_Group extends GroupToken {
+	
+	public MessageDiscardedExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getMessageDiscardedExprAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MessageDiscardedExpr_RightParenthesisKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMessageDiscardedExprRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// "messageDiscarded"
+protected class MessageDiscardedExpr_MessageDiscardedKeyword_0 extends KeywordToken  {
+	
+	public MessageDiscardedExpr_MessageDiscardedKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getMessageDiscardedExprAccess().getMessageDiscardedKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// "("
+protected class MessageDiscardedExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
+	
+	public MessageDiscardedExpr_LeftParenthesisKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getMessageDiscardedExprAccess().getLeftParenthesisKeyword_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MessageDiscardedExpr_MessageDiscardedKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// buffer=BufferMapExpr
+protected class MessageDiscardedExpr_BufferAssignment_2 extends AssignmentToken  {
+	
+	public MessageDiscardedExpr_BufferAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMessageDiscardedExprAccess().getBufferAssignment_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("buffer",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("buffer");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getBufferMapExprRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getMessageDiscardedExprAccess().getBufferBufferMapExprParserRuleCall_2_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new MessageDiscardedExpr_LeftParenthesisKeyword_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// ")"
+protected class MessageDiscardedExpr_RightParenthesisKeyword_3 extends KeywordToken  {
+	
+	public MessageDiscardedExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getMessageDiscardedExprAccess().getRightParenthesisKeyword_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MessageDiscardedExpr_BufferAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+/************ end Rule MessageDiscardedExpr ****************/
 
 
 /************ begin Rule TransitionExpr ****************

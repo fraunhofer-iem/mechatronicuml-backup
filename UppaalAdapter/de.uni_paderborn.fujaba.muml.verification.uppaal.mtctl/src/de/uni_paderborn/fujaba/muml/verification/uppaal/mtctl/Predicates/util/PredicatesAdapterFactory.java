@@ -122,6 +122,10 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 				return createStateInStatechartExprAdapter();
 			}
 			@Override
+			public Adapter caseMessageDiscardedExpr(MessageDiscardedExpr object) {
+				return createMessageDiscardedExprAdapter();
+			}
+			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -338,6 +342,20 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStateInStatechartExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr <em>Message Discarded Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr
+	 * @generated
+	 */
+	public Adapter createMessageDiscardedExprAdapter() {
 		return null;
 	}
 

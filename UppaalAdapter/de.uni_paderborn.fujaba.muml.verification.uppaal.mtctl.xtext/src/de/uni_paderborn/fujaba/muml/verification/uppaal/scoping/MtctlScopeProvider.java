@@ -22,6 +22,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.Buffer
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
@@ -374,6 +375,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		if (context instanceof MessageInTransitExpr || context instanceof MessageInBufferExpr && reference != null && "message".equals(reference.getName()))
 			return createScope(getScopeMessageType(context, reference));
 		if (context instanceof BufferMsgCountExpr || context instanceof MessageInBufferExpr && reference != null && "buffer".equals(reference.getName()))
+			return createScope(getScopeBuffer(context, reference));
+		if (context instanceof MessageDiscardedExpr && reference != null && "buffer".equals(reference.getName()))
 			return createScope(getScopeBuffer(context, reference));
 		if (context instanceof StateInStatechartExpr && reference != null && "statechart".equals(reference.getName()))
 			return createScope(getScopeStatechart(context, reference));

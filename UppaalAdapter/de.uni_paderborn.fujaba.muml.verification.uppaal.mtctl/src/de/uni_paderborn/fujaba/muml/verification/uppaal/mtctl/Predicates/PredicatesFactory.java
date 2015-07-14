@@ -130,6 +130,15 @@ public interface PredicatesFactory extends EFactory {
 	StateInStatechartExpr createStateInStatechartExpr();
 
 	/**
+	 * Returns a new object of class '<em>Message Discarded Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Discarded Expr</em>'.
+	 * @generated
+	 */
+	MessageDiscardedExpr createMessageDiscardedExpr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -69,6 +69,7 @@ public class PredicatesFactoryImpl extends EFactoryImpl implements PredicatesFac
 			case PredicatesPackage.TRUE_EXPR: return createTrueExpr();
 			case PredicatesPackage.FALSE_EXPR: return createFalseExpr();
 			case PredicatesPackage.STATE_IN_STATECHART_EXPR: return createStateInStatechartExpr();
+			case PredicatesPackage.MESSAGE_DISCARDED_EXPR: return createMessageDiscardedExpr();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -222,6 +223,16 @@ public class PredicatesFactoryImpl extends EFactoryImpl implements PredicatesFac
 	public StateInStatechartExpr createStateInStatechartExpr() {
 		StateInStatechartExprImpl stateInStatechartExpr = new StateInStatechartExprImpl();
 		return stateInStatechartExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageDiscardedExpr createMessageDiscardedExpr() {
+		MessageDiscardedExprImpl messageDiscardedExpr = new MessageDiscardedExprImpl();
+		return messageDiscardedExpr;
 	}
 
 	/**

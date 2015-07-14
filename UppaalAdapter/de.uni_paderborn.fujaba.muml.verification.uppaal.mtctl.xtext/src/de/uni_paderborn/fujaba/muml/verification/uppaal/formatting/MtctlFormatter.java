@@ -43,7 +43,7 @@ public class MtctlFormatter extends AbstractDeclarativeFormatter {
 			c.setNoSpace().before(parentheses.getSecond());
 		}
 		
-		for (Keyword keyword : f.findKeywords("bufferMessageCount", "transitionFiring", "messageInBuffer", "messageInTransit", "stateInStatechart", "substateOf", "stateActive", "stateEntering", "stateExiting", "forall", "exists")) //remove excess space between keywords and their expected parenthesis
+		for (Keyword keyword : f.findKeywords("bufferMessageCount", "transitionFiring", "messageDiscarded", "messageInBuffer", "messageInTransit", "stateInStatechart", "substateOf", "stateActive", "stateEntering", "stateExiting", "forall", "exists")) //remove excess space between keywords and their expected parenthesis
 			c.setNoSpace().after(keyword);
 		
 		for(Keyword semicolon: f.findKeywords(";")) { //do newlines after ';'

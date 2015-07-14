@@ -38,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.Connect
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DynamicPredicateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.FalseExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicateExpr;
@@ -172,6 +173,13 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * @generated
 	 */
 	private EClass stateInStatechartExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageDiscardedExprEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -510,6 +518,24 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMessageDiscardedExpr() {
+		return messageDiscardedExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageDiscardedExpr_Buffer() {
+		return (EReference)messageDiscardedExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getComparisonOp() {
 		return comparisonOpEEnum;
 	}
@@ -582,6 +608,9 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		createEReference(stateInStatechartExprEClass, STATE_IN_STATECHART_EXPR__STATE);
 		createEReference(stateInStatechartExprEClass, STATE_IN_STATECHART_EXPR__STATECHART);
 
+		messageDiscardedExprEClass = createEClass(MESSAGE_DISCARDED_EXPR);
+		createEReference(messageDiscardedExprEClass, MESSAGE_DISCARDED_EXPR__BUFFER);
+
 		// Create enums
 		comparisonOpEEnum = createEEnum(COMPARISON_OP);
 	}
@@ -632,6 +661,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		trueExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
 		falseExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
 		stateInStatechartExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
+		messageDiscardedExprEClass.getESuperTypes().add(this.getDynamicPredicateExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deadlockExprEClass, DeadlockExpr.class, "DeadlockExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -673,6 +703,9 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		initEClass(stateInStatechartExprEClass, StateInStatechartExpr.class, "StateInStatechartExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateInStatechartExpr_State(), theComparablesPackage.getMapExpr(), null, "state", null, 0, 1, StateInStatechartExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStateInStatechartExpr_Statechart(), theComparablesPackage.getMapExpr(), null, "statechart", null, 0, 1, StateInStatechartExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageDiscardedExprEClass, MessageDiscardedExpr.class, "MessageDiscardedExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageDiscardedExpr_Buffer(), theComparablesPackage.getMapExpr(), null, "buffer", null, 0, 1, MessageDiscardedExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(comparisonOpEEnum, ComparisonOp.class, "ComparisonOp");

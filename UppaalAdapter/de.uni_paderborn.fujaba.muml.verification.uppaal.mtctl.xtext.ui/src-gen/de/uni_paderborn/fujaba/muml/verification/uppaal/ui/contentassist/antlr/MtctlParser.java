@@ -81,6 +81,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStateInStatechartExprAccess().getGroup(), "rule__StateInStatechartExpr__Group__0");
 					put(grammarAccess.getMessageInTransitExprAccess().getGroup(), "rule__MessageInTransitExpr__Group__0");
 					put(grammarAccess.getMessageInBufferExprAccess().getGroup(), "rule__MessageInBufferExpr__Group__0");
+					put(grammarAccess.getMessageDiscardedExprAccess().getGroup(), "rule__MessageDiscardedExpr__Group__0");
 					put(grammarAccess.getTransitionFiringExprAccess().getGroup(), "rule__TransitionFiringExpr__Group__0");
 					put(grammarAccess.getComparisonExprAccess().getGroup(), "rule__ComparisonExpr__Group__0");
 					put(grammarAccess.getBufferMessageCountExprAccess().getGroup(), "rule__BufferMessageCountExpr__Group__0");
@@ -126,6 +127,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMessageInTransitExprAccess().getMessageAssignment_2(), "rule__MessageInTransitExpr__MessageAssignment_2");
 					put(grammarAccess.getMessageInBufferExprAccess().getMessageAssignment_2(), "rule__MessageInBufferExpr__MessageAssignment_2");
 					put(grammarAccess.getMessageInBufferExprAccess().getBufferAssignment_4(), "rule__MessageInBufferExpr__BufferAssignment_4");
+					put(grammarAccess.getMessageDiscardedExprAccess().getBufferAssignment_2(), "rule__MessageDiscardedExpr__BufferAssignment_2");
 					put(grammarAccess.getTransitionFiringExprAccess().getTransitionAssignment_2(), "rule__TransitionFiringExpr__TransitionAssignment_2");
 					put(grammarAccess.getComparisonExprAccess().getLhsAssignment_1(), "rule__ComparisonExpr__LhsAssignment_1");
 					put(grammarAccess.getComparisonExprAccess().getOpAssignment_2(), "rule__ComparisonExpr__OpAssignment_2");

@@ -186,6 +186,15 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PredicatesPackage.MESSAGE_DISCARDED_EXPR: {
+				MessageDiscardedExpr messageDiscardedExpr = (MessageDiscardedExpr)theEObject;
+				T result = caseMessageDiscardedExpr(messageDiscardedExpr);
+				if (result == null) result = caseDynamicPredicateExpr(messageDiscardedExpr);
+				if (result == null) result = casePredicateExpr(messageDiscardedExpr);
+				if (result == null) result = caseExpression(messageDiscardedExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -397,6 +406,21 @@ public class PredicatesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStateInStatechartExpr(StateInStatechartExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Discarded Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Discarded Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageDiscardedExpr(MessageDiscardedExpr object) {
 		return null;
 	}
 

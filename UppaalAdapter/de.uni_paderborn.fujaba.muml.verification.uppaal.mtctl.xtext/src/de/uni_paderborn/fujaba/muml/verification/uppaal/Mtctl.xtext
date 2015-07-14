@@ -123,7 +123,7 @@ StateInStatechartExpr returns mtctl::StateInStatechartExpr:
 ;
 
 MessageExpr returns mtctl::PredicateExpr:
-	MessageInBufferExpr | MessageInTransitExpr
+	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr
 ;
 
 MessageInTransitExpr returns mtctl::MessageInTransitExpr:
@@ -132,6 +132,10 @@ MessageInTransitExpr returns mtctl::MessageInTransitExpr:
 
 MessageInBufferExpr returns mtctl::MessageInBufferExpr:
 	'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
+;
+
+MessageDiscardedExpr returns mtctl::MessageDiscardedExpr:
+	'messageDiscarded' '('buffer = BufferMapExpr')'
 ;
 
 TransitionExpr returns mtctl::PredicateExpr:

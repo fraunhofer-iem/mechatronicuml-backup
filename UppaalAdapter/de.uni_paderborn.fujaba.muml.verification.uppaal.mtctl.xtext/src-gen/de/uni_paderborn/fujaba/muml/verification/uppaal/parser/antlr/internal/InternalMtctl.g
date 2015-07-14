@@ -1594,6 +1594,16 @@ ruleMessageExpr returns [EObject current=null]
         $current = $this_MessageInTransitExpr_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getMessageExprAccess().getMessageDiscardedExprParserRuleCall_2()); 
+    }
+    this_MessageDiscardedExpr_2=ruleMessageDiscardedExpr
+    { 
+        $current = $this_MessageDiscardedExpr_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1717,6 +1727,57 @@ ruleMessageInBufferExpr returns [EObject current=null]
 )	otherlv_5=')' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMessageDiscardedExpr
+entryRuleMessageDiscardedExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMessageDiscardedExprRule()); }
+	 iv_ruleMessageDiscardedExpr=ruleMessageDiscardedExpr 
+	 { $current=$iv_ruleMessageDiscardedExpr.current; } 
+	 EOF 
+;
+
+// Rule MessageDiscardedExpr
+ruleMessageDiscardedExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='messageDiscarded' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMessageDiscardedExprAccess().getMessageDiscardedKeyword_0());
+    }
+	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getMessageDiscardedExprAccess().getLeftParenthesisKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMessageDiscardedExprAccess().getBufferBufferMapExprParserRuleCall_2_0()); 
+	    }
+		lv_buffer_2_0=ruleBufferMapExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMessageDiscardedExprRule());
+	        }
+       		set(
+       			$current, 
+       			"buffer",
+        		lv_buffer_2_0, 
+        		"BufferMapExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3=')' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getMessageDiscardedExprAccess().getRightParenthesisKeyword_3());
     }
 )
 ;

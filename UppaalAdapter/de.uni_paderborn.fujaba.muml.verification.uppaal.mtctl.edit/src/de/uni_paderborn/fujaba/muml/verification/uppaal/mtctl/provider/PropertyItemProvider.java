@@ -251,6 +251,11 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createMessageDiscardedExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add

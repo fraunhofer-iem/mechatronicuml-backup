@@ -904,6 +904,34 @@ finally {
 
 
 
+// Entry rule entryRuleMessageDiscardedExpr
+entryRuleMessageDiscardedExpr 
+:
+{ before(grammarAccess.getMessageDiscardedExprRule()); }
+	 ruleMessageDiscardedExpr
+{ after(grammarAccess.getMessageDiscardedExprRule()); } 
+	 EOF 
+;
+
+// Rule MessageDiscardedExpr
+ruleMessageDiscardedExpr
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getMessageDiscardedExprAccess().getGroup()); }
+(rule__MessageDiscardedExpr__Group__0)
+{ after(grammarAccess.getMessageDiscardedExprAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleTransitionExpr
 entryRuleTransitionExpr 
 :
@@ -1831,6 +1859,12 @@ rule__MessageExpr__Alternatives
 { before(grammarAccess.getMessageExprAccess().getMessageInTransitExprParserRuleCall_1()); }
 	ruleMessageInTransitExpr
 { after(grammarAccess.getMessageExprAccess().getMessageInTransitExprParserRuleCall_1()); }
+)
+
+    |(
+{ before(grammarAccess.getMessageExprAccess().getMessageDiscardedExprParserRuleCall_2()); }
+	ruleMessageDiscardedExpr
+{ after(grammarAccess.getMessageExprAccess().getMessageDiscardedExprParserRuleCall_2()); }
 )
 
 ;
@@ -4952,6 +4986,135 @@ finally {
 
 
 
+rule__MessageDiscardedExpr__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MessageDiscardedExpr__Group__0__Impl
+	rule__MessageDiscardedExpr__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MessageDiscardedExpr__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMessageDiscardedExprAccess().getMessageDiscardedKeyword_0()); }
+
+	'messageDiscarded' 
+
+{ after(grammarAccess.getMessageDiscardedExprAccess().getMessageDiscardedKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MessageDiscardedExpr__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MessageDiscardedExpr__Group__1__Impl
+	rule__MessageDiscardedExpr__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MessageDiscardedExpr__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMessageDiscardedExprAccess().getLeftParenthesisKeyword_1()); }
+
+	'(' 
+
+{ after(grammarAccess.getMessageDiscardedExprAccess().getLeftParenthesisKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MessageDiscardedExpr__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MessageDiscardedExpr__Group__2__Impl
+	rule__MessageDiscardedExpr__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MessageDiscardedExpr__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMessageDiscardedExprAccess().getBufferAssignment_2()); }
+(rule__MessageDiscardedExpr__BufferAssignment_2)
+{ after(grammarAccess.getMessageDiscardedExprAccess().getBufferAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MessageDiscardedExpr__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MessageDiscardedExpr__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MessageDiscardedExpr__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMessageDiscardedExprAccess().getRightParenthesisKeyword_3()); }
+
+	')' 
+
+{ after(grammarAccess.getMessageDiscardedExprAccess().getRightParenthesisKeyword_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+
+
+
+
 rule__TransitionFiringExpr__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -7224,6 +7387,21 @@ rule__MessageInBufferExpr__BufferAssignment_4
 (
 { before(grammarAccess.getMessageInBufferExprAccess().getBufferBufferMapExprParserRuleCall_4_0()); }
 	ruleBufferMapExpr{ after(grammarAccess.getMessageInBufferExprAccess().getBufferBufferMapExprParserRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MessageDiscardedExpr__BufferAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMessageDiscardedExprAccess().getBufferBufferMapExprParserRuleCall_2_0()); }
+	ruleBufferMapExpr{ after(grammarAccess.getMessageDiscardedExprAccess().getBufferBufferMapExprParserRuleCall_2_0()); }
 )
 
 ;

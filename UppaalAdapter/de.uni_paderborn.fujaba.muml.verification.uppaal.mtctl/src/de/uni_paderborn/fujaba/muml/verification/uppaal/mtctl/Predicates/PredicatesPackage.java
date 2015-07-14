@@ -2450,6 +2450,178 @@ public interface PredicatesPackage extends EPackage {
 	int STATE_IN_STATECHART_EXPR_OPERATION_COUNT = STATIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.MessageDiscardedExprImpl <em>Message Discarded Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.MessageDiscardedExprImpl
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getMessageDiscardedExpr()
+	 * @generated
+	 */
+	int MESSAGE_DISCARDED_EXPR = 14;
+
+	/**
+	 * The feature id for the '<em><b>Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR__BUFFER = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Message Discarded Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR_FEATURE_COUNT = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ECLASS = DYNAMIC_PREDICATE_EXPR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EIS_PROXY = DYNAMIC_PREDICATE_EXPR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ERESOURCE = DYNAMIC_PREDICATE_EXPR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ECONTAINER = DYNAMIC_PREDICATE_EXPR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ECONTAINING_FEATURE = DYNAMIC_PREDICATE_EXPR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ECONTAINMENT_FEATURE = DYNAMIC_PREDICATE_EXPR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ECONTENTS = DYNAMIC_PREDICATE_EXPR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EALL_CONTENTS = DYNAMIC_PREDICATE_EXPR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ECROSS_REFERENCES = DYNAMIC_PREDICATE_EXPR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EGET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = DYNAMIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = DYNAMIC_PREDICATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EIS_SET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EUNSET__ESTRUCTURALFEATURE = DYNAMIC_PREDICATE_EXPR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR___EINVOKE__EOPERATION_ELIST = DYNAMIC_PREDICATE_EXPR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The number of operations of the '<em>Message Discarded Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_DISCARDED_EXPR_OPERATION_COUNT = DYNAMIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2457,7 +2629,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getComparisonOp()
 	 * @generated
 	 */
-	int COMPARISON_OP = 14;
+	int COMPARISON_OP = 15;
 
 
 	/**
@@ -2733,6 +2905,27 @@ public interface PredicatesPackage extends EPackage {
 	EReference getStateInStatechartExpr_Statechart();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr <em>Message Discarded Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Discarded Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr
+	 * @generated
+	 */
+	EClass getMessageDiscardedExpr();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr#getBuffer <em>Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Buffer</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr#getBuffer()
+	 * @see #getMessageDiscardedExpr()
+	 * @generated
+	 */
+	EReference getMessageDiscardedExpr_Buffer();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3000,6 +3193,24 @@ public interface PredicatesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE_IN_STATECHART_EXPR__STATECHART = eINSTANCE.getStateInStatechartExpr_Statechart();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.MessageDiscardedExprImpl <em>Message Discarded Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.MessageDiscardedExprImpl
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getMessageDiscardedExpr()
+		 * @generated
+		 */
+		EClass MESSAGE_DISCARDED_EXPR = eINSTANCE.getMessageDiscardedExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Buffer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_DISCARDED_EXPR__BUFFER = eINSTANCE.getMessageDiscardedExpr_Buffer();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}' enum.

@@ -83,6 +83,14 @@ enabled="true"
 name="messageInBuffer">messageInBuffer(${message},${buffer})</template>
 
 <template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageDiscarded"
+deleted="false" 
+description="true iff a message of buffer gets discarded" 
+id="messageDiscarded"
+enabled="true" 
+name="messageDiscarded">messageDiscarded(${buffer})</template>
+
+<template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_transitionFiring"
 deleted="false" 
 description="true iff transition is firing" 

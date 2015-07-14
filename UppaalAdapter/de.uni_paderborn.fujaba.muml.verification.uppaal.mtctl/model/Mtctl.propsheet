@@ -75,6 +75,9 @@
     <classes superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/ConnectorOverflowExpr"/>
     </classes>
+    <classes superClasses="_RnIuAc1gEeSIgPDefa6ZBw">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageDiscardedExpr"/>
+    </classes>
   </packages>
   <packages xmi:id="_RnIuBs1gEeSIgPDefa6ZBw">
     <genPackage href="Mtctl.genmodel#//mtctl/Quantifiers"/>

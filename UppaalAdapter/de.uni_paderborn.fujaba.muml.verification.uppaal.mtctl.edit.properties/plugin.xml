@@ -138,6 +138,11 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.MessageDiscardedExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#MessageDiscardedExpr">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.AFExprEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#AFExpr">
        </propertyEditor>

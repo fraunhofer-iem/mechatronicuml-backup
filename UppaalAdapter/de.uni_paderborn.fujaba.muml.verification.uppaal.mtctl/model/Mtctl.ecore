@@ -156,6 +156,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageDiscardedExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//Comparables/MapExpr"
+          containment="true"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="Sets" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
       nsPrefix="Sets">

@@ -271,6 +271,11 @@ public class ImplyExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.IMPLY_EXPR__LEFT_OPD,
+				 PredicatesFactory.eINSTANCE.createMessageDiscardedExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.IMPLY_EXPR__LEFT_OPD,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add
@@ -452,6 +457,11 @@ public class ImplyExprItemProvider
 			(createChildParameter
 				(BooleanLogicPackage.Literals.IMPLY_EXPR__RIGHT_OPD,
 				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.IMPLY_EXPR__RIGHT_OPD,
+				 PredicatesFactory.eINSTANCE.createMessageDiscardedExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

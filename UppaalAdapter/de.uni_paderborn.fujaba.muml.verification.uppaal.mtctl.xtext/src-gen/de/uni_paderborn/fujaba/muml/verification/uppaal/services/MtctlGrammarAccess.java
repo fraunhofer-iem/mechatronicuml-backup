@@ -887,12 +887,13 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cMessageInBufferExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMessageInTransitExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMessageDiscardedExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//MessageExpr returns mtctl::PredicateExpr:
-		//	MessageInBufferExpr | MessageInTransitExpr;
+		//	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr;
 		@Override public ParserRule getRule() { return rule; }
 
-		//MessageInBufferExpr | MessageInTransitExpr
+		//MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//MessageInBufferExpr
@@ -900,6 +901,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//MessageInTransitExpr
 		public RuleCall getMessageInTransitExprParserRuleCall_1() { return cMessageInTransitExprParserRuleCall_1; }
+
+		//MessageDiscardedExpr
+		public RuleCall getMessageDiscardedExprParserRuleCall_2() { return cMessageDiscardedExprParserRuleCall_2; }
 	}
 
 	public class MessageInTransitExprElements extends AbstractParserRuleElementFinder {
@@ -976,6 +980,38 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+
+	public class MessageDiscardedExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MessageDiscardedExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMessageDiscardedKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cBufferAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBufferBufferMapExprParserRuleCall_2_0 = (RuleCall)cBufferAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//MessageDiscardedExpr returns mtctl::MessageDiscardedExpr:
+		//	"messageDiscarded" "(" buffer=BufferMapExpr ")";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"messageDiscarded" "(" buffer=BufferMapExpr ")"
+		public Group getGroup() { return cGroup; }
+
+		//"messageDiscarded"
+		public Keyword getMessageDiscardedKeyword_0() { return cMessageDiscardedKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//buffer=BufferMapExpr
+		public Assignment getBufferAssignment_2() { return cBufferAssignment_2; }
+
+		//BufferMapExpr
+		public RuleCall getBufferBufferMapExprParserRuleCall_2_0() { return cBufferBufferMapExprParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
 	public class TransitionExprElements extends AbstractParserRuleElementFinder {
@@ -1749,6 +1785,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private final MessageExprElements pMessageExpr;
 	private final MessageInTransitExprElements pMessageInTransitExpr;
 	private final MessageInBufferExprElements pMessageInBufferExpr;
+	private final MessageDiscardedExprElements pMessageDiscardedExpr;
 	private final TransitionExprElements pTransitionExpr;
 	private final TransitionFiringExprElements pTransitionFiringExpr;
 	private final ComparisonExprElements pComparisonExpr;
@@ -1812,6 +1849,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMessageExpr = new MessageExprElements();
 		this.pMessageInTransitExpr = new MessageInTransitExprElements();
 		this.pMessageInBufferExpr = new MessageInBufferExprElements();
+		this.pMessageDiscardedExpr = new MessageDiscardedExprElements();
 		this.pTransitionExpr = new TransitionExprElements();
 		this.pTransitionFiringExpr = new TransitionFiringExprElements();
 		this.pComparisonExpr = new ComparisonExprElements();
@@ -2139,7 +2177,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageExpr returns mtctl::PredicateExpr:
-	//	MessageInBufferExpr | MessageInTransitExpr;
+	//	MessageInBufferExpr | MessageInTransitExpr | MessageDiscardedExpr;
 	public MessageExprElements getMessageExprAccess() {
 		return pMessageExpr;
 	}
@@ -2166,6 +2204,16 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMessageInBufferExprRule() {
 		return getMessageInBufferExprAccess().getRule();
+	}
+
+	//MessageDiscardedExpr returns mtctl::MessageDiscardedExpr:
+	//	"messageDiscarded" "(" buffer=BufferMapExpr ")";
+	public MessageDiscardedExprElements getMessageDiscardedExprAccess() {
+		return pMessageDiscardedExpr;
+	}
+	
+	public ParserRule getMessageDiscardedExprRule() {
+		return getMessageDiscardedExprAccess().getRule();
 	}
 
 	//TransitionExpr returns mtctl::PredicateExpr:

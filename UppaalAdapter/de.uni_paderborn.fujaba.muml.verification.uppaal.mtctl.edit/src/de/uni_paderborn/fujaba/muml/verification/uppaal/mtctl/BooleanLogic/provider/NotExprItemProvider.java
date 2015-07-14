@@ -269,6 +269,11 @@ public class NotExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
+				 PredicatesFactory.eINSTANCE.createMessageDiscardedExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.NOT_EXPR__OPD,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add
