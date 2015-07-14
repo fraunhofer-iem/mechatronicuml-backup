@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.Compari
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.FalseExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
@@ -361,6 +362,28 @@ public class Mtctl2English {
       Object _expr_1 = this.expr(_message_1, true);
       _builder_1.append(_expr_1, "");
       _builder_1.append(" is not in transit");
+      _xifexpression = _builder_1;
+    }
+    return _xifexpression;
+  }
+  
+  protected CharSequence _expr(final MessageDiscardedExpr expr, final boolean positive) {
+    CharSequence _xifexpression = null;
+    if (positive) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("a message in the buffer ");
+      MapExpr _buffer = expr.getBuffer();
+      Object _expr = this.expr(_buffer, true);
+      _builder.append(_expr, "");
+      _builder.append(" gets discarded");
+      _xifexpression = _builder;
+    } else {
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("no message in the buffer ");
+      MapExpr _buffer_1 = expr.getBuffer();
+      Object _expr_1 = this.expr(_buffer_1, true);
+      _builder_1.append(_expr_1, "");
+      _builder_1.append(" gets discarded");
       _xifexpression = _builder_1;
     }
     return _xifexpression;
@@ -1144,6 +1167,8 @@ public class Mtctl2English {
       return _expr((DeadlockExpr)expr, positive);
     } else if (expr instanceof FalseExpr) {
       return _expr((FalseExpr)expr, positive);
+    } else if (expr instanceof MessageDiscardedExpr) {
+      return _expr((MessageDiscardedExpr)expr, positive);
     } else if (expr instanceof MessageInBufferExpr) {
       return _expr((MessageInBufferExpr)expr, positive);
     } else if (expr instanceof MessageInTransitExpr) {

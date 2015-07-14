@@ -15,6 +15,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.Compari
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ConnectorOverflowExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DeadlockExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.FalseExpr
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageDiscardedExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr
@@ -139,6 +140,13 @@ class Mtctl2English {
 			'''the message «expr(expr.message, true)» is in transit'''
 		else
 			'''the message «expr(expr.message, true)» is not in transit'''
+	}
+	
+	def dispatch expr(MessageDiscardedExpr expr, boolean positive) {
+		if (positive)
+			'''a message in the buffer «expr(expr.buffer, true)» gets discarded'''
+		else
+			'''no message in the buffer «expr(expr.buffer, true)» gets discarded'''
 	}
 	
 	def dispatch expr(StateActiveExpr expr, boolean positive) {
