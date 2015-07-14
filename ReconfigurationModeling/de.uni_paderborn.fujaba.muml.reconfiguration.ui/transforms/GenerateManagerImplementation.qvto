@@ -176,7 +176,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : 
 	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
 	manager.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC;
 	manager.ports -> any(name = 'embeddedCI').subroleBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
-	manager.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_adapt);
+	manager.ports -> any(name = 'embeddedCI').coordinatorBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_adapt);
 	
 	-- configure message types of ports
 	var currentPort : ReconfigurationPort = null;

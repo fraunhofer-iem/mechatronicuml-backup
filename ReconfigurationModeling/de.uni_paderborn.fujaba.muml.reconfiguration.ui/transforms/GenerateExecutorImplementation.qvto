@@ -230,7 +230,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
 	executor.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC;
 	executor.ports -> any(name = 'embeddedCI').subroleBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_subrole);
-	executor.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
+	executor.ports -> any(name = 'embeddedCI').coordinatorBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
 	
 	return;
 }
