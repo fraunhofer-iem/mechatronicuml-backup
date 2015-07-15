@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.browser.editingdomain;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -32,14 +31,7 @@ public class EditingDomainRegistry {
 			List<Saveable> saveables = new ArrayList<Saveable>();
 
 			for (MumlEditingDomain domain : map.values()) {
-				
-			}
-			for (URI uri : new HashSet<URI>(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getURIs())) {
-				IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
-				Saveable saveable = getSaveable(iFile);
-				if (saveable != null) {
-					saveables.add(saveable);
-				}
+				saveables.add(domain.getSaveable());
 			}
 			return saveables.toArray(new Saveable[] { });
 		}
