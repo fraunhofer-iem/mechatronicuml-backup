@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.browser.providers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,6 +30,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
@@ -39,7 +39,6 @@ import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -47,7 +46,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.Saveable;
 import org.eclipse.ui.navigator.SaveablesProvider;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
@@ -66,58 +64,9 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	private Map<URI, URI> relocatedParents = new HashMap<URI, URI>();
 	private Map<URI, Set<URI>> relocatedChildren = new HashMap<URI, Set<URI>>();
 	private Map<TransactionalEditingDomain, AdapterFactoryContentProvider> adapterFactoryContentProviders = new HashMap<TransactionalEditingDomain, AdapterFactoryContentProvider>();
-	private Map<URI, Saveable> saveables = new HashMap<URI, Saveable>();
 	
 	private boolean refreshActive = true;
 
-	private SaveablesProvider saveablesProvider = new SaveablesProvider() { 
-		@Override
-		public Saveable[] getSaveables() {
-			List<Saveable> saveables = new ArrayList<Saveable>();
-
-			for (URI uri : new HashSet<URI>(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getURIs())) {
-				IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
-				Saveable saveable = getSaveable(iFile);
-				if (saveable != null) {
-					saveables.add(saveable);
-				}
-			}
-			return saveables.toArray(new Saveable[] { });
-		}
-
-		@Override
-		public Object[] getElements(Saveable saveable) {
-			List<Object> elements = new ArrayList<Object>();
-			for (URI uri : saveables.keySet()) {
-				if (saveable == saveables.get(uri)) {
-					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
-					if (iFile != null) {
-						elements.add(iFile);
-					}
-				}
-			}
-			return elements.toArray();
-		}
-
-		@Override
-		public Saveable getSaveable(Object element) {
-			URI uri = null;
-			if (element instanceof EObject) {
-				uri = ((EObject) element).eResource().getURI();
-			}
-			if (element instanceof Resource) {
-				uri = ((Resource) element).getURI();
-			}
-			if (element instanceof IFile) {
-				IFile iFile = (IFile) element;
-				uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
-			}
-			if (uri != null) {
-				return ModelBrowserContentProvider.this.getSaveable(uri);
-			}
-			return null;
-		}
-	};
 	private ResourceSetListener resourceSetListener = new ResourceSetListenerImpl() {
 		public void resourceSetChanged(final ResourceSetChangeEvent event) {
 			final Set<IFile> refreshes = new HashSet<IFile>();
@@ -169,24 +118,6 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				adapterFactoryContentProviders.put(editingDomain, new AdapterFactoryContentProvider(adapterFactory));
 			}
 			return adapterFactoryContentProviders.get(editingDomain);
-		}
-		return null;
-	}
-
-	private Saveable getSaveable(URI uri) {
-		if (!saveables.containsKey(uri)) {
-			Saveable saveable = createSaveable(uri);
-			if (saveable != null) {
-				saveables.put(uri, saveable);
-			}
-		}
-		return saveables.get(uri);
-	}
-
-	private Saveable createSaveable(URI uri) {
-		TransactionalEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
-		if (domain != null) {
-			return new ModelBrowserSaveable(domain);
 		}
 		return null;
 	}
@@ -251,9 +182,9 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 				return;
 			}
 			synchronized (editingDomain) {
-				System.out.println("Reloading " + iFile);
 				Resource resource = editingDomain.getResourceSet().getResource(uri, true);
-				if (resource != null) {
+				if (resource instanceof XMIResource) {
+					System.out.println("Reloading " + iFile);
 					try {
 						resource.unload();
 						resource.load(Collections.emptyMap());
@@ -275,7 +206,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 								}
 							}
 						}
-					} catch (IOException e) {
+					} catch (Exception e) {
 						ModelBrowserPlugin.log(e);
 					}
 				}
@@ -516,53 +447,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	@Override
 	public <T> T getAdapter(Class<T> adapter) {
 		if (adapter == SaveablesProvider.class) {
-			return (T) saveablesProvider;
+			return (T) ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider();
 		}
 		return null;
 	}
 	
-	public class ModelBrowserSaveable extends Saveable {
-		
-		private TransactionalEditingDomain domain;
-
-		public ModelBrowserSaveable(TransactionalEditingDomain domain) {
-			this.domain = domain;
-		}
-		
-		@Override
-		public String getName() {
-			return "name";
-		}
-
-		@Override
-		public String getToolTipText() {
-			return "tooltip text";
-		}
-
-		@Override
-		public ImageDescriptor getImageDescriptor() {
-			return null;
-		}
-
-		@Override
-		public void doSave(IProgressMonitor monitor) throws CoreException {
-		}
-
-		@Override
-		public boolean isDirty() {
-			return true;
-		}
-
-		@Override
-		public boolean equals(Object object) {
-			return object == this;
-		}
-
-		@Override
-		public int hashCode() {
-			return domain.hashCode();
-		}
-		
-	}
 
 }
