@@ -20,8 +20,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 /**
  * @generated
  */
-public abstract class RealtimestatechartAbstractNavigatorItem extends
-		PlatformObject {
+public abstract class RealtimestatechartAbstractNavigatorItem extends PlatformObject {
 
 	/**
 	 * @generated
@@ -33,23 +32,20 @@ public abstract class RealtimestatechartAbstractNavigatorItem extends
 				return "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem.class);
 	}
 
 	/**

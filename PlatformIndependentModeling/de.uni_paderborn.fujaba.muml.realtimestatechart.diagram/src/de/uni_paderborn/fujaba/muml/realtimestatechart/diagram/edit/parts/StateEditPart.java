@@ -106,34 +106,26 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.StateItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.StateCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy());
 
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -152,8 +144,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 				case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -197,45 +188,45 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActionCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChannelCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureInvariantCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.WEST);
-			getBorderedFigure()
-					.getBorderItemContainer()
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
+			getBorderedFigure().getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.EAST);
-			getBorderedFigure()
-					.getBorderItemContainer()
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
+			getBorderedFigure().getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
@@ -252,38 +243,40 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActionCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChannelCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureInvariantCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
+			getBorderedFigure().getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
+			getBorderedFigure().getBorderItemContainer()
 					.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart) childEditPart)
 							.getFigure());
 			return true;
@@ -340,10 +333,10 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -437,8 +430,9 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -446,34 +440,38 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -522,16 +520,15 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 
 			RoundedRectangle undecoratedStateFigure0 = new RoundedRectangle();
 
-			undecoratedStateFigure0.setCornerDimensions(new Dimension(
-					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
+			undecoratedStateFigure0
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 
 			this.add(undecoratedStateFigure0);
 
 			GridLayout layoutUndecoratedStateFigure0 = new GridLayout();
 			layoutUndecoratedStateFigure0.numColumns = 1;
 			layoutUndecoratedStateFigure0.makeColumnsEqualWidth = false;
-			undecoratedStateFigure0
-					.setLayoutManager(layoutUndecoratedStateFigure0);
+			undecoratedStateFigure0.setLayoutManager(layoutUndecoratedStateFigure0);
 
 			fFigureStateNameLabel = new WrappingLabel();
 
@@ -547,8 +544,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureStateNameLabel.verticalSpan = 1;
 			constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;
-			undecoratedStateFigure0.add(fFigureStateNameLabel,
-					constraintFFigureStateNameLabel);
+			undecoratedStateFigure0.add(fFigureStateNameLabel, constraintFFigureStateNameLabel);
 
 			fFigureInvariantCompartment = new RectangleFigure();
 
@@ -562,8 +558,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureInvariantCompartment.verticalSpan = 1;
 			constraintFFigureInvariantCompartment.grabExcessHorizontalSpace = false;
 			constraintFFigureInvariantCompartment.grabExcessVerticalSpace = false;
-			undecoratedStateFigure0.add(fFigureInvariantCompartment,
-					constraintFFigureInvariantCompartment);
+			undecoratedStateFigure0.add(fFigureInvariantCompartment, constraintFFigureInvariantCompartment);
 
 			fFigureChannelCompartment = new RectangleFigure();
 
@@ -577,8 +572,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureChannelCompartment.verticalSpan = 1;
 			constraintFFigureChannelCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureChannelCompartment.grabExcessVerticalSpace = false;
-			undecoratedStateFigure0.add(fFigureChannelCompartment,
-					constraintFFigureChannelCompartment);
+			undecoratedStateFigure0.add(fFigureChannelCompartment, constraintFFigureChannelCompartment);
 
 			fFigureActionCompartment = new RectangleFigure();
 
@@ -592,8 +586,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureActionCompartment.verticalSpan = 1;
 			constraintFFigureActionCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureActionCompartment.grabExcessVerticalSpace = false;
-			undecoratedStateFigure0.add(fFigureActionCompartment,
-					constraintFFigureActionCompartment);
+			undecoratedStateFigure0.add(fFigureActionCompartment, constraintFFigureActionCompartment);
 
 			fFigureRegionsCompartment = new RectangleFigure();
 
@@ -607,8 +600,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureRegionsCompartment.verticalSpan = 1;
 			constraintFFigureRegionsCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureRegionsCompartment.grabExcessVerticalSpace = true;
-			undecoratedStateFigure0.add(fFigureRegionsCompartment,
-					constraintFFigureRegionsCompartment);
+			undecoratedStateFigure0.add(fFigureRegionsCompartment, constraintFFigureRegionsCompartment);
 
 		}
 
@@ -652,8 +644,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURESTATENAMELABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 10, SWT.BOLD);
+	static final Font FFIGURESTATENAMELABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, SWT.BOLD);
 
 }

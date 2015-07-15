@@ -19,15 +19,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
  * @generated
  */
 public class StateInvariantCompartmentItemSemanticEditPolicy
-		extends
-		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StateInvariantCompartmentItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
+		super(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
 	}
 
 	/**
@@ -36,8 +34,9 @@ public class StateInvariantCompartmentItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.commands.ClockConstraintCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.commands.ClockConstraintCreateCommand(
+							req));
 		}
 		return super.getCreateCommand(req);
 	}

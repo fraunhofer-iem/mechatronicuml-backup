@@ -36,8 +36,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class TransitionEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -79,12 +78,10 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.TransitionItemSemanticEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.TRANSITION_COLOR_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.TRANSITION_COLOR_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.TransitionColorEditPolicy());
 
 	}
@@ -95,14 +92,12 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionLabelFigure());
+					.setLabel(getPrimaryShape().getFigureTransitionLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionDeadlineLabelFigure());
+					.setLabel(getPrimaryShape().getFigureTransitionDeadlineLabelFigure());
 			return true;
 		}
 		return false;
@@ -209,8 +204,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		 */
 		private RotatableDecoration createSourceDecoration() {
 			de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration df = new de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration();
-			df.setLocation(new Point(getMapMode().DPtoLP(0), getMapMode()
-					.DPtoLP(0)));
+			df.setLocation(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			df.setSize(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16));
 
 			return df;
@@ -255,16 +249,13 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		// Properties View.
 		EObject sourceElement = null;
 		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView().getElement();
 		}
 		EObject targetElement = null;
 		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView().getElement();
 		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
+		if (notification.getOldValue() == sourceElement || notification.getOldValue() == targetElement) {
 			Display.getCurrent().asyncExec(new Runnable() {
 				@Override
 				public void run() {

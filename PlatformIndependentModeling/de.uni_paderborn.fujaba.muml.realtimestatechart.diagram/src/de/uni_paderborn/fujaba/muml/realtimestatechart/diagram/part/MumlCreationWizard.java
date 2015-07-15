@@ -20,8 +20,7 @@ import org.eclipse.ui.IWorkbench;
  * @generated
  */
 public class MumlCreationWizard
-		extends
-		de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
+		extends de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated
@@ -29,8 +28,9 @@ public class MumlCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewRealtimestatechartWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+						.getBundledImageDescriptor("icons/wizban/NewRealtimestatechartWizard.gif")); //$NON-NLS-1$
 
 	}
 

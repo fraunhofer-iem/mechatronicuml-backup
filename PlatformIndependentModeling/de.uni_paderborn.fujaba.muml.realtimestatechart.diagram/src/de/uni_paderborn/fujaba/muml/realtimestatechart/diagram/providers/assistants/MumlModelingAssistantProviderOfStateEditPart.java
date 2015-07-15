@@ -24,8 +24,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class MumlModelingAssistantProviderOfStateEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -39,8 +38,10 @@ public class MumlModelingAssistantProviderOfStateEditPart
 		types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034);
 		types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035);
 		types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042);
-		types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037);
-		types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036);
+		types.add(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037);
+		types.add(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036);
 		return types;
 	}
 
@@ -49,9 +50,9 @@ public class MumlModelingAssistantProviderOfStateEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnSource((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) sourceEditPart);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource(
+				(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) sourceEditPart);
 	}
 
 	/**
@@ -68,12 +69,9 @@ public class MumlModelingAssistantProviderOfStateEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
-			IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetRelTypesOnSourceAndTarget(
 				(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) sourceEditPart,
 				targetEditPart);
@@ -87,13 +85,16 @@ public class MumlModelingAssistantProviderOfStateEditPart
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		return types;
 	}
@@ -102,10 +103,8 @@ public class MumlModelingAssistantProviderOfStateEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForTarget(IAdaptable source,
-			IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForTarget(
 				(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) sourceEditPart,
 				relationshipType);
@@ -120,8 +119,10 @@ public class MumlModelingAssistantProviderOfStateEditPart
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003) {
 			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
 		}
 		return types;
 	}
@@ -131,9 +132,9 @@ public class MumlModelingAssistantProviderOfStateEditPart
 	 */
 	@Override
 	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
-		return doGetRelTypesOnTarget((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) targetEditPart);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget(
+				(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) targetEditPart);
 	}
 
 	/**
@@ -150,10 +151,8 @@ public class MumlModelingAssistantProviderOfStateEditPart
 	 * @generated
 	 */
 	@Override
-	public List<IElementType> getTypesForSource(IAdaptable target,
-			IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
-				.getAdapter(IGraphicalEditPart.class);
+	public List<IElementType> getTypesForSource(IAdaptable target, IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		return doGetTypesForSource(
 				(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart) targetEditPart,
 				relationshipType);
@@ -168,8 +167,10 @@ public class MumlModelingAssistantProviderOfStateEditPart
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003) {
 			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
-			types.add(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
+			types.add(
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
 		}
 		return types;
 	}

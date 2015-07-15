@@ -50,32 +50,27 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart(
@@ -98,12 +93,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart(
@@ -118,12 +111,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart(
@@ -154,8 +145,7 @@ public class MumlEditPartFactory implements EditPartFactory {
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart(
-						view);
+				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart(view);
 
 			case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart(
@@ -181,10 +171,8 @@ public class MumlEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

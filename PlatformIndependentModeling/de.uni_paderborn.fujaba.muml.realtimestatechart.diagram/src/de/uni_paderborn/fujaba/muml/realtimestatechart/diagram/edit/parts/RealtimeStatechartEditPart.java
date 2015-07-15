@@ -95,19 +95,16 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.RealtimeStatechartItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -119,8 +116,7 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -163,16 +159,15 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureStatechartVariablesLabel());
+					.setLabel(getPrimaryShape().getFigureStatechartVariablesLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStatechartContentsCompartment();
+			IFigure pane = getPrimaryShape().getFigureStatechartContentsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -189,10 +184,10 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStatechartContentsCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) childEditPart)
-					.getFigure());
+			IFigure pane = getPrimaryShape().getFigureStatechartContentsCompartment();
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -235,10 +230,10 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -332,8 +327,9 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -389,14 +385,12 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			constraintStatechartTitleAreaFigure0.verticalSpan = 1;
 			constraintStatechartTitleAreaFigure0.grabExcessHorizontalSpace = true;
 			constraintStatechartTitleAreaFigure0.grabExcessVerticalSpace = false;
-			this.add(statechartTitleAreaFigure0,
-					constraintStatechartTitleAreaFigure0);
+			this.add(statechartTitleAreaFigure0, constraintStatechartTitleAreaFigure0);
 
 			GridLayout layoutStatechartTitleAreaFigure0 = new GridLayout();
 			layoutStatechartTitleAreaFigure0.numColumns = 3;
 			layoutStatechartTitleAreaFigure0.makeColumnsEqualWidth = false;
-			statechartTitleAreaFigure0
-					.setLayoutManager(layoutStatechartTitleAreaFigure0);
+			statechartTitleAreaFigure0.setLayoutManager(layoutStatechartTitleAreaFigure0);
 
 			fFigureHistoryFigure = new Ellipse();
 
@@ -408,8 +402,7 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			constraintFFigureHistoryFigure.verticalSpan = 1;
 			constraintFFigureHistoryFigure.grabExcessHorizontalSpace = false;
 			constraintFFigureHistoryFigure.grabExcessVerticalSpace = false;
-			statechartTitleAreaFigure0.add(fFigureHistoryFigure,
-					constraintFFigureHistoryFigure);
+			statechartTitleAreaFigure0.add(fFigureHistoryFigure, constraintFFigureHistoryFigure);
 
 			GridLayout layoutFFigureHistoryFigure = new GridLayout();
 			layoutFFigureHistoryFigure.numColumns = 1;
@@ -448,8 +441,7 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			constraintFFigureStatechartVariablesLabel.verticalSpan = 1;
 			constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;
-			statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel,
-					constraintFFigureStatechartVariablesLabel);
+			statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);
 
 			// Process FigureRef details
 
@@ -468,8 +460,7 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			constraintFFigureStatechartContentsCompartment.verticalSpan = 1;
 			constraintFFigureStatechartContentsCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureStatechartContentsCompartment.grabExcessVerticalSpace = true;
-			this.add(fFigureStatechartContentsCompartment,
-					constraintFFigureStatechartContentsCompartment);
+			this.add(fFigureStatechartContentsCompartment, constraintFFigureStatechartContentsCompartment);
 
 		}
 

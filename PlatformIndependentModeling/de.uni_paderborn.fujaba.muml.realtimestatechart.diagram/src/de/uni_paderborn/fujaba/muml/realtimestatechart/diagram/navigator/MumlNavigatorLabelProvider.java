@@ -31,21 +31,16 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 /**
  * @generated
  */
-public class MumlNavigatorLabelProvider extends LabelProvider implements
-		ICommonLabelProvider, ITreePathLabelProvider {
+public class MumlNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	static {
-		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.getInstance()
-				.getImageRegistry()
-				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.getInstance()
+				.getImageRegistry().put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.getInstance()
+				.getImageRegistry().put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
 	}
 
 	/**
@@ -54,8 +49,9 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
 		if (element instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem
-				&& !isOwnView(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem) element)
-						.getView())) {
+				&& !isOwnView(
+						((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem) element)
+								.getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -87,47 +83,47 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_1000); //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_1000);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?State", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?State", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryEvent", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?DoEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?DoEvent", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitEvent", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ClockConstraint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ClockConstraint", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?SynchronizationChannel", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?SynchronizationChannel", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryPoint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryPoint", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitPoint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitPoint", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Region", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Region", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043); //$NON-NLS-1$
+			return getImage("Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Transition", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003); //$NON-NLS-1$
+			return getImage("Navigator?Link?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Transition", //$NON-NLS-1$
+					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -139,8 +135,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		ImageRegistry imageRegistry = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null
-				&& elementType != null
+		if (image == null && elementType != null
 				&& de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes
 						.isKnownElementType(elementType)) {
 			image = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes
@@ -182,8 +177,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
@@ -224,9 +218,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+					.getInstance().logError("No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -235,20 +227,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getRealtimeStatechart_2007Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5061); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5061); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -257,20 +246,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getState_3032Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5060); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5060); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -279,20 +265,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getEntryEvent_3033Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5050); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5050); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -301,20 +284,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getDoEvent_3034Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5051); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5051); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -323,20 +303,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getExitEvent_3035Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5052); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5052); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -345,20 +322,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getClockConstraint_3036Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5053); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5053); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -367,20 +341,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getSynchronizationChannel_3037Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5054); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5054); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -395,9 +366,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3040); //$NON-NLS-1$
+					.getInstance().logError("No domain element for view with visualID = " + 3040); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -412,9 +381,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3041); //$NON-NLS-1$
+					.getInstance().logError("No domain element for view with visualID = " + 3041); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -423,20 +390,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getRegion_3042Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5063); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 5063); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -451,9 +415,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 3043); //$NON-NLS-1$
+					.getInstance().logError("No domain element for view with visualID = " + 3043); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -462,20 +424,17 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getTransition_4003Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+		IParser parser = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlParserProvider.getParser(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
+				view.getElement() != null ? view.getElement() : view,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 6005); //$NON-NLS-1$
+					.getInstance().logError("Parser was not found for label " + 6005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

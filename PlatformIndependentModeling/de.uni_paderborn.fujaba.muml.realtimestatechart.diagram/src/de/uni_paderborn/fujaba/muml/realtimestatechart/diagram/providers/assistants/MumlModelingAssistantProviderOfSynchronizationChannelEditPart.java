@@ -16,7 +16,6 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.assist
  * @generated
  */
 public class MumlModelingAssistantProviderOfSynchronizationChannelEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlModelingAssistantProvider {
 
 }

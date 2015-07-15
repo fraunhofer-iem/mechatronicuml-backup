@@ -20,15 +20,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
  * @generated
  */
 public class TransitionItemSemanticEditPolicy
-		extends
-		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public TransitionItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
+		super(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003);
 	}
 
 	/**

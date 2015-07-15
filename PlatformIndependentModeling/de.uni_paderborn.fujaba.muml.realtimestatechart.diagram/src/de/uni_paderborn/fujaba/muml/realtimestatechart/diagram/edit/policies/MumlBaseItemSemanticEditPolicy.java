@@ -82,8 +82,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
 				Integer id = new Integer(
 						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
@@ -109,12 +108,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -122,35 +119,28 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			ICommand command = editPolicyCommand instanceof ICommandProxy
+					? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
 		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
 		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -163,8 +153,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	private IElementType getContextElementType(IEditCommandRequest request) {
 		IElementType requestContextElementType = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes
 				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -263,16 +252,14 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -297,10 +284,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
-			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() //$NON-NLS-1$
+					|| nextView.getElement() != view.getElement()) {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
@@ -315,8 +302,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				.getInstance().getLinkConstraints();
 		if (cached == null) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-					.getInstance().setLinkConstraints(
-							cached = new LinkConstraints());
+					.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -339,10 +325,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateTransition_4003(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
-				View sourceView, View targetView) {
-			return canExistTransition_4003(container, null, source, target,
-					sourceView, targetView);
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target, View sourceView, View targetView) {
+			return canExistTransition_4003(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
@@ -352,16 +336,16 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.Transition linkInstance,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
+					envType.put("oppositeEnd", //$NON-NLS-1$
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getVertex());
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -369,22 +353,20 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					env.put("oppositeView", targetView);
 
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
-							.getExpression(
-									18,
+							.getExpression(18,
 									de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-											.getVertex(), envType);
+											.getVertex(),
+									envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
 						return false;
 					} // else fall-through
 				}
 				return true;
 			} catch (Exception e) {
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+						.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
@@ -395,16 +377,16 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public java.lang.String getErrorTransition_4003(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target, View sourceView, View targetView) {
 			try {
 				if (source == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
+					envType.put("oppositeEnd", //$NON-NLS-1$
+							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getVertex());
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -412,14 +394,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					env.put("oppositeView", targetView);
 
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
-							.getExpression(
-									18,
+							.getExpression(18,
 									de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-											.getVertex(), envType);
+											.getVertex(),
+									envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
 						String body = expression.body().trim();
 						if (body.startsWith("--")) {
 							int end = body.indexOf('\n');
@@ -438,8 +419,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return null;
 			} catch (Exception e) {
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+						.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}

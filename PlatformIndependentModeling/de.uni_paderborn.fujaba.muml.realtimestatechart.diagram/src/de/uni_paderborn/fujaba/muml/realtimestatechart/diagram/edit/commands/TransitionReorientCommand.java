@@ -71,11 +71,11 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target = getLink()
-				.getTarget();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target = getLink().getTarget();
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)) {
 			return false;
 		}
@@ -86,14 +86,12 @@ public class TransitionReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistTransition_4003(container,
-						getLink(), getNewSource(), target, sourceView,
-						targetView)) {
+				.getLinkConstraints()
+				.canExistTransition_4003(container, getLink(), getNewSource(), target, sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorTransition_4003(container,
-							getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints()
+					.getErrorTransition_4003(container, getNewSource(), target, sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -103,11 +101,11 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source = getLink()
-				.getSource();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source = getLink().getSource();
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)) {
 			return false;
 		}
@@ -118,14 +116,12 @@ public class TransitionReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistTransition_4003(container,
-						getLink(), source, getNewTarget(), sourceView,
-						targetView)) {
+				.getLinkConstraints()
+				.canExistTransition_4003(container, getLink(), source, getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorTransition_4003(container,
-							source, getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints()
+					.getErrorTransition_4003(container, source, getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -134,11 +130,9 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

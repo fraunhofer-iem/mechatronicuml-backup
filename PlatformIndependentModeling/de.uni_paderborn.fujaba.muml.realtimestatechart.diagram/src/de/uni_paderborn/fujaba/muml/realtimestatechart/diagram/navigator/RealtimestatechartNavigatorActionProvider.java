@@ -37,8 +37,7 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
-public class RealtimestatechartNavigatorActionProvider extends
-		CommonActionProvider {
+public class RealtimestatechartNavigatorActionProvider extends CommonActionProvider {
 
 	/**
 	 * @generated
@@ -77,12 +76,10 @@ public class RealtimestatechartNavigatorActionProvider extends
 		if (!myContribute) {
 			return;
 		}
-		IStructuredSelection selection = (IStructuredSelection) getContext()
-				.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) getContext().getSelection();
 		myOpenDiagramAction.selectionChanged(selection);
 		if (myOpenDiagramAction.isEnabled()) {
-			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN,
-					myOpenDiagramAction);
+			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, myOpenDiagramAction);
 		}
 	}
 
@@ -111,8 +108,7 @@ public class RealtimestatechartNavigatorActionProvider extends
 		 * @generated
 		 */
 		public OpenDiagramAction(ICommonViewerWorkbenchSite viewerSite) {
-			super(
-					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
+			super(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.NavigatorActionProvider_OpenDiagramActionName);
 			myViewerSite = viewerSite;
 		}
 
@@ -127,8 +123,7 @@ public class RealtimestatechartNavigatorActionProvider extends
 					selectedElement = ((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlNavigatorItem) selectedElement)
 							.getView();
 				} else if (selectedElement instanceof IAdaptable) {
-					selectedElement = ((IAdaptable) selectedElement)
-							.getAdapter(View.class);
+					selectedElement = ((IAdaptable) selectedElement).getAdapter(View.class);
 				}
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
@@ -153,13 +148,11 @@ public class RealtimestatechartNavigatorActionProvider extends
 			IEditorInput editorInput = getEditorInput(myDiagram);
 			IWorkbenchPage page = myViewerSite.getPage();
 			try {
-				page.openEditor(
-						editorInput,
+				page.openEditor(editorInput,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditor.ID);
 			} catch (PartInitException e) {
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError(
-								"Exception while openning diagram", e); //$NON-NLS-1$
+						.getInstance().logError("Exception while openning diagram", e); //$NON-NLS-1$
 			}
 		}
 
@@ -170,16 +163,14 @@ public class RealtimestatechartNavigatorActionProvider extends
 			Resource diagramResource = diagram.eResource();
 			for (EObject nextEObject : diagramResource.getContents()) {
 				if (nextEObject == diagram) {
-					return new FileEditorInput(
-							WorkspaceSynchronizer.getFile(diagramResource));
+					return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
 				}
 				if (nextEObject instanceof Diagram) {
 					break;
 				}
 			}
 			URI uri = EcoreUtil.getURI(diagram);
-			String editorName = uri.lastSegment() + '#'
-					+ diagram.eResource().getContents().indexOf(diagram);
+			String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
 			IEditorInput editorInput = new URIEditorInput(uri, editorName);
 			return editorInput;
 		}

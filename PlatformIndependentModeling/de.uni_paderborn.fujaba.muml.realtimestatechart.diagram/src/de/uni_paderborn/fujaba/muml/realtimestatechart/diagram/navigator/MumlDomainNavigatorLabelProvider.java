@@ -42,8 +42,8 @@ public class MumlDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) element)
+			return myAdapterFactoryLabelProvider.getImage(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) element)
 							.getEObject());
 		}
 		return null;
@@ -54,8 +54,8 @@ public class MumlDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	 */
 	public String getText(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) element)
+			return myAdapterFactoryLabelProvider.getText(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.MumlDomainNavigatorItem) element)
 							.getEObject());
 		}
 		return null;

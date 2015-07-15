@@ -18,8 +18,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class MumlNavigatorGroup
-		extends
+public class MumlNavigatorGroup extends
 		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem {
 
 	/**

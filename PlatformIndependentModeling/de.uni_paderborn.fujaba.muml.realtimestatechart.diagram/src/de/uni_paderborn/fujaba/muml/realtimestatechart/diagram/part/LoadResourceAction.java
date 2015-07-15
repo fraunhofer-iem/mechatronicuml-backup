@@ -33,8 +33,7 @@ public class LoadResourceAction extends DefaultLoadResourceAction {
 		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
 		Shell shell = diagramEditor.getEditorSite().getShell();
 		assert diagramEditor instanceof DiagramEditor;
-		TransactionalEditingDomain editingDomain = ((DiagramEditor) diagramEditor)
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((DiagramEditor) diagramEditor).getEditingDomain();
 
 		EcoreActionBarContributor.ExtendedLoadResourceAction.ExtendedLoadResourceDialog loadResourceDialog = new EcoreActionBarContributor.ExtendedLoadResourceAction.ExtendedLoadResourceDialog(
 				shell, editingDomain);

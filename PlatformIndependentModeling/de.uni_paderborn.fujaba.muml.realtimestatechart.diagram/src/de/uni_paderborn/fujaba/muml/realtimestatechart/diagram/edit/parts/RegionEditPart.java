@@ -105,24 +105,19 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.RegionItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -134,8 +129,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -183,16 +177,15 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureStatechartVariablesLabel());
+					.setLabel(getPrimaryShape().getFigureStatechartVariablesLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureRegionContentsCompartment();
+			IFigure pane = getPrimaryShape().getFigureRegionContentsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
-					.getFigure());
+			pane.add(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -212,10 +205,10 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureRegionContentsCompartment();
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
-					.getFigure());
+			IFigure pane = getPrimaryShape().getFigureRegionContentsCompartment();
+			pane.remove(
+					((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
+							.getFigure());
 			return true;
 		}
 		return false;
@@ -258,10 +251,10 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -355,8 +348,9 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -364,14 +358,13 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
+			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getType(
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -442,8 +435,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			GridLayout layoutRegionTitleAreaFigure0 = new GridLayout();
 			layoutRegionTitleAreaFigure0.numColumns = 2;
 			layoutRegionTitleAreaFigure0.makeColumnsEqualWidth = false;
-			regionTitleAreaFigure0
-					.setLayoutManager(layoutRegionTitleAreaFigure0);
+			regionTitleAreaFigure0.setLayoutManager(layoutRegionTitleAreaFigure0);
 
 			RectangleFigure statechartTitleAreaFigure1 = new RectangleFigure();
 
@@ -458,14 +450,12 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			constraintStatechartTitleAreaFigure1.verticalSpan = 1;
 			constraintStatechartTitleAreaFigure1.grabExcessHorizontalSpace = true;
 			constraintStatechartTitleAreaFigure1.grabExcessVerticalSpace = false;
-			regionTitleAreaFigure0.add(statechartTitleAreaFigure1,
-					constraintStatechartTitleAreaFigure1);
+			regionTitleAreaFigure0.add(statechartTitleAreaFigure1, constraintStatechartTitleAreaFigure1);
 
 			GridLayout layoutStatechartTitleAreaFigure1 = new GridLayout();
 			layoutStatechartTitleAreaFigure1.numColumns = 3;
 			layoutStatechartTitleAreaFigure1.makeColumnsEqualWidth = false;
-			statechartTitleAreaFigure1
-					.setLayoutManager(layoutStatechartTitleAreaFigure1);
+			statechartTitleAreaFigure1.setLayoutManager(layoutStatechartTitleAreaFigure1);
 
 			fFigureHistoryFigure = new Ellipse();
 
@@ -477,8 +467,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			constraintFFigureHistoryFigure.verticalSpan = 1;
 			constraintFFigureHistoryFigure.grabExcessHorizontalSpace = false;
 			constraintFFigureHistoryFigure.grabExcessVerticalSpace = false;
-			statechartTitleAreaFigure1.add(fFigureHistoryFigure,
-					constraintFFigureHistoryFigure);
+			statechartTitleAreaFigure1.add(fFigureHistoryFigure, constraintFFigureHistoryFigure);
 
 			GridLayout layoutFFigureHistoryFigure = new GridLayout();
 			layoutFFigureHistoryFigure.numColumns = 1;
@@ -517,8 +506,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			constraintFFigureStatechartVariablesLabel.verticalSpan = 1;
 			constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;
-			statechartTitleAreaFigure1.add(fFigureStatechartVariablesLabel,
-					constraintFFigureStatechartVariablesLabel);
+			statechartTitleAreaFigure1.add(fFigureStatechartVariablesLabel, constraintFFigureStatechartVariablesLabel);
 
 			// Process FigureRef details
 
@@ -535,9 +523,8 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			fFigureRegionPriorityLabel.setFont(FFIGUREREGIONPRIORITYLABEL_FONT);
 
-			fFigureRegionPriorityLabel.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(2),
-					getMapMode().DPtoLP(5)));
+			fFigureRegionPriorityLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(2), getMapMode().DPtoLP(5)));
 
 			regionPriority1.add(fFigureRegionPriorityLabel);
 
@@ -558,8 +545,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			constraintFFigureRegionContentsCompartment.verticalSpan = 1;
 			constraintFFigureRegionContentsCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureRegionContentsCompartment.grabExcessVerticalSpace = true;
-			this.add(fFigureRegionContentsCompartment,
-					constraintFFigureRegionContentsCompartment);
+			this.add(fFigureRegionContentsCompartment, constraintFFigureRegionContentsCompartment);
 
 		}
 
@@ -614,8 +600,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font FFIGUREREGIONPRIORITYLABEL_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 8, SWT.NORMAL);
+	static final Font FFIGUREREGIONPRIORITYLABEL_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 8, SWT.NORMAL);
 
 }

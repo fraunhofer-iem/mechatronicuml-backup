@@ -36,8 +36,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> getSemanticChildren(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
@@ -72,10 +71,9 @@ public class MumlDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor>();
 
-		if (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getNodeVisualID(view, modelElement) == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID) {
-			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor(
-					modelElement,
+		if (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getNodeVisualID(view,
+				modelElement) == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID) {
+			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor(modelElement,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID));
 		}
 
@@ -93,8 +91,7 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getConnectionPoints().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getConnectionPoints().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint childElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
@@ -160,8 +157,7 @@ public class MumlDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent childElement = modelElement
-					.getEntryEvent();
+			de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent childElement = modelElement.getEntryEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID) {
@@ -170,8 +166,7 @@ public class MumlDiagramUpdater {
 			}
 		}
 		{
-			de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent childElement = modelElement
-					.getDoEvent();
+			de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent childElement = modelElement.getDoEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID) {
@@ -180,8 +175,7 @@ public class MumlDiagramUpdater {
 			}
 		}
 		{
-			de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent childElement = modelElement
-					.getExitEvent();
+			de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent childElement = modelElement.getExitEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID) {
@@ -208,8 +202,7 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEmbeddedRegions().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getEmbeddedRegions().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.Region childElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.Region) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
@@ -239,8 +232,7 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getChannels().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getChannels().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel childElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
@@ -270,8 +262,7 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getInvariants().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getInvariants().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint childElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
@@ -357,8 +348,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getContainedLinks(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
@@ -394,8 +384,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getIncomingLinks(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2007IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
@@ -429,8 +418,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
 			View view) {
-		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-				.getVisualID(view)) {
+		switch (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2007OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
@@ -593,8 +581,7 @@ public class MumlDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(
-				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(modelElement, crossReferences));
 		return result;
 	}
 
@@ -664,8 +651,7 @@ public class MumlDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(
-				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(modelElement, crossReferences));
 		return result;
 	}
 
@@ -679,8 +665,7 @@ public class MumlDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(
-				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Transition_4003(modelElement, crossReferences));
 		return result;
 	}
 
@@ -806,8 +791,7 @@ public class MumlDiagramUpdater {
 	private static Collection<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_Transition_4003(
 			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor>();
-		for (Iterator<?> links = container.getTransitions().iterator(); links
-				.hasNext();) {
+		for (Iterator<?> links = container.getTransitions().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) {
 				continue;
@@ -817,13 +801,9 @@ public class MumlDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex dst = link
-					.getTarget();
-			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex src = link
-					.getSource();
-			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor(
-					src,
-					dst,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex dst = link.getTarget();
+			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex src = link.getSource();
+			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor(src, dst,
 					link,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
@@ -838,12 +818,13 @@ public class MumlDiagramUpdater {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getTransition_Target()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) {
+			if (setting
+					.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getTransition_Target()
+					|| false == setting
+							.getEObject() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) setting
@@ -852,11 +833,8 @@ public class MumlDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex src = link
-					.getSource();
-			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor(
-					src,
-					target,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex src = link.getSource();
+			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor(src, target,
 					link,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
@@ -873,8 +851,7 @@ public class MumlDiagramUpdater {
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element
-				.eContainer()) {
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) {
 				container = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) element;
 			}
@@ -883,8 +860,7 @@ public class MumlDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor>();
-		for (Iterator<?> links = container.getTransitions().iterator(); links
-				.hasNext();) {
+		for (Iterator<?> links = container.getTransitions().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) {
 				continue;
@@ -894,16 +870,12 @@ public class MumlDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex dst = link
-					.getTarget();
-			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex src = link
-					.getSource();
+			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex dst = link.getTarget();
+			de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex src = link.getSource();
 			if (src != source) {
 				continue;
 			}
-			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor(
-					src,
-					dst,
+			result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor(src, dst,
 					link,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID));
@@ -916,36 +888,40 @@ public class MumlDiagramUpdater {
 	 */
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor> getSemanticChildren(
 				View view) {
 			return MumlDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getContainedLinks(
 				View view) {
 			return MumlDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getIncomingLinks(
 				View view) {
 			return MumlDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public List<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
 				View view) {
 			return MumlDiagramUpdater.getOutgoingLinks(view);
