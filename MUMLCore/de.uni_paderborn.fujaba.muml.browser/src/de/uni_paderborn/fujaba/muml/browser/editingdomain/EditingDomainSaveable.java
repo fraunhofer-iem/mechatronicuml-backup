@@ -9,20 +9,20 @@ import org.eclipse.ui.Saveable;
 
 public class EditingDomainSaveable extends Saveable {
 	
-	private TransactionalEditingDomain domain;
+	private MumlEditingDomain domain;
 
-	public EditingDomainSaveable(TransactionalEditingDomain domain) {
+	public EditingDomainSaveable(MumlEditingDomain domain) {
 		this.domain = domain;
 	}
 	
 	@Override
 	public String getName() {
-		return "name";
+		return domain.getURI().toFileString();
 	}
 
 	@Override
 	public String getToolTipText() {
-		return "tooltip text";
+		return getName();
 	}
 
 	@Override

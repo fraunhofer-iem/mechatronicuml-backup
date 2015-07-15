@@ -14,36 +14,13 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.ui.Saveable;
 import org.eclipse.ui.navigator.SaveablesProvider;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
-import de.uni_paderborn.fujaba.muml.browser.providers.ModelBrowserContentProvider;
 
 public class EditingDomainRegistry {
-	
-	private Map<URI, Saveable> saveables = new HashMap<URI, Saveable>();
-
-	public Saveable getSaveable(URI uri) {
-		if (!saveables.containsKey(uri)) {
-			Saveable saveable = createSaveable(uri);
-			if (saveable != null) {
-				saveables.put(uri, saveable);
-			}
-		}
-		return saveables.get(uri);
-	}
-
-	private Saveable createSaveable(URI uri) {
-		TransactionalEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
-		if (domain != null) {
-			return new EditingDomainSaveable(domain);
-		}
-		return null;
-	}
 	
 	public SaveablesProvider getSaveablesProvider() {
 		return saveablesProvider;
@@ -54,6 +31,9 @@ public class EditingDomainRegistry {
 		public Saveable[] getSaveables() {
 			List<Saveable> saveables = new ArrayList<Saveable>();
 
+			for (MumlEditingDomain domain : map.values()) {
+				
+			}
 			for (URI uri : new HashSet<URI>(ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getURIs())) {
 				IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
 				Saveable saveable = getSaveable(iFile);
@@ -67,8 +47,9 @@ public class EditingDomainRegistry {
 		@Override
 		public Object[] getElements(Saveable saveable) {
 			List<Object> elements = new ArrayList<Object>();
-			for (URI uri : saveables.keySet()) {
-				if (saveable == saveables.get(uri)) {
+			for (MumlEditingDomain domain : getEditingDomains()) {
+				if (saveable == domain.getSaveable()) {
+					URI uri = domain.getURI();
 					final IFile iFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true))); 
 					if (iFile != null) {
 						elements.add(iFile);
@@ -92,16 +73,19 @@ public class EditingDomainRegistry {
 				uri = URI.createPlatformResourceURI(iFile.getFullPath().toString(), true);
 			}
 			if (uri != null) {
-				return EditingDomainRegistry.this.getSaveable(uri);
+				MumlEditingDomain domain = getEditingDomain(uri, false);
+				if (domain != null) {
+					return domain.getSaveable();
+				}
 			}
 			return null;
 		}
 	};
 	public interface Listener {
-		void editingDomainCreated(TransactionalEditingDomain domain);
+		void editingDomainCreated(MumlEditingDomain domain);
 	}
 	
-	private Map<URI, TransactionalEditingDomain> map = new HashMap<URI, TransactionalEditingDomain>();
+	private Map<URI, MumlEditingDomain> map = new HashMap<URI, MumlEditingDomain>();
 
 	private List<Listener> listeners = new ArrayList<Listener>();
 	
@@ -113,7 +97,7 @@ public class EditingDomainRegistry {
 		listeners.remove(listener);
 	}
 	
-	public Collection<TransactionalEditingDomain> getEditingDomains() {
+	public Collection<MumlEditingDomain> getEditingDomains() {
 		return map.values();
 	}
 	
@@ -121,8 +105,8 @@ public class EditingDomainRegistry {
 		return map.keySet();
 	}
 
-	public TransactionalEditingDomain getEditingDomain(URI uri, boolean create) {
-		TransactionalEditingDomain editingDomain = internalGetEditingDomain(uri, create);
+	public MumlEditingDomain getEditingDomain(URI uri, boolean create) {
+		MumlEditingDomain editingDomain = internalGetEditingDomain(uri, create);
 		if (editingDomain != null) {
 			Resource resource;
 			try {
@@ -145,7 +129,7 @@ public class EditingDomainRegistry {
 		return editingDomain;
 	}
 	
-	private TransactionalEditingDomain internalGetEditingDomain(URI uri, boolean create) {
+	private MumlEditingDomain internalGetEditingDomain(URI uri, boolean create) {
 		if (!ModelBrowserPlugin.canLoad(uri)) {
 			return null;
 		}
@@ -153,7 +137,7 @@ public class EditingDomainRegistry {
 			synchronized (map) {
 				uri = uri.trimFragment();
 				if (!map.containsKey(uri)) {
-					TransactionalEditingDomain domain = createDomain();
+					MumlEditingDomain domain = createDomain(uri);
 					map.put(uri, domain);
 					fireCreated(domain);
 				}
@@ -163,32 +147,31 @@ public class EditingDomainRegistry {
 		return null;
 	}
 	
-	protected void fireCreated(TransactionalEditingDomain domain) {
+	protected void fireCreated(MumlEditingDomain domain) {
 		for (Listener listener : listeners) {
 			listener.editingDomainCreated(domain);
 		}
 	}
 
-	protected TransactionalEditingDomain createDomain() {
-		TransactionalEditingDomain domain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
-		return domain;
+	protected MumlEditingDomain createDomain(URI uri) {
+		return MumlEditingDomain.create(uri);
 	}
 
-	public TransactionalEditingDomain getEditingDomain(Resource resource, boolean create) {
+	public MumlEditingDomain getEditingDomain(Resource resource, boolean create) {
 		if (resource != null) {
 			return getEditingDomain(resource.getURI(), create);
 		}
 		return null;
 	}
 	
-	public TransactionalEditingDomain getEditingDomain(EObject element, boolean create) {
+	public MumlEditingDomain getEditingDomain(EObject element, boolean create) {
 		if (element != null) {
 			return getEditingDomain(element.eResource(), create);
 		}
 		return null;
 	}
 	
-	public TransactionalEditingDomain getEditingDomainDispatch(Object object, boolean create) {
+	public MumlEditingDomain getEditingDomainDispatch(Object object, boolean create) {
 		if (object instanceof Resource) {
 			return getEditingDomain((Resource) object, create);
 		}

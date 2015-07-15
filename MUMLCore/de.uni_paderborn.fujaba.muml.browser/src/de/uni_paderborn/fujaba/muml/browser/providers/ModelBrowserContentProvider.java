@@ -49,6 +49,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.navigator.SaveablesProvider;
 
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
+import de.uni_paderborn.fujaba.muml.browser.editingdomain.MumlEditingDomain;
 import de.uni_paderborn.fujaba.muml.browser.items.ProgressNavigatorItem;
 
 // XXX Open Diagram Resources in Editing Domain of Semantic Element.
@@ -131,7 +132,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 	}
 
 	@Override
-	public void editingDomainCreated(TransactionalEditingDomain editingDomain) {
+	public void editingDomainCreated(MumlEditingDomain editingDomain) {
 		editingDomain.addResourceSetListener(resourceSetListener);
 	}
 	
