@@ -19,7 +19,6 @@ main() {
 	assert fatal (input.objects()[Transition]->forAll(t | not t.source.isCompositeState() and not t.target.isCompositeState())) with log("Composite transitions unsupported here.");
 	input.objects()[RootNode]->map RootNode2RootNode();
 }
-	
 
 mapping State :: State2State() : State {
 				
@@ -214,23 +213,14 @@ mapping State :: State2State() : State {
 			}
 		endif;
 		
-		invariants := self.invariants->map ClockConstraint2ClockConstraint();
-		
-		initial := self.initial;
-		
-		final := self.final;
-		
-		urgent := self.urgent;
-		
-		channels := self.channels->map SynchronizationChannel2SynchronizationChannel();
-		
+		invariants := self.invariants->map ClockConstraint2ClockConstraint();		
+		initial := self.initial;	
+		final := self.final;	
+		urgent := self.urgent;	
+		channels := self.channels->map SynchronizationChannel2SynchronizationChannel();	
 		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
-		
-		extension := self.extension.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();
-		
-		
-		
-	}
+		extension := self.extension.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();	
+}
 	
 mapping muml::realtimestatechart::Transition :: Transition2Transition() : muml::realtimestatechart::Transition disjuncts Transition::doTargetTransition2Transition, Transition::doSourceTransition2Transition, Transition::normalTransition2Transition;
 
@@ -253,7 +243,7 @@ mapping muml::realtimestatechart::Transition :: doTargetTransition2Transition() 
     	guard := self.guard.map Expression2Expression();
     	events := self.events.map TransitionEvent2TransitionEvent();
     	action := self.action.map Action2Action();
-   		 }
+}
    		 
 mapping muml::realtimestatechart::Transition :: doSourceTransition2Transition() : muml::realtimestatechart::Transition when{not (self.source.oclAsType(State).doEvent = null)}{
     	priority := self.priority;
@@ -274,7 +264,7 @@ mapping muml::realtimestatechart::Transition :: doSourceTransition2Transition() 
     	guard := self.guard.map Expression2Expression();
     	events := self.events.map TransitionEvent2TransitionEvent();
     	action := self.action.map Action2Action();
-   		 }
+}
    		 
 mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::realtimestatechart::EntryPoint{
     	name := self.name;
@@ -289,7 +279,7 @@ mapping muml::realtimestatechart::EntryPoint :: EntryPoint2EntryPoint() : muml::
     	};
     	
     	state := self.state.map State2State();
-   		 }
+}
    		 
 mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::realtimestatechart::ExitPoint{
     	name := self.name;
@@ -305,7 +295,7 @@ mapping muml::realtimestatechart::ExitPoint :: ExitPoint2ExitPoint() : muml::rea
     	};
     	
     	state := self.state.map State2State();
-   		 }
+}
 
 mapping muml::realtimestatechart::Transition :: normalTransition2Transition() : muml::realtimestatechart::Transition{
     	priority := self.priority;
@@ -324,10 +314,8 @@ mapping muml::realtimestatechart::Transition :: normalTransition2Transition() : 
     	guard := self.guard.map Expression2Expression();
     	events := self.events.map TransitionEvent2TransitionEvent();
     	action := self.action.map Action2Action();
-   		 }
+}
    		
-
-	
 mapping DoEvent :: Do2DoRegion() : Region{
 		var state := self.container().oclAsType(State);
 		priority := state.getUniqueRegionPriority(1);

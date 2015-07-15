@@ -25,28 +25,18 @@ main() {
 	input.objects()[RootNode]->map RootNode2RootNode();
 }
 
-
-
-
-
-mapping SynchronizationChannel :: SyncChannel2SyncChannel() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()}
- {
-		
-		name := self.name;
-						
+mapping SynchronizationChannel :: SyncChannel2SyncChannel() : SynchronizationChannel when {not self.urgentAndNonUrgentTransitionsSynchronize()} {
+		name := self.name;						
 		selectorType := self.selectorType;
-						
-	}
+}
 	
 mapping SynchronizationChannel :: SyncChannel2UrgentSyncChannel() : SynchronizationChannel when {self.urgentAndNonUrgentTransitionsSynchronize()} {
 		name := self.name+"Urgent";
-						
 		selectorType := self.selectorType;
 }
 
 mapping SynchronizationChannel :: SyncChannel2NonUrgentSyncChannel() : SynchronizationChannel when {self.urgentAndNonUrgentTransitionsSynchronize()}{
 	name := self.name+"NonUrgent";
-						
 	selectorType := self.selectorType;
 } 
 
@@ -70,12 +60,9 @@ mapping State :: State2State() : State {
 		doEvent := self.doEvent.map DoEvent2DoEvent();
 		exitEvent := self.exitEvent.map ExitEvent2ExitEvent();
 		
-		invariants := self.invariants->map ClockConstraint2ClockConstraint();
-		
-		initial := self.initial;
-		
-		final := self.final;
-		
+		invariants := self.invariants->map ClockConstraint2ClockConstraint();		
+		initial := self.initial;		
+		final := self.final;		
 		urgent := self.urgent;
 		
 		--Due to precondition of mappings the correct ones are chosen
@@ -87,34 +74,23 @@ mapping State :: State2State() : State {
 		
 		parentStatechart := self.parentStatechart.map RealtimeStatechart2RealtimeStatechart();
 		
-		extension := self.extension.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();
-		
+		extension := self.extension.oclAsType(CommittedExtension).map CommittedExtension2CommittedExtension();		
 	}
 	
-mapping Transition :: Transition2Transition() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}
-{
+mapping Transition :: Transition2Transition() : Transition when {self.synchronization.oclIsUndefined() or self.synchronization=null or not self.synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()} {
 		
 		source := self.source.map Vertex2Vertex();
 		target := self.target.map Vertex2Vertex();
 				
-		priority := self.priority;
-		
-		synchronization := self.synchronization.map Synchronization2Synchronization();
-		
-		clockResets := self.clockResets->map Clock2Clock();
-		
-		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint();
-		
-		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline();
-		
-		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();
-		
-		blockable := self.blockable;
-		
-		guard := self.guard.map Expression2Expression();
-		
-		events := self.events->map TransitionEvent2TransitionEvent();
-		
+		priority := self.priority;	
+		synchronization := self.synchronization.map Synchronization2Synchronization();		
+		clockResets := self.clockResets->map Clock2Clock();		
+		clockConstraints := self.clockConstraints->map ClockConstraint2ClockConstraint();		
+		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline();		
+		relativeDeadline := self.relativeDeadline.map RelativeDeadline2RelativeDeadline();		
+		blockable := self.blockable;		
+		guard := self.guard.map Expression2Expression();		
+		events := self.events->map TransitionEvent2TransitionEvent();		
 		action := self.action.map Action2Action();
 		
 		urgent := self.urgent;
@@ -124,24 +100,15 @@ mapping Transition :: Transition2UrgentTransition() : Transition when {self.sync
 		source := self.source.map Vertex2Vertex();
 		target := self.target.map Vertex2Vertex();
 			
-		priority := self.priority;
-		
-		synchronization := self.synchronization.map Synchronization2UrgentSynchronization();
-		
-		clockResets := self.clockResets->map Clock2Clock();
-		
-		clockConstraints := self.clockConstraints->mapClockConstraint();
-		
-		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();
-		
-		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();
-		
-		blockable := self.blockable;
-		
-		guard := self.guard.mapExpression();
-		
-		events := self.events.mapTransitionEvent();
-		
+		priority := self.priority;		
+		synchronization := self.synchronization.map Synchronization2UrgentSynchronization();		
+		clockResets := self.clockResets->map Clock2Clock();		
+		clockConstraints := self.clockConstraints->mapClockConstraint();		
+		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();		
+		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();		
+		blockable := self.blockable;		
+		guard := self.guard.mapExpression();		
+		events := self.events.mapTransitionEvent();		
 		action := self.action.mapAction();
 		
 		urgent := true;
@@ -151,24 +118,15 @@ mapping Transition :: Transition2NonUrgentTransition() : Transition when {self.s
 		source := self.source.map Vertex2Vertex();
 		target := self.target.map Vertex2Vertex();
 				
-		priority := self.priority;
-		
-		synchronization := self.synchronization.map Synchronization2NonUrgentSynchronization();
-		
-		clockResets := self.clockResets->map Clock2Clock();
-		
-		clockConstraints := self.clockConstraints->mapClockConstraint();
-		
-		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();
-		
-		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();
-		
-		blockable := self.blockable;
-		
-		guard := self.guard.mapExpression();
-		
-		events := self.events.mapTransitionEvent();
-		
+		priority := self.priority;		
+		synchronization := self.synchronization.map Synchronization2NonUrgentSynchronization();		
+		clockResets := self.clockResets->map Clock2Clock();		
+		clockConstraints := self.clockConstraints->mapClockConstraint();		
+		absoluteDeadlines := self.absoluteDeadlines->mapAbsoluteDeadline();		
+		relativeDeadline := self.relativeDeadline.mapRelativeDeadline();		
+		blockable := self.blockable;		
+		guard := self.guard.mapExpression();		
+		events := self.events.mapTransitionEvent();		
 		action := self.action.mapAction();
 		
 		urgent := false;
@@ -176,25 +134,18 @@ mapping Transition :: Transition2NonUrgentTransition() : Transition when {self.s
 
 constructor Synchronization :: Synchronization(channel : SynchronizationChannel, syncKind : SynchronizationKind, selectorExp : expressionsModel::Expression) {
 		
-		syncChannel := channel;
-		
-		kind := syncKind; 
-		
+		syncChannel := channel;		
+		kind := syncKind; 		
 		selectorExpression := selectorExp;
-				
-	}
+}
 
 mapping Synchronization :: Synchronization2Synchronization() : Synchronization {
 		
-		init {
-			
-			var c : SynchronizationChannel = self.syncChannel.map SyncChannel2SyncChannel();
-
-			result := new Synchronization(c, self.kind, self.selectorExpression)
-								
-		}	
-		
-	}
+	init {			
+		var c : SynchronizationChannel = self.syncChannel.map SyncChannel2SyncChannel();
+		result := new Synchronization(c, self.kind, self.selectorExpression)							
+	}	
+}
 
 mapping Synchronization :: Synchronization2UrgentSynchronization() : Synchronization{
 	init {
@@ -289,7 +240,6 @@ mapping Expression :: Expression2Expression() : Expression disjuncts
 mapping TransitionFiringExpr :: TransitionFiringExpr2OrExpr() : OrExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize() and not self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).urgent} {
 	leftOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2UrgentTransition()}};
 	rightOpd := object TransitionFiringExpr {transition := object MumlElemExpr {elem := self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).map Transition2NonUrgentTransition()}};
-	
 }
 
 mapping TransitionFiringExpr :: TransitionFiringExpr2NonUrgentTransitionFiringExpr() : TransitionFiringExpr when {self.transition.oclAsType(MumlElemExpr).elem.oclAsType(Transition).synchronization.syncChannel.urgentAndNonUrgentTransitionsSynchronize()}{
