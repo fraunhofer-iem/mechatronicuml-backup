@@ -175,8 +175,8 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:O
 		
 		source := self.source.map Vertex2VertexSubrole(context, region);
 		
-		target := self.map Unicast2StateSubrole(context, region, toplevel);
-		
+		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
+				
 		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
@@ -208,7 +208,7 @@ mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, regio
 		
 		source := self.source.map Vertex2VertexSubrole(context, region);
 		
-		target := self.map Unicast2StateSubrole(context, region, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
 					
 		synchronization :=self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);--error
 		
@@ -224,7 +224,7 @@ mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 		
 		target := self.target.map Vertex2VertexSubrole(context, region);
 		
-		source := self.map Unicast2StateSubrole(context, region, toplevel);		
+		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
 		
 		synchronization := 	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicast,SynchronizationKind::SEND, PositionSelectorKind::SELF, PositionSelectorKind::NEXT);
 		
@@ -238,7 +238,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 		
 		target := self.target.map Vertex2VertexSubrole(context, region);
 		
-		source := self.map Unicast2StateSubrole(context, region, toplevel);		
+		source := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);		
 		
 		guard := self.map TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 		
@@ -252,14 +252,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 			
 		result.synchronization :=self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicastDone,SynchronizationKind::SEND);		
 	}
-	
-mapping Transition :: Unicast2StateSubrole(context:OclAny, region:OclAny, toplevel:Boolean) : State {
-	
-		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
-		
-		parentStatechart := self.statechart.map RTSC2SubroleRTSC(context, region,toplevel);			
-					
-	}
+
 	
 mapping Transition :: Unicast2SourceRegionSubrole(context:OclAny, region:OclAny) : Region {
 		
@@ -362,7 +355,7 @@ mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 		source := self.source.map Vertex2VertexSubrole(context, region);
 		
-		target := self.map Unicast2StateSubrole(context, region, toplevel);
+		target := self.map Schema2SubroleIntermediateState(context, region,1, toplevel);
 		
 		synchronization := 	self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  unicast,SynchronizationKind::RECEIVE, PositionSelectorKind::SELF);
 		
