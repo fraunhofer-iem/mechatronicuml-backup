@@ -155,8 +155,10 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 	
 
 	
-mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Region, toplevel: Boolean) : RealtimeStatechart {
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny,  toplevel: Boolean) : RealtimeStatechart {
 		
+		
+		var region : RealtimeStatechart := result;
 		if(toplevel) {
 			name := "coordinator";
 		}
@@ -225,12 +227,14 @@ mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeSt
 		
 		result.priority := _priority;
 		
-		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart, result);		
+		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart);		
 }
 
-mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart, region:Region) : RealtimeStatechart {
+mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart {
 		
 		name := "subrole";
+		
+		var region : RealtimeStatechart := result;
 		
 		var context = sourceRealtimeStatechart;
 		var toplevel = false;
@@ -290,7 +294,7 @@ mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeSt
 	}
 
 
-mapping State :: States2StatesCoordinator(context:OclAny, region:Region) : State {
+mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatechart) : State {
 		
 		name := self.name;
 		
@@ -341,7 +345,7 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:Region) : State
 	
 	
 		-- copy the embedded regions of the state:
-		embeddedRegions += self.embeddedRegions.map EmbeddedRegion2EmbeddedCoordinatorRegion(context,region);
+		embeddedRegions += self.embeddedRegions.map EmbeddedRegion2EmbeddedCoordinatorRegion(context);
 		
 		-- add embedded Regions for transfer schemata
 		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionCoordinator(context, region);
@@ -351,16 +355,16 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:Region) : State
 		
 	}
 
-mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny, region:Region) : Region{
+mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny) : Region{
 	
 		priority := self.priority;
 		
-		result.embeddedStatechart := self.embeddedStatechart.map RTSC2CoordinatorRTSC(context, region, false);	
+		result.embeddedStatechart := self.embeddedStatechart.map RTSC2CoordinatorRTSC(context, false);	
 }
 
 
 
-mapping State :: States2StatesSubrole(context:OclAny, region:Region) : State {
+mapping State :: States2StatesSubrole(context:OclAny, region:RealtimeStatechart) : State {
 		
 		name := self.name;
 		

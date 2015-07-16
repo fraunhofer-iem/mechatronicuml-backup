@@ -21,7 +21,7 @@ property unicastDone : String = "unicastDone";
 
 ------------------------------------------------------------Transfer Schema Unicast of Coordinator------------------------------------------------------------------
 	
-mapping Transition :: Unicast2TransSendSyncCoordinator(context:OclAny, region:Region, conditional:Boolean, toplevel : Boolean) : Transition {
+mapping Transition :: Unicast2TransSendSyncCoordinator(context:OclAny, region:RealtimeStatechart, conditional:Boolean, toplevel : Boolean) : Transition {
 
 		priority := self.priority;
 		
@@ -48,7 +48,7 @@ mapping Transition :: Unicast2TransSendSyncCoordinator(context:OclAny, region:Re
 	}
 
 // @author: sthiele2
-mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:Region, toplevel : Boolean) : Transition {
+mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
 	source := self.source.map Vertex2VertexCoordinator(context, region);
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,unicastDLCName,toplevel);
@@ -60,7 +60,7 @@ mapping Transition :: Unicast2CoordinatorStartTransition(context:OclAny, region:
 }
 
 // @author: sthiele2
-mapping Transition :: Unicast2CoordinatorIntermediateTransition(context:OclAny, region:Region, toplevel : Boolean): Transition
+mapping Transition :: Unicast2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean): Transition
 {
 	// creates the transition from intermediate state 1 to intermediate state 2
 	source := self.map Schema2CoordinatorIntermediateState(context,region,1, unicastDLCName,toplevel);
@@ -74,7 +74,7 @@ mapping Transition :: Unicast2CoordinatorIntermediateTransition(context:OclAny, 
 }
 
 // @author: sthiele2
-mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:Region, toplevel: Boolean): Transition
+mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart, toplevel: Boolean): Transition
 {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
 	source := self.map Schema2CoordinatorIntermediateState(context,region,2,unicastDLCName, toplevel);
@@ -86,7 +86,7 @@ mapping Transition :: Unicast2CoordinatorEndTransition(context:OclAny, region:Re
 }
 
 
-mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny, region:Region) : Region {
+mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
 		
 		priority := self.priority;
 		
@@ -96,7 +96,7 @@ mapping Transition :: Unicast2SourceRegionCoordinator(context:OclAny, region:Reg
 					
 	}
 	
-mapping Transition :: Unicast2SourceEmbeddedRTSCCoordinator(context:OclAny, region:Region) : RealtimeStatechart {
+mapping Transition :: Unicast2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
 		
 		name:= "unicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
@@ -108,7 +108,7 @@ mapping Transition :: Unicast2SourceEmbeddedRTSCCoordinator(context:OclAny, regi
 					
 	}
 	
-mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := 1;
 		
@@ -124,7 +124,7 @@ mapping Transition :: Unicast2TransCheckEmbeddedCoordinator(context:OclAny, regi
 			
 	}
 	
-mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := 1;
 		
@@ -139,15 +139,15 @@ mapping Transition :: Unicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, 
 	}
 	
 	
-mapping Transition :: Unicast2StateCoordinator(context:OclAny, region:Region, toplevel: Boolean) : State {
+mapping Transition :: Unicast2StateCoordinator(context:OclAny, region:RealtimeStatechart, toplevel: Boolean) : State {
 	
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_Sending";
 		
-		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region, toplevel);	
+		parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context,toplevel);	
 						
 	}
 	
-mapping Transition :: Unicast2TransReceiveSyncCoordinator(context:OclAny, region:Region, toplevel : Boolean) : Transition {
+mapping Transition :: Unicast2TransReceiveSyncCoordinator(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
 	
 		priority := self.priority;
 		
@@ -169,7 +169,7 @@ mapping Transition :: Unicast2TransReceiveSyncCoordinator(context:OclAny, region
 	
 --------------------------------------------------------------- Transfer Schema Unicast of Subrole----------------------------------------------------------------------
 	
-mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 
 		priority := (self.priority-1)*2+2;
 		
@@ -202,7 +202,7 @@ mapping Transition :: Unicast2TransSendSyncFirstSubrole(context:OclAny, region:R
 		
 	}
 	
-mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 
 		priority := (self.priority-1)*2+1;
 		
@@ -218,7 +218,7 @@ mapping Transition :: Unicast2TransSendSynNotFirstcSubrole(context:OclAny, regio
 		
 	}
 	
-mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 	
 		priority := 2;
 		
@@ -232,7 +232,7 @@ mapping Transition :: Unicast2TransReceiveSyncNotLastSubrole(context:OclAny, reg
 					
 	}
 			
-mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 	
 		priority := 1;
 		
@@ -254,7 +254,7 @@ mapping Transition :: Unicast2TransReceiveSyncLastSubrole(context:OclAny, region
 	}
 
 	
-mapping Transition :: Unicast2SourceRegionSubrole(context:OclAny, region:Region) : Region {
+mapping Transition :: Unicast2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
 		
 		priority := self.priority;
 		
@@ -264,7 +264,7 @@ mapping Transition :: Unicast2SourceRegionSubrole(context:OclAny, region:Region)
 					
 	}
 	
-mapping Transition :: Unicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:Region) : RealtimeStatechart {
+mapping Transition :: Unicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
 		
 		name:= "unicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
@@ -279,7 +279,7 @@ mapping Transition :: Unicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:R
 					
 	}
 	
-mapping Transition :: Unicast2RequestedIdleCheckSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2RequestedIdleCheckSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 				
@@ -293,7 +293,7 @@ mapping Transition :: Unicast2RequestedIdleCheckSubrole(context:OclAny, region:R
 		
 	}
 	
-mapping Transition :: Unicast2RequestedIdleCheckDoneLastSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2RequestedIdleCheckDoneLastSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 				
@@ -307,7 +307,7 @@ mapping Transition :: Unicast2RequestedIdleCheckDoneLastSubrole(context:OclAny, 
 					
 	}
 	
-mapping Transition :: Unicast2RequestedIdleCheckDonePossibleSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2RequestedIdleCheckDonePossibleSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 3;
 				
@@ -321,7 +321,7 @@ mapping Transition :: Unicast2RequestedIdleCheckDonePossibleSubrole(context:OclA
 		
 	}
 	
-mapping Transition :: Unicast2IdleRequestedFulfilledSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2IdleRequestedFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 				
@@ -337,7 +337,7 @@ mapping Transition :: Unicast2IdleRequestedFulfilledSubrole(context:OclAny, regi
 					
 	}
 	
-mapping Transition :: Unicast2IdleRequestedNotFulfilledSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Unicast2IdleRequestedNotFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 				
@@ -351,7 +351,7 @@ mapping Transition :: Unicast2IdleRequestedNotFulfilledSubrole(context:OclAny, r
 					
 	}
 	
-mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
@@ -367,7 +367,7 @@ mapping Transition :: Unicast2TransSendSyncNotConditionSubrole(context:OclAny, r
 		
 	}
 	
-mapping Transition :: UnicastNotLastAndPossibleExpression(context:OclAny, region:Region, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
+mapping Transition :: UnicastNotLastAndPossibleExpression(context:OclAny, region:RealtimeStatechart, varName:String, notOp: Boolean, transMapping: Integer) : LogicalExpression {
 
 		leftExpression := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 		

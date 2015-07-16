@@ -52,11 +52,11 @@ query getBooleanPrimitiveDataType(theRootNode : RootNode) : muml::types::Primiti
 
 
 // @author: sthiele2 -- creates an intermediate state in the subrole region
-mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:Region, stateID : Integer,toplevel : Boolean) : State {
+mapping  Transition :: Schema2SubroleIntermediateState(context:OclAny, region:RealtimeStatechart, stateID : Integer,toplevel : Boolean) : State {
 	
 		name := self.source.name + "_Intermediate_"+ stateID.toString()+ "_" + self.target.name  ;
 				
-		parentStatechart := self.RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart), region);		
+		parentStatechart := self.RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));		
 					
 	}
 
@@ -81,7 +81,7 @@ mapping Transition :: TransitionDeadline2CoordinatorDeadlineClock(clockName : St
 }	
 
 //@author: sthiele2 -- creates a clock constraint in order to disassamble a deadline at a schema-specifying-transition
-mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:Region, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
+mapping  Transition :: RelativeDeadline2ClockConstraint(context:OclAny, region:RealtimeStatechart, mapLowerBound : Boolean, operator :ComparingOperator, clockName : String) : ClockConstraint
 {
 		var timeValue : TimeValue;
 		if(mapLowerBound)
@@ -132,7 +132,7 @@ mapping Transition :: TransferSchemataLogicalExpression( context:EObject, positi
 	
 
 	
-mapping Transition :: TransferSchemataTimeValue(context:OclAny, region:Region, val:Expression, timeUnit:TimeUnit) : TimeValue {
+mapping Transition :: TransferSchemataTimeValue(context:OclAny, region:RealtimeStatechart, val:Expression, timeUnit:TimeUnit) : TimeValue {
 
 		value := val;
 		
@@ -143,7 +143,7 @@ mapping Transition :: TransferSchemataTimeValue(context:OclAny, region:Region, v
 ----------------------------------------------------XXXXXXXXXXXXXXXX--MAPPINGS FOR ALL TRANSFER SCHEMATA--XXXXXXXXXXXXXXXXXX--------------------------------------------
 	
 --Transfer Schemata State
-mapping Transition :: RegionState(context:OclAny, region:Region, StateName:String, ini:Boolean) : State {
+mapping Transition :: RegionState(context:OclAny, region:RealtimeStatechart, StateName:String, ini:Boolean) : State {
 		
 		name := StateName;
 		
@@ -152,7 +152,7 @@ mapping Transition :: RegionState(context:OclAny, region:Region, StateName:Strin
 	}
 	
 --Transfer Schemata Guard
-mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, context2:OclAny, region:Region, varName:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
 			leftExpression := self.map TransferSchemaNotCondition(context2, region, transMapping);
@@ -171,7 +171,7 @@ mapping Transition :: TransferSchemaConditionAndPossibleGuard(context1:OclAny, c
 	
 	}
 	
-mapping Transition :: TransferSchemaNotVarAndVarGuard(context:OclAny, region:Region, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaNotVarAndVarGuard(context:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
 			leftExpression := self.map TransferSchemaGuard(result, varName1, notOp);
@@ -185,7 +185,7 @@ mapping Transition :: TransferSchemaNotVarAndVarGuard(context:OclAny, region:Reg
 	
 	}
 	
-mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, context2:OclAny, region:Region, varName:String, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, transMapping: Integer) : LogicalExpression {
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
 		
@@ -195,7 +195,7 @@ mapping Transition :: TransferSchemaGuardAndPossibleGuard(context1:OclAny, conte
 	
 	}
 	
-mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, context2:OclAny, region:Region, varName:String, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName:String, transMapping: Integer) : LogicalExpression {
 		
 		leftExpression := self.guard.map Expression2Expression(context2);
 		
@@ -205,7 +205,7 @@ mapping Transition :: TransferSchemaGuardAndNotPossibleGuard(context1:OclAny, co
 	
 	}
 	
-mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:Region, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
 			leftExpression := self.map TransferSchemaGuard(result, varName1, true);
@@ -218,7 +218,7 @@ mapping Transition :: TransferSchemaSingleSendAndPossibleGuard(context1:OclAny, 
 		operator := LogicOperator::AND;
 }
 
-mapping Transition :: TransferSchemaErrorOrNotPossibleGuard(context1:OclAny, region:Region, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaErrorOrNotPossibleGuard(context1:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		if(notOp){
 			rightExpression := self.map TransferSchemaGuard(result, varName2, true);
@@ -231,7 +231,7 @@ mapping Transition :: TransferSchemaErrorOrNotPossibleGuard(context1:OclAny, reg
 		operator := LogicOperator::OR;
 }
 
-mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context2:OclAny, region:Region, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
+mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context2:OclAny, region:RealtimeStatechart, varName1:String, varName2:String, notOp:Boolean, transMapping: Integer) : LogicalExpression {
 		
 		rightExpression := self.map TransferSchemaSingleSendAndPossibleGuard(context1, context2, region, varName1, varName2, true, transMapping);
 		
@@ -240,7 +240,7 @@ mapping Transition :: TransferSchemaThreeVariablesGuard(context1:OclAny, context
 		operator := LogicOperator::AND;
 }
 	
-mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:Region, transMapping: Integer) : UnaryExpression {
+mapping Transition :: TransferSchemaNotCondition(context:OclAny, region:RealtimeStatechart, transMapping: Integer) : UnaryExpression {
 
 		if(not self.raiseMessageEvent.oclIsUndefined()){
 			enclosedExpression := self.raiseMessageEvent.oneToManyCommunicationSchema.condition.map Expression2Expression(context);
@@ -265,14 +265,14 @@ mapping Transition :: TransferSchemaGuard(context:OclAny, varName:String, op:Boo
 
 	
 // @author: sthiele2
-mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region:Region, intermediateStateNumber : Integer, clockName : String,toplevel : Boolean) : State
+mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region:RealtimeStatechart, intermediateStateNumber : Integer, clockName : String,toplevel : Boolean) : State
 {
 	// creates an intermediate state in the coordinator region
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
 		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
 	}endif;
-	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, region,toplevel);	
+	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, toplevel);	
 	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name ;
 }
 
@@ -398,7 +398,7 @@ mapping RealtimeStatechart :: TransferSchemataChannel(channelName: String, selec
 	}
 
 
-mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:Region) : Vertex
+mapping Vertex :: Vertex2VertexCoordinator(context:OclAny, region:RealtimeStatechart) : Vertex
 		disjuncts State::States2StatesCoordinator, StateConnectionPoint::StateConnectionPoint2StateConnectionPointCoordinator;
 		
 
@@ -417,7 +417,7 @@ mapping RealtimeStatechart :: Rtsc2InitialState() : State {
 					
 	}
 	
-mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart, region:Region) : RealtimeStatechart {
+mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart) : RealtimeStatechart {
 		assert fatal (false) with log ("Do not go here!");	
 }
 
@@ -428,7 +428,7 @@ mapping RealtimeStatechart :: State2CoordinatorRegion(context:RealtimeStatechart
 		
 		//parentState := context.oclAsType(State);
 		
-		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context, result,true);
+		embeddedStatechart := self.map RTSC2CoordinatorRTSC(context,true); 
 }
 	
 mapping RealtimeStatechart :: State2SubroleRegion(context:OclAny) : Region {
@@ -445,17 +445,17 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
 		assert fatal (false) with log ("Do not go here!");	
 }	
 
-mapping State :: States2StatesCoordinator(context:OclAny, region:Region) : State{
+mapping State :: States2StatesCoordinator(context:OclAny, region:RealtimeStatechart) : State{
 	
 	assert fatal (false) with log ("Do not go here!");
 }
 	
-mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Region, highlevel: Boolean) : RealtimeStatechart {
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, highlevel: Boolean) : RealtimeStatechart {
 
 		assert fatal (false) with log ("Do not go here!");
 }
 
-mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Region) : RealtimeStatechart {
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
 
 		assert fatal (false) with log ("Do not go here!");
 }
@@ -463,7 +463,7 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Region
 
 	
 -- to coordinator
-mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Region) : Transition {
+mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 		
 		source := self.source.oclAsType(State).map Vertex2VertexCoordinator(context, region);
 		target := self.target.oclAsType(State).map Vertex2VertexCoordinator(context, region);
@@ -490,7 +490,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 						
 	}
 	
-	mapping Transition :: Transition2TransitionSubrole(context:OclAny, region:Region, toplevel : Boolean) : Transition {
+	mapping Transition :: Transition2TransitionSubrole(context:OclAny, region:RealtimeStatechart, toplevel : Boolean) : Transition {
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 
@@ -508,16 +508,15 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		
 	}
 	
-mapping Transition :: Transition2StateSubrole(containerRegion : Region, state:Vertex,_initial: Boolean): State {
+mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeStatechart, state:Vertex,_initial: Boolean): State {
 		
 		name := state.name;
 		
 		result.initial := _initial;
 		
-		containerRegion.embeddedStatechart.states += result;
-		
+		containerRegion.states += result;
 }
-mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:Region,toplevel : Boolean) : Transition {
+mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : Transition {
 		
 		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
 		
@@ -532,7 +531,7 @@ mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region
 		
 	}
 	
-mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:Region,toplevel : Boolean) : Transition {
+mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : Transition {
 		
 		source := self.map TransitionNoMessage2TransitionRecSyncSubrole(context, region, toplevel);
 		target := self.map Transition2StateSubrole(region,self.target, false);
@@ -543,11 +542,11 @@ mapping Transition :: Transition2TransitionLastSubrole(context:OclAny, region:Re
 		
 	}
 	
-mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:Region,toplevel : Boolean) : State {
+mapping Transition :: TransitionNoMessage2TransitionRecSyncSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : State {
 		
 		name := self.source.name + "_" + self.target.name + "_" + self.priority.toString() +"_SwitchState";
 	
-		parentStatechart := self.RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart), region);
+		parentStatechart := self.RTSC2SubroleSchemaRTSC(context.oclAsType(RealtimeStatechart));
 		
 	}
 	

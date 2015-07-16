@@ -21,7 +21,7 @@ property multicastCheck : String = "multicastCheck";
 ----------------------------------------------------------------Transfer Schema Multicast of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2
-mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, region:Region,toplevel : Boolean) : Transition {
+mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : Transition {
 	// this mapping creates an outgoing transition from the (mapped) source of the schema transition to a first intermediate state
 	source := self.source.map Vertex2VertexCoordinator(context, region);
 	target := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName,toplevel);
@@ -33,7 +33,7 @@ mapping Transition :: Multicast2CoordinatorStartTransition(context:OclAny, regio
 }
 
 // @author: sthiele2
-mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny, region:Region,toplevel : Boolean): Transition
+mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny, region:RealtimeStatechart,toplevel : Boolean): Transition
 {
 	// creates the transition from intermediate state 1 to intermediate state 2
 	source := self.map Schema2CoordinatorIntermediateState(context,region,1,multicastDLCName,toplevel);
@@ -48,7 +48,7 @@ mapping Transition :: Multicast2CoordinatorIntermediateTransition(context:OclAny
 }
 
 // @author: sthiele2
-mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:Region, toplevel : Boolean): Transition
+mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:RealtimeStatechart, toplevel : Boolean): Transition
 {
 	// creates a transition from intermediate state 2 to the (mapped) target of the schema transition 
 	source := self.map Schema2CoordinatorIntermediateState(context,region, 2, multicastDLCName,toplevel);
@@ -62,7 +62,7 @@ mapping Transition :: Multicast2CoordinatorEndTransition(context:OclAny, region:
 
 	
 ------------- non Conditional Coordinator Mappings	
-mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediate(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediate(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 
 		priority := self.priority;
 						
@@ -77,7 +77,7 @@ mapping Transition :: NonConditionalMulticast2TranssitionFromSourceToIntermediat
 		guard := self.guard.map Expression2Expression(result);
 }
 
-mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget(context:OclAny, region:Region,  toplevel:Boolean) : Transition{
+mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget(context:OclAny, region:RealtimeStatechart,  toplevel:Boolean) : Transition{
 	
 		priority := 1;
 		
@@ -94,7 +94,7 @@ mapping Transition :: NonConditionalMulticast2TransitionFromIntermediateToTarget
 
 ---------------- Coordinator Mappings for Embedded State
 
-mapping Transition :: Multicast2SourceRegionCoordinator(context:OclAny, region:Region) : Region {
+mapping Transition :: Multicast2SourceRegionCoordinator(context:OclAny, region:RealtimeStatechart) : Region {
 		
 		priority := self.priority;
 		
@@ -104,7 +104,7 @@ mapping Transition :: Multicast2SourceRegionCoordinator(context:OclAny, region:R
 					
 	}
 	
-mapping Transition :: Multicast2SourceEmbeddedRTSCCoordinator(context:OclAny, region:Region) : RealtimeStatechart {
+mapping Transition :: Multicast2SourceEmbeddedRTSCCoordinator(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
 		
 		name:= "multicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
@@ -116,7 +116,7 @@ mapping Transition :: Multicast2SourceEmbeddedRTSCCoordinator(context:OclAny, re
 					
 	}
 	
-mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny, region:Region) : Transition {
+mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := 1;
 		
@@ -132,7 +132,7 @@ mapping Transition :: Multicast2TransCheckEmbeddedCoordinator(context:OclAny, re
 			
 	}
 	
-mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:Region) : Transition {
+mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny, region:RealtimeStatechart) : Transition {
 
 		priority := 1;
 		
@@ -155,7 +155,7 @@ mapping Transition :: Multicast2TransCheckDoneEmbeddedCoordinator(context:OclAny
 	
 ----------------------------------------------------------------- Transfer Schema Multicast of Subrole-------------------------------------------------------------------
 	
-mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
@@ -185,7 +185,7 @@ mapping Transition :: Multicast2TransSendSyncSubrole(context:OclAny, region:Regi
 		
 	}
 	
-mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 	
 		priority := 2;
 		
@@ -199,7 +199,7 @@ mapping Transition :: Multicast2TransReceiveSyncNotLastSubrole(context:OclAny, r
 					
 	}
 			
-mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 	
 		priority := 1;
 		
@@ -221,7 +221,7 @@ mapping Transition :: Multicast2TransReceiveSyncLastSubrole(context:OclAny, regi
 	
 
 	
-mapping Transition :: Multicast2SourceRegionSubrole(context:OclAny, region:Region) : Region {
+mapping Transition :: Multicast2SourceRegionSubrole(context:OclAny, region:RealtimeStatechart) : Region {
 		
 		priority := self.priority;
 		
@@ -231,7 +231,7 @@ mapping Transition :: Multicast2SourceRegionSubrole(context:OclAny, region:Regio
 					
 	}
 	
-mapping Transition :: Multicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:Region) : RealtimeStatechart {
+mapping Transition :: Multicast2SourceEmbeddedRTSCSubrole(context:OclAny, region:RealtimeStatechart) : RealtimeStatechart {
 		
 		name:= "multicastCheck" + "_" + self.source.name + "_" + self.target.name + "_" + self.priority.toString();
 		
@@ -245,7 +245,7 @@ mapping Transition :: Multicast2SourceEmbeddedRTSCSubrole(context:OclAny, region
 					
 	}
 	
-mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 				
@@ -259,7 +259,7 @@ mapping Transition :: Multicast2RequestedIdleCheckSubrole(context:OclAny, region
 					
 	}
 	
-mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 				
@@ -273,7 +273,7 @@ mapping Transition :: Multicast2RequestedIdleCheckDoneSubrole(context:OclAny, re
 					
 	}
 	
-mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 2;
 				
@@ -289,7 +289,7 @@ mapping Transition :: Multicast2IdleRequestedFulfilledSubrole(context:OclAny, re
 					
 	}
 	
-mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny, region:Region) : Transition {
+mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny, region:RealtimeStatechart) : Transition {
 	
 		priority := 1;
 				
@@ -303,7 +303,7 @@ mapping Transition :: Multicast2IdleRequestedNotFulfilledSubrole(context:OclAny,
 					
 	}
 	
-mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:Region, toplevel:Boolean) : Transition {
+mapping Transition :: Multicast2TransSendSyncNotConditionSubrole(context:OclAny, region:RealtimeStatechart, toplevel:Boolean) : Transition {
 		
 		source := self.map Transition2StateSubrole(region,self.source, true);
 		
