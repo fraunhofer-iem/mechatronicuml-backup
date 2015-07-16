@@ -18,7 +18,7 @@ property multiReceiveDoneChannelName : String = "multiReceiveDone";
 -------------------------------------------------------------Transfer Schema MultiReceive of Coordinator------------------------------------------------------------------
 
 // @author: sthiele2 -- creates a transition in the coordinator region from the schema-transition's soruce to the intermediate state
-mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 	
 		priority := self.priority;
 		
@@ -36,7 +36,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateCoordinator
 }
 
 // @author: sthiele2 -- create a transition in the coordinator region from the intermediate state to the schema-transition's target 
-mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 		
 		priority := 1;
 		
@@ -59,11 +59,11 @@ mapping Transition :: MultiReceive2TransitionFromIntermediateToTargetCoordinator
 ------------------------------------------------------------------ Transfer Schema MultiReceive of Subrole---------------------------------------------------------------
 
 // @author: sthiele2 -- creates a transition in the subrole region from the schema-transition's source to the intermediate state 1
-mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subrole(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subrole(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 	
 		priority := 2;
 		
-		source := self.source.map Vertex2VertexSubrole(context,region);
+		source := self.map Transition2StateSubrole(region,self.source, true);
 		
 		target := self.map Schema2SubroleIntermediateState(context,region, 1,toplevel);
 		
@@ -76,11 +76,11 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediateState1Subro
 }
 
 // @author: sthiele2 -- creates a transition in the subrole region from the schema-transition's source to the intermediate state 2
-mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(context : OclAny, region : OclAny,toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(context : OclAny, region:Region,toplevel : Boolean) : Transition{
 		
 		priority := 1;
 		
-		source := self.source.map Vertex2VertexSubrole(context,region);
+		source := self.map Transition2StateSubrole(region,self.source, true);
 		
 		target := self.map Schema2SubroleIntermediateState(context,region, 2, toplevel);
 		
@@ -95,7 +95,7 @@ mapping Transition :: MultiReceive2TransitionFromSourceToIntermediate2Subrole(co
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 1 source to the intermediate state 2 
 // 					 -- implements the success case
-mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Subrole(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Subrole(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 		
 		priority := 1;
 		
@@ -110,7 +110,7 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate1ToIntermediate2Su
 
 // @author: sthiele2 -- creates a second transition in the subrole region from the intermediate state 1 source to the intermediate state 2
 //					 -- implements the failuer case
-mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Subrole(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Subrole(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 		
 		priority := 2;
 		
@@ -125,13 +125,13 @@ mapping Transition :: MultiReceive2Transition2FromIntermediate1ToIntermediate2Su
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
 // 					 -- implements the case that self == last
-mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 	
 		priority := 1;
 		
 		source := self.map Schema2SubroleIntermediateState(context,region,2, toplevel);
 		
-		target := self.target.map Vertex2VertexSubrole(context,region);
+		target := self.map Transition2StateSubrole(region,self.target, false);
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::EQUAL);
 	
@@ -140,13 +140,13 @@ mapping Transition :: MultiReceive2Transition1FromIntermediate2ToTarget(context 
 
 // @author: sthiele2 -- creates a transition in the subrole region from the intermediate state 2 to the schema-transition's target state
 // 					 -- implements the case that self <> last
-mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context : OclAny, region : OclAny, toplevel : Boolean) : Transition{
+mapping Transition :: MultiReceive2Transition2FromIntermediate2ToTarget(context : OclAny, region:Region, toplevel : Boolean) : Transition{
 	
 		priority := 2;
 		
 		source := self.map Schema2SubroleIntermediateState(context,region,2, toplevel);
 		
-		target := self.target.map Vertex2VertexSubrole(context,region);
+		target := self.map Transition2StateSubrole(region,self.target, false);
 		
 		guard := self.map  TransferSchemataLogicalExpression(result,PositionSelectorKind::LAST, ComparingOperator::UNEQUAL);
 			

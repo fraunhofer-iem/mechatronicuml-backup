@@ -155,7 +155,7 @@ mapping RealtimeStatechart :: RTSC2RTSC() : RealtimeStatechart {
 	
 
 	
-mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny, toplevel: Boolean) : RealtimeStatechart {
+mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:Region, toplevel: Boolean) : RealtimeStatechart {
 		
 		if(toplevel) {
 			name := "coordinator";
@@ -202,14 +202,41 @@ mapping RealtimeStatechart :: RTSC2CoordinatorRTSC(context:OclAny, region:OclAny
 		
 			}
 	
+mapping RealtimeStatechart :: RTSC2SubroleRTSC() : RealtimeStatechart {
+		name := "subrole";
+		
+		// add one main state on toplevel of subrole statechart
+		var mainState = new State();
+			
+		mainState.name := "subrole Main";
+		
+		// add embedded reigon for every used schema
+		var prio : Integer := 1;
+		self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()))->union(self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined())))
+		->forEach(t) {
+			mainState.embeddedRegions += t.map OneToManyCommunicationSchema2SubroleRegion(self, prio);
+			prio := prio +1;
+		};		
+		
+		states += mainState;
+}
 
-mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny,toplevel:Boolean) : RealtimeStatechart {
+mapping Transition:: OneToManyCommunicationSchema2SubroleRegion(sourceRealtimeStatechart : RealtimeStatechart, _priority : Integer): Region {
+		
+		result.priority := _priority;
+		
+		result.embeddedStatechart := self.map RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart, result);		
+}
+
+mapping Transition :: RTSC2SubroleSchemaRTSC(sourceRealtimeStatechart:RealtimeStatechart, region:Region) : RealtimeStatechart {
 		
 		name := "subrole";
 		
-		states += self.states.map States2StatesSubrole(context, region);
+		var context = sourceRealtimeStatechart;
+		var toplevel = false;
 		
-		 self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
+		
+		sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) 
 				and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) 
 				and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined()))->forEach(transition){
 			variables += transition.map Transition2SubroleSpecificBooleanVaribale("sendUnicast");
@@ -217,53 +244,53 @@ mapping RealtimeStatechart :: RTSC2SubroleRTSC(context:OclAny, region:OclAny,top
 		
 	
 		--transitions without message
-		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionSubrole(context, region,toplevel);
-		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionNotLastSubrole(context, region,toplevel);
-		transitions += self.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionLastSubrole(context, region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionSubrole(context, region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionNotLastSubrole(context, region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|t.triggerMessageEvent.oclIsUndefined() and t.raiseMessageEvent.oclIsUndefined()).map Transition2TransitionLastSubrole(context, region,toplevel);
 		
 		--transition with multicast
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransSendSyncSubrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransReceiveSyncNotLastSubrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransReceiveSyncLastSubrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2TransSendSyncNotConditionSubrole(context, region, toplevel); 
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransSendSyncSubrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransReceiveSyncNotLastSubrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast)).map Multicast2TransReceiveSyncLastSubrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2TransSendSyncNotConditionSubrole(context, region, toplevel); 
 		
 		--transition with unicast
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Unicast2TransSendSyncFirstSubrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Unicast2TransReceiveSyncNotLastSubrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Unicast2TransReceiveSyncLastSubrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2TransSendSyncNotConditionSubrole(context, region, toplevel); 
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Unicast2TransSendSyncFirstSubrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Unicast2TransReceiveSyncNotLastSubrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast)).map Unicast2TransReceiveSyncLastSubrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2TransSendSyncNotConditionSubrole(context, region, toplevel); 
 		
 		--transition with MultiReceive
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2TransitionFromSourceToIntermediateState1Subrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition1FromIntermediate1ToIntermediate2Subrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition2FromIntermediate1ToIntermediate2Subrole(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition1FromIntermediate2ToTarget(context, region, toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition2FromIntermediate2ToTarget(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2TransitionFromSourceToIntermediateState1Subrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition1FromIntermediate1ToIntermediate2Subrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition2FromIntermediate1ToIntermediate2Subrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition1FromIntermediate2ToTarget(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive)).map MultiReceive2Transition2FromIntermediate2ToTarget(context, region, toplevel);
 		
 		-- if MultiReceive is conditional, add one more transition
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map MultiReceive2TransitionFromSourceToIntermediate2Subrole(context, region, toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::MultiReceive) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map MultiReceive2TransitionFromSourceToIntermediate2Subrole(context, region, toplevel);
 		
 		--transition with singlereceive
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromSourceToIntermediate(context, region,toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition1FromIntermediateToReceivedSubrole(context, region,toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition2FromIntermediateToReceivedSubrole(context, region,toplevel);
-		transitions += self.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context,region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromSourceToIntermediate(context, region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition1FromIntermediateToReceivedSubrole(context, region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2Transition2FromIntermediateToReceivedSubrole(context, region,toplevel);
+		transitions += sourceRealtimeStatechart.transitions->select(t|(not t.triggerMessageEvent.oclIsUndefined()) and (not t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.triggerMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::SingleReceive)).map SingleReceive2TransitionFromStateExitPointToIntermediateStateOfSubRole(context,region,toplevel);
 		
 	
-		operations += self.subRoleSpecificOperations.map Operation2Operation(context);
+		operations += sourceRealtimeStatechart.subRoleSpecificOperations.map Operation2Operation(context);
 		
-		variables += self.subRoleSpecificVariables->map Variable2Variable();
+		variables += sourceRealtimeStatechart.subRoleSpecificVariables->map Variable2Variable();
 		
 		// @author: sthiele2 -- add subrole specific boolean variables for every conditional multicst schema:		
-		variables +=self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(multicastSubRoleSpecificVariableName);
-		variables +=self.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(unicastSubRoleSpecificVariableName);
+		variables +=sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(multicastSubRoleSpecificVariableName);
+		variables +=sourceRealtimeStatechart.transitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Transition2SubroleSpecificBooleanVaribale(unicastSubRoleSpecificVariableName);
 			
-		clocks += self.subRoleSpecificClocks.map Clock2Clock();
+		clocks += sourceRealtimeStatechart.subRoleSpecificClocks.map Clock2Clock();
 				
 	}
 
 
-mapping State :: States2StatesCoordinator(context:OclAny, region:OclAny) : State {
+mapping State :: States2StatesCoordinator(context:OclAny, region:Region) : State {
 		
 		name := self.name;
 		
@@ -324,43 +351,20 @@ mapping State :: States2StatesCoordinator(context:OclAny, region:OclAny) : State
 		
 	}
 
-mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny, region : OclAny) : Region{
+mapping Region :: EmbeddedRegion2EmbeddedCoordinatorRegion(context : OclAny, region:Region) : Region{
 	
 		priority := self.priority;
 		
 		result.embeddedStatechart := self.embeddedStatechart.map RTSC2CoordinatorRTSC(context, region, false);	
 }
 
-mapping Region :: EmbeddedRegion2EmbeddedSubroleRegion(context : OclAny, region : OclAny) : Region{
-	
-		priority := self.priority;
-		
-		result.embeddedStatechart := self.embeddedStatechart.map RTSC2SubroleRTSC(context, region, false);	
-}
 
-mapping State :: States2StatesSubrole(context:OclAny, region:OclAny) : State {
+
+mapping State :: States2StatesSubrole(context:OclAny, region:Region) : State {
 		
 		name := self.name;
 		
-		initial := self.initial;
-		
-		final := self.final;
-		
-		urgent := self.urgent;		
-		
-		if((not self.entryEvent.oclIsUndefined()) and (not self.entryEvent.clockResets->select(c|isClockSubRoleSpecific(c))->isEmpty())){
-			entryEvent := self.entryEvent.map EntryEvent2EntryEventSubrole(context, region);
-		}endif;
-		
-		if((not self.exitEvent.oclIsUndefined()) and (not self.exitEvent.clockResets->select(c|isClockSubRoleSpecific(c))->isEmpty())){
-			exitEvent := self.exitEvent.map ExitEvent2ExitEventCoordinator(context, region);
-		}endif;
-		
-		invariants := self.invariants->select(c|isClockSubRoleSpecific(c.clock)).map ClockConstraint2ClockConstraint(context, region);
-		
-		-- copy the embedded regions of the state:
-		embeddedRegions += self.embeddedRegions.map EmbeddedRegion2EmbeddedSubroleRegion(context,region);
-		
+				
 		--embedded Regions for transfer schemata
 		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Multicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Multicast2SourceRegionSubrole(context, region);
 		embeddedRegions += self.outgoingTransitions->select(t|(not t.raiseMessageEvent.oclIsUndefined()) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsUndefined()) and t.raiseMessageEvent.oneToManyCommunicationSchema.oclIsTypeOf(muml::realtimestatechart::one_to_n_schemata::Unicast) and (not t.raiseMessageEvent.oneToManyCommunicationSchema.condition.oclIsUndefined())).map Unicast2SourceRegionSubrole(context, region);	

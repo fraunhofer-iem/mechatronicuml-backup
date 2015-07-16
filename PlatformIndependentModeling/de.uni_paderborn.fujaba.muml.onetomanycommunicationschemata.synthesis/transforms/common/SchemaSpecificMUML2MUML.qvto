@@ -277,7 +277,7 @@ mapping Operation :: Operation2Operation(context:OclAny) : Operation {
 	
 		-- synchronizations
 	
-mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region:OclAny) : SynchronizationChannel {		
+mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region:Region) : SynchronizationChannel {		
 		init{
 			if(internalSynchronizations->includes(self))
 			{
@@ -292,7 +292,7 @@ mapping SynchronizationChannel :: SyncChannel2SyncChannel(context:OclAny, region
 		}		
 	}
 	
-mapping Synchronization :: Synchronization2Synchronization(context:OclAny, region:OclAny) : Synchronization {			
+mapping Synchronization :: Synchronization2Synchronization(context:OclAny, region:Region) : Synchronization {			
 		result.kind := self.kind;
 		result.syncChannel := self.syncChannel.map SyncChannel2SyncChannel(context, region);
 		result.selectorExpression := self.selectorExpression.map Expression2Expression(context);				
@@ -312,7 +312,7 @@ mapping Clock :: Clock2Clock() : Clock {
 		}		
 	}
 	
-mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, region:OclAny) : ClockConstraint {
+mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, region:Region) : ClockConstraint {
 				
 		clock := self.clock.map Clock2Clock();
 				
@@ -322,14 +322,14 @@ mapping ClockConstraint :: ClockConstraint2ClockConstraint(context:OclAny, regio
 		
 	}
 	
-mapping TimeValue :: TimeValue2TimeValue(context:OclAny, region:OclAny) : TimeValue {
+mapping TimeValue :: TimeValue2TimeValue(context:OclAny, region:Region) : TimeValue {
 	
 		value := self.value.map Expression2Expression(context);
 		unit := self.unit;
 		
 	}
 	
-mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, region:OclAny) : AbsoluteDeadline {
+mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, region:Region) : AbsoluteDeadline {
 		
 		upperBound := self.upperBound.map TimeValue2TimeValue(context, region);
 		lowerBound := self.lowerBound.map TimeValue2TimeValue(context, region);
@@ -338,7 +338,7 @@ mapping AbsoluteDeadline :: AbsoluteDeadline2AbsoluteDeadline(context:OclAny, re
 		
 	}
 	
-mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, region:OclAny) : RelativeDeadline {
+mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, region:Region) : RelativeDeadline {
 		
 		upperBound := self.upperBound.map TimeValue2TimeValue(context, region);
 		lowerBound := self.lowerBound.map TimeValue2TimeValue(context, region);
@@ -349,38 +349,26 @@ mapping RelativeDeadline :: RelativeDeadline2RelativeDeadline(context:OclAny, re
 -- Entry/Exit Points and States
 
 
-mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny, region:OclAny) : StateConnectionPoint
+mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointCoordinator(context:OclAny, region:Region) : StateConnectionPoint
 		disjuncts EntryPoint::EntryPoint2EntryPointCoordinator, ExitPoint::ExitPoint2ExitPointCoordinator;
 		
-mapping StateConnectionPoint :: StateConnectionPoint2StateConnectionPointSubrole(context:OclAny, region:OclAny) : StateConnectionPoint
-		disjuncts EntryPoint::EntryPoint2EntryPointSubrole, ExitPoint::ExitPoint2ExitPointSubrole;
-	
-	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:OclAny) : EntryPoint {
+
+	mapping EntryPoint :: EntryPoint2EntryPointCoordinator(context:OclAny, region:Region) : EntryPoint {
 		
 		name := self.name;
 		
 	}
 	
-	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny, region:OclAny) : ExitPoint {
+	mapping ExitPoint :: ExitPoint2ExitPointCoordinator(context:OclAny, region:Region) : ExitPoint {
 		
 		name := self.name;
 		
 	}
 	
-	mapping EntryPoint :: EntryPoint2EntryPointSubrole(context:OclAny, region:OclAny) : EntryPoint {
-		
-		name := self.name;
-		
-	}
-	
-	mapping ExitPoint :: ExitPoint2ExitPointSubrole(context:OclAny, region:OclAny) : ExitPoint {
-		
-		name := self.name;
-		
-	}
+
 	
 	
-mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:OclAny) : EntryEvent {
+mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:Region) : EntryEvent {
 		
 		clockResets += self.clockResets.map Clock2Clock();
 		
@@ -388,7 +376,7 @@ mapping EntryEvent :: EntryEvent2EntryEventCoordinator(context:OclAny, region:Oc
 					
 	}
 	
-mapping ExitEvent :: ExitEvent2ExitEventCoordinator(context:OclAny, region:OclAny) : ExitEvent {
+mapping ExitEvent :: ExitEvent2ExitEventCoordinator(context:OclAny, region:Region) : ExitEvent {
 		
 		clockResets += self.clockResets.map Clock2Clock();
 		
@@ -396,7 +384,7 @@ mapping ExitEvent :: ExitEvent2ExitEventCoordinator(context:OclAny, region:OclAn
 					
 	}
 	
-mapping EntryEvent :: EntryEvent2EntryEventSubrole(context:OclAny, region:OclAny) : EntryEvent {
+mapping EntryEvent :: EntryEvent2EntryEventSubrole(context:OclAny, region:Region) : EntryEvent {
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		
@@ -405,7 +393,7 @@ mapping EntryEvent :: EntryEvent2EntryEventSubrole(context:OclAny, region:OclAny
 	}
 	
 
-mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:OclAny) : ExitEvent {
+mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:Region) : ExitEvent {
 		
 		clockResets += self.clockResets->select(c|isClockSubRoleSpecific(c)).map Clock2Clock();
 		
@@ -413,7 +401,7 @@ mapping ExitEvent :: ExitEvent2ExitEventSubrole(context:OclAny, region:OclAny) :
 					
 	}
 	
-mapping DoEvent :: Do2Do(context:OclAny, region:OclAny) : DoEvent {
+mapping DoEvent :: Do2Do(context:OclAny, region:Region) : DoEvent {
 
 		kind := self.kind;
 	
@@ -423,7 +411,7 @@ mapping DoEvent :: Do2Do(context:OclAny, region:OclAny) : DoEvent {
 			
 	}
 	
-mapping Action :: Action2Action(context:OclAny, region:OclAny) : Action {
+mapping Action :: Action2Action(context:OclAny, region:Region) : Action {
 	
 		name := self.name;
 		
