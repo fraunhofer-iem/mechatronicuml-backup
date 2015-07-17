@@ -24,8 +24,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class MumlSheetLabelProvider extends BaseLabelProvider implements
-		ILabelProvider {
+public class MumlSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -53,8 +52,7 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
-						.getImage(etype);
+				: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.getImage(etype);
 	}
 
 	/**
@@ -93,8 +91,7 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

@@ -48,8 +48,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public RoleConnectorCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target) {
+	public RoleConnectorCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = null;
 		this.source = source;
@@ -73,12 +72,10 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+		if (source != null && false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
-		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+		if (target != null && false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -93,16 +90,13 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleConnector_4006(
-						getContainer(), getSource(), getTarget(), sourceView,
-						targetView)) {
+				.getLinkConstraints()
+				.canCreateRoleConnector_4006(getContainer(), getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnector_4006(
-							getContainer(), getSource(), getTarget(),
-							sourceView, targetView);
+					.getLinkConstraints()
+					.getErrorRoleConnector_4006(getContainer(), getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(targetView != null ? targetView : sourceView,
-							errorMessage);
+					.showMessage(targetView != null ? targetView : sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -111,11 +105,9 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		de.uni_paderborn.fujaba.muml.protocol.RoleConnector newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
@@ -123,8 +115,8 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		getContainer().setRoleConnector(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
 		newElement.getConnectorEndpoints().add(getTarget());
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers
-				.getInstance().init_RoleConnector_4006(newElement);
+		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers.getInstance()
+				.init_RoleConnector_4006(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -134,23 +126,15 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.protocol.RoleConnector newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	protected void doConfigure(de.uni_paderborn.fujaba.muml.protocol.RoleConnector newElement, IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
@@ -194,8 +178,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
+		for (EObject element = source; element != null; element = element.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
 				return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) element;
 			}
@@ -210,11 +193,9 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 */
 	private static de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification deduceContainerUsingViews(
 			View sourceView, View targetView) {
-		for (View view = sourceView; view != null; view = (View) view
-				.eContainer()) {
+		for (View view = sourceView; view != null; view = (View) view.eContainer()) {
 			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
-				return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) view
-						.getElement();
+				return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) view.getElement();
 			}
 		}
 		return null;

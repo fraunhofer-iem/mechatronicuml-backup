@@ -26,15 +26,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
  * @generated
  */
 public class AbstractCoordinationSpecificationRolesItemSemanticEditPolicy
-		extends
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AbstractCoordinationSpecificationRolesItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
+		super(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
 	}
 
 	/**
@@ -42,13 +40,11 @@ public class AbstractCoordinationSpecificationRolesItemSemanticEditPolicy
 	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req) {
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor progressMonitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info)
 					throws ExecutionException {
 				EObject referencedObject = getReferencedObject();
 				Resource resource = referencedObject.eResource();
-				CommandResult result = super.doExecuteWithResult(
-						progressMonitor, info);
+				CommandResult result = super.doExecuteWithResult(progressMonitor, info);
 				if (resource != null) {
 					resource.getContents().add(referencedObject);
 				}

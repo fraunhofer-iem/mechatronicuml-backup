@@ -71,7 +71,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -79,10 +80,11 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		if (getLink().getConnectorEndpoints().size() != 1) {
 		  return false;
 		}
-		 */
+		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
+		if (!(getLink()
+				.eContainer() instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
 			return false;
 		}
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getLink()
@@ -92,14 +94,12 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnector_4006(container,
-						getLink(), getNewSource(), target, sourceView,
-						targetView)) {
+				.getLinkConstraints()
+				.canExistRoleConnector_4006(container, getLink(), getNewSource(), target, sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnector_4006(container,
-							getNewSource(), target, sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints()
+					.getErrorRoleConnector_4006(container, getNewSource(), target, sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -109,7 +109,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
+				&& newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -117,10 +118,11 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		if (getLink().getConnectorEndpoints().size() != 1) {
 		  return false;
 		}
-		 */
+		*/
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
+		if (!(getLink()
+				.eContainer() instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
 			return false;
 		}
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getLink()
@@ -130,14 +132,12 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnector_4006(container,
-						getLink(), source, getNewTarget(), sourceView,
-						targetView)) {
+				.getLinkConstraints()
+				.canExistRoleConnector_4006(container, getLink(), source, getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnector_4006(container,
-							source, getNewTarget(), sourceView, targetView);
-			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy
-					.showMessage(sourceView, errorMessage);
+					.getLinkConstraints()
+					.getErrorRoleConnector_4006(container, source, getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -146,11 +146,9 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

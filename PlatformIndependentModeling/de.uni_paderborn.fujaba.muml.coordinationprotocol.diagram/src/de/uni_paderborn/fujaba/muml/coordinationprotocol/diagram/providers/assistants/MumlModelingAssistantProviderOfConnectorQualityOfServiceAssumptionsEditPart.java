@@ -16,7 +16,6 @@ package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.assi
  * @generated
  */
 public class MumlModelingAssistantProviderOfConnectorQualityOfServiceAssumptionsEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
 
 }

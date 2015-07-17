@@ -51,8 +51,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsEditPart extends
-		ShapeNodeEditPart {
+public class ConnectorQualityOfServiceAssumptionsEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -104,8 +103,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 
@@ -116,8 +114,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 				// If the user presses the delete key, don't delete
 				boolean keyboardDelete = request instanceof GroupRequestViaKeyboard
 						&& RequestConstants.REQ_DELETE.equals(request.getType());
-				if (request.getType() == RequestConstants.REQ_DELETE
-						|| keyboardDelete) {
+				if (request.getType() == RequestConstants.REQ_DELETE || keyboardDelete) {
 					return UnexecutableCommand.INSTANCE;
 				}
 
@@ -125,12 +122,10 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 			}
 		});
 		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.ConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
 					@Override
-					protected Command getSemanticCommand(
-							IEditCommandRequest request) {
+					protected Command getSemanticCommand(IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {
 							return null;
 						}
@@ -141,12 +136,10 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
-		installEditPolicy(
-				de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+		installEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
@@ -158,8 +151,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -263,10 +255,10 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			@Override
 			public ConnectionAnchor createDefaultAnchor() {
-				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
+				de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy connectionAnchorCreationEditPolicy = (de.uni_paderborn.fujaba.common.edit.policies.anchor.IConnectionAnchorCreationEditPolicy) getEditPolicy(
+						de.uni_paderborn.fujaba.common.edit.policies.EditPolicyRoles.CONNECTION_ANCHOR_CREATION_ROLE);
 				if (connectionAnchorCreationEditPolicy != null) {
-					return connectionAnchorCreationEditPolicy
-							.createDefaultAnchor();
+					return connectionAnchorCreationEditPolicy.createDefaultAnchor();
 				}
 				return super.createDefaultAnchor();
 			}
@@ -360,15 +352,15 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry.getType(
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class QualityOfServiceAssumptionsFigureDescriptor extends
-			RoundedRectangle {
+	public class QualityOfServiceAssumptionsFigureDescriptor extends RoundedRectangle {
 
 		/**
 		 * @generated
@@ -393,8 +385,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
@@ -495,8 +486,7 @@ public class ConnectorQualityOfServiceAssumptionsEditPart extends
 	/**
 	 * @generated
 	 */
-	static final Font STATICHEADLINELABEL0_FONT = new Font(
-			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+	static final Font STATICHEADLINELABEL0_FONT = new Font(Display.getCurrent(),
+			Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.BOLD);
 
 }

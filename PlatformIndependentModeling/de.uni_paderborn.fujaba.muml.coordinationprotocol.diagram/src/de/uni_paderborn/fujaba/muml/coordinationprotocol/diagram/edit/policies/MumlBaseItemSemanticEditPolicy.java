@@ -82,8 +82,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
 				Integer id = new Integer(
 						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
@@ -109,12 +108,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -122,35 +119,28 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			ICommand command = editPolicyCommand instanceof ICommandProxy
+					? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
 		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
 		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -163,8 +153,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	private IElementType getContextElementType(IEditCommandRequest request) {
 		IElementType requestContextElementType = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
 				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -263,16 +252,14 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -297,10 +284,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
-			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() //$NON-NLS-1$
+					|| nextView.getElement() != view.getElement()) {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
@@ -314,9 +301,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		LinkConstraints cached = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getLinkConstraints();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-					.getInstance().setLinkConstraints(
-							cached = new LinkConstraints());
+			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
+					.setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -338,11 +324,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateAbstractCoordinationSpecificationRoles_4007(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
-				de.uni_paderborn.fujaba.muml.protocol.Role target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.protocol.Role target, View sourceView, View targetView) {
 			if (source != null) {
-				if (source.getRoles().size() >= 2
-						|| source.getRoles().contains(target)) {
+				if (source.getRoles().size() >= 2 || source.getRoles().contains(target)) {
 					return false;
 				}
 				if (source == target) {
@@ -353,8 +337,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistAbstractCoordinationSpecificationRoles_4007(source,
-					target, sourceView, targetView);
+			return canExistAbstractCoordinationSpecificationRoles_4007(source, target, sourceView, targetView);
 		}
 
 		/**
@@ -363,15 +346,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target, View sourceView, View targetView) {
 			if (container != null) {
 				if (container.getRoleConnector() != null) {
 					return false;
 				}
 			}
-			return canExistRoleConnector_4006(container, null, source, target,
-					sourceView, targetView);
+			return canExistRoleConnector_4006(container, null, source, target, sourceView, targetView);
 		}
 
 		/**
@@ -379,8 +360,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateDiscreteInteractionEndpointReceiverMessageBuffer_4008(
 				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target, View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getReceiverMessageBuffer().contains(target)) {
 					return false;
@@ -389,13 +369,12 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			if (target != null
-					&& (target.getDiscreteInteractionEndpoint() != null)) {
+			if (target != null && (target.getDiscreteInteractionEndpoint() != null)) {
 				return false;
 			}
 
-			return canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(
-					source, target, sourceView, targetView);
+			return canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(source, target, sourceView,
+					targetView);
 		}
 
 		/**
@@ -403,8 +382,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateRoleConnectorConnectorQualityOfServiceAssumptions_4009(
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
-				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,
+				View targetView) {
 			if (source != null) {
 				if (source.getConnectorQualityOfServiceAssumptions() != null) {
 					return false;
@@ -414,8 +393,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 			}
 
-			return canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(
-					source, target, sourceView, targetView);
+			return canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(source, target, sourceView,
+					targetView);
 		}
 
 		/**
@@ -423,8 +402,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistAbstractCoordinationSpecificationRoles_4007(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
-				de.uni_paderborn.fujaba.muml.protocol.Role target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.protocol.Role target, View sourceView, View targetView) {
 			return true;
 		}
 
@@ -433,8 +411,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorAbstractCoordinationSpecificationRoles_4007(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
-				de.uni_paderborn.fujaba.muml.protocol.Role target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.protocol.Role target, View sourceView, View targetView) {
 			return null;
 		}
 
@@ -445,16 +422,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (target == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", //$NON-NLS-1$
+							de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -462,22 +438,18 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					env.put("oppositeView", sourceView);
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
-							.getExpression(
-									23,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+							.getExpression(23, de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
 						return false;
 					} // else fall-through
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
+						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
 			}
 		}
@@ -488,16 +460,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public java.lang.String getErrorRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target, View sourceView, View targetView) {
 			try {
 				if (target == null) {
 					return null;
 				} else {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					envType.put("oppositeEnd", //$NON-NLS-1$
+							de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint());
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -505,14 +476,11 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					env.put("oppositeView", sourceView);
 
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
-							.getExpression(
-									23,
-									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType);
+							.getExpression(23, de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+									.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
 						String body = expression.body().trim();
 						if (body.startsWith("--")) {
 							int end = body.indexOf('\n');
@@ -530,9 +498,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin.getInstance()
+						.logError("Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
 		}
@@ -542,8 +509,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistDiscreteInteractionEndpointReceiverMessageBuffer_4008(
 				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target, View sourceView, View targetView) {
 			return true;
 		}
 
@@ -552,8 +518,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorDiscreteInteractionEndpointReceiverMessageBuffer_4008(
 				de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint source,
-				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.connector.MessageBuffer target, View sourceView, View targetView) {
 			return null;
 		}
 
@@ -562,8 +527,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistRoleConnectorConnectorQualityOfServiceAssumptions_4009(
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
-				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,
+				View targetView) {
 			return true;
 		}
 
@@ -572,8 +537,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorRoleConnectorConnectorQualityOfServiceAssumptions_4009(
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector source,
-				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target,
-				View sourceView, View targetView) {
+				de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions target, View sourceView,
+				View targetView) {
 			return null;
 		}
 

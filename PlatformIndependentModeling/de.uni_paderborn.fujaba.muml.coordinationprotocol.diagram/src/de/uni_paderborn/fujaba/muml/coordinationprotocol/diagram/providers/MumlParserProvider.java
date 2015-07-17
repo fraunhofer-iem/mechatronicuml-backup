@@ -29,8 +29,7 @@ import org.storydriven.core.CorePackage;
 /**
  * @generated
  */
-public class MumlParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class MumlParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -42,8 +41,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCoordinationProtocolName_5023Parser() {
 		if (coordinationProtocolName_5023Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
 			coordinationProtocolName_5023Parser = parser;
@@ -61,8 +59,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRoleName_5006Parser() {
 		if (roleName_5006Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
 			roleName_5006Parser = parser;
@@ -101,8 +98,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	private IParser getMessageTypeName_5010Parser() {
 		if (messageTypeName_5010Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
 			messageTypeName_5010Parser = parser;
@@ -171,10 +167,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

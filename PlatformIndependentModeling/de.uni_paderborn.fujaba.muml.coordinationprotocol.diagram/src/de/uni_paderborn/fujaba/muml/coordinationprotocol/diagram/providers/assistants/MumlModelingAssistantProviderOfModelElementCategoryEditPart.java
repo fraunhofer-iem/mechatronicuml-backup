@@ -22,8 +22,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
  * @generated
  */
 public class MumlModelingAssistantProviderOfModelElementCategoryEditPart
-		extends
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
+		extends de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlModelingAssistantProvider {
 
 	/**
 	 * @generated
@@ -31,7 +30,8 @@ public class MumlModelingAssistantProviderOfModelElementCategoryEditPart
 	@Override
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
+		types.add(
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
 		return types;
 	}
 

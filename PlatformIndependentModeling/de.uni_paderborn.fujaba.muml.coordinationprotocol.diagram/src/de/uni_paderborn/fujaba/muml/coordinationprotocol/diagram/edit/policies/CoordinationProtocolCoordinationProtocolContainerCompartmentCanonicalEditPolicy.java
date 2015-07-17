@@ -60,8 +60,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy(
-			boolean canonicalNodes) {
+	public CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
 
@@ -105,18 +104,14 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getAbstractCoordinationSpecification_Roles());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getAbstractCoordinationSpecification_GmfMessageBuffers());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions());
+			myFeaturesToSynchronize.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_GmfAbstractCoordinationSpecification());
+			myFeaturesToSynchronize.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_Roles());
+			myFeaturesToSynchronize.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_GmfMessageBuffers());
+			myFeaturesToSynchronize.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+					.getAbstractCoordinationSpecification_GmfConnectorQualityOfServiceAssumptions());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -150,17 +145,15 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 				EObject childElement = childView.getElement();
 				int visualID = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView);
-				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] {
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID });
+				List<Integer> visualIDs = Arrays.asList(new Integer[] {
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MessageBufferEditPart.VISUAL_ID,
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ConnectorQualityOfServiceAssumptionsEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
-						|| childElement.eContainer() == containerView
-								.getElement() && visualIDs.contains(visualID)) {
+						|| childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -179,10 +172,8 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
@@ -234,8 +225,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 				EObject semanticElement = childView.getElement();
 
 				// Note: semanticElement can be null, for diagram annotations!
-				if (semanticElement != null
-						&& semanticElement.equals(next.getModelElement())) {
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
@@ -259,11 +249,9 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 		for (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor next : childDescriptors) {
 			String hint = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 					.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -272,10 +260,10 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -284,8 +272,8 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

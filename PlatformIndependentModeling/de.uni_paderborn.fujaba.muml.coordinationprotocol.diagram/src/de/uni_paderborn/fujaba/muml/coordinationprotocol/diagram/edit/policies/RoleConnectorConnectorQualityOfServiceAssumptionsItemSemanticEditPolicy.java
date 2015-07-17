@@ -26,15 +26,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
  * @generated
  */
 public class RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy
-		extends
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009);
+		super(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnectorConnectorQualityOfServiceAssumptions_4009);
 	}
 
 	/**
@@ -42,13 +40,11 @@ public class RoleConnectorConnectorQualityOfServiceAssumptionsItemSemanticEditPo
 	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req) {
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor progressMonitor, IAdaptable info)
+			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info)
 					throws ExecutionException {
 				EObject referencedObject = getReferencedObject();
 				Resource resource = referencedObject.eResource();
-				CommandResult result = super.doExecuteWithResult(
-						progressMonitor, info);
+				CommandResult result = super.doExecuteWithResult(progressMonitor, info);
 				if (resource != null) {
 					resource.getContents().add(referencedObject);
 				}

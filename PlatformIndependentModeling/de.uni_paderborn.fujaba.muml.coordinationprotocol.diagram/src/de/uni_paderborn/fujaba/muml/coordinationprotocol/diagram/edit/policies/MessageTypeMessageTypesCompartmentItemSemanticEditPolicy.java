@@ -19,15 +19,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
  * @generated
  */
 public class MessageTypeMessageTypesCompartmentItemSemanticEditPolicy
-		extends
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
+		extends de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeMessageTypesCompartmentItemSemanticEditPolicy() {
-		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageType_3009);
+		super(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.MessageType_3009);
 	}
 
 	/**
@@ -36,8 +34,9 @@ public class MessageTypeMessageTypesCompartmentItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Parameter_3016 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.ParameterCreateCommand(
-					req));
+			return getGEFWrapper(
+					new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands.ParameterCreateCommand(
+							req));
 		}
 		return super.getCreateCommand(req);
 	}

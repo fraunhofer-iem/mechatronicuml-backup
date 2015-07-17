@@ -41,8 +41,7 @@ public class RoleCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -64,16 +63,15 @@ public class RoleCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.protocol.Role newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 				.createRole();
 
 		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification owner = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
 		owner.getRoles().add(newElement);
 
-		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers
-				.getInstance().init_Role_3006(newElement);
+		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers.getInstance()
+				.init_Role_3006(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -84,19 +82,13 @@ public class RoleCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.protocol.Role newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+	protected void doConfigure(de.uni_paderborn.fujaba.muml.protocol.Role newElement, IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
