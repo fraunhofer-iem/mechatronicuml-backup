@@ -24,6 +24,8 @@ property usedClockNames : Dict(String,Integer);
 
 property multicastSubRoleSpecificVariableName : String = "sendMulticast";
 
+property intermediateStateCount : Integer = 0;
+
 mapping Transition::Transition2SubroleSpecificBooleanVaribale(varName : String): Variable
 {
 	var namePrefix : String = "";
@@ -267,13 +269,16 @@ mapping Transition :: TransferSchemaGuard(context:OclAny, varName:String, op:Boo
 // @author: sthiele2
 mapping Transition :: Schema2CoordinatorIntermediateState(context:OclAny, region:RealtimeStatechart, intermediateStateNumber : Integer, clockName : String,toplevel : Boolean) : State
 {
+	// use a counter for unique intermediate state names
+	intermediateStateCount := intermediateStateCount + 1;
+	
 	// creates an intermediate state in the coordinator region
 	if(not self.relativeDeadline.oclIsUndefined())
 	{
 		invariants += self.map RelativeDeadline2ClockConstraint(intermediateStateNumber,region, false, ComparingOperator::LESS_OR_EQUAL, clockName);
 	}endif;
 	result.parentStatechart := self.statechart.map RTSC2CoordinatorRTSC(context, toplevel);	
-	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name ;
+	result.name := self.source.name + "_Intermediate_"+ intermediateStateNumber.toString()+ "_" + self.target.name + "_" + intermediateStateCount.toString();
 }
 
 
@@ -478,7 +483,7 @@ mapping Transition :: Transition2TransitionCoordinator(context:OclAny, region:Re
 		
 		action := self.action.map Action2Action(context, region);
 		
-		synchronization := self.map TransferSchemata2Synchronization(context.oclAsType(RealtimeStatechart),result,  "switchState",SynchronizationKind::SEND  ,PositionSelectorKind::SELF);
+		synchronization := self.synchronization.map Synchronization2Synchronization(context,region);
 		
 		absoluteDeadlines := self.absoluteDeadlines->map AbsoluteDeadline2AbsoluteDeadline(context, region);
 		
@@ -514,7 +519,9 @@ mapping Transition :: Transition2StateSubrole(inout containerRegion : RealtimeSt
 		
 		result.initial := _initial;
 		
-		containerRegion.states += result;
+		containerRegion.states += result;	
+		
+		
 }
 mapping Transition :: Transition2TransitionNotLastSubrole(context:OclAny, region:RealtimeStatechart,toplevel : Boolean) : Transition {
 		
