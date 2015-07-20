@@ -299,7 +299,7 @@ public abstract class AbstractFujabaExportSourcePage extends
 				&& getSourceElements().length == 0) {
 			errorMessage = "Please select a domain element.";
 		} else {
-			for (Object element : domainElementExtension.getCheckedElements()) {
+			for (Object element : getSourceElements()) {
 				if (!wizardPageSupportsSourceModelElement((EObject) element)) {
 					errorMessage = "Selection contains unsupported elements.";
 					break;
@@ -323,6 +323,8 @@ public abstract class AbstractFujabaExportSourcePage extends
 				elements.add((EObject) element);
 			}
 			array = elements.toArray(array);
+		} else if (getResource() != null) {
+			array = getResource().getContents().toArray(array);
 		}
 		return array;
 	}
