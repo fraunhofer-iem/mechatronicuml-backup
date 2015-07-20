@@ -14,12 +14,12 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance#getMIPS <em>MIPS</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance#getCPI <em>CPI</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ProcessorInstance#getOwnedCacheInstance <em>Owned Cache Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getProcessorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckResourceType'"

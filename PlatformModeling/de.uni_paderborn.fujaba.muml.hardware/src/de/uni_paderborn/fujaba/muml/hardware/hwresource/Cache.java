@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache#getWritePolicy <em>Write Policy</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache#getReplacementPolicy <em>Replacement Policy</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache#getAssociativity <em>Associativity</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Cache#getUsedByProcessor <em>Used By Processor</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCache()
  * @model

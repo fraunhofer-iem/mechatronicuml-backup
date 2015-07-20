@@ -25,12 +25,12 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.PlatformPartImpl#getParentHWPlatform <em>Parent HW Platform</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.PlatformPartImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.PlatformPartImpl#getHwPortParts <em>Hw Port Parts</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -14,10 +14,10 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocol#getBusProtocol <em>Bus Protocol</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getBusProtocol()
  * @model

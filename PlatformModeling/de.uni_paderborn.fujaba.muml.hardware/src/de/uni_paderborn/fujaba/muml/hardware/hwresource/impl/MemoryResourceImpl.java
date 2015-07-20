@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.MemoryResourceImpl#getMemoryAccess <em>Memory Access</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.MemoryResourceImpl#isIsVolatile <em>Is Volatile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.MemoryResourceImpl#getMemoryType <em>Memory Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

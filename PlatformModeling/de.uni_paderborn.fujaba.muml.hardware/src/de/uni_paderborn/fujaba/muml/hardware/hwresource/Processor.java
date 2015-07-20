@@ -15,6 +15,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor#getOwnedCache <em>Owned Cache</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor#getArchitecture <em>Architecture</em>}</li>
@@ -22,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor#getFamily <em>Family</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.Processor#getNbPipelineStages <em>Nb Pipeline Stages</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getProcessor()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ownedCacheInSameStructuredResource='-- The used Cache must be containted in the same parent Resource\nif not self.ownedCache.oclIsUndefined() then\n\tself.parentStructuredResource=self.ownedCache.parentStructuredResource\nelse\n\t true\nendif\n'"

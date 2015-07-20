@@ -26,10 +26,10 @@ import org.storydriven.core.impl.CommentableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ResourceInstanceRepositoryImpl#getResourceInstances <em>Resource Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

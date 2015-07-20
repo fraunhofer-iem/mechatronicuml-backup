@@ -14,8 +14,6 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Networking Hardware Instance</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

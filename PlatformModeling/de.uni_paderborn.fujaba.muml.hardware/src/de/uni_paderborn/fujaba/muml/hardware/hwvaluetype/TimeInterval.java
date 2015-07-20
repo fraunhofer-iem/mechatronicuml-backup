@@ -17,10 +17,10 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval#getUnit <em>Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage#getTimeInterval()
  * @model

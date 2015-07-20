@@ -16,10 +16,10 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ComputingResourceInstance#getFrequency <em>Frequency</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getComputingResourceInstance()
  * @model abstract="true"

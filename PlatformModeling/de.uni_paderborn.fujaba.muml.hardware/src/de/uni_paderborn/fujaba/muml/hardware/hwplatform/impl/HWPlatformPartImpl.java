@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformPartImpl#getHwplatformType <em>Hwplatform Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformPartImpl#getEmbeddedBridges <em>Embedded Bridges</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

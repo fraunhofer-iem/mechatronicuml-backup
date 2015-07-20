@@ -38,13 +38,13 @@ import org.storydriven.core.CorePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl#getConnectedNetworkConnector <em>Connected Network Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkBridgeImpl#getDelay <em>Delay</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

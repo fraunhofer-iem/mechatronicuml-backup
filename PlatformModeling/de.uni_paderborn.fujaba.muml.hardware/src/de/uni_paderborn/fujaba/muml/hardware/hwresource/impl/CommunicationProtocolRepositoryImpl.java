@@ -20,10 +20,10 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolRepositoryImpl#getCommunicationProtocols <em>Communication Protocols</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

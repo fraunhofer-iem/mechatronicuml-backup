@@ -17,10 +17,10 @@ import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.ResourcePart#getResourceType <em>Resource Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage#getResourcePart()
  * @model

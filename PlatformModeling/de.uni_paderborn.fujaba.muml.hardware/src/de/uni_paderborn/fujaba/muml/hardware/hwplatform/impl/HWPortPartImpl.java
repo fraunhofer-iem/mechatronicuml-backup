@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getConnectedNetworkConnector <em>Connected Network Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getQueuingTime <em>Queuing Time</em>}</li>
@@ -33,7 +34,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getParentPlatformPart <em>Parent Platform Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPortPartImpl#getHwport <em>Hwport</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

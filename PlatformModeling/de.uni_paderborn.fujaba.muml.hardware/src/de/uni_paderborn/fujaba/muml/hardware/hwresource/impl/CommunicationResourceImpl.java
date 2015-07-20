@@ -24,6 +24,7 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#getProtocol <em>Protocol</em>}</li>
@@ -31,7 +32,6 @@ import org.storydriven.core.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#isMultiHWPort <em>Multi HW Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationResourceImpl#getParentResource <em>Parent Resource</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

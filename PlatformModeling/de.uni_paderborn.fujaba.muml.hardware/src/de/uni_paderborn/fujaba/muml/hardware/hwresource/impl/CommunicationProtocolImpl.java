@@ -23,6 +23,7 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#isIsTimeTriggered <em>Is Time Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#isIsEventTriggered <em>Is Event Triggered</em>}</li>
@@ -32,7 +33,6 @@ import org.storydriven.core.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#getBandwidth <em>Bandwidth</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CommunicationProtocolImpl#isIsSerial <em>Is Serial</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

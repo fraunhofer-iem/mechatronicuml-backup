@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency#getValue <em>Value</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency#getUnit <em>Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage#getFrequency()
  * @model

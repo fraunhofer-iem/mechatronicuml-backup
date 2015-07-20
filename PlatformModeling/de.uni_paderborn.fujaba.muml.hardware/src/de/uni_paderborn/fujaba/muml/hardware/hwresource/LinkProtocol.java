@@ -14,10 +14,10 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.LinkProtocol#getLinkProtocol <em>Link Protocol</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getLinkProtocol()
  * @model

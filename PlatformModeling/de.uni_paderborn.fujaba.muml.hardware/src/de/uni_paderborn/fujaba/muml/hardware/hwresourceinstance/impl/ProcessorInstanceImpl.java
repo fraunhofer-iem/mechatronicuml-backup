@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ProcessorInstanceImpl#getMIPS <em>MIPS</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ProcessorInstanceImpl#getCPI <em>CPI</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.ProcessorInstanceImpl#getOwnedCacheInstance <em>Owned Cache Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

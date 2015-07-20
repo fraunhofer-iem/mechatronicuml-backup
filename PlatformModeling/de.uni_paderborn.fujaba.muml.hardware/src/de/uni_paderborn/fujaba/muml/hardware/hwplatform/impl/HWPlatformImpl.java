@@ -24,13 +24,13 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getEmbeddedPlatformParts <em>Embedded Platform Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getNetworkingHardware <em>Networking Hardware</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getDelegationPorts <em>Delegation Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.HWPlatformImpl#getNetworkConnectors <em>Network Connectors</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

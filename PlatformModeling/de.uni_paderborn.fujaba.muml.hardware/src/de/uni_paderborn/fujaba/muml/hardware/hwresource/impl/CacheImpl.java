@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CacheImpl#getWritePolicy <em>Write Policy</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CacheImpl#getReplacementPolicy <em>Replacement Policy</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CacheImpl#getAssociativity <em>Associativity</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.CacheImpl#getUsedByProcessor <em>Used By Processor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

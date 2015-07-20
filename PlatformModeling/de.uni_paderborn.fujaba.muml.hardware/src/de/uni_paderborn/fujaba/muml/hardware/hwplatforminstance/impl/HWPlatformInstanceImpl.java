@@ -25,13 +25,13 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceImpl#getHwplatformType <em>Hwplatform Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceImpl#getDelegationPorts <em>Delegation Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceImpl#getEmbeddedHPIC <em>Embedded HPIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceImpl#getParentHPIC <em>Parent HPIC</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

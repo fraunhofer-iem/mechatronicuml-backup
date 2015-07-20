@@ -25,12 +25,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.MemoryResourceInstanceImpl#getMemorySize <em>Memory Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.MemoryResourceInstanceImpl#getThroughput <em>Throughput</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.impl.MemoryResourceInstanceImpl#getMemoryType <em>Memory Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

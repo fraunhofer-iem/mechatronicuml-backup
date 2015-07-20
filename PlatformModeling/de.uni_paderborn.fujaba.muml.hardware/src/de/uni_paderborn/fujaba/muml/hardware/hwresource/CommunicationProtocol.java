@@ -18,6 +18,7 @@ import org.storydriven.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsTimeTriggered <em>Is Time Triggered</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsEventTriggered <em>Is Event Triggered</em>}</li>
@@ -27,7 +28,6 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#getBandwidth <em>Bandwidth</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol#isIsSerial <em>Is Serial</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationProtocol()
  * @model abstract="true"

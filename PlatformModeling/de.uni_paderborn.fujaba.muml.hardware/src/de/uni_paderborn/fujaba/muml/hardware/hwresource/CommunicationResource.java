@@ -16,6 +16,7 @@ import org.storydriven.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getProtocol <em>Protocol</em>}</li>
@@ -23,7 +24,6 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#isMultiHWPort <em>Multi HW Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource#getParentResource <em>Parent Resource</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getCommunicationResource()
  * @model

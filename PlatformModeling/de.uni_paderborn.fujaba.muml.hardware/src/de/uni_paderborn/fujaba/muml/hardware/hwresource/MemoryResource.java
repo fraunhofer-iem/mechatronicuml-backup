@@ -15,12 +15,12 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryResource#getMemoryAccess <em>Memory Access</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryResource#isIsVolatile <em>Is Volatile</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.MemoryResource#getMemoryType <em>Memory Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getMemoryResource()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RAMimpliesRW ROMimpliesReadOnly'"

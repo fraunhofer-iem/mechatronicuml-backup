@@ -21,11 +21,11 @@ import org.storydriven.core.impl.CommentableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceRepositoryImpl#getResources <em>Resources</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ResourceRepositoryImpl#getProtocols <em>Protocols</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

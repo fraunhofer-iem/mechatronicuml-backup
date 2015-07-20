@@ -17,11 +17,11 @@ import org.storydriven.core.CommentableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getResources <em>Resources</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository#getProtocols <em>Protocols</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getResourceRepository()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueProtocolName='-- A Protocol must have an unique name\nself.protocols->isUnique(name)'"

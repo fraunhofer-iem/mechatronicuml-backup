@@ -27,6 +27,7 @@ import org.storydriven.core.impl.CommentableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getHwplatformInstances <em>Hwplatform Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getNetworkingHardwareInstances <em>Networking Hardware Instances</em>}</li>
@@ -34,7 +35,6 @@ import org.storydriven.core.impl.CommentableElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getParentHWPlatformInstance <em>Parent HW Platform Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.HWPlatformInstanceConfigurationImpl#getNetworkConnectorInstances <em>Network Connector Instances</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

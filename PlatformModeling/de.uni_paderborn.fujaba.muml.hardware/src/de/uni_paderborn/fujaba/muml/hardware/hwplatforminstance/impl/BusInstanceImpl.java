@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.BusInstanceImpl#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.BusInstanceImpl#getBusType <em>Bus Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.BusInstanceImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.impl.BusInstanceImpl#getBandwidth <em>Bandwidth</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

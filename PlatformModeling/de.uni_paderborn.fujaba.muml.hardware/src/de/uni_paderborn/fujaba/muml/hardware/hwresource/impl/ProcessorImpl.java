@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ProcessorImpl#getOwnedCache <em>Owned Cache</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ProcessorImpl#getArchitecture <em>Architecture</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ProcessorImpl#getFamily <em>Family</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.impl.ProcessorImpl#getNbPipelineStages <em>Nb Pipeline Stages</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

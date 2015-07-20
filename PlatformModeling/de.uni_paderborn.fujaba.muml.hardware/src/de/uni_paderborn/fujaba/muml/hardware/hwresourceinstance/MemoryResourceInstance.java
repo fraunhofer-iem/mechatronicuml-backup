@@ -18,12 +18,12 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.MemoryResourceInstance#getMemorySize <em>Memory Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.MemoryResourceInstance#getThroughput <em>Throughput</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.MemoryResourceInstance#getMemoryType <em>Memory Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getMemoryResourceInstance()
  * @model abstract="true"

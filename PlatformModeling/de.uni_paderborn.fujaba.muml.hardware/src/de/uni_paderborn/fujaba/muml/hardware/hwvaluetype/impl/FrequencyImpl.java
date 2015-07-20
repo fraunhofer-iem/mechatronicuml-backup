@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.FrequencyImpl#getValue <em>Value</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.FrequencyImpl#getUnit <em>Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

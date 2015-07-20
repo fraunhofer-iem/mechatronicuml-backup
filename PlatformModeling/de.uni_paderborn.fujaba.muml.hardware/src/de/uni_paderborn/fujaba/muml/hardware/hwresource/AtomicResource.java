@@ -15,10 +15,10 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwresource.AtomicResource#getParentStructuredResource <em>Parent Structured Resource</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage#getAtomicResource()
  * @model abstract="true"

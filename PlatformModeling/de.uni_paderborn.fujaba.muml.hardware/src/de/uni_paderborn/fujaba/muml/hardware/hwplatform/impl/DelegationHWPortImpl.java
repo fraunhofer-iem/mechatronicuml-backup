@@ -28,6 +28,7 @@ import org.storydriven.core.NamedElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationHWPortImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationHWPortImpl#getParentResourceInstance <em>Parent Resource Instance</em>}</li>
@@ -37,7 +38,6 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationHWPortImpl#isMultiHWPort <em>Multi HW Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.DelegationHWPortImpl#getPortKind <em>Port Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl#getBandwidth <em>Bandwidth</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.InternalEObject;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl#getConnectorKind <em>Connector Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.hwplatform.impl.NetworkConnectorImpl#getDelegationHWPorts <em>Delegation HW Ports</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
