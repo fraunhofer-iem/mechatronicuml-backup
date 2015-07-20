@@ -90,7 +90,12 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 					} else {
 						notifiers.add(iFile);
 					}
+					MumlEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
+					if (domain != null) {
+						ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider().dirtyChanged(domain.getSaveable());
+					}
 				}
+				
 			}
 			if (refreshActive) {
 				Display.getDefault().asyncExec(new Runnable() {

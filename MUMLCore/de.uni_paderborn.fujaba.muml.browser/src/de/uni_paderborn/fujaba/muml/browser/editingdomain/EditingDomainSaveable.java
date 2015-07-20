@@ -11,7 +11,10 @@ import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.Saveable;
+
+import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 public class EditingDomainSaveable extends Saveable {
 	
@@ -44,6 +47,9 @@ public class EditingDomainSaveable extends Saveable {
 	public void doSave(IProgressMonitor monitor) throws CoreException {
 		try {
 			domain.save();
+			((BasicCommandStack)domain.getCommandStack()).saveIsDone();
+			ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider().dirtyChanged(this);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

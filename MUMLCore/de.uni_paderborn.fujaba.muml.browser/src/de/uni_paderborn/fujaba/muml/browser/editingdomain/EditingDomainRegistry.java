@@ -20,12 +20,7 @@ import org.eclipse.ui.navigator.SaveablesProvider;
 import de.uni_paderborn.fujaba.muml.browser.ModelBrowserPlugin;
 
 public class EditingDomainRegistry {
-	
-	public SaveablesProvider getSaveablesProvider() {
-		return saveablesProvider;
-	}
-
-	private SaveablesProvider saveablesProvider = new SaveablesProvider() { 
+	public class ModelBrowserSaveablesProvider extends SaveablesProvider {
 		@Override
 		public Saveable[] getSaveables() {
 			List<Saveable> saveables = new ArrayList<Saveable>();
@@ -72,7 +67,18 @@ public class EditingDomainRegistry {
 			}
 			return null;
 		}
+		
+		public void dirtyChanged(Saveable saveable) {
+			fireSaveablesDirtyChanged(new Saveable[] { saveable });
+		}
 	};
+
+	public ModelBrowserSaveablesProvider getSaveablesProvider() {
+		return saveablesProvider;
+	}
+
+	private ModelBrowserSaveablesProvider saveablesProvider = new ModelBrowserSaveablesProvider();
+	
 	public interface Listener {
 		void editingDomainCreated(MumlEditingDomain domain);
 	}
