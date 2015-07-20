@@ -7,6 +7,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -50,7 +51,7 @@ public class EditingDomainSaveable extends Saveable {
 
 	@Override
 	public boolean isDirty() {
-		return true;
+		return ((BasicCommandStack)domain.getCommandStack()).isSaveNeeded();
 	}
 
 	@Override
