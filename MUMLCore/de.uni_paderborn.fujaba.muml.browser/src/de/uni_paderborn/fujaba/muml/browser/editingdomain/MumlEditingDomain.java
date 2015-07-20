@@ -32,7 +32,7 @@ public class MumlEditingDomain extends TransactionalEditingDomainImpl {
 	
 	protected URI uri;
 	
-	protected Saveable saveable = new EditingDomainSaveable(this);
+	protected Saveable saveable = null;
 	
 	protected MumlEditingDomain(AdapterFactory adapterFactory, TransactionalCommandStack stack, URI uri) {
 		super(adapterFactory, stack);
@@ -40,6 +40,9 @@ public class MumlEditingDomain extends TransactionalEditingDomainImpl {
 	}
 	
 	public Saveable getSaveable() {
+		if (saveable == null) {
+			saveable = new EditingDomainSaveable(this);
+		}
 		return saveable;
 	}
 	

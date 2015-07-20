@@ -91,7 +91,7 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 						notifiers.add(iFile);
 					}
 					MumlEditingDomain domain = ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getEditingDomain(uri, true);
-					if (domain != null) {
+					if (domain != null && domain.getSaveable() != null) {
 						ModelBrowserPlugin.EDITING_DOMAIN_REGISTRY.getSaveablesProvider().dirtyChanged(domain.getSaveable());
 					}
 				}
