@@ -214,8 +214,10 @@ public class ModelBrowserContentProvider extends org.eclipse.ui.model.WorkbenchC
 			}
 			Display.getDefault().asyncExec(new Runnable() {
 				@Override
-				public void run() {				
-					((StructuredViewer) viewer).refresh(); //((StructuredViewer) viewer).update(iFile, null);
+				public void run() {			
+					if (viewer != null) {
+						((StructuredViewer) viewer).refresh(); //((StructuredViewer) viewer).update(iFile, null);
+					}
 				}
 			});
 		} finally {
