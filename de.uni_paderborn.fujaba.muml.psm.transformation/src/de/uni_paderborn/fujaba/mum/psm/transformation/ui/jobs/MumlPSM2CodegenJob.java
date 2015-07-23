@@ -35,19 +35,19 @@ public class MumlPSM2CodegenJob extends Job {
 	private SystemAllocation allocation;
 
 	private TransformationExecutor executor;
-	private IPath targetFilePath;
+	private URI targetFilePath;
 
 	private String transformation;
 
 	private IStatus loadStatus;
 
 	public MumlPSM2CodegenJob(SystemAllocation allocation,
-			IPath targetFilePath, String transformation) {
+			URI targetDirectory, String transformation) {
 
 		super("MUML-PSM to CodeGen Model Transformation"); //$NON-NLS-1$
 		this.allocation = allocation;
 		this.transformation = transformation;
-		this.targetFilePath = targetFilePath;
+		this.targetFilePath = targetDirectory;
 		initializeTransformationExecutor();
 
 	}
@@ -136,7 +136,7 @@ public class MumlPSM2CodegenJob extends Job {
 				// Obtain a new resource set
 				ResourceSet resSet = new ResourceSetImpl();
 								// Create a resource
-				Resource resource = resSet.createResource(URI.createURI(targetFilePath.toString()));
+				Resource resource = resSet.createResource(targetFilePath.appendFragment("model.codegen"));
 								// Get the first model element and cast it to the right type, in
 				// my
 				// example everything is hierarchical included in this first

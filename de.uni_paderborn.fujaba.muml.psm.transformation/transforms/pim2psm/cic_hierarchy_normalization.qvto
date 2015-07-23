@@ -1,4 +1,4 @@
-transformation hierarchy_transformation(inout instance : ModelInstancePackage);
+transformation cic_hierarchy_normalization(inout instance : ModelInstancePackage);
 
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
@@ -12,10 +12,6 @@ modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
-
-main() {
-	instance.rootObjects()[CodeGenAllocation]->any(true).cic.flatComponentInstanceConfiguration();
-} 
 
 
 //walk recursivly down the hierarchy
