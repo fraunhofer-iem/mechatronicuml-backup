@@ -21,12 +21,19 @@ import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportSourcePage;
 import de.uni_paderborn.fujaba.export.pages.AbstractFujabaExportTargetPage;
 import de.uni_paderborn.fujaba.export.pages.ElementSelectionMode;
 import de.uni_paderborn.fujaba.export.wizard.AbstractFujabaExportWizard;
+import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.CodegenFlatHierarchyJob;
+import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.MumlPIM2MumlPSMJob;
+import de.uni_paderborn.fujaba.mum.psm.transformation.ui.jobs.MumlPSM2CodegenJob;
 import de.uni_paderborn.fujaba.muml.pm.common.xtext.FujabaResourceServiceProvider;
+import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
+import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 import de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui.internal.APIMappingLanguageActivator;
 
 
 public class CodegenWizard extends AbstractFujabaExportWizard {
 	private AbstractFujabaExportSourcePage sourcePage;
+	private AbstractFujabaExportSourcePage allocationPage;
+
 	private AbstractFujabaExportSourcePage apiMappingPage;
 
 	private AbstractFujabaExportTargetPage targetPage;
@@ -59,6 +66,26 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 
 		};
 		addPage(sourcePage);
+		
+		allocationPage = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
+
+			@Override
+			public String wizardPageGetSourceFileExtension() {
+				return "";
+			}
+
+			@Override
+			public boolean wizardPageSupportsSourceModelElement(EObject element) {
+				return element.getClass().getName().contains("Allocation");
+			}
+
+			@Override
+			public ElementSelectionMode wizardPageGetSupportedSelectionMode() {
+				return ElementSelectionMode.ELEMENT_SELECTION_MODE_SINGLE;
+			}
+
+		};
+		addPage(allocationPage);
 
 		apiMappingPage = new AbstractFujabaExportSourcePage("source", toolkit, getResourceSet(), initialSelection) {
 
@@ -102,6 +129,8 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 	public IFujabaExportOperation wizardCreateExportOperation() {
 		final EObject[] sourceElements = sourcePage.getSourceElements();
 		final URI sourceURI = sourcePage.getURI();
+		final URI allocationURI = allocationPage.getURI();
+
 
 		final URI apiMappingFileURI = apiMappingPage.getURI();
 		final URI destinationURI = targetPage.getDestinationURI();
@@ -127,11 +156,37 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 						XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 				
 				Resource cic =resourceSet.getResource(sourceURI, true);
+				Resource allocation = resourceSet.getResource(allocationURI, true);
 				Resource apiMapping = resourceSet.getResource(apiMappingFileURI, true);
 				
 				EcoreUtil.resolveAll(resourceSet);
 				EcoreUtil2.resolveLazyCrossReferences(apiMapping, CancelIndicator.NullImpl);
 				apiMapping.getContents();
+				
+				MumlPIM2MumlPSMJob psmJob = new MumlPIM2MumlPSMJob(
+						rootNode, apiMapping, Messages.CodegenTransformationWizard_2);
+				psmJob.setProgressGroup(progressMonitor, 10);
+				psmJob.setUser(true);
+
+				MumlPSM2CodegenJob codeGenJob = new MumlPSM2CodegenJob(
+						(SystemAllocation) ((Allocation) allocationPage.getSourceElements()[0]) , destinationURI,
+						Messages.CodegenTransformationWizard_0);
+				codeGenJob.setUser(true);
+				codeGenJob.setProgressGroup(progressMonitor, 10);
+
+				CodegenFlatHierarchyJob hierarchyJob = new CodegenFlatHierarchyJob(
+						codgenModelPath,
+						Messages.CodegenTransformationWizard_1);
+				hierarchyJob.setUser(true);
+				hierarchyJob.setProgressGroup(progressMonitor, 10);
+
+				psmJob.schedule();
+				psmJob.join();
+				monitor.worked(32);
+				codeGenJob.schedule();
+				codeGenJob.join();
+				monitor.worked(33);
+				hierarchyJob.schedule();
 				
 				return Status.OK_STATUS;
 			}
