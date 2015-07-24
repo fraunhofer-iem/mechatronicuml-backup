@@ -1,9 +1,7 @@
-### Eclipse Workspace Patch 1.0
-#P de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext
-Index: META-INF/MANIFEST.MF
+Index: de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF
 ===================================================================
---- de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(revision 15189)
-+++ de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(working copy)
+--- de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(Revision 15189)
++++ de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(Arbeitskopie)
 @@ -17,7 +17,6 @@
   org.eclipse.xtext.util,
   org.antlr.runtime,
@@ -12,4 +10,3 @@ Index: META-INF/MANIFEST.MF
   org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
   de.uni_paderborn.fujaba.common;bundle-version="0.4.0"
  Import-Package: org.apache.log4j,
- 
