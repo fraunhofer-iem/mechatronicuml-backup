@@ -1,4 +1,16 @@
 ### Eclipse Workspace Patch 1.0
+#P de.uni_paderborn.fujaba.muml.allocation.language
+Index: META-INF/MANIFEST.MF
+===================================================================
+--- de.uni_paderborn.fujaba.muml.allocation.language/META-INF/MANIFEST.MF	(revision 15189)
++++ de.uni_paderborn.fujaba.muml.allocation.language/META-INF/MANIFEST.MF	(working copy)
+@@ -22,5 +22,5 @@
+  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
+  de.uni_paderborn.fujaba.muml.hardware;bundle-version="1.0.0",
+  org.eclipse.jdt.annotation;bundle-version="[1.1.0,2.0.0)",
+- org.eclipse.ocl.xtext.completeocl;bundle-version="1.0.100"
++ org.eclipse.ocl.xtext.completeocl;bundle-version="1.0.0"
+ Bundle-ActivationPolicy: lazy
 #P de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext
 Index: META-INF/MANIFEST.MF
 ===================================================================
