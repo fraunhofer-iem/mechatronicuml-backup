@@ -162,31 +162,31 @@ public class CodegenWizard extends AbstractFujabaExportWizard {
 				EcoreUtil.resolveAll(resourceSet);
 				EcoreUtil2.resolveLazyCrossReferences(apiMapping, CancelIndicator.NullImpl);
 				apiMapping.getContents();
-				
-				MumlPIM2MumlPSMJob psmJob = new MumlPIM2MumlPSMJob(
-						rootNode, apiMapping, Messages.CodegenTransformationWizard_2);
-				psmJob.setProgressGroup(progressMonitor, 10);
-				psmJob.setUser(true);
-
-				MumlPSM2CodegenJob codeGenJob = new MumlPSM2CodegenJob(
-						(SystemAllocation) ((Allocation) allocationPage.getSourceElements()[0]) , destinationURI,
-						Messages.CodegenTransformationWizard_0);
-				codeGenJob.setUser(true);
-				codeGenJob.setProgressGroup(progressMonitor, 10);
-
-				CodegenFlatHierarchyJob hierarchyJob = new CodegenFlatHierarchyJob(
-						codgenModelPath,
-						Messages.CodegenTransformationWizard_1);
-				hierarchyJob.setUser(true);
-				hierarchyJob.setProgressGroup(progressMonitor, 10);
-
-				psmJob.schedule();
-				psmJob.join();
-				monitor.worked(32);
-				codeGenJob.schedule();
-				codeGenJob.join();
-				monitor.worked(33);
-				hierarchyJob.schedule();
+//				
+//				MumlPIM2MumlPSMJob psmJob = new MumlPIM2MumlPSMJob(
+//						rootNode, apiMapping, Messages.CodegenTransformationWizard_2);
+//				psmJob.setProgressGroup(progressMonitor, 10);
+//				psmJob.setUser(true);
+//
+//				MumlPSM2CodegenJob codeGenJob = new MumlPSM2CodegenJob(
+//						(SystemAllocation) ((Allocation) allocationPage.getSourceElements()[0]) , destinationURI,
+//						Messages.CodegenTransformationWizard_0);
+//				codeGenJob.setUser(true);
+//				codeGenJob.setProgressGroup(progressMonitor, 10);
+//
+//				CodegenFlatHierarchyJob hierarchyJob = new CodegenFlatHierarchyJob(
+//						codgenModelPath,
+//						Messages.CodegenTransformationWizard_1);
+//				hierarchyJob.setUser(true);
+//				hierarchyJob.setProgressGroup(progressMonitor, 10);
+//
+//				psmJob.schedule();
+//				psmJob.join();
+//				monitor.worked(32);
+//				codeGenJob.schedule();
+//				codeGenJob.join();
+//				monitor.worked(33);
+//				hierarchyJob.schedule();
 				
 				return Status.OK_STATUS;
 			}
