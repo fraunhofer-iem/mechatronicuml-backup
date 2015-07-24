@@ -1,6 +1,6 @@
 Index: de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF
 ===================================================================
---- de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(Revision 15189)
+--- de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(Revision 15192)
 +++ de.uni_paderborn.fujaba.muml.allocation.ilp.lpsolve.xtext/META-INF/MANIFEST.MF	(Arbeitskopie)
 @@ -17,7 +17,6 @@
   org.eclipse.xtext.util,
