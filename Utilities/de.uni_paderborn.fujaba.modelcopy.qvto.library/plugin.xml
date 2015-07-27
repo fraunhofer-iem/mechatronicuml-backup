@@ -14,4 +14,11 @@
           path="transforms/">
     </sourceContainer>
  </extension>
+ <extension
+       point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+    <library
+          file="transforms/ModelcopyLibrary.qvto"
+          id="ModelcopyLibrary">
+    </library>
+ </extension>
 </plugin>

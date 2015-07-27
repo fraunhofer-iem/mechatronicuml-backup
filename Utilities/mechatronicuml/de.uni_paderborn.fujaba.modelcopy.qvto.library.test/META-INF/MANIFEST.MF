@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Test
-Bundle-SymbolicName: de.uni_paderborn.fujaba.modelcopy.qvto.library.test
+Bundle-SymbolicName: de.uni_paderborn.fujaba.modelcopy.qvto.library.test;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -10,6 +10,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore.xmi,
  de.uni_paderborn.fujaba.muml.testlanguage.specification,
  org.eclipse.emf.validation,
- de.uni_paderborn.fujaba.muml.testlanguage;bundle-version="0.1.0"
+ de.uni_paderborn.fujaba.muml.testlanguage;bundle-version="0.1.0",
+ org.eclipse.m2m.qvt.oml.runtime;bundle-version="3.5.0",
+ de.uni_paderborn.fujaba.modelcopy.qvto.library;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.example.blindOvertaking;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml;bundle-version="0.5.0",
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;bundle-version="0.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

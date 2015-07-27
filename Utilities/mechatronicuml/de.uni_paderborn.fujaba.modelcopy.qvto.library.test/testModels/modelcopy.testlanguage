@@ -9,7 +9,7 @@
   <nodes label="Transformation" specificationClassName="Transformation">
     <inputs name="i" source="//@nodes.0/@outputs[name='model']" dataType="org.eclipse.emf.ecore.EObject"/>
     <outputs name="o" targets="//@nodes.2/@inputs[name='model_1']"/>
-    <specification xsi:type="de.uni_paderborn.fujaba.muml.testlanguage.specification:Transformation" label="Transformation" uri="platform:/resource/de.uni_paderborn.fujaba.modelcopy.qvto.library/transforms/ModelcopyTestTransformation.qvto" parameterOrder="//@nodes.1/@specification/@portSpecifications.0 //@nodes.1/@specification/@portSpecifications.1">
+    <specification xsi:type="de.uni_paderborn.fujaba.muml.testlanguage.specification:Transformation" label="Transformation" uri="platform:/resource/de.uni_paderborn.fujaba.modelcopy.qvto.library.test/transforms/ModelcopyTestTransformation.qvto" parameterOrder="//@nodes.1/@specification/@portSpecifications.0 //@nodes.1/@specification/@portSpecifications.1">
       <portSpecifications name="i" dataType="org.eclipse.emf.ecore.EObject"/>
       <portSpecifications name="o" type="OUT" dataType="org.eclipse.emf.ecore.EObject"/>
     </specification>
