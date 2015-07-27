@@ -15,11 +15,14 @@ mapping OclAny::transform() : EObject {
 		result := self.map create();
 	}
 	var element := self.oclAsType(EObject);
-	element.eClass().eAllReferences->forEach(f) {
+	element.eClass().eAllReferences->select(f | f.isValidFeature())->forEach(f) {
 		setValues(result, f, getValues(element, f).map transform());
 	};
-	element.eClass().eAllAttributes->forEach(f) {
+	element.eClass().eAllAttributes->select(f | f.isValidFeature())->forEach(f) {
 		setValues(result, f, getValues(element, f));
 	};
 }
 
+query EStructuralFeature::isValidFeature() : Boolean {
+	return self.changeable and not self._derived;
+}
