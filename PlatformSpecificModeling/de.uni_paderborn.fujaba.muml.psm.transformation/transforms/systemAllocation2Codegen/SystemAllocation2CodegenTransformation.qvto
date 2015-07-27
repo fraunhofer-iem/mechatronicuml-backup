@@ -36,16 +36,18 @@ property apiMap:MappingRepository;
 main(){
 	apiMap := apimapping.rootObjects()[MappingRepository]->any(true);
 	allocationmodel.rootObjects()[SystemAllocation]->map mapSystemAllocation2Codegen();
-	
 }
 
 mapping SystemAllocation::mapSystemAllocation2Codegen():GenSystem{
+
 	var setOfECU:Sequence(StructuredResourceInstance) := self.allocations->collect(resourceInstance);
 	var setoFComponentAllocatedToECU:Sequence(ComponentInstance);
 	setOfECU->forEach(ecu){
 		setoFComponentAllocatedToECU:=self.allocations->select(alloc| alloc.resourceInstance=ecu).componentInstance[AtomicComponentInstance];
 		genECUs+=ecu.map mapStructuredResource2GenECU(setoFComponentAllocatedToECU);
-	} 
+	};
+	cic:=self.cic;
+	hpic:=self.hpic;
 	
 }
 
