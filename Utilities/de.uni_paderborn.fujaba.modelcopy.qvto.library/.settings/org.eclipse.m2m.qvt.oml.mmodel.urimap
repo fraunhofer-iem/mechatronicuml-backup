@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://A/1.0" targetURI="platform:/resource/modelcopy.example.model/model/A.ecore"/>
+  <mapping sourceURI="http://B/1.0" targetURI="platform:/resource/modelcopy.example.model/model/B.ecore"/>
+  <mapping sourceURI="http://C/1.0" targetURI="platform:/resource/modelcopy.example.model/model/C.ecore"/>
+  <mapping sourceURI="http://D/1.0" targetURI="platform:/resource/modelcopy.example.model/model/D.ecore"/>
+</uriMap:MappingContainer>

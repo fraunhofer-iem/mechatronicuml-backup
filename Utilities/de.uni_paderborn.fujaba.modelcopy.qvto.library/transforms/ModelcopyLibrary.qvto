@@ -1,0 +1,25 @@
+library ModelcopyLibrary;
+
+import de.uni_paderborn.fujaba.modelcopy.qvto._library.ModelcopyBlackbox;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+mapping OclAny::create() : EObject {
+	init {
+		result := self.oclAsType(EObject).eClass().ePackage.eFactoryInstance.create(self.oclAsType(EObject).eClass());
+	}
+}
+
+mapping OclAny::transform() : EObject {
+	init {
+		result := self.map create();
+	}
+	var element := self.oclAsType(EObject);
+	element.eClass().eAllReferences->forEach(f) {
+		setValues(result, f, getValues(element, f).map transform());
+	};
+	element.eClass().eAllAttributes->forEach(f) {
+		setValues(result, f, getValues(element, f));
+	};
+}
+
