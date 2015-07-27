@@ -29,11 +29,11 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimeStatechartParameterImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.impl.RealtimeStatechartParameterImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

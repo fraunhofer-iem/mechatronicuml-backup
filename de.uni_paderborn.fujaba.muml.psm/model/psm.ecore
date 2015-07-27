@@ -426,5 +426,32 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GenComponentInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initCommands" upperBound="-1"
+          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="getPortInstances" upperBound="-1"
+          eType="#//codegen/GenPortInstance" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GenPortInstance">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/PortInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="samplingTime" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="execCommand" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GenECU">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ecu" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedGenTasks" upperBound="-1"
+          eType="#//codegen/GenTask" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GenTask">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="genComponentInstances"
+          upperBound="-1" eType="#//codegen/GenComponentInstance" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GenSystem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="genECUs" upperBound="-1"
+          eType="#//codegen/GenECU" containment="true"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

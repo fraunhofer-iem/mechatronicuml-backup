@@ -59,6 +59,11 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE: return createRefinedAtomicComponentInstance();
 			case CodegenPackage.REFINED_STRUCTURED_RESOURCE_INSTANCE: return createRefinedStructuredResourceInstance();
 			case CodegenPackage.CODE_GEN_ALLOCATION: return createCodeGenAllocation();
+			case CodegenPackage.GEN_COMPONENT_INSTANCE: return createGenComponentInstance();
+			case CodegenPackage.GEN_PORT_INSTANCE: return createGenPortInstance();
+			case CodegenPackage.GEN_ECU: return createGenECU();
+			case CodegenPackage.GEN_TASK: return createGenTask();
+			case CodegenPackage.GEN_SYSTEM: return createGenSystem();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -92,6 +97,56 @@ public class CodegenFactoryImpl extends EFactoryImpl implements CodegenFactory {
 	public CodeGenAllocation createCodeGenAllocation() {
 		CodeGenAllocationImpl codeGenAllocation = new CodeGenAllocationImpl();
 		return codeGenAllocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GenComponentInstance createGenComponentInstance() {
+		GenComponentInstanceImpl genComponentInstance = new GenComponentInstanceImpl();
+		return genComponentInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GenPortInstance createGenPortInstance() {
+		GenPortInstanceImpl genPortInstance = new GenPortInstanceImpl();
+		return genPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GenECU createGenECU() {
+		GenECUImpl genECU = new GenECUImpl();
+		return genECU;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GenTask createGenTask() {
+		GenTaskImpl genTask = new GenTaskImpl();
+		return genTask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GenSystem createGenSystem() {
+		GenSystemImpl genSystem = new GenSystemImpl();
+		return genSystem;
 	}
 
 	/**

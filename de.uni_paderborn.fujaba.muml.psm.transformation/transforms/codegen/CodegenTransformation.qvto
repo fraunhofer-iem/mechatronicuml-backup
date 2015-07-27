@@ -51,146 +51,17 @@ mapping SystemAllocation::mapSystemAllocation2Codegen():Codegen::CodeGenAllocati
 	hpic:=self.unionHWPIC();	
 }
 
-/**********************
-* Here is the logic for mapping the ComponentInstances
-***********************/
-
-
-//this function unions all root ComponentInstanceConfigurations to one for the Codegen Model
-helper SystemAllocation::unionCIC():ComponentInstanceConfiguration{
-	var newCIC:ComponentInstanceConfiguration:=new ComponentInstanceConfiguration();
-	newCIC.name:="codeGenComponentInstanceConfiguration";
-	var rootCICs:Set(ComponentInstanceConfiguration):=Set{};
-	self.allocations.componentInstance->forEach(ci){
-		rootCICs+=ci.getRootComponentInstanceConfiguration();
-	};
-	rootCICs->forEach(cic){
-		var tempCIC:ComponentInstanceConfiguration:=cic.map mapCIC();
-		newCIC.componentInstances+=tempCIC.componentInstances;
-		newCIC.portConnectorInstances+=tempCIC.portConnectorInstances;
-		codegenmodel.removeElement(tempCIC);
-	};
-	return newCIC;
-}
-
-mapping ComponentInstanceConfiguration::mapCIC():ComponentInstanceConfiguration{
-	name:=self.name;
-	componentInstances:=self.componentInstances->map mapComponentInstance();
-	portConnectorInstances:=self.portConnectorInstances->map mapConnectorInstance();
-}
-
-
-mapping PortConnectorInstance::mapConnectorInstance():PortConnectorInstance
-	disjuncts AssemblyConnectorInstance::mapAssemblyConnectorInstance,DelegationConnectorInstance::mapDelegationConnectorInstance;
-
-
-mapping AssemblyConnectorInstance::mapAssemblyConnectorInstance():AssemblyConnectorInstance{
-	type:=self.type;
-	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);	
-}
-
-mapping DelegationConnectorInstance::mapDelegationConnectorInstance():DelegationConnectorInstance{
-	type:=self.type;
-	connectorEndpointInstances:=self.connectorEndpointInstances.late resolve(ConnectorEndpointInstance);	
-}
-
-
-// returns the root ComponentInstanceConfiguration for a given ComponentInstance
-query ComponentInstance::getRootComponentInstanceConfiguration():ComponentInstanceConfiguration{
-	var cic:ComponentInstanceConfiguration:=self.parentCIC;
-	while(not cic.parentStructuredComponentInstance.oclIsUndefined()){
-		cic:=cic.parentStructuredComponentInstance.parentCIC;
-	};
-	return cic;
-}
-
-
-/**
- * maps the ComponentInstances of the unified CIC to RefinedComponentInstances
-**/
-mapping ComponentInstance::mapComponentInstance():ComponentInstance
-	disjuncts StructuredComponentInstance::mapStructuredComponentInstance,AtomicComponentInstance::mapAtomicComponentInstance;
-
-
-mapping StructuredComponentInstance::mapStructuredComponentInstance():StructuredComponentInstance{ 
-	 name:=self.name;
-	 componentType:=self.componentType;
-	 portInstances:=self.portInstances->map mapPortInstance();
-	 embeddedCIC:=self.embeddedCIC.map mapCIC();
-	}
-
-
-mapping AtomicComponentInstance::mapAtomicComponentInstance():RefinedAtomicComponentInstance{
-	 name:=self.name;
-	 componentType:=self.componentType;
-	 portInstances:=self.portInstances->map mapPortInstance();
-	 componentPart:=self.componentPart;
-	 allocatedResourceInstance:=self.getAllocatedResourceInstance().late resolveone(RefinedStructuredResourceInstance);
-}
 
 
 
-abstract mapping PortInstance::abstractmapPortInstance():PortInstance{
-	name:=self.name;
-	type:=self.type;
-	connectorInstances:=self.connectorInstances.late resolve(ConnectorInstance);
-}
-
-mapping PortInstance::mapPortInstance():PortInstance disjuncts ParameterisableDiscreteSinglePortInstance::mapParameterisableDiscreteSinglePortInstance, DiscreteMultiPortInstance::mapDiscreteMultiPortInstance, DiscreteSinglePortInstance::mapDiscreteSinglePortInstance;
-//mapping DiscretePortInstance::mapDiscretePortInstance():DiscretePortInstance disjuncts 
 
 
-
-mapping DiscreteMultiPortInstance::mapDiscreteMultiPortInstance():DiscreteMultiPortInstance merges PortInstance::abstractmapPortInstance{
-	subInteractionEndpointInstances:=self.subInteractionEndpointInstances.oclAsType(DiscreteSinglePortInstance)->map mapDiscreteSinglePortInstance();
-}
-
-
-mapping DiscreteSinglePortInstance::mapDiscreteSinglePortInstance():DiscreteSinglePortInstance merges PortInstance::abstractmapPortInstance{
-	multiInteractionEndpointInstance:=self.multiInteractionEndpointInstance;
-	
-}
-
-
-mapping ParameterisableDiscreteSinglePortInstance::mapParameterisableDiscreteSinglePortInstance():ParameterisableDiscreteSinglePortInstance merges PortInstance::abstractmapPortInstance{
-	bindings:=self.bindings.deepclone().oclAsType(RealtimeStatechartParameterBinding);
-}
 
 /**********************
 * Here is the logic for mapping the ResourceInstances
 ***********************/
 
-/**
- * This helper unions all HWPlatformInstance to one for the CodeGen Model
-**/
-helper SystemAllocation::unionHWPIC():HWPlatformInstanceConfiguration{
- var newHPIC : HWPlatformInstanceConfiguration := new HWPlatformInstanceConfiguration();
-	//newHPIC.name:="codeGenHPIConfiguration";
-	var rootHPIs:Set(HWPlatformInstanceConfiguration):=Set{};
-	self.allocations->collect(resourceInstance)->forEach(ri){
-		rootHPIs+=ri.getRootHWPInstanceConfiguration();
-	};
-	rootHPIs->forEach(cic){
-		var tempHIC:HWPlatformInstanceConfiguration:=cic.map mapHWPlatformInstanceConfiguration();
-		newHPIC.hwplatformInstances+=tempHIC.hwplatformInstances;
-		newHPIC.networkingHardwareInstances+=tempHIC.networkingHardwareInstances;
-		codegenmodel.removeElement(tempHIC);
-	};
-	return newHPIC;
- 
-}
 
-
-/**
-*  returns the corresponding HWPlatformInstanceConfiguration for a given StructuredResourceInstance
-**/
-query StructuredResourceInstance::getRootHWPInstanceConfiguration():HWPlatformInstanceConfiguration{
-	var hpic:EObject:=self.oclAsType(EObject).eContainer();
-	while(not hpic.eContainer().oclIsKindOf(ModelElementCategory) ){
-		hpic:=hpic.eContainer();
-	};
-	return hpic.oclAsType(HWPlatformInstanceConfiguration);
-}
 
 
 

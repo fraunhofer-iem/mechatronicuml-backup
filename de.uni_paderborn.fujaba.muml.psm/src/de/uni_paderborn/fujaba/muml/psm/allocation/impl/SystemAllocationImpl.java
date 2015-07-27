@@ -30,12 +30,12 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getAllocations <em>Allocations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getCic <em>Cic</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.SystemAllocationImpl#getHpic <em>Hpic</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

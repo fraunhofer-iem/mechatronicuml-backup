@@ -20,11 +20,11 @@ import org.storydriven.core.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository#getPortApiMappings <em>Port Api Mappings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.MappingRepository#getImports <em>Imports</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage#getMappingRepository()
  * @model

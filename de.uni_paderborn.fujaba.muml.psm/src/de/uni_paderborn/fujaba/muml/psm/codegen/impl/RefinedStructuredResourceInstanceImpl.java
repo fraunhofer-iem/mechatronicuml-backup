@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedStructuredResourceInstanceImpl#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.RefinedStructuredResourceInstanceImpl#getAllUsedMessageTypes <em>All Used Message Types</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

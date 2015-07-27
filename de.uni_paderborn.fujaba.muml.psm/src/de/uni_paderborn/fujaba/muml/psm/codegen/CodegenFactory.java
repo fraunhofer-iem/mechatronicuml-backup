@@ -49,6 +49,51 @@ public interface CodegenFactory extends EFactory {
 	CodeGenAllocation createCodeGenAllocation();
 
 	/**
+	 * Returns a new object of class '<em>Gen Component Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gen Component Instance</em>'.
+	 * @generated
+	 */
+	GenComponentInstance createGenComponentInstance();
+
+	/**
+	 * Returns a new object of class '<em>Gen Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gen Port Instance</em>'.
+	 * @generated
+	 */
+	GenPortInstance createGenPortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Gen ECU</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gen ECU</em>'.
+	 * @generated
+	 */
+	GenECU createGenECU();
+
+	/**
+	 * Returns a new object of class '<em>Gen Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gen Task</em>'.
+	 * @generated
+	 */
+	GenTask createGenTask();
+
+	/**
+	 * Returns a new object of class '<em>Gen System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gen System</em>'.
+	 * @generated
+	 */
+	GenSystem createGenSystem();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

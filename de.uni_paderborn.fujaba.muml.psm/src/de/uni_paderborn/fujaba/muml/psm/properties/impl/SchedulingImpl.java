@@ -23,12 +23,12 @@ import org.storydriven.core.impl.ExtensionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl#getDeadline <em>Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl#getPeriod <em>Period</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.SchedulingImpl#getPriority <em>Priority</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

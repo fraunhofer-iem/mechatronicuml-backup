@@ -22,11 +22,11 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimeStatechartParameterBindingImpl#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.RealtimeStatechartParameterBindingImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

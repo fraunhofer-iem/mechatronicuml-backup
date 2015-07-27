@@ -28,13 +28,13 @@ import org.storydriven.core.impl.CommentableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortApiMappingImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortApiMappingImpl#getExecCommand <em>Exec Command</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortApiMappingImpl#getRepository <em>Repository</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.PortApiMappingImpl#getInitCommand <em>Init Command</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

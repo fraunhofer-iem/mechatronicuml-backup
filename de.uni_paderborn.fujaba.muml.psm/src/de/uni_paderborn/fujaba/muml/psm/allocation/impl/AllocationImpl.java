@@ -24,11 +24,11 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationImpl#getResourceInstance <em>Resource Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

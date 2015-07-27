@@ -141,6 +141,121 @@ public class CodegenItemProviderAdapterFactory extends CodegenAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GenComponentInstanceItemProvider genComponentInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenComponentInstanceAdapter() {
+		if (genComponentInstanceItemProvider == null) {
+			genComponentInstanceItemProvider = new GenComponentInstanceItemProvider(this);
+		}
+
+		return genComponentInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GenPortInstanceItemProvider genPortInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenPortInstanceAdapter() {
+		if (genPortInstanceItemProvider == null) {
+			genPortInstanceItemProvider = new GenPortInstanceItemProvider(this);
+		}
+
+		return genPortInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenECU} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GenECUItemProvider genECUItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenECU}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenECUAdapter() {
+		if (genECUItemProvider == null) {
+			genECUItemProvider = new GenECUItemProvider(this);
+		}
+
+		return genECUItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenTask} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GenTaskItemProvider genTaskItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenTask}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenTaskAdapter() {
+		if (genTaskItemProvider == null) {
+			genTaskItemProvider = new GenTaskItemProvider(this);
+		}
+
+		return genTaskItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GenSystemItemProvider genSystemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGenSystemAdapter() {
+		if (genSystemItemProvider == null) {
+			genSystemItemProvider = new GenSystemItemProvider(this);
+		}
+
+		return genSystemItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,6 +357,11 @@ public class CodegenItemProviderAdapterFactory extends CodegenAdapterFactory imp
 		if (refinedAtomicComponentInstanceItemProvider != null) refinedAtomicComponentInstanceItemProvider.dispose();
 		if (refinedStructuredResourceInstanceItemProvider != null) refinedStructuredResourceInstanceItemProvider.dispose();
 		if (codeGenAllocationItemProvider != null) codeGenAllocationItemProvider.dispose();
+		if (genComponentInstanceItemProvider != null) genComponentInstanceItemProvider.dispose();
+		if (genPortInstanceItemProvider != null) genPortInstanceItemProvider.dispose();
+		if (genECUItemProvider != null) genECUItemProvider.dispose();
+		if (genTaskItemProvider != null) genTaskItemProvider.dispose();
+		if (genSystemItemProvider != null) genSystemItemProvider.dispose();
 	}
 
 }

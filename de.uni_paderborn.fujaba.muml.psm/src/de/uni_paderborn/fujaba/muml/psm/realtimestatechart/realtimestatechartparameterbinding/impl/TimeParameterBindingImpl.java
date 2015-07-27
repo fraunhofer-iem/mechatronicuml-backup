@@ -18,10 +18,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.TimeParameterBindingImpl#getTimeValue <em>Time Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
