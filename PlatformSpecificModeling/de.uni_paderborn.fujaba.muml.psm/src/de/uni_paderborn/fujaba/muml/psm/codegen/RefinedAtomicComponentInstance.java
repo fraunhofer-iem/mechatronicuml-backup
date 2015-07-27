@@ -15,10 +15,10 @@ import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance <em>Allocated Resource Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefinedAtomicComponentInstance()
  * @model

@@ -15,5 +15,6 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.psm.api.transformation.blackbox;bun
  de.uni_paderborn.fujaba.muml.psm.api.apimappinglanguage.ui,
  de.uni_paderborn.fujaba.muml.pm.common,
  de.uni_paderborn.fujaba.export,
- org.eclipse.core.resources
+ org.eclipse.core.resources,
+ org.eclipse.core.jobs
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

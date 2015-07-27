@@ -25,11 +25,11 @@ import org.storydriven.core.impl.ExtensionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.RequiredMemoryImpl#getRequiredMemory <em>Required Memory</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.RequiredMemoryImpl#getResourceInstance <em>Resource Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

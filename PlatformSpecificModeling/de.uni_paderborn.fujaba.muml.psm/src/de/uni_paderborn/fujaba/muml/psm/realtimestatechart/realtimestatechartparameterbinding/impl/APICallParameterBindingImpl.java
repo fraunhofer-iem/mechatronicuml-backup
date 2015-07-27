@@ -38,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getAnnotations <em>Annotation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExtensions <em>Extension</em>}</li>
@@ -48,7 +49,6 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameterbinding.impl.APICallParameterBindingImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

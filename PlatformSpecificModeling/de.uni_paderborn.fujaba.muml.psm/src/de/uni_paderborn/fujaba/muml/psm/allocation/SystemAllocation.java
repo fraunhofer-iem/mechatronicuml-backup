@@ -19,12 +19,12 @@ import org.storydriven.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getAllocations <em>Allocations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getCic <em>Cic</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation#getHpic <em>Hpic</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getSystemAllocation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllComponentInstancesAllocated'"

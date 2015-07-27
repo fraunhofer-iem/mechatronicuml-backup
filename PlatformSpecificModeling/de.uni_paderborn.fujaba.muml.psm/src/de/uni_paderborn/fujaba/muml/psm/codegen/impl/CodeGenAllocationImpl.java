@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl#getHpic <em>Hpic</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodeGenAllocationImpl#getCic <em>Cic</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

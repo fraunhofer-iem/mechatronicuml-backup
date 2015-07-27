@@ -19,11 +19,11 @@ import org.storydriven.core.ExtendableElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.Allocation#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.allocation.Allocation#getResourceInstance <em>Resource Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#getAllocation()
  * @model

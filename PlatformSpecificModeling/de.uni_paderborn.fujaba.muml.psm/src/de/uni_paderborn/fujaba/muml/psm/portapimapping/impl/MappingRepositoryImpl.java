@@ -35,12 +35,12 @@ import org.storydriven.core.impl.NamedElementImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.MappingRepositoryImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.MappingRepositoryImpl#getPortApiMappings <em>Port Api Mappings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.impl.MappingRepositoryImpl#getImports <em>Imports</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

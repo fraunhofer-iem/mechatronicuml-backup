@@ -89,6 +89,26 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 				return createCodeGenAllocationAdapter();
 			}
 			@Override
+			public Adapter caseGenComponentInstance(GenComponentInstance object) {
+				return createGenComponentInstanceAdapter();
+			}
+			@Override
+			public Adapter caseGenPortInstance(GenPortInstance object) {
+				return createGenPortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseGenECU(GenECU object) {
+				return createGenECUAdapter();
+			}
+			@Override
+			public Adapter caseGenTask(GenTask object) {
+				return createGenTaskAdapter();
+			}
+			@Override
+			public Adapter caseGenSystem(GenSystem object) {
+				return createGenSystemAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -171,6 +191,76 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCodeGenAllocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance <em>Gen Component Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance
+	 * @generated
+	 */
+	public Adapter createGenComponentInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance <em>Gen Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance
+	 * @generated
+	 */
+	public Adapter createGenPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenECU <em>Gen ECU</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenECU
+	 * @generated
+	 */
+	public Adapter createGenECUAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenTask <em>Gen Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenTask
+	 * @generated
+	 */
+	public Adapter createGenTaskAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem <em>Gen System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem
+	 * @generated
+	 */
+	public Adapter createGenSystemAdapter() {
 		return null;
 	}
 

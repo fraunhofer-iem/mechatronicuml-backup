@@ -258,70 +258,7 @@ mapping inout Muml::component::PortPart::UpdatePortPart(){
 	
 }
 
-/***************************************************************************
-* 
-*  Here starts the logic for the transformation of Component-Instances (Instance Level)
-*
-*****************************************************************************/
 
-/**
-*
-* Replaces the Continuos- and Hybrid-PortInstances with DiscretePortInstances of an AtomicComponentInstances
-*
-*/
-// component instance logic
-mapping inout Muml::instance::AtomicComponentInstance::ChangeAtomicComponentInstance(){
-	portInstances+=self.portInstances[Muml::instance::ContinuousPortInstance]->map ReplacePortInstanceWithDiscretePortInstance();
-	portInstances+=self.portInstances[Muml::instance::HybridPortInstance]->map ReplacePortInstanceWithDiscretePortInstance()
-}
-
-/**
-*
-* Replaces the Continuos- and Hybrid-PortInstances with DiscretePortInstances of a StructuredComponentInstances
-*
-*/
-mapping inout Muml::instance::StructuredComponentInstance::ChangeStructuredComponentInstance2StructuredDiscreteComponentInstance(){
-	portInstances+=self.portInstances[Muml::instance::ContinuousPortInstance]->map ReplacePortInstanceWithDiscretePortInstance();
-}
-
-
-/**
-* The General Logic to replace a PortInstance with a  DiscretePortInstance
-*/
-mapping Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance{
-	name:=self.name;
-	annotation:=self.annotation;
-	extension:=self.extension;
-	comment:=self.comment;
-	connectorInstances:=self.connectorInstances;
-	componentInstance:=self.componentInstance;
-	type:=self.type.resolveone(Muml::component::DiscretePort);
-	//the old port shall be removed at the end
-	elementsToRemove+=self;
-}
-
-/**
-* Replace a hybridPortInstance with a  DiscretePortinstance
-*/
-mapping Muml::instance::HybridPortInstance::ReplacePortInstanceWithDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance inherits Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance{
-	
-}
-
-mapping Muml::instance::ContinuousPortInstance::ReplacePortInstanceWithDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance
-	disjuncts Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithParaDiscretePortInstance, Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithSingleDiscretePortInstance {}
-
-/**
-* Replace a ContiniuosPortIsntance with a  ParametiredDiscreteSinglePortinstance
-*/
-mapping Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithParaDiscretePortInstance():psm::instance::ParameterisableDiscreteSinglePortInstance inherits Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance 
-when {self.componentInstance.oclIsKindOf(Muml::instance::AtomicComponentInstance)}{
- 	createPortBindingParameter(apiMappingRepository,result,self);
-}
-
-mapping Muml::instance::ContinuousPortInstance::ReplaceContinusPortInstanceWithSingleDiscretePortInstance():Muml::instance::DiscreteSinglePortInstance inherits Muml::instance::PortInstance::ReplacePortInstanceWithDiscretePortInstance 
-when {self.componentInstance.oclIsKindOf(Muml::instance::StructuredComponentInstance)}{
-	
-}
 
 
 /***************************************************************************

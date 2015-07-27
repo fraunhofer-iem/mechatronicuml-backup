@@ -19,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.instance.ParameterisableDiscreteSinglePortInstance#getBindings <em>Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.instance.InstancePackage#getParameterisableDiscreteSinglePortInstance()
  * @model

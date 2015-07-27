@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl.ParameterizedRealtimeStatechartImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.impl.ParameterizedRealtimeStatechartImpl#getAllParameters <em>All Parameters</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

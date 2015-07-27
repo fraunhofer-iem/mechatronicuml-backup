@@ -19,13 +19,13 @@ import org.storydriven.core.expressions.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping#getExecCommand <em>Exec Command</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping#getRepository <em>Repository</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.portapimapping.PortApiMapping#getInitCommand <em>Init Command</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.portapimapping.PortapimappingPackage#getPortApiMapping()
  * @model

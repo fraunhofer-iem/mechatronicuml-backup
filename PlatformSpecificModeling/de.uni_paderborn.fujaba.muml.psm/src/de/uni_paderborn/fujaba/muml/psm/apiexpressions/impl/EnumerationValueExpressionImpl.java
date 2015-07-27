@@ -22,10 +22,10 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.EnumerationValueExpressionImpl#getEnumValue <em>Enum Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

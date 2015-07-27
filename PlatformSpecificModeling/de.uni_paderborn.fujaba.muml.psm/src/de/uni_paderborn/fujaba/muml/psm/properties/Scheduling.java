@@ -14,12 +14,12 @@ import org.storydriven.core.Extension;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getDeadline <em>Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPeriod <em>Period</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.Scheduling#getPriority <em>Priority</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getScheduling()
  * @model

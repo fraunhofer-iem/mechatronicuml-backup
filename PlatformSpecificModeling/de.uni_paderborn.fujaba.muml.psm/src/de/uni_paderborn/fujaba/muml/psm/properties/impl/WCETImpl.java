@@ -25,11 +25,11 @@ import org.storydriven.core.impl.ExtensionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETImpl#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.properties.impl.WCETImpl#getResourceInstance <em>Resource Instance</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

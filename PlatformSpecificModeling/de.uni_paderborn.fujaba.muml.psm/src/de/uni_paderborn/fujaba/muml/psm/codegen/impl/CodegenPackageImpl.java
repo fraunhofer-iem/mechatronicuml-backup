@@ -29,6 +29,11 @@ import de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.ApiexpressionsPackag
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodeGenAllocation;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenFactory;
 import de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage;
+import de.uni_paderborn.fujaba.muml.psm.codegen.GenComponentInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.GenECU;
+import de.uni_paderborn.fujaba.muml.psm.codegen.GenPortInstance;
+import de.uni_paderborn.fujaba.muml.psm.codegen.GenSystem;
+import de.uni_paderborn.fujaba.muml.psm.codegen.GenTask;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedStructuredResourceInstance;
 
@@ -60,11 +65,13 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
 
 import de.uni_paderborn.fujaba.muml.swplatform.SwplatformPackage;
 
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,6 +100,41 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * @generated
 	 */
 	private EClass codeGenAllocationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass genComponentInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass genPortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass genECUEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass genTaskEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass genSystemEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -270,6 +312,141 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGenComponentInstance() {
+		return genComponentInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenComponentInstance_ComponentInstance() {
+		return (EReference)genComponentInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenComponentInstance_InitCommands() {
+		return (EReference)genComponentInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenComponentInstance_GetPortInstances() {
+		return (EReference)genComponentInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGenPortInstance() {
+		return genPortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenPortInstance_PortInstance() {
+		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenPortInstance_SamplingTime() {
+		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenPortInstance_ExecCommand() {
+		return (EReference)genPortInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGenECU() {
+		return genECUEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenECU_Ecu() {
+		return (EReference)genECUEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenECU_AllocatedGenTasks() {
+		return (EReference)genECUEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGenTask() {
+		return genTaskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenTask_GenComponentInstances() {
+		return (EReference)genTaskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGenSystem() {
+		return genSystemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenSystem_GenECUs() {
+		return (EReference)genSystemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CodegenFactory getCodegenFactory() {
 		return (CodegenFactory)getEFactoryInstance();
 	}
@@ -303,6 +480,26 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		codeGenAllocationEClass = createEClass(CODE_GEN_ALLOCATION);
 		createEReference(codeGenAllocationEClass, CODE_GEN_ALLOCATION__HPIC);
 		createEReference(codeGenAllocationEClass, CODE_GEN_ALLOCATION__CIC);
+
+		genComponentInstanceEClass = createEClass(GEN_COMPONENT_INSTANCE);
+		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__COMPONENT_INSTANCE);
+		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__INIT_COMMANDS);
+		createEReference(genComponentInstanceEClass, GEN_COMPONENT_INSTANCE__GET_PORT_INSTANCES);
+
+		genPortInstanceEClass = createEClass(GEN_PORT_INSTANCE);
+		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__PORT_INSTANCE);
+		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__SAMPLING_TIME);
+		createEReference(genPortInstanceEClass, GEN_PORT_INSTANCE__EXEC_COMMAND);
+
+		genECUEClass = createEClass(GEN_ECU);
+		createEReference(genECUEClass, GEN_ECU__ECU);
+		createEReference(genECUEClass, GEN_ECU__ALLOCATED_GEN_TASKS);
+
+		genTaskEClass = createEClass(GEN_TASK);
+		createEReference(genTaskEClass, GEN_TASK__GEN_COMPONENT_INSTANCES);
+
+		genSystemEClass = createEClass(GEN_SYSTEM);
+		createEReference(genSystemEClass, GEN_SYSTEM__GEN_EC_US);
 	}
 
 	/**
@@ -333,6 +530,8 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		HwplatforminstancePackage theHwplatforminstancePackage = (HwplatforminstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwplatforminstancePackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -353,6 +552,26 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		initEClass(codeGenAllocationEClass, CodeGenAllocation.class, "CodeGenAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodeGenAllocation_Hpic(), theHwplatforminstancePackage.getHWPlatformInstanceConfiguration(), null, "hpic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCodeGenAllocation_Cic(), theInstancePackage_1.getComponentInstanceConfiguration(), null, "cic", null, 1, 1, CodeGenAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(genComponentInstanceEClass, GenComponentInstance.class, "GenComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGenComponentInstance_ComponentInstance(), theInstancePackage_1.getComponentInstance(), null, "componentInstance", null, 1, 1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenComponentInstance_InitCommands(), theExpressionsPackage.getExpression(), null, "initCommands", null, 0, -1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenComponentInstance_GetPortInstances(), this.getGenPortInstance(), null, "getPortInstances", null, 0, -1, GenComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(genPortInstanceEClass, GenPortInstance.class, "GenPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGenPortInstance_PortInstance(), theInstancePackage_1.getPortInstance(), null, "portInstance", null, 1, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenPortInstance_SamplingTime(), theValuetypePackage.getTimeValue(), null, "samplingTime", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenPortInstance_ExecCommand(), theExpressionsPackage.getExpression(), null, "execCommand", null, 0, 1, GenPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(genECUEClass, GenECU.class, "GenECU", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGenECU_Ecu(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "ecu", null, 1, 1, GenECU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenECU_AllocatedGenTasks(), this.getGenTask(), null, "allocatedGenTasks", null, 0, -1, GenECU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(genTaskEClass, GenTask.class, "GenTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGenTask_GenComponentInstances(), this.getGenComponentInstance(), null, "genComponentInstances", null, 0, -1, GenTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(genSystemEClass, GenSystem.class, "GenSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGenSystem_GenECUs(), this.getGenECU(), null, "genECUs", null, 0, -1, GenSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

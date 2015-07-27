@@ -17,10 +17,10 @@ import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartpar
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.APICall#getApiCallSignature <em>Api Call Signature</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.psm.realtimestatechart.RealtimestatechartPackage#getAPICall()
  * @model

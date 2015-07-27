@@ -32,11 +32,11 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.APICallExpressionImpl#getApiCommand <em>Api Command</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.apiexpressions.impl.APICallExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
