@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.browser.providers;
+package de.uni_paderborn.fujaba.muml.browser.actions;
 
 import java.util.Collection;
 import java.util.Iterator;

@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.common.CommandException;
+import org.eclipse.core.commands.operations.IUndoContext;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
@@ -208,6 +209,9 @@ public final class ModelBrowser extends CommonNavigator implements
 	public Object getAdapter(Class key) {
 		if (key.equals(IPropertySheetPage.class)) {
 			return getPropertySheetPage();
+		}
+		if (key.equals(IUndoContext.class)) {
+			
 		}
 		return super.getAdapter(key);
 	}
