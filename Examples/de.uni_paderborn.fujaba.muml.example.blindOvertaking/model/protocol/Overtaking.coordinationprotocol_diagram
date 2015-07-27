@@ -3,7 +3,6 @@
   <children xmi:type="notation:Shape" xmi:id="_RnBcYrqgEeSQfL2uV5TAjw" type="2005" fontName="Segoe UI" lineColor="0">
     <children xmi:type="notation:DecorationNode" xmi:id="_RnBcZLqgEeSQfL2uV5TAjw" type="7005">
       <children xmi:type="notation:Node" xmi:id="_R3StArqgEeSQfL2uV5TAjw" type="3015">
-        <children xmi:type="notation:DecorationNode" xmi:id="_R3StB7qgEeSQfL2uV5TAjw" type="5023"/>
         <styles xmi:type="notation:DescriptionStyle" xmi:id="_R3StA7qgEeSQfL2uV5TAjw"/>
         <styles xmi:type="notation:FontStyle" xmi:id="_R3StBLqgEeSQfL2uV5TAjw" fontName="Segoe UI"/>
         <styles xmi:type="notation:LineStyle" xmi:id="_R3StBbqgEeSQfL2uV5TAjw" lineColor="0"/>
