@@ -69,7 +69,7 @@ public final class ModelBrowser extends CommonNavigator implements
 	public void setSelection(ISelection selection) {
 		this.selection = selection;
 
-		for (ISelectionChangedListener listener : selectionChangedListeners) {
+		for (ISelectionChangedListener listener : new ArrayList<ISelectionChangedListener>(selectionChangedListeners)) {
 			listener.selectionChanged(new SelectionChangedEvent(this, selection));
 		}
 	}
@@ -90,6 +90,7 @@ public final class ModelBrowser extends CommonNavigator implements
 		this.getCommonViewer().addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
+				
 				setSelection(ModelBrowserContentProvider.getAdaptedSelection(event.getSelection()));
 			}
 		});
